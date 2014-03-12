@@ -1,0 +1,54 @@
+/**
+* @desc         layout classes.
+* @name         layouts
+* @author       Anthony Munene
+* @tested       N/A
+* @requires     [ toolkit/_colours.scss ]
+*/
+
+body {
+	counter-reset: section;
+}
+%bodyColumn {
+	float:left;
+	padding-top: 20px;
+}
+.l-constrained {
+	@extend %contain-floats;
+	text-align: left;
+	 max-width: 960px;
+	 margin: 0 auto;
+	 *, *:before, *:after {
+	 	@include box-sizing(border-box);
+	 }
+}
+.l-constrained--header {
+	@extend .l-constrained;
+	padding: 0.5em 0px;
+}
+.l-constrained--topBordered {
+	@extend .l-constrained;
+	border-top: 10px solid $mainstream-brand;
+	margin-bottom: 60px;
+}
+.l-bodyLeftColumn{
+	@extend %bodyColumn;
+	width: 62.916%;
+	margin-right:3.125%;
+}
+.l-bodyLeftColumn--topBordered{
+	@extend %bodyColumn;
+	width: 65.625%;
+	margin-right:3.125%;
+}
+.l-bodyRightColumn {
+	@extend %bodyColumn;
+	width: 31.25%;
+}
+#content {
+	@extend %contain-floats;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 30px;
+	display: block;
+}

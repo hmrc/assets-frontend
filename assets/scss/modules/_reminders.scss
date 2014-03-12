@@ -1,0 +1,25 @@
+.reminder-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    border-bottom: 1px solid $border-colour;
+    padding: 0.5em 0;
+
+    time {
+      display: block;
+      color: $secondary-text-colour;
+
+      @include core-16;
+    }
+  }
+}
+
+.reminder {
+  border: 5px solid $light-blue;
+  padding: 0.5em;
+  margin: 1em 0 2em 0;
+
+  @include core-19;
+}

@@ -1,0 +1,98 @@
+.dashboard {
+  text-align: left;
+
+  .overview {
+    margin: 0 auto;
+    max-width: 960px;
+
+    .wrapper {
+      article {
+        margin: 0 0 3em 0;
+        min-height: 0;
+
+        @include media(tablet) {
+          margin-right: 60px;
+        }
+
+        .inner {
+          padding: 0;
+
+          @include media(tablet) {
+            margin: 0 4em 0 0;
+          }
+        }
+
+        h2 {
+          @include bold-36;
+          padding: 0;
+          margin-top: 0;
+        }
+      }
+
+      @include media(tablet) {
+        float: left;
+        width: 69%;
+      }
+    }
+  }
+
+  .calendar {
+    li {
+      border: none;
+    }
+  }
+
+  .summary {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      padding: 0;
+      margin: 0 0 1em 0;
+
+      span {
+        display: block;
+        @include bold-48;
+      }
+
+      p {
+        margin: 0.5em 0 1em 0;
+      }
+    }
+  }
+
+  .activity {
+    list-style: none;
+    margin: 0 0 1em 0;
+    padding: 0;
+
+    li {
+      display: block;
+      padding: 0;
+      border-bottom: 1px solid $border-colour;
+      @include core-16;
+
+      time {
+        display: block;
+        width: 25%;
+        float: left;
+      }
+
+      p {
+        float: left;
+        width: 75%;
+        @include core-16;
+      }
+    }
+  }
+
+  .service-info__related-subsection {
+    border: none;
+  }
+}
+
+.account-summary {
+  margin-bottom: 3em;
+}

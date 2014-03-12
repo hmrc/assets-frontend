@@ -1,0 +1,17 @@
+.page-header {
+  h1 {
+    margin-top: 0;
+
+    @include media(tablet) {
+      @include bold-48;
+      margin-top: 30px;
+    }
+  }
+
+  h2 {
+    @include media(tablet) {
+      @include bold-36;
+      padding: 0;
+    }
+  }
+}

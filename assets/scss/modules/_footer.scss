@@ -1,0 +1,108 @@
+/*------------------------------------*\
+    footer
+\*------------------------------------*/
+.footer {
+	background-color:  $grey-8;
+	border-top: 10px solid $mainstream-brand;
+	padding-top: 60px;
+}
+
+.explore {
+	float: left;
+	margin-right: 7%;
+	width: 62%;
+	a {
+		color: $grey-3;
+		&:hover {
+		  color: $grey-1;
+		}
+	}
+	ul{
+		border-top: 1px solid $grey-6;
+		padding-top: 20px;
+		margin-top: 20px;
+	}
+	li {
+		display: block;
+		float: left;
+		clear: left;
+		margin: 0 0 15px 0;
+		margin: 0 0 1.5rem 0;
+		width: 45.5%;
+		&:nth-child(even) {
+			float: right;
+			clear: none;
+		}
+	}
+
+}
+.explore--inside-government {
+	@extend .explore;
+	width: 31%;
+	margin-right: 0;
+	li{
+		width: 100%;
+		&:nth-child(even) {
+			float: left;
+			clear: both;
+		}
+	}
+}
+.explore--inline {
+	@extend .explore;
+	border-top: 1px solid $grey-6;
+	padding-bottom: 60px;
+	margin: 60px 30px 0 0;
+	width: 100%;
+	ul {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		display: inline;
+		float: none;
+		margin: 0 1.5rem 0 0;
+		width: auto;
+		&:nth-child(even) {
+			float: none;
+			clear: none;
+		}
+	}
+}
+.explore--inline__links {
+	color: $grey-3;
+	padding-top: 106px;
+	width: 75%
+}
+.explore--inline__copyright {
+	padding-top: 30px;
+	width: 25%;
+	min-height: 150px;
+	min-height: 15rem;
+	text-align: center;
+
+}
+.explore--inline__copyright__logo {
+	background: url('/assets/images/govuk-crest-2x.png') no-repeat 50% 0;
+	background-size: 125px 102px;
+	display: block;
+	padding-top: 115px;
+	padding-top: 11.5rem;
+
+}
+
+.explore__heading {
+	@include bold-24;
+}
+.open-government-licence-logo {
+	padding-right:10px;
+	width: 43px;
+	height: 17px;
+}
+@include ie(7) {
+	#footer .footer-meta .footer-meta-inner {
+		margin-top: 90px;
+	}
+
+}

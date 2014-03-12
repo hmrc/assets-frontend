@@ -1,0 +1,10 @@
+.phase-tag {
+  @include phase-tag(beta);
+  display: inline-block;
+  float: none;
+  margin-left: 5px;
+}
+
+.beta-banner {
+  @include phase-banner(beta);
+}

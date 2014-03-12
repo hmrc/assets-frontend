@@ -1,0 +1,280 @@
+/**
+* @desc         Form Field classes.
+* @name         form
+* @author       username
+* @tested       N/A
+* @requires     toolkit/_colours.scss
+*/
+
+fieldset {
+  @include core-19();
+  position: relative;
+  width: 100%;
+  legend {
+    width: 100%;
+    float: left;
+    clear: right;
+    &.h2-heading {
+      margin: 0 0 0.25em 0;
+    }
+  }
+}
+
+input {
+  @include core-19();
+  background-color: $input-bg-colour;
+  border: 1px inset $input-border;
+  margin: 0;
+  padding: 0.1em 0 0.1em 0.4em;
+  &:focus {
+    outline: 3px solid $yellow;
+  }
+}
+
+select {
+  margin: 0 0.625em;
+  @include inline-block;
+  width: auto;
+}
+
+textarea {
+  @include core-19();
+  background-color: $input-bg-colour;
+  border: 1px inset $input-border;
+  margin: 0;
+  padding: 0.1em 0 0.1em 0.4em;
+  &:focus {
+    outline: 3px solid $yellow;
+  }
+}
+
+input[type="radio"], input[type="checkbox"], select {
+  width: auto;
+  position: relative;
+  vertical-align: 2px;
+}
+
+input[type="radio"] {
+  border: none;
+}
+
+.input--xxsmall {
+  max-width: 2em;
+}
+.input--xsmall {
+  max-width: 4em;
+}
+.input--small {
+  max-width: 6em;
+}
+.input--medium {
+  width: 100%;
+  @include media(tablet) {
+    width: 20em;
+  }
+}
+.input--fullwidth {
+  width: 100%;
+}
+
+
+.input--link {
+  background: none;
+  border: none;
+  color: #2e3191;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  outline: none;
+
+  &:hover,
+  &:active {
+    color: #2e8aca;
+  }
+  &:visited {
+    color: #2e3191;
+  }
+}
+.input--cleared {
+  display: block;
+}
+
+.input--radio-inline {
+  margin-right: 5px
+}
+
+/**
+ * By default form labels will be above inputs
+ */
+label {
+  @include core-19();
+  display: block;
+}
+
+/**
+ * align labels with inputs
+ */
+label.indent {
+  padding-left: 1.5em;
+}
+
+.label--inline {
+  display: inline-block;
+  margin-top: 0.2em;
+  min-width: 130px;
+  @include ie-lte(8) {
+    width: 130px;
+  }
+
+}
+
+.label--inline-no-input {
+  @extend .label--inline;
+  margin-left: 16px;
+  margin-top: 0.75em;
+  min-width: 60px;
+  clear: none;
+  float: left;
+  @include ie-lte(8) {
+    width: 60px;
+  }
+}
+
+.label--inline-tight {
+  @extend .label--inline;
+  min-width: 0;
+  @include ie-lte(8) {
+    width: auto;
+  }
+
+}
+.label--inline-right{
+  @extend .label--inline;
+  float: right;
+}
+.label--inlineRadio{
+  @extend .label--inline;
+  @extend %contain-floats;
+  min-width: 0;
+  @include ie-lte(8) {
+    width: auto;
+  }
+
+}
+.label--inlineRadio--expanded {
+  @extend .label--inlineRadio;
+  width: 100%;
+  input {
+    float: left;
+    margin-right: 0.25em;
+    margin-top: 0.15em;
+    @include ie-lte(8) {
+      margin-top: 0.3em;
+    }
+  }
+  .label__text {
+    float: left;
+    width: 90%;
+  }
+
+}
+.label--inlineRadio--overhead {
+    float: left;
+    margin-bottom: 0.75em;
+    text-align: center;
+    width: 5.8em;
+    word-spacing: 5.8em;
+}
+.label--inlineRadio--overhead-wide {
+    @extend .label--inlineRadio--overhead;
+    width: 6.8em;
+}
+.label--inlineDropDown {
+  @extend .label--inlineRadio;
+}
+
+.label--full-length {
+  @extend .label--inline;
+  clear: both;
+}
+
+.form-field-group {
+  margin-bottom: 0.75em;
+  line-height: 1.6em;
+  @extend %contain-floats;
+  clear: both;
+}
+.form-field-single {
+  @extend .form-field-group;
+}
+.form-field {
+  @extend %contain-floats;
+  float: left;
+  margin-bottom: 0;
+  margin-top: 0.75em;
+  width: 100%;
+}
+
+/**
+ *  Allows you to stack input blocks side by side
+ */
+.form-field--inline {
+  @extend .form-field;
+  clear: none;
+  float: left;
+  width: auto;
+  position: relative;
+
+  input[type="text"], input[type="password"] {
+    margin: 0 0.52em;
+  }
+}
+
+.form-field--inline-text-input {
+  @extend .form-field--inline;
+  margin-top: 0.6em;
+}
+.form-field--inline-spaced-right {
+  @extend .form-field--inline;
+  margin-right: 15px;
+}
+.form-field--inline-spaced-left {
+  @extend .form-field--inline;
+  margin-left: 15px;
+}
+/**
+ * errors
+ */
+.form-field--error {
+  @extend .form-field;
+  background-color: #fef7f7;
+  border-left: 3px solid #df3034;
+  &.numbered {
+    margin-left: 22px!important;
+    width: 90%;
+  }
+  .error-notification {
+    display: block;
+  }
+  padding: 0.75em 1em 0.75em 1em;
+}
+
+.row {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+
+    &.bold {
+      font-weight: bold;
+    }
+  }
+}
+
+.questionnaire {
+  legend {
+    margin: 0 0 0.75em;
+  }
+}
+
+

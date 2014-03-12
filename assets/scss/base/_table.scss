@@ -1,0 +1,30 @@
+article table {
+	width: 100%;
+	margin-left: 0;
+	th, td {
+		padding: 5px 10px;
+	}
+
+	caption {
+		@extend th;
+		border-bottom: 0!important;
+		margin: 0;
+	}
+	
+	tr:nth-child(even) {
+		th[scope="row"] {
+			background-color: #fff;
+		}
+	}
+	th {
+    	border: 1px solid $grey-6;
+		background-color: $grey-8;
+		&[scope="row"] {
+			background-color: $grey-9;
+			font-weight: 300;
+		}
+	}
+	td {
+		border: 1px solid $grey-6;
+	}
+}

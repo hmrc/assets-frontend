@@ -1,0 +1,138 @@
+
+/*------------------------------------*\
+
+    SHAME ON US!!!!!
+    TODO: refactor styles back to SASS
+
+\*------------------------------------*/
+
+article h1 {
+	@include bold-48();
+	margin-top: 0;
+}
+
+article ul {
+	list-style: none;
+	margin: 0.75em 0;
+	padding: 0;
+}
+
+article ol {
+margin: 0.75em 0;
+}
+
+ol {
+padding: 0 0 0 40px;
+}
+
+li {
+list-style-position: outside;
+}
+
+article li {
+	padding-left: 0;
+}
+
+.service-info__organisation-logo {
+	line-height: 1.15em;
+}
+
+a.header__menu__proposition-name, a:visited.header__menu__proposition-name {
+	color: #fff;
+}
+
+.l-bodyRightColumn p, .l-bodyRightColumn li {
+	width: 15em;
+}
+
+.l-bodyRightColumn h2 {
+	width: 10em;
+}
+
+abbr[title] {
+	border-bottom: 0px;
+}
+
+
+.email {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+div.email {
+	margin: 2em 0em;
+}
+
+.list--numbered li {
+  display: list-item;
+  overflow: hidden;
+}
+
+.indent {
+  margin-left: 2em;
+}
+
+.phase-tag.beta  {
+  color: #fff;
+}
+
+.inline-form  .form-field {
+  line-height: 1.3em;
+  margin: 0.2em 0 0 0;
+}
+
+.inline-form  .form-field input[type="text"] {
+  margin: 0 10px;
+}
+
+.inline-form  .form-field--inline input[type="text"] {
+  margin: 0 10px;
+}
+
+
+
+
+.service-info__help a {
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+}
+
+.service-info__help {
+  color: $black;
+}
+
+
+
+.explore--inline {
+  border-top: 0;
+  margin: 0;
+}
+
+.footer {
+  padding-top: 0;
+}
+
+/*------------------------------------*\
+    form validations
+\*------------------------------------*/
+.form-field.error , .form-field-group.error{
+  background-color: #fef7f7;
+  border-left: 3px solid #df3034;
+  margin: 0 -1em 0.5em -1em;
+  padding: 0.75em 1em 1em 1em;
+}
+
+.error-notification {
+  color: #df3034;
+  display: none;
+  font-family: "nta",Arial,sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  padding-bottom: 0.5em;
+  .error & {
+    display: block;
+  }
+
+}

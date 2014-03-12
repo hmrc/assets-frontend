@@ -1,0 +1,73 @@
+p {
+  @include core-19();
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style-position: inside;
+}
+
+h2, h3, h4 {
+  font-weight: 400;
+}
+
+h1 {
+  @include bold-48;
+  margin-top: 0.5em;
+  margin-bottom: 0.75em;
+}
+
+h2 {
+  @include bold-24;
+  margin-top: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+h3 {
+  @include bold-19;
+  margin-top: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+h4 {
+  @include core-19;
+  margin-top: 0.5em;
+  margin-bottom: 0.25em;
+}
+.h1-heading {
+  @extend h1;
+}
+.h2-heading {
+  @extend h2;
+}
+.h3-heading {
+  @extend h3;
+}
+.h4-heading {
+  @extend h4;
+}
+
+.heading-36 {
+  @include bold-36();
+}
+.heading-24 {
+  @include bold-24()
+}
+
+.pre-heading {
+  @include core-27();
+  display: block;
+  color: #6f777b;
+  margin-bottom: 0.5em;
+  text-transform: capitalize;
+}
+
+.faded-text {
+  color:#6f777b;
+}
+
+small {
+  @include core-16;
+}
