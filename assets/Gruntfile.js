@@ -1,6 +1,5 @@
 var path = require("path");
 module.exports = function (grunt) {
-    console.log(path.resolve(__dirname, '../server.js'));
     // Displays the elapsed execution time of grunt tasks
     require('time-grunt')(grunt);
 
@@ -8,11 +7,10 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         //destination directories
-        dirs {
+        dirs: {
             public: "../../public/",
             temp: ".tmp"
-        }
-
+        },
         express: {
             server: {
                 options: {
