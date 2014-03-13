@@ -30,6 +30,6 @@ The [grunt Karma test runner](https://github.com/karma-runner/grunt-karma) is us
 ###Running the Frontend build
 
 	./server build
-compiles our assets for production.
+Compiles our assets for production.
 
 **TODO:** build process should create an artifact to allow us to publish to nexus.
