@@ -2071,10 +2071,10 @@ body {
 * @author       Anthony Munene
 * @tested       N/A
 * @requires     [
-					toolkit/_colours.scss,
-					toolkit/_typography.scss,
-					toolkit/design-patterns/_buttons.scss
-				]
+          toolkit/_colours.scss,
+          toolkit/_typography.scss,
+          toolkit/design-patterns/_buttons.scss
+        ]
 */
 /* line 12, ../scss/base/_buttons.scss */
 button, .button, .button--get-started {
@@ -3133,11 +3133,11 @@ article table td {
 * @author       Anthony Munene
 * @tested       N/A
 * @requires     [
-					toolkit/_colours.scss,
-					toolkit/_typography.scss,
-					toolkit/_shims.scss,
-					toolkit/_conditionals.scss
-				]
+          toolkit/_colours.scss,
+          toolkit/_typography.scss,
+          toolkit/_shims.scss,
+          toolkit/_conditionals.scss
+        ]
 */
 /* line 13, ../scss/modules/_header.scss */
 .header {
@@ -3890,7 +3890,7 @@ a.organisation-logo:hover, a.organisation-logo-stacked:hover, a.organisation-log
     font-size: 18px;
     line-height: 20px;
     padding: 3px 0 2px 38px;
-    background-image: url("/assets/images/crests/hmrc_crest_27px.png");
+    background-image: url("/images/crests/hmrc_crest_27px.png");
     background-position: 6px center;
     background-size: auto 25px;
     border-left: 2px solid #009390;
@@ -3901,7 +3901,7 @@ a.organisation-logo:hover, a.organisation-logo-stacked:hover, a.organisation-log
   /* line 76, ../scss/modules/_organisation-logo.scss */
   .organisation-logo-stacked-medium {
     padding: 25px 0 0 7px;
-    background-image: url("/assets/images/crests/hmrc_crest_27px.png");
+    background-image: url("images/crests/hmrc_crest_27px.png");
     background-position: 6px top;
     background-size: auto 25px;
   }
@@ -3919,7 +3919,7 @@ a.organisation-logo:hover, a.organisation-logo-stacked:hover, a.organisation-log
   /* line 94, ../scss/modules/_organisation-logo.scss */
   .organisation-logo-medium, .organisation-logo-stacked-medium,
   .organisation-logo-stacked-medium {
-    background-image: url("/assets/images/crests/hmrc_crest_27px_x2.png");
+    background-image: url("/images/crests/hmrc_crest_27px_x2.png");
   }
 }
 /* line 2, ../scss/modules/_template-footer.scss */

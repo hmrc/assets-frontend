@@ -10,7 +10,7 @@
   text-decoration: none;
 
   padding: 3px 0 2px 30px;
-  background-image: url("/assets/images/crests/hmrc_crest_13px.png");
+  background-image: url("/images/crests/hmrc_crest_13px.png");
   background-position: 5px center;
   background-size: auto 20px;
   background-repeat: no-repeat;
@@ -37,7 +37,7 @@ a.organisation-logo {
   @extend .organisation-logo;
 
   padding: 20px 0 0 6px;
-  background-image: url("/assets/images/crests/hmrc_crest_13px.png");
+  background-image: url("/images/crests/hmrc_crest_13px.png");
   background-position: 5px top;
   background-size: auto 20px;
 }
@@ -51,7 +51,7 @@ a.organisation-logo {
 @media all and (-webkit-min-device-pixel-ratio: 2) {
   .organisation-logo,
   .organisation-logo-stacked {
-    background-image: url("/assets/images/crests/hmrc_crest_13px.png");
+    background-image: url("/images/crests/hmrc_crest_13px.png");
   }
 }
 
@@ -61,7 +61,7 @@ a.organisation-logo {
     font-size: 18px;
     line-height: 20px;
     padding: 3px 0 2px 38px;
-    background-image: url("/assets/images/crests/hmrc_crest_27px.png");
+    background-image: url("/images/crests/hmrc_crest_27px.png");
     background-position: 6px center;
     background-size: auto 25px;
     border-left: 2px solid $hm-revenue-customs;
@@ -70,14 +70,14 @@ a.organisation-logo {
 
 @include ie(8) {
   .organisation-logo-medium {
-    background-image: url("/assets/images/crests/hmrc_crest_13px.png");
+    background-image: url("/images/crests/hmrc_crest_13px.png");
   }
 }
 .organisation-logo-stacked-medium {
   @extend .organisation-logo-medium;
   @include media(tablet){
     padding: 25px 0 0 7px;
-    background-image: url("/assets/images/crests/hmrc_crest_27px.png");
+    background-image: url("/images/crests/hmrc_crest_27px.png");
     background-position: 6px top;
     background-size: auto 25px;
   }
@@ -92,7 +92,7 @@ a.organisation-logo {
   @media all and (-webkit-min-device-pixel-ratio: 2) {
     .organisation-logo-medium,
     .organisation-logo-stacked-medium {
-      background-image: url("/assets/images/crests/hmrc_crest_27px_x2.png");
+      background-image: url("/images/crests/hmrc_crest_27px_x2.png");
     }
   }
 }
