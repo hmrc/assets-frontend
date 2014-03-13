@@ -8,6 +8,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
         'javascripts/vendor/minified/jquery.min.js',
+        'javascripts/plugins/jquery/jquery.validate.js',
         'javascripts/plugins/**/*.js',
         'test/specs/helpers/jasmine-jquery.js',
         'test/specs/helpers/jasmine-matchers.js',
