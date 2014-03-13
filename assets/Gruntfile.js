@@ -8,7 +8,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         //destination directories
         dirs: {
-            public: "../../public/",
+            public: "public/",
             temp: ".tmp"
         },
         express: {
@@ -95,8 +95,8 @@ module.exports = function (grunt) {
             },
             copyModernizr: {
                 expand: true,
-                src: ['javascripts/modernizr.js'],
-                dest: '<%= dirs.public%>'
+                src: ['javascripts/vendor/modernizr.js'],
+                dest: '<%= dirs.public%>/'
             },
             copyImagesFromToolkit: {
                  expand: true,
