@@ -63,20 +63,29 @@ module.exports = function (grunt) {
             build: ['<%= target%>dist'],
             tmp: ['<%= dirs.temp%>']
         },
-        compass: {                  // Task
-            dist: {                   // Target
-              options: {              // Target options
-                sassDir: 'scss',
-                cssDir: '<%= dirs.temp%>/css',
-                outputStyle: 'compressed'
-              }
+        sass: {
+            dist: {
+                options: {
+                    style: 'compressed'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'scss',
+                    src: ['*.scss'],
+                    dest: '<%= dirs.temp%>/css'
+                }]
             },
-            dev: {                    // Another target
-              options: {
-                sassDir: 'scss',
-                cssDir: 'stylesheets',
-                outputStyle: "expanded"
-              }
+            dev: {
+                options: {
+                    style: 'expanded'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'scss',
+                    src: ['*.scss'],
+                    dest: 'stylesheets'
+                }]
+
             }
         },
         copy: {
@@ -122,7 +131,7 @@ module.exports = function (grunt) {
             },
             compileCSS: {
                 files: ['**/*.scss'],
-                tasks: ['compass:dev']
+                tasks: ['sass:dev']
             }
         },
         // JsHint your javascript
@@ -167,7 +176,7 @@ module.exports = function (grunt) {
                         cwd: 'public/', src: '**', expand: true
                     }
                 ],
-                outDir: 'dist/RELEASE/<%= pkg.version%>',
+                outDir: 'dist/RELEASE/<%= grunt.task.current.args[0]%>',
                 suffix: 'zip',
                 template: '{{appName}}_{{version}}.{{suffix}}'
 
@@ -184,13 +193,14 @@ module.exports = function (grunt) {
 
 
     // Default task(s).
-    grunt.registerTask('default', [ 'express', 'jshint', 'compass:dev', 'watch']);
-    grunt.registerTask('build', ['jshint', 'test', 'concatenate', 'compass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup']) ;
-    grunt.registerTask('buildQA', ['jshint', 'test', 'concatenate', 'compass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:QA']) ;
+    grunt.registerTask('default', [ 'express', 'jshint', 'sass:dev', 'watch']);
+    grunt.registerTask('build', ['jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup']) ;
+    grunt.registerTask('buildQA', ['jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:QA']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);
     grunt.registerTask('copyMinCSS', ['copy:renameCSStoMin']);
+
 
 
 };

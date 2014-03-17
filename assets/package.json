@@ -35,10 +35,10 @@
     "karma-junit-reporter": "~0.2.1",
     "karma-spec-reporter": "0.0.8",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-compass": "~0.7.2",
     "grunt-contrib-copy": "~0.5.0",
     "express": "~3.4.8",
     "grunt-express": "~1.2.1",
-    "grunt-zipup": "~0.1.6"
+    "grunt-zipup": "~0.1.6",
+    "grunt-contrib-sass": "~0.7.3"
   }
 }
