@@ -9,6 +9,9 @@ if [[ -n $1 ]]; then
 	"build") echo "Starting grunt build task..."
 				grunt build
 				;;
+	"buildQA") echo "Starting grunt build task..."
+				grunt buildQA
+				;;
 	"test")  echo "Starting grunt test task..."
 				grunt test
 				;;
