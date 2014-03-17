@@ -186,6 +186,7 @@ module.exports = function (grunt) {
     // Default task(s).
     grunt.registerTask('default', [ 'express', 'jshint', 'compass:dev', 'watch']);
     grunt.registerTask('build', ['jshint', 'test', 'concatenate', 'compass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup']) ;
+    grunt.registerTask('buildQA', ['jshint', 'test', 'concatenate', 'compass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:QA']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);
