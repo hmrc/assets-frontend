@@ -143,7 +143,38 @@ module.exports = function (grunt) {
             singleRun: true,
             browsers: ['PhantomJS']
           }
+        },
+        zipup: {
+            QA: {
+                appName: '<%= pkg.name %>',
+                version: '<%= pkg.version %>',
+                addGitCommitId: true,
+                files: [
+                    {
+                        cwd: 'public/', src: '**', expand: true
+                    }
+                ],
+                outDir: 'dist/QA/',
+                suffix: 'zip',
+                template: '{{appName}}_{{version}}.{{suffix}}'
+            },
+            RELEASE: {
+                appName: '<%= pkg.name %>',
+                version: '<%= pkg.version %>',
+                addGitCommitId: true,
+                files: [
+                    {
+                        cwd: 'public/', src: '**', expand: true
+                    }
+                ],
+                outDir: 'dist/RELEASE/<%= pkg.version%>',
+                suffix: 'zip',
+                template: '{{appName}}_{{version}}.{{suffix}}'
+
+            }
+
         }
+
 
     });
     // will read the dependencies/devDependencies/peerDependencies in your package.json
@@ -154,7 +185,7 @@ module.exports = function (grunt) {
 
     // Default task(s).
     grunt.registerTask('default', [ 'express', 'jshint', 'compass:dev', 'watch']);
-    grunt.registerTask('build', ['jshint', 'test', 'concatenate', 'compass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr']) ;
+    grunt.registerTask('build', ['jshint', 'test', 'concatenate', 'compass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);
