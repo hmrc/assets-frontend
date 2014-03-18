@@ -61,7 +61,8 @@ module.exports = function (grunt) {
         },
         clean: {
             build: ['<%= target%>dist'],
-            tmp: ['<%= dirs.temp%>']
+            tmp: ['<%= dirs.temp%>'],
+            stylesheets: ['stylesheets']
         },
         sass: {
             dist: {
@@ -72,7 +73,8 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'scss',
                     src: ['*.scss'],
-                    dest: '<%= dirs.temp%>/css'
+                    dest: '<%= dirs.temp%>/css',
+                    ext: '.css'
                 }]
             },
             dev: {
@@ -83,7 +85,8 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'scss',
                     src: ['*.scss'],
-                    dest: 'stylesheets'
+                    dest: 'stylesheets',
+                    ext: '.css'
                 }]
 
             }
@@ -131,7 +134,7 @@ module.exports = function (grunt) {
             },
             compileCSS: {
                 files: ['**/*.scss'],
-                tasks: ['sass:dev']
+                tasks: ['clean:stylesheets', 'sass:dev']
             }
         },
         // JsHint your javascript
