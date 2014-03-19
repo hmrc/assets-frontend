@@ -13,7 +13,7 @@ if [[ -n $1 ]]; then
 				;;
 	"buildQA") echo "Starting grunt build task..."
 				npm install
-				grunt buildQA
+				grunt buildQA:${BUILD_NUMBER}
 				;;
 	"test")  echo "Starting grunt test task..."
 				grunt test
