@@ -9,7 +9,8 @@ module.exports = function (grunt) {
         //destination directories
         dirs: {
             public: "public/",
-            temp: ".tmp"
+            temp: ".tmp",
+            dist: "dist"
         },
         express: {
             server: {
@@ -60,7 +61,7 @@ module.exports = function (grunt) {
 
         },
         clean: {
-            build: ['<%= target%>dist'],
+            build: ['<%= dirs.dist%>'],
             tmp: ['<%= dirs.temp%>'],
             stylesheets: ['stylesheets']
         },
@@ -157,7 +158,7 @@ module.exports = function (grunt) {
           }
         },
         zipup: {
-            QA: {
+            release: {
                 appName: '<%= pkg.name %>',
                 version: '<%= pkg.version %>',
                 addGitCommitId: true,
@@ -166,25 +167,23 @@ module.exports = function (grunt) {
                         cwd: 'public/', src: '**', expand: true
                     }
                 ],
-                outDir: 'dist/QA/',
+                outDir: '<%= dirs.temp%>/zipped',
                 suffix: 'zip',
-                template: '{{appName}}_v_{{version}}_BUILD_<%= grunt.task.current.args[0] %>.{{suffix}}'
-            },
-            RELEASE: {
-                appName: '<%= pkg.name %>',
-                version: '<%= pkg.version %>',
-                addGitCommitId: true,
-                files: [
-                    {
-                        cwd: 'public/', src: '**', expand: true
-                    }
-                ],
-                outDir: 'dist/RELEASE/<%= pkg.version %>',
-                suffix: 'zip',
-                template: '{{appName}}_{{version}}.{{suffix}}'
-
+                template: '{{appName}}.{{suffix}}'
             }
 
+        },
+        hash: {
+            options: {
+                hashLength: 12,
+                hashFunction: function(source, encoding){ // default is md5
+                    return require('crypto').createHash('sha1').update(source, encoding).digest('hex');
+                }
+            },
+            release: {
+                src: '<%= dirs.temp%>/zipped/assets-frontend.zip',
+                dest: 'dist/'
+            }
         }
 
 
@@ -197,16 +196,7 @@ module.exports = function (grunt) {
 
     // Default task(s).
     grunt.registerTask('default', [ 'express', 'jshint', 'sass:dev', 'watch']);
-    grunt.registerTask('build', ['jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup']) ;
-    // build task which requires a build number from the jenkins job
-    grunt.registerTask('buildQA', function (build_number) {
-        if(build_number == null) {
-            grunt.warn("Build number must be specified");
-        }
-        console.log(build_number);
-        grunt.task.run('test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:QA:' + build_number);
-
-    });
+    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:release', 'hash:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);
