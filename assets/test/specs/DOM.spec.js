@@ -8,7 +8,7 @@ describe('DOM', function(){
     });
 
     it('should insert some fixture data into the SpecRunner', function(){
-        expect(document.getElementById('js-injected').innerHTML).toBe('An injected DOM node');
+        expect(document.getElementById('js-injected').innerHTML).toBe('An injected DOMS node');
     });
 });
 
@@ -25,7 +25,7 @@ describe('Loading fixtures', function() {
    describe('Loading a test fixture', function() {
        it('should load a test fixture', function(){
                loadFixtures('text-fixture.html');
-               expect($('#my-fixture')).toBeVisible();
+               expect($('#my-fixture')).toBeHidden();
        });
    });
 
