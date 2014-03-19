@@ -4,12 +4,15 @@ if [[ -n $1 ]]; then
 	case "$1" in
 
 	"dev") echo "Starting grunt dev mode..."
+		  npm install
 		  grunt
 		  ;;
 	"build") echo "Starting grunt build task..."
+				npm install
 				grunt build
 				;;
 	"buildQA") echo "Starting grunt build task..."
+				npm install
 				grunt buildQA
 				;;
 	"test")  echo "Starting grunt test task..."
