@@ -169,7 +169,7 @@ module.exports = function (grunt) {
                 ],
                 outDir: '<%= dirs.dist%>',
                 suffix: 'zip',
-                template: '{{appName}}-{{version}}.{{suffix}}'
+                template: '{{appName}}-999-SNAPSHOT.{{suffix}}'
             }
 
         },
