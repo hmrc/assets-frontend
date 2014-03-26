@@ -167,9 +167,9 @@ module.exports = function (grunt) {
                         cwd: 'public/', src: '**', expand: true
                     }
                 ],
-                outDir: '<%= dirs.temp%>/zipped',
+                outDir: '<%= dirs.dist%>',
                 suffix: 'zip',
-                template: '{{appName}}.{{suffix}}'
+                template: '{{appName}}-{{version}}.{{suffix}}'
             }
 
         },
@@ -196,7 +196,7 @@ module.exports = function (grunt) {
 
     // Default task(s).
     grunt.registerTask('default', [ 'express', 'jshint', 'sass:dev', 'watch']);
-    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:release', 'hash:release']) ;
+    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);
