@@ -122,6 +122,10 @@ module.exports = function (grunt) {
                cwd:'images',
                src: ['**/*.png','**/*.gif'],
                dest: '<%= dirs.public%>/images',
+            },
+            copyHealthCheck: {
+                src: 'healthcheck.json',
+                dest: '<%= dirs.public%>'
             }
         },
         watch: {
@@ -196,7 +200,7 @@ module.exports = function (grunt) {
 
     // Default task(s).
     grunt.registerTask('default', [ 'express', 'jshint', 'sass:dev', 'watch']);
-    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:release']) ;
+    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);
