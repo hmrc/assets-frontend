@@ -162,7 +162,7 @@ module.exports = function (grunt) {
           }
         },
         zipup: {
-            release: {
+            build: {
                 appName: '<%= pkg.name %>',
                 version: '<%= pkg.version %>',
                 addGitCommitId: true,
@@ -174,6 +174,19 @@ module.exports = function (grunt) {
                 outDir: '<%= dirs.dist%>',
                 suffix: 'zip',
                 template: '{{appName}}-999-SNAPSHOT.{{suffix}}'
+            },
+            release: {
+                appName: '<%= pkg.name %>',
+                version: '<%= pkg.version %>',
+                addGitCommitId: true,
+                files: [
+                    {
+                        cwd: 'public/', src: '**', expand: true
+                    }
+                ],
+                outDir: '<%= dirs.dist%>',
+                suffix: 'zip',
+                template: '{{appName}}-{{version}}.{{suffix}}'
             }
 
         },
@@ -200,7 +213,8 @@ module.exports = function (grunt) {
 
     // Default task(s).
     grunt.registerTask('default', [ 'express', 'jshint', 'sass:dev', 'watch']);
-    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
+    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:build']) ;
+    grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);

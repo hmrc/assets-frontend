@@ -2,6 +2,9 @@ node_modules
 .sass-cache
 .tmp
 assets/stylesheets
+assets/dist
 logs
 asset-target
 RUNNIN_FROM
+test_results
+

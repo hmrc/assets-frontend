@@ -15,6 +15,10 @@ if [[ -n $1 ]]; then
 				npm install
 				grunt buildQA:${BUILD_NUMBER}
 				;;
+	"release") echo "Starting grunt build task..."
+				npm install
+				grunt release
+				;;
 	"test")  echo "Starting grunt test task..."
 				grunt test
 				;;
