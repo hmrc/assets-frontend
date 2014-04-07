@@ -4,7 +4,6 @@
   margin: 0;
 
   li {
-    border-bottom: 1px solid $border-colour;
     padding: 0.5em 0;
 
     time {
@@ -17,9 +16,36 @@
 }
 
 .reminder {
-  border: 5px solid $light-blue;
-  padding: 0.5em;
-  margin: 1em 0 2em 0;
 
   @include core-19;
+}
+
+.reminder a{
+  display: inline-block;
+  background-color: $light-blue;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.7em 1em;
+}
+
+.reminder a i{
+  margin-left: 5px;
+}
+
+
+.reminder.urgent a{
+  background-color: $red;
+}
+
+.reminder p{
+  margin-top: 0;
+  display: inline-block;
+}
+
+.reminder .label{
+  background-color: #000;
+  color: #fff;
+  padding: 0.7em 1em;
+  display: inline-block;
+  margin-right: -5px;
 }
