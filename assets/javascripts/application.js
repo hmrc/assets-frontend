@@ -115,5 +115,6 @@ $(document).ready(function () {
         }
     });
 
+    GOVUK.toggleDynamicFormFields();
     GOVUK.questionnaireSubmission();
 });
