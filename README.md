@@ -32,4 +32,5 @@ The [grunt Karma test runner](https://github.com/karma-runner/grunt-karma) is us
 	./server build
 Compiles our assets for production.
 
-**TODO:** build process should create an artifact to allow us to publish to nexus.
+###Dependancies
+[GOVUK Frontend Toolkit](https://github.com/alphagov/govuk_frontend_toolkit) pulled in using the Subtree merge strategy.
