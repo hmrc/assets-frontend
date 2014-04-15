@@ -7,7 +7,7 @@ app.use(express.logger('dev'));
 app.use(app.router);
 
 //use this for the application manager healthcheck
-app.get('/public/healthcheck.json', function (req, res) {
+app.get('/', function (req, res) {
 
   res.send(res.statusCode)
 });
