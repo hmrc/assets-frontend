@@ -34,3 +34,23 @@ Compiles our assets for production.
 
 ###Dependancies
 [GOVUK Frontend Toolkit](https://github.com/alphagov/govuk_frontend_toolkit) pulled in using the Subtree merge strategy.
+
+##Using the Application Manager
+
+	
+###Download the snapshot of latest assets
+
+	./sm.py --start ASSETS -f
+
+The frontend applications use this by default
+
+###Download release version(s) of assets
+
+	./sm.py --start ASSETS -r 
+
+Change assets.version key in application.conf of the frontend application you are working on to reflect the release version. Don't forget to revert this before pushing!
+
+###Using assets from source
+
+	./sm.py --start ASSETS
+
