@@ -7,4 +7,5 @@ logs
 asset-target
 RUNNING_FROM
 test_results
+*.DS_Store
 

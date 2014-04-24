@@ -11,7 +11,6 @@ body {
 }
 %bodyColumn {
 	float:left;
-	padding-top: 20px;
 }
 .l-constrained {
 	@extend %contain-floats;
@@ -29,17 +28,13 @@ body {
 .l-constrained--topBordered {
 	@extend .l-constrained;
 	border-top: 10px solid $mainstream-brand;
-	margin-bottom: 60px;
 }
 .l-bodyLeftColumn{
 	@extend %bodyColumn;
-	width: 62.916%;
-	margin-right:3.125%;
-}
-.l-bodyLeftColumn--topBordered{
-	@extend %bodyColumn;
-	width: 65.625%;
-	margin-right:3.125%;
+	@include media(tablet) {
+		width: 64%;
+		margin-right:3.125%;
+	}
 }
 .l-bodyRightColumn {
 	@extend %bodyColumn;
@@ -49,6 +44,8 @@ body {
 	@extend %contain-floats;
 	max-width: 960px;
 	margin: 0 auto;
-	padding: 0 30px;
-	display: block;
+	padding: 0 15px 2em 15px; 
+	@include media(tablet) {
+		padding: 0 30px 2em 30px;
+	}
 }
