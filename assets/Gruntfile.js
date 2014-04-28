@@ -8,9 +8,10 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         //destination directories
         dirs: {
-            public: "public/",
+            public: "public",
             temp: ".tmp",
-            dist: "dist"
+            dist: "dist",
+            snapshot: "public/<%= pkg.version%>-SNAPSHOT"
         },
         express: {
             server: {
@@ -63,7 +64,7 @@ module.exports = function (grunt) {
         clean: {
             build: ['<%= dirs.dist%>'],
             tmp: ['<%= dirs.temp%>'],
-            stylesheets: ['stylesheets'],
+            stylesheets: ['public'],
             sass_cache: ['.sass-cache']
 
         },
@@ -88,7 +89,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'scss',
                     src: ['*.scss'],
-                    dest: 'stylesheets',
+                    dest: '<%= dirs.snapshot%>/stylesheets',
                     ext: '.css'
                 }]
 
@@ -117,13 +118,25 @@ module.exports = function (grunt) {
                  expand: true,
                  cwd:'govuk_frontend_toolkit/images',
                  src: ['**/*.png','**/*.gif'],
-                 dest: 'images',
+                 dest: 'images'
             },
             copyImagestoDist: {
                expand: true,
                cwd:'images',
                src: ['**/*.png','**/*.gif'],
-               dest: '<%= dirs.public%>/images',
+               dest: '<%= dirs.public%>/images'
+            },
+            copyImagestoSnapshot: {
+               expand: true,
+               cwd:'images',
+               src: ['**/*.png','**/*.gif'],
+               dest: '<%= dirs.snapshot%>/images'
+            },
+            copyJavaScripttoSnapshot: {
+               expand: true,
+               cwd:'javascripts',
+               src: ['**/*.js'],
+               dest: '<%= dirs.snapshot%>/javascripts'
             },
             copyHealthCheck: {
                 src: 'healthcheck.json',
@@ -214,7 +227,7 @@ module.exports = function (grunt) {
 
 
     // Default task(s).
-    grunt.registerTask('default', [ 'express', 'jshint', 'sass:dev', 'watch']);
+    grunt.registerTask('default', [ 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:dev', 'watch']);
     grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:build', 'clean:sass_cache']) ;
     grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
