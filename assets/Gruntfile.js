@@ -17,7 +17,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     port: 3002,
-                    server: path.resolve(__dirname, '../server.js'),
+                    server: path.resolve(__dirname, 'server.js'),
                     bases: path.resolve(__dirname, 'assets')
                 }
             }
