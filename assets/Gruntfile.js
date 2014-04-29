@@ -16,7 +16,7 @@ module.exports = function (grunt) {
         express: {
             server: {
                 options: {
-                    port: 3002,
+                    port: 9032,
                     server: path.resolve(__dirname, 'server.js'),
                     bases: path.resolve(__dirname, 'assets')
                 }
