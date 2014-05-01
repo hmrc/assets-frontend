@@ -29,6 +29,7 @@
 @import "base/lists";
 @import "base/table";
 @import "base/helpers";
+@import "base/errors";
 
 //Modules
 @import "modules/header";
@@ -45,6 +46,7 @@
 @import "modules/report-error";
 @import "modules/help-contents";
 @import "modules/template-sidebar";
+@import "modules/progress-indicator";
 
 //Overrides
 @import "shame";

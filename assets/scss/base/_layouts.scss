@@ -40,6 +40,18 @@ body {
 	@extend %bodyColumn;
 	width: 31.25%;
 }
+.l-contentColumn--1_of_4 {
+	@extend %bodyColumn;
+	width: 25%;
+}
+.l-contentColumn--2_of_4 {
+	@extend %bodyColumn;
+	width: 50%;
+}
+.l-contentColumn--3_of_4 {
+	@extend %bodyColumn;
+	width: 75%;
+}
 #content {
 	@extend %contain-floats;
 	max-width: 960px;

@@ -8,6 +8,7 @@
 
 fieldset {
   @include core-19();
+  margin: 0;
   position: relative;
   width: 100%;
   legend {
@@ -241,22 +242,6 @@ label.indent {
 .form-field--inline-spaced-left {
   @extend .form-field--inline;
   margin-left: 15px;
-}
-/**
- * errors
- */
-.form-field--error {
-  @extend .form-field;
-  background-color: #fef7f7;
-  border-left: 3px solid #df3034;
-  &.numbered {
-    margin-left: 22px!important;
-    width: 90%;
-  }
-  .error-notification {
-    display: block;
-  }
-  padding: 0.75em 1em 0.75em 1em;
 }
 
 .row {

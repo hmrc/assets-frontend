@@ -1,0 +1,30 @@
+/**
+* @desc         Progress indicator style navigation module
+* @name         progress-indicator
+* @author       Richard Vinall
+* @required		[ /base/_layouts.scss ]
+*/
+
+.progress-indicator--vertical {
+    @extend .l-contentColumn--1_of_4;
+}
+.progress-indicator__list {
+    margin: 0;
+}
+.progress-indicator__list-item {
+    list-style-type: none;
+}
+.progress-indicator__list {
+ 	.active,
+	.active a {
+    	color: #000000;
+	}
+	.current,
+	.current a {
+    	color: #2e8aca;
+	}
+	.inactive,
+	.inactive a {
+    	color: #ababab;
+	}
+}

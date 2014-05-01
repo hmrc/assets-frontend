@@ -1,11 +1,11 @@
 node_modules
 .sass-cache
 .tmp
-assets/stylesheets
 assets/dist
 logs
 asset-target
 RUNNING_FROM
 test_results
 *.DS_Store
+assets/public
 
