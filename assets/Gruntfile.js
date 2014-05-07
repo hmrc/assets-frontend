@@ -57,7 +57,7 @@ module.exports = function (grunt) {
             //combine all scripts and copy to distribution folder
             combineAll: {
                 src: ['javascripts/vendor/minified/json3.min.js', '<%= dirs.temp%>/minified/jquery-combined.min.js', '<%= dirs.temp%>/minified/app.min.js'],
-                dest: '<%= dirs.public%>javascripts/application.min.js'
+                dest: '<%= dirs.public%>/javascripts/application.min.js'
             }
 
         },
@@ -228,7 +228,7 @@ module.exports = function (grunt) {
 
     // Default task(s).
     grunt.registerTask('default', [ 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:dev', 'watch']);
-    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:build', 'clean:sass_cache']) ;
+    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:build', 'clean:sass_cache']) ;
     grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
