@@ -1,0 +1,15 @@
+.tab-navigation {
+	width: 100%;
+	border-bottom: 1px solid lightgray;
+}
+.tab-navigation__tab {
+	display: inline-block;
+	padding: 1%;
+}
+.tab-navigation__tab--active {
+	@extend .tab-navigation__tab;
+	border: 1px solid lightgray;
+	border-bottom: 0;
+}
+
+/*<ul class="tab-navigation"><li class="tab-navigation__tab tab-navigation__tab--active">Overview</li><li class="tab-navigation__tab"><a href="#">Messages</a></li></ul>*/

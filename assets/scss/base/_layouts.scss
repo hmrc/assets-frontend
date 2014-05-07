@@ -40,16 +40,20 @@ body {
 	@extend %bodyColumn;
 	width: 31.25%;
 }
-.l-contentColumn--1_of_4 {
+.l-contentColumn {
 	@extend %bodyColumn;
+	@extend %contain-floats;
+}
+.l-contentColumn--1_of_4 {
+	@extend .l-contentColumn;
 	width: 25%;
 }
 .l-contentColumn--2_of_4 {
-	@extend %bodyColumn;
+	@extend .l-contentColumn;
 	width: 50%;
 }
 .l-contentColumn--3_of_4 {
-	@extend %bodyColumn;
+	@extend .l-contentColumn;
 	width: 75%;
 }
 #content {
