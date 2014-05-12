@@ -1,4 +1,4 @@
-frontend-assets
+assets-frontend
 ===============
 
 Front end assets for the Tax platform
