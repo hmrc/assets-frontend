@@ -1,7 +1,7 @@
 GOVUK.toggleDynamicFormFields = function () {
   var $dynamicForm = $('form[data-dynamic-form]');
 
-  $dynamicForm.find("*[data-dynamic-fields-hide]").each( function() {
+  $dynamicForm.find('*[data-dynamic-fields-hide="true"]').each( function() {
     if($(this).prop("checked")) {
       var $toggledField = $(".data-" + $(this).data('dynamic-fields'));
       $toggledField.addClass('js-hidden');

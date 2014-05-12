@@ -95,25 +95,6 @@ $(document).ready(function () {
         // setup showing/hiding of contextual fields
         GOVUK.toggleContextualFields.setup();
     }
-    //toggle fuel questions depending on if user has selected zero emissions
-    var $form = $("#add-car-benefit-fields");
-    /**
-     * if the server side validation returns an error and the user has already selected
-     * an electric car. We need to hide the questions
-     **/
-    if ($form.find("#fuelType-electricity").prop("checked")) {
-        GOVUK.toggleNonElectricFields($form, true);
-        $form.data('electricFlagged', true);
-    }
-    $form.on('click', '*[data-iselectric]', function () {
-        if ($(this).data("iselectric")) {
-            GOVUK.toggleNonElectricFields($form, true);
-            $form.data('electricFlagged', true);
-        } else {
-            GOVUK.toggleNonElectricFields($form, false);
-            $form.removeData('electricFlagged');
-        }
-    });
 
     GOVUK.toggleDynamicFormFields();
     GOVUK.questionnaireSubmission();
