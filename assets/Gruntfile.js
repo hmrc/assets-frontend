@@ -11,7 +11,7 @@ module.exports = function (grunt) {
             public: "public",
             temp: ".tmp",
             dist: "dist",
-            snapshot: "public/<%= pkg.version%>-SNAPSHOT"
+            snapshot: "public/999-SNAPSHOT"
         },
         express: {
             server: {
@@ -179,7 +179,7 @@ module.exports = function (grunt) {
         zipup: {
             build: {
                 appName: '<%= pkg.name %>',
-                version: '<%= pkg.version %>',
+                version: '999',
                 addGitCommitId: true,
                 files: [
                     {
