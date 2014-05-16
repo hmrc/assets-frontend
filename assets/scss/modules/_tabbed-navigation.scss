@@ -15,7 +15,8 @@
 }
 .tab-navigation__tab {
 	display: inline-block;
-	padding: 0.7em 19px;
+	padding: 0 19px;
+	line-height: 2.9em;
 }
 .tab-navigation__tab--active {
 	@extend .tab-navigation__tab;

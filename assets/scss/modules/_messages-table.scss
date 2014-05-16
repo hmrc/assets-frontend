@@ -1,0 +1,16 @@
+table.messages {
+	width: 100%;
+	
+	th:nth-of-type(1) {
+		width: 5%;
+	}
+	th:nth-of-type(2) {
+		width: 50%;
+	}
+	th:nth-of-type(3) {
+		width: 25%;
+	}
+	th:nth-of-type(4) {
+		width: 20%;
+	}
+}

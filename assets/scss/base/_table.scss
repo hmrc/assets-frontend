@@ -6,7 +6,8 @@ article table {
 	}
 
 	caption {
-		@extend th;
+		border: 1px solid $grey-6;
+		background-color: $grey-8;
 		border-bottom: 0!important;
 		margin: 0;
 	}
@@ -27,4 +28,36 @@ article table {
 	td {
 		border: 1px solid $grey-6;
 	}
+}
+
+.table--borderless {
+	td, th {
+		border: none;
+		padding: 0.5em 0;
+	}
+	th {
+		background-color: $white;
+		border-bottom: 1px solid $grey-6;		
+	}
+}
+.table__row--bold {
+	td, th {
+		font-weight: bold;
+	}
+}
+.marker-column {
+	padding: 0;
+	vertical-align: middle;
+}
+.marker-column__marker {
+	background-color: $purple;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	text-indent: -99999px;
+	width: 10px;
+	height: 10px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
 }
