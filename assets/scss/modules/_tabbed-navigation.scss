@@ -5,19 +5,23 @@
 * @requires     [ base/_colours.scss ]
 */
 .tab-navigation {
-	width: 100%;
 	border-bottom: 1px solid #ccc;
+	margin: 2em 0;
+	width: 100%;
+}
+
+.tab-navigation__list {
+	margin-bottom: -1px;
 }
 .tab-navigation__tab {
 	display: inline-block;
-	padding: 0.5em 15px;
+	padding: 0.7em 19px;
 }
 .tab-navigation__tab--active {
 	@extend .tab-navigation__tab;
 	background: $white;
 	border: 1px solid #ccc;
 	border-bottom: 0;
-	margin-bottom: -1px;
 }
 
 .hightlight-block {
