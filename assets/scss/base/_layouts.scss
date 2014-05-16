@@ -65,3 +65,8 @@ body {
 		padding: 0 30px 2em 30px;
 	}
 }
+.l-constrained--full-width {
+	// TODO: get rid of !important when refactor out the #content > article
+	float: none!important;
+	width: 100%!important;
+}

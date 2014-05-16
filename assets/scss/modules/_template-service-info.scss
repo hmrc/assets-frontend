@@ -1,8 +1,9 @@
 .service-info {
+  border-top: 10px solid $mainstream-brand;
   display: inline-block;
   width: 100%;
   margin: 0;
-  padding: 0.5em 0;
+  padding: 1em 0 0.5em 0;
   @extend %contain-floats;
 
   .inner {
@@ -11,16 +12,9 @@
   }
 
   @include media(tablet) {
-    margin: 0 -30px;
-    padding: 0.5em 15px;
-
     .logo {
       float: left;
       width: 33.33%;
-    }
-
-    .organisation-logo {
-      margin-left: 15px;
     }
   }
 
