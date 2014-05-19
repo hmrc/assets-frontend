@@ -249,18 +249,61 @@ label.indent {
 } 
 
 label {
-  display: block;
-
   &.bold {
     font-weight: bold;
   }
 }
 
-
 .questionnaire {
   legend {
     margin: 0 0 0.75em;
   }
+}
+
+// new form styles
+.in-focus {
+  outline: 3px solid $yellow;
+}
+
+.selected {
+  background-color: $white;
+}
+
+.block-label {
+  background-color: $grey-8;
+  border: 1px solid $grey-8;
+  cursor: pointer;
+  float: left;
+  margin-bottom: 15px;
+  padding: 1em;
+  &:hover {
+    border-color: $black;
+  }
+}
+
+.block-label--inline {
+  @extend .block-label;
+  clear: both;
+  line-height: 0; 
+  input {
+    margin: 0 0.5em 0 0;
+  }
+}
+
+.block-label--stacked {
+  @extend .block-label;
+  line-height: 1;
+  margin-right: 15px;
+  input {
+    display: block;
+    margin: 0 auto 0.8em;
+  }
+}
+
+.dynamically-displayed {
+  border-left: 5px solid $grey-8;
+  margin: 0 0 15px;  
+  padding: 0.5em 30px;
 }
 
 

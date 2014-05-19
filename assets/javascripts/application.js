@@ -98,4 +98,6 @@ $(document).ready(function () {
 
     GOVUK.toggleDynamicFormFields();
     GOVUK.questionnaireSubmission();
+    GOVUK.registerBlockInputFields('.block-input');
+    GOVUK.registerCharacterCountFields();
 });
