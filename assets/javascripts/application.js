@@ -97,7 +97,9 @@ $(document).ready(function () {
     }
 
     GOVUK.toggleDynamicFormFields();
+    //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
+    GOVUK.simpleToggleDynamicFormFields();
     GOVUK.questionnaireSubmission();
-    GOVUK.registerBlockInputFields('.block-input');
+    GOVUK.registerBlockInputFields( '#form-end-journey-questionnaire' );
     GOVUK.registerCharacterCountFields();
 });
