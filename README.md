@@ -5,20 +5,15 @@ Front end assets for the Tax platform
 
 ##Getting Started
 
-To start serving assets on a local server, you have the option to run with Node.js or a simple Python server.
+###Development
+
 
 ###Running with Grunt (Development mode)
 
-To start the grunt task runner:
+The command below will kick off a local NodeJs server on a predefined port(9032). This serves the source assets in their unminified form via the grunt task runner.
+
 	./server dev
 
-
-###Running with Python
-
-To serve static assets use the commend below:
-
-	./server
-Please note that this will only run the precompiled (production-ready) assets
 
 
 ###Running Frontend Tests
@@ -37,20 +32,7 @@ Compiles our assets for production.
 
 ##Using the Application Manager
 
-	
-###Download the snapshot of latest assets
+Unless you're making changes to the frontend assets, you'll most likely be using the application manager to serve assets to your frontends. The ASSETS_FRONTEND service is responsible for serving released artifacts and can be started with the command below.
 
-	./sm.py --start ASSETS -f
-
-The frontend applications use this by default
-
-###Download release version(s) of assets
-
-	./sm.py --start ASSETS -r 
-
-Change assets.version key in application.conf of the frontend application you are working on to reflect the release version. Don't forget to revert this before pushing!
-
-###Using assets from source
-
-	./sm.py --start ASSETS
+	./sm.py --start ASSETS_FRONTEND
 
