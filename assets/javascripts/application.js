@@ -101,4 +101,5 @@ $(document).ready(function () {
     GOVUK.simpleToggleDynamicFormFields();
     GOVUK.questionnaireSubmission();
     GOVUK.registerBlockInputFields( '#form-end-journey-questionnaire' );
+    GOVUK.exitSurveyValidation();
 });
