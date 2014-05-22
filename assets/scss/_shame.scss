@@ -131,3 +131,13 @@ div.email {
   }
 
 }
+
+
+
+
+#content>article {
+  @include media(tablet) {
+    width: 64%;
+    float: left;
+  }
+}
