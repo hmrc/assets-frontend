@@ -7,4 +7,6 @@
 
 .beta-banner {
   @include phase-banner(beta);
+  width: 960px;
+  margin: 0 auto;
 }

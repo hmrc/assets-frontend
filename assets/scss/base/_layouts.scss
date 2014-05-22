@@ -27,7 +27,7 @@ body {
 }
 .l-constrained--topBordered {
 	@extend .l-constrained;
-	border-top: 10px solid $mainstream-brand;
+	//border-top: 10px solid $mainstream-brand; TODO: remove this class altogether as border now set as part of the service info. Must change the markup in play-frontend as well.
 }
 .l-bodyLeftColumn{
 	@extend %bodyColumn;
