@@ -2,8 +2,8 @@
  * DOM ready
  */
 $(document).ready(function () {
-    $(document).on('click', 'a', function () {
-        GOVUK.setSSOLinks(this);
+    $(document).on('click', 'a', function (e) {
+        GOVUK.setSSOLinks(e);
     });
     GOVUK.preventDoubleSubmit();
     //initialise stageprompt for Analytics
