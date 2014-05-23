@@ -2,6 +2,9 @@
  * DOM ready
  */
 $(document).ready(function () {
+    $(document).on('click', 'a', function () {
+        GOVUK.setSSOLinks(this);
+    });
     GOVUK.preventDoubleSubmit();
     //initialise stageprompt for Analytics
     //TODO: Enable once we set up Goggle Analytics
