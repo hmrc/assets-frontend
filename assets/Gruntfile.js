@@ -71,22 +71,30 @@ module.exports = function (grunt) {
             sass_cache: ['.sass-cache']
 
         },
-        compass: {
+        sass: {
             dist: {
                 options: {
-                    outputStyle: 'compressed',
-                    sassDir: '<%= dirs.sass%>',
-                    cssDir: '<%= dirs.public%>/<%= dirs.css%>',
-                    imagesDir: '<%= dirs.images%>'
-                }
+                    style: 'compressed'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'scss',
+                    src: ['*.scss'],
+                    dest: '<%= dirs.temp%>/css',
+                    ext: '.css'
+                }]
             },
             dev: {
                 options: {
-                    outputStyle: 'expanded',
-                    sassDir: '<%= dirs.sass%>',
-                    cssDir: '<%= dirs.snapshot%>/<%= dirs.css%>',
-                    imagesDir: '<%= dirs.images%>'
-                }
+                    style: 'expanded'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'scss',
+                    src: ['*.scss'],
+                    dest: '<%= dirs.snapshot%>/stylesheets',
+                    ext: '.css'
+                }]
 
             }
         },
@@ -149,7 +157,7 @@ module.exports = function (grunt) {
             },
             compileCSS: {
                 files: ['**/*.scss'],
-                tasks: ['clean:stylesheets', 'compass:dev']
+                tasks: ['clean:stylesheets', 'sass:dev']
             }
         },
         // JsHint your javascript
@@ -222,9 +230,9 @@ module.exports = function (grunt) {
 
 
     // Default task(s).
-    grunt.registerTask('default', [ 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'compass:dev', 'watch']);
-    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'compass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:build', 'clean:sass_cache']) ;
-    grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'compass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
+    grunt.registerTask('default', [ 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:dev', 'watch']);
+    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:build', 'clean:sass_cache']) ;
+    grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);
