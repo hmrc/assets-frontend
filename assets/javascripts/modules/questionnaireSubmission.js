@@ -1,7 +1,8 @@
 GOVUK.questionnaireSubmission = function () {
 	var $form = $('.questionnaire form');
 
-	$form.submit( function() {
+	$form.submit( function(e) {
+		e.preventDefault();
 		$.ajax({
 		  type: "POST",
 		  url: $form.attr("action"),
