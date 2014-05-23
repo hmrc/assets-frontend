@@ -11,7 +11,10 @@ module.exports = function (grunt) {
             public: "public",
             temp: ".tmp",
             dist: "dist",
-            snapshot: "public/999-SNAPSHOT"
+            snapshot: "public/999-SNAPSHOT",
+            sass: "scss",
+            css: "stylesheets",
+            images: "images"
         },
         express: {
             server: {
@@ -68,30 +71,22 @@ module.exports = function (grunt) {
             sass_cache: ['.sass-cache']
 
         },
-        sass: {
+        compass: {
             dist: {
                 options: {
-                    style: 'compressed'
-                },
-                files: [{
-                    expand: true,
-                    cwd: 'scss',
-                    src: ['*.scss'],
-                    dest: '<%= dirs.temp%>/css',
-                    ext: '.css'
-                }]
+                    outputStyle: 'compressed',
+                    sassDir: '<%= dirs.sass%>',
+                    cssDir: '<%= dirs.public%>/<%= dirs.css%>',
+                    imagesDir: '<%= dirs.images%>'
+                }
             },
             dev: {
                 options: {
-                    style: 'expanded'
-                },
-                files: [{
-                    expand: true,
-                    cwd: 'scss',
-                    src: ['*.scss'],
-                    dest: '<%= dirs.snapshot%>/stylesheets',
-                    ext: '.css'
-                }]
+                    outputStyle: 'expanded',
+                    sassDir: '<%= dirs.sass%>',
+                    cssDir: '<%= dirs.snapshot%>/<%= dirs.css%>',
+                    imagesDir: '<%= dirs.images%>'
+                }
 
             }
         },
@@ -154,7 +149,7 @@ module.exports = function (grunt) {
             },
             compileCSS: {
                 files: ['**/*.scss'],
-                tasks: ['clean:stylesheets', 'sass:dev']
+                tasks: ['clean:stylesheets', 'compass:dev']
             }
         },
         // JsHint your javascript
@@ -227,9 +222,9 @@ module.exports = function (grunt) {
 
 
     // Default task(s).
-    grunt.registerTask('default', [ 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:dev', 'watch']);
-    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:build', 'clean:sass_cache']) ;
-    grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
+    grunt.registerTask('default', [ 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'compass:dev', 'watch']);
+    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'compass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:build', 'clean:sass_cache']) ;
+    grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'compass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);
