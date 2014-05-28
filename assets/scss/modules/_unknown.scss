@@ -1,0 +1,180 @@
+/*
+
+* Not sure where these styles are used. They ware out of sync with the assets frontend
+
+*/
+.question {
+  margin: 0 0 10px 0;
+  padding: 10px 0;
+}
+
+.answer {
+  margin: 1em 0 0 0;
+}
+
+label.selectable {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background: #F0F0F0;
+  padding: 12px 14px 10px 16px;
+  border: 1px solid #F0F0F0;
+  margin: 1em 1em 0 0;
+}
+
+label.selectable input {
+  cursor: pointer;
+}
+
+.optional-section {
+  display: none;
+}
+
+.email-form-errors .error-notification {
+  display: block;
+  font-size: 19px;
+  padding: 1em 0 1em 15px;
+  margin: 1em 0;
+  color: #b10e1e;
+  border-left: 3px solid #b10e1e;
+}
+.js .email-form-errors .error-notification {
+  display: none;
+}
+
+.connected,
+.answer .optional-section {
+  padding: 1em 0 0 15px;
+  border-left: 3px solid #999;
+  margin: 1em 0 0 0;
+  overflow: hidden;
+}
+
+#content > article.full-width {
+  width: auto;
+  float: none;
+}
+
+.important-dates .important-date {
+  border-bottom: 1px solid #ccc;
+  padding: 1em 0;
+}
+
+.important-dates .date-wrap {
+  width: 200px;
+  margin-right: -200px;
+  float: left;
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+
+.important-dates .date-wrap time {
+  display: block;
+}
+
+.important-dates .date-wrap time span {
+  display: block;
+}
+
+.important-dates .date-wrap time .day {
+  font-size: 2.0em;
+}
+
+.important-dates .date-wrap time .month {
+  font-weight: bold;
+}
+
+.important-dates .date-wrap strong {
+  color: #fff;
+  background: #000;
+  padding: 2px 8px;
+  display: inline-block;
+  margin: 0.2em 0;
+}
+
+.important-dates .date-message {
+  padding: 0 20px 0 200px;
+}
+
+.important-dates .date-message h3, .important-dates .date-message .h3-heading {
+  margin-top: 0.3em;
+}
+
+.important-dates-wrap .footer-message {
+  text-align: center;
+  padding: 2em;
+}
+
+.has-self-assessment,
+.has-corporation,
+.has-vat,
+.has-paye {
+  display: none;
+}
+
+body.self-assessment .has-self-assessment,
+body.corporation .has-corporation,
+body.vat .has-vat,
+body.paye .has-paye {
+  display: block;
+}
+
+.main-nav {
+  border-bottom: 1px solid #ccc;
+  margin: 2em 0;
+}
+
+.main-nav .tab {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 19px;
+  position: relative;
+}
+
+.main-nav .tab.selected {
+  border: 1px solid #ccc;
+  border-bottom: none;
+  padding: 12px 19px 13px 19px;
+  background: #fff;
+  text-decoration: none;
+  color: #000;
+  margin-bottom: -1px;
+}
+
+.main-nav .messages,
+.main-nav .messages.selected {
+  padding-right: 40px;
+}
+
+.main-nav .messages.no-unread,
+.main-nav .messages.selected.no-unread {
+  padding-right: 19px;
+}
+
+.main-nav .count {
+  position: absolute;
+  background: #b10e1e;
+  color: #fff;
+  padding: 0.2em;
+  font-size: 16px;
+  text-decoration: none;
+  top: 14px;
+  right: 15px;
+  line-height: 16px;
+}
+
+.full-message {
+  width: 64%;
+  float: left;
+}
+
+.full-message li {
+  list-style: disc;
+  margin-left: 1.5em;
+}
+
+.full-message .date-sent {
+  font-size: 16px;
+  color: #454a4c;
+}
