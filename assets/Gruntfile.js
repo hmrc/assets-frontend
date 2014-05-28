@@ -67,7 +67,7 @@ module.exports = function (grunt) {
         clean: {
             build: ['<%= dirs.dist%>'],
             tmp: ['<%= dirs.temp%>'],
-            stylesheets: ['public'],
+            stylesheets: ['public/<%= dirs.snapshot%>/stylesheets'],
             sass_cache: ['.sass-cache']
 
         },
