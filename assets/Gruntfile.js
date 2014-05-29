@@ -68,6 +68,7 @@ module.exports = function (grunt) {
             build: ['<%= dirs.dist%>'],
             tmp: ['<%= dirs.temp%>'],
             stylesheets: ['public/<%= dirs.snapshot%>/stylesheets'],
+            javascripts: ['public/<%= dirs.snapshot%>/javascripts'],
             sass_cache: ['.sass-cache']
 
         },
@@ -158,6 +159,10 @@ module.exports = function (grunt) {
             compileCSS: {
                 files: ['**/*.scss'],
                 tasks: ['clean:stylesheets', 'sass:dev']
+            },
+            updateJS: {
+                files: ['javascripts/**/*.js'],
+                tasks: ['clean:javascripts','copy:copyJavaScripttoSnapshot']
             }
         },
         // JsHint your javascript
