@@ -123,7 +123,7 @@ article .example ol {
 
 article ul {
   list-style-type: circle;
-  list-style-image: image-url("bullet-disc-5px.gif");
+  list-style-image: image-url("../images/bullet-disc-5px.gif");
 }
 
 article ol {
@@ -273,14 +273,14 @@ article .summary h2,
 }
 
 article .advisory {
-  background: image-url("icon-information.png") no-repeat scroll 98% 1em #D5E8F3;
+  background: image-url("../images/icon-information.png") no-repeat scroll 98% 1em #D5E8F3;
   line-height: 1.3em;
   margin: 0 -1em 1em -1em;
   padding: 1em;
   text-align: left;
 
   @include device-pixel-ratio() {
-    background-image: image-url("icon-information-2x.png");
+    background-image: image-url("../images/icon-information-2x.png");
     background-size: 27px 27px;
   }
 
@@ -363,10 +363,10 @@ article .advisory.minor {
 
 article .help-notice {
   background:none;
-  background: image-url("icon-important.png") no-repeat scroll 0 0.5em;
+  background: image-url("../images/icon-important.png") no-repeat scroll 0 0.5em;
 
   @include device-pixel-ratio() {
-    background-image: image-url("icon-important-2x.png");
+    background-image: image-url("../images/icon-important-2x.png");
     background-size: 29px 24px;
   }
 
@@ -380,14 +380,14 @@ article .help-notice {
 }
 
 article a.important {
-  background: image-url("icon-important.png") no-repeat scroll 100% 0 #FFF;
+  background: image-url("../images/icon-important.png") no-repeat scroll 100% 0 #FFF;
 }
 
 article .subscribe {
-  background: image-url("icon-calendar.png") no-repeat scroll 98% 1em #D5E8F3;
+  background: image-url("../images/icon-calendar.png") no-repeat scroll 98% 1em #D5E8F3;
 
   @include device-pixel-ratio() {
-    background-image: image-url("icon-calendar-2x.png");
+    background-image: image-url("../images/icon-calendar-2x.png");
     background-size: 27px 27px;
   }
 
@@ -433,12 +433,12 @@ article .form-download {
   a {
     display: block;
     font-weight: 600;
-    background: image-url("icon-file-download.png") no-repeat scroll 0 0;
+    background: image-url("../images/icon-file-download.png") no-repeat scroll 0 0;
     min-height: 2.5em;
     padding:0 0 0 2.5em;
 
     @include device-pixel-ratio() {
-      background-image: image-url("icon-file-download-2x.png");
+      background-image: image-url("../images/icon-file-download-2x.png");
       background-size: 25px 25px;
     }
   }
@@ -574,10 +574,10 @@ article ol.steps {
 
     @for $i from 1 through 14 {
       &:nth-child(#{$i}) {
-  background-image: image-url("icon-steps/icon-step-#{$i}.png");
+  background-image: image-url("../images/icon-steps/icon-step-#{$i}.png");
 
   @include device-pixel-ratio() {
-    background-image: image-url("icon-steps/icon-step-#{$i}-2x.png");
+    background-image: image-url("../images/icon-steps/icon-step-#{$i}-2x.png");
     background-size: 24px 24px;
   }
       }
