@@ -2,12 +2,12 @@
  * DOM ready
  */
 var fingerprint = new Mdtpdf({
-      screen_resolution: true
-    }),
+    screen_resolution: true
+}),
     encodedFingerPrint = B64.encode(fingerprint.get()),
     mdtpdfCookie = GOVUK.getCookie("mdtpdf");
 if (!mdtpdfCookie) {
-  GOVUK.setCookie("mdtpdf", encodedFingerPrint, 7300);
+    GOVUK.setCookie("mdtpdf", encodedFingerPrint, 7300);
 }
 
 $(document).ready(function () {
