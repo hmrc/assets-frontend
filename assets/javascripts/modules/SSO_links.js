@@ -1,7 +1,7 @@
 GOVUK.setSSOLinks = function (element) {
     /**
      * Attach a one-time event handler for all global links
-    */
+     */
 
     var $target = $(element.target),
         linkHost = ($(element.target).data('sso') === true) ? true : false,
@@ -35,5 +35,5 @@ GOVUK.setSSOLinks = function (element) {
         });
         // cancel link click event if everything is successful
         return !successful;
-    } 
+    }
 }
