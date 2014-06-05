@@ -8,4 +8,5 @@ RUNNING_FROM
 test_results
 *.DS_Store
 assets/public
+Gemfile.lock
 

@@ -12,7 +12,7 @@ if (!mdtpdfCookie) {
 
 $(document).ready(function () {
     $(document).on('click', 'a', function (e) {
-        GOVUK.setSSOLinks(e);
+        return GOVUK.setSSOLinks(e);
     });
     GOVUK.preventDoubleSubmit();
     //initialise stageprompt for Analytics
@@ -114,4 +114,5 @@ $(document).ready(function () {
     GOVUK.questionnaireSubmission();
     GOVUK.registerBlockInputFields( '#form-end-journey-questionnaire' );
     GOVUK.exitSurveyValidation();
+    GOVUK.saEmailPrefs.setup();
 });
