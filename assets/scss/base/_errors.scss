@@ -5,9 +5,9 @@
 * @requires     [ colours.scss ]
 */
 
-@mixin error-box( $border: 3px ) {
+@mixin error-box( $border-width: 3px ) {
     background-color: $error-bg-color;
-    border: $border solid $error-bg-color;
+    border-left: $border-width solid $error-border-color;
     padding: 0.75em 1em;   
 }
 
@@ -29,13 +29,14 @@
 }
 
 .form-field--error {
-  @include error-box( 0 0 0 3px );
+  @include error-box( 3px );
   &.numbered {
     margin-left: 22px!important;
     width: 90%;
   }
   .error-notification {
     display: block;
+    @include core-16;
   }
   padding: 0.75em 1em 0.75em 1em;
 }
