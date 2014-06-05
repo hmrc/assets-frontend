@@ -3,8 +3,8 @@ GOVUK.setSSOLinks = function (element) {
      * Attach a one-time event handler for all global links
      */
 
-    var $target = $(element),
-        linkHost = ($(element).data('sso') === "true") ? true : false,
+    var $target = $(element.target),
+        linkHost = ($(element.target).data('sso') === true) ? true : false,
         a = document.createElement('a');
     if (linkHost) {
         var successful = true;
