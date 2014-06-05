@@ -114,4 +114,5 @@ $(document).ready(function () {
     GOVUK.questionnaireSubmission();
     GOVUK.registerBlockInputFields( '#form-end-journey-questionnaire' );
     GOVUK.exitSurveyValidation();
+    GOVUK.saEmailPrefs.setup();
 });
