@@ -244,6 +244,12 @@ label.indent {
   margin-left: 15px;
 }
 
+.form-field--hint {
+  @extend .faded-text;
+  display: block;
+  margin-bottom: 0.75em;
+}
+
 .row {
   margin-bottom: 20px;
 } 
@@ -310,3 +316,16 @@ label {
   margin: 0 0 15px;  
   padding: 0.5em 30px;
 }
+
+
+
+/*
+  Date field input group
+*/
+
+.label--dateField-group {
+  @extend .label--inlineRadio--overhead;
+  text-align: left;
+  width: 3.5em;
+}
+

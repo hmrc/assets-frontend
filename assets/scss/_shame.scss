@@ -116,7 +116,7 @@ div.email {
     form validations
 \*------------------------------------*/
 .form-field.error , .form-field-group.error{
-  @include error-box( 0 0 0 3px );
+  @include error-box( 3px );
   margin: 0 -1em 0.5em -1em;
 }
 
