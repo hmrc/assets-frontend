@@ -1,8 +1,20 @@
 #!/bin/bash
 cd assets/
 
-if [ "$(gem list SASS -i)" != "true" ]; then
-	echo "It appears that Gem SASS is not installed on your machine."
+echo "Checking for dependancies..."
+
+if [ "$(gem list ^bundler$ -i)" != "true" ]; then
+	echo "Intalling bundler..."
+	gem install bundler
+
+	if [ $? -ne 0 ]; then
+		# TODO: check for ruby environment
+		echo "Bundler failed to install. Check the output above and try again."
+		exit 1
+	fi
+fi
+
+if [ "$(gem list ^sass$ -i)" != "true" ]; then
 	echo "Running bundler install..."
 	bundle install
 fi
