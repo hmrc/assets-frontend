@@ -16,36 +16,56 @@
 }
 
 .reminder {
-
   @include core-19;
-}
-
-.reminder a{
-  display: inline-block;
   background-color: $light-blue;
-  color: #fff;
-  text-decoration: none;
-  padding: 0.7em 1em;
-}
+  margin-bottom: 1em;
 
-.reminder a i{
-  margin-left: 5px;
-}
+  a {
+    color: #fff;
+    display: block;
+    padding: 0.7em 1em;
+    text-decoration: none;
+  }
 
+  &.urgent a {
+    background-color: $red;
+  }
 
-.reminder.urgent a{
-  background-color: $red;
-}
+  i {
+    margin-left: 5px;
+  }
 
-.reminder p{
-  margin-top: 0;
-  display: inline-block;
-}
+  p {
+    margin-top: 0;
+    display: inline-block;
+  }
 
-.reminder .label{
-  background-color: #000;
-  color: #fff;
-  padding: 0.7em 1em;
-  display: inline-block;
-  margin-right: -5px;
+  .label {
+    background-color: #000;
+    color: #fff;
+    padding: 0.7em 1em;
+    display: inline-block;
+    margin-right: -5px;
+  }
+
+  .action {
+    text-decoration: underline;
+  }
+
+  &.message {
+    background-image: url(../images/mail-icon-white-small.png);
+    background-repeat: no-repeat;
+    background-position: 10px 0.7em;
+
+    a {
+      padding-left: 52px;      
+    }
+  }
+
+  @include device-pixel-ratio() {
+    &.message {
+      background-image: url(../images/mail-icon-white-large.png);    
+      background-size: 32px 25px;
+    }
+  }
 }
