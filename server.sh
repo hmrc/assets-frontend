@@ -1,12 +1,12 @@
 #!/bin/bash
 cd assets/
 
-
 if [ "$(gem list SASS -i)" != "true" ]; then
 	echo "It appears that Gem SASS is not installed on your machine."
 	echo "Running bundler install..."
-	bundler install
+	bundle install
 fi
+
 if [[ -n $1 ]]; then
 	case "$1" in
 

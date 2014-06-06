@@ -9,5 +9,3 @@ asset-target/
 test_results/
 assets/public/
 target/
-
-Gemfile.lock
