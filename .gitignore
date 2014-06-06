@@ -1,12 +1,11 @@
-node_modules
-.sass-cache
-.tmp
-assets/dist
-logs
-asset-target
-RUNNING_FROM
-test_results
 *.DS_Store
-assets/public
-Gemfile.lock
+.sass-cache/
+.tmp/
 
+node_modules/
+assets/dist/
+logs/
+asset-target/
+test_results/
+assets/public/
+target/
