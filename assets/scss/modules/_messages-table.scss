@@ -13,4 +13,13 @@ table.messages {
 	th:nth-of-type(4) {
 		width: 20%;
 	}
+
+	a {
+		color: #000;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
