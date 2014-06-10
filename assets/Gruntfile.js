@@ -212,18 +212,6 @@ module.exports = function (grunt) {
                 template: '{{appName}}-{{version}}.{{suffix}}'
             }
 
-        },
-        hash: {
-            options: {
-                hashLength: 12,
-                hashFunction: function(source, encoding){ // default is md5
-                    return require('crypto').createHash('sha1').update(source, encoding).digest('hex');
-                }
-            },
-            release: {
-                src: '<%= dirs.temp%>/zipped/assets-frontend.zip',
-                dest: 'dist/'
-            }
         }
 
 
