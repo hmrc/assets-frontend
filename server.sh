@@ -45,7 +45,7 @@ if [[ -n $1 ]]; then
 		;;
 	esac
 else
-	port=${1-3002}
+	port=${1-9032}
 	echo "Starting  simple server on port $port."
 	python -m SimpleHTTPServer $port
 fi
