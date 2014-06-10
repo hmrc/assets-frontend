@@ -58,6 +58,7 @@ body {
 }
 #content {
 	@extend %contain-floats;
+	display: block;
 	max-width: 960px;
 	margin: 0 auto;
 	padding: 0 15px 2em 15px; 
