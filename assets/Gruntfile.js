@@ -89,11 +89,11 @@ module.exports = function (grunt) {
             }
         },
         clean: {
-            build: ['<%= dirs.dist %>'],
             tmp: ['<%= dirs.temp %>'],
-            stylesheets: ['public/<%= dirs.snapshot %>/stylesheets'],
-            javascripts: ['public/<%= dirs.snapshot %>/javascripts'],
-            sass_cache: ['.sass-cache']
+            sass_cache: ['.sass-cache'],
+            stylesheets: ['<%= dirs.snapshot %>/stylesheets'],
+            javascripts: ['<%= dirs.snapshot %>/javascripts'],
+            dest: ['<%= dirs.temp %>', '<%= dirs.dist %>', '<%= dirs.public %>'],
         },
         sass: {
             govukElementsDev: {
@@ -256,8 +256,8 @@ module.exports = function (grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', [ 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:govukElementsDev', 'sass:dev', 'watch']);
-    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:build', 'clean:sass_cache']) ;
+    grunt.registerTask('default', [ 'clean:dest', 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:govukElementsDev', 'sass:dev', 'watch']);
+    grunt.registerTask('build', ['clean:dest', 'jshint', 'test', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:build', 'clean:tmp', 'clean:sass_cache']) ;
     grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
