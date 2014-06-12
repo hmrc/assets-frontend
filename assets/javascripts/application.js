@@ -6,7 +6,10 @@ var fingerprint = new Mdtpdf({
 }),
     encodedFingerPrint = B64.encode(fingerprint.get()),
     mdtpdfCookie = GOVUK.getCookie("mdtpdf");
-if (!mdtpdfCookie) {
+
+// IE7: Do not set the cookie when the encoded fingerprint is empty in IE7
+// to prevent the session being cleared by the server
+if (!mdtpdfCookie && encodedFingerPrint) {
     GOVUK.setCookie("mdtpdf", encodedFingerPrint, 7300);
 }
 
