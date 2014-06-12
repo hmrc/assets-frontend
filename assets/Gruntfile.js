@@ -76,15 +76,12 @@ module.exports = function (grunt) {
             combineAllCSS: {
                 files: {
                     '<%= dirs.temp%>/concat/application.css': [
-                        '<%= dirs.temp%>/css/elements/elements-page.css',
                         '<%= dirs.temp%>/css/elements/main.css'
                     ],
                     '<%= dirs.temp%>/concat/application-ie7.css': [
-                        '<%= dirs.temp%>/css/elements/elements-page-ie7.css',
                         '<%= dirs.temp%>/css/elements/main-ie7.css'
                     ],
                     '<%= dirs.temp%>/concat/application-ie.css': [
-                        '<%= dirs.temp%>/css/elements/elements-page-ie8.css',
                         '<%= dirs.temp%>/css/elements/main-ie8.css'
                     ]
                 }
@@ -107,8 +104,8 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= dirs.govuk.elements %>/public/sass',
-                    src: ['**/*.scss'],
-                    dest: '<%= dirs.snapshot%>/stylesheets/elements',
+                    src: ['main*.scss'],
+                    dest: '<%= dirs.snapshot %>/<%= dirs.css %>/elements',
                     ext: '.css'
                 }]
             },
@@ -120,8 +117,8 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= dirs.govuk.elements %>/public/sass',
-                    src: ['*.scss'],
-                    dest: '<%= dirs.temp%>/css/elements',
+                    src: ['main*.scss'],
+                    dest: '<%= dirs.temp %>/css/elements',
                     ext: '.css'
                 }]
 
