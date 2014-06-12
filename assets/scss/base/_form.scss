@@ -197,6 +197,7 @@ label.indent {
 
 .label--full-length {
   @extend .label--inline;
+  width: 100%;
   clear: both;
 }
 
@@ -296,6 +297,11 @@ label {
 }
 
 .block-label--inline {
+  @extend .block-label;
+  clear: none;
+}
+
+.block-label--inline-right{
   @extend .block-label;
   clear: none;
 }
