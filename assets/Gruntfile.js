@@ -20,6 +20,7 @@ module.exports = function (grunt) {
             images: "images",
             govuk :{
                 elements: "govuk_elements",
+                toolkit: "govuk_frontend_toolkit"
             }
         },
         express: {
@@ -170,7 +171,7 @@ module.exports = function (grunt) {
             },
             copyImagesFromToolkit: {
                  expand: true,
-                 cwd:'govuk_frontend_toolkit/images',
+                 cwd:'<%= dirs.govuk.toolkit %>/images',
                  src: ['**/*.png','**/*.gif'],
                  dest: 'images'
             },
