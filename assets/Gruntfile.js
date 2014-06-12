@@ -230,8 +230,7 @@ module.exports = function (grunt) {
         },
         karma: {
           options: {
-            configFile: 'test/config/karma.conf.js'//,
-            //background: true
+            configFile: 'test/config/karma.conf.js'
           },
           continuous: {
             singleRun: true,
