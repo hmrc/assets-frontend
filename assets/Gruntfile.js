@@ -19,7 +19,7 @@ module.exports = function (grunt) {
             css: "stylesheets",
             images: "images",
             govuk :{
-                elements: "govuk/govuk_elements"
+                elements: "govuk_elements",
             }
         },
         express: {
@@ -101,11 +101,11 @@ module.exports = function (grunt) {
             govukElementsDev: {
                 options: {
                     style: 'compressed',
-                    loadPath: ['<%= dirs.govuk.elements%>/govuk/public/sass']
+                    loadPath: ['<%= dirs.govuk.elements %>/govuk/public/sass']
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= dirs.govuk.elements%>/public/sass',
+                    cwd: '<%= dirs.govuk.elements %>/public/sass',
                     src: ['**/*.scss'],
                     dest: '<%= dirs.snapshot%>/stylesheets/elements',
                     ext: '.css'
@@ -114,11 +114,11 @@ module.exports = function (grunt) {
             govukElementsDist: {
                 options: {
                     style: 'compressed',
-                    loadPath: ['<%= dirs.govuk.elements%>/govuk/public/sass']
+                    loadPath: ['<%= dirs.govuk.elements %>/govuk/public/sass']
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= dirs.govuk.elements%>/public/sass',
+                    cwd: '<%= dirs.govuk.elements %>/public/sass',
                     src: ['*.scss'],
                     dest: '<%= dirs.temp%>/css/elements',
                     ext: '.css'
