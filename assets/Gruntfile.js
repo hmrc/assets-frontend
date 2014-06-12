@@ -17,7 +17,10 @@ module.exports = function (grunt) {
             snapshot: "public/999-SNAPSHOT",
             sass: "scss",
             css: "stylesheets",
-            images: "images"
+            images: "images",
+            govuk :{
+                elements: "govuk/govuk_elements"
+            }
         },
         express: {
             server: {
@@ -68,6 +71,25 @@ module.exports = function (grunt) {
                 dest: '<%= dirs.public %>/javascripts/application.min.js'
             }
         },
+        cssmin: {
+            combineAllCSS: {
+                files: {
+                    '<%= dirs.temp%>/concat/application.css': [
+                        '<%= dirs.temp%>/css/elements/elements-page.css',
+                        '<%= dirs.temp%>/css/elements/main.css'
+                    ],
+                    '<%= dirs.temp%>/concat/application-ie7.css': [
+                        '<%= dirs.temp%>/css/elements/elements-page-ie7.css',
+                        '<%= dirs.temp%>/css/elements/main-ie7.css'
+                    ],
+                    '<%= dirs.temp%>/concat/application-ie.css': [
+                        '<%= dirs.temp%>/css/elements/elements-page-ie8.css',
+                        '<%= dirs.temp%>/css/elements/main-ie8.css'
+                    ]
+                }
+
+            }
+        },
         clean: {
             build: ['<%= dirs.dist %>'],
             tmp: ['<%= dirs.temp %>'],
@@ -76,6 +98,33 @@ module.exports = function (grunt) {
             sass_cache: ['.sass-cache']
         },
         sass: {
+            govukElementsDev: {
+                options: {
+                    style: 'compressed',
+                    loadPath: ['<%= dirs.govuk.elements%>/govuk/public/sass']
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= dirs.govuk.elements%>/public/sass',
+                    src: ['**/*.scss'],
+                    dest: '<%= dirs.snapshot%>/stylesheets/elements',
+                    ext: '.css'
+                }]
+            },
+            govukElementsDist: {
+                options: {
+                    style: 'compressed',
+                    loadPath: ['<%= dirs.govuk.elements%>/govuk/public/sass']
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= dirs.govuk.elements%>/public/sass',
+                    src: ['*.scss'],
+                    dest: '<%= dirs.temp%>/css/elements',
+                    ext: '.css'
+                }]
+
+            },
             dist: {
                 options: {
                     style: 'compressed'
@@ -146,7 +195,7 @@ module.exports = function (grunt) {
         },
         watch: {
             jshint: {
-                files: ['**/*.js', '!node_modules/**'],
+                files: ['javascripts/**/*.js', '!node_modules/**'],
                 tasks: ['jshint']
             },
             test: {
@@ -154,7 +203,7 @@ module.exports = function (grunt) {
                 tasks: ['karma:continuous']
             },
             compileCSS: {
-                files: ['**/*.scss'],
+                files: ['scss/**/*.scss'],
                 tasks: ['clean:stylesheets', 'sass:dev']
             },
             updateJS: {
@@ -209,8 +258,9 @@ module.exports = function (grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', [ 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:dev', 'watch']);
-    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:build', 'clean:sass_cache']);
+    grunt.registerTask('default', [ 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:govukElementsDev', 'sass:dev', 'watch']);
+    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'zipup:build', 'clean:sass_cache']) ;
+    grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);
