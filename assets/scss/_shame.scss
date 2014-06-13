@@ -141,3 +141,13 @@ div.email {
     float: left;
   }
 }
+
+/*
+
+Overriding page header styling from GOVUK elements
+*/
+.page-header {
+  margin: 0;
+  border-bottom: 0px;
+  padding: 0;
+}
