@@ -194,6 +194,12 @@ module.exports = function (grunt) {
                cwd:'javascripts',
                src: ['**/*.js'],
                dest: '<%= dirs.snapshot %>/javascripts'
+            },
+            copyErrorPages : {
+                expand: true,
+                cwd: '<%= dirs.public %>',
+                src: ['*/'],
+                dest: 'error_pages/assets/'
             }
         },
         watch: {
@@ -212,6 +218,10 @@ module.exports = function (grunt) {
             updateJS: {
                 files: ['javascripts/**/*.js'],
                 tasks: ['clean:javascripts','copy:copyJavaScripttoSnapshot']
+            },
+            gruntfile: {
+                files: ['Gruntfile.js'],
+                tasks: ['default'],
             }
         },
         // JsHint your javascript
@@ -260,7 +270,7 @@ module.exports = function (grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', [ 'clean:dest', 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:govukElementsDev', 'sass:dev', 'watch']);
+    grunt.registerTask('default', [ 'clean:dest', 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPages', 'watch']);
     grunt.registerTask('build', ['clean:dest', 'jshint', 'test', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'clean:govukElementsTemp',  'zipup:build', 'clean:sass_cache']) ;
     grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
