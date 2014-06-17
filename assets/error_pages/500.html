@@ -46,11 +46,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="images/opengraph-image.png">
 
-	<!--[if lt IE 8 ]><link rel='stylesheet' href='http://localhost:9032/assets/0.15.0/stylesheets/application-ie7.min.css' /><![endif]-->
-  <!--[if IE 8 ]><link rel='stylesheet' href='http://localhost:9032/assets/0.15.0/stylesheets/application-ie.min.css' /><![endif]-->
-	<!--[if gt IE 8]><!--><link rel='stylesheet' href='http://localhost:9032/assets/0.15.0/stylesheets/application.min.css' /><!--<![endif]-->
+	<!--[if lt IE 8 ]><link rel='stylesheet' href='stylesheets/application-ie7.css' /><![endif]-->
+  <!--[if IE 8 ]><link rel='stylesheet' href='stylesheets/application-ie.css' /><![endif]-->
+	<!--[if gt IE 8]><!--><link rel='stylesheet' href='stylesheets/application.css' /><!--<![endif]-->
 
-	<script src='http://localhost:9032/assets/0.15.0/javascripts/vendor/modernizr.js' type='text/javascript'></script>
+	<script src='javascripts/vendor/modernizr.js' type='text/javascript'></script>
 </head>
 
 <body class="">
@@ -98,46 +98,6 @@
 
       <p>Please try again in a few minutes.</p>
     </article>
-
-    <div class="report-error">
-      <a class="report-error__toggle" href="">Get help with this page.</a>
-
-      <div class="report-error__content js-hidden">
-        <h3 class="h2-heading">Get help using this service</h3>
-
-        <p>Don’t include any personal or financial information. For example, your National Insurance or credit card numbers.</p>
-
-        <form action="/contact/problem_reports-unauthenticated" method="POST" class="form--feedback">
-          <fieldset>
-            <label for="report-name" class="form-field">
-              Name
-              <input id="report-name" maxlength="70" class="input--fullwidth" name="report-name" type="text"  data-rule-letterswithbasicpunc="true" data-rule-required="true" data-msg-required='Please provide your name.'>
-            </label>
-
-            <label for="report-email" class="form-field">
-              Email
-              <input id="report-email" maxlength="255" class="input--fullwidth" name="report-email" type="text" data-rule-required="true" data-rule-email="true" data-msg-required='Please provide your email address.'>
-            </label>
-
-            <label for="report-action" class="form-field">
-              What were you doing?
-              <input id="report-action" maxlength="1000" class="input--fullwidth" name="report-action" type="text" data-rule-required="true" data-msg-required='Please enter details of what you were doing.'>
-            </label>
-
-            <label for="report-error" class="form-field">
-              What do you need help with?
-              <input id="report-error" maxlength="1000" class="input--fullwidth" name="report-error"  type="text" data-rule-required="true" data-msg-required='Please enter details of what went wrong.'>
-            </label>
-
-            <input type="hidden" name="isJavascript" value="false"/>
-
-            <div class="form-field">
-              <button id="report-submit" class="button" type="submit">Send</button>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-    </div>
   </main>
 
   <footer class="group js-footer" id="footer" role="contentinfo">
@@ -165,10 +125,7 @@
   </footer>
   <!--end footer-->
 
-  <div id="global-app-error" class="app-error hidden"></div>
-
   <script src="javascripts/govuk-template.js" type="text/javascript"></script>
-  <script type="text/javascript">var ssoUrl = "http://localhost:8080/portal/ssoin";</script>
-  <script src="http://localhost:9032/assets/0.15.0/javascripts/application.min.js" type="text/javascript"></script>
+  <script src="javascripts/application.js" type="text/javascript"></script>
 </body>
 </html>
