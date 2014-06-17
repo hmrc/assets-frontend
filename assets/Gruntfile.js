@@ -18,8 +18,10 @@ module.exports = function (grunt) {
             sass: "scss",
             css: "stylesheets",
             images: "images",
+            errorPages: "error_pages",
             govuk :{
                 elements: "govuk_elements",
+                template: "govuk_elements/govuk",
                 toolkit: "govuk_frontend_toolkit"
             }
         },
@@ -82,14 +84,12 @@ module.exports = function (grunt) {
                     '<%= dirs.temp%>/concat/application-ie7.css': [
                         '<%= dirs.temp%>/css/elements/main-ie7.css',
                         '<%= dirs.temp%>/css/application-ie7.css'
-
                     ],
                     '<%= dirs.temp%>/concat/application-ie.css': [
                         '<%= dirs.temp%>/css/elements/main-ie8.css',
                         '<%= dirs.temp%>/css/application-ie.css'
                     ]
                 }
-
             }
         },
         clean: {
@@ -97,14 +97,16 @@ module.exports = function (grunt) {
             sass_cache: ['.sass-cache'],
             stylesheets: ['<%= dirs.snapshot %>/stylesheets'],
             javascripts: ['<%= dirs.snapshot %>/javascripts'],
-            dest: ['<%= dirs.temp %>', '<%= dirs.dist %>', '<%= dirs.public %>'],
+            dest: ['<%= dirs.temp %>', '<%= dirs.dist %>', '<%= dirs.public %>', '<%= dirs.errorPages %>/assets'],
             govukElementsTemp: ['<%= dirs.public %>/stylesheets/elements']
         },
         sass: {
             govukElementsDev: {
                 options: {
-                    style: 'compressed',
-                    loadPath: ['<%= dirs.govuk.elements %>/govuk/public/sass']
+                    style: 'expanded',
+                    sourcemap: true,
+                    lineNumbers: true,
+                    loadPath: ['<%= dirs.govuk.template %>/public/sass']
                 },
                 files: [{
                     expand: true,
@@ -117,7 +119,7 @@ module.exports = function (grunt) {
             govukElementsDist: {
                 options: {
                     style: 'compressed',
-                    loadPath: ['<%= dirs.govuk.elements %>/govuk/public/sass']
+                    loadPath: ['<%= dirs.govuk.template %>/public/sass']
                 },
                 files: [{
                     expand: true,
@@ -143,7 +145,8 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     style: 'expanded',
-                    sourcemap: true
+                    sourcemap: true,
+                    lineNumbers: true
                 },
                 files: [{
                     expand: true,
@@ -172,34 +175,122 @@ module.exports = function (grunt) {
                 dest: '<%= dirs.public %>/'
             },
             copyImagesFromToolkit: {
-                 expand: true,
-                 cwd:'<%= dirs.govuk.toolkit %>/images',
-                 src: ['**/*.png','**/*.gif'],
-                 dest: 'images'
+                expand: true,
+                cwd:'<%= dirs.govuk.toolkit %>/images',
+                src: ['**/*.png','**/*.gif'],
+                dest: 'images'
             },
             copyImagestoDist: {
-               expand: true,
-               cwd:'images',
-               src: ['**/*.png','**/*.gif'],
-               dest: '<%= dirs.public %>/images'
+                files: [
+                    {
+                        expand: true,
+                        cwd:'images',
+                        src: ['**/*.png','**/*.gif'],
+                        dest: '<%= dirs.public %>/<%= dirs.images %>'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.govuk.template %>/public/images/',
+                        src: [
+                        'gov.uk_logotype_crown*',
+                        'open-government-licence*'
+                        ],
+                        filter: 'isFile',
+                        dest: '<%= dirs.public %>/<%= dirs.images %>/'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.govuk.template %>/public/stylesheets/images/',
+                        src: [
+                        'govuk-crest*',
+                        'open-government-licence*'
+                        ],
+                        filter: 'isFile',
+                        dest: '<%= dirs.public %>/<%= dirs.css %>/<%= dirs.images %>/'
+                    }
+                ]
             },
             copyImagestoSnapshot: {
-               expand: true,
-               cwd:'images',
-               src: ['**/*.png','**/*.gif'],
-               dest: '<%= dirs.snapshot %>/images'
+                files: [
+                    {
+                        expand: true,
+                        cwd:'images',
+                        src: ['**/*.png','**/*.gif'],
+                        dest: '<%= dirs.snapshot %>/<%= dirs.images %>/'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.govuk.template %>/public/images/',
+                        src: [
+                        'gov.uk_logotype_crown*',
+                        'open-government-licence*'
+                        ],
+                        filter: 'isFile',
+                        dest: '<%= dirs.snapshot %>/<%= dirs.images %>/'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.govuk.template %>/public/stylesheets/images/',
+                        src: [
+                        'govuk-crest*',
+                        'open-government-licence*'
+                        ],
+                        filter: 'isFile',
+                        dest: '<%= dirs.snapshot %>/<%= dirs.css %>/<%= dirs.images %>/'
+                    }
+                ]
             },
             copyJavaScripttoSnapshot: {
-               expand: true,
-               cwd:'javascripts',
-               src: ['**/*.js'],
-               dest: '<%= dirs.snapshot %>/javascripts'
+                files: [
+                    {
+                        expand: true,
+                        cwd:'javascripts',
+                        src: ['**/*.js'],
+                        dest: '<%= dirs.snapshot %>/javascripts/'
+                    },
+                    {
+                        expand: true,
+                        cwd:'<%= dirs.govuk.template %>/public/javascripts/',
+                        src: ['**/*.js'],
+                        dest: '<%= dirs.snapshot %>/javascripts/'
+                    }
+                ]
             },
-            copyErrorPages : {
-                expand: true,
-                cwd: '<%= dirs.public %>',
-                src: ['*/'],
-                dest: 'error_pages/assets/'
+            copyErrorPagesToSnapshot: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.errorPages %>',
+                        src: ['*.html'],
+                        filter: 'isFile',
+                        dest: '<%= dirs.snapshot %>'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.govuk.template %>/public/stylesheets/',
+                        src: ['govuk-template*', 'fonts*'],
+                        filter: 'isFile',
+                        dest: '<%= dirs.snapshot %>/<%= dirs.css %>/'
+                    }
+                ]
+            },
+            copyErrorPagesToDist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.errorPages %>',
+                        src: ['*.html'],
+                        filter: 'isFile',
+                        dest: '<%= dirs.public %>'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.govuk.template %>/public/stylesheets/',
+                        src: ['govuk-template*', 'fonts*'],
+                        filter: 'isFile',
+                        dest: '<%= dirs.public %>/<%= dirs.css %>/'
+                    }
+                ]
             }
         },
         watch: {
@@ -218,10 +309,6 @@ module.exports = function (grunt) {
             updateJS: {
                 files: ['javascripts/**/*.js'],
                 tasks: ['clean:javascripts','copy:copyJavaScripttoSnapshot']
-            },
-            gruntfile: {
-                files: ['Gruntfile.js'],
-                tasks: ['default'],
             }
         },
         // JsHint your javascript
@@ -244,13 +331,13 @@ module.exports = function (grunt) {
             }
         },
         karma: {
-          options: {
-            configFile: 'test/config/karma.conf.js'
-          },
-          continuous: {
-            singleRun: true,
-            browsers: ['PhantomJS']
-          }
+            options: {
+                configFile: 'test/config/karma.conf.js'
+            },
+            continuous: {
+                singleRun: true,
+                browsers: ['PhantomJS']
+            }
         },
         zipup: {
             build: {
@@ -270,11 +357,12 @@ module.exports = function (grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', [ 'clean:dest', 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPages', 'watch']);
-    grunt.registerTask('build', ['clean:dest', 'jshint', 'test', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'clean:govukElementsTemp',  'zipup:build', 'clean:sass_cache']) ;
+    grunt.registerTask('default', [ 'clean:dest', 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPagesToSnapshot', 'watch']);
+    grunt.registerTask('build', ['clean:dest', 'jshint', 'test', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'clean:govukElementsTemp', 'copy:copyErrorPagesToDist', 'zipup:build', 'clean:sass_cache', 'clean:tmp']);
     grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);
     grunt.registerTask('copyMinCSS', ['copy:renameCSStoMin']);
+
 };
