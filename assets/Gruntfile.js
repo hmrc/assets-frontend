@@ -5,6 +5,7 @@ module.exports = function (grunt) {
 
     // Loading the different plugins
     require('load-grunt-tasks')(grunt);
+    grunt.loadNpmTasks('grunt-replace');
 
     // Project configuration.
     grunt.initConfig({
@@ -19,6 +20,7 @@ module.exports = function (grunt) {
             css: "stylesheets",
             images: "images",
             errorPages: "error_pages",
+            tempErrorPages: ".tmp/temp_error_pages",
             govuk :{
                 elements: "govuk_elements",
                 template: "govuk_elements/govuk",
@@ -97,7 +99,8 @@ module.exports = function (grunt) {
             sass_cache: ['.sass-cache'],
             stylesheets: ['<%= dirs.snapshot %>/stylesheets'],
             javascripts: ['<%= dirs.snapshot %>/javascripts'],
-            dest: ['<%= dirs.temp %>', '<%= dirs.dist %>', '<%= dirs.public %>', '<%= dirs.errorPages %>/assets'],
+            tmpErrorPages: ['<%= dirs.tempErrorPages %>'],
+            dest: ['<%= dirs.temp %>', '<%= dirs.tempErrorPages %>', '<%= dirs.dist %>', '<%= dirs.public %>', '<%= dirs.errorPages %>/assets'],
             govukElementsTemp: ['<%= dirs.public %>/stylesheets/elements']
         },
         sass: {
@@ -260,7 +263,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: '<%= dirs.errorPages %>',
+                        cwd: '<%= dirs.tempErrorPages %>',
                         src: ['*.html'],
                         filter: 'isFile',
                         dest: '<%= dirs.snapshot %>'
@@ -278,7 +281,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: '<%= dirs.errorPages %>',
+                        cwd: '<%= dirs.tempErrorPages %>',
                         src: ['*.html'],
                         filter: 'isFile',
                         dest: '<%= dirs.public %>'
@@ -353,13 +356,41 @@ module.exports = function (grunt) {
                 suffix: 'zip',
                 template: '{{appName}}-{{version}}-SNAPSHOT.{{suffix}}'
             }
+        },
+        replace: {
+            build: {
+                options: {
+                  patterns: [
+                    {
+                      match: 'minify',
+                      replacement: '.min'
+                    }
+                  ]
+                },
+                files: [
+                  {expand: true, cwd: '<%= dirs.errorPages %>', flatten: true, src: ['*.html'], dest: '<%= dirs.tempErrorPages %>'}
+                ]
+            },
+            dev: {
+                options: {
+                  patterns: [
+                    {
+                      match: 'minify',
+                      replacement: ''
+                    }
+                  ]
+                },
+                files: [
+                  {expand: true, cwd: '<%= dirs.errorPages %>', flatten: true, src: ['*.html'], dest: '<%= dirs.tempErrorPages %>'}
+                ]
+            }
         }
     });
 
     // Default task(s).
-    grunt.registerTask('default', [ 'clean:dest', 'express', 'jshint', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPagesToSnapshot', 'watch']);
-    grunt.registerTask('build', ['clean:dest', 'jshint', 'test', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'clean:govukElementsTemp', 'copy:copyErrorPagesToDist', 'zipup:build', 'clean:sass_cache', 'clean:tmp']);
-    grunt.registerTask('release', ['clean', 'jshint', 'test', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
+    grunt.registerTask('default', [ 'clean:dest', 'express', 'jshint', 'replace:dev', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPagesToSnapshot', 'watch']);
+    grunt.registerTask('build', ['clean:dest', 'jshint', 'test', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'clean:govukElementsTemp', 'replace:build', 'copy:copyErrorPagesToDist', 'zipup:build', 'clean:sass_cache', 'clean:tmp', 'clean:tmpErrorPages']);
+    grunt.registerTask('release', ['clean', 'jshint', 'test', 'replace:build', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
     grunt.registerTask('test', ['karma:continuous']);
     grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
     grunt.registerTask('minify', ['uglify']);
