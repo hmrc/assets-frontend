@@ -4,15 +4,20 @@ GOVUK.setSSOLinks = function (element) {
      */
 
     var $target = $(element.target),
-        linkHost = ($(element.target).data('sso') === true) ? true : false,
+        linkHost = ($(element.target).data('sso-redirect') === true) ? true : false,
+        ssoRedirect = ($(element.target).data('sso') === true) ? true : false,
         a = document.createElement('a');
-    if (linkHost) {
-        var successful = true;
-        $.ajax({
-            url: '/ssoout',
-            data: {
+    if (linkHost || ssoRedirect) {
+        var successful = true,
+            destination = ssoRedirect ? 
+            {
+                ssoRedirect: true 
+            } : {
                 destinationUrl: $target[0].href
-            },
+            };
+        $.ajax({
+            url: ssoRedirect ? $target[0].href : '/ssoout',
+            data: destination,
             type: 'GET',
             async: false,
             cache: false,
