@@ -41,6 +41,7 @@
     "karma-spec-reporter": "0.0.8",
     "load-grunt-tasks": "~0.3.0",
     "requirejs": "~2.1.10",
-    "time-grunt": "~0.2.8"
+    "time-grunt": "~0.2.8",
+    "grunt-replace": "~0.7.8"
   }
 }
