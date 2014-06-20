@@ -24,7 +24,7 @@ if [[ -n $1 ]]; then
 
 	"dev") echo "Starting grunt dev mode..."
 		  npm install
-		  grunt --force
+		  grunt
 		  ;;
 	"build") echo "Starting grunt build task..."
 				npm install
