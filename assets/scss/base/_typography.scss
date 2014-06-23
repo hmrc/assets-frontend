@@ -71,3 +71,9 @@ h4 {
 small {
   @include core-16;
 }
+
+.link-style {
+  @extend a;
+  cursor: pointer;
+  text-decoration: underline;
+}
