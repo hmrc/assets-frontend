@@ -1,15 +1,7 @@
 .phase-tag {
   @include phase-tag(beta);
-  display: inline-block;
-  float: none;
-  margin-left: 5px;
 }
 
 .beta-banner {
   @include phase-banner(beta);
-  p {
-  	width: 960px;
-  	margin: 0 auto;
-  	padding: 0 15px;
-  }
 }
