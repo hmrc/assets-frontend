@@ -115,7 +115,7 @@ $(document).ready(function () {
     //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
     GOVUK.simpleToggleDynamicFormFields();
     GOVUK.questionnaireSubmission();
-    GOVUK.registerBlockInputFields( '#form-end-journey-questionnaire' );
+    GOVUK.registerBlockInputFields();
     GOVUK.exitSurveyValidation();
     GOVUK.saEmailPrefs.setup();
 });

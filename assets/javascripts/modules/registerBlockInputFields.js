@@ -1,5 +1,5 @@
-GOVUK.registerBlockInputFields = function ( selector ) {
-      var $selectableInputs = $( selector ).find( 'input[type=radio], input[type=checkbox]' );
+GOVUK.registerBlockInputFields = function () {
+      var $selectableInputs = $( "label[class*=block-label]" ).find( 'input[type=radio], input[type=checkbox]' );
       
       $selectableInputs.each( function() {
             $( this ).change( function() {
