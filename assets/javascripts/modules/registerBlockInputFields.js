@@ -9,10 +9,10 @@ GOVUK.registerBlockInputFields = function () {
       	      $( this ).closest( 'label' ).toggleClass( 'selected', $( this ).prop( "checked" ));
             });
             $( this ).on( 'focus', function() {
-            	$( this ).closest( 'label' ).addClass( 'in-focus' );
+            	$( this ).closest( 'label' ).addClass( 'add-focus' );
             });
             $( this ).on( 'focusout', function(){
-            	$( this ).closest( 'label' ).removeClass( 'in-focus' );
+            	$( this ).closest( 'label' ).removeClass( 'add-focus' );
             });
       });
 };

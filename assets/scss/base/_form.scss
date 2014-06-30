@@ -50,7 +50,7 @@ textarea {
   }
 }
 
-input[type="radio"], input[type="checkbox"], select {
+select {
   width: auto;
   position: relative;
   vertical-align: 2px;
@@ -268,43 +268,71 @@ label {
 }
 
 // new form styles
-.in-focus {
+
+.block-label {
+
+  display: block;
+  float: none;
+  clear: left;
+  position: relative;
+
+  background: $panel-colour;
+  border: 1px solid $panel-colour;
+  padding: (18px $gutter $gutter-half $gutter*1.5);
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  cursor: pointer; // Encourage clicking on block labels
+
+  @include media(tablet) {
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    // width: 25%; - Test : check that text within labels will wrap
+  }
+}
+
+.block-label:hover {
+  border-color: $black;
+}
+
+// Position checkbox within label, to allow text to wrap
+.block-label input {
+  position: absolute;
+  top: 21px;
+  left: $gutter-half;
+  cursor: pointer;
+}
+
+// Use inline, to sit block labels next to each other
+.block-label--inline,
+.block-label--inline-right,
+.inline .block-label {
+  clear: none;
+  margin-right: $gutter-half;
+}
+
+// Only if JavaScript is enabled
+
+// Add focus styles to block labels
+.js-enabled .add-focus {
   outline: 3px solid $yellow;
   input {
     outline: none;
   }
 }
 
-.block-label {
-  background-color: $grey-8;
-  border: 1px solid $grey-8;
-  clear: both;
-  cursor: pointer;
-  line-height: 0;
-  float: left;
-  margin: 0 15px 15px 0;
-  padding: 1em;
-  &:hover {
-    border-color: $black;
-  }
-  &.selected {
-    background-color: $white;
-    border-color: $black;
-  }
-  input {
-    margin: 0 0.5em 0 0;
-  }
+// Remove focus styles from radio and checkbox inputs
+.js-enabled .block-label input:focus {
+  outline: none;
 }
 
-.block-label--inline {
-  @extend .block-label;
-  clear: none;
+// Add selected state to block labels
+.js-enabled .selected {
+  background: $white;
+  border-color: $black;
 }
 
-.block-label--inline-right{
-  @extend .block-label;
-  clear: none;
-}
 
 .block-label--stacked {
   @extend .block-label;
