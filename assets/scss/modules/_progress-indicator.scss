@@ -10,21 +10,25 @@
 }
 .progress-indicator__list {
     margin: 0;
-}
-.progress-indicator__list-item {
-    list-style-type: none;
-}
-.progress-indicator__list {
- 	.active,
-	.active a {
+    ul, ol {
+    	margin: 0;
+    	padding: 0;
+    }
+    h2 a {
+    	text-decoration: none;
+    }
+    .active a {
     	color: #000000;
 	}
-	.current,
+    .current h3,
 	.current a {
+		margin: 0;
     	color: #2e8aca;
 	}
-	.inactive,
 	.inactive a {
     	color: #ababab;
 	}
+}
+.progress-indicator__list-item {
+    list-style-type: none;
 }
