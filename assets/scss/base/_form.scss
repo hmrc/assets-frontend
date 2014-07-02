@@ -279,9 +279,8 @@ label {
   background: $panel-colour;
   border: 1px solid $panel-colour;
   padding: (18px $gutter $gutter-half $gutter*1.5);
-  margin-top: 10px;
-  margin-bottom: 10px;
-
+  margin: 10px 10px 10px 0;
+  
   cursor: pointer; // Encourage clicking on block labels
 
   @include media(tablet) {
@@ -338,9 +337,13 @@ label {
   @extend .block-label;
   clear: none;
   line-height: 1;
+  padding-left: 30px;
   input {
     display: block;
     margin: 0 auto 0.8em;
+    position: relative;
+    top: auto;
+    left: auto;
   }
 }
 
