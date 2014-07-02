@@ -77,3 +77,21 @@ ul {
 		margin-right: 10px;
 	}
 }
+
+.dl--label-value {
+	margin-bottom: 1em;
+	overflow: hidden;
+	dt, dd {
+		float: left;
+		margin-left: 0;
+		margin-bottom: 0.25em;
+		width: 50%;
+	}
+	dd {
+		font-family: "nta", Arial, sans-serif;
+		font-size: 19px;
+		font-weight: bold;
+		line-height: 1.31579;
+		text-align: right;
+	}
+}
