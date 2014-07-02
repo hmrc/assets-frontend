@@ -68,6 +68,7 @@ body {
 }
 
 .l-constrained--full-width,
+.l-constrained--full-width article, 
 .l-constrained--topBordered.full-width article {
 	// TODO: get rid of !important when refactor out the #content > article
 	float: none!important;
