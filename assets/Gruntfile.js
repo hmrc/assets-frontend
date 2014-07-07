@@ -307,7 +307,7 @@ module.exports = function (grunt) {
             },
             compileCSS: {
                 files: ['scss/**/*.scss'],
-                tasks: ['clean:stylesheets', 'sass:dev']
+                tasks: ['clean:stylesheets', 'sass:govukElementsDev', 'sass:dev']
             },
             updateJS: {
                 files: ['javascripts/**/*.js'],
