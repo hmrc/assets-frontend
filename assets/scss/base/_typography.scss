@@ -65,7 +65,8 @@ h4 {
 }
 
 .faded-text {
-  color:$grey-1;
+  // TODO Use correct color variable from govuk elements
+  color: #6f777b;
 }
 
 .faded-text--small {
