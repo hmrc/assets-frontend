@@ -40,6 +40,11 @@ module.exports = function (grunt) {
             js: {
                 src: '<%= dirs.temp %>/concat/app.js',
                 dest: '<%= dirs.temp %>/minified/app.min.js'
+            },
+            detailsPolyfill: {
+                src: '<%= dirs.temp %>/javascripts/vendor/details.polyfill.js',
+                dest: '<%= dirs.temp %>/minified/details.polyfill.min.js'
+
             }
         },
         concat: {
@@ -50,10 +55,11 @@ module.exports = function (grunt) {
                     footer: '\n})(jQuery, window, document);'
                 },
                 src: [
+
                     'javascripts/base64v1_0.js',
                     'javascripts/mdtpdf.js',
                     'javascripts/modules/*.js',
-                    'javascripts/application.js'
+                    '<%= dirs.temp %>/javascripts/application.js'
                 ],
                 dest: '<%= dirs.temp %>/concat/app.js'
             },
@@ -62,15 +68,36 @@ module.exports = function (grunt) {
                 src: [
                     'javascripts/vendor/minified/jquery.min.js',
                     'javascripts/plugins/jquery/minified/jquery.validate.min.js',
-                    'javascripts/plugins/jquery/minified/*.js'
+                    'javascripts/plugins/jquery/minified/additional-methods.min.js',
                 ],
                 dest: '<%= dirs.temp %>/minified/jquery-combined.min.js'
+            },
+            govukJSwithAppJSDev: {
+
+                    //combine govuk js with our application.js
+                    src: [
+                        '<%= dirs.temp %>/javascripts/govuk_application.js',
+                        '<%= dirs.temp %>/javascripts/hmrc_application.js'
+                    ],
+                    dest: '<%= dirs.snapshot %>/javascripts/application.js'
+
+            },
+            govukJSwithAppJSProd: {
+
+                    //combine govuk js with our application.js
+                    src: [
+                        '<%= dirs.temp %>/javascripts/govuk_application.js',
+                        '<%= dirs.temp %>/javascripts/hmrc_application.js'
+                    ],
+                    dest: '<%= dirs.temp %>/javascripts/application.js'
+
             },
             combineAll: {
                 //combine all scripts and copy to public folder
                 src: [
                     'javascripts/vendor/minified/json3.min.js',
                     '<%= dirs.temp %>/minified/jquery-combined.min.js',
+                    '<%= dirs.temp %>/minified/details.polyfill.min.js',
                     '<%= dirs.temp %>/minified/app.min.js'
                 ],
                 dest: '<%= dirs.public %>/javascripts/application.min.js'
@@ -243,6 +270,25 @@ module.exports = function (grunt) {
                     }
                 ]
             },
+            copyGOVUKElementsJSandAppJS: {
+                files: [
+                    {
+                        src: ['<%= dirs.govuk.elements %>/public/javascripts/application.js'],
+                        dest: '<%= dirs.temp %>/javascripts/govuk_application.js',
+
+                    },
+                    {
+                        src: ['<%= dirs.govuk.elements %>/public/javascripts/vendor/details.polyfill.js'],
+                        dest: '<%= dirs.temp %>/javascripts/vendor/details.polyfill.js',
+
+                    },
+                    {
+                        src: ['javascripts/application.js'],
+                        dest: '<%= dirs.temp %>/javascripts/hmrc_application.js',
+
+                    }
+                ]
+            },
             copyJavaScripttoSnapshot: {
                 files: [
                     {
@@ -256,6 +302,12 @@ module.exports = function (grunt) {
                         cwd:'<%= dirs.govuk.template %>/public/javascripts/',
                         src: ['**/*.js'],
                         dest: '<%= dirs.snapshot %>/javascripts/'
+                    },
+                    {
+                        expand: true,
+                        cwd:'<%= dirs.govuk.elements %>/public/javascripts/vendor/',
+                        src: ['details.polyfill.js'],
+                        dest: '<%= dirs.snapshot %>/javascripts/vendor/'
                     }
                 ]
             },
@@ -388,12 +440,18 @@ module.exports = function (grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', [ 'clean:dest', 'express', 'jshint', 'replace:dev', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPagesToSnapshot', 'watch']);
-    grunt.registerTask('build', ['clean:dest', 'jshint', 'test', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'clean:govukElementsTemp', 'replace:build', 'copy:copyErrorPagesToDist', 'zipup:build', 'clean:sass_cache', 'clean:tmp', 'clean:tmpErrorPages']);
-    grunt.registerTask('release', ['clean', 'jshint', 'test', 'replace:build', 'concatenate', 'sass:dist','copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'copy:copyHealthCheck', 'zipup:release']) ;
-    grunt.registerTask('test', ['karma:continuous']);
-    grunt.registerTask('concatenate', ['clean:tmp', 'concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
+    grunt.registerTask('default', [ 'clean:dest', 'express', 'jshint', 'replace:dev', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'combineGOVUKJSwithAppJSDev', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPagesToSnapshot', 'watch']);
+    //Build
+    grunt.registerTask('build', ['clean:dest', 'jshint', 'test', 'combineGOVUKJSwithAppJSProd', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'clean:govukElementsTemp', 'replace:build', 'copy:copyErrorPagesToDist', 'zipup:build', 'clean:tmp', 'clean:sass_cache', 'clean:tmpErrorPages']);
+    //Test
+    grunt.registerTask('test', ['jshint','karma:continuous']);
+    // Conatenate all Javascript
+    grunt.registerTask('concatenate', ['concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
+    //Obfuscate all Javascript
     grunt.registerTask('minify', ['uglify']);
     grunt.registerTask('copyMinCSS', ['copy:renameCSStoMin']);
+    // add GOVUK elements Javascript to application.js
+    grunt.registerTask('combineGOVUKJSwithAppJSDev', ['copy:copyGOVUKElementsJSandAppJS', 'concat:govukJSwithAppJSDev']);
+    grunt.registerTask('combineGOVUKJSwithAppJSProd', ['copy:copyGOVUKElementsJSandAppJS', 'concat:govukJSwithAppJSProd']);
 
 };
