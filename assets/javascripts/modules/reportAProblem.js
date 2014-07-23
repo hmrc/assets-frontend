@@ -8,7 +8,9 @@ GOVUK.ReportAProblem = function () {
                 "<a href='/beta-feedback'>support page</a>.</p>";
 
             $reportErrorContainer.html(response);
+            enableSubmitButton();
         },
+        //TODO: should refactor to use Javascript debounce
         disableSubmitButton = function () {
             $submitButton.attr("disabled", true);
         },
@@ -24,6 +26,10 @@ GOVUK.ReportAProblem = function () {
                 url: url,
                 datattype: 'json',
                 data: $(form).serialize(),
+                beforeSend: function () {
+                    //disable submit button
+                    disableSubmitButton();
+                },
                 success: function (data) {
                     showConfirmation(data);
                 },
