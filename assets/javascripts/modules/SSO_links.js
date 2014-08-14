@@ -11,7 +11,7 @@ GOVUK.setSSOLinks = function (element) {
         var successful = true,
             destination = serverSso ? { ssoRedirect: true  } : { destinationUrl: $target[0].href };
         $.ajax({
-            url: serverSso ? $target[0].href : (typeof ssoOutUrl == 'undefined' ? '/ssoout' : ssoOutUrl),
+            url: serverSso ? $target[0].href : '/ssoout',
             data: destination,
             type: 'GET',
             async: false,
