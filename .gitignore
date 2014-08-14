@@ -7,6 +7,7 @@ assets/dist/
 logs/
 asset-target/
 test_results/
+test_coverage/
 assets/public/
 target/
 assets/error_pages/assets/

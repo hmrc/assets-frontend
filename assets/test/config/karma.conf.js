@@ -22,25 +22,32 @@ module.exports = function(config) {
         'test/specs/*.spec.js'
     ],
 
-    // list of files to exclude
-    exclude: [
-      //'client/main.js'
-    ],
-
     preprocessors: {
-      //'client/*.js': ['commonjs'],
-     // 'test/client/*.js': ['commonjs']
-     '**/*.html': []
+      '**/*.html': [],
+      'javascripts/*.js': ['coverage'],
+      'javascripts/modules/*.js': ['coverage']
     },
 
     // use dots reporter, as travis terminal does not support escaping sequences
     // possible values: 'dots', 'progress'
     // CLI --reporters progress
-    reporters: ['spec', 'junit'],
+    reporters: ['spec', 'junit', 'coverage'],
 
     junitReporter: {
       // will be resolved to basePath (in the same way as files/exclude patterns)
       outputFile: '../test_results/TEST-javascript-test-results.xml'
+    },
+
+    coverageReporter: {
+      reporters: [
+        {
+          type : 'html',
+          dir : '../test_coverage/'
+        },
+        {
+          type: 'text-summary'
+        }
+      ]
     },
 
     // web server port
@@ -85,11 +92,12 @@ module.exports = function(config) {
 
     plugins: [
       'karma-jasmine',
+      'karma-coverage',
+      'karma-spec-reporter',
+      'karma-junit-reporter',
       'karma-chrome-launcher',
       'karma-firefox-launcher',
-      'karma-junit-reporter',
-      'karma-phantomjs-launcher',
-      'karma-spec-reporter'
+      'karma-phantomjs-launcher'
     ]
   });
 };

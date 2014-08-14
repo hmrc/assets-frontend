@@ -26,11 +26,13 @@
     "grunt-express": "~1.2.1",
     "grunt-hash": "~0.5.0",
     "grunt-karma": "~0.6.2",
+    "grunt-replace": "~0.7.8",
     "grunt-zipup": "~0.1.6",
     "jshint-stylish": "~0.1.5",
     "karma": "~0.10.9",
     "karma-chrome-launcher": "~0.1.2",
     "karma-coffee-preprocessor": "~0.1.2",
+    "karma-coverage": "^0.2.6",
     "karma-firefox-launcher": "~0.1.3",
     "karma-html2js-preprocessor": "~0.1.0",
     "karma-jasmine": "~0.1.5",
@@ -41,7 +43,6 @@
     "karma-spec-reporter": "0.0.8",
     "load-grunt-tasks": "~0.3.0",
     "requirejs": "~2.1.10",
-    "time-grunt": "~0.2.8",
-    "grunt-replace": "~0.7.8"
+    "time-grunt": "~0.2.8"
   }
 }
