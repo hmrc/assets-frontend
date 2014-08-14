@@ -24,11 +24,11 @@ button, .button {
 	@extend .button;
 	@include bold-24();
 	padding-right: 40px;
-	background-image: url("/assets/images/icon-pointer.png");
+	background-image: url("../images/icons/icon-pointer.png");
 	background-position: 100% 50%;
 	background-repeat: no-repeat;
 	&:hover {
-    background-image: url("/assets/images/icon-pointer.png");
+    background-image: url("../images/icons/icon-pointer.png");
 		background-position: 100% 50%;
 		background-repeat: no-repeat;
 	}

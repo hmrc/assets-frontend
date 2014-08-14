@@ -204,69 +204,23 @@ module.exports = function (grunt) {
                 src: ['javascripts/vendor/modernizr.js'],
                 dest: '<%= dirs.public %>/'
             },
-            copyImagesFromToolkit: {
-                expand: true,
-                cwd:'<%= dirs.govuk.toolkit %>/images',
-                src: ['**/*.png','**/*.gif'],
-                dest: 'images'
-            },
-            copyImagestoDist: {
-                files: [
-                    {
-                        expand: true,
-                        cwd:'images',
-                        src: ['**/*.png','**/*.gif'],
-                        dest: '<%= dirs.public %>/<%= dirs.images %>'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= dirs.govuk.template %>/public/images/',
-                        src: [
-                        'gov.uk_logotype_crown*',
-                        'open-government-licence*'
-                        ],
-                        filter: 'isFile',
-                        dest: '<%= dirs.public %>/<%= dirs.images %>/'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= dirs.govuk.template %>/public/stylesheets/images/',
-                        src: [
-                        'govuk-crest*',
-                        'open-government-licence*'
-                        ],
-                        filter: 'isFile',
-                        dest: '<%= dirs.public %>/<%= dirs.css %>/<%= dirs.images %>/'
-                    }
-                ]
-            },
             copyImagestoSnapshot: {
                 files: [
                     {
                         expand: true,
-                        cwd:'images',
+                        cwd:'<%= dirs.govuk.template %>/public/images/',
                         src: ['**/*.png','**/*.gif'],
                         dest: '<%= dirs.snapshot %>/<%= dirs.images %>/'
-                    },
+                    }
+                ]
+            },
+            copyImagestoPublic: {
+                files: [
                     {
                         expand: true,
-                        cwd: '<%= dirs.govuk.template %>/public/images/',
-                        src: [
-                        'gov.uk_logotype_crown*',
-                        'open-government-licence*'
-                        ],
-                        filter: 'isFile',
-                        dest: '<%= dirs.snapshot %>/<%= dirs.images %>/'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= dirs.govuk.template %>/public/stylesheets/images/',
-                        src: [
-                        'govuk-crest*',
-                        'open-government-licence*'
-                        ],
-                        filter: 'isFile',
-                        dest: '<%= dirs.snapshot %>/<%= dirs.css %>/<%= dirs.images %>/'
+                        cwd:'<%= dirs.govuk.template %>/public/images/',
+                        src: ['**/*.png','**/*.gif'],
+                        dest: '<%= dirs.public %>/<%= dirs.images %>/'
                     }
                 ]
             },
@@ -442,7 +396,7 @@ module.exports = function (grunt) {
     // Default task(s).
     grunt.registerTask('default', [ 'clean:dest', 'express', 'jshint', 'replace:dev', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'combineGOVUKJSwithAppJSDev', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPagesToSnapshot', 'watch']);
     //Build
-    grunt.registerTask('build', ['clean:dest', 'jshint', 'test', 'combineGOVUKJSwithAppJSProd', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyImagestoDist', 'copy:copyModernizr', 'clean:govukElementsTemp', 'replace:build', 'copy:copyErrorPagesToDist', 'zipup:build', 'clean:tmp', 'clean:sass_cache', 'clean:tmpErrorPages']);
+    grunt.registerTask('build', ['clean:dest', 'jshint', 'test', 'copy:copyImagestoPublic', 'combineGOVUKJSwithAppJSProd', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyModernizr', 'clean:govukElementsTemp', 'replace:build', 'copy:copyErrorPagesToDist', 'zipup:build', 'clean:tmp', 'clean:sass_cache', 'clean:tmpErrorPages']);
     //Test
     grunt.registerTask('test', ['jshint','karma:continuous']);
     // Conatenate all Javascript
