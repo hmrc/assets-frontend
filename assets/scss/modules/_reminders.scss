@@ -52,20 +52,4 @@
     text-decoration: underline;
   }
 
-  &.message {
-    background-image: url(../images/mail-icon-white-small.png);
-    background-repeat: no-repeat;
-    background-position: 10px 0.7em;
-
-    a {
-      padding-left: 52px;      
-    }
-  }
-
-  @include device-pixel-ratio() {
-    &.message {
-      background-image: url(../images/mail-icon-white-large.png);    
-      background-size: 32px 25px;
-    }
-  }
 }
