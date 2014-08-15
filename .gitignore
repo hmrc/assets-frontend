@@ -2,6 +2,7 @@
 .sass-cache/
 .tmp/
 
+npm-debug.log
 node_modules/
 assets/dist/
 logs/
@@ -11,3 +12,4 @@ test_coverage/
 assets/public/
 target/
 assets/error_pages/assets/
+assets/bower_components/
