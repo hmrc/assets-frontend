@@ -22,6 +22,6 @@
     "almond": "~0.2.9",
     "json3": "~3.3.2",
     "jquery-validation": "~1.11.1",
-    "stageprompt": "https://github.com/alphagov/stageprompt.git#~2.1.0"
+    "stageprompt": "alphagov/stageprompt#~2.1.0"
   }
 }
