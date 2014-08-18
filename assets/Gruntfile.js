@@ -202,11 +202,6 @@ module.exports = function (grunt) {
                     }
                 }]
             },
-            copyModernizr: {
-                expand: true,
-                src: ['javascripts/vendor/modernizr.js'],
-                dest: '<%= dirs.public %>/'
-            },
             copyImagestoSnapshot: {
                 files: [
                     {
@@ -265,6 +260,10 @@ module.exports = function (grunt) {
                     cwd: 'bower_components/jquery-validation',
                     src: 'jquery.validate.js',
                     dest: '<%= dirs.snapshot %>/javascripts/plugins/jquery/'
+                },
+                {
+                    src: 'bower_components/modernizr/modernizr.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/vendor/modernizr.js'
                 },
                 {
                     src: 'bower_components/jquery-validation/additional-methods.js',
