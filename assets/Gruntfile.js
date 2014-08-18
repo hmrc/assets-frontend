@@ -38,13 +38,21 @@ module.exports = function (grunt) {
         },
         uglify: {
             js: {
-                src: '<%= dirs.temp %>/concat/app.js',
-                dest: '<%= dirs.temp %>/minified/app.min.js'
+                files: [{
+                    expand: true,
+                    cwd: '<%= dirs.temp %>/concat',
+                    src: '*.js',
+                    dest: '<%= dirs.temp %>/minified',
+                    ext: '.min.js'
+                }]
             },
             detailsPolyfill: {
                 src: '<%= dirs.temp %>/javascripts/vendor/details.polyfill.js',
                 dest: '<%= dirs.temp %>/minified/details.polyfill.min.js'
-
+            },
+            json3: {
+                src: 'bower_components/json3/lib/json3.js',
+                dest: '<%= dirs.temp %>/minified/json3.min.js'
             }
         },
         concat: {
@@ -55,52 +63,47 @@ module.exports = function (grunt) {
                     footer: '\n})(jQuery, window, document);'
                 },
                 src: [
-
                     'javascripts/base64v1_0.js',
                     'javascripts/mdtpdf.js',
                     'javascripts/modules/*.js',
                     '<%= dirs.temp %>/javascripts/application.js'
                 ],
-                dest: '<%= dirs.temp %>/concat/app.js'
+                dest: '<%= dirs.temp %>/concat/app.js',
+                nonull: true
             },
             jquery: {
                 //concatenate jquery and all its plugins
                 src: [
-                    'javascripts/vendor/minified/jquery.min.js',
-                    'javascripts/plugins/jquery/minified/jquery.validate.min.js',
-                    'javascripts/plugins/jquery/minified/additional-methods.min.js',
+                    'bower_components/jquery/jquery.js',
+                    'bower_components/jquery-validation/jquery.validate.js',
+                    'bower_components/jquery-validation/additional-methods.js',
                 ],
-                dest: '<%= dirs.temp %>/minified/jquery-combined.min.js'
+                dest: '<%= dirs.temp %>/concat/jquery-combined.js',
+                nonull: true
             },
             govukJSwithAppJSDev: {
-
-                    //combine govuk js with our application.js
-                    src: [
-                        '<%= dirs.temp %>/javascripts/govuk_application.js',
-                        '<%= dirs.temp %>/javascripts/hmrc_application.js'
-                    ],
-                    dest: '<%= dirs.snapshot %>/javascripts/application.js'
-
+                //combine govuk js with our application.js
+                src: [
+                    '<%= dirs.temp %>/javascripts/govuk_application.js',
+                    '<%= dirs.temp %>/javascripts/hmrc_application.js'
+                ],
+                dest: '<%= dirs.snapshot %>/javascripts/application.js',
+                nonull: true
             },
             govukJSwithAppJSProd: {
-
-                    //combine govuk js with our application.js
-                    src: [
-                        '<%= dirs.temp %>/javascripts/govuk_application.js',
-                        '<%= dirs.temp %>/javascripts/hmrc_application.js'
-                    ],
-                    dest: '<%= dirs.temp %>/javascripts/application.js'
-
+                //combine govuk js with our application.js
+                src: [
+                    '<%= dirs.temp %>/javascripts/govuk_application.js',
+                    '<%= dirs.temp %>/javascripts/hmrc_application.js'
+                ],
+                dest: '<%= dirs.temp %>/javascripts/application.js',
+                nonull: true
             },
             combineAll: {
                 //combine all scripts and copy to public folder
-                src: [
-                    'javascripts/vendor/minified/json3.min.js',
-                    '<%= dirs.temp %>/minified/jquery-combined.min.js',
-                    '<%= dirs.temp %>/minified/details.polyfill.min.js',
-                    '<%= dirs.temp %>/minified/app.min.js'
-                ],
-                dest: '<%= dirs.public %>/javascripts/application.min.js'
+                src: '<%= dirs.temp %>/minified/{json3,jquery-combined,details.polyfill,app}.min.js',
+                dest: '<%= dirs.public %>/javascripts/application.min.js',
+                nonull: true
             }
         },
         cssmin: {
@@ -220,50 +223,93 @@ module.exports = function (grunt) {
                         expand: true,
                         cwd:'<%= dirs.govuk.template %>/public/images/',
                         src: ['**/*.png','**/*.gif'],
+<<<<<<< HEAD
                         dest: '<%= dirs.public %>/<%= dirs.images %>/'
+=======
+                        dest: '<%= dirs.snapshot %>/<%= dirs.images %>/'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.govuk.template %>/public/images/',
+                        src: [
+                            'gov.uk_logotype_crown*',
+                            'open-government-licence*'
+                        ],
+                        filter: 'isFile',
+                        dest: '<%= dirs.snapshot %>/<%= dirs.images %>/'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= dirs.govuk.template %>/public/stylesheets/images/',
+                        src: [
+                        'govuk-crest*',
+                        'open-government-licence*'
+                        ],
+                        filter: 'isFile',
+                        dest: '<%= dirs.snapshot %>/<%= dirs.css %>/<%= dirs.images %>/'
+>>>>>>> Use bower to manage JS dependancies
                     }
                 ]
             },
             copyGOVUKElementsJSandAppJS: {
-                files: [
-                    {
-                        src: ['<%= dirs.govuk.elements %>/public/javascripts/application.js'],
-                        dest: '<%= dirs.temp %>/javascripts/govuk_application.js',
-
-                    },
-                    {
-                        src: ['<%= dirs.govuk.elements %>/public/javascripts/vendor/details.polyfill.js'],
-                        dest: '<%= dirs.temp %>/javascripts/vendor/details.polyfill.js',
-
-                    },
-                    {
-                        src: ['javascripts/application.js'],
-                        dest: '<%= dirs.temp %>/javascripts/hmrc_application.js',
-
-                    }
-                ]
+                files: [{
+                    src: ['<%= dirs.govuk.elements %>/public/javascripts/application.js'],
+                    dest: '<%= dirs.temp %>/javascripts/govuk_application.js'
+                },
+                {
+                    src: ['<%= dirs.govuk.elements %>/public/javascripts/vendor/details.polyfill.js'],
+                    dest: '<%= dirs.temp %>/javascripts/vendor/details.polyfill.js'
+                },
+                {
+                    src: ['javascripts/application.js'],
+                    dest: '<%= dirs.temp %>/javascripts/hmrc_application.js'
+                }]
             },
             copyJavaScripttoSnapshot: {
-                files: [
-                    {
-                        expand: true,
-                        cwd:'javascripts',
-                        src: ['**/*.js'],
-                        dest: '<%= dirs.snapshot %>/javascripts/'
-                    },
-                    {
-                        expand: true,
-                        cwd:'<%= dirs.govuk.template %>/public/javascripts/',
-                        src: ['**/*.js'],
-                        dest: '<%= dirs.snapshot %>/javascripts/'
-                    },
-                    {
-                        expand: true,
-                        cwd:'<%= dirs.govuk.elements %>/public/javascripts/vendor/',
-                        src: ['details.polyfill.js'],
-                        dest: '<%= dirs.snapshot %>/javascripts/vendor/'
-                    }
-                ]
+                files: [{
+                    expand: true,
+                    cwd:'javascripts',
+                    src: ['**/*.js'],
+                    dest: '<%= dirs.snapshot %>/javascripts/'
+                },
+                {
+                    expand: true,
+                    cwd: 'bower_components/jquery',
+                    src: 'jquery.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/vendor/'
+                },
+                {
+                    expand: true,
+                    cwd: 'bower_components/json3/lib',
+                    src: 'json3.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/vendor/'
+                },
+                {
+                    expand: true,
+                    cwd: 'bower_components/jquery-validation',
+                    src: 'jquery.validate.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/plugins/jquery/'
+                },
+                {
+                    src: 'bower_components/jquery-validation/additional-methods.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/plugins/jquery/jquery.validate.additional-methods.js'
+                },
+                {
+                    src: 'bower_components/stageprompt/script/stageprompt.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/stageprompt.2.0.1.js'
+                },
+                {
+                    expand: true,
+                    cwd:'<%= dirs.govuk.template %>/public/javascripts',
+                    src: ['**/*.js'],
+                    dest: '<%= dirs.snapshot %>/javascripts'
+                },
+                {
+                    expand: true,
+                    cwd:'<%= dirs.govuk.elements %>/public/javascripts/vendor/',
+                    src: 'details.polyfill.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/vendor/'
+                }]
             },
             copyErrorPagesToSnapshot: {
                 files: [
@@ -323,15 +369,10 @@ module.exports = function (grunt) {
         // JsHint your javascript
         jshint: {
             all: [
-                'javascripts/*.js',
-                '!javascripts/stageprompt.2.0.1.js',
-                '!javascripts/modernizr.js',
+                'javascripts/**/*.js',
                 '!javascripts/base64v1_0.js',
                 '!javascripts/mdtpdf.js',
-                '!javascripts/require.conf.js',
-                '!javascripts/plugins/*.js',
-                '!javascripts/vendor/**/*.js',
-                '!javascripts/old_application.js'
+                '!javascripts/vendor/**/*.*',
             ],
             options: {
                 reporter: require('jshint-stylish'),
@@ -366,35 +407,47 @@ module.exports = function (grunt) {
         replace: {
             build: {
                 options: {
-                  patterns: [
-                    {
+                  patterns: [{
                       match: 'minify',
                       replacement: '.min'
-                    }
-                  ]
+                    }]
                 },
-                files: [
-                  {expand: true, cwd: '<%= dirs.errorPages %>', flatten: true, src: ['*.html'], dest: '<%= dirs.tempErrorPages %>'}
-                ]
+                files: [{
+                    expand: true,
+                    cwd: '<%= dirs.errorPages %>',
+                    flatten: true,
+                    src: ['*.html'],
+                    dest: '<%= dirs.tempErrorPages %>'
+                }]
             },
             dev: {
                 options: {
-                  patterns: [
-                    {
+                  patterns: [{
                       match: 'minify',
                       replacement: ''
-                    }
-                  ]
+                    }]
                 },
-                files: [
-                  {expand: true, cwd: '<%= dirs.errorPages %>', flatten: true, src: ['*.html'], dest: '<%= dirs.tempErrorPages %>'}
-                ]
+                files: [{
+                    expand: true,
+                    cwd: '<%= dirs.errorPages %>',
+                    flatten: true,
+                    src: ['*.html'],
+                    dest: '<%= dirs.tempErrorPages %>'
+                }]
+            }
+        },
+        bower: {
+            install: {
+                options: {
+                    targetDir: './bower_components',
+                    copy: false
+                }
             }
         }
     });
 
     // Default task(s).
-    grunt.registerTask('default', [ 'clean:dest', 'express', 'jshint', 'replace:dev', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'combineGOVUKJSwithAppJSDev', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPagesToSnapshot', 'watch']);
+    grunt.registerTask('default', [ 'clean:dest', 'express', 'bower:install', 'jshint', 'replace:dev', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'combineGOVUKJSwithAppJSDev', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPagesToSnapshot', 'watch']);
     //Build
     grunt.registerTask('build', ['clean:dest', 'jshint', 'test', 'copy:copyImagestoPublic', 'combineGOVUKJSwithAppJSProd', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyModernizr', 'clean:govukElementsTemp', 'replace:build', 'copy:copyErrorPagesToDist', 'zipup:build', 'clean:tmp', 'clean:sass_cache', 'clean:tmpErrorPages']);
     //Test
@@ -407,5 +460,4 @@ module.exports = function (grunt) {
     // add GOVUK elements Javascript to application.js
     grunt.registerTask('combineGOVUKJSwithAppJSDev', ['copy:copyGOVUKElementsJSandAppJS', 'concat:govukJSwithAppJSDev']);
     grunt.registerTask('combineGOVUKJSwithAppJSProd', ['copy:copyGOVUKElementsJSandAppJS', 'concat:govukJSwithAppJSProd']);
-
 };

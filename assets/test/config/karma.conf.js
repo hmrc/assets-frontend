@@ -7,25 +7,29 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'javascripts/vendor/minified/jquery.min.js',
-        'javascripts/plugins/jquery/jquery.validate.js',
-        'javascripts/plugins/**/*.js',
-        'test/specs/helpers/jasmine-jquery.js',
-        'test/specs/helpers/jasmine-matchers.js',
-        //fixtures
-        {pattern: 'test/specs/fixtures/**/*.html', served: true, watched: false, included: false},
-
-        'javascripts/base64v1_0.js',
-        'javascripts/mdtpdf.js',
-        'javascripts/modules/*.js',
-        'javascripts/application.js',
-        'test/specs/*.spec.js'
+      'bower_components/jquery/jquery.min.js',
+      'bower_components/jquery-validation/jquery.validate.js',
+      'bower_components/json3/lib/json3.js',
+      'bower_components/stageprompt/script/stageprompt.js',
+      'test/specs/helpers/jasmine-jquery.js',
+      'test/specs/helpers/jasmine-matchers.js',
+      //fixtures
+      {
+        pattern: 'test/specs/fixtures/**/*.html',
+        served: true,
+        watched: false,
+        included: false
+      },
+      'javascripts/base64v1_0.js',
+      'javascripts/mdtpdf.js',
+      'javascripts/modules/*.js',
+      'javascripts/application.js',
+      'test/specs/*.spec.js'
     ],
 
     preprocessors: {
       '**/*.html': [],
-      'javascripts/*.js': ['coverage'],
-      'javascripts/modules/*.js': ['coverage']
+      'javascripts/**/*.js': ['coverage']
     },
 
     // use dots reporter, as travis terminal does not support escaping sequences
