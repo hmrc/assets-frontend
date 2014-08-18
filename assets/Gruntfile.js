@@ -202,11 +202,6 @@ module.exports = function (grunt) {
                     }
                 }]
             },
-            copyModernizr: {
-                expand: true,
-                src: ['javascripts/vendor/modernizr.js'],
-                dest: '<%= dirs.public %>/'
-            },
             copyImagestoSnapshot: {
                 files: [
                     {
@@ -265,6 +260,10 @@ module.exports = function (grunt) {
                     cwd: 'bower_components/jquery-validation',
                     src: 'jquery.validate.js',
                     dest: '<%= dirs.snapshot %>/javascripts/plugins/jquery/'
+                },
+                {
+                    src: 'bower_components/modernizr/modernizr.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/vendor/modernizr.js'
                 },
                 {
                     src: 'bower_components/jquery-validation/additional-methods.js',
@@ -342,7 +341,20 @@ module.exports = function (grunt) {
                 tasks: ['clean:javascripts','copy:copyJavaScripttoSnapshot']
             }
         },
-        // JsHint your javascript
+        modernizr: {
+            dist: {
+                "devFile" : "javascripts/vendor/modernizr.js",
+                "outputFile" : "<%= dirs.public %>/javascripts/vendor/modernizr.js",
+                "extra" : {
+                    "shiv" : true,
+                    "cssclasses" : true
+                },
+                "extensibility" : {
+                    "teststyles" : true,
+                    "prefixes" : true,
+                }
+            }
+        },
         jshint: {
             all: [
                 'javascripts/**/*.js',
@@ -425,7 +437,7 @@ module.exports = function (grunt) {
     // Default task(s).
     grunt.registerTask('default', [ 'clean:dest', 'express', 'bower:install', 'jshint', 'replace:dev', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'combineGOVUKJSwithAppJSDev', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPagesToSnapshot', 'watch']);
     //Build
-    grunt.registerTask('build', ['clean:dest', 'bower:install', 'jshint', 'test', 'copy:copyImagestoPublic', 'combineGOVUKJSwithAppJSProd', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'copy:copyModernizr', 'clean:govukElementsTemp', 'replace:build', 'copy:copyErrorPagesToDist', 'zipup:build', 'clean:tmp', 'clean:sass_cache', 'clean:tmpErrorPages']);
+    grunt.registerTask('build', ['clean:dest', 'bower:install', 'jshint', 'test', 'copy:copyImagestoPublic', 'combineGOVUKJSwithAppJSProd', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'modernizr:dist', 'clean:govukElementsTemp', 'replace:build', 'copy:copyErrorPagesToDist', 'zipup:build', 'clean:tmp', 'clean:sass_cache', 'clean:tmpErrorPages']);
     //Test
     grunt.registerTask('test', ['jshint','karma:continuous']);
     // Conatenate all Javascript

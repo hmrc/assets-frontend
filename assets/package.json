@@ -28,6 +28,7 @@
     "grunt-express": "~1.2.1",
     "grunt-hash": "~0.5.0",
     "grunt-karma": "~0.6.2",
+    "grunt-modernizr": "^0.5.2",
     "grunt-replace": "~0.7.8",
     "grunt-zipup": "~0.1.6",
     "jshint-stylish": "~0.1.5",
