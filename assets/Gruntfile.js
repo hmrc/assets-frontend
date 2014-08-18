@@ -223,31 +223,7 @@ module.exports = function (grunt) {
                         expand: true,
                         cwd:'<%= dirs.govuk.template %>/public/images/',
                         src: ['**/*.png','**/*.gif'],
-<<<<<<< HEAD
                         dest: '<%= dirs.public %>/<%= dirs.images %>/'
-=======
-                        dest: '<%= dirs.snapshot %>/<%= dirs.images %>/'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= dirs.govuk.template %>/public/images/',
-                        src: [
-                            'gov.uk_logotype_crown*',
-                            'open-government-licence*'
-                        ],
-                        filter: 'isFile',
-                        dest: '<%= dirs.snapshot %>/<%= dirs.images %>/'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= dirs.govuk.template %>/public/stylesheets/images/',
-                        src: [
-                        'govuk-crest*',
-                        'open-government-licence*'
-                        ],
-                        filter: 'isFile',
-                        dest: '<%= dirs.snapshot %>/<%= dirs.css %>/<%= dirs.images %>/'
->>>>>>> Use bower to manage JS dependancies
                     }
                 ]
             },
