@@ -1,4 +1,4 @@
-var path = require("path");
+var path = require('path');
 module.exports = function (grunt) {
     // Displays the elapsed execution time of grunt tasks
     require('time-grunt')(grunt);
@@ -12,19 +12,20 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         //destination directories
         dirs: {
-            public: "public",
-            temp: ".tmp",
-            dist: "dist",
-            snapshot: "public/999-SNAPSHOT",
-            sass: "scss",
-            css: "stylesheets",
-            images: "images",
-            errorPages: "error_pages",
-            tempErrorPages: ".tmp/temp_error_pages",
+            public: 'public',
+            temp: '.tmp',
+            dist: 'dist',
+            snapshot: 'public/999-SNAPSHOT',
+            sass: 'scss',
+            css: 'stylesheets',
+            images: 'images',
+            errorPages: 'error_pages',
+            bower: './bower_components',
+            tempErrorPages: '.tmp/temp_error_pages',
             govuk :{
-                elements: "govuk_elements",
-                template: "govuk_elements/govuk",
-                toolkit: "govuk_frontend_toolkit"
+                elements: 'govuk_elements',
+                template: 'govuk_elements/govuk',
+                toolkit: 'govuk_frontend_toolkit'
             }
         },
         express: {
@@ -51,7 +52,7 @@ module.exports = function (grunt) {
                 dest: '<%= dirs.temp %>/minified/details.polyfill.min.js'
             },
             json3: {
-                src: 'bower_components/json3/lib/json3.js',
+                src: '<%= dirs.bower %>/json3/lib/json3.js',
                 dest: '<%= dirs.temp %>/minified/json3.min.js'
             }
         },
@@ -74,9 +75,9 @@ module.exports = function (grunt) {
             jquery: {
                 //concatenate jquery and all its plugins
                 src: [
-                    'bower_components/jquery/jquery.js',
-                    'bower_components/jquery-validation/jquery.validate.js',
-                    'bower_components/jquery-validation/additional-methods.js',
+                    '<%= dirs.bower %>/jquery/jquery.js',
+                    '<%= dirs.bower %>/jquery-validation/jquery.validate.js',
+                    '<%= dirs.bower %>/jquery-validation/additional-methods.js',
                 ],
                 dest: '<%= dirs.temp %>/concat/jquery-combined.js',
                 nonull: true
@@ -125,13 +126,19 @@ module.exports = function (grunt) {
             }
         },
         clean: {
-            tmp: ['<%= dirs.temp %>'],
-            sass_cache: ['.sass-cache'],
-            stylesheets: ['<%= dirs.snapshot %>/stylesheets'],
-            javascripts: ['<%= dirs.snapshot %>/javascripts'],
-            tmpErrorPages: ['<%= dirs.tempErrorPages %>'],
-            dest: ['<%= dirs.temp %>', '<%= dirs.tempErrorPages %>', '<%= dirs.dist %>', '<%= dirs.public %>', '<%= dirs.errorPages %>/assets'],
-            govukElementsTemp: ['<%= dirs.public %>/stylesheets/elements']
+            tmp: '<%= dirs.temp %>',
+            sass_cache: '.sass-cache',
+            stylesheets: '<%= dirs.snapshot %>/stylesheets',
+            javascripts: '<%= dirs.snapshot %>/javascripts',
+            tmpErrorPages: '<%= dirs.tempErrorPages %>',
+            govukElementsTemp: '<%= dirs.public %>/stylesheets/elements',
+            dest: [
+                '<%= dirs.temp %>',
+                '<%= dirs.tempErrorPages %>',
+                '<%= dirs.dist %>',
+                '<%= dirs.public %>',
+                '<%= dirs.errorPages %>/assets'
+            ]
         },
         sass: {
             govukElementsDev: {
@@ -139,7 +146,7 @@ module.exports = function (grunt) {
                     style: 'expanded',
                     sourcemap: true,
                     lineNumbers: true,
-                    loadPath: ['<%= dirs.govuk.template %>/public/sass']
+                    loadPath: '<%= dirs.govuk.template %>/public/sass'
                 },
                 files: [{
                     expand: true,
@@ -152,7 +159,7 @@ module.exports = function (grunt) {
             govukElementsDist: {
                 options: {
                     style: 'compressed',
-                    loadPath: ['<%= dirs.govuk.template %>/public/sass']
+                    loadPath: '<%= dirs.govuk.template %>/public/sass'
                 },
                 files: [{
                     expand: true,
@@ -198,41 +205,37 @@ module.exports = function (grunt) {
                     src: ['**/*.css'],
                     dest: '<%= dirs.public %>/stylesheets/',
                     rename: function(dest, src) {
-                        return dest + src.replace(/\.css$/, ".min.css");
+                        return dest + src.replace(/\.css$/, '.min.css');
                     }
                 }]
             },
             copyImagestoSnapshot: {
-                files: [
-                    {
-                        expand: true,
-                        cwd:'<%= dirs.govuk.template %>/public/images/',
-                        src: ['**/*.png','**/*.gif'],
-                        dest: '<%= dirs.snapshot %>/<%= dirs.images %>/'
-                    }
-                ]
+                files: [{
+                    expand: true,
+                    cwd:'<%= dirs.govuk.template %>/public/images/',
+                    src: ['**/*.png','**/*.gif'],
+                    dest: '<%= dirs.snapshot %>/<%= dirs.images %>/'
+                }]
             },
             copyImagestoPublic: {
-                files: [
-                    {
-                        expand: true,
-                        cwd:'<%= dirs.govuk.template %>/public/images/',
-                        src: ['**/*.png','**/*.gif'],
-                        dest: '<%= dirs.public %>/<%= dirs.images %>/'
-                    }
-                ]
+                files: [{
+                    expand: true,
+                    cwd:'<%= dirs.govuk.template %>/public/images/',
+                    src: ['**/*.png','**/*.gif'],
+                    dest: '<%= dirs.public %>/<%= dirs.images %>/'
+                }]
             },
             copyGOVUKElementsJSandAppJS: {
                 files: [{
-                    src: ['<%= dirs.govuk.elements %>/public/javascripts/application.js'],
+                    src: '<%= dirs.govuk.elements %>/public/javascripts/application.js',
                     dest: '<%= dirs.temp %>/javascripts/govuk_application.js'
                 },
                 {
-                    src: ['<%= dirs.govuk.elements %>/public/javascripts/vendor/details.polyfill.js'],
+                    src: '<%= dirs.govuk.elements %>/public/javascripts/vendor/details.polyfill.js',
                     dest: '<%= dirs.temp %>/javascripts/vendor/details.polyfill.js'
                 },
                 {
-                    src: ['javascripts/application.js'],
+                    src: 'javascripts/application.js',
                     dest: '<%= dirs.temp %>/javascripts/hmrc_application.js'
                 }]
             },
@@ -245,82 +248,70 @@ module.exports = function (grunt) {
                 },
                 {
                     expand: true,
-                    cwd: 'bower_components/jquery',
-                    src: 'jquery.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/vendor/'
-                },
-                {
-                    expand: true,
-                    cwd: 'bower_components/json3/lib',
-                    src: 'json3.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/vendor/'
-                },
-                {
-                    expand: true,
-                    cwd: 'bower_components/jquery-validation',
-                    src: 'jquery.validate.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/plugins/jquery/'
-                },
-                {
-                    src: 'bower_components/modernizr/modernizr.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/vendor/modernizr.js'
-                },
-                {
-                    src: 'bower_components/jquery-validation/additional-methods.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/plugins/jquery/jquery.validate.additional-methods.js'
-                },
-                {
-                    src: 'bower_components/stageprompt/script/stageprompt.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/stageprompt.2.0.1.js'
-                },
-                {
-                    expand: true,
                     cwd:'<%= dirs.govuk.template %>/public/javascripts',
                     src: ['**/*.js'],
                     dest: '<%= dirs.snapshot %>/javascripts'
                 },
                 {
-                    expand: true,
-                    cwd:'<%= dirs.govuk.elements %>/public/javascripts/vendor/',
-                    src: 'details.polyfill.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/vendor/'
+                    src: '<%= dirs.bower %>/jquery/jquery.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/vendor/jquery.js'
+                },
+                {
+                    src: '<%= dirs.bower %>/json3/lib/json3.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/vendor/json3.js'
+                },
+                {
+                    src: '<%= dirs.bower %>/jquery-validation/jquery.validate.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/plugins/jquery/jquery.validate.js'
+                },
+                {
+                    src: '<%= dirs.bower %>/modernizr/modernizr.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/vendor/modernizr.js'
+                },
+                {
+                    src: '<%= dirs.bower %>/jquery-validation/additional-methods.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/plugins/jquery/jquery.validate.additional-methods.js'
+                },
+                {
+                    src: '<%= dirs.bower %>/stageprompt/script/stageprompt.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/stageprompt.2.0.1.js'
+                },
+                {
+                    src: '<%= dirs.govuk.elements %>/public/javascripts/vendor/details.polyfill.js',
+                    dest: '<%= dirs.snapshot %>/javascripts/vendor/details.polyfill.js'
                 }]
             },
             copyErrorPagesToSnapshot: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '<%= dirs.tempErrorPages %>',
-                        src: ['*.html'],
-                        filter: 'isFile',
-                        dest: '<%= dirs.snapshot %>'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= dirs.govuk.template %>/public/stylesheets/',
-                        src: ['govuk-template*', 'fonts*'],
-                        filter: 'isFile',
-                        dest: '<%= dirs.snapshot %>/<%= dirs.css %>/'
-                    }
-                ]
+                files: [{
+                    expand: true,
+                    cwd: '<%= dirs.tempErrorPages %>',
+                    src: ['*.html'],
+                    filter: 'isFile',
+                    dest: '<%= dirs.snapshot %>'
+                },
+                {
+                    expand: true,
+                    cwd: '<%= dirs.govuk.template %>/public/stylesheets/',
+                    src: ['govuk-template*', 'fonts*'],
+                    filter: 'isFile',
+                    dest: '<%= dirs.snapshot %>/<%= dirs.css %>/'
+                }]
             },
             copyErrorPagesToDist: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '<%= dirs.tempErrorPages %>',
-                        src: ['*.html'],
-                        filter: 'isFile',
-                        dest: '<%= dirs.public %>'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= dirs.govuk.template %>/public/stylesheets/',
-                        src: ['govuk-template*', 'fonts*'],
-                        filter: 'isFile',
-                        dest: '<%= dirs.public %>/<%= dirs.css %>/'
-                    }
-                ]
+                files: [{
+                    expand: true,
+                    cwd: '<%= dirs.tempErrorPages %>',
+                    src: ['*.html'],
+                    filter: 'isFile',
+                    dest: '<%= dirs.public %>'
+                },
+                {
+                    expand: true,
+                    cwd: '<%= dirs.govuk.template %>/public/stylesheets/',
+                    src: ['govuk-template*', 'fonts*'],
+                    filter: 'isFile',
+                    dest: '<%= dirs.public %>/<%= dirs.css %>/'
+                }]
             }
         },
         watch: {
@@ -343,15 +334,15 @@ module.exports = function (grunt) {
         },
         modernizr: {
             dist: {
-                "devFile" : "javascripts/vendor/modernizr.js",
-                "outputFile" : "<%= dirs.public %>/javascripts/vendor/modernizr.js",
-                "extra" : {
-                    "shiv" : true,
-                    "cssclasses" : true
+                devFile : 'javascripts/vendor/modernizr.js',
+                outputFile : '<%= dirs.public %>/javascripts/vendor/modernizr.js',
+                extra : {
+                    shiv : true,
+                    cssclasses : true
                 },
-                "extensibility" : {
-                    "teststyles" : true,
-                    "prefixes" : true,
+                extensibility : {
+                    teststyles : true,
+                    prefixes : true,
                 }
             }
         },
@@ -395,9 +386,9 @@ module.exports = function (grunt) {
         replace: {
             build: {
                 options: {
-                  patterns: [{
-                      match: 'minify',
-                      replacement: '.min'
+                    patterns: [{
+                        match: 'minify',
+                        replacement: '.min'
                     }]
                 },
                 files: [{
@@ -410,9 +401,9 @@ module.exports = function (grunt) {
             },
             dev: {
                 options: {
-                  patterns: [{
-                      match: 'minify',
-                      replacement: ''
+                    patterns: [{
+                        match: 'minify',
+                        replacement: ''
                     }]
                 },
                 files: [{
@@ -427,7 +418,7 @@ module.exports = function (grunt) {
         bower: {
             install: {
                 options: {
-                    targetDir: './bower_components',
+                    targetDir: '<%= dirs.bower %>',
                     copy: false
                 }
             }
