@@ -1,47 +1,58 @@
 /**
-* @desc         Progress indicator style navigation module
-* @name         progress-indicator
-* @author       Richard Vinall
-* @required		[ /base/_layouts.scss ]
+* @desc          Progress indicator style navigation module
+* @name          progress-indicator
+* @author        Richard Vinall
+* @required      [/base/_layouts.scss ]
 */
 
-.progress-indicator--vertical {
-    @extend .l-contentColumn--1_of_4;
-}
 .progress-indicator__list {
     margin: 0;
     ul, ol {
-    	margin: 0;
-    	padding: 0;
-    }
-    h2 a {
-    	text-decoration: none;
-    }
-    h2.active a,
-    h2.current a {
-    	color: $black;
-    	text-decoration: none;
-    }
-    .active a {
-    	color: #2e8aca;
-	}
-	.current,
-    .current h3,
-	.current a {
-		margin: 0;
-    	color: #2e8aca;
-	}
-	.inactive,
-	.inactive h2,
-	.inactive a {
-    	color: #ababab;
-	}
-
-	.tick {
-        color: #00692f;
-        margin-left: 5px;
+        margin: 0;
+        padding: 0;
     }
 }
 .progress-indicator__list-item {
     list-style-type: none;
 }
+.progress-indicator__list-item__completed {
+    color: #00692f;
+    margin-left: 5px;
+
+}
+
+/******** list item states ********/
+.progress-indicator__list-item--current, .progress-indicator__list-item--active {
+    @extend .progress-indicator__list-item;
+    a {
+        margin: 0;
+        color: $link-active-colour;
+
+    }
+}
+.progress-indicator__list-item--current {
+    a {
+        font-weight: bold;
+    }
+}
+
+.progress-indicator__list-item--inactive {
+    @extend .progress-indicator__list-item;
+    &:first-child {
+        color: $grey-1;
+    }
+}
+
+
+/******** heading states ********/
+.progress-indicator__list-item__heading--current {
+    > a {
+        color: $text-colour;
+    }
+}
+.progress-indicator__list-item__heading--inactive {
+    > a {
+        color: $grey-1;
+    }
+}
+
