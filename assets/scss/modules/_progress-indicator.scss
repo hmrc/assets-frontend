@@ -38,7 +38,7 @@
 
 .progress-indicator__list-item--inactive {
     @extend .progress-indicator__list-item;
-    &.first-child {
+    &:first-child {
         color: $grey-1;
     }
 }
