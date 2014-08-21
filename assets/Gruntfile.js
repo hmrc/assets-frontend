@@ -414,6 +414,7 @@ module.exports = function (grunt) {
                         'jquery.validate.additional-methods': '../<%= dirs.bower %>/jquery-validation/additional-methods',
                         'details.polyfill': '../<%= dirs.govuk.elements %>/public/javascripts/vendor/details.polyfill',
                         'stageprompt': '../<%= dirs.bower %>/stageprompt/script/stageprompt',
+                        'govuk-elements': '../<%= dirs.govuk.elements %>/govuk/public/javascripts/govuk-template',
                         'base64': 'base64v1_0',
                         'mdtpdf': 'mdtpdf'
                     },
@@ -424,6 +425,9 @@ module.exports = function (grunt) {
                     include: [
                         'json3',
                         'details.polyfill',
+                        'base64',
+                        'mdtpdf',
+                        'govuk-elements',
                         'modules/fingerprint',
                         'application'
                     ],
