@@ -5,7 +5,6 @@ module.exports = function (grunt) {
 
     // Loading the different plugins
     require('load-grunt-tasks')(grunt);
-    grunt.loadNpmTasks('grunt-replace');
 
     // Project configuration.
     grunt.initConfig({
@@ -20,7 +19,7 @@ module.exports = function (grunt) {
             css: 'stylesheets',
             images: 'images',
             errorPages: 'error_pages',
-            bower: './bower_components',
+            bower: 'bower_components',
             tempErrorPages: '.tmp/temp_error_pages',
             govuk :{
                 elements: 'govuk_elements',
@@ -88,7 +87,7 @@ module.exports = function (grunt) {
                     '<%= dirs.temp %>/javascripts/govuk_application.js',
                     '<%= dirs.temp %>/javascripts/hmrc_application.js'
                 ],
-                dest: '<%= dirs.snapshot %>/javascripts/application.js',
+                dest: '<%= dirs.temp %>/javascripts/application.js',
                 nonull: true
             },
             govukJSwithAppJSProd: {
@@ -152,7 +151,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= dirs.govuk.elements %>/public/sass',
                     src: ['main*.scss'],
-                    dest: '<%= dirs.snapshot %>/<%= dirs.css %>/elements',
+                    dest: '<%= dirs.temp %>/css/elements',
                     ext: '.css'
                 }]
             },
@@ -192,18 +191,29 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'scss',
                     src: ['*.scss'],
-                    dest: '<%= dirs.snapshot %>/stylesheets',
+                    dest: '<%= dirs.temp %>/css',
                     ext: '.css'
                 }]
             }
         },
         copy: {
-            renameCSStoMin: {
+            renameCSStoMinDist: {
                 files: [{
                     expand: true,
                     cwd: '<%= dirs.temp %>/concat',
                     src: ['**/*.css'],
                     dest: '<%= dirs.public %>/stylesheets/',
+                    rename: function(dest, src) {
+                        return dest + src.replace(/\.css$/, '.min.css');
+                    }
+                }]
+            },
+            renameCSStoMinDev: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= dirs.temp %>/concat',
+                    src: ['**/*.css'],
+                    dest: '<%= dirs.snapshot %>/stylesheets/',
                     rename: function(dest, src) {
                         return dest + src.replace(/\.css$/, '.min.css');
                     }
@@ -239,46 +249,10 @@ module.exports = function (grunt) {
                     dest: '<%= dirs.temp %>/javascripts/hmrc_application.js'
                 }]
             },
-            copyJavaScripttoSnapshot: {
+            modernizrDev: {
                 files: [{
-                    expand: true,
-                    cwd:'javascripts',
-                    src: ['**/*.js'],
-                    dest: '<%= dirs.snapshot %>/javascripts/'
-                },
-                {
-                    expand: true,
-                    cwd:'<%= dirs.govuk.template %>/public/javascripts',
-                    src: ['**/*.js'],
-                    dest: '<%= dirs.snapshot %>/javascripts'
-                },
-                {
-                    src: '<%= dirs.bower %>/jquery/jquery.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/vendor/jquery.js'
-                },
-                {
-                    src: '<%= dirs.bower %>/json3/lib/json3.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/vendor/json3.js'
-                },
-                {
-                    src: '<%= dirs.bower %>/jquery-validation/jquery.validate.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/plugins/jquery/jquery.validate.js'
-                },
-                {
                     src: '<%= dirs.bower %>/modernizr/modernizr.js',
                     dest: '<%= dirs.snapshot %>/javascripts/vendor/modernizr.js'
-                },
-                {
-                    src: '<%= dirs.bower %>/jquery-validation/additional-methods.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/plugins/jquery/jquery.validate.additional-methods.js'
-                },
-                {
-                    src: '<%= dirs.bower %>/stageprompt/script/stageprompt.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/stageprompt.2.0.1.js'
-                },
-                {
-                    src: '<%= dirs.govuk.elements %>/public/javascripts/vendor/details.polyfill.js',
-                    dest: '<%= dirs.snapshot %>/javascripts/vendor/details.polyfill.js'
                 }]
             },
             copyErrorPagesToSnapshot: {
@@ -329,7 +303,13 @@ module.exports = function (grunt) {
             },
             updateJS: {
                 files: ['javascripts/**/*.js'],
-                tasks: ['clean:javascripts','copy:copyJavaScripttoSnapshot']
+                tasks: ['requirejs', 'copy:modernizrDev']
+            },
+            configFiles: {
+                files: ['Gruntfile.js'],
+                options: {
+                    reload: true
+                }
             }
         },
         modernizr: {
@@ -422,20 +402,90 @@ module.exports = function (grunt) {
                     copy: false
                 }
             }
+        },
+        requirejs: {
+            compile: {
+                options: {
+                    baseUrl: 'javascripts',
+                    paths: {
+                        'json3': '../<%= dirs.bower %>/json3/lib/json3',
+                        'jquery': '../<%= dirs.bower %>/jquery/jquery',
+                        'jquery.validate': '../<%= dirs.bower %>/jquery-validation/jquery.validate',
+                        'jquery.validate.additional-methods': '../<%= dirs.bower %>/jquery-validation/additional-methods',
+                        'details.polyfill': '../<%= dirs.govuk.elements %>/public/javascripts/vendor/details.polyfill',
+                        'stageprompt': '../<%= dirs.bower %>/stageprompt/script/stageprompt',
+                        'base64': 'base64v1_0',
+                        'mdtpdf': 'mdtpdf'
+                    },
+                    shim: {
+                        'jquery.validate': ['jquery'],
+                        'jquery.validate.additional-methods': ['jquery']
+                    },
+                    include: [
+                        'json3',
+                        'details.polyfill',
+                        'modules/fingerprint',
+                        'application'
+                    ],
+                    name: '../<%= dirs.bower %>/almond/almond',
+                    out: '<%= dirs.snapshot %>/javascripts/application.min.js',
+                    preserveLicenseComments: false,
+                    generateSourceMaps: true,
+                    optimize: 'none',
+                    // uglify2: {
+                    //     mangle: false
+                    // },
+                    // wrap: true
+                }
+            }
         }
     });
 
     // Default task(s).
-    grunt.registerTask('default', [ 'clean:dest', 'express', 'bower:install', 'jshint', 'replace:dev', 'copy:copyImagestoSnapshot', 'copy:copyJavaScripttoSnapshot', 'combineGOVUKJSwithAppJSDev', 'sass:govukElementsDev', 'sass:dev', 'copy:copyErrorPagesToSnapshot', 'watch']);
+    grunt.registerTask('default', [
+        'clean:dest',
+        'express',
+        'bower:install',
+        'jshint',
+        'replace:dev',
+        'copy:copyImagestoSnapshot',
+        'requirejs',
+        'copy:modernizrDev',
+        'combineGOVUKJSwithAppJSDev',
+        'sass:govukElementsDev',
+        'sass:dev',
+        'cssmin:combineAllCSS',
+        'copy:renameCSStoMinDev',
+        'copy:copyErrorPagesToSnapshot',
+        'watch'
+    ]);
+
     //Build
-    grunt.registerTask('build', ['clean:dest', 'bower:install', 'jshint', 'test', 'copy:copyImagestoPublic', 'combineGOVUKJSwithAppJSProd', 'concatenate', 'sass:govukElementsDist', 'sass:dist', 'cssmin:combineAllCSS', 'copyMinCSS', 'modernizr:dist', 'clean:govukElementsTemp', 'replace:build', 'copy:copyErrorPagesToDist', 'zipup:build', 'clean:tmp', 'clean:sass_cache', 'clean:tmpErrorPages']);
+    grunt.registerTask('build', [
+        'clean:dest',
+        'bower:install',
+        // 'test',
+        'copy:copyImagestoPublic',
+        'combineGOVUKJSwithAppJSProd',
+        'concatenate',
+        'sass:govukElementsDist',
+        'sass:dist',
+        'cssmin:combineAllCSS',
+        'copy:renameCSStoMinDist',
+        'modernizr:dist',
+        'clean:govukElementsTemp',
+        'replace:build',
+        'copy:copyErrorPagesToDist',
+        'zipup:build',
+        'clean:tmp',
+        'clean:sass_cache',
+        'clean:tmpErrorPages'
+    ]);
+
     //Test
-    grunt.registerTask('test', ['jshint','karma:continuous']);
+    grunt.registerTask('test', ['jshint', 'karma:continuous']);
     // Conatenate all Javascript
-    grunt.registerTask('concatenate', ['concat:single', 'concat:jquery', 'minify', 'concat:combineAll']);
-    //Obfuscate all Javascript
-    grunt.registerTask('minify', ['uglify']);
-    grunt.registerTask('copyMinCSS', ['copy:renameCSStoMin']);
+    grunt.registerTask('concatenate', ['concat:single', 'concat:jquery', 'uglify', 'concat:combineAll']);
     // add GOVUK elements Javascript to application.js
     grunt.registerTask('combineGOVUKJSwithAppJSDev', ['copy:copyGOVUKElementsJSandAppJS', 'concat:govukJSwithAppJSDev']);
     grunt.registerTask('combineGOVUKJSwithAppJSProd', ['copy:copyGOVUKElementsJSandAppJS', 'concat:govukJSwithAppJSProd']);
