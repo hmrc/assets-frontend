@@ -23,20 +23,16 @@ if [[ -n $1 ]]; then
 	case "$1" in
 
 	"dev") echo "Starting grunt dev mode..."
-		  npm install
-		  grunt
-		  ;;
+	  npm install
+	  grunt
+	  ;;
 	"build") echo "Starting grunt build task..."
-				npm install
-				grunt build
-				;;
-	"buildQA") echo "Starting grunt build task..."
-				npm install
-				grunt buildQA:${BUILD_NUMBER}
-				;;
+		npm install
+		grunt build
+		;;
 	"test")  echo "Starting grunt test task..."
-				grunt test
-				;;
+		grunt test
+		;;
 	*)  echo "invalid parameter '$1'"
 		;;
 	esac
