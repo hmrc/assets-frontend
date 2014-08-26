@@ -11,5 +11,5 @@ indent_style = space
 indent_size = 2
 
 # Matches the exact files either package.json or .travis.yml
-[{Gruntfile.js, *.json}]
+[*.json]
 indent_size = 4
