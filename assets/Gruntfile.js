@@ -172,8 +172,7 @@ module.exports = function(grunt) {
           '!node_modules/**'
         ],
         tasks: [
-          'jshint',
-          // 'karma:continuous',
+          'test',
           'requirejs:dev'
         ]
       },
