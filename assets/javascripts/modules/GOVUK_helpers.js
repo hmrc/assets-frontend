@@ -1,27 +1,31 @@
-GOVUK.setCookie = function (name, value, duration) {
-    var expires = '';
-    if (duration) {
+define(['jquery'], function($) {
+  return {
+    expires: '',
+    setCookie: function(name, value, duration) {
+      if (duration) {
         var date = new Date();
         date.setTime(date.getTime() + (duration * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toGMTString();
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
-};
-GOVUK.getCookie = function (name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
+        this.expires = "; expires=" + date.toGMTString();
+      }
+      document.cookie = name + "=" + value + this.expires + "; path=/";
+    },
+    getCookie: function(name) {
+      var i, c, nameEQ = name + "=",
+        ca = document.cookie.split(';');
+      for (i = 0; i < ca.length; i += 1) {
+        c = ca[i];
         while (c.charAt(0) === ' ') {
-            c = c.substring(1, c.length);
+          c = c.substring(1, c.length);
         }
         if (c.indexOf(nameEQ) === 0) {
-            return c.substring(nameEQ.length, c.length);
+          return c.substring(nameEQ.length, c.length);
         }
+      }
+      return null;
+    },
+    // TODO: remove this if it isn't being used
+    eraseCookie: function(name) {
+      this.setCookie(name, "", -1);
     }
-    return null;
-};
-// TODO: remove this if it isn't being used
-GOVUK.eraseCookie = function (name) {
-    GOVUK.setCookie(name, "", -1);
-};
+  };
+});

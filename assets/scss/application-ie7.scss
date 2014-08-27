@@ -4,10 +4,11 @@ $ie-version: 7;
 /*------------------------------------*\
     IE Version
 \*------------------------------------*/
-@import "application";
+@import "../govuk_elements/public/sass/main-ie7.scss";
+@import "application-base";
 
 /*TODO: cleanup ie styles: currently just pulling in all styles so what's the point? */
- .report-error {
-    display: block;
-	zoom: 1;
+.report-error {
+  display: block;
+  zoom: 1;
 }
