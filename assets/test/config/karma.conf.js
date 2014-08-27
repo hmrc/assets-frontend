@@ -16,6 +16,7 @@ module.exports = function(config) {
       {pattern: 'test/specs/helpers/jasmine-matchers.js', included: false},
       {pattern: 'bower_components/**/*.js', included: false},
       {pattern: 'javascripts/modules/*.js', included: false},
+      {pattern: 'javascripts/*.js', included: false},
       {pattern: 'test/specs/fixtures/*.html', included: false},
       {pattern: 'test/specs/*.js', included: false},
       {pattern: 'test/specs/helpers/*.js', included: false}

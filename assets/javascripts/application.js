@@ -1,6 +1,6 @@
 require([
   'jquery',
-  'modules/SSO_Links',
+  'modules/SSO_links',
   'modules/contentNudge',
   'modules/reportAProblem',
   'modules/preventDoubleSubmit',
@@ -11,8 +11,7 @@ require([
   'modules/registerBlockInputFields',
   'modules/exitSurveyValidation',
   'modules/saEmailPrefs',
-  'jquery.validate',
-  'jquery.validate.additional-methods'
+  'jquery.validate'
 ], function(
   $,
   setSSOLinks,

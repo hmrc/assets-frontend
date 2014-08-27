@@ -1,4 +1,4 @@
-define(['jquery', 'mdtpdf', 'jasmine-matchers'], function($) {
+define(['jquery', 'modules/mdtpdf', 'jasmine-matchers'], function($) {
   describe("Device Fingerprint", function() {
       var fingerprint;
 

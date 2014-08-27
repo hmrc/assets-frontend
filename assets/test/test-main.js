@@ -25,7 +25,6 @@ requirejs.config({
     'stageprompt': '../bower_components/stageprompt/script/stageprompt',
     'govuk-elements': '../govuk_elements/govuk/public/javascripts/govuk-template',
     'base64': '../bower_components/base64v1_0/index',
-    'mdtpdf': 'modules/mdtpdf',
     'jasmine-jquery': '../test/specs/helpers/jasmine-jquery',
     'jasmine-matchers': '../test/specs/helpers/jasmine-matchers'
   },
