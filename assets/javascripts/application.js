@@ -125,7 +125,7 @@ require([
 
     if ($("*[data-contextual-helper]").length) {
       // setup showing/hiding of contextual fields
-      toggleContextualFields.setup();
+      toggleContextualFields().setup();
     }
 
     toggleDynamicFormFields();
