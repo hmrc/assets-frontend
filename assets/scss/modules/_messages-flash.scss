@@ -1,42 +1,42 @@
-section.flash {
+.flash {
     border: 3px solid #6f777b;
     background-color: #f8f8f8;
     padding: 20px;
     margin-bottom: 40px;
     max-width: 798px;
 }
-section.flash h2 {
+.flash h2 {
     margin: 0;
     font-weight: bold;
 }
-section.flash h3 {
+.flash h3 {
     margin: 0 0 10px;
 }
-section.flash ul {
+.flash ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-section.flash li {
+.flash li {
     list-style-type: none;
 }
-section.flash.error-summary {
+.flash.error-summary {
     border-color: #e12d2d;
     background-color: #faebec;
 }
-section.flash.error-summary h2 {
+.flash.error-summary h2 {
     margin: 0 0 10px;
 }
-section.flash.error-summary li {
+.flash.error-summary li {
     color: #e12d2d;
 }
-section.flash.error-summary li a {
+.flash.error-summary li a {
     color: #e12d2d;
 }
-section.flash.error-summary li a:hover {
+.flash.error-summary li a:hover {
     text-decoration: none;
 }
-section.flash.success {
+.flash.success {
     border-color: #85994b;
     background-color: #e7ebda;
 }
