@@ -1,6 +1,6 @@
 .flash {
-    border: 3px solid #6f777b;
-    background-color: #f8f8f8;
+    border: 3px solid $grey-1;
+    background-color: $grey-9;
     padding: 20px;
     margin-bottom: 40px;
     max-width: 798px;
@@ -22,19 +22,19 @@
 }
 
 .flash.error-summary {
-    border-color: #e12d2d;
-    background-color: #faebec;
+    border-color: $error-border-color;
+    background-color: $error-bg-color;
     h2 {
         margin: 0 0 10px;
     }
     li {
-        color: #e12d2d;
+        color: $error-color;
     }
     li a {
-        color: #e12d2d;
-    }
-    li a:hover {
-        text-decoration: none;
+        color: $error-color;
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
 
