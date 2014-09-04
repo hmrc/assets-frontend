@@ -9,53 +9,7 @@
 body {
 	counter-reset: section;
 }
-%bodyColumn {
-	float:left;
-}
-.l-constrained {
-	@extend %contain-floats;
-	text-align: left;
-	 max-width: 960px;
-	 margin: 0 auto;
-	 *, *:before, *:after {
-	 	@include box-sizing(border-box);
-	 }
-}
-.l-constrained--header {
-	@extend .l-constrained;
-	padding: 0.5em 0px;
-}
-.l-constrained--topBordered {
-	@extend .l-constrained;
-	//border-top: 10px solid $mainstream-brand; TODO: remove this class altogether as border now set as part of the service info. Must change the markup in play-frontend as well.
-}
-.l-bodyLeftColumn{
-	@extend %bodyColumn;
-	@include media(tablet) {
-		width: 64%;
-		margin-right:3.125%;
-	}
-}
-.l-bodyRightColumn {
-	@extend %bodyColumn;
-	width: 31.25%;
-}
-.l-contentColumn {
-	@extend %bodyColumn;
-	@extend %contain-floats;
-}
-.l-contentColumn--1_of_4 {
-	@extend .l-contentColumn;
-	width: 25%;
-}
-.l-contentColumn--2_of_4 {
-	@extend .l-contentColumn;
-	width: 50%;
-}
-.l-contentColumn--3_of_4 {
-	@extend .l-contentColumn;
-	width: 75%;
-}
+
 #content {
 	@extend %contain-floats;
 	display: block;
@@ -67,10 +21,27 @@ body {
 	}
 }
 
-.l-constrained--full-width,
-.l-constrained--full-width article, 
-.l-constrained--topBordered.full-width article {
-	// TODO: get rid of !important when refactor out the #content > article
+// TODO: remove lines 24-35 once all frontends are using play-frontend@8.1.0 + 
+#content>article {
+  @include media(tablet) {
+    width: 64%;
+    float: left;
+  }
+}
+
+.full-width article {
 	float: none!important;
 	width: 100%!important;
+}
+
+.content__body {
+	.full-width & {
+		float: none;
+		width: 100%;
+	}
+
+	@include media(tablet) {
+    	width: 64%;
+    	float: left;
+  	}
 }
