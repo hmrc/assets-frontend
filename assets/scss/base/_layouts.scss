@@ -21,7 +21,7 @@ body {
 	}
 }
 
-// TODO: remove lines 24-35 once all frontends are using play-frontend@ + 
+// TODO: remove lines 24-35 once all frontends are using play-frontend@8.1.0 + 
 #content>article {
   @include media(tablet) {
     width: 64%;
