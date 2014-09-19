@@ -308,7 +308,10 @@ label {
 .block-label--inline-right,
 .inline .block-label {
   clear: none;
-  margin-right: $gutter-half;
+  margin-right: 0;
+  @include media(tablet) {
+    margin-right: $gutter-half;
+  }
 }
 
 // Only if JavaScript is enabled
