@@ -1,7 +1,7 @@
 define(['jquery'], function($) {
   // allow the user to report page errors
   return function() {
-    var $reportErrorContainer = $('.report-error__content'),
+        var $reportErrorContainer = $('.report-error__content'),
         $submitButton = $reportErrorContainer.find('.button'),
         showErrorMessage = function() {
           var response = "<h2>Sorry, we're unable to receive your message right now.</h2> " +
@@ -13,7 +13,7 @@ define(['jquery'], function($) {
         },
         //TODO: should refactor to use Javascript debounce
         disableSubmitButton = function() {
-          $submitButton.attr("disabled", true);
+          $submitButton.attr("disabled", "disabled");
         },
         enableSubmitButton = function() {
           $submitButton.attr("disabled", false);
