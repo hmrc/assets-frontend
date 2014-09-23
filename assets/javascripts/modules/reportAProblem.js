@@ -13,10 +13,10 @@ define(['jquery'], function($) {
         },
         //TODO: should refactor to use Javascript debounce
         disableSubmitButton = function() {
-          $submitButton.attr("disabled", true);
+          $submitButton.prop("disabled", true);
         },
         enableSubmitButton = function() {
-          $submitButton.attr("disabled", false);
+          $submitButton.prop("disabled", false);
         },
         showConfirmation = function(data) {
           $reportErrorContainer.html(data.message);
