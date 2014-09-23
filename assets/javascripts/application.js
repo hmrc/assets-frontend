@@ -62,7 +62,7 @@ require([
       //Highlight invalid input
       highlight: function(element, errorClass) {
         $(element).parent().addClass('form-field--error');
-        $errorReportForm.find('.button').attr('disabled', false);
+        $errorReportForm.find('.button').prop('disabled', false);
       },
       //Unhighlight valid input
       unhighlight: function(element, errorClass) {

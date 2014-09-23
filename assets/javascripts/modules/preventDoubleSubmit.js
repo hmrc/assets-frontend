@@ -6,7 +6,7 @@ define(['jquery'], function($) {
           submited: true
         });
         $('input[type=submit], button[type=submit]', this).each(function() {
-          $(this).attr("disabled", "disabled");
+          $(this).prop("disabled", true);
         });
         return true;
       } else {
