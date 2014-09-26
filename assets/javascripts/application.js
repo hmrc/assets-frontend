@@ -11,7 +11,8 @@ require([
   'modules/registerBlockInputFields',
   'modules/exitSurveyValidation',
   'modules/saEmailPrefs',
-  'jquery.validate'
+  'jquery.validate',
+  'jquery.validate.additional-methods'
 ], function(
   $,
   setSSOLinks,
@@ -62,6 +63,7 @@ require([
       //Highlight invalid input
       highlight: function(element, errorClass) {
         $(element).parent().addClass('form-field--error');
+        //TODO: temp fix for form submission bug. Report a problem needs a rewrite
         $errorReportForm.find('.button').prop('disabled', false);
       },
       //Unhighlight valid input
