@@ -153,70 +153,6 @@ article dd {
   margin-bottom: 0.75em;
 }
 
-article table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin: 1em -1em 2em -1em;
-  width: 105.95%;
-
-  caption {
-    @include bold-24;
-    margin: 0.4em 0.5em 0.4em 0.7em;
-    text-align: left;
-  }
-
-  @include media-down(mobile) {
-    margin: 1em 0 2em 0;
-    width: 100%;
-
-    caption {
-      padding-left: 0;
-    }
-  }
-}
-
-article th, article td {
-  @include core-16;
-  vertical-align: top;
-  padding: 0.7em 0.5em 0.7em 1em;
-
-  a[rel="external"] {
-    @include external-link-16;
-    @include media-down(mobile) {
-      @include external-link-14;
-    }
-  }
-}
-
-article tr:nth-child(even) td {
-  background-color: #fff;
-}
-
-article td {
-  background: $grey-9;
-  border: dotted 1px $grey-7;
-
-  small {
-    @include core-16;
-  }
-}
-
-/* reduce table font size on very small screens */
-@media screen and (max-width: 320px) {
-  article th, article td, article td small {
-    font-size: 10px;
-  }
-}
-
-article th {
-  line-height: 1.25em;
-  text-align: left;
-  color: $grey-0;
-  font-weight: 700;
-  background-color: $grey-8;
-  border: solid 1px $grey-6;
-}
-
 /*
  * More article formatting including markdown styles.
  */
@@ -390,7 +326,6 @@ article .subscribe {
     background-image: image-url("../images/icon-calendar-2x.png");
     background-size: 27px 27px;
   }
-
 }
 
 article .info-notice {
@@ -574,12 +509,12 @@ article ol.steps {
 
     @for $i from 1 through 14 {
       &:nth-child(#{$i}) {
-  background-image: image-url("../images/icon-steps/icon-step-#{$i}.png");
+        background-image: image-url("../images/icon-steps/icon-step-#{$i}.png");
 
-  @include device-pixel-ratio() {
-    background-image: image-url("../images/icon-steps/icon-step-#{$i}-2x.png");
-    background-size: 24px 24px;
-  }
+        @include device-pixel-ratio() {
+          background-image: image-url("../images/icon-steps/icon-step-#{$i}-2x.png");
+          background-size: 24px 24px;
+        }
       }
     }
 
@@ -622,8 +557,8 @@ article ol.steps {
       line-height: inherit;
 
       em {
-  font-size: 1em;
-  display: inline;
+        font-size: 1em;
+        display: inline;
       }
     }
   }

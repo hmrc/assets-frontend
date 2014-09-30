@@ -1,50 +1,28 @@
-article table {
-	width: 100%;
-	margin-left: 0;
-	th, td {
-		padding: 5px 10px;
-	}
-
-	caption {
-		@include bold-16;
-		padding: 0.7em 0.5em 0.7em 1em;
-		border: 1px solid $grey-6;
-		background-color: $grey-8;
-		border-bottom: 0!important;
-		margin: 0;
-	}
-	
-	tr:nth-child(even) {
-		th[scope="row"] {
-			background-color: #fff;
+table {
+	td, th {
+		&.right-aligned {
+			text-align: right;
 		}
 	}
-	th {
-    	border: 1px solid $grey-6;
-		background-color: $grey-8;
-		&[scope="row"] {
-			background-color: $grey-9;
-			font-weight: 300;
-		}
-	}
-	td {
-		border: 1px solid $grey-6;
+	.highlight td, caption {
+		font-weight: 700;
 	}
 }
 
+//TODO refactor out when messages used by yta/sa designs are finalised
 .table--borderless {
 	td, th {
 		border: none;
 		padding: 0.5em 0;
 	}
 	th {
-		background-color: $white;
-		border-bottom: 1px solid $grey-6;		
+		border-bottom: 1px solid $grey-6;
 	}
 }
+//TODO refactor out when messages used by yta/sa designs are finalised
 .table__row--bold {
 	td, th {
-		font-weight: bold;
+		font-weight: 700;
 	}
 	a {
 		color: inherit;
