@@ -24,7 +24,7 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'bower_components/**/*Spec.js'
+      'bower_components/**/*{s,S}pec.js'
     ],
 
     preprocessors: {
