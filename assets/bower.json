@@ -23,7 +23,6 @@
     "json3": "~3.3.2",
     "jquery-validation": "~1.11.1",
     "stageprompt": "alphagov/stageprompt#~2.1.0",
-    "modernizr": "~2.8.3",
-    "base64v1_0": "http://download-codeplex.sec.s-msft.com/Download/Release?ProjectName=jsbase64&DownloadId=388390&FileTime=130290497334270000&Build=20928"
+    "modernizr": "~2.8.3"
   }
 }
