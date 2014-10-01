@@ -9,7 +9,6 @@ require.config({
     'details.polyfill': '../govuk_elements/public/javascripts/vendor/details.polyfill',
     'stageprompt': '../bower_components/stageprompt/script/stageprompt',
     'govuk-elements': '../govuk_elements/govuk/public/javascripts/govuk-template',
-    'base64': '../bower_components/base64v1_0/index',
     'mdtpdf': 'modules/mdtpdf'
   },
   shim: {
@@ -19,7 +18,6 @@ require.config({
   include: [
     'json3',
     'details.polyfill',
-    'base64',
     'mdtpdf',
     'govuk-elements',
     'modules/fingerprint',

@@ -1,4 +1,4 @@
-require(['base64', 'mdtpdf'], function() {
+require(['vendor/base64v1_0', 'mdtpdf'], function() {
 
   // TODO: obscure all references to fingerprint
   var fingerprint = new window.Mdtpdf({
