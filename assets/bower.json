@@ -23,6 +23,7 @@
     "json3": "~3.3.2",
     "jquery-validation": "~1.11.1",
     "stageprompt": "alphagov/stageprompt#~2.1.0",
-    "modernizr": "~2.8.3"
+    "modernizr": "~2.8.3",
+    "base64": "davidchambers/Base64.js#~0.3.0"
   }
 }

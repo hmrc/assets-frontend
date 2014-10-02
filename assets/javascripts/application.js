@@ -1,6 +1,5 @@
 require([
   'jquery',
-  'vendor/base64v1_0',
   'modules/SSO_links',
   'modules/contentNudge',
   'modules/reportAProblem',
