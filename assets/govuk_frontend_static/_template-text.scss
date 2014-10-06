@@ -89,16 +89,6 @@ article li {
     margin: 0;
     list-style-position: inside;
   }
-
-  li {
-    @include core-19;
-    list-style-type: circle;
-  }
-
-  p {
-    @include core-19;
-    margin: 0;
-  }
 }
 
 article ul, article ol {
