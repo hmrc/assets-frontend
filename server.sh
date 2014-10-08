@@ -1,36 +1,26 @@
 #!/bin/bash
+
+output() {
+  printf "\n$1\n"
+}
+
+deps() {
+  echo "Checking for dependancies..."
+  npm install
+}
+
 cd assets/
-
-echo "Checking for dependancies..."
-
-if [ "$(gem list ^bundler$ -i)" != "true" ]; then
-	echo "Intalling bundler..."
-	gem install bundler
-
-	if [ $? -ne 0 ]; then
-		# TODO: check for ruby environment
-		echo "Bundler failed to install. Check the output above and try again."
-		exit 1
-	fi
-fi
-
-if [ "$(gem list ^sass$ -i)" != "true" ]; then
-	echo "Running bundler install..."
-	bundle install
-fi
 
 if [[ -n $1 ]]; then
 	case "$1" in
 
-	"dev") echo "Starting grunt dev mode..."
-	  npm install
+	"dev") deps && output "Starting grunt in dev mode..."
 	  grunt
 	  ;;
-	"build") echo "Starting grunt build task..."
-		npm install
+	"build") deps && output "Starting grunt build task..."
 		grunt build
 		;;
-	"test")  echo "Starting grunt test task..."
+	"test")  deps && output "Starting grunt test task..."
 		grunt test
 		;;
 	*)  echo "invalid parameter '$1'"
