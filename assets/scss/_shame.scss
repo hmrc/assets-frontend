@@ -145,3 +145,9 @@ Overriding page header styling from GOVUK elements
   border-bottom: 0px;
   padding: 0;
 }
+
+
+/* Add grey footer when page is too short */
+
+html { background: $grey-8; }
+body { background: $white; }
