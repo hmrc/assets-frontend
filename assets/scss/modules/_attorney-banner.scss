@@ -1,0 +1,30 @@
+.nested-banner {
+padding: 10px 0 8px 0;
+}
+.nested-banner{
+padding-top: 10px;
+padding-bottom: 18px;
+}
+.nested-banner p {
+margin: 0;
+text-align: left;
+padding-top: 12px;
+padding-bottom: 12px;
+padding-left:15px;
+font-family: "nta", Arial, sans-serif;
+font-size: 19px;
+line-height: 1.25;
+font-weight: 300;
+text-transform: none;
+color: $attorney-grey;
+background-color: $attorney-yellow;
+}
+
+.nested-banner a {
+font-family: "nta", Arial, sans-serif;
+font-size: 19px;
+line-height: 1.25;
+font-weight: 300;
+text-transform: none;
+color: $attorney-grey;
+}
