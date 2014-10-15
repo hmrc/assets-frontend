@@ -1,25 +1,23 @@
 .nested-banner {
+
     padding: 10px 0 18px 0;
-}
 
-.nested-banner p {
-    margin: 0;
-    text-align: left;
-    padding:12px 0 12px 15px;
-    font-family: "nta", Arial, sans-serif;
-    font-size: 19px;
-    line-height: 1.25;
-    font-weight: 300;
-    text-transform: none;
-    color: $attorney-grey;
-    background-color: $attorney-yellow;
-}
+    p a{
+        font-family: "nta", Arial, sans-serif;
+        font-size: 19px;
+        line-height: 1.25;
+        font-weight: 300;
+        text-transform: none;
+        color: $attorney-grey;
 
-.nested-banner a {
-    font-family: "nta", Arial, sans-serif;
-    font-size: 19px;
-    line-height: 1.25;
-    font-weight: 300;
-    text-transform: none;
-    color: $attorney-grey;
+    }
+
+    p{
+        margin: 0;
+        text-align: left;
+        padding:12px 0 12px 15px;
+        background-color: $attorney-yellow;
+
+    }
+    
 }
