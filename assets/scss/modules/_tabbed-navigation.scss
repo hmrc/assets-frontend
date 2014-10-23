@@ -21,7 +21,7 @@
   a {
     border-top: 1px solid $border-colour;
     display: block;
-    padding: 0.5em;
+    padding: 0.5em 0;
     text-decoration: none;
 
     .count {
@@ -47,6 +47,8 @@
 }
 
 .tab-navigation__tab--active {
+	margin-bottom: 0;
+	padding: 0.5em 0;
   @include media(tablet) {
       	border: 1px solid $border-colour;
         border-bottom: 1px solid #fff;
