@@ -47,6 +47,7 @@
 }
 
 .tab-navigation__tab--active {
+	border-top: 1px solid $border-colour;
 	margin-bottom: 0;
 	padding: 0.5em 0;
   @include media(tablet) {
