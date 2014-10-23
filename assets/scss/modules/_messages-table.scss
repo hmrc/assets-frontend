@@ -1,5 +1,9 @@
 table.messages {
 	width: 100%;
+
+	th {
+		font-weight: 400;
+	}
 	
 	th:nth-of-type(1) {
 		width: 5%;
@@ -16,10 +20,12 @@ table.messages {
 
 	a {
 		color: #000;
-		text-decoration: none;
+	}
 
+	tbody tr {
+		cursor: pointer;
 		&:hover {
-			text-decoration: underline;
+			background: #dee0e2;
 		}
 	}
 }

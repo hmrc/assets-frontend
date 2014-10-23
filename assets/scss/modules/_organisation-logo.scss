@@ -5,7 +5,7 @@
   display: block;
   position: relative;
   font-size: 13px;
-  line-height: 15px;
+  line-height: 16px;
   padding: 3px 0 2px 0;
   text-decoration: none;
 
@@ -59,7 +59,7 @@ a.organisation-logo {
 .organisation-logo-medium {
   @include media(tablet){
     font-size: 18px;
-    line-height: 20px;
+    line-height: 22px;
     padding: 3px 0 2px 38px;
     background-image: url("../images/icons/crests/hmrc_crest_27px.png");
     background-position: 6px center;

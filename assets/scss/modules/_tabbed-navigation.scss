@@ -2,46 +2,66 @@
 * @desc         tabbed navigation styles
 * @name         tabbed-navigation
 * @author       Richard Vinall
-* @requires     [ base/_colours.scss ]
+* @requires     [ base/conditionals.scss, base/_colours.scss ]
 */
-.tab-navigation {
-	border-bottom: 1px solid #ccc;
-	margin: 2em 0;
-	width: 100%;
+.tab-navigation__list {
+  margin-bottom: 1em;
 }
 
 .tab-navigation__list {
-	margin-bottom: -1px;
-}
-.tab-navigation__tab {
-	display: inline-block;
-	padding: 0 19px;
-	line-height: 2.9em;
-	margin-bottom: 0;
-}
-.tab-navigation__tab--active {
-	@extend .tab-navigation__tab;
-	background: $white;
-	border: 1px solid #ccc;
-	border-bottom: 0;
+  border-bottom: 1px solid #ccc;
+  list-style-type: none;
+  @include media(tablet) {
+    display: flex;
+  }
 }
 
-.highlight-block {
-	display: inline-block;
-	color: $white;
-	padding: 7px 0.5em 5px;
-	margin-left: 10px;
-	font-size: 16px;
-	text-decoration: none;
-	line-height: 16px;
+.tab-navigation__tab {
+  margin-bottom: 0;
+  a {
+    border-top: 1px solid $border-colour;
+    display: block;
+    padding: 0.5em 0;
+    text-decoration: none;
+
+    .count {
+      background-color: $red;
+      color: $white;
+      padding: 0 5px;
+    }
+  }
+
+  @include media(tablet) {
+      display: inline-block;
+      a {
+        background-color: #dee0e2;
+        border: 0;
+        margin: 0.25em 0.25em 0.25em 0;
+        padding: 0.45em;
+      }
+
+      @include ie-lte(7) {
+        zoom: 1;
+      }
+  }
 }
+
+.tab-navigation__tab--active {
+	border-top: 1px solid $border-colour;
+	margin-bottom: 0;
+	padding: 0.5em 0;
+  @include media(tablet) {
+      	border: 1px solid $border-colour;
+        border-bottom: 1px solid #fff;
+        margin: 0 0.25em -1px 0;
+        padding: 0.7em;
+  }
+}
+
 .highlight-block--red {
-	@extend .highlight-block;
-	background: $alert-bg-red;
-}
-.highlight-block--black {
-	@extend .highlight-block;
-	background: $black;
+	background-color: $red;
+	color: $white;
+    padding: 0 5px;	
 }
 
 
