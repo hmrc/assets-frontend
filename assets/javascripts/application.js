@@ -2,6 +2,7 @@ require([
   'jquery',
   'modules/SSO_links',
   'modules/contentNudge',
+  'modules/tableRowClick',
   'modules/reportAProblem',
   'modules/preventDoubleSubmit',
   'modules/toggleContextualFields',
@@ -17,6 +18,7 @@ require([
   $,
   setSSOLinks,
   contentNudge,
+  tableRowClick,
   reportAProblem,
   preventDoubleSubmit,
   toggleContextualFields,
@@ -33,6 +35,12 @@ require([
       // TODO: fix error thrown when clicking a [data-sso] links
       return setSSOLinks(e, window.ssoUrl);
     });
+
+    var $clickableRow = $('.clickable-row');
+
+    if($clickableRow.length) {
+      tableRowClick($clickableRow);
+    }
     preventDoubleSubmit();
 
     // initialise stageprompt for Analytics

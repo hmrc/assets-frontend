@@ -8,10 +8,13 @@
     margin: 0 auto;
   }
 
+  .logo {
+      margin-top: 10px;
+  }
+
   @include media(tablet) {
     .logo {
       float: left;
-      margin-top: 10px;
       width: 33.33%;
     }
   }
