@@ -2,7 +2,7 @@ define(['jquery'], function($) {
   return function() {
     var $form = $('#form-submit-email-address'),
       setup = function() {
-        if ($('.email-prefs__toggle[value="true"]').is(':checked')) {
+        if ($('.email-prefs__toggle[value="true"]').attr('checked') === 'checked') {
           $form.find('.connected').removeClass('js-hidden');
         }
         $('.email-prefs__toggle').click(function() {
