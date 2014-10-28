@@ -44,8 +44,7 @@ require([
     preventDoubleSubmit();
 
     // initialise stageprompt for Analytics
-    // TODO: Enable once we set up Goggle Analytics
-    // GOVUK.performance.stageprompt.setupForGoogleAnalytics();
+    GOVUK.performance.stageprompt.setupForGoogleAnalytics();
 
     // toggle for reporting a problem (on all content pages)
     $('.report-error__toggle').on('click', function(e) {
