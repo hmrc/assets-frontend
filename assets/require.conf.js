@@ -23,6 +23,7 @@ require.config({
     'mdtpdf',
     'govuk-elements',
     'modules/fingerprint',
+    'stageprompt',
     'application'
   ],
   preserveLicenseComments: false,
