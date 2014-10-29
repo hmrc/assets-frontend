@@ -5,13 +5,11 @@
 * @requires     [ base/conditionals.scss, base/_colours.scss ]
 */
 .tab-navigation__list {
-  margin-bottom: 1em;
-}
-
-.tab-navigation__list {
   border-bottom: 1px solid #ccc;
   list-style-type: none;
+  margin-bottom: 1em;
   @include media(tablet) {
+    @extend %contain-floats;
     display: flex;
   }
 }
@@ -32,16 +30,12 @@
   }
 
   @include media(tablet) {
-      display: inline-block;
+      float: left;
       a {
         background-color: #dee0e2;
         border: 0;
         margin: 0.25em 0.25em 0.25em 0;
         padding: 0.45em;
-      }
-
-      @include ie-lte(7) {
-        zoom: 1;
       }
   }
 }
@@ -53,6 +47,7 @@
   @include media(tablet) {
       	border: 1px solid $border-colour;
         border-bottom: 1px solid #fff;
+        float: left;
         margin: 0 0.25em -1px 0;
         padding: 0.7em;
   }
