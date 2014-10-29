@@ -374,6 +374,15 @@ label {
   FROM GOVUK_ELEMENTS
 */ 
   
+.form-hint {
+  display: block;
+  color: $secondary-text-colour;
+  margin-bottom: 5px;
+  @include media (tablet) {
+    margin-top: 8px;
+  }
+}
+
 .form-date label {
   display: block;
   margin-bottom: 5px;
