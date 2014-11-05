@@ -4,6 +4,11 @@
 * @author       Richard Vinall
 * @requires     [ base/conditionals.scss, base/_colours.scss ]
 */
+
+.tab-navigation {
+  margin: 2em 0;
+}
+
 .tab-navigation__list {
   border-bottom: 1px solid #ccc;
   list-style-type: none;
