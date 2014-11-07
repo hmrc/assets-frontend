@@ -1,0 +1,46 @@
+table {
+	td, th {
+		&.right-aligned {
+			text-align: right;
+		}
+	}
+	.highlight td, caption {
+		font-weight: 700;
+	}
+}
+
+//TODO refactor out when messages used by yta/sa designs are finalised
+.table--borderless {
+	td, th {
+		border: none;
+		padding: 0.5em 0;
+	}
+	th {
+		border-bottom: 1px solid $grey-6;
+	}
+}
+//TODO refactor out when messages used by yta/sa designs are finalised
+.table__row--bold {
+	td, th {
+		font-weight: 700;
+	}
+	a {
+		color: inherit;
+	}
+}
+.marker-column {
+	padding: 0;
+	vertical-align: middle;
+}
+.marker-column__marker {
+	background-color: $red;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	text-indent: -99999px;
+	width: 10px;
+	height: 10px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}

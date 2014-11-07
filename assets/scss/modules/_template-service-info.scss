@@ -1,0 +1,40 @@
+.service-info {
+  border-top: 10px solid $mainstream-brand;
+  padding-bottom: 0.5em;
+  @extend %contain-floats;
+
+  .inner {
+    max-width: 990px;
+    margin: 0 auto;
+  }
+
+  .logo {
+      margin-top: 10px;
+  }
+
+  @include media(tablet) {
+    .logo {
+      float: left;
+      width: 33.33%;
+    }
+  }
+
+  .service-info__help {
+    @include media(tablet) {
+      float: left;
+      width: 66.66%;
+    }
+    margin-top: 10px;
+
+    p {
+      @include core-16(20/16);
+      color: $secondary-text-colour;
+      margin: 1em 0;
+
+      @include media(tablet) {
+        margin: 0;
+        padding-top: 5px;
+      }
+    }
+  }
+}

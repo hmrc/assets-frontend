@@ -1,0 +1,7 @@
+.phase-tag {
+  @include phase-tag(beta);
+}
+
+.beta-banner {
+  @include phase-banner(beta);
+}

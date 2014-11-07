@@ -1,0 +1,65 @@
+.page-navigation {
+  @include media-down(mobile) {
+    margin-top: 0;
+  }
+
+  width: 64%;
+  float: left;
+
+  ol {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    overflow: hidden;
+    width:50%;
+
+    @include ie-lte(7) {
+      width: 49%;
+    }
+
+    @include media-down(mobile) {
+      float: none;
+      display: block;
+      width: auto;
+    }
+  }
+
+  li {
+    list-style: decimal;
+    list-style-position: outside;
+    margin-right: 0.75em;
+    margin-left: 1.5em;
+    clear: left;
+
+    @include ie-lte(7) {
+      list-style: none;
+      margin-left: 0;
+      display: list-item;
+    }
+
+    @include media-down(mobile) {
+      float: none;
+      margin: 0 1em 0 2.25em;
+    }
+
+    a {
+      padding: 0.25em 1em 0.25em 0;
+      @include core-16;
+
+      @include ie-lte(7) {
+        display: inline;
+        float: left;
+      }
+    }
+
+    @include media-down(mobile) {
+      @include core-19($line-height: (45/19));
+
+      span, a {
+        border-top: solid 1px $grey-6;
+        margin: 0 -1em 0 -2.25em;
+        padding: 1em 1em 1em 2.75em;
+      }
+    }
+  }
+}

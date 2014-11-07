@@ -1,0 +1,65 @@
+/**
+* @desc         header classes.
+* @name         header
+* @author       Anthony Munene
+* @tested       N/A
+* @requires     [
+					toolkit/_colours.scss,
+					toolkit/_typography.scss,
+					toolkit/_shims.scss,
+					toolkit/_conditionals.scss
+				]
+*/
+.header {
+	@extend %contain-floats;
+	background-color: $black;
+    @include ie(6) {
+      width: 960px;
+    }
+}
+.header__logo {
+	@extend %contain-floats;
+    padding-top: 0;
+    float: left;
+    margin: 5px 0 2px 0;
+    @media screen and (max-width: 379px) {
+      width: auto;
+      float: none;
+    }
+    a {
+		float: left;
+		position: relative;
+		width: 166px;
+		height: 30px;
+		overflow: hidden;
+		img {
+			position: absolute;
+			left: -166px;
+			top: 0;
+			border: none;
+			width: 200%;
+			height: 300%;
+		}
+    }
+}
+.header__menu__proposition-name {
+	@include bold-24;
+	text-decoration: none;
+	color: $white; // TODO: add to color variables
+}
+
+.header__menu__proposition-links {
+	@include bold-16;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	li {
+		display: inline;
+		padding-right: 15px;
+	}
+	a{
+		@include bold-16;
+		color: $white;
+		text-decoration: none;
+	}
+}

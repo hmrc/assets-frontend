@@ -1,0 +1,15 @@
+.report-error {
+	display: inline-block;
+	clear: both;
+	width: 100%;
+	margin: 2em 0 1.5em 0;
+	.report-error__toggle {
+		@include core-16;
+		color: #454a4c;
+	}
+
+  @include media(tablet) {
+    width: 66%;
+    float: left;
+  }
+}

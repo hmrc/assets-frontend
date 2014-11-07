@@ -1,0 +1,36 @@
+/**
+* @desc         button classes.
+* @name         buttons
+* @author       Anthony Munene
+* @tested       N/A
+* @requires     [
+					toolkit/_colours.scss,
+					toolkit/_typography.scss,
+					toolkit/design-patterns/_buttons.scss
+				]
+*/
+button, .button {
+	text-transform: capitalize;
+	@include button($button-colour);
+	@include core-19();
+	margin: 0;
+}
+
+.button--alert {
+	@include button($red);
+	@include core-19();
+}
+.button--get-started {
+	@extend .button;
+	@include bold-24();
+	padding-right: 40px;
+	background-image: url("../images/icons/icon-pointer.png");
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+	&:hover {
+    background-image: url("../images/icons/icon-pointer.png");
+		background-position: 100% 50%;
+		background-repeat: no-repeat;
+	}
+
+}

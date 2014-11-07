@@ -1,0 +1,52 @@
+
+.service-info__organisation-logo {
+	background-image: url("../images/icons/crests/hmrc_crest_27px.png");
+	background-repeat: no-repeat;
+	border-left: 2px solid #bbb;
+	border-color: #009390;
+	padding: 50px 0 0 9px;
+	margin-top: 5px;
+	background-position: 9px top;
+	background-size: auto 40px;
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	line-height: 20px;
+}
+
+.service-info__related-subsection {
+	border-top: 10px solid $mainstream-brand;
+	margin-top: 3em;
+}
+.service-info__help {
+	@include core-16();
+	color: #6f777b;
+}
+.service-info__navigation {
+	a{
+		@include core-16();
+	}
+}
+.service-info__navigation__more {
+	padding: 0 0.5em;
+	background-color: $light-blue-25;
+	text-decoration: none;;
+}
+
+.organisation-logo span {
+	margin-left: 0;
+	padding-top: 5px;
+}
+
+#legacy-sources {
+	position: relative;
+
+	left: 43.3em;
+}
+
+.organisation-logo-stacked-hmrc-large {
+  padding: 40px 0 0 10px;
+  background-image: url("../images/icons/crests/hmrc_crest_27px.png");
+  background-position: 9px top;
+  background-size: auto 40px;
+}

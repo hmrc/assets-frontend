@@ -1,0 +1,56 @@
+// govuk_frontend_toolkit
+@import "../govuk_frontend_toolkit/stylesheets/_colours";
+@import "../govuk_frontend_toolkit/stylesheets/_conditionals";
+@import "../govuk_frontend_toolkit/stylesheets/_css3";
+@import "../govuk_frontend_toolkit/stylesheets/_device-pixels";
+@import "../govuk_frontend_toolkit/stylesheets/_typography";
+@import "../govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta";
+@import "../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons";
+
+// Reset
+@import "base/normalize";
+
+//Static Specific
+@import "../govuk_frontend_static/colours";
+@import "../govuk_frontend_static/conditionals2";
+@import "../govuk_frontend_static/basic";
+@import "../govuk_frontend_static/template-text";
+
+
+// HMRC Specific
+@import "base/colours";
+@import "base/fonts";
+@import "base/typography";
+@import "base/layouts";
+@import "base/buttons";
+@import "base/form";
+@import "base/lists";
+@import "base/table";
+@import "base/helpers";
+@import "base/errors";
+
+//Modules
+@import "modules/header";
+@import "modules/attorney-banner";
+@import "modules/footer";
+@import "modules/phase-beta";
+@import "modules/template-service-info";
+@import "modules/action-list";
+@import "modules/dashboard";
+@import "modules/template-page-header";
+@import "modules/page-navigation";
+@import "modules/reminders";
+@import "modules/organisation-logo";
+@import "modules/template-footer";
+@import "modules/report-error";
+@import "modules/help-contents";
+@import "modules/template-sidebar";
+@import "modules/tabbed-navigation";
+@import "modules/messages-table";
+@import "modules/messages-flash";
+
+//Overrides
+@import "shame";
+
+//Unkown CSS
+@import "modules/unknown";

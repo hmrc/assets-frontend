@@ -1,0 +1,372 @@
+/**
+* @desc         Form Field classes.
+* @name         form
+* @author       username
+* @tested       N/A
+* @requires     toolkit/_colours.scss
+*/
+
+fieldset {
+  @include core-19();
+  margin: 0;
+  position: relative;
+  width: 100%;
+  legend {
+    width: 100%;
+    float: left;
+    clear: right;
+    margin-bottom: 0.75em;
+    &.h2-heading {
+      margin: 0 0 0.25em 0;
+    }
+  }
+}
+
+input {
+  @include core-19();
+  background-color: $input-bg-colour;
+  border: 1px inset $input-border;
+  margin: 0;
+  padding: 0.1em 0 0.1em 0.4em;
+  &:focus {
+    outline: 3px solid $yellow;
+  }
+}
+
+select {
+  margin: 0 0.625em;
+  @include inline-block;
+  width: auto;
+}
+
+textarea {
+  @include core-19();
+  background-color: $input-bg-colour;
+  border: 1px inset $input-border;
+  margin: 0;
+  padding: 0.1em 0 0.1em 0.4em;
+  &:focus {
+    outline: 3px solid $yellow;
+  }
+}
+
+select {
+  width: auto;
+  position: relative;
+  vertical-align: 2px;
+}
+
+input[type="radio"] {
+  border: none;
+}
+
+.input--xxsmall {
+  max-width: 2em;
+}
+.input--xsmall {
+  max-width: 4em;
+}
+.input--small {
+  max-width: 6em;
+}
+.input--medium {
+  width: 100%;
+  @include media(tablet) {
+    width: 20em;
+  }
+}
+.input--fullwidth {
+  width: 98.2%;
+}
+
+
+.input--link {
+  background: none;
+  border: none;
+  color: #2e3191;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  outline: none;
+
+  &:hover,
+  &:active {
+    color: #2e8aca;
+  }
+  &:visited {
+    color: #2e3191;
+  }
+}
+.input--cleared {
+  display: block;
+}
+
+.input--radio-inline {
+  margin-right: 5px
+}
+
+/**
+ * By default form labels will be above inputs
+ */
+label {
+  @include core-19();
+  display: block;
+}
+
+/**
+ * align labels with inputs
+ */
+label.indent {
+  padding-left: 1.5em;
+}
+
+.label--inline {
+  display: inline-block;
+  margin-top: 0.2em;
+  min-width: 130px;
+  @include ie-lte(8) {
+    width: 130px;
+  }
+
+}
+
+.label--inline-no-input {
+  @extend .label--inline;
+  margin-left: 16px;
+  margin-top: 0.75em;
+  min-width: 60px;
+  clear: none;
+  float: left;
+  @include ie-lte(8) {
+    width: 60px;
+  }
+}
+
+.label--inline-tight {
+  @extend .label--inline;
+  min-width: 0;
+  @include ie-lte(8) {
+    width: auto;
+  }
+
+}
+.label--inline-right{
+  @extend .label--inline;
+  float: right;
+}
+.label--inlineRadio{
+  @extend .label--inline;
+  @extend %contain-floats;
+  min-width: 0;
+  @include ie-lte(8) {
+    width: auto;
+  }
+
+}
+.label--inlineRadio--expanded {
+  @extend .label--inlineRadio;
+  width: 100%;
+  input {
+    float: left;
+    margin-right: 0.25em;
+    margin-top: 0.15em;
+    @include ie-lte(8) {
+      margin-top: 0.3em;
+    }
+  }
+  .label__text {
+    float: left;
+    width: 90%;
+  }
+
+}
+.label--inlineRadio--overhead {
+    float: left;
+    margin-bottom: 0.75em;
+    text-align: center;
+    width: 5.8em;
+    word-spacing: 5.8em;
+}
+.label--inlineRadio--overhead-wide {
+    @extend .label--inlineRadio--overhead;
+    width: 6.8em;
+}
+.label--inlineDropDown {
+  @extend .label--inlineRadio;
+}
+
+.label--full-length {
+  @extend .label--inline;
+  width: 100%;
+  clear: both;
+}
+
+.form-field-group {
+  margin-bottom: 0.75em;
+  line-height: 1.6em;
+  @extend %contain-floats;
+  clear: both;
+}
+.form-field-single {
+  @extend .form-field-group;
+}
+.form-field {
+  @extend %contain-floats;
+  float: left;
+  margin-bottom: 0.75em;
+  margin-top: 0;
+  width: 100%;
+}
+
+/**
+ *  Allows you to stack input blocks side by side
+ */
+.form-field--inline {
+  @extend .form-field;
+  clear: none;
+  float: left;
+  width: auto;
+  position: relative;
+
+  input[type="text"], input[type="password"] {
+    margin: 0 0.52em;
+  }
+}
+
+.form-field--inline-text-input {
+  @extend .form-field--inline;
+}
+.form-field--inline-spaced-right {
+  @extend .form-field--inline;
+  margin-right: 15px;
+}
+.form-field--inline-spaced-left {
+  @extend .form-field--inline;
+  margin-left: 15px;
+}
+
+.form-field--hint {
+  @extend .faded-text;
+  display: block;
+  margin-bottom: 0.75em;
+}
+
+.row {
+  margin-bottom: 20px;
+} 
+
+label {
+  &.bold {
+    font-weight: bold;
+  }
+}
+
+.questionnaire {
+  legend {
+    margin: 0 0 0.75em;
+  }
+}
+
+// new form styles
+
+.block-label {
+
+  display: block;
+  float: none;
+  clear: left;
+  position: relative;
+
+  background: $panel-colour;
+  border: 1px solid $panel-colour;
+  padding: (18px $gutter $gutter-half $gutter*1.5);
+  margin: 10px 10px 10px 0;
+  
+  cursor: pointer; // Encourage clicking on block labels
+
+  @include media(tablet) {
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    // width: 25%; - Test : check that text within labels will wrap
+  }
+}
+
+.block-label:hover {
+  border-color: $black;
+}
+
+// Position checkbox within label, to allow text to wrap
+.block-label input {
+  position: absolute;
+  top: 21px;
+  left: $gutter-half;
+  cursor: pointer;
+}
+
+// Use inline, to sit block labels next to each other
+.block-label--inline,
+.block-label--inline-right,
+.inline .block-label {
+  clear: none;
+  margin-right: 0;
+  @include media(tablet) {
+    margin-right: $gutter-half;
+  }
+}
+
+// Only if JavaScript is enabled
+
+// Add focus styles to block labels
+.js-enabled .add-focus {
+  outline: 3px solid $yellow;
+  input {
+    outline: none;
+  }
+}
+
+// Remove focus styles from radio and checkbox inputs
+.js-enabled .block-label input:focus {
+  outline: none;
+}
+
+// Add selected state to block labels
+.js-enabled .selected {
+  background: $white;
+  border-color: $black;
+}
+
+
+.block-label--stacked {
+  @extend .block-label;
+  clear: none;
+  line-height: 1;
+  padding-left: 30px;
+  float: left;
+  input {
+    display: block;
+    margin: 0 auto 0.8em;
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+}
+
+.dynamically-displayed {
+  border-left: 5px solid $grey-8;
+  clear: both;
+  margin: 0 0 15px;  
+  padding: 0.5em 30px;
+}
+
+
+
+/*
+  Date field input group
+*/
+
+.label--dateField-group {
+  @extend .label--inlineRadio--overhead;
+  text-align: left;
+  width: 3.5em;
+}
+

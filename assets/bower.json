@@ -1,0 +1,29 @@
+{
+  "name": "assets-frontend",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "**/*.txt",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "authors": [
+    "HMRC"
+  ],
+  "keywords": [
+    "HMRC"
+  ],
+  "license": "Apache License 2.0",
+  "homepage": "https://github.tools.tax.service.gov.uk/HMRC/assets-frontend",
+  "private": true,
+  "devDependencies": {
+    "jquery": "~1.10.2",
+    "almond": "~0.2.9",
+    "json3": "~3.3.2",
+    "jquery-validation": "~1.11.1",
+    "stageprompt": "alphagov/stageprompt#~2.1.0",
+    "modernizr": "~2.8.3",
+    "base64": "davidchambers/Base64.js#~0.3.0"
+  }
+}

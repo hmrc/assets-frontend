@@ -1,0 +1,58 @@
+nav.help-contents {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  .inner {
+    padding: 0;
+    width: auto;
+
+    p {
+      margin-bottom: 0.75em;
+      padding-bottom: 1em;
+    }
+
+    @include media(tablet) {
+      p {
+        padding-bottom: 1.5em;
+      }
+    }
+  }
+
+  ul {
+    @extend %contain-floats;
+
+    margin: 0;
+    padding: 0;
+  }
+  ul li {
+    display: block;
+    float: left;
+    margin-bottom: 0;
+    margin-right: 2.5%;
+    width: 48.75%;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    @include media-down(tablet) {
+      width: auto;
+      margin: 0;
+      float: none;
+    }
+
+    a {
+      @include core-24;
+      @include bold-24;
+
+      margin-top: 0;
+      margin-bottom: 0;
+      text-decoration: none;
+    }
+
+    p {
+      margin-top: 0.2em;
+    }
+  }
+}

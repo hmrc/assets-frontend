@@ -1,0 +1,96 @@
+
+/**
+* @desc         lists.
+* @name         layouts
+* @author       Anthony Munene
+* @tested       N/A
+* @requires     N/A
+*/
+
+ul {
+	list-style-type: none;
+	li {
+    @include core-19();
+	}
+}
+
+.list--numbered {
+	list-style-type: none;
+	padding-left: 0;
+	margin-bottom: 25px;
+	.numbered {
+		margin: 0 0 20px 25px;
+		padding-left: 15px;
+		&:before {
+			counter-increment: section;      /* Increment the section counter */
+			content: counter(section) ". "; /* Display the counter */
+			position: absolute;
+			left: -25px;
+			top: 0;
+			padding-right: 10px;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.bullets {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 1em;
+}
+
+.list--inline {
+	li {
+		display: inline;
+	}
+}
+
+.activity-list {
+	padding-left: 0;
+	li {
+		display: inline-block;
+	}
+}
+.activity-list__date {
+	float: left;
+	text-align: left;
+	min-width:  170px;
+	margin-right: 10px;
+	> * {
+		font-weight: bold;
+	}
+}
+.activity-list__date--highlight {
+	@extend .activity-list__date;
+	font-weight: bold;
+}
+.activity-list__description {
+	float: left;
+	width: 400px;
+}
+
+.coms-alerts {
+	img {
+		margin-right: 10px;
+	}
+}
+
+.dl--label-value {
+	margin-bottom: 1em;
+	overflow: hidden;
+	dt, dd {
+		float: left;
+		margin-left: 0;
+		margin-bottom: 0.25em;
+		width: 50%;
+	}
+	dd {
+		font-family: "nta", Arial, sans-serif;
+		font-size: 19px;
+		font-weight: bold;
+		line-height: 1.31579;
+		text-align: right;
+	}
+}
