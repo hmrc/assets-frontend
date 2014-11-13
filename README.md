@@ -49,8 +49,8 @@ $ ./server build
 
 ### Dependancies
 
-[GOVUK Frontend Toolkit](https://github.com/alphagov/govuk_frontend_toolkit) pulled in using the Subtree merge strategy.
-
+[GOV.UK Elements](https://github.com/alphagov/govuk_elements) pulled in using the Subtree merge strategy.
+ 
 ```
 $ git submodule init && git submodule update
 $ ./update_govuk_elements.sh
