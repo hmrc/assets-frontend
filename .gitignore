@@ -4,7 +4,7 @@
 
 npm-debug.log
 node_modules/
-assets/dist/
+dist/
 logs/
 asset-target/
 test_results/
