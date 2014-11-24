@@ -49,8 +49,10 @@ $ ./server build
 
 ### Dependancies
 
+
 [GOV.UK Elements](https://github.com/alphagov/govuk_elements) pulled in using the Subtree merge strategy.
  
+>>>>>>> 4dcdb4cdafd24a0631facdf04e72e78d3eb3fc63
 ```
 $ git submodule init && git submodule update
 $ ./update_govuk_elements.sh
