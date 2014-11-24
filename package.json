@@ -1,0 +1,19 @@
+{
+  "name": "hmrc-assets-frontend",
+  "version": "0.0.1",
+  "description": "Frontend assets for the tax platform",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hmrc/assets-frontend.git"
+  },
+  "contributors": [
+    "Rory Powis <rory.powis@digital.cabinet-office.gov.uk>",
+    "Richard Vinall <richard.vinall@digital.cabinet-office.gov.uk>",
+    "Anthony Munene <anthony.munene@digital.cabinet-office.gov.uk>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hmrc/assets-frontend/issues"
+  },
+  "homepage": "https://github.com/hmrc/assets-frontend"
+}

@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
     dirs: {
       temp: '.tmp',
-      dist: 'dist',
+      dist: '../dist',
       public: 'public',
       bower: 'bower_components',
       snapshot: 'public/999-SNAPSHOT',
@@ -23,6 +23,12 @@ module.exports = function(grunt) {
     },
 
     clean: {
+      dist: {
+        src: '<%= dirs.dist %>',
+        options: {
+          force: true
+        }
+      },
       public: '<%= dirs.public %>',
       stylesheets: '<%= dirs.snapshot %>/stylesheets'
     },
@@ -143,9 +149,19 @@ module.exports = function(grunt) {
       build: {
         files: [{
           expand: true,
+          cwd: '../',
+          src: ['package.json'],
+          dest: '<%= dirs.dist %>/'
+        }, {
+          expand: true,
           cwd: '<%= dirs.govuk.template %>/public/images',
           src: ['**/*'],
-          dest: '<%= dirs.public %>/images'
+          dest: '<%= dirs.dist %>/images'
+        }, {
+          expand: true,
+          cwd: '<%= dirs.public %>',
+          src: ['**/*', '!**/*.map'],
+          dest: '<%= dirs.dist %>/'
         }]
       }
     },
@@ -186,21 +202,6 @@ module.exports = function(grunt) {
           reload: true
         }
       }
-    },
-
-    // make a zipfile
-    compress: {
-      main: {
-        options: {
-          archive: '<%= dirs.dist %>/<%= pkg.name %>-999-SNAPSHOT.zip',
-          pretty: true
-        },
-        files: [{
-          expand: true,
-          cwd: 'public/',
-          src: '**'
-        }]
-      }
     }
   });
 
@@ -223,8 +224,7 @@ module.exports = function(grunt) {
     'test',
     'requirejs:build',
     'modernizr',
-    'copy:build',
-    'compress'
+    'copy:build'
   ]);
 
   grunt.registerTask('test', [
@@ -232,4 +232,5 @@ module.exports = function(grunt) {
     'karma'
   ]);
 
-}
+
+};
