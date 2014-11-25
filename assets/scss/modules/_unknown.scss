@@ -44,9 +44,10 @@ label.selectable input {
 
 .connected,
 .answer .optional-section {
-  padding: 1em 0 0 15px;
   border-left: 3px solid #999;
+  float: none;
   margin: 1em 0 0 0;
+  padding: 1em 0 0 15px;
   overflow: hidden;
 }
 
