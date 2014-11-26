@@ -68,7 +68,10 @@ div.email {
 }
 
 .indent {
-  margin-left: 2em;
+  border-left: 10px solid $grey-8;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding-left: 1em;
 }
 
 .phase-tag.beta  {
@@ -87,9 +90,6 @@ div.email {
 .inline-form  .form-field--inline input[type="text"] {
   margin: 0 10px;
 }
-
-
-
 
 .service-info__help a {
   font-size: 16px;
