@@ -202,6 +202,19 @@ module.exports = function(grunt) {
           reload: true
         }
       }
+    },
+    compress: {
+      main: {
+        options: {
+          archive: 'dist/<%= pkg.name %>-999-SNAPSHOT.zip',
+          pretty: true
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= dirs.dist %>',
+          src: '**'
+        }]
+      }
     }
   });
 
@@ -224,7 +237,8 @@ module.exports = function(grunt) {
     'test',
     'requirejs:build',
     'modernizr',
-    'copy:build'
+    'copy:build',
+    'compress'
   ]);
 
   grunt.registerTask('test', [
