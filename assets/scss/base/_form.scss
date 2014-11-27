@@ -389,8 +389,12 @@ label {
 }
 
 .form-date {
-  clear: both;
-  overflow: hidden;
+  @extend %contains-floats;
+  display: inline-block;
+
+  @ie-lte(7){
+    zoom: 1;
+  }
 }
 
 .form-date .form-group {
