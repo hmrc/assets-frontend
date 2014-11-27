@@ -392,7 +392,7 @@ label {
   @extend %contains-floats;
   display: inline-block;
 
-  @ie-lte(7){
+  @include(7){
     zoom: 1;
   }
 }
