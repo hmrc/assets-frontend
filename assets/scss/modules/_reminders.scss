@@ -53,3 +53,12 @@
   }
 
 }
+
+.alert-block {
+  background: $alert-bg-red;
+  color: #fff;
+  padding: 0.15em 0.3em;
+  margin: 0 0.2em;
+  text-decoration: none;
+  line-height: 16px;
+}
