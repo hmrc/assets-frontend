@@ -1,20 +1,22 @@
 define(['jquery'], function($) {
   return function() {
-    var $selectableInputs = $("label[class*=block-label]").find('input[type=radio], input[type=checkbox]');
+    var $selectableInputs = $("label[class*=block-label]");
 
-    $selectableInputs.each(function() {
-      $(this).change(function() {
+    $selectableInputs
+      .find('input[type=radio], input[type=checkbox]')
+      .on('focus click', function(e) {
+        e.stopPropagation();
+
+        var current = $(this).closest('label')[0];
+        $(current).addClass('add-focus');
+        $selectableInputs.not(current).removeClass('add-focus');
+      })
+      .on('change', function(e) {
         if ($(this).attr('type') === 'radio') {
-          $(this).closest('label').siblings('label').removeClass('selected');
+          $(this).closest('label').siblings().removeClass('selected');
         }
+
         $(this).closest('label').toggleClass('selected', $(this).prop("checked"));
       });
-      $(this).on('focus', function() {
-        $(this).closest('label').addClass('add-focus');
-      });
-      $(this).on('focusout', function() {
-        $(this).closest('label').removeClass('add-focus');
-      });
-    });
   };
 });
