@@ -21,7 +21,7 @@ h1 {
 
 h2 {
   @include bold-24;
-  margin-top: 0.5em;
+  margin-top: 0.5em!important; //remove importance when govuk_frontend_static is killed
   margin-bottom: 0.25em;
 }
 
