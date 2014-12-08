@@ -84,6 +84,17 @@ small {
   text-decoration: underline;
 }
 
+.button--link-style {
+  border: none;
+  background: none;
+  box-shadow: none;
+  @extend .link-style;
+
+  &:hover, &:focus, &:active {
+    background: none;
+  }
+}
+
 .indent {
   border-left: 10px solid $grey-8;
   margin-bottom: 10px;
