@@ -1,10 +1,14 @@
 aside {
-  border-top: 10px solid $mainstream-brand;
-  position: static;
-  float: none;
+  // border-top: 10px solid $mainstream-brand;
+  // position: static;
+  // float: none;
   width: auto;
   margin: 30px 0 0 0;
 
+  .branded--top { 
+    border-top: 10px solid $mainstream-brand;
+  }
+    
   @include media(tablet) {
     float: right;
     width: 31%;
