@@ -5,7 +5,6 @@ define(['jquery'], function($) {
     $selectableInputs
       .find('input[type=radio], input[type=checkbox]')
       .on('focus click', function(e) {
-        e.stopPropagation();
 
         var current = $(this).closest('label')[0];
         $(current).addClass('add-focus');
