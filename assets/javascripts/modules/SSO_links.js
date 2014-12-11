@@ -3,7 +3,6 @@ define(['jquery'], function($) {
     var a, $target,
         clientSso,
         serverSso,
-        ssoOutHost,
         successful,
         destination,
         payload;
@@ -13,8 +12,7 @@ define(['jquery'], function($) {
      */
     if (element) {
       $target = $(element.target);
-      ssoOutHost = (window.ssoOutHost) ? window.ssoOutHost : '';
-      console.log("ssoOutHost", ssoOutHost);
+      
       clientSso = $(element.target).data('sso') === true || $(element.target).data('sso') === "client";
       serverSso = $(element.target).data('sso') === "server";
       a = document.createElement('a');
@@ -26,7 +24,7 @@ define(['jquery'], function($) {
           destinationUrl: $target[0].href
         };
         $.ajax({
-          url: serverSso ? $target[0].href : ssoOutHost + '/ssoout',
+          url: serverSso ? $target[0].href : '/ssoout',
           data: destination,
           type: 'GET',
           async: false,
