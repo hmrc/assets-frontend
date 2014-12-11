@@ -51,7 +51,7 @@ body {
 }
 
 .bordered-box {
-  border: 1px solid $grey-8;
+  border: 1px solid $border-colour;
   margin-bottom: 20px;
   padding: 20px;
 
@@ -63,7 +63,7 @@ body {
 .bordered-box--shaded {
   @extend .bordered-box;
 
-  background-color: $grey-4;
+  background-color: $shaded-bg-grey;
 
   h2 {
     border-bottom: 5px solid $mainstream-brand;
@@ -72,5 +72,5 @@ body {
 }
 
 .divider--bottom {
-  border-bottom: 1px solid $grey-8;
+  border-bottom: 1px solid $border-colour;
 }
