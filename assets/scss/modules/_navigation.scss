@@ -117,6 +117,18 @@
   }
 }
 
+
+.breadcrumbs {
+  @extend %contain-floats;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.breadcrumbs__crumb {
+  float: left;
+  margin-right: 10px;
+}
+
 .breadcrumbs__crumb:before {
   content: "<";
   margin-right: 3px;
