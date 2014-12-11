@@ -46,6 +46,31 @@ body {
   	}
 }
 
+.brand-border--top {
+  border-top: 10px solid $mainstream-brand; 
+}
+
+.bordered-box {
+  border: 1px solid $border-colour;
+  margin-bottom: 20px;
+  padding: 20px;
+
+  h2 {
+    margin-top: 0!important;
+  }
+}
+
+.bordered-box--shaded {
+  @extend .bordered-box;
+
+  background-color: $shaded-bg-grey;
+
+  h2 {
+    border-bottom: 5px solid $mainstream-brand;
+    margin-top: 0!important;
+  }
+}
+
 .divider--bottom {
-  border-bottom: 1px solid $grey-8;
+  border-bottom: 1px solid $border-colour;
 }
