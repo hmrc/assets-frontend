@@ -31,7 +31,7 @@ define(['jquery'], function($) {
           cache: false,
           success: function(data, status, jqXHR) {
             var form = document.createElement('form');
-            form.method = 'POST';
+            form.method = 'GET';
             form.action = ssoUrl;
             payload = document.createElement('input');
             payload.type = 'hidden';
