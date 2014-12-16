@@ -25,6 +25,9 @@ define(['jquery'], function($) {
             },
             'opt-in': {
               required: true
+            },
+            'accept-tc': {
+              required: true
             }
           },
           messages: {
