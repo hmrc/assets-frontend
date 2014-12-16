@@ -50,25 +50,28 @@ body {
   border-top: 10px solid $mainstream-brand; 
 }
 
-.bordered-box {
-  border: 1px solid $border-colour;
-  margin-bottom: 20px;
-  padding: 20px;
-
+.section {
+  margin-bottom: 1em;
+  padding: 1em;
   h2 {
     margin-top: 0!important;
-  }
+  }  
+}
+
+.section--branded {
+  @extend .section;
+  h2 {
+    border-bottom: 5px solid $mainstream-brand;
+  }  
+}
+
+.bordered-box {
+  border: 1px solid $border-colour;
 }
 
 .bordered-box--shaded {
   @extend .bordered-box;
-
   background-color: $shaded-bg-grey;
-
-  h2 {
-    border-bottom: 5px solid $mainstream-brand;
-    margin-top: 0!important;
-  }
 }
 
 .divider--bottom {
