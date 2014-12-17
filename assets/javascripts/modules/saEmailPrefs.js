@@ -41,6 +41,9 @@ define(['jquery'], function($) {
             },
             'opt-in': {
               required: "Confirm if you want Self Assessment email reminders"
+            },
+            'accept-tc': {
+              required: "You must accept the terms and conditions"
             }
           },
           onfocusout: false,
