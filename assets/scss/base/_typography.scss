@@ -53,7 +53,10 @@ h4 {
   @include bold-36();
 }
 .heading-24 {
-  @include bold-24()
+  @include bold-24();
+}
+.heading-24--normal {
+  @include core-24();
 }
 
 .pre-heading {
@@ -100,4 +103,19 @@ small {
   margin-bottom: 10px;
   overflow: hidden;
   padding-left: 1em;
+}
+
+.flag {
+  display: inline-block;
+  color: $white;
+  padding: 7px 0.5em 5px;
+  font-size: 16px;
+  text-decoration: none;
+  line-height: 16px;
+  &.flag--soon {
+    background-color: $grey-1;
+  }
+  &.flag--urgent {
+    background-color: $red;
+  }
 }
