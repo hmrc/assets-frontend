@@ -21,19 +21,6 @@ body {
 	}
 }
 
-// TODO: remove lines 24-35 once all frontends are using play-frontend@8.1.0 + 
-#content>article {
-  @include media(tablet) {
-    width: 64%;
-    float: left;
-  }
-}
-
-.full-width article {
-	float: none!important;
-	width: 100%!important;
-}
-
 .content__body {
 	.full-width & {
 		float: none;
@@ -41,8 +28,9 @@ body {
 	}
 
 	@include media(tablet) {
-    	width: 64%;
     	float: left;
+      margin-right: 5%;
+      width: 61.666667%;
   	}
 }
 
@@ -52,7 +40,8 @@ body {
 
 .section {
   margin-bottom: 1em;
-  padding: 1em;
+  padding: 1em 0;
+
   h2 {
     margin-top: 0!important;
   }  
@@ -62,11 +51,14 @@ body {
   @extend .section;
   h2 {
     border-bottom: 5px solid $mainstream-brand;
+    margin-top: 0!important;
+    margin-bottom: 0.65em;
   }  
 }
 
 .bordered-box {
   border: 1px solid $border-colour;
+  padding: 1em 1em 0.5em;
 }
 
 .bordered-box--shaded {
