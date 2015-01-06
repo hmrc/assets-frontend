@@ -45,13 +45,12 @@
 .header__menu__proposition-name {
 	@include bold-24;
 	text-decoration: none;
-	color: $white; // TODO: add to color variables
+	color: $white;
 }
 
 .header__menu__proposition-links {
 	@include bold-16;
   float: right;
-  display: inline-block;
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
