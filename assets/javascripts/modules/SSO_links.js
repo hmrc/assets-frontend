@@ -26,7 +26,7 @@ define(['jquery'], function($) {
         $.ajax({
           url: serverSso ? $target[0].href : '/ssoout',
           data: destination,
-          type: 'POST',
+          type: 'GET',
           async: false,
           cache: false,
           success: function(data, status, jqXHR) {

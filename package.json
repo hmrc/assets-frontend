@@ -1,6 +1,6 @@
 {
   "name": "hmrc-assets-frontend",
-  "version": "1.41.0",
+  "version": "1.42.0",
   "description": "Frontend assets for the tax platform",
   "repository": {
     "type": "git",
