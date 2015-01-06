@@ -180,6 +180,18 @@ body.paye .has-paye {
   color: #454a4c;
 }
 
+details {
+  margin: 15px 0;
+
+  .panel-indent {
+    margin: 0;
+
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
 /************************* Styling for important notices *************************/
 
 .important-notice {

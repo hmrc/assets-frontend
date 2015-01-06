@@ -112,6 +112,10 @@ small {
   font-size: 16px;
   text-decoration: none;
   line-height: 16px;
+  @include ie-lte(7) {
+    zoom: 1;
+  }
+
   &.flag--soon {
     background-color: $grey-1;
   }
@@ -119,3 +123,9 @@ small {
     background-color: $red;
   }
 }
+
+.highlight-block--red {
+  @extend .flag;
+  background-color: $red;
+}
+

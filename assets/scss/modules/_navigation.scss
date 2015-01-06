@@ -139,14 +139,3 @@
   color: $black;
   text-decoration: none;
 }
-
-.highlight-block--red {
-  background-color: $red;
-  color: $white;
-  display: inline-block;
-  padding: 0.5em;
-
-  @include ie-lte(7) {
-    zoom: 1;
-  }
-}
