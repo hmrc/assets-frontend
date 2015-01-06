@@ -50,6 +50,8 @@
 
 .header__menu__proposition-links {
 	@include bold-16;
+  float: right;
+  display: inline-block;
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
