@@ -1,6 +1,7 @@
-define(['jquery'], function($) {
-  return function() {
-    $('form').on('submit', function() {
+require('jquery');
+
+module.exports = function () {
+  $('form').on('submit', function() {
       if (typeof $.data(this, "disabledOnSubmit") === 'undefined') {
         $.data(this, "disabledOnSubmit", {
           submited: true
@@ -13,5 +14,4 @@ define(['jquery'], function($) {
         return false;
       }
     });
-  };
-});
+};

@@ -188,10 +188,7 @@ module.exports = function(grunt) {
           'test/test-main.js',
           '!node_modules/**'
         ],
-        tasks: [
-          'test',
-          'requirejs:dev'
-        ]
+        tasks: ['test']
       },
       configFiles: {
         files: [
@@ -215,6 +212,21 @@ module.exports = function(grunt) {
           src: '**'
         }]
       }
+    },
+    browserify: {
+      options: {
+        watch: true
+      },
+      dev: {
+        files: {
+          '<%= dirs.snapshot %>/javascripts/application.min.js': ['javascripts/modules/**/*.js']
+        }
+      },
+      build: {
+        files: {
+          '<%= dirs.public %>/javascripts/application.min.js': ['javascripts/modules/**/*.js']
+        }
+      }
     }
   });
 
@@ -222,8 +234,8 @@ module.exports = function(grunt) {
     'clean',
     'bower:install',
     'sass:dev',
+    'browserify:dev',
     'test',
-    'requirejs:dev',
     'copy:dev',
     'express',
     'watch'
@@ -234,8 +246,8 @@ module.exports = function(grunt) {
     'bower:install',
     'sass:build',
     'cssmin',
+    'browserify:build',
     'test',
-    'requirejs:build',
     'modernizr',
     'copy:build',
     'compress'

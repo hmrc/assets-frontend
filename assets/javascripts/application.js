@@ -1,34 +1,22 @@
-require([
-  'jquery',
-  'modules/SSO_links',
-  'modules/contentNudge',
-  'modules/tableRowClick',
-  'modules/reportAProblem',
-  'modules/preventDoubleSubmit',
-  'modules/toggleContextualFields',
-  'modules/toggleDynamicFormFields',
-  'modules/simpleToggleDynamicFormFields',
-  'modules/questionnaireSubmission',
-  'modules/registerBlockInputFields',
-  'modules/exitSurveyValidation',
-  'modules/saEmailPrefs',
-  'jquery.validate',
-  'jquery.validate.additional-methods'
-], function(
-  $,
-  setSSOLinks,
-  contentNudge,
-  tableRowClick,
-  reportAProblem,
-  preventDoubleSubmit,
-  toggleContextualFields,
-  toggleDynamicFormFields,
-  simpleToggleDynamicFormFields,
-  questionnaireSubmission,
-  registerBlockInputFields,
-  exitSurveyValidation,
-  saEmailPrefs
-) {
+
+require('jquery');
+var setSSOLinks = require('./modules/SSO_links.js');
+var contentNudge = require('./modules/contentNudge.js');
+var tableRowClick = require('modules/tableRowClick.js');
+var reportAProblem = require('./modules/reportAProblem.js');
+var preventDoubleSubmit = require('./modules/preventDoubleSubmit.js');
+var toggleContextualFields = require('./modules/toggleContextualFields.js');
+var toggleDynamicFormFields = require('./modules/toggleDynamicFormFields.js');
+var simpleToggleDynamicFormFields = require('./modules/simpleToggleDynamicFormFields.js');
+var questionnaireSubmission = require('./modules/questionnaireSubmission.js');
+var registerBlockInputFields = require('./modules/registerBlockInputFields.js');
+var exitSurveyValidation = require('./modules/exitSurveyValidation.js');
+var saEmailPrefs = require('./modules/saEmailPrefs.js');
+var GOVUK = require('./modules/GOVUK_helpers.js');
+
+
+
+(function() {
 
   $(function() {
     $(document).on('click', 'a', function(e) {
@@ -146,4 +134,4 @@ require([
     exitSurveyValidation();
     saEmailPrefs().setup();
   });
-});
+})();

@@ -1,5 +1,6 @@
-define(['jquery'], function($) {
-  return function() {
+require('jquery');
+
+modules.export = function() {
     var $dynamicForm = $('form[data-dynamic-form]');
 
     $dynamicForm.find('*[data-dynamic-fields-hide="true"]').each(function() {
@@ -27,5 +28,4 @@ define(['jquery'], function($) {
         $toggledField.find(':checked').prop('checked', false);
       }
     });
-  };
-});
+};

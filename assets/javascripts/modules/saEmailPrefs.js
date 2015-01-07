@@ -1,5 +1,6 @@
-define(['jquery'], function($) {
-  return function() {
+require('jquery');
+
+modules.export = function($) {
     var $form = $('#form-submit-email-address'),
       setup = function() {
         if ($('.email-prefs__toggle[value="true"]').attr('checked') === 'checked') {
@@ -79,5 +80,4 @@ define(['jquery'], function($) {
     return {
       setup: setup
     };
-  };
-});
+};

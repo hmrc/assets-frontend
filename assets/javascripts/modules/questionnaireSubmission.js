@@ -1,5 +1,6 @@
-define(['jquery'], function($) {
-  return function() {
+require('jquery');
+
+module.exports =  function() {
     var $form = $('.questionnaire form');
 
     $form.submit( function(e) {
@@ -11,5 +12,4 @@ define(['jquery'], function($) {
       });
       $form.parents('.questionnaire').toggleClass('js-hidden');
     });
-  };
-});
+};

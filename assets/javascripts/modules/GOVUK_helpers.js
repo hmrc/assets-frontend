@@ -1,5 +1,4 @@
-define(['jquery'], function($) {
-  return {
+module.exports =  {
     expires: '',
     setCookie: function(name, value, duration) {
       if (duration) {
@@ -27,5 +26,4 @@ define(['jquery'], function($) {
     eraseCookie: function(name) {
       this.setCookie(name, "", -1);
     }
-  };
-});
+};

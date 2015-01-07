@@ -1,4 +1,6 @@
-define(['jquery'], function ($) {
+require('jquery');
+
+module.exports = function () {
   return function() {
     var $surveyForm = $('#form-end-journey-questionnaire');
     if ($surveyForm) {
@@ -53,4 +55,4 @@ define(['jquery'], function ($) {
       });
     }
   };
-});
+};
