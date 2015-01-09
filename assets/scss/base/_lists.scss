@@ -41,6 +41,13 @@ ul {
   margin-left: 1em;
 }
 
+.list--ticks {
+  li:before {
+    content: '✔';
+    margin-right: 0.5em;
+  }  
+}
+
 .list--inline {
 	li {
 		display: inline;
