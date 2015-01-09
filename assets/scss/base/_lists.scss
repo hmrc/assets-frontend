@@ -41,6 +41,18 @@ ul {
   margin-left: 1em;
 }
 
+.list--ticks {
+  padding-left: 1.5em;
+
+  li::before {
+    color: $primary-green;
+    content: "\2713";// code for '✓'
+    display: inline-block;
+    margin-left: -1.5em;
+    width: 1.5em;
+  }  
+}
+
 .list--inline {
 	li {
 		display: inline;
