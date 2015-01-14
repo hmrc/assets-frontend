@@ -3,7 +3,7 @@ define(['jquery'], function($) {
     var $target,
         clientSso,
         serverSso,
-        successful,
+        keepDefaultLinkBehaviour,
         destination;
 
     /**
@@ -18,7 +18,7 @@ define(['jquery'], function($) {
       serverSso = $(element.target).data('sso') === "server";
 
       if (clientSso || serverSso) {
-        successful = true;
+        keepDefaultLinkBehaviour = false;
         destination = serverSso ? {
           ssoRedirect: true
         } : {
@@ -33,12 +33,18 @@ define(['jquery'], function($) {
           success: function(data, status, jqXHR) {
             window.location = ssoUrl + '?payload=' + encodeURIComponent(data);
           },
-          error: function() {
-            successful = false;
+          error: function(jqXHR, textStatus, errorThrown) {
+            if(jqXHR.status == 401) {
+              keepDefaultLinkBehaviour = false;
+              window.location.reload();
+            }
+            else {
+              keepDefaultLinkBehaviour = true;
+            }
           }
         });
-        // cancel link click event if everything is successful
-        return !successful;
+        // cancel link click event if SSO call is successful and let the SSO redirect manage that
+        return keepDefaultLinkBehaviour;
       }
     }
   };
