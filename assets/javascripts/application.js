@@ -145,5 +145,14 @@ require([
     registerBlockInputFields();
     exitSurveyValidation();
     saEmailPrefs().setup();
+
+
+    $('details').on('click', function(e){
+      console.log($(e.target));//.find('div').is(':visible'));
+      // if($(e).find('.panel-indent').showing()){
+      //   $('.action-list').find('a').css({'visibility': 'hidden'});
+      //   $('.action-list').find('a').css({'visibility': 'visible'});
+      // }
+    });
   });
 });
