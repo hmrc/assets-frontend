@@ -2,6 +2,10 @@
   "name": "assets-frontend",
   "version": "0.0.1",
   "description": "Frontend development workflow for GOVUK",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hmrc/assets-frontend"
+  },
   "scripts": {
     "test": ""
   },
