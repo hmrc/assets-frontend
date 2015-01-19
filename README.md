@@ -26,7 +26,7 @@ $ sm --start ASSETS_FRONTEND
 The command below will kick off a local node.js server on a predefined port(9032). This serves the assets with sourcemaps via the grunt task runner.
 
 ```
-$ ./server dev
+$ ./server.sh dev
 ```
 
 
@@ -35,7 +35,7 @@ $ ./server dev
 The [grunt Karma test runner](https://github.com/karma-runner/grunt-karma) is used to run our frontend tests with the command:
 
 ```
-$ ./server test
+$ ./server.sh test
 ```
 
 
@@ -44,13 +44,20 @@ $ ./server test
 Compiles the assets for production.
 
 ```
-$ ./server build
+$ ./server.sh build
 ```
+
+Compiles the assets for npm.
+
+```
+$ ./server.sh build --release=$VERSION_NUMBER
+```
+(Where $VERSION_NUMBER is a string in semver format. i.e. 1.50.0)
 
 ### Dependancies
 
 [GOV.UK Elements](https://github.com/alphagov/govuk_elements) pulled in using the Subtree merge strategy.
- 
+
 ```
 $ git submodule init && git submodule update
 $ ./update_govuk_elements.sh
