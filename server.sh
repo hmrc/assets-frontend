@@ -12,22 +12,26 @@ deps() {
 cd assets/
 
 if [[ -n $1 ]]; then
-	case "$1" in
+  case "$1" in
 
-	"dev") deps && output "Starting grunt in dev mode..."
-	  grunt
-	  ;;
-	"build") deps && output "Starting grunt build task..."
-		grunt build
-		;;
-	"test")  deps && output "Starting grunt test task..."
-		grunt test
-		;;
-	*)  echo "invalid parameter '$1'"
-		;;
-	esac
+  "dev") deps && output "Starting grunt in dev mode..."
+    grunt
+    ;;
+  "build") deps && output "Starting grunt build task..."
+    if [[ -n $2 ]]; then
+      grunt build $2
+    else
+      grunt build
+    fi
+    ;;
+  "test")  deps && output "Starting grunt test task..."
+    grunt test
+    ;;
+  *)  echo "invalid parameter '$1'"
+    ;;
+  esac
 else
-	port=${1-9032}
-	echo "Starting simple server on port $port..."
-	python -m SimpleHTTPServer $port
+  port=${1-9032}
+  echo "Starting simple server on port $port..."
+  python -m SimpleHTTPServer $port
 fi

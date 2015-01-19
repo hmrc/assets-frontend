@@ -47,6 +47,13 @@ Compiles the assets for production.
 $ ./server.sh build
 ```
 
+Compiles the assets for npm.
+
+```
+$ ./server.sh build --release=$VERSION_NUMBER
+```
+(Where $VERSION_NUMBER is a string in semver format. i.e. 1.50.0)
+
 ### Dependancies
 
 [GOV.UK Elements](https://github.com/alphagov/govuk_elements) pulled in using the Subtree merge strategy.
