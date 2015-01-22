@@ -31,7 +31,17 @@ define(['jquery'], function($) {
           async: false,
           cache: false,
           success: function(data, status, jqXHR) {
-            window.location = ssoUrl + '?payload=' + encodeURIComponent(data);
+             var form = document.createElement('form');
+             form.method = 'POST';
+             form.action = ssoUrl;
+             payload = document.createElement('input');
+             payload.type = 'hidden';
+             payload.name = 'payload';
+             payload.value = data;
+             document.body.appendChild(form);
+             form.appendChild(payload);
+             // POST form
+             form.submit();
           },
           error: function(jqXHR, textStatus, errorThrown) {
             if(jqXHR.status == 401) {
