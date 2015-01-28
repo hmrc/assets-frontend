@@ -8,7 +8,7 @@
   },
   "scripts": {
     "install": "napa",
-    "postinstall": "grunt --gruntfile node_modules/modernizr/Gruntfile.js build"
+    "postinstall": "./node_modules/grunt-cli/bin/grunt --gruntfile node_modules/modernizr/Gruntfile.js build"
   },
   "napa": {
     "stageprompt": "alphagov/stageprompt#2.1.0"
