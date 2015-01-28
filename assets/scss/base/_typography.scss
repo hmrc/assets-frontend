@@ -99,10 +99,12 @@ small {
 }
 
 .indent {
+  @include core-16();
   border-left: 10px solid $grey-8;
-  margin-bottom: 10px;
+  display: block;
+  margin: 0.5em 0 1em;
   overflow: hidden;
-  padding-left: 1em;
+  padding: 0.25em 0.5em;
 }
 
 .flag {

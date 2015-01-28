@@ -1,6 +1,5 @@
 var path = require('path');
 module.exports = function(grunt) {
-
   // Displays the elapsed execution time of grunt tasks
   require('time-grunt')(grunt);
 
@@ -14,7 +13,7 @@ module.exports = function(grunt) {
       temp: '.tmp',
       dist: '../dist',
       public: 'public',
-      bower: 'bower_components',
+      node_modules: 'node_modules',
       snapshot: 'public/999-SNAPSHOT',
       govuk: {
         elements: 'govuk_elements',
@@ -31,15 +30,6 @@ module.exports = function(grunt) {
       },
       public: '<%= dirs.public %>',
       stylesheets: '<%= dirs.snapshot %>/stylesheets'
-    },
-
-    bower: {
-      install: {
-        options: {
-          targetDir: '<%= dirs.bower %>',
-          copy: false
-        }
-      }
     },
 
     sass: {
@@ -94,6 +84,28 @@ module.exports = function(grunt) {
       }
     },
 
+    browserify: {
+      options: {
+        watch: true,
+        browserifyOptions: {
+         debug: true
+        }
+      },
+      dev: {
+        files: {
+          '<%= dirs.snapshot %>/javascripts/application.min.js': ['javascripts/application.js']
+        }
+      },
+      build: {
+        options: {
+          plugin: ['minifyify']
+        },
+        files: {
+          '<%= dirs.public %>/javascripts/application.min.js': ['javascripts/application.js']
+        }
+      }
+    },
+
     karma: {
       options: {
         configFile: 'test/config/karma.conf.js'
@@ -104,24 +116,21 @@ module.exports = function(grunt) {
       }
     },
 
-    requirejs: {
+    modernizr: {
       dev: {
-        options: {
-          mainConfigFile: "require.conf.js",
-          out: '<%= dirs.snapshot %>/javascripts/application.min.js',
+        "devFile": '<%= dirs.node_modules %>/modernizr/dist/modernizr-build.js',
+        outputFile: '<%= dirs.snapshot %>/javascripts/vendor/modernizr.js',
+        extra: {
+          shiv: true,
+          cssclasses: true
+        },
+        extensibility: {
+          teststyles: true,
+          prefixes: true,
         }
       },
-      build: {
-        options: {
-          mainConfigFile: "require.conf.js",
-          out: '<%= dirs.public %>/javascripts/application.min.js',
-        }
-      }
-    },
-
-    modernizr: {
       dist: {
-        devFile: '<%= dirs.bower %>/modernizr/modernizr.js',
+        devFile: '<%= dirs.node_modules %>/modernizr/dist/modernizr-build.js',
         outputFile: '<%= dirs.public %>/javascripts/vendor/modernizr.js',
         extra: {
           shiv: true,
@@ -141,18 +150,10 @@ module.exports = function(grunt) {
           cwd: '<%= dirs.govuk.template %>/public/images',
           src: ['**/*'],
           dest: '<%= dirs.snapshot %>/images'
-        }, {
-          src: '<%= dirs.bower %>/modernizr/modernizr.js',
-          dest: '<%= dirs.snapshot %>/javascripts/vendor/modernizr.js'
         }]
       },
       build: {
         files: [{
-          expand: true,
-          cwd: '../',
-          src: ['package.json'],
-          dest: '<%= dirs.dist %>/'
-        }, {
           expand: true,
           cwd: '<%= dirs.govuk.template %>/public/images',
           src: ['**/*'],
@@ -200,6 +201,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     compress: {
       main: {
         options: {
@@ -212,44 +214,49 @@ module.exports = function(grunt) {
           src: '**'
         }]
       }
-    },
-    browserify: {
-      options: {
-        watch: true
-      },
-      dev: {
-        files: {
-          '<%= dirs.snapshot %>/javascripts/application.min.js': ['javascripts/modules/**/*.js']
-        }
-      },
-      build: {
-        files: {
-          '<%= dirs.public %>/javascripts/application.min.js': ['javascripts/modules/**/*.js']
-        }
-      }
     }
   });
 
+  grunt.registerTask('version', 'Bumps the package.json version for publishing to npm', function() {
+    var version = grunt.option('release');
+
+    if (version && version !== '999-SNAPSHOT') {
+      var dist = grunt.config.get('dirs.dist'),
+          packageFile = grunt.file.read('package-build.json');
+
+      packageFile = grunt.template.process(packageFile, {data: {'version': version}});
+
+      grunt.file.write(dist + '/package.json', packageFile);
+      grunt.log.ok('Version bumped to ' + version);
+      grunt.log.ok('Wrote file to ' + dist + '/package.json');
+    }
+    else {
+      grunt.log.error("No package.json needs to be written");
+    }
+  });
+
+  grunt.registerTask('dev', ['default']);
+
   grunt.registerTask('default', [
     'clean',
-    'bower:install',
     'sass:dev',
-    'browserify:dev',
     'test',
     'copy:dev',
+    'modernizr:dev',
+    'browserify:dev',
     'express',
     'watch'
   ]);
 
   grunt.registerTask('build', [
     'clean',
-    'bower:install',
     'sass:build',
     'cssmin',
     'browserify:build',
     'test',
-    'modernizr',
+    'modernizr:dist',
     'copy:build',
+    'version',
     'compress'
   ]);
 
@@ -257,5 +264,4 @@ module.exports = function(grunt) {
     'jshint',
     'karma'
   ]);
-
 };

@@ -2,8 +2,10 @@
 .sass-cache/
 .tmp/
 
+package.json
 npm-debug.log
 node_modules/
+*_git-remotes/
 dist/
 logs/
 asset-target/

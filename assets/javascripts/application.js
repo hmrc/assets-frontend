@@ -1,20 +1,19 @@
-
 require('jquery');
-var setSSOLinks = require('./modules/SSO_links.js');
-var contentNudge = require('./modules/contentNudge.js');
-var tableRowClick = require('modules/tableRowClick.js');
-var reportAProblem = require('./modules/reportAProblem.js');
-var preventDoubleSubmit = require('./modules/preventDoubleSubmit.js');
-var toggleContextualFields = require('./modules/toggleContextualFields.js');
-var toggleDynamicFormFields = require('./modules/toggleDynamicFormFields.js');
-var simpleToggleDynamicFormFields = require('./modules/simpleToggleDynamicFormFields.js');
-var questionnaireSubmission = require('./modules/questionnaireSubmission.js');
-var registerBlockInputFields = require('./modules/registerBlockInputFields.js');
-var exitSurveyValidation = require('./modules/exitSurveyValidation.js');
-var saEmailPrefs = require('./modules/saEmailPrefs.js');
-var GOVUK = require('./modules/GOVUK_helpers.js');
+require('validate');
 
-
+var setSSOLinks = require('./modules/SSO_links.js'),
+    contentNudge = require('./modules/contentNudge.js'),
+    tableRowClick = require('./modules/tableRowClick.js'),
+    reportAProblem = require('./modules/reportAProblem.js'),
+    preventDoubleSubmit = require('./modules/preventDoubleSubmit.js'),
+    toggleContextualFields = require('./modules/toggleContextualFields.js'),
+    toggleDynamicFormFields = require('./modules/toggleDynamicFormFields.js'),
+    simpleToggleDynamicFormFields = require('./modules/simpleToggleDynamicFormFields.js'),
+    questionnaireSubmission = require('./modules/questionnaireSubmission.js'),
+    registerBlockInputFields = require('./modules/registerBlockInputFields.js'),
+    exitSurveyValidation = require('./modules/exitSurveyValidation.js'),
+    saEmailPrefs = require('./modules/saEmailPrefs.js'),
+    GOVUK = require('stageprompt');
 
 (function() {
 
@@ -24,7 +23,11 @@ var GOVUK = require('./modules/GOVUK_helpers.js');
       return setSSOLinks(e, window.ssoUrl);
     });
 
-    var $clickableRow = $('.clickable-row');
+    var $clickableRow = $('.clickable-row'),
+        //feedback forms require a hidden field denoting if javascript is enabled
+        $feedbackForms = $('.form--feedback'),
+        $searchFocus = $('.js-search-focus'),
+        $errorReportForm = $('.report-error__content form');
 
     if($clickableRow.length) {
       tableRowClick($clickableRow);
@@ -40,11 +43,7 @@ var GOVUK = require('./modules/GOVUK_helpers.js');
       e.preventDefault();
     });
 
-    //feedback forms require a hidden field denoting if javascript is enabled
 
-    var $feedbackForms = $('.form--feedback'),
-        $searchFocus = $('.js-search-focus'),
-        $errorReportForm = $('.report-error__content form');
 
     //we have javascript enabled so change hidden input to reflect this
     $feedbackForms.find('input[name="isJavascript"]').attr("value", true);
@@ -133,5 +132,14 @@ var GOVUK = require('./modules/GOVUK_helpers.js');
     registerBlockInputFields();
     exitSurveyValidation();
     saEmailPrefs().setup();
+
+
+    $('details').on('click', function(e){
+      console.log($(e.target));//.find('div').is(':visible'));
+      // if($(e).find('.panel-indent').showing()){
+      //   $('.action-list').find('a').css({'visibility': 'hidden'});
+      //   $('.action-list').find('a').css({'visibility': 'visible'});
+      // }
+    });
   });
 })();

@@ -51,7 +51,7 @@ label.selectable input {
   overflow: hidden;
 }
 
-#content > article.full-width {
+#content > .full-width {
   width: auto;
   float: none;
 }
@@ -191,6 +191,7 @@ details {
     }
   }
 }
+table details{ margin:0; }
 
 /************************* Styling for important notices *************************/
 

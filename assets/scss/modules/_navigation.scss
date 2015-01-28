@@ -64,23 +64,19 @@
   }
 }
 
-.tab-navigation {
+.tabs-nav {
   margin: 2em 0;
-}
-
-.tab-navigation__list {
   border-bottom: 1px solid #ccc;
   list-style-type: none;
   margin-bottom: 1em;
+
   @include media(tablet) {
     @extend %contain-floats;
     display: flex;
   }
-}
 
-.tab-navigation__tab {
-  margin-bottom: 0;
-  a {
+  &__tab {
+    margin-bottom: 0;
     border-top: 1px solid $border-colour;
     display: block;
     padding: 0.5em 0;
@@ -91,32 +87,30 @@
       color: $white;
       padding: 0 5px;
     }
-  }
 
-  @include media(tablet) {
+    @include media(tablet) {
       float: left;
-      a {
-        background-color: #dee0e2;
-        border: 0;
-        margin: 0.25em 0.25em 0.25em 0;
-        padding: 0.45em;
-      }
+      background-color: #dee0e2;
+      border: 0;
+      margin: 0.25em 0.25em 0.25em 0;
+      padding: 0.45em;
+    }
+  }
+
+  &__tab--active {
+    border-top: 1px solid $border-colour;
+    margin-bottom: 0;
+    padding: 0.5em 0;
+
+    @include media(tablet) {
+      border: 1px solid $border-colour;
+      border-bottom: 1px solid #fff;
+      float: left;
+      margin: 0 0.25em -1px 0;
+      padding: 0.7em;
+    }
   }
 }
-
-.tab-navigation__tab--active {
-  border-top: 1px solid $border-colour;
-  margin-bottom: 0;
-  padding: 0.5em 0;
-  @include media(tablet) {
-        border: 1px solid $border-colour;
-        border-bottom: 1px solid #fff;
-        float: left;
-        margin: 0 0.25em -1px 0;
-        padding: 0.7em;
-  }
-}
-
 
 .breadcrumbs {
   @extend %contain-floats;

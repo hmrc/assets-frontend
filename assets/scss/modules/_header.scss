@@ -64,3 +64,27 @@
 		text-decoration: none;
 	}
 }
+
+
+/*
+
+Overriding page header styling from GOVUK elements
+*/
+.page-header {
+  margin: 0;
+  border-bottom: 0px;
+  padding: 0;
+}
+
+.transaction-banner--complete {
+  background-color: #28a197;
+  padding: 30px;
+  margin-bottom: 30px;
+
+  .transaction-banner__heading {
+    color: $white;
+    @include bold-36();
+    margin: 15px 0;
+    text-align: center;
+ }
+}

@@ -125,7 +125,7 @@
     "maxerr"        : 100,      // Maximum errors before stopping.
     "predef"        : [         // Extra globals.
         "require",
-        "define",
+        "module",
         "escape",
         "console"
     ]

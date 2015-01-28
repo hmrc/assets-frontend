@@ -165,9 +165,12 @@
 }
 
 .js .js-hidden {
-    display: none;
+  display: none;
 }
 
+.no-js .js-visible {
+  display: none;
+}
 
 %no-bullet {
 	list-style: none;
