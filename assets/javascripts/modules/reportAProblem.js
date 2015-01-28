@@ -1,13 +1,12 @@
-define(['jquery'], function($) {
-  // allow the user to report page errors
-  return function() {
+require('jquery');
+
+module.exports = function() {
     var $reportErrorContainer = $('.report-error__content'),
         $submitButton = $reportErrorContainer.find('.button'),
         showErrorMessage = function() {
           var response = "<h2>Sorry, we're unable to receive your message right now.</h2> " +
                           "<p>We have other ways for you to provide feedback on the " +
                           "<a href='/beta-feedback'>support page</a>.</p>";
-
           $reportErrorContainer.html(response);
           enableSubmitButton();
         },
@@ -44,5 +43,4 @@ define(['jquery'], function($) {
     return {
       submitForm: submit
     };
-  };
-});
+};

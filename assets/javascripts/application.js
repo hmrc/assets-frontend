@@ -1,34 +1,21 @@
-require([
-  'jquery',
-  'modules/SSO_links',
-  'modules/contentNudge',
-  'modules/tableRowClick',
-  'modules/reportAProblem',
-  'modules/preventDoubleSubmit',
-  'modules/toggleContextualFields',
-  'modules/toggleDynamicFormFields',
-  'modules/simpleToggleDynamicFormFields',
-  'modules/questionnaireSubmission',
-  'modules/registerBlockInputFields',
-  'modules/exitSurveyValidation',
-  'modules/saEmailPrefs',
-  'jquery.validate',
-  'jquery.validate.additional-methods'
-], function(
-  $,
-  setSSOLinks,
-  contentNudge,
-  tableRowClick,
-  reportAProblem,
-  preventDoubleSubmit,
-  toggleContextualFields,
-  toggleDynamicFormFields,
-  simpleToggleDynamicFormFields,
-  questionnaireSubmission,
-  registerBlockInputFields,
-  exitSurveyValidation,
-  saEmailPrefs
-) {
+require('jquery');
+require('validate');
+
+var setSSOLinks = require('./modules/SSO_links.js'),
+    contentNudge = require('./modules/contentNudge.js'),
+    tableRowClick = require('./modules/tableRowClick.js'),
+    reportAProblem = require('./modules/reportAProblem.js'),
+    preventDoubleSubmit = require('./modules/preventDoubleSubmit.js'),
+    toggleContextualFields = require('./modules/toggleContextualFields.js'),
+    toggleDynamicFormFields = require('./modules/toggleDynamicFormFields.js'),
+    simpleToggleDynamicFormFields = require('./modules/simpleToggleDynamicFormFields.js'),
+    questionnaireSubmission = require('./modules/questionnaireSubmission.js'),
+    registerBlockInputFields = require('./modules/registerBlockInputFields.js'),
+    exitSurveyValidation = require('./modules/exitSurveyValidation.js'),
+    saEmailPrefs = require('./modules/saEmailPrefs.js'),
+    GOVUK = require('stageprompt');
+
+(function() {
 
   $(function() {
     $(document).on('click', 'a', function(e) {
@@ -36,7 +23,11 @@ require([
       return setSSOLinks(e, window.ssoUrl);
     });
 
-    var $clickableRow = $('.clickable-row');
+    var $clickableRow = $('.clickable-row'),
+        //feedback forms require a hidden field denoting if javascript is enabled
+        $feedbackForms = $('.form--feedback'),
+        $searchFocus = $('.js-search-focus'),
+        $errorReportForm = $('.report-error__content form');
 
     if($clickableRow.length) {
       tableRowClick($clickableRow);
@@ -52,11 +43,7 @@ require([
       e.preventDefault();
     });
 
-    //feedback forms require a hidden field denoting if javascript is enabled
 
-    var $feedbackForms = $('.form--feedback'),
-        $searchFocus = $('.js-search-focus'),
-        $errorReportForm = $('.report-error__content form');
 
     //we have javascript enabled so change hidden input to reflect this
     $feedbackForms.find('input[name="isJavascript"]').attr("value", true);
@@ -145,5 +132,14 @@ require([
     registerBlockInputFields();
     exitSurveyValidation();
     saEmailPrefs().setup();
+
+
+    $('details').on('click', function(e){
+      console.log($(e.target));//.find('div').is(':visible'));
+      // if($(e).find('.panel-indent').showing()){
+      //   $('.action-list').find('a').css({'visibility': 'hidden'});
+      //   $('.action-list').find('a').css({'visibility': 'visible'});
+      // }
+    });
   });
-});
+})();

@@ -1,5 +1,6 @@
-define(['jquery'], function($) {
-  return function() {
+require('jquery');
+
+module.exports = function() {
     var fields,
         $toggledField,
         $fieldToHide,
@@ -60,5 +61,4 @@ define(['jquery'], function($) {
       $fieldToShow.removeClass('js-hidden');
       $fieldToShow.find(':checked').prop('checked', false);
     }
-  };
-});
+};

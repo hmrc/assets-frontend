@@ -1,77 +1,78 @@
-define(['jquery', 'modules/mdtpdf', 'jasmine-matchers'], function($) {
-  describe("Device Fingerprint", function() {
-      var fingerprint;
+require('jquery');
 
-      beforeEach(function() {
-          fingerprint = new Mdtpdf();
-      });
-      afterEach(function() {
-          fingerprint = undefined;
-      });
+var Mdtpdf = require('../../javascripts/modules/mdtpdf.js')
+describe("Device Fingerprint", function() {
+    var fingerprint;
 
-      it("should return a device fingerprint object", function() {
-          expect(fingerprint).not.toBeUndefined();
-      });
-      it("method get() was called", function() {
+    beforeEach(function() {
+        fingerprint = new Mdtpdf();
+    });
+    afterEach(function() {
+        fingerprint = undefined;
+    });
 
-          spyOn(fingerprint, "get");
-          fingerprint.get();
-          expect(fingerprint.get).toHaveBeenCalled();
-      });
+    it("should return a device fingerprint object", function() {
+        expect(fingerprint).not.toBeUndefined();
+    });
+    it("method get() was called", function() {
 
-      describe("returns", function() {
-          var fpDetails;
-          var originalNavigator = navigator;
+        spyOn(fingerprint, "get");
+        fingerprint.get();
+        expect(fingerprint.get).toHaveBeenCalled();
+    });
 
-          beforeEach(function() {
-              fingerprint = new Mdtpdf( { screen_resolution: true } );
+    describe("returns", function() {
+        var fpDetails;
+        var originalNavigator = navigator;
 
-              var attributes = { userAgent: 'Mock user agent', language: 'Some language', platform: 'The os', cpuClass: 'The cpu class', doNotTrack: 'true', plugins: [{name: 'plugin name', description: 'plugin description'}]};
-              $.each(attributes, function(key, value){
-                  navigator.__defineGetter__(key, function(){
-                      return value;
-                  })
-              });
-          });
+        beforeEach(function() {
+            fingerprint = new Mdtpdf( { screen_resolution: true } );
 
-          afterEach(function() {
-              //fingerprint = undefined;
-              //navigator = undefined;
-              //screen = undefined;
-              //fpDetails = undefined;
-          });
+            var attributes = { userAgent: 'Mock user agent', language: 'Some language', platform: 'The os', cpuClass: 'The cpu class', doNotTrack: 'true', plugins: [{name: 'plugin name', description: 'plugin description'}]};
+            $.each(attributes, function(key, value){
+                navigator.__defineGetter__(key, function(){
+                    return value;
+                })
+            });
+        });
 
-          it("userAgent attribute", function() {
-              fpDetails = $.parseJSON(fingerprint.get());
-              expect(fpDetails.userAgent).toBeString();
-          });
-          it("language attribute", function() {
-              fpDetails = $.parseJSON(fingerprint.get());
-              expect(fpDetails.language).toBeString();
-          });
-          it("platform attribute", function() {
-              fpDetails = $.parseJSON(fingerprint.get());
-              expect(fpDetails.platform).toBeString();
-          });
-          it("cpuClass attribute", function() {
-              fpDetails = $.parseJSON(fingerprint.get());
-              expect(fpDetails.cpuClass).toBeString();
-          });
-          it("doNotTrack attribute", function() {
-              fpDetails = $.parseJSON(fingerprint.get());
-              expect(fpDetails.doNotTrack).toBeBoolean();
-          });
-          it("number of plugins", function() {
-              fpDetails = $.parseJSON(fingerprint.get());
-              expect(fpDetails.numberOfPlugins).toBeNumber();
-          });
-          it("list of plugins", function() {
-              spyOn(fingerprint, "getPluginsString");
-              fpDetails = $.parseJSON(fingerprint.get());
-              expect(fingerprint.getPluginsString).toHaveBeenCalled();
-              expect(fpDetails.plugins).not.toBe(null);
-          });
+        afterEach(function() {
+            //fingerprint = undefined;
+            //navigator = undefined;
+            //screen = undefined;
+            //fpDetails = undefined;
+        });
 
-      });
-  });
+        it("userAgent attribute", function() {
+            fpDetails = $.parseJSON(fingerprint.get());
+            expect(fpDetails.userAgent).toBeString();
+        });
+        it("language attribute", function() {
+            fpDetails = $.parseJSON(fingerprint.get());
+            expect(fpDetails.language).toBeString();
+        });
+        it("platform attribute", function() {
+            fpDetails = $.parseJSON(fingerprint.get());
+            expect(fpDetails.platform).toBeString();
+        });
+        it("cpuClass attribute", function() {
+            fpDetails = $.parseJSON(fingerprint.get());
+            expect(fpDetails.cpuClass).toBeString();
+        });
+        it("doNotTrack attribute", function() {
+            fpDetails = $.parseJSON(fingerprint.get());
+            expect(fpDetails.doNotTrack).toBeBoolean();
+        });
+        it("number of plugins", function() {
+            fpDetails = $.parseJSON(fingerprint.get());
+            expect(fpDetails.numberOfPlugins).toBeNumber();
+        });
+        it("list of plugins", function() {
+            spyOn(fingerprint, "getPluginsString");
+            fpDetails = $.parseJSON(fingerprint.get());
+            expect(fingerprint.getPluginsString).toHaveBeenCalled();
+            expect(fpDetails.plugins).not.toBe(null);
+        });
+
+    });
 });

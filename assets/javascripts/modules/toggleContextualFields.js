@@ -1,5 +1,6 @@
-define(['jquery'], function ($) {
-  return function() {
+require('jquery');
+
+module.exports =  function () {
     var $DOM = $("#content"),
       setup = function() {
         //select 'yes' option when user selects a contextual input
@@ -42,5 +43,4 @@ define(['jquery'], function ($) {
     return {
       setup: setup
     };
-  };
-});
+};

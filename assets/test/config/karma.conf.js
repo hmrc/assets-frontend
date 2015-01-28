@@ -5,48 +5,31 @@ module.exports = function(config) {
   config.set({
 
     // base path, that will be used to resolve files and exclude
-    basePath: '../../',
+    basePath: '..',
 
     // frameworks to use
-    frameworks: ['jasmine', 'requirejs'],
+    frameworks:  ['jasmine-jquery', 'jasmine', 'jasmine-matchers',  'browserify'],
 
     // list of files / patterns to load in the browser
     files: [
-      'test/test-main.js',
-      {pattern: 'test/specs/helpers/jasmine-matchers.js', included: false},
-      {pattern: 'bower_components/**/*.js', included: false},
-      {pattern: 'javascripts/modules/*.js', included: false},
-      {pattern: 'javascripts/*.js', included: false},
-      {pattern: 'test/specs/fixtures/*.html', included: false},
-      {pattern: 'test/specs/*.js', included: false},
-      {pattern: 'test/specs/helpers/*.js', included: false}
+      'specs/*.js',
+      'specs/fixtures/*.html'
     ],
-
-    // list of files to exclude
-    exclude: [
-      'bower_components/**/*{s,S}pec.js'
-    ],
-
     preprocessors: {
-      'javascripts/**/*.js': ['coverage']
+      'specs/*.js': ['browserify']
     },
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['spec', 'junit', 'coverage'],
+    reporters: ['spec', 'junit'],
 
     junitReporter: {
       // will be resolved to basePath (in the same way as files/exclude patterns)
-      outputFile: '../test_results/TEST-javascript-test-results.xml'
+      outputFile: '../../test_results/TEST-javascript-test-results.xml'
     },
-
-    coverageReporter: {
-      reporters: [{
-        type: 'html',
-        dir: '../test_coverage/'
-      }, {
-        type: 'text-summary'
-      }]
+    // browserify configuration
+    browserify: {
+      debug: true
     },
 
     // web server port
@@ -81,13 +64,14 @@ module.exports = function(config) {
 
     plugins: [
       'karma-jasmine',
-      'karma-coverage',
-      'karma-requirejs',
       'karma-spec-reporter',
       'karma-junit-reporter',
       'karma-chrome-launcher',
       'karma-firefox-launcher',
-      'karma-phantomjs-launcher'
+      'karma-phantomjs-launcher',
+      'karma-browserify',
+      'karma-jasmine-jquery',
+      'karma-jasmine-matchers'
     ]
   });
 };

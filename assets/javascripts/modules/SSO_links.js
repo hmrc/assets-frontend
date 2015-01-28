@@ -1,10 +1,12 @@
-define(['jquery'], function($) {
-  return function(element, ssoUrl) {
+require('jquery');
+
+module.exports = function(element ,ssoUrl) {
     var $target,
+        payload,
         clientSso,
         serverSso,
-        keepDefaultLinkBehaviour,
-        destination;
+        destination,
+        keepDefaultLinkBehaviour;
 
     /**
      * Attach a one-time event handler for all global links
@@ -44,7 +46,7 @@ define(['jquery'], function($) {
              form.submit();
           },
           error: function(jqXHR, textStatus, errorThrown) {
-            if(jqXHR.status == 401) {
+            if(jqXHR.status === 401) {
               keepDefaultLinkBehaviour = false;
               window.location.reload();
             }
@@ -57,5 +59,4 @@ define(['jquery'], function($) {
         return keepDefaultLinkBehaviour;
       }
     }
-  };
-});
+};
