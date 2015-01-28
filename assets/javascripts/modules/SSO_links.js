@@ -2,12 +2,11 @@ require('jquery');
 
 module.exports = function(element ,ssoUrl) {
     var $target,
-      payload,
-      clientSso,
-      serverSso,
-      keepDefaultLinkBehaviour,
-      destination,
-      payload;
+        payload,
+        clientSso,
+        serverSso,
+        destination,
+        keepDefaultLinkBehaviour;
 
     /**
      * Attach a one-time event handler for all global links
