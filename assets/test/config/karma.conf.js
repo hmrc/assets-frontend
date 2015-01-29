@@ -8,7 +8,12 @@ module.exports = function(config) {
     basePath: '..',
 
     // frameworks to use
-    frameworks:  ['jasmine-jquery', 'jasmine', 'jasmine-matchers',  'browserify'],
+    frameworks:  [
+      'jasmine-jquery',
+      'jasmine',
+      'jasmine-matchers',
+      'browserify'
+    ],
 
     // list of files / patterns to load in the browser
     files: [
