@@ -78,13 +78,12 @@ Overriding page header styling from GOVUK elements
 
 .transaction-banner--complete {
   background-color: #28a197;
+  color: $white;
   padding: 30px;
   margin-bottom: 30px;
-
-  .transaction-banner__heading {
-    color: $white;
+  text-align: center;
+}
+.transaction-banner__heading {
     @include bold-36();
     margin: 15px 0;
-    text-align: center;
- }
-}
+  }

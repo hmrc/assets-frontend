@@ -61,13 +61,16 @@ input[type="radio"] {
 }
 
 .input--xxsmall {
-  max-width: 2em;
+  max-width: 2.2em;
 }
 .input--xsmall {
   max-width: 4em;
 }
 .input--small {
   max-width: 6em;
+}
+.input--normal {
+  max-width: 8em;
 }
 .input--medium {
   width: 100%;
@@ -78,7 +81,6 @@ input[type="radio"] {
 .input--fullwidth {
   width: 98.2%;
 }
-
 
 .input--link {
   background: none;
