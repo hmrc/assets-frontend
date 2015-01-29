@@ -82,9 +82,8 @@ Overriding page header styling from GOVUK elements
   padding: 30px;
   margin-bottom: 30px;
   text-align: center;
-
-  .transaction-banner__heading {
+}
+.transaction-banner__heading {
     @include bold-36();
     margin: 15px 0;
   }
-}
