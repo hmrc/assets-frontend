@@ -126,7 +126,7 @@ module.exports = function(grunt) {
         },
         extensibility: {
           teststyles: true,
-          prefixes: true,
+          prefixes: true
         }
       },
       dist: {
@@ -138,7 +138,7 @@ module.exports = function(grunt) {
         },
         extensibility: {
           teststyles: true,
-          prefixes: true,
+          prefixes: true
         }
       }
     },

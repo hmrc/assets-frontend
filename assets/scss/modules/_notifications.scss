@@ -1,0 +1,47 @@
+.flash {
+  border: 3px solid $grey-1;
+  background-color: $grey-9;
+  padding: 20px;
+  margin-bottom: 40px;
+  max-width: 798px;
+  h2 {
+    margin: 0;
+    font-weight: bold;
+  }
+  h3 {
+    margin: 0 0 10px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    list-style-type: none;
+  }
+}
+
+.flash.error-summary {
+  border-color: $error-border-color;
+  background-color: $error-bg-color;
+  h2 {
+    margin: 0 0 10px;
+  }
+  li {
+    color: $error-color;
+  }
+  a {
+    color: $error-color;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.flash.success {
+  border-color: #85994b;
+  background-color: #e7ebda;
+  h2 {
+    margin: 0 0 10px;
+  }
+}

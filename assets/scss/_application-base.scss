@@ -29,7 +29,7 @@
 @import "base/helpers";
 @import "base/errors";
 
-//Modules
+// Modules
 @import "modules/header";
 @import "modules/attorney-banner";
 @import "modules/footer";
@@ -44,11 +44,13 @@
 @import "modules/report-error";
 @import "modules/help-contents";
 @import "modules/template-sidebar";
-@import "modules/messages-table";
-@import "modules/messages-flash";
+@import "modules/notifications";
 
-//Overrides
+// Page Specific Styles
+@import "pages/messages";
+
+// Overrides
 @import "shame";
 
-//Unkown CSS
+// Unknown CSS
 @import "modules/unknown";
