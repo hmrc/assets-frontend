@@ -8,7 +8,7 @@ module.exports = function() {
 
       var current = $(this).closest('label')[0];
       $(current).addClass('add-focus');
-      $selectableInputs.not(current).removeClass('add-focus');
+      $selectableInputs.not(current).removeClass('add-focus selected');
     })
     .on('change', function() {
       if ($(this).attr('type') === 'radio') {
