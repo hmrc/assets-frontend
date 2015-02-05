@@ -153,6 +153,11 @@ module.exports = function(grunt) {
         }]
       },
       build: {
+        options: {
+          process: function(content, srcpath) {
+            return content.replace("//# sourceMappingURL=bundle.map", "");
+          }
+        },
         files: [{
           expand: true,
           cwd: '<%= dirs.govuk.template %>/public/images',
