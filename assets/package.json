@@ -71,6 +71,7 @@
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "validate": "./node_modules/jquery-validation/src/core.js",
     "delegate": "./node_modules/jquery-validation/src/delegate.js",
+    "basicpunc": "./node_modules/jquery-validation/src/additional/letterswithbasicpunc.js",
     "mdtpdf": "./javascripts/modules/mdtpdf.js",
     "stageprompt": "./node_modules/stageprompt/script/stageprompt.js"
   },

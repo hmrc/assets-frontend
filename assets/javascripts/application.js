@@ -1,5 +1,6 @@
 require('jquery');
 require('validate');
+require('basicpunc');
 
 var setSSOLinks = require('./modules/SSO_links.js'),
     contentNudge = require('./modules/contentNudge.js'),
