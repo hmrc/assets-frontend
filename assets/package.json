@@ -73,7 +73,8 @@
     "delegate": "./node_modules/jquery-validation/src/delegate.js",
     "basicpunc": "./node_modules/jquery-validation/src/additional/letterswithbasicpunc.js",
     "mdtpdf": "./javascripts/modules/mdtpdf.js",
-    "stageprompt": "./node_modules/stageprompt/script/stageprompt.js"
+    "stageprompt": "./node_modules/stageprompt/script/stageprompt.js",
+    "details": "./govuk_elements/public/javascripts/vendor/details.polyfill.js"
   },
   "browserify-shim": {
     "jquery": {
