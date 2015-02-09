@@ -141,6 +141,12 @@ small {
   &.flag--urgent {
     background-color: $red;
   }
+  &.flag--on-left-side {
+    margin-right:6px;
+  }
+  &.flag--on-right-side {
+    margin-left:6px;
+  }
 }
 
 .highlight-block--red {
