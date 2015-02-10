@@ -28,6 +28,7 @@ input {
   border: 1px inset $input-border;
   margin: 0;
   padding: 0.1em 0 0.1em 0.4em;
+  &.text--right{ padding: 0.1em 0.4em 0.1em 0;  }
   &:focus {
     outline: 3px solid $yellow;
   }
