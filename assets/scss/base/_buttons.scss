@@ -12,7 +12,10 @@
 button, .button {
   text-transform: capitalize;
   @include button($button-colour);
+  // overriding govuk_frontend_toolkit button styles as they're out of date and don't reflect the style guide
+  padding: em(10) em(15) em(5) em(15);
   @include core-19();
+  line-height:1.25;
   margin: 0;
   //Core 19 reduces the font size on smaller screens. This is not desired for buttons.
   @media (max-width: 640px) {
