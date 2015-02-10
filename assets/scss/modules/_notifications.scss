@@ -45,3 +45,19 @@
     margin: 0 0 10px;
   }
 }
+
+.alert {
+  border-left: 4px solid #df3034;
+  clear: both;
+  margin: 0 0 1.05263em;
+  padding: 1.05263em;
+
+  .alert__message {
+    margin: 0;
+  }
+}
+
+.alert--success {
+  background-color: rgba(40,161,151,0.1);
+  border-color: #28a197;
+}
