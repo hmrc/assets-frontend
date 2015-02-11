@@ -49,8 +49,8 @@
 .alert {
   border-left: 4px solid #df3034;
   clear: both;
-  margin: 0 0 1.05263em;
-  padding: 1.05263em;
+  margin: 0 0 em(20);
+  padding: em(20);
 
   .alert__message {
     margin: 0;
