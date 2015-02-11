@@ -1,3 +1,6 @@
+// Why are typography-related styles living here? Looks like this file has become a dumping ground
+// TODO: Move non-typography related styles to relevant SCSS files
+
 p {
   @include core-19();
 

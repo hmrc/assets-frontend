@@ -1,0 +1,23 @@
+
+.payments {
+
+  .heading-xlarge {
+    font-size:36px;
+  }
+
+  .content__body {
+    p {
+      margin:8px 0 5px 0;
+    }
+  }
+
+  fieldset legend {
+    float:none; // all legends are floated left for some reason, so resetting this for payments
+  }
+
+  .button {
+    margin:0 0 12px 0;
+  }
+
+}
+
