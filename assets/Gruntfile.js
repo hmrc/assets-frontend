@@ -155,19 +155,22 @@ module.exports = function(grunt) {
       build: {
         options: {
           process: function(content, srcpath) {
-            return content.replace("//# sourceMappingURL=bundle.map", "");
+            content.replace("//# sourceMappingURL=bundle.map", "");
           }
         },
+        files: [{
+          expand: true,
+          cwd: '<%= dirs.public %>',
+          src: ['**/*', '!**/*.map'],
+          dest: '<%= dirs.dist %>/'
+        }]
+      },
+      images: {
         files: [{
           expand: true,
           cwd: '<%= dirs.govuk.template %>/public/images',
           src: ['**/*'],
           dest: '<%= dirs.dist %>/images'
-        }, {
-          expand: true,
-          cwd: '<%= dirs.public %>',
-          src: ['**/*', '!**/*.map'],
-          dest: '<%= dirs.dist %>/'
         }]
       }
     },
@@ -261,6 +264,7 @@ module.exports = function(grunt) {
     'test',
     'modernizr:dist',
     'copy:build',
+    'copy:images',
     'version',
     'compress'
   ]);
