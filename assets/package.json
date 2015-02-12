@@ -74,7 +74,8 @@
     "basicpunc": "./node_modules/jquery-validation/src/additional/letterswithbasicpunc.js",
     "mdtpdf": "./javascripts/modules/mdtpdf.js",
     "stageprompt": "./node_modules/stageprompt/script/stageprompt.js",
-    "details": "./govuk_elements/public/javascripts/vendor/details.polyfill.js"
+    "details": "./govuk_elements/public/javascripts/vendor/details.polyfill.js",
+    "govuk-template": "./govuk_elements/govuk/public/javascripts/govuk-template.js"
   },
   "browserify-shim": {
     "jquery": {
@@ -88,6 +89,9 @@
     },
     "stageprompt": {
       "exports": "GOVUK"
+    },
+    "govuk-template": {
+      "depends": ["stageprompt"]
     }
   }
 }

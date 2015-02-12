@@ -2,6 +2,7 @@ require('jquery');
 require('details');
 require('validate');
 require('basicpunc');
+require('govuk-template');
 
 var setSSOLinks = require('./modules/SSO_links.js'),
     contentNudge = require('./modules/contentNudge.js'),
