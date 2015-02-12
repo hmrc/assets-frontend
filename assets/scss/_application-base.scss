@@ -16,6 +16,9 @@
 @import "../govuk_frontend_static/basic";
 @import "../govuk_frontend_static/template-text";
 
+// govuk_elements
+@import "../govuk_elements/public/sass/service-design-manual/helpers/_breadcrumbs";
+
 // HMRC Specific
 @import "base/colours";
 @import "base/fonts";
@@ -44,7 +47,6 @@
 @import "modules/help-contents";
 @import "modules/template-sidebar";
 @import "modules/notifications";
-@import "modules/breadcrumb";
 
 // Page Specific Styles
 @import "pages/messages";
