@@ -1,6 +1,8 @@
 require('jquery');
+require('details');
 require('validate');
 require('basicpunc');
+require('govuk-template');
 
 var setSSOLinks = require('./modules/SSO_links.js'),
     contentNudge = require('./modules/contentNudge.js'),
@@ -14,8 +16,7 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     registerBlockInputFields = require('./modules/registerBlockInputFields.js'),
     exitSurveyValidation = require('./modules/exitSurveyValidation.js'),
     saEmailPrefs = require('./modules/saEmailPrefs.js'),
-    GOVUK = require('stageprompt'),
-    detailsPolyfill = require('details');
+    GOVUK = require('stageprompt');
 
 $(function() {
   $(document).on('click', 'a', function(e) {
@@ -132,5 +133,4 @@ $(function() {
   registerBlockInputFields();
   exitSurveyValidation();
   saEmailPrefs().setup();
-  detailsPolyfill;
 });

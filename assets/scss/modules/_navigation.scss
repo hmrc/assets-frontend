@@ -1,3 +1,32 @@
+.header__menu__proposition-name {
+  @include bold-24;
+  text-decoration: none;
+  color: $white;
+}
+
+.header__menu__proposition-links {
+  @include bold-16;
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  @include media-down(tablet) {
+    width: 100%;
+  }
+
+  li {
+    display: inline;
+    padding-right: 15px;
+  }
+
+  a{
+    @include bold-16;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
 .page-navigation {
   @include media-down(mobile) {
     margin-top: 0;
