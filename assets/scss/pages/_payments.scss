@@ -19,5 +19,17 @@
     margin:0 0 12px 0;
   }
 
+  .pay-now,
+  .pay-now + img {
+    display:inline-block;
+  }
+
+  .pay-now {
+    vertical-align:top;
+    margin-top:6px;
+  }
+
 }
+
+
 
