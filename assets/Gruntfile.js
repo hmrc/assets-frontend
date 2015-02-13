@@ -155,7 +155,7 @@ module.exports = function(grunt) {
       build: {
         options: {
           process: function(content, srcpath) {
-            content.replace("//# sourceMappingURL=bundle.map", "");
+            return content.replace("//# sourceMappingURL=bundle.map", "");
           }
         },
         files: [{
