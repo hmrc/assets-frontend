@@ -142,6 +142,15 @@
   }
 }
 
+#global-breadcrumb{
+  margin:0px;
+  border-top: 1px solid $border-colour;
+
+  li{
+    margin-bottom: 0px;
+  }
+}
+
 .breadcrumbs {
   @extend %contain-floats;
   margin-bottom: 20px;
