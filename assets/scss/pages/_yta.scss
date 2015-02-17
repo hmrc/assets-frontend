@@ -1,0 +1,25 @@
+
+.last-login-summary {
+  margin:em(11) em(15) em(10) 0;
+  p {
+    margin:0;
+  }
+  .user-name {
+    font-weight:bold;
+  }
+  .more-details {
+    margin:em(5) 0 0 0;
+    @include core-16();
+  }
+}
+
+.last-login-details {
+  position:relative;
+  margin:em(10) em(15) 0 0;
+
+  strong {
+    @include core-19();
+    font-weight:bold;
+  }
+
+}

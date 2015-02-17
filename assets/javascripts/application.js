@@ -17,7 +17,7 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     exitSurveyValidation = require('./modules/exitSurveyValidation.js'),
     saEmailPrefs = require('./modules/saEmailPrefs.js'),
     GOVUK = require('stageprompt'),
-    lastLogin = require('lastLogin');
+    lastLogin = require('./modules/lastLogin.js');
 
 $(function() {
   $(document).on('click', 'a', function(e) {

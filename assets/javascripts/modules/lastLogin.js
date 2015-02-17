@@ -1,16 +1,19 @@
 /**
  * YTA Dashboard - Last Login Section
  *
- * This JS implementation is currently necessary as the details/summary tags do not support
- * what the design required, which was to place text before a right-aligned summary tag (YTA-628)
- *
  */
 
-(function() {
+var expandCollapse = require('./expandCollapse.js');
 
+module.exports = function() {
 
+  var ec = new expandCollapse();
 
+  ec.init({
+    expanderSection:  '.last-login-summary .more-details',
+    targetSection:    '.last-login-details',
+    hideExpander:     true
+  });
 
+};
 
-
-})();
