@@ -4,7 +4,7 @@
 .footer {
 	background-color:  $grey-8;
 	border-top: 10px solid $mainstream-brand;
-	padding-top: 60px;
+	padding-top: 0;		
 }
 
 .explore {
@@ -48,11 +48,12 @@
 		}
 	}
 }
+
 .explore--inline {
 	@extend .explore;
-	border-top: 1px solid $grey-6;
+	border-top: 0;
 	padding-bottom: 60px;
-	margin: 60px 30px 0 0;
+	margin: 0;
 	width: 100%;
 	ul {
 		border: 0;
@@ -89,12 +90,22 @@
 	display: block;
 	padding-top: 115px;
 	padding-top: 11.5rem;
-
 }
 
 .explore__heading {
 	@include bold-24;
 }
+
+#footer .open-government-licence h2 {
+  margin-top: 0!important;
+}
+
+@include media(mobile) {
+	#footer .footer-meta .footer-meta-inner .open-government-licence h2 {
+		height: auto;
+	}
+}
+
 .open-government-licence-logo {
 	padding-right:10px;
 	width: 43px;
