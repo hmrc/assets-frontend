@@ -3,16 +3,16 @@
  *
  */
 
-var expandCollapse = require('./expandCollapse.js');
+var ExpandCollapse = require('./expandCollapse.js');
 
 module.exports = function() {
 
-  var ec = new expandCollapse();
+  var ec = new ExpandCollapse();
 
   ec.init({
-    expanderSection:  '.last-login-summary .more-details',
-    targetSection:    '.last-login-details',
-    hideExpander:     true
+    expanderSection: '.last-login-summary .more-details',
+    targetSection:   '.last-login-details',
+    hideExpander:    true
   });
 
 };

@@ -23,59 +23,57 @@
 
 module.exports = function() {
 
-  var $expander,
-      $target,
-      hideExpander;
+  var self = this;
 
-  function init(options) {
+  this.init = function(options) {
 
     if(!options || !options.expanderSection || !options.targetSection) {
       return;
     }
 
-    $expander = $(options.expanderSection);
-    $target   = $(options.targetSection);
+    this.$expander = $(options.expanderSection);
+    this.$target   = $(options.targetSection);
 
     // hide expander if specified, but only if there's a minimise link in the target
-    hideExpander = options.hideExpander && $target.find('.minimise').length || false;
+    this.hideExpander = (options.hideExpander && this.$target.find('.minimise').length === 1);
 
-    $target.addClass('visuallyhidden');
+    this.$target.addClass('visuallyhidden');
 
-    bindEvents();
+    this.bindEvents();
 
-  }
+  };
 
-  function bindEvents() {
+  this.bindEvents = function() {
 
     // expand link is either $expander itself or a link contained within it
-    var $link = $expander.is('a') ? $expander : $expander.find('a');
+    var $link = this.$expander.is('a') ? this.$expander : this.$expander.find('a');
 
-    $link.on('click', toggleTarget);
+    $link.on('click', function(e) {
+      self.toggleTarget.call(self, e);
+    });
 
     // bind minimise link if present
-    $target.find('.minimise').show().on('click', toggleTarget);
+    this.$target.find('.minimise').show().on('click', function(e) {
+      self.toggleTarget.call(self, e);
+    });
 
-  }
+  };
 
   /**
    * Toggle expand/collapse state of target section
    *
    * @param e    event object
    */
-  function toggleTarget(e) {
+  this.toggleTarget = function(e) {
 
     e.preventDefault();
 
-    $target.toggleClass('visuallyhidden');
+    this.$target.toggleClass('visuallyhidden');
 
-    if(hideExpander) {
-      $expander.toggleClass('visuallyhidden');
+    if(this.hideExpander) {
+      this.$expander.toggleClass('visuallyhidden');
     }
 
-  }
-
-  return {
-    init:init
   };
 
 };
