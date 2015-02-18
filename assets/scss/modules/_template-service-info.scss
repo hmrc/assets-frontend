@@ -8,8 +8,22 @@
     margin: 0 auto;
   }
 
-  .logo {
-      margin-top: 10px;
+  .logo,
+  .last-login {
+    margin-top: em(10);
+  }
+
+  .last-login {
+    margin-bottom:em(10);
+  }
+
+  .alert--info {
+    position:relative;
+    margin:em(10) 0 em(10) 0;
+  }
+
+  .more-details {
+    margin:em(5) 0 0 0;
   }
 
   @include media(tablet) {
