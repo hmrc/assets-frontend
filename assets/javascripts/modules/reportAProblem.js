@@ -4,9 +4,10 @@ module.exports = function() {
     var $reportErrorContainer = $('.report-error__content'),
         $submitButton = $reportErrorContainer.find('.button'),
         showErrorMessage = function() {
-          var response = "<h2>Sorry, we're unable to receive your message right now.</h2> " +
-                          "<p>We have other ways for you to provide feedback on the " +
-                          "<a href='/beta-feedback'>support page</a>.</p>";
+          var response = "<p>There was a problem sending your query.</p>" +
+                         "<p>Please try again later or email " +
+                         "<a href='mailto:hmrcsupport@tax.service.gov.uk'>hmrcsupport@tax.service.gov.uk</a> " +
+                         "if you need technical help with this website.</p>";
           $reportErrorContainer.html(response);
           enableSubmitButton();
         },
