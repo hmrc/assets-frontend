@@ -16,7 +16,8 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     registerBlockInputFields = require('./modules/registerBlockInputFields.js'),
     exitSurveyValidation = require('./modules/exitSurveyValidation.js'),
     saEmailPrefs = require('./modules/saEmailPrefs.js'),
-    GOVUK = require('stageprompt');
+    GOVUK = require('stageprompt'),
+    toggleDetails = require('./modules/toggleDetails.js');
 
 $(function() {
   $(document).on('click', 'a', function(e) {
@@ -133,4 +134,5 @@ $(function() {
   registerBlockInputFields();
   exitSurveyValidation();
   saEmailPrefs().setup();
+  toggleDetails();
 });

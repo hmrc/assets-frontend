@@ -8,14 +8,16 @@
     margin: 0 auto;
   }
 
-  .logo {
-      margin-top: 10px;
+  .logo,
+  .last-login {
+    margin-top: em(10);
   }
 
   @include media(tablet) {
     .logo {
       float: left;
       width: 33.33%;
+      margin-bottom:em(10);
     }
   }
 
@@ -38,3 +40,12 @@
     }
   }
 }
+
+.last-login {
+  margin-bottom:em(10);
+}
+
+.last-login__more-details {
+  margin:em(5) 0 0 0;
+}
+

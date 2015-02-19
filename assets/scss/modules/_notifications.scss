@@ -47,17 +47,45 @@
 }
 
 .alert {
-  border-left: 4px solid #df3034;
+  border-left: 5px solid #df3034;
   clear: both;
   margin: 0 0 em(20);
-  padding: em(20);
+  padding: em(17) em(15);
+  @include core-16();
 
   .alert__message {
-    margin: 0;
+    margin:0 0 em(10) 0;
+    @include core-16();
+
+    &:last-of-type {
+      margin-bottom:0;
+    }
   }
+  .minimise {
+    display:block;
+    float:right;
+    text-align:right;
+    margin-top:em(-5);
+    margin-bottom:em(10);
+  }
+
+  @include media(mobile) {
+    .minimise {
+      margin-top:0;
+      float:none;
+    }
+  }
+
 }
 
 .alert--success {
   background-color: rgba(40,161,151,0.1);
   border-color: #28a197;
+}
+
+.alert--info {
+  background-color:#def;
+  border-color:#005EA4;
+  position:relative;
+  margin:em(10) 0 em(10) 0;
 }
