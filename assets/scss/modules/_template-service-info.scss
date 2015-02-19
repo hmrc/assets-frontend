@@ -13,23 +13,11 @@
     margin-top: em(10);
   }
 
-  .last-login {
-    margin-bottom:em(10);
-  }
-
-  .alert--info {
-    position:relative;
-    margin:em(10) 0 em(10) 0;
-  }
-
-  .more-details {
-    margin:em(5) 0 0 0;
-  }
-
   @include media(tablet) {
     .logo {
       float: left;
       width: 33.33%;
+      margin-bottom:em(10);
     }
   }
 
@@ -52,3 +40,12 @@
     }
   }
 }
+
+.last-login {
+  margin-bottom:em(10);
+}
+
+.last-login__more-details {
+  margin:em(5) 0 0 0;
+}
+

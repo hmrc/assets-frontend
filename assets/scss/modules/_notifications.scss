@@ -50,7 +50,7 @@
   border-left: 5px solid #df3034;
   clear: both;
   margin: 0 0 em(20);
-  padding: em(17) em(15) em(17) em(15); // specific values to match design, or should we always round off?
+  padding: em(17) em(15);
   @include core-16();
 
   .alert__message {
@@ -62,11 +62,20 @@
     }
   }
   .minimise {
-    position:absolute;
-    top:12px;
-    right:10px;
-    display:none; /* not need for non-JS */
+    display:block;
+    float:right;
+    text-align:right;
+    margin-top:em(-5);
+    margin-bottom:em(10);
   }
+
+  @include media(mobile) {
+    .minimise {
+      margin-top:0;
+      float:none;
+    }
+  }
+
 }
 
 .alert--success {
@@ -77,4 +86,6 @@
 .alert--info {
   background-color:#def;
   border-color:#005EA4;
+  position:relative;
+  margin:em(10) 0 em(10) 0;
 }
