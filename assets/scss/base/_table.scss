@@ -47,3 +47,14 @@ table {
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 }
+
+.table--light-header {
+  thead {
+    border-bottom: 3px solid $govuk-blue;
+  }
+
+  th {
+    color: $grey-1;
+    font-weight: 400;
+  }
+}
