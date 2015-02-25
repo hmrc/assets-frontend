@@ -46,6 +46,8 @@ textarea {
   border: 1px inset $input-border;
   margin: 0;
   padding: 0.1em 0 0.1em 0.4em;
+  width:100%;
+  max-width:400px;
   &:focus {
     outline: 3px solid $yellow;
   }
@@ -59,6 +61,7 @@ select {
 
 input[type="radio"] {
   border: none;
+  margin-right:5px;
 }
 
 .input--xxsmall {
@@ -317,6 +320,11 @@ label {
   }
 }
 
+.block-label--inline {
+  margin:0 0 10px 0;
+}
+
+
 // Only if JavaScript is enabled
 
 // Add focus styles to block labels
@@ -359,6 +367,12 @@ label {
   clear: both;
   margin: 0 0 15px;  
   padding: 0.5em 30px;
+  box-sizing: border-box;
+
+  input[type="radio"] {
+    margin-right:5px;
+  }
+
 }
 
 
