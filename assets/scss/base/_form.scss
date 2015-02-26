@@ -44,11 +44,13 @@ textarea {
   @include core-19();
   background-color: $input-bg-colour;
   border: 1px inset $input-border;
-  margin: 0;
+  margin: em(10) 0;
   padding: 0.1em 0 0.1em 0.4em;
+
   @include media(mobile) {
     width:100%;
   }
+
   &:focus {
     outline: 3px solid $yellow;
   }
@@ -370,8 +372,12 @@ label {
   padding: 0.5em 30px;
   box-sizing: border-box;
 
+  @include media(mobile) {
+    padding: 0.5em 15px;
+  }
+
   input[type="radio"] {
-    margin-right:5px;
+    //margin-right:5px;
   }
 
 }
