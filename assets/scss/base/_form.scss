@@ -370,10 +370,10 @@ label {
   clear: both;
   margin: 0 0 15px;  
   padding: 0.5em 30px;
-  box-sizing: border-box;
 
   @include media(mobile) {
     padding: 0.5em 15px;
+    box-sizing: border-box;
   }
 
 }
