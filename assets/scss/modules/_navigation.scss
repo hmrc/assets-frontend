@@ -165,3 +165,12 @@
 a.back-link {
   color: $black;
 }
+
+#global-breadcrumb {
+  margin:0;
+  padding-top:0.35em;
+
+  li {
+    margin-bottom: 0;
+  }
+}
