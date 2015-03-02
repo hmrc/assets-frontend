@@ -1,5 +1,6 @@
 .service-info {
   border-top: 10px solid $mainstream-brand;
+  padding-bottom:0.5em;
   @extend %contain-floats;
 
   .inner {
@@ -21,11 +22,12 @@
   }
 
   .service-info__help {
+    margin-top: 10px;
+
     @include media(tablet) {
       float: left;
       width: 66.66%;
     }
-    margin-top: 10px;
 
     p {
       @include core-16(20/16);
@@ -37,7 +39,9 @@
         padding-top: 5px;
       }
     }
+
   }
+
 }
 
 .last-login {
