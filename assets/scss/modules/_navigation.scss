@@ -142,15 +142,6 @@
   }
 }
 
-#global-breadcrumb{
-  margin:0px;
-  border-top: 1px solid $border-colour;
-
-  li{
-    margin-bottom: 0px;
-  }
-}
-
 .back-link {
   @include core-19();
   border-bottom: 1px solid $black;
@@ -160,6 +151,7 @@
     content: "<";
     padding-right: em(5);
   }
+
 }
 
 a.back-link {
@@ -168,7 +160,7 @@ a.back-link {
 
 #global-breadcrumb {
   margin:0;
-  padding-top:0.35em;
+  padding-top:0;
 
   li {
     margin-bottom: 0;
