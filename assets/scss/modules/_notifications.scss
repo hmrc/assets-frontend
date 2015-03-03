@@ -4,18 +4,22 @@
   padding: 20px;
   margin-bottom: 40px;
   max-width: 798px;
+
   h2 {
     margin: 0;
     font-weight: bold;
   }
+
   h3 {
     margin: 0 0 10px;
   }
+
   ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
+
   li {
     list-style-type: none;
   }
@@ -24,14 +28,18 @@
 .flash.error-summary {
   border-color: $error-border-color;
   background-color: $error-bg-color;
+
   h2 {
     margin: 0 0 10px;
   }
+
   li {
     color: $error-color;
   }
+
   a {
     color: $error-color;
+
     &:hover {
       text-decoration: none;
     }
@@ -41,6 +49,7 @@
 .flash.success {
   border-color: #85994b;
   background-color: #e7ebda;
+
   h2 {
     margin: 0 0 10px;
   }
@@ -81,6 +90,12 @@
 .alert--success {
   background-color: rgba(40,161,151,0.1);
   border-color: #28a197;
+}
+
+.alert--failure {
+  background-color: #fef7f7;
+  border-color: #df3034;
+  color: #df3034;
 }
 
 .alert--info {
