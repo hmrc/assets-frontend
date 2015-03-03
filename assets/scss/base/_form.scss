@@ -44,8 +44,13 @@ textarea {
   @include core-19();
   background-color: $input-bg-colour;
   border: 1px inset $input-border;
-  margin: 0;
+  margin: em(10) 0;
   padding: 0.1em 0 0.1em 0.4em;
+
+  @include media(mobile) {
+    width:100%;
+  }
+
   &:focus {
     outline: 3px solid $yellow;
   }
@@ -59,6 +64,7 @@ select {
 
 input[type="radio"] {
   border: none;
+  margin-right:5px;
 }
 
 .input--xxsmall {
@@ -317,6 +323,11 @@ label {
   }
 }
 
+.block-label--inline {
+  margin:0 0 10px 0;
+}
+
+
 // Only if JavaScript is enabled
 
 // Add focus styles to block labels
@@ -359,6 +370,12 @@ label {
   clear: both;
   margin: 0 0 15px;  
   padding: 0.5em 30px;
+
+  @include media(mobile) {
+    padding: 0.5em 15px;
+    box-sizing: border-box;
+  }
+
 }
 
 
