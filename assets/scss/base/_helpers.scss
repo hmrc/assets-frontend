@@ -165,11 +165,11 @@
 }
 
 .js .js-hidden {
-  display: none;
+  display: none !important;
 }
 
 .no-js .js-visible {
-  display: none;
+  display: none !important;
 }
 
 %no-bullet {

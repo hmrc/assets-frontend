@@ -62,7 +62,6 @@
     }
   }
   .minimise {
-    display:block;
     float:right;
     text-align:right;
     margin-top:em(-5);
@@ -72,6 +71,7 @@
   @include media(mobile) {
     .minimise {
       margin-top:0;
+      display:block;
       float:none;
     }
   }
