@@ -1,5 +1,6 @@
 table {
 	margin-bottom: 30px;
+  border-bottom: 3px solid $grey-6;
 
 	td, th {
 		&.right-aligned {
@@ -49,6 +50,8 @@ table {
 }
 
 .table--light-header {
+  border-bottom: none;
+
   thead {
     border-bottom: 3px solid $govuk-blue;
   }

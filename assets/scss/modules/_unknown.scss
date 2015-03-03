@@ -182,16 +182,19 @@ body.paye .has-paye {
 
 details {
   margin: 15px 0;
+}
 
-  .panel-indent {
-    margin: 0;
+.panel-indent {
+  margin: 0;
 
-    p:first-child {
-      margin-top: 0;
-    }
+  p:first-child {
+    margin-top: 0;
   }
 }
-table details{ margin:0; }
+
+table details {
+  margin:0;
+}
 
 /************************* Styling for important notices *************************/
 

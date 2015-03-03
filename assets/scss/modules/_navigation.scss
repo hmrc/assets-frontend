@@ -155,9 +155,11 @@
   @include core-19();
   border-bottom: 1px solid $black;
   text-decoration: none;
+  display: inline-block;
+  margin-bottom: em(30);
 
   &:before {
-    content: "<";
+    content: "\2039"; // Unicode &lsaquo;
     padding-right: em(5);
   }
 }
