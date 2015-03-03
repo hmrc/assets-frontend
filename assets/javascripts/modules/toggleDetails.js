@@ -46,13 +46,11 @@ module.exports = function() {
     });
 
     //// show minimise link (hidden for non-JS) and bind  click
-    $container.find('.minimise').removeClass('js-hidden').bind("click", function(e) {
+    $container.find('.minimise').bind("click", function(e) {
       toggleClick(e);
     });
 
     function toggleClick(e) {
-
-     // console.log("toggleClick, this = " + this);
 
       e.preventDefault();
 
