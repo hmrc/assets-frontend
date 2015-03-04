@@ -35,3 +35,13 @@ table.messages {
     margin:30px 0 0 0;
   }
 }
+
+.penalty-details {
+  margin-top:em(10);
+  padding:0.8em 1em 0.6em;
+  background-color:$shaded-bg-grey;
+  table {
+    border-bottom: hidden;
+    margin-bottom: 0
+  }
+}
