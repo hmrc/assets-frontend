@@ -9,8 +9,9 @@
   }
 
   .logo,
-  .last-login {
-    margin-top: em(10);
+  .last-login,
+  .service-info__agent-name {
+    margin-top: em(15);
   }
 
   @include media(tablet) {
@@ -39,9 +40,26 @@
         padding-top: 5px;
       }
     }
+  }
+}
 
+.service-info__agent-name {
+  .agent-name,
+  .delegate-info {
+    @include bold-19();
+    float: right;
   }
 
+  .acting-agent {
+    color: $grey-1;
+    display: block;
+    @include core-16();
+  }
+
+  .client-name {
+    color: $black;
+    display: block;
+  }
 }
 
 .last-login {
@@ -51,4 +69,3 @@
 .last-login__more-details {
   margin:em(5) 0 0 0;
 }
-
