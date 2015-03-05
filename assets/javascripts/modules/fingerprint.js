@@ -1,10 +1,10 @@
 var Mdtpdf = require('mdtpdf'),
     govuk = require('./GOVUK_helpers.js');
 
-(function() {
+module.exports =  function() {
   // TODO: obscure all references to fingerprint
   var fingerprint = new Mdtpdf({
-      screen_resolution: true
+        screen_resolution: true
     }),
     encodedFingerPrint = window.btoa(fingerprint.get()),
     mdtpdfCookie = govuk.getCookie("mdtpdf");
@@ -14,4 +14,4 @@ var Mdtpdf = require('mdtpdf'),
   if (!mdtpdfCookie && encodedFingerPrint) {
     govuk.setCookie("mdtpdf", encodedFingerPrint, 7300);
   }
-})();
+};

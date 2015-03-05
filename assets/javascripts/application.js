@@ -17,7 +17,8 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     exitSurveyValidation = require('./modules/exitSurveyValidation.js'),
     saEmailPrefs = require('./modules/saEmailPrefs.js'),
     GOVUK = require('stageprompt'),
-    toggleDetails = require('./modules/toggleDetails.js');
+    toggleDetails = require('./modules/toggleDetails.js'),
+    fingerprint = require('./modules/fingerprint.js');
 
 $(function() {
   $(document).on('click', 'a', function(e) {
@@ -38,6 +39,9 @@ $(function() {
 
   // initialise stageprompt for Analytics
   GOVUK.performance.stageprompt.setupForGoogleAnalytics();
+
+  //initialise mdtpf
+  fingerprint();
 
   // toggle for reporting a problem (on all content pages)
   $('.report-error__toggle').on('click', function(e) {
