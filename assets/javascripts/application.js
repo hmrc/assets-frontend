@@ -20,6 +20,9 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     toggleDetails = require('./modules/toggleDetails.js'),
     fingerprint = require('./modules/fingerprint.js');
 
+  //initialise mdtpf
+  fingerprint();    
+
 $(function() {
   $(document).on('click', 'a', function(e) {
     // TODO: fix error thrown when clicking a [data-sso] links
@@ -40,8 +43,6 @@ $(function() {
   // initialise stageprompt for Analytics
   GOVUK.performance.stageprompt.setupForGoogleAnalytics();
 
-  //initialise mdtpf
-  fingerprint();
 
   // toggle for reporting a problem (on all content pages)
   $('.report-error__toggle').on('click', function(e) {
