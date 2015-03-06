@@ -56,51 +56,49 @@
 }
 
 .alert {
-  border-left: 5px solid #df3034;
   clear: both;
+  border-left-width: em(3);
+  border-left-style: solid;
   margin: 0 0 em(20);
   padding: em(17) em(15);
-  @include core-16();
 
   .alert__message {
-    margin:0 0 em(10) 0;
-    @include core-16();
+    margin: 0 0 em(10);
+    @include core-19();
 
     &:last-of-type {
       margin-bottom:0;
     }
   }
-  .minimise {
-    float:right;
-    text-align:right;
-    margin-top:em(-5);
-    margin-bottom:em(10);
-  }
 
-  @include media(mobile) {
-    .minimise {
-      margin-top:0;
-      display:block;
-      float:none;
+  .minimise {
+    float: right;
+    text-align: right;
+    margin-top: em(-5);
+    margin-bottom: em(10);
+
+    @include media(mobile) {
+      margin-top: 0;
+      display: block;
+      float: none;
     }
   }
-
 }
 
 .alert--success {
-  background-color: rgba(40,161,151,0.1);
-  border-color: #28a197;
+  background-color: $success-bg-color;
+  border-color: $success-border-color;
 }
 
 .alert--failure {
-  background-color: #fef7f7;
-  border-color: #df3034;
-  color: #df3034;
+  background-color: $error-bg-color;
+  border-color: $error-color;
+  color: $error-color;
 }
 
 .alert--info {
-  background-color:#def;
-  border-color:#005EA4;
-  position:relative;
-  margin:em(10) 0 em(10) 0;
+  background-color: $info-bg-color;
+  border-color: $info-border-color;
+  position: relative;
+  margin: em(10) 0;
 }
