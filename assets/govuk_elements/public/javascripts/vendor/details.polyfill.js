@@ -91,6 +91,8 @@
       //detect native implementations
       details.__native = typeof(details.open) == 'boolean';
 
+      details.setAttribute('role', 'group');
+
       //save shortcuts to the inner summary and content elements
       details.__summary = details.getElementsByTagName('summary').item(0);
       details.__content = details.getElementsByTagName('div').item(0);
@@ -106,12 +108,14 @@
       //so that assistive technologies know it controls the aria-expanded state
       details.__summary.setAttribute('aria-controls', details.__content.id);
 
+      details.__summary.setAttribute('aria-expanded', 'false');
+      details.__summary.setAttribute('role', 'button');
+
       //also set tabindex so the summary is keyboard accessible
       details.__summary.setAttribute('tabindex', '0');
 
       //then set aria-expanded and style.display and remove the
       //open attribute, so this region is now collapsed by default
-      details.__content.setAttribute('aria-expanded', 'false');
       details.__content.style.display = 'none';
       details.removeAttribute('open');
 
@@ -136,9 +140,9 @@
     //to expand or collapse the region (ie. invert the current state)
     //then update the twisty if we have one with a correpsonding glyph
     function statechange(summary) {
-      var expanded = summary.__details.__content.getAttribute('aria-expanded') == 'true';
+      var expanded = details.__summary.getAttribute('aria-expanded') == 'true';
 
-      summary.__details.__content.setAttribute('aria-expanded', (expanded ? 'false' : 'true'));
+      details.__summary.setAttribute('aria-expanded', (expanded ? 'false' : 'true'));
       summary.__details.__content.style.display = (expanded ? 'none' : 'block');
 
       if(summary.__twisty)
