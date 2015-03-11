@@ -1,0 +1,36 @@
+.dataTables_filter input[type=checkbox] {
+  margin: 0 12px 0 5px;
+}
+
+.dataTables_info {
+  float: left;
+}
+
+.dataTables_filter {
+  text-align: right;
+}
+
+.dataTables_paginate {
+  text-align: right;
+
+  span, a {
+    margin-right: 5px;
+  }
+
+  .disabled {
+    display: none;
+  }
+
+  a {
+    color: $link-colour;
+    cursor: pointer;
+
+    &:hover {
+      color: $link-hover-colour;
+    }
+  }
+
+  .current {
+    color: $text-colour;
+  }
+}
