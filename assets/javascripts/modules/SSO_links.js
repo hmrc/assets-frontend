@@ -33,17 +33,7 @@ module.exports = function(element ,ssoUrl) {
           async: false,
           cache: false,
           success: function(data, status, jqXHR) {
-             var form = document.createElement('form');
-             form.method = 'POST';
-             form.action = ssoUrl;
-             payload = document.createElement('input');
-             payload.type = 'hidden';
-             payload.name = 'payload';
-             payload.value = data;
-             document.body.appendChild(form);
-             form.appendChild(payload);
-             // POST form
-             form.submit();
+            window.location = ssoUrl + '?payload=' + encodeURIComponent(data);
           },
           error: function(jqXHR, textStatus, errorThrown) {
             if(jqXHR.status === 401) {
