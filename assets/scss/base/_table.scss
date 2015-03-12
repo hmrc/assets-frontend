@@ -64,4 +64,8 @@ table {
 
 .controlpanel {
   margin-bottom: em(30);
+
+  .js-datatable-wrapper & {
+    float: left;
+  }
 }

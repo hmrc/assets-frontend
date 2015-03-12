@@ -1,0 +1,47 @@
+.dataTables_info {
+  float: left;
+
+  &.no-float {
+    float: none;
+  }
+}
+
+.dataTables_filter {
+  text-align: right;
+
+  input {
+    border: 1px solid $grey-1;
+    width: em(260);
+  }
+}
+
+::-webkit-input-placeholder {
+  color: $grey-1;
+  font-size: em(15);
+  padding: em(5) 0 0 em(5);
+}
+
+.dataTables_paginate {
+  text-align: right;
+
+  span, a {
+    margin-right: 5px;
+  }
+
+  .disabled {
+    display: none;
+  }
+
+  a {
+    color: $link-colour;
+    cursor: pointer;
+
+    &:hover {
+      color: $link-hover-colour;
+    }
+  }
+
+  .current {
+    color: $text-colour;
+  }
+}

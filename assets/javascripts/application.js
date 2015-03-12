@@ -18,10 +18,11 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     saEmailPrefs = require('./modules/saEmailPrefs.js'),
     GOVUK = require('stageprompt'),
     toggleDetails = require('./modules/toggleDetails.js'),
-    fingerprint = require('./modules/fingerprint.js');
+    fingerprint = require('./modules/fingerprint.js'),
+    enhancedTables = require('./modules/enhancedTables.js');
 
   //initialise mdtpf
-  fingerprint();    
+  fingerprint();
 
 $(function() {
   $(document).on('click', 'a', function(e) {
@@ -40,17 +41,29 @@ $(function() {
   }
   preventDoubleSubmit();
 
+  // select all
+  $('<input id="checkbox-all" type="checkbox">').appendTo('.js-select-all');
+  $('#checkbox-all').on('click', function() {
+    var checked = $(this).is(':checked');
+    $('td input[type=checkbox]').each(function(i) {
+      $(this).prop('checked', checked);
+    });
+  });
+
+  // datatables init
+  var datatable = $('.js-datatable');
+  if (datatable.length) {
+    enhancedTables(datatable);
+  }
+
   // initialise stageprompt for Analytics
   GOVUK.performance.stageprompt.setupForGoogleAnalytics();
-
 
   // toggle for reporting a problem (on all content pages)
   $('.report-error__toggle').on('click', function(e) {
     $('.report-error__content').toggleClass('js-hidden');
     e.preventDefault();
   });
-
-
 
   //we have javascript enabled so change hidden input to reflect this
   $feedbackForms.find('input[name="isJavascript"]').attr("value", true);
@@ -77,31 +90,36 @@ $(function() {
     }
   });
 
-
   $('.print-link a').attr('target', '_blank');
 
   if ($searchFocus.val() !== '') {
     $searchFocus.addClass('focus');
   }
+
   $searchFocus.on('focus', function(e) {
     $(e.target).addClass('focus');
   });
+
   $searchFocus.on('blur', function(e) {
     if ($searchFocus.val() === '') {
       $(e.target).removeClass('focus');
     }
   });
+
   if (window.location.hash && $(".design-principles").length !== 1 && $('.section-page').length !== 1) {
     contentNudge(window.location.hash);
   }
+
   $("nav").delegate('a', 'click', function() {
     var hash,
         href = $(this).attr('href');
+
     if (href.charAt(0) === '#') {
       hash = href;
     } else if (href.indexOf("#") > 0) {
       hash = "#" + href.split("#")[1];
     }
+
     if ($(hash).length === 1) {
       $("html, body").animate({
         scrollTop: $(hash).offset().top - $("#global-header").height()

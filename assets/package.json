@@ -21,6 +21,7 @@
   "devDependencies": {
     "browserify-istanbul": "^0.1.3",
     "browserify-shim": "^3.8.2",
+    "datatables": "^1.10.5",
     "express": "~3.4.8",
     "fingerprintjs": "^0.5.3",
     "grunt": "^0.4.5",
@@ -75,7 +76,8 @@
     "mdtpdf": "./javascripts/modules/mdtpdf.js",
     "stageprompt": "./node_modules/stageprompt/script/stageprompt.js",
     "details": "./javascripts/modules/details.polyfill.js",
-    "govuk-template": "./govuk_elements/govuk/public/javascripts/govuk-template.js"
+    "govuk-template": "./govuk_elements/govuk/public/javascripts/govuk-template.js",
+    "datatables": "./node_modules/datatables/media/js/jquery.dataTables.js"
   },
   "browserify-shim": {
     "jquery": {
@@ -91,7 +93,9 @@
       "exports": "GOVUK"
     },
     "govuk-template": {
-      "depends": ["stageprompt"]
+      "depends": [
+        "stageprompt"
+      ]
     }
   }
 }
