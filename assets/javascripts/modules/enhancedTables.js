@@ -6,7 +6,7 @@ module.exports = function(tableSelector) {
 
   var table = tableSelector.DataTable({
     dom: 'ftip',
-    pageLength: 5,
+    pageLength: 50,
     lengthChange: false,
     order: [
       [1, "asc"]
@@ -25,14 +25,16 @@ module.exports = function(tableSelector) {
     pagingType: "simple_numbers",
     drawCallback: function(settings) {
       var wrapper = this.parent(),
-          rowsPerPage = 3,
+          rowsPerPage = settings._iDisplayLength,
           rowsToShow = this.api().page.info().recordsDisplay,
           minRowsPerPage = settings.aLengthMenu[0][0];
 
       if (rowsToShow <= rowsPerPage || rowsPerPage === -1) {
         $('.dataTables_paginate', wrapper).addClass('visuallyhidden');
+        $('.dataTables_info', wrapper).addClass('no-float');
       } else {
         $('.dataTables_paginate', wrapper).removeClass('visuallyhidden');
+        $('.dataTables_info', wrapper).removeClass('no-float');
       }
 
       if (rowsToShow <= minRowsPerPage) {
