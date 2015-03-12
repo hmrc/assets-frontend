@@ -11,6 +11,7 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     preventDoubleSubmit = require('./modules/preventDoubleSubmit.js'),
     toggleContextualFields = require('./modules/toggleContextualFields.js'),
     toggleDynamicFormFields = require('./modules/toggleDynamicFormFields.js'),
+    conditionallyDisableButton = require('./modules/conditionallyDisableButton.js'),
     simpleToggleDynamicFormFields = require('./modules/simpleToggleDynamicFormFields.js'),
     questionnaireSubmission = require('./modules/questionnaireSubmission.js'),
     registerBlockInputFields = require('./modules/registerBlockInputFields.js'),
@@ -25,6 +26,8 @@ var setSSOLinks = require('./modules/SSO_links.js'),
   fingerprint();
 
 $(function() {
+  conditionallyDisableButton();
+
   $(document).on('click', 'a', function(e) {
     // TODO: fix error thrown when clicking a [data-sso] links
     return setSSOLinks(e, window.ssoUrl);
