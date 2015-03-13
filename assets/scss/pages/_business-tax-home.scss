@@ -1,0 +1,21 @@
+.business-tax-home {
+
+  details {
+    margin: 5px 0;
+    summary {
+      font-size: 16px;
+      color: $details-link;
+      &:hover {
+        color: $details-link-hover;
+      }
+      text-decoration: underline;
+      i {
+        display: inline-block;
+      }
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+
+}
