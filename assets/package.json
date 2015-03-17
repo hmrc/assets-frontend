@@ -42,6 +42,7 @@
     "grunt-sass": "^0.14.0",
     "jquery": "^1.11.2",
     "jquery-validation": "^1.13.1",
+    "js-base64": "^2.1.7",
     "jshint-stylish": "~0.1.5",
     "json3": "^3.3.2",
     "karma": "^0.12.31",
@@ -77,7 +78,8 @@
     "stageprompt": "./node_modules/stageprompt/script/stageprompt.js",
     "details": "./javascripts/modules/details.polyfill.js",
     "govuk-template": "./govuk_elements/govuk/public/javascripts/govuk-template.js",
-    "datatables": "./node_modules/datatables/media/js/jquery.dataTables.js"
+    "datatables": "./node_modules/datatables/media/js/jquery.dataTables.js",
+    "base64": "./node_modules/js-base64/base64.min.js"
   },
   "browserify-shim": {
     "jquery": {
