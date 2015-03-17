@@ -1,6 +1,6 @@
 {
   "name": "assets-frontend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Frontend development workflow for GOVUK",
   "repository": {
     "type": "git",
