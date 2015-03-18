@@ -18,4 +18,13 @@
     }
   }
 
+  a[rel="external"] {
+
+    @include external-link-16;
+
+    &:after {
+      background-image: url("../images/icons/external-links/external-link.png");
+    }
+  }
+
 }
