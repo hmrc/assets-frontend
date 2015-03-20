@@ -39,4 +39,35 @@
     }
   }
 
+  article li {
+    padding-left: 0;
+  }
+
+  .alert {
+    color: $black;
+    padding: 0.4em 0.8em 0.3em;
+    border-left-width: 4px;
+  }
+
+  .alert--failure {
+    background-color: $alert-failure;
+  }
+
+  .flag {
+    padding: 0 0 0 1em;
+    margin-left: 1em;
+    @include bold-19;
+
+    &.flag--urgent {
+      border-left: 1px solid $mellow-red-50;
+      color: $mellow-red;
+      background-color: inherit;
+    }
+    &.flag--soon {
+      border-left: 1px solid $grey-7;
+      color: $grey-3;
+      background-color: inherit;
+    }
+  }
+
 }
