@@ -121,12 +121,13 @@ ul {
       border-top: 1px solid $border-colour;
     }
   }
-  li.action-list__grouped {
-    border-top: none;
-    p {
-      margin: 0.4em 0;
-      padding: 0;
-    }
+}
+
+.action-list__grouped {
+  border-top: none;
+  p {
+    margin: 0.4em 0;
+    padding: 0;
   }
 }
 
