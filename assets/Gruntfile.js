@@ -150,7 +150,13 @@ module.exports = function(grunt) {
           cwd: '<%= dirs.govuk.template %>/public/images',
           src: ['**/*'],
           dest: '<%= dirs.snapshot %>/images'
-        }]
+        },
+        {
+          expand: true,
+          cwd: 'images',
+          src: ['**/*'],
+          dest: '<%= dirs.snapshot %>/images'
+        }]        
       },
       build: {
         options: {

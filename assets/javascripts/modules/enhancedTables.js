@@ -43,13 +43,64 @@ module.exports = function(tableSelector) {
         $('.dataTables_length', wrapper).removeClass('visuallyhidden');
       }
     }
+  }),
+  pageLength = table.settings()[0]._iDisplayLength;
+
+  tableSelector.parents('form').on('click', '.js-datatable-submit, .js-datatable-delete', function(event) {
+    tableSubmit(this , event);
   });
 
-  tableSelector.parents('form').on('click', '.js-datatable-submit', function(event) {
-    event.preventDefault();
-    var selectedNodes = table.$(':not(:visible)').filter(':checked');
-    selectedNodes.addClass('hidden').appendTo(tableSelector.parents('form'));
-    console.log('selectedNodes ' , selectedNodes);
-    $(this).parents('form').submit();
+  //clear the check-all box on when user paginates
+
+  //on deselect run function that returns true or false for select-all
+  tableSelector.on('page.dt', function (e, settings) {
+    tableSelector.one('draw.dt', function () {
+      //check-all stays checked as long as all items on the page are selected
+      var $checkAll = $("#checkbox-all");
+      if(isAllChecked()) { 
+        $checkAll.prop('checked', true);
+      } else {
+        $checkAll.prop('checked', false);
+      }
+    });
+
   });
+  
+  tableSelector.on('click', '.client-checkbox', function () {
+    //uncheck select all tick if one of the items is unchecked by the user
+    if(!this.checked) {
+      $("#checkbox-all").prop('checked', false);
+    }
+  });   
+
+  var tableSubmit = function (el, event) {
+    event.preventDefault();
+    var selectedNodes = table.$('input[type="checkbox"]:checked');
+    selectedNodes.addClass('hidden').appendTo(tableSelector.parents('form'));
+    $(el).parents('form').submit();
+
+  };
+
+  var isAllChecked = function() {
+    return tableSelector.find('td input[type=checkbox]:checked').length === pageLength ? true : false;    
+  };
+
+  var selectAll = function () {
+      // select all
+      $('#js-select-all').html('<input id="checkbox-all" type="checkbox">')
+        .on('click', '#checkbox-all', function() {
+          var isChecked = $(this).is(':checked');
+          $('td input[type=checkbox]').each(function(i) {
+            $(this).prop('checked', isChecked);
+          });          
+      });    
+  };
+
+  selectAll();
+
+  // control items should be fixed in position if table is scrolled
+  var sticky = require('sticky-header');
+  sticky(document.getElementById('controlpanel'));
 };
+
+
