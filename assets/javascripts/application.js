@@ -44,15 +44,6 @@ $(function() {
   }
   preventDoubleSubmit();
 
-  // select all
-  $('<input id="checkbox-all" type="checkbox">').appendTo('.js-select-all');
-  $('#checkbox-all').on('click', function() {
-    var checked = $(this).is(':checked');
-    $('td input[type=checkbox]').each(function(i) {
-      $(this).prop('checked', checked);
-    });
-  });
-
   // datatables init
   var datatable = $('.js-datatable');
   if (datatable.length) {
