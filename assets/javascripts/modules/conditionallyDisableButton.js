@@ -6,7 +6,7 @@ module.exports = function() {
       buttonName = $checkboxToggle.data('toggle-button'),
       $toggleButton = $('[name=' + buttonName + ']');
 
-  if (!$checkboxToggle.length) { return false; };
+  if (!$checkboxToggle.length) { return false; }
 
   $toggleButton.prop('disabled', true);
 
