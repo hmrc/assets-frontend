@@ -75,12 +75,28 @@ module.exports = function(grunt) {
       all: [
         'javascripts/**/*.js',
         '!javascripts/vendor/**/*',
-        '!javascripts/**/{base64v1_0,mdtpdf}.js'
+        '!javascripts/encryption/**/*',
+        '!javascripts/**/mdtpdf.js'
       ],
       options: {
         reporter: require('jshint-stylish'),
         jshintrc: true,
         force: true
+      }
+    },
+
+    concat: {
+      build: {
+        src: ['javascripts/encryption/**/*.js'],
+        dest: '<%= dirs.public %>/javascripts/encryption.min.js'
+      }
+    },
+
+    uglify: {
+      build: {
+        files: {
+          '<%= dirs.public %>/javascripts/encryption.min.js': ['<%= dirs.public %>/javascripts/encryption.min.js']
+        }
       }
     },
 
@@ -118,7 +134,7 @@ module.exports = function(grunt) {
 
     modernizr: {
       dev: {
-        "devFile": '<%= dirs.node_modules %>/modernizr/dist/modernizr-build.js',
+        devFile: '<%= dirs.node_modules %>/modernizr/dist/modernizr-build.js',
         outputFile: '<%= dirs.snapshot %>/javascripts/vendor/modernizr.js',
         extra: {
           shiv: true,
@@ -156,7 +172,7 @@ module.exports = function(grunt) {
           cwd: 'images',
           src: ['**/*'],
           dest: '<%= dirs.snapshot %>/images'
-        }]        
+        }]
       },
       build: {
         options: {
@@ -264,6 +280,7 @@ module.exports = function(grunt) {
     'copy:dev',
     'modernizr:dev',
     'browserify:dev',
+    'concat',
     'express',
     'watch'
   ]);
@@ -273,6 +290,8 @@ module.exports = function(grunt) {
     'sass:build',
     'cssmin',
     'browserify:build',
+    'concat',
+    'uglify',
     'test',
     'modernizr:dist',
     'copy:build',
