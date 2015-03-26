@@ -38,7 +38,7 @@
     addEvent(node, 'keyup', function(e, target)
     {
       keydown = false;
-      if(e.keyCode == 13) { callback(e, target); }
+      if(e.keyCode === 13) { callback(e, target); }
     });
     addEvent(node, 'click', function(e, target)
     {
@@ -50,12 +50,12 @@
   function getAncestor(node, match) {
     do
     {
-      if(!node || node.nodeName.toLowerCase() == match)
+      if(!node || node.nodeName.toLowerCase() === match)
       {
         break;
       }
     }
-    while(node = node.parentNode);
+    while(node === node.parentNode);
 
     return node;
   }
@@ -78,18 +78,18 @@
 
     //get the collection of details elements, but if that's empty
     //then we don't need to bother with the rest of the scripting
-    if((list = document.getElementsByTagName('details')).length == 0)
+    if((list = document.getElementsByTagName('details')).length === 0)
     {
       return;
     }
 
     //else iterate through them to apply their initial state
-    for(var n = list.length, i = 0; i < n; i ++)
+    for (var n = list.length, i = 0; i < n; i++)
     {
       var details = list[i];
 
       //detect native implementations
-      details.__native = typeof(details.open) == 'boolean';
+      details.__native = typeof(details.open) === 'boolean';
 
       details.setAttribute('role', 'group');
 
@@ -140,7 +140,7 @@
     //to expand or collapse the region (ie. invert the current state)
     //then update the twisty if we have one with a correpsonding glyph
     function statechange(summary) {
-      var expanded = details.__summary.getAttribute('aria-expanded') == 'true';
+      var expanded = details.__summary.getAttribute('aria-expanded') === 'true';
 
       details.__summary.setAttribute('aria-expanded', (expanded ? 'false' : 'true'));
       summary.__details.__content.style.display = (expanded ? 'none' : 'block');
