@@ -68,7 +68,7 @@ var browserifyTask = function(callback, devMode) {
     }
 
     var reportFinished = function() {
-      console.log("ending");
+      console.log('ending');
       // Log when bundling completes
       bundleLogger.end(bundleConfig.outputName);
 

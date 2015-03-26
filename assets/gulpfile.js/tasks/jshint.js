@@ -1,8 +1,8 @@
 'use strict';
 
-var config = require('../config').scripts,
-	gulp   = require('gulp'),
-	jshint = require('gulp-jshint-cached');
+var gulp   = require('gulp'),
+    config = require('../config').scripts,
+  	jshint = require('gulp-jshint-cached');
 
 gulp.task('jshint', function() {
   return gulp.src([config.src, config.jshintExclude])

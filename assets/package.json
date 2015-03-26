@@ -7,8 +7,9 @@
     "url": "https://github.com/hmrc/assets-frontend"
   },
   "scripts": {
-    "install": "napa",
-    "postinstall": "./node_modules/grunt-cli/bin/grunt --gruntfile node_modules/modernizr/Gruntfile.js build"
+    "dev": "gulp",
+    "build": "gulp build",
+    "install": "napa"
   },
   "napa": {
     "stageprompt": "alphagov/stageprompt#2.1.0"

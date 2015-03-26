@@ -14,18 +14,18 @@ cd assets/
 if [[ -n $1 ]]; then
   case "$1" in
 
-  "dev") deps && output "Starting grunt in dev mode..."
-    grunt
+  "dev") deps && output "Starting gulp in dev mode..."
+    npm run-script dev
     ;;
-  "build") deps && output "Starting grunt build task..."
+  "build") deps && output "Starting gulp build task..."
     if [[ -n $2 ]]; then
-      grunt build $2
+      npm run-script build $2
     else
-      grunt build
+      npm run-script build
     fi
     ;;
-  "test")  deps && output "Starting grunt test task..."
-    grunt test
+  "test")  deps && output "Starting gulp test task..."
+    npm run-script test
     ;;
   *)  echo "invalid parameter '$1'"
     ;;
