@@ -54,6 +54,8 @@ module.exports = {
     src: src + 'javascripts/modules/**/*.js',
     jshintExclude: '!javascripts/**/{base64v1_0,details.polyfill,mdtpdf}.js',
     dest: snapshotDir + 'javascripts',
+    jscsSrc: src + '.jscsrc',
+    encryptionSrc: src + 'javascripts/encryption/**/*.js',
     vendorDest: {
       dev: snapshotDir + 'javascripts/vendor',
       prod: distDir + 'javascripts/vendor'
