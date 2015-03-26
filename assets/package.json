@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build",
-    "install": "napa"
+    "install": "napa",
+    "postinstall": "node -e \"require('grunt').tasks(['modernizr']);\""
   },
   "napa": {
     "stageprompt": "alphagov/stageprompt#2.1.0"
@@ -27,9 +28,14 @@
     "del": "^1.1.1",
     "express": "~3.4.8",
     "fingerprintjs": "^0.5.3",
+    "grunt": "^0.4.5",
     "grunt-cli": "0.1.9",
+    "grunt-modernizr": "^0.6.0",
     "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-grunt": "^0.5.2",
     "gulp-if": "^1.2.5",
+    "gulp-jscs": "^1.6.0",
     "gulp-jshint": "^1.9.4",
     "gulp-jshint-cached": "^1.4.2",
     "gulp-json-editor": "^2.2.1",
@@ -87,7 +93,8 @@
     "details": "./javascripts/modules/details.polyfill.js",
     "govuk-template": "./govuk_elements/govuk/public/javascripts/govuk-template.js",
     "datatables": "./node_modules/datatables/media/js/jquery.dataTables.js",
-    "base64": "./node_modules/js-base64/base64.min.js"
+    "base64": "./node_modules/js-base64/base64.js",
+    "json3": "./node_modules/json3/lib/json3.js"
   },
   "browserify-shim": {
     "jquery": {
@@ -106,6 +113,12 @@
       "depends": [
         "stageprompt"
       ]
+    },
+    "json3": {
+      "exports": "JSON"
+    },
+    "mdtpdf": {
+      "depends": "json3"
     }
   }
 }
