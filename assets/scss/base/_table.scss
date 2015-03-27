@@ -50,7 +50,7 @@ table {
 }
 
 .table--light-header {
-  border-bottom: none;
+  border-bottom: 2px solid $light-grey;
 
   thead {
     border-bottom: 3px solid $govuk-blue;
