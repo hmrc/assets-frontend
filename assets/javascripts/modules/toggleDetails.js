@@ -22,7 +22,7 @@
 
 module.exports = function() {
 
-  var visuallyHidden = 'visuallyhidden';
+  var hidden = 'hidden';
 
   // for each toggle link in the pge
   $('[data-toggle-details]').each(function() {
@@ -38,7 +38,7 @@ module.exports = function() {
     $container = $('.' + $linkContainer.data('toggle-details'));
 
     // container should be hidden on page load
-    $container.addClass(visuallyHidden);
+    $container.addClass(hidden);
 
     // bind toggle link click
     $link.bind("click", function(e) {
@@ -54,9 +54,9 @@ module.exports = function() {
 
       e.preventDefault();
 
-      $container.toggleClass(visuallyHidden);
+      $container.toggleClass(hidden);
 
-      $linkContainer.toggleClass(visuallyHidden);
+      $linkContainer.toggleClass(hidden);
 
     }
 
