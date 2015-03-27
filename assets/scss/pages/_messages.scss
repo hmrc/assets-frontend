@@ -1,6 +1,11 @@
 table.messages {
 	width: 100%;
 
+  td:last-child,
+  th:last-child {
+    padding-right:0;
+  }
+
 	th {
 		font-weight: 400;
 	}
