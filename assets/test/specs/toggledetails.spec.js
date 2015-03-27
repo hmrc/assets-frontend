@@ -2,7 +2,7 @@ require('jquery');
 
 describe("Given I have a toggle details module and two targets on the page", function() {
 
-  var visuallyHidden = 'visuallyhidden';
+  var hidden = 'hidden';
 
   var toggleDetails,
       $link1,
@@ -35,13 +35,13 @@ describe("Given I have a toggle details module and two targets on the page", fun
     });
 
     it("Both link containers should be visible", function() {
-      expect($link1).not.toHaveClass(visuallyHidden);
-      expect($link2).not.toHaveClass(visuallyHidden);
+      expect($link1).not.toHaveClass(hidden);
+      expect($link2).not.toHaveClass(hidden);
     });
 
-    it("Both target containers should be visually hidden", function() {
-      expect($target1).toHaveClass(visuallyHidden);
-      expect($target2).toHaveClass(visuallyHidden);
+    it("Both target containers should be hidden", function() {
+      expect($target1).toHaveClass(hidden);
+      expect($target2).toHaveClass(hidden);
     });
 
     it("Both minimise links should be not be hidden", function() {
@@ -69,19 +69,19 @@ describe("Given I have a toggle details module and two targets on the page", fun
     });
 
     it("The first link should be hidden", function() {
-      expect($link1).toHaveClass(visuallyHidden);
+      expect($link1).toHaveClass(hidden);
     });
 
     it("The first target should be visible", function() {
-      expect($target1).not.toHaveClass(visuallyHidden);
+      expect($target1).not.toHaveClass(hidden);
     });
 
     it("The second link should be visible", function() {
-      expect($link2).not.toHaveClass(visuallyHidden);
+      expect($link2).not.toHaveClass(hidden);
     });
 
     it("The second target should be hidden", function() {
-      expect($target2).toHaveClass(visuallyHidden);
+      expect($target2).toHaveClass(hidden);
     });
 
   });
@@ -104,19 +104,19 @@ describe("Given I have a toggle details module and two targets on the page", fun
     });
 
     it("The first link should be visible", function() {
-      expect($link1).not.toHaveClass(visuallyHidden);
+      expect($link1).not.toHaveClass(hidden);
     });
 
     it("The first target should be hidden", function() {
-      expect($target1).toHaveClass(visuallyHidden);
+      expect($target1).toHaveClass(hidden);
     });
 
     it("The second link should be hidden", function() {
-      expect($link2).toHaveClass(visuallyHidden);
+      expect($link2).toHaveClass(hidden);
     });
 
     it("The second target should be visible", function() {
-      expect($target2).not.toHaveClass(visuallyHidden);
+      expect($target2).not.toHaveClass(hidden);
     });
 
   });
@@ -141,19 +141,19 @@ describe("Given I have a toggle details module and two targets on the page", fun
     });
 
     it("The first link should be visible", function() {
-      expect($link1).not.toHaveClass(visuallyHidden);
+      expect($link1).not.toHaveClass(hidden);
     });
 
     it("The first target should be hidden", function() {
-      expect($target1).toHaveClass(visuallyHidden);
+      expect($target1).toHaveClass(hidden);
     });
 
     it("The second link should be visible", function() {
-      expect($link2).not.toHaveClass(visuallyHidden);
+      expect($link2).not.toHaveClass(hidden);
     });
 
     it("The second target should be hidden", function() {
-      expect($target2).toHaveClass(visuallyHidden);
+      expect($target2).toHaveClass(hidden);
     });
 
   });
@@ -178,19 +178,19 @@ describe("Given I have a toggle details module and two targets on the page", fun
     });
 
     it("The first link should be visible", function() {
-      expect($link1).not.toHaveClass(visuallyHidden);
+      expect($link1).not.toHaveClass(hidden);
     });
 
     it("The first target should be hidden", function() {
-      expect($target1).toHaveClass(visuallyHidden);
+      expect($target1).toHaveClass(hidden);
     });
 
     it("The second link should be visible", function() {
-      expect($link2).not.toHaveClass(visuallyHidden);
+      expect($link2).not.toHaveClass(hidden);
     });
 
     it("The second target should be hidden", function() {
-      expect($target2).toHaveClass(visuallyHidden);
+      expect($target2).toHaveClass(hidden);
     });
 
   });
