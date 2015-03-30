@@ -10,9 +10,11 @@ table.messages {
 		font-weight: 400;
 	}
 	
-	th:nth-of-type(1) {
-		width: 15%;
+	.marker-column {
+		width: 5%;
 	}
+
+  // TODO: Replace these nth-of-types with classes
 	th:nth-of-type(2) {
 		width: 50%;
 	}
