@@ -1,6 +1,7 @@
 *.DS_Store
 .sass-cache/
 .tmp/
+*.iml
 
 package.json
 npm-debug.log
