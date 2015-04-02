@@ -22,10 +22,16 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     fingerprint = require('./modules/fingerprint.js'),
     enhancedTables = require('./modules/enhancedTables.js');
 
-  //initialise mdtpf
-  fingerprint();
+//initialise mdtpf
+fingerprint();
 
 $(function() {
+  var datatable,
+      $searchFocus,
+      $clickableRow,
+      $feedbackForms,
+      $errorReportForm;
+
   conditionallyDisableButton();
 
   $(document).on('click', 'a', function(e) {
@@ -33,19 +39,21 @@ $(function() {
     return setSSOLinks(e, window.ssoUrl);
   });
 
-  var $clickableRow = $('.clickable-row'),
-      //feedback forms require a hidden field denoting if javascript is enabled
-      $feedbackForms = $('.form--feedback'),
-      $searchFocus = $('.js-search-focus'),
-      $errorReportForm = $('.report-error__content form');
+  // feedback forms require a hidden field denoting if javascript is enabled
+  $searchFocus      = $('.js-search-focus');
+  $clickableRow     = $('.clickable-row');
+  $feedbackForms    = $('.form--feedback');
+  $errorReportForm  = $('.report-error__content form');
 
-  if($clickableRow.length) {
+  if ($clickableRow.length) {
     tableRowClick($clickableRow);
   }
+
   preventDoubleSubmit();
 
   // datatables init
-  var datatable = $('.js-datatable');
+  datatable = $('.js-datatable');
+
   if (datatable.length) {
     enhancedTables(datatable);
   }
@@ -60,7 +68,7 @@ $(function() {
   });
 
   //we have javascript enabled so change hidden input to reflect this
-  $feedbackForms.find('input[name="isJavascript"]').attr("value", true);
+  $feedbackForms.find('input[name=isJavascript]').attr('value', true);
 
   //Initialise validation for the feedback form
   $errorReportForm.validate({
@@ -68,19 +76,23 @@ $(function() {
     errorPlacement: function(error, element) {
       error.insertBefore(element);
     },
+
     //Highlight invalid input
     highlight: function(element, errorClass) {
       $(element).parent().addClass('form-field--error');
+
       //TODO: temp fix for form submission bug. Report a problem needs a rewrite
       $errorReportForm.find('.button').prop('disabled', false);
     },
+
     //Unhighlight valid input
     unhighlight: function(element, errorClass) {
       $(element).parent().removeClass('form-field--error');
     },
+
     //When all fields are valid perform AJAX call
     submitHandler: function(form) {
-      reportAProblem().submitForm(form, $errorReportForm.attr("action"));
+      reportAProblem().submitForm(form, $errorReportForm.attr('action'));
     }
   });
 
@@ -100,23 +112,23 @@ $(function() {
     }
   });
 
-  if (window.location.hash && $(".design-principles").length !== 1 && $('.section-page').length !== 1) {
+  if (window.location.hash && $('.design-principles').length !== 1 && $('.section-page').length !== 1) {
     contentNudge(window.location.hash);
   }
 
-  $("nav").delegate('a', 'click', function() {
+  $('nav').delegate('a', 'click', function() {
     var hash,
-        href = $(this).attr('href');
+      href = $(this).attr('href');
 
     if (href.charAt(0) === '#') {
       hash = href;
-    } else if (href.indexOf("#") > 0) {
-      hash = "#" + href.split("#")[1];
+    } else if (href.indexOf('#') > 0) {
+      hash = '#' + href.split('#')[1];
     }
 
     if ($(hash).length === 1) {
-      $("html, body").animate({
-        scrollTop: $(hash).offset().top - $("#global-header").height()
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top - $('#global-header').height()
       }, 10);
     }
   });
@@ -130,6 +142,7 @@ $(function() {
       .on('blur', function() {
         $(this).removeClass('button-active');
       });
+
     $('.button')
       .on('mouseover', function() {
         $(this).addClass('button-hover');
@@ -139,12 +152,13 @@ $(function() {
       });
   }
 
-  if ($("*[data-contextual-helper]").length) {
+  if ($('*[data-contextual-helper]').length) {
     // setup showing/hiding of contextual fields
     toggleContextualFields().setup();
   }
 
   toggleDynamicFormFields();
+
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
   simpleToggleDynamicFormFields();
   questionnaireSubmission();

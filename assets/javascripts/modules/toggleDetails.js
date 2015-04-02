@@ -6,10 +6,10 @@
  *
  * Usage:
  *
- *  Place attribute "data-toggle-details" on toggle link or a link's container
+ *  Place attribute 'data-toggle-details' on toggle link or a link's container
  *  The value of this attribute must be the class of the target container to show/hide
  *
- *  <div data-toggle-details="my-target-container">
+ *  <div data-toggle-details='my-target-container'>
  *      <a href="#">Toggle Link</a>
  *  </div>
  *
@@ -27,9 +27,9 @@ module.exports = function() {
   // for each toggle link in the pge
   $('[data-toggle-details]').each(function() {
 
-    var $linkContainer = $(this),
-        $link,
-        $container;
+    var $link,
+        $container,
+        $linkContainer = $(this);
 
     // link is either this element or the anchor inside it
     $link = $linkContainer.is('a') ? $linkContainer : $linkContainer.find('a');
@@ -41,12 +41,12 @@ module.exports = function() {
     $container.addClass(hidden);
 
     // bind toggle link click
-    $link.bind("click", function(e) {
+    $link.bind('click', function(e) {
       toggleClick(e);
     });
 
     //// show minimise link (hidden for non-JS) and bind  click
-    $container.find('.minimise').bind("click", function(e) {
+    $container.find('.minimise').bind('click', function(e) {
       toggleClick(e);
     });
 

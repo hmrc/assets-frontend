@@ -71,6 +71,18 @@ module.exports = function(grunt) {
       }
     },
 
+    jscs: {
+      src: [
+        'javascripts/**/*.js',
+        '!javascripts/vendor/**/*',
+        '!javascripts/encryption/**/*',
+        '!javascripts/**/mdtpdf.js'
+      ],
+      options: {
+        config: './.jscsrc'
+      }
+    },
+
     jshint: {
       all: [
         'javascripts/**/*.js',
@@ -104,7 +116,7 @@ module.exports = function(grunt) {
       options: {
         watch: true,
         browserifyOptions: {
-         debug: true
+          debug: true
         }
       },
       dev: {
@@ -177,7 +189,7 @@ module.exports = function(grunt) {
       build: {
         options: {
           process: function(content, srcpath) {
-            return content.replace("//# sourceMappingURL=bundle.map", "");
+            return content.replace('//# sourceMappingURL=bundle.map', '');
           }
         },
         files: [{
@@ -254,20 +266,22 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('version', 'Bumps the package.json version for publishing to npm', function() {
-    var version = grunt.option('release');
+    var dist,
+        packageFile,
+        version = grunt.option('release');
 
     if (version && version !== '999-SNAPSHOT') {
-      var dist = grunt.config.get('dirs.dist'),
-          packageFile = grunt.file.read('package-build.json');
+      dist = grunt.config.get('dirs.dist');
+      packageFile = grunt.file.read('package-build.json');
 
-      packageFile = grunt.template.process(packageFile, {data: {'version': version}});
+      packageFile = grunt.template.process(packageFile, {data: {version: version}});
 
       grunt.file.write(dist + '/package.json', packageFile);
       grunt.log.ok('Version bumped to ' + version);
       grunt.log.ok('Wrote file to ' + dist + '/package.json');
     }
     else {
-      grunt.log.error("No package.json needs to be written");
+      grunt.log.error('No package.json needs to be written');
     }
   });
 
@@ -301,6 +315,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('test', [
+    'jscs',
     'jshint',
     'karma'
   ]);
