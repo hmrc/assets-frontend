@@ -73,6 +73,18 @@ $ ./update_govuk_elements.sh
 4. Push to your fork
 5. Open a pull request back to this repo
 
-## License ##
- 
+
+### Syntax
+
+"All code in any code-base should look like a single person typed it, no matter how many people contributed." - [Rick Waldron](https://github.com/rwaldron/idiomatic.js/#all-code-in-any-code-base-should-look-like-a-single-person-typed-it-no-matter-how-many-people-contributed)
+
+* Use [Editorconfig](http://editorconfig.org/#download) when possible.
+* Two space indents. Don't use tabs anywhere.
+* No trailing whitespace, except in markdown files where a linebreak must be forced.
+* Files must end in a new line
+
+More to come in the form of a wiki page...
+
+## License
+
 This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html").
