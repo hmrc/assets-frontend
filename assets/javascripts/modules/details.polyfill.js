@@ -6,23 +6,18 @@
 
 // http://www.sitepoint.com/fixing-the-details-element/
 
-(function(){
+(function() {
 
   //add event construct for modern browsers or IE
   //which fires the callback with a pre-converted target reference
   function addEvent(node, type, callback) {
-    if(node.addEventListener)
-    {
-      node.addEventListener(type, function(e)
-      {
+    if (node.addEventListener) {
+      node.addEventListener(type, function(e) {
         callback(e, e.target);
 
       }, false);
-    }
-    else if(node.attachEvent)
-    {
-      node.attachEvent('on' + type, function(e)
-      {
+    } else if (node.attachEvent) {
+      node.attachEvent('on' + type, function(e) {
         callback(e, e.srcElement);
       });
     }
@@ -31,36 +26,36 @@
   //handle cross-modal click events
   function addClickEvent(node, callback) {
     var keydown = false;
-    addEvent(node, 'keydown', function()
-    {
+
+    addEvent(node, 'keydown', function() {
       keydown = true;
     });
-    addEvent(node, 'keyup', function(e, target)
-    {
+
+    addEvent(node, 'keyup', function(e, target) {
       keydown = false;
-      if(e.keyCode === 13) { callback(e, target); }
+      if (e.keyCode === 13) {
+        callback(e, target);
+      }
     });
-    addEvent(node, 'click', function(e, target)
-    {
-      if(!keydown) { callback(e, target); }
+
+    addEvent(node, 'click', function(e, target) {
+      if (!keydown) {
+        callback(e, target);
+      }
     });
   }
 
   //get the nearest ancestor element of a node that matches a given tag name
   function getAncestor(node, match) {
-    do
-    {
-      if(!node || node.nodeName.toLowerCase() === match)
-      {
+    do {
+      if (!node || node.nodeName.toLowerCase() === match) {
         break;
       }
     }
-    while(node === node.parentNode);
+    while (node === node.parentNode);
 
     return node;
   }
-
-
 
   //create a started flag so we can prevent the initialisation
   //function firing from both DOMContentLoaded and window.onloiad
@@ -68,28 +63,30 @@
 
   //initialisation function
   function addDetailsPolyfill(list) {
+    var i, n,
+        twisty,
+        details;
+
     //if this has already happened, just return
     //else set the flag so it doesn't happen again
-    if(started)
-    {
+    if (started) {
       return;
     }
+
     started = true;
 
     //get the collection of details elements, but if that's empty
     //then we don't need to bother with the rest of the scripting
-    if((list = document.getElementsByTagName('details')).length === 0)
-    {
+    if ((list = document.getElementsByTagName('details')).length === 0) {
       return;
     }
 
     //else iterate through them to apply their initial state
-    for (var n = list.length, i = 0; i < n; i++)
-    {
-      var details = list[i];
+    for (n = list.length, i = 0; i < n; i++) {
+      details = list[i];
 
       //detect native implementations
-      details.__native = typeof(details.open) === 'boolean';
+      details.__native = typeof (details.open) === 'boolean';
 
       details.setAttribute('role', 'group');
 
@@ -99,8 +96,7 @@
 
       //if the content doesn't have an ID, assign it one now
       //which we'll need for the summary's aria-controls assignment
-      if(!details.__content.id)
-      {
+      if (!details.__content.id) {
         details.__content.id = 'details-content-' + i;
       }
 
@@ -125,16 +121,14 @@
 
       //then if this is not a native implementation, create an arrow
       //inside the summary, saving its reference as a summary property
-      if(!details.__native)
-      {
-        var twisty = document.createElement('i');
+      if (!details.__native) {
+        twisty = document.createElement('i');
         twisty.className = 'arrow arrow-closed';
         twisty.appendChild(document.createTextNode('\u25ba'));
 
         details.__summary.__twisty = details.__summary.insertBefore(twisty, details.__summary.firstChild);
       }
     }
-
 
     //define a statechange function that updates aria-expanded and style.display
     //to expand or collapse the region (ie. invert the current state)
@@ -145,8 +139,7 @@
       details.__summary.setAttribute('aria-expanded', (expanded ? 'false' : 'true'));
       summary.__details.__content.style.display = (expanded ? 'none' : 'block');
 
-      if(summary.__twisty)
-      {
+      if (summary.__twisty) {
         summary.__twisty.firstChild.nodeValue = (expanded ? '\u25ba' : '\u25bc');
         summary.__twisty.setAttribute('class', (expanded ? 'arrow arrow-closed' : 'arrow arrow-open'));
       }
@@ -159,10 +152,10 @@
     //to pass-through the event, else call and return the statechange function
     //which also returns true to pass-through the remaining event
     addClickEvent(document, function(e, summary) {
-      if(!(summary = getAncestor(summary, 'summary')))
-      {
+      if (!(summary = getAncestor(summary, 'summary'))) {
         return true;
       }
+
       return statechange(summary);
     });
   }
@@ -173,4 +166,4 @@
   addEvent(document, 'DOMContentLoaded', addDetailsPolyfill);
   addEvent(window, 'load', addDetailsPolyfill);
 
-  })();
+})();

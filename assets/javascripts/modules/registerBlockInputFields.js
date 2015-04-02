@@ -1,7 +1,8 @@
 require('jquery');
 
 module.exports = function() {
-  var $selectableInputs = $("label[class*=block-label]");
+  var $selectableInputs = $('label[class*=block-label]');
+
   $selectableInputs
     .find('input[type=radio], input[type=checkbox]')
     .on('focus click', function() {
@@ -14,6 +15,7 @@ module.exports = function() {
       if ($(this).attr('type') === 'radio') {
         $(this).closest('label').siblings().removeClass('selected');
       }
-      $(this).closest('label').toggleClass('selected', $(this).prop("checked"));
-    });  
+
+      $(this).closest('label').toggleClass('selected', $(this).prop('checked'));
+    });
 };
