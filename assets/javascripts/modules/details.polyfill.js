@@ -109,7 +109,11 @@
       details.__summary.setAttribute('aria-controls', details.__content.id);
 
       details.__summary.setAttribute('aria-expanded', 'false');
-      details.__summary.setAttribute('role', 'button');
+      
+      // do not overwrite existing role, e.g. alert
+      if(!details.__summary.getAttribute('role')) {
+        details.__summary.setAttribute('role', 'button');
+      }
 
       //also set tabindex so the summary is keyboard accessible
       details.__summary.setAttribute('tabindex', '0');
