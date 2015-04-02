@@ -219,4 +219,3 @@
   addEvent(window, 'load', addDetailsPolyfill);
 
 })();
-  
