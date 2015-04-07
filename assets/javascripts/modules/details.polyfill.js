@@ -109,9 +109,9 @@
       details.__summary.setAttribute('aria-controls', details.__content.id);
 
       details.__summary.setAttribute('aria-expanded', 'false');
-      
+
       // do not overwrite existing role, e.g. alert
-      if(!details.__summary.getAttribute('role')) {
+      if (!details.__summary.getAttribute('role')) {
         details.__summary.setAttribute('role', 'button');
       }
 
