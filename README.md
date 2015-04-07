@@ -72,3 +72,7 @@ $ ./update_govuk_elements.sh
 3. Bump the `package.json` version number
 4. Push to your fork
 5. Open a pull request back to this repo
+
+## License ##
+ 
+This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html").
