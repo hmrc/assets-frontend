@@ -1,10 +1,10 @@
 require('jquery');
 require('datatables');
 
+var sticky = require('./sticky-header.js');
+
 module.exports = function(tableSelector) {
   var table,
-      sticky,
-      selectAll,
       pageLength,
       tableSubmit,
       isAllChecked;
@@ -72,7 +72,6 @@ module.exports = function(tableSelector) {
         $checkAll.prop('checked', false);
       }
     });
-
   });
 
   tableSelector.on('click', '.client-checkbox', function() {
@@ -87,15 +86,13 @@ module.exports = function(tableSelector) {
     var selectedNodes = table.$('input[type=checkbox]:checked');
     selectedNodes.addClass('hidden').appendTo(tableSelector.parents('form'));
     $(el).parents('form').submit();
-
   };
 
   isAllChecked = function() {
     return tableSelector.find('td input[type=checkbox]:checked').length === pageLength ? true : false;
   };
 
-  selectAll = function() {
-    // select all
+  if ($('#js-select-all').length) {
     $('#js-select-all').html('<input id="checkbox-all" type="checkbox">')
       .on('click', '#checkbox-all', function() {
         var isChecked = $(this).is(':checked');
@@ -103,11 +100,11 @@ module.exports = function(tableSelector) {
           $(this).prop('checked', isChecked);
         });
       });
-  };
-
-  selectAll();
+  }
 
   // control items should be fixed in position if table is scrolled
-  sticky = require('sticky-header');
-  sticky(document.getElementById('controlpanel'));
+  sticky({
+    el: '.controlpanel.stick',
+    className: 'fixed'
+  });
 };
