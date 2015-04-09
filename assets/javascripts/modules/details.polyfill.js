@@ -8,13 +8,12 @@
 
 (function() {
 
-  //add event construct for modern browsers or IE
-  //which fires the callback with a pre-converted target reference
+  // Add event construct for modern browsers or IE
+  // which fires the callback with a pre-converted target reference
   function addEvent(node, type, callback) {
     if (node.addEventListener) {
       node.addEventListener(type, function(e) {
         callback(e, e.target);
-
       }, false);
     } else if (node.attachEvent) {
       node.attachEvent('on' + type, function(e) {
@@ -23,124 +22,176 @@
     }
   }
 
-  //handle cross-modal click events
+  // Handle cross-modal click events
   function addClickEvent(node, callback) {
-    var keydown = false;
-
-    addEvent(node, 'keydown', function() {
-      keydown = true;
+    // Prevent space(32) from scrolling the page
+    addEvent(node, 'keypress', function(e, target) {
+      if (e.keyCode === 32) {
+        if (e.preventDefault) {
+          e.preventDefault();
+        } else {
+          e.returnValue = false;
+        }
+      }
     });
 
+    // When the key comes up - check if it is enter(13) or space(32)
     addEvent(node, 'keyup', function(e, target) {
-      keydown = false;
-      if (e.keyCode === 13) {
+      if (e.keyCode === 13 || e.keyCode === 32) {
         callback(e, target);
       }
     });
 
-    addEvent(node, 'click', function(e, target) {
-      if (!keydown) {
-        callback(e, target);
-      }
+    addEvent(node, 'mouseup', function(e, target) {
+      callback(e, target);
     });
   }
 
-  //get the nearest ancestor element of a node that matches a given tag name
+  // Get the nearest ancestor element of a node that matches a given tag name
   function getAncestor(node, match) {
     do {
       if (!node || node.nodeName.toLowerCase() === match) {
         break;
       }
+
+      node = node.parentNode;
     }
-    while (node === node.parentNode);
+    while (node);
 
     return node;
   }
 
-  //create a started flag so we can prevent the initialisation
-  //function firing from both DOMContentLoaded and window.onloiad
+  // Create a started flag so we can prevent the initialisation
+  // function firing from both DOMContentLoaded and window.onload
   var started = false;
 
-  //initialisation function
+  // Initialisation function
   function addDetailsPolyfill(list) {
-    var i, n,
+    var n,
+        i = 0,
         twisty,
         details;
 
-    //if this has already happened, just return
-    //else set the flag so it doesn't happen again
+    // If this has already happened, just return
+    // else set the flag so it doesn't happen again
     if (started) {
       return;
     }
 
     started = true;
 
-    //get the collection of details elements, but if that's empty
-    //then we don't need to bother with the rest of the scripting
+    // Get the collection of details elements, but if that's empty
+    // then we don't need to bother with the rest of the scripting
     if ((list = document.getElementsByTagName('details')).length === 0) {
       return;
     }
 
-    //else iterate through them to apply their initial state
-    for (n = list.length, i = 0; i < n; i++) {
+    // else iterate through them to apply their initial state
+    n = list.length;
+
+    for (n; i < n; i++) {
       details = list[i];
 
-      //detect native implementations
-      details.__native = typeof (details.open) === 'boolean';
+      // Detect native implementations
+      details.__native = typeof details.open === 'boolean';
 
-      details.setAttribute('role', 'group');
-
-      //save shortcuts to the inner summary and content elements
+      // Save shortcuts to the inner summary and content elements
       details.__summary = details.getElementsByTagName('summary').item(0);
       details.__content = details.getElementsByTagName('div').item(0);
 
-      //if the content doesn't have an ID, assign it one now
-      //which we'll need for the summary's aria-controls assignment
+      // If the content doesn't have an ID, assign it one now
+      // which we'll need for the summary's aria-controls assignment
       if (!details.__content.id) {
         details.__content.id = 'details-content-' + i;
       }
 
-      //then define aria-controls on the summary to point to that ID
-      //so that assistive technologies know it controls the aria-expanded state
-      details.__summary.setAttribute('aria-controls', details.__content.id);
+      // Add ARIA role="group" to details
+      details.setAttribute('role', 'group');
 
-      details.__summary.setAttribute('aria-expanded', 'false');
-
-      // do not overwrite existing role, e.g. alert
+      // Add role=button to summary
+      // without overwriting existing role, e.g. alert
       if (!details.__summary.getAttribute('role')) {
         details.__summary.setAttribute('role', 'button');
       }
 
-      //also set tabindex so the summary is keyboard accessible
-      details.__summary.setAttribute('tabindex', '0');
+      // Add aria-controls
+      details.__summary.setAttribute('aria-controls', details.__content.id);
 
-      //then set aria-expanded and style.display and remove the
-      //open attribute, so this region is now collapsed by default
-      details.__content.style.display = 'none';
-      details.removeAttribute('open');
+      // Set tabindex so the summary is keyboard accessible
+      // details.__summary.setAttribute('tabindex', 0);
+      // http://www.saliences.com/browserBugs/tabIndex.html
+      details.__summary.tabIndex = 0;
 
-      //create a circular reference from the summary back to its
-      //parent details element, for convenience in the click handler
+      // Detect initial open/closed state
+
+      // Native support - has 'open' attribute
+      if (details.open === true) {
+        details.__summary.setAttribute('aria-expanded', 'true');
+        details.__content.setAttribute('aria-hidden', 'false');
+        details.__content.style.display = 'block';
+      }
+
+      // Native support - doesn't have 'open' attribute
+      if (details.open === false) {
+        details.__summary.setAttribute('aria-expanded', 'false');
+        details.__content.setAttribute('aria-hidden', 'true');
+        details.__content.style.display = 'none';
+      }
+
+      // If this is not a native implementation
+      if (!details.__native) {
+        // Add an arrow
+        twisty = document.createElement('i');
+
+        // Check for the 'open' attribute
+        // If open exists, but isn't supported it won't have a value
+        if (details.getAttribute('open') === '') {
+          details.__summary.setAttribute('aria-expanded', 'true');
+          details.__content.setAttribute('aria-hidden', 'false');
+        }
+
+        // If open doesn't exist - it will be null or undefined
+        if (details.getAttribute('open') === null || details.getAttribute('open') === 'undefined') {
+          details.__summary.setAttribute('aria-expanded', 'false');
+          details.__content.setAttribute('aria-hidden', 'true');
+          details.__content.style.display = 'none';
+        }
+
+      }
+
+      // Create a circular reference from the summary back to its
+      // parent details element, for convenience in the click handler
       details.__summary.__details = details;
 
-      //then if this is not a native implementation, create an arrow
-      //inside the summary, saving its reference as a summary property
+      // If this is not a native implementation, create an arrow
+      // inside the summary
       if (!details.__native) {
+
         twisty = document.createElement('i');
-        twisty.className = 'arrow arrow-closed';
-        twisty.appendChild(document.createTextNode('\u25ba'));
+
+        if (details.getAttribute('open') === '') {
+          twisty.className = 'arrow arrow-open';
+          twisty.appendChild(document.createTextNode('\u25bc'));
+        } else {
+          twisty.className = 'arrow arrow-closed';
+          twisty.appendChild(document.createTextNode('\u25ba'));
+        }
 
         details.__summary.__twisty = details.__summary.insertBefore(twisty, details.__summary.firstChild);
+        details.__summary.__twisty.setAttribute('aria-hidden', 'true');
+
       }
     }
 
-    //define a statechange function that updates aria-expanded and style.display
-    //to expand or collapse the region (ie. invert the current state)
-    //then update the twisty if we have one with a correpsonding glyph
+    // Define a statechange function that updates aria-expanded and style.display
+    // Also update the arrow position
     function statechange(summary) {
-      var expanded = details.__summary.getAttribute('aria-expanded') === 'true';
 
-      details.__summary.setAttribute('aria-expanded', (expanded ? 'false' : 'true'));
+      var expanded = summary.__details.__summary.getAttribute('aria-expanded') === 'true',
+          hidden = summary.__details.__content.getAttribute('aria-hidden') === 'true';
+
+      summary.__details.__summary.setAttribute('aria-expanded', (expanded ? 'false' : 'true'));
+      summary.__details.__content.setAttribute('aria-hidden', (hidden ? 'false' : 'true'));
       summary.__details.__content.style.display = (expanded ? 'none' : 'block');
 
       if (summary.__twisty) {
@@ -151,10 +202,7 @@
       return true;
     }
 
-    //now bind a document click event to handle summary elements
-    //if the target is not inside a summary element, just return true
-    //to pass-through the event, else call and return the statechange function
-    //which also returns true to pass-through the remaining event
+    // Bind a click event to handle summary elements
     addClickEvent(document, function(e, summary) {
       if (!(summary = getAncestor(summary, 'summary'))) {
         return true;
@@ -164,9 +212,9 @@
     });
   }
 
-  //then bind two load events for modern and older browsers
-  //if the first one fires it will set a flag to block the second one
-  //but if it's not supported then the second one will fire
+  // Bind two load events for modern and older browsers
+  // If the first one fires it will set a flag to block the second one
+  // but if it's not supported then the second one will fire
   addEvent(document, 'DOMContentLoaded', addDetailsPolyfill);
   addEvent(window, 'load', addDetailsPolyfill);
 
