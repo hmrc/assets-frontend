@@ -3,6 +3,7 @@
   display: inline-block;
   width: 100%;
 }
+
 .dataTables_info {
   float: left;
 
@@ -10,37 +11,38 @@
     float: none;
   }
 }
+
+#js-select-all {
+  width: 3%;
+}
+
 .controlpanel {
   background-color: $white;
   width: 100%;
   padding: 5px 0;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+  }
 }
+
 .controlpanel__items {
   position: relative;
 }
 
-//hide default datatables searchbox
 .dataTables_filter {
   text-align: right;
   position: absolute;
-  right: 0; 
+  right: 0;
   top: -69px;
+
   input {
     border: 1px solid $grey-1;
     width: em(260);
-  }  
+  }
 }
-
-// .dataTables_enhancedFilter {
-//   text-align: right;
-//   position: absolute;
-//   right: 0;
-//   top: 0;
-//   input {
-//     border: 1px solid $grey-1;
-//     width: em(260);
-//   }  
-// }
 
 ::-webkit-input-placeholder {
   color: $grey-1;
@@ -55,10 +57,6 @@
     margin-right: 5px;
   }
 
-  .disabled {
-    display: none;
-  }
-
   a {
     color: $link-colour;
     cursor: pointer;
@@ -71,33 +69,45 @@
   .current {
     color: $text-colour;
   }
+
+  .disabled {
+    display: none;
+  }
 }
 
 .dataTable thead {
   .sorting {
     background: url("../images/sort_both.png") no-repeat scroll center right;
   }
+
   .sorting_asc {
     background: url("../images/sort_asc.png") no-repeat scroll center right;
   }
+
   .sorting_desc {
     background: url("../images/sort_desc.png") no-repeat scroll center right;
   }
+
   .sorting_asc_disabled {
     background: url("../images/sort_asc_disabled.png") no-repeat scroll center right;
   }
+
   .sorting_desc_disabled {
     background: url("../images/sort_desc_disabled.png") no-repeat scroll center right;
-  } 
+  }
+
   .client {
     background-position-x: 57px;
   }
+
   .paye {
     background-position-x: 120px;
   }
+
   .client-ref {
     background-position-x: 123px;
   }
+
   label, th {
     cursor: pointer;
   }

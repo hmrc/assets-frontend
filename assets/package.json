@@ -63,7 +63,6 @@
     "minifyify": "^6.0.0",
     "modernizr": "^3.0.0-pre",
     "napa": "^1.2.0",
-    "sticky-header": "^0.2.1",
     "time-grunt": "~0.2.8"
   },
   "browserify": {
