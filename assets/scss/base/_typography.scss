@@ -160,3 +160,11 @@ small {
 .heading--underlined {
   border-bottom: solid 5px $govuk-blue;
 }
+
+details {
+  margin: 15px 0;
+
+  .summary {
+    text-decoration: underline;
+  }
+}
