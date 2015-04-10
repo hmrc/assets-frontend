@@ -12,6 +12,16 @@ table {
     @include core-16;
   }
 
+  td p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   caption,
   .highlight td {
     font-weight: 700;
