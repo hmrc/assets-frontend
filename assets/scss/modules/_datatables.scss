@@ -39,8 +39,17 @@
   top: -69px;
 
   input {
+    background-image: url("../images/icon-search-dark.png");
+    background-repeat: no-repeat;
+    background-position: 10px center;
     border: 1px solid $grey-1;
-    width: em(260);
+    padding-left: 30px;
+    width: em(300);
+
+    @include device-pixel-ratio() {
+      background-image: url("../images/icon-search-dark-2x.png");
+      background-size: 16px 16px;
+    }
   }
 }
 
