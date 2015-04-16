@@ -80,7 +80,8 @@
     "details": "./javascripts/modules/details.polyfill.js",
     "govuk-template": "./govuk_elements/govuk/public/javascripts/govuk-template.js",
     "datatables": "./node_modules/datatables/media/js/jquery.dataTables.js",
-    "base64": "./node_modules/js-base64/base64.min.js"
+    "base64": "./node_modules/js-base64/base64.min.js",
+    "json3": "./node_modules/json3/lib/json3.js"
   },
   "browserify-shim": {
     "jquery": {
@@ -99,6 +100,12 @@
       "depends": [
         "stageprompt"
       ]
+    },
+    "json3": {
+      "exports" : "JSON"
+    },
+    "mdtpdf" : {
+      "depends": "json3"
     }
   }
 }
