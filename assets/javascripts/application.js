@@ -16,6 +16,7 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     questionnaireSubmission = require('./modules/questionnaireSubmission.js'),
     registerBlockInputFields = require('./modules/registerBlockInputFields.js'),
     exitSurveyValidation = require('./modules/exitSurveyValidation.js'),
+    riskTriageValidation = require('./modules/riskTriageValidation.js'),
     saEmailPrefs = require('./modules/saEmailPrefs.js'),
     GOVUK = require('stageprompt'),
     toggleDetails = require('./modules/toggleDetails.js'),
@@ -165,6 +166,7 @@ $(function() {
   questionnaireSubmission();
   registerBlockInputFields();
   exitSurveyValidation();
+  riskTriageValidation();
   saEmailPrefs().setup();
   toggleDetails();
   validatorFocus();
