@@ -20,6 +20,7 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     GOVUK = require('stageprompt'),
     toggleDetails = require('./modules/toggleDetails.js'),
     fingerprint = require('./modules/fingerprint.js'),
+    validatorFocus = require('./modules/validatorFocus.js'),
     enhancedTables = require('./modules/enhancedTables.js');
 
 //initialise mdtpf
@@ -166,4 +167,5 @@ $(function() {
   exitSurveyValidation();
   saEmailPrefs().setup();
   toggleDetails();
+  validatorFocus();
 });
