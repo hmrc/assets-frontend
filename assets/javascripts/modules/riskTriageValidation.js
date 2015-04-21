@@ -1,7 +1,6 @@
 require('jquery');
 
 module.exports = function() {
-  console.log('initialising triage validation');
 
   var $riskTriageForm = $('.form--risk-triage');
 
