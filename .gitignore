@@ -2,6 +2,7 @@
 .sass-cache/
 .tmp/
 *.iml
+.idea
 
 package.json
 npm-debug.log
