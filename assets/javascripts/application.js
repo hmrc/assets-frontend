@@ -22,7 +22,8 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     toggleDetails = require('./modules/toggleDetails.js'),
     fingerprint = require('./modules/fingerprint.js'),
     validatorFocus = require('./modules/validatorFocus.js'),
-    enhancedTables = require('./modules/enhancedTables.js');
+    enhancedTables = require('./modules/enhancedTables.js'),
+    attorneyBanner = require('./modules/attorneyBanner.js');
 
 //initialise mdtpf
 fingerprint();
@@ -170,4 +171,5 @@ $(function() {
   saEmailPrefs().setup();
   toggleDetails();
   validatorFocus();
+  attorneyBanner();
 });
