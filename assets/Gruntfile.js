@@ -137,7 +137,7 @@ module.exports = function(grunt) {
           plugin: ['minifyify']
         },
         files: {
-          '<%= dirs.snapshot %>/javascripts/mdtpdf.min.js': ['javascripts/export/fingerprint.js']
+          '<%= dirs.public %>/javascripts/mdtpdf.min.js': ['javascripts/export/fingerprint.js']
         }
       }
     },
