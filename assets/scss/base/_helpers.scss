@@ -164,11 +164,9 @@
     @include accessibility;
 }
 
+.hidden,
+.no-js .js-visible,
 .js .js-hidden {
-  display: none !important;
-}
-
-.no-js .js-visible {
   display: none !important;
 }
 
