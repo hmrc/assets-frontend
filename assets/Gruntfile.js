@@ -131,6 +131,14 @@ module.exports = function(grunt) {
         files: {
           '<%= dirs.public %>/javascripts/application.min.js': ['javascripts/application.js']
         }
+      },
+      fingerprint: {
+        options: {
+          plugin: ['minifyify']
+        },
+        files: {
+          '<%= dirs.public %>/javascripts/mdtpdf.min.js': ['javascripts/export/fingerprint.js']
+        }
       }
     },
 
@@ -294,6 +302,7 @@ module.exports = function(grunt) {
     'copy:dev',
     'modernizr:dev',
     'browserify:dev',
+    'browserify:fingerprint',
     'concat',
     'express',
     'watch'
@@ -304,6 +313,7 @@ module.exports = function(grunt) {
     'sass:build',
     'cssmin',
     'browserify:build',
+    'browserify:fingerprint',
     'concat',
     'uglify',
     'test',
