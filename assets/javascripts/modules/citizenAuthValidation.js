@@ -29,7 +29,7 @@ module.exports = function() {
 
       highlight: function(element) {
         $(element).parent().addClass('form-field--error');
-        $(element).closest('.client-error-notification').parent().addClass('error');
+        $(element).closest('.client-validated').addClass('error');
       },
 
       //When invalid submission, re-enable the submit button
@@ -98,7 +98,7 @@ module.exports = function() {
           $(element).parent().addClass('form-field--error');
         }
 
-        $(element).closest('.client-error-notification').parent().addClass('error');
+        $(element).closest('.client-validated').addClass('error');
       },
 
       unhighlight: function(element) {
@@ -107,12 +107,13 @@ module.exports = function() {
           if ($('.risk-date-error').length === 0) {
             // only remove error marker from DOB group if no other date field errors
             $('#dob').removeClass('form-field--error');
+            $(element).closest('.client-validated').removeClass('error');
           }
         } else {
           $(element).parent().removeClass('form-field--error');
+          $(element).closest('.client-validated').removeClass('error');
         }
 
-        $(element).closest('.client-error-notification').parent().removeClass('error');
       },
 
       //When invalid submission, re-enable the submit button
