@@ -4,11 +4,11 @@ var gulp =  require('gulp'),
 	jscs = require('gulp-jscs');
 
 gulp.task('jscs', function() {
-	return gulp.src([
+  return gulp.src([
 		config.entryPoint,
 		config.src,
 		config.gulpTasks,
 		config.jshintExclude
 	])
-	.pipe(jscs(config.jscs));
+	.pipe(jscs({configPath: config.jscsSrc}));
 });

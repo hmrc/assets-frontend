@@ -2,7 +2,7 @@
 
 var gulp   = require('gulp'),
     config = require('../config').scripts,
-  	jshint = require('gulp-jshint-cached');
+    jshint = require('gulp-jshint-cached');
 
 gulp.task('jshint', function() {
   return gulp.src([config.src, config.jshintExclude])

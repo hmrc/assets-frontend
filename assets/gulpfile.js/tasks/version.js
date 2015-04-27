@@ -8,7 +8,7 @@ var gulp        = require('gulp'),
     config      = require('../config').production,
     version     = util.env.release;
 
-gulp.task('version', function () {
+gulp.task('version', function() {
   if (version && version !== '999-SNAPSHOT') {
     gulp.src(packageFile)
       .pipe(jeditor({

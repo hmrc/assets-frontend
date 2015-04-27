@@ -6,7 +6,7 @@ var gulp        = require('gulp'),
     config      = require('../config').sass,
     sourceMaps  = require('gulp-sourcemaps');
 
-gulp.task('sass', function () {
+gulp.task('sass', function() {
   var env   = global.runmode,
       isDev = (env === 'dev');
 

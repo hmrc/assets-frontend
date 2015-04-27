@@ -25,7 +25,8 @@ Test:
 var src = './',
     dest = './public/',
     distDir = './dist/',
-    // npmModules = src + 'node_modules/',
+
+ // npmModules = src + 'node_modules/',
     snapshotDir = dest + '999-SNAPSHOT/',
     govuk = {
       elements: src + 'govuk_elements',
@@ -52,10 +53,12 @@ module.exports = {
 
   scripts: {
     src: src + 'javascripts/modules/**/*.js',
-    jshintExclude: '!javascripts/**/{base64v1_0,details.polyfill,mdtpdf}.js',
     dest: snapshotDir + 'javascripts',
+    entryPoint: src + 'javascripts/application.js',
+    jshintExclude: '!javascripts/**/{base64v1_0,details.polyfill,mdtpdf}.js',
     jscsSrc: src + '.jscsrc',
     encryptionSrc: src + 'javascripts/encryption/**/*.js',
+    gulpTasks: src + 'gulpfile.js/**/*.js',
     vendorDest: {
       dev: snapshotDir + 'javascripts/vendor',
       prod: distDir + 'javascripts/vendor'
@@ -94,7 +97,7 @@ module.exports = {
         includePaths: [govuk.template + '/public/sass'],
         outputStyle: 'expanded'
       },
-      sourceMapsDir: './maps',
+      sourceMapsDir: './maps'
     },
     prod: {
       dest: distDir + 'stylesheets/',
@@ -123,7 +126,7 @@ module.exports = {
   test: {
     specsScr: src + 'test/specs/unit/**/*.js',
     fixturesScr: src + 'test/specs/fixtures/*.html',
-    karma: src + 'test/config/karma.conf.js',
+    karma: src + 'test/config/karma.conf.js'
   },
 
   server: {
@@ -142,6 +145,6 @@ module.exports = {
     jsDest: distDir + 'javascripts/',
     imagesDir: distDir + 'images',
     cssSrc: distDir + 'stylesheets',
-    dest: distDir,
+    dest: distDir
   }
 };
