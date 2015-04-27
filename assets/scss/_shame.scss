@@ -110,7 +110,8 @@ div.email {
   margin: 0 -1em 0.5em -1em;
 }
 
-.error-notification {
+.error-notification,
+.client-error-notification {
   color: $error-color;
   display: none;
   text-transform: none;
