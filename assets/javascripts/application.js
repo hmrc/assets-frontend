@@ -21,7 +21,9 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     GOVUK = require('stageprompt'),
     toggleDetails = require('./modules/toggleDetails.js'),
     fingerprint = require('./modules/fingerprint.js'),
-    enhancedTables = require('./modules/enhancedTables.js');
+    validatorFocus = require('./modules/validatorFocus.js'),
+    enhancedTables = require('./modules/enhancedTables.js'),
+    attorneyBanner = require('./modules/attorneyBanner.js');
 
 //initialise mdtpf
 fingerprint();
@@ -168,4 +170,6 @@ $(function() {
   riskTriageValidation();
   saEmailPrefs().setup();
   toggleDetails();
+  validatorFocus();
+  attorneyBanner();
 });
