@@ -29,6 +29,51 @@
     margin:0 5px 0 0;
   }
 
+  .tab {
+    width:160px;
+    padding:14px 0 6px;
+    text-align:center;
+    margin-bottom:0px;
+    margin-right:20px;
+    color: #005EA5;
+    cursor: pointer;
+    float: left;
+  }
+
+  .tab.ui-tabs-active {
+    border-bottom: 2px solid #6F777B;
+    color:#0B0C0C;
+    cursor: initial;
+  }
+
+  .table-label {
+    width: 100%;
+    margin: 0;
+    background-color: transparent;
+    border: 0;
+    box-sizing: border-box;
+    padding: 18px 30px 12px 45px;
+  }
+
+  .table-label.selected,
+  .table-label:hover {
+    outline:0;
+    background-color:$grey-8;
+  }
+
+  a.ui-tabs-anchor {
+    text-decoration: none;
+  }
+
+  table.calendar td {
+    padding: 0;
+  }
+
+  table.calendar label span {
+    float: right;
+    padding-left: 12px;
+  }
+
 }
 
 
