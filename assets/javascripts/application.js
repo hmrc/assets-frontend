@@ -15,9 +15,11 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     simpleToggleDynamicFormFields = require('./modules/simpleToggleDynamicFormFields.js'),
     questionnaireSubmission = require('./modules/questionnaireSubmission.js'),
     registerBlockInputFields = require('./modules/registerBlockInputFields.js'),
-    exitSurveyValidation = require('./modules/exitSurveyValidation.js'),
-    citizenAuthValidation = require('./modules/citizenAuthValidation.js'),
-    saEmailPrefs = require('./modules/saEmailPrefs.js'),
+    customValidations = require('./validation/customValidations.js'),
+    exitSurveyValidation = require('./validation/exitSurveyValidation.js'),
+    citizenAuthValidation = require('./validation/citizenAuthValidation.js'),
+    feedbackFormValidation = require('./validation/feedbackFormValidation.js'),
+    saEmailPrefs = require('./validation/saEmailPrefs.js'),
     GOVUK = require('stageprompt'),
     toggleDetails = require('./modules/toggleDetails.js'),
     fingerprint = require('./modules/fingerprint.js'),
@@ -46,7 +48,6 @@ $(function() {
   $searchFocus      = $('.js-search-focus');
   $clickableRow     = $('.clickable-row');
   $feedbackForms    = $('.form--feedback');
-  $errorReportForm  = $('.report-error__content form');
 
   if ($clickableRow.length) {
     tableRowClick($clickableRow);
@@ -72,32 +73,6 @@ $(function() {
 
   //we have javascript enabled so change hidden input to reflect this
   $feedbackForms.find('input[name=isJavascript]').attr('value', true);
-
-  //Initialise validation for the feedback form
-  $errorReportForm.validate({
-    errorClass: 'error-notification',
-    errorPlacement: function(error, element) {
-      error.insertBefore(element);
-    },
-
-    //Highlight invalid input
-    highlight: function(element, errorClass) {
-      $(element).parent().addClass('form-field--error');
-
-      //TODO: temp fix for form submission bug. Report a problem needs a rewrite
-      $errorReportForm.find('.button').prop('disabled', false);
-    },
-
-    //Unhighlight valid input
-    unhighlight: function(element, errorClass) {
-      $(element).parent().removeClass('form-field--error');
-    },
-
-    //When all fields are valid perform AJAX call
-    submitHandler: function(form) {
-      reportAProblem().submitForm(form, $errorReportForm.attr('action'));
-    }
-  });
 
   $('.print-link a').attr('target', '_blank');
 
@@ -166,8 +141,10 @@ $(function() {
   simpleToggleDynamicFormFields();
   questionnaireSubmission();
   registerBlockInputFields();
-  exitSurveyValidation();
-  citizenAuthValidation();
+  customValidations();
+  exitSurveyValidation().setup();
+  citizenAuthValidation().setup();
+  feedbackFormValidation().setup();
   saEmailPrefs().setup();
   toggleDetails();
   validatorFocus();
