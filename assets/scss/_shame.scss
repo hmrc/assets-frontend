@@ -119,6 +119,7 @@ div.email {
   .error & {
     display: block;
     float: none;
+    @include core-16;
   }
 
 }
