@@ -3,9 +3,19 @@ module.exports = function(el) {
   //to stop it popping to the windows width when position was changed to fixed
   //ADD THE DATA-FOCUSES TAG TO YOUR ELEMENT WITH ITS OWN ID IN IT
   var bannerId = $('[data-focuses]').attr('data-focuses'),
-  idOfBanner = $('#' + bannerId),
-  orgElementPos = idOfBanner.offset(),
-  orgElementTop = orgElementPos.top,
+      idOfBanner,
+      orgElementPos,
+      orgElementTop,
+      widthOrgElement;
+
+  if (!bannerId) {
+    return;
+  }
+
+  idOfBanner = $('#' + bannerId);
+  orgElementPos = idOfBanner.offset();
+  orgElementTop = orgElementPos.top;
+
   widthOrgElement = idOfBanner.width();
 
   //Banner pops out the DOM so this makes sure the content below doesn't shift up
