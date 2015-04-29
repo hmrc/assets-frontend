@@ -64,6 +64,10 @@
     padding-left: 0;
   }
 
+  .action-list li {
+    padding-top: 0;
+  }
+
   .alert {
     color: $black;
     padding: 0.4em 0.8em 0.3em;
@@ -87,10 +91,14 @@
       }
       &.flag--soon {
         border-left: 1px solid $grey-7;
-        color: $grey-3;
+        color: $grey-1;
         background-color: inherit;
       }
     }
+  }
+
+  .go-to {
+    margin: 1.5em 0 0;
   }
 
 }
