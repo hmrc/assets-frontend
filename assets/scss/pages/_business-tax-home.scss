@@ -1,4 +1,4 @@
-.business-tax-home {
+.business-tax {
 
   details {
     margin: 5px 0;
@@ -24,6 +24,28 @@
 
     &:after {
       background-image: url("../images/icons/external-links/external-link.png");
+    }
+  }
+
+  .main__section--divider-top {
+      margin-top: 25px;
+      padding-top: 10px;
+      border-top: 1px solid $border-colour;
+  }
+
+  .main__section--divider-bottom {
+    border-bottom: 1px solid $border-colour;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  .add-remove-taxes__group {
+    h2, h3 {
+      margin-bottom: 5px;
+    }
+    p, a {
+      font-size: 16px;
+      margin: 5px 0;
     }
   }
 
