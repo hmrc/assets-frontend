@@ -1,9 +1,14 @@
 .business-tax {
 
+  .subheading {
+    @include core-19;
+    margin: 0 0 19px;
+  }
+
   details {
     margin: 5px 0;
     summary {
-      font-size: 16px;
+      @include core-16;
       color: $details-link;
       padding-right: 5px;
       &:hover {
@@ -19,7 +24,7 @@
       }
     }
     p {
-      font-size: 16px;
+      @include core-16;
     }
   }
 
@@ -44,14 +49,13 @@
     padding-bottom: 20px;
   }
 
-  .add-remove-taxes__group {
-    h2, h3 {
-      margin-bottom: 5px;
-    }
-    p, a {
-      font-size: 16px;
-      margin: 5px 0;
-    }
+  .add-remove-taxes__heading {
+    margin: 5px 0;
+  }
+
+  .add-remove-taxes__text {
+    @include core-16;
+    margin: 5px 0;
   }
 
   .section--branded {
