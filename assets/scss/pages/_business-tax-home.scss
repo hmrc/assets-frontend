@@ -27,16 +27,6 @@
       @include core-16;
     }
   }
-
-  a[rel="external"] {
-
-    @include external-link-16;
-
-    &:after {
-      background-image: url("../images/icons/external-links/external-link.png");
-    }
-  }
-
   .main__section--divider-top {
       margin-top: 25px;
       padding-top: 10px;
