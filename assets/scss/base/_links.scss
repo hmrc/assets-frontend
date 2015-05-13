@@ -1,0 +1,33 @@
+
+a[rel="external"].external-link-12 {
+  @include external-link-12;
+}
+a[rel="external"].external-link-12-no-hover {
+  @include external-link-12-no-hover;
+}
+a[rel="external"].external-link-13 {
+  @include external-link-13;
+}
+a[rel="external"].external-link-13-no-hover {
+  @include external-link-13-no-hover;
+}
+a[rel="external"].external-link-14 {
+  @include external-link-14;
+}
+a[rel="external"].external-link-14-bold-no-hover {
+  @include external-link-14-bold-no-hover;
+}
+a[rel="external"].external-link-16 {
+  @include external-link-16;
+}
+a[rel="external"].external-link-16-bold-no-hover {
+  @include external-link-16-bold-no-hover;
+}
+
+a[rel="external"].external-link-19 {
+  @extend %external-link-default;
+  @include external-link-19;
+}
+a[rel="external"].external-link-19-bold-no-hover {
+  @include external-link-19-bold-no-hover;
+}
