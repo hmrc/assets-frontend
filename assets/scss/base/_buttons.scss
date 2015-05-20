@@ -41,3 +41,9 @@ button, .button {
   @include button($grey-8);
   @include core-19();
 }
+
+.button--small {
+  @include button($button-colour);
+  @include core-16();
+  margin-top: 10px;
+}

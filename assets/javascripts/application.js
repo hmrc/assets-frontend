@@ -8,6 +8,7 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     contentNudge = require('./modules/contentNudge.js'),
     tableRowClick = require('./modules/tableRowClick.js'),
     reportAProblem = require('./modules/reportAProblem.js'),
+    ajaxFormSubmit = require('./modules/ajaxFormSubmit.js'),
     preventDoubleSubmit = require('./modules/preventDoubleSubmit.js'),
     toggleContextualFields = require('./modules/toggleContextualFields.js'),
     toggleDynamicFormFields = require('./modules/toggleDynamicFormFields.js'),
@@ -138,6 +139,7 @@ $(function() {
   toggleDynamicFormFields();
 
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
+  ajaxFormSubmit.init();
   simpleToggleDynamicFormFields();
   questionnaireSubmission();
   registerBlockInputFields();
