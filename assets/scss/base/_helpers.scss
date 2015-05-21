@@ -180,18 +180,10 @@
 .break-word{
     -ms-word-break: break-all;
         word-break: break-all;
-<<<<<<< HEAD
 
         word-break: break-word;
         word-wrap: break-word;
         overflow-wrap: break-word;
-=======
-     //Non standard for webkit
-        word-break: break-word;
-
-        word-wrap:break-word;
-        overflow-wrap:break-word;
->>>>>>> 35ecc8ec663bc5ef5cf832bc1f1cb16dd8af5c53
 
     -webkit-hyphens: auto;
        -moz-hyphens: auto;
