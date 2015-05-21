@@ -177,7 +177,7 @@
 	@extend %no-bullet;
 }
 
-.break-word{
+%break-word{
     -ms-word-break: break-all;
         word-break: break-all;
 
@@ -188,4 +188,7 @@
     -webkit-hyphens: auto;
        -moz-hyphens: auto;
             hyphens: auto;
+}
+.break-word{
+    @extend %break-word;
 }
