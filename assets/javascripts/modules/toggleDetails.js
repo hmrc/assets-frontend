@@ -22,7 +22,7 @@
 
 module.exports = function() {
 
-  var hidden = 'hidden';
+  var hidden = 'js-hidden';
 
   // for each toggle link in the pge
   $('[data-toggle-details]').each(function() {
