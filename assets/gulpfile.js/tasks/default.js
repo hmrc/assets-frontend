@@ -1,5 +1,8 @@
 'use strict';
 
-var gulp = require('gulp');
+var gulp        = require('gulp'),
+    runSequence = require('run-sequence');
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default',['clean'], function (){
+  runSequence(['sass', 'images'], ['modernizr','watch']);
+});

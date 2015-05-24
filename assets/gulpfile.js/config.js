@@ -25,7 +25,6 @@ Test:
 var src = './',
     dest = './public/',
     distDir = './dist/',
- // npmModules = src + 'node_modules/',
     snapshotDir = dest + '999-SNAPSHOT/',
     govuk = {
       elements: src + 'govuk_elements',
@@ -42,10 +41,10 @@ module.exports = {
     port: 9032,
     open: false,
     server: {
-      baseDir: snapshotDir,
+      baseDir: src,
       directory: true,
       routes: {
-        '/assets': snapshotDir
+        '/assets': dest
       }
     }
   },
@@ -63,15 +62,21 @@ module.exports = {
       prod: distDir + 'javascripts/vendor'
     },
     modernizr: {
-      //devFile: npmModules + 'modernizr/dist/modernizr-build.min.js',
-      extra: {
-        shiv: true,
-        cssclasses: true
-      },
-      extensibility: {
-        teststyles: true,
-        prefixes: true
-      }
+      'options': [
+        'html5shiv',
+        'prefixes',
+        'testStyles',
+        'load'
+      ],
+      'tests': [
+        'touchevents',
+        'requestanimationframe',
+        'proximity'
+      ],
+      'excludeTests': [
+        'flash',
+        'hidden'
+      ]
     }
   },
 
@@ -89,6 +94,7 @@ module.exports = {
   sass: {
     src: 'scss/**/*.scss',
     govukSrc: govuk.template + '/public/sass/**/*.scss',
+    govukElementsSrc: govuk.elements + '/public/sass/**/*.scss',
     dev: {
       dest: snapshotDir + 'stylesheets/',
       settings: {
