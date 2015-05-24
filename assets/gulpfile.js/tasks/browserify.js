@@ -8,17 +8,23 @@
    See browserify.bundleConfigs in gulp/config.js
 */
 
-var browserify   = require('browserify'),
-    watchify     = require('watchify'),
-    bundleLogger = require('../util/bundleLogger'),
-    gulp         = require('gulp'),
-    handleErrors = require('../util/handleErrors'),
-    source       = require('vinyl-source-stream'),
-    config       = require('../config').browserify,
-    _            = require('lodash'),
-    gutil        = require('gulp-util'),
+var browserify     = require('browserify'),
+    watchify       = require('watchify'),
+    bundleLogger   = require('../util/bundleLogger'),
+    gulp           = require('gulp'),
+    handleErrors   = require('../util/handleErrors'),
+    source         = require('vinyl-source-stream'),
+    sourcemaps     = require('gulp-sourcemaps'),
+    buffer         = require('vinyl-buffer'),
+    config         = require('../config').browserify,
+    _              = require('lodash'),
+    gutil          = require('gulp-util'),
+    rename         = require('gulp-rename'),
+    uglify         = require('gulp-uglify'),
+    gulpIf         = require('gulp-if'),
     browserifyTask = function(callback, devMode) {
-      var env        = global.runmode,
+      var env            = global.runmode,
+          isDev          = (env === 'dev'),
           bundleQueue    = config.bundleConfigs.length,
           browserifyThis = function(bundleConfig) {
 
@@ -40,14 +46,18 @@ var browserify   = require('browserify'),
 
                   return b
                     .bundle()
-
-                    // Report compile errors
-                    .on('error', handleErrors)
-
                     // Use vinyl-source-stream to make the
                     // stream gulp compatible. Specify the
                     // desired output filename here.
                     .pipe(source(bundleConfig.outputName))
+
+                    .pipe(gulpIf(!isDev, buffer()))
+                    // uglify on  production build
+                    .pipe(gulpIf(!isDev, uglify()))
+                    .pipe(rename({suffix: '.min'}))
+                    // Report compile errors
+                    .on('error', handleErrors)
+                    //.pipe(gulpIf(isDev, sourcemaps.write('./')))
 
                     // Specify the output destination
                     .pipe(gulp.dest(bundleConfig[env].dest))
