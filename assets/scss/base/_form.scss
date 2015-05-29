@@ -89,6 +89,10 @@ input[type="radio"] {
   width: 98.2%;
 }
 
+.input--no-spinner {
+  -moz-appearance: textfield;
+}
+
 .input--link {
   background: none;
   border: none;
