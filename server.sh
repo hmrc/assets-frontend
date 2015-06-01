@@ -15,17 +15,17 @@ if [[ -n $1 ]]; then
   case "$1" in
 
   "dev") deps && output "Starting gulp in dev mode..."
-    npm run-script dev
+    npm run dev
     ;;
   "build") deps && output "Starting gulp build task..."
     if [[ -n $2 ]]; then
-      npm run-script build $2
+      npm run build $2
     else
-      npm run-script build
+      npm run build
     fi
     ;;
   "test")  deps && output "Starting gulp test task..."
-    npm run-script test
+    npm run test
     ;;
   *)  echo "invalid parameter '$1'"
     ;;

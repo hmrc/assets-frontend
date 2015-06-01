@@ -15,12 +15,10 @@ Dev:
 Build:
 - Image compression
 
-
 Test:
 - Continuous
 - Spec reporter
-
- */
+*/
 
 var src = './',
     dest = './public/',
