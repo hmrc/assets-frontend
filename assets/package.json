@@ -9,8 +9,7 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build",
-    "install": "napa",
-    "postinstall": "node -e \"require('grunt').tasks(['modernizr']);\""
+    "install": "napa"
   },
   "napa": {
     "stageprompt": "alphagov/stageprompt#2.1.0"
