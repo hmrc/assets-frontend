@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/hmrc/assets-frontend.png?label=ready&title=Ready)](https://waffle.io/hmrc/assets-frontend)
 assets-frontend
 ===============
 

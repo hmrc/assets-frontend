@@ -2,7 +2,7 @@ require('jquery');
 
 describe("Given I have a toggle details module and two targets on the page", function() {
 
-  var hidden = 'hidden';
+  var hidden = 'js-hidden';
 
   var toggleDetails,
       $link1,

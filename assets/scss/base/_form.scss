@@ -89,6 +89,15 @@ input[type="radio"] {
   width: 98.2%;
 }
 
+.input--no-spinner {
+  -moz-appearance: textfield;
+}
+
+.input--no-spinner::-webkit-inner-spin-button, 
+.input--no-spinner::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
 .input--link {
   background: none;
   border: none;

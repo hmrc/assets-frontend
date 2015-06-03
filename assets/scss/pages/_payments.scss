@@ -74,6 +74,19 @@
     padding-left: 12px;
   }
 
+  .user-name {
+    width: 100%;
+    float: right;
+    text-align: right;
+
+    @include media(mobile) {
+      padding: 20px 0 0 0;
+      float: left;
+      text-align: left;
+    }
+
+  }
+
 }
 
 
