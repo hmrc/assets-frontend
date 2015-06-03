@@ -34,4 +34,4 @@ module.exports = function(el) {
       idOfBanner.css('position', 'relative');
     }
   }
-}
+};
