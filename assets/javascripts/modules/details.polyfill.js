@@ -26,7 +26,7 @@
   function addClickEvent(node, callback) {
     // Prevent space(32) from scrolling the page
     addEvent(node, 'keypress', function(e, target) {
-      if (e.keyCode === 32) {
+      if (e.keyCode === 32 && e.target == document.body) {
         if (e.preventDefault) {
           e.preventDefault();
         } else {
