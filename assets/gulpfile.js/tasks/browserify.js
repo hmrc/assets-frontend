@@ -46,18 +46,20 @@ var browserify     = require('browserify'),
 
                   return b
                     .bundle()
+
                     // Use vinyl-source-stream to make the
                     // stream gulp compatible. Specify the
                     // desired output filename here.
                     .pipe(source(bundleConfig.outputName))
 
                     .pipe(gulpIf(!isDev, buffer()))
+
                     // uglify on  production build
                     .pipe(gulpIf(!isDev, uglify()))
                     .pipe(rename({suffix: '.min'}))
+
                     // Report compile errors
                     .on('error', handleErrors)
-                    //.pipe(gulpIf(isDev, sourcemaps.write('./')))
 
                     // Specify the output destination
                     .pipe(gulp.dest(bundleConfig[env].dest))
