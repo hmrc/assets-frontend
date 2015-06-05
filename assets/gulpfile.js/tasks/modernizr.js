@@ -11,7 +11,7 @@ gulp.task('modernizr', function() {
 
   modernizr.build(config.scripts.modernizr, function(result) {
     customModernizr = result;
-    return stringSrc('modernizr.js', _result)
+    return stringSrc('modernizr.js', result)
     .pipe(gulp.dest(config.scripts.vendorDest[env]));
   });
 });
