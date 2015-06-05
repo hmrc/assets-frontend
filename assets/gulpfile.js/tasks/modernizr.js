@@ -1,13 +1,29 @@
 'use strict';
 
 var gulp         = require('gulp'),
-    glpModernizr = require('gulp-modernizr'),
     config       = require('../config'),
-    fs           = require('fs');
+    gutil        = require('gulp-util'),
+    modernizr = require('modernizr');
 
 gulp.task('modernizr', function() {
-  var env = global.runmode;
-  gulp.src([config.sass[env].dest]+ '*.css')
-    .pipe(glpModernizr(config.scripts.modernizr))
-    .pipe(gulp.dest(config.scripts.vendorDest[env]))
+  var env = global.runmode,
+            customModernizr ;
+
+  modernizr.build(config.scripts.modernizr, function(result) {
+    customModernizr = result;
+    return stringSrc('modernizr.js', _result)
+    .pipe(gulp.dest(config.scripts.vendorDest[env]));
+  });
 });
+
+//function that allows us to stream the contents of the modernizr build
+
+function stringSrc(filename, string) {
+  var src = require('stream').Readable({ objectMode: true })
+  src._read = function() {
+    this.push(new gutil.File({ cwd: '', base: '', path: filename, contents: new Buffer(string) }));
+    this.push(null);
+  }
+
+  return src;
+}

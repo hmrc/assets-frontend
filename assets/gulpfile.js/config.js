@@ -60,20 +60,54 @@ module.exports = {
       prod: distDir + 'javascripts/vendor'
     },
     modernizr: {
-      'options': [
-        'html5shiv',
-        'prefixes',
-        'testStyles',
-        'load'
-      ],
-      'tests': [
-        'touchevents',
+      'feature-detects': [
+        'cookies',
+        'css/all',
+        'draganddrop',
+        'elem/details',
+        'elem/picture',
+        'elem/progress-meter',
+        'file/api',
+        'file/filesystem',
+        'forms/placeholder',
+        'forms/validation',
+        'fullscreen-api',
+        'geolocation',
+        'hashchange',
+        'hiddenscroll',
+        'history',
+        'htmlimports',
+        'ie8compat',
+        'input',
+        'input/formaction',
+        'input/formenctype',
+        'input/formmethod',
+        'input/formtarget',
+        'inputsearchevent',
+        'inputtypes',
+        'json',
+        'notification',
+        'pagevisibility-api',
+        'performance',
+        'pointerevents',
+        'proximity',
+        'queryselector',
         'requestanimationframe',
-        'proximity'
+        'script/async',
+        'script/defer',
+        'speech/speech-recognition',
+        'speech/speech-synthesis',
+        'storage/localstorage',
+        'storage/sessionstorage',
+        'storage/websqldatabase',
+        'svg',
+        'textarea/maxlength',
+        'touchevents',
+        'vibration',
+        'video'
       ],
-      'excludeTests': [
-        'flash',
-        'hidden'
+      'options': [
+          'setClasses'
       ]
     }
   },
