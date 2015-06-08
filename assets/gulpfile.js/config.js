@@ -74,10 +74,12 @@ module.exports = {
       ],
       'crawl': true,
       'dest': snapshotDir + 'javascripts/vendor/modernizr.js',
-      'custom-tests': [
-        'test1',
-        'test2'
-      ]
+      'files' : {
+        'src': [
+          src + '{javascripts,scss,govuk_*}/**/*.{js,scss}',
+          '!**[^node_modules]/**/modernizr.js'
+        ]
+      }
     }
   },
 
