@@ -7,6 +7,5 @@ var gulp         = require('gulp'),
 
 gulp.task('modernizr', function() {
   var env = global.runmode;
+  return modernizr(config.scripts.modernizr);
 });
-
-modernizr(config.scripts.modernizr);
