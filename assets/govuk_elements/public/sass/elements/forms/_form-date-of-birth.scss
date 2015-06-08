@@ -25,21 +25,21 @@
 // Build: http://modernizr.com/download/#-touch-cssclasses-teststyles-prefixes
 
 // Hide date of birth
-.touch .date-of-birth {
+.touchevents .date-of-birth {
   display: none;
 }
 
 // Hide native date of birth
-.no-touch .native-date-of-birth {
+.no-touchevents .native-date-of-birth {
   display: none;
 }
 
 // Show native date of birth
-.touch .native-date-of-birth {
+.touchevents .native-date-of-birth {
   display: block;
 }
 
 // Set a minimum height for date inputs
-.touch input[type="date"] {
+.touchevents input[type="date"] {
   min-height: 36px;
 }
