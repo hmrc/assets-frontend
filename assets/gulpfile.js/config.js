@@ -56,26 +56,27 @@ module.exports = {
     encryptionSrc: src + 'javascripts/encryption/**/*.js',
     gulpTasks: src + 'gulpfile.js/**/*.js',
     vendorDest: {
-      dev: snapshotDir + 'javascripts/vendor',
-      prod: distDir + 'javascripts/vendor'
+      dev: snapshotDir + 'javascripts/vendor/',
+      prod: distDir + 'javascripts/vendor/'
     },
+
     modernizr: {
-      'options': [
-          'setClasses',
-          'html5printshiv',
-          'testProp'
+      options: [
+        'setClasses',
+        'html5printshiv',
+        'testProp'
       ],
-      'tests': [
+      tests: [
         'touchevents'
       ],
-      'excludeTests': [
+      excludeTests: [
         'flash',
         'hidden'
       ],
-      'crawl': true,
-      'dest': snapshotDir + 'javascripts/vendor/modernizr.js',
-      'files' : {
-        'src': [
+      crawl: true,
+      dest: 'modernizr.js',
+      files : {
+        src: [
           src + '{javascripts,scss,govuk_*}/**/*.{js,scss}',
           '!**[^node_modules]/**/modernizr.js'
         ]

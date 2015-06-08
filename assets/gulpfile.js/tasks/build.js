@@ -6,5 +6,12 @@ var gulp           = require('gulp'),
 
 gulp.task('build', ['clean', 'test'], function() {
   global.runmode = 'prod';
-  runSequence(['sass', 'images'], 'browserify', 'version', 'zip');
+  global.location = undefined;
+  runSequence(
+    ['sass', 'images'],
+    'browserify',
+    'modernizr',
+    'version',
+    'zip'
+  );
 });
