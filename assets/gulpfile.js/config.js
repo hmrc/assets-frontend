@@ -61,19 +61,22 @@ module.exports = {
     },
     modernizr: {
       'options': [
-        'html5shiv',
-        'prefixes',
-        'testStyles',
-        'load'
+          'setClasses',
+          'html5printshiv',
+          'testProp'
       ],
       'tests': [
-        'touchevents',
-        'requestanimationframe',
-        'proximity'
+        'touchevents'
       ],
       'excludeTests': [
         'flash',
         'hidden'
+      ],
+      'crawl': true,
+      'dest': snapshotDir + 'javascripts/vendor/modernizr.js',
+      'custom-tests': [
+        'test1',
+        'test2'
       ]
     }
   },
