@@ -3,17 +3,22 @@
 var gulp         = require('gulp'),
     config       = require('../config'),
     gutil        = require('gulp-util'),
-    modernizr    = require('customizr');
+    modernizr    = require('gulp-modernizr'),
+    uglify       = require('gulp-uglify'),
+    gulpIf       = require('gulp-if');
 
-gulp.task('modernizr', function() {
-  var env = global.runmode;
+gulp.task('modernizr', function(callback) {
+  var env   = global.runmode,
+      isDev = (env === 'dev');
 
-  config.scripts.modernizr.dest = config.scripts.vendorDest[env] + config.scripts.modernizr.dest;
-
-  if(env === 'prod') {
+  if (!isDev) {
     config.scripts.modernizr.cache = false;
-    config.scripts.modernizr.uglify = true;
   }
 
-  return modernizr(config.scripts.modernizr);
+  return gulp.src(config.scripts.modernizr.files.src)
+      .pipe(modernizr(config.scripts.modernizr))
+
+      //uglify on build
+      .pipe(gulpIf(!isDev, uglify()))
+      .pipe(gulp.dest(config.scripts.vendorDest[env]));
 });
