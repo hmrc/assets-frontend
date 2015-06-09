@@ -73,7 +73,6 @@ module.exports = {
         'flash',
         'hidden'
       ],
-      crawl: true,
       dest: 'modernizr.js',
       files : {
         src: [
