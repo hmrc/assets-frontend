@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build",
+    "test": "npm run build",
     "install": "napa"
   },
   "napa": {
