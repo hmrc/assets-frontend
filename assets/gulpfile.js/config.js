@@ -73,7 +73,6 @@ module.exports = {
         'flash',
         'hidden'
       ],
-      dest: 'modernizr.js',
       files : {
         src: [
           src + '{javascripts,scss,govuk_*}/**/*.{js,scss}',
