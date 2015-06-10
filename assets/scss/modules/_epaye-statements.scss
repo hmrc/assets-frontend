@@ -1,37 +1,65 @@
 #annualSummaries {
-  table.summary {
-    border-bottom: none;
-    td {
-      border-bottom: none;
+  
+  &> thead th {
+    vertical-align: bottom;
+
+    &:first-child {
+      padding-left: 21px;
     }
   }
   
+  &> thead th,
+  details summary > table td {
+    text-align:right;
+    width: 24.4%;
+    
+    &.payments {
+      width: 26.2%;
+    }
+  }
+
+  
+  &> thead th:first-child,
+  details summary > table td:first-child  {
+    text-align: left;
+    width: 20%;
+  }
+
   details summary {
+    margin: 0;
+    
     &::-webkit-details-marker {
       display: none;
       list-style-type: none;
     }
+
+    &> table {
+      border-bottom: none;
+      margin: 0;
+      td {
+        border-bottom: none;
+      }
+    }
+
     td.details span.summary::before {
       content: "►";
-      padding-right: 5px;
-      transition: .6s linear;
+      padding: 0 2px;
+      transition: .2s linear;
       display: inline-block;
     }
   }
-  details[open] summary td.details span.summary::before {
-    content: "▼ ";
-  }
-
-  &> thead th {
-    width: 25%;
-    vertical-align: bottom;
+  
+  details[open] summary {
+    table {
+      background-color: $grey-8;
+    }
+    
+    td.details span.summary::before {
+      //transform: rotate(90deg);
+      content: "▼";
+    }
   }
   
-  &> thead th:first-child {
-      width: 20%;
-      padding-left: 21px;
-  }
-
   td[role="group"] {
     padding: 0;
     
