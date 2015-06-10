@@ -1,5 +1,5 @@
-var govuk = require('../../javascripts/modules/GOVUK_helpers.js'),
-	fingerprint = require('../../javascripts/modules/fingerprint.js');
+var govuk = require('../../../javascripts/modules/GOVUK_helpers.js'),
+	fingerprint = require('../../../javascripts/modules/fingerprint.js');
 describe("fingerprint cookie", function () {
 	beforeEach(function () {
 		fingerprint();

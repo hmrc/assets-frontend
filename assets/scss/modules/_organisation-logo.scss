@@ -49,7 +49,8 @@ a.organisation-logo {
 @media all and (-webkit-min-device-pixel-ratio: 2) {
   .organisation-logo,
   .organisation-logo-stacked {
-    background-image: url("../images/icons/crests/hmrc_crest_13px.png");
+    background-image: url("../images/icons/crests/hmrc_crest_13px_x2.png");
+    background-size: auto 20px;
   }
 }
 
@@ -89,6 +90,7 @@ a.organisation-logo {
     .organisation-logo-medium,
     .organisation-logo-stacked-medium {
       background-image: url("../images/icons/crests/hmrc_crest_18px_x2.png");
+      background-size: auto 26px;
     }
   }
 }

@@ -30,8 +30,8 @@ module.exports = function(el) {
       idOfBanner.css('position', 'relative');
     }
   }
-
   //Run the function to reposition the banner
   setInterval(stickIt, 100);
 
-}
+};
+

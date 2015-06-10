@@ -1,14 +1,19 @@
 module.exports = {
   expires: '',
+  cookieDomain: '',
 
-  setCookie: function(name, value, duration) {
+  setCookie: function(name, value, duration, domain) {
+    if (domain) {
+      this.cookieDomain = '; domain=' + domain;
+    }
+
     if (duration) {
       var date = new Date();
       date.setTime(date.getTime() + (duration * 24 * 60 * 60 * 1000));
       this.expires = '; expires=' + date.toGMTString();
     }
 
-    document.cookie = name + '=' + value + this.expires + '; path=/';
+    document.cookie = name + '=' + value + this.expires + this.cookieDomain + '; path=/';
   },
 
   getCookie: function(name) {
