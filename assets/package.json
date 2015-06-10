@@ -18,7 +18,7 @@
     "GOVUK"
   ],
   "author": "HMRC",
-  "license": "BSD",
+  "license": "Apache-2.0",
   "devDependencies": {
     "browser-sync": "^2.4.0",
     "browserify-istanbul": "^0.1.3",
