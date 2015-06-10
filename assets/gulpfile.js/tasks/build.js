@@ -9,7 +9,7 @@ gulp.task('build', ['clean', 'test'], function() {
   global.location = undefined;
   runSequence(
     ['sass', 'images'],
-    'browserify',
+    ['browserify', 'concatEncryption'],
     'modernizr',
     'version',
     'zip'
