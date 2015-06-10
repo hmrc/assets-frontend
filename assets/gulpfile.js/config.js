@@ -127,6 +127,17 @@ module.exports = {
         dest: distDir + 'javascripts'
       },
       outputName: 'application.js'
+    },{
+      entries: [
+        src + 'javascripts/export/fingerprint.js'
+      ],
+      dev: {
+        dest: snapshotDir + 'javascripts'
+      },
+      prod: {
+        dest: distDir + 'javascripts'
+      },
+      outputName: 'mdtpdf.js'
     }]
   },
 
