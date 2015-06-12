@@ -20,9 +20,9 @@ Test:
 - Spec reporter
 */
 
-var src = './',
-    dest = './public/',
-    distDir = './dist/',
+var src = './assets/',
+    dest = src + 'public/',
+    distDir = src + 'dist/',
     snapshotDir = dest + '999-SNAPSHOT/',
     govuk = {
       elements: src + 'govuk_elements',
@@ -34,27 +34,26 @@ module.exports = {
   dest: './public/',
   distDir: './dist/',
 
-  browserSync: {
-    ui: false,
-    port: 9032,
-    open: false,
-    server: {
-      baseDir: src,
-      directory: true,
-      routes: {
-        '/assets': dest
-      }
-    }
+  production: {
+    jsSrc: distDir + 'javascripts/*.js',
+    jsDest: distDir + 'javascripts/',
+    imagesDir: distDir + 'images',
+    cssSrc: distDir + 'stylesheets',
+    dest: distDir
   },
 
   scripts: {
     src: src + 'javascripts/modules/**/*.js',
     dest: snapshotDir + 'javascripts',
     entryPoint: src + 'javascripts/application.js',
-    jshintExclude: '!javascripts/**/{base64v1_0,details.polyfill,mdtpdf}.js',
-    jscsSrc: src + '.jscsrc',
+    jshintExclude: '!' + src + 'javascripts/**/{base64v1_0,details.polyfill,mdtpdf}.js',
+    jscsSrc: '.jscsrc',
+    gulpTasks: 'gulpfile.js/**/*.js',
     encryptionSrc: src + 'javascripts/encryption/**/*.js',
-    gulpTasks: src + 'gulpfile.js/**/*.js',
+    encryptionDest: {
+      dev: snapshotDir + 'javascripts/',
+      prod: distDir + 'javascripts/'
+    },
     vendorDest: {
       dev: snapshotDir + 'javascripts/vendor/',
       prod: distDir + 'javascripts/vendor/'
@@ -94,7 +93,7 @@ module.exports = {
   },
 
   sass: {
-    src: 'scss/**/*.scss',
+    src: src + 'scss/**/*.scss',
     govukSrc: govuk.template + '/public/sass/**/*.scss',
     govukElementsSrc: govuk.elements + '/public/sass/**/*.scss',
     dev: {
@@ -144,25 +143,18 @@ module.exports = {
   test: {
     specsScr: src + 'test/specs/unit/**/*.js',
     fixturesScr: src + 'test/specs/fixtures/*.html',
-    karma: src + 'test/config/karma.conf.js'
+    karmaConfig: src + 'test/config/karma.conf.js'
   },
 
-  server: {
-    options: {
-      port: 9032,
-      server: src + 'server.js',
-      bases: src
-    },
-    dist: {
-      root: dest + '999-SNAPSHOT/'
+  browserSync: {
+    ui: false,
+    port: 9032,
+    open: false,
+    server: {
+      baseDir: src,
+      routes: {
+        '/assets': dest
+      }
     }
-  },
-
-  production: {
-    jsSrc: distDir + 'javascripts/*.js',
-    jsDest: distDir + 'javascripts/',
-    imagesDir: distDir + 'images',
-    cssSrc: distDir + 'stylesheets',
-    dest: distDir
   }
 };

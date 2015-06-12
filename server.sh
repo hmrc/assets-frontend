@@ -9,8 +9,6 @@ deps() {
   npm install
 }
 
-cd assets/
-
 if [[ -n $1 ]]; then
   case "$1" in
 
@@ -33,5 +31,6 @@ if [[ -n $1 ]]; then
 else
   port=${1-9032}
   echo "Starting simple server on port $port..."
+  cd target
   python -m SimpleHTTPServer $port
 fi
