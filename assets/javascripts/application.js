@@ -149,4 +149,5 @@ $(function() {
   toggleDetails();
   validatorFocus();
   attorneyBanner();
+
 });
