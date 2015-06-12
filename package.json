@@ -84,10 +84,10 @@
     "validate": "./node_modules/jquery-validation/src/core.js",
     "delegate": "./node_modules/jquery-validation/src/delegate.js",
     "basicpunc": "./node_modules/jquery-validation/src/additional/letterswithbasicpunc.js",
-    "mdtpdf": "./javascripts/modules/mdtpdf.js",
+    "mdtpdf": "./assets/javascripts/modules/mdtpdf.js",
     "stageprompt": "./node_modules/stageprompt/script/stageprompt.js",
-    "details": "./javascripts/modules/details.polyfill.js",
-    "govuk-template": "./govuk_elements/govuk/public/javascripts/govuk-template.js",
+    "details": "./assets/javascripts/modules/details.polyfill.js",
+    "govuk-template": "./assets/govuk_elements/govuk/public/javascripts/govuk-template.js",
     "datatables": "./node_modules/datatables/media/js/jquery.dataTables.js",
     "base64": "./node_modules/js-base64/base64.js",
     "json3": "./node_modules/json3/lib/json3.js"

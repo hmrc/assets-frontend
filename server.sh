@@ -9,8 +9,6 @@ deps() {
   npm install
 }
 
-cd assets/
-
 if [[ -n $1 ]]; then
   case "$1" in
 

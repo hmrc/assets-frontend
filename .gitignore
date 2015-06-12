@@ -4,7 +4,6 @@
 *.iml
 .idea
 
-package.json
 npm-debug.log
 node_modules/
 *_git-remotes/
@@ -16,4 +15,3 @@ test_coverage/
 assets/public/
 target/
 assets/error_pages/assets/
-assets/bower_components/
