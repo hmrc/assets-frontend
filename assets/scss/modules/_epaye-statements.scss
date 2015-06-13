@@ -164,10 +164,6 @@
         
         td, th {
           vertical-align: top;
-
-          & > table {
-            width: 59%;
-          }
         }
 
         & > tbody tr:last-child td {
@@ -189,9 +185,10 @@
 
       & > .panel-indent > table {
         @include border-bottom-zero;
+        width: 111%; // account for second td (first td contains summary element)
         
-        & > tbody > tr > td {
-          @include border-bottom-zero;
+        &.details-payments {
+          width: 59%;
         }
       }
     }
