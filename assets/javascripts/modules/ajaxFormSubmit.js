@@ -45,28 +45,31 @@ var ajaxFormSubmit = {
     for (; a < ajaxFormCount; a++) {
       $ajaxItem = $($ajaxForm[a]);
 
-      $ajaxItem.on('submit', function(event) {
-        event.preventDefault();
+      $ajaxItem.on('submit', {context: _this}, _this.submitHandler);
+    }
+  },
 
-        var $this = $(this),
-            $form = $this.attr('data-ajax-submit') ? $this : $this.find('[data-ajax-submit]'),
-            path = $form.attr('formaction') || $form.attr('action'),
-            $scope = $form.attr('data-container') || $this,
-            serializedData = _this.serializeForAjax($scope),
-            callback = {
-              config: {
-                name: $form.attr('data-callback-name'),
-                args: $form.attr('data-callback-args')
-              },
-              fn: null
-            };
+  submitHandler: function(event) {
+    event.preventDefault();
 
-        callback.fn = _this.getCallback(callback.config, serializedData);
+    var $this = $(this),
+      _this = event.data.context,
+      $form = $this.attr('data-ajax-submit') ? $this : $this.find('[data-ajax-submit]'),
+      path = $form.attr('formaction') || $form.attr('action'),
+      $scope = $form.attr('data-container') || $this,
+      serializedData = _this.serializeForAjax($scope),
+      callback = {
+        config: {
+          name: $form.attr('data-callback-name'),
+          args: $form.attr('data-callback-args')
+        },
+        fn: null
+      };
 
-        if (!!callback) {
-          _this.doSubmit(path, serializedData, callback.fn);
-        }
-      });
+    callback.fn = _this.getCallback(callback.config, serializedData);
+
+    if (!!callback) {
+      _this.doSubmit(path, serializedData, callback.fn);
     }
   },
 
