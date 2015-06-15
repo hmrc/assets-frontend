@@ -1,0 +1,197 @@
+@mixin border-bottom-zero {
+  border-bottom-width: 0;
+}
+
+#annualSummaries {
+  border-bottom-width: 1px;
+  .alert-text {
+    color: $alert-bg-red;
+  }
+  
+  .flagicon {
+    background-image: url("../images/statements-flag3.png");
+    background-repeat: no-repeat;
+    background-position: 3px 4px;
+    padding-left: 3px;
+    
+    &:before {
+      content: "\f104";
+    }
+  }  
+  td, th {
+    padding-right: 0;
+  }
+  
+  & > thead th {
+    vertical-align: bottom;
+
+    &:first-child {
+      padding-left: 21px;
+    }
+    &:last-child {
+      padding-right: 24px;
+    }
+  }
+
+  & > thead th,
+  details summary > table td {
+    text-align: right;
+    width: 24.4%;
+
+    &.payments {
+      width: 26.2%;
+    }
+  }
+
+  & > thead th:first-child,
+  details summary > table td:first-child {
+    text-align: left;
+    width: 20%;
+  }
+  
+  & tbody > tr > td[role="group"] {
+    padding: 0;
+  }
+
+  details summary {
+    margin: 0;
+    width: 100%;
+    
+    //outline: none;
+
+    &::-webkit-details-marker {
+      display: none;
+      list-style-type: none;
+    }
+
+    & > table {
+      @include border-bottom-zero;
+      margin: 0;
+      
+      
+      td {
+        @include border-bottom-zero;
+        padding: 12px 3px 10px;
+      }
+      
+      td:last-child {
+        padding-right: 24px;
+      }
+
+    }
+    
+    .summary {
+      color: $grey-0;
+      margin-bottom:0.26316em;
+      
+      &::before {
+        content: "►";
+        padding: 0 2px;
+        display: inline-block;
+      }
+    }
+  }
+
+  details[open] summary {
+    & > table {
+      background-color: $grey-8;
+    }
+
+    &[aria-expanded=true] .summary::before {
+      //transform: rotate(90deg);
+      content: "▼";
+    }
+  }
+
+
+  .details {
+    @include border-bottom-zero;
+    margin: 0;
+
+    thead {
+      border-bottom-color: $light-grey;
+    }
+
+    &> tbody > tr > td {
+      @include border-bottom-zero;
+    }
+
+    th,
+    td {
+      color: $grey-0;
+      &:nth-child(even) {
+        text-align: right;
+        padding-right: 0;
+      }
+    }
+    
+  }
+
+  td > .second-row {
+    color: $grey-1;
+    display: block;
+    @include core-14;
+    padding-left: 19px;
+  }
+
+  .multiline {
+    vertical-align: top;
+  }
+  
+  .details-content {
+    @include border-bottom-zero;
+
+    li {
+      @include core-16();
+    }
+
+    & > tbody > tr > td {
+      @include border-bottom-zero;
+      padding: 0 24px;
+      
+      .details-total {
+        border-top: 1px solid $light-grey;
+        border-bottom: 2px solid $light-grey;
+        
+        td {
+          padding: 12px 0 10px;
+        }
+      }
+
+      table {
+        margin: 0;
+        border-bottom-width: 1px;
+        
+        td, th {
+          vertical-align: top;
+        }
+
+        & > tbody tr:last-child td {
+          border-bottom-width: 1px;
+        }
+      }
+    }
+
+    details[role="group"] {
+      & > summary table {
+        background-color: transparent;
+        @include border-bottom-zero;
+        margin: 0;
+
+        thead {
+          @include border-bottom-zero;
+        }
+      }
+
+      & > .panel-indent > table {
+        @include border-bottom-zero;
+        width: 100%; 
+        
+        &.details-payments {
+          width: 59%;
+        }
+      }
+    }
+  }  
+}
+

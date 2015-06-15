@@ -48,6 +48,11 @@
   .delegate-info {
     @include bold-19();
     float: right;
+
+    .client-name {
+      color: $grey-0;
+      @include bold-19();
+    }
   }
 
   .acting-agent {
