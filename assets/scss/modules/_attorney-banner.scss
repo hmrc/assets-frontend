@@ -1,5 +1,5 @@
 .attorneyBanner {
-  margin: 0 0 30px 0;
+  margin: 0px;
   width: 100%;
   background: #ffbf47;
   color: #000;
@@ -8,6 +8,10 @@
   border-color: #f47738;
   position: relative;
   z-index:999;
+}
+
+#heightHolder{
+  margin: 0 0 30px 0;
 }
 
 .stickyBanner {
