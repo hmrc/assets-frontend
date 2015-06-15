@@ -82,11 +82,11 @@
     
     .summary {
       color: $grey-0;
+      margin-bottom:0.26316em;
       
       &::before {
         content: "►";
         padding: 0 2px;
-        transition: .2s linear;
         display: inline-block;
       }
     }
@@ -185,7 +185,7 @@
 
       & > .panel-indent > table {
         @include border-bottom-zero;
-        width: 111%; // account for second td (first td contains summary element)
+        width: 100%; 
         
         &.details-payments {
           width: 59%;
