@@ -124,11 +124,11 @@ describe('AjaxFormSubmit', function() {
       }, this.timeoutInterval - 500);
     });
 
-    it("the 'ajaxFormSubmit.getCalllback' property is available", function (done) {
+    it("the 'ajaxFormSubmit.getCallback' property is available", function (done) {
       setTimeout(function () {
-        expect(ajaxFormSubmit.getCalllback).toBeDefined();
-        expect(typeof ajaxFormSubmit.getCalllback).toBe('function');
-        // getCalllback: function(config, data)
+        expect(ajaxFormSubmit.getCallback).toBeDefined();
+        expect(typeof ajaxFormSubmit.getCallback).toBe('function');
+        // getCallback: function(config, data)
         done();
       }, this.timeoutInterval - 500);
     });
@@ -236,7 +236,7 @@ describe('AjaxFormSubmit', function() {
 
       it('The Button "data-callback" values for  '+ payeId + ' return a function', function () {
         var $button = $(panelId + ' > details > .panel-indent > .button'),
-            callback = ajaxFormSubmit.getCalllback({
+            callback = ajaxFormSubmit.getCallback({
           name: $button.attr('data-callback-name'),
           args: $button.attr('data-callback-args')
         }, ajaxFormSubmit.serializeForAjax($button.attr('data-container')));

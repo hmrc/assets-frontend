@@ -61,7 +61,7 @@ var ajaxFormSubmit = {
               fn: null
             };
 
-        callback.fn = _this.getCalllback(callback.config, serializedData);
+        callback.fn = _this.getCallback(callback.config, serializedData);
 
         if (!!callback) {
           _this.doSubmit(path, serializedData, callback.fn);
@@ -99,7 +99,7 @@ var ajaxFormSubmit = {
     return ret.join('&').replace(/%20/g, '+').replace(/=$/, '').replace(/&$/, '');
   },
 
-  getCalllback: function(config, data) {
+  getCallback: function(config, data) {
     var parts = config.name.split('.'),
         method = window;
 
