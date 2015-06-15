@@ -1,0 +1,103 @@
+<script>
+    window.callbacks = window.callbacks || {
+                ajaxFormSubmit: {
+                    clientList: {
+                        insertFormResponse: {
+                            success: function (response, data, container, type) {
+                            },
+
+                            error: function (xhr) {
+                            }
+                        }
+                    }
+                }
+            };
+</script>
+<form id="verify-form" method="post" action="/agent/client-list" class="js-datatable-wrapper">
+    <div id="client_000Z000_notes">
+        <p>You’re not authorised to view this account.</p>
+        <details id="ask-for-access-000Z000" role="group">
+            <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="false">
+                <span class="summary">Ask for access</span>
+            </summary>
+            <div class="panel-indent" id="details-content-0" aria-hidden="true" style="display: none;">
+                <input type="hidden" name="csrfToken"
+                       value="00000a000aa00000aaa0000aa00aa0aaa0a00000-0000000000000-0a00000000aa0000a0a00aa0">
+                <input name="name" type="hidden" value="Employer0">
+                <input name="payeref" type="hidden" value="000/Z000">
+                <label for="email" class="form-label">Your email</label>
+                <input name="email" id="ask-for-access-000Z000-email" class="input--fullwidth" type="text"
+                       value="test@email.com">
+                <button class="button button--small" type="submit" id="ask-for-access-000Z000-submit"
+                        formaction="client-access-request.html" data-ajax-submit="true"
+                        data-container="#client_000Z000_notes"
+                        data-callback-name="window.callbacks.ajaxFormSubmit.clientList.insertFormResponse"
+                        data-callback-args="#client_000Z000_notes,insert">
+                    Send
+                </button>
+            </div>
+        </details>
+    </div>
+    <div id="client_111Z111_notes">
+        <p>You’re not authorised to view this account.</p>
+        <details id="ask-for-access-111Z111" role="group">
+            <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="false">
+                <span class="summary">Ask for access</span>
+            </summary>
+
+            <div class="panel-indent" id="details-content-1" aria-hidden="true" style="display: none;">
+                <input type="hidden" name="csrfToken"
+                       value="11111b111bb11111bbb1111bb11bb1bbb1b11111-1111111111111-1b11111111bb1111b1b11bb1">
+                <input name="name" type="hidden" value="Employer1">
+                <input name="payeref" type="hidden" value="111/Z111">
+                <label for="email" class="form-label">Your email</label>
+                <input name="email" id="ask-for-access-111Z111-email" class="input--fullwidth" type="text"
+                       value="foo@bar.com">
+                <button class="button button--small" type="submit" id="ask-for-access-111Z111-submit"
+                        formaction="client-access-request.html" data-ajax-submit="true"
+                        data-container="#client_111Z111_notes"
+                        data-callback-name="window.callbacks.ajaxFormSubmit.clientList.insertFormResponse"
+                        data-callback-args="#client_111Z111_notes,insert">
+                    Send
+                </button>
+            </div>
+        </details>
+    </div>
+</form>
+
+<details id="missing-client" role="group" open="">
+    <summary role="button" aria-controls="details-content-1" tabindex="0" aria-expanded="true">
+        <span class="summary">Can't find your client?</span>
+    </summary>
+    <div class="panel-indent" id="details-content-2" aria-hidden="false" style="display: block;">
+        <p>You can’t see clients authorised with a paper 64-8 form only.</p>
+        <strong>Ask for access for missing 64-8 clients</strong>
+
+
+        <form action="/agent/client-list/client-access-request" method="POST" id="missing-client-form"
+              class="form-group">
+
+            <input type="hidden" name="csrfToken"
+                   value="22222c222cc22222ccc2222cc22cc2ccc2c22222">
+
+            <label for="paye-reference" class="form-label">PAYE reference</label>
+
+            <input name="payeref" id="missing-client-paye-ref" type="text" value="">
+
+            <label for="email" class="form-label">Your email</label>
+
+
+            <input name="email" id="missing-client-email" type="text" value="agent@agency.com">
+
+
+            <input name="missingclient" type="hidden" value="true">
+            <button class="button" type="submit" id="missing-client-submit"
+                    formaction="/agent/client-list/client-access-xhr-request" data-ajax-submit="true"
+                    data-container="#missing-client-form"
+                    data-callback-name="window.GOVUK.callbacks.ajaxFormSubmit.clientList.insertFormResponse"
+                    data-callback-args="#missing-client-form,replace">Send
+            </button>
+
+        </form>
+    </div>
+</details>

@@ -8,6 +8,7 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     contentNudge = require('./modules/contentNudge.js'),
     tableRowClick = require('./modules/tableRowClick.js'),
     reportAProblem = require('./modules/reportAProblem.js'),
+    ajaxFormSubmit = require('./modules/ajaxFormSubmit.js'),
     preventDoubleSubmit = require('./modules/preventDoubleSubmit.js'),
     toggleContextualFields = require('./modules/toggleContextualFields.js'),
     toggleDynamicFormFields = require('./modules/toggleDynamicFormFields.js'),
@@ -137,7 +138,40 @@ $(function() {
 
   toggleDynamicFormFields();
 
+  window.GOVUK.callbacks = window.GOVUK.callbacks || {
+      ajaxFormSubmit: {
+        clientList: {
+          insertFormResponse: {
+            success: function(response, data, container, type) {
+              var re = new RegExp('&?email=([^&]+)', 'gi'),
+                emails = data.match(re);
+
+              if (type === 'replace') {
+                $(container).replaceWith(response);
+              } else {
+                // 'insert'
+                $(container).html(response);
+              }
+
+              if (!!emails.length) {
+                $('input[name="email"]').each(function(index, element) {
+                  $(element).attr('value', decodeURIComponent(emails[0]).replace(re, '$1'));
+                });
+              }
+            },
+
+            error: function(xhr) {
+              var htmlText = xhr.responseText;
+              $('head').html(htmlText.substring(htmlText.indexOf('<head>') + 6, htmlText.indexOf('</head>')));
+              $('body').html(htmlText.substring(htmlText.indexOf('<body>') + 6, htmlText.indexOf('</body>')));
+            }
+          }
+        }
+      }
+    };
+
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
+  ajaxFormSubmit.init();
   simpleToggleDynamicFormFields();
   questionnaireSubmission();
   registerBlockInputFields();
