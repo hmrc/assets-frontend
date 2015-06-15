@@ -1,23 +1,29 @@
+.attorneyBanner {
+  margin: 0px;
+  width: 100%;
+  background: #ffbf47;
+  color: #000;
+  border-style: solid;
+  border-width: 0px 0px 10px 0px;
+  border-color: #f47738;
+  position: relative;
+  z-index:999;
+}
 
-    .attorneyBanner {
-      margin: 0px;
-      width: 100%;
-      background: #ffbf47;
-      color: #000;
-      border-style: solid;
-      border-width: 0px 0px 10px 0px;
-      border-color: #f47738;
-      position: relative;
-      z-index:999;
-    }
-    .banner-links {
-      color: #005ea5;
-      float: right;
-    }
-    .attorneyPara {
-      padding: 20px 10px;
-      font-size: 19px;
-      margin: 0;
-      line-height: 1;
-    }
+.stickyBanner {
+  position: fixed;
+  top: 0px;
+}
+
+.banner-links {
+  color: #005ea5;
+  float: right;
+}
+
+.attorneyPara {
+  padding: 20px 10px;
+  font-size: 19px;
+  margin: 0;
+  line-height: 1;
+}
 
