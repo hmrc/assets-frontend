@@ -35,7 +35,6 @@ module.exports = function(settings) {
   $(window).scroll(function(event) {
     if (getWindowScroll().top > originalRect.top - requiredTop) {
       el.style.width = originalRect.width + 'px';
-      el.style.width = originalRect.width + 'px';
       $(el).addClass(className).after(function() {
         if (!document.getElementById('placeholder')) {
           return placeholder;
