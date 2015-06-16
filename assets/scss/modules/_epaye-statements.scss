@@ -10,6 +10,7 @@
   max-width: 900px;
   float: none;
   clear: both;
+  z-index: 999;
   
   a.client-list {
     margin-left: 19px;
@@ -42,6 +43,16 @@ a.paye-back-link {
   &.alert--info {
     position: inherit;
   }
+}
+#statements-year-message {
+  float:left;
+  width: 50%;
+}
+
+#statements-year-navigation {
+  float:right;
+  text-align: right;
+  width: 50%;
 }
 
 #statementsTotals {
