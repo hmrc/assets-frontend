@@ -4,7 +4,7 @@ var sticky = require('./sticky-header.js');
 
 module.exports = function(el) {
 
-  if ($('.attorneyBanner').length == 0) {
+  if ($('.attorneyBanner').length === 0) {
     return;
   }
 
