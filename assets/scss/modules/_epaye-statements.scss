@@ -53,6 +53,12 @@ a.paye-back-link {
   float:right;
   text-align: right;
   width: 50%;
+  
+  span, a {
+    &:first-child {
+      margin-right: 0.5em
+    }
+  } 
 }
 
 #statementsTotals {
