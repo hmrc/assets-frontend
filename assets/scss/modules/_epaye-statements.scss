@@ -2,6 +2,41 @@
   border-bottom-width: 0;
 }
 
+#statementsTotals {
+  border: 2px solid #bfc1c3;
+  border-left-width: 0;
+  border-right-width: 0;
+
+  .totals {
+    padding-right: 0;
+    text-align: left;
+  }
+
+  td {
+    font-weight: bold;
+    width: 24.4%;
+    padding-right: 0;
+    text-align: right;
+  }
+  
+  #amount-paid {
+    width: 26.2%;
+  }
+  
+  #balance {
+    padding-right: 24px;
+  }
+}
+
+.wrapper #annualSummaries {
+  @include border-bottom-zero;
+  margin-bottom: 10px;
+  
+  tr:last-child > td {
+    @include border-bottom-zero;
+  }   
+}
+
 #annualSummaries {
   border-bottom-width: 1px;
   .alert-text {
@@ -46,7 +81,6 @@
   & > thead th:first-child,
   details summary > table td:first-child {
     text-align: left;
-    width: 20%;
   }
   
   & tbody > tr > td[role="group"] {
@@ -83,12 +117,17 @@
     .summary {
       color: $grey-0;
       margin-bottom:0.26316em;
+      white-space: nowrap;
       
       &::before {
         content: "►";
         padding: 0 2px;
         display: inline-block;
       }
+    }
+    .no-detail {
+      padding-left: 18px;
+      white-space: nowrap;
     }
   }
 
@@ -141,8 +180,15 @@
   .details-content {
     @include border-bottom-zero;
 
-    li {
-      @include core-16();
+    ul {
+      list-style-type: disc;
+      margin: 0.75em;
+      max-width: 30em;
+      
+      li {
+        @include core-16();
+        margin-bottom: 5px;
+      }
     }
 
     & > tbody > tr > td {
@@ -161,6 +207,7 @@
       table {
         margin: 0;
         border-bottom-width: 1px;
+        background-color: $shaded-bg-grey;
         
         td, th {
           vertical-align: top;
