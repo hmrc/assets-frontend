@@ -2,6 +2,48 @@
   border-bottom-width: 0;
 }
 
+#delegation-banner {
+  background-color:$info-bg-color; 
+  border-left: 3px solid $govuk-blue;
+  margin: 10px 0 1em; 
+  padding: 0.6em 1em 0.5em; 
+  max-width: 900px;
+  float: none;
+  clear: both;
+  
+  a.client-list {
+    margin-left: 19px;
+  }
+}
+.paye-header {
+  h1 {
+    padding: 10px 0 5px 0;
+    margin-bottom: 10px;      
+  }
+}
+
+a.paye-back-link {
+  @include core-19();
+  border-bottom: 1px solid $black;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: em(12);
+  color: $black;
+}
+.statements-balance {
+  #balance-message {
+    margin: 0;
+  }  
+  &.alert {
+    padding: 0.8em 1em 0.6em 1em;
+    margin: 1.5em 0 20px 0;    
+  }
+  
+  &.alert--info {
+    position: inherit;
+  }
+}
+
 #statementsTotals {
   border: 2px solid #bfc1c3;
   border-left-width: 0;
@@ -39,6 +81,7 @@
 
 #annualSummaries {
   border-bottom-width: 1px;
+  
   .alert-text {
     color: $alert-bg-red;
   }
@@ -52,7 +95,8 @@
     &:before {
       content: "\f104";
     }
-  }  
+  }
+
   td, th {
     padding-right: 0;
   }
@@ -63,6 +107,7 @@
     &:first-child {
       padding-left: 21px;
     }
+
     &:last-child {
       padding-right: 24px;
     }
@@ -90,8 +135,6 @@
   details summary {
     margin: 0;
     width: 100%;
-    
-    //outline: none;
 
     &::-webkit-details-marker {
       display: none;
@@ -102,7 +145,6 @@
       @include border-bottom-zero;
       margin: 0;
       
-      
       td {
         @include border-bottom-zero;
         padding: 12px 3px 10px;
@@ -111,7 +153,6 @@
       td:last-child {
         padding-right: 24px;
       }
-
     }
     
     .summary {
@@ -125,6 +166,7 @@
         display: inline-block;
       }
     }
+    
     .no-detail {
       padding-left: 18px;
       white-space: nowrap;
@@ -163,7 +205,6 @@
         padding-right: 0;
       }
     }
-    
   }
 
   td > .second-row {
