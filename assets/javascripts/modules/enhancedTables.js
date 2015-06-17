@@ -84,7 +84,13 @@ module.exports = function(tableSelector) {
   tableSubmit = function(el, event) {
     event.preventDefault();
     var selectedNodes = table.$('input[type=checkbox]:checked');
-    selectedNodes.addClass('hidden').appendTo(tableSelector.parents('form'));
+
+    selectedNodes.each(function(index, element) {
+      var $this = $(element);
+      $this.after('<input type="hidden" value="' + $this.attr("value") + '" name="' + $this.attr("name") + '" id="' + $this.attr("id") + '">')
+            .attr('disabled', 'disabled');
+    });
+    
     $(el).parents('form').submit();
   };
 
