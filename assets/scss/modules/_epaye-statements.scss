@@ -2,16 +2,19 @@
   border-bottom-width: 0;
 }
 
-#delegation-banner {
+.delegation-banner {
   background-color:$info-bg-color; 
   border-left: 3px solid $govuk-blue;
-  margin: 10px 0 1em; 
   padding: 0.6em 1em 0.5em; 
   max-width: 900px;
   float: none;
   clear: both;
   z-index: 999;
-  
+
+  &.panel-indent {
+    margin: 10px 0 1em;
+  }
+
   a.client-list {
     margin-left: 19px;
   }
@@ -22,17 +25,8 @@
     margin-bottom: 10px;      
   }
 }
-
-a.paye-back-link {
-  @include core-19();
-  border-bottom: 1px solid $black;
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: em(12);
-  color: $black;
-}
 .statements-balance {
-  #balance-message {
+  .balance-message {
     margin: 0;
   }  
   &.alert {
@@ -44,12 +38,13 @@ a.paye-back-link {
     position: inherit;
   }
 }
-#statements-year-message {
+
+.statements-year-message {
   float:left;
   width: 50%;
 }
 
-#statements-year-navigation {
+.statements-year-navigation {
   float:right;
   text-align: right;
   width: 50%;
@@ -61,7 +56,7 @@ a.paye-back-link {
   } 
 }
 
-#statementsTotals {
+.statements-totals {
   border: 2px solid #bfc1c3;
   border-left-width: 0;
   border-right-width: 0;
@@ -78,16 +73,16 @@ a.paye-back-link {
     text-align: right;
   }
   
-  #amount-paid {
+  .amount-paid {
     width: 26.2%;
   }
   
-  #balance {
+  .balance {
     padding-right: 24px;
   }
 }
 
-.wrapper #annualSummaries {
+.wrapper .annual-summaries {
   @include border-bottom-zero;
   margin-bottom: 10px;
   
@@ -96,7 +91,7 @@ a.paye-back-link {
   }   
 }
 
-#annualSummaries {
+.annual-summaries {
   border-bottom-width: 1px;
   
   .alert-text {
