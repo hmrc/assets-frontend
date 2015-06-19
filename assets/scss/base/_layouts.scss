@@ -7,42 +7,42 @@
 */
 
 body {
-	counter-reset: section;
+  counter-reset: section;
 }
 
 #content {
-	@extend %contain-floats;
-	display: block;
-	max-width: 960px;
-	margin: 0 auto;
-	padding: 0 15px 2em 15px; 
-	@include media(tablet) {
-		padding: 0 30px 2em 30px;
-	}
+  @extend %contain-floats;
+  display: block;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px 2em 15px;
+  @include media(tablet) {
+    padding: 0 30px 2em 30px;
+  }
 }
 
 .content__body {
 
-	.full-width & {
-		float: none;
-		width: 100%;
-	}
+  .full-width & {
+    float: none;
+    width: 100%;
+  }
 
-	@include media(tablet) {
-    	float: left;
-      width: 61.666667%;
+  @include media(tablet) {
+    float: left;
+    width: 61.666667%;
   }
 
   .messages-box,
   .service-info__related-subsection {
-    display:none;
+    display: none;
   }
 
   @include media(mobile) {
 
     .messages-box,
     .service-info__related-subsection {
-      display:block;
+      display: block;
     }
 
   }
@@ -52,13 +52,13 @@ body {
 @include media(mobile) {
 
   .sidebar {
-    display:none;
+    display: none;
   }
 
 }
 
 .brand-border--top {
-  border-top: 10px solid $mainstream-brand; 
+  border-top: 10px solid $mainstream-brand;
 }
 
 .section {
@@ -66,17 +66,21 @@ body {
   padding: 1em 0;
 
   h2 {
-    margin-top: 0!important;
-  }  
+    margin-top: 0 !important;
+  }
+}
+
+.subsection {
+  margin: 1.5em 0;
 }
 
 .section--branded {
   @extend .section;
   h2 {
     border-bottom: 5px solid $mainstream-brand;
-    margin-top: 0!important;
+    margin-top: 0 !important;
     margin-bottom: 0.65em;
-  }  
+  }
 }
 
 .bordered-box {
@@ -87,6 +91,12 @@ body {
 .bordered-box--shaded {
   @extend .bordered-box;
   background-color: $shaded-bg-grey;
+}
+
+.box--shaded {
+  padding: 0.5em 1em;
+  background-color: $grey-8;
+  border: none;
 }
 
 .divider--bottom {
