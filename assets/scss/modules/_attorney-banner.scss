@@ -8,10 +8,13 @@
   border-color: #f47738;
   position: relative;
   z-index:999;
+  padding:20px 0px;
 }
 
-.attorneyContainer{
-  margin: 0 0 30px 0;
+.grid-wrapper.attorneyContainer{
+  margin-bottom:30px;
+  margin-left:0px;
+  margin-right:0px;
 }
 
 .stickyBanner {
@@ -23,10 +26,13 @@
   color: #005ea5;
   float: right;
 }
-
+@media(max-width:641px){
+    .banner-links {
+        float:left;
+    }
+}
 .attorneyPara {
   padding: 20px 10px;
   font-size: 19px;
   margin: 0;
-  line-height: 1;
 }

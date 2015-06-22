@@ -1,6 +1,6 @@
   module.exports = function(el) {
 
-    var bannerId = $('[data-focuses="attorneyBanner"]').attr('id'),
+    var bannerId = $('.attorneyBanner').attr('id'),
     topOffset;
     if (!bannerId) {
       topOffset = 0;
