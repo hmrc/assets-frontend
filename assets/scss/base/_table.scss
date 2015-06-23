@@ -1,6 +1,5 @@
 table {
   margin-bottom: 30px;
-  border-bottom: 3px solid $grey-6;
 
   td, th {
     &.right-aligned {
@@ -84,6 +83,9 @@ table {
     color: $grey-1;
     font-weight: 400;
   }
+}
+.table--heavy-footer{
+  border-bottom: 3px solid $grey-6;
 }
 
 .controlpanel {
