@@ -29,6 +29,7 @@ module.exports = function(settings) {
       placeholder = document.createElement('div');
 
   placeholder.id = 'placeholder';
+  placeholder.style.width = originalRect.width + 'px';
   placeholder.style.height = originalRect.height + 'px';
 
   $(window).scroll(function(event) {
