@@ -28,6 +28,10 @@
   float: right;
 }
 @media(max-width:641px){
+    .stickyBanner {
+          margin:0 15px;
+        }
+
     .banner-links {
         float:left;
     }
