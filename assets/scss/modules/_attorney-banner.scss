@@ -1,27 +1,28 @@
 .attorneyBanner {
-  margin: 0px;
-  width: 100%;
+  max-width:960px;
   background: #ffbf47;
-  color: #000;
   border-style: solid;
   border-width: 0px 0px 10px 0px;
   border-color: #f47738;
-  position: relative;
   z-index:999;
   padding:20px 0px;
 }
-
 .grid-wrapper.attorneyContainer{
-  margin-bottom:30px;
-  margin-left:0px;
-  margin-right:0px;
+  margin:0 0 30px 0;
 }
-
 .stickyBanner {
-  position: fixed;
   top: 0px;
+  position: fixed;
+  box-sizing:border-box;
 }
-
+@media(max-width:1020px){
+    .stickyBanner {
+      left:0;
+      right:0;
+      width:auto;
+      margin:0 30px;
+    }
+}
 .banner-links {
   color: #005ea5;
   float: right;
