@@ -12,7 +12,7 @@
   z-index: 999;
 
   &.panel-indent {
-    margin: 10px 0 1em;
+    margin: 0 0 1em 10px;
   }
 
   a.client-list {
@@ -143,49 +143,66 @@
   & tbody > tr > td[role="group"] {
     padding: 0;
   }
-
-  details summary {
-    margin: 0;
-    width: 100%;
-
-    &::-webkit-details-marker {
-      display: none;
-      list-style-type: none;
+  
+  details  {
+    & > div {
+      padding-top: 10px;
+      background-color: $shaded-bg-grey;
     }
-
-    & > table {
-      @include border-bottom-zero;
+    
+    summary {
       margin: 0;
+      width: 100%;
+      display: block;
       
-      td {
+      &.no-data {
+        cursor: default;
+        outline: none;
+      }
+      
+      &::-webkit-details-marker {
+        display: none;
+        list-style-type: none;
+      }
+  
+      & > table {
         @include border-bottom-zero;
-        padding: 12px 3px 10px;
+        margin: 0;
+        
+        td {
+          @include border-bottom-zero;
+          padding: 12px 3px 10px;
+        }
+        
+        td:last-child {
+          padding-right: 24px;
+        }
       }
       
-      td:last-child {
-        padding-right: 24px;
+      .summary {
+        color: $grey-0;
+        margin-bottom:0.26316em;
+        white-space: nowrap;
+        
+        &::before {
+          content: "►";
+          padding: 0 2px;
+          display: inline-block;
+        }
       }
-    }
-    
-    .summary {
-      color: $grey-0;
-      margin-bottom:0.26316em;
-      white-space: nowrap;
       
-      &::before {
-        content: "►";
-        padding: 0 2px;
-        display: inline-block;
+      .no-detail {
+        padding-left: 18px;
+        white-space: nowrap;
       }
-    }
-    
-    .no-detail {
-      padding-left: 18px;
-      white-space: nowrap;
     }
   }
 
   details[open] summary {
+    //&.no-data + div {
+    //  padding-top: 2px;
+    //}
+    
     & > table {
       background-color: $grey-8;
     }
@@ -260,7 +277,6 @@
       table {
         margin: 0;
         border-bottom-width: 1px;
-        background-color: $shaded-bg-grey;
         
         td, th {
           vertical-align: top;
@@ -273,6 +289,7 @@
     }
 
     details[role="group"] {
+
       & > summary table {
         background-color: transparent;
         @include border-bottom-zero;
@@ -283,12 +300,15 @@
         }
       }
 
-      & > .panel-indent > table {
-        @include border-bottom-zero;
-        width: 100%; 
-        
-        &.details-payments {
-          width: 59%;
+      & > .panel-indent {
+
+        & > table {
+          @include border-bottom-zero;
+          width: 100%;
+
+          &.details-payments {
+            width: 59%;
+          }
         }
       }
     }
