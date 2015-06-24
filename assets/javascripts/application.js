@@ -183,4 +183,5 @@ $(function() {
   toggleDetails();
   validatorFocus();
   attorneyBanner();
+
 });
