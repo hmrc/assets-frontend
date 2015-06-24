@@ -1,5 +1,16 @@
 .business-tax {
 
+  @mixin small-bold-no-underline() {
+    @include bold-19();
+
+    & a:link {
+      text-decoration: none;
+    }
+    & a:hover {
+      text-decoration: underline;
+    }
+  }
+
   .subheading {
     @include core-19;
     margin: 0 0 19px;
@@ -49,8 +60,13 @@
   }
 
   .section--branded {
+    padding: 0 0 1em;
     border-bottom: 3px solid $grey-7;
     margin-bottom: 2em;
+
+    h2 {
+      border-bottom: 4px solid #005ea5;
+    }
   }
 
   .sidebar {
@@ -63,8 +79,14 @@
     padding-left: 0;
   }
 
-  .action-list li {
+  .section__li {
     padding: 0.25em 0;
+  }
+
+  .section__li--details-link {
+    @include small-bold-no-underline();
+    margin-top: 20px;
+    margin-bottom: -10px;
   }
 
   .alert {
