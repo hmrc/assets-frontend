@@ -1,37 +1,40 @@
-module.exports = function(el) {
-  //Had to grab the width & vertical position off the original
-  //to stop it popping to the windows width when position was changed to fixed
-  //ADD THE DATA-FOCUSES TAG TO YOUR ELEMENT WITH ITS OWN ID IN IT
-  var bannerId = $('[data-focuses]').attr('data-focuses'),
-      idOfBanner,
-      orgElementPos,
-      orgElementTop,
-      widthOrgElement;
+/**
+ * Attorney Banner
+ *
+ * Uses the sticky-header to create a fixed position banner that persists through the users viewport
+ *
+ * Usage:
+ *
+ *  attorney_banner should be called in your main template after your service info
+ *  with parameters to match these:- @(name: Option[String], returnLinkUrl : String, returnLinkText: String)
+ *  https://github.com/hmrc/play-ui/blob/master/src/main/twirl/uk/gov/hmrc/play/views/layouts/attorney_banner.scala.html
+ *
+ *  Example from the tai-frontend:
+ *  https://www.github.com/hmrc/tai-frontend/blob/master/app/views/main.scala.html#L47
+ *
+ *  @actingAttorneyBanner = {
+ *      @actingAttorney.map {actingAttorneyValue =>
+ *        @includes.attorney_banner(actingAttorneyValue.name, config.ApplicationConfig.citizenSwitchOffUrl, "back to trusted helpers")
+ *      }
+ *  }
+ *
+ *
+ **/
 
-  if (!bannerId) {
+require('jquery');
+
+var sticky = require('./sticky-header.js');
+
+module.exports = function(el) {
+
+  if ($('.attorneyBanner').length === 0) {
     return;
   }
 
-  idOfBanner = $('#' + bannerId);
-  orgElementPos = idOfBanner.offset();
-  orgElementTop = orgElementPos.top;
+  sticky({
+    el: '.attorneyBanner',
+    className: 'stickyBanner'
+  });
 
-  widthOrgElement = idOfBanner.width();
-
-  //Banner pops out the DOM so this makes sure the content below doesn't shift up
-  //You need a containing element around the floating element!
-  idOfBanner.parent().css('height', idOfBanner.parent().height());
-
-  //Run the function to reposition the banner
-  setInterval(stickIt, 100);
-
-  function stickIt() {
-    if ($(window).scrollTop() >= (orgElementTop)) {
-      // scrolled past the original position; change the position to fixed.
-      idOfBanner.css('position', 'fixed').css('width', widthOrgElement).css('top', '0px');
-    } else {
-      //Returns the banner to the DOM once we scroll up
-      idOfBanner.css('position', 'relative');
-    }
-  }
 };
+
