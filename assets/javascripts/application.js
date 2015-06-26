@@ -7,6 +7,7 @@ require('govuk-template');
 var setSSOLinks = require('./modules/SSO_links.js'),
     contentNudge = require('./modules/contentNudge.js'),
     tableRowClick = require('./modules/tableRowClick.js'),
+    feedbackForms = require('./modules/feedbackForms.js'),
     reportAProblem = require('./modules/reportAProblem.js'),
     ajaxFormSubmit = require('./modules/ajaxFormSubmit.js'),
     preventDoubleSubmit = require('./modules/preventDoubleSubmit.js'),
@@ -19,7 +20,6 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     customValidations = require('./validation/customValidations.js'),
     exitSurveyValidation = require('./validation/exitSurveyValidation.js'),
     citizenAuthValidation = require('./validation/citizenAuthValidation.js'),
-    feedbackFormValidation = require('./validation/feedbackFormValidation.js'),
     saEmailPrefs = require('./validation/saEmailPrefs.js'),
     GOVUK = require('stageprompt'),
     toggleDetails = require('./modules/toggleDetails.js'),
@@ -34,9 +34,7 @@ fingerprint();
 $(function() {
   var datatable,
       $searchFocus,
-      $clickableRow,
-      $feedbackForms,
-      $errorReportForm;
+      $clickableRow;
 
   conditionallyDisableButton();
 
@@ -48,8 +46,7 @@ $(function() {
   // feedback forms require a hidden field denoting if javascript is enabled
   $searchFocus      = $('.js-search-focus');
   $clickableRow     = $('.clickable-row');
-  $feedbackForms    = $('.form--feedback');
-
+  
   if ($clickableRow.length) {
     tableRowClick($clickableRow);
   }
@@ -65,15 +62,6 @@ $(function() {
 
   // initialise stageprompt for Analytics
   GOVUK.performance.stageprompt.setupForGoogleAnalytics();
-
-  // toggle for reporting a problem (on all content pages)
-  $('.report-error__toggle').on('click', function(e) {
-    $('.report-error__content').toggleClass('js-hidden');
-    e.preventDefault();
-  });
-
-  //we have javascript enabled so change hidden input to reflect this
-  $feedbackForms.find('input[name=isJavascript]').attr('value', true);
 
   $('.print-link a').attr('target', '_blank');
 
@@ -178,7 +166,8 @@ $(function() {
   customValidations();
   exitSurveyValidation().setup();
   citizenAuthValidation().setup();
-  feedbackFormValidation().setup();
+  feedbackForms().setup();
+  reportAProblem().setup();
   saEmailPrefs().setup();
   toggleDetails();
   validatorFocus();

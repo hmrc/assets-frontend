@@ -13,3 +13,10 @@
     float: left;
   }
 }
+
+.report-error__content .report-error__loading {
+	background-image: url("../images/loading.gif");
+  	background-repeat: no-repeat;
+  	margin-top: 0.5em;
+  	padding: 32px 32px 0 0;
+}
