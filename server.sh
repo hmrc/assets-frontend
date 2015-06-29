@@ -5,7 +5,7 @@ output() {
 }
 
 deps() {
-  echo "Checking for dependancies..."
+  echo "Checking for dependencies..."
   npm install
 }
 
