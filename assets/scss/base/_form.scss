@@ -63,8 +63,12 @@ select {
 }
 
 input[type="radio"] {
-  border: none;
-  margin-right:5px;
+  border: 1px solid $black;
+  margin-right: 5px;
+}
+
+input[type="radio"]:checked {
+  background-color: $black;
 }
 
 .input--xxsmall {

@@ -140,3 +140,34 @@ ul {
   }
 }
 
+.two-col-list {
+
+  .two-col-list__col {
+    width: auto;
+    float: none;
+  }
+
+  ul {
+    margin: 0;
+    li {
+      margin: 0.7em 0;
+      @include core-16;
+    }
+  }
+
+  @include media(tablet) {
+    display: inline-block;
+
+    .two-col-list__col {
+      width: 48%;
+    }
+    .two-col-list__col--left {
+      float: left;
+    }
+    .two-col-list__col--right {
+      float: right;
+    }
+
+  }
+
+}
