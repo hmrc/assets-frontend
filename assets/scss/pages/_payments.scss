@@ -87,7 +87,55 @@
 
   }
 
+  .summary__amount-cell {
+    position:relative;
+  }
+
+  .summary__amounts {
+    position:absolute;
+    left:0;
+    top:0;
+  }
+
+  .summary__amounts__item {
+    @include core-16;
+    padding: em(14) em(20) em(12) 0;
+    margin:0;
+    text-align:right;
+    display:block;
+    height:19px;
+
+    @include media(mobile) {
+      padding: em(13) em(20) em(10) 0;
+      height:18px;
+    }
+
+    &.fee {
+      padding: em(26) em(20) em(24) 0;
+
+      @include media(mobile) {
+        padding: em(22) em(20) em(22) 0;
+      }
+        
+    }
+
+  }
+
+  // Chrome only hack to resolve differences in padding cross-browser
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    .summary__amounts__item {
+      padding: em(13) em(20) em(12) 0;
+
+      &.fee {
+        padding-top: em(25);
+
+        @include media(mobile) {
+          padding-top: em(16);
+        }
+
+      }
+
+    }
+  }
+
 }
-
-
-

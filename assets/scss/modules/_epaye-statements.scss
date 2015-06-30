@@ -2,8 +2,98 @@
   border-bottom-width: 0;
 }
 
-#annualSummaries {
+.delegation-banner {
+  background-color:$info-bg-color; 
+  border-left: 3px solid $govuk-blue;
+  padding: 0.6em 1em 0.5em; 
+  max-width: 900px;
+  float: none;
+  clear: both;
+  z-index: 999;
+
+  &.panel-indent {
+    margin: 0 0 1em 10px;
+  }
+
+  a.client-list {
+    margin-left: 19px;
+  }
+}
+.paye-header {
+  h1 {
+    padding: 10px 0 5px 0;
+    margin-bottom: 10px;      
+  }
+}
+.statements-balance {
+  .balance-message {
+    margin: 0;
+  }  
+  &.alert {
+    padding: 0.8em 1em 0.6em 1em;
+    margin: 1.5em 0 20px 0;    
+  }
+  
+  &.alert--info {
+    position: inherit;
+  }
+}
+
+.statements-year-message {
+  float:left;
+  width: 50%;
+}
+
+.statements-year-navigation {
+  float:right;
+  text-align: right;
+  width: 50%;
+  
+  span, a {
+    &:first-child {
+      margin-right: 0.5em
+    }
+  } 
+}
+
+.statements-totals {
+  border: 2px solid #bfc1c3;
+  border-left-width: 0;
+  border-right-width: 0;
+
+  .totals {
+    padding-right: 0;
+    text-align: left;
+  }
+
+  td {
+    font-weight: bold;
+    width: 24.4%;
+    padding-right: 0;
+    text-align: right;
+  }
+  
+  .amount-paid {
+    width: 26.2%;
+  }
+  
+  .balance {
+    padding-right: 24px;
+  }
+}
+
+.wrapper .annual-summaries {
+  @include border-bottom-zero;
+  margin-bottom: 10px;
+  
+  tr:last-child > td {
+    @include border-bottom-zero;
+  }   
+}
+
+.annual-summaries {
   border-bottom-width: 1px;
+  
   .alert-text {
     color: $alert-bg-red;
   }
@@ -17,7 +107,8 @@
     &:before {
       content: "\f104";
     }
-  }  
+  }
+
   td, th {
     padding-right: 0;
   }
@@ -28,6 +119,7 @@
     &:first-child {
       padding-left: 21px;
     }
+
     &:last-child {
       padding-right: 24px;
     }
@@ -46,53 +138,71 @@
   & > thead th:first-child,
   details summary > table td:first-child {
     text-align: left;
-    width: 20%;
   }
   
   & tbody > tr > td[role="group"] {
     padding: 0;
   }
-
-  details summary {
-    margin: 0;
-    width: 100%;
-    
-    //outline: none;
-
-    &::-webkit-details-marker {
-      display: none;
-      list-style-type: none;
+  
+  details  {
+    & > div {
+      padding-top: 10px;
+      background-color: $shaded-bg-grey;
     }
-
-    & > table {
-      @include border-bottom-zero;
+    
+    summary {
       margin: 0;
+      width: 100%;
+      display: block;
       
+      &.no-data {
+        cursor: default;
+        outline: none;
+      }
       
-      td {
+      &::-webkit-details-marker {
+        display: none;
+        list-style-type: none;
+      }
+  
+      & > table {
         @include border-bottom-zero;
-        padding: 12px 3px 10px;
+        margin: 0;
+        
+        td {
+          @include border-bottom-zero;
+          padding: 12px 3px 10px;
+        }
+        
+        td:last-child {
+          padding-right: 24px;
+        }
       }
       
-      td:last-child {
-        padding-right: 24px;
+      .summary {
+        color: $grey-0;
+        margin-bottom:0.26316em;
+        white-space: nowrap;
+        
+        &::before {
+          content: "►";
+          padding: 0 2px;
+          display: inline-block;
+        }
       }
-
-    }
-    
-    .summary {
-      color: $grey-0;
-      margin-bottom:0.26316em;
       
-      &::before {
-        content: "►";
-        padding: 0 2px;
-        display: inline-block;
+      .no-detail {
+        padding-left: 18px;
+        white-space: nowrap;
       }
     }
   }
 
   details[open] summary {
+    //&.no-data + div {
+    //  padding-top: 2px;
+    //}
+    
     & > table {
       background-color: $grey-8;
     }
@@ -124,7 +234,6 @@
         padding-right: 0;
       }
     }
-    
   }
 
   td > .second-row {
@@ -141,8 +250,15 @@
   .details-content {
     @include border-bottom-zero;
 
-    li {
-      @include core-16();
+    ul {
+      list-style-type: disc;
+      margin: 0.75em;
+      max-width: 30em;
+      
+      li {
+        @include core-16();
+        margin-bottom: 5px;
+      }
     }
 
     & > tbody > tr > td {
@@ -173,6 +289,7 @@
     }
 
     details[role="group"] {
+
       & > summary table {
         background-color: transparent;
         @include border-bottom-zero;
@@ -183,12 +300,15 @@
         }
       }
 
-      & > .panel-indent > table {
-        @include border-bottom-zero;
-        width: 100%; 
-        
-        &.details-payments {
-          width: 59%;
+      & > .panel-indent {
+
+        & > table {
+          @include border-bottom-zero;
+          width: 100%;
+
+          &.details-payments {
+            width: 59%;
+          }
         }
       }
     }
