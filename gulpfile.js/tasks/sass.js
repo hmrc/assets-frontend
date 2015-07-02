@@ -6,7 +6,9 @@ var gulp         = require('gulp'),
     config       = require('../config').sass,
     sourceMaps   = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
-    rename      = require('gulp-rename');
+    plumber      = require('gulp-plumber'),
+    gutil        = require('gulp-util'),
+    rename       = require('gulp-rename');
 
 gulp.task('sass', function() {
   var env   = global.runmode,
@@ -14,6 +16,10 @@ gulp.task('sass', function() {
 
   return gulp.src(config.src)
        .pipe(gulpif(isDev, sourceMaps.init()))
+       .pipe(plumber(function(error) {
+         gutil.log(gutil.colors.red(error.message));
+         this.emit('end');
+       }))
        .pipe(sass(config[env].settings))
        .pipe(autoprefixer())
        .pipe(rename({suffix: '.min'}))
