@@ -3,7 +3,9 @@ module.exports = {
   cookieDomain: '',
 
   setCookie: function(name, value, duration, domain) {
-    if (domain) {
+    var secure = window.location.protocol.indexOf('https') ? '' : '; secure';
+
+    if (domain !== 'localhost') {
       this.cookieDomain = '; domain=' + domain;
     }
 
@@ -13,7 +15,7 @@ module.exports = {
       this.expires = '; expires=' + date.toGMTString();
     }
 
-    document.cookie = name + '=' + value + this.expires + this.cookieDomain + '; path=/';
+    document.cookie = name + '=' + value + this.expires + this.cookieDomain + '; path=/' + secure;
   },
 
   getCookie: function(name) {
