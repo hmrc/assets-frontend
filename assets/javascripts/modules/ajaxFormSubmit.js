@@ -7,6 +7,7 @@
  *
  *  Place the attribute 'data-ajax-submit="true"' on either a form tag or a button
  *  that has:
+ *    - a data-formaction attribute for javascript enabled form post (ajax)
  *    - a formaction attribute for non-javascript enabled form post (full page reload)
  *    - a 'data-container' attribute with a selector for the element which contains 'scoped' form values
  *    - a 'data-callback-name' attribute with name-spaced object property name with contains 'success' and 'error' property functions
@@ -55,7 +56,7 @@ var ajaxFormSubmit = {
     var $this = $(this),
       _this = event.data.context,
       $form = $this.attr('data-ajax-submit') ? $this : $this.find('[data-ajax-submit]'),
-      path = $form.attr('formaction') || $form.attr('action'),
+      path = $form.attr('data-formaction') || $form.attr('formaction') || $form.attr('action'),
       $scope = $form.attr('data-container') || $this,
       serializedData = _this.serializeForAjax($scope),
       callback = {
@@ -89,7 +90,10 @@ var ajaxFormSubmit = {
         callback('error', result);
       }
     })
-    .always(function(result) {
+    .always(function() {
+      if (!!callback) {
+        callback('always');
+      }
     });
   },
 
