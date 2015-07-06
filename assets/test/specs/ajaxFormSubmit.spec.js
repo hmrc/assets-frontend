@@ -20,7 +20,16 @@ describe('AjaxFormSubmit', function() {
       forms = $("form[data-ajax-submit], button[data-ajax-submit], input[data-ajax-submit]");
       formCount = forms.length;
       ajaxFormSubmit = require('../../javascripts/modules/ajaxFormSubmit.js');
-      ajaxFormSubmit.init();
+      ajaxFormSubmit.init({ 
+          clientList: {
+            callbacks: {
+              success: function (response, data, helpers, container, type) {},
+              error: function  (response, data, helpers, container, type) {},
+              always: function (response, data, helpers, container, type) {}
+            },
+            helpers: {}
+          }
+      });
       
       setTimeout(function () {
         done();
@@ -44,25 +53,26 @@ describe('AjaxFormSubmit', function() {
     });
     
     for (var e = 0; e < formCount; e++) {
-      var payeId = Array(4).join(e.toString()) + "/Z" + Array(4).join(e.toString()),
-          panelId = '#client_' + payeId.replace('/', '') + '_notes';
+      var payeId = new Array(4).join(e.toString()) + "/Z" + new Array(4).join(e.toString()),
+          panelId = '#client_' + payeId.replace('/', '') + '_notes',
+          $formPanel = null;
       
-      it('Form elements for PAYE Ref '+ payeId + ' are present', function () {
-        var $formPanel = $(panelId);
-        expect($formPanel.find('input[name="csrfToken"]')).toBeDefined();
-        expect($formPanel.find('input[name="csrfToken"]').attr('value').length).toBeTruthy();
+      it('Form elements for PAYE Ref '+ payeId + ' are present', (function (pId, $fp) {
+        $fp = $(pId);
+        expect($fp.find('input[name="csrfToken"]')).toBeDefined();
+        expect($fp.find('input[name="csrfToken"]').attr('value').length).toBeTruthy();
 
-        expect($formPanel.find('input[name="name"]')).toBeDefined();
-        expect((/^Employer[0-9]$/i).test($formPanel.find('input[name="name"]').attr('value'))).toBe(true);
+        expect($fp.find('input[name="name"]')).toBeDefined();
+        expect((/^Employer[0-9]$/i).test($fp.find('input[name="name"]').attr('value'))).toBe(true);
 
-        expect($formPanel.find('input[name="payeref"]')).toBeDefined();
-        expect((/^[0-9]{3}\/[A-Z][0-9]{3}$/i).test($formPanel.find('input[name="payeref"]').attr('value'))).toBe(true);
+        expect($fp.find('input[name="payeref"]')).toBeDefined();
+        expect((/^[0-9]{3}\/[A-Z][0-9]{3}$/i).test($fp.find('input[name="payeref"]').attr('value'))).toBe(true);
 
-        expect($formPanel.find('input[name="email"]')).toBeDefined();
-      });
+        expect($fp.find('input[name="email"]')).toBeDefined();
+      })(panelId, $formPanel));
 
-      it('Form button attributes for PAYE Ref '+ payeId + ' are present', function () {
-        var $button = $(panelId + ' > details > .panel-indent > .button');
+      it('Form button attributes for PAYE Ref '+ payeId + ' are present', (function (pId) {
+        var $button = $(pId + ' > details > .panel-indent > .button');
         expect($button.length).toBeTruthy();
 
         expect($button.attr('data-ajax-submit')).not.toBeUndefined();
@@ -81,7 +91,7 @@ describe('AjaxFormSubmit', function() {
         expect(callbackArgs[0]).toBe($button.attr('data-container'));
         expect(callbackArgs[1]).toBe('insert');
         expect(callbackArgs[1]).not.toBe('replace');
-      });
+      })(panelId));
     }
   });
   
@@ -174,7 +184,7 @@ describe('AjaxFormSubmit', function() {
 
       setTimeout(function () {
         for (var e = 0; e < formCount; e++) {
-          var payeId = Array(4).join(e.toString()) + "/Z" + Array(4).join(e.toString()),
+          var payeId = new Array(4).join(e.toString()) + "/Z" + new Array(4).join(e.toString()),
             containerId = '#client_' + payeId.replace('/', '') + '_notes',
             data = ajaxFormSubmit.serializeForAjax(containerId);
 
@@ -231,17 +241,24 @@ describe('AjaxFormSubmit', function() {
     });
 
     for (var e = 0; e < formCount; e++) {
-      var payeId = Array(4).join(e.toString()) + "/Z" + Array(4).join(e.toString()),
-        panelId = '#client_' + payeId.replace('/', '') + '_notes';
+      var payeId = new Array(4).join(e.toString()) + "/Z" + new Array(4).join(e.toString()),
+      panelId = '#client_' + payeId.replace('/', '') + '_notes';
 
-      it('The Button "data-callback" values for  '+ payeId + ' return a function', function () {
-        var $button = $(panelId + ' > details > .panel-indent > .button'),
+      it('The Button "data-callback" values for  '+ payeId + ' return a function', (function (pId) {
+        var $button = $(pId + ' > details > .panel-indent > .button'),
             callback = ajaxFormSubmit.getCallback({
-          name: $button.attr('data-callback-name'),
-          args: $button.attr('data-callback-args')
-        }, ajaxFormSubmit.serializeForAjax($button.attr('data-container')));
+              config: {
+                name: $button.attr('data-callback-name'),
+                args: $button.attr('data-callback-args'),
+                callbacks: {
+                  success: function (response, data, helpers, container, type) {},
+                  error: function  (response, data, helpers, container, type) {},
+                  always: function (response, data, helpers, container, type) {}
+                },
+                helpers: {}
+              }}, ajaxFormSubmit.serializeForAjax($button.attr('data-container')));
         expect(typeof callback).toBe("function");
-      });
+      })(panelId));
     }
   });
 

@@ -125,41 +125,8 @@ $(function() {
   }
 
   toggleDynamicFormFields();
-
-  window.GOVUK.callbacks = window.GOVUK.callbacks || {
-      ajaxFormSubmit: {
-        clientList: {
-          insertFormResponse: {
-            success: function(response, data, container, type) {
-              var re = new RegExp('&?email=([^&]+)', 'gi'),
-                emails = data.match(re);
-
-              if (type === 'replace') {
-                $(container).replaceWith(response);
-              } else {
-                // 'insert'
-                $(container).html(response);
-              }
-
-              if (!!emails.length) {
-                $('input[name="email"]').each(function(index, element) {
-                  $(element).attr('value', decodeURIComponent(emails[0]).replace(re, '$1'));
-                });
-              }
-            },
-
-            error: function(xhr) {
-              var htmlText = xhr.responseText;
-              $('head').html(htmlText.substring(htmlText.indexOf('<head>') + 6, htmlText.indexOf('</head>')));
-              $('body').html(htmlText.substring(htmlText.indexOf('<body>') + 6, htmlText.indexOf('</body>')));
-            }
-          }
-        }
-      }
-    };
-
+  
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
-  ajaxFormSubmit.init();
   simpleToggleDynamicFormFields();
   questionnaireSubmission();
   registerBlockInputFields();
@@ -172,5 +139,87 @@ $(function() {
   toggleDetails();
   validatorFocus();
   attorneyBanner();
+  ajaxFormSubmit.init({
+    clientAccessResponse: {
+      callbacks: {
+        success: function (response, data, helpers, container, type) {
+          helpers.insertResponseHtml(helpers, type, data, $(container), response);
+        },
 
+        error: function (response, data, helpers, container, type) {
+          helpers.insertResponseHtml(helpers, type, data, $(container), response);
+        },
+
+        always: function (response, data, helpers, container, type) {
+          helpers.resetForms(type, data, container);
+        }
+      }
+    },
+    helpers: {
+      insertResponseHtml: function (helpers, type, data, $target, response) {
+        var html = !!response.responseText ? response.responseText : response,
+          isError = !!response.status || response.status === 500,
+          isNotValidationError = isError && /<h1[^>]*>\s*Sorry, we’re experiencing technical difficulties\s*<\/h1>/i.test(html),
+          isValidType = function () {
+            return $.isFunction($.fn[type]);
+          };
+
+        if (!isError) {
+          $target.addClass('js-hidden');
+        } else if (!isValidType()) {
+          type = 'prepend';
+        }
+
+        $target.parent().find('.alert--success, .alert--failure').remove();
+
+        if (isNotValidationError) {
+          var htmlText = html;
+          $('head').html(htmlText.substring(htmlText.indexOf('<head>') + 6, htmlText.indexOf('</head>')));
+          $('body').html(htmlText.substring(htmlText.indexOf('<body>') + 6, htmlText.indexOf('</body>')));
+        }
+        else if (!isValidType()) {
+          // just 'insert' html in target container element
+          $target.html(html);
+        }
+        else {
+          $.fn[type].apply($target, [html]);
+        }
+
+        if (data.indexOf('missingclient=true') > -1) {
+          helpers.bindEvents($target, data);
+        }
+        else {
+          $target.removeClass('js-hidden');
+        }
+      },
+
+      resetForms: function (type, data, target) {
+        var re = new RegExp('&?email=([^&]+)', 'gi'),
+          emails = data.match(re);
+
+        $(target + ', #client-list_wrapper .summary').find('input[type=submit], button[type=submit]').prop('disabled', false);
+
+        if (!!emails && !!emails.length) {
+          $('input[name="email"]').each(function (index, element) {
+            $(element).attr('value', decodeURIComponent(emails[0]).replace(re, '$1'));
+          });
+        }
+      },
+
+      bindEvents: function ($container) {
+        $('#another-missing-client').one("click keydown", function (event) {
+          event.preventDefault();
+
+          var $this = $(event.target);
+
+          $this.parent().find('.alert--success, .alert--failure').remove();
+          $this.remove();
+
+          $('input[name="payeref"]').prop('value', null); // -webkit-autofill background-color mask: $('input[name="payeref"]').css({'-webkit-box-shadow':'0 0 0 500px white inset' });
+
+          $container.removeClass('js-hidden');
+        });
+      }
+    }
+  });
 });
