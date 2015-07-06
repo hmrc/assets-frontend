@@ -7,6 +7,7 @@
  *
  *  Place the attribute 'data-ajax-submit="true"' on either a form tag or a button
  *  that has:
+ *    - a data-formaction attribute for javascript enabled form post (ajax)
  *    - a formaction attribute for non-javascript enabled form post (full page reload)
  *    - a 'data-container' attribute with a selector for the element which contains 'scoped' form values
  *    - a 'data-callback-name' attribute with name-spaced object property name with contains 'success' and 'error' property functions
@@ -18,7 +19,7 @@
  *
  *  <form action="#"
  *   data-ajax-submit="true"
- *   data-container="#selector" data-callback-name="window.GOVUK.callbacks.[libraryname].[pagename].[functionname]"
+ *   data-container="#selector" data-callback-name="[libraryname].callbacks"
  *   data-callback-args="#selector,insert|replace">
  *      <input type="submit" value="Submit"/>
  *  </form>
@@ -27,7 +28,7 @@
  *
  *  <button class="button" type="submit" id="missing-client-submit" formaction="#"
  *   data-ajax-submit="true"
- *   data-container="#selector" data-callback-name="window.GOVUK.callbacks.[libraryname].[pagename].[functionname]"
+ *   data-container="#selector" data-callback-name="[libraryname].callbacks"
  *   data-callback-args="#selector,insert|replace">Submit</button>
  *
  **/
@@ -35,7 +36,7 @@ require('jquery');
 
 var ajaxFormSubmit = {
 
-  init: function() {
+  init: function(config) {
     var _this = this,
         $ajaxForm = $('form:has([data-ajax-submit])'),
         ajaxFormCount = $ajaxForm.length,
@@ -45,7 +46,7 @@ var ajaxFormSubmit = {
     for (; a < ajaxFormCount; a++) {
       $ajaxItem = $($ajaxForm[a]);
 
-      $ajaxItem.on('submit', {context: _this}, _this.submitHandler);
+      $ajaxItem.on('submit', {context: _this, config: config}, _this.submitHandler);
     }
   },
 
@@ -55,21 +56,23 @@ var ajaxFormSubmit = {
     var $this = $(this),
       _this = event.data.context,
       $form = $this.attr('data-ajax-submit') ? $this : $this.find('[data-ajax-submit]'),
-      path = $form.attr('formaction') || $form.attr('action'),
+      path = $form.attr('data-formaction') || $form.attr('formaction') || $form.attr('action'),
       $scope = $form.attr('data-container') || $this,
       serializedData = _this.serializeForAjax($scope),
-      callback = {
+      handlers = {
         config: {
           name: $form.attr('data-callback-name'),
-          args: $form.attr('data-callback-args')
+          args: $form.attr('data-callback-args'),
+          callbacks: event.data.config,
+          helpers: event.data.config.helpers || {}
         },
         fn: null
       };
+    
+    handlers.fn = _this.getCallback(handlers.config, serializedData);
 
-    callback.fn = _this.getCallback(callback.config, serializedData);
-
-    if (!!callback) {
-      _this.doSubmit(path, serializedData, callback.fn);
+    if (!!handlers) {
+      _this.doSubmit(path, serializedData, handlers.fn);
     }
   },
 
@@ -89,7 +92,10 @@ var ajaxFormSubmit = {
         callback('error', result);
       }
     })
-    .always(function(result) {
+    .always(function() {
+      if (!!callback) {
+        callback('always');
+      }
     });
   },
 
@@ -104,16 +110,16 @@ var ajaxFormSubmit = {
 
   getCallback: function(config, data) {
     var parts = config.name.split('.'),
-        method = window;
+        method = config.callbacks,
+        helpers = config.helpers;
 
     if (!!config.name) {
       if (!!config.args) {
         config.parameters = [].concat(config.args.split(','));
       }
 
-      if (!!data) {
-        config.parameters.unshift(data);
-      }
+      config.parameters.unshift(helpers);
+      config.parameters.unshift(!!data ? data : null);
 
       jQuery.each(parts, function(index, value) {
         method = method[value];
