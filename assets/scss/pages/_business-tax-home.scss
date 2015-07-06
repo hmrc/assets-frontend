@@ -109,8 +109,13 @@
     border-left-width: 4px;
   }
 
+  .alert--info {
+    background-color: $light-blue-25;
+  }
+
   .alert--failure {
-    background-color: $alert-failure;
+    background-color: $alert-failure-bg;
+    border-color: $red;
   }
 
   .link-list__link {
@@ -146,8 +151,8 @@
       @include bold-19;
 
       &.flag--urgent {
-        border-left: 1px solid $mellow-red-50;
-        color: $mellow-red;
+        border-left: 1px solid $red;
+        color: $red;
         background-color: inherit;
       }
       &.flag--soon {
