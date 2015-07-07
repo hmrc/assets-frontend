@@ -83,8 +83,6 @@ module.exports = function(tableSelector) {
 
   tableSubmit = function(el, event) {
     event.preventDefault();
-    var selectedNodes = table.$('input[type=checkbox]:checked');
-    selectedNodes.addClass('hidden').appendTo(tableSelector.parents('form'));
     $(el).parents('form').submit();
   };
 
