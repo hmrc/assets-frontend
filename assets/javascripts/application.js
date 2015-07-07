@@ -125,21 +125,8 @@ $(function() {
   }
 
   toggleDynamicFormFields();
-  
-  //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
-  simpleToggleDynamicFormFields();
-  questionnaireSubmission();
-  registerBlockInputFields();
-  customValidations();
-  exitSurveyValidation().setup();
-  citizenAuthValidation().setup();
-  feedbackForms().setup();
-  reportAProblem().setup();
-  saEmailPrefs().setup();
-  toggleDetails();
-  validatorFocus();
-  attorneyBanner();
-  ajaxFormSubmit.init({
+
+  var callbacks = {
     clientAccessResponse: {
       callbacks: {
         success: function (response, data, helpers, container, type) {
@@ -221,5 +208,20 @@ $(function() {
         });
       }
     }
-  });
+  };
+  
+  //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
+  simpleToggleDynamicFormFields();
+  questionnaireSubmission();
+  registerBlockInputFields();
+  customValidations();
+  exitSurveyValidation().setup();
+  citizenAuthValidation().setup();
+  feedbackForms().setup();
+  reportAProblem().setup();
+  saEmailPrefs().setup();
+  toggleDetails();
+  validatorFocus();
+  attorneyBanner();
+  ajaxFormSubmit.init(callbacks);
 });
