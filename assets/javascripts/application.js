@@ -119,7 +119,7 @@ $(function() {
       });
   }
 
-  if ($('*[data-contextual-helper]').length) {
+  if ($('*[data-contextual-helpers]').length) {
     // setup showing/hiding of contextual fields
     toggleContextualFields().setup();
   }
@@ -138,18 +138,18 @@ $(function() {
         },
 
         always: function (response, data, helpers, container, type) {
-          helpers.resetForms(type, data, container);
+          helpers.resetForms(helpers, type, data, container);
         }
       }
     },
     helpers: {
       insertResponseHtml: function (helpers, type, data, $target, response) {
         var html = !!response.responseText ? response.responseText : response,
-          isError = !!response.status || response.status === 500,
-          isNotValidationError = isError && /<h1[^>]*>\s*Sorry, we’re experiencing technical difficulties\s*<\/h1>/i.test(html),
-          isValidType = function () {
-            return $.isFunction($.fn[type]);
-          };
+            htmlText = helpers.utilities.cleanHtml(html),
+            isError = !!response.status || response.status === 500,
+            isValidType = function () {
+              return $.isFunction($.fn[type]);
+            };
 
         if (!isError) {
           $target.addClass('js-hidden');
@@ -159,17 +159,20 @@ $(function() {
 
         $target.parent().find('.alert--success, .alert--failure').remove();
 
-        if (isNotValidationError) {
-          var htmlText = html;
-          $('head').html(htmlText.substring(htmlText.indexOf('<head>') + 6, htmlText.indexOf('</head>')));
-          $('body').html(htmlText.substring(htmlText.indexOf('<body>') + 6, htmlText.indexOf('</body>')));
+        var heading = helpers.utilities.getElementInnerHtml(htmlText, 'h1');
+        
+        if (helpers.utilities.isFullPageError(heading)) {
+          var $head = helpers.utilities.getElementInnerHtml(htmlText, 'head'),
+            $body = helpers.utilities.getElementInnerHtml(htmlText, 'body');
+          $('head').html($head);
+          $('body').html($body);
         }
         else if (!isValidType()) {
           // just 'insert' html in target container element
-          $target.html(html);
+          $target.html(htmlText);
         }
         else {
-          $.fn[type].apply($target, [html]);
+          $.fn[type].apply($target, [htmlText]);
         }
 
         if (data.indexOf('missingclient=true') > -1) {
@@ -179,20 +182,24 @@ $(function() {
           $target.removeClass('js-hidden');
         }
       },
-
-      resetForms: function (type, data, target) {
-        var re = new RegExp('&?email=([^&]+)', 'gi'),
-          emails = data.match(re);
-
+      
+      resetForms: function (helpers, type, data, target) {
+        var emailValue = helpers.getEmailValue(target, data);
+        
         $(target + ', #client-list_wrapper .summary').find('input[type=submit], button[type=submit]').prop('disabled', false);
 
-        if (!!emails && !!emails.length) {
-          $('input[name="email"]').each(function (index, element) {
-            $(element).attr('value', decodeURIComponent(emails[0]).replace(re, '$1'));
-          });
-        }
+        $('input[name="email"]').each(function (index, element) {
+            $(element).val(emailValue);
+        });
       },
-
+      
+      getEmailValue: function(container, data) {
+        var reEmail = /&?email=([^&]+)/gi, 
+            emailMatch = data.match(reEmail), 
+            emailValue = $(container).find('input[name="email"]').val();
+        return emailValue || decodeURIComponent(emailMatch[0]).replace(reEmail, '$1') || ""; 
+      },
+    
       bindEvents: function ($container) {
         $('#another-missing-client').one("click keydown", function (event) {
           event.preventDefault();
@@ -206,6 +213,21 @@ $(function() {
 
           $container.removeClass('js-hidden');
         });
+      },
+      
+      utilities: {
+        getElementInnerHtml: function(html, nodeName) {
+          var re = new RegExp("^(.+)<" + nodeName + "[^>]*>(.+?)<\/" + nodeName + ">(.+)$", "gi");
+          return $($.parseHTML(html.replace(re, "$2")));
+        },
+
+        cleanHtml: function(htmlString) {
+          return $.trim(htmlString).replace(/[\r\n\f\t]/g, '').replace(/>\s+</g, '><')
+        },
+
+        isFullPageError: function(heading) {
+          return !!heading && heading.text() === 'Sorry, we’re experiencing technical difficulties';
+        }
       }
     }
   };
