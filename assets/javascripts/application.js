@@ -125,7 +125,7 @@ $(function() {
   }
 
   toggleDynamicFormFields();
-  
+
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
   simpleToggleDynamicFormFields();
   questionnaireSubmission();
