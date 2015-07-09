@@ -5,7 +5,7 @@ module.exports = {
   setCookie: function(name, value, duration, domain) {
     var secure = window.location.protocol.indexOf('https') ? '' : '; secure';
 
-    if (domain !== 'localhost') {
+    if (domain) {
       this.cookieDomain = '; domain=' + domain;
     }
 
