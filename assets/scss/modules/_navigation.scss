@@ -161,10 +161,21 @@ a.back-link {
 }
 
 #global-breadcrumb {
+  padding-bottom: 0px;
   margin:0;
   padding-top:0;
+  border-bottom: none;
+  border-top:1px solid $grey-8;
+
+  ol {
+    padding: 0.75em 0 0.55em 0;
+  }
 
   li {
     margin-bottom: 0;
+
+    a:focus {
+      outline: 3px solid $yellow;
+    }
   }
 }
