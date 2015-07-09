@@ -16,8 +16,9 @@ module.exports = function() {
   // IE7: Do not set the cookie when the encoded fingerprint is empty in IE7
   // to prevent the session being cleared by the server
   if (!mdtpdfCookie && encodedFingerPrint) {
-    curDomain = window.location.hostname.split('.').slice(-3);
-    cookieDomain = (curDomain.length > 1) ? '.' + curDomain.join('.') : window.location.hostname;
+    curDomain = window.location.hostname.split('.');
+    curDomain.shift();
+    cookieDomain = (curDomain.length > 1) ? '.' + curDomain.join('.') : false;
 
     govuk.setCookie('mdtpdf', encodedFingerPrint, 7300, cookieDomain);
   }
