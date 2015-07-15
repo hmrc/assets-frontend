@@ -17,8 +17,8 @@
                         formaction="#client-access-request" data-ajax-submit="true"
                         data-formaction="#client-access-request-xhr" 
                         data-container="#client_000Z000_notes"
-                        data-callback-name="clientList.callbacks"
-                        data-callback-args="#client_000Z000_notes,before">
+                        data-callback-name="clientAccessResponse.callbacks"
+                        data-callback-args="#client_000Z000_notes,insert">
                     Send
                 </button>
             </div>
@@ -43,8 +43,8 @@
                         formaction="#client-access-request" data-ajax-submit="true"
                         data-formaction="#client-access-request-xhr"
                         data-container="#client_111Z111_notes"
-                        data-callback-name="clientList.callbacks"
-                        data-callback-args="#client_111Z111_notes,replace">
+                        data-callback-name="clientAccessResponse.callbacks"
+                        data-callback-args="#client_111Z111_notes,insert">
                     Send
                 </button>
             </div>
@@ -81,12 +81,12 @@
             <button class="button" type="submit" id="missing-client-submit"
                     formaction="/agent/client-list/client-access-xhr-request" data-ajax-submit="true"
                     data-container="#missing-client-form"
-                    data-callback-name="window.GOVUK.callbacks.ajaxFormSubmit.clientList.insertFormResponse"
-                    data-callback-args="#missing-client-form,replace">Send
+                    data-callback-name="clientAccessResponse.callbacks"
+                    data-callback-args="#missing-client-form,before">Send
             </button>
 
         </form>
     </div>
 </details>
 <a id="agent-client-list">dummy element to 'post' to - prevents code analysis warning on commit.</a>
-<a id="#agent-client-list-client-access-request">dummy element to 'post' to - prevents code analysis warning on commit.</a>
+<a id="agent-client-list-client-access-request">dummy element to 'post' to - prevents code analysis warning on commit.</a>
