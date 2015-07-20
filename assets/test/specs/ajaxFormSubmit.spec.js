@@ -1,215 +1,161 @@
 require('jquery');
 
+jasmine.getFixtures().fixturesPath = "base/specs/fixtures/";
+
+preloadFixtures('ajax-form-client-access-request.html', "client-access-request-responses.html");
+
+var ajaxFormSubmit = require('../../javascripts/modules/ajaxFormSubmit.js'),
+    ajaxCallbacks = require('../../javascripts/modules/ajaxCallbacks.js'),  
+    forms = undefined,
+    formCount = 0,
+    responseHtml = {
+      'clientAccessSuccess': 
+        responseHelper({
+          file: "base/specs/fixtures/client-access-request-responses.html",
+          dom: '#access--response'
+        }),
+      'missingClientSuccess':
+        responseHelper({
+          file: "base/specs/fixtures/client-access-request-responses.html",
+          dom: '#missing--response'
+        })
+      };
+
 describe('AjaxFormSubmit', function() {
-  var ajaxFormSubmit,
-    forms = [],
-    formCount = 0;
-    
-
   beforeEach(function () {
-    this.originalTimeout = 0;
-    this.timeoutInterval = 2000;
-
-    jasmine.getFixtures().fixturesPath = "base/specs/fixtures/";
-
-    this.baseBeforeEachAsync = function (done, timeoutInterval) {
-      this.originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-      jasmine.DEFAULT_TIMEOUT_INTERVAL = timeoutInterval;
-      
-      loadFixtures('ajax-form-client-access-request.html');
-      forms = $("form[data-ajax-submit], button[data-ajax-submit], input[data-ajax-submit]");
-      formCount = forms.length;
-      ajaxFormSubmit = require('../../javascripts/modules/ajaxFormSubmit.js');
-      ajaxFormSubmit.init({ 
-          clientList: {
-            callbacks: {
-              success: function (response, data, helpers, container, type) {},
-              error: function  (response, data, helpers, container, type) {},
-              always: function (response, data, helpers, container, type) {}
-            },
-            helpers: {}
-          }
-      });
-      
-      setTimeout(function () {
-        done();
-      }, 1);
-    };
-
-  });
-
-  afterEach(function (done) {
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = this.originalTimeout;
-    done();
+    loadFixtures('ajax-form-client-access-request.html');
+    forms = $("*[data-ajax-submit]");
+    formCount = forms.length;
+    
+    ajaxFormSubmit.init(ajaxCallbacks);  
   });
   
   describe('When the client access request fixture loads', function() {
-    beforeEach(function (done) {
-      this.baseBeforeEachAsync(done, 2000);
-    });
-    
     it('Form element is present', function() {
       expect($('#verify-form').length).toBeTruthy();
     });
     
-    for (var e = 0; e < formCount; e++) {
-      var payeId = new Array(4).join(e.toString()) + "/Z" + new Array(4).join(e.toString()),
-          panelId = '#client_' + payeId.replace('/', '') + '_notes',
-          $formPanel = null;
-      
-      it('Form elements for PAYE Ref '+ payeId + ' are present', (function (pId, $fp) {
-        $fp = $(pId);
-        expect($fp.find('input[name="csrfToken"]')).toBeDefined();
-        expect($fp.find('input[name="csrfToken"]').attr('value').length).toBeTruthy();
+    it('Form elements for PAYEs are present', function () {
+      for (var e = 0; e < formCount; e++) {
+        var payeId = new Array(4).join(e.toString()) + "/Z" + new Array(4).join(e.toString()),
+          $fp = $(forms[e]).parents('#client_' + payeId.replace('/', '') + '_notes, #missing-client'),
+          $button = $fp.find('.button');
 
-        expect($fp.find('input[name="name"]')).toBeDefined();
-        expect((/^Employer[0-9]$/i).test($fp.find('input[name="name"]').attr('value'))).toBe(true);
+        expect($fp.length).toBeTruthy();
+        
+        expect($fp.find('input[name="csrfToken"]').val().length).toBeTruthy();
+        
+        if ($fp.attr('id') !== 'missing-client') {
+          expect($fp.find('input[name="name"]')).toBeDefined();
+          expect((/^Employer[0-9]$/i).test($fp.find('input[name="name"]').attr('value'))).toBe(true);
 
-        expect($fp.find('input[name="payeref"]')).toBeDefined();
-        expect((/^[0-9]{3}\/[A-Z][0-9]{3}$/i).test($fp.find('input[name="payeref"]').attr('value'))).toBe(true);
+          expect($fp.find('input[name="payeref"]').length).toBeTruthy();
+          expect((/^[0-9]{3}\/[A-Z][0-9]{3}$/i).test($fp.find('input[name="payeref"]').attr('value'))).toBe(true);
+        }
+        else {
+          expect($fp.find('input[name="name"]').length).toBeFalsy();
+          expect($fp.find('input[name="payeref"]').attr('value')).toBe("");
+          
+        } 
+        
+        expect($fp.find('input[name="email"]').length).toBeTruthy();
 
-        expect($fp.find('input[name="email"]')).toBeDefined();
-      })(panelId, $formPanel));
-
-      it('Form button attributes for PAYE Ref '+ payeId + ' are present', (function (pId) {
-        var $button = $(pId + ' > details > .panel-indent > .button');
         expect($button.length).toBeTruthy();
 
-        expect($button.attr('data-ajax-submit')).not.toBeUndefined();
+        expect($button.attr('data-ajax-submit').length).toBeTruthy();
         expect($button.attr('data-ajax-submit')).toBe('true');
 
-        expect($button.attr('data-container')).not.toBeUndefined();
-        expect((/^#client_[0-9]{3}[A-Z][0-9]{3}_notes$/i).test($button.attr('data-container'))).toBe(true);
+        expect($button.attr('data-container').length).toBeTruthy();
+        expect(new RegExp("#" + $fp.attr('id'),"i").test($button.attr('data-container'))).toBe(true);
 
-        expect($button.attr('data-callback-name')).not.toBeUndefined();
-        expect($button.attr('data-callback-name')).toBe('window.callbacks.ajaxFormSubmit.clientList.insertFormResponse');
+        expect($button.attr('data-callback-name').length).toBeTruthy();
+        expect($button.attr('data-callback-name')).toBe('clientAccessResponse.callbacks');
 
-        expect($button.attr('data-callback-args')).not.toBeUndefined();
+        expect($button.attr('data-callback-args').length).toBeTruthy();
 
         var callbackArgs = $button.attr('data-callback-args').split(',');
         expect(callbackArgs.length).toBe(2);
         expect(callbackArgs[0]).toBe($button.attr('data-container'));
-        expect(callbackArgs[1]).toBe('insert');
+        expect(callbackArgs[1]).toBe($fp.attr('id')==='missing-client' ? 'before' : 'insert');
         expect(callbackArgs[1]).not.toBe('replace');
-      })(panelId));
-    }
+      }
+    });
   });
   
   describe('When the "ajaxFormSubmit.js" is loaded in the client access request fixture', function() {
-    beforeEach(function (done) {
-      this.baseBeforeEachAsync(done, 2000);
-      done();
-    });
     
-    it("the 'ajaxFormSubmit' var loads if we wait", function (done) {
-      setTimeout(function () {
-        expect(ajaxFormSubmit).toBeDefined();
-        done();
-      }, this.timeoutInterval - 500);
+    it("the 'ajaxFormSubmit' var loads if we wait", function () {
+      expect(ajaxFormSubmit).toBeDefined();
     });
-
-    it("the 'ajaxFormSubmit.init' property is available", function (done) {
-      setTimeout(function () {
-        expect(ajaxFormSubmit.init).toBeDefined();
-        expect(typeof ajaxFormSubmit.init).toBe('function');
-        done();
-      }, this.timeoutInterval - 500);
+  
+    it("the 'ajaxFormSubmit.init' property is available", function () {
+      expect(ajaxFormSubmit.init).toBeDefined();
+      expect(typeof ajaxFormSubmit.init).toBe('function');
     });
-
-    it("the 'ajaxFormSubmit.doSubmit' property is available", function (done) {
-      setTimeout(function () {
-        expect(ajaxFormSubmit.doSubmit).toBeDefined();
-        expect(typeof ajaxFormSubmit.doSubmit).toBe('function');
-        // doSubmit: function(path, data, targetContainer, targetType, callback
-        done();
-      }, this.timeoutInterval - 500);
+  
+    it("the 'ajaxFormSubmit.doSubmit' property is available", function () {
+      expect(ajaxFormSubmit.doSubmit).toBeDefined();
+      expect(typeof ajaxFormSubmit.doSubmit).toBe('function');
     });
-
-    it("the 'ajaxFormSubmit.serializeForAjax' property is available", function (done) {
-      setTimeout(function () {
-        expect(ajaxFormSubmit.serializeForAjax).toBeDefined();
-        expect(typeof ajaxFormSubmit.serializeForAjax).toBe('function');
-        // serializeForAjax: function(formScope)
-        done();
-      }, this.timeoutInterval - 500);
+  
+    it("the 'ajaxFormSubmit.serializeForAjax' property is available", function () {
+      expect(ajaxFormSubmit.serializeForAjax).toBeDefined();
+      expect(typeof ajaxFormSubmit.serializeForAjax).toBe('function');
     });
-
-    it("the 'ajaxFormSubmit.getCallback' property is available", function (done) {
-      setTimeout(function () {
-        expect(ajaxFormSubmit.getCallback).toBeDefined();
-        expect(typeof ajaxFormSubmit.getCallback).toBe('function');
-        // getCallback: function(config, data)
-        done();
-      }, this.timeoutInterval - 500);
+  
+    it("the 'ajaxFormSubmit.getCallback' property is available", function () {
+      expect(ajaxFormSubmit.getCallback).toBeDefined();
+      expect(typeof ajaxFormSubmit.getCallback).toBe('function');
     });
   });
   
   describe('When the "ajaxFormSubmit.js" is initialized in the client access request fixture', function() {
-    beforeEach(function (done) {
-      this.baseBeforeEachAsync(done, 2000);
-      done();
-    });
-
-    it("'doSubmit' handler is bound to the client access form", function (done) {
-      setTimeout(function () {
+  
+    it("'doSubmit' handler is bound to the client access form", function () {
+      //setTimeout(function () {
         var handlers = $._data($('#verify-form')[0], 'events');
-
+  
         expect(handlers.submit.length).toBeTruthy();
         expect(typeof handlers.submit[0].handler).toBe("function");
-
+  
         var formHandler;
-
+  
         for (var f = 0; f < handlers.submit.length; f++) {
           var h = handlers.submit[f].handler;
-
+  
           if (h.toString().indexOf(".doSubmit(") > -1) {
             formHandler = h;
           }
         }
-
+  
         expect(formHandler).toBeDefined();
-
-        done();
-      }, this.timeoutInterval - 500);
     });
   });
-
+  
   describe("When 'serializeForAjax' creates a data string for the scoped form ONLY", function () {
+    var scopeForms = [];
     
-    var scopeForms = [],
-        scopeCount = 0;
+    beforeEach(function(){
+      for (var e = 0; e < formCount; e++) {
+        var payeId = new Array(4).join(e.toString()) + "/Z" + new Array(4).join(e.toString()),
+          $fp = $(forms[e]).parents('#client_' + payeId.replace('/', '') + '_notes, #missing-client'),
+          data = ajaxFormSubmit.serializeForAjax($fp);
+        
+        scopeForms.push({
+          payeId: payeId,
+          containerId: $fp.attr('id'),
+          $fields: $fp.find('input[name]'),
+          serial: data.replace(/&?isajax=true&?/i, '').split('&')
+        });
+      }
+    });
     
-    beforeEach(function (done) {
-      this.baseBeforeEachAsync(done, 10000);
-
-      setTimeout(function () {
-        for (var e = 0; e < formCount; e++) {
-          var payeId = new Array(4).join(e.toString()) + "/Z" + new Array(4).join(e.toString()),
-            containerId = '#client_' + payeId.replace('/', '') + '_notes',
-            data = ajaxFormSubmit.serializeForAjax(containerId);
-
-          scopeForms.push({
-            payeId: payeId,
-            containerId: containerId,
-            $fields: $(containerId).find('input[name]'),
-            serial: data.replace(/&?isajax=true&?/i, '').split('&')
-          });
-          scopeCount++;
-        }
-        done();
-      }, this.timeoutInterval - 500);
+    it('scoped forms exist',function() {
+      expect(scopeForms.length).toBeTruthy();
     });
-
-    it('scoped forms exist',function(done) {
-      setTimeout(function () {
-        expect(scopeCount).toBeTruthy();
-        done();
-      }, this.timeoutInterval - 500);
-    });
-
-    it('serialized form fields match field values', function (done) {
-      setTimeout(function () {
-        for (var f = 0; f < scopeCount; f++) {
+    
+    it('serialized form fields match field values', function () {
+        for (var f = 0; f < formCount; f++) {
           var form = scopeForms[f],
             data = form.serial,
             count = data.length,
@@ -229,72 +175,94 @@ describe('AjaxFormSubmit', function() {
             expect(dataValues[name]).toBe(encodeURIComponent(value));
           }
         }
-        done();
-      }, this.timeoutInterval - 500);
     });
-
   });
-
+  
   describe("When 'getCallback' gets the callback function", function() {
-    beforeEach(function (done) {
-      this.baseBeforeEachAsync(done, 2000);
-    });
-
-    for (var e = 0; e < formCount; e++) {
-      var payeId = new Array(4).join(e.toString()) + "/Z" + new Array(4).join(e.toString()),
-      panelId = '#client_' + payeId.replace('/', '') + '_notes';
-
-      it('The Button "data-callback" values for  '+ payeId + ' return a function', (function (pId) {
-        var $button = $(pId + ' > details > .panel-indent > .button'),
+      it('The Button "data-callback" values return a function', function () {
+        for (var e = 0; e < formCount; e++) {
+          var payeId = new Array(4).join(e.toString()) + "/Z" + new Array(4).join(e.toString()),
+            $fp = $(forms[e]).parents('#client_' + payeId.replace('/', '') + '_notes, #missing-client'),
+            $button = $fp.find('.button'),
             callback = ajaxFormSubmit.getCallback({
-              config: {
-                name: $button.attr('data-callback-name'),
-                args: $button.attr('data-callback-args'),
-                callbacks: {
-                  success: function (response, data, helpers, container, type) {},
-                  error: function  (response, data, helpers, container, type) {},
-                  always: function (response, data, helpers, container, type) {}
-                },
-                helpers: {}
-              }}, ajaxFormSubmit.serializeForAjax($button.attr('data-container')));
-        expect(typeof callback).toBe("function");
-      })(panelId));
-    }
+                  name: $button.attr('data-callback-name'),
+                  args: $button.attr('data-callback-args'),
+                  callbacks: ajaxCallbacks,
+                  helpers: ajaxCallbacks.helpers
+                }, 
+              ajaxFormSubmit.serializeForAjax($button.attr('data-container')));
+          expect(typeof callback).toBe("function");
+        }
+      });
   });
+  
+  describe('When submitting client access request form', function() {
+    var spy = undefined, 
+      callbackArgs = [],
+      $button = undefined;
+    
+    beforeEach(function(){
+      for (var e = 0; e < formCount; e++) {
+        var payeId = new Array(4).join(e.toString()) + "/Z" + new Array(4).join(e.toString()),
+          $fp = $(forms[e]).parents('#client_' + payeId.replace('/', '') + '_notes, #missing-client'),
+          isMissingClient = $fp.attr('id') === 'missing-client',
+          successHtml = isMissingClient ? responseHtml.missingClientSuccess : responseHtml.clientAccessSuccess;
 
-  describe('When the a client access request form is submitted', function() {
-    beforeEach(function (done) {
-      this.baseBeforeEachAsync(done, 2000);
-      done();
-    });
-
-    it("Makes an ajax post", function (done) {
-      setTimeout(function () {
-        debugger;
-
-        var callbackMethod = spyOn($, "ajax").and.callFake(function() {
-          this.done = function() {
-            return this; // "<p>You asked for access on d MMMM YYYY.</p><p>You’ll usually hear back within 2 days.</p>";
-          };
-          this.fail = function() { return this; };
-          this.always = function() { return this; };
-          return this;
+        $button = $fp.find('.button');
+        spy = spy || spyOn($, "ajax");
+        callbackArgs.push({
+          html: successHtml,
+          $form: $fp,
+          position: isMissingClient ? 'before' : 'insert',
+          container: isMissingClient ? '.panel-indent>.alert--success' : '>p'
         });
-
-        if (forms[0].tagName === "FORM") {
-          forms[0].submit();
+      }    
+    });
+  
+    it("Ajax post occurs", function () {
+      for (var e = 0; e < formCount; e++) {
+        var callbackParams = callbackArgs[e], 
+          html = callbackParams.html,
+            $form = callbackParams.$form,
+            position = callbackParams.position,
+            data = ajaxFormSubmit.serializeForAjax(callbackParams.$form),
+            container = callbackParams.container,
+            callbackMethod = spy.and.callFake((function(h, d, helps,$f, p) {
+              return function() {
+                return $.Deferred()
+                  .resolveWith(null,[h, d, helps,$f, p])
+                  .promise();
+            }})(html, data, ajaxCallbacks.helpers, $form, position));
+        
+        if (forms[e].tagName === "FORM") {
+          forms[e].submit();
         }
         else {
-          forms[0].click();
+          forms[e].click();
         }
 
         expect(callbackMethod).toHaveBeenCalled();
-        expect(callbackMethod.calls.mostRecent().args[0].type).toBe("POST");
-        expect(callbackMethod.calls.mostRecent().args[0].data).toBe(
-          ajaxFormSubmit.serializeForAjax($(forms[0]).attr('data-callback-args').split(',')[0])
-        );
-        done();
-      }, this.timeoutInterval - 500);
+        
+        var args = callbackMethod.calls.mostRecent().args;
+        expect(args.length).toBe(1);
+        
+        expect($form.find(container).length).toBeGreaterThan(0);
+
+        expect($button).not.toBeDisabled();
+      }
     });
-  });  
+  });
 });
+
+function responseHelper(target) {
+  var result =
+  $.ajax({
+    url: target.file,
+    type: 'get',
+    data: target.data || {},
+    async: false,
+    cache: true
+  });
+  var $element = $('<result/>').html(result.responseText).find(target.dom);
+  return $element.html();
+}
