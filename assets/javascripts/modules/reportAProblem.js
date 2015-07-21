@@ -38,7 +38,6 @@ module.exports = function() {
         $.ajax({
           type: 'POST',
           url: url,
-          datattype: 'json',
           data: $(form).serialize(),
           beforeSend: function(xhr) {
             disableSubmitButton();
