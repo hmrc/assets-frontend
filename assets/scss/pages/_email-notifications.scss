@@ -1,0 +1,29 @@
+
+.email-notifications__heading {
+  @include bold-48();
+  margin:0 0 30px 0;
+}
+
+.email-notifications__subheading {
+  @include bold-24();
+  display: block;
+  margin: 25px 0 7px 0;  
+}
+
+p.email-notifications__p {
+  padding: 17px 0 8px 0;
+}
+
+.email-notifications__list-heading {
+  padding:0 0 7px 0;
+}
+
+.email-notifications__list {
+  padding:0 0 3px 0;
+}
+
+p.email-notifications__indent {
+  margin:30px 0 35px 0;
+}
+
+
