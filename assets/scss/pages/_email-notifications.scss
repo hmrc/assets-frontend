@@ -1,0 +1,33 @@
+
+.email-notifications__heading {
+  @include bold-48();
+  margin:25px 0 30px 0;
+}
+
+.email-notifications__subheading-text {
+  @include bold-24();
+  display: block;
+  margin: 0 0 7px 0;  
+}
+
+.email-notifications__heading-text {
+  @include bold-48();
+}
+
+// NOTE: specifying p element is needed to override ".content__body p"
+p.email-notifications__p {
+  padding: 17px 0 8px 0;
+}
+
+.email-notifications__list-heading {
+  padding:0 0 7px 0;
+}
+
+.email-notifications__list {
+  padding:0 0 3px 0;
+}
+
+// NOTE: specifying p element is needed to override ".content__body p"
+p.email-notifications__indent {
+  margin:30px 0 35px 0;
+}
