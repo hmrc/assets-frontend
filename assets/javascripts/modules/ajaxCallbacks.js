@@ -10,8 +10,8 @@ var ajaxCallbacks = {
         helpers.insertResponseHtml(helpers, type, data, $(container), response);
       },
 
-      error: function (response, data, helpers, container, type) {
-        helpers.insertResponseHtml(helpers, type, data, $(container), response);
+      error: function (response, data, helpers, container) {
+        helpers.insertResponseHtml(helpers, 'before', data, $(container + ' .form-field:has(>input[name][type="text"])'), response);
       },
 
       always: function (response, data, helpers, container, type) {
@@ -23,43 +23,57 @@ var ajaxCallbacks = {
     insertResponseHtml: function (helpers, type, data, $target, response) {
       var html = !!response.responseText ? response.responseText : response,
         htmlText = helpers.utilities.cleanHtml(html),
-        isError = !!response.status || response.status === 500,
-        isValidType = function () {
-          return $.isFunction($.fn[type]);
-        };
-
-      if (!isError) {
-        $target.addClass('js-hidden');
-      } else if (!isValidType()) {
-        type = 'prepend';
+        htmlNodes = $.parseHTML(htmlText),
+        nodeCount = htmlNodes.length || 0,
+        i = 0,
+        $node, $errorTarget,
+        isError = !!response.status || response.status === 500;
+        
+      if(!$.isFunction($.fn[type])) { 
+        $target.html('');
+        type  = 'append'; 
       }
-
-      $target.parent().find('.alert--success, .alert--failure').remove();
-
-      var heading = helpers.utilities.getElementInnerHtml(htmlText, 'h1');
-
-      if (helpers.utilities.isFullPageError(heading)) {
-        var $head = helpers.utilities.getElementInnerHtml(htmlText, 'head'),
-          $body = helpers.utilities.getElementInnerHtml(htmlText, 'body');
-        $('head').html($head);
-        $('body').html($body);
-      }
-      else if (!isValidType()) {
-        // just 'insert' html in target container element
-        $target.html(htmlText);
+      
+      if (helpers.utilities.isFullPageError(helpers, htmlText)) {
+        helpers.insertFullPageErrorHtml(helpers, htmlText);
       }
       else {
-        $.fn[type].apply($target, [htmlText]);
-      }
 
-      if (data.indexOf('missingclient=true') > -1) {
-        helpers.bindEvents($target, data);
-      }
-      else {
-        $target.removeClass('js-hidden');
+        if (!isError) {
+          $target.addClass('js-hidden');
+        }
+
+        $target.removeClass('error');
+        $target.parent().find('.alert--success, .alert--failure').remove();
+
+        for (; i < nodeCount; i++) {
+          $node = $(htmlNodes[i]);
+
+          if (isError) {
+            $errorTarget = $target.find('>input[name="' + $node.attr('data-input-for') +  '"]');
+            $errorTarget.closest('.form-field').addClass('error');
+            $errorTarget.blur();
+          }
+
+          $.fn[type].apply($errorTarget || $target, [$node]);
+        }
+
+        if (data.indexOf('missingclient=true') > -1) {
+          helpers.bindEvents($target, data);
+        }
+        else {
+          $target.removeClass('js-hidden');
+        }
       }
     },
-
+    
+    insertFullPageErrorHtml: function (helpers, htmlText) {
+      var $head = helpers.utilities.getElementInnerHtml(htmlText, 'head'),
+        $body = helpers.utilities.getElementInnerHtml(htmlText, 'body');
+      $('head').html($head);
+      $('body').html($body);
+    },
+    
     resetForms: function (helpers, type, data, target) {
       var emailValue = helpers.getEmailValue(target, data);
 
@@ -72,9 +86,12 @@ var ajaxCallbacks = {
 
     getEmailValue: function(container, data) {
       var reEmail = /&?email=([^&]+)/gi,
-        emailMatch = !!data ? data.match(reEmail) : [''],
-        emailValue = $(container).find('input[name="email"]').val();
-      return emailValue || decodeURIComponent(emailMatch[0]).replace(reEmail, '$1') || "";
+        emailMatch = (function(d, re) {
+            var m = !!d ? d.match(re) : null;
+            return (!!d && !!m) ? m[0] : [''];
+          })(data, reEmail),
+            emailValue = $(container).find('input[name="email"]').val();
+      return emailValue || decodeURIComponent(emailMatch).replace(reEmail, '$1') || "";
     },
 
     bindEvents: function ($container) {
@@ -82,7 +99,8 @@ var ajaxCallbacks = {
         event.preventDefault();
 
         var $this = $(event.target);
-
+        
+        $this.parent().find('.error').removeClass('error');
         $this.parent().find('.alert--success, .alert--failure').remove();
         $this.remove();
 
@@ -102,8 +120,13 @@ var ajaxCallbacks = {
         return $.trim(htmlString).replace(/[\r\n\f\t]/g, '').replace(/>\s+</g, '><');
       },
 
-      isFullPageError: function(heading) {
-        return !!heading && heading.text() === 'Sorry, we’re experiencing technical difficulties';
+      isFullPageError: function(helpers, html) {
+        var heading;
+        if (!!html && !!html.length) {
+          heading = helpers.utilities.getElementInnerHtml(html, 'h1');
+          return !!heading && heading.text() === 'Sorry, we’re experiencing technical difficulties';
+        }
+        return false;
       }
     }
   }
