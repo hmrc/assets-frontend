@@ -126,39 +126,41 @@ describe('AjaxCallbacks', function () {
 
     describe('.isFullPageError() should return', function () {
       var fullPageError = '<div style="visibility:hidden"><p>blah</p><h1>Sorry, we’re experiencing technical difficulties</h1><p>blah</p></div>',
-          $fullPageError = setFixtures(fullPageError),
-          $heading = $fullPageError.find('h1');
+          $fullPageError = setFixtures(fullPageError);
 
       it('true, when page contains full page error heading and text', function () {
+        var $heading = $fullPageError.find('h1');
         expect($heading.length).toBeTruthy();
         expect($heading.text().length).toBeTruthy();
 
-        expect(helpers.utilities.isFullPageError($heading)).toBe(true);
+        expect(helpers.utilities.isFullPageError(helpers, $fullPageError.html())).toBe(true);
       });
 
       it('false when page contains full page error heading without text', function () {
-        var $headingNoText = $heading.clone();
-        $headingNoText.text('');
+        var $fullPageErrorClone = $fullPageError.clone(),
+            $headingNoText = $fullPageErrorClone.find('h1');
 
         expect($headingNoText.length).toBeTruthy();
+        
+        $headingNoText.text('');
         expect($headingNoText.text().length).toBeFalsy();
 
-        expect(helpers.utilities.isFullPageError($headingNoText)).toBe(false);
+        expect(helpers.utilities.isFullPageError(helpers, $fullPageErrorClone.html())).toBe(false);
       });
       
-      it('false when heading param is null', function () {
-        expect(helpers.utilities.isFullPageError(null)).toBe(false);
+      it('false when html param is null', function () {
+        expect(helpers.utilities.isFullPageError(helpers, null)).toBe(false);
       });
 
-      it('false when heading param is undefined', function () {
-        expect(helpers.utilities.isFullPageError(undefined)).toBe(false);
+      it('false when html param is undefined', function () {
+        expect(helpers.utilities.isFullPageError(helpers, undefined)).toBe(false);
       });
 
-      it('false when heading param is empty string', function () {
-        expect(helpers.utilities.isFullPageError('')).toBe(false);
+      it('false when html param is empty string', function () {
+        expect(helpers.utilities.isFullPageError(helpers, '')).toBe(false);
       });
 
-      it('false when heading param is missing', function () {
+      it('false when html param is missing', function () {
         expect(helpers.utilities.isFullPageError()).toBe(false);
       });
       
