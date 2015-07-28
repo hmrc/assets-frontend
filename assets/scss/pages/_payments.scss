@@ -84,7 +84,7 @@
     text-align: right;
 
     @include media(mobile) {
-      padding: em(20) 0 0 0;
+      padding: em(10) 0 0 0;
       float: left;
       text-align: left;
     }
