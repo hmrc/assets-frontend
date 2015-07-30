@@ -41,7 +41,7 @@ $(function() {
 
   $(document).on('click', 'a', function(e) {
     // TODO: fix error thrown when clicking a [data-sso] links
-    return setSSOLinks(e, window.ssoUrl);
+    return setSSOLinks(e, window.ssoUrl, window.ssoMethod);
   });
 
   // feedback forms require a hidden field denoting if javascript is enabled
