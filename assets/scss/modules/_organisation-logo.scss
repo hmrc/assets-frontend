@@ -63,6 +63,7 @@ a.organisation-logo {
     background-image: url("../images/icons/crests/hmrc_crest_18px.png");
     background-position: 6px center;
     border-left: 2px solid $hm-revenue-customs;
+    white-space: nowrap;
   }
 }
 
