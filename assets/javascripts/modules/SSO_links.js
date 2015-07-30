@@ -1,12 +1,14 @@
 require('jquery');
 
-module.exports = function(element, ssoUrl) {
+module.exports = function(element, ssoUrl, ssoMethod) {
   var $target,
       payload,
       clientSso,
       serverSso,
       destination,
       keepDefaultLinkBehaviour;
+
+  var useGet = ssoMethod === 'GET';
 
   /**
    * Attach a one-time event handler for all global links
@@ -35,18 +37,22 @@ module.exports = function(element, ssoUrl) {
         async: false,
         cache: false,
         success: function(data, status, jqXHR) {
-          var form = document.createElement('form');
-          form.method = 'POST';
-          form.action = ssoUrl;
-          payload = document.createElement('input');
-          payload.type = 'hidden';
-          payload.name = 'payload';
-          payload.value = data;
-          document.body.appendChild(form);
-          form.appendChild(payload);
+          if (useGet){
+            window.location = ssoUrl + '?payload=' + encodeURIComponent(data);
+          } else {
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = ssoUrl;
+            payload = document.createElement('input');
+            payload.type = 'hidden';
+            payload.name = 'payload';
+            payload.value = data;
+            document.body.appendChild(form);
+            form.appendChild(payload);
 
-          // POST form
-          form.submit();
+            // POST form
+            form.submit();
+          }
         },
 
         error: function(jqXHR, textStatus, errorThrown) {
