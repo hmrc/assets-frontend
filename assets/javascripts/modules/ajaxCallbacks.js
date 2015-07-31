@@ -11,7 +11,12 @@ var ajaxCallbacks = {
       },
 
       error: function (response, data, helpers, container) {
-        helpers.insertResponseHtml(helpers, 'before', data, $(container + ' .form-field:has(>input[name][type="text"])'), response);
+        if (response.readyState === 0) {
+          document.location.href = "/account/sign-in?continue=" + encodeURIComponent(document.location.href);
+        }
+        else {
+          helpers.insertResponseHtml(helpers, 'before', data, $(container + ' .form-field:has(>input[name][type="text"])'), response);
+        }
       },
 
       always: function (response, data, helpers, container, type) {
@@ -36,9 +41,6 @@ var ajaxCallbacks = {
       
       if (helpers.utilities.isFullPageError(helpers, htmlText)) {
         helpers.insertFullPageErrorHtml($target, helpers, htmlText);
-      }
-      else if (helpers.utilities.isSessionTimeout(helpers, htmlText)) {
-        document.location.href = "/account/sign-in?continue=" + encodeURIComponent(document.location.href);
       }
       else {
         if (!isError) {
@@ -72,7 +74,10 @@ var ajaxCallbacks = {
     insertFullPageErrorHtml: function ($target, helpers, htmlText) {
       var $heading = helpers.utilities.getElementInnerHtml(htmlText, 'h1'),
           $button = $target.closest('*:has([data-ajax-submit="true"])').find('button[type="submit"], input[type="submit"]');
-          
+
+      $target.removeClass('error');
+      $target.parent().find('.alert--success, .alert--failure').remove();       
+      
       $button.parent('.form-field').addClass('error');
 
       $('<div class="alert alert--failure" data-input-for="email" id="service--error">' +
@@ -127,18 +132,10 @@ var ajaxCallbacks = {
       },
 
       isFullPageError: function(helpers, html) {
-        return helpers.utilities.hasFullPageHeading(helpers, html, 'Sorry, we’re experiencing technical difficulties');
-      },
-      
-      isSessionTimeout: function(helpers, html) {
-        return helpers.utilities.hasFullPageHeading(helpers, html, 'Sign in with your Government Gateway account');
-      },
-      
-      hasFullPageHeading: function(helpers, html, text) {
         var heading;
         if (!!html && !!html.length) {
           heading = helpers.utilities.getElementInnerHtml(html, 'h1');
-          return !!heading && heading.text() === text;
+          return !!heading && heading.text() === 'Sorry, we’re experiencing technical difficulties';
         }
         return false;
       }
