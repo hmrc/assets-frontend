@@ -40,20 +40,34 @@ var ajaxFormSubmit = {
     var _this = this,
         $ajaxForm = $('form:has([data-ajax-submit])'),
         ajaxFormCount = $ajaxForm.length,
-        a = 0,
-        $ajaxItem = null;
+        a = 0;
 
     for (; a < ajaxFormCount; a++) {
-      $ajaxItem = $($ajaxForm[a]);
+      var eventData = {context: _this, config: config},
+      $form = $($ajaxForm[a]);
+      
+      $form.on('submit click', 'input[data-ajax-submit], button[data-ajax-submit]', eventData, _this.submitHandler);
 
-      $ajaxItem.on('submit', {context: _this, config: config}, _this.submitHandler);
+      if ($form.find('[data-ajax-submit]').length > 1) {
+        // more than one button/input submit in the forms context - capture + handle enter key submit on text fields
+        $form.on('keypress', 'input[type="text"], textarea', eventData, _this.keypressHandler);
+      }
     }
   },
 
+  keypressHandler: function(event) {
+    if (event.which === 13) {
+      event.preventDefault();
+      var thisContext = $(this).closest('*:has([data-ajax-submit="true"])').find('[data-ajax-submit="true"]'); 
+      event.data.context.submitHandler.apply(thisContext, [{ type: 'submit', preventDefault: function(){}, data: event.data }]);
+    }
+  },
+  
   submitHandler: function(event) {
     event.preventDefault();
 
     var $this = $(this),
+      _config = event.data.config,
       _this = event.data.context,
       $form = $this.attr('data-ajax-submit') ? $this : $this.find('[data-ajax-submit]'),
       path = $form.attr('data-formaction') || $form.attr('formaction') || $form.attr('action'),
@@ -63,8 +77,8 @@ var ajaxFormSubmit = {
         config: {
           name: $form.attr('data-callback-name'),
           args: $form.attr('data-callback-args'),
-          callbacks: event.data.config,
-          helpers: event.data.config.helpers || {}
+          callbacks: _config,
+          helpers: _config.helpers || {}
         },
         fn: null
       };

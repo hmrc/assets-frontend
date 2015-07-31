@@ -11,7 +11,12 @@ var ajaxCallbacks = {
       },
 
       error: function (response, data, helpers, container) {
-        helpers.insertResponseHtml(helpers, 'before', data, $(container + ' .form-field:has(>input[name][type="text"])'), response);
+        if (response.readyState === 0) {
+          document.location.href = "/account/sign-in?continue=" + encodeURIComponent(document.location.href);
+        }
+        else {
+          helpers.insertResponseHtml(helpers, 'before', data, $(container + ' .form-field:has(>input[name][type="text"])'), response);
+        }
       },
 
       always: function (response, data, helpers, container, type) {
@@ -35,10 +40,9 @@ var ajaxCallbacks = {
       }
       
       if (helpers.utilities.isFullPageError(helpers, htmlText)) {
-        helpers.insertFullPageErrorHtml(helpers, htmlText);
+        helpers.insertFullPageErrorHtml($target, helpers, htmlText);
       }
       else {
-
         if (!isError) {
           $target.addClass('js-hidden');
         }
@@ -67,11 +71,18 @@ var ajaxCallbacks = {
       }
     },
     
-    insertFullPageErrorHtml: function (helpers, htmlText) {
-      var $head = helpers.utilities.getElementInnerHtml(htmlText, 'head'),
-        $body = helpers.utilities.getElementInnerHtml(htmlText, 'body');
-      $('head').html($head);
-      $('body').html($body);
+    insertFullPageErrorHtml: function ($target, helpers, htmlText) {
+      var $heading = helpers.utilities.getElementInnerHtml(htmlText, 'h1'),
+          $button = $target.closest('*:has([data-ajax-submit="true"])').find('button[type="submit"], input[type="submit"]');
+
+      $target.removeClass('error');
+      $target.parent().find('.alert--success, .alert--failure').remove();       
+      
+      $button.parent('.form-field').addClass('error');
+
+      $('<div class="alert alert--failure" data-input-for="email" id="service--error">' +
+        '<span class="error-message">' + $heading.text() + '</span>' +
+      '</div>').insertBefore($button);
     },
     
     resetForms: function (helpers, type, data, target) {
@@ -102,9 +113,9 @@ var ajaxCallbacks = {
         
         $this.parent().find('.error').removeClass('error');
         $this.parent().find('.alert--success, .alert--failure').remove();
-        $this.remove();
+        $this.parent().find('input[name="payeref"]').prop('value', null);
 
-        $('input[name="payeref"]').prop('value', null); // -webkit-autofill background-color mask: $('input[name="payeref"]').css({'-webkit-box-shadow':'0 0 0 500px white inset' });
+        $this.remove();
 
         $container.removeClass('js-hidden');
       });
