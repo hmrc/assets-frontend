@@ -7,7 +7,8 @@ module.exports = function(tableSelector) {
   var table,
       pageLength,
       tableSubmit,
-      isAllChecked;
+      isAllChecked, 
+      addHiddenInput;
 
   tableSelector.parent().addClass('js-datatable-wrapper');
 
@@ -81,9 +82,33 @@ module.exports = function(tableSelector) {
     }
   });
 
+  // add hidden inputs to a form
+  addHiddenInputs = function($form, $inputs) {
+
+    $inputs.each(function() {
+
+      $('<input>')
+        .attr({'type': 'hidden', 'name': $(this).attr('name')})
+        .val($(this).attr('value'))
+        .appendTo($form);
+
+    });
+
+    return $form;
+
+  };
+
   tableSubmit = function(el, event) {
+
+    var $form       = $(el).parents('form'), 
+        $checkboxes = table.$('input[type=checkbox]:checked');
+
     event.preventDefault();
-    $(el).parents('form').submit();
+
+    // add checkboxes to form as hidden inputs
+    $form = addHiddenInputs($form, $checkboxes);
+
+    $form.submit();
   };
 
   isAllChecked = function() {
