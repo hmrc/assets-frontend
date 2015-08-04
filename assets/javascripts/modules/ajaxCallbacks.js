@@ -7,16 +7,23 @@ var ajaxCallbacks = {
   clientAccessResponse: {
     callbacks: {
       success: function (response, data, helpers, container, type) {
-        helpers.insertResponseHtml(helpers, type, data, $(container), response);
+        helpers.insertResponseHtml(helpers, type, data, $(container), response);   
       },
 
       error: function (response, data, helpers, container) {
-        if (response.readyState === 0) {
-          document.location.href = "/account/sign-in?continue=" + encodeURIComponent(document.location.href);
+
+        // if session has timed out
+        if(response.status === 401 && 
+           response.responseJSON && 
+           response.responseJSON.redirectUri) {
+
+          // go to login page with specified redirect URI 
+          document.location.href = response.responseJSON.redirectUri;
         }
         else {
           helpers.insertResponseHtml(helpers, 'before', data, $(container + ' .form-field:has(>input[name][type="text"])'), response);
         }
+
       },
 
       always: function (response, data, helpers, container, type) {
