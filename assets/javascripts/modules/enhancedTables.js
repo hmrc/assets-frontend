@@ -7,7 +7,8 @@ module.exports = function(tableSelector) {
   var table,
       pageLength,
       tableSubmit,
-      isAllChecked, 
+      isAllChecked,
+      updateCheckAll,
       addHiddenInput;
 
   tableSelector.parent().addClass('js-datatable-wrapper');
@@ -60,27 +61,31 @@ module.exports = function(tableSelector) {
     tableSubmit(this, event);
   });
 
-  //clear the check-all box on when user paginates
+  isAllChecked = function() {
+
+    var pageInputs     = '#verification-list tbody input[type=checkbox]',
+        $inputs        = $(pageInputs),
+        $checkedInputs = $(pageInputs + ':checked');
+
+    return $checkedInputs.length === $inputs.length;
+  };
+
+  // update check-all checkbox
+  updateCheckAll = function() {
+    $('#checkbox-all').prop('checked', isAllChecked());
+  };
+
+  // clear the check-all box on when user paginates
 
   //on deselect run function that returns true or false for select-all
   tableSelector.on('page.dt', function(e, settings) {
-    tableSelector.one('draw.dt', function() {
-      //check-all stays checked as long as all items on the page are selected
-      var $checkAll = $('#checkbox-all');
-      if (isAllChecked()) {
-        $checkAll.prop('checked', true);
-      } else {
-        $checkAll.prop('checked', false);
-      }
-    });
+
+    //check-all stays checked as long as all items on the page are selected
+    tableSelector.one('draw.dt', updateCheckAll);
+
   });
 
-  tableSelector.on('click', '.client-checkbox', function() {
-    //uncheck select all tick if one of the items is unchecked by the user
-    if (!this.checked) {
-      $('#checkbox-all').prop('checked', false);
-    }
-  });
+  tableSelector.on('click', '.client-checkbox', updateCheckAll);
 
   // add hidden inputs to a form
   addHiddenInputs = function($form, $inputs) {
@@ -100,19 +105,16 @@ module.exports = function(tableSelector) {
 
   tableSubmit = function(el, event) {
 
-    var $form       = $(el).parents('form'), 
-        $checkboxes = table.$('input[type=checkbox]:checked');
+    var $form          = $(el).parents('form'), 
+        $allCheckboxes = table.$('input[type=checkbox]:checked');
 
     event.preventDefault();
 
     // add checkboxes to form as hidden inputs
-    $form = addHiddenInputs($form, $checkboxes);
+    $form = addHiddenInputs($form, $allCheckboxes);
 
     $form.submit();
-  };
 
-  isAllChecked = function() {
-    return tableSelector.find('td input[type=checkbox]:checked').length === pageLength ? true : false;
   };
 
   if ($('#js-select-all').length) {
@@ -124,6 +126,8 @@ module.exports = function(tableSelector) {
         });
       });
   }
+
+  updateCheckAll();
 
   // control items should be fixed in position if table is scrolled
   sticky({
