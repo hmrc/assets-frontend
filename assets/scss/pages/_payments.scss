@@ -1,6 +1,12 @@
 
 .payments {
 
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   .heading-xlarge {
     font-size:36px;
   }
@@ -76,6 +82,22 @@
   table.calendar label span {
     float: right;
     padding-left: 12px;
+  }
+
+  .how-to-pay {
+    border-bottom: 0px;
+  }
+
+  .min.summary {
+    border-bottom: 0px;
+  }
+
+  .content__body p {
+    margin : 8px 0 20px;
+  }
+
+  .survey__legend {
+    margin-bottom: 0;
   }
 
   .user-name {
