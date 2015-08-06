@@ -20,7 +20,7 @@
   }
 
   details {
-    margin: 5px 0;
+    margin: 0 0 10px;
     summary {
       @include core-16;
       color: $details-link;
@@ -73,7 +73,14 @@
 
     h2 {
       border-bottom: 4px solid #005ea5;
+      margin-bottom: 0.4em;
     }
+  }
+
+  .section__p--reference-number {
+    @include core-16();
+    margin-top: 0.4em;
+    margin-bottom: 1em;
   }
 
   .section__ul--link-list {
@@ -94,12 +101,22 @@
   }
 
   .section__li {
+    padding: 0;
+    p {
+      margin: 0;
+    }
+    a {
+      margin: 0.9em 0;
+    }
+  }
+
+  .section__li--text-link {
     padding: 0.25em 0;
   }
 
-  .section__li--details-link {
+  .details-link {
     @include small-bold-no-underline();
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: -10px;
   }
 
@@ -114,6 +131,7 @@
   }
 
   .alert--failure {
+    font-weight: bold;
     background-color: $alert-failure-bg;
     border-color: $red;
   }
