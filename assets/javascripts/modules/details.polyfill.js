@@ -180,6 +180,11 @@
         details.__summary.__twisty = details.__summary.insertBefore(twisty, details.__summary.firstChild);
         details.__summary.__twisty.setAttribute('aria-hidden', 'true');
 
+        addEvent(details.__summary, "keydown", function (e) {
+          if (e.keyCode == 13 || e.keyCode == 32) {
+            e.preventDefault();
+          }
+        });
       }
     }
 
