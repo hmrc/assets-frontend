@@ -9,11 +9,6 @@
     }
   }
 
-  @mixin small-bold-no-underline() {
-    @include bold-19();
-    @include link-underline-on-hover();
-  }
-
   .subheading {
     @include core-19;
     margin: 0 0 19px;
@@ -98,7 +93,7 @@
   }
 
   .section__li--details-link {
-    @include small-bold-no-underline();
+    @include bold-19();
     margin-top: 20px;
     margin-bottom: -10px;
   }
