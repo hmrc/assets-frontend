@@ -136,6 +136,41 @@
     border-color: $red;
   }
 
+  .latency-message {
+    width: 100%;
+    box-sizing: border-box;
+    border-left: 4px solid $black;
+    padding: 5px 0 5px 55px;
+    margin-bottom: 15px;
+
+    background: $yellow-25 url("../images/icons/icon-important.png") no-repeat scroll 10px;
+    @include device-pixel-ratio() {
+      background-image: url("../images/icons/icon-important-2x.png");
+      background-size: 27px 27px;
+    }
+    span {
+      @include core-16;
+      display: block;
+      padding: 2px 0;
+    }
+  }
+
+  .latency-message--home {
+    @include media(desktop) {
+      width: 61.66%;
+      min-width: 28em;
+    }
+  }
+
+  .latency-message--details {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    @include media(desktop) {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+
   .link-list__link {
     @include link-underline-on-hover();
     @include core-19;
@@ -183,6 +218,19 @@
 
   .go-to {
     margin: 1.5em 0 0;
+  }
+
+  &.your-details {
+
+    .content__body {
+      @include media(tablet) {
+        width: 100%;
+      }
+      @include media(desktop) {
+        float: left;
+        width: 61.666667%;
+      }
+    }
   }
 
 }
