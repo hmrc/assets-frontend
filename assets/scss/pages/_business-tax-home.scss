@@ -15,7 +15,7 @@
   }
 
   details {
-    margin: 0 0 10px;
+    margin: 0 0 15px;
     summary {
       @include core-16;
       color: $details-link;
@@ -98,7 +98,10 @@
   .section__li {
     padding: 0;
     p {
-      margin: 0;
+      margin: 0 0 0.5em;
+    }
+    .p--with-details {
+      margin-bottom: 0;
     }
     a {
       margin: 0.9em 0;
