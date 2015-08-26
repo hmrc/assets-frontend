@@ -112,9 +112,9 @@
     padding: 0.25em 0;
   }
 
-  .section__li--details-link {
+  .details-link {
     @include bold-19();
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: -10px;
   }
 
