@@ -6,18 +6,18 @@ require('jquery');
 var ajaxCallbacks = {
   clientAccessResponse: {
     callbacks: {
-      success: function (response, data, helpers, container, type) {
-        helpers.insertResponseHtml(helpers, type, data, $(container), response);   
+      success: function(response, data, helpers, container, type) {
+        helpers.insertResponseHtml(helpers, type, data, $(container), response);
       },
 
-      error: function (response, data, helpers, container) {
+      error: function(response, data, helpers, container) {
 
         // if session has timed out
-        if(response.status === 401 && 
-           response.responseJSON && 
+        if (response.status === 401 &&
+           response.responseJSON &&
            response.responseJSON.redirectUri) {
 
-          // go to login page with specified redirect URI 
+          // go to login page with specified redirect URI
           document.location.href = response.responseJSON.redirectUri;
         }
         else {
@@ -26,50 +26,64 @@ var ajaxCallbacks = {
 
       },
 
-      always: function (response, data, helpers, container, type) {
-        helpers.resetForms(helpers, type, data, container);
+      always: function(response, data, helpers, container, type) {
+        if (helpers.hasErrorType !== 'service') {
+          helpers.resetForms(helpers, type, data, container);
+        }
       }
     }
   },
   helpers: {
-    insertResponseHtml: function (helpers, type, data, $target, response) {
+    hasErrorType: undefined,
+
+    setDomHtml: function(type, $target, $node) {
+      if ($.isFunction($.fn[type]) && !!$target && !!$node) {
+        $.fn[type].apply($target, [$node]);
+      }
+    },
+
+    insertResponseHtml: function(helpers, type, data, $target, response) {
       var html = !!response.responseText ? response.responseText : response,
         htmlText = helpers.utilities.cleanHtml(html),
         htmlNodes = $.parseHTML(htmlText),
         nodeCount = htmlNodes.length || 0,
         i = 0,
         $node, $errorTarget,
+        isMissingClient = data.indexOf('missingclient=true') > -1,
         isError = !!response.status || response.status === 500;
-        
-      if(!$.isFunction($.fn[type])) { 
-        $target.html('');
-        type  = 'append'; 
+
+      if (!$.isFunction($.fn[type])) {
+        $target.empty();
+        type  = 'append';
       }
-      
+
       if (helpers.utilities.isFullPageError(helpers, htmlText)) {
         helpers.insertFullPageErrorHtml($target, helpers, htmlText);
       }
-      else {
+      else if (helpers.utilities.isServiceError(helpers, htmlNodes)) {
+        helpers.insertServiceErrorHtml(helpers, htmlText);
+      }
+      else { // handle 'validation error' or 'success' message & state
+        helpers.resetErrorMessages($target.parent(), $target);
+
         if (!isError) {
           $target.addClass('js-hidden');
         }
-
-        $target.removeClass('error');
-        $target.parent().find('.alert--success, .alert--failure').remove();
 
         for (; i < nodeCount; i++) {
           $node = $(htmlNodes[i]);
 
           if (isError) {
+            //helpers.hasErrorType = 'validation';
             $errorTarget = $target.find('>input[name="' + $node.attr('data-input-for') +  '"]');
             $errorTarget.closest('.form-field').addClass('error');
             $errorTarget.blur();
           }
 
-          $.fn[type].apply($errorTarget || $target, [$node]);
+          helpers.setDomHtml(type, $errorTarget || $target, $node);
         }
 
-        if (data.indexOf('missingclient=true') > -1) {
+        if (isMissingClient && !isError) {
           helpers.bindEvents($target, data);
         }
         else {
@@ -77,47 +91,78 @@ var ajaxCallbacks = {
         }
       }
     },
-    
-    insertFullPageErrorHtml: function ($target, helpers, htmlText) {
+
+    insertFullPageErrorHtml: function($target, helpers, htmlText) {
       var $heading = helpers.utilities.getElementInnerHtml(htmlText, 'h1'),
           $button = $target.closest('*:has([data-ajax-submit="true"])').find('button[type="submit"], input[type="submit"]');
 
-      $target.removeClass('error');
-      $target.parent().find('.alert--success, .alert--failure').remove();       
-      
+      helpers.resetErrorMessages($target.parent(), $target);
+
       $button.parent('.form-field').addClass('error');
 
-      $('<div class="alert alert--failure" data-input-for="email" id="service--error">' +
-        '<span class="error-message">' + $heading.text() + '</span>' +
-      '</div>').insertBefore($button);
+      helpers.setDomHtml('insertBefore',
+        $('<div class="alert alert--failure" data-input-for="email" id="service--error">' +
+          '<span class="error-message">' + $heading.text() + '</span>' +
+        '</div>'),
+        $button);
     },
-    
-    resetForms: function (helpers, type, data, target) {
+
+    insertServiceErrorHtml: function(helpers, htmlText) {
+      var $missingClientForm = $('#missing-client-form'),
+          $clientAccessForms = $('.client-access-details');
+
+      // replace missing client form
+      $missingClientForm.empty();
+      helpers.setDomHtml('prepend', $missingClientForm, htmlText);
+
+      // insert into client access request forms & disable elements
+      $clientAccessForms.each(function(i, e) {
+        var $form = $(e);
+        $form.find('input, button[type=submit]').prop('disabled', true);
+        helpers.resetErrorMessages($form, $form.find('.form-field.error'));
+        helpers.setDomHtml('before', $form.find('.form-field:first'), htmlText);
+      });
+    },
+
+    resetErrorMessages: function($target, $error) {
+      if (!!$error) {
+        $error.removeClass('error');
+      }
+
+      $target.find('.form-field:has(*[data-id="service--error"]), .alert--success, .alert--failure')
+        .removeClass('error')
+        .remove();
+    },
+
+    resetForms: function(helpers, type, data, target) {
       var emailValue = helpers.getEmailValue(target, data);
 
-      $("input[type=submit]:disabled, button[type=submit]:disabled").prop('disabled', false);
+      $('input[type=submit]:disabled, button[type=submit]:disabled').prop('disabled', false);
 
-      $('input[name="email"]').each(function (index, element) {
+      $('input[name="email"]').each(function(index, element) {
         $(element).val(emailValue);
       });
     },
 
     getEmailValue: function(container, data) {
       var reEmail = /&?email=([^&]+)/gi,
-        emailMatch = (function(d, re) {
+        emailMatch = (
+          function(d, re) {
             var m = !!d ? d.match(re) : null;
             return (!!d && !!m) ? m[0] : [''];
-          })(data, reEmail),
+          }
+
+        )(data, reEmail),
             emailValue = $(container).find('input[name="email"]').val();
-      return emailValue || decodeURIComponent(emailMatch).replace(reEmail, '$1') || "";
+      return emailValue || decodeURIComponent(emailMatch).replace(reEmail, '$1') || '';
     },
 
-    bindEvents: function ($container) {
-      $('#another-missing-client').one("click keydown", function (event) {
+    bindEvents: function($container) {
+      $('#another-missing-client').one('click keydown', function(event) {
         event.preventDefault();
 
         var $this = $(event.target);
-        
+
         $this.parent().find('.error').removeClass('error');
         $this.parent().find('.alert--success, .alert--failure').remove();
         $this.parent().find('input[name="payeref"]').prop('value', null);
@@ -130,8 +175,8 @@ var ajaxCallbacks = {
 
     utilities: {
       getElementInnerHtml: function(html, nodeName) {
-        var re = new RegExp("^(.*)<" + nodeName + "[^>]*>(.+?)<\/" + nodeName + ">(.*)$", "gi");
-        return re.test(html) ? $($.parseHTML(html.replace(re, "$2"))) : '';
+        var re = new RegExp('^(.*)<' + nodeName + '[^>]*>(.+?)<\/' + nodeName + '>(.*)$', 'gi');
+        return re.test(html) ? $($.parseHTML(html.replace(re, '$2'))) : '';
       },
 
       cleanHtml: function(htmlString) {
@@ -139,12 +184,34 @@ var ajaxCallbacks = {
       },
 
       isFullPageError: function(helpers, html) {
-        var heading;
+        var heading,
+            isError = false;
         if (!!html && !!html.length) {
           heading = helpers.utilities.getElementInnerHtml(html, 'h1');
-          return !!heading && heading.text() === 'Sorry, we’re experiencing technical difficulties';
+          isError = !!heading && heading.text() === 'Sorry, we’re experiencing technical difficulties';
         }
-        return false;
+
+        if (isError) {
+          helpers.hasErrorType = 'full-page';
+        }
+
+        return isError;
+      },
+
+      isServiceError: function(helpers, nodes) {
+        var $htmlNodes = $(nodes),
+            serviceError = false;
+
+        $htmlNodes.each(function(i, e) {
+          serviceError = !!$(e).find('*').andSelf().filter('[data-id="service--error"]').length;
+          return !serviceError;
+        });
+
+        if (serviceError) {
+          helpers.hasErrorType = 'service';
+        }
+
+        return serviceError;
       }
     }
   }
