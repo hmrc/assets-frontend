@@ -59,5 +59,5 @@ GOVUK.performance.stageprompt = (function () {
 }());
 
 GOVUK.performance.sendGoogleAnalyticsEvent = function (category, event, label) {
-  _gaq.push(['_trackEvent', category, event, label, undefined, true]);
+  _gaq && _gaq.push(['_trackEvent', category, event, label, undefined, true]);
 };
