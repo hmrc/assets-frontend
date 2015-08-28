@@ -11,10 +11,8 @@
     font-size:36px;
   }
 
-  .content__body {
-    p {
-      margin:8px 0 5px 0;
-    }
+  p {
+    margin:8px 0 20px 0;
   }
 
   fieldset legend {
@@ -26,6 +24,10 @@
   }
 
   .form-label-bold {
+    margin-bottom: 5px;
+  }
+
+  .form-hint {
     margin-bottom: 5px;
   }
 
@@ -90,10 +92,6 @@
 
   .min.summary {
     border-bottom: 0px;
-  }
-
-  .content__body p {
-    margin : 8px 0 20px;
   }
 
   .survey__legend {
