@@ -14,8 +14,14 @@
     margin: 0 0 19px;
   }
 
+  .inline {
+    display: inline;
+    margin: 0 0 0 10px;
+  }
+
   details {
     margin: 0 0 15px;
+
     summary {
       @include core-16;
       color: $details-link;
