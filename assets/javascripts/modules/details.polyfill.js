@@ -42,8 +42,11 @@
       }
     });
 
+    // Ignore right mouse clicks, to avoid problems on Chrome
     addEvent(node, 'mouseup', function(e, target) {
-      callback(e, target);
+      if (e.which !== 3) {
+        callback(e, target);
+      }
     });
   }
 
