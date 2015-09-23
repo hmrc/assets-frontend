@@ -47,8 +47,12 @@ label.selectable input {
   border-left: 3px solid #999;
   float: none;
   margin: 1em 0 0 0;
-  padding: 1em 0 0 15px;
+  padding: 1em 1em 0 15px;
   overflow: hidden;
+}
+
+.connected {
+  box-sizing:border-box;
 }
 
 #content > .full-width {
