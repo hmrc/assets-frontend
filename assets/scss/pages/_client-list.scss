@@ -56,3 +56,10 @@ $client-list-error-background: #fef7f7;
 .client-access-details .form-field.error {
   margin-left: -1.1875em;
 }
+
+#global-breadcrumb {
+  &.agent-breadcrumb {
+    padding-bottom: 1.5em;
+    border-bottom: 0;
+  }
+}

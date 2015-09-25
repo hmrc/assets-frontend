@@ -97,3 +97,52 @@
   margin-bottom: 1.5em;
   padding-top: 1em;
 }
+
+.agent-services--dashboard {
+  .grid-wrapper {
+    padding-bottom: 0;
+  }
+  
+  .sidebar-links {
+    border-top: 8px solid $mainstream-brand;
+    padding-bottom: 0.5em;
+    margin-bottom: 1.25em;
+    
+    &:first-child {
+      margin-top: 1.5em;
+    }
+    
+    ul {
+      margin: 0.75em 0;
+    }
+    
+    li {
+      font-size: 19px;
+      line-height: 1.31579;
+      margin-bottom: 0.2em;
+    } 
+    
+  }
+
+  .service-options {
+    h2 {
+      margin-bottom: 0.25em;
+    }
+    
+    .service-option--links {
+      padding-bottom: 0.5em;
+
+      &:first-child a {
+        font-weight: 700;
+      }
+  
+      &:last-child li {
+        margin: 1em 0;
+      }
+      
+      a:link {
+        color: $govuk-blue;
+      }
+    }
+  }
+}
