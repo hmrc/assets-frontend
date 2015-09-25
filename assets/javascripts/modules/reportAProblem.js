@@ -65,20 +65,24 @@ module.exports = function() {
       },
 
       configureToggle = function() {
-        $('.report-error__toggle').on('click', function(e) {
-          var $errorContent = $('.report-error__content'); 
+        var reportErrorToggle = $('.report-error__toggle');
+        
+        reportErrorToggle.on('click', function(e) {
+          var $errorContent = $('.report-error__content');
           if($errorContent.has('form').length === 0) {
             // show the spinner
             $errorContent.removeClass('hidden');
             $errorContent.removeClass('js-hidden');
             // the form or the form's submission result is not there, load the HTML asynchronously using Ajax
             // and replace the spinner with the form markup
-            load(decodeURIComponent(reportProblemAjaxUrl));    
+            load(decodeURIComponent(reportProblemAjaxUrl));
           } else {
-            $errorContent.toggleClass('js-hidden');  
+            $errorContent.toggleClass('js-hidden');
           }
-          
-          e.preventDefault();
+
+          // Preventing navigation ONLY if element has "href" attribute
+          if (reportErrorToggle.attr("href"))
+            e.preventDefault();
         });
       },
 
