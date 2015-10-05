@@ -1,0 +1,18 @@
+
+.cancel-authorise {
+  display: inline-block;
+  margin: 7px 0 0 0;
+
+  @include media(mobile) {
+    margin-top:15px;    
+  }
+
+}
+
+.scopes {
+  margin: 20px 0 20px 0;
+}
+
+.scopes--item {
+  padding: 0 0 5px 0;
+}
