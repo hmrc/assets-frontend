@@ -151,6 +151,13 @@
   white-space:nowrap !important;
 }
 
+/**
+* Force long character sequences to split over lines, e.g. email addresses
+*/
+.word-wrap {
+  white-space: pre-line;
+  word-wrap: break-word;
+}
 
 /**
  * Hide content off-screen without resorting to `display:none;`, also provide
