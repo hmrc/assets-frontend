@@ -99,49 +99,116 @@
 }
 
 .agent-services--dashboard {
+  @include media(mobile) {
+    .logo,
+    .service-info__agent-name {
+      display: inline-block;
+    }
+
+    .service-info__agent-name {
+      float: right;
+    }
+  }
+  
   .grid-wrapper {
     padding-bottom: 0;
   }
   
-  .sidebar-links {
-    border-top: 8px solid $mainstream-brand;
-    padding-bottom: 0.5em;
-    margin-bottom: 1.25em;
-    
-    &:first-child {
-      margin-top: 1.5em;
-    }
-    
-    ul {
-      margin: 0.75em 0;
-    }
-    
-    li {
-      font-size: 19px;
-      line-height: 1.31579;
-      margin-bottom: 0.2em;
-    } 
-    
+  .content__body, .sidebar {
+    margin-top: 1.25em;
   }
 
-  .service-options {
-    h2 {
-      margin-bottom: 0.25em;
-    }
-    
-    .service-option--links {
-      padding-bottom: 0.5em;
+  .sidebar {
+    width: 33%;
 
-      &:first-child a {
+    @include media(mobile) {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  .sidebar-links {
+    width: 100%;
+    border-top-width: 8px;
+    border-bottom: none;
+
+    @include media(desktop) {
+      padding-bottom: 0.5em;
+      margin-bottom: 1.25em;
+    }
+
+    @include media(mobile) {
+      margin-bottom: 0;
+      border-top-width: 4px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }    
+
+  .sidebar-links--list {
+    margin: 0.75em 0;
+    
+    @include media(mobile) {
+      margin-bottom: 0;
+    }
+  }
+
+  .sidebar-links--item {
+    font-size: 19px;
+    line-height: 1.31579;
+    margin-bottom: 5px;
+
+    @include media(mobile) {
+      font-size: 16px;
+      line-height: 1.25;
+      margin: 1em 0;
+    }
+  }
+
+  @include media(mobile) {
+    .sidebar-links--link {
+      border-top: 0;
+      padding: 0;
+    }
+  }
+  
+  .service-options--heading {
+    margin-bottom: 0.25em;
+  }
+
+  .service-option--links {
+    border-top: 4px solid $light-blue;
+    padding-bottom: 0.5em;
+
+    &:first-child {
+      .service-option--link {
         font-weight: 700;
       }
-  
-      &:last-child li {
-        margin: 1em 0;
+
+      .service-option--item {
+        border-bottom: 1px solid $grey-8;
+        padding: .438em 0 .625em 0;
+        width: 90%;
+
+        &:last-child {
+          border-bottom: none;
+        }
       }
-      
-      a:link {
-        color: $govuk-blue;
+    }
+
+    &:last-child .service-option--item {
+        margin: 1em 0;
+    }
+
+    .service-option--link:link {
+      color: $govuk-blue;
+    }
+
+    @include media(mobile) {
+      .service-option--item {
+        margin-left: 0;
       }
     }
   }
