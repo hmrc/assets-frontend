@@ -1,22 +1,27 @@
-  module.exports = function(el) {
-
+  module.exports = function() {
     var bannerId = $('.attorneyBanner').attr('id'),
-    topOffset;
-    if (!bannerId) {
       topOffset = 0;
-    } else {
-      idOfBanner = $('#' + bannerId);
-      topOffset = idOfBanner.parent().height();
+
+    if (bannerId) {
+      topOffset = $('#' + bannerId).parent().height();
     }
 
     $('.error-summary a').on('click', function(e) {
       e.preventDefault();
       var focusId = $(this).attr('data-focuses'),
-      inputToFocus = $('#' + focusId);
+        inputToFocus = $('#' + focusId),
+        inputTagName = inputToFocus.prop("tagName").toLowerCase(),
+        nodeToScrollTo = inputToFocus;
+
+      if (["input", "select", "button"].indexOf(inputTagName) !== -1) {
+        nodeToScrollTo = inputToFocus.parent();
+      }
+
       $('html, body').animate({
-        scrollTop: inputToFocus.parent().offset().top - topOffset
+        scrollTop: nodeToScrollTo.offset().top - topOffset
       }, 500);
-      inputToFocus.parent().find(':input').first().focus();
+
+      nodeToScrollTo.find(':input').first().focus();
     });
   };
 
