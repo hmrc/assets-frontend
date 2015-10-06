@@ -16,3 +16,18 @@
 .scopes--item {
   padding: 0 0 5px 0;
 }
+
+.anchor-links {
+  padding: 0;
+}
+
+.anchor-links--item {
+  display: inline-block;
+  width: 48%;
+  @include core-16;
+}
+
+.api-breadcrumb {
+  border:top: 1px solid #bfc1c3;
+  border-bottom: none;
+}
