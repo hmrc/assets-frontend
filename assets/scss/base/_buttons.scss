@@ -17,6 +17,11 @@ button, .button {
   @include button($button-colour);
   @include core-19();
   margin: 0 em(15) 0 0;
+
+  &.button--link {
+    color: $link-colour;
+  }
+
 }
 
 .button--alert {
@@ -57,7 +62,6 @@ button, .button {
  */
 .button--link {
   background-color: transparent;
-  color: $link-colour !important;
   box-shadow: none;
   text-decoration: underline;
 
@@ -78,3 +82,5 @@ button, .button {
   }
 
 }
+
+
