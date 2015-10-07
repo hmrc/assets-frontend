@@ -9,6 +9,9 @@
           toolkit/design-patterns/_buttons.scss
         ]
 */
+
+
+
 button, .button {
   text-transform: capitalize;
   @include button($button-colour);
@@ -46,4 +49,32 @@ button, .button {
   @include button($button-colour);
   @include core-16();
   margin-top: 10px;
+}
+
+/**
+ * For links that need to be positioned beside buttons
+ * Used in conjunction with button class
+ */
+.button--link {
+  background-color: transparent;
+  color: $link-colour !important;
+  box-shadow: none;
+  text-decoration: underline;
+
+  &:hover, 
+  &:focus, 
+  &:active {
+    top: 0;
+    outline: none;
+    background-color: transparent;
+  }
+
+  &:hover, &:focus {
+    color: $link-hover-colour;
+  }
+
+  &:active {
+    color: $link-active-colour;
+  }
+
 }
