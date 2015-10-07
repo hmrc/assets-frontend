@@ -18,9 +18,7 @@ button, .button {
   @include core-19();
   margin: 0 em(15) 0 0;
 
-  &.button--link {
-    color: $link-colour;
-  }
+
 
 }
 
@@ -81,6 +79,10 @@ button, .button {
     color: $link-active-colour;
   }
 
+}
+
+.button.button--link {
+  color: $link-colour;
 }
 
 
