@@ -1,14 +1,24 @@
 
-.snippet__block {
+.snippet--block {
   margin: 10px 0 10px 0;
   padding: 20px;
   border: none;
-  color: $grey-3;
+  color: $grey-0;
 }
 
-.snippet__inline {
+pre.snippet--block {
+  font-size: 14px;
+}
+
+.snippet--inline {
+  font-family: monospace, serif;
+}
+
+code.snippet--inline { 
   background-color: transparent;
   border: none;
-  color: $grey-1;
   padding: 0;
+  color: $grey-1;
 }
+
+
