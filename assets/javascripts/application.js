@@ -4,6 +4,8 @@ require('validate');
 require('basicpunc');
 require('govuk-template');
 
+window._gaq = window._gaq || [];
+
 var setSSOLinks = require('./modules/SSO_links.js'),
     contentNudge = require('./modules/contentNudge.js'),
     tableRowClick = require('./modules/tableRowClick.js'),
@@ -28,6 +30,7 @@ var setSSOLinks = require('./modules/SSO_links.js'),
     validatorFocus = require('./modules/validatorFocus.js'),
     enhancedTables = require('./modules/enhancedTables.js'),
     attorneyBanner = require('./modules/attorneyBanner.js');
+    helpAndContact = require('./modules/helpAndContact.js');
 
 //initialise mdtpf
 fingerprint();
@@ -126,7 +129,7 @@ $(function() {
   }
 
   toggleDynamicFormFields();
-  
+
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
   simpleToggleDynamicFormFields();
   questionnaireSubmission();
@@ -140,5 +143,7 @@ $(function() {
   toggleDetails();
   validatorFocus();
   attorneyBanner();
+  helpAndContact().init();
   ajaxFormSubmit.init(ajaxCallbacks);
+
 });
