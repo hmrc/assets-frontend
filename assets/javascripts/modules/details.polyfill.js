@@ -64,9 +64,10 @@
     return node;
   }
 
-  // Create a started flag so we can prevent the initialisation
-  // function firing from both DOMContentLoaded and window.onload
-  var started = false;
+  function reapplyDetailsPolyfill() {
+    started = false;
+    addDetailsPolyfill();
+  }
 
   // Initialisation function
   function addDetailsPolyfill(list) {
@@ -211,19 +212,32 @@
     }
 
     // Bind a click event to handle summary elements
-    addClickEvent(document, function(e, summary) {
-      if (!(summary = getAncestor(summary, 'summary'))) {
-        return true;
-      }
+    if (!eventsBound) {
+      addClickEvent(document, function(e, summary) {
+        if (!(summary = getAncestor(summary, 'summary'))) {
+          return true;
+        }
 
-      return statechange(summary);
-    });
+        return statechange(summary);
+      });
+      eventsBound = true;
+    }
   }
+
+  // Create a started flag so we can prevent the initialisation
+  //  function firing from both DOMContentLoaded and window.onload
+  // Create eventsBound flag. If this is to redecorate after ajax load, don't
+  //  re-apply event listeners, or they stack up.
+  var started = false,
+    eventsBound = false;
 
   // Bind two load events for modern and older browsers
   // If the first one fires it will set a flag to block the second one
   // but if it's not supported then the second one will fire
   addEvent(document, 'DOMContentLoaded', addDetailsPolyfill);
   addEvent(window, 'load', addDetailsPolyfill);
+
+  // explicit firing after ajax load of content with details
+  addEvent(window, 'reapplyDetails', reapplyDetailsPolyfill);
 
 })();
