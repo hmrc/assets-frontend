@@ -175,3 +175,38 @@ ul {
   }
 
 }
+
+.three-col-list {
+
+  .three-col-list__col {
+    width: auto;
+    float: none;
+  }
+
+  ul {
+    margin: 0;
+    li {
+      margin: 0.7em 0;
+      @include core-16;
+    }
+  }
+
+  @include media(tablet) {
+    display: inline-block;
+
+    .three-col-list__col {
+      width: 28%;
+      margin-right: 60px;
+    }
+    .three-col-list__col--left,
+    .three-col-list__col--middle {
+      float: left;
+    }
+    .three-col-list__col--right {
+      float: right;
+      margin-right: 0;
+    }
+
+  }
+
+}
