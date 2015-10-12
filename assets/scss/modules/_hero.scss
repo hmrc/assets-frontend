@@ -1,0 +1,18 @@
+
+
+
+.hero { 
+  background-color: $govuk-blue-colour;
+  padding: 0 0 20px 0;
+
+  .heading-large,
+  .heading-small {
+    color: $white;
+  }
+
+  .heading-small {
+    @include core-19;
+  }
+  
+
+}
