@@ -18,7 +18,7 @@ module.exports = function() {
   },
 
   updateHelpContent = function(partial) {
-    var ajaxUrl = '/account/contact-hmrc/partial/'+partial;
+    var ajaxUrl = '/business-account/contact-hmrc/partial/'+partial;
     var $contentPane = $('.help-content');
     $contentPane.load(ajaxUrl, function(response, status, xhr) {
       updateSelectedMenuItem(partial);
