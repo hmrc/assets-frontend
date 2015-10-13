@@ -14,7 +14,7 @@ module.exports = function() {
   updateHistory = function(selected) {
     var baseUrl = window.location.href.replace(baseUrlRegex, '');
     var newUrl = baseUrl + contactHmrc + '/' + selected;
-    history.pushState(selected, null, newUrl);
+    history.pushState(null, null, newUrl);
   },
 
   updateHelpContent = function(partial) {
@@ -64,7 +64,8 @@ module.exports = function() {
 
       window.addEventListener('popstate', function (e) {
         if (window.location.pathname.indexOf(contactHmrc) > -1) {
-          updateHelpContent(e.state);
+          var partial = e.target.location.pathname.replace(/.*\//, '');
+          updateHelpContent(partial);
         }
       });
     }
