@@ -21,13 +21,17 @@ module.exports = function() {
     var ajaxUrl = '/business-account/contact-hmrc/partial/'+partial;
     var $contentPane = $('.help-content');
     $contentPane.load(ajaxUrl, function(response, status, xhr) {
-      updateSelectedMenuItem(partial);
-      initYoutubeLinks();
-      applyDetailsPolyfill();
+      if (status === 'error') {
+        location.reload();
+      } else {
+        updateSelectedMenuItem(partial);
+        initYoutubeLinks();
+        applyDetailsPolyfill();
+      }
     });
   },
 
-  applyDetailsPolyfill = function(){
+  applyDetailsPolyfill = function() {
     window.dispatchEvent(new Event('reapplyDetails'));
   },
 
