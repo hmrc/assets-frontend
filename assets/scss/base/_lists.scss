@@ -196,15 +196,11 @@ ul {
     display: inline-block;
 
     .three-col-list__col {
-      width: 28%;
-      margin-right: 60px;
-    }
-    .three-col-list__col--left,
-    .three-col-list__col--middle {
+      width: 29%;  
+      margin-right: 6.5%;
       float: left;
     }
     .three-col-list__col--right {
-      float: right;
       margin-right: 0;
     }
 

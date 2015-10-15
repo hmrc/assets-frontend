@@ -4,7 +4,11 @@
 .hero { 
   background-color: $govuk-blue-colour;
   position: relative;
-  padding: 0 0 20px 0;
+  padding-bottom: 0;
+
+  @include media(tablet) {
+    padding-bottom: 20px;
+  }
 
   .heading-large,
   .heading-small {
@@ -19,18 +23,37 @@
     @include core-19;
   }
 
+  @include media(tablet) {
+    .heading-large {
+      @include bold-36;
+    }
+  }
+
+  @include media(desktop) {
+    .heading-large {
+      @include bold-48;
+    }
+  }  
+
   .side-content {
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    position: static;
+    float: right;
     background-color: $black;
-    padding:20px;
-    width: 20%;
+    padding:18px 20px 18px 20px;
+    width: 45%;
+  }
+
+  @include media(tablet) {
+    .side-content {
+      position: absolute;
+      right: 30px;
+      bottom: 0;
+      width: 23%;
+    }
   }
 
   .side-content--link {
     color: $white;
   }
   
-
 }
