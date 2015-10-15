@@ -3,6 +3,7 @@
 
 .hero { 
   background-color: $govuk-blue-colour;
+  position: relative;
   padding: 0 0 20px 0;
 
   .heading-large,
@@ -10,8 +11,25 @@
     color: $white;
   }
 
+  .heading-large {
+    margin: 35px 0 0 0;
+  }
+
   .heading-small {
     @include core-19;
+  }
+
+  .side-content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: $black;
+    padding:20px;
+    width: 20%;
+  }
+
+  .side-content--link {
+    color: $white;
   }
   
 
