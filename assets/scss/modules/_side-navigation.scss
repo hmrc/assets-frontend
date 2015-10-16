@@ -49,7 +49,7 @@
   .side-nav__list--selected {
     .side-nav__link {
       color: $govuk-blue;
-      @inclue bold-16;
+      @include bold-16;
       background-color: transparent;
 
     }
