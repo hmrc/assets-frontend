@@ -51,8 +51,8 @@ table {
   border-top: 1px solid $border-colour;
 }
 
-.table--padded-left {
-  padding-left: 12px;
+.table-cell--padded {
+  padding: 20px 12px 20px 12px;
 }
 
 //TODO refactor out when messages used by yta/sa designs are finalised
