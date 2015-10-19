@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Dividers
+   ========================================================================== */
+
+.divider-left {
+  border-left: 1px solid $light-grey;
+}
+
+.gutter-left {
+  margin-left: $gutter;
+}
+
+.bordered-box {
+  border: 1px solid $border-colour;
+  padding: 1em 1em 0.5em;
+}
+
+.bordered-box--shaded {
+  @extend .bordered-box;
+  background-color: $shaded-bg-grey;
+}
+
+.box--shaded {
+  padding: 0.5em 1em;
+  background-color: $grey-8;
+  border: none;
+}
+
+.divider--bottom {
+  border-bottom: 1px solid $border-colour;
+}
+
+.divider--top {
+  border-top: 1px solid $border-colour;
+}

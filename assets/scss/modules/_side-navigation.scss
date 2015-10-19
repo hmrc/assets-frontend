@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Side Navigation
+   ========================================================================== */
+
+.side-nav {
+  margin-top: $gutter;
+}
+
+.side-nav__list {
+  position: relative;
+  list-style: none;
+}
+
+.side-nav__list--selected {
+  .side-nav__link {
+    color: $white;
+    background-color: $govuk-blue;
+  }
+}
+
+.side-nav__link {
+  padding: $gutter/2.5 $gutter $gutter/3.75 $gutter/2;
+  text-decoration: none;
+  display: block;
+  background-color: transparent;
+  @include core-19;
+  &:hover {
+    background-color: $grey-8;
+  }
+  &:after {
+    position: absolute;
+    right: $gutter/3;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "\203A";
+  }
+}
+
+.side-nav--child {
+  margin-top: 0;
+  border-right: none;
+  border-left: 4px solid $light-grey;
+
+  .side-nav__link {
+    @include core-16;
+    padding-left: $gutter/1.25;
+  }
+
+  .side-nav__list--selected {
+    .side-nav__link {
+      color: $govuk-blue;
+      @include bold-16;
+      background-color: transparent;
+
+    }
+  }
+}
