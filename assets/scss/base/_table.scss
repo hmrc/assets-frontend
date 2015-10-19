@@ -43,6 +43,18 @@ table {
   }
 }
 
+.table--light {
+  background-color: $highlight-colour;
+}
+
+.table--top-border {
+  border-top: 1px solid $border-colour;
+}
+
+.table--padded-left {
+  padding-left: 12px;
+}
+
 //TODO refactor out when messages used by yta/sa designs are finalised
 .table__row--bold {
   td, th {
