@@ -167,3 +167,7 @@ details {
     text-decoration: underline;
   }
 }
+
+.font-xxsmall {
+  @include core-14;
+}

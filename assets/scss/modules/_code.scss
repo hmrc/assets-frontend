@@ -11,7 +11,7 @@ pre.snippet--block {
 }
 
 .snippet--inline {
-  font-family: monospace, serif;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 }
 
 code.snippet--inline { 
@@ -19,6 +19,14 @@ code.snippet--inline {
   border: none;
   padding: 0;
   color: $grey-1;
+}
+
+.tag {
+  background-color: #DEE0E2;
+  color: $black;
+  padding: 3px 8px 1px 8px;
+  margin-right: 7px;
+  @include border-radius(5px);
 }
 
 

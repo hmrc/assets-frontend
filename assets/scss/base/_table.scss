@@ -43,7 +43,7 @@ table {
   }
 }
 
-.table--light {
+.table-cell--light {
   background-color: $highlight-colour;
 }
 
@@ -64,6 +64,10 @@ table {
   a {
     color: inherit;
   }
+}
+
+.table--col-one-third {
+  width: 38%;
 }
 
 .marker-column {
