@@ -1,0 +1,7 @@
+.alpha-banner {
+  @include phase-banner(alpha);
+
+  .phase-tag {
+    @include phase-tag(alpha);
+  }
+}
