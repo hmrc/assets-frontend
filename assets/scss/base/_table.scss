@@ -43,6 +43,18 @@ table {
   }
 }
 
+.table-cell--light {
+  background-color: $highlight-colour;
+}
+
+.table--top-border {
+  border-top: 1px solid $border-colour;
+}
+
+.table-cell--padded {
+  padding: 20px 12px 20px 12px;
+}
+
 //TODO refactor out when messages used by yta/sa designs are finalised
 .table__row--bold {
   td, th {
@@ -52,6 +64,10 @@ table {
   a {
     color: inherit;
   }
+}
+
+.table--col-one-third {
+  width: 38%;
 }
 
 .marker-column {

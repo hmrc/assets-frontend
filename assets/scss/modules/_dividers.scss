@@ -4,10 +4,20 @@
 
 .divider-left {
   border-left: 1px solid $light-grey;
+
+  @include media(mobile) {
+    border-left: none;
+  }
+
 }
 
 .gutter-left {
   margin-left: $gutter;
+
+  @include media(mobile) {
+    margin-left: 0;
+  }
+  
 }
 
 .bordered-box {

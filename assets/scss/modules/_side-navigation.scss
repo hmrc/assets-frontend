@@ -4,6 +4,10 @@
 
 .side-nav {
   margin-top: $gutter;
+
+  @include media(mobile) {
+    display: none;
+  }
 }
 
 .side-nav__list {
@@ -23,7 +27,7 @@
   text-decoration: none;
   display: block;
   background-color: transparent;
-  @include core-19;
+  @include core-16;
   &:hover {
     background-color: $grey-8;
   }
@@ -42,7 +46,6 @@
   border-left: 4px solid $light-grey;
 
   .side-nav__link {
-    @include core-16;
     padding-left: $gutter/1.25;
   }
 
