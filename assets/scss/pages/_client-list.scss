@@ -63,3 +63,20 @@ $client-list-error-background: #fef7f7;
     border-bottom: 0;
   }
 }
+
+.client-list .content-header .sidebar-links {
+  border-width: 5px;
+  margin-right: 0;
+  
+  @include media(mobile) {
+    display: none;
+  }
+  
+  .sidebar-links__item {
+    display: block;
+    float:left;
+    width: 100%;
+  }
+}
+
+
