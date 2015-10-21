@@ -8,60 +8,63 @@
     padding-bottom: 30px;
   }
 
+  details summary {
+    color: $govuk-blue;
+  }
+
   .help-menu {
-    float: left;
-    width: 30%;
-    border-right: 1px solid #bfc1c3;
+    width: 100%;
     margin: 0;
-    padding-bottom: 300px;
-  }
-
-  .menu__list, .menu__list-item {
-    margin: 0;
-  }
-
-  .menu__list-item {
-    a:focus {
-      background-color: inherit;
-      outline: 0;
-    }
-    &:hover {
-      background-color: #DEE0E2;
-    }
-    a:after {
-      content: '\203A';
-      float: right;
-      color: #005FA8;
-    }
-    a, a:visited {
-      text-decoration: none;
-      @include core-19;
-      color: #000;
-      display: block;
-      padding: 18px 15px;
-      &:hover {
-        color: #005FA8;
-      }
+    @include media(tablet) {
+      width: 30%;
+      float: left;
+      border-right: 1px solid #bfc1c3;
+      padding-bottom: 300px;
     }
   }
-
-  .menu__list-item--selected, .menu__list-item--selected:hover {
-    background-color: #005FA8;
-    a, a:visited {
-      color: #fff;
-    }
-    a:after {
-      color: #fff;
+  .help-item--selected .help-menu {
+    display: none;
+    @include media(tablet) {
+      display: initial;
+      width: 30%;
+      border-right: 1px solid #bfc1c3;
+      padding-bottom: 300px;
     }
   }
 
   .help-content {
-    float: right;
-    width: 66%;
+    width: 0;
+    display: none;
+    @include media(tablet) {
+      width: 66%;
+      display: initial;
+      float: right;
+    }
+  }
+  .help-item--selected .help-content {
+    width: 100%;
+    display: initial;
+    @include media(tablet) {
+      width: 66%;
+    }
   }
 
   .vertically-separated {
     margin: 10px 0;
   }
+
+  /* override styles in _side-navigation.scss */
+  .side-nav {
+    margin-top: 0;
+    @include media(mobile){
+      display: initial;
+    }
+  }
+
+  .side-nav__link {
+    @include core-19;
+    padding: 18px 15px;
+  }
+  /* end override styles */
 
 }
