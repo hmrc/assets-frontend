@@ -184,6 +184,12 @@
   display: none !important;
 }
 
+&.hidden--tablet {
+  @include media(tablet) {
+    display: none !important;
+  }
+}
+
 %no-bullet {
 	list-style: none;
 }

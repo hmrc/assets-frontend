@@ -4,6 +4,16 @@
   color: $white;
 }
 
+a.header__menu__proposition-name {
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+
+}
+
 .header__menu__proposition-links {
   @include bold-16;
   float: right;
@@ -20,7 +30,7 @@
     padding-right: 15px;
   }
 
-  a{
+  a {
     @include bold-16;
     color: $white;
     text-decoration: none;
