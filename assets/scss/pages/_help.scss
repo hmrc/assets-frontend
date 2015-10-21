@@ -9,11 +9,40 @@
   }
 
   .help-menu {
-    float: left;
-    width: 30%;
-    border-right: 1px solid #bfc1c3;
+    width: 100%;
     margin: 0;
-    padding-bottom: 300px;
+    @include media(tablet) {
+      width: 30%;
+      float: left;
+      border-right: 1px solid #bfc1c3;
+      padding-bottom: 300px;
+    }
+  }
+  .help-item--selected .help-menu {
+    display: none;
+    @include media(tablet) {
+      display: initial;
+      width: 30%;
+      border-right: 1px solid #bfc1c3;
+      padding-bottom: 300px;
+    }
+  }
+
+  .help-content {
+    width: 0;
+    display: none;
+    @include media(tablet) {
+      width: 66%;
+      display: initial;
+      float: right;
+    }
+  }
+  .help-item--selected .help-content {
+    width: 100%;
+    display: initial;
+    @include media(tablet) {
+      width: 66%;
+    }
   }
 
   .menu__list, .menu__list-item {
@@ -53,11 +82,6 @@
     a:after {
       color: #fff;
     }
-  }
-
-  .help-content {
-    float: right;
-    width: 66%;
   }
 
   .vertically-separated {
