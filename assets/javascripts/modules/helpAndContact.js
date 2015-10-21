@@ -4,78 +4,120 @@ module.exports = function() {
 
   var contactHmrc = '/contact-hmrc',
     baseUrlRegex = new RegExp(contactHmrc + '.*'),
+    subpathRegex = new RegExp('.*' + contactHmrc + '/'),
+    onHelpHomeRegex = new RegExp('.*' + contactHmrc + '/?$'),
 
-  updateSelectedMenuItem = function(selected) {
-    $('.menu__list li').removeClass('menu__list-item--selected');
-    var selectedLi = $('.menu__list a[href*='+selected+']').closest('li');
-    selectedLi.addClass('menu__list-item--selected');
-  },
+    supportsHistoryApi = function() {
+      return !!(window.history && history.pushState);
+    },
 
-  updateHistory = function(selected) {
-    var baseUrl = window.location.href.replace(baseUrlRegex, '');
-    var newUrl = baseUrl + contactHmrc + '/' + selected;
-    history.pushState(null, null, newUrl);
-  },
+    onHelpPage = function() {
+      return window.location.pathname.indexOf(contactHmrc) > -1;
+    },
 
-  updateHelpContent = function(partial) {
-    var ajaxUrl = '/business-account/contact-hmrc/partial/'+partial;
-    var $contentPane = $('.help-content');
-    $contentPane.load(ajaxUrl, function(response, status, xhr) {
-      if (status === 'error') {
-        location.reload();
+    isHelpHome = function(url) {
+      return onHelpHomeRegex.test(url);
+    },
+
+    addMobileViewClass = function() {
+      $('.help__wrapper').addClass('help-item--selected');
+    },
+
+    removeMobileViewClass = function() {
+      $('.help__wrapper').removeClass('help-item--selected');
+    },
+
+    getBaseUrl = function() {
+      return window.location.href.replace(baseUrlRegex, '');
+    },
+
+    getSubpage = function(url) {
+      if (isHelpHome(url)) {
+        return "";
       } else {
-        updateSelectedMenuItem(partial);
-        initYoutubeLinks();
-        applyDetailsPolyfill();
+        var helpSubPath = url.replace(subpathRegex, '');
+        if (helpSubPath.charAt(helpSubPath.length - 1) === '/') {
+          return helpSubPath.substring(0, helpSubPath.length - 2);
+        } else {
+          return helpSubPath;
+        }
       }
-    });
-  },
+    },
 
-  applyDetailsPolyfill = function() {
-    window.dispatchEvent(new Event('reapplyDetails'));
-  },
+    applyDetailsPolyfill = function() {
+      window.dispatchEvent(new Event('reapplyDetails'));
+    },
 
-  supportsHistoryApi = function() {
-    return !!(window.history && history.pushState);
-  },
+    updateSelectedMenuItem = function(selected) {
+      $('.menu__list li').removeClass('menu__list-item--selected');
+      if (selected) {
+        var selectedLi = $('.menu__list a[href*=' + selected + ']').closest('li');
+        selectedLi.addClass('menu__list-item--selected');
+      }
+    },
 
-  initYoutubeLinks = function() {
+    updateHistory = function(selected) {
+      var newUrl = getBaseUrl() + contactHmrc + '/' + selected;
+      history.pushState(null, null, newUrl);
+    },
 
-    // 'Jump links' to timed points in embedded YouTube video replace the iframe contents
-    var $videoIframe = $('#video-iframe');
-    if ($($videoIframe).length) {
-      $('.youtube-link').click(function(e) {
-        e.preventDefault();
-        var iframeUrl = $(this).attr('href').replace(/.*\//, 'https://www.youtube.com/embed/');
-        if (iframeUrl) {
-          $videoIframe.attr('src', iframeUrl);
-        }
-      });
-    }
-  },
+    updateHelpContent = function(subpage) {
+      var $contentPane = $('.help-content');
+      if (subpage) {
+        var ajaxUrl = '/business-account/contact-hmrc/partial/' + subpage;
+        $contentPane.load(ajaxUrl, function(response, status, xhr) {
+          if (status === 'error') {
+            location.reload();
+          } else {
+            updateSelectedMenuItem(subpage);
+            addMobileViewClass();
+            initYoutubeLinks();
+            applyDetailsPolyfill();
+          }
+        });
+      } else {
+        $contentPane.empty();
+        updateSelectedMenuItem('');
+        removeMobileViewClass();
+      }
+    },
 
-  init = function() {
+    initYoutubeLinks = function() {
+      var $videoIframe = $('#video-iframe');
+      if ($($videoIframe).length) {
+        $('.youtube-link').click(function(e) {
+          e.preventDefault();
+          var iframeUrl = $(this).attr('href').replace(/.*\//, 'https://www.youtube.com/embed/');
+          if (iframeUrl) {
+            $videoIframe.attr('src', iframeUrl);
+          }
+        });
+      }
+    },
 
-    // Allow Ajax help menu sub page switching
-    if (supportsHistoryApi()) {
+    init = function() {
 
-      $('.help-menu-link').click(function(e) {
-        e.preventDefault();
-        var partial = $(this).attr('href').replace(/.*\//, '');
-        updateHelpContent(partial);
-        updateHistory(partial);
-      });
+      // 'Jump links' to timed points in embedded YouTube video replace the iframe contents
+      initYoutubeLinks();
 
-      window.addEventListener('popstate', function (e) {
-        if (window.location.pathname.indexOf(contactHmrc) > -1) {
-          var partial = e.target.location.pathname.replace(/.*\//, '');
-          updateHelpContent(partial);
-        }
-      });
-    }
+      // Allow Ajax help menu sub page switching
+      if (supportsHistoryApi()) {
 
-    initYoutubeLinks();
-  };
+        $('.help-menu-link').click(function(event) {
+          event.preventDefault();
+          var subpage = getSubpage($(this).attr('href'));
+          updateHelpContent(subpage);
+          updateHistory(subpage);
+        });
+
+        window.addEventListener('popstate', function(event) {
+          if (onHelpPage()) {
+            var subpage = getSubpage(event.target.location.pathname);
+            updateHelpContent(subpage);
+          }
+        });
+      }
+    };
 
   return {
     init: init
