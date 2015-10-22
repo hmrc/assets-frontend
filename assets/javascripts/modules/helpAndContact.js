@@ -50,6 +50,7 @@ module.exports = function() {
 
     updateSelectedMenuItem = function(selected) {
       $('.side-nav li').removeClass('side-nav__list--selected');
+      $('.side-nav li a').trigger('blur'); // lose yellow highlight on focused element
       if (selected) {
         var selectedLi = $('.side-nav a[href*=' + selected + ']').closest('li');
         selectedLi.addClass('side-nav__list--selected');
