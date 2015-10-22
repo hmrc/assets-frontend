@@ -56,11 +56,10 @@
   /* override styles in _side-navigation.scss */
   .side-nav {
     margin-top: 0;
-    @include media(mobile){
+    @include media(mobile) {
       display: initial;
     }
   }
-
   .side-nav__link {
     @include core-19;
     padding: 18px 15px;
