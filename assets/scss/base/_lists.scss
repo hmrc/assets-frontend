@@ -157,6 +157,9 @@ ul {
       margin: 0.7em 0;
       @include core-16;
     }
+    &.two-col-list--padded {
+      margin-bottom: 30px;
+    }
   }
 
   @include media(tablet) {
