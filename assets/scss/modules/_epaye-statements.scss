@@ -315,3 +315,67 @@
   }  
 }
 
+.paye-statements {
+  .h1-heading {
+    margin-bottom: .8em;
+  }
+
+  .h2-heading {
+    margin-bottom: .25em;
+  }
+
+  .h4-heading {
+    margin-top: .5em;
+    margin-bottom: .25em;
+  }
+  
+  .annual-summaries {
+    margin-top: 0;
+  }
+  
+  .sidebar-links {
+    margin-bottom: 1.6em;
+    margin-right: .8em;
+
+    &:first-child {
+      margin-top: 3.6em;
+    }
+  }
+  
+  .sidebar-links__heading {
+    margin: .65em 0 .375em .15em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  .sidebar-links__item {
+    border-bottom: 1px solid $border-colour;
+    font-size: 19px;
+    line-height: 1.25;
+    padding: 0.3em 0;
+    margin: 0;
+    
+    &.selected {
+      background-color: $govuk-blue;
+
+      .sidebar-links__link {
+        color: $white;
+        &:hover, &:focus, &:active {
+          color: $white;
+        }
+      }
+    }
+  }
+  
+  .sidebar-links__link {
+    text-decoration: none;
+    padding-left: .25em;
+    
+    &:hover, &:focus, &:active {
+      text-decoration: underline;
+    }
+  }  
+}
+
