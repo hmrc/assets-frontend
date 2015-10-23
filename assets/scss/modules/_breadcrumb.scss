@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Bread crumbs
+   ========================================================================== */
+
+/* Usage:
+<nav class="breadcrumb-nav">
+  <ul>
+    <li class="breadcrumb-nav__item"><a href=""> ... </a></li>
+    <li class="breadcrumb-nav__item breadcrumb-nav__item--trail"></li>
+  </ul>
+</nav>
+*/
+
+.breadcrumb-nav {
+
+  .breadcrumb-nav__item {
+    @include copy-16();
+    display: inline-block;
+  }
+
+  .breadcrumb-nav__item--trail {
+    margin-left: $gutter/5;
+    margin-right: $gutter/5;
+
+      &:after {
+        content: "›";
+      }
+  }
+}
