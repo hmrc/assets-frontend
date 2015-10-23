@@ -98,7 +98,7 @@
   padding-top: 1em;
 }
 
-.agent-services--dashboard {
+.services-dashboard {
   @include media(mobile) {
     .logo,
     .service-info__agent-name {
@@ -158,7 +158,7 @@
   .sidebar-links--item {
     font-size: 19px;
     line-height: 1.31579;
-    margin-bottom: 5px;
+    margin: .4em 0;
 
     @include media(mobile) {
       font-size: 16px;
