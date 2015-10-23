@@ -3,8 +3,6 @@
    ========================================================================== */
 
 .side-nav {
-  margin-top: $gutter;
-
   @include media(mobile) {
     display: none;
   }
