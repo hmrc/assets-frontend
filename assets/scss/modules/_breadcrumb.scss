@@ -11,19 +11,18 @@
 </nav>
 */
 
-.breadcrumb-nav {
+.breadcrumb-nav {}
 
-  .breadcrumb-nav__item {
-    @include copy-16();
-    display: inline-block;
-  }
+.breadcrumb-nav__item {
+  @include copy-16();
+  display: inline-block;
+}
 
-  .breadcrumb-nav__item--trail {
-    margin-left: $gutter/5;
-    margin-right: $gutter/5;
+.breadcrumb-nav__item--trail {
+  margin-left: $gutter/5;
+  margin-right: $gutter/5;
 
-      &:after {
-        content: "›";
-      }
+  &:after {
+    content: "›";
   }
 }
