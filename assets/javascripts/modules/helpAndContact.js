@@ -104,7 +104,7 @@ module.exports = function() {
       // Allow Ajax help menu sub page switching
       if (supportsHistoryApi()) {
 
-        $('.side-nav__link').click(function(event) {
+        $('.sa-only-help .side-nav__link').click(function(event) {
           event.preventDefault();
           var subpage = getSubpage($(this).attr('href'));
           updateHelpContent(subpage);
