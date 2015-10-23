@@ -49,7 +49,7 @@ $site-width: 960px;
   }
 }
 
-// An extendable selector to define a row for grid columns to sit in
+// An extendable selector to define a row for grid columns to sit in using floats
 //
 // Usage:
 //
@@ -58,10 +58,61 @@ $site-width: 960px;
 // }
 
 %grid-row {
+  @extend %contain-floats;
+  margin: 0 (-$gutter-half);
+}
+
+// A mixin for a grid column
+// Creates a cross browser grid column with a standardised gutter between the
+// columns. Widths should be defined as fractions of the full desktop width
+// they want to fill. By default they break to become full width at tablet size
+// but that can be configured to be desktop using the `$full-width` argument.
+//
+// Usage:
+//
+//   .column-quarter {
+//     @include grid-column( 1/4 );
+//   }
+//   .column-half {
+//     @include grid-column( 1/2 );
+//   }
+//   .column-third {
+//     @include grid-column( 1/3 );
+//   }
+//   .column-two-thirds {
+//     @include grid-column( 2/3 );
+//   }
+//   .column-desktop-third {
+//     @include grid-column( 1/3, $full-width: desktop );
+//   }
+
+@mixin grid-column($width, $full-width: tablet, $float: left) {
+  @include media($full-width){
+    float: $float;
+    width: percentage($width);
+  }
+  @include ie-lte(7){
+    width: (($site-width + $gutter) * $width) - $gutter;
+  }
+
+  padding: 0 $gutter-half;
+  @include box-sizing(border-box);
+}
+
+
+// An extendable selector to define a row for grid columns to sit in using display:table
+//
+// Usage:
+//
+// .grid-row-table {
+//   @extend %grid-row-table;
+// }
+
+%grid-row-table {
   width: 100%;
   @include media(tablet){
-    margin-left: $gutter/2;
-    margin-right: $gutter/2;
+    margin-left: $gutter-half;
+    margin-right: $gutter-half;
     display: table;
   }
 }
@@ -90,12 +141,15 @@ $site-width: 960px;
 //     @include grid-column( 1/3, $full-width: desktop );
 //   }
 
-@mixin grid-column($width, $full-width: tablet) {
+@mixin grid-column-table($width, $full-width: tablet) {
   @include media($full-width){
     width: percentage($width);
   }
   @include ie-lte(7){
     width: (($site-width + $gutter) * $width) - $gutter;
   }
+  vertical-align: top;
+  display: table-cell;
+  width: 100%;
   @include box-sizing(border-box);
 }
