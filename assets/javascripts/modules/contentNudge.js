@@ -1,9 +1,18 @@
 require('jquery');
 
 module.exports = function(hash) {
-  if ($(hash).length === 1) {
-    if ($(hash).css('top') === 'auto' || '0') {
-      $(window).scrollTop($(hash).offset().top - $('#global-header').height());
+  var targetElement;
+  try {
+    targetElement = $(hash);
+  }
+  catch (ex) {
+    /* This can only happen if selector from 'hash' is not valid. */
+    return;
+  }
+
+  if (targetElement.length === 1) {
+    if (targetElement.css('top') === 'auto' || '0') {
+      $(window).scrollTop(targetElement.offset().top - $('#global-header').height());
     }
   }
 };
