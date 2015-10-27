@@ -155,6 +155,10 @@
       width: 100%;
       display: block;
       
+      &[aria-expanded=true] .summary::before {
+        content: "▼";
+      }
+      
       &.no-data {
         cursor: default;
         outline: none;
@@ -189,6 +193,11 @@
           padding: 0 2px;
           display: inline-block;
         }
+        
+      }
+
+      &> i.arrow {
+        @include accessibility;
       }
       
       .no-detail {
@@ -199,20 +208,12 @@
   }
 
   details[open] summary {
-    //&.no-data + div {
-    //  padding-top: 2px;
-    //}
     
     & > table {
       background-color: $grey-8;
     }
-
-    &[aria-expanded=true] .summary::before {
-      //transform: rotate(90deg);
-      content: "▼";
-    }
   }
-
+  
 
   .details {
     @include border-bottom-zero;
