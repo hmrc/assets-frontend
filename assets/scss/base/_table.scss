@@ -55,6 +55,10 @@ table {
   padding: 20px 12px 20px 12px;
 }
 
+.table-cell--indented {
+  padding-left: 33px;
+}
+
 //TODO refactor out when messages used by yta/sa designs are finalised
 .table__row--bold {
   td, th {

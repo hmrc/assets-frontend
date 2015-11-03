@@ -34,4 +34,9 @@ a[rel="external"].external-link-19-bold-no-hover {
 
 .link--no-underline {
   text-decoration: none;
+  &:hover, 
+  &:focus { 
+    text-decoration: underline;  
+  }
 }
+
