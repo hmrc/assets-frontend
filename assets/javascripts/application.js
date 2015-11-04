@@ -6,7 +6,7 @@ require('govuk-template');
 
 window._gaq = window._gaq || [];
 
-var setSSOLinks = require('./modules/SSO_links.js'),
+var sso = require('./modules/sso.js'),
     contentNudge = require('./modules/contentNudge.js'),
     tableRowClick = require('./modules/tableRowClick.js'),
     feedbackForms = require('./modules/feedbackForms.js'),
@@ -41,11 +41,6 @@ $(function() {
       $clickableRow;
 
   conditionallyDisableButton();
-
-  $(document).on('click', 'a', function(e) {
-    // TODO: fix error thrown when clicking a [data-sso] links
-    return setSSOLinks(e, window.ssoUrl, window.ssoMethod);
-  });
 
   // feedback forms require a hidden field denoting if javascript is enabled
   $searchFocus      = $('.js-search-focus');
@@ -128,6 +123,7 @@ $(function() {
     toggleContextualFields().setup();
   }
 
+  sso().init();
   toggleDynamicFormFields();
 
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
