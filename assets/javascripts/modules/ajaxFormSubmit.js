@@ -77,6 +77,7 @@ var ajaxFormSubmit = {
         config: {
           name: $form.attr('data-callback-name'),
           args: $form.attr('data-callback-args'),
+          $element: $form,
           callbacks: _config,
           helpers: _config.helpers || {}
         },
@@ -94,7 +95,12 @@ var ajaxFormSubmit = {
     $.ajax({
       url: path,
       type: 'POST',
-      data: data
+      data: data,
+      beforeSend: function() {
+        if (!!callback) {
+          callback('beforeSend');
+        }
+      }
     })
     .done(function(result) {
       if (!!callback) {
@@ -125,7 +131,8 @@ var ajaxFormSubmit = {
   getCallback: function(config, data) {
     var parts = config.name.split('.'),
         method = config.callbacks,
-        helpers = config.helpers;
+        helpers = config.helpers,
+        $element = config.$element;
 
     if (!!config.name) {
       if (!!config.args) {
@@ -134,7 +141,8 @@ var ajaxFormSubmit = {
 
       config.parameters.unshift(helpers);
       config.parameters.unshift(!!data ? data : null);
-
+      config.parameters.unshift($element);
+      
       jQuery.each(parts, function(index, value) {
         method = method[value];
       });
