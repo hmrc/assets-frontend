@@ -1,7 +1,7 @@
 require('jquery');
 
 module.exports = function(element, ssoUrl, ssoMethod) {
-  var $target,
+  var $element,
       payload,
       clientSso,
       serverSso,
@@ -9,34 +9,30 @@ module.exports = function(element, ssoUrl, ssoMethod) {
       keepDefaultLinkBehaviour,
       newWindow,
       winId;
-
+  var elementHref;
   var useGet = ssoMethod === 'GET';
   
   /**
    * Attach a one-time event handler for all global links
    */
   if (element) {
-    $target = $(element.target);
-    newWindow = !!$target.attr('target');
-    winId = $target.attr('id');
-
-
-    clientSso =
-      $(element.target).data('sso') === true ||
-      $(element.target).data('sso') === 'client';
-
-    serverSso = $(element.target).data('sso') === 'server';
+    $element = $(element);
+    newWindow = !!$element.attr('target');
+    winId = element.id;
+    elementHref = element.href;
+    clientSso = $element.data('sso') === true || $element.data('sso') === 'client';
+    serverSso = $element.data('sso') === 'server';
 
     if (clientSso || serverSso) {
       keepDefaultLinkBehaviour = false;
       destination = serverSso ? {
         ssoRedirect: true
       } : {
-        destinationUrl: $target[0].href
+        destinationUrl: elementHref
       };
 
       $.ajax({
-        url: serverSso ? $target[0].href : '/ssoout',
+        url: serverSso ? elementHref : '/ssoout',
         data: destination, 
         type: 'GET',
         async: false,
