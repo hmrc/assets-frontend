@@ -1,20 +1,34 @@
 require('jquery');
 
+//TODO-benC: this file is doing to much, GET/POST/Links/Redirect - needs to be split out.
+
+/**
+ * SSO encryption process file
+ * Use Cases:
+ * Customer clicks a link
+ * Customer is sent to a page which contains a redirect element
+ *
+ * SSO GET call is successful then let the SSO redirect manage that.
+ * SSO GET call is a failure cancel
+ * - 401 (Unauthorised) - reload the page (this is currently used for links only)
+ * - Anything else, render the returned html error page and place in the page (BadRequest from Encryption process)
+ *
+ * @param element
+ * @param ssoUrl
+ * @param ssoMethod
+ * @returns {boolean}
+ */
 module.exports = function(element, ssoUrl, ssoMethod) {
   var $element,
       payload,
       clientSso,
       serverSso,
       destination,
-      keepDefaultLinkBehaviour,
       newWindow,
       winId;
   var elementHref;
   var useGet = ssoMethod === 'GET';
-  
-  /**
-   * Attach a one-time event handler for all global links
-   */
+
   if (element) {
     $element = $(element);
     newWindow = !!$element.attr('target');
@@ -24,7 +38,6 @@ module.exports = function(element, ssoUrl, ssoMethod) {
     serverSso = $element.data('sso') === 'server';
 
     if (clientSso || serverSso) {
-      keepDefaultLinkBehaviour = false;
       destination = serverSso ? {
         ssoRedirect: true
       } : {
@@ -40,7 +53,7 @@ module.exports = function(element, ssoUrl, ssoMethod) {
         success: function(data, status, jqXHR) {
           var win = window,
               getUrl = ssoUrl + '?payload=' + encodeURIComponent(data);
-          
+
           if (useGet) {
             if (newWindow) {
               win.open(getUrl, !!winId ? winId : '_blank');
@@ -74,17 +87,20 @@ module.exports = function(element, ssoUrl, ssoMethod) {
         },
 
         error: function(jqXHR, textStatus, errorThrown) {
-          if (jqXHR.status === 401) {
-            keepDefaultLinkBehaviour = false;
+          var statusCode = jqXHR.status;
+          var responseText = jqXHR.responseText;
+
+          if (statusCode === 401) {
+            // Unauthorised from a page link click
             window.location.reload();
           } else {
-            keepDefaultLinkBehaviour = true;
+            if (responseText) {
+              // place returned failure html into page
+              $('html').html(responseText);
+            }
           }
         }
       });
-
-      // cancel link click event if SSO call is successful and let the SSO redirect manage that
-      return keepDefaultLinkBehaviour;
     }
   }
 };

@@ -10,22 +10,18 @@ module.exports = function () {
   var setSSOLinks = require('./SSO_links.js');
 
   var ssoPageRedirect = function () {
-    var performLinkDefaultBehaviour;
     var redirectSSoPage = $('.js-sso-page-redirect').get(0);
 
     if (redirectSSoPage) {
-      performLinkDefaultBehaviour = setSSOLinks(redirectSSoPage, window.ssoUrl, window.ssoMethod);
-
-      if (performLinkDefaultBehaviour) {
-        window.location.replace(redirectSSoPage.href);
-      }
+      setSSOLinks(redirectSSoPage, window.ssoUrl, window.ssoMethod);
     }
   };
 
   var addListeners = function () {
     // TODO-rory: fix error thrown when clicking a [data-sso] links
-    $(document).on('click', 'a[data-sso]', function (event) {
-      return setSSOLinks(event.target, window.ssoUrl, window.ssoMethod);
+    $(document).on('click', 'a[data-sso="(true|client|server)"]', function (event) {
+      event.preventDefault();
+      setSSOLinks(event.target, window.ssoUrl, window.ssoMethod);
     });
   };
 
