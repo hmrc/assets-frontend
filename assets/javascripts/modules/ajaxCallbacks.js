@@ -6,11 +6,15 @@ require('jquery');
 var ajaxCallbacks = {
   clientAccessResponse: {
     callbacks: {
-      success: function(response, data, helpers, container, type) {
+      beforeSend: function($element) {
+        $element.prop('disabled', true);
+      },
+
+      success: function(response, $element, data, helpers, container, type) {
         helpers.insertResponseHtml(helpers, type, data, $(container), response);
       },
 
-      error: function(response, data, helpers, container) {
+      error: function(response, $element, data, helpers, container) {
 
         // if session has timed out
         if (response.status === 401 &&
@@ -26,7 +30,7 @@ var ajaxCallbacks = {
 
       },
 
-      always: function(response, data, helpers, container, type) {
+      always: function(response, $element, data, helpers, container, type) {
         if (helpers.hasErrorType !== 'service') {
           helpers.resetForms(helpers, type, data, container);
         }
