@@ -41,8 +41,10 @@ module.exports = function(element, ssoUrl, ssoMethod) {
 
       elementHref = element.href;
       elementTarget = element.target;
-      openInNewWindow = elementTarget && elementTarget === '_blank';
       winId = element.id;
+
+      //accept custom target attribute values
+      openInNewWindow = !!elementTarget && ['_self', '_top', '_parent'].indexOf(elementTarget) === -1;
 
       destination = serverSso ? {
         ssoRedirect: true
