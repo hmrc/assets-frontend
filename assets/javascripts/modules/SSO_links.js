@@ -1,6 +1,7 @@
 require('jquery');
 
 //TODO-benC: this file is doing to much, GET/POST/Links/Redirect - needs to be split out.
+//TODO-benC: after refactor unit test this work
 
 /**
  * SSO encryption process file
@@ -19,25 +20,32 @@ require('jquery');
  * @returns {boolean}
  */
 module.exports = function(element, ssoUrl, ssoMethod) {
-  var $element,
-      payload,
-      clientSso,
-      serverSso,
-      destination,
-      newWindow,
-      winId;
+  var $element;
+  var payload;
+  var clientSso;
+  var serverSso;
+  var destination;
+  var winId;
+  var openInNewWindow;
+  var allowLinkCLickEvent = true;
   var elementHref;
+  var elementTarget;
   var useGet = ssoMethod === 'GET';
 
   if (element) {
     $element = $(element);
-    newWindow = !!$element.attr('target');
-    winId = element.id;
-    elementHref = element.href;
     clientSso = $element.data('sso') === true || $element.data('sso') === 'client';
     serverSso = $element.data('sso') === 'server';
 
     if (clientSso || serverSso) {
+
+      elementHref = element.href;
+      elementTarget = element.target;
+      winId = element.id;
+
+      //accept custom target attribute values
+      openInNewWindow = !!elementTarget && ['_self', '_top', '_parent'].indexOf(elementTarget) === -1;
+
       destination = serverSso ? {
         ssoRedirect: true
       } : {
@@ -54,9 +62,11 @@ module.exports = function(element, ssoUrl, ssoMethod) {
           var win = window,
               getUrl = ssoUrl + '?payload=' + encodeURIComponent(data);
 
+          allowLinkCLickEvent = false;
+
           if (useGet) {
-            if (newWindow) {
-              win.open(getUrl, !!winId ? winId : '_blank');
+            if (openInNewWindow) {
+              win.open(getUrl, !!winId ? winId : elementTarget);
               win.focus();
             } else {
               win.location = getUrl;
@@ -66,8 +76,8 @@ module.exports = function(element, ssoUrl, ssoMethod) {
             form.method = 'POST';
             form.action = ssoUrl;
 
-            if (newWindow) {
-              form.target = !!winId ? winId : '_blank';
+            if (openInNewWindow) {
+              form.target = !!winId ? winId : elementTarget;
             }
 
             payload = document.createElement('input');
@@ -80,7 +90,7 @@ module.exports = function(element, ssoUrl, ssoMethod) {
             // POST form
             form.submit();
 
-            if (newWindow) {
+            if (openInNewWindow) {
               win.focus();
             }
           }
@@ -89,18 +99,28 @@ module.exports = function(element, ssoUrl, ssoMethod) {
         error: function(jqXHR, textStatus, errorThrown) {
           var statusCode = jqXHR.status;
           var responseText = jqXHR.responseText;
+          var htmlFragment;
+
+          allowLinkCLickEvent = false;
 
           if (statusCode === 401) {
             // Unauthorised from a page link click
             window.location.reload();
           } else {
             if (responseText) {
+              htmlFragment = document.createElement('html');
+              htmlFragment.lang = 'en';
+              htmlFragment.innerHTML = responseText;
+
               // place returned failure html into page
-              $('html').html(responseText);
+              document.replaceChild(htmlFragment, document.documentElement);
             }
           }
         }
       });
     }
+
+    // control link event
+    return allowLinkCLickEvent;
   }
 };
