@@ -1,6 +1,7 @@
 require('jquery');
 
 //TODO-benC: this file is doing to much, GET/POST/Links/Redirect - needs to be split out.
+//TODO-benC: after refactor unit test this work
 
 /**
  * SSO encryption process file
