@@ -20,25 +20,30 @@ require('jquery');
  * @returns {boolean}
  */
 module.exports = function(element, ssoUrl, ssoMethod) {
-  var $element,
-      payload,
-      clientSso,
-      serverSso,
-      destination,
-      newWindow,
-      winId;
+  var $element;
+  var payload;
+  var clientSso;
+  var serverSso;
+  var destination;
+  var winId;
+  var openInNewWindow;
+  var allowLinkCLickEvent = true;
   var elementHref;
+  var elementTarget;
   var useGet = ssoMethod === 'GET';
 
   if (element) {
     $element = $(element);
-    newWindow = !!$element.attr('target');
-    winId = element.id;
-    elementHref = element.href;
     clientSso = $element.data('sso') === true || $element.data('sso') === 'client';
     serverSso = $element.data('sso') === 'server';
 
     if (clientSso || serverSso) {
+
+      elementHref = element.href;
+      elementTarget = element.target;
+      openInNewWindow = elementTarget && elementTarget === '_blank';
+      winId = element.id;
+
       destination = serverSso ? {
         ssoRedirect: true
       } : {
@@ -55,9 +60,11 @@ module.exports = function(element, ssoUrl, ssoMethod) {
           var win = window,
               getUrl = ssoUrl + '?payload=' + encodeURIComponent(data);
 
+          allowLinkCLickEvent = false;
+
           if (useGet) {
-            if (newWindow) {
-              win.open(getUrl, !!winId ? winId : '_blank');
+            if (openInNewWindow) {
+              win.open(getUrl, !!winId ? winId : elementTarget);
               win.focus();
             } else {
               win.location = getUrl;
@@ -67,8 +74,8 @@ module.exports = function(element, ssoUrl, ssoMethod) {
             form.method = 'POST';
             form.action = ssoUrl;
 
-            if (newWindow) {
-              form.target = !!winId ? winId : '_blank';
+            if (openInNewWindow) {
+              form.target = !!winId ? winId : elementTarget;
             }
 
             payload = document.createElement('input');
@@ -81,7 +88,7 @@ module.exports = function(element, ssoUrl, ssoMethod) {
             // POST form
             form.submit();
 
-            if (newWindow) {
+            if (openInNewWindow) {
               win.focus();
             }
           }
