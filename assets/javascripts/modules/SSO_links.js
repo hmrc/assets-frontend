@@ -97,18 +97,28 @@ module.exports = function(element, ssoUrl, ssoMethod) {
         error: function(jqXHR, textStatus, errorThrown) {
           var statusCode = jqXHR.status;
           var responseText = jqXHR.responseText;
+          var htmlFragment;
+
+          allowLinkCLickEvent = false;
 
           if (statusCode === 401) {
             // Unauthorised from a page link click
             window.location.reload();
           } else {
             if (responseText) {
+              htmlFragment = document.createElement('html');
+              htmlFragment.lang = 'en';
+              htmlFragment.innerHTML = responseText;
+
               // place returned failure html into page
-              $('html').html(responseText);
+              document.replaceChild(htmlFragment, document.documentElement);
             }
           }
         }
       });
     }
+
+    // control link event
+    return allowLinkCLickEvent;
   }
 };
