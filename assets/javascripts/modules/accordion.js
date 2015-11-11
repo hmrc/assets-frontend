@@ -17,6 +17,10 @@ module.exports = function() {
       if($body.height() === 0) {
         newHeight = $body.get(0).scrollHeight;
         $this.addClass(expanded);
+        $arrow.addClass('arrow--expand');
+      }
+      else {
+        $arrow.removeClass('arrow--expand'); 
       }
 
       $body.animate({
@@ -29,7 +33,7 @@ module.exports = function() {
           $this.removeClass(expanded);
         }
 
-        $arrow.toggleClass('arrow--right arrow--down');
+        //$arrow.toggleClass('arrow--right arrow--down');
       });
 
     });
