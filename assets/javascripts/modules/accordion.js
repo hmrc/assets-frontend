@@ -3,34 +3,41 @@ module.exports = function() {
 
   $('[data-accordion]').each(function() {
 
-    var $this  = $(this),
-        $button = $this.find('[data-accordion-button]'),
-        $body  = $this.find('[data-accordion-body]'),
-        $arrow = $this.find('[data-accordion-arrow]');
+    var $this    = $(this),
+        $button  = $this.find('[data-accordion-button]'),
+        $body    = $this.find('[data-accordion-body]'),
+        $arrow   = $this.find('[data-accordion-arrow]'),
+        expanded = 'accordion--expanded';
 
     $button.click(function(e) {
-      e.preventDefault();      
-
       var newHeight = 0;
 
-      if($body.hasClass('accordion--expanded')) {
-        console.log("should be contracting");
-        newHeight = 0;
-      }
-      else {
-        console.log("should be expanding");
+      e.preventDefault();      
+
+      if($body.height() === 0) {
         newHeight = $body.get(0).scrollHeight;
+        $this.addClass(expanded);
       }
 
       $body.animate({
         height: newHeight        
       }, 200, function() {
-        $body.toggleClass('accordion--expanded');
+
+        if(newHeight > 0) {
+          $this.addClass(expanded);
+        } else {
+          $this.removeClass(expanded);
+        }
+
         $arrow.toggleClass('arrow--right arrow--down');
       });
 
     });
 
   });
+
+  function buttonClick(e) {
+
+  }
 
 }
