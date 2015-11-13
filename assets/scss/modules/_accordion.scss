@@ -4,11 +4,13 @@
   overflow: auto;
   border-top: 1px solid #bfc1c3;
   border-bottom: 1px solid #bfc1c3;
+
   &.accordion--expanded {
     .accordion__body {
       border-top: 1px solid #bfc1c3;
     }
   }
+  
 }
 
 .accordion--stacked {
@@ -63,12 +65,6 @@
   float: left;
   background-color: white;
 }
-
-
-
-
-
-
 
 
 
