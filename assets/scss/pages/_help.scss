@@ -25,7 +25,7 @@
   .help-item--selected .help-menu {
     display: none;
     @include media(tablet) {
-      display: initial;
+      display: block;
       width: 30%;
       border-right: 1px solid #bfc1c3;
       padding-bottom: 300px;
@@ -37,13 +37,13 @@
     display: none;
     @include media(tablet) {
       width: 66%;
-      display: initial;
+      display: block;
       float: right;
     }
   }
   .help-item--selected .help-content {
     width: 100%;
-    display: initial;
+    display: block;
     @include media(tablet) {
       width: 66%;
     }
@@ -57,7 +57,7 @@
   .side-nav {
     margin-top: 0;
     @include media(mobile) {
-      display: initial;
+      display: block;
     }
   }
   .side-nav__link {
