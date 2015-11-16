@@ -2,6 +2,11 @@
   border-bottom-width: 0;
 }
 
+@mixin summary-arrow-styles {
+  color: $details-link;
+  padding: 0 2px;
+}
+
 .delegation-banner {
   background-color:$info-bg-color; 
   border-left: 3px solid $govuk-blue;
@@ -15,16 +20,17 @@
     margin: 0 0 1em 10px;
   }
 
-  a.client-list {
+  .client-list {
     margin-left: 19px;
   }
 }
-.paye-header {
-  h1 {
-    padding: 10px 0 5px 0;
-    margin-bottom: 10px;      
-  }
+
+.paye-header > .h1-heading {
+  padding: 10px 0 5px 0;
+  margin-bottom: 10px;      
 }
+
+
 .statements-balance {
   .balance-message {
     margin: 0;
@@ -48,57 +54,79 @@
   float:right;
   text-align: right;
   width: 50%;
-  
-  span, a {
-    &:first-child {
-      margin-right: 0.5em
-    }
-  } 
 }
 
-.statements-totals {
+.statements-year--text, .statements-year__link {
+  &:first-child {
+    margin-right: 0.5em
+  }
+}
+
+// **** STATEMENT TOTALS - annual-statement page
+.statements__table--totals {
   border: 2px solid #bfc1c3;
   border-left-width: 0;
   border-right-width: 0;
+}
 
-  .totals {
+.statements__table__cell--totals {
+  font-weight: bold;
+  width: 24.4%;
+  padding-right: 0;
+  text-align: right;
+  
+  &.totals {
     padding-right: 0;
     text-align: left;
   }
 
-  td {
-    font-weight: bold;
-    width: 24.4%;
-    padding-right: 0;
-    text-align: right;
-  }
-  
-  .amount-paid {
+  &.amount-paid {
     width: 26.2%;
   }
-  
-  .balance {
+
+  &.balance {
     padding-right: 24px;
   }
 }
 
-.wrapper .annual-summaries {
+// **** STATEMENTS - annual-statement page
+.wrapper .annual-summaries--group {
   @include border-bottom-zero;
   margin-bottom: 10px;
   
-  tr:last-child > td {
+  .statements__table__row:last-child > .statements__table__cell {
     @include border-bottom-zero;
   }   
 }
 
-.annual-summaries {
+// **** STATEMENTS - account-overview AND annual-statement pages
+.annual-summaries--group {
   border-bottom-width: 1px;
   
-  .alert-text {
+  .statement__summary--parent {
+    // "summary-arrow-styles" mixin at top of file
+    @include multi-line-summary-block(22%);
+    
+    .summary__table {
+      @include border-bottom-zero;
+      margin: 0;
+    }
+  }
+
+  .statement__summary {
+    @include multi-line-summary-block();
+    padding: 0;
+  }
+
+  .statement__summary--parent[aria-expanded=true]{
+    background-color: $grey-8;
+  }
+    
+  .alert--text {
     color: $alert-bg-red;
   }
   
-  .flagicon {
+  .icon--flag {
     background-image: url("../images/statements-flag3.png");
     background-repeat: no-repeat;
     background-position: 3px 4px;
@@ -109,11 +137,11 @@
     }
   }
 
-  td, th {
+  .statements__table__cell, .statements__table__head__cell {
     padding-right: 0;
   }
   
-  & > thead th {
+  .annual-summaries__header--cell {
     vertical-align: bottom;
 
     &:first-child {
@@ -125,8 +153,8 @@
     }
   }
 
-  & > thead th,
-  details summary > table td {
+  .annual-summaries__header--cell,
+  .summary__cell {
     text-align: right;
     width: 24.4%;
 
@@ -134,187 +162,153 @@
       width: 26.2%;
     }
   }
-
-  & > thead th:first-child,
-  details summary > table td:first-child {
-    text-align: left;
-  }
   
-  & tbody > tr > td[role="group"] {
+  .annual-summaries__cell--group {
     padding: 0;
   }
   
-  details  {
-    & > div {
-      padding-top: 10px;
-      background-color: $shaded-bg-grey;
-    }
-    
-    summary {
-      margin: 0;
-      width: 100%;
-      display: block;
-      
-      &.no-data {
-        cursor: default;
-        outline: none;
-      }
-      
-      &::-webkit-details-marker {
-        display: none;
-        list-style-type: none;
-      }
+  .details__container {
+    padding-top: 10px;
+    background-color: $shaded-bg-grey;
+  }
   
-      & > table {
-        @include border-bottom-zero;
-        margin: 0;
-        
-        td {
-          @include border-bottom-zero;
-          padding: 12px 3px 10px;
-        }
-        
-        td:last-child {
-          padding-right: 24px;
-        }
-      }
-      
-      .summary {
-        color: $grey-0;
-        margin-bottom:0.26316em;
-        white-space: nowrap;
-        
-        &::before {
-          content: "►";
-          padding: 0 2px;
-          display: inline-block;
-        }
-      }
-      
-      .no-detail {
-        padding-left: 18px;
-        white-space: nowrap;
-      }
-    }
+  .statement__summary {
+    margin: 0;
+    width: 100%;
+    display: block;
   }
 
-  details[open] summary {
-    //&.no-data + div {
-    //  padding-top: 2px;
-    //}
-    
-    & > table {
-      background-color: $grey-8;
-    }
-
-    &[aria-expanded=true] .summary::before {
-      //transform: rotate(90deg);
-      content: "▼";
-    }
-  }
-
-
-  .details {
+  .summary__table {
     @include border-bottom-zero;
     margin: 0;
-
-    thead {
-      border-bottom-color: $light-grey;
-    }
-
-    &> tbody > tr > td {
-      @include border-bottom-zero;
-    }
-
-    th,
-    td {
-      color: $grey-0;
-      &:nth-child(even) {
-        text-align: right;
-        padding-right: 0;
-      }
-    }
   }
 
-  td > .second-row {
+  .summary__cell {
+    @include border-bottom-zero;
+    padding: 12px 3px 10px;
+  }
+
+  .summary__cell:last-child {
+    padding-right: 24px;
+  }
+
+  .summary__cell--content {
+    color: $grey-0;
+    margin-bottom:0.26316em;
+    white-space: nowrap;
+  }
+
+  .summary__cell--no-content {
+    padding-left: 18px;
+    white-space: nowrap;
+  }
+  
+  .details__table {
+    @include border-bottom-zero;
+    margin: 0;
+  }
+
+  .details__table__head--item,
+  .summary__table__head {
+    border-bottom-color: $light-grey;
+  }
+
+  .details__table__head__cell--item,
+  .details__table__cell--item,
+  .summary__table__head__cell,
+  .summary__table__cell,
+  .details__table__cell--total {
+    color: $grey-0;
+    &:nth-child(even) {
+      text-align: right;
+      padding-right: 0;
+    }
+  }
+  
+  .details__table__cell--content {
+    @include border-bottom-zero;
+  }
+  
+  .cell__label--content {
     color: $grey-1;
     display: block;
     @include core-14;
     padding-left: 19px;
   }
 
-  .multiline {
+  .annual-summaries__row,
+  .summary__table__row {
     vertical-align: top;
   }
+
+  .statements__table__head__cell--black {
+    color: $black;
+  } 
   
-  .details-content {
+  .details__summary--black {
+    color:$black;
+    text-decoration: underline;
+  }
+  
+  .details__table--content-container {
     @include border-bottom-zero;
+  }
 
-    ul {
-      list-style-type: disc;
-      margin: 0.75em;
-      max-width: 30em;
-      
-      li {
-        @include core-16();
-        margin-bottom: 5px;
-      }
-    }
+  .details__table__cell--content-container {
+    @include border-bottom-zero;
+    padding: 0 24px;
 
-    & > tbody > tr > td {
-      @include border-bottom-zero;
-      padding: 0 24px;
-      
-      .details-total {
-        border-top: 1px solid $light-grey;
-        border-bottom: 2px solid $light-grey;
-        
-        td {
-          padding: 12px 0 10px;
-        }
+    .statements__table {
+      margin: 0;
+      border-bottom-width: 1px;
+
+      .statements__table__cell, .statements__table__head__cell {
+        vertical-align: top;
       }
 
-      table {
-        margin: 0;
+      & > .statements__table__body .statements__table__row:last-child .statements__table__cell {
         border-bottom-width: 1px;
-        
-        td, th {
-          vertical-align: top;
-        }
-
-        & > tbody tr:last-child td {
-          border-bottom-width: 1px;
-        }
       }
     }
 
-    details[role="group"] {
-
-      & > summary table {
-        background-color: transparent;
-        @include border-bottom-zero;
-        margin: 0;
-
-        thead {
-          @include border-bottom-zero;
-        }
-      }
-
-      & > .panel-indent {
-
-        & > table {
-          @include border-bottom-zero;
-          width: 100%;
-
-          &.details-payments {
-            width: 59%;
-          }
-        }
-      }
+    .details__table--total {
+      border-top: 1px solid $light-grey;
+      border-bottom: 2px solid $light-grey;
     }
+  }
+  
+  .details__table__cell--total {
+    padding: 12px 0 10px;
   }  
+
+  .details__list--notices {
+    list-style-type: disc;
+    margin: 0.75em;
+    max-width: 30em;
+  }
+
+  .details__list--notices-item {
+    @include core-16();
+    margin-bottom: 5px;
+  }
 }
 
+.summary__table {
+  .statements__table__head {
+    @include border-bottom-zero;
+  }
+}
+
+.statement__details--group > .panel-indent > .statements__table {
+  @include border-bottom-zero;
+  width: 100%;
+}
+
+.summary__table--payments {
+  width: 59%;
+}
+
+// **** SIDEBAR LINKS
 .paye-statements {
   .h1-heading {
     margin-bottom: .8em;
@@ -329,7 +323,7 @@
     margin-bottom: .25em;
   }
   
-  .annual-summaries {
+  .annual-summaries--group {
     margin-top: 0;
   }
   
