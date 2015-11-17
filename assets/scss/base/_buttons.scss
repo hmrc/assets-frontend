@@ -77,4 +77,19 @@ button, .button {
 
 }
 
+/* Transforms button into a link */
+/* //TODO potentially remove these over rides if the styles on the global button element selector is removed */
+.pseudo-link {
+  padding: 0;
+  background: none;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  color: $link-hover-colour;
+  text-decoration: underline;
 
+  &:hover, &:focus {
+    color: $link-hover-colour;
+    background-color: transparent;
+  }
+}
