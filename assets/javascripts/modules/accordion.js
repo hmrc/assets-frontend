@@ -4,12 +4,18 @@ module.exports = function() {
   // for each accordion in the page
   $('[data-accordion]').each(function() {
 
-    var $accordion = $(this),
-        $button    = $accordion.find('[data-accordion-button]');
+    var $accordion    = $(this),
+        $button       = $accordion.find('[data-accordion-button]'),
+        $body         = $accordion.find('[data-accordion-body]'),
+        $arrow        = $accordion.find('[data-accordion-arrow]'),
+        expandedClass = 'accordion--expanded';
+    
+    // hide any elements flagged to be revealed only on expand
+    $accordion.find('[data-accordion-reveal]').addClass('hidden');
 
     // expand any accordions that have been flagged
     if($accordion.is('[data-accordion-expanded]')) {
-      expand($accordion, false);
+      expand($accordion, $body, $arrow, expandedClass, false);
     }
 
     // bind accordion click
@@ -29,17 +35,18 @@ module.exports = function() {
 
     var $body         = $accordion.find('[data-accordion-body]'),
         $arrow        = $accordion.find('[data-accordion-arrow]'),
-        expandedClass = 'accordion--expanded';
+        expandedClass = 'accordion--expanded',
+        animate       = $accordion.is('[data-accordion-animate]');
     
     e.preventDefault();
 
     // if accordion is collapsed
-    if($body.height() === 0) {
-      expand($accordion, $body, $arrow, expandedClass, true);
+    if($body.hasClass('hidden')) {
+      expand($accordion, $body, $arrow, expandedClass, animate);
     }
     // if accordon is expanded
     else {
-      collapse($accordion, $body, $arrow, expandedClass);
+      collapse($accordion, $body, $arrow, expandedClass, animate);
     }
 
   }
@@ -54,9 +61,9 @@ module.exports = function() {
    * @param  {Boolean} animate      To animate or not, that is the question
    */
   function expand($accordion, $body, $arrow, expandedClass, animate) {
-
+    
     // height of accordion body once expanded
-    var newHeight = $body.get(0).scrollHeight;
+    var newHeight = getHeight($body);
 
     // set class to handle subtle style differences (borders)
     $accordion.addClass(expandedClass);
@@ -72,7 +79,10 @@ module.exports = function() {
       .find('.accordion__row__right')
       .children()
       .first()
-      .toggleClass('flush flush--top');
+      .addClass('flush--top')
+      .removeClass('flush');
+
+    $body.height(0).removeClass('hidden');
 
     if(animate) {
 
@@ -85,7 +95,8 @@ module.exports = function() {
 
     }
     else {
-      $body.height(newHeight);      
+      $accordion.addClass(expandedClass);
+      $body.height(newHeight);
     }
 
   }
@@ -97,13 +108,12 @@ module.exports = function() {
    * @param  {Object} $body         jQuery object of accordion body (expanded section)
    * @param  {Object} $arrow        jQuery object of accordion arrow 
    * @param  {String} expandedClass Class to handle visual differences in expand/collapse states
+   * @param  {Boolean} animate      To animate or not, that is the question
    */
-  function collapse($accordion, $body, $arrow, expandedClass) {
+  function collapse($accordion, $body, $arrow, expandedClass, animate) {
 
-    var $body     = $accordion.find('[data-accordion-body]'),
-        $arrow    = $accordion.find('[data-accordion-arrow]'),
-        expanded  = 'accordion--expanded',
-        newHeight = 0;
+    var expandedHeight = $body.height(),
+        newHeight      = 0;
 
     $arrow.removeClass('arrow--expand'); 
 
@@ -113,14 +123,34 @@ module.exports = function() {
       .find('.accordion__row__right')
       .children()
       .first()
-      .toggleClass('flush flush--top');
+      .removeClass('flush--top')
+      .addClass('flush');
 
-    $body.animate({
-      height: newHeight        
-    }, 200, function() {
+    if(animate) {
+
+      $body.animate({
+        height: newHeight        
+      }, 200, function() {
+        $accordion.removeClass(expandedClass);
+        $body.addClass('hidden').height(expandedHeight);
+      });
+
+    }
+    else {
       $accordion.removeClass(expandedClass);
-    });
+      $body.height(newHeight);
+    }
 
   }
 
-}
+  function getHeight($element) {
+
+    var height = $element.removeClass('hidden').height();
+
+    $element.addClass('hidden');
+
+    return height;
+
+  }
+
+};

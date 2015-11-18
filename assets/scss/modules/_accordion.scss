@@ -37,7 +37,6 @@
 }
 
 .accordion__body {
-  height: 0;
   overflow: hidden;
   border-top: 1px solid #f8f8f8;
 }
@@ -66,7 +65,10 @@
   background-color: white;
 }
 
-
+.off-screen {
+  position: absolute;
+  left: -3000px;
+}
 
 
 
