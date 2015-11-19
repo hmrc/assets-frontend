@@ -1,3 +1,34 @@
+/**
+ * Accordion Module
+ * 
+ * Usage:
+ *
+ *  <div class="accordion" data-accordion>
+ *
+ *    <div class="accordion__row">     
+ *      <i class="arrow arrow--right" data-accordion-arrow></i>
+ *      <a href="#" data-accordion-button>Accordion Title</a>  
+ *      <div data-accordion-reveal>
+ *        <p>Optionally reveal content that is not part of the body on expand</p>
+ *      </div>
+ *    </div>
+ *
+ *    <div class="accordion__body hidden" data-accordion-body>                        
+ *      <p>Accordion Body</p>
+ *    </div>
+ *
+ *   </div>
+ *
+ * NOTES: 
+ * 
+ *  - All data attribute hooks are mandatory
+ *  - These classes are mandatory: accordion, accordion__body, hidden
+ *  - All other classes are optional
+ *  - The arrow is optional
+ *  - data-accordion-expanded can be placed on the container to expand by default
+ * 
+ */
+
 
 module.exports = function() {
 
@@ -82,6 +113,7 @@ module.exports = function() {
       .addClass('flush--top')
       .removeClass('flush');
 
+    // body must be height 0 and visible before expanding 
     $body.height(0).removeClass('hidden');
 
     if(animate) {
@@ -131,18 +163,34 @@ module.exports = function() {
       $body.animate({
         height: newHeight        
       }, 200, function() {
+
+        // adjust borders
         $accordion.removeClass(expandedClass);
+
+        // hide body and restore height to 0 for next expand
         $body.addClass('hidden').height(expandedHeight);
+
       });
 
     }
     else {
+
+      // adjust borders
       $accordion.removeClass(expandedClass);
+
+      // collapse accordion body
       $body.height(newHeight);
+
     }
 
   }
 
+  /**
+   * Helper to get actual height of element 
+   * 
+   * @param  {Object} $element jQuery object of element 
+   * @return {Number} height   height of element
+   */
   function getHeight($element) {
 
     var height = $element.removeClass('hidden').height();
