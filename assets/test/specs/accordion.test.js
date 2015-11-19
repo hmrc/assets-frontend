@@ -22,34 +22,57 @@ describe("Given I have an accordion module on the page", function() {
 
     });
 
-    it("Then the accordion is collapsed", function() {      
-      expect($('.accordion [data-accordion-body]').height()).toBe(0);
+    it("Then the accordion is collapsed", function() {          
+      expect($('#accordion1 [data-accordion-body]').height()).toBe(0);
     });
 
     it("Then any content flagged to be revealed is hidden", function() {      
-      expect($('.accordion [data-accordion-reveal]')).toHaveClass('hidden');
+      expect($('#accordion1 [data-accordion-reveal]')).toHaveClass('hidden');
     });
 
   });
 
-  describe("When I click on the accordion title", function() {
+  describe("When I click on Accordion #1 title", function() {
 
     beforeEach(function() {
 
       // init accordion module
       accordion();
 
-      $('.accordion [data-accordion-button]').click();
+      $('#accordion1 [data-accordion-button]').click();
 
     });
 
-    xit("Then the accordion is expanded", function() {   
-      //console.log("height = " + $('.accordion [data-accordion-body]').height());   
-      expect($('.accordion [data-accordion-body]').height() > 0).toBe(true);
+    it("Then the accordion is expanded", function() {      
+      expect($('#accordion1 [data-accordion-body]').height() > 0).toBe(true);
     });
 
-    xit("Then any content flagged to be revealed is shown", function() {      
-      expect($('.accordion [data-accordion-reveal]')).not.toHaveClass('hidden');
+    it("Then any content flagged to be revealed is shown", function() {      
+      expect($('#accordion1 [data-accordion-reveal]')).not.toHaveClass('hidden');
+    });
+
+  });
+
+  describe("When Accordion #2 loads", function() {
+
+    beforeEach(function() {
+
+      // init accordion module
+      accordion();
+
+    });
+
+    it("Then the accordion is expanded by default", function() {      
+      expect($('#accordion2 [data-accordion-body]').height() > 0).toBe(true);
+    });
+
+    it("Then any content flagged to be revealed is shown", function() {      
+      expect($('#accordion2 [data-accordion-reveal]')).not.toHaveClass('hidden');
+    });
+
+    it("Then clicking the accordion title collapses the accordion", function() {      
+      $('#accordion2 [data-accordion-button]').click();
+      expect($('#accordion2 [data-accordion-body]').height()).toBe(0);
     });
 
   });

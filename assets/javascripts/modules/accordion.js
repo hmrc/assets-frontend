@@ -70,7 +70,7 @@ module.exports = function() {
    * @param  {Boolean} animate      To animate or not, that is the question
    */
   function expand($accordion, $body, $arrow, expandedClass, animate) {
-
+    
     // height of accordion body once expanded
     var newHeight = getHeight($body);
 
