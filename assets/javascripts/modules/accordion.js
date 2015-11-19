@@ -1,9 +1,31 @@
 /**
  * Accordion Module
- *
+ * 
  * Usage:
  *
+ *  <div class="accordion" data-accordion>
  *
+ *    <div class="accordion__row">     
+ *      <i class="arrow arrow--right" data-accordion-arrow></i>
+ *      <a href="#" data-accordion-button>Accordion Title</a>  
+ *      <div data-accordion-reveal>
+ *        <p>Optionally reveal content that is not part of the body on expand</p>
+ *      </div>
+ *    </div>
+ *
+ *    <div class="accordion__body hidden" data-accordion-body>                        
+ *      <p>Accordion Body</p>
+ *    </div>
+ *
+ *   </div>
+ *
+ * NOTES: 
+ * 
+ *  - All data attribute hooks are mandatory
+ *  - These classes are mandatory: accordion, accordion__body, hidden
+ *  - All other classes are optional
+ *  - The arrow is optional
+ *  - data-accordion-expanded can be placed on the container to expand by default
  * 
  */
 
@@ -70,7 +92,7 @@ module.exports = function() {
    * @param  {Boolean} animate      To animate or not, that is the question
    */
   function expand($accordion, $body, $arrow, expandedClass, animate) {
-    
+
     // height of accordion body once expanded
     var newHeight = getHeight($body);
 
