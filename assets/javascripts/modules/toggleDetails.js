@@ -12,7 +12,7 @@
  *   the Javascript hides it on page load. Also add class js-visible to the toggle link element if you
  *   want non-js behaviour where the container is open with no toggle link shown.
  *
- *  <div data-toggle-details='my-target-container js-visible'>
+ *  <div data-toggle-details="my-target-container" class="js-visible">
  *      <a href="#">Toggle Link</a>
  *  </div>
  *
