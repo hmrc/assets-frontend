@@ -18,7 +18,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'specs/*.js',
-      'specs/fixtures/*.html'
+      'specs/fixtures/*.html',
+      '../public/999-SNAPSHOT/stylesheets/application.min.css'
     ],
     preprocessors: {
       'specs/*.js': ['browserify']

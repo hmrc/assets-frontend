@@ -1,6 +1,12 @@
 .arrow {
   color: #2e8aca;
   font-style: normal;
+  font-size: 20px;
+  width: 12px;
+  height: 23px;
+  margin: 0 2px 0 0;
+  display: inline-block;
+  transition-duration: 0.2s;  
 }
 
 .arrow--right {
@@ -27,5 +33,11 @@
   }
 }
 
-
-
+.arrow--expand {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition-duration: 0.2s;
+}
