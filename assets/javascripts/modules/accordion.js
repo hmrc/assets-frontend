@@ -1,3 +1,12 @@
+/**
+ * Accordion Module
+ *
+ * Usage:
+ *
+ *
+ * 
+ */
+
 
 module.exports = function() {
 
@@ -82,6 +91,7 @@ module.exports = function() {
       .addClass('flush--top')
       .removeClass('flush');
 
+    // body must be height 0 and visible before expanding 
     $body.height(0).removeClass('hidden');
 
     if(animate) {
@@ -131,18 +141,34 @@ module.exports = function() {
       $body.animate({
         height: newHeight        
       }, 200, function() {
+
+        // adjust borders
         $accordion.removeClass(expandedClass);
+
+        // hide body and restore height to 0 for next expand
         $body.addClass('hidden').height(expandedHeight);
+
       });
 
     }
     else {
+
+      // adjust borders
       $accordion.removeClass(expandedClass);
+
+      // collapse accordion body
       $body.height(newHeight);
+
     }
 
   }
 
+  /**
+   * Helper to get actual height of element 
+   * 
+   * @param  {Object} $element jQuery object of element 
+   * @return {Number} height   height of element
+   */
   function getHeight($element) {
 
     var height = $element.removeClass('hidden').height();
