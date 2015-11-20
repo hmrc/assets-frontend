@@ -40,7 +40,7 @@
   border-top: 1px solid #f8f8f8;
 }
 
-.accordion__sub-row {
+.accordion__body__row {
   border-bottom: 1px solid #bfc1c3;
   overflow: auto;
   margin: 0;
@@ -50,14 +50,14 @@
   }
 }
 
-.accordion__sub-row__left {
+.accordion__body__row__left {
   padding: 20px 12px 20px 30px;
   width: 33%;
   float: left;
   background-color: white;
 }
 
-.accordion__sub-row__right {
+.accordion__body__row__right {
   padding: 20px 0 20px 0;
   width: 60%;
   float: left;
