@@ -30,7 +30,8 @@ var sso = require('./modules/sso.js'),
     validatorFocus = require('./modules/validatorFocus.js'),
     enhancedTables = require('./modules/enhancedTables.js'),
     attorneyBanner = require('./modules/attorneyBanner.js');
-    videoIframe = require('./modules/videoIFrame.js');
+    videoIframe = require('./modules/videoIFrame.js'),    
+    accordion = require('./modules/accordion.js');    
 
 //initialise mdtpf
 fingerprint();
@@ -140,6 +141,7 @@ $(function() {
   validatorFocus();
   attorneyBanner();
   videoIframe();
-  ajaxFormSubmit.init(ajaxCallbacks);
+  ajaxFormSubmit.init(ajaxCallbacks);  
+  accordion();
 
 });
