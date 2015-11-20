@@ -30,7 +30,8 @@ module.exports = function() {
 
   window.GOVUK.aidCallback = function(json) {
     //only part of the fingerprint is included to keep the cookie small
-    var values = {},
+    var prop, 
+        values = {},
         valuesText = '',
         properties = [
           'browserAcceptHeaders',
@@ -54,14 +55,14 @@ module.exports = function() {
         ];
 
     for (i = 0; i < properties.length; i++) {
-      var prop = properties[i];
+      prop = properties[i];
       if (json.device.fingerprint[prop]) {
         values[prop] = json.device.fingerprint[prop];
       }
     }
 
     for (i = 0; i < webTraffic.length; i++) {
-      var prop = webTraffic[i];
+      prop = webTraffic[i];
       if (json.webTraffic[prop]) {
         values[prop] = json.webTraffic[prop];
       }
