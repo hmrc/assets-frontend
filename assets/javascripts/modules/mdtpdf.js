@@ -69,6 +69,7 @@
   Mdtpdf.prototype = {
     get: function(){
       var keys = {};
+      keys.version = 1;
       keys.userAgent = navigator.userAgent;
       keys.language = navigator.language;
       keys.colorDepth = screen.colorDepth;
