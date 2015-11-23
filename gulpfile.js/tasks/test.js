@@ -14,4 +14,4 @@ var fs        = require('fs'),
       });
     };
 
-gulp.task('test', ['jshint'],  karmaTask);
+gulp.task('test', ['sass', 'jshint'],  karmaTask);
