@@ -271,6 +271,14 @@ label.indent {
   margin-bottom: 0.75em;
 }
 
+/**
+ * Wrap action elements of form (submit button, cancel link)
+ * to provide space between these and last inputs of form
+ */
+.form-field--submit {
+  margin-top: 15px;
+}
+
 .row {
   margin-bottom: 20px;
 } 
