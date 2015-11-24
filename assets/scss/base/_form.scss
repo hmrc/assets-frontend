@@ -36,6 +36,7 @@ select {
   margin: 0 0.625em;
   @include inline-block;
   width: auto;
+  @include core-19();
 }
 
 textarea {
