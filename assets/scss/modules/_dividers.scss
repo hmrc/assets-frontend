@@ -43,3 +43,8 @@
 .divider--top {
   border-top: 1px solid $border-colour;
 }
+
+.divider--top--thick {
+  padding-top:20px;
+  border-top: 2px solid $border-colour;
+}
