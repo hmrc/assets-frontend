@@ -2,32 +2,19 @@ require('jquery');
 
 describe("Given I have a tabs module on the page", function() {
 
-  var tabs;
-
-  beforeEach(function() {
-
-    jasmine.getFixtures().fixturesPath = "base/specs/fixtures/";
-    loadFixtures('tabs-fixtures.html');
-
-    tabs = require('../../javascripts/modules/tabs.js');
-
-  });
+  jasmine.getFixtures().fixturesPath = "base/specs/fixtures/";
+  var tabs = require('../../javascripts/modules/tabs.js');
 
   describe("When I load the page", function() {
 
-    beforeEach(function() {  
-      tabs(); // init tabs module
+    beforeEach(function() {
+      loadFixtures('tabs-fixtures.html');
+      tabs().init(); // init tabs module
     });
 
-    it("Then the 1st tab content is hidden", function() {        
+    it("Then only the 2nd tab content is visible", function() {
       expect($('[data-tab-content="1"]')).toHaveClass('hidden');
-    });
-
-    it("Then the 2nd tab content is visible", function() {        
       expect($('[data-tab-content="2"]')).not.toHaveClass('hidden');
-    });
-
-    it("Then the 3rd tab content is hidden", function() {        
       expect($('[data-tab-content="3"]')).toHaveClass('hidden');
     });
 
@@ -35,23 +22,63 @@ describe("Given I have a tabs module on the page", function() {
 
   describe("When I click the first tab link", function() {
 
-    beforeEach(function() {  
-      tabs(); // init tabs module
+    beforeEach(function() {
+      loadFixtures('tabs-fixtures.html');
+      tabs().init(); // init tabs module
       $('[data-tab-link="1"]').click();
     });
 
-    it("Then the 1st tab content is visible", function() {        
+    it("Then only the 1st tab content is visible", function() {
       expect($('[data-tab-content="1"]')).not.toHaveClass('hidden');
-    });
-
-    it("Then the 2nd tab content is hidden", function() {        
       expect($('[data-tab-content="2"]')).toHaveClass('hidden');
-    });
-
-    it("Then the 3rd tab content is hidden", function() {        
       expect($('[data-tab-content="3"]')).toHaveClass('hidden');
     });
 
+  });
+
+  describe("With auto open tabs enabled", function() {
+
+    describe("When I open the page", function() {
+
+      describe("With no URL hash", function() {
+
+        beforeEach(function() {
+          loadFixtures('tabs-fixtures-auto-open.html');
+          tabs().init();
+        });
+
+        it("should have the first tab selected", function() {
+          expect($('.tabs-nav__tab--active').text()).toEqual("Tab One");
+        });
+
+        it("should have the first tab's content shown", function() {
+          expect($('[data-tab-content="one"]')).not.toHaveClass('hidden');
+          expect($('[data-tab-content="two"]')).toHaveClass('hidden');
+          expect($('[data-tab-content="three"]')).toHaveClass('hidden');
+        });
+      });
+
+      describe("With URL hash", function() {
+
+        beforeEach(function() {
+          loadFixtures('tabs-fixtures-auto-open.html');
+          window.history.replaceState(null, null, '#three');
+          tabs().init();
+        });
+
+        it("should have the tab matching the hash selected", function() {
+          expect($('.tabs-nav__tab--active').text()).toEqual("Tab Three");
+        });
+
+        it("should have the matching tab's content shown", function() {
+          expect($('[data-tab-content="one"]')).toHaveClass('hidden');
+          expect($('[data-tab-content="two"]')).toHaveClass('hidden');
+          expect($('[data-tab-content="three"]')).not.toHaveClass('hidden');
+
+        });
+      });
+
+    });
   });
 
 });
