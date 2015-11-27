@@ -104,6 +104,10 @@ body {
   }
 }
 
+.section--blue-top {
+  border-top: 10px solid $govuk-blue;
+}
+
 .full-width {
   width: $full-width;
 }
