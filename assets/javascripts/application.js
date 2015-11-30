@@ -29,10 +29,10 @@ var sso = require('./modules/sso.js'),
     fingerprint = require('./modules/fingerprint.js'),
     validatorFocus = require('./modules/validatorFocus.js'),
     enhancedTables = require('./modules/enhancedTables.js'),
-    attorneyBanner = require('./modules/attorneyBanner.js');
-    videoIframe = require('./modules/videoIFrame.js'),    
+    attorneyBanner = require('./modules/attorneyBanner.js'),
+    youtubePlayer = require('./modules/youtubePlayer.js'),
     accordion = require('./modules/accordion.js'),
-    tabs = require('./modules/tabs.js');    
+    tabs = require('./modules/tabs.js');
 
 //initialise mdtpf
 fingerprint();
@@ -141,7 +141,7 @@ $(function() {
   toggleDetails();
   validatorFocus();
   attorneyBanner();
-  videoIframe();
+  youtubePlayer().init();
   ajaxFormSubmit.init(ajaxCallbacks); 
   tabs(); 
   accordion();
