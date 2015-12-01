@@ -42,6 +42,10 @@
     width: 90%;
   }
 
+  &.fields-aligned {
+    margin-left: -22px;
+  }
+
   .error-notification {
     display: block;
     @include core-16;
