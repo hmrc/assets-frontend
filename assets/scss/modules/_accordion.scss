@@ -4,6 +4,15 @@
   border-top: 1px solid #bfc1c3;
   border-bottom: 1px solid #bfc1c3;
 
+  .tag {
+    margin: 0 7px 20px 0;
+
+    @include media(mobile) {
+      margin-bottom: 10px;
+    }
+
+  }
+
   &.accordion--expanded {
     .accordion__body {
       border-top: 1px solid #bfc1c3;
@@ -28,6 +37,19 @@
 .accordion__row__left {
   width:38%;
   display: table-cell;
+  padding: 0 10px 0 0;
+
+  .accordion__indicator {
+    float: left;
+    margin: -4px 5px 20px 0;
+  }
+
+  @include media(tablet) {
+    .accordion__indicator {
+      margin-top: -2px; 
+    }
+  }
+
 }
 
 .accordion__row__right {  
@@ -48,13 +70,20 @@
   &:last-child {
     border-bottom: none;
   }
+
 }
 
 .accordion__body__row__left {
   padding: 20px 12px 20px 30px;
-  width: 33%;
+  width: 32%;
   float: left;
   background-color: white;
+
+  @include media(mobile) {
+    width: auto;
+    float: none;
+  }
+
 }
 
 .accordion__body__row__right {
@@ -62,4 +91,11 @@
   width: 60%;
   float: left;
   background-color: white;
+
+  @include media(mobile) {
+    width: auto;
+    float: none;
+    padding: 0 12px 20px 25px;
+  }
+
 }

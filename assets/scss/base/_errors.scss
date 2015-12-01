@@ -15,28 +15,40 @@
     @include error-box;
     margin-bottom: 20px;
 }
+
 .error-overview__heading {
     font-size: 22px;
     margin: 0;
 }
+
 .error-overview__list-item {
     color: $error-color;
     font-size: 15px;
     margin-left: 20px;
+
     a {
         color: inherit;
     }
+
 }
 
 .form-field--error {
-  @include error-box( 3px );
+  @include error-box(3px);
+  @include box-sizing(border-box);
+  padding: 0.75em 1em 0.75em 1em;
+
   &.numbered {
     margin-left: 22px!important;
     width: 90%;
   }
+
   .error-notification {
     display: block;
     @include core-16;
   }
-  padding: 0.75em 1em 0.75em 1em;
+
+  .error-field {
+    border: 3px solid $error-border-color;
+  }
+  
 }
