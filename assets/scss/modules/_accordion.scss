@@ -39,13 +39,13 @@
   display: table-cell;
   padding: 0 10px 0 0;
 
-  .arrow {
+  .accoridon__indicator {
     float: left;
     margin: -4px 5px 20px 0;
   }
 
   @include media(tablet) {
-    .arrow {
+    .accoridon__indicator {
       margin-top: -2px; 
     }
   }
