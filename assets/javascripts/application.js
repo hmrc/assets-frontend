@@ -11,6 +11,7 @@ var sso = require('./modules/sso.js'),
     form = require('./validation/form.js'),
     toggle = require('./modules/toggle.js'),
     autoCompleteFactory = require('./modules/autoCompleteFactory.js'),
+    control = require('./modules/control.js'),
     contentNudge = require('./modules/contentNudge.js'),
     tableRowClick = require('./modules/tableRowClick.js'),
     feedbackForms = require('./modules/feedbackForms.js'),
@@ -134,6 +135,7 @@ $(function() {
   form().init();
   toggle().init();
   autoCompleteFactory().init(); //This needs to be below form as it add suggestion validation
+  control().init();
   toggleDynamicFormFields();
 
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
