@@ -323,26 +323,26 @@ label {
 }
 
 // Position checkbox within label, to allow text to wrap
-.block-label input {
-  position: absolute;
-  top: 21px;
+.block-label input,
+.vertically-aligned-input {
+  @include vertically-centered();
   left: $gutter-half;
   cursor: pointer;
+
+  @include ie-lte(9){
+    top: 38%;
+  }
 }
 
 // Use inline, to sit block labels next to each other
 .block-label--inline,
 .block-label--inline-right,
 .inline .block-label {
+  margin:0 10px 10px 0;
   clear: none;
-  margin-right: 0;
   @include media(tablet) {
     margin-right: $gutter-half;
   }
-}
-
-.block-label--inline {
-  margin:0 0 10px 0;
 }
 
 

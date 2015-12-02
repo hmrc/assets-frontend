@@ -9,6 +9,9 @@ $path: "../images/icons/";
 @import "../govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta";
 @import "../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons";
 
+// Tools
+@import "mixins";
+
 // Reset
 @import "base/normalize";
 
@@ -67,6 +70,7 @@ $path: "../images/icons/";
 @import "modules/breadcrumb";
 @import "modules/accordion";
 @import "modules/youtube-player";
+@import "modules/toggle";
 
 // Page Specific Styles
 @import "pages/messages";
