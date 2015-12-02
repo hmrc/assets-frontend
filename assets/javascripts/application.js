@@ -8,6 +8,7 @@ window._gaq = window._gaq || [];
 
 var sso = require('./modules/sso.js'),
     visibility = require('./modules/visibility.js'),
+    form = require('./validation/form.js'),
     contentNudge = require('./modules/contentNudge.js'),
     tableRowClick = require('./modules/tableRowClick.js'),
     feedbackForms = require('./modules/feedbackForms.js'),
@@ -128,6 +129,7 @@ $(function() {
 
   sso().init();
   visibility().init();
+  form().init();
   toggleDynamicFormFields();
 
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
