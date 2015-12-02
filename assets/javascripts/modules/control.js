@@ -15,6 +15,15 @@ Control html markup:
            data-control-target="countryCode"
            data-control-value="44"/>
 </label>
+
+Target markup example:
+
+<select class="flush--left" id="countryCode" name="countryCode">
+    <option value="0">@Messages("otpfe.enter_mobile.country.default")</option>
+    @for(countryCode <- countryCodes) {
+        <option value="@countryCode.code"@isSelected(countryCode.code)>@countryCode.country</option>
+    }
+</select>
  */
 var $controlElems;
 
