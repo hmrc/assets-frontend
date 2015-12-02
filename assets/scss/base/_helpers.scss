@@ -185,9 +185,13 @@
     @include accessibility;
 }
 
+// TODO .visible-javascript-on .hidden-javascript-on are duplicates of .js-visible and .js-hidden to aid with understanding
+// TODO and not use the .js-convention (for javascript hooks) needs tidying up and duplications removed
 .hidden,
 .no-js .js-visible,
-.js .js-hidden {
+.no-js .visible-javascript-on,
+.js .js-hidden,
+.js .hidden-javascript-on {
   display: none !important;
 }
 
