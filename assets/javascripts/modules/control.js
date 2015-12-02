@@ -28,7 +28,6 @@ var controlEvent = function ($controlElem) {
 
   $controlElem.on('click', function () {
     $controlTarget.val($controlValue);
-    console.log('--------  ' + $controlTarget.val() + '  --------');
   });
 };
 
