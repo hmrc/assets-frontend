@@ -7,10 +7,14 @@ require('govuk-template');
 window._gaq = window._gaq || [];
 
 var sso = require('./modules/sso.js'),
+<<<<<<< b67d303b675c85827b2b7c8514913d763a1014b3
     visibility = require('./modules/visibility.js'),
     form = require('./validation/form.js'),
     toggle = require('./modules/toggle.js'),
     autoCompleteFactory = require('./modules/autoCompleteFactory.js'),
+=======
+    control = require('./modules/control.js'),
+>>>>>>> GG-359: control JavaScript
     contentNudge = require('./modules/contentNudge.js'),
     tableRowClick = require('./modules/tableRowClick.js'),
     feedbackForms = require('./modules/feedbackForms.js'),
@@ -130,10 +134,14 @@ $(function() {
   }
 
   sso().init();
+<<<<<<< b67d303b675c85827b2b7c8514913d763a1014b3
   visibility().init();
   form().init();
   toggle().init();
   autoCompleteFactory().init(); //This needs to be below form as it add suggestion validation
+=======
+  control().init();
+>>>>>>> GG-359: control JavaScript
   toggleDynamicFormFields();
 
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
