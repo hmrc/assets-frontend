@@ -19,7 +19,7 @@
   padding: em(8) em(10);
   margin: 0 !important; //TODO-fix overriding the article li{ ... } rule
   &:hover {
-    background-color: #0097cf;
+    background-color: $light-blue;
     color: $white;
   }
 }
