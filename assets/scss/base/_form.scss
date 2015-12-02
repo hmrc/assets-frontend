@@ -32,11 +32,16 @@ input {
   }
 }
 
-select {
-  margin: 0 0.625em;
-  @include inline-block;
-  width: auto;
+select,
+.select {
+  display: block;
+  margin: 1em 0.625em;
+  width: 100%;
   @include core-19();
+
+  @include media(tablet) {
+    width: auto;
+  }
 }
 
 textarea {
@@ -55,11 +60,6 @@ textarea {
   }
 }
 
-select {
-  width: auto;
-  position: relative;
-  vertical-align: 2px;
-}
 
 input[type="radio"] {
   border: 1px solid $black;
@@ -309,14 +309,12 @@ label {
   border: 1px solid $panel-colour;
   padding: (18px $gutter $gutter-half $gutter*1.5);
   margin: 10px 10px 10px 0;
-  
   cursor: pointer; // Encourage clicking on block labels
 
   @include media(tablet) {
     float: left;
     margin-top: 5px;
     margin-bottom: 5px;
-    // width: 25%; - Test : check that text within labels will wrap
   }
 }
 
@@ -418,8 +416,17 @@ label {
 
 /*
   FROM GOVUK_ELEMENTS
-*/ 
-  
+*/
+
+.form-element-bold {
+  @include bold-24;
+  display: block;
+  margin-bottom: 0;
+  .form-hint {
+    @include core-19;
+  }
+}
+
 .form-hint {
   display: block;
   color: $secondary-text-colour;
@@ -427,6 +434,14 @@ label {
   @include media (tablet) {
     margin-top: 8px;
   }
+}
+
+.form-hint-secondary {
+  display: block;
+  @include core-16;
+  color: $black;
+  margin-bottom: 5px;
+  margin-top: 8px;
 }
 
 .form-date label {
@@ -458,3 +473,25 @@ label {
 .form-date .form-group input {
   width: 100%;
 }
+
+.form-control {
+  @include core-19;
+
+  width: 100%;
+  @include box-sizing(border-box);
+  padding: 4px;
+  background-color: $white;
+  border: 1px solid $border-colour;
+
+  // Disable webkit appearance and remove rounded corners
+  -webkit-appearance: none;
+  border-radius: 0;
+
+  @include media(tablet) {
+    width: 50%;
+  }
+}
+
+.form-control--block {
+  display: block;
+} 
