@@ -143,7 +143,7 @@ $(function() {
   attorneyBanner();
   youtubePlayer().init();
   ajaxFormSubmit.init(ajaxCallbacks); 
-  tabs(); 
+  tabs().init();
   accordion();
 
 });

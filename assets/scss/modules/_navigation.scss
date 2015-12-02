@@ -114,7 +114,7 @@ a.header__menu__proposition-name {
     display: flex;
   }
 
-  &__tab {
+  .tabs-nav__tab {
     margin-bottom: 0;
     border-top: 1px solid $border-colour;
     display: block;
@@ -136,7 +136,7 @@ a.header__menu__proposition-name {
     }
   }
 
-  &__tab--active {
+  .tabs-nav__tab--active {
     border-top: 1px solid $border-colour;
     margin-bottom: 0;
     padding: 0.5em 0;
