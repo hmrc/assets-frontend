@@ -58,6 +58,7 @@ button, .button {
   box-shadow: none;
   text-decoration: underline;
   color: $link-colour;
+  border: none;
 
   &:hover, 
   &:focus, 
@@ -73,6 +74,10 @@ button, .button {
 
   &:active {
     color: $link-active-colour;
+  }
+
+  @include media(mobile) {
+    margin-top: 10px;
   }
 
 }
