@@ -18,6 +18,7 @@ Suggestions auto complete html markup:
            autocomplete="off"
            spellcheck="false"
            required
+           data-rule-suggestion="true"
            aria-autocomplete="list"
            aria-haspopup="country-code-suggestions"
            aria-activedescendant />
@@ -314,7 +315,6 @@ var setup = function ($elem, $targetElem) {
   $clearInputButton = $('.js-suggestions-clear');
   $suggestionsContainer = $('.js-suggestions').first();
   $suggestionsStatusMessage = $('.js-suggestions-status-message').first();
-  $autoCompleteInputElem.rules('add', 'suggestion'); //validation rule
   getSuggestions();
 };
 
