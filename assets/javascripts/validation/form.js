@@ -8,6 +8,24 @@ JavaScript error messages added in your markup using the .error-notification cla
 Server side errors handled by using @if(registrationForm("phoneNumber").hasErrors){ error}
 ---------------------------
 
+Custom Validation:
+ Your custom validation will be picked up by jQuery validation via the inputs attribute by adding the following:
+
+ data-rule-suggestion="true"
+ (this will add the custom suggestion validation)
+
+Example:
+ <input type="text"
+        name="country-code-auto-complete"
+        id="country-code-auto-complete"
+        class="form-control form-control--block js-choose-country-auto-complete"
+        autocomplete="off"
+        spellcheck="false"
+        required
+        data-rule-suggestion="true"
+        aria-autocomplete="list"
+        aria-haspopup="country-code-suggestions"
+        aria-activedescendant />
 
 Inline error markup example:
 
@@ -94,7 +112,12 @@ var displayErrorSummary = function (validator, $errorSummary) {
 
     // find the error message and display
     if (invalidInputs[validationId]) {
-      $elem.removeClass('hidden');
+      //do not re-show server-rendered error messages when performing JS validation
+      if ($elem.hasClass('server-rendered')) {
+        $elem.addClass('hidden');
+      } else {
+        $elem.removeClass('hidden');
+      }
     } else {
       $elem.addClass('hidden');
     }
@@ -103,10 +126,25 @@ var displayErrorSummary = function (validator, $errorSummary) {
   $errorSummary.removeClass('hidden');
 };
 
+var flushErrors = function (invalid) {
+  for(var inputName in invalid) {
+    var $elem = $('[name="' + inputName + '"]');
+
+    if ($elem.is(':hidden')) {
+      delete invalid[inputName];
+      $elem.val('');
+      $elem.closest('.form-field-group').removeClass('error');
+    }
+  }
+};
+
 var handleErrors = function (validator) {
-  var $errorSummary = $('.error-summary', $(validator.currentForm));
+  var $currentForm = $(validator.currentForm);
+  var $errorSummary = $('.error-summary', $currentForm);
   var errors = validator.numberOfInvalids();
-  var submitButton = validator.submitButton;
+  var submitButton = $currentForm.find(':submit')[0];
+
+  flushErrors(validator.invalid);
 
   if (errors) {
     displayErrorSummary(validator, $errorSummary);
@@ -119,8 +157,7 @@ var handleErrors = function (validator) {
 
 var setupForm = function ($formElem) {
 
-
-  $formElem.validate({
+  var validator = $formElem.validate({
     errorPlacement: function () {
       // error messages shown by revealing hidden content in markup
     },
@@ -131,8 +168,8 @@ var setupForm = function ($formElem) {
       $(element).closest('.form-field-group').removeClass('error');
     },
     showErrors: function () {
-      handleErrors(this);
-      this.defaultShowErrors();
+      handleErrors(validator);
+      validator.defaultShowErrors();
     },
     submitHandler: function (form) {
       form.submit();

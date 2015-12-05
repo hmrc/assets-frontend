@@ -50,6 +50,13 @@ Target markup example:
  */
 var $toggleElems;
 
+var flushErrors = function ($targetElem) {
+  var $inputs = $targetElem.find('input');
+  if ($inputs.length) {
+    $($inputs[0].form).validate().showErrors();
+  }
+};
+
 /**
  * Controls for triggering toggle
  * 1 (left mouse click)
@@ -63,15 +70,17 @@ var toggleEvent = function ($elem) {
   var closeId = $elem.data('close');
   var target;
 
-  $elem.on('click keydown', $triggerElemSelector, function (event) {
+  $elem.on('click', $triggerElemSelector, function (event) {
 
     if (event.which === 1 || 32) { //limit to left mouse click and space bar
       target = event.target;
 
       if (target.id === openId) {
         $targetElem.show().attr('aria-expanded', 'true').attr('aria-visible', 'true');
+        flushErrors($targetElem);
       } else if (target.id === closeId) {
         $targetElem.hide().attr('aria-expanded', 'false').attr('aria-visible', 'false');
+        flushErrors($targetElem);
       }
     }
   });
