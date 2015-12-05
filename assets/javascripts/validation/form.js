@@ -141,12 +141,11 @@ var flushErrors = function (invalid) {
 var handleErrors = function (validator) {
   var $currentForm = $(validator.currentForm);
   var $errorSummary = $('.error-summary', $currentForm);
-  var errors = validator.numberOfInvalids();
   var submitButton = $currentForm.find(':submit')[0];
 
   flushErrors(validator.invalid);
 
-  if (errors) {
+  if (validator.numberOfInvalids()) {
     displayErrorSummary(validator, $errorSummary);
     toggleSubmitButtonSate(submitButton, true);
   } else {
