@@ -126,7 +126,16 @@ var displayErrorSummary = function (validator, $errorSummary) {
   $errorSummary.removeClass('hidden');
 };
 
-var flushErrors = function (invalid) {
+var purgeErrorList = function (errorList, $elem) {
+  for (var i = errorList.length; i-- > 0; ) {
+    var errorDetail = errorList[i];
+    if (errorDetail.element.name === $elem[0].name) {
+      errorList.splice(i, 1);
+    }
+  }
+};
+
+var flushErrors = function (invalid, errorList) {
   for(var inputName in invalid) {
     var $elem = $('[name="' + inputName + '"]');
 
@@ -134,6 +143,7 @@ var flushErrors = function (invalid) {
       delete invalid[inputName];
       $elem.val('');
       $elem.closest('.form-field-group').removeClass('error');
+      purgeErrorList(errorList, $elem);
     }
   }
 };
@@ -143,7 +153,7 @@ var handleErrors = function (validator) {
   var $errorSummary = $('.error-summary', $currentForm);
   var submitButton = $currentForm.find(':submit')[0];
 
-  flushErrors(validator.invalid);
+  flushErrors(validator.invalid, validator.errorList);
 
   if (validator.numberOfInvalids()) {
     displayErrorSummary(validator, $errorSummary);
