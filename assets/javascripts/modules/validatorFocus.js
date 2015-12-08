@@ -9,7 +9,7 @@
     $('.error-summary a').on('click', function(e) {
       e.preventDefault();
       var focusId = $(this).attr('data-focuses'),
-        inputToFocus = $('#' + focusId),
+        inputToFocus = $('[id=\'' + focusId + '\']'),
         inputTagName = inputToFocus.prop("tagName").toLowerCase(),
         nodeToScrollTo = inputToFocus;
 
