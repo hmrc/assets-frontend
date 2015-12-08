@@ -66,14 +66,6 @@ body {
 
 }
 
-@include media(mobile) {
-
-  .sidebar {
-    display: none;
-  }
-
-}
-
 .brand-border--top {
   border-top: 10px solid $mainstream-brand;
 }

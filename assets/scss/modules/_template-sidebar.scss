@@ -1,4 +1,5 @@
-aside {
+
+.sidebar {
   width: auto;
   margin: 30px 0 0 0;
 
@@ -7,45 +8,45 @@ aside {
     width: 33.333333%;
     margin: 0;
   }
+}
 
-  h2 {
-    @include bold-24;
-    margin-top: 15px;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
-      padding: 0;
-      margin: 0 -15px;
-      padding: 0;
-
-      @include media(tablet) {
-        padding: 0;
-        margin: 0 0 0.75em 0;
-      }
-
-      @include core-16;
-
-      a {
-        display: block;
-        border-top: solid 1px $border-colour;
-        padding: 1em 15px;
-
-        @include media(tablet) {
-          display: inline;
-          border: none;
-          padding: 0;
-        }
-      }
-    }
-  }
-
-  .helpful {
-    color: $secondary-text-colour;
-    @include core-16;
-    margin: 0.5em 0;
+.sidebar--hidden-sm {
+  display: none;
+  @include media(tablet) {
+    display: block;
   }
 }
+
+.sidebar__list {
+  list-style: none;
+  padding: 0;
+  @include core-16;
+}
+
+.sidebar__list-item {
+  padding: 0;
+  margin: 0 0 0.75em 0;
+}
+
+.sidebar__list-item--lined-sm {
+  display: block;
+  border-top: solid 1px $border-colour;
+  padding: 1em 15px;
+
+  @include media(tablet) {
+    border: none;
+    padding: 0;
+  }
+}
+
+.sidebar__heading {
+  @include bold-24;
+  margin-top: 15px;
+}
+
+.sidebar--helpful {
+  color: $secondary-text-colour;
+  @include core-16;
+  margin: 0.5em 0;
+}
+
