@@ -5,3 +5,11 @@
 .beta-banner {
   @include phase-banner(beta);
 }
+
+.header__menu {
+  .beta {
+    vertical-align: top;
+    margin: em(3) 0 0 em(5);
+    color: $white;
+  }
+}
