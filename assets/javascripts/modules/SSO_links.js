@@ -1,8 +1,5 @@
 require('jquery');
 
-//TODO-benC: this file is doing to much, GET/POST/Links/Redirect - needs to be split out.
-//TODO-benC: after refactor unit test this work
-
 /**
  * SSO encryption process file
  * Use Cases:
@@ -44,7 +41,7 @@ module.exports = function(element, ssoUrl, ssoMethod) {
       winId = element.id;
 
       //accept custom target attribute values
-      openInNewWindow = !!elementTarget && ['_self', '_top', '_parent'].indexOf(elementTarget) === -1;
+      openInNewWindow = !!elementTarget && (elementTarget !== '_self' && elementTarget !== '_top' && elementTarget !== '_parent');
 
       destination = serverSso ? {
         ssoRedirect: true
