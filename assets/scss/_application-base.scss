@@ -72,7 +72,8 @@ $path: "../images/icons/";
 @import "modules/youtube-player";
 @import "modules/auto-complete";
 @import "modules/toggle";
-@import "modules/_external-markup";
+@import "modules/external-markup";
+@import "modules/entity";
 
 // Page Specific Styles
 @import "pages/messages";
