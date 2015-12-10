@@ -1,21 +1,19 @@
-.panel-indent {
-  margin: 0;
-
-  p:first-child {
-    margin-top: 0;
-  }
-}
-
 // Indented panels with a grey left hand border
 .panel-indent {
+  margin: 0;
   @include contain-floats;
   clear: both;
   border-left: 4px solid $border-colour;
 
   padding: 10px 0 10px $gutter-half;
+
+  //TODO needs to be BEM
+  p:first-child {
+    margin-top: 0;
+  }
 }
 
-.panel-indent--with-gutter {
+.panel-indent--gutter {
   margin: ($gutter $gutter-half $gutter*1.5 0);
 }
 
