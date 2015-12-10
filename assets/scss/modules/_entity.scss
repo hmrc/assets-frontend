@@ -1,0 +1,13 @@
+.exclamation {
+  &:before {
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    display: inline-block;
+    content: "!";
+    color: $white;
+    @include border-radius(20px);
+    margin-right: em(4);
+    background-color: $black;
+  }
+}
