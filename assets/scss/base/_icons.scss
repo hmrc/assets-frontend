@@ -41,3 +41,17 @@
   transform: rotate(90deg);
   transition-duration: 0.2s;
 }
+
+.exclamation {
+  width: 35px;
+  height: 35px;
+  margin-right: em(4);
+  vertical-align: middle;
+  display: inline-block;
+  background-image: url('../images/icons/icon-important.png');
+
+  @include device-pixel-ratio() {
+    background-image: url('../images/icons/icon-important-2x.png');
+    background-size: cover;
+  }
+}
