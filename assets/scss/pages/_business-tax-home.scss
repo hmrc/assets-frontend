@@ -34,13 +34,6 @@
   .main__section--divider-top {
     margin-top: 25px;
     padding-top: 10px;
-    border-top: 1px solid $border-colour;
-  }
-
-  .main__section--divider-bottom {
-    border-bottom: 1px solid $border-colour;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
   }
 
   .add-remove-taxes__heading {
@@ -216,6 +209,10 @@
 
   .manage-acct__section + .manage-acct__section {
     margin-top: 3em;
+  }
+
+  .tabs-nav {
+    margin-top: 1em;
   }
 
 }

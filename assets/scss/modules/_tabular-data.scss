@@ -73,6 +73,7 @@
     margin: 0;
   }
 }
+
 /** need to use absolute positioning where the heading uses a details element */
 .tabular-data__data-1--after-details {
   @include media(tablet) {
@@ -93,6 +94,7 @@
     padding-right: 10px;
   }
 }
+
 /** need to use absolute positioning where the heading uses a details element */
 .tabular-data__data-2--after-details {
   @include media(tablet) {
@@ -133,12 +135,20 @@
 }
 
 .tabular-data__tab-content {
-  border: 1px solid #bfc1c3;
-  border-top: 0;
-  padding: 20px 15px;
+  border-bottom: 1px solid #bfc1c3;
+  padding: 20px 0 0;
+
+  @include media(tablet) {
+    border: 1px solid #bfc1c3;
+    border-top: 0;
+    padding: 20px 15px;
+  }
 }
 
 .tabular-data__divider--full-width {
   border-bottom: 1px solid #bfc1c3;
-  margin: 0 -15px;
+
+  @include media(tablet) {
+    margin: 0 -15px;
+  }
 }
