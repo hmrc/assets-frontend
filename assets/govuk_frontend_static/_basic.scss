@@ -48,7 +48,10 @@ fieldset {
   padding: 0;
 }
 
-a,
+a {
+  color: $link-colour;
+}
+
 a:visited {
   color: $link-visited-colour;
 }
