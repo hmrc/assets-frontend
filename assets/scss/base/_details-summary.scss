@@ -1,5 +1,5 @@
 /**
-* @desc         details summary element mixins.
+* @desc         details summary element styles and mixins.
 * @name         details-summary
 * @author       Matthew Pepper
 * @tested       N/A
@@ -57,3 +57,17 @@
     display: block;
   }
 }
+
+.summary--black {
+  color: $black;
+  &:hover {
+    color: $black;
+  }
+  i {
+    color: $black;
+    &:visited {
+      color: $black;
+    }
+  }
+}
+
