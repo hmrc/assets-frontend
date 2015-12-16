@@ -210,3 +210,12 @@ ul {
   }
 
 }
+
+.link-list {
+  margin-bottom: $gutter-half;
+}
+
+.link-list__item {
+  display: block;
+  margin-bottom: $gutter-half;
+}
