@@ -196,16 +196,10 @@ var setup = function () {
   $forms = $('.js-form');
 };
 
-var init = function () {
+module.exports = function () {
   setup();
 
   if ($forms.length) {
     setupValidation();
   }
-};
-
-module.exports = function () {
-  return {
-    init: init
-  };
 };
