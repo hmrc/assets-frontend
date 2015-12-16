@@ -9,7 +9,7 @@ require('jquery');
  * @param element
  * @returns {*}
  */
-var getPosition = function (element) {
+var get = function (element) {
   if (typeof element.selectionEnd !== 'undefined') {
     return element.selectionEnd;
   } else if (document.selection) { // < IE9
@@ -22,7 +22,7 @@ var getPosition = function (element) {
  * @param element
  * @param position
  */
-var setPosition = function (element, position) {
+var set = function (element, position) {
   if (typeof element.selectionEnd !== 'undefined') {
     element.selectionEnd = position;
   } else if (element.createTextRange) { // < IE9
@@ -36,7 +36,7 @@ var setPosition = function (element, position) {
 
 module.exports = function () {
   return {
-    getPosition: getPosition,
-    setPosition: setPosition
+    get: get,
+    set: set
   };
 };

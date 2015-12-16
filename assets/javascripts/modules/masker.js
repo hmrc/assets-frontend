@@ -1,5 +1,5 @@
 require('jquery');
-var caret = require('../utils/caret.js');
+var caretPosition = require('../utils/caretPosition.js');
 
 /**
  Input Masker
@@ -31,9 +31,9 @@ var masker = function () {
     var matches = this.value.match(regEx);
     var returnValue = matches && matches.join('') || '';
 
-    cursorPosition = caret().getPosition(this);
+    cursorPosition = caretPosition().get(this);
     this.value = returnValue;
-    caret().setPosition(this, cursorPosition);
+    caretPosition().set(this, cursorPosition);
   };
 };
 
