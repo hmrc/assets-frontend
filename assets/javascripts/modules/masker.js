@@ -31,9 +31,9 @@ var masker = function () {
     var matches = this.value.match(regEx);
     var returnValue = matches && matches.join('') || '';
 
-    cursorPosition = caretPosition().get(this);
+    cursorPosition = caretPosition.get(this);
     this.value = returnValue;
-    caretPosition().set(this, cursorPosition);
+    caretPosition.set(this, cursorPosition);
   };
 };
 
@@ -51,16 +51,10 @@ var setup = function () {
   $maskedElems = $('.js-masker');
 };
 
-var init = function () {
+module.exports = function () {
   setup();
 
   if ($maskedElems.length) {
     addListeners();
   }
-};
-
-module.exports = function () {
-  return {
-    init: init
-  };
 };

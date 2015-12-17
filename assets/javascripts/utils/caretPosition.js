@@ -34,9 +34,7 @@ var set = function (element, position) {
   }
 };
 
-module.exports = function () {
-  return {
-    get: get,
-    set: set
-  };
+module.exports = {
+  get: get,
+  set: set
 };

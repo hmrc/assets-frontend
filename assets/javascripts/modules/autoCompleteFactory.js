@@ -9,13 +9,7 @@ var createAutoCompleteCountries = function () {
 };
 
 // A factory for creating auto complete suggestions
-var init = function () {
-  createAutoCompleteCountries();
-  // add other auto compeltes here
-};
-
 module.exports = function () {
-  return {
-    init: init
-  };
+  createAutoCompleteCountries();
+  // add other auto completes here
 };

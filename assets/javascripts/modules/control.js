@@ -46,15 +46,9 @@ var addListeners = function () {
   });
 };
 
-var init = function () {
+module.exports = function () {
   setup();
   if ($controlElems.length) {
     addListeners();
   }
-};
-
-module.exports = function () {
-  return {
-    init: init
-  };
 };

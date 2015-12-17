@@ -28,7 +28,7 @@ var setup = function () {
   $hideElements = $('.js-aria-hide');
 };
 
-var init = function () {
+module.exports = function () {
   setup();
 
   if ($showElements.length) {
@@ -38,10 +38,4 @@ var init = function () {
   if ($hideElements.length) {
     hide();
   }
-};
-
-module.exports = function () {
-  return {
-    init: init
-  };
 };

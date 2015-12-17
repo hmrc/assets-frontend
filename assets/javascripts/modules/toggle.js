@@ -96,16 +96,10 @@ var setup = function () {
   $toggleElems = $('.js-toggle');
 };
 
-var init = function () {
+module.exports = function () {
   setup();
 
   if ($toggleElems.length) {
     addListeners();
   }
-};
-
-module.exports = function () {
-  return {
-    init: init
-  };
 };

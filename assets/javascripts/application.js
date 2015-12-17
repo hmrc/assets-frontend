@@ -132,12 +132,12 @@ $(function() {
   }
 
   sso().init();
-  visibility().init();
-  form().init();
-  toggle().init();
-  autoCompleteFactory().init();
-  control().init();
-  masker().init();
+  visibility();
+  form();
+  toggle();
+  autoCompleteFactory();
+  control();
+  masker();
   toggleDynamicFormFields();
 
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
