@@ -3,7 +3,6 @@
 
 // Form group is used to wrap label and input pairs
 .form-group {
-  float: left;
   width: 100%;
   clear: both;
   @include contain-floats;
