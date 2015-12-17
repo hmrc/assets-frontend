@@ -490,8 +490,15 @@ label {
   @include media(tablet) {
     width: 50%;
   }
+
 }
 
 .form-control--block {
   display: block;
-} 
+}
+
+.form-input {
+  background-color: $white;
+  border: 1px solid $border-colour;  
+}
+
