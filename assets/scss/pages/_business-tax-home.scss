@@ -14,23 +14,6 @@
     margin: 0 0 19px;
   }
 
-  summary {
-    @include core-16;
-    color: $details-link;
-    padding-right: 5px;
-    &:hover {
-      color: $details-link-hover;
-    }
-    &:focus {
-      // prevent left side of focus box being hidden
-      outline-offset: -3px;
-    }
-    text-decoration: underline;
-    i {
-      display: inline-block;
-    }
-  }
-
   .main__section--divider-top {
     margin-top: 25px;
     padding-top: 10px;
@@ -188,15 +171,20 @@
     }
   }
 
-  .details {
-    margin-left: 10px;
-  }
-
   .pbik-link {
     position: absolute;
   }
+
   .pbik-summary {
+    @include core-16;
     margin-left: 17em;
+  }
+
+  .sa-summary {
+    padding-right: 5px;
+    &:focus {
+      outline-offset: -3px;
+    }
   }
 
   .spacing--top {
