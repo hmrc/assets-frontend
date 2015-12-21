@@ -22,8 +22,8 @@ fieldset {
 
 input {
   @include core-19();
-  background-color: $input-bg-colour;
-  border: 1px inset $input-border;
+  background-color: $white;
+  border: 2px solid #6f777b;
   margin: 0;
   padding: 0.1em 0 0.1em 0.4em;
   &.text--right{ padding: 0.1em 0.4em 0.1em 0;  }
@@ -46,8 +46,8 @@ select,
 
 textarea {
   @include core-19();
-  background-color: $input-bg-colour;
-  border: 1px inset $input-border;
+  background-color: $white;
+  border: 2px solid #6f777b;
   margin: em(10) 0;
   padding: 0.1em 0 0.1em 0.4em;
 
@@ -237,6 +237,10 @@ label.indent {
   margin-bottom: 0.75em;
   margin-top: 0;
   width: 100%;
+}
+
+.form-field--tall {
+  margin: 0 0 1.5em 0;
 }
 
 /**

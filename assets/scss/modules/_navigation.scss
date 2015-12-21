@@ -152,6 +152,12 @@ a.header__menu__proposition-name {
   }
 }
 
+.tab-content {
+  .first {
+    margin-top: 30px;
+  }
+}
+
 .back-link {
   @include core-19();
   border-bottom: 1px solid $black;
