@@ -41,6 +41,7 @@ var $suggestionsData;
 var $suggestionsContainer;
 var $autoCompleteInputElem;
 var $targetInput;
+var suggestionDisplayFormat;
 var $suggestionsStatusMessage;
 var $clearInputButton;
 
@@ -59,7 +60,10 @@ var displaySuggestions = function ($suggestionsContainer, matches, match) {
     var positionalClassNames = [];
     var li = liHtmlFragment.cloneNode();
     var pattern = new RegExp('^(' + match + ')', 'i');
-    var html = suggestion.title.replace(pattern, '<span class="suggestion__highlight">$1</span>');
+    var html;
+
+    suggestion.title.replace(pattern, '<span class="suggestion__highlight">$1</span>');
+    html = (typeof suggestionDisplayFormat === 'function') ? suggestionDisplayFormat(suggestion.title, suggestion.value) : suggestion.title;
 
     if (index === 0) {
       positionalClassNames.push('suggestion--first');
@@ -226,11 +230,17 @@ var inputKeyupEvent = function () {
       $clearInputButton.removeClass('hidden');
 
       $(suggestions).each(function (index, suggestion) {
-        var regEx = new RegExp('^(' + inputVal + ')', 'i');
+        var regEx;
 
-        if (regEx.test(suggestion.title)) {
-          matches.push(suggestion);
+        try {
+          regEx = new RegExp('^(' + inputVal + ')', 'i');
+          if (regEx.test(suggestion.title)) {
+            matches.push(suggestion);
+          }
+        } catch (e) {
+          //TODO add reporting?
         }
+
       });
 
       if (matches.length) {
@@ -308,9 +318,10 @@ var suggestionsEvent = function () {
  * @param $elem
  * @param $targetElem
  */
-var setup = function ($elem, $targetElem) {
+var setup = function ($elem, $targetElem, suggestionFormat) {
   $autoCompleteInputElem = $elem;
   $targetInput = $targetElem;
+  suggestionDisplayFormat = suggestionFormat;
   $suggestionsData = $('#suggestions');
   $clearInputButton = $('.js-suggestions-clear');
   $suggestionsContainer = $('.js-suggestions').first();
@@ -332,11 +343,17 @@ var getSuggestions = function () {
 /**
  * create the autoComplete
  * @param $autoCompleteInputElem
- * @param $targetInputElem
+ *
+ * @param $targetInputElem - [optional]
+ * Input element to apply the suggestion.value too when a suggestion is selected. If this is not supplied then the autoComplete input will contain the
+ * suggestion.title which will be sent to the backend as the value of the $autoCompleteInputElem
+ *
+ * @param suggestionFormat - [optional]
+ * Format for the suggestion to be displayed in the suggestion list, this will default to suggestion.title if a format is not supplied
  */
-var build = function ($autoCompleteInputElem, $targetInputElem) {
+var build = function ($autoCompleteInputElem, $targetInputElem, suggestionFormat) {
   if ($autoCompleteInputElem.length) {
-    setup($autoCompleteInputElem, $targetInputElem);
+    setup($autoCompleteInputElem, $targetInputElem, suggestionFormat);
     addEventListeners();
   }
 };
