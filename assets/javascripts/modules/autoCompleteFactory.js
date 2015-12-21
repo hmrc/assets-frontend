@@ -11,7 +11,6 @@ var createAutoCompleteCountries = function () {
   autoComplete($chooseCountryAutoCompleteElem.first(), $countryCodeInput, suggestionDisplayTemplate);
 };
 
-// A factory for creating auto complete suggestions
 module.exports = function () {
   createAutoCompleteCountries();
   // add other auto completes here
