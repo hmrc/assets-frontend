@@ -41,6 +41,7 @@ var $suggestionsData;
 var $suggestionsContainer;
 var $autoCompleteInputElem;
 var $targetInput;
+var suggestionDisplayTemplate;
 var $suggestionsStatusMessage;
 var $clearInputButton;
 
@@ -59,7 +60,10 @@ var displaySuggestions = function ($suggestionsContainer, matches, match) {
     var positionalClassNames = [];
     var li = liHtmlFragment.cloneNode();
     var pattern = new RegExp('^(' + match + ')', 'i');
-    var html = suggestion.title.replace(pattern, '<span class="suggestion__highlight">$1</span>');
+    var html;
+
+    suggestion.title.replace(pattern, '<span class="suggestion__highlight">$1</span>');
+    html = (typeof suggestionDisplayTemplate === 'function') ? suggestionDisplayTemplate(suggestion.title, suggestion.value) : suggestion.title;
 
     if (index === 0) {
       positionalClassNames.push('suggestion--first');
@@ -308,9 +312,10 @@ var suggestionsEvent = function () {
  * @param $elem
  * @param $targetElem
  */
-var setup = function ($elem, $targetElem) {
+var setup = function ($elem, $targetElem, suggestionTemplate) {
   $autoCompleteInputElem = $elem;
   $targetInput = $targetElem;
+  suggestionDisplayTemplate = suggestionTemplate;
   $suggestionsData = $('#suggestions');
   $clearInputButton = $('.js-suggestions-clear');
   $suggestionsContainer = $('.js-suggestions').first();
@@ -333,10 +338,11 @@ var getSuggestions = function () {
  * create the autoComplete
  * @param $autoCompleteInputElem
  * @param $targetInputElem
+ * @param suggestionTemplate
  */
-var build = function ($autoCompleteInputElem, $targetInputElem) {
+var build = function ($autoCompleteInputElem, $targetInputElem, suggestionTemplate) {
   if ($autoCompleteInputElem.length) {
-    setup($autoCompleteInputElem, $targetInputElem);
+    setup($autoCompleteInputElem, $targetInputElem, suggestionTemplate);
     addEventListeners();
   }
 };
