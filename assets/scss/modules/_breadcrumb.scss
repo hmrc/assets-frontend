@@ -4,7 +4,7 @@
 
 /* Usage:
 <nav class="breadcrumb-nav">
-  <ul>
+  <ul class="breadcrumb-nav__list">
     <li class="breadcrumb-nav__item"><a href=""> ... </a></li>
     <li class="breadcrumb-nav__item breadcrumb-nav__item--trail"></li>
   </ul>
@@ -12,7 +12,7 @@
 */
 
 .breadcrumb-nav {
-  padding: 10px 0 40px 0;
+  padding: em(10) 0 em(40) 0;
 }
 
 .breadcrumb-nav__item {
@@ -26,5 +26,18 @@
 
   &:after {
     content: "›";
+  }
+}
+
+.breadcrumb-nav--slim {
+  padding-top: em(5);
+  padding-bottom: em(10);
+
+  .breadcrumb-nav__list {
+    margin: 0;
+  }
+
+  .breadcrumb-nav__item {
+    margin: 0;
   }
 }
