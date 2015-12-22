@@ -77,7 +77,7 @@ var bindEvents = function($counter) {
  */
 var addCounterHtml = function($counter) {
 
-  var html = $('<p class="char-counter-text flush--top"><span data-counter></span> remaining <span data-char-text>characters</span></p>');
+  var html = $('<p class="char-counter-text flush"><span data-counter></span> remaining <span data-char-text>characters</span></p>');
 
   $counter.find(counterField).after(html);
 
