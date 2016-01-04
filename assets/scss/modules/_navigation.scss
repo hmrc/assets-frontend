@@ -129,9 +129,10 @@ a.header__menu__proposition-name {
     @include media(tablet) {
       float: left;      
       background-color: $white;
-      border: 0;
-      margin: 0 0.25em 0em 0.25em;
-      padding: 0.8em 1.25em 0.5em 1.25em;
+      border: 1px solid transparent;
+      //margin: 0 0.25em 0em 0.25em;
+      margin: 0 5px 0 5px;
+      padding: 15px 22px 15px 22px;
     }
 
     &.first {
@@ -150,14 +151,14 @@ a.header__menu__proposition-name {
     margin: 0;
     padding: 0.5em 0;
     display:block;
-    font-weight: bold;
+    //font-weight: bold;
 
     @include media(tablet) {
       border: 1px solid $border-colour;
       border-bottom: 1px solid #fff;
       float: left;
       margin: 0 0 -1px 0;
-      padding: 0.8em 1.2em 0.7em 1.2em;
+      padding: 15px 22px 15px 22px;
     }
   }
 }

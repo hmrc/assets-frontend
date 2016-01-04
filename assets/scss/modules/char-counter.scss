@@ -1,0 +1,20 @@
+
+.char-counter {
+  position: relative;
+  margin-bottom: 1.5em;
+  display: inline-block;
+
+  [data-char-field] {
+    height: 70px;
+  }
+
+  @include media(mobile) {
+    display: block;
+  }
+
+}
+
+.char-counter-text {
+  color: #6f777b;
+  text-align: right;
+}

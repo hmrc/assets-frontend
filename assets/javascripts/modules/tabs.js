@@ -65,7 +65,7 @@ var initialiseTabs = function() {
     $tabs.on('click', '[data-tab-link]', function(e) {
 
       // add tab hash to URL if enabled
-      if (!selectActiveTabWithJs) {
+      if(!selectActiveTabWithJs) {
         e.preventDefault();
       }
 
@@ -144,7 +144,7 @@ var updateTabContents = function($tabs, $tabLink) {
 var updateTabLinks = function($tabs) {
 
   var $clickedTab = $(this),
-    $tabLinks = $tabs.find('[data-tab-link]');
+      $tabLinks   = $tabs.find('[data-tab-link]');
 
   $tabLinks.each(function() {
 
