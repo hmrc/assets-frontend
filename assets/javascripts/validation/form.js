@@ -95,12 +95,6 @@ Summary Error Markup example:
 
 var $forms;
 
-var toggleSubmitButtonSate = function(submitButton, disable) {
-  if (submitButton) { //submit not available when focused on input
-    submitButton.disabled = disable;
-  }
-};
-
 var displayErrorSummary = function (validator, $errorSummary) {
   var $errorSummaryMessages = $errorSummary.find('.js-error-summary-messages > li');
   var invalidInputs = validator.invalid;
@@ -151,16 +145,13 @@ var flushErrors = function (invalid, errorList) {
 var handleErrors = function (validator) {
   var $currentForm = $(validator.currentForm);
   var $errorSummary = $('.error-summary', $currentForm);
-  var submitButton = $currentForm.find(':submit')[0];
 
   flushErrors(validator.invalid, validator.errorList);
 
   if (validator.numberOfInvalids()) {
     displayErrorSummary(validator, $errorSummary);
-    toggleSubmitButtonSate(submitButton, true);
   } else {
     $errorSummary.addClass('hidden');
-    toggleSubmitButtonSate(submitButton, false);
   }
 };
 
@@ -182,7 +173,11 @@ var setupForm = function ($formElem) {
     },
     submitHandler: function (form) {
       form.submit();
-    }
+    },
+    invalidHandler: function() {
+      //When invalid submission, re-enable the submit button
+      $formElem.find('.button[type=submit]').prop('disabled', false);
+    },
   });
 };
 
