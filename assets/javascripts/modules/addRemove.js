@@ -5,25 +5,30 @@
  *
  *  <div class="add-remove"
  *        data-add-remove
- *        data-add-text="Add another redirect URI"
- *        data-attr-name="redirectUris[$]"
- *        data-attr-id="redirectUris[$]">
+ *        data-add-remove-max="5"
+ *        data-attr-name="redirectUris[$]">
  *
- *   <script type="text/template" data-add-remove-template>
- *     <li class="add-remove--item" data-add-remove-item>
- *       <input type="text" value="" data-add-remove-unique/>
- *     </li>
- *   </script>
+ *    <script type="text/template" data-item-template>
+ *      <li class="add-remove__item" data-add-remove-item>
+ *        <input type="text" value="" data-add-remove-unique/>
+ *      </li>
+ *    </script>
+ *    <script type="text/template" data-remove-btn-template>
+ *      <a href="#" class="add-remove__remove-btn" data-remove-btn>Delete</a>
+ *    </script>
+ *    <script type="text/template" data-add-btn-template>
+ *      <a href="#" data-add-btn>Add another redirect URI</a>
+ *    </script>
  *
  *    <ul data-add-remove-list>
  *      <li data-add-remove-item>
- *        <input type="text" value="Value 1" name="redirectUris[0]" id="redirectUris[0]" data-add-remove-unique/>
+ *        <input type="text" value="Value 1" name="redirectUris[0]" data-add-remove-unique/>
  *      </li>
  *      <li data-add-remove-item>
- *        <input type="text" value="Value 2" name="redirectUris[1]" id="redirectUris[1]" data-add-remove-unique/>
+ *        <input type="text" value="Value 2" name="redirectUris[1]" data-add-remove-unique/>
  *      </li>
  *      <li data-add-remove-item>
- *        <input type="text" value="Value 3" name="redirectUris[2]" id="redirectUris[2]" data-add-remove-unique/>
+ *        <input type="text" value="Value 3" name="redirectUris[2]" data-add-remove-unique/>
  *      </li>
  *    </ul>
  *
@@ -38,6 +43,10 @@ var addRemoveContainer = '[data-add-remove]',
     addButton          = '[data-add-btn]',
     removeButton       = '[data-remove-btn]',
     maxItems           = 'data-add-remove-max';
+
+var itemTemplate       = '[data-item-template]',
+    addBtnTemplate     = '[data-add-btn-template]',
+    removeBtnTemplate  = '[data-remove-btn-template]';
 
 
 /**
@@ -54,21 +63,16 @@ module.exports = function() {
 
   // for each add/remove container on the page
   $addRemoveContainers.each(function() {
-
     var $container = $(this);
 
-    $container.find(addRemoveItem).each(function() {
+    $container.find('[data-removable]').each(function() {
+      var $item = $(this);
 
-      // only insert Remove button if removable is set
-      if($(this).is('[data-removable]')) {
+      // add html for remove button
+      insertRemoveButton($container, $item);
 
-        // add html for remove button
-        insertRemoveButton($(this));
-
-        // bind remove click event
-        bindRemoveEvent($container, $(this));
-
-      }
+      // bind remove click event
+      bindRemoveEvent($container, $item);
 
     });
 
@@ -90,11 +94,14 @@ module.exports = function() {
 /**
  * Insert a Remove button in the item
  *
+ * @param $container
  * @param $item
  */
-var insertRemoveButton = function($item) {
+var insertRemoveButton = function($container, $item) {
 
-  $item.append('<a href="#" class="add-remove__remove-btn" data-remove-btn>Delete</a>');
+  var html = $container.find(removeBtnTemplate).html();
+
+  $item.append(html);
 
 };
 
@@ -110,7 +117,7 @@ var bindRemoveEvent = function($container, $item) {
     e.preventDefault();
 
     // remove list item
-    $(this).parent().remove();
+    $item.remove();
 
     // if there's no Add button
     if($container.find(addButton).length === 0) {
@@ -131,9 +138,9 @@ var bindRemoveEvent = function($container, $item) {
  */
 var insertAddButton = function($container) {
 
-  var addText = $container.data('add-text');
+  var html = $container.find(addBtnTemplate).html();
 
-  $container.append('<a href="#" data-add-btn>' + addText + '</a>');
+  $container.append(html);
 
 };
 
@@ -169,7 +176,7 @@ var addItem = function($container) {
   if($newItem.is('[data-removable]')) {
 
     // add the Remove button
-    insertRemoveButton($newItem);
+    insertRemoveButton($container, $newItem);
 
     // bind click event on Remove button
     bindRemoveEvent($container, $newItem);
@@ -195,12 +202,11 @@ var createItem = function($container) {
 
   var listCount = $container.find('[data-add-remove-item]').length,      // get count of items
       nameAttr  = $container.attr('data-attr-name'),                     // get pattern for unique name attribute
-      idAttr    = $container.attr('data-attr-id'),                       // get pattern for unique id attribute
       $newItem,
       $unique;
 
   // get clone of template item wrapped in LI
-  $newItem = $($container.find('[data-add-remove-template]').html());
+  $newItem = $($container.find(itemTemplate).html());
 
   // get unique item (e.g. input, textarea) within item
   $unique = $newItem.find('[data-add-remove-unique]');
@@ -210,13 +216,6 @@ var createItem = function($container) {
     nameAttr = nameAttr.replace(/\$/, listCount);
     $unique.attr({name: nameAttr});
   }
-  if(idAttr) {
-    idAttr = idAttr.replace(/\$/, listCount);
-    $unique.attr({id: idAttr});
-  }
-
-  // clear value of unique field
-  $unique.val('');
 
   return $newItem;
 
