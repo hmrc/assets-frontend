@@ -39,7 +39,8 @@ var sso = require('./modules/sso.js'),
     youtubePlayer = require('./modules/youtubePlayer.js'),
     accordion = require('./modules/accordion.js'),
     tabs = require('./modules/tabs.js'),
-    charCounter = require('./modules/charCounter.js');
+    charCounter = require('./modules/charCounter.js'),
+    addRemove = require('./modules/addRemove.js');
 
 //initialise mdtpf
 fingerprint();
@@ -159,5 +160,6 @@ $(function() {
   tabs().init();
   accordion();
   charCounter();
+  addRemove();
 
 });

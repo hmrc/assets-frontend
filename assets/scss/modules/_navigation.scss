@@ -120,6 +120,7 @@ a.header__menu__proposition-name {
     display: block;
     padding: 0.5em 0;
     text-decoration: none;
+    white-space: nowrap;
 
     .count {
       background-color: $red;
