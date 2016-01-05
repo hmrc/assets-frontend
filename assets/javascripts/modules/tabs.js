@@ -39,33 +39,39 @@ require('jquery');
 
  */
 
-var activeTabClass,
-    inactiveTabClass,
+var activeTabClass = 'tabs-nav__tab--active',
+    inactiveTabClass = 'tabs-nav__tab',
     $tabElems,
-    $firstTab,
     selectActiveTabWithJs;
 
 // for each set of tabs in the page
-var initialiseTabs = function() {
+module.exports = function() {
+
+  $tabElems = $('[data-tabs]');
+
+  if($tabElems.length === 0) return;
+
   $tabElems.each(function() {
 
     var $tabs = $(this),
         activeTab;
 
+    selectActiveTabWithJs = $tabs.hasClass('js-hash-selected-tab');
+
+    // active tab is either first or based on url hash
+    activeTab = findActiveTab($tabs);
+
+    // initial setting of tab links state
+    updateTabLinks.call(activeTab, $tabs);
+
     // initial setting of tab content to be visible/hidden
-    if (selectActiveTabWithJs) {
-      activeTab = findActiveTabFromHash();
-      updateTabLinks.call(activeTab, $tabs);
-      updateTabContents($tabs, activeTab);
-    } else {
-      updateTabContents($tabs);
-    }
+    updateTabContents($tabs, activeTab);
 
     // for each tab link
     $tabs.on('click', '[data-tab-link]', function(e) {
 
       // add tab hash to URL if enabled
-      if (!selectActiveTabWithJs) {
+      if(!selectActiveTabWithJs) {
         e.preventDefault();
       }
 
@@ -74,26 +80,31 @@ var initialiseTabs = function() {
 
       // update state of tab links
       updateTabLinks.call(this, $tabs);
+
     });
 
   });
+
 };
 
 /**
  * Determine which tab to open at the start.
  * The open tab will be that matching the URL hash,
  * or the first tab if no hash present.
+ *
  * @returns {string} jQuery object for the tab to open
  */
-var findActiveTabFromHash = function() {
-  var activeTabLink = '',
+var findActiveTab = function($tabs) {
+
+  var $firstTab = $tabs.find('[data-tab-link]:first'),
       tab;
 
-  if (selectActiveTabWithJs) {
+  // only check hash if tabs instance specifies to do so
+  if(selectActiveTabWithJs) {
     tab = findTabByLinkAttr(window.location.hash);
-    activeTabLink = tab || $firstTab;
   }
-  return activeTabLink;
+
+  return tab || $firstTab;
 };
 
 /**
@@ -144,7 +155,7 @@ var updateTabContents = function($tabs, $tabLink) {
 var updateTabLinks = function($tabs) {
 
   var $clickedTab = $(this),
-    $tabLinks = $tabs.find('[data-tab-link]');
+      $tabLinks   = $tabs.find('[data-tab-link]');
 
   $tabLinks.each(function() {
 
@@ -157,7 +168,9 @@ var updateTabLinks = function($tabs) {
 
     // switch markup of tab link as needed
     $tabLink = updateLinkMarkup($tabLink, clickable);
+
   });
+
 };
 
 /**
@@ -222,26 +235,3 @@ var updateLinkMarkup = function($tabLink, clickable) {
 
   return $tabLink;
 };
-
-/**
- * if tabs present on page, initialise behaviour
- */
-var init = function() {
-
-  activeTabClass = 'tabs-nav__tab--active';
-  inactiveTabClass = 'tabs-nav__tab';
-  $tabElems = $('[data-tabs]');
-  $firstTab = $('a[data-tab-link]:first');
-  selectActiveTabWithJs = $('.js-hash-selected-tab').length > 0;
-
-  if ($tabElems.length) {
-    initialiseTabs();
-  }
-};
-
-module.exports = function() {
-  return {
-    init: init
-  };
-};
-
