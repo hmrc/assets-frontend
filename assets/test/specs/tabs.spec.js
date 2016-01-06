@@ -28,7 +28,7 @@ describe("Given I have a tabs module on the page", function() {
       $('[data-tab-link="2"]').click();
     });
 
-    it("Then only the 1st tab content is visible", function() {
+    it("Then only the 2nd tab content is visible", function() {
       expect($('[data-tab-content="1"]')).toHaveClass('hidden');
       expect($('[data-tab-content="2"]')).not.toHaveClass('hidden');
       expect($('[data-tab-content="3"]')).toHaveClass('hidden');
