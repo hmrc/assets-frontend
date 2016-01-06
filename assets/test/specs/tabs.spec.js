@@ -20,7 +20,7 @@ describe("Given I have a tabs module on the page", function() {
 
   });
 
-  describe("When I click the first tab link", function() {
+  describe("When I click the 2nd tab link", function() {
 
     beforeEach(function() {
       loadFixtures('tabs-fixtures.html');
