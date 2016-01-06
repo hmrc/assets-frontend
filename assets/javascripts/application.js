@@ -8,6 +8,7 @@ window._gaq = window._gaq || [];
 
 var sso = require('./modules/sso.js'),
     visibility = require('./modules/visibility.js'),
+    mask = require('./modules/mask.js'),
     form = require('./validation/form.js'),
     toggle = require('./modules/toggle.js'),
     autoCompleteFactory = require('./modules/autoCompleteFactory.js'),
@@ -136,6 +137,7 @@ $(function() {
   sso().init();
   visibility();
   form();
+  mask();
   toggle();
   autoCompleteFactory();
   control();
