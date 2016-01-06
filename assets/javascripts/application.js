@@ -157,7 +157,7 @@ $(function() {
   attorneyBanner();
   youtubePlayer().init();
   ajaxFormSubmit.init(ajaxCallbacks); 
-  tabs().init();
+  tabs();
   accordion();
   charCounter();
   addRemove();

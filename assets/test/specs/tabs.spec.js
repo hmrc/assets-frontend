@@ -9,28 +9,28 @@ describe("Given I have a tabs module on the page", function() {
 
     beforeEach(function() {
       loadFixtures('tabs-fixtures.html');
-      tabs().init(); // init tabs module
+      tabs(); // init tabs module
     });
 
-    it("Then only the 2nd tab content is visible", function() {
-      expect($('[data-tab-content="1"]')).toHaveClass('hidden');
-      expect($('[data-tab-content="2"]')).not.toHaveClass('hidden');
+    it("Then only the first tab content is visible", function() {
+      expect($('[data-tab-content="1"]')).not.toHaveClass('hidden');
+      expect($('[data-tab-content="2"]')).toHaveClass('hidden');
       expect($('[data-tab-content="3"]')).toHaveClass('hidden');
     });
 
   });
 
-  describe("When I click the first tab link", function() {
+  describe("When I click the 2nd tab link", function() {
 
     beforeEach(function() {
       loadFixtures('tabs-fixtures.html');
-      tabs().init(); // init tabs module
-      $('[data-tab-link="1"]').click();
+      tabs(); // init tabs module
+      $('[data-tab-link="2"]').click();
     });
 
-    it("Then only the 1st tab content is visible", function() {
-      expect($('[data-tab-content="1"]')).not.toHaveClass('hidden');
-      expect($('[data-tab-content="2"]')).toHaveClass('hidden');
+    it("Then only the 2nd tab content is visible", function() {
+      expect($('[data-tab-content="1"]')).toHaveClass('hidden');
+      expect($('[data-tab-content="2"]')).not.toHaveClass('hidden');
       expect($('[data-tab-content="3"]')).toHaveClass('hidden');
     });
 
@@ -44,7 +44,7 @@ describe("Given I have a tabs module on the page", function() {
 
         beforeEach(function() {
           loadFixtures('tabs-fixtures-auto-open.html');
-          tabs().init();
+          tabs();
         });
 
         it("should have the first tab selected", function() {
@@ -63,7 +63,7 @@ describe("Given I have a tabs module on the page", function() {
         beforeEach(function() {
           loadFixtures('tabs-fixtures-auto-open.html');
           window.history.replaceState(null, null, '#three');
-          tabs().init();
+          tabs();
         });
 
         it("should have the tab matching the hash selected", function() {
