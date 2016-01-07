@@ -1,10 +1,10 @@
 {
   "name": "assets-frontend",
   "version": "0.0.1",
-  "description": "Frontend development workflow for GOVUK",
+  "description": "Frontend static assets for HMRC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hmrc/assets-frontend"
+    "url": "https://github.com/hmrc/assets-frontend.git"
   },
   "scripts": {
     "dev": "gulp",
@@ -16,7 +16,8 @@
     "stageprompt": "alphagov/stageprompt#2.1.0"
   },
   "keywords": [
-    "GOVUK"
+    "HMRC",
+    "assets"
   ],
   "author": "HMRC",
   "license": "Apache-2.0",
