@@ -6,12 +6,12 @@ Mask content and show or hide it.
 
 Example:
 
-<div class="js-mask-content">
- <span>
-  <span class="js-visible">•••••••••••••••••••</span>
-  <span class="js-hidden">secret</span>
- </span>
- <a href="#" class="js-visible js-mask-control" data-text-show="Show" data-text-hide="Hide">Show</a>
+<div class="js-mask-container">
+  <span>
+    <span class="js-visible js-mask-secret">mask</span>
+    <span class="js-hidden js-mask-revealed">secret</span>
+  </span>
+  <a href="#" class="js-visible js-mask-control" data-text-show="Show" data-text-hide="Hide">Show</a>
 </div>
  */
 
