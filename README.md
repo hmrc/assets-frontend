@@ -39,6 +39,20 @@ The [Karma test runner](http://karma-runner.github.io/) is used to run our JS te
 $ ./server.sh test
 ```
 
+### Running tests whilst developing
+
+To add an auto watch and run test whilst developing use the command:
+
+```
+$ npm run test:dev
+```
+
+To run tests and check dependencies use the command:
+
+```
+$ ./server.sh test-dev
+```
+
 
 ### Running a Production build
 
