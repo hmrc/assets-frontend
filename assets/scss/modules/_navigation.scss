@@ -142,6 +142,7 @@ a.header__menu__proposition-name {
     margin-bottom: 0;
     padding: 0.5em 0;
     display:block;
+    white-space: nowrap;
 
     @include media(tablet) {
       border: 1px solid $border-colour;

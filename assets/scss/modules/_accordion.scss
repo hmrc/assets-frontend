@@ -5,7 +5,7 @@
   border-bottom: 1px solid #bfc1c3;
 
   .tag {
-    margin: 0 7px 20px 0;
+    margin: 0 7px 7px 0;
 
     @include media(mobile) {
       margin-bottom: 10px;
@@ -30,31 +30,30 @@
 }
 
 .accordion__row {
-  padding: 20px 12px 20px 12px;
+  padding: 15px 12px 15px 12px;
   background-color: #f8f8f8;
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .accordion__row__left {
-  width:38%;
+  width:35%;
   display: table-cell;
   padding: 0 10px 0 0;
+  box-sizing: border-box;
 
   .accordion__indicator {
     float: left;
-    margin: -4px 5px 20px 0;
-  }
-
-  @include media(tablet) {
-    .accordion__indicator {
-      margin-top: -2px; 
-    }
+    margin: -2px 5px 5px 0;
   }
 
 }
 
 .accordion__row__right {  
-  width:59%;
+  width:50%;
   display: table-cell;
+  box-sizing: border-box;
 }
 
 .accordion__body {
@@ -66,6 +65,8 @@
   border-bottom: 1px solid #bfc1c3;
   overflow: auto;
   margin: 0;
+  display: table;
+  width: 100%;
 
   &:last-child {
     border-bottom: none;
@@ -74,28 +75,51 @@
 }
 
 .accordion__body__row__left {
-  padding: 20px 12px 20px 30px;
-  width: 32%;
-  float: left;
+  padding: 10px 12px 10px 30px;
+  width: 42%;
   background-color: white;
+  vertical-align: top;
+  display: table-cell;
+
+  &.spaced {
+    padding: 15px 12px 15px 30px;
+  }
 
   @include media(mobile) {
     width: auto;
-    float: none;
+    display: table;
+    padding: 15px 20px 15px 30px;
+
+    .tag {
+      margin-bottom: 0;
+    }
+
   }
 
 }
 
 .accordion__body__row__right {
-  padding: 20px 0 20px 0;
-  width: 60%;
-  float: left;
+  padding: 10px 12px 10px 0;
   background-color: white;
+  display: table-cell;
+
+  &.spaced {
+    padding: 15px 12px 15px 0;
+  }
 
   @include media(mobile) {
     width: auto;
-    float: none;
-    padding: 0 12px 20px 25px;
+    display: table;
+    padding: 0 20px 15px 30px;
   }
 
+}
+
+.accordion__button:visited {
+  color: $govuk-blue-colour;
+}
+
+.accordion a,
+.accordion span {
+  //border: 1px solid red;
 }
