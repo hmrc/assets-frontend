@@ -38,7 +38,7 @@ var ajaxFormSubmit = {
 
   init: function(config) {
     var _this = this,
-        $ajaxForm = $('form:has([data-ajax-submit])'),
+        $ajaxForm = $('form[data-ajax-submit], form:has([data-ajax-submit])'),
         ajaxFormCount = $ajaxForm.length,
         a = 0;
 
