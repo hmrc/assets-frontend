@@ -214,7 +214,7 @@ describe('AjaxFormSubmit', function() {
           html: successHtml,
           $form: $fp,
           position: isMissingClient ? 'before' : 'insert',
-          container: isMissingClient ? '.panel-indent>.alert--success' : '>p'
+          container: isMissingClient ? '.panel-indent .alert--success' : '>p'
         });
       }    
     });
