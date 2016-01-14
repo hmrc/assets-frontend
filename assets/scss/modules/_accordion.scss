@@ -5,10 +5,10 @@
   border-bottom: 1px solid #bfc1c3;
 
   .tag {
-    margin: 0 7px 7px 0;
+    margin: 0 em(7) em(7) 0;
 
     @include media(mobile) {
-      margin-bottom: 10px;
+      margin-bottom: em(10);
     }
 
   }
@@ -30,7 +30,7 @@
 }
 
 .accordion__row {
-  padding: 15px 12px 15px 12px;
+  padding: em(15) em(12) em(15) em(12);
   background-color: #f8f8f8;
   display: table;
   width: 100%;
@@ -40,12 +40,17 @@
 .accordion__row__left {
   width:35%;
   display: table-cell;
-  padding: 0 10px 0 0;
+  padding: 0 em(10) 0 0;
   box-sizing: border-box;
 
   .accordion__indicator {
     float: left;
-    margin: -2px 5px 5px 0;
+    margin: em(-4) em(5) em(5) 0;
+
+    @include media(tablet) {
+      margin-top: em(-2);
+    }
+
   }
 
 }
@@ -75,20 +80,20 @@
 }
 
 .accordion__body__row__left {
-  padding: 10px 12px 10px 30px;
+  padding: em(10) em(12) em(10) em(30);
   width: 42%;
   background-color: white;
   vertical-align: top;
   display: table-cell;
 
   &.spaced {
-    padding: 15px 12px 15px 30px;
+    padding: em(15) em(12) em(15) em(30);
   }
 
   @include media(mobile) {
     width: auto;
     display: table;
-    padding: 15px 20px 15px 30px;
+    padding: em(15) em(20) em(15) em(30);
 
     .tag {
       margin-bottom: 0;
@@ -99,18 +104,23 @@
 }
 
 .accordion__body__row__right {
-  padding: 10px 12px 10px 0;
+  padding: em(10) em(12) em(10) 0;
   background-color: white;
   display: table-cell;
-
-  &.spaced {
-    padding: 15px 12px 15px 0;
-  }
 
   @include media(mobile) {
     width: auto;
     display: table;
-    padding: 0 20px 15px 30px;
+    padding: 0 em(20) em(15) em(30);
+  }
+
+  &.spaced {
+    padding: em(15) em(12) em(15) 0;
+
+    @include media(mobile) {
+      padding-left: em(30);
+    }
+
   }
 
 }
@@ -119,7 +129,3 @@
   color: $govuk-blue-colour;
 }
 
-.accordion a,
-.accordion span {
-  //border: 1px solid red;
-}
