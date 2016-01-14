@@ -1,7 +1,7 @@
 .toggle-btn {
-  @include core-16;
-  padding: em(3) em(10) em(3) em(10);
+  padding: em(5) em(10) em(3) em(10);
   display: inline-block;
+  line-height: 1.4em;
 }
 
 .toggle-btn--on {
