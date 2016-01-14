@@ -60,31 +60,27 @@
         <p>You can’t see clients authorised with a paper 64-8 form only.</p>
         <strong>Ask for access for missing 64-8 clients</strong>
 
+        <form action="#agent-client-list-client-access-request" method="POST" id="missing-client-form" class="form-group">
 
-        <form action="#agent-client-list-client-access-request" method="POST" id="missing-client-form"
-              class="form-group">
-
-            <input type="hidden" name="csrfToken"
-                   value="22222c222cc22222ccc2222cc22cc2ccc2c22222">
-
-            <label for="missing-client-paye-ref" class="form-label">PAYE reference</label>
-
-            <input name="payeref" id="missing-client-paye-ref" type="text" value="">
-
-            <label for="missing-client-email" class="form-label">Your email</label>
-
-
-            <input name="email" id="missing-client-email" type="text" value="agent@agency.com">
-
-
-            <input name="missingclient" type="hidden" value="true">
-            <button class="button" type="submit" id="missing-client-submit"
-                    formaction="/agent/client-list/client-access-xhr-request" data-ajax-submit="true"
-                    data-container="#missing-client-form"
-                    data-callback-name="clientAccessResponse.callbacks"
-                    data-callback-args="#missing-client-form,before">Send
-            </button>
-
+            <input type="hidden" name="csrfToken" value="d5724df076c0776d249431a3857f101b70473dc3-1452719940926-8110a9ddcf9b091e5a70207f">
+            <div class="form-field">
+                <label for="missing-client-email" class="form-label bold">Your email</label>
+                <input name="email" id="missing-client-email" type="text" value="agent@agency.com">
+            </div>
+            <div class="form-field">
+                <label for="missing-client-paye-ref" class="form-label bold">Missing client</label>
+                <input name="payeref" id="missing-client-paye-ref" type="text" value="" placeholder="e.g. 123/AB4567">
+            </div>
+            <div class="form-field">
+                <input class="button" value="Send request" type="submit" id="missing-client-submit" 
+                data-formaction="#agent-client-list-client-access-request" 
+                    formaction="#agent-client-list-client-access-request" 
+                    data-ajax-submit="true" 
+                    data-container="#missing-client-form" 
+                    data-journey-click="missing-client:Click:Ask for access for missing 64-8 clients (form submit)" 
+                    data-callback-name="clientAccessResponse.callbacks" 
+                    data-callback-args="#missing-client-form,before">
+            </div>
         </form>
     </div>
 </details>
