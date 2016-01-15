@@ -104,7 +104,11 @@
   .sorting_desc_disabled {
     background: url("../images/sort_desc_disabled.png") no-repeat scroll center right;
   }
-
+  
+  .sorting--hidden {
+    background-image: none;
+  }
+  
   .client {
     background-position-x: 57px;
   }
