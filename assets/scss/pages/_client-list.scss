@@ -1,7 +1,4 @@
 .js-datatable-wrapper[action$="client-list"] {
-  th:first-child {
-    width: 3%;
-  }
 
   .client {
     background-position-x: 57px;
@@ -18,24 +15,25 @@
     width: 18%;
   }
 
-  .notes {
-    width: 28%;
+  th:last-child {
+    width: 7%;
   }
 }
 
 $client-list-error-background: #fef7f7;
-.missing-client-details,
-.client-access-details {
+.missing-client {
   .form-field {
     &.error,
-    &>.alert {
+    &>[role="alert"],
+    .error-message {
       background-color: $client-list-error-background;
     }
+    
     &.error {
       padding: 0.75em 1em 1em 1em;
     }
 
-    &>.alert {
+    &>[role="alert"] {
       margin-bottom: 0;
       border-left-style: none;
       padding: 0;
@@ -52,9 +50,6 @@ $client-list-error-background: #fef7f7;
       border: 4px solid $alert-bg-red;
     }
   }
-}
-.client-access-details .form-field.error {
-  margin-left: -1.1875em;
 }
 
 #global-breadcrumb {

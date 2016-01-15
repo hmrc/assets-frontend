@@ -48,6 +48,9 @@ button, .button {
   @include core-16();
   margin-top: 10px;
 }
+.button--table {
+  @include button($grey-8);
+}
 
 /**
  * For links that need to be positioned beside buttons
@@ -59,6 +62,10 @@ button, .button {
   text-decoration: underline;
   color: $link-colour;
   border: none;
+
+  &.button--link-table {
+    color: $black;
+  }
 
   &:hover, 
   &:focus, 
@@ -79,7 +86,6 @@ button, .button {
   @include media(mobile) {
     margin-top: 10px;
   }
-
 }
 
 /* Transforms button into a link */
