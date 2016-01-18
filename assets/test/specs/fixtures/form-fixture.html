@@ -1,0 +1,51 @@
+<form class="js-form" autocomplete="off" novalidate="novalidate">
+
+  <div class="flash error-summary" id="Search-failure" role="group" aria-labelledby="errorSummaryHeading" tabindex="-1">
+    <h2 id="errorSummaryHeading" class="h3-heading">There are errors on the page.</h2>
+    <ul class="js-error-summary-messages"></ul>
+  </div>
+
+  <fieldset class="form-field-group">
+    <label class="form-element-bold" for="text-input-example">Text input example
+    <span class="error-notification" role="tooltip" data-journey="search-page:error:text-input-example">
+        Required text
+    </span>
+    <input type="text"
+           name="text-input-example"
+           id="text-input-example"
+           class="form-control"
+           minlength="5"
+           maxlength="13"
+           required
+           pattern="^[0-9]{5,13}$"
+           data-msg-pattern="Wrong pattern"
+           data-msg-required="Required text"
+           data-msg-minlength="Min length of 5 is required">
+    </label>
+  </fieldset>
+
+
+  <fieldset class="form-field-group" id="radio-example">
+    <span class="error-notification" role="tooltip" data-journey="search-page:error:radio-example">
+        Required selection
+    </span>
+
+    <label class="block-label block-label--inline" for="radio-yes">Yes
+      <input type="radio"
+             id="radio-yes"
+             value="yes"
+             name="radio-example"
+             required
+             data-msg-required="Required selection"/>
+    </label>
+    <label class="block-label block-label--inline" for="radio-no">No
+      <input type="radio"
+             id="radio-no"
+             value="no"
+             name="radio-example"
+             required/>
+    </label>
+  </fieldset>
+
+  <button id="submit-button" type="submit">Submit</button>
+</form>
