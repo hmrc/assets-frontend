@@ -81,23 +81,25 @@ Summary Error Markup example:
 var $forms;
 
 var displayGlobalErrorSummary = function (validator, errorMessages) {
+  var $template = $('<li role="tooltip"><a></a></li>');
+  var $errorSummaryListElement;
+
   if (errorMessages.length) {
+
     $(errorMessages).each(function (index, errorDetail) {
-      createErrorSummaryListItem(validator, errorDetail.message, errorDetail.name);
+      $errorSummaryListElement = $template.clone();
+      createErrorSummaryListItem($errorSummaryListElement, validator, errorDetail);
     });
   }
 };
 
-var createErrorSummaryListItem = function (validator, error, name) {
+var createErrorSummaryListItem = function ($liElement, validator, errorDetail) {
   var $errorSummaryMessages = $(validator.currentForm).find('.js-error-summary-messages');
-  var $template = $('<li role="tooltip"><a></a></li>');
-  var $errorSummaryListElement = $template.clone();
-  var $anchorElement = $errorSummaryListElement.find('a');
+  var $anchorElement = $liElement.find('a');
 
-  $errorSummaryListElement.attr('data-journey', 'search-page:error:' + name);
-  $anchorElement.attr('data-focuses', name).attr('id', name + '-error').attr('href', '#' + name).text(error);
-
-  $errorSummaryMessages.append($errorSummaryListElement);
+  $liElement.attr('data-journey', 'search-page:error:' + errorDetail.name);
+  $anchorElement.attr('data-focuses', errorDetail.name).attr('id', errorDetail.name + '-error').attr('href', '#' + name).text(errorDetail.message);
+  $errorSummaryMessages.append($liElement);
 }
 
 /**
