@@ -136,7 +136,7 @@ $(function() {
 
   sso().init();
   visibility();
-  form();
+  form.init();
   mask();
   toggle();
   autoCompleteFactory();

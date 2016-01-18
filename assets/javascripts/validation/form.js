@@ -2,7 +2,10 @@ require('jquery');
 
 /**
 Generic form validation
-Place attributes on form inputs and add the class .js-form to your form.
+- Place attributes on form inputs,
+- Add the class .js-form to your form,
+- Add messages for errors via data-msg-<error_type>
+- Works with server side errors
 
 JavaScript error messages added in your markup using the .error-notification class
 Server side errors handled by using @if(registrationForm("phoneNumber").hasErrors){ error}
@@ -18,10 +21,11 @@ Example:
  <input type="text"
         name="country-code-auto-complete"
         id="country-code-auto-complete"
-        class="form-control form-control--block js-choose-country-auto-complete"
+        class="form-control form-control--block"
         autocomplete="off"
         spellcheck="false"
         required
+        value=""
         data-rule-suggestion="true"
         aria-autocomplete="list"
         aria-haspopup="country-code-suggestions"
@@ -29,7 +33,7 @@ Example:
 
 Inline error markup example:
 
- <fieldset class="form-field-group@if(registrationForm("phoneNumber").hasErrors){ error}">
+ <fieldset class="form-field-group@if(registrationForm("phoneNumber").hasErrors){ form-field-group--error}">
     <legend class="visuallyhidden">@Messages("otpfe.enter_mobile.page.header")</legend>
 
       <label class="form-element-bold" for="phoneNumber">
@@ -42,142 +46,149 @@ Inline error markup example:
           </span>
           <input type="text"
                  name="phoneNumber"
-                 value="@registrationForm("phoneNumber").value"
+                 value=""
                  id="phoneNumber"
                  class="form-control"
                  minlength="10"
                  maxlength="15"
                  pattern="^[0-9]{10,15}$"
                  required
-                 aria-required="true"/>
+                 aria-required="true"
+                 data-msg-pattern="Invalid Pattern"
+                 data-msg-required="This is required"
+                 data-msg-minlength="Minimum length not reached"/>
       </label>
  </fieldset>
 ---------------------------
 
 Summary Error Markup example:
 
- <div class="flash error-summary@if(!registrationForm.hasErrors){ hidden}" id="Search-failure" role="group" aria-labelledby="errorSummaryHeading" tabindex="-1">
- <h2 id="errorSummaryHeading" class="h3-heading">Heading</h2>
+ <div class="flash error-summary@if(form.hasErrors) { error-summary--show}"
+      id="Search-failure"
+      role="group"
+      aria-labelledby="errorSummaryHeading"
+      tabindex="-1">
 
- @* ----- Form Summary errors (JavaScript only) ----- *@
- <ul class="js-error-summary-messages">
-    <li class="hidden" role="tooltip" data-journey="search-page:error:phoneNumber">
-      <a href="#phoneNumber" class="error-list" data-focuses="phoneNumber" id="phoneNumber-error">
-        Error Message phone Number
-      </a>
-    </li>
-    <li class="hidden" role="tooltip" data-journey="search-page:error:uk-number">
-      <a href="#uk-number" class="error-list" data-focuses="uk-number" id="uk-number-error">
-        Error Message uk number
-      </a>
-    </li>
-    <li class="hidden" role="tooltip" data-journey="search-page:error:country-code-auto-complete">
-      <a href="#country-code-auto-complete" class="error-list" data-focuses="country-code-auto-complete" id="country-code-auto-complete-error">
-        Error Message Auto Complete
-      </a>
-    </li>
- </ul>
-
- @* ----- Form Summary Server side errors ----- *@
- @if(registrationForm.hasErrors){
-    <ul class="js-error-summary-messages">
-        @registrationForm.errors.map { error =>
-            <li role="tooltip" data-journey="search-page:error:@error.key">
-                <a href="#@error.key" class="error-list" data-focuses="@error.key" id="@{error.key}-error">
-                @Messages(error.message)
-                </a>
-            </li>
-        }
-    </ul>
-  }
+      <h2 id="errorSummaryHeading" class="h3-heading">@heading</h2>
+      <ul class="js-error-summary-messages">
+      @if(form.hasErrors) {
+        @form.errors.map(error => fragments.errorSummaryItem(error.key, error.message))
+      }
+      </ul>
  </div>
  */
 
 var $forms;
 
-var displayErrorSummary = function (validator, $errorSummary) {
-  var $errorSummaryMessages = $errorSummary.find('.js-error-summary-messages > li');
-  var invalidInputs = validator.invalid;
-
-  $errorSummaryMessages.each(function (index, elem) {
-    var $elem = $(elem);
-    var identSplit = $elem.data('journey').split('search-page:error:');
-    var validationId = identSplit && identSplit[1];
-
-    // find the error message and display
-    if (invalidInputs[validationId]) {
-      //do not re-show server-rendered error messages when performing JS validation
-      if ($elem.hasClass('server-rendered')) {
-        $elem.addClass('hidden');
-      } else {
-        $elem.removeClass('hidden');
-      }
-    } else {
-      $elem.addClass('hidden');
-    }
-  });
-
-  $errorSummary.removeClass('hidden');
-};
-
-var purgeErrorList = function (errorList, $elem) {
-  for (var i = errorList.length; i-- > 0; ) {
-    var errorDetail = errorList[i];
-    if (errorDetail.element.name === $elem[0].name) {
-      errorList.splice(i, 1);
-    }
+var displayGlobalErrorSummary = function (validator, errorMessages) {
+  if (errorMessages.length) {
+    $(errorMessages).each(function (index, errorDetail) {
+      createErrorSummaryListItem(validator, errorDetail.message, errorDetail.name);
+    });
   }
 };
 
-var flushErrors = function (invalid, errorList) {
-  for(var inputName in invalid) {
+var createErrorSummaryListItem = function (validator, error, name) {
+  var $errorSummaryMessages = $(validator.currentForm).find('.js-error-summary-messages');
+  var $template = $('<li role="tooltip"><a></a></li>');
+  var $errorSummaryListElement = $template.clone();
+  var $anchorElement = $errorSummaryListElement.find('a');
+
+  $errorSummaryListElement.attr('data-journey', 'search-page:error:' + name);
+  $anchorElement.attr('data-focuses', name).attr('id', name + '-error').attr('href', '#' + name).text(error);
+
+  $errorSummaryMessages.append($errorSummaryListElement);
+}
+
+/**
+ * Clear the following for hidden inputs error messages, reset inputs and remove errors from validator.invalid
+ * @param invalidInputs
+ */
+var flushHiddenElementErrors = function (invalidInputs) {
+  for(var inputName in invalidInputs) {
     var $elem = $('[name="' + inputName + '"]');
 
     if ($elem.is(':hidden')) {
-      delete invalid[inputName];
+      delete invalidInputs[inputName];
       $elem.val('');
-      $elem.closest('.form-field-group').removeClass('error');
-      purgeErrorList(errorList, $elem);
+      $elem.closest('.form-field-group').removeClass('form-field-group--error');
     }
   }
 };
+
 
 var handleErrors = function (validator) {
   var $currentForm = $(validator.currentForm);
   var $errorSummary = $('.error-summary', $currentForm);
+  var errorSummaryContainer = $errorSummary.find('.js-error-summary-messages');
+  var errorMessages;
 
-  flushErrors(validator.invalid, validator.errorList);
+  // show default errors so the messages get updated before we extract them
+  validator.defaultShowErrors();
+  errorMessages = getErrorMessages();
+  errorSummaryContainer.html('');
 
-  if (validator.numberOfInvalids()) {
-    displayErrorSummary(validator, $errorSummary);
+  flushHiddenElementErrors(validator.invalid);
+
+  if (errorMessages.length) {
+    displayGlobalErrorSummary(validator, errorMessages, $errorSummary);
+    $errorSummary.addClass('error-summary--show');
   } else {
-    $errorSummary.addClass('hidden');
+    $errorSummary.removeClass('error-summary--show');
   }
 };
 
-var setupForm = function ($formElem) {
+/**
+ * Get the current global error messages show on the form
+ *
+ * NOTE: this has been create because it is not possible to get all messages via the exposed .errorList or .invalid when
+ * using custom errors sent in via data-msg-* rules there is a bug/feature where the message in .invalid is set to "true"
+ * in certain circumstances. There is also a feature with .showErrors() interface supplying local and global error lists
+ * dependant on blur/click/focus or submit actions. This function normalizes this.
+ * @returns {Array}
+ */
+var getErrorMessages = function () {
+  var errorMessages = [];
 
+  $('.error-notification').each(function (index, errorMessageElem) {
+    var $errorMessageElem = $(errorMessageElem);
+    var name = $errorMessageElem.attr('data-journey').split(':').pop();
+    var error = {};
+
+    // only interested in current error messages
+    if (!$errorMessageElem.is(':hidden')) {
+      error.name = name;
+      error.message = $errorMessageElem.text();
+      errorMessages.push(error);
+    }
+  });
+
+  return errorMessages;
+};
+
+
+var setupForm = function ($formElem) {
   var validator = $formElem.validate({
-    errorPlacement: function () {
-      // error messages shown by revealing hidden content in markup
+    errorPlacement: function ($error, $element) {
+      var $formFieldGroup = $element.closest('.form-field-group');
+      $formFieldGroup.find('.error-notification').text($error.text());
     },
     highlight: function (element) {
-      $(element).closest('.form-field-group').addClass('error');
+      $(element).closest('.form-field-group').addClass('form-field-group--error');
     },
     unhighlight: function (element) {
-      $(element).closest('.form-field-group').removeClass('error');
+      $(element).closest('.form-field-group').removeClass('form-field-group--error');
     },
     showErrors: function () {
       handleErrors(validator);
-      validator.defaultShowErrors();
     },
     submitHandler: function (form) {
       form.submit();
     },
     invalidHandler: function() {
-      //When invalid submission, re-enable the submit button
+      // When invalid submission, re-enable the submit button as the preventDoubleSubmit module disables the submit onSubmit
       $formElem.find('.button[type=submit]').prop('disabled', false);
-    },
+    }
   });
 };
 
@@ -191,10 +202,16 @@ var setup = function () {
   $forms = $('.js-form');
 };
 
-module.exports = function () {
+var init = function () {
   setup();
 
   if ($forms.length) {
     setupValidation();
   }
 };
+
+
+module.exports = {
+  init: init,
+  getErrorMessages: getErrorMessages
+}
