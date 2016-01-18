@@ -1,0 +1,25 @@
+.error-summary {
+  display: none;
+}
+
+.error-summary--show {
+  display: block;
+}
+
+.error-notification {
+  color: $error-color;
+  display: none;
+  padding-bottom: em(8);
+  @include core-16;
+}
+
+.form-field-group--error {
+  @include error-box(3px);
+  margin: 0 em(-16) em(8) em(-16);
+
+  .error-notification {
+    display: block;
+  }
+}
+
+

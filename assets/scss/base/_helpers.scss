@@ -191,9 +191,7 @@
 // TODO and not use the .js-convention (for javascript hooks) needs tidying up and duplications removed
 .hidden,
 .no-js .js-visible,
-.no-js .visible-javascript-on,
-.js .js-hidden,
-.js .hidden-javascript-on {
+.js .js-hidden {
   display: none !important;
 }
 
