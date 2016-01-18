@@ -98,7 +98,7 @@ var createErrorSummaryListItem = function ($liElement, validator, errorDetail) {
   var $anchorElement = $liElement.find('a');
 
   $liElement.attr('data-journey', 'search-page:error:' + errorDetail.name);
-  $anchorElement.attr('data-focuses', errorDetail.name).attr('id', errorDetail.name + '-error').attr('href', '#' + name).text(errorDetail.message);
+  $anchorElement.attr('data-focuses', errorDetail.name).attr('id', errorDetail.name + '-error').attr('href', '#' + errorDetail.name).text(errorDetail.message);
   $errorSummaryMessages.append($liElement);
 }
 
