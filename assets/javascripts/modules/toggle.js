@@ -17,22 +17,18 @@ Toggle markup example:
     <label class="block-label block-label--inline" for="uk-phone-number-toggle-close">Yes
         <input type="radio"
                id="uk-phone-number-toggle-close"
-               class="js-toggle-trigger js-control"
+               class="js-toggle-trigger"
                value="yes"
                name="uk-number"
-               required
-               data-control-target="countryCode"
-               data-control-value="44"/>
+               required />
     </label>
     <label class="block-label block-label--inline" for="uk-phone-number-toggle-open">No
         <input type="radio"
                id="uk-phone-number-toggle-open"
-               class="js-toggle-trigger js-control"
+               class="js-toggle-trigger"
                value="no"
                name="uk-number"
                required
-               data-control-target="countryCode"
-               data-control-value="0"
                aria-controls="uk-phone-number-toggle-target"/>
     </label>
 </fieldset>
@@ -49,13 +45,6 @@ Target markup example:
 </div>
  */
 var $toggleElems;
-
-var flushErrors = function ($targetElem) {
-  var $inputs = $targetElem.find('input');
-  if ($inputs.length) {
-    $($inputs[0].form).validate().showErrors();
-  }
-};
 
 /**
  * Controls for triggering toggle
@@ -77,10 +66,8 @@ var toggleEvent = function ($elem) {
 
       if (target.id === openId) {
         $targetElem.show().attr('aria-expanded', 'true').attr('aria-visible', 'true');
-        flushErrors($targetElem);
       } else if (target.id === closeId) {
         $targetElem.hide().attr('aria-expanded', 'false').attr('aria-visible', 'false');
-        flushErrors($targetElem);
       }
     }
   });
