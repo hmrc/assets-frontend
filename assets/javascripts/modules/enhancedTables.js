@@ -130,7 +130,7 @@ module.exports = function(tableSelector) {
   updateCheckAll();
 
   // control items should be fixed in position if table is scrolled
-  if (!$('.controlpanel.stick')) {
+  if (!!$('.controlpanel.stick').length) {
     sticky({
       el: '.controlpanel.stick',
       className: 'fixed'
