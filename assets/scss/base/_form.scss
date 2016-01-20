@@ -324,9 +324,7 @@ label {
   cursor: pointer; // Encourage clicking on block labels
 
   @include media(tablet) {
-    float: left;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: em(10);
   }
 }
 
