@@ -71,3 +71,24 @@
   }
 }
 
+.no-details details {
+  summary {
+    .arrow-closed {
+      display: inline;
+    }
+
+    .arrow-open {
+      display: none;
+    }
+  }
+
+  &.open summary {
+    .arrow-closed {
+      display: none;
+    }
+
+    .arrow-open {
+      display: inline;
+    }
+  }
+}
