@@ -103,65 +103,6 @@ a.header__menu__proposition-name {
   }
 }
 
-.tabs-nav {
-  margin: 2em 0;
-  border-bottom: 1px solid #ccc;
-  list-style-type: none;
-  margin-bottom: 1em;
-
-  @include media(tablet) {
-    @extend %contain-floats;
-    display: flex;
-  }
-
-  .tabs-nav__tab {
-    margin-bottom: 0;
-    border-top: 1px solid $border-colour;
-    display: block;
-    padding: 0.5em 0;
-    text-decoration: none;
-    white-space: nowrap;
-
-    .count {
-      background-color: $red;
-      color: $white;
-      padding: 0 5px;
-    }
-
-    @include media(tablet) {
-      float: left;
-      background-color: #dee0e2;
-      border: 0;
-      margin: 0.25em 0.25em 0.25em 0;
-      padding: 0.45em;
-    }
-  }
-
-  .tabs-nav__tab--active {
-    border-top: 1px solid $border-colour;
-    margin-bottom: 0;
-    padding: 0.5em 0;
-    display:block;
-    white-space: nowrap;
-
-    @include media(tablet) {
-      border: 1px solid $border-colour;
-      border-bottom: 1px solid #fff;
-      float: left;
-      margin: 0 0.25em -1px 0;
-      padding: 0.7em;
-    }
-  }
-}
-
-.tab-content {
-
-  .tab-content__first {
-    margin-top: em(30);
-  }
-
-}
-
 .back-link {
   @include core-19();
   border-bottom: 1px solid $black;
