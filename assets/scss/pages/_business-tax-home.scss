@@ -60,7 +60,6 @@
   }
 
   article li {
-    padding-left: 0;
     @include media(mobile) {
       margin-left: 0;
     }
