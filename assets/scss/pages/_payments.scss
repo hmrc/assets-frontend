@@ -8,15 +8,15 @@
   }
 
   .heading-xlarge {
-    font-size:36px;
+    font-size: em(36);
   }
 
   p {
-    margin:8px 0 20px 0;
+    margin: em(8) 0 em(20) 0;
   }
 
   .vertical-space-top {
-    margin-top: 20px;
+    margin-top: em(20);
   }
 
   fieldset legend {
@@ -24,15 +24,15 @@
   }
 
   .button {
-    margin:0 0 12px 0;
+    margin:0 0 em(12) 0;
   }
 
   .form-label-bold {
-    margin-bottom: 5px;
+    margin-bottom: em(5);
   }
 
   .form-hint {
-    margin-bottom: 5px;
+    margin-bottom: em(5);
   }
 
   .pay-now,
@@ -42,15 +42,15 @@
 
   .pay-now {
     vertical-align:top;
-    margin:0 5px 0 0;
+    margin:0 em(5) 0 0;
   }
 
   .tab {
-    width:160px;
-    padding:14px 0 6px;
+    width:em(160);
+    padding: em(14) 0 em(6);
     text-align:center;
-    margin-bottom:0px;
-    margin-right:20px;
+    margin-bottom: 0;
+    margin-right: em(20);
     color: #005EA5;
     cursor: pointer;
     float: left;
@@ -68,7 +68,7 @@
     background-color: transparent;
     border: 0;
     box-sizing: border-box;
-    padding: 18px 30px 12px 45px;
+    padding: em(18) em(30) em(12) em(45);
   }
 
   .table-label.selected,
@@ -87,15 +87,15 @@
 
   table.calendar label span {
     float: right;
-    padding-left: 12px;
+    padding-left: em(12);
   }
 
   .how-to-pay {
-    border-bottom: 0px;
+    border-bottom: 0;
   }
 
   .min.summary {
-    border-bottom: 0px;
+    border-bottom: 0;
   }
 
   .survey__legend {
@@ -133,17 +133,22 @@
     top:0;
   }
 
+  .worldpay-logo {
+    position: relative;
+    top: em(4);
+  }
+
   .summary__amounts__item {
     @include core-16;
     padding: em(14) em(20) em(12) 0;
-    margin:0;
-    text-align:right;
-    display:block;
-    height:19px;
+    margin: 0;
+    text-align: right;
+    display: block;
+    height: em(19);
 
     @include media(mobile) {
       padding: em(13) em(20) em(10) 0;
-      height:18px;
+      height: em(18);
     }
 
     &.fee {
