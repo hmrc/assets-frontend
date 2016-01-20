@@ -38,16 +38,18 @@ describe("Tests for the <details> polyfill for pre-historic browsers.", function
     it("Should set content ids.", function ()
     {
       expect($("div", details1).attr("id")).toMatch(/details-content-\d+/);
-      expect($("div", details1).attr("id")).toMatch(/details-content-\d+/);
+      expect($("div", details2).attr("id")).toMatch(/details-content-\d+/);
     });
 
     it("Should contain arrows.", function ()
     {
-      expect($("summary>i.arrow.arrow-open", details1).size()).toEqual(1);
-      expect($("summary>i.arrow.arrow-closed", details1).size()).toEqual(1);
+      var openArrowQuery = "summary>i.arrow.arrow-open";
+      var closedArrowQuery = "summary>i.arrow.arrow-closed";
+      expect($(openArrowQuery, details1).length).toEqual(1);
+      expect($(closedArrowQuery, details1).length).toEqual(1);
 
-      expect($("summary>i.arrow.arrow-open", details2).size()).toEqual(1);
-      expect($("summary>i.arrow.arrow-closed", details2).size()).toEqual(1);
+      expect($(openArrowQuery, details2).length).toEqual(1);
+      expect($(closedArrowQuery, details2).length).toEqual(1);
     });
 
     describe("Opening details.", function ()
