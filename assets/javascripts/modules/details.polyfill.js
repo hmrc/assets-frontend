@@ -4,6 +4,7 @@
 
   var proto = $.fn,
     details,
+    nextDetailsId = 1,
   // :'(
     isOpera = Object.prototype.toString.call(window.opera) == '[object Opera]',
   // Feature test for native `<details>` support
@@ -36,6 +37,14 @@
       }
       return diff;
     }(document)),
+    fixDetailContentId = function ($detailsNotSummary)
+    {
+      var $content = $detailsNotSummary.first();
+      if (!$content.attr("id"))
+      {
+        $content.attr("id", "details-content-" + nextDetailsId++);
+      }
+    },
     toggleOpen = function ($details, $detailsSummary, $detailsNotSummary, toggle)
     {
       var isOpen = $details.prop('open'),
@@ -87,9 +96,9 @@
           $summary = $('summary', $details).first();
 
         if ($details.prop("details-initialised"))
-        {
           return;
-        }
+
+        fixDetailContentId($details.children(':not(summary)'));
 
         $details.prop("details-initialised", true);
         $summary.attr({
@@ -147,6 +156,7 @@
           return;
         }
 
+        $details.attr("role", "group");
         $details.prop("details-initialised", true);
 
         // If there is no `summary` in the current `details` element…
@@ -156,8 +166,8 @@
           $detailsSummary = $('<summary>').text('Details').prependTo($details);
         }
 
-        $('<span>').addClass("arrow-open").append(document.createTextNode("\u25bc")).prependTo($detailsSummary);
-        $('<span>').addClass("arrow-closed").append(document.createTextNode("\u25ba")).prependTo($detailsSummary);
+        $('<i>').addClass("arrow arrow-open").append(document.createTextNode("\u25bc")).prependTo($detailsSummary);
+        $('<i>').addClass("arrow arrow-closed").append(document.createTextNode("\u25ba")).prependTo($detailsSummary);
 
         // Look for direct child text nodes
         if ($detailsNotSummary.length != $detailsNotSummaryContents.length)
@@ -172,6 +182,8 @@
           // There are now no direct child text nodes anymore — they’re wrapped in `span` elements
           $detailsNotSummary = $details.children(':not(summary)');
         }
+
+        fixDetailContentId($detailsNotSummary);
 
         // Hide content unless there’s an `open` attribute
         $details.prop('open', typeof $details.attr('open') == 'string');
