@@ -31,16 +31,29 @@ Example:
         aria-haspopup="country-code-suggestions"
         aria-activedescendant />
 
+
+Fragments:
+ @import uk.gov.hmrc.play.views.html.helpers._
+ 
+ You can find the fragments errorSummary.scala.html and errorInline.scala.html in the play-ui repo. They will give you the
+ latest markup for free.
+
 Inline error markup example:
+
+ @import uk.gov.hmrc.play.views.html.helpers._
 
  <fieldset class="form-field-group@if(registrationForm("phoneNumber").hasErrors){ form-field-group--error}">
     <legend class="visuallyhidden">@Messages("otpfe.enter_mobile.page.header")</legend>
 
+      @errorInline(
+       errorKey = "phoneNumber",
+       errorMessage = "error message",
+       classes = Seq("extra-classes")
+      )
+
       <label class="form-element-bold" for="phoneNumber">
       Label text
-          <span class="error-notification" role="tooltip" data-journey="search-page:error:phoneNumber">
-            Error Message
-          </span>
+
           <span class="form-hint">
            Form Hint
           </span>
@@ -59,23 +72,18 @@ Inline error markup example:
                  data-msg-minlength="Minimum length not reached"/>
       </label>
  </fieldset>
----------------------------
+
 
 Summary Error Markup example:
 
- <div class="flash error-summary@if(form.hasErrors) { error-summary--show}"
-      id="Search-failure"
-      role="group"
-      aria-labelledby="errorSummaryHeading"
-      tabindex="-1">
+ @import uk.gov.hmrc.play.views.html.helpers._
 
-      <h2 id="errorSummaryHeading" class="h3-heading">@heading</h2>
-      <ul class="js-error-summary-messages">
-      @if(form.hasErrors) {
-        @form.errors.map(error => fragments.errorSummaryItem(error.key, error.message))
-      }
-      </ul>
- </div>
+ @errorSummary(
+  heading = Messages("otpfe.site.error.page.header"),
+  form = registrationForm,
+  classes = Seq("extra-classes")
+  dataJourney = Some("pageName")
+ )
  */
 
 var $forms;
@@ -97,8 +105,10 @@ var createErrorSummaryListItem = function ($liElement, validator, errorDetail) {
   var $errorSummaryMessages = $(validator.currentForm).find('.js-error-summary-messages');
   var $anchorElement = $liElement.find('a');
 
-  $liElement.attr('data-journey', 'search-page:error:' + errorDetail.name);
-  $anchorElement.attr('data-focuses', errorDetail.name).attr('id', errorDetail.name + '-error').attr('href', '#' + errorDetail.name).text(errorDetail.message);
+  $anchorElement.attr('data-focuses', errorDetail.name)
+                .attr('id', errorDetail.name + '-error')
+                .attr('href', '#' + errorDetail.name)
+                .text(errorDetail.message);
   $errorSummaryMessages.append($liElement);
 }
 
@@ -154,7 +164,7 @@ var getErrorMessages = function () {
 
   $('.error-notification').each(function (index, errorMessageElem) {
     var $errorMessageElem = $(errorMessageElem);
-    var name = $errorMessageElem.attr('data-journey').split(':').pop();
+    var name = $errorMessageElem.attr('data-input-name');
     var error = {};
 
     // only interested in current error messages
