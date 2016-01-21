@@ -5,3 +5,9 @@
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+@mixin error-box( $border-width: 3px ) {
+  background-color: $error-bg-color;
+  border-left: $border-width solid $error-border-color;
+  padding: 0.75em 1em;
+}
