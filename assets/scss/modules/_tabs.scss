@@ -18,21 +18,21 @@
     &:focus,
     &:hover,
     &:active {
-      background-color: #DEE0E2;
+      background-color: $govuk-grey-3;
     }
 
     &:visited {
-      color: #005ea5;
+      color: $govuk-blue-colour;
     }
 
     .count {
       background-color: $red;
       color: $white;
-      padding: 0 5px;
+      padding: 0 em(5);
     }
 
     @include media(tablet) {
-      height: 53px;
+      height: em(53);
       display: inline-block;
       margin: 0 em(3) 0 0;
       padding: 0.7em 0.8em;
@@ -51,14 +51,14 @@
     &:focus,
     &:hover,
     &:active {
-      background-color: #DEE0E2;
+      background-color: $govuk-grey-3;
     }
 
   }
 
   .tabs-nav__tab--active {
     z-index: 2;
-    color: #000;
+    color: black; // there is a variable for $black but it's in govuk_elements, which will be removed
     background-color: $white;
     transition: none;
 
@@ -69,7 +69,7 @@
     }
 
     @include media(tablet) {
-      height: 54px;
+      height: em(54);
       padding: 0.7em;
       border: 1px solid $border-colour;
       border-bottom: none;
@@ -108,13 +108,13 @@
 }
 
 .tabs-nav__tab {
-  color: #005ea5;
+  color: $govuk-blue-colour;
   text-decoration: underline;
   cursor: pointer;
 }
 
 .tabs-nav__tab--active {
-  color: #000;
+  color: black;
   text-decoration: none;
   cursor: default;
 }
