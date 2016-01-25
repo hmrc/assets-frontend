@@ -131,16 +131,20 @@ var removeElements = function($activeTab, $tabs) {
 
   $tabs.find('[data-tab-link]').each(function() {
 
-    var $tabLink = $(this),
-      $element = $tabLink.find('.tabs-nav__tab'),
-      attrs    = getAttributes($element),
-      tabText  = $element.text();
+    var $tabLI   = $(this),
+        $element = $tabLI.find('.tabs-nav__tab'),
+        attrs    = getAttributes($element),
+        tabText  = $element.text(),
+        listItemClasses = $tabLI.attr('class');  // save classes on LI that will be overwritten
 
-    if(attrs.class) {
-      $tabLink.addClass(attrs.class);    // put element classes on LI
-    }
+    // set attributes on LI from child element
+    $tabLI.attr(attrs);
 
-    $tabLink.html(tabText);
+    // restore LI classes from before
+    $tabLI.addClass(listItemClasses);
+
+    // text of LI is just tab link text
+    $tabLI.html(tabText);
 
   });
 
