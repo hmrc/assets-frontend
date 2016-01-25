@@ -55,3 +55,19 @@
     background-size: cover;
   }
 }
+
+.govuk-verify {
+  background: {
+    image: url("../images/govuk-verify.png");
+    position: center;
+    repeat: no-repeat;
+    size: 100%;
+  };
+  display: inline-block;
+  height: 63px;
+  width: 91px;
+
+  @include device-pixel-ratio() {
+    background-image: url("../images/govuk-verify-2x.png");
+  }
+}
