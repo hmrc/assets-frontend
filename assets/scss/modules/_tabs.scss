@@ -58,7 +58,7 @@
 
   .tabs-nav__tab--active {
     z-index: 2;
-    color: black; // there is a variable for $black but it's in govuk_elements, which will be removed
+    color: $black;
     background-color: $white;
     transition: none;
 
@@ -106,7 +106,7 @@
 }
 
 .tabs-nav__tab--active {
-  color: black;
+  color: $black;
   text-decoration: none;
   cursor: default;
 }
