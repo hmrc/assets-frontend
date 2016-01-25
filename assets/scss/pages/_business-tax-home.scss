@@ -11,16 +11,16 @@
 
   .subheading {
     @include core-19;
-    margin: 0 0 19px;
+    margin: 0 0 em(19);
   }
 
   .main__section--divider-top {
-    margin-top: 25px;
-    padding-top: 10px;
+    margin-top: em(25);
+    padding-top: em(10);
   }
 
   .add-remove-taxes__heading {
-    margin: 10px 0 5px;
+    margin: em(10) 0 em(5);
   }
 
   .add-remove-taxes__p {
@@ -29,7 +29,7 @@
 
   .add-remove-taxes__text {
     @include core-19;
-    margin: 5px 0;
+    margin: em(5) 0;
   }
 
   .section--branded {
@@ -84,18 +84,16 @@
 
   .details-link {
     @include bold-19();
-    margin-top: 20px;
-    margin-bottom: -10px;
+    margin-top: em(20);
+    margin-bottom: em(-10);
   }
 
   .tax-grouping {
     margin: 1em 0;
   }
 
-  .alert {
+  .alert--success {
     color: $black;
-    padding: 0.4em 0.8em 0.3em;
-    border-left-width: 4px;
   }
 
   .alert--info {
@@ -115,16 +113,16 @@
       color: $link-visited-colour;
     }
     border-bottom: 1px solid $grey-7;
-    line-height: 30px;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
+    line-height: em(30);
+    margin-bottom: em(5);
+    padding-bottom: em(5);
     @include media(mobile) {
       border-bottom: none;
     }
   }
 
   .link-list__link--final {
-    margin-bottom: -10px;
+    margin-bottom: em(-10);
     @include media(mobile) {
       padding-bottom: 0;
     }
@@ -180,18 +178,18 @@
   }
 
   .sa-summary {
-    padding-right: 5px;
+    padding-right: em(5);
     &:focus {
-      outline-offset: -3px;
+      outline-offset: em(-3);
     }
   }
 
   .spacing--top {
-    padding-top: 10px;
+    padding-top: em(10);
   }
 
   .spacing--bottom {
-    padding-bottom: 10px;
+    padding-bottom: em(10);
   }
 
   .manage-acct__section + .manage-acct__section {
