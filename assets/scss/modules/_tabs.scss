@@ -97,14 +97,6 @@
 
   }
 
-  .tab-content {
-
-    .tab-content__first {
-      margin-top: em(30);
-    }
-
-  }
-
 }
 
 .tabs-nav__tab {
@@ -117,5 +109,13 @@
   color: black;
   text-decoration: none;
   cursor: default;
+}
+
+.tab-content {
+
+  .tab-content__first {
+    margin-top: em(30);
+  }
+
 }
 
