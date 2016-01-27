@@ -26,3 +26,36 @@
     white-space: nowrap;
   }
 }
+
+.js-datatable-wrapper.client-list {
+  .dataTables_wrapper {
+    margin-top: em(50);
+  }
+
+  .dataTables_filter__block {
+    padding: em(30) 0 0;
+  }
+
+  .dataTables_filter {
+    right: auto;
+    top: em(-40);
+  }
+  
+  
+  .js-datatable {
+    
+    .client-ref {
+      background-position-x: 87px;
+    }
+    
+    .status--unconfirmed {
+      background-color: $grey-8;
+    }
+
+    .status--confirm-success {
+      background-color: $success-bg-color;
+    }
+  }
+}
+
+
