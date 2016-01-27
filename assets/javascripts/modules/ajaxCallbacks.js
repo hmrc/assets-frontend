@@ -82,7 +82,8 @@ var ajaxCallbacks = {
           if (isError) {
             //helpers.hasErrorType = 'validation';
             $errorTarget = $target.find('>input[name="' + $node.attr('data-input-for') +  '"]');
-            $errorTarget.closest('.form-field').addClass('error');
+            $errorTarget.addClass("error-field");
+            $errorTarget.closest('.form-field').addClass('form-field--error');
             $errorTarget.blur();
           }
 
