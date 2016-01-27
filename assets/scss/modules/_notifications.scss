@@ -158,15 +158,15 @@
   }
 }
 
-.highlight-message__indent {
+.highlight-message--indent {
   margin: em(20) em(40) em(20) 0;
 }
 
-.highlight-message__icon-top {
+.highlight-message--icon-top {
   background-position-y: em(20);
 }
 
-.highlight-message__dark {
+.highlight-message--dark {
   background-color: $govuk-blue-colour;
   color: #fff;
   padding-bottom: em(30);
