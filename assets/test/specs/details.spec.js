@@ -15,11 +15,6 @@ describe("Tests for the <details> polyfill for pre-historic browsers.", function
     require('../../javascripts/modules/details.polyfill.js');
   });
 
-  afterEach(function ()
-  {
-    jasmine.clock().uninstall();
-  });
-
   describe("How it works when details got initialised on page load.", function ()
   {
     beforeEach(function ()
@@ -73,7 +68,7 @@ describe("Tests for the <details> polyfill for pre-historic browsers.", function
       {
         $(details1).children("summary").click();
 
-        expect($(details1).is("[open]")).toBeTruthy();
+        expect($(details1).is(".open")).toBeTruthy();
       });
     });
 
@@ -98,7 +93,7 @@ describe("Tests for the <details> polyfill for pre-historic browsers.", function
       {
         $(details2).children("summary").click();
 
-        expect($(details2).is("[open]")).toBeFalsy();
+        expect($(details2).is(".open")).toBeFalsy();
       });
     });
   });
