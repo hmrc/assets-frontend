@@ -66,6 +66,7 @@
   
 }
 
+.error,
 .form-field-group--error {
   @include error-box(3px);
   margin: 0 em(-16) em(8) em(-16);
