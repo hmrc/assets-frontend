@@ -208,3 +208,19 @@
 	@extend %no-bullet;
 }
 
+/**
+ * Truncate text with an ellipsis
+ */
+.truncate {
+  text-overflow:ellipsis;
+  overflow: hidden;
+
+  /**
+   * Table cells need this hack in order for
+   * truncation to work normally
+   */
+  &.table-cell {
+    max-width:1px;
+  }
+
+}
