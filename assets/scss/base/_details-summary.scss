@@ -71,6 +71,27 @@
   }
 }
 
+.no-details details {
+  summary {
+    .arrow-closed {
+      display: inline-block;
+    }
+
+    .arrow-open {
+      display: none;
+    }
+  }
+
+  &.open summary {
+    .arrow-closed {
+      display: none;
+    }
+
+    .arrow-open {
+      display: inline-block;
+    }
+  }
+}
 .details {
   .details__inner {
     padding-bottom: 2em;

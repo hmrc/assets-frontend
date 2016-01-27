@@ -1,243 +1,238 @@
-// <details> polyfill
-// http://caniuse.com/#feat=details
+/*! http://mths.be/details v0.1.0 by @mathias | includes http://mths.be/noselect v1.0.3 */
+;(function (document, $)
+{
 
-// FF Support for HTML5's <details> and <summary>
-// https://bugzilla.mozilla.org/show_bug.cgi?id=591737
-
-// http://www.sitepoint.com/fixing-the-details-element/
-
-(function() {
-
-  // Add event construct for modern browsers or IE
-  // which fires the callback with a pre-converted target reference
-  function addEvent(node, type, callback) {
-    if (node.addEventListener) {
-      node.addEventListener(type, function(e) {
-        callback(e, e.target);
-      }, false);
-    } else if (node.attachEvent) {
-      node.attachEvent('on' + type, function(e) {
-        callback(e, e.srcElement);
-      });
-    }
-  }
-
-  // Handle cross-modal click events
-  function addClickEvent(node, callback) {
-    // Prevent space(32) from scrolling the page
-    addEvent(node, 'keypress', function(e, target) {
-      if (e.keyCode === 32 && e.target == document.body) {
-        if (e.preventDefault) {
-          e.preventDefault();
-        } else {
-          e.returnValue = false;
-        }
+  var proto = $.fn,
+    details,
+    nextDetailsId = 1,
+  // :'(
+    isOpera = Object.prototype.toString.call(window.opera) == '[object Opera]',
+  // Feature test for native `<details>` support
+    isDetailsSupported = (function (doc)
+    {
+      var el = doc.createElement('details'),
+        fake,
+        root,
+        diff;
+      if (!('open' in el))
+      {
+        return false;
       }
+      root = doc.body || (function ()
+        {
+          var de = doc.documentElement;
+          fake = true;
+          return de.insertBefore(doc.createElement('body'), de.firstElementChild || de.firstChild);
+        }());
+      el.innerHTML = '<summary>a</summary>b';
+      el.style.display = 'block';
+      root.appendChild(el);
+      diff = el.offsetHeight;
+      el.open = true;
+      diff = diff != el.offsetHeight;
+      root.removeChild(el);
+      if (fake)
+      {
+        root.parentNode.removeChild(root);
+      }
+      return diff;
+    }(document)),
+    fixDetailContentId = function ($detailsNotSummary)
+    {
+      var $content = $detailsNotSummary.first();
+      if (!$content.attr("id"))
+      {
+        $content.attr("id", "details-content-" + nextDetailsId++);
+      }
+    },
+    toggleOpen = function ($details, $detailsSummary, $detailsNotSummary, toggle)
+    {
+      var isOpen = $details.prop('open'),
+        close = isOpen && toggle || !isOpen && !toggle;
+      if (close)
+      {
+        $details.removeClass('open').prop('open', false).removeAttr("open").triggerHandler('close.details');
+        $detailsSummary.attr('aria-expanded', false);
+        $detailsNotSummary.hide();
+      }
+      else
+      {
+        $details.addClass('open').prop('open', true).attr("open", "").triggerHandler('open.details');
+        $detailsSummary.attr('aria-expanded', true);
+        $detailsNotSummary.show();
+      }
+    };
+
+  /* http://mths.be/noselect v1.0.3 */
+  proto.noSelect = function ()
+  {
+
+    // Since the string 'none' is used three times, storing it in a variable gives better results after minification
+    var none = 'none';
+
+    // onselectstart and ondragstart for WebKit & IE
+    // onmousedown for WebKit & Opera
+    return this.bind('selectstart dragstart mousedown', function ()
+    {
+      return false;
+    }).css({
+      'MozUserSelect': none,
+      'msUserSelect': none,
+      'webkitUserSelect': none,
+      'userSelect': none
     });
 
-    // When the key comes up - check if it is enter(13) or space(32)
-    addEvent(node, 'keyup', function(e, target) {
-      if (e.keyCode === 13 || e.keyCode === 32) {
-        callback(e, target);
-      }
-    });
+  };
 
-    // Ignore right mouse clicks, to avoid problems on Chrome
-    addEvent(node, 'mouseup', function(e, target) {
-      if (e.which !== 3) {
-        callback(e, target);
-      }
-    });
-  }
+  // Execute the fallback only if there’s no native `details` support
+  if (isDetailsSupported)
+  {
 
-  // Get the nearest ancestor element of a node that matches a given tag name
-  function getAncestor(node, match) {
-    do {
-      if (!node || node.nodeName.toLowerCase() === match) {
-        break;
-      }
+    details = proto.details = function ()
+    {
+      return this.each(function ()
+      {
+        var $details = $(this),
+          $summary = $('summary', $details).first();
 
-      node = node.parentNode;
-    }
-    while (node);
+        if ($details.prop("details-initialised"))
+          return;
 
-    return node;
-  }
+        fixDetailContentId($details.children(':not(summary)'));
 
-  function reapplyDetailsPolyfill() {
-    started = false;
-    addDetailsPolyfill();
-  }
-
-  // Initialisation function
-  function addDetailsPolyfill(list) {
-    var n,
-        i = 0,
-        twisty,
-        details;
-
-    // If this has already happened, just return
-    // else set the flag so it doesn't happen again
-    if (started) {
-      return;
-    }
-
-    started = true;
-
-    // Get the collection of details elements, but if that's empty
-    // then we don't need to bother with the rest of the scripting
-    if ((list = document.getElementsByTagName('details')).length === 0) {
-      return;
-    }
-
-    // else iterate through them to apply their initial state
-    n = list.length;
-
-    for (n; i < n; i++) {
-      details = list[i];
-
-      // Detect native implementations
-      details.__native = typeof details.open === 'boolean';
-
-      // Save shortcuts to the inner summary and content elements
-      details.__summary = details.getElementsByTagName('summary').item(0);
-      details.__content = details.getElementsByTagName('div').item(0);
-
-      // If the content doesn't have an ID, assign it one now
-      // which we'll need for the summary's aria-controls assignment
-      if (!details.__content.id) {
-        details.__content.id = 'details-content-' + i;
-      }
-
-      // Add ARIA role="group" to details
-      details.setAttribute('role', 'group');
-
-      // Add role=button to summary
-      // without overwriting existing role, e.g. alert
-      if (!details.__summary.getAttribute('role')) {
-        details.__summary.setAttribute('role', 'button');
-      }
-
-      // Add aria-controls
-      details.__summary.setAttribute('aria-controls', details.__content.id);
-
-      // Set tabindex so the summary is keyboard accessible
-      // details.__summary.setAttribute('tabindex', 0);
-      // http://www.saliences.com/browserBugs/tabIndex.html
-      details.__summary.tabIndex = 0;
-
-      // Detect initial open/closed state
-
-      // Native support - has 'open' attribute
-      if (details.open === true) {
-        details.__summary.setAttribute('aria-expanded', 'true');
-        details.__content.setAttribute('aria-hidden', 'false');
-        details.__content.style.display = 'block';
-      }
-
-      // Native support - doesn't have 'open' attribute
-      if (details.open === false) {
-        details.__summary.setAttribute('aria-expanded', 'false');
-        details.__content.setAttribute('aria-hidden', 'true');
-        details.__content.style.display = 'none';
-      }
-
-      // If this is not a native implementation
-      if (!details.__native) {
-        // Add an arrow
-        twisty = document.createElement('i');
-
-        // Check for the 'open' attribute
-        // If open exists, but isn't supported it won't have a value
-        if (details.getAttribute('open') === '') {
-          details.__summary.setAttribute('aria-expanded', 'true');
-          details.__content.setAttribute('aria-hidden', 'false');
-        }
-
-        // If open doesn't exist - it will be null or undefined
-        if (details.getAttribute('open') === null || details.getAttribute('open') === 'undefined') {
-          details.__summary.setAttribute('aria-expanded', 'false');
-          details.__content.setAttribute('aria-hidden', 'true');
-          details.__content.style.display = 'none';
-        }
-
-      }
-
-      // Create a circular reference from the summary back to its
-      // parent details element, for convenience in the click handler
-      details.__summary.__details = details;
-
-      // If this is not a native implementation, create an arrow
-      // inside the summary
-      if (!details.__native) {
-
-        twisty = document.createElement('i');
-
-        if (details.getAttribute('open') === '') {
-          twisty.className = 'arrow arrow-open';
-          twisty.appendChild(document.createTextNode('\u25bc'));
-        } else {
-          twisty.className = 'arrow arrow-closed';
-          twisty.appendChild(document.createTextNode('\u25ba'));
-        }
-
-        details.__summary.__twisty = details.__summary.insertBefore(twisty, details.__summary.firstChild);
-        details.__summary.__twisty.setAttribute('aria-hidden', 'true');
-
-        addEvent(details.__summary, "keydown", function (e) {
-          if (e.keyCode == 13 || e.keyCode == 32) {
-            e.preventDefault();
+        $details.prop("details-initialised", true);
+        $summary.attr({
+          'role': 'button',
+          'aria-expanded': $details.prop('open')
+        }).on('click', function ()
+        {
+          // the value of the `open` property is the old value
+          var close = $details.prop('open');
+          $summary.attr('aria-expanded', !close);
+          $details.triggerHandler((close ? 'close' : 'open') + '.details');
+        }).on("toggle-open", function ()
+        {
+          var opened = $details.prop('open');
+          $details.prop("open", !opened);
+          if (opened)
+          {
+            $details.removeAttr("open");
           }
+          else
+          {
+            $details.attr("open", "");
+          }
+          $summary.attr('aria-expanded', !opened);
+          $details.triggerHandler((opened ? 'close' : 'open') + '.details');
         });
-      }
-    }
+      });
 
-    // Define a statechange function that updates aria-expanded and style.display
-    // Also update the arrow position
-    function statechange(summary) {
+    };
 
-      var expanded = summary.__details.__summary.getAttribute('aria-expanded') === 'true',
-          hidden = summary.__details.__content.getAttribute('aria-hidden') === 'true';
+    details.support = isDetailsSupported;
 
-      summary.__details.__summary.setAttribute('aria-expanded', (expanded ? 'false' : 'true'));
-      summary.__details.__content.setAttribute('aria-hidden', (hidden ? 'false' : 'true'));
-      summary.__details.__content.style.display = (expanded ? 'none' : 'block');
+  }
+  else
+  {
 
-      if (summary.__twisty) {
-        summary.__twisty.firstChild.nodeValue = (expanded ? '\u25ba' : '\u25bc');
-        summary.__twisty.setAttribute('class', (expanded ? 'arrow arrow-closed' : 'arrow arrow-open'));
-      }
+    details = proto.details = function ()
+    {
 
-      return true;
-    }
+      // Loop through all `details` elements
+      return this.each(function ()
+      {
 
-    // Bind a click event to handle summary elements
-    if (!eventsBound) {
-      addClickEvent(document, function(e, summary) {
-        if (!(summary = getAncestor(summary, 'summary'))) {
-          return true;
+        // Store a reference to the current `details` element in a variable
+        var $details = $(this),
+        // Store a reference to the `summary` element of the current `details` element (if any) in a variable
+          $detailsSummary = $('summary', $details).first(),
+        // Do the same for the info within the `details` element
+          $detailsNotSummary = $details.children(':not(summary)'),
+        // This will be used later to look for direct child text nodes
+          $detailsNotSummaryContents = $details.contents(':not(summary)');
+
+        if ($details.prop("details-initialised"))
+        {
+          return;
         }
 
-        return statechange(summary);
+        $details.attr("role", "group");
+        $details.prop("details-initialised", true);
+
+        // If there is no `summary` in the current `details` element…
+        if (!$detailsSummary.length)
+        {
+          // …create one with default text
+          $detailsSummary = $('<summary>').text('Details').prependTo($details);
+        }
+
+        $('<i>').addClass("arrow arrow-open").append(document.createTextNode("\u25bc")).prependTo($detailsSummary);
+        $('<i>').addClass("arrow arrow-closed").append(document.createTextNode("\u25ba")).prependTo($detailsSummary);
+
+        // Look for direct child text nodes
+        if ($detailsNotSummary.length != $detailsNotSummaryContents.length)
+        {
+          // Wrap child text nodes in a `span` element
+          $detailsNotSummaryContents.filter(function ()
+          {
+            // Only keep the node in the collection if it’s a text node containing more than only whitespace
+            // http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#space-character
+            return this.nodeType == 3 && /[^ \t\n\f\r]/.test(this.data);
+          }).wrap('<span>');
+          // There are now no direct child text nodes anymore — they’re wrapped in `span` elements
+          $detailsNotSummary = $details.children(':not(summary)');
+        }
+
+        fixDetailContentId($detailsNotSummary);
+
+        // Hide content unless there’s an `open` attribute
+        $details.prop('open', typeof $details.attr('open') == 'string');
+        toggleOpen($details, $detailsSummary, $detailsNotSummary);
+
+        // Add `role=button` and set the `tabindex` of the `summary` element to `0` to make it keyboard accessible
+        $detailsSummary.attr('role', 'button').noSelect().prop('tabIndex', 0)
+          .on('click', function ()
+          {
+            // Focus on the `summary` element
+            $detailsSummary.focus();
+            // Toggle the `open` and `aria-expanded` attributes and the `open` property of the `details` element and display the additional info
+            toggleOpen($details, $detailsSummary, $detailsNotSummary, true);
+          })
+          .on("toggle-open", function ()
+          {
+            // Toggle the `open` and `aria-expanded` attributes and the `open` property of the `details` element and display the additional info
+            toggleOpen($details, $detailsSummary, $detailsNotSummary, true);
+          })
+          .keyup(function (event)
+          {
+            if (32 == event.keyCode || (13 == event.keyCode && !isOpera))
+            {
+              // Space or Enter is pressed — trigger the `click` event on the `summary` element
+              // Opera already seems to trigger the `click` event when Enter is pressed
+              event.preventDefault();
+              $detailsSummary.click();
+            }
+          });
+
       });
-      eventsBound = true;
-    }
+
+    };
+
+    details.support = isDetailsSupported;
   }
 
-  // Create a started flag so we can prevent the initialisation
-  //  function firing from both DOMContentLoaded and window.onload
-  // Create eventsBound flag. If this is to redecorate after ajax load, don't
-  //  re-apply event listeners, or they stack up.
-  var started = false,
-    eventsBound = false;
+  if (!isDetailsSupported)
+  {
+    $("html").addClass("no-details");
+  }
 
-  // Bind two load events for modern and older browsers
-  // If the first one fires it will set a flag to block the second one
-  // but if it's not supported then the second one will fire
-  addEvent(document, 'DOMContentLoaded', addDetailsPolyfill);
-  addEvent(window, 'load', addDetailsPolyfill);
+  $(window).on("reapplyDetails", function ()
+  {
+    $("details").details();
+  });
 
-  // explicit firing after ajax load of content with details
-  addEvent(window, 'reapplyDetails', reapplyDetailsPolyfill);
-
-})();
+  $(function ()
+  {
+    $("details").details();
+  });
+}(document, jQuery));
