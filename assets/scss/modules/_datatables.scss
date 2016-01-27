@@ -121,3 +121,66 @@
     cursor: pointer;
   }
 }
+
+.js-datatable-wrapper[action$="client-list"] {
+  th:first-child {
+    width: 3%;
+  }
+
+  .client {
+    background-position-x: 57px;
+    width: 25%;
+  }
+
+  .paye {
+    background-position-x: 120px;
+    width: 20%;
+  }
+
+  .client-ref {
+    background-position-x: 123px;
+    width: 18%;
+  }
+
+  .notes {
+    width: 28%;
+  }
+
+  .tel-no {
+    white-space: nowrap;
+  }
+}
+
+.js-datatable-wrapper.client-list {
+  .dataTables_wrapper {
+    margin-top: em(50);
+  }
+
+  .dataTables_filter__block {
+    padding: em(30) 0 0;
+  }
+
+  .dataTables_filter {
+    right: auto;
+    top: em(-40);
+  }
+
+
+  .js-datatable {
+
+    .client-ref {
+      background-position-x: 87px;
+    }
+
+    .status--unconfirmed {
+      background-color: $grey-8;
+    }
+
+    .status--confirm-success {
+      background-color: $success-bg-color;
+    }
+  }
+}
+
+
+
