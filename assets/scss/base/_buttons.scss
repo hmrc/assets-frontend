@@ -48,8 +48,11 @@ button, .button {
   @include core-16();
   margin-top: 10px;
 }
+
 .button--table {
-  @include button($grey-8);
+  @include button($shaded-bg-grey);
+  border-bottom: 1px solid #000; // $black;
+  box-shadow: 0 0 0 $grey-4;
 }
 
 /**
