@@ -1,25 +1,3 @@
-.js-datatable-wrapper[action$="client-list"] {
-
-  .client {
-    background-position-x: 57px;
-    width: 25%;
-  }
-
-  .paye {
-    background-position-x: 120px;
-    width: 20%;
-  }
-
-  .client-ref {
-    background-position-x: 123px;
-    width: 18%;
-  }
-
-  th:last-child {
-    width: 7%;
-  }
-}
-
 $client-list-error-background: #fef7f7;
 .missing-client {
   .form-field {
@@ -61,15 +39,29 @@ $client-list-error-background: #fef7f7;
 
 .client-list .content-header .sidebar-links {
   border-width: 5px;
+  padding-top: 20px;
   margin-right: 0;
-
+ 
   @include media(mobile) {
     display: none;
   }
 
   .sidebar-links__item {
     display: block;
-    float:left;
+    float: left;
     width: 100%;
+    
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:first-child,
+    &:nth-child(2) {
+      border-top: none;
+    }
   }
+}
+
+.sidebar-links__item-summary {
+  margin-left: em(3);
 }
