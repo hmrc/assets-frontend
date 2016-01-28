@@ -107,17 +107,9 @@
         }).on('click', function ()
         {
           // the value of the `open` property is the old value
-          var close = $details.prop('open');
-          if (close)
-          {
-            $details.removeClass("open");
-          }
-          else
-          {
-            $details.addClass("open");
-          }
-          $summary.attr('aria-expanded', !close);
-          $details.triggerHandler((close ? 'close' : 'open') + '.details');
+          var isOpen = $details.prop('open');
+          $summary.attr('aria-expanded', !isOpen);
+          $details.toggleClass("open", !isOpen).triggerHandler((isOpen ? 'close' : 'open') + '.details');
         }).on("toggle-open", function ()
         {
           var opened = $details.prop('open');
@@ -128,7 +120,7 @@
           }
           else
           {
-            $details.addClas("open").attr("open", "");
+            $details.addClass("open").attr("open", "");
           }
           $summary.attr('aria-expanded', !opened);
           $details.triggerHandler((opened ? 'close' : 'open') + '.details');
