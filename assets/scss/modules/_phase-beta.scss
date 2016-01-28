@@ -6,6 +6,10 @@
   @include phase-banner(beta);
 }
 
+.beta-banner--borderless {
+  border: none;
+}
+
 .header__menu {
   .beta {
     vertical-align: top;
