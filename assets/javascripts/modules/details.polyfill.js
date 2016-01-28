@@ -24,7 +24,7 @@
           fake = true;
           return de.insertBefore(doc.createElement('body'), de.firstElementChild || de.firstChild);
         }());
-      el.innerHTML = '<summary>a</summary>b';
+      el.innerHTML = '<summary>a</summary><div>b</div>';
       el.style.display = 'block';
       root.appendChild(el);
       diff = el.offsetHeight;
@@ -107,20 +107,20 @@
         }).on('click', function ()
         {
           // the value of the `open` property is the old value
-          var close = $details.prop('open');
-          $summary.attr('aria-expanded', !close);
-          $details.triggerHandler((close ? 'close' : 'open') + '.details');
+          var isOpen = $details.prop('open');
+          $summary.attr('aria-expanded', !isOpen);
+          $details.toggleClass("open", !isOpen).triggerHandler((isOpen ? 'close' : 'open') + '.details');
         }).on("toggle-open", function ()
         {
           var opened = $details.prop('open');
           $details.prop("open", !opened);
           if (opened)
           {
-            $details.removeAttr("open");
+            $details.removeClass("open").removeAttr("open");
           }
           else
           {
-            $details.attr("open", "");
+            $details.addClass("open").attr("open", "");
           }
           $summary.attr('aria-expanded', !opened);
           $details.triggerHandler((opened ? 'close' : 'open') + '.details');
