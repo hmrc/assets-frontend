@@ -30,7 +30,10 @@ module.exports = function () {
 
   // Use the pattern attribute on your input with a valid regex
   jQuery.validator.addMethod('pattern', function (value, element, pattern) {
-    var regex = new RegExp(pattern);
+    var dataAttributeFlag = element.getAttribute('data-pattern-flags');
+    var flag = dataAttributeFlag || '';
+    var regex = new RegExp(pattern, flag);
+
     return regex.test(value);
   });
   
