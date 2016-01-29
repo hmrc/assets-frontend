@@ -12,6 +12,7 @@ var sso = require('./modules/sso.js'),
     form = require('./validation/form.js'),
     toggle = require('./modules/toggle.js'),
     autoCompleteFactory = require('./modules/autoCompleteFactory.js'),
+    passwordReveal = require('./modules/passwordReveal.js'),
     control = require('./modules/control.js'),
     masker = require('./modules/masker.js'),
     contentNudge = require('./modules/contentNudge.js'),
@@ -142,6 +143,7 @@ $(function() {
   autoCompleteFactory();
   control();
   masker();
+  passwordReveal();
   toggleDynamicFormFields();
 
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
