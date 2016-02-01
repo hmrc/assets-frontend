@@ -1,0 +1,64 @@
+.form-hint,
+%form-hint {
+  display: block;
+  color: $secondary-text-colour;
+  margin-bottom: em(5);
+
+  @include media (tablet) {
+    margin-top: em(8);
+  }
+}
+
+.form-element-bold {
+  @include bold-24;
+  display: block;
+  margin-bottom: 0;
+
+  .form-hint {
+    @include core-19;
+  }
+}
+
+.form-hint-secondary {
+  display: block;
+  @include core-16;
+  color: $black;
+  margin-bottom: em(5);
+  margin-top: em(8);
+}
+
+.form-hint-list {
+  @extend %form-hint;
+  margin-bottom: em(12);
+}
+
+.form-hint-list-item {
+  margin: 0 0 em(6) 0;
+}
+
+.form-hint-list-item__indicator {
+  vertical-align: middle;
+  margin-right: em(5);
+  display: inline-block;
+  width: em(21);
+  height: em(21);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../images/bullet-icon.svg");
+
+  @include ie-lte(9) {
+    background-image: url("../images/bullet-icon.png");
+  }
+}
+
+.form-hint-list-item--valid {
+  color: $primary-green;
+
+  .form-hint-list-item__indicator {
+    background-image: url("../images/valid-icon.svg");
+
+    @include ie-lte(9) {
+      background-image: url("../images/valid-icon.png");
+    }
+  }
+}

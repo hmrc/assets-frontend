@@ -430,32 +430,6 @@ label {
   FROM GOVUK_ELEMENTS
 */
 
-.form-element-bold {
-  @include bold-24;
-  display: block;
-  margin-bottom: 0;
-  .form-hint {
-    @include core-19;
-  }
-}
-
-.form-hint {
-  display: block;
-  color: $secondary-text-colour;
-  margin-bottom: 5px;
-  @include media (tablet) {
-    margin-top: 8px;
-  }
-}
-
-.form-hint-secondary {
-  display: block;
-  @include core-16;
-  color: $black;
-  margin-bottom: 5px;
-  margin-top: 8px;
-}
-
 .form-date label {
   display: block;
   margin-bottom: 5px;

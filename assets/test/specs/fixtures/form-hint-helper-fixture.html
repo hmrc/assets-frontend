@@ -1,0 +1,35 @@
+<ul>
+  <li class="js-hint-example-rule" id="example-hint-rule-one" data-hint-rule="^\w{8,12}$" data-hint-rule-flag="i">
+    be between 8 and 12 characters
+  </li>
+  <li class="js-hint-example-rule" id="example-hint-rule-two" data-hint-rule="[A-Za-z]+">
+    contain at least one letter (a-z)
+  </li>
+  <li class="js-hint-example-rule" id="example-hint-rule-three" data-hint-rule="[0-9]+">
+    contain at least one number (0-9)
+  </li>
+  <li class="js-hint-example-rule" id="example-hint-rule-four" data-hint-rule="^((?!example)[\S])+$" data-hint-rule-flag="i">
+    should not contain the word 'example'
+  </li>
+</ul>
+
+<input type="password"
+       name="example"
+       id="example"
+       class="js-form-hint-helper"
+       data-hint-rules="js-hint-example-rule">
+</div>
+
+<!-- example two -->
+<ul>
+  <li class="js-hint-example-two-rule" id="example-two-hint-rule-one" data-hint-rule="^\d{20}$" data-hint-rule-flag="i">
+    20 digits
+  </li>
+</ul>
+
+<input type="text"
+       name="example-two"
+       id="example-two"
+       class="js-form-hint-helper"
+       data-hint-rules="js-hint-example-two-rule">
+</div>
