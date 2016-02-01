@@ -215,18 +215,17 @@
 .truncate {
   text-overflow:ellipsis;
   overflow: hidden;
-
-  /**
-   * Table cells need this hack in order for
-   * truncation to work normally
-   */
-  &.table-cell {
-    max-width:1px;
-  }
-
 }
 
-.truncate--max-width-small {
+/**
+ * Table cells need this hack in order
+ * for truncation to work normally
+ */
+.truncate--table-cell {
+  max-width: 1px;
+}
+
+.truncate--small {
   max-width: 125px;
 }
 
