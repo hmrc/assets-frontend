@@ -3,13 +3,14 @@
  * 
  * Usage:
  *
- *  <div class="accordion" data-accordion>
+ *  <div id="accordion1" class="accordion"
+ *       data-accordion data-accordion-expanded data-accordion-set-hash>
  *
- *    <div class="accordion__row">     
+ *    <div class="accordion__row">
  *      <i class="arrow arrow--right" data-accordion-arrow></i>
  *      <a href="#" data-accordion-button>Accordion Title</a>  
  *      <div data-accordion-reveal>
- *        <p>Optionally reveal content that is not part of the body on expand</p>
+ *        <p>Optionally reveal content on expand that is not part of the body</p>
  *      </div>
  *    </div>
  *
@@ -19,14 +20,22 @@
  *
  *   </div>
  *
- * NOTES: 
+ * NOTES:
  * 
- *  - All data attribute hooks are mandatory
- *  - These classes are mandatory: accordion, accordion__body, hidden
- *  - All other classes are optional
- *  - The arrow is optional
- *  - data-accordion-expanded can be placed on the container to expand by default
- * 
+ *  - Mandatory attributes:
+ *     - id                         unique identifier used for anchoring to accordion based on URL hash
+ *     - data-accordion             main hook into accordion, placed on outer-most container
+ *     - data-accordion-button      expand/collapse event will be bound to this element
+ *     - data-accordion-body        element contains content that will be expanded/collapsed
+ *  - Optional attributes:
+ *     - data-accordion-arrow       arrow icon element which will be animated on state change
+ *     - data-accordion-reveal      any sections outside of the body that should be revealed on expand
+ *     - data-accordion-expanded    hard-code to expand on init, useful for server-side rendering
+ *     - data-accordion-set-hash    will cause URL hash to be updated with ID of accordion upon expand
+ *  - Mandatory classes:            accordion, accordion__body, hidden
+ *  - Optional classes:             arrow, arrow--right
+ *  - Column classes:               there are additional classes in _accordion.scss for accordions whose layout
+ *                                  demands left and right columns both at the button level and within the body
  */
 
 
@@ -45,7 +54,7 @@ module.exports = function() {
     $accordion.find('[data-accordion-reveal]').addClass('hidden');
 
     // expand any accordions that have been flagged
-    if($accordion.is('[data-accordion-expanded]')) {
+    if($accordion.is('[data-accordion-expanded]') || isAnchored($accordion)) {
       expand($accordion, $body, $arrow, expandedClass, false);
     }
 
@@ -60,7 +69,7 @@ module.exports = function() {
    * Triggered on click of accordion for expand/collapse of body
    * 
    * @param  {Object} e            event object
-   * @param  {Object} $accordion   jQuery object of accorodion element    
+   * @param  {Object} $accordion   jQuery object of accordion element
    */
   function buttonClick(e, $accordion) {
 
@@ -83,6 +92,24 @@ module.exports = function() {
   }
 
   /**
+   * Return whether or not an accordion is anchored to in URL
+   *
+   * @param    $accordion     jQuery object of accordion element
+   * @returns  {boolean}      whether or not id and hash match
+     */
+  function isAnchored($accordion) {
+
+    // get accordion's ID
+    var id = $accordion.attr('id');
+
+    // get hash from url
+    var hash = location.hash.substring(1);
+
+    return id === hash;
+
+  }
+
+  /**
    * Expand Accordion
    * 
    * @param  {Object} $accordion    jQuery object of accordion element
@@ -92,7 +119,7 @@ module.exports = function() {
    * @param  {Boolean} animate      To animate or not, that is the question
    */
   function expand($accordion, $body, $arrow, expandedClass, animate) {
-   
+
     // height of accordion body once expanded
     var newHeight = getHeight($body);
 
@@ -104,7 +131,7 @@ module.exports = function() {
 
     // reveal any elements flagged as such
     $accordion.find('[data-accordion-reveal]').removeClass('hidden');
-    
+
     // ensure first element of right row has margin for content below it
     $accordion
       .find('.accordion__row__right')
@@ -133,6 +160,11 @@ module.exports = function() {
       $body.css({height: 'auto'});
     }
 
+    // if configured to update url hash
+    if($accordion.is('[data-accordion-set-hash]')) {
+      updateHash($accordion);
+    }
+
   }
 
   /**
@@ -145,7 +177,7 @@ module.exports = function() {
    * @param  {Boolean} animate      To animate or not, that is the question
    */
   function collapse($accordion, $body, $arrow, expandedClass, animate) {
-   
+
     var expandedHeight = $body.height(),
         newHeight      = 0;
 
@@ -183,6 +215,26 @@ module.exports = function() {
       // collapse accordion body
       $body.height(newHeight);
 
+    }
+
+  }
+
+  /**
+   * Update URL hash based on selected accordion
+   *
+   * @param $accordion     jQuery object of accordion element
+     */
+  function updateHash($accordion) {
+
+    // get id of accordion which contains unique accordion name
+    var hashVal = $.trim($accordion.attr('id'));
+
+    if(history.replaceState) {
+      history.replaceState(null, null, '#' + hashVal);
+    }
+    else {
+      // warning: for older browsers, this causes the accordion to be scrolled to
+      location.hash = hashVal;
     }
 
   }
