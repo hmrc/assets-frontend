@@ -1,26 +1,26 @@
 
 <div data-tabs>
 
-  <ul>
-    <li>
-      <a href="#" data-tab-link="1">Tab Link 1</a>
+  <ul role="tablist">
+    <li id="tab1" data-tab-link="1" role="tab" aria-controls="tabContent1" tabindex="0">
+      <span class="tabs-nav__tab tabs-nav__tab--active">Tab Link 1</span>
     </li>
-    <li>
-      <span data-tab-link="2">Tab Link 2</span>
+    <li id="tab2" data-tab-link="2" role="tab" aria-controls="tabContent2" tabindex="0">
+      <a href="#" class="tabs-nav__tab">Tab Link 2</a>
     </li>
-    <li>
-      <a href="#" data-tab-link="3">Tab Link 3</a>
+    <li id="tab3" data-tab-link="3" role="tab" aria-controls="tabContent3" tabindex="0">
+      <a href="#" class="tabs-nav__tab">Tab Link 3</a>
     </li>
   </ul>
 
   <ul>
-    <li data-tab-content="1">
+    <li id="tabContent1" data-tab-content="1" class="tab-content" role="tabpanel" aria-labelledby="tab1">
       <p>Tab Content 1</p>
     </li>
-    <li data-tab-content="2">
+    <li id="tabContent2" data-tab-content="2" class="tab-content" role="tabpanel" aria-labelledby="tab2">
       <p>Tab Content 2</p>
     </li>
-    <li data-tab-content="3">
+    <li id="tabContent3" data-tab-content="3" class="tab-content" role="tabpanel" aria-labelledby="tab3">
       <p>Tab Content 3</p>
     </li>
   </ul>

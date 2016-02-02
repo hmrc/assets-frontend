@@ -84,13 +84,13 @@
 .hard--ends     { padding-top:   0!important; padding-bottom:0!important; }
 .hard--sides    { padding-right: 0!important; padding-left:  0!important; }
 
-
-.align--top { vertical-align: top !important; } 
-
+.align--middle { vertical-align: middle !important; }
+.align--top { vertical-align: top !important; }
 
 .inline-block {
     display: inline-block !important;
 }
+
 .display-block {
   display: block !important;
 }
@@ -192,9 +192,7 @@
 // TODO and not use the .js-convention (for javascript hooks) needs tidying up and duplications removed
 .hidden,
 .no-js .js-visible,
-.no-js .visible-javascript-on,
-.js .js-hidden,
-.js .hidden-javascript-on {
+.js .js-hidden {
   display: none !important;
 }
 
@@ -209,5 +207,25 @@
 }
 .no-bullets {
 	@extend %no-bullet;
+}
+
+/**
+ * Truncate text with an ellipsis
+ */
+.truncate {
+  text-overflow:ellipsis;
+  overflow: hidden;
+}
+
+/**
+ * Table cells need this hack in order
+ * for truncation to work normally
+ */
+.truncate--table-cell {
+  max-width: 1px;
+}
+
+.truncate--small {
+  max-width: 125px;
 }
 

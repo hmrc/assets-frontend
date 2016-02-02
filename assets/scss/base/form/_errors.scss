@@ -1,30 +1,32 @@
-/**
-* @desc         Contains rules for errors
-* @name         errors
-* @author       Richard Vinall
-* @requires     [ colours.scss ]
-*/
+.error-summary {
+  display: none;
+}
 
-@mixin error-box( $border-width: 3px ) {
-    background-color: $error-bg-color;
-    border-left: $border-width solid $error-border-color;
-    padding: 0.75em 1em;   
+.error-summary--show {
+  display: block;
+}
+
+.error-notification {
+  color: $error-color;
+  display: none;
+  padding-bottom: em(8);
+  @include core-16;
 }
 
 .error-overview {
     @include error-box;
-    margin-bottom: 20px;
+    margin-bottom: em(20);
 }
 
 .error-overview__heading {
-    font-size: 22px;
+    font-size: em(22);
     margin: 0;
 }
 
 .error-overview__list-item {
     color: $error-color;
-    font-size: 15px;
-    margin-left: 20px;
+    font-size: em(15);
+    margin-left: em(20);
 
     a {
         color: inherit;
@@ -35,15 +37,15 @@
 .form-field--error {
   @include error-box(3px);
   @include box-sizing(border-box);
-  padding: 0.75em 1em 0.75em 1em;
+  padding: em(12) em(16) em(12) em(16);
 
   &.numbered {
-    margin-left: 22px!important;
+    margin-left: em(22)!important;
     width: 90%;
   }
 
   &.fields-aligned {
-    margin-left: -22px;
+    margin-left: em(-22);
 
     @include media(mobile) {
       border-left: none;
@@ -62,4 +64,14 @@
     border: 3px solid $error-border-color;
   }
   
+}
+
+.error,
+.form-field-group--error {
+  @include error-box(3px);
+  margin: 0 em(-16) em(8) em(-16);
+
+  .error-notification {
+    display: block;
+  }
 }

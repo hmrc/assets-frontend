@@ -8,9 +8,12 @@ window._gaq = window._gaq || [];
 
 var sso = require('./modules/sso.js'),
     visibility = require('./modules/visibility.js'),
+    mask = require('./modules/mask.js'),
     form = require('./validation/form.js'),
     toggle = require('./modules/toggle.js'),
     autoCompleteFactory = require('./modules/autoCompleteFactory.js'),
+    passwordReveal = require('./modules/passwordReveal.js'),
+    formHintHelper = require('./modules/formHintHelper.js'),
     control = require('./modules/control.js'),
     masker = require('./modules/masker.js'),
     contentNudge = require('./modules/contentNudge.js'),
@@ -39,7 +42,8 @@ var sso = require('./modules/sso.js'),
     youtubePlayer = require('./modules/youtubePlayer.js'),
     accordion = require('./modules/accordion.js'),
     tabs = require('./modules/tabs.js'),
-    charCounter = require('./modules/charCounter.js');
+    charCounter = require('./modules/charCounter.js'),
+    addRemove = require('./modules/addRemove.js');
 
 //initialise mdtpf
 fingerprint();
@@ -134,11 +138,14 @@ $(function() {
 
   sso().init();
   visibility();
-  form();
+  form.init();
+  mask();
   toggle();
   autoCompleteFactory();
   control();
   masker();
+  passwordReveal();
+  formHintHelper();
   toggleDynamicFormFields();
 
   //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
@@ -156,8 +163,9 @@ $(function() {
   attorneyBanner();
   youtubePlayer().init();
   ajaxFormSubmit.init(ajaxCallbacks); 
-  tabs().init();
+  tabs();
   accordion();
   charCounter();
+  addRemove();
 
 });

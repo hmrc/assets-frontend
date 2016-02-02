@@ -1,9 +1,9 @@
 .flash {
   border: 3px solid $grey-1;
   background-color: $grey-9;
-  padding: 20px;
-  margin-bottom: 40px;
-  max-width: 798px;
+  padding: em(20);
+  margin-bottom: em(40);
+  max-width: em(798);
 
   h2 {
     margin: 0;
@@ -11,7 +11,7 @@
   }
 
   h3 {
-    margin: 0 0 10px;
+    margin: 0 0 em(10);
   }
 
   ul {
@@ -30,7 +30,7 @@
   background-color: $error-bg-color;
 
   h2 {
-    margin: 0 0 10px;
+    margin: 0 0 em(10);
   }
 
   li {
@@ -51,7 +51,7 @@
   background-color: #e7ebda;
 
   h2 {
-    margin: 0 0 10px;
+    margin: 0 0 em(10);
   }
 }
 
@@ -96,6 +96,11 @@
   color: $error-color;
 }
 
+.alert--important {
+  background-color: $alert-bg-red;
+  color: $white;
+}
+
 .alert--info {
   background-color: $info-bg-color;
   border-color: $info-border-color;
@@ -106,15 +111,24 @@
     background-color: $shaded-bg-grey;
     border-color: $light-grey;
   }
+}
 
+.alert--borderless {
+  border: 0;
+  border-left-style: none;
+}
+
+.alert--slim {
+  padding: 0.4em 0.8em 0.3em;
+  border-left-width: em(4);
 }
 
 .highlight-message {
   width: 100%;
   box-sizing: border-box;
   border-left: 4px solid $black;
-  padding: 5px 0 5px 55px;
-  margin-bottom: 15px;
+  padding: em(5) 0 em(5) em(55);
+  margin-bottom: em(15);
 
   background: $yellow-25 url("../images/icons/icon-important.png") no-repeat scroll 10px;
   @include device-pixel-ratio() {
@@ -124,7 +138,7 @@
   span {
     @include core-16;
     display: block;
-    padding: 2px 0;
+    padding: em(2) 0;
   }
 }
 
@@ -136,10 +150,25 @@
 }
 
 .highlight-message--full-width {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: em(15);
+  padding-bottom: em(15);
   @include media(desktop) {
     width: 100%;
     min-width: 100%;
   }
 }
+
+.highlight-message--indent {
+  margin: em(20) em(40) em(20) 0;
+}
+
+.highlight-message--icon-top {
+  background-position-y: em(20);
+}
+
+.highlight-message--dark {
+  background-color: $govuk-blue-colour;
+  color: #fff;
+  padding-bottom: em(30);
+}
+

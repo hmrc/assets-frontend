@@ -49,6 +49,12 @@ button, .button {
   margin-top: 10px;
 }
 
+.button--table {
+  @include button($shaded-bg-grey);
+  border-bottom: 1px solid #000; // $black;
+  box-shadow: 0 0 0 $grey-4;
+}
+
 /**
  * For links that need to be positioned beside buttons
  * Used in conjunction with button class
@@ -60,8 +66,11 @@ button, .button {
   color: $link-colour;
   border: none;
 
-  &:hover, 
-  &:focus, 
+  &.button--link-table {
+    color: $black;
+  }
+
+  &:hover,
   &:active {
     top: 0;
     outline: none;
@@ -79,7 +88,6 @@ button, .button {
   @include media(mobile) {
     margin-top: 10px;
   }
-
 }
 
 /* Transforms button into a link */

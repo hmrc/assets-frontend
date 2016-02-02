@@ -11,7 +11,8 @@ var ajaxCallbacks = {
       },
 
       success: function(response, $element, data, helpers, container, type) {
-        helpers.insertResponseHtml(helpers, type, data, $(container), response);
+        $('input[name="payeref"]').val('');
+        helpers.insertResponseHtml(helpers, type, data, $(container + ' .form-field:has(>input[name][type="text"])').first(), response);
       },
 
       error: function(response, $element, data, helpers, container) {
@@ -60,7 +61,9 @@ var ajaxCallbacks = {
         $target.empty();
         type  = 'append';
       }
-
+      
+      helpers.resetErrorMessages($target.parent(), $target);
+      
       if (helpers.utilities.isFullPageError(helpers, htmlText)) {
         helpers.insertFullPageErrorHtml($target, helpers, htmlText);
       }
@@ -68,7 +71,6 @@ var ajaxCallbacks = {
         helpers.insertServiceErrorHtml(helpers, htmlText);
       }
       else { // handle 'validation error' or 'success' message & state
-        helpers.resetErrorMessages($target.parent(), $target);
 
         if (!isError) {
           $target.addClass('js-hidden');
@@ -80,7 +82,8 @@ var ajaxCallbacks = {
           if (isError) {
             //helpers.hasErrorType = 'validation';
             $errorTarget = $target.find('>input[name="' + $node.attr('data-input-for') +  '"]');
-            $errorTarget.closest('.form-field').addClass('error');
+            $errorTarget.addClass("error-field");
+            $errorTarget.closest('.form-field').addClass('form-field--error');
             $errorTarget.blur();
           }
 
@@ -129,13 +132,8 @@ var ajaxCallbacks = {
     },
 
     resetErrorMessages: function($target, $error) {
-      if (!!$error) {
-        $error.removeClass('error');
-      }
-
-      $target.find('.form-field:has(*[data-id="service--error"]), .alert--success, .alert--failure')
-        .removeClass('error')
-        .remove();
+      $target.find('.error').andSelf().removeClass('error');
+      $target.find('.form-field:has(*[data-id="service--error"]), .alert--success, .alert--failure').remove();
     },
 
     resetForms: function(helpers, type, data, target) {

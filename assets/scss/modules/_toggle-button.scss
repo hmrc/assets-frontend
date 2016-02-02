@@ -1,0 +1,16 @@
+.toggle-btn {
+  padding: em(5) em(10) em(3) em(10);
+  display: inline-block;
+  line-height: 1.4em;
+}
+
+.toggle-btn--on {
+  background-color: $button-colour;
+  color: $white;
+  margin: 0 em(10) 0 0;
+}
+
+.toggle-btn--off {
+  background-color: $light-grey;
+  margin: 0 0 0 em(10);
+}

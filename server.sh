@@ -22,6 +22,9 @@ if [[ -n $1 ]]; then
       npm run build
     fi
     ;;
+  "test-dev")  deps && output "Auto watch tests..."
+    npm run test:dev
+    ;;
   "test")  deps && output "Starting gulp test task..."
     npm run test
     ;;

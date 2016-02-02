@@ -5,10 +5,10 @@
   border-bottom: 1px solid #bfc1c3;
 
   .tag {
-    margin: 0 7px 20px 0;
+    margin: 0 em(7) em(7) 0;
 
     @include media(mobile) {
-      margin-bottom: 10px;
+      margin-bottom: em(10);
     }
 
   }
@@ -30,31 +30,35 @@
 }
 
 .accordion__row {
-  padding: 20px 12px 20px 12px;
+  padding: em(15) em(12) em(15) em(12);
   background-color: #f8f8f8;
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .accordion__row__left {
-  width:38%;
+  width:35%;
   display: table-cell;
-  padding: 0 10px 0 0;
+  padding: 0 em(10) 0 0;
+  box-sizing: border-box;
 
   .accordion__indicator {
     float: left;
-    margin: -4px 5px 20px 0;
-  }
+    margin: em(-4) em(5) em(5) 0;
 
-  @include media(tablet) {
-    .accordion__indicator {
-      margin-top: -2px; 
+    @include media(tablet) {
+      margin-top: em(-2);
     }
+
   }
 
 }
 
 .accordion__row__right {  
-  width:59%;
+  width:50%;
   display: table-cell;
+  box-sizing: border-box;
 }
 
 .accordion__body {
@@ -66,6 +70,8 @@
   border-bottom: 1px solid #bfc1c3;
   overflow: auto;
   margin: 0;
+  display: table;
+  width: 100%;
 
   &:last-child {
     border-bottom: none;
@@ -74,28 +80,52 @@
 }
 
 .accordion__body__row__left {
-  padding: 20px 12px 20px 30px;
-  width: 32%;
-  float: left;
+  padding: em(10) em(12) em(10) em(30);
+  width: 42%;
   background-color: white;
+  vertical-align: top;
+  display: table-cell;
+
+  &.spaced {
+    padding: em(15) em(12) em(15) em(30);
+  }
 
   @include media(mobile) {
     width: auto;
-    float: none;
+    display: table;
+    padding: em(15) em(20) em(15) em(30);
+
+    .tag {
+      margin-bottom: 0;
+    }
+
   }
 
 }
 
 .accordion__body__row__right {
-  padding: 20px 0 20px 0;
-  width: 60%;
-  float: left;
+  padding: em(10) em(12) em(10) 0;
   background-color: white;
+  display: table-cell;
 
   @include media(mobile) {
     width: auto;
-    float: none;
-    padding: 0 12px 20px 25px;
+    display: table;
+    padding: 0 em(20) em(15) em(30);
+  }
+
+  &.spaced {
+    padding: em(15) em(12) em(15) 0;
+
+    @include media(mobile) {
+      padding-left: em(30);
+    }
+
   }
 
 }
+
+.accordion__button:visited {
+  color: $govuk-blue-colour;
+}
+

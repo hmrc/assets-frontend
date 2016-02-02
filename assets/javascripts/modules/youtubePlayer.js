@@ -27,7 +27,7 @@ var GOVUK = require('stageprompt');
  */
 
 var $youtubePlayerElems;
-var $jumpLinks;
+var $playerChangeLinks;
 var YoutubePlayers;
 
 /**
@@ -106,14 +106,20 @@ var addYouTubeAPIScript = function() {
  */
 var addListeners = function() {
 
-  $jumpLinks.click(function(event) {
+  $playerChangeLinks.click(function(event) {
     event.preventDefault();
     var time = $(this).data('skip-time');
+    var videoId = $(this).data('video-id');
     var playerId = $(this).data('player-id');
     var youtubePlayer = YoutubePlayers[playerId];
     youtubePlayer.started = true;
     if (youtubePlayer.player) {
-      youtubePlayer.player.seekTo(time);
+      if (videoId) {
+        youtubePlayer.player.loadVideoById({'videoId': videoId});
+      }
+      if (time) {
+        youtubePlayer.player.seekTo(time);
+      }
       youtubePlayer.player.playVideo();
     }
   });
@@ -124,7 +130,7 @@ var addListeners = function() {
  */
 var init = function() {
   $youtubePlayerElems = $('.js-youtube-player');
-  $jumpLinks = $('.js-youtube-skip');
+  $playerChangeLinks = $('.js-youtube-link');
 
   if ($youtubePlayerElems.length) {
     initialisePlayers();

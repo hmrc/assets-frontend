@@ -35,10 +35,11 @@ $path: "../images/icons/";
 @import "base/lists";
 @import "base/table";
 @import "base/helpers";
-@import "base/errors";
 @import "base/links";
 @import "base/icons";
 @import "base/details-summary";
+@import "base/form/errors";
+@import "base/form/hint";
 
 // Modules
 @import "modules/header";
@@ -62,7 +63,6 @@ $path: "../images/icons/";
 @import "modules/help-contents";
 @import "modules/template-sidebar";
 @import "modules/notifications";
-@import "modules/client-list";
 @import "modules/epaye-statements";
 @import "modules/tabular-data";
 @import "modules/code";
@@ -74,11 +74,14 @@ $path: "../images/icons/";
 @import "modules/toggle";
 @import "modules/_external-markup";
 @import "modules/char-counter";
+@import "modules/add-remove";
+@import "modules/toggle-button";
+@import "modules/tabs";
+
 
 // Page Specific Styles
 @import "pages/messages";
 @import "pages/payments";
-@import "pages/client-list";
 @import "pages/business-tax-home";
 @import "pages/help";
 @import "pages/risk-triage";
