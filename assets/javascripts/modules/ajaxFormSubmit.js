@@ -44,11 +44,12 @@ var ajaxFormSubmit = {
 
     for (; a < ajaxFormCount; a++) {
       var eventData = {context: _this, config: config},
-      $form = $($ajaxForm[a]);
+      $form = $($ajaxForm[a]),
+      selector = 'input[type="submit"], button[type="submit"]';
       
-      $form.on('submit click', 'input[data-ajax-submit], button[data-ajax-submit]', eventData, _this.submitHandler);
+      $form.on('submit click', $('form:has[data-ajax-submit]').length ? selector.replace('submit', 'data-ajax-submit') : selector, eventData, _this.submitHandler);
 
-      if ($form.find('[data-ajax-submit]').length > 1) {
+      if ($form.find('[data-ajax-submit]').addBack().length > 1) {
         // more than one button/input submit in the forms context - capture + handle enter key submit on text fields
         $form.on('keypress', 'input[type="text"], textarea', eventData, _this.keypressHandler);
       }
@@ -69,7 +70,7 @@ var ajaxFormSubmit = {
     var $this = $(this),
       _config = event.data.config,
       _this = event.data.context,
-      $form = $this.attr('data-ajax-submit') ? $this : $this.find('[data-ajax-submit]'),
+      $form = $this.attr('data-ajax-submit') ? $this : $this.closest('[data-ajax-submit]'),
       path = $form.attr('data-formaction') || $form.attr('formaction') || $form.attr('action'),
       $scope = $form.attr('data-container') || $this,
       serializedData = _this.serializeForAjax($scope),
