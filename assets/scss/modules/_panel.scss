@@ -16,6 +16,11 @@
   margin: ($gutter $gutter-half $gutter*1.5 0);
 }
 
+.panel-indent--info{
+    border-left-color:#008c88;
+    background:#D5F3F2;
+}
+
 .panel-indent legend {
   margin-top: 0;
 }
