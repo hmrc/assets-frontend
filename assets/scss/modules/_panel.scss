@@ -16,6 +16,13 @@
   margin: ($gutter $gutter-half $gutter*1.5 0);
 }
 
+.panel-indent--info{
+    background-color: $light-blue-25;
+    margin: 15px 0px 20px 0px;
+    padding: 15px 15px 20px 15px;
+    border-left: 4px solid $govuk-blue-colour;
+}
+
 .panel-indent legend {
   margin-top: 0;
 }
