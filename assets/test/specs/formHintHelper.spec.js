@@ -6,13 +6,8 @@ var $exampleOneRuleTwoElem;
 var $exampleOneRuleThreeElem;
 var $exampleOneRuleFourElem;
 var $exampleTwoRuleOneElem;
-var $exampleThreeRuleOneElem;
-var $exampleThreeRuleTwoElem;
 var $exampleOneInputElem;
 var $exampleTwoInputElem;
-var $exampleThreeInputOneElem;
-var $exampleThreeInputTwoElem;
-
 var assertRulesAreNotValid = function (rules) {
   rules.map(function ($elem) {
     expect($elem).not.toHaveClass('form-hint-list-item--valid');
@@ -28,10 +23,6 @@ var setup = function () {
   $exampleTwoRuleOneElem = $('#example-two-hint-rule-one');
   $exampleOneInputElem = $('#example');
   $exampleTwoInputElem = $('#example-two');
-  $exampleThreeInputOneElem = $('#example-three');
-  $exampleThreeInputTwoElem = $('#example-three-confirm');
-  $exampleThreeRuleOneElem = $('#example-three-hint-rule-one');
-  $exampleThreeRuleTwoElem = $('#example-three-hint-rule-two');
 };
 
 describe('Form Hint Helper', function () {
@@ -132,68 +123,5 @@ describe('Form Hint Helper', function () {
         $exampleOneRuleFourElem,
       ]);
     });
-  });
-
-  describe('matching field verification', function() {
-
-    it('should not be ticked when both inputs are empty', function(){
-
-      expect($exampleThreeRuleTwoElem).not.toHaveClass('form-hint-list-item--valid');
-
-    });
-
-    it('should not be ticked when both inputs are different', function(){
-
-      $exampleThreeInputOneElem.val('starwars');
-      $exampleThreeInputTwoElem.val('iloveyou').trigger('keyup');
-
-      expect($exampleThreeRuleTwoElem).not.toHaveClass('form-hint-list-item--valid');
-
-    });
-
-    it('should be ticked when both inputs are non-empty and the same', function(){
-
-      $exampleThreeInputOneElem.val('starwars');
-      $exampleThreeInputTwoElem.val('starwars').trigger('keyup');
-
-      expect($exampleThreeRuleTwoElem).toHaveClass('form-hint-list-item--valid');
-
-    });
-
-    it('should be ticked when both inputs are non-empty and the same, entered in either order', function(){
-
-      $exampleThreeInputTwoElem.val('starwars');
-      $exampleThreeInputOneElem.val('starwars').trigger('keyup');
-
-      expect($exampleThreeRuleTwoElem).toHaveClass('form-hint-list-item--valid');
-
-    });
-
-    it('should not be ticked when both inputs are empty', function(){
-
-      $exampleThreeInputTwoElem.val('');
-      $exampleThreeInputOneElem.val('').trigger('keyup');
-
-      expect($exampleThreeRuleTwoElem).not.toHaveClass('form-hint-list-item--valid');
-
-    });
-
-    it('should not interfere with a regex rule on one input field', function(){
-
-      $exampleThreeInputOneElem.val('123').trigger('keyup');
-      $exampleThreeInputTwoElem.val('123').trigger('keyup');
-
-      expect($exampleThreeRuleOneElem).not.toHaveClass('form-hint-list-item--valid');
-      expect($exampleThreeRuleTwoElem).toHaveClass('form-hint-list-item--valid');
-
-      $exampleThreeInputOneElem.val('abc').trigger('keyup');
-      $exampleThreeInputTwoElem.val('123').trigger('keyup');
-
-      expect($exampleThreeRuleOneElem).toHaveClass('form-hint-list-item--valid');
-      expect($exampleThreeRuleTwoElem).not.toHaveClass('form-hint-list-item--valid');
-
-    });
-
-
   });
 });
