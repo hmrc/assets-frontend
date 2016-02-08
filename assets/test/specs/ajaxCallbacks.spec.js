@@ -396,6 +396,118 @@ describe('AjaxCallbacks', function() {
         });
 
       });
+      
+      describe('.hasSessionLapsed', function() {
+        var response = { 'status': 401, 'responseJSON': { 'redirectUri': '#' } };
+        it('returns true if status in specified in valid response object is 401 ("Unauthorized")', function() {
+          helpers.utilities.redirect(response);
+          expect(/#$/.test(window.location.href)).toBe(true);
+        });
+        
+        it('returns false if status is not 401', function() {
+          response.status = 200;
+          helpers.utilities.redirect(response);
+          expect(window.location.href).toBe(window.location.href);
+        });
+
+        it('returns false if response object is invalid', function() {
+          var currentUri = window.location.href;
+          
+          response.status = undefined;
+          helpers.utilities.redirect(response);
+          expect(window.location.href).toBe(currentUri);
+
+          response.status = 401;
+
+          response.responseJSON.redirectUri = undefined;
+          helpers.utilities.redirect(response);
+          expect(window.location.href).toBe(currentUri);
+
+          response.responseJSON = {};
+          helpers.utilities.redirect(response);
+          expect(window.location.href).toBe(currentUri);
+
+          response = {};
+          helpers.utilities.redirect(response);
+          expect(window.location.href).toBe(currentUri);
+
+          helpers.utilities.redirect(undefined);
+          expect(window.location.href).toBe(currentUri);
+        });
+      });
+      
+      describe('.redirect', function() {
+        var response = { 'responseJSON': { 'redirectUri': '#' } };  
+
+        it('loads page at ".responseJSON.redirectUri" specified in valid response object', function() {
+          helpers.utilities.redirect(response);
+          expect(/#$/.test(window.location.href)).toBe(true);
+        });
+
+        it('ignores invalid response object', function() {
+          var currentUri = window.location.href;
+
+          response.responseJSON.redirectUri = undefined;
+          helpers.utilities.redirect(response);
+          expect(window.location.href).toBe(currentUri);
+
+          response.responseJSON = {};
+          helpers.utilities.redirect(response);
+          expect(window.location.href).toBe(currentUri);
+
+          response = {};
+          helpers.utilities.redirect(response);
+          expect(window.location.href).toBe(currentUri);
+
+          helpers.utilities.redirect(undefined);
+          expect(window.location.href).toBe(currentUri);
+        });
+      });
+      
+      describe('.setFormState', function() {
+        var $form = $('<form style="visibility:hidden">' +
+          '<input name="value1" value="something 1"/>' +
+          '<input name="email" type="email" value="test@test.com"/>' +
+          '<textarea>test</textarea>' +
+          '<input name="value2" value="something 2"/><button type="submit" class="button" value="go" />' +
+          '</form>'),
+          $button = $('<button type="submit" class="button" value="go" />');
+
+        it('disables form fields', function() {
+          helpers.utilities.setFormState($form, true);
+          
+          $form.find('input, textarea, button').each(function(idx, element) {
+            expect($(element).prop('disabled')).toBe(true);
+            expect($(element).attr('aria-disabled')).toBe('true');
+          });
+        });
+          
+        it('enables disabled form fields', function() {
+          helpers.utilities.setFormState($form, true);
+          helpers.utilities.setFormState($form, false);
+
+          $form.find('input , button').each(function(idx, element) {
+            expect($(element).prop('disabled')).toBe(false);
+            expect($(element).attr('aria-disabled')).toBe('false');
+          });
+        });
+        
+        it('disables form button', function() {
+
+          helpers.utilities.setFormState($button, false);
+
+          expect($button.prop('disabled')).toBe(false);
+          expect($button.attr('aria-disabled')).toBe('false');
+        });
+
+        it('enables disabled form button', function() {
+          helpers.utilities.setFormState($button, false);
+          helpers.utilities.setFormState($button, true);
+          
+          expect($button.prop('disabled')).toBe(true);
+          expect($button.attr('aria-disabled')).toBe('true');
+        });
+      });      
     });
   });
 });

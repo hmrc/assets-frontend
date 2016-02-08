@@ -14,8 +14,8 @@
  *    - a 'data-callback-args' attribute containing comma separated list of argument parameters to pass to callback:
  *      + 1. the selector where the partial view content will be added
  *      + 2. the method to use when adding new content to the container - options are 'insert' or 'replace' (insert is the default)
- *
- *
+ *    - a data-targets-success attribute with a selector for element(s) found within the data-container to be used by the success callback
+ *    - a data-targets-error attribute with a selector for element(s) found within the data-container to be used by the success callback
  *
  *  <form action="#"
  *   data-ajax-submit="true"
@@ -40,14 +40,15 @@ var ajaxFormSubmit = {
     var _this = this,
         $ajaxForm = $('form[data-ajax-submit], form:has([data-ajax-submit])'),
         ajaxFormCount = $ajaxForm.length,
-        a = 0;
+        a = 0, eventData, $form, selector;
 
     for (; a < ajaxFormCount; a++) {
-      var eventData = {context: _this, config: config},
-      $form = $($ajaxForm[a]),
+      eventData = {context: _this, config: config};
+      $form = $($ajaxForm[a]);
       selector = 'input[type="submit"], button[type="submit"]';
-      
-      $form.on('submit click', $('form:has[data-ajax-submit]').length ? selector.replace('submit', 'data-ajax-submit') : selector, eventData, _this.submitHandler);
+
+      $form.on('submit click', $('form:has[data-ajax-submit]').length ?
+        selector.replace('submit', 'data-ajax-submit') : selector, eventData, _this.submitHandler);
 
       if ($form.find('[data-ajax-submit]').addBack().length > 1) {
         // more than one button/input submit in the forms context - capture + handle enter key submit on text fields
@@ -59,32 +60,36 @@ var ajaxFormSubmit = {
   keypressHandler: function(event) {
     if (event.which === 13) {
       event.preventDefault();
-      var thisContext = $(this).closest('*:has([data-ajax-submit="true"])').find('[data-ajax-submit="true"]'); 
-      event.data.context.submitHandler.apply(thisContext, [{ type: 'submit', preventDefault: function(){}, data: event.data }]);
+      var thisContext = $(this).closest('*:has([data-ajax-submit="true"])').find('[data-ajax-submit="true"]');
+      event.data.context.submitHandler.apply(thisContext, [{ type: 'submit', preventDefault: function() {}, data: event.data }]);
     }
   },
-  
+
   submitHandler: function(event) {
     event.preventDefault();
 
     var $this = $(this),
       _config = event.data.config,
       _this = event.data.context,
-      $form = $this.attr('data-ajax-submit') ? $this : $this.closest('[data-ajax-submit]'),
-      path = $form.attr('data-formaction') || $form.attr('formaction') || $form.attr('action'),
-      $scope = $form.attr('data-container') || $this,
+      $form = $this.data('ajax-submit') ? $this : $this.closest('[data-ajax-submit]'),
+      path = $form.data('formaction') || $form.attr('formaction') || $form.attr('action'),
+      $scope = $form.data('container') || $this,
       serializedData = _this.serializeForAjax($scope),
       handlers = {
         config: {
-          name: $form.attr('data-callback-name'),
-          args: $form.attr('data-callback-args'),
+          name: $form.data('callback-name'),
+          args: $form.data('callback-args'),
           $element: $form,
+          targets: {
+            success: $form.data('target-success') || '',
+            error: $form.data('target-error') || ''
+          },
           callbacks: _config,
           helpers: _config.helpers || {}
         },
         fn: null
       };
-    
+
     handlers.fn = _this.getCallback(handlers.config, serializedData);
 
     if (!!handlers) {
@@ -133,27 +138,33 @@ var ajaxFormSubmit = {
     var parts = config.name.split('.'),
         method = config.callbacks,
         helpers = config.helpers,
-        $element = config.$element;
+        $element = config.$element,
+        targets = config.targets;
 
     if (!!config.name) {
       if (!!config.args) {
         config.parameters = [].concat(config.args.split(','));
       }
 
+      config.parameters.unshift(targets);
       config.parameters.unshift(helpers);
       config.parameters.unshift(!!data ? data : null);
       config.parameters.unshift($element);
-      
+
       jQuery.each(parts, function(index, value) {
         method = method[value];
       });
 
       return function(type, response) {
+        var fn = method[type] || config.helpers.base[type];
+
         if (!!response) {
           config.parameters.unshift(response);
         }
 
-        method[type].apply(null, config.parameters);
+        if (!!fn) {
+          fn.apply(null, config.parameters);
+        }
       };
     }
     else {
