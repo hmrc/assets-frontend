@@ -12,6 +12,51 @@ var ajaxCallbacks = {
       }
     }
   },
+  dataTableSubmitResponse: {
+    callbacks: {
+      beforeSend: function($element, data, helpers) {
+        $('.js-datatable-submit').prop('disabled', true); // disable all data-table submit elements
+
+        helpers.base.beforeSend.apply(null, arguments);
+      },
+
+      success: function(response, $element, data, helpers, targets, container, type) {
+        var $container = $(container);
+
+        $container
+          .empty()
+          .closest('tbody').find('tr.status--confirm-success').each(function (index, element) {
+          $(element).removeClass('status--confirm-success');
+        });
+
+        $container.closest('tr').removeClass('status--unconfirmed').addClass('status--confirm-success confirmed');
+
+        helpers.base.success.apply(null, arguments);
+      },
+
+      error: function(response, $element, data, helpers, targets, container, type) {
+        $('button.js-datatable-submit').prop('disabled', false);
+
+        if (response.status === 500) { // a service-error, disable all submit buttons
+          $element.find('button.js-datatable-submit').each(function (index, element) {
+            $(element).prop('disabled', true);
+          });
+        }
+
+        $(container).closest('tr').addClass('form--field--error');
+
+        helpers.base.error.apply(null, arguments);
+      },
+
+      always: function(response, $element, data, helpers) {
+        if (response.status !== 500) { // not a service-error
+          $('.js-datatable-submit').prop('disabled', false);  // re-enable all data-table submit elements
+        }
+
+        helpers.base.always.apply(null, arguments);
+      }
+    }
+  },
   helpers: {
     base: {
       beforeSend: function($element, data, helpers, targets, container, type, actions) {
