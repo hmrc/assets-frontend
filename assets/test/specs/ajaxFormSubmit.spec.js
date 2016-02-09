@@ -69,7 +69,7 @@ describe('AjaxFormSubmit', function() {
         expect(new RegExp("#" + $fp.attr('id'),"i").test($button.attr('data-container'))).toBe(true);
 
         expect($button.attr('data-callback-name').length).toBeTruthy();
-        expect($button.attr('data-callback-name')).toBe('clientAccessResponse.callbacks');
+        expect($button.attr('data-callback-name')).toBe('emailFormResponse.callbacks');
 
         expect($button.attr('data-callback-args').length).toBeTruthy();
 
