@@ -63,7 +63,7 @@
     "karma-jasmine-jquery": "hmrc/karma-jasmine-jquery#5f308457fd",
     "karma-jasmine-matchers": "^2.0.0-beta2",
     "karma-junit-reporter": "~0.3.8",
-    "karma-phantomjs-launcher": "~0.2.3",
+    "karma-phantomjs-launcher": "1.0.0",
     "karma-script-launcher": "~0.1.0",
     "karma-spec-reporter": "0.0.23",
     "lodash": "^3.5.0",
