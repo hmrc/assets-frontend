@@ -104,6 +104,11 @@ table {
     font-weight: 400;
   }
 }
+
+.table__header--highlight {
+    border-bottom: em(2) solid $govuk-blue-colour;
+}
+
 .table--heavy-footer{
   border-bottom: 3px solid $grey-6;
 }
