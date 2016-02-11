@@ -102,7 +102,7 @@ describe('Form Validation', function () {
     });
 
 
-    describe('When I enter the wrong pattern on text input', function () {
+    describe('When I enter the wrong pattern on text input and submit', function () {
 
       beforeEach(function () {
         // select radio button, add wrong format value to text input
@@ -131,7 +131,7 @@ describe('Form Validation', function () {
       });
     });
 
-    describe('When I enter value below min length', function () {
+    describe('When I enter value below min length and submit', function () {
 
       beforeEach(function () {
         // select radio button, add value below min length to text input
@@ -160,7 +160,7 @@ describe('Form Validation', function () {
       });
     });
 
-    describe('When I do not select a radio input', function () {
+    describe('When I do not select a radio input and submit', function () {
 
       beforeEach(function () {
         // do not select radio button, add correct value for text input
@@ -187,5 +187,33 @@ describe('Form Validation', function () {
         expect($errorMessages.eq(0).text()).toBe($radioYesElement.attr('data-msg-required'));
       });
     });
+
+    describe('When I enter value below min length and blur', function () {
+
+      beforeEach(function () {
+        // select radio button, add value below min length to text input
+        $radioYesElement.click();
+        $textInputExample.val('55').blur();
+      });
+
+      it('The error summary should not be visible', function () {
+        expect($errorSummary).not.toHaveClass('error-summary--show');
+      });
+
+      it('The error summary should contain 0 errors', function () {
+        var $errorMessages = $errorSummaryMessages.find('> li');
+        expect($errorMessages.length).toBe(0);
+      });
+
+      it('The form should have 1 error', function () {
+        expect(form.getErrorMessages().length).toBe(1);
+      });
+
+      it('The form should have the invalid pattern inline error message', function () {
+        var $inlineErrorMessage = $('#text-input-example-error-message');
+        expect($inlineErrorMessage.text()).toBe($textInputExample.attr('data-msg-minlength'));
+      });
+    });
+
   });
 });
