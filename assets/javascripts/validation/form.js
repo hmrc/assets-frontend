@@ -88,7 +88,7 @@ Summary Error Markup example:
 
 var $forms;
 
-var displayGlobalErrorSummary = function (validator, errorMessages) {
+var renderGlobalErrorSummary = function (validator, errorMessages) {
   var $template = $('<li role="tooltip"><a></a></li>');
   var $errorSummaryListElement;
 
@@ -142,12 +142,20 @@ var handleErrors = function (validator, submitted) {
 
   flushHiddenElementErrors(validator.invalid);
 
+  // on submit or the error summary is already displayed
   if (submitted || $errorSummary.is(':visible')) {
     if (errorMessages.length) {
-      displayGlobalErrorSummary(validator, errorMessages, $errorSummary);
-      $errorSummary.addClass('error-summary--show');
+      renderGlobalErrorSummary(validator, errorMessages, $errorSummary);
+      $errorSummary.addClass('error-summary--show').removeClass('visuallyhidden');
     } else {
       $errorSummary.removeClass('error-summary--show');
+    }
+  } else { // inline error
+    if (errorMessages.length) {
+      renderGlobalErrorSummary(validator, errorMessages, $errorSummary);
+      $errorSummary.addClass('visuallyhidden');
+    } else {
+      $errorSummary.removeClass('visuallyhidden');
     }
   }
 };

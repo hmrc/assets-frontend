@@ -200,9 +200,14 @@ describe('Form Validation', function () {
         expect($errorSummary).not.toHaveClass('error-summary--show');
       });
 
-      it('The error summary should contain 0 errors', function () {
+      it('The error summary should be visible for accessibility users', function () {
+        expect($errorSummary).toHaveClass('visuallyhidden');
+      });
+
+      it('The error summary should contain 1 errors', function () {
         var $errorMessages = $errorSummaryMessages.find('> li');
-        expect($errorMessages.length).toBe(0);
+        expect($errorMessages.length).toBe(1);
+        expect($errorMessages.eq(0).text()).toBe($textInputExample.attr('data-msg-minlength'));
       });
 
       it('The form should have 1 error', function () {
