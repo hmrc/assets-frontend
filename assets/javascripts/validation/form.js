@@ -88,7 +88,7 @@ Summary Error Markup example:
 
 var $forms;
 
-var displayGlobalErrorSummary = function (validator, errorMessages) {
+var renderGlobalErrorSummary = function (validator, errorMessages) {
   var $template = $('<li role="tooltip"><a></a></li>');
   var $errorSummaryListElement;
 
@@ -129,7 +129,7 @@ var flushHiddenElementErrors = function (invalidInputs) {
 };
 
 
-var handleErrors = function (validator) {
+var handleErrors = function (validator, submitted) {
   var $currentForm = $(validator.currentForm);
   var $errorSummary = $('.error-summary', $currentForm);
   var errorSummaryContainer = $errorSummary.find('.js-error-summary-messages');
@@ -142,11 +142,21 @@ var handleErrors = function (validator) {
 
   flushHiddenElementErrors(validator.invalid);
 
-  if (errorMessages.length) {
-    displayGlobalErrorSummary(validator, errorMessages, $errorSummary);
-    $errorSummary.addClass('error-summary--show');
-  } else {
-    $errorSummary.removeClass('error-summary--show');
+  // on submit or the error summary is already displayed
+  if (submitted || $errorSummary.is(':visible')) {
+    if (errorMessages.length) {
+      renderGlobalErrorSummary(validator, errorMessages, $errorSummary);
+      $errorSummary.addClass('error-summary--show').removeClass('visuallyhidden');
+    } else {
+      $errorSummary.removeClass('error-summary--show');
+    }
+  } else { // inline error
+    if (errorMessages.length) {
+      renderGlobalErrorSummary(validator, errorMessages, $errorSummary);
+      $errorSummary.addClass('visuallyhidden');
+    } else {
+      $errorSummary.removeClass('visuallyhidden');
+    }
   }
 };
 
@@ -180,6 +190,7 @@ var getErrorMessages = function () {
 
 
 var setupForm = function ($formElem) {
+  var submitted = false;
   var validator = $formElem.validate({
     errorPlacement: function ($error, $element) {
       var $formFieldGroup = $element.closest('.form-field-group');
@@ -192,12 +203,14 @@ var setupForm = function ($formElem) {
       $(element).closest('.form-field-group').removeClass('form-field-group--error');
     },
     showErrors: function () {
-      handleErrors(validator);
+      handleErrors(validator, submitted);
+      submitted = false;
     },
     submitHandler: function (form) {
       form.submit();
     },
     invalidHandler: function() {
+      submitted = true;
       // When invalid submission, re-enable the submit button as the preventDoubleSubmit module disables the submit onSubmit
       $formElem.find('.button[type=submit]').prop('disabled', false);
     }
