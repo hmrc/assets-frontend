@@ -7,7 +7,7 @@
 * @requires     N/A
 */
 
-ul {
+ul, nav ul {
 	list-style-type: none;
 	li {
     @include core-19();
