@@ -31,7 +31,7 @@
   display: table;
   width: 100%;
   position: relative;
-  padding: 15px 0;
+  padding: em(15) 0;
 }
 
 .tabular-data__entry * {
@@ -64,7 +64,7 @@
 /** second position */
 .tabular-data__data-1 {
   display: block;
-  margin: 10px 0;
+  margin: em(10) 0;
   @include media(tablet) {
     display: table-cell;
     width: 50%;
@@ -79,19 +79,19 @@
   @include media(tablet) {
     position: absolute;
     left: 40%;
-    top: 5px;
+    top: em(5);
   }
 }
 
 /** third position */
 .tabular-data__data-2 {
   display: block;
-  margin: 10px 0;
+  margin: em(10) 0;
   @include media(tablet) {
     display: table-cell;
     width: 10%;
     text-align: right;
-    padding-right: 10px;
+    padding-right: em(10);
   }
 }
 
@@ -99,7 +99,7 @@
 .tabular-data__data-2--after-details {
   @include media(tablet) {
     position: absolute;
-    top: 5px;
+    top: em(5);
     right: 0;
   }
 }
@@ -116,7 +116,7 @@
   padding-top: 0;
   margin-top: 0;
   @include media(tablet) {
-    margin-top: 5px;
+    margin-top: em(5);
   }
 }
 
@@ -129,19 +129,19 @@
 .tabular-data__cell--pull-up {
   @include media(tablet) {
     position: absolute;
-    top: -30px;
+    top: em(-30);
     right: 0;
   }
 }
 
 .tabular-data__tab-content {
   border-bottom: 1px solid #bfc1c3;
-  padding: 20px 0 0;
+  padding: em(20) 0 0;
 
   @include media(tablet) {
     border: 1px solid #bfc1c3;
     border-top: 0;
-    padding: 20px 15px;
+    padding: em(5) em(15) 0;
   }
 }
 
@@ -149,6 +149,6 @@
   border-bottom: 1px solid #bfc1c3;
 
   @include media(tablet) {
-    margin: 0 -15px;
+    margin: 0 em(-13);
   }
 }
