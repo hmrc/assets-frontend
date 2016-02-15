@@ -1,13 +1,7 @@
 // Why are typography-related styles living here? Looks like this file has become a dumping ground
 // TODO: Move non-typography related styles to relevant SCSS files
 
-p {
-  @include core-19();
 
-  .content__body & {
-    margin: 0.75em 0;
-  }
-}
 ul {
   padding: 0;
   margin: 0;
