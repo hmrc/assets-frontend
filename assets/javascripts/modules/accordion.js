@@ -14,7 +14,7 @@
  *      </div>
  *    </div>
  *
- *    <div class="accordion__body hidden" data-accordion-body>                        
+ *    <div id="accordion1-body" class="accordion__body hidden" data-accordion-body>                        
  *      <p>Accordion Body</p>
  *    </div>
  *
@@ -23,7 +23,8 @@
  * NOTES:
  * 
  *  - Mandatory attributes:
- *     - id                         unique identifier used for anchoring to accordion based on URL hash
+ *     - id on main container       unique identifier used for anchoring to accordion based on URL hash
+       - id on body element         unique identified used for accessibility reasons (ties button to content)
  *     - data-accordion             main hook into accordion, placed on outer-most container
  *     - data-accordion-button      expand/collapse event will be bound to this element
  *     - data-accordion-body        element contains content that will be expanded/collapsed
@@ -52,6 +53,12 @@ module.exports = function() {
     
     // hide any elements flagged to be revealed only on expand
     $accordion.find('[data-accordion-reveal]').addClass('hidden');
+
+    // accordion links behave as expand/collapse buttons
+    $button.attr('role', 'button');
+
+    // tell screen-readers that button controls content
+    $button.attr('aria-controls', $body.attr('id'));
 
     // expand any accordions that have been flagged
     if($accordion.is('[data-accordion-expanded]') || isAnchored($accordion)) {
@@ -126,6 +133,9 @@ module.exports = function() {
     // set class to handle subtle style differences (borders)
     $accordion.addClass(expandedClass);
 
+    // update aria expanded state
+    $accordion.attr('aria-expanded', true);
+
     // animates arrow to pointing down state
     $arrow.addClass('arrow--expand');
 
@@ -142,6 +152,9 @@ module.exports = function() {
 
     // body must be height 0 and visible before expanding 
     $body.height(0).removeClass('hidden');
+
+    // make body visible to screen-readers
+    $body.attr('aria-hidden', false);
 
     if(animate) {
 
@@ -183,6 +196,9 @@ module.exports = function() {
 
     $arrow.removeClass('arrow--expand'); 
 
+    // update aria expanded state
+    $accordion.attr('aria-expanded', false);
+
     $accordion.find('[data-accordion-reveal]').addClass('hidden');
 
     $accordion
@@ -191,6 +207,9 @@ module.exports = function() {
       .first()
       .removeClass('flush--top')
       .addClass('flush');
+
+    // make body hidden to screen-readers
+    $body.attr('aria-hidden', true);
 
     if(animate) {
 
