@@ -1,0 +1,8 @@
+{
+  "source": [
+    "assets"
+  ],
+  "destination": "component-library",
+  "template": "node_modules/hmrc-component-library-template",
+  "verbose": true
+}
