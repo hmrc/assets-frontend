@@ -1,18 +1,20 @@
-// Button
-//
-// Your standard button suitable for clicking.
-//
-// Markup:
-// <button class="button {{modifier_class}}">Button text</button>
-//
-// .button--alert         - A description here
-// .button--get-started   - A description here
-// .button--secondary     - A description here
-// .button--small         - A description here
-// .button--table         - A description here
-// .button.button--link   - A description here
-//
-// Styleguide 0.1
+/*
+Buttons
+
+Your standard button suitable for clicking.
+
+Markup:
+<button class="button {{modifier_class}}">Button text</button>
+
+.button--alert         - A description here
+.button--get-started   - A description here
+.button--secondary     - A description here
+.button--small         - A description here
+.button--table         - A description here
+.button.button--link   - A description here
+
+Styleguide 0.1
+*/
 
 button, .button {
   text-transform: capitalize;
