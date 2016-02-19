@@ -59,18 +59,6 @@ button, .button {
   box-shadow: 0 0 0 $grey-4;
 }
 
-// adds margin on left and right of button for situations
-// where button is sitting inline with other elements
-.button--spaced {
-  margin: 0 em(10) 0 em(10);
-}
-
-// adds left and right padding for buttons whose text is extremely short
-.button--padded {
-  padding-left: em(30);
-  padding-right: em(30);
-}
-
 /**
  * For links that need to be positioned beside buttons
  * Used in conjunction with button class
@@ -122,4 +110,3 @@ button, .button {
     background-color: transparent;
   }
 }
-
