@@ -1,13 +1,10 @@
 {
   "source": [
-    "assets"
+    "assets/scss"
   ],
   "destination": "component-library",
   "template": "node_modules/hmrc-component-library-template",
   "css": [
-    "public/stylesheets/application.min.css",
-    "public/stylesheets/application-ie.min.css",
-    "public/stylesheets/application-ie7.min.css"
-  ],
-  "verbose": true
+    "public/stylesheets/application.min.css"
+  ]
 }
