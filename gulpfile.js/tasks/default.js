@@ -7,6 +7,7 @@ gulp.task('default', ['clean'], function () {
   runSequence(
     ['sass', 'images', 'concatEncryption'],
     'modernizr',
+    'component-library',
     'watch'
   );
 });
