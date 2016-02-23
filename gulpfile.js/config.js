@@ -151,9 +151,9 @@ module.exports = {
     port: 9032,
     open: false,
     server: {
-      baseDir: src,
       routes: {
-        '/assets': dest
+        '/assets': dest,
+        '/component-library': './component-library'
       }
     }
   }
