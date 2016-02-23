@@ -31,8 +31,8 @@ var src = './assets/',
     };
 
 module.exports = {
-  dest: './public/',
-  distDir: './dist/',
+  dest: dest,
+  distDir: distDir,
 
   production: {
     jsSrc: distDir + 'javascripts/*.js',

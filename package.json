@@ -12,9 +12,8 @@
     "dev": "gulp",
     "build": "gulp build",
     "test": "gulp test",
-    "test:dev": "karma start assets/test/config/karma.conf.js no-single-run",
-    "copy": "cp -r assets/public/999-SNAPSHOT/stylesheets component-library/public",
-    "comp-lib": "kss-node --config component-lib.json && npm run copy"
+    "comp-lib": "gulp component-library",
+    "test:dev": "karma start assets/test/config/karma.conf.js no-single-run"
   },
   "napa": {
     "stageprompt": "alphagov/stageprompt#2.1.0"

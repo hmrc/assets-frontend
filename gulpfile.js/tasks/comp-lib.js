@@ -10,8 +10,14 @@ gulp.task('clean-comp-lib', function(cb) {
   del(compLibConfig.destination, cb);
 });
 
-gulp.task('component-library', ['clean-comp-lib'], function (cb) {
-  exec('npm run comp-lib', function (err, stout, sterr) {
+gulp.task('component-library', ['clean-comp-lib', 'sass'], function (cb) {
+  var env = global.runmode,
+      genCompLib = './node_modules/.bin/kss-node --config component-lib.json';
+
+  exec(genCompLib, function (err, stout, sterr) {
+    gulp.src([config.sass[env].dest])
+        .pipe(gulp.dest(compLibConfig.destination + '/public'));
+
     cb(err);
   });
 });
