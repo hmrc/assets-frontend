@@ -120,3 +120,7 @@ table {
     float: left;
   }
 }
+
+.table--font-small {
+  @include core-19;
+}
