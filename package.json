@@ -7,14 +7,14 @@
     "url": "https://github.com/hmrc/assets-frontend.git"
   },
   "scripts": {
+    "install": "napa",
     "start": "npm run dev",
-    "kss": "kss-node --config component-lib.json && npm run copy",
-    "copy": "cp -r assets/dist/stylesheets component-library/public",
     "dev": "gulp",
     "build": "gulp build",
     "test": "gulp test",
     "test:dev": "karma start assets/test/config/karma.conf.js no-single-run",
-    "install": "napa"
+    "copy": "cp -r assets/public/999-SNAPSHOT/stylesheets component-library/public",
+    "comp-lib": "kss-node --config component-lib.json && npm run copy"
   },
   "napa": {
     "stageprompt": "alphagov/stageprompt#2.1.0"
