@@ -15,9 +15,8 @@ gulp.task('component-library', ['clean-comp-lib', 'sass'], function (cb) {
       genCompLib = './node_modules/.bin/kss-node --config component-lib.json';
 
   exec(genCompLib, function (err, stout, sterr) {
-    gulp.src([config.sass[env].dest])
-        .pipe(gulp.dest(compLibConfig.destination + '/public'));
-
+    gulp.src([config.images[env].dest + '/**/*', config.sass[env].dest + '**/*'], {base: config[env].dest})
+      .pipe(gulp.dest(compLibConfig.destination + '/public'));
     cb(err);
   });
 });
