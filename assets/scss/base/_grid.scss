@@ -1,7 +1,12 @@
 /*
 Grids
 
-These are grids.
+You create the grid with `.grid-layout` and individual columns with a column class `.grid-layout__column` and
+fraction class `.grid-layout__column--1-4`.
+
+* Add a `.grid-layout` container.
+* Add your columns with individual `.grid-layout__column`.
+* Add your fractional width classes to set the width of the columns e.g. `.grid-layout__column--1-4`.
 
 Markup:
 <div class="grid-layout">
