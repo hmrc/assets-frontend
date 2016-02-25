@@ -34,6 +34,13 @@ module.exports = {
   dest: dest,
   distDir: distDir,
 
+  dev: {
+    dest: snapshotDir,
+  },
+  prod: {
+    dest: distDir,
+  },
+
   production: {
     jsSrc: distDir + 'javascripts/*.js',
     jsDest: distDir + 'javascripts/',
