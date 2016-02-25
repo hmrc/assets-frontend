@@ -1,0 +1,81 @@
+$mask-opacity: rgba(89, 89, 89, .7); //#595959;
+$light-box-background: rgba(255, 255, 255, 1);
+$light-box-border: em(5) solid rgba(0, 0, 0, 1);
+$light-box-box-shadow: 0 em(2) 0 #6f777b;
+$light-box-yellow: $attorney-yellow; //#ffbf47;
+
+@mixin set-clip-rect($for-ie: false, $px-value: 0) {
+  @if $for-ie == true {
+    clip: rect(em($px-value) em($px-value) em($px-value) em($px-value));
+  } @else {
+    clip: rect(em($px-value), em($px-value), em($px-value), em($px-value));
+  }
+}
+
+body {
+  &.scroll-off {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+.light-box {
+  &.light-box--hidden {
+    @include set-clip-rect(true, 1);
+    @include set-clip-rect(false, 1);
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    z-index: 0;
+
+    &:focus {
+      clip: auto;
+      height: auto;
+      overflow: auto;
+      position: relative;
+      width: auto;
+    }
+  }
+
+  background-color: $mask-opacity;
+  left: 0;
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.light-box__content {
+  &:focus {
+    outline: 3px solid $light-box-yellow; 
+  }
+  
+  padding: em(7) em(32);
+  position: static;
+  @include media(mobile) {
+    [role="button"][data-lightbox-action="close"] {
+      width: 100%;
+    }
+  }  
+}
+
+.light-box__inner {
+  background-color: $light-box-background;
+  border: $light-box-border;
+  left: 0;
+  margin: em(130) auto 0;  
+  max-width: 90%;
+  overflow-y: auto;
+  padding: em(8);
+  position: fixed;
+  right: 0;
+  top: 0;
+  @include media(desktop) {
+    margin: em(130) 25% 0;
+    max-width: em(720);
+  }  
+}
