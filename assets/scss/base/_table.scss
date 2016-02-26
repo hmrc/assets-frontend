@@ -43,6 +43,20 @@ table {
   }
 }
 
+// resets table cell's font size to base
+.table--font-reset {
+
+  td {
+    @include core-19;
+  }
+
+}
+
+// for tables that need to be spaced from above element
+.table--spaced-top {
+  margin-top: em(30);
+}
+
 .table-cell--light {
   background-color: $highlight-colour;
 }
@@ -120,3 +134,4 @@ table {
     float: left;
   }
 }
+
