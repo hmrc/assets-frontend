@@ -6,5 +6,6 @@
   "template": "node_modules/hmrc-component-library-template",
   "css": [
     "public/stylesheets/application.min.css"
-  ]
+  ],
+  "homepage": "../../styleguide.md"
 }
