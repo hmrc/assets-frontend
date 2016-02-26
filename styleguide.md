@@ -1,4 +1,4 @@
-# Home page
+This guide demonstrates styles and components for HMRC applications
 
 * Need information explaining the Component Library
 * Process of adding comments
