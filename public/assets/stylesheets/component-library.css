@@ -1,0 +1,78 @@
+/* Styles for the structure of the component library */
+.comp-lib {
+  margin-top: 2em;
+  display: table;
+  width: 100%;
+}
+.comp-lib-sidebar {
+  width: 20%;
+  display: table-cell;
+  vertical-align: top;
+}
+.comp-lib-main {
+  width: 80%;
+  display: table-cell;
+}
+.comp-lib-menu-item {
+  margin-bottom: .2em;
+}
+.comp-lib-menu-item--highlighted {
+  font-weight: bold;
+}
+.comp-lib-menu-link {
+  color: #000;
+  text-decoration: none;
+}
+.comp-lib-menu-link:hover {
+  text-decoration: underline;
+}
+.comp-lib-menu-link:link,
+.comp-lib-menu-link:visited,
+.comp-lib-menu-link:active {
+  color: #000;
+}
+.comp-lib-pattern-intro {
+  margin-bottom: 2em;
+}
+.comp-lib-pre {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  font-size: .9em;
+  border: none;
+}
+.comp-lib-code {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  border: none;
+}
+.comp-lib-pattern-component {
+  margin: .4em .4em .8em 0;
+}
+.comp-lib-pattern-example {
+  margin-bottom: 3em;
+}
+.comp-lib-pattern-example__description {
+  margin-bottom: .4em;
+}
+.comp-lib-pattern-example__description code,
+.comp-lib-pattern-intro code {
+  border: none !important;
+  font: inherit;
+  border-radius: 4px;
+  padding-top: .2em;
+  padding-bottom: .2em;
+}
+.comp-lib-pattern-component .grid-layout__column {
+  background-color: #dee0e2;
+  padding: 1em;
+  outline: 1px solid #fff;
+}
+.comp-lib-pattern-component .grid-layout {
+  font-size: .8em;
+}
+.comp-lib-pattern-intro ul {
+  list-style: disc;
+  list-style-position: inside;
+  margin: 0;
+  padding-left: 1.2em;
+}
