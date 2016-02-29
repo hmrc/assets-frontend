@@ -71,6 +71,10 @@
   }
 }
 
+.summary--underline {
+  text-decoration: underline;
+}
+
 .no-details details {
   summary {
     .arrow-closed {
@@ -92,6 +96,7 @@
     }
   }
 }
+
 .details {
   .details__inner {
     padding-bottom: 2em;
