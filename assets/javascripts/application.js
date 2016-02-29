@@ -44,7 +44,7 @@ var sso = require('./modules/sso.js'),
     tabs = require('./modules/tabs.js'),
     charCounter = require('./modules/charCounter.js'),
     addRemove = require('./modules/addRemove.js'),
-    lightBox = require('./modules/lightbox.js');
+    modalDialog = require('./modules/modalDialog.js');
 
 //initialise mdtpf
 fingerprint();
@@ -168,6 +168,6 @@ $(function() {
   accordion();
   charCounter();
   addRemove();
-  lightBox().init();
+  modalDialog().init();
 
 });

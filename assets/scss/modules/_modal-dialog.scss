@@ -1,8 +1,8 @@
 $mask-opacity: rgba(89, 89, 89, .7); //#595959;
-$light-box-background: rgba(255, 255, 255, 1);
-$light-box-border: em(5) solid rgba(0, 0, 0, 1);
-$light-box-box-shadow: 0 em(2) 0 #6f777b;
-$light-box-yellow: $attorney-yellow; //#ffbf47;
+$modal-dialog-background: rgba(255, 255, 255, 1);
+$modal-dialog-border: em(5) solid rgba(0, 0, 0, 1);
+$modal-dialog-box-shadow: 0 em(2) 0 #6f777b;
+$modal-dialog-yellow: $attorney-yellow; //#ffbf47;
 
 @mixin set-clip-rect($for-ie: false, $px-value: 0) {
   @if $for-ie == true {
@@ -19,8 +19,8 @@ body {
   }
 }
 
-.light-box {
-  &.light-box--hidden {
+.modal-dialog {
+  &.modal-dialog--hidden {
     @include set-clip-rect(true, 1);
     @include set-clip-rect(false, 1);
     border: 0;
@@ -49,23 +49,23 @@ body {
   z-index: 1;
 }
 
-.light-box__content {
+.modal-dialog__content {
   &:focus {
-    outline: 3px solid $light-box-yellow; 
+    outline: 3px solid $modal-dialog-yellow; 
   }
   
   padding: em(7) em(32);
   position: static;
   @include media(mobile) {
-    [role="button"][data-lightbox-action="close"] {
+    [role="button"][data-modaldialog-action="close"] {
       width: 100%;
     }
   }  
 }
 
-.light-box__inner {
-  background-color: $light-box-background;
-  border: $light-box-border;
+.modal-dialog__inner {
+  background-color: $modal-dialog-background;
+  border: $modal-dialog-border;
   left: 0;
   margin: em(130) auto 0;  
   max-width: 90%;

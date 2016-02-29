@@ -1,19 +1,19 @@
 require('jquery');
 window._gaq = [];
-var lightBox, $body, $actions, $lightBox, $inner,  $content1, $content2, $actions1, $actions2;
+var modalDialog, $body, $actions, $modalDialog, $inner,  $content1, $content2, $actions1, $actions2;
 
-describe('Given I have a light-box module on the page', function() {
+describe('Given I have a modal-dialog module on the page', function() {
 
   beforeEach(function() {
     jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/';
-    loadFixtures('light-box.html');
+    loadFixtures('modal-dialog.html');
     
-    lightBox = require('../../javascripts/modules/lightbox.js');
+    modalDialog = require('../../javascripts/modules/modalDialog.js');
     
     $body = $('body');
     $actions = $('.document-actions');
-    $lightBox = $('.light-box');
-    $inner = $('.light-box__inner');
+    $modalDialog = $('.modal-dialog');
+    $inner = $('.modal-dialog__inner');
     $content1 = $('#content-1');
     $content2 = $('#content-2');
     $actions1 = $('#content-1-actions');
@@ -23,7 +23,7 @@ describe('Given I have a light-box module on the page', function() {
   // open / close
   describe('and on loading the page', function() {
     beforeEach(function() {
-      lightBox().init(); // init light-box module
+      modalDialog().init(); // init modal-dialog module
     });
     it('shows content 1 is hidden, and content 2 is visible', function() {
       expect($content1.is(':not(:visible)')).toBe(true);
@@ -31,16 +31,16 @@ describe('Given I have a light-box module on the page', function() {
     });
   });
 
-  describe('and the light-box closes', function() {
+  describe('and the modal-dialog closes', function() {
     beforeEach(function() {
-      lightBox().init(); // init light-box module
+      modalDialog().init(); // init modal-dialog module
     });
 
-    describe('when clicking a [data-lightbox-action="close"] control in light-box content', function() {
+    describe('when clicking a [data-modaldialog-action="close"] control in modal-dialog content', function() {
       var $contentCloseLink;
 
       beforeEach(function() {
-        $contentCloseLink = $content2.find('a[data-lightbox-action="close"]');
+        $contentCloseLink = $content2.find('a[data-modaldialog-action="close"]');
         expect($contentCloseLink.length).toBe(1);
         $contentCloseLink.click();
       });
@@ -54,16 +54,16 @@ describe('Given I have a light-box module on the page', function() {
         expect($body.hasClass('scroll-off')).toBe(false);
       });
 
-      it("light-box is hidden", function(){
-        expect($lightBox.hasClass('light-box--hidden')).toBe(true);
+      it("modal-dialog is hidden", function(){
+        expect($modalDialog.hasClass('modal-dialog--hidden')).toBe(true);
       });
     });
 
-    describe('when clicking a [data-lightbox-action="close"] control in document content', function() {
+    describe('when clicking a [data-modaldialog-action="close"] control in document content', function() {
       var $documentCloseLink;
 
       beforeEach(function() {
-        $documentCloseLink = $actions.find('[data-lightbox-action="close"][data-lightbox-target="content-2"]');
+        $documentCloseLink = $actions.find('[data-modaldialog-action="close"][data-modaldialog-target="content-2"]');
         expect($documentCloseLink.length).toBe(1);
         $documentCloseLink.click();
       });
@@ -77,13 +77,13 @@ describe('Given I have a light-box module on the page', function() {
         expect($body.hasClass('scroll-off')).toBe(false);
       });
 
-      it("the light-box is hidden", function(){
-        expect($lightBox.hasClass('light-box--hidden')).toBe(true);
+      it("the modal-dialog is hidden", function(){
+        expect($modalDialog.hasClass('modal-dialog--hidden')).toBe(true);
       });
     });
     
     it('when user uses escape key', function() {
-      $documentOpenLink = $actions.find('[data-lightbox-action="open"][data-lightbox-target="content-1"]');
+      $documentOpenLink = $actions.find('[data-modaldialog-action="open"][data-modaldialog-target="content-1"]');
 
       //var e = $.Event("keyup");
       //e.which = 27;
@@ -94,28 +94,28 @@ describe('Given I have a light-box module on the page', function() {
       expect($content2.is(':not(:visible)')).toBe(true);
       expect($content1.is(':not(:visible)')).toBe(true);
       expect($body.hasClass('scroll-off')).toBe(false);
-      expect($lightBox.hasClass('light-box--hidden')).toBe(true);
+      expect($modalDialog.hasClass('modal-dialog--hidden')).toBe(true);
     });
   });
 
-  describe('and the light-box opens', function() {
+  describe('and the modal-dialog opens', function() {
     beforeEach(function() {
-      lightBox().init(); // init light-box module
+      modalDialog().init(); // init modal-dialog module
     });
 
-    describe('when clicking a [data-lightbox-action="open"] control in light-box content', function() {
+    describe('when clicking a [data-modaldialog-action="open"] control in modal-dialog content', function() {
       beforeEach(function() {
-        $content2.find('a[data-lightbox-action="close"]').click();
+        $content2.find('a[data-modaldialog-action="close"]').click();
         expect($content2.is(':not(:visible)')).toBe(true);
         expect($content1.is(':not(:visible)')).toBe(true);
-        $actions.find('[data-lightbox-action="open"][data-lightbox-target="content-1"]').click();
+        $actions.find('[data-modaldialog-action="open"][data-modaldialog-target="content-1"]').click();
       });
 
       it('content is visible', function() {
         expect($content2.is(':not(:visible)')).toBe(true);
         expect($content1.is(':visible')).toBe(true);
 
-        var $contentOpen = $content1.find('[data-lightbox-action="open"][data-lightbox-target="content-2"]');
+        var $contentOpen = $content1.find('[data-modaldialog-action="open"][data-modaldialog-target="content-2"]');
         expect($contentOpen.length).toBe(1);
         $contentOpen.click();
 
@@ -123,20 +123,20 @@ describe('Given I have a light-box module on the page', function() {
         expect($content2.is(':visible')).toBe(true);
 
         expect($body.hasClass('scroll-off')).toBe(true);
-        expect($lightBox.hasClass('light-box--hidden')).toBe(false);
+        expect($modalDialog.hasClass('modal-dialog--hidden')).toBe(false);
       });
     });
   
-    describe('when clicking a [data-lightbox-action="open"] control in document content', function () {
+    describe('when clicking a [data-modaldialog-action="open"] control in document content', function () {
       var $documentOpenLink;
 
       beforeEach(function () {
-        // close the light-box
-        $actions.find('[data-lightbox-action="close"][data-lightbox-target="content-2"]').click();
+        // close the modal-dialog
+        $actions.find('[data-modaldialog-action="close"][data-modaldialog-target="content-2"]').click();
         expect($content2.is(':not(:visible)')).toBe(true);
         expect($content1.is(':not(:visible)')).toBe(true);
 
-        $documentOpenLink = $actions.find('[data-lightbox-action="open"][data-lightbox-target="content-1"]');
+        $documentOpenLink = $actions.find('[data-modaldialog-action="open"][data-modaldialog-target="content-1"]');
         expect($documentOpenLink.length).toBe(1);
 
         $documentOpenLink.click();
@@ -151,8 +151,8 @@ describe('Given I have a light-box module on the page', function() {
         expect($body.hasClass('scroll-off')).toBe(true);
       });
 
-      it("light-box is not hidden", function(){
-        expect($lightBox.hasClass('light-box--hidden')).toBe(false);
+      it("modal-dialog is not hidden", function(){
+        expect($modalDialog.hasClass('modal-dialog--hidden')).toBe(false);
       });
 
     });
@@ -160,9 +160,9 @@ describe('Given I have a light-box module on the page', function() {
   
   
   // tabbing 
-  describe("and the open light-box retains focus when the user", function() {
+  describe("and the open modal-dialog retains focus when the user", function() {
     beforeEach(function() {
-      lightBox().init(); // init light-box module
+      modalDialog().init(); // init modal-dialog module
     });
     
     it("clicks elsewhere on the page", function() {
@@ -175,50 +175,50 @@ describe('Given I have a light-box module on the page', function() {
       var $documentOpenLink;
     
       beforeEach(function() {
-        $documentOpenLink = $actions.find('[data-lightbox-action="open"][data-lightbox-target="content-1"]');
+        $documentOpenLink = $actions.find('[data-modaldialog-action="open"][data-modaldialog-target="content-1"]');
         expect($documentOpenLink.length).toBe(1);
 
         $documentOpenLink.click();
       });
 
       it("returning to the first tab-indexed item after the last", function() {
-        // item in focus is light-box__content block
+        // item in focus is modal-dialog__content block
         expect($(document.activeElement).is($content1)).toBe(true);
-        expect($(document.activeElement).hasClass('light-box__content')).toBe(true);
+        expect($(document.activeElement).hasClass('modal-dialog__content')).toBe(true);
         
         simulateKeyEvent($(document.activeElement), 'keydown', 9);
         // item in focus is <button/> content close control link
         expect($content1.find($(document.activeElement)).length).toBe(1);
-        expect($(document.activeElement).data('lightboxAction')).toBe('close');
+        expect($(document.activeElement).data('modaldialogAction')).toBe('close');
         
         simulateKeyEvent($(document.activeElement), 'keydown', 9);
         // item in focus is <a/> content open control link
         expect($content1.find($(document.activeElement)).length).toBe(1);
-        expect($(document.activeElement).data('lightboxAction')).toBe('open');
+        expect($(document.activeElement).data('modaldialogAction')).toBe('open');
         
         simulateKeyEvent($(document.activeElement), 'keydown', 9);
         expect($(document.activeElement).is($content1)).toBe(true);
-        expect($(document.activeElement).hasClass('light-box__content')).toBe(true);
+        expect($(document.activeElement).hasClass('modal-dialog__content')).toBe(true);
       });
 
       it("+ shift key in reverse, moveing to the last tabindex item after the first", function() {
-        // item in focus is light-box__content block
+        // item in focus is modal-dialog__content block
         expect($(document.activeElement).is($content1)).toBe(true);
-        expect($(document.activeElement).hasClass('light-box__content')).toBe(true);
+        expect($(document.activeElement).hasClass('modal-dialog__content')).toBe(true);
 
         simulateKeyEvent($(document.activeElement), 'keydown', 9, true);
         // item in focus is <a/> content open control link
         expect($content1.find($(document.activeElement)).length).toBe(1);
-        expect($(document.activeElement).data('lightboxAction')).toBe('open');
+        expect($(document.activeElement).data('modaldialogAction')).toBe('open');
         
         simulateKeyEvent($(document.activeElement), 'keydown', 9, true);
         // item in focus is <button/> content close control link
         expect($content1.find($(document.activeElement)).length).toBe(1);
-        expect($(document.activeElement).data('lightboxAction')).toBe('close');
+        expect($(document.activeElement).data('modaldialogAction')).toBe('close');
 
         simulateKeyEvent($(document.activeElement), 'keydown', 9, true);
         expect($(document.activeElement).is($content1)).toBe(true);
-        expect($(document.activeElement).hasClass('light-box__content')).toBe(true);
+        expect($(document.activeElement).hasClass('modal-dialog__content')).toBe(true);
         
       });
     });

@@ -1,12 +1,12 @@
 /**
- * @name lightBox
- * @module javascripts/modules/lightbox
+ * @name modalDialog
+ * @module javascripts/modules/modaldialog
  * @author  Matthew Pepper
  * @requires jquery
  * @requires stageprompt
- * @requires scss/modules/_light-box.scss
+ * @requires scss/modules/_modal-dialog.scss
  *
- * @summary An accessible light-box component module consisting of:
+ * @summary An accessible modal-dialog component module consisting of:
  * - outer container masking element, covering the page
  * - inner container for content, with auto scrolling if content exceeds inner container height
  * - content(s) with visibility toggle
@@ -20,53 +20,53 @@
  * @see @link{'Tab key does not select menus or buttons|https://support.mozilla.org/en-US/kb/Pressing%20Tab%20key%20does%20not%20select%20menus%20or%20buttons}
  *
  * @example:
- * - include "light-box" & "light-box__container" in page or page template
- * - include "light-box__content" inner html markup in partial views
+ * - include "modal-dialog" & "modal-dialog__container" in page or page template
+ * - include "modal-dialog__content" inner html markup in partial views
  *
- *  <div class="light-box" role="dialog">
- *    <div class="light-box__inner">
- *      <div id="content-1" class="light-box__content" data-ga-open-event="category:Event:id" tabindex="1" role="dialog" aria-labelledby="heading-id" aria-describedby="message-id" hidden>
+ *  <div class="modal-dialog">
+ *    <div class="modal-dialog__inner">
+ *      <div id="content-1" class="modal-dialog__content" data-ga-open-event="category:Event:id" tabindex="1" role="dialog" aria-labelledby="heading-id" aria-describedby="message-id" hidden>
  *        <div id="message-id">
  *          <h2 id="heading-id">content 1 heading</h2>
  *          ....
- *          <button role="button" class="button button--secondary" data-journey-click="category:Event:id" data-lightbox-action="close" tabindex="1">close</button>
+ *          <button role="button" class="button button--secondary" data-journey-click="category:Event:id" data-modaldialog-action="close" tabindex="1">close</button>
  *        </div>
  *      </div>
- *      <div id="content-2" class="light-box__content" data-ga-open-event="category:Event:id" tabindex="1" role="dialog" aria-labelledby="heading-id-2" aria-describedby="message-id-2">
+ *      <div id="content-2" class="modal-dialog__content" data-ga-open-event="category:Event:id" tabindex="1" role="dialog" aria-labelledby="heading-id-2" aria-describedby="message-id-2">
  *        <div id="message-id-2">
  *          <h2 id="heading-id-2">content 2 heading</h2>
  *          ...
- *          <a href="#" data-lightbox-action="close" tabindex="1" data-journey-click="category:Event:id">...</a>
+ *          <a href="#" data-modaldialog-action="close" tabindex="1" data-journey-click="category:Event:id">...</a>
  *        </div>
  *      </div>
  *    </div>
  *  </div>
  *
- *  // to display light-box on a link's click event:
- *  <a class="" href="#" data-lightbox-action="id-selector-of-content" data-journey-click="category:Event:id">click to open</a>
+ *  // to display modal-dialog on a link's click event:
+ *  <a class="" href="#" data-modaldialog-action="id-selector-of-content" data-journey-click="category:Event:id">click to open</a>
  *
  */
 require('jquery');
 var GOVUK = require('stageprompt');
 
 module.exports = function() {
-  var $lightBox = $('.light-box'),
-    $container = $('.light-box__inner'),
-    $contents = $('.light-box__content'),
-    contentShowing = '.light-box__content:not([hidden])',
+  var $modalDialog = $('.modal-dialog'),
+    $container = $('.modal-dialog__inner'),
+    $contents = $('.modal-dialog__content'),
+    contentShowing = '.modal-dialog__content:not([hidden])',
     $doc = $(document),
     $body = $('body'),
     $returnFocus;
 
   /**
-   * Hide light-box, container & content.
+   * Hide modal-dialog, container & content.
    */
   function hide() {
     // un-fix body position
     $body.removeClass('scroll-off');
 
-    // 'hide' $lightBox
-    $lightBox.addClass('light-box--hidden').css({width: '', height: ''});
+    // 'hide' $modalDialog
+    $modalDialog.addClass('modal-dialog--hidden').css({width: '', height: ''});
 
     // hide
     $(contentShowing).each(function() {
@@ -79,25 +79,25 @@ module.exports = function() {
   }
 
   /**
-   * Show light-box, container & content.
+   * Show modal-dialog, container & content.
    * @param {Event} e - optional event (not passed in init()...
-   *                    passed by dom elements which display / close light-box
-   *                    using data-lightbox-action=[open|close] and data-lightbox-target="light-box__content-id"
+   *                    passed by dom elements which display / close modal-dialog
+   *                    using data-modaldialog-action=[open|close] and data-modaldialog-target="modal-dialog__content-id"
    */
   function show(e) {
     var $content = getDisplayContent(e);
 
     if (!!$content && $content.length) {
-      // set currently focussed element for return focus on light-box hide
+      // set currently focussed element for return focus on modal-dialog hide
       $returnFocus = $(document.activeElement);
 
       // fix body position
       $body.addClass('scroll-off');
 
-      // 'show' $lightBox
-      $lightBox.removeClass('light-box--hidden');
+      // 'show' $modalDialog
+      $modalDialog.removeClass('modal-dialog--hidden');
 
-      // set $lightBox size (with height dimension relative to content height)
+      // set $modalDialog size (with height dimension relative to content height)
       setDimensions($content);
 
       // shift focus to showing content
@@ -109,15 +109,15 @@ module.exports = function() {
   }
 
   /**
-   * Get the content element to be shown in the light-box
-   * @param {Event} e - optional event passed by dom event trigger from element with [data-lightbox-action="open | close"] attribute)
+   * Get the content element to be shown in the modal-dialog
+   * @param {Event} e - optional event passed by dom event trigger from element with [data-modaldialog-action="open | close"] attribute)
    * @returns {HTMLElement}
    */
   function getDisplayContent(e) {
     var $content, $target;
 
-    // if event is passed by dom event trigger (from element with [data-lightbox-action="open | close"])
-    if (e && e.target && $(e.target).data('lightboxTarget') && $(e.target).data('lightboxAction')) {
+    // if event is passed by dom event trigger (from element with [data-modaldialog-action="open | close"])
+    if (e && e.target && $(e.target).data('modaldialogTarget') && $(e.target).data('modaldialogAction')) {
       $target = $(e.target);
 
       // mark currently showing content to be hidden
@@ -126,11 +126,11 @@ module.exports = function() {
       });
 
       // get target
-      $content = $('#' + $target.data('lightboxTarget'));
+      $content = $('#' + $target.data('modaldialogTarget'));
 
       if ($content.length) {
         // mark event target to be shown / hidden
-        $content.setHidden($target.data('lightboxAction') !== 'open');
+        $content.setHidden($target.data('modaldialogAction') !== 'open');
       }
     }
     else {
@@ -144,7 +144,7 @@ module.exports = function() {
   }
 
   /**
-   * Set the dimensions of the light box's inner container to fit the view-port.
+   * Set the dimensions of the modal dialog's inner container to fit the view-port.
    * @param {HTMLElement} $element - content element
    */
   function setDimensions($element) {
@@ -152,7 +152,7 @@ module.exports = function() {
         maxHeight = Math.max.apply(null, $contents.map(
           function() {
             var thisHeight = Math.min.apply(null, [$(this).outerHeight(false), $element.outerHeight(false)]);
-            return thisHeight > $lightBox.outerHeight(false) ? $lightBox.outerHeight(false) : thisHeight;
+            return thisHeight > $modalDialog.outerHeight(false) ? $modalDialog.outerHeight(false) : thisHeight;
           }).get()),
           total = maxHeight < $(window).height() - offset ? maxHeight : maxHeight - offset;
 
@@ -162,38 +162,38 @@ module.exports = function() {
   }
 
   /**
-   * Set the dimensions of the light box element to fit the view-port
+   * Set the dimensions of the modal dialog element to fit the view-port
    */
-  function setLightBoxDimensions() {
+  function setModalDialogDimensions() {
     // set height and width to mask to fill up the whole document
-    $lightBox.css({width: $doc.width() + 'px', height: $doc.height() + 'px'});
+    $modalDialog.css({width: $doc.width() + 'px', height: $doc.height() + 'px'});
   }
 
   /**
-   * Helper function to test for light-box displayed.
+   * Helper function to test for modal-dialog displayed.
    * @returns {number|boolean}
    */
-  function isLightBoxOpen() {
+  function isModalDialogOpen() {
     return $(contentShowing).length;
   }
 
   /**
-   * Window resize event handler to re-calculate the light-box element's dimensions
+   * Window resize event handler to re-calculate the modal-dialog element's dimensions
    * @param {Function} setMaskDimensions - callback function
    */
   $(window).on('resize', function() {
-    setLightBoxDimensions();
+    setModalDialogDimensions();
     setDimensions($(contentShowing));
   });
 
   /**
-   * Event handler to capture [esc] key press in light-box
+   * Event handler to capture [esc] key press in modal-dialog
    **/
-  $lightBox.on('keyup', contentShowing, function(e) {
-    // escape key press to close light-box
-    if (isLightBoxOpen() && e.which === 27) {
+  $modalDialog.on('keyup', contentShowing, function(e) {
+    // escape key press to close modal-dialog
+    if (isModalDialogOpen() && e.which === 27) {
       // send google analytics event - assume the same value as the close button
-      var $closeButton = $(contentShowing).find('[data-lightbox-action="close"]');
+      var $closeButton = $(contentShowing).find('[data-modaldialog-action="close"]');
 
       if ($closeButton.length)
       {
@@ -205,10 +205,10 @@ module.exports = function() {
   });
 
   /**
-   * Event handler to capture tab key press in light-box - needs to be in doc context to capture tab outside light-box.
+   * Event handler to capture tab key press in modal-dialog - needs to be in doc context to capture tab outside modal-dialog.
    */
   $doc.on('keydown', function(e) {
-    if (isLightBoxOpen() && e.which === 9) {
+    if (isModalDialogOpen() && e.which === 9) {
       // listen for tab direction event here
       e.preventDefault();
       var $src = $(e.target),
@@ -217,7 +217,7 @@ module.exports = function() {
         inc = $tabs.index($src) + (isBack ? -1 : 1),
         $focus;
 
-      // if focus has moved out of light-box bring it back
+      // if focus has moved out of modal-dialog bring it back
       if (inc < 0) {
         $focus = $tabs.last();
       }
@@ -234,10 +234,10 @@ module.exports = function() {
   });
 
   /**
-   * Event handler for document click to return focus to light-box when content showing.
+   * Event handler for document click to return focus to modal-dialog when content showing.
    */
   $doc.on('click', function(e) {
-    if (isLightBoxOpen() && !$(contentShowing).find($(e.target)).length) {
+    if (isModalDialogOpen() && !$(contentShowing).find($(e.target)).length) {
       if ($(contentShowing).find('[tabindex="1"]:focus').length) {
         $(contentShowing).find('[tabindex="1"]:focus').focus();
       } else {
@@ -248,19 +248,19 @@ module.exports = function() {
   });
 
   /**
-   * Event handler for hiding light-box & content.
+   * Event handler for hiding modal-dialog & content.
    */
-  $body.find($contents).addBack().on('click', '[data-lightbox-action="close"]', function(e) {
+  $body.find($contents).addBack().on('click', '[data-modaldialog-action="close"]', function(e) {
     e.preventDefault();
     hide();
   });
 
   /**
-   * Event handler for showing light-box & content.
+   * Event handler for showing modal-dialog & content.
    */
-  $body.find($contents).addBack().on('click', '[data-lightbox-action="open"]', function(e) {
+  $body.find($contents).addBack().on('click', '[data-modaldialog-action="open"]', function(e) {
     e.preventDefault();
-    setLightBoxDimensions();
+    setModalDialogDimensions();
     //setDimensions($(contentShowing));
     show(e);
   });
@@ -303,12 +303,12 @@ module.exports = function() {
    * Module initialization
    */
   function init() {
-    if ($lightBox.length && $contents.length) {
-      setLightBoxDimensions();
+    if ($modalDialog.length && $contents.length) {
+      setModalDialogDimensions();
       setup();
     }
     else {
-      $lightBox.hide();
+      $modalDialog.hide();
     }
   }
 
