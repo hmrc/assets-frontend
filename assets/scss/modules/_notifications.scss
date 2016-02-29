@@ -167,8 +167,17 @@
 }
 
 .highlight-message--dark {
+  .highlight-message--dark-text {
+    color: $white;
+  }
+  
   background-color: $govuk-blue-colour;
-  color: #fff;
+  color: $white;
   padding-bottom: em(30);
 }
 
+.highlight-message--light {
+  background-color: $white;
+  color: $black;
+  padding-bottom: em(30);
+}
