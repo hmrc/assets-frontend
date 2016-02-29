@@ -10,7 +10,7 @@ gulp.task('clean-comp-lib', function(cb) {
   del(compLibConfig.destination, cb);
 });
 
-gulp.task('component-library', ['clean-comp-lib', 'sass'], function (cb) {
+gulp.task('component-library', ['clean-comp-lib', 'sass', 'images'], function (cb) {
   var env = global.runmode,
       genCompLib = './node_modules/.bin/kss-node --config component-lib.json';
 
