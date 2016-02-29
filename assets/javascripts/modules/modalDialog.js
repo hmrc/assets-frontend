@@ -25,14 +25,17 @@
  *
  *  <div class="modal-dialog">
  *    <div class="modal-dialog__inner">
- *      <div id="content-1" class="modal-dialog__content" data-ga-open-event="category:Event:id" tabindex="1" role="dialog" aria-labelledby="heading-id" aria-describedby="message-id" hidden>
+ *      <div id="content-1" class="modal-dialog__content" data-ga-open-event="category:Event:id" tabindex="1" role="dialog"
+ *          aria-labelledby="heading-id" aria-describedby="message-id" hidden>
  *        <div id="message-id">
  *          <h2 id="heading-id">content 1 heading</h2>
  *          ....
- *          <button role="button" class="button button--secondary" data-journey-click="category:Event:id" data-modaldialog-action="close" tabindex="1">close</button>
+ *          <button role="button" class="button button--secondary" data-journey-click="category:Event:id"
+ *            data-modaldialog-action="close" tabindex="1">close</button>
  *        </div>
  *      </div>
- *      <div id="content-2" class="modal-dialog__content" data-ga-open-event="category:Event:id" tabindex="1" role="dialog" aria-labelledby="heading-id-2" aria-describedby="message-id-2">
+ *      <div id="content-2" class="modal-dialog__content" data-ga-open-event="category:Event:id" tabindex="1" role="dialog"
+ *        aria-labelledby="heading-id-2" aria-describedby="message-id-2">
  *        <div id="message-id-2">
  *          <h2 id="heading-id-2">content 2 heading</h2>
  *          ...
@@ -261,10 +264,9 @@ module.exports = function() {
   $body.find($contents).addBack().on('click', '[data-modaldialog-action="open"]', function(e) {
     e.preventDefault();
     setModalDialogDimensions();
-    //setDimensions($(contentShowing));
     show(e);
   });
-  
+
   /**
    * Event handler for custom event triggered by hidden attribute / prop state change.
    */
