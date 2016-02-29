@@ -99,7 +99,10 @@ button, .button {
 
   @include media(mobile) {
     margin-top: 10px;
+    text-align: center;
+    box-sizing: border-box;
   }
+
 }
 
 /* Transforms button into a link */
