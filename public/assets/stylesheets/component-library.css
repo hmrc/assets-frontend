@@ -54,14 +54,6 @@
 .comp-lib-pattern-example__description {
   margin-bottom: .4em;
 }
-.comp-lib-pattern-example__description code,
-.comp-lib-pattern-intro code {
-  border: none !important;
-  font: inherit;
-  border-radius: 4px;
-  padding-top: .2em;
-  padding-bottom: .2em;
-}
 .comp-lib-pattern-component .grid-layout__column {
   background-color: #dee0e2;
   padding: 1em;
@@ -70,9 +62,29 @@
 .comp-lib-pattern-component .grid-layout {
   font-size: .8em;
 }
-.comp-lib-pattern-intro ul {
+.comp-lib-pattern-example__description code,
+.comp-lib-pattern-markdown code {
+  border: none !important;
+  font: inherit;
+  border-radius: 4px;
+  padding-top: .2em;
+  padding-bottom: .2em;
+}
+.comp-lib-pattern-markdown ul {
   list-style: disc;
   list-style-position: inside;
   margin: 0;
   padding-left: 1.2em;
+  margin-bottom: 2em;
+}
+.comp-lib-pattern-markdown p {
+  margin-bottom: 1.6em;
+}
+.comp-lib-pattern-markdown h1 {
+  padding-top: .6em;
+}
+.comp-lib-pattern-markdown h2,
+.comp-lib-pattern-markdown h3,
+.comp-lib-pattern-markdown h4 {
+  margin-bottom: 1em;
 }
