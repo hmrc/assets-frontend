@@ -77,6 +77,9 @@ button, .button {
   text-decoration: underline;
   color: $link-colour;
   border: none;
+  margin-top: em(10);
+  text-align: center;
+  box-sizing: border-box;
 
   &.button--link-table {
     color: $black;
@@ -97,10 +100,10 @@ button, .button {
     color: $link-active-colour;
   }
 
-  @include media(mobile) {
-    margin-top: 10px;
-    text-align: center;
-    box-sizing: border-box;
+  @include media(tablet) {
+    margin-top: 0;
+    text-align: left;
+    box-sizing: content-box;
   }
 
 }
