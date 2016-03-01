@@ -1,0 +1,137 @@
+/*
+Modal Dialog
+
+An accessibility compliant & responsive modal dialog box module.
+
+<table style="border-left: 4px solid #AF1324; background-color: rgba(173, 19, 37, 0.1);">
+    <tr>
+        <td style="border-bottom-width: 0;padding-left: 4px;font-size: 19px;font-weight: bold;color: #AF1324;line-height: 1.31579;">Experimental</td>
+    </tr>
+    <tr>
+        <td style="border-bottom-width: 0;padding-left: 8px;font-size: 19px;line-height: 1.31579;">
+          Before considering a [modal dialog box](https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll]), *make sure that you have strong evidence* that:
+        </td>
+    </tr>
+    <tr>
+        <td style="border-bottom-width: 0;padding-left: 16px;font-size: 19px;line-height: 1.31579;">
+          <ul>
+              <li>There is a real user need to have attention focused on a single piece of content.</li>
+              <li>That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content.</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+* Add a `.modal-dialog` container, with a `.modal-dialog__inner` content container.
+* Add one or more `.modal-dialog__content` container blocks
+* Add a 'close' element in each `.modal-dialog__content`
+  * `<button data-modaldialog-action="close">...</button>`
+  * `<a href="#" data-modaldialog-action="close">...</a>`
+* Add the following attributes to each `.modal-dialog__content`
+  * `role="..."` - value can be "dialog" or "alertdialog".
+  * `tabindex="1"` - value *must* be "1".
+  * `aria-labelledby="..."` - apply the id value for the content's heading.
+  * `aria-describedby="..."` - apply the id value for the block element containing text describing the dialog purpose / message.
+  * `data-ga-open-event` - google analytics 'open' event is fired when dialog content becomes visible.
+
+
+
+| *Required libraries / modules*: |  |  | 
+| ------- | ----------- | ------------- |
+| javascript/modules/modal-dialog.js |  jquery | stageprompt | 
+
+| *References*: |
+| ------- | 
+| [Modal dialog boxes - designpatterns.hackpad.com](https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll) |
+| [Using the dialog role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_dialog_role) |
+| [Making an accessible dialog box - NCZOnline](https://www.nczonline.net/blog/2013/02/12/making-an-accessible-dialog-box/) |
+| [HTML5 Accessibility Chops: hidden and aria-hidden](https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/) |
+
+
+Markup:
+<div class="modal-dialog">
+    <div class="modal-dialog__inner">
+       <div id="content-1" class="modal-dialog__content" data-ga-open-event="::" tabindex="1" role="dialog" aria-labelledby="heading-id" aria-describedby="message-id">
+         <div id="message-id">
+           <h2 id="heading-id">content 1 heading</h2>
+           <p>&lt;!-- content here --></p>
+           <button role="button" class="button button" data-journey-click="::"
+             data-modaldialog-action="close" tabindex="1">Close</button>
+            <button role="button" class="button button--secondary" data-journey-click="::" data-modaldialog-action="open" data-modaldialog-target="content-2" tabindex="1">Open other dialog</button>
+       </div>
+       </div>
+       <div id="content-2" class="modal-dialog__content" data-ga-open-event="::" tabindex="1" role="dialog" aria-labelledby="heading-id-2" aria-describedby="message-id-2" hidden>
+         <div id="message-id-2">
+           <h2 id="heading-id-2">content 2 heading</h2>
+           <p>&lt;!-- content here --></p>
+           <a href="#" data-modaldialog-action="close" tabindex="1" data-journey-click="::">Close</a>
+         </div>
+       </div>
+   </div>
+ </div>
+
+
+Style guide: Modal Dialog
+*/
+
+body {
+  &.scroll-off {
+    position: fixed;
+    width: 100%;
+  }
+}
+.modal-dialog {
+  &.modal-dialog--hidden {
+    @include set-square-clip(true, 1);
+    @include set-square-clip(false, 1);
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    z-index: 0;
+    &:focus {
+      clip: auto;
+      height: auto;
+      overflow: auto;
+      position: relative;
+      width: auto;
+    }
+  }
+  background-color: $mask-opacity;
+  left: 0;
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.modal-dialog__content {
+  &:focus {
+    outline: 3px solid $modal-dialog-yellow;
+  }
+  padding: em(7) em(32);
+  position: static;
+  @include media(mobile) {
+    [role="button"][data-modaldialog-action="close"] {
+      width: 100%;
+    }
+  }
+}
+.modal-dialog__inner {
+  background-color: $white;
+  border: em(5) solid $black;
+  left: 0;
+  margin: em(130) auto 0;
+  max-width: 90%;
+  overflow-y: auto;
+  padding: em(8);
+  position: fixed;
+  right: 0;
+  top: 0;
+  @include media(desktop) {
+    margin: em(130) 25% 0;
+    max-width: em(720);
+  }
+}
