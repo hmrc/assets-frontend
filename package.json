@@ -7,12 +7,15 @@
     "url": "https://github.com/hmrc/assets-frontend.git"
   },
   "scripts": {
+    "install": "napa",
     "start": "npm run dev",
     "dev": "gulp",
     "build": "gulp build",
     "test": "gulp test",
     "test:dev": "karma start assets/test/config/karma.conf.js no-single-run",
-    "install": "napa"
+    "comp-lib": "gulp component-library",
+    "comp-lib:watch": "nodemon -e html,js,css,png,jpeg -x 'npm run comp-lib:link && npm run comp-lib'",
+    "comp-lib:link": "npm link hmrc-component-library-template"
   },
   "napa": {
     "stageprompt": "alphagov/stageprompt#2.1.0"
@@ -40,13 +43,14 @@
     "gulp-json-editor": "^2.2.1",
     "gulp-modernizr": "^1.0.0-alpha",
     "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.0",
     "gulp-sass": "^2.1.1",
     "gulp-sourcemaps": "^1.5.1",
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.4",
     "gulp-zip": "^2.0.3",
-    "gulp-plumber": "^1.0.1",
+    "hmrc-component-library-template": "hmrc/component-library-template",
     "jasmine-core": "^2.3.4",
     "jquery": "^1.11.2",
     "jquery-validation": "1.13.1",
@@ -66,6 +70,7 @@
     "karma-phantomjs-launcher": "1.0.0",
     "karma-script-launcher": "~0.1.0",
     "karma-spec-reporter": "0.0.23",
+    "kss": "^2.4.0",
     "lodash": "^3.5.0",
     "minifyify": "^6.0.0",
     "modernizr": "^3.0.0-alpha.4",

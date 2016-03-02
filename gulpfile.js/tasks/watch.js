@@ -10,7 +10,7 @@ var config   = require('../config'),
 gulp.task('watch', ['watchify', 'server'], function(callback) {
   gulp.watch(config.scripts.src, ['jshint']);
   gulp.watch(config.test.src,  ['test']);
-  gulp.watch(config.sass.src,  ['sass']);
+  gulp.watch(config.sass.src,  ['sass', 'component-library']);
 
   // Watchify will watch and recompile our JS, so no need to gulp.watch it
 });

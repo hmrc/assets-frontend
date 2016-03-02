@@ -1,13 +1,21 @@
-/**
-* @desc         button classes.
-* @name         buttons
-* @author       Anthony Munene
-* @tested       N/A
-* @requires     [
-          toolkit/_colours.scss,
-          toolkit/_typography.scss,
-          toolkit/design-patterns/_buttons.scss
-        ]
+/*
+Buttons
+
+Buttons are used for *calls to actions* to start a journey or to *submit* information on a form. Simply place the
+`.button` selector on your `<button>` element.
+If you are using an `<a>` element please also apply the `role="button"` attribute.
+
+Markup:
+<button class="button {{modifier_class}}">Button text</button>
+
+.button--get-started   - For a button to start a user journey add the modifier `.button--get-started`
+.button--secondary     - A secondary button can be created by adding the modifier `.button--secondary`
+.button--alert         - For an alert button add the modifier `.button--alert`
+.button--small         - If you wish to have a smaller button add the modifier `.button--small`
+.button--table         - For a button within a table you can use the modifier `.button--table`
+.button.button--link   - To make a button appear like a link add the modifier `.button.button--link`
+
+Styleguide Buttons
 */
 
 button, .button {

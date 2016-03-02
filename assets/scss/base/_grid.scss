@@ -1,18 +1,40 @@
-/* ==========================================================================
-   Grid
-   ========================================================================== */
-
 /*
-Usage:
+Grids
 
-  <div class="grid-layout">
-      <div class="grid-layout__column grid-layout__column--1-4">
-        ...
-      </div>
-      <div class="grid-layout__column grid-layout__column--3-4">
-      . ..
-      </div>
+You create the grid with `.grid-layout` and individual columns with a column class `.grid-layout__column` and
+fraction class `.grid-layout__column--1-4`.
+
+* Add a `.grid-layout` container.
+* Add your columns with individual `.grid-layout__column`.
+* Add your fractional width classes to set the width of the columns e.g. `.grid-layout__column--1-4`.
+
+Markup:
+<div class="grid-layout">
+  <div class="grid-layout__column grid-layout__column--1-4">
+    .grid-layout__column--1-4
   </div>
+  <div class="grid-layout__column grid-layout__column--3-4">
+    .grid-layout__column--3-4
+  </div>
+</div>
+<div class="grid-layout">
+  <div class="grid-layout__column grid-layout__column--1-3">
+    .grid-layout__column--1-3
+  </div>
+  <div class="grid-layout__column grid-layout__column--2-3">
+    .grid-layout__column--2-3
+  </div>
+</div>
+<div class="grid-layout">
+  <div class="grid-layout__column grid-layout__column--1-2">
+    .grid-layout__column--1-2
+  </div>
+  <div class="grid-layout__column grid-layout__column--1-2">
+    .grid-layout__column--1-2
+  </div>
+</div>
+
+Styleguide Grids
 */
 
 .grid-layout {
@@ -29,21 +51,18 @@ Usage:
   @include grid-column-table(1/4);
 }
 
-.grid-layout__column--1-3 {  
-  @include grid-column-table(1/3);
+.grid-layout__column--3-4 {
+  @include grid-column-table(3/4);
 }
 
 .grid-layout__column--1-2 {
-  @include grid-column-table(1/2); 
+  @include grid-column-table(1/2);
 }
 
-.grid-layout__column--2-3 {  
+.grid-layout__column--1-3 {
+  @include grid-column-table(1/3);
+}
+
+.grid-layout__column--2-3 {
   @include grid-column-table(2/3);
 }
-
-.grid-layout__column--3-4 {
-  @include grid-column-table(3/4); 
-}
-
-
-
