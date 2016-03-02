@@ -81,10 +81,11 @@
   margin-bottom: 1.6em;
 }
 .comp-lib-pattern-markdown h1 {
-  padding-top: .6em;
+  padding-top: 1.6em;
 }
 .comp-lib-pattern-markdown h2,
 .comp-lib-pattern-markdown h3,
 .comp-lib-pattern-markdown h4 {
   margin-bottom: 1em;
+  padding-top: .8em;
 }
