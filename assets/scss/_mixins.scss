@@ -12,16 +12,16 @@
   padding: 0.75em 1em;
 }
 
-@mixin page-slice () {
+@mixin page-slice ($paddingBottom: 0) {
   @extend %contain-floats;
   display: block;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 em(15) em($paddingBottom) em(15);
   line-height: 1.5;
   @include core-19();
 
   @include media(tablet) {
-    padding: 0 30px;
+    padding: 0 em(30) em($paddingBottom) em(30);
   }
 }

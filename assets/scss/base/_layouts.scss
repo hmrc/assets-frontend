@@ -10,32 +10,21 @@ body {
   counter-reset: section;
 }
 
+#wrapper {
+  text-align: left;
+}
+
 #content {
-  @extend %contain-floats;
-  display: block;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 15px 2em 15px;
-  @include media(tablet) {
-    padding: 0 30px 2em 30px;
-  }
+  @include page-slice(32);
+}
+
+.centered-content {
+  @include page-slice();
 }
 
 .full-width-banner {
   background-color: $govuk-blue-colour;
   position: relative;
-}
-
-.centered-content {    
-  @extend %contain-floats;
-  overflow: auto;
-  display: block;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 15px 0 15px;
-  @include media(tablet) {
-    padding: 0 30px 0 30px;
-  }
 }
 
 .content__body {
