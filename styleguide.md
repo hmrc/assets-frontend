@@ -1,8 +1,7 @@
 This Component Library demonstrates styles and components for **HMRC** applications. It is built on top of the [GOV.UK frontend toolkit](https://github.com/alphagov/govuk_frontend_toolkit) and the [GOV.UK template](https://github.com/alphagov/govuk_template) and it uses the [hmrc-component-library-template](https://github.com/hmrc/component-library-template).
   
   
-* [What is the Component Library](#what-is-the-component-library)
-* [Why do we need a Component Library?](#why-do-we-need-a-component-library)
+* [What is the Component Library?](#what-is-the-component-library)
 * [Adding Components](#adding-components)
 * [Discussing Changes](#discussing-changes)
 * [Reporting Issues / Actioning work - Components](#reporting-issues)
@@ -12,27 +11,10 @@ This Component Library demonstrates styles and components for **HMRC** applicati
 * [Developing on the template](#developing-on-the-template)
   
   
+  
 <a name="what-is-the-component-library"></a>
 ## What is the Component Library?
-The Component Library is generated output of [HMRC assets-fronted](https://github.com/hmrc/assets-frontend) stylesheets. 
-
-* It allows Designers and Developers to see what Components we have across our Service
-* It provides communication between teams about Components
-* It allows teams to stay in sync across the Service
-* It avoids duplication of work
-* Avoids misunderstandings
-* Promotes designing and developing as a Service
-* Will create parity across HMRC teams, providing a Service wide design and client side development approach
-
-
-
-<a name="why-do-we-need-a-component-library"></a>
-## Why do we need a Component Library?
-Without a Component Library unless you have extensive knowledge of what is in our stylesheets or know all of our web pages well we have no exposure of what Components we have across HMRC.
-* This means an inconsistent interface for users
-* Leads to extra design, development and QA work
-* Difficult to agree on Components
-* Difficult to understand designing/developing as a Service rather than just your designing/developing for your projects needs
+The Component Library is generated output of [HMRC assets-fronted](https://github.com/hmrc/assets-frontend) stylesheets. It allows Designers and Developers to see what components we have across the Tax Platform.
 
 
 
