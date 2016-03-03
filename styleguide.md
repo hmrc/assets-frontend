@@ -3,10 +3,10 @@ This Component Library demonstrates styles and components for **HMRC** applicati
 * [What is the Component Library?](#what-is-the-component-library)
 * [Adding Components](#adding-components)
 * [Discussing Changes](#discussing-changes)
-* [Reporting Issues / Actioning work - Components](#reporting-issues)
+* [Reporting Issues / Actioning work - Components](#reporting-issues-actioning-work-components)
 * [Development details](#development-details)
 * [Component Library Template](#component-library-template)
-* [Reporting Issues / Actioning work - Template](#reporting-issues-template)
+* [Reporting Issues / Actioning work - Template](#reporting-issues-actioning-work-template)
 * [Developing on the template](#developing-on-the-template)
 
 
