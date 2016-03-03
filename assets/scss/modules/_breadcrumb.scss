@@ -1,15 +1,26 @@
-/* ==========================================================================
-   Bread crumbs
-   ========================================================================== */
+/*
+Breadcrumbs
 
-/* Usage:
-<nav class="breadcrumb-nav">
-  <ul class="breadcrumb-nav__list">
-    <li class="breadcrumb-nav__item"><a href=""> ... </a></li>
-    <li class="breadcrumb-nav__item breadcrumb-nav__item--trail"></li>
-  </ul>
-</nav>
+The breadcrumb nav is styled using the `.breadcrumb-nav` selector. You can also have a *slimmer* version by adding
+the `.breadcrumb-nav--slim` modifier.
+
+Markup:
+    <nav class="breadcrumb-nav {{modifier_class}}">
+        <ul class="breadcrumb-nav__list">
+                    <li class="breadcrumb-nav__item">
+                      <a href="/component-library">Home</a>
+                    </li>
+                    <li class="breadcrumb-nav__item
+                               breadcrumb-nav__item--trail"></li>
+            <li class="breadcrumb-nav__item">Breadcrumbs</li>
+        </ul>
+    </nav>
+
+.breadcrumb-nav--slim - A *slimmer* version of the breadcrumb with less `margin` and `padding`
+
+Styleguide Breadcrumbs
 */
+
 
 .breadcrumb-nav {
   padding: em(10) 0 em(40) 0;
