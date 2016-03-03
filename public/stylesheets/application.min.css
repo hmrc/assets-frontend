@@ -10098,23 +10098,34 @@ code.snippet--inline {
   color: #fff;
 }
 
-/* ==========================================================================
-   Bread crumbs
-   ========================================================================== */
-/* Usage:
-<nav class="breadcrumb-nav">
-  <ul class="breadcrumb-nav__list">
-    <li class="breadcrumb-nav__item"><a href=""> ... </a></li>
-    <li class="breadcrumb-nav__item breadcrumb-nav__item--trail"></li>
-  </ul>
-</nav>
+/*
+Breadcrumbs
+
+The breadcrumb nav is styled using the `.breadcrumb-nav` selector. You can also have a *slimmer* version by adding
+the `.breadcrumb-nav--slim` modifier.
+
+Markup:
+    <nav class="breadcrumb-nav {{modifier_class}}">
+        <ul class="breadcrumb-nav__list">
+                    <li class="breadcrumb-nav__item">
+                      <a href="/component-library">Home</a>
+                    </li>
+                    <li class="breadcrumb-nav__item
+                               breadcrumb-nav__item--trail"></li>
+            <li class="breadcrumb-nav__item">Breadcrumbs</li>
+        </ul>
+    </nav>
+
+.breadcrumb-nav--slim - A *slimmer* version of the breadcrumb with less `margin` and `padding`
+
+Styleguide Breadcrumbs
 */
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
 .breadcrumb-nav {
   padding: 0.52632em 0 2.10526em 0;
 }
 
-/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
 .breadcrumb-nav__item {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -10127,7 +10138,7 @@ code.snippet--inline {
 }
 
 @media (max-width: 640px) {
-  /* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+  /* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
   .breadcrumb-nav__item {
     font-size: 14px;
     line-height: 1.14286;
@@ -10135,36 +10146,36 @@ code.snippet--inline {
 }
 
 @media (min-width: 641px) {
-  /* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+  /* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
   .breadcrumb-nav__item {
     padding-top: 5px;
     padding-bottom: 5px;
   }
 }
 
-/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
 .breadcrumb-nav__item--trail {
   margin-left: 6px;
   margin-right: 6px;
 }
 
-/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
 .breadcrumb-nav__item--trail:after {
   content: "›";
 }
 
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
 .breadcrumb-nav--slim {
   padding-top: 0.26316em;
   padding-bottom: 0.52632em;
 }
 
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
 .breadcrumb-nav--slim .breadcrumb-nav__list {
   margin: 0;
 }
 
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
 .breadcrumb-nav--slim .breadcrumb-nav__item {
   margin: 0;
 }

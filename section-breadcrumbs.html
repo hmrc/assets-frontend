@@ -92,37 +92,32 @@
                 <li class="comp-lib-menu-item">
                   <a href="./" class="comp-lib-menu-link">Home</a>
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-breadcrumbs.html" class="comp-lib-menu-link">Breadcrumbs</a>
 
+                  <ul>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-buttons.html" class="comp-lib-menu-link">Buttons</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-grids.html" class="comp-lib-menu-link">Grids</a>
 
-                  <ul>
-                  </ul>
                 </li>
               </ul>
             </nav>
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-grids">
+                  <div id="kssref-breadcrumbs">
                 <div>
-                  <h1><a href="#kssref-grids" class="comp-lib-menu-link">Grids</a></h1>
+                  <h1><a href="#kssref-breadcrumbs" class="comp-lib-menu-link">Breadcrumbs</a></h1>
 
                   <div class="comp-lib-pattern-intro comp-lib-pattern-markdown">
-                    <p>You create the grid with <code>.grid-layout</code> and individual columns with a column class <code>.grid-layout__column</code> and
-fraction class <code>.grid-layout__column--1-4</code>.</p>
-<ul>
-<li>Add a <code>.grid-layout</code> container.</li>
-<li>Add your columns with individual <code>.grid-layout__column</code>.</li>
-<li>Add your fractional width classes to set the width of the columns e.g. <code>.grid-layout__column--1-4</code>.</li>
-</ul>
+                    <p>The breadcrumb nav is styled using the <code>.breadcrumb-nav</code> selector. You can also have a <em>slimmer</em> version by adding
+the <code>.breadcrumb-nav--slim</code> modifier.</p>
 
                   </div>
                 </div>
@@ -131,57 +126,58 @@ fraction class <code>.grid-layout__column--1-4</code>.</p>
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component">
-                        <div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-4">
-    .grid-layout__column--1-4
-  </div>
-  <div class="grid-layout__column grid-layout__column--3-4">
-    .grid-layout__column--3-4
-  </div>
-</div>
-<div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-3">
-    .grid-layout__column--1-3
-  </div>
-  <div class="grid-layout__column grid-layout__column--2-3">
-    .grid-layout__column--2-3
-  </div>
-</div>
-<div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-2">
-    .grid-layout__column--1-2
-  </div>
-  <div class="grid-layout__column grid-layout__column--1-2">
-    .grid-layout__column--1-2
-  </div>
-</div>
+                            <nav class="breadcrumb-nav [modifier class]">
+        <ul class="breadcrumb-nav__list">
+                    <li class="breadcrumb-nav__item">
+                      <a href="/component-library">Home</a>
+                    </li>
+                    <li class="breadcrumb-nav__item
+                               breadcrumb-nav__item--trail"></li>
+            <li class="breadcrumb-nav__item">Breadcrumbs</li>
+        </ul>
+    </nav>
                       </div>
-                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-4&quot;&gt;
-    .grid-layout__column--1-4
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--3-4&quot;&gt;
-    .grid-layout__column--3-4
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-3&quot;&gt;
-    .grid-layout__column--1-3
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--2-3&quot;&gt;
-    .grid-layout__column--2-3
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
-    .grid-layout__column--1-2
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
-    .grid-layout__column--1-2
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre></div>
+                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">    &lt;nav class=&quot;breadcrumb-nav [modifier class]&quot;&gt;
+        &lt;ul class=&quot;breadcrumb-nav__list&quot;&gt;
+                    &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;
+                      &lt;a href=&quot;/component-library&quot;&gt;Home&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;breadcrumb-nav__item
+                               breadcrumb-nav__item--trail&quot;&gt;&lt;/li&gt;
+            &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;Breadcrumbs&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;</code></pre></div>
                     </div>
 
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-example__description">
+                        A <em>slimmer</em> version of the breadcrumb with less <code>margin</code> and <code>padding</code>
+                      </div>
+                      <div class="comp-lib-pattern-component">
+                            <nav class="breadcrumb-nav breadcrumb-nav--slim">
+        <ul class="breadcrumb-nav__list">
+                    <li class="breadcrumb-nav__item">
+                      <a href="/component-library">Home</a>
+                    </li>
+                    <li class="breadcrumb-nav__item
+                               breadcrumb-nav__item--trail"></li>
+            <li class="breadcrumb-nav__item">Breadcrumbs</li>
+        </ul>
+    </nav>
+                      </div>
+                      <div>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">    &lt;nav class=&quot;breadcrumb-nav breadcrumb-nav--slim&quot;&gt;
+        &lt;ul class=&quot;breadcrumb-nav__list&quot;&gt;
+                    &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;
+                      &lt;a href=&quot;/component-library&quot;&gt;Home&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;breadcrumb-nav__item
+                               breadcrumb-nav__item--trail&quot;&gt;&lt;/li&gt;
+            &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;Breadcrumbs&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;</code></pre>
+                      </div>
+                    </div>
                   </div>
 
                   </div>
