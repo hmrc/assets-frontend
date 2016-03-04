@@ -46,6 +46,7 @@ var setup = function () {
   fixtureTwoSecretText = $fixtureTwoQaSecret.text();
   fixtureTwoControlTextShow = $fixtureTwoControl.data('textShow');
   fixtureTwoControlTextHide = $fixtureTwoControl.data('textHide');
+
 };
 
 describe('Mask', function () {
@@ -108,5 +109,34 @@ describe('Mask', function () {
       expect($fixtureTwoQaSecret).toHaveClass(JS_HIDDEN_SELECTOR);
       expect($fixtureTwoControl.text()).toBe(fixtureTwoControlTextShow);
     });
+
   });
+
+  describe('on revealing a timer-configured secret', function() {
+
+    beforeEach(function(done) {
+      setup();
+
+      // click to reveal secret
+      $fixtureTwoControl.click();
+
+      // wait longer than configured timer (145 miliseconds) to check that secret is hidden
+      setTimeout(function() {
+        done();
+      }, 150);
+
+    });
+
+    it('150 milliseconds after revealing secret, the secret is masked', function(done) {    
+      expect($fixtureTwoQaMask).toHaveClass(JS_VISIBLE_SELECTOR);
+      done();
+    });
+
+    it('150 milliseconds after revealing secret, link contains correct text', function(done) {
+      expect($fixtureTwoControl.text()).toBe(fixtureTwoControlTextShow);
+      done();
+    });
+
+  });
+
 });
