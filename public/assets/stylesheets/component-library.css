@@ -31,9 +31,19 @@
 .comp-lib-menu-link:active {
   color: #000;
 }
-.comp-lib-pattern-intro {
+.comp-lib-description {
   margin-bottom: 2em;
+  line-height: 1.5;
 }
+.comp-lib-description p {
+  line-height: 1.5;
+}
+.comp-lib-description--experimental {
+  border-left: 4px solid #af1324;
+  background-color: #f7e7e9;
+  padding: 1em;
+}
+.comp-lib-description--deprecated {}
 .comp-lib-pre {
   padding-right: 0 !important;
   padding-left: 0 !important;
@@ -44,6 +54,7 @@
   padding-right: 0 !important;
   padding-left: 0 !important;
   border: none;
+  font-size: .9em;
 }
 .comp-lib-pattern-component {
   border: 1px solid #f8f8f8;
@@ -70,8 +81,8 @@
   border: none !important;
   font: inherit;
   border-radius: 4px;
-  padding-top: .2em;
-  padding-bottom: .2em;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .comp-lib-pattern-markdown ul {
   list-style: disc;
