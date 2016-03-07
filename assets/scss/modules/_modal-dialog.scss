@@ -1,39 +1,27 @@
-/*
+/* 
 Modal Dialog
+
 
 An accessibility compliant & responsive modal dialog box module.
 
-<table style="border-left: 4px solid #AF1324; background-color: rgba(173, 19, 37, 0.1);">
-    <tr>
-        <td style="border-bottom-width: 0;padding-left: 4px;font-size: 19px;font-weight: bold;color: #AF1324;line-height: 1.31579;">Experimental</td>
-    </tr>
-    <tr>
-        <td style="border-bottom-width: 0;padding-left: 8px;font-size: 19px;line-height: 1.31579;">
-          Before considering a [modal dialog box](https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll]), *make sure that you have strong evidence* that:
-        </td>
-    </tr>
-    <tr>
-        <td style="border-bottom-width: 0;padding-left: 16px;font-size: 19px;line-height: 1.31579;">
-          <ul>
-              <li>There is a real user need to have attention focused on a single piece of content.</li>
-              <li>That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content.</li>
-            </ul>
-        </td>
-    </tr>
-</table>
 
-* Add a `.modal-dialog` container, with a `.modal-dialog__inner` content container.
-* Add one or more `.modal-dialog__content` container blocks
-* Add a 'close' element in each `.modal-dialog__content`
-  * `<button data-modaldialog-action="close">...</button>`
-  * `<a href="#" data-modaldialog-action="close">...</a>`
-* Add the following attributes to each `.modal-dialog__content`
-  * `role="..."` - value can be "dialog" or "alertdialog".
-  * `tabindex="1"` - value *must* be "1".
-  * `aria-labelledby="..."` - apply the id value for the content's heading.
-  * `aria-describedby="..."` - apply the id value for the block element containing text describing the dialog purpose / message.
-  * `data-ga-open-event` - google analytics 'open' event is fired when dialog content becomes visible.
+Experimental: **Before considering a [modal dialog box](https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll), make sure that you have strong evidence that:**
+* There is a real user need to have attention focused on a single piece of content;
+* That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content;
 
+
+To create and use the experimental modal dialog component:
+  * Add a `.modal-dialog` container, with a `.modal-dialog__inner` content container.
+  * Add one or more `.modal-dialog__content` container blocks
+  * Add a 'close' element in each `.modal-dialog__content`
+    * `<button data-modaldialog-action="close">...</button>`
+    * `<a href="#" data-modaldialog-action="close">...</a>`
+  * Add the following attributes to each `.modal-dialog__content`
+    * `role="..."` - value can be "dialog" or "alertdialog".
+    * `tabindex="1"` - value *must* be "1".
+    * `aria-labelledby="..."` - apply the id value for the content's heading.
+    * `aria-describedby="..."` - apply the id value for the block element containing text describing the dialog purpose / message.
+    * `data-ga-open-event` - google analytics 'open' event is fired when dialog content becomes visible.
 
 
 | *Required libraries / modules*: |  |  | 
@@ -54,16 +42,16 @@ Markup:
        <div id="content-1" class="modal-dialog__content" data-ga-open-event="::" tabindex="1" role="dialog" aria-labelledby="heading-id" aria-describedby="message-id">
          <div id="message-id">
            <h2 id="heading-id">content 1 heading</h2>
-           <p>&lt;!-- content here --></p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at egestas ex. Fusce vulputate semper nisl sit amet imperdiet. Praesent hendrerit ac lorem eleifend vehicula. Nunc tincidunt sagittis purus feugiat volutpat. Cras a arcu odio. Praesent aliquet, tellus at commodo sagittis, odio ligula pulvinar leo, et fringilla nisl massa in metus. Vivamus sollicitudin lacus dolor, dapibus sodales ex pulvinar et. Proin scelerisque venenatis congue. Praesent sit amet velit ut mauris fringilla mattis vel a risus. Proin lobortis vestibulum leo sit amet commodo. Maecenas non urna nisi.</p> 
            <button role="button" class="button button" data-journey-click="::"
              data-modaldialog-action="close" tabindex="1">Close</button>
             <button role="button" class="button button--secondary" data-journey-click="::" data-modaldialog-action="open" data-modaldialog-target="content-2" tabindex="1">Open other dialog</button>
-       </div>
+          </div>
        </div>
        <div id="content-2" class="modal-dialog__content" data-ga-open-event="::" tabindex="1" role="dialog" aria-labelledby="heading-id-2" aria-describedby="message-id-2" hidden>
          <div id="message-id-2">
            <h2 id="heading-id-2">content 2 heading</h2>
-           <p>&lt;!-- content here --></p>
+            <p>Phasellus sapien mi, rutrum eu lacinia et, pulvinar sit amet risus. Donec mi odio, tincidunt eu malesuada at, elementum at nunc. Donec lobortis massa sed sollicitudin malesuada. Suspendisse mattis ultrices tristique. Aenean et sollicitudin odio. Morbi varius ultrices neque, ut tincidunt sapien imperdiet nec. Pellentesque bibendum sem sit amet elit condimentum facilisis. In ornare sapien lorem, a molestie lectus blandit sit amet.</p> 
            <a href="#" data-modaldialog-action="close" tabindex="1" data-journey-click="::">Close</a>
          </div>
        </div>
