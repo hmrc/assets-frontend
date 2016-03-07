@@ -50,6 +50,12 @@ module.exports = {
   },
 
   scripts: {
+    dev: {
+      dest: snapshotDir + 'javascripts'
+    },
+    prod: {
+      dest: distDir + 'javascripts'
+    },
     src: src + 'javascripts/modules/**/*.js',
     dest: snapshotDir + 'javascripts',
     entryPoint: src + 'javascripts/application.js',
