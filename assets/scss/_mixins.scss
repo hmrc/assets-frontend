@@ -25,3 +25,11 @@
     padding: 0 em(30) em($paddingBottom) em(30);
   }
 }
+
+@mixin set-square-clip($for-ie: false, $px-value: 0) {
+  @if $for-ie == true {
+    clip: rect(em($px-value) em($px-value) em($px-value) em($px-value));
+  } @else {
+    clip: rect(em($px-value), em($px-value), em($px-value), em($px-value));
+  }
+}

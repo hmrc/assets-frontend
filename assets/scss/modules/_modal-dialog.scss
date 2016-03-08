@@ -1,0 +1,144 @@
+/* 
+Modal Dialog
+
+Experimental:  An accessibility compliant & responsive modal dialog box module.
+
+**Before considering a [modal dialog box](https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll), make sure that you have strong evidence that:**
+* There is a real user need to have attention focused on a single piece of content;
+* That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content;
+
+
+Markup:
+<div class="modal-dialog">
+  <div class="modal-dialog__inner">
+    <div id="removing-clients" 
+         class="modal-dialog__content" 
+         tabindex="1" 
+         data-ga-open-event="client-list:Open:Removing clients dialog" 
+         role="dialog" 
+         aria-labelledby="removing-clients--heading" 
+         aria-describedby="removing-clients--description" 
+         hidden>
+      <h2 id="removing-clients--heading">What does removing a client do?</h2>
+      <div id="removing-clients--description">
+        <p>When you remove a client you give up the authorisation this client has given you to act for them.</p>
+        <p>Your authorisation will be removed from both HMRC’s services and the Government Gateway.</p>
+        <p>This means you won’t be able to:</p>
+        <ul class="bullets">
+          <li>act for this client online, in writing or on the phone</li>
+          <li>see this client’s information online</li>
+        </ul>
+        <p>
+          You can use the <a id="online-auth-service" href="https://www.gov.uk/guidance/payecis-for-agents-online-service" class="link" rel="external" target="_blank" tabindex="1" data-journey-click="modal-removing-clients:Click:online-auth-service">online authorisation service</a>, if you want to restore your authorisation.
+        </p>
+      </div>
+      <p>
+        <button class="button button--secondary" 
+                role="button" 
+                data-modaldialog-action="close" 
+                type="button" 
+                tabindex="1" 
+                data-journey-click="client-list:Click:Removing clients dialog close">Close</button>
+      </p>
+    </div>
+    <div id="deleting-client" 
+         class="modal-dialog__content" 
+         tabindex="1" 
+         role="dialog" 
+         data-ga-open-event="client-list:Open:Deleting clients dialog" 
+         aria-labelledby="deleting-clients--heading" 
+         aria-describedby="deleting-clients--description">
+      <h2 id="deleting-clients--heading">Before you access your clients' accounts</h2>
+      <div id="deleting-clients--description">
+        <p>You must:</p>
+        <ul class="bullets">
+          <li>confirm the clients you represent</li>
+          <li>remove anyone you no longer represent</li>
+        </ul>
+        <div class="highlight-message highlight-message--light highlight-message--indent alert--borderless soft--ends">
+          <p id="deleting-clients--message" class="bold-small flush--ends">You may be in breach of the Data Protection Act if you dont remove old clients you no longer represent.</p>
+        </div>
+      </div>
+      <p>
+        <button class="button" 
+                role="button" 
+                data-modaldialog-action="close"
+                type="button" 
+                tabindex="1" 
+                data-journey-click="client-list:Click:Deleting clients dialog close">Continue</button>
+        <a href="#" 
+           class="button button--link" 
+           role="button" 
+           data-journey-click="client-list:Click:Deleting clients dialog more..." 
+           data-modaldialog-action="open" 
+           data-modaldialog-target="removing-clients" 
+           tabindex="1">More...</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+Style guide: Modal Dialog
+*/
+
+body {
+  &.scroll-off {
+    position: fixed;
+    width: 100%;
+  }
+}
+.modal-dialog {
+  &.modal-dialog--hidden {
+    @include set-square-clip(true, 1);
+    @include set-square-clip(false, 1);
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    z-index: 0;
+    &:focus {
+      clip: auto;
+      height: auto;
+      overflow: auto;
+      position: relative;
+      width: auto;
+    }
+  }
+  background-color: $mask-opacity;
+  left: 0;
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.modal-dialog__content {
+  &:focus {
+    outline: 3px solid $modal-dialog-yellow;
+  }
+  padding: em(7) em(32);
+  position: static;
+  @include media(mobile) {
+    [role="button"][data-modaldialog-action="close"] {
+      width: 100%;
+    }
+  }
+}
+.modal-dialog__inner {
+  background-color: $white;
+  border: em(5) solid $black;
+  left: 0;
+  margin: em(130) auto 0;
+  max-width: 90%;
+  overflow-y: auto;
+  padding: em(8);
+  position: fixed;
+  right: 0;
+  top: 0;
+  @include media(desktop) {
+    margin: em(130) 25% 0;
+    max-width: em(720);
+  }
+}
