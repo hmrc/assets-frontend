@@ -1,0 +1,104 @@
+/*
+Details
+
+The HTML Details Element `<details>` is used as a widget the user can retrieve additional information.
+
+Markup:
+<details>
+  <summary class="{{modifier_class}}">Opening Times</summary>
+  <div>
+    <h3>The office is open:</h3>
+    <p>9am - 5pm Monday to friday.</p>
+    <h3>The office is closed:</h3>
+    <ul>
+      <li>On Saturdays and Sundays.<li>
+      <li>On Bank Holidays and National holidays.<li>
+    </ul>
+    <a href="">More Details</a>
+  </div>
+</details>
+
+.summary        - Details with underlined links
+.summary--black - Details with black arrows and text within summary
+
+Styleguide Details
+*/
+
+details {
+  margin: 15px 0;
+
+  .summary {
+    text-decoration: underline;
+  }
+}
+
+.summary--black {
+  color: $black;
+  &:hover {
+    color: $black;
+  }
+  i {
+    color: $black;
+    &:visited {
+      color: $black;
+    }
+  }
+}
+
+/*
+Alternative
+
+In comparison to the default details component, this component has differing class attributes and the selectors used
+for this component add extra padding at the bottom of the opened details section.
+
+Markup:
+<details class="details">
+  <summary class="summary">Opening Times</summary>
+  <div class="details__inner">
+    <h3>The office is open:</h3>
+    <p>9am - 5pm Monday to friday.</p>
+    <h3>The office is closed:</h3>
+    <ul>
+      <li>On Saturdays and Sundays.<li>
+      <li>On Bank Holidays and National holidays.<li>
+    </ul>
+    <a href="">More Details</a>
+  </div>
+</details>
+
+Styleguide Details.alternative
+*/
+
+.details {
+  .details__inner {
+    padding-bottom: 2em;
+  }
+}
+
+
+/*
+NON-COMP-LIB
+Details fall back work. When details is not supported in the browser then apply the following to the polyfill
+implementation
+*/
+.no-details details {
+  summary {
+    .arrow-closed {
+      display: inline-block;
+    }
+
+    .arrow-open {
+      display: none;
+    }
+  }
+
+  &.open summary {
+    .arrow-closed {
+      display: none;
+    }
+
+    .arrow-open {
+      display: inline-block;
+    }
+  }
+}
