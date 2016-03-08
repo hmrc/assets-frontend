@@ -1,66 +1,53 @@
 /* 
 Modal Dialog
 
+Experimental:  An accessibility compliant & responsive modal dialog box module.
 
-An accessibility compliant & responsive modal dialog box module.
-
-
-Experimental: 
 **Before considering a [modal dialog box](https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll), make sure that you have strong evidence that:**
 * There is a real user need to have attention focused on a single piece of content;
 * That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content;
 
 
-To create and use the experimental modal dialog component:
-  * Add a `.modal-dialog` container, with a `.modal-dialog__inner` content container.
-  * Add one or more `.modal-dialog__content` container blocks
-  * Add a 'close' element in each `.modal-dialog__content`
-    * `<button data-modaldialog-action="close">...</button>`
-    * `<a href="#" data-modaldialog-action="close">...</a>`
-  * Add the following attributes to each `.modal-dialog__content`
-    * `role="..."` - value can be "dialog" or "alertdialog".
-    * `tabindex="1"` - value *must* be "1".
-    * `aria-labelledby="..."` - apply the id value for the content's heading.
-    * `aria-describedby="..."` - apply the id value for the block element containing text describing the dialog purpose / message.
-    * `data-ga-open-event` - google analytics 'open' event is fired when dialog content becomes visible.
-
-
-| *Required libraries / modules*: |  |  | 
-| ------- | ----------- | ------------- |
-| javascript/modules/modal-dialog.js |  jquery | stageprompt | 
-
-| *References*: |
-| ------- | 
-| [Modal dialog boxes - designpatterns.hackpad.com](https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll) |
-| [Using the dialog role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_dialog_role) |
-| [Making an accessible dialog box - NCZOnline](https://www.nczonline.net/blog/2013/02/12/making-an-accessible-dialog-box/) |
-| [HTML5 Accessibility Chops: hidden and aria-hidden](https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/) |
-
-
 Markup:
 <div class="modal-dialog">
-    <div class="modal-dialog__inner">
-       <div id="content-1" class="modal-dialog__content" data-ga-open-event="::" tabindex="1" role="dialog" aria-labelledby="heading-id" aria-describedby="message-id">
-           <h2 id="heading-id">content 1 heading</h2>
-           <div id="message-id">
-             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at egestas ex. Fusce vulputate semper nisl sit amet imperdiet. Praesent hendrerit ac lorem eleifend vehicula. Nunc tincidunt sagittis purus feugiat volutpat. Cras a arcu odio. Praesent aliquet, tellus at commodo sagittis, odio ligula pulvinar leo, et fringilla nisl massa in metus. Vivamus sollicitudin lacus dolor, dapibus sodales ex pulvinar et.</p> 
-          </div>
-          <div>
-            <button role="button" class="button button" data-journey-click="::"
-               data-modaldialog-action="close" tabindex="1">Close</button>
-            <button role="button" class="button button--secondary" data-journey-click="::" data-modaldialog-action="open" data-modaldialog-target="content-2" tabindex="1">Open other dialog</button>
-          </div>
-       </div>
-       <div id="content-2" class="modal-dialog__content" data-ga-open-event="::" tabindex="1" role="dialog" aria-labelledby="heading-id-2" aria-describedby="message-id-2" hidden>
-        <h2 id="heading-id-2">content 2 heading</h2>
-        <div id="message-id-2">
-          <p>Proin scelerisque venenatis congue. Praesent sit amet velit ut mauris fringilla mattis vel a risus. Proin lobortis vestibulum leo sit amet commodo. Maecenas non urna nisi. Phasellus sapien mi, rutrum eu lacinia et, pulvinar sit amet risus. Donec mi odio, tincidunt eu malesuada at, elementum at nunc. Donec lobortis massa sed sollicitudin malesuada. Suspendisse mattis ultrices tristique. Aenean et sollicitudin odio. Morbi varius ultrices neque, ut tincidunt sapien imperdiet nec. Pellentesque bibendum sem sit amet elit condimentum facilisis. In ornare sapien lorem, a molestie lectus blandit sit amet.</p> 
+  <div class="modal-dialog__inner">
+    <div id="removing-clients" class="modal-dialog__content" tabindex="1" data-ga-open-event="client-list:Open:Removing clients dialog" role="dialog" aria-labelledby="removing-clients--heading" aria-describedby="removing-clients--description" hidden>
+      <h2 id="removing-clients--heading">What does removing a client do?</h2>
+      <div id="removing-clients--description">
+        <p>When you remove a client you give up the authorisation this client has given you to act for them.</p>
+        <p>Your authorisation will be removed from both HMRC’s services and the Government Gateway.</p>
+        <p>This means you won’t be able to:</p>
+        <ul class="bullets">
+          <li>act for this client online, in writing or on the phone</li>
+          <li>see this client’s information online</li>
+        </ul>
+        <p>
+          You can use the <a id="online-auth-service" href="https://www.gov.uk/guidance/payecis-for-agents-online-service" class="link" rel="external" target="_blank" tabindex="1" data-journey-click="modal-removing-clients:Click:online-auth-service">online authorisation service</a>, if you want to restore your authorisation.
+        </p>
+      </div>
+      <p>
+        <button class="button button--secondary" role="button" data-modaldialog-action="close" type="button" tabindex="1" data-journey-click="client-list:Click:Removing clients dialog close">Close</button>
+      </p>
+    </div>
+    <div id="deleting-client" class="modal-dialog__content" tabindex="1" role="dialog" data-ga-open-event="client-list:Open:Deleting clients dialog" aria-labelledby="deleting-clients--heading" aria-describedby="deleting-clients--description">
+      <h2 id="deleting-clients--heading">Before you access your clients' accounts</h2>
+      <div id="deleting-clients--description">
+        <p>You must:</p>
+        <ul class="bullets">
+          <li>confirm the clients you represent</li>
+          <li>remove anyone you no longer represent</li>
+        </ul>
+        <div class="highlight-message highlight-message--light highlight-message--indent alert--borderless soft--ends">
+          <p id="deleting-clients--message" class="bold-small flush--ends">You may be in breach of the Data Protection Act if you dont remove old clients you no longer represent.</p>
         </div>
-        <div><a href="#" data-modaldialog-action="close" tabindex="1" data-journey-click="::">Close</a></div>
-     </div>
-   </div>
- </div>
-
+      </div>
+      <p>
+        <button class="button" role="button" data-modaldialog-action="close" tabindex="1" data-journey-click="client-list:Click:Deleting clients dialog close">Continue</button>
+        <a href="#" class="button button--link" role="button" data-journey-click="::" data-modaldialog-action="open" data-modaldialog-target="removing-clients" tabindex="1">More...</a>
+      </p>
+    </div>
+  </div>
+</div>
 
 Style guide: Modal Dialog
 */
