@@ -8625,6 +8625,18 @@ nav.help-contents ul li p {
   padding-bottom: 1.57895em;
 }
 
+/* line 170, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+.highlight-message--dark .highlight-message--dark-text {
+  color: #fff;
+}
+
+/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+.highlight-message--light {
+  background-color: #fff;
+  color: #0b0c0c;
+  padding-bottom: 1.57895em;
+}
+
 /* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .delegation-banner {
   background-color: #ddeeff;
@@ -9947,6 +9959,154 @@ Styleguide Breadcrumbs
 /* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
 .tab-content .tab-content__first {
   margin-top: 1.57895em;
+}
+
+/* 
+Modal Dialog
+
+Experimental:  An accessibility compliant & responsive modal dialog box module.
+
+**Before considering a [modal dialog box](https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll), make sure that you have strong evidence that:**
+* There is a real user need to have attention focused on a single piece of content;
+* That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content;
+
+
+Markup:
+<div class="modal-dialog">
+  <div class="modal-dialog__inner">
+    <div id="removing-clients" 
+         class="modal-dialog__content" 
+         tabindex="1" 
+         data-ga-open-event="client-list:Open:Removing clients dialog" 
+         role="dialog" 
+         aria-labelledby="removing-clients--heading" 
+         aria-describedby="removing-clients--description" 
+         hidden>
+      <h2 id="removing-clients--heading">What does removing a client do?</h2>
+      <div id="removing-clients--description">
+        <p>When you remove a client you give up the authorisation this client has given you to act for them.</p>
+        <p>Your authorisation will be removed from both HMRC’s services and the Government Gateway.</p>
+        <p>This means you won’t be able to:</p>
+        <ul class="bullets">
+          <li>act for this client online, in writing or on the phone</li>
+          <li>see this client’s information online</li>
+        </ul>
+        <p>
+          You can use the <a id="online-auth-service" href="https://www.gov.uk/guidance/payecis-for-agents-online-service" class="link" rel="external" target="_blank" tabindex="1" data-journey-click="modal-removing-clients:Click:online-auth-service">online authorisation service</a>, if you want to restore your authorisation.
+        </p>
+      </div>
+      <p>
+        <button class="button button--secondary" 
+                role="button" 
+                data-modaldialog-action="close" 
+                type="button" 
+                tabindex="1" 
+                data-journey-click="client-list:Click:Removing clients dialog close">Close</button>
+      </p>
+    </div>
+    <div id="deleting-client" 
+         class="modal-dialog__content" 
+         tabindex="1" 
+         role="dialog" 
+         data-ga-open-event="client-list:Open:Deleting clients dialog" 
+         aria-labelledby="deleting-clients--heading" 
+         aria-describedby="deleting-clients--description">
+      <h2 id="deleting-clients--heading">Before you access your clients' accounts</h2>
+      <div id="deleting-clients--description">
+        <p>You must:</p>
+        <ul class="bullets">
+          <li>confirm the clients you represent</li>
+          <li>remove anyone you no longer represent</li>
+        </ul>
+        <div class="highlight-message highlight-message--light highlight-message--indent alert--borderless soft--ends">
+          <p id="deleting-clients--message" class="bold-small flush--ends">You may be in breach of the Data Protection Act if you dont remove old clients you no longer represent.</p>
+        </div>
+      </div>
+      <p>
+        <button class="button" 
+                role="button" 
+                data-modaldialog-action="close"
+                type="button" 
+                tabindex="1" 
+                data-journey-click="client-list:Click:Deleting clients dialog close">Continue</button>
+        <a href="#" 
+           class="button button--link" 
+           role="button" 
+           data-journey-click="client-list:Click:Deleting clients dialog more..." 
+           data-modaldialog-action="open" 
+           data-modaldialog-target="removing-clients" 
+           tabindex="1">More...</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+Style guide: Modal Dialog
+*/
+/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+body.scroll-off {
+  position: fixed;
+  width: 100%;
+}
+
+/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+.modal-dialog {
+  background-color: rgba(89, 89, 89, 0.7);
+  left: 0;
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+.modal-dialog.modal-dialog--hidden {
+  clip: rect(0.05263em 0.05263em 0.05263em 0.05263em);
+  clip: rect(0.05263em, 0.05263em, 0.05263em, 0.05263em);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  z-index: 0;
+}
+
+/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+.modal-dialog.modal-dialog--hidden:focus {
+  clip: auto;
+  height: auto;
+  overflow: auto;
+  position: relative;
+  width: auto;
+}
+
+/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+.modal-dialog__content {
+  padding: 0.36842em 1.68421em;
+  position: static;
+}
+
+/* line 118, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+.modal-dialog__content:focus {
+  outline: 3px solid #FFBF47;
+}
+
+/* line 129, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+.modal-dialog__inner {
+  background-color: #fff;
+  border: 0.26316em solid #0b0c0c;
+  left: 0;
+  margin: 6.84211em auto 0;
+  max-width: 90%;
+  overflow-y: auto;
+  padding: 0.42105em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 6.84211em 25% 0;
+  max-width: 37.89474em;
 }
 
 /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_messages.scss */

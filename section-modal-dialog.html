@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title>Component library - HM Revenue &amp; Customs</title>
+
+    <script type="text/javascript">
+      (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
+    </script>
+
+    <link rel="stylesheet" href="public/assets/stylesheets/component-library.css">
+
+    <!--[if gt IE 8]><!--><link href="public/assets/stylesheets/govuk-template.css" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <!--[if IE 6]><link href="public/assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]><link href="public/assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]><link href="public/assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <link href="public/assets/stylesheets/govuk-template-print.css" media="print" rel="stylesheet" type="text/css" />
+
+    <!--[if IE 8]>
+    <script type="text/javascript">
+      (function(){if(window.opera){return;}
+       setTimeout(function(){var a=document,g,b={families:(g=
+       ["nta"]),urls:["public/assets/stylesheets/fonts-ie8.css"]},
+       c="public/assets/javascripts/vendor/goog/webfont-debug.js",d="script",
+       e=a.createElement(d),f=a.getElementsByTagName(d)[0],h=g.length;WebFontConfig
+       ={custom:b},e.src=c,f.parentNode.insertBefore(e,f);for(;h=h-1;a.documentElement
+       .className+=' wf-'+g[h].replace(/\s/g,'').toLowerCase()+'-n4-loading');},0)
+      })()
+    </script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+      <link href="public/assets/stylesheets/fonts.css" media="all" rel="stylesheet" type="text/css" />
+    <!--<![endif]-->
+
+
+    <!--[if lt IE 9]>
+      <script src="public/assets/javascripts/ie.js" type="text/javascript"></script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" href="public/assets/stylesheets/vendor/highlight/github.css">
+
+    <link rel="shortcut icon" href="public/assets/images/favicon.ico" type="image/x-icon" />
+
+    <!-- Size for iPad and iPad mini (high resolution) -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="public/assets/images/apple-touch-icon-152x152.png">
+    <!-- Size for iPhone and iPod touch (high resolution) -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="public/assets/images/apple-touch-icon-120x120.png">
+    <!-- Size for iPad 2 and iPad mini (standard resolution) -->
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="public/assets/images/apple-touch-icon-76x76.png">
+    <!-- Default non-defined size, also used for Android 2.1+ devices -->
+    <link rel="apple-touch-icon-precomposed" href="public/assets/images/apple-touch-icon-60x60.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="public/assets/images/opengraph-image.png">
+
+    <link rel="stylesheet" href="public/stylesheets/application.min.css">
+
+  </head>
+
+  <body>
+
+    <header role="banner" id="global-header">
+      <div class="header-wrapper">
+        <div class="header-global">
+          <div class="header-logo">
+            <a href="https://www.gov.uk/" title="Go to the GOV.UK homepage" id="logo" class="content">
+              <img src="public/assets/images/gov.uk_logotype_crown_invert_trans.png" width="35" height="31" alt=""> GOV.UK
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="wrapper">
+      <div id="content">
+
+        <div class="service-info">
+          <div class="logo">
+            <span class="organisation-logo organisation-logo-medium">HM Revenue &amp; Customs</span>
+          </div>
+        </div>
+        <h1 class="heading-48">Component Library</h1>
+        <div class="comp-lib">
+
+          <aside class="comp-lib-sidebar">
+            <nav>
+              <ul>
+                <li class="comp-lib-menu-item">
+                  <a href="./" class="comp-lib-menu-link">Home</a>
+                </li>
+                <li class="comp-lib-menu-item">
+                  <a href="section-breadcrumbs.html" class="comp-lib-menu-link">Breadcrumbs</a>
+
+                </li>
+                <li class="comp-lib-menu-item">
+                  <a href="section-buttons.html" class="comp-lib-menu-link">Buttons</a>
+
+                </li>
+                <li class="comp-lib-menu-item">
+                  <a href="section-grids.html" class="comp-lib-menu-link">Grids</a>
+
+                </li>
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                  <a href="section-modal-dialog.html" class="comp-lib-menu-link">Modal Dialog</a>
+
+                  <ul>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+
+          <article class="comp-lib-main">
+                  <div id="kssref-modal-dialog">
+                <div>
+                  <h1><a href="#kssref-modal-dialog" class="comp-lib-menu-link">Modal Dialog</a></h1>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                               comp-lib-description--experimental
+                              ">
+                    <p>Experimental:  An accessibility compliant &amp; responsive modal dialog box module.</p>
+<p><strong>Before considering a <a href="https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll">modal dialog box</a>, make sure that you have strong evidence that:</strong></p>
+<ul>
+<li>There is a real user need to have attention focused on a single piece of content;</li>
+<li>That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content;</li>
+</ul>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component">
+                        <div class="modal-dialog">
+  <div class="modal-dialog__inner">
+    <div id="removing-clients"
+         class="modal-dialog__content"
+         tabindex="1"
+         data-ga-open-event="client-list:Open:Removing clients dialog"
+         role="dialog"
+         aria-labelledby="removing-clients--heading"
+         aria-describedby="removing-clients--description"
+         hidden>
+      <h2 id="removing-clients--heading">What does removing a client do?</h2>
+      <div id="removing-clients--description">
+        <p>When you remove a client you give up the authorisation this client has given you to act for them.</p>
+        <p>Your authorisation will be removed from both HMRC’s services and the Government Gateway.</p>
+        <p>This means you won’t be able to:</p>
+        <ul class="bullets">
+          <li>act for this client online, in writing or on the phone</li>
+          <li>see this client’s information online</li>
+        </ul>
+        <p>
+          You can use the <a id="online-auth-service" href="https://www.gov.uk/guidance/payecis-for-agents-online-service" class="link" rel="external" target="_blank" tabindex="1" data-journey-click="modal-removing-clients:Click:online-auth-service">online authorisation service</a>, if you want to restore your authorisation.
+        </p>
+      </div>
+      <p>
+        <button class="button button--secondary"
+                role="button"
+                data-modaldialog-action="close"
+                type="button"
+                tabindex="1"
+                data-journey-click="client-list:Click:Removing clients dialog close">Close</button>
+      </p>
+    </div>
+    <div id="deleting-client"
+         class="modal-dialog__content"
+         tabindex="1"
+         role="dialog"
+         data-ga-open-event="client-list:Open:Deleting clients dialog"
+         aria-labelledby="deleting-clients--heading"
+         aria-describedby="deleting-clients--description">
+      <h2 id="deleting-clients--heading">Before you access your clients' accounts</h2>
+      <div id="deleting-clients--description">
+        <p>You must:</p>
+        <ul class="bullets">
+          <li>confirm the clients you represent</li>
+          <li>remove anyone you no longer represent</li>
+        </ul>
+        <div class="highlight-message highlight-message--light highlight-message--indent alert--borderless soft--ends">
+          <p id="deleting-clients--message" class="bold-small flush--ends">You may be in breach of the Data Protection Act if you dont remove old clients you no longer represent.</p>
+        </div>
+      </div>
+      <p>
+        <button class="button"
+                role="button"
+                data-modaldialog-action="close"
+                type="button"
+                tabindex="1"
+                data-journey-click="client-list:Click:Deleting clients dialog close">Continue</button>
+        <a href="#"
+           class="button button--link"
+           role="button"
+           data-journey-click="client-list:Click:Deleting clients dialog more..."
+           data-modaldialog-action="open"
+           data-modaldialog-target="removing-clients"
+           tabindex="1">More...</a>
+      </p>
+    </div>
+  </div>
+</div>
+                      </div>
+                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;modal-dialog&quot;&gt;
+  &lt;div class=&quot;modal-dialog__inner&quot;&gt;
+    &lt;div id=&quot;removing-clients&quot;
+         class=&quot;modal-dialog__content&quot;
+         tabindex=&quot;1&quot;
+         data-ga-open-event=&quot;client-list:Open:Removing clients dialog&quot;
+         role=&quot;dialog&quot;
+         aria-labelledby=&quot;removing-clients--heading&quot;
+         aria-describedby=&quot;removing-clients--description&quot;
+         hidden&gt;
+      &lt;h2 id=&quot;removing-clients--heading&quot;&gt;What does removing a client do?&lt;/h2&gt;
+      &lt;div id=&quot;removing-clients--description&quot;&gt;
+        &lt;p&gt;When you remove a client you give up the authorisation this client has given you to act for them.&lt;/p&gt;
+        &lt;p&gt;Your authorisation will be removed from both HMRC’s services and the Government Gateway.&lt;/p&gt;
+        &lt;p&gt;This means you won’t be able to:&lt;/p&gt;
+        &lt;ul class=&quot;bullets&quot;&gt;
+          &lt;li&gt;act for this client online, in writing or on the phone&lt;/li&gt;
+          &lt;li&gt;see this client’s information online&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p&gt;
+          You can use the &lt;a id=&quot;online-auth-service&quot; href=&quot;https://www.gov.uk/guidance/payecis-for-agents-online-service&quot; class=&quot;link&quot; rel=&quot;external&quot; target=&quot;_blank&quot; tabindex=&quot;1&quot; data-journey-click=&quot;modal-removing-clients:Click:online-auth-service&quot;&gt;online authorisation service&lt;/a&gt;, if you want to restore your authorisation.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+        &lt;button class=&quot;button button--secondary&quot;
+                role=&quot;button&quot;
+                data-modaldialog-action=&quot;close&quot;
+                type=&quot;button&quot;
+                tabindex=&quot;1&quot;
+                data-journey-click=&quot;client-list:Click:Removing clients dialog close&quot;&gt;Close&lt;/button&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;deleting-client&quot;
+         class=&quot;modal-dialog__content&quot;
+         tabindex=&quot;1&quot;
+         role=&quot;dialog&quot;
+         data-ga-open-event=&quot;client-list:Open:Deleting clients dialog&quot;
+         aria-labelledby=&quot;deleting-clients--heading&quot;
+         aria-describedby=&quot;deleting-clients--description&quot;&gt;
+      &lt;h2 id=&quot;deleting-clients--heading&quot;&gt;Before you access your clients&#x27; accounts&lt;/h2&gt;
+      &lt;div id=&quot;deleting-clients--description&quot;&gt;
+        &lt;p&gt;You must:&lt;/p&gt;
+        &lt;ul class=&quot;bullets&quot;&gt;
+          &lt;li&gt;confirm the clients you represent&lt;/li&gt;
+          &lt;li&gt;remove anyone you no longer represent&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;div class=&quot;highlight-message highlight-message--light highlight-message--indent alert--borderless soft--ends&quot;&gt;
+          &lt;p id=&quot;deleting-clients--message&quot; class=&quot;bold-small flush--ends&quot;&gt;You may be in breach of the Data Protection Act if you dont remove old clients you no longer represent.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+        &lt;button class=&quot;button&quot;
+                role=&quot;button&quot;
+                data-modaldialog-action=&quot;close&quot;
+                type=&quot;button&quot;
+                tabindex=&quot;1&quot;
+                data-journey-click=&quot;client-list:Click:Deleting clients dialog close&quot;&gt;Continue&lt;/button&gt;
+        &lt;a href=&quot;#&quot;
+           class=&quot;button button--link&quot;
+           role=&quot;button&quot;
+           data-journey-click=&quot;client-list:Click:Deleting clients dialog more...&quot;
+           data-modaldialog-action=&quot;open&quot;
+           data-modaldialog-target=&quot;removing-clients&quot;
+           tabindex=&quot;1&quot;&gt;More...&lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+                    </div>
+
+                  </div>
+
+                  </div>
+          </article>
+        </div>
+    </div>
+  </main>
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+      <div class="footer-wrapper">
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+            <div class="open-government-licence">
+              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+                <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+            </div>
+          </div>
+
+          <div class="copyright">
+            <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--end footer-->
+
+    <script src="public/assets/javascripts/vendor/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    <script src="public/javascripts/application.min.js"></script>
+
+  </body>
+</html>
