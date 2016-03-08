@@ -21,5 +21,5 @@ module.exports = function() {
     .on('focusout', function() {
       var current = $(this).closest('label')[0];
       $(current).removeClass('add-focus');
-               });
+    });
 };
