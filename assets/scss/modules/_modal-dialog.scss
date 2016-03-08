@@ -11,7 +11,14 @@ Experimental:  An accessibility compliant & responsive modal dialog box module.
 Markup:
 <div class="modal-dialog">
   <div class="modal-dialog__inner">
-    <div id="removing-clients" class="modal-dialog__content" tabindex="1" data-ga-open-event="client-list:Open:Removing clients dialog" role="dialog" aria-labelledby="removing-clients--heading" aria-describedby="removing-clients--description" hidden>
+    <div id="removing-clients" 
+         class="modal-dialog__content" 
+         tabindex="1" 
+         data-ga-open-event="client-list:Open:Removing clients dialog" 
+         role="dialog" 
+         aria-labelledby="removing-clients--heading" 
+         aria-describedby="removing-clients--description" 
+         hidden>
       <h2 id="removing-clients--heading">What does removing a client do?</h2>
       <div id="removing-clients--description">
         <p>When you remove a client you give up the authorisation this client has given you to act for them.</p>
@@ -26,10 +33,21 @@ Markup:
         </p>
       </div>
       <p>
-        <button class="button button--secondary" role="button" data-modaldialog-action="close" type="button" tabindex="1" data-journey-click="client-list:Click:Removing clients dialog close">Close</button>
+        <button class="button button--secondary" 
+                role="button" 
+                data-modaldialog-action="close" 
+                type="button" 
+                tabindex="1" 
+                data-journey-click="client-list:Click:Removing clients dialog close">Close</button>
       </p>
     </div>
-    <div id="deleting-client" class="modal-dialog__content" tabindex="1" role="dialog" data-ga-open-event="client-list:Open:Deleting clients dialog" aria-labelledby="deleting-clients--heading" aria-describedby="deleting-clients--description">
+    <div id="deleting-client" 
+         class="modal-dialog__content" 
+         tabindex="1" 
+         role="dialog" 
+         data-ga-open-event="client-list:Open:Deleting clients dialog" 
+         aria-labelledby="deleting-clients--heading" 
+         aria-describedby="deleting-clients--description">
       <h2 id="deleting-clients--heading">Before you access your clients' accounts</h2>
       <div id="deleting-clients--description">
         <p>You must:</p>
@@ -42,8 +60,19 @@ Markup:
         </div>
       </div>
       <p>
-        <button class="button" role="button" data-modaldialog-action="close" tabindex="1" data-journey-click="client-list:Click:Deleting clients dialog close">Continue</button>
-        <a href="#" class="button button--link" role="button" data-journey-click="::" data-modaldialog-action="open" data-modaldialog-target="removing-clients" tabindex="1">More...</a>
+        <button class="button" 
+                role="button" 
+                data-modaldialog-action="close"
+                type="button" 
+                tabindex="1" 
+                data-journey-click="client-list:Click:Deleting clients dialog close">Continue</button>
+        <a href="#" 
+           class="button button--link" 
+           role="button" 
+           data-journey-click="client-list:Click:Deleting clients dialog more..." 
+           data-modaldialog-action="open" 
+           data-modaldialog-target="removing-clients" 
+           tabindex="1">More...</a>
       </p>
     </div>
   </div>
