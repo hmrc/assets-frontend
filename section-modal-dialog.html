@@ -123,13 +123,13 @@
                               comp-lib-pattern-markdown
                                comp-lib-description--experimental
                               ">
-                    <p>Experimental:  An accessibility compliant &amp; responsive modal dialog box module.</p>
-<p><strong>Before considering a <a href="https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll">modal dialog box</a>, make sure that you have strong evidence that:</strong></p>
+                    <p>An accessibility compliant &amp; responsive modal dialog box module.</p>
+<p>Experimental: Before considering this design pattern, make sure that you have strong evidence that:</p>
 <ul>
 <li>There is a real user need to have attention focused on a single piece of content;</li>
 <li>That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content;</li>
 </ul>
-<button href="#" class="button" role="button" data-modaldialog-action="open" data-modaldialog-target="experimental-modal" tabindex="1">Open example</button>
+<button href="#" class="button" role="button" data-modaldialog-action="open" data-modaldialog-target="example-modal" tabindex="1">Open example</button>
                   </div>
                 </div>
 
@@ -139,78 +139,52 @@
                       <div class="comp-lib-pattern-component">
                         <div class="modal-dialog modal-dialog--hidden">
   <div class="modal-dialog__inner">
-    <div id="experimental-modal"
+    <div id="example-modal"
          class="modal-dialog__content"
          tabindex="1"
          role="dialog"
          data-ga-open-event="::"
-         aria-labelledby="experimental-modals--heading"
-         aria-describedby="experimental-modals--description"
+         aria-labelledby="example-modals--heading"
+         aria-describedby="example-modals--description"
          hidden>
-      <h2 id="experimental-modals--heading">Experimental: Modal Dialog</h2>
-      <div id="experimental-modals--description">
-        <p>An accessibility compliant &amp; responsive modal dialog box module.</p>
-        <p>Before considering a <a
-          href="https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll">
-            modal dialog box</a>, make sure that you have strong evidence that:</p>
-        <ul class="bullets">
-          <li>
-            There is a real user need to have attention focused
-            on a single piece of content.
-          </li>
-          <li>
-              That need cannot be met by taking the user to a new page
-              in the same flow that contains the crucial piece of content.
-          </li>
-        </ul>
+      <h2 id="example-modals--heading">Modal Dialog Title</h2>
+      <div id="example-modals--description">
+        This is an example of some content that you wish to draw users
+        attention to.
       </div>
-      <p>
-        <button class="button"
-                role="button"
-                data-modaldialog-action="close"
-                type="button"
-                tabindex="1"
-                data-journey-click="::">Close</button>
-      </p>
+      <button class="button"
+              role="button"
+              data-modaldialog-action="close"
+              type="button"
+              tabindex="1">
+        Close
+      </button>
     </div>
   </div>
 </div>
                       </div>
                       <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;modal-dialog modal-dialog--hidden&quot;&gt;
   &lt;div class=&quot;modal-dialog__inner&quot;&gt;
-    &lt;div id=&quot;experimental-modal&quot;
+    &lt;div id=&quot;example-modal&quot;
          class=&quot;modal-dialog__content&quot;
          tabindex=&quot;1&quot;
          role=&quot;dialog&quot;
          data-ga-open-event=&quot;::&quot;
-         aria-labelledby=&quot;experimental-modals--heading&quot;
-         aria-describedby=&quot;experimental-modals--description&quot;
+         aria-labelledby=&quot;example-modals--heading&quot;
+         aria-describedby=&quot;example-modals--description&quot;
          hidden&gt;
-      &lt;h2 id=&quot;experimental-modals--heading&quot;&gt;Experimental: Modal Dialog&lt;/h2&gt;
-      &lt;div id=&quot;experimental-modals--description&quot;&gt;
-        &lt;p&gt;An accessibility compliant &amp;amp; responsive modal dialog box module.&lt;/p&gt;
-        &lt;p&gt;Before considering a &lt;a
-          href=&quot;https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll&quot;&gt;
-            modal dialog box&lt;/a&gt;, make sure that you have strong evidence that:&lt;/p&gt;
-        &lt;ul class=&quot;bullets&quot;&gt;
-          &lt;li&gt;
-            There is a real user need to have attention focused
-            on a single piece of content.
-          &lt;/li&gt;
-          &lt;li&gt;
-              That need cannot be met by taking the user to a new page
-              in the same flow that contains the crucial piece of content.
-          &lt;/li&gt;
-        &lt;/ul&gt;
+      &lt;h2 id=&quot;example-modals--heading&quot;&gt;Modal Dialog Title&lt;/h2&gt;
+      &lt;div id=&quot;example-modals--description&quot;&gt;
+        This is an example of some content that you wish to draw users
+        attention to.
       &lt;/div&gt;
-      &lt;p&gt;
-        &lt;button class=&quot;button&quot;
-                role=&quot;button&quot;
-                data-modaldialog-action=&quot;close&quot;
-                type=&quot;button&quot;
-                tabindex=&quot;1&quot;
-                data-journey-click=&quot;::&quot;&gt;Close&lt;/button&gt;
-      &lt;/p&gt;
+      &lt;button class=&quot;button&quot;
+              role=&quot;button&quot;
+              data-modaldialog-action=&quot;close&quot;
+              type=&quot;button&quot;
+              tabindex=&quot;1&quot;&gt;
+        Close
+      &lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre></div>
