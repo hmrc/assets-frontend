@@ -3733,16 +3733,6 @@ small {
 }
 
 /* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_typography.scss */
-details {
-  margin: 15px 0;
-}
-
-/* line 170, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_typography.scss */
-details .summary {
-  text-decoration: underline;
-}
-
-/* line 175, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_typography.scss */
 .font-xxsmall {
   font-family: "nta", Arial, sans-serif;
   font-size: 14px;
@@ -3752,7 +3742,7 @@ details .summary {
 }
 
 @media (max-width: 640px) {
-  /* line 175, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_typography.scss */
+  /* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_typography.scss */
   .font-xxsmall {
     font-size: 12px;
     line-height: 1.25;
@@ -6318,66 +6308,112 @@ a[rel="external"].external-link-19-bold-no-hover:hover:after, [rel="external"].e
   }
 }
 
-/**
-* @desc         details summary element styles and mixins.
-* @name         details-summary
-* @author       Matthew Pepper
-* @tested       N/A
-* @requires     
-            Usage: add @mixin summary-arrow-styles { ... } 
-                   to the referencing stylesheet to enable the addition
-                   of other style rules for the summary elements arrow.
-                   Create an empty 'summary-arrow-styles' mixin 
-                   where further styles not required.
+/*
+Details
+
+The HTML Details Element `<details>` is used as a widget the user can retrieve additional information.
+
+Markup:
+<details>
+  <summary class="{{modifier_class}}">Opening Times</summary>
+  <div>
+    <h3>The office is open:</h3>
+    <p>9am - 5pm Monday to friday.</p>
+    <h3>The office is closed:</h3>
+    <ul>
+      <li>On Saturdays and Sundays.<li>
+      <li>On Bank Holidays and National holidays.<li>
+    </ul>
+    <a href="">More Details</a>
+  </div>
+</details>
+
+.summary        - Details with underlined links
+.summary--black - Details with black arrows and text within summary
+
+Styleguide Details
 */
-/**
-* @desc         Mixin which extends details summary element styles when a taller multi-line block is used in the summary.
-* @name         details-multi-line-summary-block
-* @param        $vpos: optional parameter for absolute vertical positioning summary element arrow.
-*/
-/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+details {
+  margin: 15px 0;
+}
+
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+details .summary {
+  text-decoration: underline;
+}
+
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .summary--black {
   color: #0b0c0c;
 }
 
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .summary--black:hover {
   color: #0b0c0c;
 }
 
-/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .summary--black i {
   color: #0b0c0c;
 }
 
-/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .summary--black i:visited {
   color: #0b0c0c;
 }
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/*
+Alternative
+
+In comparison to the default details component, this component has differing class attributes and the selectors used
+for this component add extra padding at the bottom of the opened details section.
+
+Markup:
+<details class="details">
+  <summary class="summary">Opening Times</summary>
+  <div class="details__inner">
+    <h3>The office is open:</h3>
+    <p>9am - 5pm Monday to friday.</p>
+    <h3>The office is closed:</h3>
+    <ul>
+      <li>On Saturdays and Sundays.<li>
+      <li>On Bank Holidays and National holidays.<li>
+    </ul>
+    <a href="">More Details</a>
+  </div>
+</details>
+
+Styleguide Details.alternative
+*/
+/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+.details .details__inner {
+  padding-bottom: 2em;
+}
+
+/*
+NON-COMP-LIB
+Details fall back work. When details is not supported in the browser then apply the following to the polyfill
+implementation
+*/
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details summary .arrow-closed {
   display: inline-block;
 }
 
-/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details summary .arrow-open {
   display: none;
 }
 
-/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details.open summary .arrow-closed {
   display: none;
 }
 
-/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details.open summary .arrow-open {
   display: inline-block;
-}
-
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
-.details .details__inner {
-  padding-bottom: 2em;
 }
 
 /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
@@ -8834,7 +8870,7 @@ nav.help-contents ul li p {
   border-bottom-width: 1px;
 }
 
-/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent > .arrow {
   top: 22%;
   position: absolute;
@@ -8842,7 +8878,7 @@ nav.help-contents ul li p {
   padding: 0 2px;
 }
 
-/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent::-webkit-details-marker {
   top: 22%;
   position: absolute;
@@ -8850,23 +8886,23 @@ nav.help-contents ul li p {
   padding: 0 2px;
 }
 
-/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent[aria-disabled=true] {
   cursor: default;
   outline: none;
 }
 
-/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent[aria-disabled=true]::-webkit-details-marker {
   visibility: hidden;
 }
 
-/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent[aria-disabled=true] > .arrow {
   display: none;
 }
 
-/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent:after {
   clear: both;
   content: "";
@@ -8884,35 +8920,35 @@ nav.help-contents ul li p {
   padding: 0;
 }
 
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary > .arrow {
   color: #0b0c0c;
   padding: 0 2px;
 }
 
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary::-webkit-details-marker {
   color: #0b0c0c;
   padding: 0 2px;
 }
 
-/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary[aria-disabled=true] {
   cursor: default;
   outline: none;
 }
 
-/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary[aria-disabled=true]::-webkit-details-marker {
   visibility: hidden;
 }
 
-/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary[aria-disabled=true] > .arrow {
   display: none;
 }
 
-/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details-summary.scss */
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary:after {
   clear: both;
   content: "";

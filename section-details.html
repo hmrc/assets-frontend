@@ -92,19 +92,22 @@
                 <li class="comp-lib-menu-item">
                   <a href="./" class="comp-lib-menu-link">Home</a>
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-breadcrumbs.html" class="comp-lib-menu-link">Breadcrumbs</a>
 
-                  <ul>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-buttons.html" class="comp-lib-menu-link">Buttons</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-details.html" class="comp-lib-menu-link">Details</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-details.html#kssref-details-alternative">Alternative</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-grids.html" class="comp-lib-menu-link">Grids</a>
@@ -119,16 +122,15 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-breadcrumbs">
+                  <div id="kssref-details">
                 <div>
-                  <h1><a href="#kssref-breadcrumbs" class="comp-lib-menu-link">Breadcrumbs</a></h1>
+                  <h1><a href="#kssref-details" class="comp-lib-menu-link">Details</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>The breadcrumb nav is styled using the <code>.breadcrumb-nav</code> selector. You can also have a <em>slimmer</em> version by adding
-the <code>.breadcrumb-nav--slim</code> modifier.</p>
+                    <p>The HTML Details Element <code>&lt;details&gt;</code> is used as a widget the user can retrieve additional information.</p>
 
                   </div>
                 </div>
@@ -137,61 +139,158 @@ the <code>.breadcrumb-nav--slim</code> modifier.</p>
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component">
-                            <nav class="breadcrumb-nav [modifier class]">
-        <ul class="breadcrumb-nav__list">
-                    <li class="breadcrumb-nav__item">
-                      <a href="/component-library">Home</a>
-                    </li>
-                    <li class="breadcrumb-nav__item
-                               breadcrumb-nav__item--trail"></li>
-            <li class="breadcrumb-nav__item">Breadcrumbs</li>
-        </ul>
-    </nav>
+                        <details>
+  <summary class="[modifier class]">Opening Times</summary>
+  <div>
+    <h3>The office is open:</h3>
+    <p>9am - 5pm Monday to friday.</p>
+    <h3>The office is closed:</h3>
+    <ul>
+      <li>On Saturdays and Sundays.<li>
+      <li>On Bank Holidays and National holidays.<li>
+    </ul>
+    <a href="">More Details</a>
+  </div>
+</details>
                       </div>
-                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">    &lt;nav class=&quot;breadcrumb-nav [modifier class]&quot;&gt;
-        &lt;ul class=&quot;breadcrumb-nav__list&quot;&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;
-                      &lt;a href=&quot;/component-library&quot;&gt;Home&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item
-                               breadcrumb-nav__item--trail&quot;&gt;&lt;/li&gt;
-            &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;Breadcrumbs&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;</code></pre></div>
+                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
+  &lt;summary class=&quot;[modifier class]&quot;&gt;Opening Times&lt;/summary&gt;
+  &lt;div&gt;
+    &lt;h3&gt;The office is open:&lt;/h3&gt;
+    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
+    &lt;h3&gt;The office is closed:&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
+      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
+    &lt;/ul&gt;
+    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</code></pre></div>
                     </div>
 
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-example__description">
-                        A <em>slimmer</em> version of the breadcrumb with less <code>margin</code> and <code>padding</code>
+                        Details with underlined links
                       </div>
                       <div class="comp-lib-pattern-component">
-                            <nav class="breadcrumb-nav breadcrumb-nav--slim">
-        <ul class="breadcrumb-nav__list">
-                    <li class="breadcrumb-nav__item">
-                      <a href="/component-library">Home</a>
-                    </li>
-                    <li class="breadcrumb-nav__item
-                               breadcrumb-nav__item--trail"></li>
-            <li class="breadcrumb-nav__item">Breadcrumbs</li>
-        </ul>
-    </nav>
+                        <details>
+  <summary class="summary">Opening Times</summary>
+  <div>
+    <h3>The office is open:</h3>
+    <p>9am - 5pm Monday to friday.</p>
+    <h3>The office is closed:</h3>
+    <ul>
+      <li>On Saturdays and Sundays.<li>
+      <li>On Bank Holidays and National holidays.<li>
+    </ul>
+    <a href="">More Details</a>
+  </div>
+</details>
                       </div>
                       <div>
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">    &lt;nav class=&quot;breadcrumb-nav breadcrumb-nav--slim&quot;&gt;
-        &lt;ul class=&quot;breadcrumb-nav__list&quot;&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;
-                      &lt;a href=&quot;/component-library&quot;&gt;Home&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item
-                               breadcrumb-nav__item--trail&quot;&gt;&lt;/li&gt;
-            &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;Breadcrumbs&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
+  &lt;summary class=&quot;summary&quot;&gt;Opening Times&lt;/summary&gt;
+  &lt;div&gt;
+    &lt;h3&gt;The office is open:&lt;/h3&gt;
+    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
+    &lt;h3&gt;The office is closed:&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
+      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
+    &lt;/ul&gt;
+    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</code></pre>
+                      </div>
+                    </div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-example__description">
+                        Details with black arrows and text within summary
+                      </div>
+                      <div class="comp-lib-pattern-component">
+                        <details>
+  <summary class="summary--black">Opening Times</summary>
+  <div>
+    <h3>The office is open:</h3>
+    <p>9am - 5pm Monday to friday.</p>
+    <h3>The office is closed:</h3>
+    <ul>
+      <li>On Saturdays and Sundays.<li>
+      <li>On Bank Holidays and National holidays.<li>
+    </ul>
+    <a href="">More Details</a>
+  </div>
+</details>
+                      </div>
+                      <div>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
+  &lt;summary class=&quot;summary--black&quot;&gt;Opening Times&lt;/summary&gt;
+  &lt;div&gt;
+    &lt;h3&gt;The office is open:&lt;/h3&gt;
+    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
+    &lt;h3&gt;The office is closed:&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
+      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
+    &lt;/ul&gt;
+    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</code></pre>
                       </div>
                     </div>
                   </div>
 
                   </div>
+                  <section id="kssref-details-alternative">
+                <div>
+                  <h2><a href="#kssref-details-alternative" class="comp-lib-menu-link">Alternative</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>In comparison to the default details component, this component has differing class attributes and the selectors used
+for this component add extra padding at the bottom of the opened details section.</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component">
+                        <details class="details">
+  <summary class="summary">Opening Times</summary>
+  <div class="details__inner">
+    <h3>The office is open:</h3>
+    <p>9am - 5pm Monday to friday.</p>
+    <h3>The office is closed:</h3>
+    <ul>
+      <li>On Saturdays and Sundays.<li>
+      <li>On Bank Holidays and National holidays.<li>
+    </ul>
+    <a href="">More Details</a>
+  </div>
+</details>
+                      </div>
+                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details class=&quot;details&quot;&gt;
+  &lt;summary class=&quot;summary&quot;&gt;Opening Times&lt;/summary&gt;
+  &lt;div class=&quot;details__inner&quot;&gt;
+    &lt;h3&gt;The office is open:&lt;/h3&gt;
+    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
+    &lt;h3&gt;The office is closed:&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
+      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
+    &lt;/ul&gt;
+    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</code></pre></div>
+                    </div>
+
+                  </div>
+
+                  </section>
           </article>
         </div>
     </div>
