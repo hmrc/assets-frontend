@@ -7,57 +7,35 @@ Experimental:  An accessibility compliant & responsive modal dialog box module.
 * There is a real user need to have attention focused on a single piece of content;
 * That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content;
 
+<button href="#" class="button" role="button" data-modaldialog-action="open" data-modaldialog-target="experimental-modal" tabindex="1">Open example</button>
 
 Markup:
-<div class="modal-dialog">
+<div class="modal-dialog modal-dialog--hidden">
   <div class="modal-dialog__inner">
-    <div id="removing-clients" 
+    <div id="experimental-modal" 
          class="modal-dialog__content" 
          tabindex="1" 
-         data-ga-open-event="client-list:Open:Removing clients dialog" 
          role="dialog" 
-         aria-labelledby="removing-clients--heading" 
-         aria-describedby="removing-clients--description" 
+         data-ga-open-event="::" 
+         aria-labelledby="experimental-modals--heading" 
+         aria-describedby="experimental-modals--description"
          hidden>
-      <h2 id="removing-clients--heading">What does removing a client do?</h2>
-      <div id="removing-clients--description">
-        <p>When you remove a client you give up the authorisation this client has given you to act for them.</p>
-        <p>Your authorisation will be removed from both HMRC’s services and the Government Gateway.</p>
-        <p>This means you won’t be able to:</p>
+      <h2 id="experimental-modals--heading">Experimental: Modal Dialog</h2>
+      <div id="experimental-modals--description">
+        <p>An accessibility compliant &amp; responsive modal dialog box module.</p>
+        <p>Before considering a <a 
+          href="https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll">
+            modal dialog box</a>, make sure that you have strong evidence that:</p>
         <ul class="bullets">
-          <li>act for this client online, in writing or on the phone</li>
-          <li>see this client’s information online</li>
+          <li>
+            There is a real user need to have attention focused 
+            on a single piece of content.
+          </li>
+          <li>
+              That need cannot be met by taking the user to a new page
+              in the same flow that contains the crucial piece of content.
+          </li>
         </ul>
-        <p>
-          You can use the <a id="online-auth-service" href="https://www.gov.uk/guidance/payecis-for-agents-online-service" class="link" rel="external" target="_blank" tabindex="1" data-journey-click="modal-removing-clients:Click:online-auth-service">online authorisation service</a>, if you want to restore your authorisation.
-        </p>
-      </div>
-      <p>
-        <button class="button button--secondary" 
-                role="button" 
-                data-modaldialog-action="close" 
-                type="button" 
-                tabindex="1" 
-                data-journey-click="client-list:Click:Removing clients dialog close">Close</button>
-      </p>
-    </div>
-    <div id="deleting-client" 
-         class="modal-dialog__content" 
-         tabindex="1" 
-         role="dialog" 
-         data-ga-open-event="client-list:Open:Deleting clients dialog" 
-         aria-labelledby="deleting-clients--heading" 
-         aria-describedby="deleting-clients--description">
-      <h2 id="deleting-clients--heading">Before you access your clients' accounts</h2>
-      <div id="deleting-clients--description">
-        <p>You must:</p>
-        <ul class="bullets">
-          <li>confirm the clients you represent</li>
-          <li>remove anyone you no longer represent</li>
-        </ul>
-        <div class="highlight-message highlight-message--light highlight-message--indent alert--borderless soft--ends">
-          <p id="deleting-clients--message" class="bold-small flush--ends">You may be in breach of the Data Protection Act if you dont remove old clients you no longer represent.</p>
-        </div>
       </div>
       <p>
         <button class="button" 
@@ -65,14 +43,7 @@ Markup:
                 data-modaldialog-action="close"
                 type="button" 
                 tabindex="1" 
-                data-journey-click="client-list:Click:Deleting clients dialog close">Continue</button>
-        <a href="#" 
-           class="button button--link" 
-           role="button" 
-           data-journey-click="client-list:Click:Deleting clients dialog more..." 
-           data-modaldialog-action="open" 
-           data-modaldialog-target="removing-clients" 
-           tabindex="1">More...</a>
+                data-journey-click="::">Close</button>
       </p>
     </div>
   </div>
