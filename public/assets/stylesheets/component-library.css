@@ -16,6 +16,11 @@
 .comp-lib-menu-item {
   margin-bottom: .2em;
 }
+.comp-lib-menu-item--indented {
+  list-style: disc;
+  list-style-position: inside;
+  font-size: .9em;
+}
 .comp-lib-menu-item--highlighted {
   font-weight: bold;
 }
