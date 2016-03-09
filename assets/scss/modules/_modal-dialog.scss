@@ -1,50 +1,37 @@
-/* 
+/*
 Modal Dialog
 
-Experimental:  An accessibility compliant & responsive modal dialog box module.
+An accessibility compliant & responsive modal dialog box module.
 
-**Before considering a [modal dialog box](https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll), make sure that you have strong evidence that:**
+Experimental: Before considering this design pattern, make sure that you have strong evidence that:
 * There is a real user need to have attention focused on a single piece of content;
 * That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content;
 
-<button href="#" class="button" role="button" data-modaldialog-action="open" data-modaldialog-target="experimental-modal" tabindex="1">Open example</button>
+<button href="#" class="button" role="button" data-modaldialog-action="open" data-modaldialog-target="example-modal" tabindex="1">Open example</button>
 
 Markup:
 <div class="modal-dialog modal-dialog--hidden">
   <div class="modal-dialog__inner">
-    <div id="experimental-modal" 
-         class="modal-dialog__content" 
-         tabindex="1" 
-         role="dialog" 
-         data-ga-open-event="::" 
-         aria-labelledby="experimental-modals--heading" 
-         aria-describedby="experimental-modals--description"
+    <div id="example-modal"
+         class="modal-dialog__content"
+         tabindex="1"
+         role="dialog"
+         data-ga-open-event="::"
+         aria-labelledby="example-modals--heading"
+         aria-describedby="example-modals--description"
          hidden>
-      <h2 id="experimental-modals--heading">Experimental: Modal Dialog</h2>
-      <div id="experimental-modals--description">
-        <p>An accessibility compliant &amp; responsive modal dialog box module.</p>
-        <p>Before considering a <a 
-          href="https://designpatterns.hackpad.com/Modal-dialog-boxes-ZJNqssq4Dll">
-            modal dialog box</a>, make sure that you have strong evidence that:</p>
-        <ul class="bullets">
-          <li>
-            There is a real user need to have attention focused 
-            on a single piece of content.
-          </li>
-          <li>
-              That need cannot be met by taking the user to a new page
-              in the same flow that contains the crucial piece of content.
-          </li>
-        </ul>
+      <h2 id="example-modals--heading">Modal Dialog</h2>
+      <div id="example-modals--description">
+        This is an example of some content that you wish to draw users
+        attention to.
       </div>
-      <p>
-        <button class="button" 
-                role="button" 
-                data-modaldialog-action="close"
-                type="button" 
-                tabindex="1" 
-                data-journey-click="::">Close</button>
-      </p>
+      <button class="button"
+              role="button"
+              data-modaldialog-action="close"
+              type="button"
+              tabindex="1">
+        Close
+      </button>
     </div>
   </div>
 </div>
