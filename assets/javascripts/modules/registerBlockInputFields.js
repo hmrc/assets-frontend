@@ -26,7 +26,9 @@ module.exports = function() {
       var $input = $(event.target);
 
       if ($input.attr('type') === 'radio') {
-        $input.closest('label').siblings().removeClass('selected');
+        $("input[name='" + $input.prop('name') + "']").map(function (index, inputWithSameName) {
+            $(inputWithSameName).closest('label').removeClass('selected');
+        });
       }
 
       $input.closest('label').toggleClass('selected', $input.prop('checked'));
