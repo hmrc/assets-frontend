@@ -33,7 +33,7 @@ module.exports = function() {
 
       $input.closest('label').toggleClass('selected', $input.prop('checked'));
     })
-    .on('focusout', function(event) {
+    .on('blur', function(event) {
       $(event.target).closest('label').removeClass('add-focus');
     });
 };
