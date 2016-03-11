@@ -37,7 +37,7 @@ $path: "../images/icons/";
 @import "base/helpers";
 @import "base/links";
 @import "base/icons";
-@import "base/details-summary";
+@import "base/details";
 @import "base/form/errors";
 @import "base/form/hint";
 
@@ -77,7 +77,7 @@ $path: "../images/icons/";
 @import "modules/add-remove";
 @import "modules/toggle-button";
 @import "modules/tabs";
-
+@import "modules/modal-dialog";
 
 // Page Specific Styles
 @import "pages/messages";

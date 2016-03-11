@@ -1,0 +1,102 @@
+/*
+Modal Dialog
+
+An accessibility compliant & responsive modal dialog box module.
+
+Experimental: Before considering this design pattern, make sure that you have strong evidence that:
+* There is a real user need to have attention focused on a single piece of content;
+* That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content;
+
+<button href="#" class="button" role="button" data-modaldialog-action="open" data-modaldialog-target="example-modal" tabindex="1">Open example</button>
+
+Markup:
+<div class="modal-dialog modal-dialog--hidden">
+  <div class="modal-dialog__inner">
+    <div id="example-modal"
+         class="modal-dialog__content"
+         tabindex="1"
+         role="dialog"
+         data-ga-open-event="::"
+         aria-labelledby="example-modals--heading"
+         aria-describedby="example-modals--description"
+         hidden>
+      <h2 id="example-modals--heading">Modal Dialog Title</h2>
+      <div id="example-modals--description">
+        This is an example of some content that you wish to draw users
+        attention to.
+      </div>
+      <button class="button"
+              role="button"
+              data-modaldialog-action="close"
+              type="button"
+              tabindex="1">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+Style guide: Modal Dialog
+*/
+
+body {
+  &.scroll-off {
+    position: fixed;
+    width: 100%;
+  }
+}
+.modal-dialog {
+  &.modal-dialog--hidden {
+    @include set-square-clip(true, 1);
+    @include set-square-clip(false, 1);
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    z-index: 0;
+    &:focus {
+      clip: auto;
+      height: auto;
+      overflow: auto;
+      position: relative;
+      width: auto;
+    }
+  }
+  background-color: $mask-opacity;
+  left: 0;
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.modal-dialog__content {
+  &:focus {
+    outline: 3px solid $modal-dialog-yellow;
+  }
+  padding: em(7) em(32);
+  position: static;
+  @include media(mobile) {
+    [role="button"][data-modaldialog-action="close"] {
+      width: 100%;
+    }
+  }
+}
+.modal-dialog__inner {
+  background-color: $white;
+  border: em(5) solid $black;
+  left: 0;
+  margin: em(130) auto 0;
+  max-width: 90%;
+  overflow-y: auto;
+  padding: em(8);
+  position: fixed;
+  right: 0;
+  top: 0;
+  @include media(desktop) {
+    margin: em(130) 25% 0;
+    max-width: em(720);
+  }
+}

@@ -31,8 +31,15 @@ var src = './assets/',
     };
 
 module.exports = {
-  dest: './public/',
-  distDir: './dist/',
+  dest: dest,
+  distDir: distDir,
+
+  dev: {
+    dest: snapshotDir,
+  },
+  prod: {
+    dest: distDir,
+  },
 
   production: {
     jsSrc: distDir + 'javascripts/*.js',
@@ -43,6 +50,12 @@ module.exports = {
   },
 
   scripts: {
+    dev: {
+      dest: snapshotDir + 'javascripts'
+    },
+    prod: {
+      dest: distDir + 'javascripts'
+    },
     src: src + 'javascripts/modules/**/*.js',
     dest: snapshotDir + 'javascripts',
     entryPoint: src + 'javascripts/application.js',
@@ -151,9 +164,10 @@ module.exports = {
     port: 9032,
     open: false,
     server: {
-      baseDir: src,
+      baseDir: '.',
       routes: {
-        '/assets': dest
+        '/assets': dest,
+        '/component-library': './component-library'
       }
     }
   }

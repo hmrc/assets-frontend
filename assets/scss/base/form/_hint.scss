@@ -9,6 +9,10 @@
   }
 }
 
+.form-hint--small {
+  @include core-16;
+}
+
 .form-element-bold {
   @include bold-24;
   display: block;

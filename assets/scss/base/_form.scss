@@ -26,6 +26,7 @@ input {
   border: 2px solid #6f777b;
   margin: 0;
   padding: 0.1em 0 0.1em 0.4em;
+  @include box-sizing(border-box);
   &.text--right{ padding: 0.1em 0.4em 0.1em 0;  }
   &:focus {
     outline: 3px solid $yellow;
@@ -50,6 +51,7 @@ textarea {
   border: 2px solid #6f777b;
   margin: em(10) 0;
   padding: 0.1em 0 0.1em 0.4em;
+  @include box-sizing(border-box);
 
   @include media(mobile) {
     width:100%;

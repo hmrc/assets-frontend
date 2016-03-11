@@ -43,7 +43,8 @@ var sso = require('./modules/sso.js'),
     accordion = require('./modules/accordion.js'),
     tabs = require('./modules/tabs.js'),
     charCounter = require('./modules/charCounter.js'),
-    addRemove = require('./modules/addRemove.js');
+    addRemove = require('./modules/addRemove.js'),
+    modalDialog = require('./modules/modalDialog.js');
 
 //initialise mdtpf
 fingerprint();
@@ -167,5 +168,6 @@ $(function() {
   accordion();
   charCounter();
   addRemove();
+  modalDialog();
 
 });

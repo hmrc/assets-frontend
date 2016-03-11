@@ -1,13 +1,21 @@
-/**
-* @desc         button classes.
-* @name         buttons
-* @author       Anthony Munene
-* @tested       N/A
-* @requires     [
-          toolkit/_colours.scss,
-          toolkit/_typography.scss,
-          toolkit/design-patterns/_buttons.scss
-        ]
+/*
+Buttons
+
+Buttons are used for *calls to actions* to start a journey or to *submit* information on a form. Simply place the
+`.button` selector on your `<button>` element.
+If you are using an `<a>` element please also apply the `role="button"` attribute.
+
+Markup:
+<button class="button {{modifier_class}}">Button text</button>
+
+.button--get-started   - For a button to start a user journey add the modifier `.button--get-started`
+.button--secondary     - A secondary button can be created by adding the modifier `.button--secondary`
+.button--alert         - For an alert button add the modifier `.button--alert`
+.button--small         - If you wish to have a smaller button add the modifier `.button--small`
+.button--table         - For a button within a table you can use the modifier `.button--table`
+.button.button--link   - To make a button appear like a link add the modifier `.button.button--link`
+
+Styleguide Buttons
 */
 
 button, .button {
@@ -53,6 +61,18 @@ button, .button {
   @include button($shaded-bg-grey);
   border-bottom: 1px solid #000; // $black;
   box-shadow: 0 0 0 $grey-4;
+}
+
+// adds margin on left and right of button for situations
+// where button is sitting inline with other elements
+.button--spaced {
+  margin: 0 em(10) 0 em(10);
+}
+
+// adds left and right padding for buttons whose text is extremely short
+.button--padded {
+  padding-left: em(30);
+  padding-right: em(30);
 }
 
 /**
@@ -106,3 +126,4 @@ button, .button {
     background-color: transparent;
   }
 }
+

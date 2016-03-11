@@ -11,3 +11,67 @@
   border-left: $border-width solid $error-border-color;
   padding: 0.75em 1em;
 }
+
+@mixin page-slice ($paddingBottom: 0) {
+  @extend %contain-floats;
+  display: block;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 em(15) em($paddingBottom) em(15);
+  line-height: 1.5;
+  @include core-19();
+
+  @include media(tablet) {
+    padding: 0 em(30) em($paddingBottom) em(30);
+  }
+}
+
+@mixin set-square-clip($for-ie: false, $px-value: 0) {
+  @if $for-ie == true {
+    clip: rect(em($px-value) em($px-value) em($px-value) em($px-value));
+  } @else {
+    clip: rect(em($px-value), em($px-value), em($px-value), em($px-value));
+  }
+}
+
+@mixin multi-line-summary-block($vpos:"") {
+  @if $vpos != "" {
+    & > .arrow {
+      top: $vpos;
+      position: absolute;
+      @include summary-arrow-styles;
+    }
+
+    &::-webkit-details-marker {
+      top: $vpos;
+      position: absolute;
+      @include summary-arrow-styles;
+    }
+  } @else {
+    & > .arrow {
+      @include summary-arrow-styles;
+    }
+    &::-webkit-details-marker {
+      @include summary-arrow-styles;
+    }
+  }
+
+  &[aria-disabled=true] {
+    cursor: default;
+    outline: none;
+
+    &::-webkit-details-marker {
+      visibility: hidden;
+    }
+
+    & > .arrow {
+      display: none;
+    }
+  }
+
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}

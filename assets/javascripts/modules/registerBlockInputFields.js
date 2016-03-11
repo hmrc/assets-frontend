@@ -5,17 +5,35 @@ module.exports = function() {
 
   $selectableInputs
     .find('input[type=radio], input[type=checkbox]')
-    .on('focus click', function() {
+    .map(function (index, input) {
 
-      var current = $(this).closest('label')[0];
-      $(current).addClass('add-focus');
-      $selectableInputs.not(current).removeClass('add-focus selected');
+      var $input = $(input);
+
+      if ($input.is(':checked')) {
+        $input.closest('label').addClass('selected');
+      }
+      return input;
     })
-    .on('change', function() {
-      if ($(this).attr('type') === 'radio') {
-        $(this).closest('label').siblings().removeClass('selected');
+    .on('focus click', function(event) {
+
+      var $label = $(event.target).closest('label');
+
+      $label.addClass('add-focus');
+      $selectableInputs.not($label).removeClass('add-focus');
+    })
+    .on('change', function(event) {
+
+      var $input = $(event.target);
+
+      if ($input.attr('type') === 'radio') {
+        $("input[name='" + $input.prop('name') + "']").map(function (index, inputWithSameName) {
+            $(inputWithSameName).closest('label').removeClass('selected');
+        });
       }
 
-      $(this).closest('label').toggleClass('selected', $(this).prop('checked'));
+      $input.closest('label').toggleClass('selected', $input.prop('checked'));
+    })
+    .on('blur', function(event) {
+      $(event.target).closest('label').removeClass('add-focus');
     });
 };

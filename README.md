@@ -1,9 +1,19 @@
-assets-frontend
-===============
+# assets-frontend
 
-Frontend assets for the Tax platform
+Frontend assets for the Tax Platform
 
 [![Stories in Ready](https://badge.waffle.io/hmrc/assets-frontend.png?label=ready&title=Ready)](https://waffle.io/hmrc/assets-frontend) [![Build Status](https://travis-ci.org/hmrc/assets-frontend.svg?branch=master)](https://travis-ci.org/hmrc/assets-frontend) [![devDependency Status](https://david-dm.org/hmrc/assets-frontend/dev-status.svg)](https://david-dm.org/hmrc/assets-frontend#info=devDependencies)
+
+- [Using service-manager](#using-service-manager)
+- [Requirements](#requirements)
+- [Running Locally](#running-locally)
+- [Running JS Tests](#running-js-tests)
+- [Running tests whilst developing](#running-js-tests-whilst-developing)
+- [Running a Production build](#running-a-production-build)
+- [Component Library](#component-library)
+- [Contributing](#contributing)
+- [More info](#more-info)
+- [License](#license)
 
 
 ## Using service-manager
@@ -15,16 +25,31 @@ $ sm --start ASSETS_FRONTEND
 ```
 
 
-## Development
+## Developing Locally
 
 ### Requirements
 
-* [node.js](http://nodejs.org/download/)
+* [node.js](https://nodejs.org/en/)
+* [npm](https://www.npmjs.com/)
+* [nodemon](https://github.com/remy/nodemon) (for [working on the Component Library](working-on-the-component-library))
+
+#### [node.js](https://nodejs.org/en/) & [npm](https://www.npmjs.com/)
+
+Please install node.js and npm. 
+You may find it easier to use the Node Version Manager [nvm](https://github.com/creationix/nvm)
+
+#### nodemon
+
+It is recommended to install nodemon globally.
+
+```
+$ npm install -g nodemon
+```
 
 
 ### Running Locally (Development mode)
 
-The command below will kick off a local node.js server on a predefined port (9032). This serves the assets with sourcemaps via the gulp task runner.
+The command below will kick off a local node.js server on a predefined port (`9032`). This serves the assets with sourcemaps via the gulp task runner.
 
 ```
 $ ./server.sh dev
@@ -39,20 +64,11 @@ The [Karma test runner](http://karma-runner.github.io/) is used to run our JS te
 $ ./server.sh test
 ```
 
-### Running tests whilst developing
-
-To add an auto watch and run test whilst developing use the command:
-
-```
-$ npm run test:dev
-```
-
-To run tests and check dependencies use the command:
+Or to run the tests with a watch task for continuous development, you can run them with:
 
 ```
 $ ./server.sh test-dev
 ```
-
 
 ### Running a Production build
 
@@ -62,12 +78,62 @@ Compiles the assets for production.
 $ ./server.sh build
 ```
 
-Compiles the assets for npm. This bumps the version number in `package-build.json`
+
+## Component Library
+
+### Viewing the Component Library
+
+If you're running assets-frontend locally using `./server dev` or `npm start`, then you can view the Component Library by opening a browser at http://localhost:9032/component-library/
+
+### Running Component Library with watch
+
+The Component Library will be compiled when you run the following command, this command also adds a watch task so any
+changes you make within assets will automatically re-build the component library.
 
 ```
-$ ./server.sh build --release=$VERSION_NUMBER
+$ ./server.sh dev
 ```
-(Where `$VERSION_NUMBER` is a string in semver format. i.e. 1.50.0)
+
+### Manually building the Component Library
+
+A static build of the Component Library can be generated as a single process by running
+
+```
+$ npm run comp-lib
+```
+
+Bare in mind that in order to see the output in a browser you'll have to serve the files manually from the `component-library` directory with something like [http-server](https://www.npmjs.com/package/http-server) (for node.js) or [SimpleHTTPServer](https://docs.python.org/2/library/simplehttpserver.html) (for python)
+
+
+### Working on the Component Library
+
+If you're working on the [templates](https://github.com/hmrc/component-library-template) for the Component Library, there is a helpful watch task using [nodemon](https://github.com/remy/nodemon). This makes development easier and faster.
+
+```
+$ npm install -g nodemon
+$ npm run comp-lib:watch -- -w ./path/to/hmrc/component-library-template
+```
+
+You need to give it the path to a local checkout of [hmrc-component-library-template](https://github.com/hmrc/component-library-template/), relative to the assets-frontend's `package.json`
+
+The watch task then automatically links this local copy [hmrc/component-library-template](https://github.com/hmrc/component-library-template.git) and then builds the Component Library using the [npm script above](#manually-building-the-component-library).
+
+The steps for the whole process are as follows:
+
+1. Remove the npm installed dependancy
+2. Clone the [hmrc/component-library-template](https://github.com/hmrc/component-library-template/)
+3. Symlink the local template for npm
+4. Run the watch task in assets-frontend
+
+Assuming you're in the root of your local assets-frontend it would look like this:
+
+```
+$ rm -rf node_modules/hmrc-component-library-template
+$ cd .. && git clone https://github.com/hmrc/component-library-template.git
+$ cd component-library-template && npm link
+$ cd ../assets-frontend
+$ npm run comp-lib:watch -- -w ../component-library-template
+```
 
 
 ## Contributing
@@ -78,9 +144,10 @@ $ ./server.sh build --release=$VERSION_NUMBER
 4. Open a pull request back to this repo
 
 
-### More info
+## More info
 
 Check out [the wiki](https://github.com/hmrc/assets-frontend/wiki)
+
 
 ## License
 
