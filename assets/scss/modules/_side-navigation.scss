@@ -1,10 +1,46 @@
-/* ==========================================================================
-   Side Navigation
-   ========================================================================== */
+/*
+Side Navigation
+
+A left-hand side navigation.
+The navigation is not displayed at mobile breakpoint.
+
+Markup:
+<div class="side-nav {{modifier_class}}">
+  <ul class="side-nav__component">
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Self Assessment</a>
+    </li>
+    <li class="side-nav__list side-nav__list--selected">
+      <span class="side-nav__link">Corporation Tax</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Problems with this website</a>
+    </li>
+  </ul>
+</div>
+
+.side-nav--mobile-visible - Remains visible at mobile breakpoint, shows only the rightmost present element with the .side-nav__component class.
+
+Styleguide Side Navigation
+*/
 
 .side-nav {
+  overflow: hidden;
   @include media(mobile) {
     display: none;
+  }
+}
+
+.side-nav--mobile-visible {
+  display: block;
+  .side-nav__component {
+    display: none;
+    @include media(tablet) {
+        display: block;
+    }
+    &:last-child {
+      display: block;
+    }
   }
 }
 
@@ -52,7 +88,112 @@
       color: $govuk-blue;
       @include bold-16;
       background-color: transparent;
-
     }
+  }
+}
+
+/*
+Two-level navigation
+
+Two-level navigation shows a submenu to the right of the primary menu.
+
+Markup:
+<div class="side-nav">
+  <ul class="side-nav__component side-nav__quarter-width" id="main-menu">
+    <li class="side-nav__list side-nav__list--selected">
+      <a class="side-nav__link" href="#">Self Assessment</a>
+    </li>
+    <li class="side-nav__list">
+      <span class="side-nav__link">Corporation Tax</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Problems with this website</a>
+    </li>
+  </ul>
+  <ul class="side-nav__component side-nav__quarter-width side-nav__left-bordered side-nav__link--solid-background" id="sub-menu-2">
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Tax return help</a>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Refund requests</a>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Questions about Self Assessment</a>
+    </li>
+  </ul>
+</div>
+
+Styleguide Side Navigation.two_level
+*/
+
+.side-nav__quarter-width {
+  width: 100%;
+  @include media(tablet) {
+    position: relative;
+    float: left;
+    width: 25%;
+    min-width: em(160);
+  }
+}
+
+.side-nav__left-bordered {
+  border-left: 0;
+  @include media(tablet) {
+    border-left: 1px solid #bfc1c3;
+  }
+}
+
+.side-nav__link--solid-background {
+  background-color: $white;
+}
+
+
+/*
+Overlapping two-level navigation
+
+When displaying a menu, submenu and content, the submenu overlaps the primary, to allow more space for content to the right.
+
+Markup:
+<div class="side-nav">
+  <ul class="side-nav__component side-nav__quarter-width" id="main-menu">
+    <li class="side-nav__list side-nav__list--selected">
+      <a class="side-nav__link" href="#">Self Assessment</a>
+    </li>
+    <li class="side-nav__list">
+      <span class="side-nav__link">Corporation Tax</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Problems with this website</a>
+    </li>
+  </ul>
+  <ul class="side-nav__component side-nav__quarter-width side-nav__left--overlap side-nav__left-bordered side-nav__link--solid-background" id="sub-menu-2">
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Tax return help</a>
+    </li>
+    <li class="side-nav__list side-nav__list--selected">
+      <span class="side-nav__link">Refund requests</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Questions about Self Assessment</a>
+    </li>
+  </ul>
+  <div class="side-nav__component side-nav__rhs-content side-nav__left-bordered" id="content">
+    <h2>Refund requests</h2>
+    <p>We'll refund you automatically if you paid your tax by credit or debit card. You need to request a refund online if you didn't pay by card. How long refunds take Credit and debit card refunds take 3 working days. You'll get a confirmation letter. If you requested a refund online, you'll usually get it within 5 weeks. It can take longer if HMRC needs to make anti-fraud checks. Don't make a new online refund request - it will slow down your original request.</p>
+  </div>
+</div>
+
+Styleguide Side Navigation.overlapping
+*/
+
+.side-nav__left--overlap {
+  margin-left: em(-100);
+}
+
+.side-nav__rhs-content {
+  padding-left: 0;
+  @include media(tablet) {
+    padding-left: em(30);
+    overflow: hidden;
   }
 }
