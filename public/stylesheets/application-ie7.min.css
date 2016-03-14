@@ -3879,6 +3879,11 @@ body {
   width: 100%;
 }
 
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+.row {
+  margin-bottom: 20px;
+}
+
 /*
 Grids
 
@@ -4643,564 +4648,6 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
 .pseudo-link:hover, .pseudo-link:focus {
   color: #2e8aca;
   background-color: transparent;
-}
-
-/**
-* @desc         Form Field classes.
-* @name         form
-* @author       username
-* @tested       N/A
-* @requires     toolkit/_colours.scss
-*/
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-fieldset {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 19px;
-  line-height: 1.31579;
-  font-weight: 400;
-  text-transform: none;
-  margin: 0;
-  position: relative;
-  width: 100%;
-}
-
-@media (max-width: 640px) {
-  /* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-  fieldset {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-fieldset legend {
-  width: 100%;
-  margin-bottom: 0.75em;
-}
-
-/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-fieldset legend.h2-heading {
-  margin: 0 0 0.25em 0;
-}
-
-/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-input {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 19px;
-  line-height: 1.31579;
-  font-weight: 400;
-  text-transform: none;
-  background-color: #fff;
-  border: 2px solid #6f777b;
-  margin: 0;
-  padding: 0.1em 0 0.1em 0.4em;
-  box-sizing: border-box;
-}
-
-@media (max-width: 640px) {
-  /* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-  input {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-input.text--right {
-  padding: 0.1em 0.4em 0.1em 0;
-}
-
-/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-input:focus {
-  outline: 3px solid #ffbf47;
-}
-
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-select,
-.select {
-  display: block;
-  margin: 1em 0.625em;
-  width: 100%;
-  font-family: "nta", Arial, sans-serif;
-  font-size: 19px;
-  line-height: 1.31579;
-  font-weight: 400;
-  text-transform: none;
-  width: auto;
-}
-
-@media (max-width: 640px) {
-  /* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-  select,
-  .select {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-textarea {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 19px;
-  line-height: 1.31579;
-  font-weight: 400;
-  text-transform: none;
-  background-color: #fff;
-  border: 2px solid #6f777b;
-  margin: 0.52632em 0;
-  padding: 0.1em 0 0.1em 0.4em;
-  box-sizing: border-box;
-}
-
-@media (max-width: 640px) {
-  /* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-  textarea {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-textarea:focus {
-  outline: 3px solid #ffbf47;
-}
-
-/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.textarea--fullwidth {
-  box-sizing: border-box;
-  width: 100%;
-}
-
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-input[type="radio"] {
-  border: 1px solid #0b0c0c;
-  margin-right: 5px;
-}
-
-/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-input[type="radio"]:checked {
-  background-color: #0b0c0c;
-}
-
-/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--xxsmall {
-  max-width: 2.2em;
-}
-
-/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--xsmall {
-  max-width: 4em;
-}
-
-/* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--small {
-  max-width: 6em;
-}
-
-/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--normal {
-  max-width: 8em;
-}
-
-/* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--medium {
-  width: 100%;
-  width: 20em;
-}
-
-/* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--fullwidth {
-  width: 98.2%;
-}
-
-/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--no-spinner {
-  -moz-appearance: textfield;
-}
-
-/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--no-spinner::-webkit-inner-spin-button,
-.input--no-spinner::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
-
-/* line 114, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--link {
-  background: none;
-  border: none;
-  color: #2e3191;
-  text-decoration: underline;
-  padding: 0;
-  margin: 0;
-  outline: none;
-}
-
-/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--link:hover, .input--link:active {
-  color: #2e8aca;
-}
-
-/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--link:visited {
-  color: #2e3191;
-}
-
-/* line 131, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--cleared {
-  display: block;
-}
-
-/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.input--radio-inline {
-  margin-right: 5px;
-}
-
-/**
- * By default form labels will be above inputs
- */
-/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-label {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 19px;
-  line-height: 1.31579;
-  font-weight: 400;
-  text-transform: none;
-  display: block;
-}
-
-@media (max-width: 640px) {
-  /* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-  label {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-/**
- * align labels with inputs
- */
-/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-label.indent {
-  padding-left: 1.5em;
-}
-
-/* line 154, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--inline, .label--inline-no-input, .label--inline-tight, .label--inline-right, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .label--full-length {
-  display: inline-block;
-  margin-top: 0.2em;
-  min-width: 130px;
-  width: 130px;
-}
-
-/* line 164, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--inline-no-input {
-  margin-left: 16px;
-  margin-top: 0.75em;
-  min-width: 60px;
-  clear: none;
-  float: left;
-  width: 60px;
-}
-
-/* line 176, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--inline-tight {
-  min-width: 0;
-  width: auto;
-}
-
-/* line 184, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--inline-right {
-  float: right;
-}
-
-/* line 188, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown {
-  min-width: 0;
-  width: auto;
-}
-
-/* line 197, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--inlineRadio--expanded {
-  width: 100%;
-}
-
-/* line 200, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--inlineRadio--expanded input {
-  float: left;
-  margin-right: 0.25em;
-  margin-top: 0.15em;
-  margin-top: 0.3em;
-}
-
-/* line 208, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--inlineRadio--expanded .label__text {
-  float: left;
-  width: 90%;
-}
-
-/* line 214, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--inlineRadio--overhead, .label--inlineRadio--overhead-wide, .label--dateField-group {
-  float: left;
-  margin-bottom: 0.75em;
-  text-align: center;
-  width: 5.8em;
-  word-spacing: 5.8em;
-}
-
-/* line 221, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--inlineRadio--overhead-wide {
-  width: 6.8em;
-}
-
-/* line 229, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--full-length {
-  width: 100%;
-  clear: both;
-}
-
-/* line 235, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-field-group, .form-field-single {
-  margin-bottom: 0.75em;
-  line-height: 1.6em;
-  clear: both;
-}
-
-/* line 244, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left {
-  float: left;
-  margin-bottom: 0.75em;
-  margin-top: 0;
-  width: 100%;
-}
-
-/* line 252, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-field--tall {
-  margin: 0 0 1.57895em 0;
-}
-
-/**
- *  Allows you to stack input blocks side by side
- */
-/* line 259, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left {
-  clear: none;
-  float: left;
-  width: auto;
-  position: relative;
-}
-
-/* line 266, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-field--inline input[type="text"], .form-field--inline-text-input input[type="text"], .form-field--inline-spaced-right input[type="text"], .form-field--inline-spaced-left input[type="text"], .form-field--inline input[type="password"], .form-field--inline-text-input input[type="password"], .form-field--inline-spaced-right input[type="password"], .form-field--inline-spaced-left input[type="password"] {
-  margin: 0 0.52em;
-}
-
-/* line 274, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-field--inline-spaced-right {
-  margin-right: 15px;
-}
-
-/* line 278, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-field--inline-spaced-left {
-  margin-left: 15px;
-}
-
-/* line 283, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-field--hint {
-  display: block;
-  margin-bottom: 0.75em;
-}
-
-/**
- * Wrap action elements of form (submit button, cancel link)
- * to provide space between these and last inputs of form
- */
-/* line 293, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-field--submit {
-  margin-top: 15px;
-}
-
-/* line 297, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.row {
-  margin-bottom: 20px;
-}
-
-/* line 302, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-label.bold {
-  font-weight: bold;
-}
-
-/* line 308, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.questionnaire legend {
-  margin: 0 0 0.75em;
-}
-
-/* line 315, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.block-label, .block-label--stacked {
-  display: block;
-  float: none;
-  clear: left;
-  position: relative;
-  background: #dee0e2;
-  border: 1px solid #dee0e2;
-  padding: 18px 30px 15px 45px;
-  margin: 10px 10px 10px 0;
-  cursor: pointer;
-  float: left;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-/* line 335, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.block-label:hover, .block-label--stacked:hover {
-  border-color: #0b0c0c;
-}
-
-/* line 340, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.block-label input, .block-label--stacked input,
-.vertically-aligned-input {
-  display: block;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  left: 15px;
-  cursor: pointer;
-  top: 38%;
-}
-
-/* line 351, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.block-label input.top-aligned-input, .block-label--stacked input.top-aligned-input,
-.vertically-aligned-input.top-aligned-input {
-  top: 1.63158em;
-  top: 1.52632em;
-}
-
-/* line 360, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.block-label--inline,
-.block-label--inline-right,
-.inline .block-label,
-.inline .block-label--stacked {
-  margin: 0 10px 10px 0;
-  clear: none;
-  margin-right: 15px;
-}
-
-/* line 374, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.js-enabled .add-focus {
-  outline: 3px solid #ffbf47;
-}
-
-/* line 376, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.js-enabled .add-focus input {
-  outline: none;
-}
-
-/* line 382, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.js-enabled .block-label input:focus, .js-enabled .block-label--stacked input:focus {
-  outline: none;
-}
-
-/* line 387, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.js-enabled .selected {
-  background: #fff;
-  border-color: #0b0c0c;
-}
-
-/* line 393, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.block-label--stacked {
-  clear: none;
-  line-height: 1;
-  padding-left: 30px;
-  float: left;
-}
-
-/* line 405, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.block-label--stacked input {
-  display: block;
-  margin: 0 auto 0.8em;
-  position: relative;
-  top: auto;
-  left: auto;
-}
-
-/* line 414, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.dynamically-displayed {
-  border-left: 5px solid #DEE0E2;
-  clear: both;
-  margin: 0 0 15px;
-  padding: 0.5em 30px;
-}
-
-/*
-  Date field input group
-*/
-/* line 433, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.label--dateField-group {
-  text-align: left;
-  width: 3.5em;
-}
-
-/*
-  FROM GOVUK_ELEMENTS
-*/
-/* line 443, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-date label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-/* line 448, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-date {
-  display: inline-block;
-  zoom: 1;
-}
-
-/* line 457, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-date .form-group {
-  width: 56px;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 0;
-  clear: none;
-}
-
-/* line 465, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-date .form-group-year {
-  width: 70px;
-}
-
-/* line 469, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-date .form-group input {
-  width: 100%;
-}
-
-/* line 473, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-control {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 19px;
-  line-height: 1.31579;
-  font-weight: 400;
-  text-transform: none;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 4px;
-  background-color: #fff;
-  border: 1px solid #bfc1c3;
-  -webkit-appearance: none;
-  border-radius: 0;
-  width: 50%;
-}
-
-@media (max-width: 640px) {
-  /* line 473, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-  .form-control {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-/* line 491, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_form.scss */
-.form-control--block {
-  display: block;
 }
 
 /**
@@ -6530,7 +5977,19 @@ implementation
   display: block;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/*
+Form Hint
+
+Form hints are used for providing extra information to a user about a form input.
+
+Markup:
+<span class="form-hint {{modifier_class}}">An example form hint, providing extra information to a user</span>
+
+.form-hint--small - A small version of the form hint can be used via the selector `.form-hint--small`
+
+Styleguide Form Hint
+*/
+/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint,
 .form-hint-list {
   display: block;
@@ -6539,7 +5998,7 @@ implementation
   margin-top: 0.42105em;
 }
 
-/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint--small {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -6549,51 +6008,24 @@ implementation
 }
 
 @media (max-width: 640px) {
-  /* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+  /* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
   .form-hint--small {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
-.form-element-bold {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 24px;
-  line-height: 1.25;
-  font-weight: 400;
-  text-transform: none;
-  font-weight: 700;
-  display: block;
-  margin-bottom: 0;
-}
+/*
+Secondary
 
-@media (max-width: 640px) {
-  /* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
-  .form-element-bold {
-    font-size: 20px;
-    line-height: 1.2;
-  }
-}
+A secondary form hint.
 
-/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
-.form-element-bold .form-hint {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 19px;
-  line-height: 1.31579;
-  font-weight: 400;
-  text-transform: none;
-}
+Markup:
+<span class="form-hint-secondary">An example form hint, providing extra information to a user</span>
 
-@media (max-width: 640px) {
-  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
-  .form-element-bold .form-hint {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+Styleguide Form Hint.secondary
+*/
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint-secondary {
   display: block;
   font-family: "nta", Arial, sans-serif;
@@ -6607,24 +6039,95 @@ implementation
 }
 
 @media (max-width: 640px) {
-  /* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+  /* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
   .form-hint-secondary {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/*
+Bold
+
+A bold Form hint.
+
+Markup:
+<div class="form-element-bold">
+  <span class="form-hint">An example form hint, providing extra information to a user</span>
+</div>
+
+Styleguide Form Hint.bold
+*/
+/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+.form-element-bold {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  /* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+  .form-element-bold {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+.form-element-bold .form-hint {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+  .form-element-bold .form-hint {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/*
+List
+
+A Form hint list. The form hint list can also be used in conjunction with `formHintHelper.js` for instance if you
+had a password text input and wanted to check the hints have been correctly matched.
+
+Markup:
+<ul class="form-hint-list">
+  <li class="form-hint-list-item">
+    <span class="form-hint-list-item__indicator"></span>
+    An example form hint, providing extra information to a user
+  </li>
+  <li class="form-hint-list-item {{modifier_class}}">
+    <span class="form-hint-list-item__indicator"></span>
+    A second example form hint, providing extra information to a user
+  </li>
+</ul>
+
+.form-hint-list-item--valid - A valid form hint (used in conjunction with `formHintHelper.js`)
+
+Styleguide Form Hint.list
+*/
+/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint-list {
   margin-bottom: 0.63158em;
 }
 
-/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint-list-item {
   margin: 0 0 0.31579em 0;
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint-list-item__indicator {
   vertical-align: middle;
   margin-right: 0.26316em;
@@ -6637,15 +6140,928 @@ implementation
   background-image: url("../images/bullet-icon.png");
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/* line 118, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint-list-item--valid {
   color: #00823B;
 }
 
-/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint-list-item--valid .form-hint-list-item__indicator {
   background-image: url("../images/valid-icon.svg");
   background-image: url("../images/valid-icon.png");
+}
+
+/*
+Text Input
+
+Text Inputs are used for obtaining information from users in a form.
+
+Markup:
+<input name="example_text_input" type="text" class="{{modifier_class}}" value="example value" />
+
+.input--xxsmall      - For a extra extra! small input use `.input--xxsmall`
+.input--xsmall       - For a extra small input use `.input--xsmall`
+.input--small        - For a small input use `.input--small`
+.input--normal       - For a normal input use `.input--normal`
+.input--fullwidth    - For a full width input use `.input--fullwidth`
+.input--no-spinner   - For an input without a spinner`.input--no-spinner`
+.input--cleared      - To make an input `{display: block}` use `.input--cleared`
+.input--link         - To make an input appear like a link add the modifier `.input--link`
+
+Styleguide Text Input
+*/
+/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+input {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  background-color: #fff;
+  border: 2px solid #6f777b;
+  margin: 0;
+  padding: 0.1em 0 0.1em 0.4em;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+  input {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+input.text--right {
+  padding: 0.1em 0.4em 0.1em 0;
+}
+
+/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+input:focus {
+  outline: 3px solid #ffbf47;
+}
+
+/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--xxsmall {
+  max-width: 2.2em;
+}
+
+/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--xsmall {
+  max-width: 4em;
+}
+
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--small {
+  max-width: 6em;
+}
+
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--normal {
+  max-width: 8em;
+}
+
+/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--medium {
+  width: 100%;
+  width: 20em;
+}
+
+/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--fullwidth {
+  width: 98.2%;
+}
+
+/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--cleared {
+  display: block;
+}
+
+/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--link {
+  background: none;
+  border: none;
+  color: #2e3191;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--link:hover, .input--link:active {
+  color: #2e8aca;
+}
+
+/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--link:visited {
+  color: #2e3191;
+}
+
+/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.form-date .form-group input {
+  width: 100%;
+}
+
+/*
+Number
+
+Number Inputs are used for entering a floating point number.
+
+Markup:
+<input name="example_number_input" type="number" class="input--xxsmall input--no-spinner" value="example value" />
+
+Styleguide Text Input.number
+*/
+/* line 98, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--no-spinner {
+  -moz-appearance: textfield;
+}
+
+/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--no-spinner::-webkit-inner-spin-button,
+.input--no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/*
+Select Input
+
+Select Inputs are used to enable a user to choose from a list of options.
+
+Markup:
+<select class="select" name="example_select_input">
+  <option value="one">Option One</option>
+  <option value="two">Option Two</option>
+  <option value="three">Option Three</option>
+  <option value="four">Option Four</option>
+</select>
+
+Styleguide Select Input
+*/
+/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_select-input.scss */
+select,
+.select {
+  display: block;
+  margin: 1em 0.625em;
+  width: 100%;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  width: auto;
+}
+
+@media (max-width: 640px) {
+  /* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_select-input.scss */
+  select,
+  .select {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/*
+Radio Input
+
+Radio Inputs are used to enable users to make a choice in a form.
+
+Markup:
+<label for="example-radio" class="block-label {{modifier_class}}">
+  Yes
+  <input name="example_text_input" type="radio" value="example value" id="example-radio"/>
+</label>
+<label for="example-radio" class="block-label {{modifier_class}}">
+  No
+  <input name="example_text_input" type="radio" value="example value" id="example-radio"/>
+</label>
+
+Styleguide Radio Input
+*/
+/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_radio-input.scss */
+input[type="radio"] {
+  border: 1px solid #0b0c0c;
+  margin-right: 5px;
+}
+
+/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_radio-input.scss */
+input[type="radio"]:checked {
+  background-color: #0b0c0c;
+}
+
+/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_radio-input.scss */
+.input--radio-inline {
+  margin-right: 5px;
+}
+
+/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_radio-input.scss */
+.js-enabled .block-label input:focus, .js-enabled .block-label--stacked input:focus {
+  outline: none;
+}
+
+/*
+Textarea Input
+
+Text Inputs are used for obtaining information from users in a form.
+
+Markup:
+<textarea class="{{modifier_class}}" name="example_textarea_input" id="example" cols="30" rows="10"></textarea>
+
+.textarea--fullwidth - A full width textarea `.textarea--fullwidth`
+
+Styleguide Textarea Input
+*/
+/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
+textarea {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  background-color: #fff;
+  border: 2px solid #6f777b;
+  margin: 0.52632em 0;
+  padding: 0.1em 0 0.1em 0.4em;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  /* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
+  textarea {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
+textarea:focus {
+  outline: 3px solid #ffbf47;
+}
+
+/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
+.textarea--fullwidth {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.vertically-aligned-input, .block-label input, .block-label--stacked input {
+  display: block;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 15px;
+  cursor: pointer;
+  top: 38%;
+}
+
+/*
+Label
+
+Labels are used to describe an input or group of inputs.
+
+Markup:
+<label class="{{modifier_class}}" for="label_example">
+  First Name
+  <input id="label_example" class="input--cleared" name="example" type="text" value="example value" />
+</label>
+
+.indent                   - An indented label `.indent`
+.bold                     - A bold label `.bold`
+.label--inline            - An inline label `.label--inline`
+.label--inline-tight      - A tight inline label `.label--inline-tight`
+.label--inline-right      - A right aligned inline label `.label--inline-right`
+
+
+Styleguide Label
+*/
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+label {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  /* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+  label {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+label.bold {
+  font-weight: bold;
+}
+
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+label.indent {
+  padding-left: 1.5em;
+}
+
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--inline, .label--inline-no-input, .label--inline-tight, .label--inline-right, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .label--full-length {
+  display: inline-block;
+  margin-top: 0.2em;
+  min-width: 130px;
+  width: 130px;
+}
+
+/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--inline-no-input {
+  margin-left: 16px;
+  margin-top: 0.75em;
+  min-width: 60px;
+  clear: none;
+  float: left;
+  width: 60px;
+}
+
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--inline-tight {
+  min-width: 0;
+  width: auto;
+}
+
+/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--inline-right {
+  float: right;
+}
+
+/*
+Radio input
+
+Labels containing a `radio` input.
+
+Markup:
+<label class="block-label {{modifier_class}}" for="label_radio_example">
+  Purple
+  <input id="label_radio_example" name="example" type="radio" />
+</label>
+
+.label--inlineRadio                   - An inline radio label `.label--inlineRadio`
+.label--inlineRadio--overhead         - A inline radio overhead label `.label--inlineRadio--overhead`
+.label--inlineRadio--overhead-wide    - A wide inline radio overhead label `.label--inlineRadio--overhead-wide`
+.label--full-length                   - A full length label `.label--full-length`
+
+Styleguide Label.radio
+*/
+/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown {
+  min-width: 0;
+  width: auto;
+}
+
+/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--inlineRadio--overhead, .label--inlineRadio--overhead-wide, .label--dateField-group {
+  float: left;
+  margin-bottom: 0.75em;
+  text-align: center;
+  width: 5.8em;
+  word-spacing: 5.8em;
+}
+
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--inlineRadio--overhead-wide {
+  width: 6.8em;
+}
+
+/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--full-length {
+  width: 100%;
+  clear: both;
+}
+
+/*
+Radio expanded
+
+Labels containing a `radio` input and a `span` wrapping the labels text.
+
+Markup:
+<label class="block-label label--inlineRadio--expanded" for="label_radio_expanded_example">
+  <span class="label__text">Yellow</span>
+  <input id="label_radio_expanded_example" name="example" type="radio" />
+</label>
+
+Styleguide Label.radio expanded
+*/
+/* line 146, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--inlineRadio--expanded {
+  width: 100%;
+}
+
+/* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--inlineRadio--expanded input {
+  float: left;
+  margin-right: 0.25em;
+  margin-top: 0.15em;
+  margin-top: 0.3em;
+}
+
+/* line 157, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--inlineRadio--expanded .label__text {
+  float: left;
+  width: 90%;
+}
+
+/*
+Select input
+
+Labels containing a `select` input.
+
+Markup:
+<label class="label--inlineDropDown" for="label_select_example">
+  <select id="label_select_example" class="select" name="example">
+    <option value="one">Option One</option>
+    <option value="two">Option Two</option>
+    <option value="three">Option Three</option>
+    <option value="four">Option Four</option>
+  </select>
+</label>
+
+Styleguide Label.select
+*/
+/*
+Date
+
+Labels containing a `date`.
+
+Markup:
+<label for="example_label_date" class=" label--dateField-group">
+  <span>Month</span>
+</label>
+<input type="text" name="month" id="example_label_date">
+
+Styleguide Label.date
+*/
+/* line 200, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.label--dateField-group {
+  text-align: left;
+  width: 3.5em;
+}
+
+/*
+Aligned
+
+Labels containing a `radio` input with alignment.
+
+Markup:
+<label class="block-label" for="label_aligned_example">
+  London
+  <input class="{{modifier_class}}" id="label_aligned_example" name="example" type="radio" />
+</label>
+
+.vertically-aligned-input   - A vertically aligned input `.vertically-aligned-input`
+.top-aligned-input          - A top aligned input `.top-aligned-input`
+
+Styleguide Label.aligned
+*/
+/* line 230, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.top-aligned-input {
+  top: 1.63158em;
+  top: 1.52632em;
+}
+
+/*
+Block
+
+Labels containing a `radio` input and a `span` wrapping the labels text.
+
+Markup:
+<label class="block-label {{modifier_class}}" for="label_block_example">
+  <input id="label_block_example" name="example" type="radio" />
+  Blue
+</label>
+<label class="block-label {{modifier_class}}" for="label_block_example_other">
+  <input id="label_block_example_other" name="example" type="radio" />
+  Green
+</label>
+
+.block-label:hover            - Hover status for `.block-label`
+.block-label--inline          - An inline block label `.block-label--inline`
+.block-label--inline-right    - An inline block label right `.block-label--inline-right`
+.block-label--stacked         - A stacked block label `.block-label--stacked`
+
+Styleguide Label.block
+*/
+/* line 262, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.block-label, .block-label--stacked {
+  display: block;
+  float: none;
+  clear: left;
+  position: relative;
+  background: #dee0e2;
+  border: 1px solid #dee0e2;
+  padding: 18px 30px 15px 45px;
+  margin: 10px 10px 10px 0;
+  cursor: pointer;
+  float: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* line 285, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.block-label:hover, .block-label--stacked:hover {
+  border-color: #0b0c0c;
+}
+
+/* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.block-label--inline,
+.block-label--inline-right,
+.inline .block-label,
+.inline .block-label--stacked {
+  margin: 0 10px 10px 0;
+  clear: none;
+  margin-right: 15px;
+}
+
+/* line 300, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.block-label--stacked {
+  clear: none;
+  line-height: 1;
+  padding-left: 30px;
+  float: left;
+}
+
+/* line 312, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.block-label--stacked input {
+  display: block;
+  margin: 0 auto 0.8em;
+  position: relative;
+  top: auto;
+  left: auto;
+}
+
+/*
+Form date
+
+A container element using the `.form-date` css selector will change how a child label appears.
+
+Markup:
+<div class="form-date">
+  <label for="label_form_date_example">
+    <input class="input--xxsmall input--no-spinner" id="label_form_date_example" name="example" type="number" />
+    Yellow
+  </label>
+  <label for="label_form_date_example_other">
+    <input class="input--xxsmall input--no-spinner" id="label_form_date_example_other" name="example" type="number" />
+    Orange
+  </label>
+</div>
+
+Styleguide Label.form date
+*/
+/* line 342, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.form-date label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* line 353, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.js-enabled .add-focus {
+  outline: 3px solid #ffbf47;
+}
+
+/* line 355, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.js-enabled .add-focus input {
+  outline: none;
+}
+
+/* line 361, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+.js-enabled .selected {
+  background: #fff;
+  border-color: #0b0c0c;
+}
+
+/*
+Group
+
+A Form field is used to group several controls or elements within a web form.
+
+Markup:
+<fieldset class="{{modifier_class}}">
+  <div class="form-field">
+    <label for="first-name">
+      First Name
+      <input type="text" id="first-name" value=""/>
+    </label>
+  </div>
+ <div class="form-field">
+    <label for="second-name">
+      Second Name
+      <input type="text" id="second-name" value=""/>
+    </label>
+  </div>
+  <div class="form-field">
+    <button class="button" type="submit">Send</button>
+  </div>
+</fieldset>
+
+.form-field-group    - A form field group can be applied via `.form-field-group`
+.form-field-single   - A form field single can be applied via `.form-field-single`
+
+Styleguide Form.group
+*/
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+fieldset {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  /* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  fieldset {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+fieldset legend {
+  width: 100%;
+  margin-bottom: 0.75em;
+}
+
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+fieldset legend.h2-heading {
+  margin: 0 0 0.25em 0;
+}
+
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-field-group, .form-field-single {
+  margin-bottom: 0.75em;
+  line-height: 1.6em;
+  clear: both;
+}
+
+/*
+Field
+
+A Form field is used to group several controls or elements within a web form.
+
+Markup:
+<fieldset class="form-field-group">
+  <div class="form-field {{modifier_class}}">
+    <label for="first-name">
+      First Name
+      <input type="text" id="first-name" value=""/>
+    </label>
+  </div>
+  <div class="form-field {{modifier_class}}">
+    <label for="second-name">
+      Second Name
+      <input type="text" id="second-name" value=""/>
+    </label>
+  </div>
+  <div class="form-field {{modifier_class}}">
+    <button class="button" type="submit">Send</button>
+  </div>
+</fieldset>
+
+.form-field--tall - A "tall" form field can be used via `.form-field--tall`
+
+Styleguide Form.field
+*/
+/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left {
+  float: left;
+  margin-bottom: 0.75em;
+  margin-top: 0;
+  width: 100%;
+}
+
+/* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-field--tall {
+  margin: 0 0 1.57895em 0;
+}
+
+/*
+Inline
+
+For a inline elements you have a few choices.
+
+Markup:
+<fieldset class="form-field-group">
+  <div class="{{modifier_class}}">
+    <label for="blue" class="block-label">
+      <input type="radio" id="blue"/>
+      Blue
+    </label>
+  </div>
+  <div class="{{modifier_class}}">
+    <label for="green" class="block-label">
+      <input type="radio" id="green"/>
+      Green
+    </label>
+  </div>
+  <div class="form-field">
+    <button class="button" type="submit">Send</button>
+  </div>
+</fieldset>
+
+.form-field--inline              - For an inline form field use `.form-field--inline`
+.form-field--inline-text-input   - For an inline form field for text input use `.form-field--inline-text-input`
+.form-field--inline-spaced-right - For an inline form field for text input spaced to the right use `.form-field--inline-spaced-right`
+.form-field--inline-spaced-left  - For an inline form field for text input spaced to the left use `.form-field--inline-spaced-left`
+
+Styleguide Form.inline
+*/
+/**
+ *  Allows you to stack input blocks side by side
+ */
+/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left {
+  clear: none;
+  float: left;
+  width: auto;
+  position: relative;
+}
+
+/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-field--inline input[type="text"], .form-field--inline-text-input input[type="text"], .form-field--inline-spaced-right input[type="text"], .form-field--inline-spaced-left input[type="text"], .form-field--inline input[type="password"], .form-field--inline-text-input input[type="password"], .form-field--inline-spaced-right input[type="password"], .form-field--inline-spaced-left input[type="password"] {
+  margin: 0 0.52em;
+}
+
+/* line 151, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-field--inline-spaced-right {
+  margin-right: 15px;
+}
+
+/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-field--inline-spaced-left {
+  margin-left: 15px;
+}
+
+/*
+Submit
+
+A class to provide extra space between the `submit` input and inputs found before.
+
+Markup:
+<div class="form-field form-field--submit">
+  <button class="button" type="submit">Send</button>
+</div>
+
+Styleguide Form.submit
+*/
+/**
+ * Wrap action elements of form (submit button, cancel link)
+ * to provide space between these and last inputs of form
+ */
+/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-field--submit {
+  margin-top: 15px;
+}
+
+/*
+Field hint
+
+A hint for a form field
+
+Markup:
+<p class="form-field--hint">Example hint</p>
+
+Styleguide Form.hint
+*/
+/* line 195, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-field--hint {
+  display: block;
+  margin-bottom: 0.75em;
+}
+
+/*
+Date
+
+For displaying a date you can use the following markup.
+> note need for `.input--xsmall` class on input.
+
+Markup:
+<div class="form-date">
+  <div class="form-group form-group-year">
+    <label for="year" class="block-label">
+      <input class="input--xsmall" type="number" pattern="[0-9]*" min="0" max="12" id="year" name="year"/>
+      Year
+    </label>
+  </div>
+</div>
+
+Styleguide Form.date
+*/
+/* line 222, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-date {
+  display: inline-block;
+  zoom: 1;
+}
+
+/* line 231, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-date .form-group-year {
+  width: 70px;
+}
+
+/* line 235, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-date .form-group {
+  width: 56px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 0;
+  clear: none;
+}
+
+/*
+Dynamic
+
+For dynamically displayed markup.
+
+Markup:
+<fieldset class="dynamically-displayed">
+  <label for="textarea">
+    <textarea id="textarea" name="details" cols="40" rows="6"></textarea>
+  </label>
+</fieldset>
+
+Styleguide Form.dynamic
+*/
+/* line 260, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.dynamically-displayed {
+  border-left: 5px solid #DEE0E2;
+  clear: both;
+  margin: 0 0 15px;
+  padding: 0.5em 30px;
+}
+
+/*
+Control
+
+For displaying form controls.
+
+Markup:
+<label for="control">
+  Surname
+  <input type="text" id="control"
+         name="surname" class="form-control {{modifier_class}}"/>
+</label>
+
+.form-control--block - For a block control use `.form-control--block`
+
+Styleguide Form.control
+*/
+/* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-control {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #bfc1c3;
+  -webkit-appearance: none;
+  border-radius: 0;
+  width: 50%;
+}
+
+@media (max-width: 640px) {
+  /* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  .form-control {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 308, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.form-control--block {
+  display: block;
+}
+
+/*
+Legend
+
+For displaying the legend within the `.questionnaire` container.
+
+Markup:
+<div class="questionnaire">
+  <legend>Please provide your work details</legend>
+</div>
+
+Styleguide Form.legend
+*/
+/* line 328, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.questionnaire legend {
+  margin: 0 0 0.75em;
 }
 
 /**
@@ -7835,22 +8251,67 @@ a.back-to-top-link:visited, .back-to-top-link.link-style:visited, .back-to-top-l
   color: #005ea5;
 }
 
-/* ==========================================================================
-   Side Navigation
-   ========================================================================== */
-/* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/*
+Side Navigation
+
+A left-hand side navigation.
+The navigation is not displayed at mobile breakpoint.
+
+Markup:
+<div class="side-nav {{modifier_class}}">
+  <ul class="side-nav__component">
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Self Assessment</a>
+    </li>
+    <li class="side-nav__list side-nav__list--selected">
+      <span class="side-nav__link">Corporation Tax</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Problems with this website</a>
+    </li>
+  </ul>
+</div>
+
+.side-nav--mobile-visible - Remains visible at mobile breakpoint, shows only the rightmost present element with the .side-nav__component class.
+
+Styleguide Side Navigation
+*/
+/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+.side-nav {
+  overflow: hidden;
+  display: none;
+  display: block;
+}
+
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+.side-nav--mobile-visible {
+  display: block;
+}
+
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+.side-nav--mobile-visible .side-nav__component {
+  display: none;
+  display: block;
+}
+
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+.side-nav--mobile-visible .side-nav__component:last-child {
+  display: block;
+}
+
+/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
 .side-nav__list {
   position: relative;
   list-style: none;
 }
 
-/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
 .side-nav__list--selected .side-nav__link, .side-nav__list--selected:hover .side-nav__link {
   color: #fff;
   background-color: #005ea5;
 }
 
-/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
 .side-nav__link {
   padding: 12px 30px 8px 15px;
   text-decoration: none;
@@ -7864,19 +8325,19 @@ a.back-to-top-link:visited, .back-to-top-link.link-style:visited, .back-to-top-l
 }
 
 @media (max-width: 640px) {
-  /* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+  /* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
   .side-nav__link {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
 .side-nav__link:hover {
   background-color: #DEE0E2;
 }
 
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
 .side-nav__link:after {
   position: absolute;
   right: 10px;
@@ -7886,19 +8347,19 @@ a.back-to-top-link:visited, .back-to-top-link.link-style:visited, .back-to-top-l
   content: "\203A";
 }
 
-/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
 .side-nav--child {
   margin-top: 0;
   border-right: none;
   border-left: 4px solid #bfc1c3;
 }
 
-/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
 .side-nav--child .side-nav__link {
   padding-left: 24px;
 }
 
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
 .side-nav--child .side-nav__list--selected .side-nav__link {
   color: #005ea5;
   font-family: "nta", Arial, sans-serif;
@@ -7911,11 +8372,114 @@ a.back-to-top-link:visited, .back-to-top-link.link-style:visited, .back-to-top-l
 }
 
 @media (max-width: 640px) {
-  /* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+  /* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
   .side-nav--child .side-nav__list--selected .side-nav__link {
     font-size: 14px;
     line-height: 1.14286;
   }
+}
+
+/*
+Two-level
+
+Two-level navigation shows a submenu to the right of the primary menu.
+
+Markup:
+<div class="side-nav">
+  <ul class="side-nav__component side-nav__quarter-width">
+    <li class="side-nav__list side-nav__list--selected">
+      <a class="side-nav__link" href="#">Self Assessment</a>
+    </li>
+    <li class="side-nav__list">
+      <span class="side-nav__link">Corporation Tax</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Problems with this website</a>
+    </li>
+  </ul>
+  <ul class="side-nav__component side-nav__quarter-width">
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Tax return help</a>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Refund requests</a>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Questions about Self Assessment</a>
+    </li>
+  </ul>
+</div>
+
+Styleguide Side Navigation.two_level
+*/
+/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+.side-nav__quarter-width {
+  width: 100%;
+  position: relative;
+  float: left;
+  width: 25%;
+  min-width: 8.42105em;
+}
+
+/* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+.side-nav__component {
+  border-left: 0;
+  border-left: 1px solid #bfc1c3;
+}
+
+/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+.side-nav__component:first-child {
+  border-left: 0;
+}
+
+/*
+Overlapping two-level
+
+When displaying a menu, submenu and content, the submenu overlaps the primary, to allow more space for content to the right.
+
+Markup:
+<div class="side-nav">
+  <ul class="side-nav__component side-nav__quarter-width">
+    <li class="side-nav__list side-nav__list--selected">
+      <a class="side-nav__link" href="#">Self Assessment</a>
+    </li>
+    <li class="side-nav__list">
+      <span class="side-nav__link">Corporation Tax</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Problems with this website</a>
+    </li>
+  </ul>
+  <ul class="side-nav__component side-nav__quarter-width side-nav__left--overlap">
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Tax return help</a>
+    </li>
+    <li class="side-nav__list side-nav__list--selected">
+      <span class="side-nav__link">Refund requests</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Questions about Self Assessment</a>
+    </li>
+  </ul>
+  <div class="side-nav__component side-nav__rhs-content">
+    <h2>Refund requests</h2>
+    <p>We'll refund you automatically if you paid your tax by credit or debit card. You need to request a refund online if you didn't pay by card. How long refunds take Credit and debit card refunds take 3 working days. You'll get a confirmation letter. If you requested a refund online, you'll usually get it within 5 weeks. It can take longer if HMRC needs to make anti-fraud checks. Don't make a new online refund request - it will slow down your original request.</p>
+  </div>
+</div>
+
+Styleguide Side Navigation.overlapping
+*/
+/* line 189, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+.side-nav__left--overlap {
+  background-color: #fff;
+  margin-left: -5.26316em;
+}
+
+/* line 194, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+.side-nav__rhs-content {
+  padding-left: 0;
+  padding-left: 1.57895em;
+  overflow: hidden;
 }
 
 /* ==========================================================================
@@ -10754,90 +11318,6 @@ table.messages a, table.messages .link-style, table.messages .button--link-style
 /* line 199, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_business-tax-home.scss */
 .business-tax .tabs-nav {
   margin-top: 1em;
-}
-
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-.sa-only-help {
-  /* override styles in _side-navigation.scss */
-  /* end override styles */
-}
-
-/* line 3, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-.sa-only-help .content__body {
-  width: 100%;
-}
-
-/* line 7, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-.sa-only-help .page-header {
-  padding-bottom: 30px;
-}
-
-/* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-.sa-only-help details summary {
-  color: #005ea5;
-}
-
-/* line 15, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-.sa-only-help .help-menu {
-  width: 100%;
-  margin: 0;
-  width: 30%;
-  float: left;
-  border-right: 1px solid #bfc1c3;
-  padding-bottom: 300px;
-}
-
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-.sa-only-help .help-item--selected .help-menu {
-  display: none;
-  display: block;
-  width: 30%;
-  border-right: 1px solid #bfc1c3;
-  padding-bottom: 300px;
-}
-
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-.sa-only-help .help-content {
-  width: 0;
-  display: none;
-  width: 66%;
-  display: block;
-  float: right;
-}
-
-/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-.sa-only-help .help-item--selected .help-content {
-  width: 100%;
-  display: block;
-  width: 66%;
-}
-
-/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-.sa-only-help .vertically-separated {
-  margin: 10px 0;
-}
-
-/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-.sa-only-help .side-nav {
-  margin-top: 0;
-}
-
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-.sa-only-help .side-nav__link {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 19px;
-  line-height: 1.31579;
-  font-weight: 400;
-  text-transform: none;
-  padding: 18px 15px;
-}
-
-@media (max-width: 640px) {
-  /* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_help.scss */
-  .sa-only-help .side-nav__link {
-    font-size: 16px;
-    line-height: 1.25;
-  }
 }
 
 /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_risk-triage.scss */

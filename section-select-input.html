@@ -112,11 +112,9 @@
                   <a href="section-form-hint.html" class="comp-lib-menu-link">Form Hint</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-grids.html" class="comp-lib-menu-link">Grids</a>
 
-                  <ul>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-label.html" class="comp-lib-menu-link">Label</a>
@@ -126,9 +124,11 @@
                   <a href="section-radio-input.html" class="comp-lib-menu-link">Radio Input</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-select-input.html" class="comp-lib-menu-link">Select Input</a>
 
+                  <ul>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-side-navigation.html" class="comp-lib-menu-link">Side Navigation</a>
@@ -147,21 +147,15 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-grids">
+                  <div id="kssref-select-input">
                 <div>
-                  <h1><a href="#kssref-grids" class="comp-lib-menu-link">Grids</a></h1>
+                  <h1><a href="#kssref-select-input" class="comp-lib-menu-link">Select Input</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>You create the grid with <code>.grid-layout</code> and individual columns with a column class <code>.grid-layout__column</code> and
-fraction class <code>.grid-layout__column--1-4</code>.</p>
-<ul>
-<li>Add a <code>.grid-layout</code> container.</li>
-<li>Add your columns with individual <code>.grid-layout__column</code>.</li>
-<li>Add your fractional width classes to set the width of the columns e.g. <code>.grid-layout__column--1-4</code>.</li>
-</ul>
+                    <p>Select Inputs are used to enable a user to choose from a list of options.</p>
 
                   </div>
                 </div>
@@ -170,55 +164,19 @@ fraction class <code>.grid-layout__column--1-4</code>.</p>
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component">
-                        <div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-4">
-    .grid-layout__column--1-4
-  </div>
-  <div class="grid-layout__column grid-layout__column--3-4">
-    .grid-layout__column--3-4
-  </div>
-</div>
-<div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-3">
-    .grid-layout__column--1-3
-  </div>
-  <div class="grid-layout__column grid-layout__column--2-3">
-    .grid-layout__column--2-3
-  </div>
-</div>
-<div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-2">
-    .grid-layout__column--1-2
-  </div>
-  <div class="grid-layout__column grid-layout__column--1-2">
-    .grid-layout__column--1-2
-  </div>
-</div>
+                        <select class="select" name="example_select_input">
+  <option value="one">Option One</option>
+  <option value="two">Option Two</option>
+  <option value="three">Option Three</option>
+  <option value="four">Option Four</option>
+</select>
                       </div>
-                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-4&quot;&gt;
-    .grid-layout__column--1-4
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--3-4&quot;&gt;
-    .grid-layout__column--3-4
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-3&quot;&gt;
-    .grid-layout__column--1-3
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--2-3&quot;&gt;
-    .grid-layout__column--2-3
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
-    .grid-layout__column--1-2
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
-    .grid-layout__column--1-2
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre></div>
+                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;select class=&quot;select&quot; name=&quot;example_select_input&quot;&gt;
+  &lt;option value=&quot;one&quot;&gt;Option One&lt;/option&gt;
+  &lt;option value=&quot;two&quot;&gt;Option Two&lt;/option&gt;
+  &lt;option value=&quot;three&quot;&gt;Option Three&lt;/option&gt;
+  &lt;option value=&quot;four&quot;&gt;Option Four&lt;/option&gt;
+&lt;/select&gt;</code></pre></div>
                     </div>
 
                   </div>

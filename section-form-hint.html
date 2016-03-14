@@ -108,15 +108,24 @@
                   <a href="section-form.html" class="comp-lib-menu-link">Form</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-form-hint.html" class="comp-lib-menu-link">Form Hint</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-form-hint.html#kssref-form-hint-bold">Bold</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-form-hint.html#kssref-form-hint-list">List</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-form-hint.html#kssref-form-hint-secondary">Secondary</a>
+                      </li>
+                  </ul>
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-grids.html" class="comp-lib-menu-link">Grids</a>
 
-                  <ul>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-label.html" class="comp-lib-menu-link">Label</a>
@@ -147,21 +156,15 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-grids">
+                  <div id="kssref-form-hint">
                 <div>
-                  <h1><a href="#kssref-grids" class="comp-lib-menu-link">Grids</a></h1>
+                  <h1><a href="#kssref-form-hint" class="comp-lib-menu-link">Form Hint</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>You create the grid with <code>.grid-layout</code> and individual columns with a column class <code>.grid-layout__column</code> and
-fraction class <code>.grid-layout__column--1-4</code>.</p>
-<ul>
-<li>Add a <code>.grid-layout</code> container.</li>
-<li>Add your columns with individual <code>.grid-layout__column</code>.</li>
-<li>Add your fractional width classes to set the width of the columns e.g. <code>.grid-layout__column--1-4</code>.</li>
-</ul>
+                    <p>Form hints are used for providing extra information to a user about a form input.</p>
 
                   </div>
                 </div>
@@ -170,60 +173,152 @@ fraction class <code>.grid-layout__column--1-4</code>.</p>
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component">
-                        <div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-4">
-    .grid-layout__column--1-4
-  </div>
-  <div class="grid-layout__column grid-layout__column--3-4">
-    .grid-layout__column--3-4
-  </div>
-</div>
-<div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-3">
-    .grid-layout__column--1-3
-  </div>
-  <div class="grid-layout__column grid-layout__column--2-3">
-    .grid-layout__column--2-3
-  </div>
-</div>
-<div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-2">
-    .grid-layout__column--1-2
-  </div>
-  <div class="grid-layout__column grid-layout__column--1-2">
-    .grid-layout__column--1-2
-  </div>
+                        <span class="form-hint [modifier class]">An example form hint, providing extra information to a user</span>
+                      </div>
+                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;form-hint [modifier class]&quot;&gt;An example form hint, providing extra information to a user&lt;/span&gt;</code></pre></div>
+                    </div>
+
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-example__description">
+                        A small version of the form hint can be used via the selector <code>.form-hint--small</code>
+                      </div>
+                      <div class="comp-lib-pattern-component">
+                        <span class="form-hint form-hint--small">An example form hint, providing extra information to a user</span>
+                      </div>
+                      <div>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;form-hint form-hint--small&quot;&gt;An example form hint, providing extra information to a user&lt;/span&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  </div>
+                  <section id="kssref-form-hint-bold">
+                <div>
+                  <h2><a href="#kssref-form-hint-bold" class="comp-lib-menu-link">Bold</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>A bold Form hint.</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component">
+                        <div class="form-element-bold">
+  <span class="form-hint">An example form hint, providing extra information to a user</span>
 </div>
                       </div>
-                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-4&quot;&gt;
-    .grid-layout__column--1-4
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--3-4&quot;&gt;
-    .grid-layout__column--3-4
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-3&quot;&gt;
-    .grid-layout__column--1-3
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--2-3&quot;&gt;
-    .grid-layout__column--2-3
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
-    .grid-layout__column--1-2
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
-    .grid-layout__column--1-2
-  &lt;/div&gt;
+                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;form-element-bold&quot;&gt;
+  &lt;span class=&quot;form-hint&quot;&gt;An example form hint, providing extra information to a user&lt;/span&gt;
 &lt;/div&gt;</code></pre></div>
                     </div>
 
                   </div>
 
+                  </section>
+                  <section id="kssref-form-hint-list">
+                <div>
+                  <h2><a href="#kssref-form-hint-list" class="comp-lib-menu-link">List</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>A Form hint list. The form hint list can also be used in conjunction with <code>formHintHelper.js</code> for instance if you
+had a password text input and wanted to check the hints have been correctly matched.</p>
+
                   </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component">
+                        <ul class="form-hint-list">
+  <li class="form-hint-list-item">
+    <span class="form-hint-list-item__indicator"></span>
+    An example form hint, providing extra information to a user
+  </li>
+  <li class="form-hint-list-item [modifier class]">
+    <span class="form-hint-list-item__indicator"></span>
+    A second example form hint, providing extra information to a user
+  </li>
+</ul>
+                      </div>
+                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;ul class=&quot;form-hint-list&quot;&gt;
+  &lt;li class=&quot;form-hint-list-item&quot;&gt;
+    &lt;span class=&quot;form-hint-list-item__indicator&quot;&gt;&lt;/span&gt;
+    An example form hint, providing extra information to a user
+  &lt;/li&gt;
+  &lt;li class=&quot;form-hint-list-item [modifier class]&quot;&gt;
+    &lt;span class=&quot;form-hint-list-item__indicator&quot;&gt;&lt;/span&gt;
+    A second example form hint, providing extra information to a user
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre></div>
+                    </div>
+
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-example__description">
+                        A valid form hint (used in conjunction with <code>formHintHelper.js</code>)
+                      </div>
+                      <div class="comp-lib-pattern-component">
+                        <ul class="form-hint-list">
+  <li class="form-hint-list-item">
+    <span class="form-hint-list-item__indicator"></span>
+    An example form hint, providing extra information to a user
+  </li>
+  <li class="form-hint-list-item form-hint-list-item--valid">
+    <span class="form-hint-list-item__indicator"></span>
+    A second example form hint, providing extra information to a user
+  </li>
+</ul>
+                      </div>
+                      <div>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;ul class=&quot;form-hint-list&quot;&gt;
+  &lt;li class=&quot;form-hint-list-item&quot;&gt;
+    &lt;span class=&quot;form-hint-list-item__indicator&quot;&gt;&lt;/span&gt;
+    An example form hint, providing extra information to a user
+  &lt;/li&gt;
+  &lt;li class=&quot;form-hint-list-item form-hint-list-item--valid&quot;&gt;
+    &lt;span class=&quot;form-hint-list-item__indicator&quot;&gt;&lt;/span&gt;
+    A second example form hint, providing extra information to a user
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  </section>
+                  <section id="kssref-form-hint-secondary">
+                <div>
+                  <h2><a href="#kssref-form-hint-secondary" class="comp-lib-menu-link">Secondary</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>A secondary form hint.</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component">
+                        <span class="form-hint-secondary">An example form hint, providing extra information to a user</span>
+                      </div>
+                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;form-hint-secondary&quot;&gt;An example form hint, providing extra information to a user&lt;/span&gt;</code></pre></div>
+                    </div>
+
+                  </div>
+
+                  </section>
           </article>
         </div>
     </div>

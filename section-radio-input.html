@@ -112,19 +112,19 @@
                   <a href="section-form-hint.html" class="comp-lib-menu-link">Form Hint</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-grids.html" class="comp-lib-menu-link">Grids</a>
 
-                  <ul>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-label.html" class="comp-lib-menu-link">Label</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-radio-input.html" class="comp-lib-menu-link">Radio Input</a>
 
+                  <ul>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-select-input.html" class="comp-lib-menu-link">Select Input</a>
@@ -147,21 +147,15 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-grids">
+                  <div id="kssref-radio-input">
                 <div>
-                  <h1><a href="#kssref-grids" class="comp-lib-menu-link">Grids</a></h1>
+                  <h1><a href="#kssref-radio-input" class="comp-lib-menu-link">Radio Input</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>You create the grid with <code>.grid-layout</code> and individual columns with a column class <code>.grid-layout__column</code> and
-fraction class <code>.grid-layout__column--1-4</code>.</p>
-<ul>
-<li>Add a <code>.grid-layout</code> container.</li>
-<li>Add your columns with individual <code>.grid-layout__column</code>.</li>
-<li>Add your fractional width classes to set the width of the columns e.g. <code>.grid-layout__column--1-4</code>.</li>
-</ul>
+                    <p>Radio Inputs are used to enable users to make a choice in a form.</p>
 
                   </div>
                 </div>
@@ -170,55 +164,23 @@ fraction class <code>.grid-layout__column--1-4</code>.</p>
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component">
-                        <div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-4">
-    .grid-layout__column--1-4
-  </div>
-  <div class="grid-layout__column grid-layout__column--3-4">
-    .grid-layout__column--3-4
-  </div>
-</div>
-<div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-3">
-    .grid-layout__column--1-3
-  </div>
-  <div class="grid-layout__column grid-layout__column--2-3">
-    .grid-layout__column--2-3
-  </div>
-</div>
-<div class="grid-layout">
-  <div class="grid-layout__column grid-layout__column--1-2">
-    .grid-layout__column--1-2
-  </div>
-  <div class="grid-layout__column grid-layout__column--1-2">
-    .grid-layout__column--1-2
-  </div>
-</div>
+                        <label for="example-radio" class="block-label ">
+  Yes
+  <input name="example_text_input" type="radio" value="example value" id="example-radio"/>
+</label>
+<label for="example-radio" class="block-label ">
+  No
+  <input name="example_text_input" type="radio" value="example value" id="example-radio"/>
+</label>
                       </div>
-                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-4&quot;&gt;
-    .grid-layout__column--1-4
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--3-4&quot;&gt;
-    .grid-layout__column--3-4
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-3&quot;&gt;
-    .grid-layout__column--1-3
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--2-3&quot;&gt;
-    .grid-layout__column--2-3
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;grid-layout&quot;&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
-    .grid-layout__column--1-2
-  &lt;/div&gt;
-  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
-    .grid-layout__column--1-2
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre></div>
+                      <div><pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;label for=&quot;example-radio&quot; class=&quot;block-label &quot;&gt;
+  Yes
+  &lt;input name=&quot;example_text_input&quot; type=&quot;radio&quot; value=&quot;example value&quot; id=&quot;example-radio&quot;/&gt;
+&lt;/label&gt;
+&lt;label for=&quot;example-radio&quot; class=&quot;block-label &quot;&gt;
+  No
+  &lt;input name=&quot;example_text_input&quot; type=&quot;radio&quot; value=&quot;example value&quot; id=&quot;example-radio&quot;/&gt;
+&lt;/label&gt;</code></pre></div>
                     </div>
 
                   </div>

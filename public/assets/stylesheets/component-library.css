@@ -37,7 +37,6 @@
   color: #000;
 }
 .comp-lib-description {
-  margin-bottom: 2em;
   line-height: 1.5;
 }
 .comp-lib-description p {
@@ -64,8 +63,9 @@
 .comp-lib-pattern-component {
   border: 1px solid #f8f8f8;
   border-top-right-radius: 4px;
-  border-top-right-left: 4px;
+  border-top-right-radius: 4px;
   padding: .4em;
+  overflow: hidden;
 }
 .comp-lib-pattern-example {
   margin-bottom: 3em;
@@ -88,6 +88,11 @@
   border-radius: 4px;
   padding-top: 0;
   padding-bottom: 0;
+}
+.comp-lib-pattern-markdown blockquote {
+  margin-left: .4em;
+  padding-left: .6em;
+  border-left: 4px solid #dee0e2;
 }
 .comp-lib-pattern-markdown ul {
   list-style: disc;
