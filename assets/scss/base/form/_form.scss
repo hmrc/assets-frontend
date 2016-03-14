@@ -7,14 +7,14 @@ Markup:
 <fieldset class="{{modifier_class}}">
   <div class="form-field">
     <label for="first-name">
-      <input type="text" id="first-name" value=""/>
       First Name
+      <input type="text" id="first-name" value=""/>
     </label>
   </div>
  <div class="form-field">
     <label for="second-name">
-      <input type="text" id="second-name" value=""/>
       Second Name
+      <input type="text" id="second-name" value=""/>
     </label>
   </div>
   <div class="form-field">
@@ -64,14 +64,14 @@ Markup:
 <fieldset class="form-field-group">
   <div class="form-field {{modifier_class}}">
     <label for="first-name">
-      <input type="text" id="first-name" value=""/>
       First Name
+      <input type="text" id="first-name" value=""/>
     </label>
   </div>
   <div class="form-field {{modifier_class}}">
     <label for="second-name">
-      <input type="text" id="second-name" value=""/>
       Second Name
+      <input type="text" id="second-name" value=""/>
     </label>
   </div>
   <div class="form-field {{modifier_class}}">
@@ -100,7 +100,7 @@ Styleguide Form.field
 /*
 Inline
 
-For an inline elements you have a few choices.
+For a inline elements you have a few choices.
 
 Markup:
 <fieldset class="form-field-group">
@@ -209,8 +209,8 @@ Markup:
 <div class="form-date">
   <div class="form-group form-group-year">
     <label for="year" class="block-label">
-      <input class="input--xsmall" type="number" pattern="[0-9]*" min="0" max="31" id="year" name="year"/>
-      Blue
+      <input class="input--xsmall" type="number" pattern="[0-9]*" min="0" max="12" id="year" name="year"/>
+      Year
     </label>
   </div>
 </div>
@@ -223,7 +223,7 @@ Styleguide Form.date
   @extend %contains-floats;
   display: inline-block;
 
-  @include ie-lte(7){
+  @include ie-lte(7) {
     zoom: 1;
   }
 }
@@ -278,7 +278,8 @@ For displaying form controls.
 Markup:
 <label for="control">
   Surname
-  <input type="text" id="control" name="surname" class="form-control {{modifier_class}}"/>
+  <input type="text" id="control"
+         name="surname" class="form-control {{modifier_class}}"/>
 </label>
 
 .form-control--block - For a block control use `.form-control--block`
