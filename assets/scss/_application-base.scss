@@ -31,15 +31,22 @@ $path: "../images/icons/";
 @import "base/layouts";
 @import "base/grid";
 @import "base/buttons";
-@import "base/form";
 @import "base/lists";
 @import "base/table";
 @import "base/helpers";
 @import "base/links";
 @import "base/icons";
 @import "base/details";
+
+// Form
 @import "base/form/errors";
 @import "base/form/hint";
+@import "base/form/text-input";
+@import "base/form/select-input";
+@import "base/form/radio-input";
+@import "base/form/textarea";
+@import "base/form/label";
+@import "base/form/form";
 
 // Modules
 @import "modules/header";

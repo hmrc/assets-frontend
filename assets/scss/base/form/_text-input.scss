@@ -1,0 +1,106 @@
+/*
+Text Input
+
+Text Inputs are used for obtaining information from users in a form.
+
+Markup:
+<input name="example_text_input" type="text" class="{{modifier_class}}" value="example value" />
+
+.input--xxsmall      - For a extra extra! small input use `.input--xxsmall`
+.input--xsmall       - For a extra small input use `.input--xsmall`
+.input--small        - For a small input use `.input--small`
+.input--normal       - For a normal input use `.input--normal`
+.input--fullwidth    - For a full width input use `.input--fullwidth`
+.input--no-spinner   - For an input without a spinner`.input--no-spinner`
+.input--cleared      - To make an input `{display: block}` use `.input--cleared`
+.input--link         - To make an input appear like a link add the modifier `.input--link`
+
+Styleguide Text Input
+*/
+
+input {
+  @include core-19();
+  background-color: $white;
+  border: 2px solid #6f777b;
+  margin: 0;
+  padding: 0.1em 0 0.1em 0.4em;
+  @include box-sizing(border-box);
+  &.text--right{ padding: 0.1em 0.4em 0.1em 0;  }
+  &:focus {
+    outline: 3px solid $yellow;
+  }
+}
+
+.input--xxsmall {
+  max-width: 2.2em;
+}
+
+.input--xsmall {
+  max-width: 4em;
+}
+
+.input--small {
+  max-width: 6em;
+}
+
+.input--normal {
+  max-width: 8em;
+}
+
+.input--medium {
+  width: 100%;
+  @include media(tablet) {
+    width: 20em;
+  }
+}
+
+.input--fullwidth {
+  width: 98.2%;
+}
+
+.input--cleared {
+  display: block;
+}
+
+// POTENTIALLY-NOT-IN-USE
+.input--link {
+  background: none;
+  border: none;
+  color: #2e3191;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  outline: none;
+
+  &:hover,
+  &:active {
+    color: #2e8aca;
+  }
+  &:visited {
+    color: #2e3191;
+  }
+}
+
+.form-date .form-group input {
+  width: 100%;
+}
+
+/*
+Number
+
+Number Inputs are used for entering a floating point number.
+
+Markup:
+<input name="example_number_input" type="number" class="input--xxsmall input--no-spinner" value="example value" />
+
+Styleguide Text Input.number
+*/
+.input--no-spinner {
+  -moz-appearance: textfield;
+}
+
+.input--no-spinner::-webkit-inner-spin-button,
+.input--no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+

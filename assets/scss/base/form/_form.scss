@@ -1,0 +1,331 @@
+/*
+Group
+
+A Form field is used to group several controls or elements within a web form.
+
+Markup:
+<fieldset class="{{modifier_class}}">
+  <div class="form-field">
+    <label for="first-name">
+      First Name
+      <input type="text" id="first-name" value=""/>
+    </label>
+  </div>
+ <div class="form-field">
+    <label for="second-name">
+      Second Name
+      <input type="text" id="second-name" value=""/>
+    </label>
+  </div>
+  <div class="form-field">
+    <button class="button" type="submit">Send</button>
+  </div>
+</fieldset>
+
+.form-field-group    - A form field group can be applied via `.form-field-group`
+.form-field-single   - A form field single can be applied via `.form-field-single`
+
+Styleguide Form.group
+*/
+
+
+fieldset {
+  @include core-19();
+  margin: 0;
+  position: relative;
+  width: 100%;
+  legend {
+    width: 100%;
+    margin-bottom: 0.75em;
+    &.h2-heading {
+      margin: 0 0 0.25em 0;
+    }
+  }
+}
+
+.form-field-group {
+  margin-bottom: 0.75em;
+  line-height: 1.6em;
+  @extend %contain-floats;
+  clear: both;
+}
+
+.form-field-single {
+  @extend .form-field-group;
+}
+
+
+/*
+Field
+
+A Form field is used to group several controls or elements within a web form.
+
+Markup:
+<fieldset class="form-field-group">
+  <div class="form-field {{modifier_class}}">
+    <label for="first-name">
+      First Name
+      <input type="text" id="first-name" value=""/>
+    </label>
+  </div>
+  <div class="form-field {{modifier_class}}">
+    <label for="second-name">
+      Second Name
+      <input type="text" id="second-name" value=""/>
+    </label>
+  </div>
+  <div class="form-field {{modifier_class}}">
+    <button class="button" type="submit">Send</button>
+  </div>
+</fieldset>
+
+.form-field--tall - A "tall" form field can be used via `.form-field--tall`
+
+Styleguide Form.field
+*/
+
+.form-field {
+  @extend %contain-floats;
+  float: left;
+  margin-bottom: 0.75em;
+  margin-top: 0;
+  width: 100%;
+}
+
+.form-field--tall {
+  margin: 0 0 em(30) 0;
+}
+
+
+/*
+Inline
+
+For a inline elements you have a few choices.
+
+Markup:
+<fieldset class="form-field-group">
+  <div class="{{modifier_class}}">
+    <label for="blue" class="block-label">
+      <input type="radio" id="blue"/>
+      Blue
+    </label>
+  </div>
+  <div class="{{modifier_class}}">
+    <label for="green" class="block-label">
+      <input type="radio" id="green"/>
+      Green
+    </label>
+  </div>
+  <div class="form-field">
+    <button class="button" type="submit">Send</button>
+  </div>
+</fieldset>
+
+.form-field--inline              - For an inline form field use `.form-field--inline`
+.form-field--inline-text-input   - For an inline form field for text input use `.form-field--inline-text-input`
+.form-field--inline-spaced-right - For an inline form field for text input spaced to the right use `.form-field--inline-spaced-right`
+.form-field--inline-spaced-left  - For an inline form field for text input spaced to the left use `.form-field--inline-spaced-left`
+
+Styleguide Form.inline
+*/
+
+/**
+ *  Allows you to stack input blocks side by side
+ */
+.form-field--inline {
+  @extend .form-field;
+  clear: none;
+  float: left;
+  width: auto;
+  position: relative;
+
+  input[type="text"], input[type="password"] {
+    margin: 0 0.52em;
+  }
+}
+
+.form-field--inline-text-input {
+  @extend .form-field--inline;
+}
+
+.form-field--inline-spaced-right {
+  @extend .form-field--inline;
+  margin-right: 15px;
+}
+
+.form-field--inline-spaced-left {
+  @extend .form-field--inline;
+  margin-left: 15px;
+}
+
+
+/*
+Submit
+
+A class to provide extra space between the `submit` input and inputs found before.
+
+Markup:
+<div class="form-field form-field--submit">
+  <button class="button" type="submit">Send</button>
+</div>
+
+Styleguide Form.submit
+*/
+
+/**
+ * Wrap action elements of form (submit button, cancel link)
+ * to provide space between these and last inputs of form
+ */
+.form-field--submit {
+  margin-top: 15px;
+}
+
+
+/*
+Field hint
+
+A hint for a form field
+
+Markup:
+<p class="form-field--hint">Example hint</p>
+
+Styleguide Form.hint
+*/
+
+.form-field--hint {
+  @extend .faded-text;
+  display: block;
+  margin-bottom: 0.75em;
+}
+
+
+/*
+Date
+
+For displaying a date you can use the following markup.
+> note need for `.input--xsmall` class on input.
+
+Markup:
+<div class="form-date">
+  <div class="form-group form-group-year">
+    <label for="year" class="block-label">
+      <input class="input--xsmall" type="number" pattern="[0-9]*" min="0" max="12" id="year" name="year"/>
+      Year
+    </label>
+  </div>
+</div>
+
+Styleguide Form.date
+*/
+
+
+.form-date {
+  @extend %contains-floats;
+  display: inline-block;
+
+  @include ie-lte(7) {
+    zoom: 1;
+  }
+}
+
+.form-date .form-group-year {
+  width: 70px;
+}
+
+.form-date .form-group {
+  width: 56px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 0;
+  clear: none;
+}
+
+
+/*
+Dynamic
+
+For dynamically displayed markup.
+
+Markup:
+<fieldset class="dynamically-displayed">
+  <label for="textarea">
+    <textarea id="textarea" name="details" cols="40" rows="6"></textarea>
+  </label>
+</fieldset>
+
+Styleguide Form.dynamic
+*/
+
+// seen in ./business-tax-account/app/views/survey.scala.html
+.dynamically-displayed {
+  border-left: 5px solid $grey-8;
+  clear: both;
+  margin: 0 0 15px;
+  padding: 0.5em 30px;
+
+  @include media(mobile) {
+    padding: 0.5em 15px;
+    box-sizing: border-box;
+  }
+}
+
+
+/*
+Control
+
+For displaying form controls.
+
+Markup:
+<label for="control">
+  Surname
+  <input type="text" id="control"
+         name="surname" class="form-control {{modifier_class}}"/>
+</label>
+
+.form-control--block - For a block control use `.form-control--block`
+
+Styleguide Form.control
+*/
+
+.form-control {
+  @include core-19;
+
+  width: 100%;
+  @include box-sizing(border-box);
+  padding: 4px;
+  background-color: $white;
+  border: 1px solid $border-colour;
+
+  // Disable webkit appearance and remove rounded corners
+  -webkit-appearance: none;
+  border-radius: 0;
+
+  @include media(tablet) {
+    width: 50%;
+  }
+}
+
+.form-control--block {
+  display: block;
+}
+
+
+/*
+Legend
+
+For displaying the legend within the `.questionnaire` container.
+
+Markup:
+<div class="questionnaire">
+  <legend>Please provide your work details</legend>
+</div>
+
+Styleguide Form.legend
+*/
+
+// seen in ./paye-frontend/app/views/paye/includes/end_of_journey_questionnaire.scala.html
+.questionnaire {
+  legend {
+    margin: 0 0 0.75em;
+  }
+}

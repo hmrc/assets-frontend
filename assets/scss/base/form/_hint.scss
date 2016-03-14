@@ -1,3 +1,16 @@
+/*
+Form Hint
+
+Form hints are used for providing extra information to a user about a form input.
+
+Markup:
+<span class="form-hint {{modifier_class}}">An example form hint, providing extra information to a user</span>
+
+.form-hint--small - A small version of the form hint can be used via the selector `.form-hint--small`
+
+Styleguide Form Hint
+*/
+
 .form-hint,
 %form-hint {
   display: block;
@@ -13,6 +26,38 @@
   @include core-16;
 }
 
+/*
+Secondary
+
+A secondary form hint.
+
+Markup:
+<span class="form-hint-secondary">An example form hint, providing extra information to a user</span>
+
+Styleguide Form Hint.secondary
+*/
+
+.form-hint-secondary {
+  display: block;
+  @include core-16;
+  color: $black;
+  margin-bottom: em(5);
+  margin-top: em(8);
+}
+
+/*
+Bold
+
+A bold Form hint.
+
+Markup:
+<div class="form-element-bold">
+  <span class="form-hint">An example form hint, providing extra information to a user</span>
+</div>
+
+Styleguide Form Hint.bold
+*/
+
 .form-element-bold {
   @include bold-24;
   display: block;
@@ -23,13 +68,28 @@
   }
 }
 
-.form-hint-secondary {
-  display: block;
-  @include core-16;
-  color: $black;
-  margin-bottom: em(5);
-  margin-top: em(8);
-}
+/*
+List
+
+A Form hint list. The form hint list can also be used in conjunction with `formHintHelper.js` for instance if you
+had a password text input and wanted to check the hints have been correctly matched.
+
+Markup:
+<ul class="form-hint-list">
+  <li class="form-hint-list-item">
+    <span class="form-hint-list-item__indicator"></span>
+    An example form hint, providing extra information to a user
+  </li>
+  <li class="form-hint-list-item {{modifier_class}}">
+    <span class="form-hint-list-item__indicator"></span>
+    A second example form hint, providing extra information to a user
+  </li>
+</ul>
+
+.form-hint-list-item--valid - A valid form hint (used in conjunction with `formHintHelper.js`)
+
+Styleguide Form Hint.list
+*/
 
 .form-hint-list {
   @extend %form-hint;
