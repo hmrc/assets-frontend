@@ -1,9 +1,23 @@
-/**
-* @desc         lists.
-* @name         layouts
-* @author       Anthony Munene
-* @tested       N/A
-* @requires     N/A
+/*
+Lists
+
+Unordered lists are used for representing data in a list format.
+
+Markup:
+<ul class="{{modifier_class}}">
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ul>
+
+.list--numbered               - A numbered list
+.bullets                      - A bulleted list 
+.lower-letters                - A lowercase ASCII lettered list (a, b, c, etc)
+.list--ticks                  - A ticked list item with custom tick icons
+.list--inline                 - An inline list
+
+
+Styleguide Lists
 */
 
 ul {
@@ -71,6 +85,29 @@ ul, nav ul {
   }
 }
 
+/*
+Activity list
+
+// richiv authored on Jan 14, 2015
+
+An activity list
+
+Deprecated: Before considering this design pattern, make sure that you have strong evidence that:
+* There is a real user need to have attention focused on a single piece of content;
+* That need cannot be met by taking the user to a new page in the same flow that contains the crucial piece of content;
+
+Markup:
+<dl class="activity-list">
+  <dt class="activity-list__date">14th March 2016</dt>
+  <dd class="activity-list__description">description</dd>
+  <dd class="activity-list__description">description</dd>
+  <dd class="activity-list__description">description</dd>
+  <dd class="activity-list__description">description</dd>
+</dl>
+
+Styleguide Lists.activity list
+*/
+
 .activity-list {
   padding-left: 0;
   li {
@@ -98,11 +135,44 @@ ul, nav ul {
   width: 400px;
 }
 
+/*
+Coms Alerts
+
+Communication alerts
+
+Deprecated: This pattern is now deprecated (?);
+
+Markup:
+<ul class="coms-alerts">
+  <li><img src="./public/images/icons/icon-important.png" alt="coms alert"/>List item 1</li>
+</ul>
+
+Styleguide Lists.coms alerts
+*/
+
 .coms-alerts {
   img {
     margin-right: 10px;
   }
 }
+
+/*
+Definition list
+
+Definition list with title floated left and descriptions floated right and bold
+
+Markup:
+<dl class="dl--label-value">
+  <dt>List item 1</dt>
+  <dd>List item 1 description</dd>
+  <dt>List item 2</dt>
+  <dd>List item 2 description</dd>
+  <dt>List item 3</dt>
+  <dd>List item 3 description</dd>
+</dl>
+
+Styleguide Lists.definiton list
+*/
 
 .dl--label-value {
   margin-bottom: 1em;
@@ -121,6 +191,21 @@ ul, nav ul {
     text-align: right;
   }
 }
+
+/*
+Action list
+
+An action list with the first child having a top border
+
+Markup:
+<ul class="action-list">
+  <li class="action-list__grouped"><p>First paragraph<p><p>Second paragraph</p></li>
+  <li class="action-list__grouped"><p>First paragraph<p><p>Second paragraph</p></li>
+  <li class="action-list__grouped"><p>First paragraph<p><p>Second paragraph</p></li>
+</ul>
+
+Styleguide Lists.action list
+*/
 
 .action-list {
   list-style: none;
