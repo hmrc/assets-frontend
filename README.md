@@ -136,16 +136,18 @@ $ npm run comp-lib:watch -- -w ../component-library-template
 ```
 
 ### Updating the Component Library dependency
-If you wish to update the component library in assets frontend.
+If you wish to update the component library in assets frontend because there have been changes in the component
+library.
 
 ```
-$ npm install
-```
-
-To specifically update just the component library
-
-```
+$ rm -rf node_modules/hmrc-component-library-template
 $ npm install hmrc/component-library-template
+```
+
+or
+
+```
+$ npm install --force hmrc/component-library-template
 ```
 
 
