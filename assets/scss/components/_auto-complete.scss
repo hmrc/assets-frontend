@@ -1,3 +1,38 @@
+/*
+Auto Complete
+
+The Auto complete is used to aid a user with a large amount of choices they may have to make.
+
+Markup:
+<fieldset class="form-field-group">
+  <label>
+  Tell us the country where the number is registered
+    <div class="suggestions-input-container">
+      <input type="text"
+             name="country-code-auto-complete"
+             id="country-code-auto-complete"
+             class="suggestions-input
+                    form-control
+                    form-control--block
+                    js-choose-country-auto-complete"
+             autocomplete="off"
+             spellcheck="false"
+             aria-autocomplete="list"
+             aria-haspopup="true"
+             aria-owns="suggestions-list"
+             aria-activedescendant />
+      <i class="suggestions-clear hidden js-suggestions-clear"></i>
+      <span role="status" aria-live="polite"
+            class="visuallyhidden js-suggestions-status-message"></span>
+      <div id="suggestions-list" class="suggestions js-suggestions"></div>
+    </div>
+  </label>
+</fieldset>
+
+Styleguide AutoComplete
+*/
+
+
 .suggestions {
   position: absolute;
   z-index: 1000;
@@ -7,6 +42,10 @@
 
 .suggestions-input-container {
   position: relative;
+}
+
+.suggestions-input {
+  width: 92%;
 }
 
 .suggestions-list {
