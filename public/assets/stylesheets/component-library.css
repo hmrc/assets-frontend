@@ -65,7 +65,6 @@
   border-top-right-radius: 4px;
   border-top-right-radius: 4px;
   padding: .4em;
-  overflow: hidden;
 }
 .comp-lib-pattern-example {
   margin-bottom: 3em;
@@ -112,4 +111,9 @@
 .comp-lib-pattern-markdown h4 {
   margin-bottom: 1em;
   padding-top: .8em;
+}
+.comp-lib-clearfix:after {
+  content: ' ';
+  display: block;
+  clear: both;
 }
