@@ -3,24 +3,23 @@ Side Navigation
 
 A left-hand side navigation.
 The navigation is not displayed at mobile breakpoint.
-The .side-nav__link--mobile-tall class increases the height of the nav links to make them more clickable on touch screen devices.
 
 Markup:
 <div class="side-nav {{modifier_class}}">
   <ul class="side-nav__component">
     <li class="side-nav__list">
-      <a class="side-nav__link side-nav__link--mobile-tall" href="#">Self Assessment</a>
+      <a class="side-nav__link" href="#">Self Assessment</a>
     </li>
     <li class="side-nav__list side-nav__list--selected">
-      <span class="side-nav__link side-nav__link--mobile-tall">Corporation Tax</span>
+      <span class="side-nav__link">Corporation Tax</span>
     </li>
     <li class="side-nav__list">
-      <a class="side-nav__link side-nav__link--mobile-tall" href="#">Problems with this website</a>
+      <a class="side-nav__link" href="#">Problems with this website</a>
     </li>
   </ul>
 </div>
 
-.side-nav--mobile-visible - Adding the .side-nav--mobile-visible class means the navigation visible at mobile breakpoint, and shows only the rightmost present element with the .side-nav__component class.
+.side-nav--mobile-visible - makes the navigation visible at mobile breakpoint, and shows only the rightmost present element with the .side-nav__component class. It also increases the height of the nav links to make them more clickable on touch screen devices.
 
 Styleguide Side Navigation
 */
@@ -42,6 +41,12 @@ Styleguide Side Navigation
     }
     &:last-child {
       display: block;
+    }
+  }
+  .side-nav__link {
+    padding: $gutter/1.5 $gutter $gutter/1.5 $gutter/2;
+    @include media(tablet) {
+      padding: $gutter/2.5 $gutter $gutter/3.75 $gutter/2;
     }
   }
 }
@@ -73,13 +78,6 @@ Styleguide Side Navigation
     top: 50%;
     transform: translateY(-50%);
     content: "\203A";
-  }
-}
-
-.side-nav__link--mobile-tall {
-  padding: $gutter/1.5 $gutter $gutter/1.5 $gutter/2;
-  @include media(tablet) {
-    padding: $gutter/2.5 $gutter $gutter/3.75 $gutter/2;
   }
 }
 
@@ -132,7 +130,7 @@ Markup:
   </ul>
 </div>
 
-.side-nav__component--tall -  gives the left border a minimum height. Useful when nav to left may be taller than the component's content.
+.side-nav__component--tall - gives the left border a minimum height. Useful when nav to left may be taller than the component's content.
 
 Styleguide Side Navigation.two_level
 */
