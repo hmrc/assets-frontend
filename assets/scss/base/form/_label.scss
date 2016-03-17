@@ -19,11 +19,11 @@ Markup:
   <input id="label_example" class="input--cleared" name="example" type="text" value="example value" />
 </label>
 
-.indent                   - An indented label `.indent`
-.bold                     - A bold label `.bold`
-.label--inline            - An inline label `.label--inline`
-.label--inline-tight      - A tight inline label `.label--inline-tight`
-.label--inline-right      - A right aligned inline label `.label--inline-right`
+.indent                   - An indented label
+.bold                     - A bold label
+.label--inline            - An inline label
+.label--inline-tight      - A tight inline label
+.label--inline-right      - A right aligned inline label
 
 
 Styleguide Label
@@ -92,10 +92,10 @@ Markup:
   <input id="label_radio_example" name="example" type="radio" />
 </label>
 
-.label--inlineRadio                   - An inline radio label `.label--inlineRadio`
-.label--inlineRadio--overhead         - A inline radio overhead label `.label--inlineRadio--overhead`
-.label--inlineRadio--overhead-wide    - A wide inline radio overhead label `.label--inlineRadio--overhead-wide`
-.label--full-length                   - A full length label `.label--full-length`
+.label--inlineRadio                   - An inline radio label
+.label--inlineRadio--overhead         - A inline radio overhead label
+.label--inlineRadio--overhead-wide    - A wide inline radio overhead label
+.label--full-length                   - A full length label
 
 Styleguide Label.radio
 */
@@ -215,8 +215,8 @@ Markup:
   <input class="{{modifier_class}}" id="label_aligned_example" name="example" type="radio" />
 </label>
 
-.vertically-aligned-input   - A vertically aligned input `.vertically-aligned-input`
-.top-aligned-input          - A top aligned input `.top-aligned-input`
+.vertically-aligned-input   - A vertically aligned input
+.top-aligned-input          - A top aligned input
 
 Styleguide Label.aligned
 */
@@ -250,10 +250,10 @@ Markup:
   Green
 </label>
 
-.block-label:hover            - Hover status for `.block-label`
-.block-label--inline          - An inline block label `.block-label--inline`
-.block-label--inline-right    - An inline block label right `.block-label--inline-right`
-.block-label--stacked         - A stacked block label `.block-label--stacked`
+.block-label:hover            - Hover status
+.block-label--inline          - An inline block label
+.block-label--inline-right    - An inline block label right
+.block-label--stacked         - A stacked block label
 
 Styleguide Label.block
 */

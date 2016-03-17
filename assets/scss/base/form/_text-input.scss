@@ -6,14 +6,14 @@ Text Inputs are used for obtaining information from users in a form.
 Markup:
 <input name="example_text_input" type="text" class="{{modifier_class}}" value="example value" />
 
-.input--xxsmall      - For a extra extra! small input use `.input--xxsmall`
-.input--xsmall       - For a extra small input use `.input--xsmall`
-.input--small        - For a small input use `.input--small`
-.input--normal       - For a normal input use `.input--normal`
-.input--fullwidth    - For a full width input use `.input--fullwidth`
-.input--no-spinner   - For an input without a spinner`.input--no-spinner`
-.input--cleared      - To make an input `{display: block}` use `.input--cleared`
-.input--link         - To make an input appear like a link add the modifier `.input--link`
+.input--xxsmall      - An extra extra! small input
+.input--xsmall       - An extra small input
+.input--small        - An small input
+.input--normal       - An normal input
+.input--fullwidth    - An full width input
+.input--no-spinner   - An input without a spinner
+.input--cleared      - To make an input `{display: block}`
+.input--link         - To make an input appear like a link
 
 Styleguide Text Input
 */
