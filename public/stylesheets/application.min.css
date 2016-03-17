@@ -4229,12 +4229,12 @@ If you are using an `<a>` element please also apply the `role="button"` attribut
 Markup:
 <button class="button {{modifier_class}}">Button text</button>
 
-.button--get-started   - For a button to start a user journey add the modifier `.button--get-started`
-.button--secondary     - A secondary button can be created by adding the modifier `.button--secondary`
-.button--alert         - For an alert button add the modifier `.button--alert`
-.button--small         - If you wish to have a smaller button add the modifier `.button--small`
-.button--table         - For a button within a table you can use the modifier `.button--table`
-.button.button--link   - To make a button appear like a link add the modifier `.button.button--link`
+.button--get-started   - For a button to start a user journey
+.button--secondary     - A secondary button
+.button--alert         - An alert button
+.button--small         - A smaller button
+.button--table         - A button within a table
+.button.button--link   - To make a button appear like a link
 
 Styleguide Buttons
 */
@@ -6171,7 +6171,7 @@ Form hints are used for providing extra information to a user about a form input
 Markup:
 <span class="form-hint {{modifier_class}}">An example form hint, providing extra information to a user</span>
 
-.form-hint--small - A small version of the form hint can be used via the selector `.form-hint--small`
+.form-hint--small - A small version of the form hint
 
 Styleguide Form Hint
 */
@@ -6350,14 +6350,14 @@ Text Inputs are used for obtaining information from users in a form.
 Markup:
 <input name="example_text_input" type="text" class="{{modifier_class}}" value="example value" />
 
-.input--xxsmall      - For a extra extra! small input use `.input--xxsmall`
-.input--xsmall       - For a extra small input use `.input--xsmall`
-.input--small        - For a small input use `.input--small`
-.input--normal       - For a normal input use `.input--normal`
-.input--fullwidth    - For a full width input use `.input--fullwidth`
-.input--no-spinner   - For an input without a spinner`.input--no-spinner`
-.input--cleared      - To make an input `{display: block}` use `.input--cleared`
-.input--link         - To make an input appear like a link add the modifier `.input--link`
+.input--xxsmall      - An extra extra! small input
+.input--xsmall       - An extra small input
+.input--small        - An small input
+.input--normal       - An normal input
+.input--fullwidth    - An full width input
+.input--no-spinner   - An input without a spinner
+.input--cleared      - To make an input `{display: block}`
+.input--link         - To make an input appear like a link
 
 Styleguide Text Input
 */
@@ -6573,7 +6573,7 @@ Text Inputs are used for obtaining information from users in a form.
 Markup:
 <textarea class="{{modifier_class}}" name="example_textarea_input" id="example" cols="30" rows="10"></textarea>
 
-.textarea--fullwidth - A full width textarea `.textarea--fullwidth`
+.textarea--fullwidth - A full width textarea
 
 Styleguide Textarea Input
 */
@@ -6638,11 +6638,11 @@ Markup:
   <input id="label_example" class="input--cleared" name="example" type="text" value="example value" />
 </label>
 
-.indent                   - An indented label `.indent`
-.bold                     - A bold label `.bold`
-.label--inline            - An inline label `.label--inline`
-.label--inline-tight      - A tight inline label `.label--inline-tight`
-.label--inline-right      - A right aligned inline label `.label--inline-right`
+.indent                   - An indented label
+.bold                     - A bold label
+.label--inline            - An inline label
+.label--inline-tight      - A tight inline label
+.label--inline-right      - A right aligned inline label
 
 
 Styleguide Label
@@ -6712,10 +6712,10 @@ Markup:
   <input id="label_radio_example" name="example" type="radio" />
 </label>
 
-.label--inlineRadio                   - An inline radio label `.label--inlineRadio`
-.label--inlineRadio--overhead         - A inline radio overhead label `.label--inlineRadio--overhead`
-.label--inlineRadio--overhead-wide    - A wide inline radio overhead label `.label--inlineRadio--overhead-wide`
-.label--full-length                   - A full length label `.label--full-length`
+.label--inlineRadio                   - An inline radio label
+.label--inlineRadio--overhead         - A inline radio overhead label
+.label--inlineRadio--overhead-wide    - A wide inline radio overhead label
+.label--full-length                   - A full length label
 
 Styleguide Label.radio
 */
@@ -6822,8 +6822,8 @@ Markup:
   <input class="{{modifier_class}}" id="label_aligned_example" name="example" type="radio" />
 </label>
 
-.vertically-aligned-input   - A vertically aligned input `.vertically-aligned-input`
-.top-aligned-input          - A top aligned input `.top-aligned-input`
+.vertically-aligned-input   - A vertically aligned input
+.top-aligned-input          - A top aligned input
 
 Styleguide Label.aligned
 */
@@ -6854,10 +6854,10 @@ Markup:
   Green
 </label>
 
-.block-label:hover            - Hover status for `.block-label`
-.block-label--inline          - An inline block label `.block-label--inline`
-.block-label--inline-right    - An inline block label right `.block-label--inline-right`
-.block-label--stacked         - A stacked block label `.block-label--stacked`
+.block-label:hover            - Hover status
+.block-label--inline          - An inline block label
+.block-label--inline-right    - An inline block label right
+.block-label--stacked         - A stacked block label
 
 Styleguide Label.block
 */
@@ -6997,8 +6997,8 @@ Markup:
   </div>
 </fieldset>
 
-.form-field-group    - A form field group can be applied via `.form-field-group`
-.form-field-single   - A form field single can be applied via `.form-field-single`
+.form-field-group    - A form field group
+.form-field-single   - A form field single
 
 Styleguide Form.group
 */
@@ -7064,7 +7064,7 @@ Markup:
   </div>
 </fieldset>
 
-.form-field--tall - A "tall" form field can be used via `.form-field--tall`
+.form-field--tall - A "tall" form field
 
 Styleguide Form.field
 */
@@ -7105,10 +7105,10 @@ Markup:
   </div>
 </fieldset>
 
-.form-field--inline              - For an inline form field use `.form-field--inline`
-.form-field--inline-text-input   - For an inline form field for text input use `.form-field--inline-text-input`
-.form-field--inline-spaced-right - For an inline form field for text input spaced to the right use `.form-field--inline-spaced-right`
-.form-field--inline-spaced-left  - For an inline form field for text input spaced to the left use `.form-field--inline-spaced-left`
+.form-field--inline              - An inline form field
+.form-field--inline-text-input   - An inline form field for text input
+.form-field--inline-spaced-right - An inline form field for text input spaced to the right
+.form-field--inline-spaced-left  - An inline form field for text input spaced to the left
 
 Styleguide Form.inline
 */
@@ -7254,7 +7254,7 @@ Markup:
          name="surname" class="form-control {{modifier_class}}"/>
 </label>
 
-.form-control--block - For a block control use `.form-control--block`
+.form-control--block - A block control
 
 Styleguide Form.control
 */
