@@ -10358,7 +10358,40 @@ Styleguide Breadcrumbs
   height: 100%;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/*
+Auto Complete
+
+The Auto complete is used to aid a user with a large amount of choices they may have to make.
+
+Markup:
+<fieldset class="form-field-group">
+  <label>
+  Tell us the country where the number is registered
+    <div class="suggestions-input-container">
+      <input type="text"
+             name="country-code-auto-complete"
+             id="country-code-auto-complete"
+             class="suggestions-input
+                    form-control
+                    form-control--block
+                    js-choose-country-auto-complete"
+             autocomplete="off"
+             spellcheck="false"
+             aria-autocomplete="list"
+             aria-haspopup="true"
+             aria-owns="suggestions-list"
+             aria-activedescendant />
+      <i class="suggestions-clear hidden js-suggestions-clear"></i>
+      <span role="status" aria-live="polite"
+            class="visuallyhidden js-suggestions-status-message"></span>
+      <div id="suggestions-list" class="suggestions js-suggestions"></div>
+    </div>
+  </label>
+</fieldset>
+
+Styleguide AutoComplete
+*/
+/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions {
   position: absolute;
   z-index: 1000;
@@ -10366,52 +10399,57 @@ Styleguide Breadcrumbs
   width: 92%;
 }
 
-/* line 8, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions-input-container {
   position: relative;
 }
 
-/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+.suggestions-input {
+  width: 92%;
+}
+
+/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions-list {
   margin: 0;
   list-style: none;
   border: 1px solid #bfc1c3;
 }
 
-/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion {
   padding: 0.42105em 0.52632em;
   margin: 0 !important;
 }
 
-/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion:hover {
   background-color: #2b8cc4;
   color: #fff;
 }
 
-/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion__highlight {
   font-weight: bold;
 }
 
-/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion--selected {
   background-color: #2b8cc4;
   color: #fff;
 }
 
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion--first {
   margin-top: 0;
 }
 
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion--last {
   margin-bottom: 0;
 }
 
-/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions-clear {
   background-image: url("../images/clear_all_button.png");
   background-repeat: no-repeat;
@@ -10428,19 +10466,19 @@ Styleguide Breadcrumbs
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+  /* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
   .suggestions-clear {
     background-image: url("../images/clear_all_button_x2.png");
     background-size: 22px 44px;
   }
 }
 
-/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions-clear:hover {
   background-position: bottom right;
 }
 
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_auto-complete.scss */
+/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .has-suggestions {
   border-bottom: 1px solid #fff;
 }
