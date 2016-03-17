@@ -22,8 +22,8 @@ Markup:
   </div>
 </fieldset>
 
-.form-field-group    - A form field group can be applied via `.form-field-group`
-.form-field-single   - A form field single can be applied via `.form-field-single`
+.form-field-group    - A form field group
+.form-field-single   - A form field single
 
 Styleguide Form.group
 */
@@ -79,7 +79,7 @@ Markup:
   </div>
 </fieldset>
 
-.form-field--tall - A "tall" form field can be used via `.form-field--tall`
+.form-field--tall - A "tall" form field
 
 Styleguide Form.field
 */
@@ -121,10 +121,10 @@ Markup:
   </div>
 </fieldset>
 
-.form-field--inline              - For an inline form field use `.form-field--inline`
-.form-field--inline-text-input   - For an inline form field for text input use `.form-field--inline-text-input`
-.form-field--inline-spaced-right - For an inline form field for text input spaced to the right use `.form-field--inline-spaced-right`
-.form-field--inline-spaced-left  - For an inline form field for text input spaced to the left use `.form-field--inline-spaced-left`
+.form-field--inline              - An inline form field
+.form-field--inline-text-input   - An inline form field for text input
+.form-field--inline-spaced-right - An inline form field for text input spaced to the right
+.form-field--inline-spaced-left  - An inline form field for text input spaced to the left
 
 Styleguide Form.inline
 */
@@ -282,7 +282,7 @@ Markup:
          name="surname" class="form-control {{modifier_class}}"/>
 </label>
 
-.form-control--block - For a block control use `.form-control--block`
+.form-control--block - A block control
 
 Styleguide Form.control
 */

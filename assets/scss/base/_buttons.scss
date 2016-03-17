@@ -8,12 +8,12 @@ If you are using an `<a>` element please also apply the `role="button"` attribut
 Markup:
 <button class="button {{modifier_class}}">Button text</button>
 
-.button--get-started   - For a button to start a user journey add the modifier `.button--get-started`
-.button--secondary     - A secondary button can be created by adding the modifier `.button--secondary`
-.button--alert         - For an alert button add the modifier `.button--alert`
-.button--small         - If you wish to have a smaller button add the modifier `.button--small`
-.button--table         - For a button within a table you can use the modifier `.button--table`
-.button.button--link   - To make a button appear like a link add the modifier `.button.button--link`
+.button--get-started   - For a button to start a user journey
+.button--secondary     - A secondary button
+.button--alert         - An alert button
+.button--small         - A smaller button
+.button--table         - A button within a table
+.button.button--link   - To make a button appear like a link
 
 Styleguide Buttons
 */
