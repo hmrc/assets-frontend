@@ -1,4 +1,44 @@
+/*
+Links
 
+A link takes you to a location on the same page or any other page on the Web.
+
+Markup:
+<a class="link--no-underline">Example link</a>
+
+Styleguide Links
+*/
+
+.link--no-underline {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+
+/*
+External
+
+An external link indicates you it will take you to a location on an external site to the one you are currently on.
+
+Markup:
+<a class="{{modifier_class}}" rel="external">Example external link</a>
+
+.external-link-12                 - External Link font size 12
+.external-link-12-no-hover        - External Link font size 12 without hover
+.external-link-13                 - External Link font size 13
+.external-link-13-no-hover        - External Link font size 13 without hover
+.external-link-14                 - External Link font size 14
+.external-link-14-bold-no-hover   - External Link font size 14 without hover
+.external-link-16                 - External Link font size 16
+.external-link-16-bold-no-hover   - External Link font size 16 bold without hover
+.external-link-19                 - External Link font size 19
+.external-link-19-bold-no-hover   - External Link font size 19 bold without hover
+
+Styleguide Links.external
+*/
 a[rel="external"].external-link-12 {
   @include external-link-12;
 }
@@ -30,12 +70,4 @@ a[rel="external"].external-link-19 {
 }
 a[rel="external"].external-link-19-bold-no-hover {
   @include external-link-19-bold-no-hover;
-}
-
-.link--no-underline {
-  text-decoration: none;
-  &:hover, 
-  &:focus { 
-    text-decoration: underline;  
-  }
 }
