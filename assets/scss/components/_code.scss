@@ -1,0 +1,68 @@
+/*
+Code
+
+The `code` element is used to show a fragment of computer code. The
+
+Markup:
+<code class="{{modifier_class}}">{exampleCode: true}</code>
+
+.snippet--inline - Display the code element inline
+
+Styleguide Code
+*/
+
+.snippet--inline {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
+
+code.snippet--inline {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: $grey-1;
+}
+
+
+/*
+Code
+
+The `pre` element is used to show preformatted text.
+
+Markup:
+<pre class="{{modifier_class}}">https://api.service.hmrc.gov.uk/</pre>
+
+.snippet--block - Display the `pre` element as block
+
+Styleguide Code.pre
+*/
+
+.snippet--block {
+  margin: 10px 0 20px 0;
+  padding: 20px;
+  border: none;
+  color: $grey-0;
+  line-height: 2em;
+}
+
+pre.snippet--block {
+  font-size: 14px;
+}
+
+
+/*
+Tag
+
+The `.tag` selector is used to highlight content.
+
+Markup:
+<span class="tag">Example Tag</span>
+
+Styleguide Code.tag
+*/
+
+.tag {
+  background-color: #DEE0E2;
+  color: $black;
+  padding: 3px 8px 1px 8px;
+  @include border-radius(5px);
+}
