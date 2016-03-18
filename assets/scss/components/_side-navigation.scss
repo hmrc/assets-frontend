@@ -19,7 +19,7 @@ Markup:
   </ul>
 </div>
 
-.side-nav--mobile-visible - Remains visible at mobile breakpoint, shows only the rightmost present element with the .side-nav__component class.
+.side-nav--mobile-visible - makes the navigation visible at mobile breakpoint, and shows only the rightmost present element with the .side-nav__component class. It also increases the height of the nav links to make them more clickable on touch screen devices.
 
 Styleguide Side Navigation
 */
@@ -37,10 +37,24 @@ Styleguide Side Navigation
   .side-nav__component {
     display: none;
     @include media(tablet) {
-        display: block;
+      display: block;
     }
     &:last-child {
       display: block;
+    }
+  }
+  .side-nav__link {
+    padding: $gutter/1.5 $gutter $gutter/1.5 $gutter/2;
+    @include media(tablet) {
+      padding: $gutter/2.5 $gutter $gutter/3.75 $gutter/2;
+    }
+  }
+}
+
+.side-nav--tall {
+  .side-nav__component {
+    @include media(tablet) {
+      min-height: em(275);
     }
   }
 }
@@ -99,13 +113,13 @@ Two-level
 Two-level navigation shows a submenu to the right of the primary menu.
 
 Markup:
-<div class="side-nav">
+<div class="side-nav {{modifier_class}}">
   <ul class="side-nav__component side-nav__quarter-width">
     <li class="side-nav__list side-nav__list--selected">
-      <a class="side-nav__link" href="#">Self Assessment</a>
+      <span class="side-nav__link">Self Assessment</span>
     </li>
     <li class="side-nav__list">
-      <span class="side-nav__link">Corporation Tax</span>
+      <a class="side-nav__link" href="#">Corporation Tax</a>
     </li>
     <li class="side-nav__list">
       <a class="side-nav__link" href="#">Problems with this website</a>
@@ -123,6 +137,8 @@ Markup:
     </li>
   </ul>
 </div>
+
+.side-nav--tall - gives the components' left border a minimum height. Useful when nav to left may be taller than the component's content.
 
 Styleguide Side Navigation.two_level
 */
@@ -147,7 +163,6 @@ Styleguide Side Navigation.two_level
   }
 }
 
-
 /*
 Overlapping two-level
 
@@ -157,10 +172,10 @@ Markup:
 <div class="side-nav">
   <ul class="side-nav__component side-nav__quarter-width">
     <li class="side-nav__list side-nav__list--selected">
-      <a class="side-nav__link" href="#">Self Assessment</a>
+      <span class="side-nav__link">Self Assessment</span>
     </li>
     <li class="side-nav__list">
-      <span class="side-nav__link">Corporation Tax</span>
+      <a class="side-nav__link" href="#">Corporation Tax</a>
     </li>
     <li class="side-nav__list">
       <a class="side-nav__link" href="#">Problems with this website</a>
@@ -177,7 +192,7 @@ Markup:
       <a class="side-nav__link" href="#">Questions about Self Assessment</a>
     </li>
   </ul>
-  <div class="side-nav__component side-nav__rhs-content">
+  <div class="side-nav__component side-nav__right-side-content">
     <h2>Refund requests</h2>
     <p>We'll refund you automatically if you paid your tax by credit or debit card. You need to request a refund online if you didn't pay by card. How long refunds take Credit and debit card refunds take 3 working days. You'll get a confirmation letter. If you requested a refund online, you'll usually get it within 5 weeks. It can take longer if HMRC needs to make anti-fraud checks. Don't make a new online refund request - it will slow down your original request.</p>
   </div>
@@ -191,9 +206,10 @@ Styleguide Side Navigation.overlapping
   margin-left: em(-100);
 }
 
-.side-nav__rhs-content {
+.side-nav__right-side-content {
   padding-left: 0;
   @include media(tablet) {
+    margin-top: em(14);
     padding-left: em(30);
     overflow: hidden;
   }
