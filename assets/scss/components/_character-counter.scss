@@ -1,3 +1,15 @@
+/*
+Character Counter
+
+A character counter for textareas.
+
+Markup:
+<div class="char-counter" data-char-counter>
+  <textarea cols="40" rows="2" maxLength="250" data-char-field></textarea>
+</div>
+
+Styleguide Textarea Input.Counter
+*/
 
 .char-counter {
   position: relative;
@@ -11,7 +23,6 @@
   @include media(tablet) {
     display: inline-block;
   }
-
 }
 
 .char-counter-text {
