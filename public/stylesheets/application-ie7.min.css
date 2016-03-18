@@ -10523,7 +10523,19 @@ Styleguide AutoComplete
   }
 }
 
-/* line 2, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_char-counter.scss */
+/*
+Character Counter
+
+A character counter for textareas.
+
+Markup:
+<div class="char-counter" data-char-counter>
+  <textarea cols="40" rows="2" maxLength="250" data-char-field></textarea>
+</div>
+
+Styleguide Textarea Input.Counter
+*/
+/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_character-counter.scss */
 .char-counter {
   position: relative;
   margin-bottom: 1.5em;
@@ -10531,12 +10543,12 @@ Styleguide AutoComplete
   display: inline-block;
 }
 
-/* line 7, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_char-counter.scss */
+/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_character-counter.scss */
 .char-counter [data-char-field] {
   height: 70px;
 }
 
-/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_char-counter.scss */
+/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_character-counter.scss */
 .char-counter-text {
   color: #6f777b;
   text-align: right;
