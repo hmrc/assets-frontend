@@ -100,15 +100,21 @@
                   <a href="section-breadcrumbs.html" class="comp-lib-menu-link">Breadcrumbs</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-buttons.html" class="comp-lib-menu-link">Buttons</a>
 
-                  <ul>
-                  </ul>
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-code.html" class="comp-lib-menu-link">Code</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-code.html#kssref-code-pre">Code</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-code.html#kssref-code-tag">Tag</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-details.html" class="comp-lib-menu-link">Details</a>
@@ -159,17 +165,15 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-buttons">
+                  <div id="kssref-code">
                 <div>
-                  <h1><a href="#kssref-buttons" class="comp-lib-menu-link">Buttons</a></h1>
+                  <h1><a href="#kssref-code" class="comp-lib-menu-link">Code</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>Buttons are used for <em>calls to actions</em> to start a journey or to <em>submit</em> information on a form. Simply place the
-<code>.button</code> selector on your <code>&lt;button&gt;</code> element.
-If you are using an <code>&lt;a&gt;</code> element please also apply the <code>role=&quot;button&quot;</code> attribute.</p>
+                    <p>The <code>code</code> element is used to show a fragment of computer code. The</p>
 
                   </div>
                 </div>
@@ -178,82 +182,92 @@ If you are using an <code>&lt;a&gt;</code> element please also apply the <code>r
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <button class="button [modifier class]">Button text</button>
+                        <code class="[modifier class]">{exampleCode: true}</code>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;button class=&quot;button [modifier class]&quot;&gt;Button text&lt;/button&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;code class=&quot;[modifier class]&quot;&gt;{exampleCode: true}&lt;/code&gt;</code></pre>
                       </div>
                     </div>
 
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-example__description">
-                        <code>.button--get-started</code> - For a button to start a user journey
+                        <code>.snippet--inline</code> - Display the code element inline
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <button class="button button--get-started">Button text</button>
+                        <code class="snippet--inline">{exampleCode: true}</code>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;button class=&quot;button button--get-started&quot;&gt;Button text&lt;/button&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.button--secondary</code> - A secondary button
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <button class="button button--secondary">Button text</button>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;button class=&quot;button button--secondary&quot;&gt;Button text&lt;/button&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.button--alert</code> - An alert button
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <button class="button button--alert">Button text</button>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;button class=&quot;button button--alert&quot;&gt;Button text&lt;/button&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.button--small</code> - A smaller button
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <button class="button button--small">Button text</button>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;button class=&quot;button button--small&quot;&gt;Button text&lt;/button&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.button--table</code> - A button within a table
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <button class="button button--table">Button text</button>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;button class=&quot;button button--table&quot;&gt;Button text&lt;/button&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.button.button--link</code> - To make a button appear like a link
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <button class="button button button--link">Button text</button>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;button class=&quot;button button button--link&quot;&gt;Button text&lt;/button&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;code class=&quot;snippet--inline&quot;&gt;{exampleCode: true}&lt;/code&gt;</code></pre>
                       </div>
                     </div>
                   </div>
 
                   </div>
+                  <section id="kssref-code-pre">
+                <div>
+                  <h2><a href="#kssref-code-pre" class="comp-lib-menu-link">Code</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>The <code>pre</code> element is used to show preformatted text.</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <pre class="[modifier class]">https://api.service.hmrc.gov.uk/</pre>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;pre class=&quot;[modifier class]&quot;&gt;https://api.service.hmrc.gov.uk/&lt;/pre&gt;</code></pre>
+                      </div>
+                    </div>
+
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-example__description">
+                        <code>.snippet--block</code> - Display the <code>pre</code> element as block
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <pre class="snippet--block">https://api.service.hmrc.gov.uk/</pre>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;pre class=&quot;snippet--block&quot;&gt;https://api.service.hmrc.gov.uk/&lt;/pre&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  </section>
+                  <section id="kssref-code-tag">
+                <div>
+                  <h2><a href="#kssref-code-tag" class="comp-lib-menu-link">Tag</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>The <code>.tag</code> selector is used to highlight content.</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <span class="tag">Example Tag</span>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;tag&quot;&gt;Example Tag&lt;/span&gt;</code></pre>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  </section>
           </article>
         </div>
     </div>

@@ -5558,6 +5558,47 @@ table details {
   max-width: 125px;
 }
 
+/*
+Links
+
+A link takes you to a location on the same page or any other page on the Web.
+
+Markup:
+<a class="link--no-underline">Example link</a>
+
+Styleguide Links
+*/
+/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.link--no-underline {
+  text-decoration: none;
+}
+
+/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.link--no-underline:hover, .link--no-underline:focus {
+  text-decoration: underline;
+}
+
+/*
+External
+
+An external link indicates you it will take you to a location on an external site to the one you are currently on.
+
+Markup:
+<a class="{{modifier_class}}" rel="external">Example external link</a>
+
+.external-link-12                 - External Link font size 12
+.external-link-12-no-hover        - External Link font size 12 without hover
+.external-link-13                 - External Link font size 13
+.external-link-13-no-hover        - External Link font size 13 without hover
+.external-link-14                 - External Link font size 14
+.external-link-14-bold-no-hover   - External Link font size 14 without hover
+.external-link-16                 - External Link font size 16
+.external-link-16-bold-no-hover   - External Link font size 16 bold without hover
+.external-link-19                 - External Link font size 19
+.external-link-19-bold-no-hover   - External Link font size 19 bold without hover
+
+Styleguide Links.external
+*/
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
 a[rel="external"].external-link-12:after, [rel="external"].external-link-12.link-style:after, [rel="external"].external-link-12.button--link-style:after {
   content: "        ";
@@ -5666,16 +5707,6 @@ a[rel="external"].external-link-19-bold-no-hover:after, [rel="external"].externa
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
 a[rel="external"].external-link-19-bold-no-hover:hover:after, [rel="external"].external-link-19-bold-no-hover.link-style:hover:after, [rel="external"].external-link-19-bold-no-hover.button--link-style:hover:after {
   background-position: right 6px;
-}
-
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
-.link--no-underline {
-  text-decoration: none;
-}
-
-/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
-.link--no-underline:hover, .link--no-underline:focus {
-  text-decoration: underline;
 }
 
 /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
@@ -10026,7 +10057,44 @@ nav.help-contents ul li p {
   margin: 0 -0.68421em;
 }
 
-/* line 2, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_code.scss */
+/*
+Code
+
+The `code` element is used to show a fragment of computer code. The
+
+Markup:
+<code class="{{modifier_class}}">{exampleCode: true}</code>
+
+.snippet--inline - Display the code element inline
+
+Styleguide Code
+*/
+/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_code.scss */
+.snippet--inline {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
+
+/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_code.scss */
+code.snippet--inline {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: #6f777b;
+}
+
+/*
+Code
+
+The `pre` element is used to show preformatted text.
+
+Markup:
+<pre class="{{modifier_class}}">https://api.service.hmrc.gov.uk/</pre>
+
+.snippet--block - Display the `pre` element as block
+
+Styleguide Code.pre
+*/
+/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_code.scss */
 .snippet--block {
   margin: 10px 0 20px 0;
   padding: 20px;
@@ -10035,25 +10103,22 @@ nav.help-contents ul li p {
   line-height: 2em;
 }
 
-/* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_code.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_code.scss */
 pre.snippet--block {
   font-size: 14px;
 }
 
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_code.scss */
-.snippet--inline {
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-}
+/*
+Tag
 
-/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_code.scss */
-code.snippet--inline {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  color: #6f777b;
-}
+The `.tag` selector is used to highlight content.
 
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_code.scss */
+Markup:
+<span class="tag">Example Tag</span>
+
+Styleguide Code.tag
+*/
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_code.scss */
 .tag {
   background-color: #DEE0E2;
   color: #0b0c0c;
@@ -11370,22 +11435,22 @@ table.messages a, table.messages .link-style, table.messages .button--link-style
   margin-top: 1em;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_risk-triage.scss */
+/* line 2, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_risk-triage.scss */
 .marriage-allowance__heading {
   margin: 15px 0 30px 0;
 }
 
-/* line 5, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_risk-triage.scss */
+/* line 7, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_risk-triage.scss */
 .p60__details {
   margin: 10px 0 0 0;
 }
 
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_risk-triage.scss */
+/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_risk-triage.scss */
 .your-pay__text {
   margin: 0 0 10px 0;
 }
 
-/* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_risk-triage.scss */
+/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_risk-triage.scss */
 .p60-form__image {
   width: 400px;
 }
