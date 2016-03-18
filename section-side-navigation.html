@@ -216,7 +216,7 @@ The navigation is not displayed at mobile breakpoint.</p>
 
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-example__description">
-                        <code>.side-nav--mobile-visible</code> - Remains visible at mobile breakpoint, shows only the rightmost present element with the .side-nav__component class.
+                        <code>.side-nav--mobile-visible</code> - makes the navigation visible at mobile breakpoint, and shows only the rightmost present element with the .side-nav__component class. It also increases the height of the nav links to make them more clickable on touch screen devices.
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <div class="side-nav side-nav--mobile-visible">
@@ -272,10 +272,10 @@ The navigation is not displayed at mobile breakpoint.</p>
                         <div class="side-nav">
   <ul class="side-nav__component side-nav__quarter-width">
     <li class="side-nav__list side-nav__list--selected">
-      <a class="side-nav__link" href="#">Self Assessment</a>
+      <span class="side-nav__link">Self Assessment</span>
     </li>
     <li class="side-nav__list">
-      <span class="side-nav__link">Corporation Tax</span>
+      <a class="side-nav__link" href="#">Corporation Tax</a>
     </li>
     <li class="side-nav__list">
       <a class="side-nav__link" href="#">Problems with this website</a>
@@ -292,7 +292,7 @@ The navigation is not displayed at mobile breakpoint.</p>
       <a class="side-nav__link" href="#">Questions about Self Assessment</a>
     </li>
   </ul>
-  <div class="side-nav__component side-nav__rhs-content">
+  <div class="side-nav__component side-nav__right-side-content">
     <h2>Refund requests</h2>
     <p>We'll refund you automatically if you paid your tax by credit or debit card. You need to request a refund online if you didn't pay by card. How long refunds take Credit and debit card refunds take 3 working days. You'll get a confirmation letter. If you requested a refund online, you'll usually get it within 5 weeks. It can take longer if HMRC needs to make anti-fraud checks. Don't make a new online refund request - it will slow down your original request.</p>
   </div>
@@ -302,10 +302,10 @@ The navigation is not displayed at mobile breakpoint.</p>
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;side-nav&quot;&gt;
   &lt;ul class=&quot;side-nav__component side-nav__quarter-width&quot;&gt;
     &lt;li class=&quot;side-nav__list side-nav__list--selected&quot;&gt;
-      &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Self Assessment&lt;/a&gt;
+      &lt;span class=&quot;side-nav__link&quot;&gt;Self Assessment&lt;/span&gt;
     &lt;/li&gt;
     &lt;li class=&quot;side-nav__list&quot;&gt;
-      &lt;span class=&quot;side-nav__link&quot;&gt;Corporation Tax&lt;/span&gt;
+      &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Corporation Tax&lt;/a&gt;
     &lt;/li&gt;
     &lt;li class=&quot;side-nav__list&quot;&gt;
       &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Problems with this website&lt;/a&gt;
@@ -322,7 +322,7 @@ The navigation is not displayed at mobile breakpoint.</p>
       &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Questions about Self Assessment&lt;/a&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
-  &lt;div class=&quot;side-nav__component side-nav__rhs-content&quot;&gt;
+  &lt;div class=&quot;side-nav__component side-nav__right-side-content&quot;&gt;
     &lt;h2&gt;Refund requests&lt;/h2&gt;
     &lt;p&gt;We&#x27;ll refund you automatically if you paid your tax by credit or debit card. You need to request a refund online if you didn&#x27;t pay by card. How long refunds take Credit and debit card refunds take 3 working days. You&#x27;ll get a confirmation letter. If you requested a refund online, you&#x27;ll usually get it within 5 weeks. It can take longer if HMRC needs to make anti-fraud checks. Don&#x27;t make a new online refund request - it will slow down your original request.&lt;/p&gt;
   &lt;/div&gt;
@@ -350,13 +350,13 @@ The navigation is not displayed at mobile breakpoint.</p>
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="side-nav">
+                        <div class="side-nav [modifier class]">
   <ul class="side-nav__component side-nav__quarter-width">
     <li class="side-nav__list side-nav__list--selected">
-      <a class="side-nav__link" href="#">Self Assessment</a>
+      <span class="side-nav__link">Self Assessment</span>
     </li>
     <li class="side-nav__list">
-      <span class="side-nav__link">Corporation Tax</span>
+      <a class="side-nav__link" href="#">Corporation Tax</a>
     </li>
     <li class="side-nav__list">
       <a class="side-nav__link" href="#">Problems with this website</a>
@@ -376,13 +376,13 @@ The navigation is not displayed at mobile breakpoint.</p>
 </div>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;side-nav&quot;&gt;
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;side-nav [modifier class]&quot;&gt;
   &lt;ul class=&quot;side-nav__component side-nav__quarter-width&quot;&gt;
     &lt;li class=&quot;side-nav__list side-nav__list--selected&quot;&gt;
-      &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Self Assessment&lt;/a&gt;
+      &lt;span class=&quot;side-nav__link&quot;&gt;Self Assessment&lt;/span&gt;
     &lt;/li&gt;
     &lt;li class=&quot;side-nav__list&quot;&gt;
-      &lt;span class=&quot;side-nav__link&quot;&gt;Corporation Tax&lt;/span&gt;
+      &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Corporation Tax&lt;/a&gt;
     &lt;/li&gt;
     &lt;li class=&quot;side-nav__list&quot;&gt;
       &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Problems with this website&lt;/a&gt;
@@ -403,6 +403,63 @@ The navigation is not displayed at mobile breakpoint.</p>
                       </div>
                     </div>
 
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-example__description">
+                        <code>.side-nav--tall</code> - gives the components&#39; left border a minimum height. Useful when nav to left may be taller than the component&#39;s content.
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <div class="side-nav side-nav--tall">
+  <ul class="side-nav__component side-nav__quarter-width">
+    <li class="side-nav__list side-nav__list--selected">
+      <span class="side-nav__link">Self Assessment</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Corporation Tax</a>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Problems with this website</a>
+    </li>
+  </ul>
+  <ul class="side-nav__component side-nav__quarter-width">
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Tax return help</a>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Refund requests</a>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Questions about Self Assessment</a>
+    </li>
+  </ul>
+</div>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;side-nav side-nav--tall&quot;&gt;
+  &lt;ul class=&quot;side-nav__component side-nav__quarter-width&quot;&gt;
+    &lt;li class=&quot;side-nav__list side-nav__list--selected&quot;&gt;
+      &lt;span class=&quot;side-nav__link&quot;&gt;Self Assessment&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;side-nav__list&quot;&gt;
+      &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Corporation Tax&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;side-nav__list&quot;&gt;
+      &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Problems with this website&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class=&quot;side-nav__component side-nav__quarter-width&quot;&gt;
+    &lt;li class=&quot;side-nav__list&quot;&gt;
+      &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Tax return help&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;side-nav__list&quot;&gt;
+      &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Refund requests&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;side-nav__list&quot;&gt;
+      &lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Questions about Self Assessment&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
                   </div>
 
                   </section>

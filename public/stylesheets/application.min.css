@@ -8751,58 +8751,77 @@ Markup:
   </ul>
 </div>
 
-.side-nav--mobile-visible - Remains visible at mobile breakpoint, shows only the rightmost present element with the .side-nav__component class.
+.side-nav--mobile-visible - makes the navigation visible at mobile breakpoint, and shows only the rightmost present element with the .side-nav__component class. It also increases the height of the nav links to make them more clickable on touch screen devices.
 
 Styleguide Side Navigation
 */
-/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav {
   overflow: hidden;
   display: none;
 }
 
 @media (min-width: 641px) {
-  /* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+  /* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
   .side-nav {
     display: block;
   }
 }
 
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav--mobile-visible {
   display: block;
 }
 
-/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav--mobile-visible .side-nav__component {
   display: none;
 }
 
 @media (min-width: 641px) {
-  /* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+  /* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
   .side-nav--mobile-visible .side-nav__component {
     display: block;
   }
 }
 
-/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav--mobile-visible .side-nav__component:last-child {
   display: block;
 }
 
-/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
+.side-nav--mobile-visible .side-nav__link {
+  padding: 20px 30px 20px 15px;
+}
+
+@media (min-width: 641px) {
+  /* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
+  .side-nav--mobile-visible .side-nav__link {
+    padding: 12px 30px 8px 15px;
+  }
+}
+
+@media (min-width: 641px) {
+  /* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
+  .side-nav--tall .side-nav__component {
+    min-height: 14.47368em;
+  }
+}
+
+/* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav__list {
   position: relative;
   list-style: none;
 }
 
-/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav__list--selected .side-nav__link, .side-nav__list--selected:hover .side-nav__link {
   color: #fff;
   background-color: #005ea5;
 }
 
-/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav__link {
   padding: 12px 30px 8px 15px;
   text-decoration: none;
@@ -8816,19 +8835,19 @@ Styleguide Side Navigation
 }
 
 @media (max-width: 640px) {
-  /* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+  /* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
   .side-nav__link {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav__link:hover {
   background-color: #DEE0E2;
 }
 
-/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav__link:after {
   position: absolute;
   right: 10px;
@@ -8838,19 +8857,19 @@ Styleguide Side Navigation
   content: "\203A";
 }
 
-/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav--child {
   margin-top: 0;
   border-right: none;
   border-left: 4px solid #bfc1c3;
 }
 
-/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav--child .side-nav__link {
   padding-left: 24px;
 }
 
-/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav--child .side-nav__list--selected .side-nav__link {
   color: #005ea5;
   font-family: "nta", Arial, sans-serif;
@@ -8863,7 +8882,7 @@ Styleguide Side Navigation
 }
 
 @media (max-width: 640px) {
-  /* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+  /* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
   .side-nav--child .side-nav__list--selected .side-nav__link {
     font-size: 14px;
     line-height: 1.14286;
@@ -8876,13 +8895,13 @@ Two-level
 Two-level navigation shows a submenu to the right of the primary menu.
 
 Markup:
-<div class="side-nav">
+<div class="side-nav {{modifier_class}}">
   <ul class="side-nav__component side-nav__quarter-width">
     <li class="side-nav__list side-nav__list--selected">
-      <a class="side-nav__link" href="#">Self Assessment</a>
+      <span class="side-nav__link">Self Assessment</span>
     </li>
     <li class="side-nav__list">
-      <span class="side-nav__link">Corporation Tax</span>
+      <a class="side-nav__link" href="#">Corporation Tax</a>
     </li>
     <li class="side-nav__list">
       <a class="side-nav__link" href="#">Problems with this website</a>
@@ -8901,15 +8920,17 @@ Markup:
   </ul>
 </div>
 
+.side-nav--tall - gives the components' left border a minimum height. Useful when nav to left may be taller than the component's content.
+
 Styleguide Side Navigation.two_level
 */
-/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 146, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav__quarter-width {
   width: 100%;
 }
 
 @media (min-width: 641px) {
-  /* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+  /* line 146, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
   .side-nav__quarter-width {
     position: relative;
     float: left;
@@ -8918,18 +8939,18 @@ Styleguide Side Navigation.two_level
   }
 }
 
-/* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav__component {
   border-left: 0;
 }
 
-/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 158, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav__component:first-child {
   border-left: 0;
 }
 
 @media (min-width: 641px) {
-  /* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+  /* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
   .side-nav__component {
     border-left: 1px solid #bfc1c3;
   }
@@ -8944,10 +8965,10 @@ Markup:
 <div class="side-nav">
   <ul class="side-nav__component side-nav__quarter-width">
     <li class="side-nav__list side-nav__list--selected">
-      <a class="side-nav__link" href="#">Self Assessment</a>
+      <span class="side-nav__link">Self Assessment</span>
     </li>
     <li class="side-nav__list">
-      <span class="side-nav__link">Corporation Tax</span>
+      <a class="side-nav__link" href="#">Corporation Tax</a>
     </li>
     <li class="side-nav__list">
       <a class="side-nav__link" href="#">Problems with this website</a>
@@ -8964,7 +8985,7 @@ Markup:
       <a class="side-nav__link" href="#">Questions about Self Assessment</a>
     </li>
   </ul>
-  <div class="side-nav__component side-nav__rhs-content">
+  <div class="side-nav__component side-nav__right-side-content">
     <h2>Refund requests</h2>
     <p>We'll refund you automatically if you paid your tax by credit or debit card. You need to request a refund online if you didn't pay by card. How long refunds take Credit and debit card refunds take 3 working days. You'll get a confirmation letter. If you requested a refund online, you'll usually get it within 5 weeks. It can take longer if HMRC needs to make anti-fraud checks. Don't make a new online refund request - it will slow down your original request.</p>
   </div>
@@ -8972,20 +8993,21 @@ Markup:
 
 Styleguide Side Navigation.overlapping
 */
-/* line 189, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
+/* line 204, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
 .side-nav__left--overlap {
   background-color: #fff;
   margin-left: -5.26316em;
 }
 
-/* line 194, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
-.side-nav__rhs-content {
+/* line 209, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
+.side-nav__right-side-content {
   padding-left: 0;
 }
 
 @media (min-width: 641px) {
-  /* line 194, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_side-navigation.scss */
-  .side-nav__rhs-content {
+  /* line 209, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_side-navigation.scss */
+  .side-nav__right-side-content {
+    margin-top: 0.73684em;
     padding-left: 1.57895em;
     overflow: hidden;
   }
