@@ -1,5 +1,5 @@
 require('jquery');
-require('datatables');
+require('datatables')();
 
 var sticky = require('./sticky-header.js');
 
