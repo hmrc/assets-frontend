@@ -1,0 +1,54 @@
+/*
+Phase Banner
+
+A GOV.UK Phase banner, with a **beta** tag inside.
+
+Markup:
+<div class="beta-banner {{modifier_class}}">
+  <p>
+    <strong class="phase-tag">BETA</strong>
+    <span>This is a new service.Help us improve it - send your
+    <a href="">feedback</a>.</span>
+  </p>
+</div>
+
+.beta-banner--borderless - A border less phase banner
+
+Styleguide Beta.Phase Banner
+*/
+
+.beta-banner {
+  @include phase-banner(beta);
+}
+
+.beta-banner--borderless {
+  border: none;
+}
+
+
+
+/*
+Phase Tag
+
+A GOV.UK **beta** Phase tag.
+
+Markup:
+<nav class="header__menu">
+  <a href="https://www.gov.uk/service-manual" class="phase-tag beta">Beta</a>
+</nav>
+
+Styleguide Beta.Phase Tag
+*/
+
+.phase-tag {
+  @include phase-tag(beta);
+}
+
+// example found in play-ui/src/main/twirl/uk/gov/hmrc/play/views/layouts/header_nav.scala.html
+.header__menu {
+  .beta {
+    vertical-align: top;
+    margin: em(3) 0 0 em(5);
+    color: $white;
+  }
+}
