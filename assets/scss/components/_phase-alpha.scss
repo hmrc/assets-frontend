@@ -1,0 +1,25 @@
+/*
+Phase Banner
+
+A GOV.UK Phase banner, with an **alpha** tag inside.
+
+Markup:
+<div class="alpha-banner">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a trial service. Help us improve it - send your
+    <a href="">feedback</a>.</span>
+  </p>
+</div>
+
+Styleguide Alpha.Phase Banner
+*/
+
+
+.alpha-banner {
+  @include phase-banner(alpha);
+
+  .phase-tag {
+    @include phase-tag(alpha);
+  }
+}
