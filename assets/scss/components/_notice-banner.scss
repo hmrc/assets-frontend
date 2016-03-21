@@ -1,0 +1,35 @@
+/*
+Notification banner
+
+Markup:
+<div class="notice-banner">
+  <div class="notice-banner__wrapper">
+    <h3 class="notice-banner__content">Please help us improve our service</h3>
+    <a class="notice-banner__content" href="#">Enter our survey</a>
+  </div>
+</div>
+
+Styleguide Notification banner
+*/
+
+.notice-banner {
+  width: 100%;
+  background-color: #003e74;
+}
+
+.notice-banner__wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 15px;
+  @include media(tablet) {
+    padding: 15px 30px;
+  }
+}
+
+.notice-banner__content {
+  color: $white;
+  margin-top: 0;
+  a {
+    color: $white;
+  }
+}
