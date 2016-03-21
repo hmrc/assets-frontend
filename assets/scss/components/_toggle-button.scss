@@ -1,3 +1,16 @@
+/*
+Toggle Button
+
+Markup:
+<span class="toggle-btn {{modifier_class}}">Toggle Button</span>
+
+.toggle-btn--on - The toggle button is on
+.toggle-btn--off - The toggle button is off
+
+Styleguide Toggle Button
+*/
+
+
 .toggle-btn {
   padding: em(5) em(10) em(3) em(10);
   display: inline-block;
