@@ -100,9 +100,17 @@
                   <a href="section-autocomplete.html" class="comp-lib-menu-link">Auto Complete</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-beta.html" class="comp-lib-menu-link">Beta</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-beta.html#kssref-beta-phase-banner">Phase Banner</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-beta.html#kssref-beta-phase-tag">Phase Tag</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-breadcrumbs.html" class="comp-lib-menu-link">Breadcrumbs</a>
@@ -152,11 +160,9 @@
                   <a href="section-radio-input.html" class="comp-lib-menu-link">Radio Input</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-select-input.html" class="comp-lib-menu-link">Select Input</a>
 
-                  <ul>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-side-navigation.html" class="comp-lib-menu-link">Side Navigation</a>
@@ -179,15 +185,24 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-select-input">
+                  <div id="kssref-beta">
                 <div>
-                  <h1><a href="#kssref-select-input" class="comp-lib-menu-link">Select Input</a></h1>
+                  <h1><a href="#kssref-beta" class="comp-lib-menu-link">Beta</a></h1>
+
+                </div>
+
+                <!-- pattern examples -->
+
+                  </div>
+                  <section id="kssref-beta-phase-banner">
+                <div>
+                  <h2><a href="#kssref-beta-phase-banner" class="comp-lib-menu-link">Phase Banner</a></h2>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>Select Inputs are used to enable a user to choose from a list of options.</p>
+                    <p>A GOV.UK Phase banner, with a <strong>beta</strong> tag inside.</p>
 
                   </div>
                 </div>
@@ -196,26 +211,82 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <select class="select" name="example_select_input">
-  <option value="one">Option One</option>
-  <option value="two">Option Two</option>
-  <option value="three">Option Three</option>
-  <option value="four">Option Four</option>
-</select>
+                        <div class="beta-banner [modifier class]">
+  <p>
+    <strong class="phase-tag">BETA</strong>
+    <span>This is a new service.Help us improve it - send your
+    <a href="">feedback</a>.</span>
+  </p>
+</div>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;select class=&quot;select&quot; name=&quot;example_select_input&quot;&gt;
-  &lt;option value=&quot;one&quot;&gt;Option One&lt;/option&gt;
-  &lt;option value=&quot;two&quot;&gt;Option Two&lt;/option&gt;
-  &lt;option value=&quot;three&quot;&gt;Option Three&lt;/option&gt;
-  &lt;option value=&quot;four&quot;&gt;Option Four&lt;/option&gt;
-&lt;/select&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;beta-banner [modifier class]&quot;&gt;
+  &lt;p&gt;
+    &lt;strong class=&quot;phase-tag&quot;&gt;BETA&lt;/strong&gt;
+    &lt;span&gt;This is a new service.Help us improve it - send your
+    &lt;a href=&quot;&quot;&gt;feedback&lt;/a&gt;.&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-example__description">
+                        <code>.beta-banner--borderless</code> - A border less phase banner
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <div class="beta-banner beta-banner--borderless">
+  <p>
+    <strong class="phase-tag">BETA</strong>
+    <span>This is a new service.Help us improve it - send your
+    <a href="">feedback</a>.</span>
+  </p>
+</div>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;beta-banner beta-banner--borderless&quot;&gt;
+  &lt;p&gt;
+    &lt;strong class=&quot;phase-tag&quot;&gt;BETA&lt;/strong&gt;
+    &lt;span&gt;This is a new service.Help us improve it - send your
+    &lt;a href=&quot;&quot;&gt;feedback&lt;/a&gt;.&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  </section>
+                  <section id="kssref-beta-phase-tag">
+                <div>
+                  <h2><a href="#kssref-beta-phase-tag" class="comp-lib-menu-link">Phase Tag</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>A GOV.UK <strong>beta</strong> Phase tag.</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <nav class="header__menu">
+  <a href="https://www.gov.uk/service-manual" class="phase-tag beta">Beta</a>
+</nav>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;nav class=&quot;header__menu&quot;&gt;
+  &lt;a href=&quot;https://www.gov.uk/service-manual&quot; class=&quot;phase-tag beta&quot;&gt;Beta&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
                       </div>
                     </div>
 
                   </div>
 
-                  </div>
+                  </section>
           </article>
         </div>
     </div>

@@ -7358,7 +7358,23 @@ Styleguide Notification banner
   height: 17px;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_phase-alpha.scss */
+/*
+Phase Banner
+
+A GOV.UK Phase banner, with an **alpha** tag inside.
+
+Markup:
+<div class="alpha-banner">
+  <p>
+    <strong class="phase-tag">ALPHA</strong>
+    <span>This is a trial service. Help us improve it - send your
+    <a href="">feedback</a>.</span>
+  </p>
+</div>
+
+Styleguide Alpha.Phase Banner
+*/
+/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-alpha.scss */
 .alpha-banner {
   padding: 10px 0 8px 0;
   padding-bottom: 10px;
@@ -7423,7 +7439,7 @@ Styleguide Notification banner
   vertical-align: baseline;
 }
 
-/* line 4, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_phase-alpha.scss */
+/* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-alpha.scss */
 .alpha-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -7445,43 +7461,32 @@ Styleguide Notification banner
 }
 
 @media (max-width: 640px) {
-  /* line 4, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_phase-alpha.scss */
+  /* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-alpha.scss */
   .alpha-banner .phase-tag {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_phase-beta.scss */
-.phase-tag {
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: top;
-  vertical-align: baseline;
-  margin: 0 8px 0 0;
-  padding: 2px 5px 0;
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 300;
-  text-transform: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: #fff;
-  background-color: #f47738;
-}
+/*
+Phase Banner
 
-@media (max-width: 640px) {
-  /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_phase-beta.scss */
-  .phase-tag {
-    font-size: 14px;
-    line-height: 1.14286;
-  }
-}
+A GOV.UK Phase banner, with a **beta** tag inside.
 
-/* line 5, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_phase-beta.scss */
+Markup:
+<div class="beta-banner {{modifier_class}}">
+  <p>
+    <strong class="phase-tag">BETA</strong>
+    <span>This is a new service.Help us improve it - send your
+    <a href="">feedback</a>.</span>
+  </p>
+</div>
+
+.beta-banner--borderless - A border less phase banner
+
+Styleguide Beta.Phase Banner
+*/
+/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-beta.scss */
 .beta-banner {
   padding: 10px 0 8px 0;
   padding-bottom: 10px;
@@ -7546,12 +7551,53 @@ Styleguide Notification banner
   vertical-align: baseline;
 }
 
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_phase-beta.scss */
+/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-beta.scss */
 .beta-banner--borderless {
   border: none;
 }
 
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_phase-beta.scss */
+/*
+Phase Tag
+
+A GOV.UK **beta** Phase tag.
+
+Markup:
+<nav class="header__menu">
+  <a href="https://www.gov.uk/service-manual" class="phase-tag beta">Beta</a>
+</nav>
+
+Styleguide Beta.Phase Tag
+*/
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-beta.scss */
+.phase-tag {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  vertical-align: baseline;
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #f47738;
+}
+
+@media (max-width: 640px) {
+  /* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-beta.scss */
+  .phase-tag {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-beta.scss */
 .header__menu .beta {
   vertical-align: top;
   margin: 0.15789em 0 0 0.26316em;
@@ -10491,7 +10537,22 @@ Styleguide AutoComplete
   display: none;
 }
 
-/* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_external-markup.scss */
+/*
+External Markup
+
+Partial HTML fragments from other services may be vanilla HTML with no classes upon which to apply styles.
+This module can house any wrapper styles to apply to this content.
+
+Markup:
+<div class="external-markup--xsmall">
+  <h2>Heading level 2</h2>
+  <p>Paragraph text</p>
+  <a href="">Anchor</a>
+</div>
+
+Styleguide External Markup
+*/
+/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
 .external-markup--xsmall h2, .external-markup--xsmall .h2-heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -10502,14 +10563,14 @@ Styleguide AutoComplete
 }
 
 @media (max-width: 640px) {
-  /* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_external-markup.scss */
+  /* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
   .external-markup--xsmall h2, .external-markup--xsmall .h2-heading {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_external-markup.scss */
+/* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
 .external-markup--xsmall p, .external-markup--xsmall a, .external-markup--xsmall .link-style, .external-markup--xsmall .button--link-style {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -10519,7 +10580,7 @@ Styleguide AutoComplete
 }
 
 @media (max-width: 640px) {
-  /* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_external-markup.scss */
+  /* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
   .external-markup--xsmall p, .external-markup--xsmall a, .external-markup--xsmall .link-style, .external-markup--xsmall .button--link-style {
     font-size: 14px;
     line-height: 1.14286;
