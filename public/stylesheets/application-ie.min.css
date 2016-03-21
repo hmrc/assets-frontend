@@ -7170,13 +7170,26 @@ Styleguide Form.legend
   margin: 0;
 }
 
-/* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notice-banner.scss */
+/*
+Notification banner
+
+Markup:
+<div class="notice-banner">
+  <div class="notice-banner__wrapper">
+    <h3 class="notice-banner__content">Please help us improve our service</h3>
+    <a class="notice-banner__content" href="#">Enter our survey</a>
+  </div>
+</div>
+
+Styleguide Notification banner
+*/
+/* line 15, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notice-banner.scss */
 .notice-banner {
   width: 100%;
   background-color: #003e74;
 }
 
-/* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notice-banner.scss */
+/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notice-banner.scss */
 .notice-banner__wrapper {
   max-width: 960px;
   margin: 0 auto;
@@ -7184,13 +7197,13 @@ Styleguide Form.legend
   padding: 15px 30px;
 }
 
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notice-banner.scss */
+/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notice-banner.scss */
 .notice-banner__content {
   color: #fff;
   margin-top: 0;
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notice-banner.scss */
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notice-banner.scss */
 .notice-banner__content a, .notice-banner__content .link-style, .notice-banner__content .button--link-style {
   color: #fff;
 }
@@ -10560,21 +10573,32 @@ Styleguide Textarea Input.Counter
   margin: 0 0 0 0.26316em;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_toggle-button.scss */
+/*
+Toggle Button
+
+Markup:
+<span class="toggle-btn {{modifier_class}}">Toggle Button</span>
+
+.toggle-btn--on - The toggle button is on
+.toggle-btn--off - The toggle button is off
+
+Styleguide Toggle Button
+*/
+/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
 .toggle-btn {
   padding: 0.26316em 0.52632em 0.15789em 0.52632em;
   display: inline-block;
   line-height: 1.4em;
 }
 
-/* line 7, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_toggle-button.scss */
+/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
 .toggle-btn--on {
   background-color: #00823b;
   color: #fff;
   margin: 0 0.52632em 0 0;
 }
 
-/* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_toggle-button.scss */
+/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
 .toggle-btn--off {
   background-color: #bfc1c3;
   margin: 0 0 0 0.52632em;

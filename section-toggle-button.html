@@ -96,11 +96,9 @@
                   <a href="section-autocomplete.html" class="comp-lib-menu-link">Auto Complete</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-breadcrumbs.html" class="comp-lib-menu-link">Breadcrumbs</a>
 
-                  <ul>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-buttons.html" class="comp-lib-menu-link">Buttons</a>
@@ -158,85 +156,54 @@
                   <a href="section-textarea-input.html" class="comp-lib-menu-link">Textarea Input</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-toggle-button.html" class="comp-lib-menu-link">Toggle Button</a>
 
+                  <ul>
+                  </ul>
                 </li>
               </ul>
             </nav>
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-breadcrumbs">
+                  <div id="kssref-toggle-button">
                 <div>
-                  <h1><a href="#kssref-breadcrumbs" class="comp-lib-menu-link">Breadcrumbs</a></h1>
+                  <h1><a href="#kssref-toggle-button" class="comp-lib-menu-link">Toggle Button</a></h1>
 
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <p>The breadcrumb nav is styled using the <code>.breadcrumb-nav</code> selector. You can also have a <em>slimmer</em> version by adding
-the <code>.breadcrumb-nav--slim</code> modifier.</p>
-
-                  </div>
                 </div>
 
                 <!-- pattern examples -->
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                            <nav class="breadcrumb-nav [modifier class]">
-        <ul class="breadcrumb-nav__list">
-                    <li class="breadcrumb-nav__item">
-                      <a href="/component-library">Home</a>
-                    </li>
-                    <li class="breadcrumb-nav__item
-                               breadcrumb-nav__item--trail"></li>
-            <li class="breadcrumb-nav__item">Breadcrumbs</li>
-        </ul>
-    </nav>
+                        <span class="toggle-btn [modifier class]">Toggle Button</span>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">    &lt;nav class=&quot;breadcrumb-nav [modifier class]&quot;&gt;
-        &lt;ul class=&quot;breadcrumb-nav__list&quot;&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;
-                      &lt;a href=&quot;/component-library&quot;&gt;Home&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item
-                               breadcrumb-nav__item--trail&quot;&gt;&lt;/li&gt;
-            &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;Breadcrumbs&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;toggle-btn [modifier class]&quot;&gt;Toggle Button&lt;/span&gt;</code></pre>
                       </div>
                     </div>
 
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-example__description">
-                        <code>.breadcrumb-nav--slim</code> - A <em>slimmer</em> version of the breadcrumb with less <code>margin</code> and <code>padding</code>
+                        <code>.toggle-btn--on</code> - The toggle button is on
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                            <nav class="breadcrumb-nav breadcrumb-nav--slim">
-        <ul class="breadcrumb-nav__list">
-                    <li class="breadcrumb-nav__item">
-                      <a href="/component-library">Home</a>
-                    </li>
-                    <li class="breadcrumb-nav__item
-                               breadcrumb-nav__item--trail"></li>
-            <li class="breadcrumb-nav__item">Breadcrumbs</li>
-        </ul>
-    </nav>
+                        <span class="toggle-btn toggle-btn--on">Toggle Button</span>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">    &lt;nav class=&quot;breadcrumb-nav breadcrumb-nav--slim&quot;&gt;
-        &lt;ul class=&quot;breadcrumb-nav__list&quot;&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;
-                      &lt;a href=&quot;/component-library&quot;&gt;Home&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item
-                               breadcrumb-nav__item--trail&quot;&gt;&lt;/li&gt;
-            &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;Breadcrumbs&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;toggle-btn toggle-btn--on&quot;&gt;Toggle Button&lt;/span&gt;</code></pre>
+                      </div>
+                    </div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-example__description">
+                        <code>.toggle-btn--off</code> - The toggle button is off
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <span class="toggle-btn toggle-btn--off">Toggle Button</span>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;toggle-btn toggle-btn--off&quot;&gt;Toggle Button&lt;/span&gt;</code></pre>
                       </div>
                     </div>
                   </div>
