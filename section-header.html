@@ -136,22 +136,22 @@
                   <a href="section-grids.html" class="comp-lib-menu-link">Grids</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-header.html" class="comp-lib-menu-link">Header</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-header.html#kssref-header-transaction">Transaction</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-label.html" class="comp-lib-menu-link">Label</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-links.html" class="comp-lib-menu-link">Links</a>
 
-                  <ul>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-links.html#kssref-links-external">External</a>
-                      </li>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-notification-banner.html" class="comp-lib-menu-link">Notification banner</a>
@@ -186,15 +186,15 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-links">
+                  <div id="kssref-header">
                 <div>
-                  <h1><a href="#kssref-links" class="comp-lib-menu-link">Links</a></h1>
+                  <h1><a href="#kssref-header" class="comp-lib-menu-link">Header</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>A link takes you to a location on the same page or any other page on the Web.</p>
+                    <p>A page header is used to show a heading for a section on a page using <code>.page-header</code></p>
 
                   </div>
                 </div>
@@ -203,25 +203,29 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="link--no-underline">Example link</a>
+                        <header class="page-header">
+    <h1>Heading level 1</h1>
+</header>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;link--no-underline&quot;&gt;Example link&lt;/a&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;header class=&quot;page-header&quot;&gt;
+    &lt;h1&gt;Heading level 1&lt;/h1&gt;
+&lt;/header&gt;</code></pre>
                       </div>
                     </div>
 
                   </div>
 
                   </div>
-                  <section id="kssref-links-external">
+                  <section id="kssref-header-transaction">
                 <div>
-                  <h2><a href="#kssref-links-external" class="comp-lib-menu-link">External</a></h2>
+                  <h2><a href="#kssref-header-transaction" class="comp-lib-menu-link">Transaction</a></h2>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>An external link indicates you it will take you to a location on an external site to the one you are currently on.</p>
+                    <p>A transactional header is to signify the completion of a transaction on a service. You can use this heading with the following markup.</p>
 
                   </div>
                 </div>
@@ -230,123 +234,19 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="[modifier class]" rel="external">Example external link</a>
+                        <div class="transaction-banner--complete">
+  <h1 class="transaction-banner__heading">Heading level 1</h1>
+  <p>Information concerning the transaction</p>
+</div>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;[modifier class]&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;transaction-banner--complete&quot;&gt;
+  &lt;h1 class=&quot;transaction-banner__heading&quot;&gt;Heading level 1&lt;/h1&gt;
+  &lt;p&gt;Information concerning the transaction&lt;/p&gt;
+&lt;/div&gt;</code></pre>
                       </div>
                     </div>
 
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.external-link-12</code> - External Link font size 12
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="external-link-12" rel="external">Example external link</a>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-12&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.external-link-12-no-hover</code> - External Link font size 12 without hover
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="external-link-12-no-hover" rel="external">Example external link</a>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-12-no-hover&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.external-link-13</code> - External Link font size 13
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="external-link-13" rel="external">Example external link</a>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-13&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.external-link-13-no-hover</code> - External Link font size 13 without hover
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="external-link-13-no-hover" rel="external">Example external link</a>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-13-no-hover&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.external-link-14</code> - External Link font size 14
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="external-link-14" rel="external">Example external link</a>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-14&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.external-link-14-bold-no-hover</code> - External Link font size 14 without hover
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="external-link-14-bold-no-hover" rel="external">Example external link</a>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-14-bold-no-hover&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.external-link-16</code> - External Link font size 16
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="external-link-16" rel="external">Example external link</a>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-16&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.external-link-16-bold-no-hover</code> - External Link font size 16 bold without hover
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="external-link-16-bold-no-hover" rel="external">Example external link</a>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-16-bold-no-hover&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.external-link-19</code> - External Link font size 19
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="external-link-19" rel="external">Example external link</a>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-19&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-example__description">
-                        <code>.external-link-19-bold-no-hover</code> - External Link font size 19 bold without hover
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a class="external-link-19-bold-no-hover" rel="external">Example external link</a>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-19-bold-no-hover&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                      </div>
-                    </div>
                   </div>
 
                   </section>

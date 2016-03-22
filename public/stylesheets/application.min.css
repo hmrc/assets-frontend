@@ -7342,24 +7342,12 @@ Styleguide Form.legend
   margin: 0 0 0.75em;
 }
 
-/**
-@desc         header classes.
-@name         header
-@author       Anthony Munene
-@tested       N/A
-@requires     [
-  toolkit/_colours.scss,
-  toolkit/_typography.scss,
-  toolkit/_shims.scss,
-  toolkit/_conditionals.scss
-]
-*/
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_header.scss */
+/* line 3, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header {
   background-color: #0b0c0c;
 }
 
-/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_header.scss */
+/* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header__logo {
   padding-top: 0;
   float: left;
@@ -7367,14 +7355,14 @@ Styleguide Form.legend
 }
 
 @media screen and (max-width: 379px) {
-  /* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_header.scss */
+  /* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
   .header__logo {
     width: auto;
     float: none;
   }
 }
 
-/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_header.scss */
+/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header__logo a, .header__logo .link-style, .header__logo .button--link-style {
   float: left;
   position: relative;
@@ -7383,7 +7371,7 @@ Styleguide Form.legend
   overflow: hidden;
 }
 
-/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_header.scss */
+/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header__logo a img, .header__logo .link-style img, .header__logo .button--link-style img {
   position: absolute;
   left: -166px;
@@ -7394,16 +7382,39 @@ Styleguide Form.legend
 }
 
 /*
-  Overriding page header styling from GOVUK elements
+Header
+
+A page header is used to show a heading for a section on a page using `.page-header`
+
+Markup:
+<header class="page-header">
+    <h1>Heading level 1</h1>
+</header>
+
+Styleguide Header
 */
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_header.scss */
+/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .page-header {
   margin: 0;
   border-bottom: 0px;
   padding: 0;
 }
 
-/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_header.scss */
+/*
+Transaction
+
+A transactional header is to signify the completion of a transaction on a service. You can use this heading with the following markup.
+
+
+Markup:
+<div class="transaction-banner--complete">
+  <h1 class="transaction-banner__heading">Heading level 1</h1>
+  <p>Information concerning the transaction</p>
+</div>
+
+Styleguide Header.Transaction
+*/
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .transaction-banner--complete {
   background-color: #28a197;
   color: #fff;
@@ -7412,7 +7423,7 @@ Styleguide Form.legend
   text-align: center;
 }
 
-/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_header.scss */
+/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .transaction-banner__heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -7424,7 +7435,7 @@ Styleguide Form.legend
 }
 
 @media (max-width: 640px) {
-  /* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_header.scss */
+  /* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
   .transaction-banner__heading {
     font-size: 24px;
     line-height: 1.04167;
