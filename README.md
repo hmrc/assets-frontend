@@ -153,10 +153,8 @@ $ npm install --force hmrc/component-library-template
 
 ## Contributing
 
-1. Fork this repo
-2. Create a feature branch
-3. Push to your fork
-4. Open a pull request back to this repo
+Please take a few minutes to review the process and guidelines before you submit your request, otherwise it may be rejected.
+[CONTRIBUTING.md](CONTRIBUTING.md)
 
 
 ## More info
