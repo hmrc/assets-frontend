@@ -100,17 +100,9 @@
                   <a href="section-autocomplete.html" class="comp-lib-menu-link">Auto Complete</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-beta.html" class="comp-lib-menu-link">Beta</a>
 
-                  <ul>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-beta.html#kssref-beta-phase-banner">Phase Banner</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-beta.html#kssref-beta-phase-tag">Phase Tag</a>
-                      </li>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-breadcrumbs.html" class="comp-lib-menu-link">Breadcrumbs</a>
@@ -160,9 +152,14 @@
                   <a href="section-notification-banner.html" class="comp-lib-menu-link">Notification banner</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-panel.html" class="comp-lib-menu-link">Panel</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-panel.html#kssref-panel-form">Form</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-radio-input.html" class="comp-lib-menu-link">Radio Input</a>
@@ -193,24 +190,15 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-beta">
+                  <div id="kssref-panel">
                 <div>
-                  <h1><a href="#kssref-beta" class="comp-lib-menu-link">Beta</a></h1>
-
-                </div>
-
-                <!-- pattern examples -->
-
-                  </div>
-                  <section id="kssref-beta-phase-banner">
-                <div>
-                  <h2><a href="#kssref-beta-phase-banner" class="comp-lib-menu-link">Phase Banner</a></h2>
+                  <h1><a href="#kssref-panel" class="comp-lib-menu-link">Panel</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>A GOV.UK Phase banner, with a <strong>beta</strong> tag inside.</p>
+                    <p>A panel is used to highlight content by indenting it.</p>
 
                   </div>
                 </div>
@@ -219,60 +207,65 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="beta-banner [modifier class]">
-  <p>
-    <strong class="phase-tag">BETA</strong>
-    <span>This is a new service.Help us improve it - send your
-    <a href="">feedback</a>.</span>
-  </p>
+                        <div class="panel-indent [modifier class]">
+  <h2>Heading level 2</h2>
+  <p>Example paragraph text</p>
 </div>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;beta-banner [modifier class]&quot;&gt;
-  &lt;p&gt;
-    &lt;strong class=&quot;phase-tag&quot;&gt;BETA&lt;/strong&gt;
-    &lt;span&gt;This is a new service.Help us improve it - send your
-    &lt;a href=&quot;&quot;&gt;feedback&lt;/a&gt;.&lt;/span&gt;
-  &lt;/p&gt;
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;panel-indent [modifier class]&quot;&gt;
+  &lt;h2&gt;Heading level 2&lt;/h2&gt;
+  &lt;p&gt;Example paragraph text&lt;/p&gt;
 &lt;/div&gt;</code></pre>
                       </div>
                     </div>
 
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-example__description">
-                        <code>.beta-banner--borderless</code> - A border less phase banner
+                        <code>.panel-indent--gutter</code> - Panel indent with gutter
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="beta-banner beta-banner--borderless">
-  <p>
-    <strong class="phase-tag">BETA</strong>
-    <span>This is a new service.Help us improve it - send your
-    <a href="">feedback</a>.</span>
-  </p>
+                        <div class="panel-indent panel-indent--gutter">
+  <h2>Heading level 2</h2>
+  <p>Example paragraph text</p>
 </div>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;beta-banner beta-banner--borderless&quot;&gt;
-  &lt;p&gt;
-    &lt;strong class=&quot;phase-tag&quot;&gt;BETA&lt;/strong&gt;
-    &lt;span&gt;This is a new service.Help us improve it - send your
-    &lt;a href=&quot;&quot;&gt;feedback&lt;/a&gt;.&lt;/span&gt;
-  &lt;/p&gt;
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;panel-indent panel-indent--gutter&quot;&gt;
+  &lt;h2&gt;Heading level 2&lt;/h2&gt;
+  &lt;p&gt;Example paragraph text&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-example__description">
+                        <code>.panel-indent--info</code> - An information panel indent
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <div class="panel-indent panel-indent--info">
+  <h2>Heading level 2</h2>
+  <p>Example paragraph text</p>
+</div>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;panel-indent panel-indent--info&quot;&gt;
+  &lt;h2&gt;Heading level 2&lt;/h2&gt;
+  &lt;p&gt;Example paragraph text&lt;/p&gt;
 &lt;/div&gt;</code></pre>
                       </div>
                     </div>
                   </div>
 
-                  </section>
-                  <section id="kssref-beta-phase-tag">
+                  </div>
+                  <section id="kssref-panel-form">
                 <div>
-                  <h2><a href="#kssref-beta-phase-tag" class="comp-lib-menu-link">Phase Tag</a></h2>
+                  <h2><a href="#kssref-panel-form" class="comp-lib-menu-link">Form</a></h2>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>A GOV.UK <strong>beta</strong> Phase tag.</p>
+                    <p>A panel that includes a form has specific rules applied.</p>
 
                   </div>
                 </div>
@@ -281,14 +274,34 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <nav class="header__menu">
-  <a href="https://www.gov.uk/service-manual" class="phase-tag beta">Beta</a>
-</nav>
+                        <div class="panel-indent">
+  <legend>Please enter your fullname</legend>
+  <fieldset class="form-group">
+    <label for="firstname">
+      Firstname
+      <input id="firstname" type="text" class="form-control" />
+    </label>
+    <label for="surname">
+      Surname
+      <input id="surname" type="text" class="form-control" />
+    </label>
+  </fieldset>
+</div>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;nav class=&quot;header__menu&quot;&gt;
-  &lt;a href=&quot;https://www.gov.uk/service-manual&quot; class=&quot;phase-tag beta&quot;&gt;Beta&lt;/a&gt;
-&lt;/nav&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;panel-indent&quot;&gt;
+  &lt;legend&gt;Please enter your fullname&lt;/legend&gt;
+  &lt;fieldset class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;firstname&quot;&gt;
+      Firstname
+      &lt;input id=&quot;firstname&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;
+    &lt;/label&gt;
+    &lt;label for=&quot;surname&quot;&gt;
+      Surname
+      &lt;input id=&quot;surname&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+&lt;/div&gt;</code></pre>
                       </div>
                     </div>
 

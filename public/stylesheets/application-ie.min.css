@@ -7977,7 +7977,23 @@ Styleguide Beta.Phase Tag
   color: #005ea5;
 }
 
-/* line 2, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_panel.scss */
+/*
+Panel
+
+A panel is used to highlight content by indenting it.
+
+Markup:
+<div class="panel-indent {{modifier_class}}">
+  <h2>Heading level 2</h2>
+  <p>Example paragraph text</p>
+</div>
+
+.panel-indent--gutter - Panel indent with gutter
+.panel-indent--info   - An information panel indent
+
+Styleguide Panel
+*/
+/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent, .email-notifications__indent {
   margin: 0;
   clear: both;
@@ -7992,17 +8008,17 @@ Styleguide Beta.Phase Tag
   clear: both;
 }
 
-/* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_panel.scss */
+/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent p:first-child, .email-notifications__indent p:first-child {
   margin-top: 0;
 }
 
-/* line 15, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_panel.scss */
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent--gutter {
   margin: 30px 15px 45px 0;
 }
 
-/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_panel.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent--info {
   background-color: #d5e8f3;
   margin: 15px 0 20px 0;
@@ -8010,23 +8026,45 @@ Styleguide Beta.Phase Tag
   border-left: 0.21053em solid #005ea5;
 }
 
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_panel.scss */
-.panel-indent legend, .email-notifications__indent legend {
-  margin-top: 0;
-}
-
-/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_panel.scss */
+/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent p:only-child, .email-notifications__indent p:only-child,
 .panel-indent p:last-child, .email-notifications__indent p:last-child {
   margin-bottom: 0;
 }
 
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_panel.scss */
+/*
+Form
+
+A panel that includes a form has specific rules applied.
+
+Markup:
+<div class="panel-indent">
+  <legend>Please enter your fullname</legend>
+  <fieldset class="form-group">
+    <label for="firstname">
+      Firstname
+      <input id="firstname" type="text" class="form-control" />
+    </label>
+    <label for="surname">
+      Surname
+      <input id="surname" type="text" class="form-control" />
+    </label>
+  </fieldset>
+</div>
+
+Styleguide Panel.form
+*/
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+.panel-indent legend, .email-notifications__indent legend {
+  margin-top: 0;
+}
+
+/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent .form-group:last-child, .email-notifications__indent .form-group:last-child {
   margin-bottom: 0;
 }
 
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_panel.scss */
+/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent .form-control, .email-notifications__indent .form-control {
   width: 92%;
 }
