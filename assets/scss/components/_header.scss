@@ -1,16 +1,5 @@
-/**
-@desc         header classes.
-@name         header
-@author       Anthony Munene
-@tested       N/A
-@requires     [
-  toolkit/_colours.scss,
-  toolkit/_typography.scss,
-  toolkit/_shims.scss,
-  toolkit/_conditionals.scss
-]
-*/
-
+// This .header work has been superseded by the work found in govuk_template
+//POTENTIALLY-NOT-IN-USE
 .header {
   @extend %contain-floats;
   background-color: $black;
@@ -20,6 +9,7 @@
   }
 }
 
+//POTENTIALLY-NOT-IN-USE
 .header__logo {
   @extend %contain-floats;
   padding-top: 0;
@@ -50,14 +40,40 @@
 }
 
 /*
-  Overriding page header styling from GOVUK elements
+Header
+
+A page header is used to show a heading for a section on a page using `.page-header`
+
+Markup:
+<header class="page-header">
+    <h1>Heading level 1</h1>
+</header>
+
+Styleguide Header
 */
+
+// Overriding page header styling from GOVUK elements
 .page-header {
   margin: 0;
   border-bottom: 0px;
   padding: 0;
 }
 
+
+/*
+Transaction
+
+A transactional header is to signify the completion of a transaction on a service. You can use this heading with the following markup.
+
+
+Markup:
+<div class="transaction-banner--complete">
+  <h1 class="transaction-banner__heading">Heading level 1</h1>
+  <p>Information concerning the transaction</p>
+</div>
+
+Styleguide Header.Transaction
+*/
 .transaction-banner--complete {
   background-color: #28a197;
   color: $white;
@@ -67,6 +83,6 @@
 }
 
 .transaction-banner__heading {
-    @include bold-36();
-    margin: 15px 0;
-  }
+  @include bold-36();
+  margin: 15px 0;
+}
