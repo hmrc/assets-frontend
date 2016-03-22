@@ -35,23 +35,35 @@ ul, nav ul {
 }
 
 /*
-Numbered list
+Numbered List
 
-An ordered list with numbers where the parent element uses the modifier `.list--numbered` and the child elements use the class `.numbered`
+Defining sections in markup with numbers associated against them using `.list--numbered` on the container and `.numbered` on the element to identify its position
 
 Markup:
-<div style="position:relative" class="list--numbered">
-  <p class="numbered">List item 1</p>
-</div>
-<div style="position:relative" class="list--numbered">
-  <p class="numbered">List item 2</p>
-</div>
-<div style="position:relative" class="list--numbered">
-  <p class="numbered">List item 3</p>
-</div>
+<fieldset class="list--numbered">
+  <legend>Section 1</legend>
+  <div class="form-field-group numbered">
+    <label class="bold-small" for="example-1">
+      Question 1
+      <div class="form-field">
+        <input type="text" class="form-control" id="example-1" />
+      </div>
+    </label>
+  </div>
+</fieldset>
+<fieldset class="list--numbered">
+  <legend>Section 2</legend>
+  <div class="form-field-group numbered">
+    <label class="bold-small" for="example-2">
+      Question 1
+      <div class="form-field">
+        <input type="text" class="form-control" id="example-2" />
+      </div>
+    </label>
+  </div>
+</fieldset>
 
-
-Styleguide Lists.numbered list
+Styleguide Lists.Numbered List
 */
 
 .list--numbered {
@@ -104,20 +116,20 @@ Styleguide Lists.numbered list
 }
 
 /*
-Activity list
+Activity List
 
-An definiton list where the list uses the class `.activity-list` and the child elements uses the element class `.activity-list__date` and it's siblings use `.activity-list__description`
+A list of dates with associated descriptions for that date, the date has the class `.activity-list__date` and the description has the class `.activity-list__description`
 
 Markup:
-<dl class="activity-list">
-  <dt class="activity-list__date">14th March 2016</dt>
-  <dd class="activity-list__description">description</dd>
-  <dd class="activity-list__description">description</dd>
-  <dd class="activity-list__description">description</dd>
-  <dd class="activity-list__description">description</dd>
-</dl>
+<ul class="activity-list">
+  <li class="{{modifier_class}}">14th March 2016</li>
+  <li class="activity-list__description">event for 14th March 2016</li>
+</ul>
 
-Styleguide Lists.activity list
+.activity-list__date                      - A list item which represents a date
+.activity-list__date--highlight           - A highlighted list item which represents a date
+
+Styleguide Lists.Activity List
 */
 
 .activity-list {
@@ -154,10 +166,13 @@ Communication alerts, this applies a margin right after the image using the clas
 
 Markup:
 <ul class="coms-alerts">
-  <li><img src="./public/images/icons/icon-important.png" alt="coms alert"/>List item 1</li>
+  <li>
+    <img src="./public/images/icons/icon-important.png" alt="coms alert"/>
+    List item 1
+  </li>
 </ul>
 
-Styleguide Lists.coms alerts
+Styleguide Lists.Coms Alerts
 */
 
 .coms-alerts {
@@ -167,7 +182,7 @@ Styleguide Lists.coms alerts
 }
 
 /*
-Definition list
+Definition List
 
 Definition list with a modifier of `dl--label-value` where the definition title is floated left and definition descriptions are floated right and bold 
 
@@ -181,7 +196,7 @@ Markup:
   <dd>List item 3 description</dd>
 </dl>
 
-Styleguide Lists.definiton list
+Styleguide Lists.Definiton List
 */
 
 .dl--label-value {
@@ -203,18 +218,27 @@ Styleguide Lists.definiton list
 }
 
 /*
-Action list
+Action List
 
 An action list `.action-list` with each element having a top border
 
 Markup:
 <ul class="action-list">
-  <li><p>First paragraph<p><p>Second paragraph</p></li>
-  <li><p>First paragraph<p><p>Second paragraph</p></li>
-  <li><p>First paragraph<p><p>Second paragraph</p></li>
+  <li>
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li>
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li>
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
 </ul>
 
-Styleguide Lists.action list
+Styleguide Lists.Action List
 */
 
 .action-list {
@@ -240,12 +264,21 @@ An action list that is grouped with each element having a top border and reduced
 
 Markup:
 <ul class="list-noborder action-list">
-  <li class="action-list__grouped"><p>First paragraph<p><p>Second paragraph</p></li>
-  <li class="action-list__grouped"><p>First paragraph<p><p>Second paragraph</p></li>
-  <li class="action-list__grouped"><p>First paragraph<p><p>Second paragraph</p></li>
+  <li class="action-list__grouped">
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li class="action-list__grouped">
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li class="action-list__grouped">
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
 </ul>
 
-Styleguide Lists.action list grouped
+Styleguide Lists.Action List Grouped
 */
 
 .action-list__grouped {
@@ -290,7 +323,7 @@ Markup:
 
 .two-col-list--padded               - A column with bottom padding
 
-Styleguide Lists.two Column List
+Styleguide Lists.Two Column List
 */
 
 .two-col-list {
@@ -358,7 +391,7 @@ Markup:
   </div>
 </div>
 
-Styleguide Lists.three Column List
+Styleguide Lists.Three Column List
 */
 
 .three-col-list {
@@ -394,7 +427,7 @@ Styleguide Lists.three Column List
 }
 
 /*
-Link list
+Link List
 
 For creating a list of links where the markup may not be list items
 
@@ -405,7 +438,7 @@ Markup:
   <a class="link-list__item" href="#">Item 3</a>
 </div>
 
-Styleguide Lists.link lists
+Styleguide Lists.Link Lists
 */
 
 .link-list {
