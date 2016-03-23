@@ -2,7 +2,7 @@ require('jquery');
 
 describe('Given I have an enhanced table on the page', function() {
   jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/';
-  loadFixtures('enhanced-tables.html');
+  loadFixtures('enhanced-tables-fixture.html');
   var tableSelector = '.js-datatable', 
       $table = $(tableSelector), 
       dataTable = require('../../javascripts/modules/enhancedTables.js')($table),
@@ -29,23 +29,33 @@ describe('Given I have an enhanced table on the page', function() {
   });
   
   it("should be initiated with ascending sort on column 3, as configured on table's data attributes.", function() {
-    var order = objDataTable.order();
+    expect(objDataTable.order().length).toBe(2);
     
-    expect(order.length).toBe(2);
-    //expect(order[0].join(",")).toBe($table.data('order').join(","));
-    
-    expect(order[0]).toBe(3);
-    expect(order[1]).toBe("asc");
+    expect(objDataTable.order()[0]).toBe(3);
+    expect(objDataTable.order()[1]).toBe("asc");
 
-    // reset sort order (use dom, no api function)
+    // sort col 3 in descending order (use dom, no api function)
     $table.find("thead > tr > th:eq(3)").click();
+
+    expect(objDataTable.order()[0][0]).toBe(3);
+    expect(objDataTable.order()[0][1]).toBe("desc");
+
+    // sort col 3 in ascending order (use dom, no api function)
+    $table.find("thead > tr > th:eq(2)").click();
+
+    expect(objDataTable.order()[0][0]).toBe(2);
+    expect(objDataTable.order()[0][1]).toBe("asc");
+
+    // sort col 2 in descending order (use dom, no api function)
+    $table.find("thead > tr > th:eq(2)").click();
+
+    expect(objDataTable.order()[0][0]).toBe(2);
+    expect(objDataTable.order()[0][1]).toBe("desc");
   });
   
   it("should return one (1) search result when searching for table row three (3) column one (1) cell text.", function() {
-    var search = objDataTable.columns(0).search("Row 3 / Cell 1").draw(),
-        searchResults = $table.find("tbody > tr");
-        
-        expect(searchResults.length).toBe(1);
+    objDataTable.columns(0).search("Row 3 / Cell 1").draw(),
+    expect($table.find("tbody > tr").length).toBe(1);
   });
 });
 
