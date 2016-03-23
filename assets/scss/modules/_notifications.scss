@@ -163,7 +163,8 @@
 }
 
 .highlight-message--icon-top {
-  background-position-y: em(20);
+  background-position: em(20) em(20);
+  background-size: em(27) em(27);
 }
 
 .highlight-message--dark {
