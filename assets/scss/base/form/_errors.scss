@@ -1,9 +1,63 @@
+/*
+Summary
+
+Errors are used to display information to the user about incorrect entries within a form.
+
+Markup:
+<div class="flash error-summary error-summary--show"
+     id="error-summary-display"
+     role="alert"
+     aria-labelledby="error-summary-heading"
+     tabindex="-1">
+    <h2 id="error-summary-heading" class="h3-heading">Summary Heading</h2>
+    <ul>
+      <li role="tooltip"><a href="">Please enter your first name</a></li>
+      <li role="tooltip"><a href="">Please enter your surname</a></li>
+    </ul>
+</div>
+
+
+Styleguide Errors.Summary
+*/
 .error-summary {
   display: none;
 }
 
 .error-summary--show {
   display: block;
+}
+
+//POTENTIALLY-NOT-IN-USE
+.error-overview {
+    @include error-box;
+    margin-bottom: em(20);
+}
+
+
+/*
+Overview Heading
+
+Used as a heading in an error overview
+
+Markup:
+<h1 class="error-overview__heading">Example heading level 1 error</h1>
+
+Styleguide Errors.Overview Heading
+*/
+.error-overview__heading {
+    font-size: em(22);
+    margin: 0;
+}
+
+//POTENTIALLY-NOT-IN-USE
+.error-overview__list-item {
+    color: $error-color;
+    font-size: em(15);
+    margin-left: em(20);
+
+    a {
+        color: inherit;
+    }
 }
 
 .error-notification {
@@ -13,26 +67,40 @@
   @include core-16;
 }
 
-.error-overview {
-    @include error-box;
-    margin-bottom: em(20);
-}
+/*
+Form Field
 
-.error-overview__heading {
-    font-size: em(22);
-    margin: 0;
-}
+The form field in error state is demonstrated by using the `.form-field--error` selector. Styles are also provide for
+`.error-notification` and `.error-field` to highlight the communication of errors to the user.
 
-.error-overview__list-item {
-    color: $error-color;
-    font-size: em(15);
-    margin-left: em(20);
+Markup:
+<fieldset>
+  <legend>Please enter your full name</legend>
+  <div class="form-field form-field--error {{modifier_class}}">
+    <span class="error-notification">Please enter your first name</span>
+    <label for="firstname">
+        Full Name
+        <input type="text"
+               class="input--medium error-field"
+               id="firstname" />
+    </label>
+  </div>
+  <div class="form-field form-field--error {{modifier_class}}">
+    <span class="error-notification">Please enter your surname</span>
+    <label for="surname">
+        Full Name
+        <input type="text"
+               class="input--medium error-field"
+               id="surname" />
+    </label>
+  </div>
+</fieldset>
 
-    a {
-        color: inherit;
-    }
+.numbered         - fieldset with a different margin
+.fields-aligned   - flush aligned fieldset
 
-}
+Styleguide Errors.Form Field
+*/
 
 .form-field--error {
   @include error-box(3px);
@@ -52,7 +120,6 @@
       padding-left: 0;
       margin-left: 0;
     }
-
   }
 
   .error-notification {
@@ -63,10 +130,41 @@
   .error-field {
     border: 3px solid $error-border-color;
   }
-  
 }
 
-.error,
+/*
+Form Field Group
+
+The form field group in error state is demonstrated by using the `.form-field-group--error` selector. Styles are also provide for
+`.error-notification` to highlight the communication of errors to the user.
+
+Markup:
+<fieldset class="form-field-group form-field-group--error">
+  <legend>Please enter your full name</legend>
+  <div class="form-field">
+    <label for="firstname">
+        First Name
+        <span class="error-notification">Please enter your first name</span>
+        <input type="text"
+               class="form-control"
+               id="firstname" />
+    </label>
+  </div>
+  <div class="form-field">
+    <label for="surname">
+        Surname
+        <span class="error-notification">Please enter your surname</span>
+        <input type="text"
+               class="form-control"
+               id="surname" />
+    </label>
+  </div>
+</fieldset>
+
+Styleguide Errors.Form Field Group
+*/
+
+.error, //used for backward compatibility for work found in play-ui
 .form-field-group--error {
   @include error-box(3px);
   margin: 0 em(-16) em(8) em(-16);
