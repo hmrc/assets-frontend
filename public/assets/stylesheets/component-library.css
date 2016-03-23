@@ -8,6 +8,7 @@
   width: 20%;
   display: table-cell;
   vertical-align: top;
+  padding-right: .8em;
 }
 .comp-lib-main {
   width: 80%;
@@ -15,6 +16,7 @@
 }
 .comp-lib-menu-item {
   margin-bottom: .2em;
+  padding: .1em .2em .1em 0;
 }
 .comp-lib-menu-item--indented {
   list-style: disc;
@@ -36,11 +38,10 @@
 .comp-lib-menu-link:active {
   color: #000;
 }
-.comp-lib-description {
-  line-height: 1.5;
-}
+.comp-lib-description,
 .comp-lib-description p {
   line-height: 1.5;
+  margin-bottom: 1em;
 }
 .comp-lib-description--experimental {
   border-left: 4px solid #af1324;
@@ -55,22 +56,14 @@
   border: none;
 }
 .comp-lib-code {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
   border: none;
   font-size: .9em;
 }
 .comp-lib-pattern-component {
-  border: 1px solid #f8f8f8;
-  border-top-right-radius: 4px;
-  border-top-right-radius: 4px;
-  padding: .4em;
+  padding: 1.2em 0;
 }
 .comp-lib-pattern-example {
-  margin-bottom: 3em;
-}
-.comp-lib-pattern-example__description {
-  margin-bottom: .4em;
+  margin-bottom: 4em;
 }
 .comp-lib-pattern-component .grid-layout__column {
   background-color: #dee0e2;
@@ -80,7 +73,7 @@
 .comp-lib-pattern-component .grid-layout {
   font-size: .8em;
 }
-.comp-lib-pattern-example__description code,
+.comp-lib-description code,
 .comp-lib-pattern-markdown code {
   border: none !important;
   font: inherit;
