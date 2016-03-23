@@ -34,6 +34,34 @@ ul, nav ul {
   }
 }
 
+.bullets {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 1em;
+}
+
+.lower-letters {
+  list-style-type: lower-alpha;
+}
+
+.list--ticks {
+  padding-left: 1.5em;
+
+  li::before {
+    color: $primary-green;
+    content: "\2713";// code for '✓'
+    display: inline-block;
+    margin-left: -1.5em;
+    width: 1.5em;
+  }
+}
+
+.list--inline {
+  li {
+    display: inline;
+  }
+}
+
 /*
 Numbered List
 
@@ -84,34 +112,6 @@ Styleguide Lists.Numbered List
     &:last-child {
       margin-bottom: 0;
     }
-  }
-}
-
-.bullets {
-  list-style-type: disc;
-  list-style-position: inside;
-  margin-left: 1em;
-}
-
-.lower-letters {
-  list-style-type: lower-alpha;
-}
-
-.list--ticks {
-  padding-left: 1.5em;
-
-  li::before {
-    color: $primary-green;
-    content: "\2713"; // code for '✓'
-    display: inline-block;
-    margin-left: -1.5em;
-    width: 1.5em;
-  }
-}
-
-.list--inline {
-  li {
-    display: inline;
   }
 }
 
