@@ -5894,17 +5894,74 @@ implementation
   display: inline-block;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/*
+Summary
+
+Errors are used to display information to the user about incorrect entries within a form.
+
+Markup:
+<div class="flash error-summary error-summary--show"
+     id="error-summary-display"
+     role="alert"
+     aria-labelledby="error-summary-heading"
+     tabindex="-1">
+    <h2 id="error-summary-heading" class="h3-heading">Summary Heading</h2>
+    <ul>
+      <li role="tooltip"><a href="">Please enter your first name</a></li>
+      <li role="tooltip"><a href="">Please enter your surname</a></li>
+    </ul>
+</div>
+
+
+Styleguide Errors.Summary
+*/
+/* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error-summary {
   display: none;
 }
 
-/* line 5, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error-summary--show {
   display: block;
 }
 
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+.error-overview {
+  background-color: #fff;
+  border-left: 3px solid #df3034;
+  padding: 0.75em 1em;
+  margin-bottom: 1.05263em;
+}
+
+/*
+Overview Heading
+
+Used as a heading in an error overview
+
+Markup:
+<h1 class="error-overview__heading">Example heading level 1 error</h1>
+
+Styleguide Errors.Overview Heading
+*/
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+.error-overview__heading {
+  font-size: 1.15789em;
+  margin: 0;
+}
+
+/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+.error-overview__list-item {
+  color: #af1324;
+  font-size: 0.78947em;
+  margin-left: 1.05263em;
+}
+
+/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+.error-overview__list-item a, .error-overview__list-item .link-style, .error-overview__list-item .button--link-style {
+  color: inherit;
+}
+
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error-notification {
   color: #af1324;
   display: none;
@@ -5917,40 +5974,48 @@ implementation
 }
 
 @media (max-width: 640px) {
-  /* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+  /* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
   .error-notification {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
-.error-overview {
-  background-color: #fff;
-  border-left: 3px solid #df3034;
-  padding: 0.75em 1em;
-  margin-bottom: 1.05263em;
-}
+/*
+Form Field
 
-/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
-.error-overview__heading {
-  font-size: 1.15789em;
-  margin: 0;
-}
+The form field in error state is demonstrated by using the `.form-field--error` selector. Styles are also provide for
+`.error-notification` and `.error-field` to highlight the communication of errors to the user.
 
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
-.error-overview__list-item {
-  color: #af1324;
-  font-size: 0.78947em;
-  margin-left: 1.05263em;
-}
+Markup:
+<fieldset>
+  <legend>Please enter your full name</legend>
+  <div class="form-field form-field--error {{modifier_class}}">
+    <span class="error-notification">Please enter your first name</span>
+    <label for="firstname">
+        Full Name
+        <input type="text"
+               class="input--medium error-field"
+               id="firstname" />
+    </label>
+  </div>
+  <div class="form-field form-field--error {{modifier_class}}">
+    <span class="error-notification">Please enter your surname</span>
+    <label for="surname">
+        Full Name
+        <input type="text"
+               class="input--medium error-field"
+               id="surname" />
+    </label>
+  </div>
+</fieldset>
 
-/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
-.error-overview__list-item a, .error-overview__list-item .link-style, .error-overview__list-item .button--link-style {
-  color: inherit;
-}
+.numbered         - fieldset with a different margin
+.fields-aligned   - flush aligned fieldset
 
-/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+Styleguide Errors.Form Field
+*/
+/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error {
   background-color: #fff;
   border-left: 3px solid #df3034;
@@ -5959,18 +6024,18 @@ implementation
   padding: 0.63158em 0.84211em 0.63158em 0.84211em;
 }
 
-/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error.numbered {
   margin-left: 1.15789em !important;
   width: 90%;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error.fields-aligned {
   margin-left: -1.15789em;
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error .error-notification {
   display: block;
   font-family: "nta", Arial, sans-serif;
@@ -5981,19 +6046,50 @@ implementation
 }
 
 @media (max-width: 640px) {
-  /* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+  /* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
   .form-field--error .error-notification {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error .error-field {
   border: 3px solid #df3034;
 }
 
-/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/*
+Form Field Group
+
+The form field group in error state is demonstrated by using the `.form-field-group--error` selector. Styles are also provide for
+`.error-notification` to highlight the communication of errors to the user.
+
+Markup:
+<fieldset class="form-field-group form-field-group--error">
+  <legend>Please enter your full name</legend>
+  <div class="form-field">
+    <label for="firstname">
+        First Name
+        <span class="error-notification">Please enter your first name</span>
+        <input type="text"
+               class="form-control"
+               id="firstname" />
+    </label>
+  </div>
+  <div class="form-field">
+    <label for="surname">
+        Surname
+        <span class="error-notification">Please enter your surname</span>
+        <input type="text"
+               class="form-control"
+               id="surname" />
+    </label>
+  </div>
+</fieldset>
+
+Styleguide Errors.Form Field Group
+*/
+/* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error,
 .form-field-group--error {
   background-color: #fff;
@@ -6002,7 +6098,7 @@ implementation
   margin: 0 -0.84211em 0.42105em -0.84211em;
 }
 
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 172, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error .error-notification,
 .form-field-group--error .error-notification {
   display: block;
@@ -10682,7 +10778,7 @@ Partial HTML fragments from other services may be vanilla HTML with no classes u
 This module can house any wrapper styles to apply to this content.
 
 Markup:
-<div class="external-markup--xsmall">
+<div class="external-markup">
   <h2>Heading level 2</h2>
   <p>Paragraph text</p>
   <a href="">Anchor</a>
@@ -10691,7 +10787,7 @@ Markup:
 Styleguide External Markup
 */
 /* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
-.external-markup--xsmall h2, .external-markup--xsmall .h2-heading {
+.external-markup h2, .external-markup .h2-heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -10702,14 +10798,14 @@ Styleguide External Markup
 
 @media (max-width: 640px) {
   /* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
-  .external-markup--xsmall h2, .external-markup--xsmall .h2-heading {
+  .external-markup h2, .external-markup .h2-heading {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
 /* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
-.external-markup--xsmall p, .external-markup--xsmall a, .external-markup--xsmall .link-style, .external-markup--xsmall .button--link-style {
+.external-markup p, .external-markup a, .external-markup .link-style, .external-markup .button--link-style {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -10719,7 +10815,7 @@ Styleguide External Markup
 
 @media (max-width: 640px) {
   /* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
-  .external-markup--xsmall p, .external-markup--xsmall a, .external-markup--xsmall .link-style, .external-markup--xsmall .button--link-style {
+  .external-markup p, .external-markup a, .external-markup .link-style, .external-markup .button--link-style {
     font-size: 14px;
     line-height: 1.14286;
   }
