@@ -5,7 +5,7 @@ Partial HTML fragments from other services may be vanilla HTML with no classes u
 This module can house any wrapper styles to apply to this content.
 
 Markup:
-<div class="external-markup--xsmall">
+<div class="external-markup">
   <h2>Heading level 2</h2>
   <p>Paragraph text</p>
   <a href="">Anchor</a>
@@ -15,7 +15,7 @@ Styleguide External Markup
 */
 
 
-.external-markup--xsmall {
+.external-markup {
   h2 {
     @include bold-16;
   }
