@@ -130,10 +130,12 @@
     background-image: url("../images/statements-flag3.png");
     background-repeat: no-repeat;
     background-position: 3px 4px;
-    padding-left: 3px;
+    padding-left: 12px;
     
     &:before {
-      content: "\f104";
+      content: "\00a0";
+      height: 14px;
+      width: 11px;
     }
   }
 
