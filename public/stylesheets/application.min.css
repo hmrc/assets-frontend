@@ -11751,13 +11751,13 @@ Markup:
 
 
 */
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 body.scroll-off {
   position: fixed;
   width: 100%;
 }
 
-/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog {
   background-color: rgba(89, 89, 89, 0.7);
   left: 0;
@@ -11767,7 +11767,7 @@ body.scroll-off {
   z-index: 1;
 }
 
-/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog.modal-dialog--hidden {
   clip: rect(0.05263em 0.05263em 0.05263em 0.05263em);
   clip: rect(0.05263em, 0.05263em, 0.05263em, 0.05263em);
@@ -11781,7 +11781,7 @@ body.scroll-off {
   z-index: 0;
 }
 
-/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog.modal-dialog--hidden:focus {
   clip: auto;
   height: auto;
@@ -11790,25 +11790,25 @@ body.scroll-off {
   width: auto;
 }
 
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog__content {
   padding: 0.36842em 1.68421em;
   position: static;
 }
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog__content:focus {
   outline: 3px solid #FFBF47;
 }
 
 @media (max-width: 640px) {
-  /* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+  /* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
   .modal-dialog__content [role="button"][data-modaldialog-action="close"] {
     width: 100%;
   }
 }
 
-/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog__inner {
   background-color: #fff;
   border: 0.26316em solid #0b0c0c;
@@ -11823,7 +11823,7 @@ body.scroll-off {
 }
 
 @media (min-width: 769px) {
-  /* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_modal-dialog.scss */
+  /* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
   .modal-dialog__inner {
     margin: 6.84211em 25% 0;
     max-width: 37.89474em;
