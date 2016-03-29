@@ -1,38 +1,96 @@
+/*
+Lists
 
-/**
-* @desc         lists.
-* @name         layouts
-* @author       Anthony Munene
-* @tested       N/A
-* @requires     N/A
+
+Markup:
+
+<ul>
+  <li class="list-item">
+      <div class="list-item__primary">
+          <h3 class="list-item__heading">Sample heading</h3>
+          <p class="list-item__info">Sample info text</p>
+      </div>
+      <div class="list-item__secondary">
+          <a class="list-item__link list-item__link--right" href="review">CTA link</a>
+      </div>
+  </li>
+</ul>
+
+.list-item                - a list item with a bottom grey border
+.list-item__primary       - primary content of list item
+.list-item__secondary     - secondary content of list item
+.list-item__heading       - heading of list item
+.list-item__info          - list item information
+.list-item__info--right   - list item information right aligned
+.list-item__link          - link within list item
+.list-item__link--right   - link within list item rlight aligned
+
+Styleguide Lists
 */
 
+.list-item {
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid $border-colour;
+}
+
+.list-item__primary,
+.list-item__secondary {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.list-item__heading {
+  @include core-19;
+  display: inline-block;
+  margin: 0;
+}
+
+.list-item__info {
+  @extend .faded-text;
+  @include core-16;
+  margin-top: em(5) !important;  // neeed to override .content__body p
+}
+
+.list-item__link {
+  @include core-19;
+}
+
+.list-item__info--right,
+.list-item__link--right {
+  float: right;
+}
+
+
+
+
+
 ul, nav ul {
-	list-style-type: none;
-	li {
+  list-style-type: none;
+  li {
     @include core-19();
-	}
+  }
 }
 
 .list--numbered {
-	list-style-type: none;
-	padding-left: 0;
-	margin-bottom: 25px;
-	.numbered {
-		margin: 0 0 20px 25px;
-		padding-left: 15px;
-		&:before {
-			counter-increment: section;      /* Increment the section counter */
-			content: counter(section) ". "; /* Display the counter */
-			position: absolute;
-			left: -25px;
-			top: 0;
-			padding-right: 10px;
-		}
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 25px;
+  .numbered {
+    margin: 0 0 20px 25px;
+    padding-left: 15px;
+    &:before {
+      counter-increment: section;      /* Increment the section counter */
+      content: counter(section) ". "; /* Display the counter */
+      position: absolute;
+      left: -25px;
+      top: 0;
+      padding-right: 10px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .bullets {
@@ -58,57 +116,57 @@ ul, nav ul {
 }
 
 .list--inline {
-	li {
-		display: inline;
-	}
+  li {
+    display: inline;
+  }
 }
 
 .activity-list {
-	padding-left: 0;
-	li {
-		display: inline-block;
-	}
+  padding-left: 0;
+  li {
+    display: inline-block;
+  }
 }
 .activity-list__date {
-	float: left;
-	text-align: left;
-	min-width:  170px;
-	margin-right: 10px;
-	> * {
-		font-weight: bold;
-	}
+  float: left;
+  text-align: left;
+  min-width:  170px;
+  margin-right: 10px;
+  > * {
+    font-weight: bold;
+  }
 }
 .activity-list__date--highlight {
-	@extend .activity-list__date;
-	font-weight: bold;
+  @extend .activity-list__date;
+  font-weight: bold;
 }
 .activity-list__description {
-	float: left;
-	width: 400px;
+  float: left;
+  width: 400px;
 }
 
 .coms-alerts {
-	img {
-		margin-right: 10px;
-	}
+  img {
+    margin-right: 10px;
+  }
 }
 
 .dl--label-value {
-	margin-bottom: 1em;
-	overflow: hidden;
-	dt, dd {
-		float: left;
-		margin-left: 0;
-		margin-bottom: 0.25em;
-		width: 50%;
-	}
-	dd {
-		font-family: "nta", Arial, sans-serif;
-		font-size: 19px;
-		font-weight: bold;
-		line-height: 1.31579;
-		text-align: right;
-	}
+  margin-bottom: 1em;
+  overflow: hidden;
+  dt, dd {
+    float: left;
+    margin-left: 0;
+    margin-bottom: 0.25em;
+    width: 50%;
+  }
+  dd {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.31579;
+    text-align: right;
+  }
 }
 
 .action-list {
