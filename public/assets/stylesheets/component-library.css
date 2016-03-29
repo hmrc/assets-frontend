@@ -1,17 +1,22 @@
 /* Styles for the structure of the component library */
+.comp-lib-content {
+  max-width: 1024px;
+  padding: 0 1em;
+  margin: 0 auto;
+}
 .comp-lib {
-  margin-top: 2em;
+  margin-top: 2.6em;
   display: table;
   width: 100%;
 }
 .comp-lib-sidebar {
-  width: 20%;
+  width: 22%;
   display: table-cell;
   vertical-align: top;
   padding-right: .8em;
 }
 .comp-lib-main {
-  width: 80%;
+  width: 78%;
   display: table-cell;
 }
 .comp-lib-menu-item {
@@ -64,8 +69,10 @@
 }
 .comp-lib-pattern-example {
   margin-top: 2em;
-  border-top: 1px solid #d8d8d8;
   padding-top: 1em;
+}
+.comp-lib-heading-2 {
+  border-bottom: 1px solid #d8d8d8;
 }
 .comp-lib-pattern-component .grid-layout__column {
   background-color: #dee0e2;
