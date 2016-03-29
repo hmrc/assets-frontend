@@ -1,0 +1,100 @@
+
+/*
+Pending
+
+An item which describes an application. Typically this would be one item in a list of pending applications.
+The info below the heading typically provides subtext of less importance, e.g. date of submission.
+The call-to-action link is typically to process the application, e.g. Review.
+
+Markup:
+<ul>
+  <li class="app-info">
+      <div class="app-info__primary">
+          <h3 class="app-info__heading">Application heading</h3>
+          <p class="app-info__info">Application info text</p>
+      </div>
+      <div class="app-info__secondary">
+          <a href="">CTA link</a>
+      </div>
+  </li>
+</ul>
+
+Styleguide App Info.Pending
+*/
+
+/*
+Approved
+
+An item which describes an application with status.
+
+Markup:
+<ul>
+  <li class="app-info">
+      <div class="app-info__primary">
+          <h3 class="app-info__heading">Application heading</h3>
+          <p class="app-info__info">Application info text</p>
+      </div>
+      <div class="app-info__secondary">
+          <span class="status status--verified">verified</span>
+      </div>
+  </li>
+</ul>
+
+Styleguide App Info.Approved
+*/
+
+
+.app-info {
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid $border-colour;
+}
+
+.app-info__primary,
+.app-info__secondary {
+  display: table-cell;
+  vertical-align: top;
+  @include core-19;
+}
+
+.app-info__secondary {
+  text-align: right;
+}
+
+.app-info__heading {
+  @include core-19;
+  margin: 0;
+}
+
+.app-info__info {
+  @extend .faded-text;
+  @include core-16;
+  margin-top: em(5) !important;  // neeed to override .content__body p
+}
+
+
+/*
+Status
+
+Status is used to display the status of `.app-info`.
+
+Markup:
+<span class="status {{modifier_class}}">Example status text</span>
+
+.status--verified        - Verified status
+.status--not-verified    - Not verified status
+
+Styleguide App Info.Status
+*/
+
+.status {
+  @include core-19;  
+}
+
+.status--verified {
+  color: #009900;
+}
+
+.status--not-verified {
+  color: #F47738;
+}
