@@ -63,7 +63,9 @@
   padding: 1.2em 0;
 }
 .comp-lib-pattern-example {
-  margin-bottom: 4em;
+  margin-top: 2em;
+  border-top: 1px solid #d8d8d8;
+  padding-top: 1em;
 }
 .comp-lib-pattern-component .grid-layout__column {
   background-color: #dee0e2;
@@ -84,7 +86,12 @@
 .comp-lib-pattern-markdown blockquote {
   margin-left: .4em;
   padding-left: .6em;
-  border-left: 4px solid #dee0e2;
+  border-left: 4px solid #bfc1c3;
+  color: #bfc1c3;
+}
+.comp-lib-pattern-markdown blockquote code {
+  color: #fff;
+  background-color: #bfc1c3;
 }
 .comp-lib-pattern-markdown ul {
   list-style: disc;
