@@ -6428,10 +6428,11 @@ Markup:
 <textarea class="{{modifier_class}}" name="example_textarea_input" id="example" cols="30" rows="10"></textarea>
 
 .textarea--fullwidth - A full width textarea
+.textarea--3-4       - A three quarters width textarea
 
 Styleguide Textarea Input
 */
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
+/* line 15, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
 textarea {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -6446,21 +6447,25 @@ textarea {
 }
 
 @media (max-width: 640px) {
-  /* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
+  /* line 15, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
   textarea {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
+/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
 textarea:focus {
   outline: 3px solid #ffbf47;
 }
 
-/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
+.textarea--3-4 {
+  width: 75%;
+}
+
+/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_textarea.scss */
 .textarea--fullwidth {
-  box-sizing: border-box;
   width: 100%;
 }
 
@@ -7221,7 +7226,31 @@ Styleguide Header.Transaction
   }
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_attorney-banner.scss */
+/*
+Attorney Banner
+
+The Attorney Banner adds a persistent floating banner to display additional login information.
+
+Markup:
+<div class="grid-wrapper attorneyContainer">
+    <div class="attorneyBanner grid">
+        <div class="grid grid-2-3">
+            <div class="inner-block">
+                You're using this service for
+                <span class="heading-small">John Smith</span>.
+            </div>
+        </div>
+        <div class="grid grid-1-3">
+            <div class="inner-block">
+                <a href="" class="banner-links">Return to your account</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide Attorney Banner
+*/
+/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .attorneyBanner {
   z-index: 999;
   border-left: 3px solid #005ea5;
@@ -7231,12 +7260,12 @@ Styleguide Header.Transaction
   max-width: 960px;
 }
 
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_attorney-banner.scss */
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .grid-wrapper.attorneyContainer {
   margin: 0 0 30px 0;
 }
 
-/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_attorney-banner.scss */
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .stickyBanner {
   top: 0px;
   position: fixed;
@@ -7244,7 +7273,7 @@ Styleguide Header.Transaction
 }
 
 @media (max-width: 1020px) {
-  /* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_attorney-banner.scss */
+  /* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
   .stickyBanner {
     left: 0;
     right: 0;
@@ -7253,24 +7282,24 @@ Styleguide Header.Transaction
   }
 }
 
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_attorney-banner.scss */
+/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .banner-links {
   color: #005ea5;
   float: right;
 }
 
 @media (max-width: 641px) {
-  /* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_attorney-banner.scss */
+  /* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
   .stickyBanner {
     margin: 0 15px;
   }
-  /* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_attorney-banner.scss */
+  /* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
   .banner-links {
     float: left;
   }
 }
 
-/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_attorney-banner.scss */
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .attorneyPara {
   padding: 20px 10px;
   font-size: 19px;
@@ -9464,7 +9493,7 @@ nav.help-contents ul li p {
 
 /* line 165, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
 .highlight-message--icon-top {
-  background-position-y: 1.05263em;
+  background-position: 20px 20px;
 }
 
 /* line 169, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
@@ -10370,12 +10399,12 @@ Markup:
 
 Styleguide Breadcrumbs
 */
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav {
   padding: 0.52632em 0 2.10526em 0;
 }
 
-/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav__item {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -10390,36 +10419,36 @@ Styleguide Breadcrumbs
 }
 
 @media (max-width: 640px) {
-  /* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+  /* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
   .breadcrumb-nav__item {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav__item--trail {
   margin-left: 6px;
   margin-right: 6px;
 }
 
-/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav__item--trail:after {
   content: "›";
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav--slim {
   padding-top: 0.26316em;
   padding-bottom: 0.52632em;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav--slim .breadcrumb-nav__list {
   margin: 0;
 }
 
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_breadcrumb.scss */
+/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav--slim .breadcrumb-nav__item {
   margin: 0;
 }
