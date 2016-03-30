@@ -1,3 +1,26 @@
+/*
+Template Sidebar
+
+An example of a right floated sidebar.
+
+Markup:
+<div class="sidebar {{modifier_class}}">
+  <ul class="sidebar__list">
+    <li class="sidebar__list-item">
+      Sidebar list item
+    </li>
+    <li class="sidebar__list-item">
+      <p class="sidebar__list-item--small-indent">Indented sidebar list item</p>
+    </li>
+  </ul>
+</div>
+
+.sidebar--full-width  - Full width sidebar
+.sidebar--hidden-sm   - Sidebar hidden in `small` viewport
+
+Styleguide Template Sidebar
+*/
+
 .sidebar {
   width: auto;
   margin: 30px 0 0 0;
@@ -38,6 +61,7 @@
   }
 }
 
+//POTENTIALLY-NOT-IN-USE
 .sidebar__list-item--lined-sm {
   display: block;
   border-top: solid 1px $border-colour;
@@ -48,12 +72,12 @@
     padding: 0;
   }
 }
-
+//POTENTIALLY-NOT-IN-USE
 .sidebar__heading {
   @include bold-24;
   margin-top: 15px;
 }
-
+//POTENTIALLY-NOT-IN-USE
 .sidebar--helpful {
   color: $secondary-text-colour;
   @include core-16;
