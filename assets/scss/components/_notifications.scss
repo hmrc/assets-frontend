@@ -1,0 +1,310 @@
+/*
+Flash
+
+A flash message is used to communicate a message to a user.
+
+Markup:
+<div class="flash {{modifier_class}}">
+    <h2>Heading level 2</h2>
+    <h3>Heading level 3</h3>
+    <ul>
+      <li><a href="">Example list item</a></li>
+      <li><a href="">Example list item</a></li>
+    </ul>
+</div>
+
+.success       - A flash message used for a successful action
+
+Styleguide Notification.Flash
+*/
+
+.flash {
+  border: 3px solid $grey-1;
+  background-color: $grey-9;
+  padding: em(20);
+  margin-bottom: em(40);
+  max-width: em(798);
+
+  h2 {
+    margin: 0;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin: 0 0 em(10);
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.flash.success {
+  border-color: #85994b;
+  background-color: #e7ebda;
+
+  h2 {
+    margin: 0 0 em(10);
+  }
+}
+
+/*
+Error Summary
+
+A flash message used with the `.error-summary` for an error summary item.
+
+Markup:
+<div class="flash error-summary error-summary--show">
+    <h2>Heading level 2</h2>
+    <h3>Heading level 3</h3>
+    <ul>
+      <li><a href="">Example list item</a></li>
+      <li><a href="">Example list item</a></li>
+    </ul>
+</div>
+
+Styleguide Notification.Flash error
+*/
+
+.flash.error-summary {
+  border-color: $error-border-color;
+  background-color: $error-bg-color;
+
+  h2 {
+    margin: 0 0 em(10);
+  }
+
+  li {
+    color: $error-color;
+  }
+
+  a {
+    color: $error-color;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+/*
+Alert
+
+An alert is used to communicate an **important** message to a user.
+
+Markup:
+<div class="alert {{modifier_class}}" role="alert">
+  <p class="alert__message">Alert example text</p>
+</div>
+
+.alert--success     - A successful message
+.alert--failure     - A failure message
+.alert--important   - A message of importance
+.alert--info        - A message containing information
+.alert--borderless  - A borderless message
+.alert--slim        - A *slim* message
+
+Styleguide Notification.Alert
+*/
+
+
+.alert {
+  clear: both;
+  border-left-width: em(3);
+  border-left-style: solid;
+  margin: 0 0 em(20);
+  padding: em(17) em(15);
+
+  .alert__message {
+    margin: 0 0 em(10);
+    @include core-19();
+
+    &:last-of-type {
+      margin-bottom:0;
+    }
+  }
+
+  .minimise {
+    float: right;
+    text-align: right;
+    margin-top: em(-5);
+    margin-bottom: em(10);
+
+    @include media(mobile) {
+      margin-top: 0;
+      display: block;
+      float: none;
+    }
+  }
+}
+
+/*
+Alert toggle
+
+An example of an alert with toggle functionality to demonstrate the use of the `.minimise` selector.
+
+Markup:
+<a href="#" class="js-visible" data-toggle-details="js-toggle-example">Open Alert</a>
+<div class="alert js-hidden js-toggle-example">
+    <a class="minimise js-visible" href="#">Close Alert</a>
+    <p class="alert__message">Example Alert Message with toggle</p>
+</div>
+
+Styleguide Notification.Alert toggle
+*/
+
+.alert--success {
+  background-color: $success-bg-color;
+  border-color: $success-border-color;
+}
+
+.alert--failure {
+  background-color: $error-bg-color;
+  border-color: $error-color;
+  color: $error-color;
+}
+
+.alert--important {
+  background-color: $alert-bg-red;
+  color: $white;
+}
+
+.alert--borderless {
+  border: 0;
+  border-left-style: none;
+}
+
+.alert--slim {
+  padding: 0.4em 0.8em 0.3em;
+  border-left-width: em(4);
+}
+
+
+/*
+Alert Info
+
+The information alert has differing markup to `.alert`. This is why this currently has a separate markup example.
+
+Markup:
+<div class="alert alert--info alert--info__light" role="alert">
+  <p class="alert__message">Alert example text</p>
+</div>
+
+Styleguide Notification.Alert info
+*/
+
+
+.alert--info {
+  background-color: $info-bg-color;
+  border-color: $info-border-color;
+  position: relative;
+  margin: em(10) 0;
+
+  &.alert--info__light {
+    background-color: $shaded-bg-grey;
+    border-color: $light-grey;
+  }
+}
+
+
+/*
+Highlight
+
+A highlight is used when you wish to highlight content to a user.
+
+Markup:
+<div class="highlight-message {{modifier_class}}">
+  <p>An example paragraph for the highlight message content. </p>
+</div>
+
+.highlight-message--content-body  - A content body width
+.highlight-message--full-width    - Full width highlight
+.highlight-message--indent        - Indented highlight
+.highlight-message--icon-top      - Highlight with an icon aligned to the top
+.highlight-message--light         - A light highlight
+
+Styleguide Notification.Highlight
+*/
+
+
+.highlight-message {
+  width: 100%;
+  box-sizing: border-box;
+  border-left: 4px solid $black;
+  padding: em(5) 0 em(5) em(55);
+  margin-bottom: em(15);
+
+  background: $yellow-25 url("../images/icons/icon-important.png") no-repeat scroll 10px;
+  @include device-pixel-ratio() {
+    background-image: url("../images/icons/icon-important-2x.png");
+    background-size: 27px 27px;
+  }
+  span {
+    @include core-16;
+    display: block;
+    padding: em(2) 0;
+  }
+}
+
+.highlight-message--content-body {
+  @include media(desktop) {
+    width: 61.66%;
+    min-width: 28em;
+  }
+}
+
+.highlight-message--full-width {
+  padding-top: em(15);
+  padding-bottom: em(15);
+  @include media(desktop) {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+.highlight-message--indent {
+  margin: em(20) em(40) em(20) 0;
+}
+
+.highlight-message--icon-top {
+  background-position: 20px 20px;
+}
+
+.highlight-message--light {
+  background-color: $white;
+  color: $black;
+  padding-bottom: em(30);
+}
+
+
+/*
+Highlight Dark
+
+A highlight is used when you wish to highlight content to a user.
+> The dark highlight has differing markup to `.highlight`. This is why this currently has a separate markup example.
+
+Markup:
+<div class="highlight-message highlight-message--dark">
+  <p>Example highlight text</p>
+  <p class="highlight-message--dark-text">Example dark highlight text</p>
+</div>
+
+Styleguide Notification.Highlight dark
+*/
+
+.highlight-message--dark {
+  .highlight-message--dark-text {
+    color: $white;
+  }
+  
+  background-color: $govuk-blue-colour;
+  color: $white;
+  padding-bottom: em(30);
+}
