@@ -1,10 +1,20 @@
 
 /*
+App Info
+
+An item which describes an application. Typically this would be one item in a list of applications.
+The heading is the application name. 
+The info below the heading typically provides subtext of less importance, e.g. date of submission.
+The call-to-action link is typically to process a pending application, e.g. Review.
+
+Styleguide App Info
+*/
+
+/*
+
 Pending
 
-An item which describes an application. Typically this would be one item in a list of pending applications.
-The info below the heading typically provides subtext of less importance, e.g. date of submission.
-The call-to-action link is typically to process the application, e.g. Review.
+An application which is pending approval and contains a call-to-action link to process the application.
 
 Markup:
 <ul>
@@ -25,7 +35,7 @@ Styleguide App Info.Pending
 /*
 Approved
 
-An item which describes an application with status.
+An application which has been approved and has a status indicating whether or not it has been verified via email.
 
 Markup:
 <ul>
