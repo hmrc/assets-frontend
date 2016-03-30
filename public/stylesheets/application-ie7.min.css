@@ -3610,7 +3610,7 @@ h4, .h4-heading {
 }
 
 /* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_typography.scss */
-.faded-text, .faded-text--small, .form-field--hint {
+.faded-text, .faded-text--small, .form-field--hint, .app-info__info {
   color: #6f777b;
 }
 
@@ -11290,6 +11290,168 @@ body.scroll-off {
   top: 0;
   margin: 6.84211em 25% 0;
   max-width: 37.89474em;
+}
+
+/*
+App Info
+
+An item which describes an application. Typically this would be one item in a list of applications.
+The heading is the application name. 
+The info below the heading typically provides subtext of less importance, e.g. date of submission.
+The call-to-action link is typically to process a pending application, e.g. Review.
+
+Styleguide App Info
+*/
+/*
+
+Pending
+
+An application which is pending approval and contains a call-to-action link to process the application.
+
+Markup:
+<ul>
+  <li class="app-info">
+      <div class="app-info__primary">
+          <h3 class="app-info__heading">Application heading</h3>
+          <p class="app-info__info">Application info text</p>
+      </div>
+      <div class="app-info__secondary">
+          <a href="">CTA link</a>
+      </div>
+  </li>
+</ul>
+
+Styleguide App Info.Pending
+*/
+/*
+Approved
+
+An application which has been approved and has a status indicating whether or not it has been verified via email.
+
+Markup:
+<ul>
+  <li class="app-info">
+      <div class="app-info__primary">
+          <h3 class="app-info__heading">
+            <a href="">Application heading</a>
+          </h3>
+          <p class="app-info__info">Application info text</p>
+      </div>
+      <div class="app-info__secondary">
+          <span class="status status--verified">verified</span>
+      </div>
+  </li>
+</ul>
+
+Styleguide App Info.Approved
+*/
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+.app-info {
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+.app-info__primary,
+.app-info__secondary {
+  display: table-cell;
+  vertical-align: top;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+  .app-info__primary,
+  .app-info__secondary {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+.app-info__secondary {
+  text-align: right;
+}
+
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+.app-info__heading {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  /* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+  .app-info__heading {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+.app-info__info {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  margin-top: 0.26316em !important;
+}
+
+@media (max-width: 640px) {
+  /* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+  .app-info__info {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/*
+Status
+
+Describes the status of an application, which is either verified (green text) or not verified (orange text).
+
+Markup:
+<span class="status {{modifier_class}}">Example status text</span>
+
+.status--verified        - Verified status
+.status--not-verified    - Not verified status
+
+Styleguide App Info.Status
+*/
+/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+.status {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+  .status {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+.status--verified {
+  color: #009900;
+}
+
+/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+.status--not-verified {
+  color: #F47738;
 }
 
 /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_messages.scss */

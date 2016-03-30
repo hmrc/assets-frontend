@@ -94,16 +94,27 @@
           <aside class="comp-lib-sidebar">
             <nav>
               <ul>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="./" class="comp-lib-menu-link">Home</a>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-alpha.html" class="comp-lib-menu-link">Alpha</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-app-info.html" class="comp-lib-menu-link">App Info</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-app-info.html#kssref-app-info-approved">Approved</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-app-info.html#kssref-app-info-pending">Pending</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-app-info.html#kssref-app-info-status">Status</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-attorney-banner.html" class="comp-lib-menu-link">Attorney Banner</a>
@@ -210,36 +221,174 @@
           </aside>
 
           <article class="comp-lib-main">
-              <div class="comp-lib-pattern-markdown">
-                 <p>This Component Library demonstrates styles and components for <strong>HMRC</strong> applications. It is built on top of the <a href="https://github.com/alphagov/govuk_frontend_toolkit">GOV.UK frontend toolkit</a> and the <a href="https://github.com/alphagov/govuk_template">GOV.UK template</a> and it uses the <a href="https://github.com/hmrc/component-library-template">hmrc-component-library-template</a>.</p>
-<ul>
-<li><a href="#what-is-the-component-library">What is the Component Library?</a></li>
-<li><a href="#adding-components">Adding Components</a></li>
-<li><a href="#discussing-changes">Discussing Changes</a></li>
-<li><a href="#reporting-issues-actioning-work-components">Reporting Issues / Actioning work - Components</a></li>
-<li><a href="#development-details">Development details</a></li>
-<li><a href="#component-library-template">Component Library Template</a></li>
-<li><a href="#reporting-issues-actioning-work-template">Reporting Issues / Actioning work - Template</a></li>
-<li><a href="#developing-on-the-template">Developing on the template</a></li>
-</ul>
-<h2 id="what-is-the-component-library-">What is the Component Library?</h2>
-<p>The Component Library is the generated output of <a href="https://github.com/hmrc/assets-frontend">HMRC assets-fronted</a> stylesheets. It allows Designers and Developers to see what components we have across the Tax Platform.</p>
-<h2 id="adding-components">Adding Components</h2>
-<p>You can see information about how to add a comment which will enable a component to be rendered in the Component Library by visiting the <a href="https://github.com/hmrc/assets-frontend/wiki/Component-Library">HMRC assets-fronted wiki</a>.</p>
-<h2 id="discussing-changes">Discussing Changes</h2>
-<p>We have setup a <strong>Components</strong> collection on the <a href="https://hmrcdigital.hackpad.com/collection/EU4v7qZDRel">HMRC Digital Hackpad</a>. Every component page in the Component Library will have a hackpad page of the same name. This will be the place to discuss what you would like for you components.</p>
-<h2 id="reporting-issues-actioning-work-components">Reporting Issues / Actioning work - Components</h2>
-<p>Once a decision has been made by the design team on a component the work needs to be raised and the component needs to be written/changed. To do this please raise an issue in <a href="https://github.com/hmrc/assets-frontend/issues">HMRC assets-fronted issues</a> and attach the <code>component library</code> label to it.</p>
-<h2 id="development-details">Development details</h2>
-<p>All the information you need to know for developing and enabling Components within the Component Library can be found can be found in the <a href="https://github.com/hmrc/assets-frontend">assets-frontend</a> README.</p>
-<h1 id="component-library-template">Component Library Template</h1>
-<p>This library uses the <a href="https://github.com/hmrc/component-library-template">hmrc-component-library-template</a>.</p>
-<h2 id="reporting-issues-actioning-work-template">Reporting Issues / Actioning work - Template</h2>
-<p>If you would like to discuss extra features or the design of the template itself please raise an issue in <a href="https://github.com/hmrc/component-library-template/issues">HMRC component-library-template issues</a>.</p>
-<h2 id="developing-on-the-template">Developing on the template</h2>
-<p>All the information you need to know for developing on the template can be found in the <a href="https://github.com/hmrc/component-library-template#readme">hmrc-component-library-template README</a>.</p>
+                  <div id="kssref-app-info">
+                <div>
+                  <h1><a href="#kssref-app-info" class="comp-lib-menu-link">App Info</a></h1>
 
-              </div>
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>An item which describes an application. Typically this would be one item in a list of applications.
+The heading is the application name.
+The info below the heading typically provides subtext of less importance, e.g. date of submission.
+The call-to-action link is typically to process a pending application, e.g. Review.</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+
+                  </div>
+                  <section id="kssref-app-info-approved">
+                <div>
+                  <h2><a href="#kssref-app-info-approved" class="comp-lib-menu-link">Approved</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>An application which has been approved and has a status indicating whether or not it has been verified via email.</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <ul>
+  <li class="app-info">
+      <div class="app-info__primary">
+          <h3 class="app-info__heading">
+            <a href="">Application heading</a>
+          </h3>
+          <p class="app-info__info">Application info text</p>
+      </div>
+      <div class="app-info__secondary">
+          <span class="status status--verified">verified</span>
+      </div>
+  </li>
+</ul>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;ul&gt;
+  &lt;li class=&quot;app-info&quot;&gt;
+      &lt;div class=&quot;app-info__primary&quot;&gt;
+          &lt;h3 class=&quot;app-info__heading&quot;&gt;
+            &lt;a href=&quot;&quot;&gt;Application heading&lt;/a&gt;
+          &lt;/h3&gt;
+          &lt;p class=&quot;app-info__info&quot;&gt;Application info text&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;app-info__secondary&quot;&gt;
+          &lt;span class=&quot;status status--verified&quot;&gt;verified&lt;/span&gt;
+      &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  </section>
+                  <section id="kssref-app-info-pending">
+                <div>
+                  <h2><a href="#kssref-app-info-pending" class="comp-lib-menu-link">Pending</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>An application which is pending approval and contains a call-to-action link to process the application.</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <ul>
+  <li class="app-info">
+      <div class="app-info__primary">
+          <h3 class="app-info__heading">Application heading</h3>
+          <p class="app-info__info">Application info text</p>
+      </div>
+      <div class="app-info__secondary">
+          <a href="">CTA link</a>
+      </div>
+  </li>
+</ul>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;ul&gt;
+  &lt;li class=&quot;app-info&quot;&gt;
+      &lt;div class=&quot;app-info__primary&quot;&gt;
+          &lt;h3 class=&quot;app-info__heading&quot;&gt;Application heading&lt;/h3&gt;
+          &lt;p class=&quot;app-info__info&quot;&gt;Application info text&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;app-info__secondary&quot;&gt;
+          &lt;a href=&quot;&quot;&gt;CTA link&lt;/a&gt;
+      &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  </section>
+                  <section id="kssref-app-info-status">
+                <div>
+                  <h2><a href="#kssref-app-info-status" class="comp-lib-menu-link">Status</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>Describes the status of an application, which is either verified (green text) or not verified (orange text).</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <span class="status [modifier class]">Example status text</span>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;status [modifier class]&quot;&gt;Example status text&lt;/span&gt;</code></pre>
+                      </div>
+                    </div>
+
+                    <div class="comp-lib-pattern-example">
+                      <h2 class="comp-lib-heading-2">.status--verified</h2>
+                      <div class="comp-lib-description">
+                        Verified status
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <span class="status status--verified">Example status text</span>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;status status--verified&quot;&gt;Example status text&lt;/span&gt;</code></pre>
+                      </div>
+                    </div>
+                    <div class="comp-lib-pattern-example">
+                      <h2 class="comp-lib-heading-2">.status--not-verified</h2>
+                      <div class="comp-lib-description">
+                        Not verified status
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <span class="status status--not-verified">Example status text</span>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;status status--not-verified&quot;&gt;Example status text&lt;/span&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  </section>
           </article>
         </div>
     </div>
