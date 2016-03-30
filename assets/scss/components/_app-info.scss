@@ -1,0 +1,112 @@
+
+/*
+App Info
+
+An item which describes an application. Typically this would be one item in a list of applications.
+The heading is the application name. 
+The info below the heading typically provides subtext of less importance, e.g. date of submission.
+The call-to-action link is typically to process a pending application, e.g. Review.
+
+Styleguide App Info
+*/
+
+/*
+
+Pending
+
+An application which is pending approval and contains a call-to-action link to process the application.
+
+Markup:
+<ul>
+  <li class="app-info">
+      <div class="app-info__primary">
+          <h3 class="app-info__heading">Application heading</h3>
+          <p class="app-info__info">Application info text</p>
+      </div>
+      <div class="app-info__secondary">
+          <a href="">CTA link</a>
+      </div>
+  </li>
+</ul>
+
+Styleguide App Info.Pending
+*/
+
+/*
+Approved
+
+An application which has been approved and has a status indicating whether or not it has been verified via email.
+
+Markup:
+<ul>
+  <li class="app-info">
+      <div class="app-info__primary">
+          <h3 class="app-info__heading">
+            <a href="">Application heading</a>
+          </h3>
+          <p class="app-info__info">Application info text</p>
+      </div>
+      <div class="app-info__secondary">
+          <span class="status status--verified">verified</span>
+      </div>
+  </li>
+</ul>
+
+Styleguide App Info.Approved
+*/
+
+
+.app-info {
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid $border-colour;
+}
+
+.app-info__primary,
+.app-info__secondary {
+  display: table-cell;
+  vertical-align: top;
+  @include core-19;
+}
+
+.app-info__secondary {
+  text-align: right;
+}
+
+.app-info__heading {
+  @include core-19; // required to override default bold heading
+  margin: 0;
+}
+
+.app-info__info {
+  @extend .faded-text;
+  @include core-16;
+  margin-top: em(5) !important;  // needed to override .content__body p
+}
+
+
+/*
+Status
+
+Describes the status of an application, which is either verified (green text) or not verified (orange text).
+
+Markup:
+<span class="status {{modifier_class}}">Example status text</span>
+
+.status--verified        - Verified status
+.status--not-verified    - Not verified status
+
+Styleguide App Info.Status
+*/
+
+.status {
+  @include core-19;  
+}
+
+.status--verified {
+  color: #009900;
+}
+
+.status--not-verified {
+  color: #F47738;
+}
