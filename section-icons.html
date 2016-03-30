@@ -121,17 +121,9 @@
                   <a href="section-buttons.html" class="comp-lib-menu-link">Buttons</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-code.html" class="comp-lib-menu-link">Code</a>
 
-                  <ul>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-code.html#kssref-code-pre">Code</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-code.html#kssref-code-tag">Tag</a>
-                      </li>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-details.html" class="comp-lib-menu-link">Details</a>
@@ -161,9 +153,20 @@
                   <a href="section-header.html" class="comp-lib-menu-link">Header</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-icons.html" class="comp-lib-menu-link">Icons</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-icons.html#kssref-icons-arrow">Arrow</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-icons.html#kssref-icons-exclamation">Exclamation</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-icons.html#kssref-icons-verify">GOVUK Verify</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-label.html" class="comp-lib-menu-link">Label</a>
@@ -210,15 +213,24 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-code">
+                  <div id="kssref-icons">
                 <div>
-                  <h1><a href="#kssref-code" class="comp-lib-menu-link">Code</a></h1>
+                  <h1><a href="#kssref-icons" class="comp-lib-menu-link">Icons</a></h1>
+
+                </div>
+
+                <!-- pattern examples -->
+
+                  </div>
+                  <section id="kssref-icons-arrow">
+                <div>
+                  <h2><a href="#kssref-icons-arrow" class="comp-lib-menu-link">Arrow</a></h2>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>The <code>code</code> element is used to show a fragment of computer code. The</p>
+                    <p>The arrow icon is used to represent an open or closed child element.</p>
 
                   </div>
                 </div>
@@ -227,76 +239,73 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <code class="[modifier class]">{exampleCode: true}</code>
+                        <i class="arrow [modifier class]"></i>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;code class=&quot;[modifier class]&quot;&gt;{exampleCode: true}&lt;/code&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;i class=&quot;arrow [modifier class]&quot;&gt;&lt;/i&gt;</code></pre>
                       </div>
                     </div>
 
                     <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.snippet--inline</h2>
+                      <h2 class="comp-lib-heading-2">.arrow--right</h2>
                       <div class="comp-lib-description">
-                        Display the code element inline
+                        Arrow pointing to the right
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <code class="snippet--inline">{exampleCode: true}</code>
+                        <i class="arrow arrow--right"></i>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;code class=&quot;snippet--inline&quot;&gt;{exampleCode: true}&lt;/code&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;i class=&quot;arrow arrow--right&quot;&gt;&lt;/i&gt;</code></pre>
                       </div>
                     </div>
-                  </div>
-
-                  </div>
-                  <section id="kssref-code-pre">
-                <div>
-                  <h2><a href="#kssref-code-pre" class="comp-lib-menu-link">Code</a></h2>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <p>The <code>pre</code> element is used to show preformatted text.</p>
-
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
-                  <div>
                     <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <pre class="[modifier class]">https://api.service.hmrc.gov.uk/</pre>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;pre class=&quot;[modifier class]&quot;&gt;https://api.service.hmrc.gov.uk/&lt;/pre&gt;</code></pre>
-                      </div>
-                    </div>
-
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.snippet--block</h2>
+                      <h2 class="comp-lib-heading-2">.arrow--left</h2>
                       <div class="comp-lib-description">
-                        Display the <code>pre</code> element as block
+                        Arrow pointing to the left
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <pre class="snippet--block">https://api.service.hmrc.gov.uk/</pre>
+                        <i class="arrow arrow--left"></i>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;pre class=&quot;snippet--block&quot;&gt;https://api.service.hmrc.gov.uk/&lt;/pre&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;i class=&quot;arrow arrow--left&quot;&gt;&lt;/i&gt;</code></pre>
+                      </div>
+                    </div>
+                    <div class="comp-lib-pattern-example">
+                      <h2 class="comp-lib-heading-2">.arrow--up</h2>
+                      <div class="comp-lib-description">
+                        Arrow pointing up
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <i class="arrow arrow--up"></i>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;i class=&quot;arrow arrow--up&quot;&gt;&lt;/i&gt;</code></pre>
+                      </div>
+                    </div>
+                    <div class="comp-lib-pattern-example">
+                      <h2 class="comp-lib-heading-2">.arrow--down</h2>
+                      <div class="comp-lib-description">
+                        Arrow pointing down
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <i class="arrow arrow--down"></i>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;i class=&quot;arrow arrow--down&quot;&gt;&lt;/i&gt;</code></pre>
                       </div>
                     </div>
                   </div>
 
                   </section>
-                  <section id="kssref-code-tag">
+                  <section id="kssref-icons-exclamation">
                 <div>
-                  <h2><a href="#kssref-code-tag" class="comp-lib-menu-link">Tag</a></h2>
+                  <h2><a href="#kssref-icons-exclamation" class="comp-lib-menu-link">Exclamation</a></h2>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>The <code>.tag</code> selector is used to highlight content.</p>
+                    <p>The exclamation icon is used to highlight content to the user.</p>
 
                   </div>
                 </div>
@@ -305,10 +314,37 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <span class="tag">Example Tag</span>
+                        <span class="exclamation"></span>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;tag&quot;&gt;Example Tag&lt;/span&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;exclamation&quot;&gt;&lt;/span&gt;</code></pre>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  </section>
+                  <section id="kssref-icons-verify">
+                <div>
+                  <h2><a href="#kssref-icons-verify" class="comp-lib-menu-link">GOVUK Verify</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <p>This is the icon used for GOVUK Verify.</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <span class="govuk-verify"></span>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;govuk-verify&quot;&gt;&lt;/span&gt;</code></pre>
                       </div>
                     </div>
 

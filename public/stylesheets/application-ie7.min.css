@@ -5709,7 +5709,22 @@ a[rel="external"].external-link-19-bold-no-hover:hover:after, [rel="external"].e
   background-position: right 6px;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/*
+Arrow
+
+The arrow icon is used to represent an open or closed child element.
+
+Markup:
+<i class="arrow {{modifier_class}}"></i>
+
+.arrow--right   - Arrow pointing to the right
+.arrow--left    - Arrow pointing to the left
+.arrow--up      - Arrow pointing up
+.arrow--down    - Arrow pointing down
+
+Styleguide Icons.Arrow
+*/
+/* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .arrow {
   color: #2e8aca;
   font-style: normal;
@@ -5722,27 +5737,27 @@ a[rel="external"].external-link-19-bold-no-hover:hover:after, [rel="external"].e
           transition-duration: 0.2s;
 }
 
-/* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .arrow--right:after {
   content: "▸";
 }
 
-/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .arrow--left:after {
   content: "◂";
 }
 
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .arrow--up:after {
   content: "▴";
 }
 
-/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .arrow--down:after {
   content: "▾";
 }
 
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .arrow--expand {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -5750,7 +5765,17 @@ a[rel="external"].external-link-19-bold-no-hover:hover:after, [rel="external"].e
           transition-duration: 0.2s;
 }
 
-/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/*
+Exclamation
+
+The exclamation icon is used to highlight content to the user.
+
+Markup:
+<span class="exclamation"></span>
+
+Styleguide Icons.Exclamation
+*/
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .exclamation {
   width: 35px;
   height: 35px;
@@ -5761,14 +5786,24 @@ a[rel="external"].external-link-19-bold-no-hover:hover:after, [rel="external"].e
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+  /* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
   .exclamation {
     background-image: url("../images/icons/icon-important-2x.png");
     background-size: cover;
   }
 }
 
-/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/*
+GOVUK Verify
+
+This is the icon used for GOVUK Verify.
+
+Markup:
+<span class="govuk-verify"></span>
+
+Styleguide Icons.Verify
+*/
+/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .govuk-verify {
   background-image: url("../images/govuk-verify.png");
   background-position: center;
@@ -5780,7 +5815,7 @@ a[rel="external"].external-link-19-bold-no-hover:hover:after, [rel="external"].e
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+  /* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
   .govuk-verify {
     background-image: url("../images/govuk-verify-2x.png");
   }
