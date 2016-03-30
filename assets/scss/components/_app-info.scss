@@ -31,7 +31,9 @@ Markup:
 <ul>
   <li class="app-info">
       <div class="app-info__primary">
-          <h3 class="app-info__heading">Application heading</h3>
+          <h3 class="app-info__heading">
+            <a href="">Application heading</a>
+          </h3>
           <p class="app-info__info">Application info text</p>
       </div>
       <div class="app-info__secondary">
@@ -62,14 +64,14 @@ Styleguide App Info.Approved
 }
 
 .app-info__heading {
-  @include core-19;
+  @include core-19; // required to override default bold heading
   margin: 0;
 }
 
 .app-info__info {
   @extend .faded-text;
   @include core-16;
-  margin-top: em(5) !important;  // neeed to override .content__body p
+  margin-top: em(5) !important;  // needed to override .content__body p
 }
 
 
@@ -77,6 +79,7 @@ Styleguide App Info.Approved
 Status
 
 Status is used to display the status of `.app-info`.
+Currently, an application can either be `verified` or `not verified`.
 
 Markup:
 <span class="status {{modifier_class}}">Example status text</span>
