@@ -9316,7 +9316,26 @@ nav.help-contents ul li p {
   }
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/*
+Flash
+
+A flash message is used to communicate a message to a user.
+
+Markup:
+<div class="flash {{modifier_class}}">
+    <h2>Heading level 2</h2>
+    <h3>Heading level 3</h3>
+    <ul>
+      <li><a href="">Example list item</a></li>
+      <li><a href="">Example list item</a></li>
+    </ul>
+</div>
+
+.success       - A flash message used for a successful action
+
+Styleguide Notification.Flash
+*/
+/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .flash {
   border: 3px solid #6f777b;
   background-color: #eaedef;
@@ -9325,67 +9344,103 @@ nav.help-contents ul li p {
   max-width: 42em;
 }
 
-/* line 8, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .flash h2, .flash .h2-heading {
   margin: 0;
   font-weight: bold;
 }
 
-/* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .flash h3, .flash .h3-heading {
   margin: 0 0 0.52632em;
 }
 
-/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .flash ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .flash li {
   list-style-type: none;
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
-.flash.error-summary {
-  border-color: #df3034;
-  background-color: #fff;
-}
-
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
-.flash.error-summary h2, .flash.error-summary .h2-heading {
-  margin: 0 0 0.52632em;
-}
-
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
-.flash.error-summary li {
-  color: #af1324;
-}
-
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
-.flash.error-summary a, .flash.error-summary .link-style, .flash.error-summary .button--link-style {
-  color: #af1324;
-}
-
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
-.flash.error-summary a:hover, .flash.error-summary .link-style:hover, .flash.error-summary .button--link-style:hover {
-  text-decoration: none;
-}
-
-/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .flash.success {
   border-color: #85994b;
   background-color: #e7ebda;
 }
 
-/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .flash.success h2, .flash.success .h2-heading {
   margin: 0 0 0.52632em;
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/*
+Error Summary
+
+A flash message used with the `.error-summary` for an error summary item.
+
+Markup:
+<div class="flash error-summary error-summary--show">
+    <h2>Heading level 2</h2>
+    <h3>Heading level 3</h3>
+    <ul>
+      <li><a href="">Example list item</a></li>
+      <li><a href="">Example list item</a></li>
+    </ul>
+</div>
+
+Styleguide Notification.Flash error
+*/
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+.flash.error-summary {
+  border-color: #df3034;
+  background-color: #fff;
+}
+
+/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+.flash.error-summary h2, .flash.error-summary .h2-heading {
+  margin: 0 0 0.52632em;
+}
+
+/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+.flash.error-summary li {
+  color: #af1324;
+}
+
+/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+.flash.error-summary a, .flash.error-summary .link-style, .flash.error-summary .button--link-style {
+  color: #af1324;
+}
+
+/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+.flash.error-summary a:hover, .flash.error-summary .link-style:hover, .flash.error-summary .button--link-style:hover {
+  text-decoration: none;
+}
+
+/*
+Alert
+
+An alert is used to communicate an **important** message to a user.
+
+Markup:
+<div class="alert {{modifier_class}}" role="alert">
+  <p class="alert__message">Alert example text</p>
+</div>
+
+.alert--success     - A successful message
+.alert--failure     - A failure message
+.alert--important   - A message of importance
+.alert--info        - A message containing information
+.alert--borderless  - A borderless message
+.alert--slim        - A *slim* message
+
+Styleguide Notification.Alert
+*/
+/* line 118, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert {
   clear: both;
   border-left-width: 0.15789em;
@@ -9394,7 +9449,7 @@ nav.help-contents ul li p {
   padding: 0.89474em 0.78947em;
 }
 
-/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert .alert__message {
   margin: 0 0 0.52632em;
   font-family: "nta", Arial, sans-serif;
@@ -9405,19 +9460,19 @@ nav.help-contents ul li p {
 }
 
 @media (max-width: 640px) {
-  /* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+  /* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
   .alert .alert__message {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 129, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert .alert__message:last-of-type {
   margin-bottom: 0;
 }
 
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert .minimise {
   float: right;
   text-align: right;
@@ -9425,26 +9480,64 @@ nav.help-contents ul li p {
   margin-bottom: 0.52632em;
 }
 
-/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/*
+Alert toggle
+
+An example of an alert with toggle functionality to demonstrate the use of the `.minimise` selector.
+
+Markup:
+<a href="#" class="js-visible" data-toggle-details="js-toggle-example">Open Alert</a>
+<div class="alert js-hidden js-toggle-example">
+    <a class="minimise js-visible" href="#">Close Alert</a>
+    <p class="alert__message">Example Alert Message with toggle</p>
+</div>
+
+Styleguide Notification.Alert toggle
+*/
+/* line 163, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--success {
   background-color: #e9f5f4;
   border-color: #28a197;
 }
 
-/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 168, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--failure {
   background-color: #fff;
   border-color: #af1324;
   color: #af1324;
 }
 
-/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 174, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--important {
   background-color: #b10e1e;
   color: #fff;
 }
 
-/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+.alert--borderless {
+  border: 0;
+  border-left-style: none;
+}
+
+/* line 184, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+.alert--slim {
+  padding: 0.4em 0.8em 0.3em;
+  border-left-width: 0.21053em;
+}
+
+/*
+Alert Info
+
+The information alert has differing markup to `.alert`. This is why this currently has a separate markup example.
+
+Markup:
+<div class="alert alert--info alert--info__light" role="alert">
+  <p class="alert__message">Alert example text</p>
+</div>
+
+Styleguide Notification.Alert info
+*/
+/* line 204, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--info {
   background-color: #ddeeff;
   border-color: #005EA4;
@@ -9452,25 +9545,31 @@ nav.help-contents ul li p {
   margin: 0.52632em 0;
 }
 
-/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 210, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--info.alert--info__light {
   background-color: #f8f8f8;
   border-color: #bfc1c3;
 }
 
-/* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
-.alert--borderless {
-  border: 0;
-  border-left-style: none;
-}
+/*
+Highlight
 
-/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
-.alert--slim {
-  padding: 0.4em 0.8em 0.3em;
-  border-left-width: 0.21053em;
-}
+A highlight is used when you wish to highlight content to a user.
 
-/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+Markup:
+<div class="highlight-message {{modifier_class}}">
+  <p>An example paragraph for the highlight message content. </p>
+</div>
+
+.highlight-message--content-body  - A content body width
+.highlight-message--full-width    - Full width highlight
+.highlight-message--indent        - Indented highlight
+.highlight-message--icon-top      - Highlight with an icon aligned to the top
+.highlight-message--light         - A light highlight
+
+Styleguide Notification.Highlight
+*/
+/* line 237, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message {
   width: 100%;
   box-sizing: border-box;
@@ -9481,14 +9580,14 @@ nav.help-contents ul li p {
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+  /* line 237, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
   .highlight-message {
     background-image: url("../images/icons/icon-important-2x.png");
     background-size: 27px 27px;
   }
 }
 
-/* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 249, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message span {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -9500,20 +9599,20 @@ nav.help-contents ul li p {
 }
 
 @media (max-width: 640px) {
-  /* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+  /* line 249, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
   .highlight-message span {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 256, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--content-body {
   width: 61.66%;
   min-width: 28em;
 }
 
-/* line 152, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 263, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--full-width {
   padding-top: 0.78947em;
   padding-bottom: 0.78947em;
@@ -9521,33 +9620,47 @@ nav.help-contents ul li p {
   min-width: 100%;
 }
 
-/* line 161, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 272, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--indent {
   margin: 1.05263em 2.10526em 1.05263em 0;
 }
 
-/* line 165, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 276, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--icon-top {
   background-position: 20px 20px;
 }
 
-/* line 169, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 280, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+.highlight-message--light {
+  background-color: #fff;
+  color: #0b0c0c;
+  padding-bottom: 1.57895em;
+}
+
+/*
+Highlight Dark
+
+A highlight is used when you wish to highlight content to a user.
+> The dark highlight has differing markup to `.highlight`. This is why this currently has a separate markup example.
+
+Markup:
+<div class="highlight-message highlight-message--dark">
+  <p>Example highlight text</p>
+  <p class="highlight-message--dark-text">Example dark highlight text</p>
+</div>
+
+Styleguide Notification.Highlight dark
+*/
+/* line 302, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--dark {
   background-color: #005ea5;
   color: #fff;
   padding-bottom: 1.57895em;
 }
 
-/* line 170, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
+/* line 303, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--dark .highlight-message--dark-text {
   color: #fff;
-}
-
-/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_notifications.scss */
-.highlight-message--light {
-  background-color: #fff;
-  color: #0b0c0c;
-  padding-bottom: 1.57895em;
 }
 
 /* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
