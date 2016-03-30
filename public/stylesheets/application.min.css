@@ -9830,14 +9830,36 @@ nav.help-contents ul li p {
   margin-top: 0.2em;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+/*
+Template Sidebar
+
+An example of a right floated sidebar.
+
+Markup:
+<div class="sidebar {{modifier_class}}">
+  <ul class="sidebar__list">
+    <li class="sidebar__list-item">
+      Sidebar list item
+    </li>
+    <li class="sidebar__list-item">
+      <p class="sidebar__list-item--small-indent">Indented sidebar list item</p>
+    </li>
+  </ul>
+</div>
+
+.sidebar--full-width  - Full width sidebar
+.sidebar--hidden-sm   - Sidebar hidden in `small` viewport
+
+Styleguide Template Sidebar
+*/
+/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar {
   width: auto;
   margin: 30px 0 0 0;
 }
 
 @media (min-width: 641px) {
-  /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+  /* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar {
     float: right;
     width: 33.333333%;
@@ -9846,26 +9868,26 @@ nav.help-contents ul li p {
 }
 
 @media (min-width: 641px) {
-  /* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+  /* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar--full-width {
     width: 100%;
     min-width: 100%;
   }
 }
 
-/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar--hidden-sm {
   display: none;
 }
 
 @media (min-width: 641px) {
-  /* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+  /* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar--hidden-sm {
     display: block;
   }
 }
 
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar__list {
   list-style: none;
   padding: 0;
@@ -9877,25 +9899,25 @@ nav.help-contents ul li p {
 }
 
 @media (max-width: 640px) {
-  /* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+  /* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar__list {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar__list-item {
   padding: 0;
   margin: 0 0 0.75em 0;
 }
 
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar__list-item .sidebar__list-item--small-indent {
   margin-left: 0.15789em;
 }
 
-/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar__list-item--lined-sm {
   display: block;
   border-top: solid 1px #bfc1c3;
@@ -9903,14 +9925,14 @@ nav.help-contents ul li p {
 }
 
 @media (min-width: 641px) {
-  /* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+  /* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar__list-item--lined-sm {
     border: none;
     padding: 0;
   }
 }
 
-/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar__heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -9922,14 +9944,14 @@ nav.help-contents ul li p {
 }
 
 @media (max-width: 640px) {
-  /* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+  /* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar__heading {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar--helpful {
   color: #6f777b;
   font-family: "nta", Arial, sans-serif;
@@ -9941,7 +9963,7 @@ nav.help-contents ul li p {
 }
 
 @media (max-width: 640px) {
-  /* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-sidebar.scss */
+  /* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar--helpful {
     font-size: 14px;
     line-height: 1.14286;

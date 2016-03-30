@@ -105,11 +105,9 @@
                   <a href="section-app-info.html" class="comp-lib-menu-link">App Info</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-attorney-banner.html" class="comp-lib-menu-link">Attorney Banner</a>
 
-                  <ul>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-autocomplete.html" class="comp-lib-menu-link">Auto Complete</a>
@@ -195,9 +193,11 @@
                   <a href="section-side-navigation.html" class="comp-lib-menu-link">Side Navigation</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-template-sidebar.html" class="comp-lib-menu-link">Template Sidebar</a>
 
+                  <ul>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-text-input.html" class="comp-lib-menu-link">Text Input</a>
@@ -216,15 +216,15 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-attorney-banner">
+                  <div id="kssref-template-sidebar">
                 <div>
-                  <h1><a href="#kssref-attorney-banner" class="comp-lib-menu-link">Attorney Banner</a></h1>
+                  <h1><a href="#kssref-template-sidebar" class="comp-lib-menu-link">Template Sidebar</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>The Attorney Banner adds a persistent floating banner to display additional login information.</p>
+                    <p>An example of a right floated sidebar.</p>
 
                   </div>
                 </div>
@@ -233,41 +233,91 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="grid-wrapper attorneyContainer">
-    <div class="attorneyBanner grid">
-        <div class="grid grid-2-3">
-            <div class="inner-block">
-                You're using this service for
-                <span class="heading-small">John Smith</span>.
-            </div>
-        </div>
-        <div class="grid grid-1-3">
-            <div class="inner-block">
-                <a href="" class="banner-links">Return to your account</a>
-            </div>
-        </div>
-    </div>
+                        <div class="sidebar [modifier class]">
+  <ul class="sidebar__list">
+    <li class="sidebar__list-item">
+      Sidebar list item
+    </li>
+    <li class="sidebar__list-item">
+      <p class="sidebar__list-item--small-indent">Indented sidebar list item</p>
+    </li>
+  </ul>
 </div>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;grid-wrapper attorneyContainer&quot;&gt;
-    &lt;div class=&quot;attorneyBanner grid&quot;&gt;
-        &lt;div class=&quot;grid grid-2-3&quot;&gt;
-            &lt;div class=&quot;inner-block&quot;&gt;
-                You&#x27;re using this service for
-                &lt;span class=&quot;heading-small&quot;&gt;John Smith&lt;/span&gt;.
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;grid grid-1-3&quot;&gt;
-            &lt;div class=&quot;inner-block&quot;&gt;
-                &lt;a href=&quot;&quot; class=&quot;banner-links&quot;&gt;Return to your account&lt;/a&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;sidebar [modifier class]&quot;&gt;
+  &lt;ul class=&quot;sidebar__list&quot;&gt;
+    &lt;li class=&quot;sidebar__list-item&quot;&gt;
+      Sidebar list item
+    &lt;/li&gt;
+    &lt;li class=&quot;sidebar__list-item&quot;&gt;
+      &lt;p class=&quot;sidebar__list-item--small-indent&quot;&gt;Indented sidebar list item&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
                       </div>
                     </div>
 
+                    <div class="comp-lib-pattern-example">
+                      <h2 class="comp-lib-heading-2">.sidebar--full-width</h2>
+                      <div class="comp-lib-description">
+                        Full width sidebar
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <div class="sidebar sidebar--full-width">
+  <ul class="sidebar__list">
+    <li class="sidebar__list-item">
+      Sidebar list item
+    </li>
+    <li class="sidebar__list-item">
+      <p class="sidebar__list-item--small-indent">Indented sidebar list item</p>
+    </li>
+  </ul>
+</div>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;sidebar sidebar--full-width&quot;&gt;
+  &lt;ul class=&quot;sidebar__list&quot;&gt;
+    &lt;li class=&quot;sidebar__list-item&quot;&gt;
+      Sidebar list item
+    &lt;/li&gt;
+    &lt;li class=&quot;sidebar__list-item&quot;&gt;
+      &lt;p class=&quot;sidebar__list-item--small-indent&quot;&gt;Indented sidebar list item&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                    <div class="comp-lib-pattern-example">
+                      <h2 class="comp-lib-heading-2">.sidebar--hidden-sm</h2>
+                      <div class="comp-lib-description">
+                        Sidebar hidden in <code>small</code> viewport
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <div class="sidebar sidebar--hidden-sm">
+  <ul class="sidebar__list">
+    <li class="sidebar__list-item">
+      Sidebar list item
+    </li>
+    <li class="sidebar__list-item">
+      <p class="sidebar__list-item--small-indent">Indented sidebar list item</p>
+    </li>
+  </ul>
+</div>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;sidebar sidebar--hidden-sm&quot;&gt;
+  &lt;ul class=&quot;sidebar__list&quot;&gt;
+    &lt;li class=&quot;sidebar__list-item&quot;&gt;
+      Sidebar list item
+    &lt;/li&gt;
+    &lt;li class=&quot;sidebar__list-item&quot;&gt;
+      &lt;p class=&quot;sidebar__list-item--small-indent&quot;&gt;Indented sidebar list item&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
                   </div>
 
                   </div>
