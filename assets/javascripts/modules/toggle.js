@@ -34,7 +34,7 @@ Toggle markup example:
 
 Target markup example:
 
-<div id="uk-phone-number-toggle-target" class="toggle-target">
+<div id="uk-phone-number-toggle-target" class="hidden">
 ......
 </div>
  */
@@ -59,9 +59,9 @@ var toggleEvent = function ($elem) {
       target = event.target;
 
       if (target.id === openId) {
-        $targetElem.show().attr('aria-expanded', 'true').attr('aria-visible', 'true');
+        $targetElem.removeClass('hidden').attr('aria-expanded', 'true').attr('aria-visible', 'true');
       } else if (target.id === closeId) {
-        $targetElem.hide().attr('aria-expanded', 'false').attr('aria-visible', 'false');
+        $targetElem.addClass('hidden').attr('aria-expanded', 'false').attr('aria-visible', 'false');
       }
     }
   });
