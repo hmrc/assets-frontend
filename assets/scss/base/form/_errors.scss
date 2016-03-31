@@ -78,20 +78,18 @@ Markup:
   <legend>Please enter your full name</legend>
   <div class="form-field form-field--error {{modifier_class}}">
     <span class="error-notification">Please enter your first name</span>
-    <label for="firstname">
+    <label>
         Full Name
         <input type="text"
-               class="input--medium error-field"
-               id="firstname" />
+               class="input--medium error-field"/>
     </label>
   </div>
   <div class="form-field form-field--error {{modifier_class}}">
     <span class="error-notification">Please enter your surname</span>
-    <label for="surname">
+    <label>
         Full Name
         <input type="text"
-               class="input--medium error-field"
-               id="surname" />
+               class="input--medium error-field"/>
     </label>
   </div>
 </fieldset>
@@ -142,21 +140,19 @@ Markup:
 <fieldset class="form-field-group form-field-group--error">
   <legend>Please enter your full name</legend>
   <div class="form-field">
-    <label for="firstname">
+    <label>
         First Name
         <span class="error-notification">Please enter your first name</span>
         <input type="text"
-               class="form-control"
-               id="firstname" />
+               class="form-control"/>
     </label>
   </div>
   <div class="form-field">
-    <label for="surname">
+    <label>
         Surname
         <span class="error-notification">Please enter your surname</span>
         <input type="text"
-               class="form-control"
-               id="surname" />
+               class="form-control"/>
     </label>
   </div>
 </fieldset>

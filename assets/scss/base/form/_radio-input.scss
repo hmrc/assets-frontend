@@ -4,13 +4,13 @@ Radio Input
 Radio Inputs are used to enable users to make a choice in a form.
 
 Markup:
-<label for="example-radio" class="block-label {{modifier_class}}">
+<label class="block-label {{modifier_class}}">
   Yes
-  <input name="example_text_input" type="radio" value="example value" id="example-radio"/>
+  <input name="example_text_input" type="radio" value="example value"/>
 </label>
-<label for="example-radio" class="block-label {{modifier_class}}">
+<label class="block-label {{modifier_class}}">
   No
-  <input name="example_text_input" type="radio" value="example value" id="example-radio"/>
+  <input name="example_text_input" type="radio" value="example value"/>
 </label>
 
 Styleguide Radio Input
