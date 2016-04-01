@@ -97,9 +97,11 @@
                 <li class="comp-lib-menu-item">
                   <a href="./" class="comp-lib-menu-link">Home</a>
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-add-remove.html" class="comp-lib-menu-link">Add Remove</a>
 
+                  <ul>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-alpha.html" class="comp-lib-menu-link">Alpha</a>
@@ -133,14 +135,9 @@
                   <a href="section-code.html" class="comp-lib-menu-link">Code</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-details.html" class="comp-lib-menu-link">Details</a>
 
-                  <ul>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-details.html#kssref-details-alternative">Alternative</a>
-                      </li>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-errors.html" class="comp-lib-menu-link">Errors</a>
@@ -231,15 +228,21 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-details">
+                  <div id="kssref-add-remove">
                 <div>
-                  <h1><a href="#kssref-details" class="comp-lib-menu-link">Details</a></h1>
+                  <h1><a href="#kssref-add-remove" class="comp-lib-menu-link">Add Remove</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>The HTML Details Element <code>&lt;details&gt;</code> is used as a widget the user can retrieve additional information.</p>
+                    <p>A component to add and remove inputs on a page. You have the option of sending in custom attributes for:</p>
+<ul>
+<li><code>data-can-delete=&quot;true&quot;</code> to add delete buttons</li>
+<li><code>data-delete-btn-text</code> to send in custom delete button text, this defaults to <strong>Delete</strong> and will only work when the
+<code>data-can-delete=&quot;true&quot;</code> is set</li>
+<li><code>data-add-btn-text</code> to send in custom add button text, this defaults to <strong>Add another redirect URI</strong></li>
+</ul>
 
                   </div>
                 </div>
@@ -248,164 +251,54 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <details>
-  <summary class="[modifier class]">Opening Times</summary>
-  <div>
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
+                        <div data-add-remove
+     data-max="5"
+     data-can-delete="true"
+     data-add-btn-text="Add me"
+     data-delete-btn-text="Delete me">
+  <ul class="add-remove__list" data-add-remove-list>
+    <li class="add-remove__item" data-add-remove-item>
+      <input name="example[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input />
+    </li>
+    <li class="add-remove__item" data-add-remove-item>
+      <input name="example[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input />
+    </li>
+  </ul>
+</div>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
-  &lt;summary class=&quot;[modifier class]&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
-                      </div>
-                    </div>
-
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.summary</h2>
-                      <div class="comp-lib-description">
-                        Details with underlined links
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <details>
-  <summary class="summary">Opening Times</summary>
-  <div>
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
-  &lt;summary class=&quot;summary&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.summary--black</h2>
-                      <div class="comp-lib-description">
-                        Details with black arrows and text within summary
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <details>
-  <summary class="summary--black">Opening Times</summary>
-  <div>
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
-  &lt;summary class=&quot;summary--black&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
-                      </div>
-                    </div>
-                  </div>
-
-                  </div>
-                  <section id="kssref-details-alternative">
-                <div>
-                  <h2><a href="#kssref-details-alternative" class="comp-lib-menu-link">Alternative</a></h2>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <p>In comparison to the default details component, this component has differing class attributes and the selectors used
-for this component add extra padding at the bottom of the opened details section.</p>
-
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
-                  <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <details class="details">
-  <summary class="summary">Opening Times</summary>
-  <div class="details__inner">
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details class=&quot;details&quot;&gt;
-  &lt;summary class=&quot;summary&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div class=&quot;details__inner&quot;&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div data-add-remove
+     data-max=&quot;5&quot;
+     data-can-delete=&quot;true&quot;
+     data-add-btn-text=&quot;Add me&quot;
+     data-delete-btn-text=&quot;Delete me&quot;&gt;
+  &lt;ul class=&quot;add-remove__list&quot; data-add-remove-list&gt;
+    &lt;li class=&quot;add-remove__item&quot; data-add-remove-item&gt;
+      &lt;input name=&quot;example[]&quot;
+             type=&quot;text&quot;
+             class=&quot;form-input input--medium&quot;
+             data-add-remove-input /&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;add-remove__item&quot; data-add-remove-item&gt;
+      &lt;input name=&quot;example[]&quot;
+             type=&quot;text&quot;
+             class=&quot;form-input input--medium&quot;
+             data-add-remove-input /&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
                       </div>
                     </div>
 
                   </div>
 
-                  </section>
+                  </div>
           </article>
         </div>
     </div>

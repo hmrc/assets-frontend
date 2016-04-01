@@ -133,14 +133,9 @@
                   <a href="section-code.html" class="comp-lib-menu-link">Code</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-details.html" class="comp-lib-menu-link">Details</a>
 
-                  <ul>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-details.html#kssref-details-alternative">Alternative</a>
-                      </li>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-errors.html" class="comp-lib-menu-link">Errors</a>
@@ -190,9 +185,11 @@
                   <a href="section-notification-banner.html" class="comp-lib-menu-link">Notification banner</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-page-header.html" class="comp-lib-menu-link">Page Header</a>
 
+                  <ul>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-panel.html" class="comp-lib-menu-link">Panel</a>
@@ -231,15 +228,15 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-details">
+                  <div id="kssref-page-header">
                 <div>
-                  <h1><a href="#kssref-details" class="comp-lib-menu-link">Details</a></h1>
+                  <h1><a href="#kssref-page-header" class="comp-lib-menu-link">Page Header</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
                               ">
-                    <p>The HTML Details Element <code>&lt;details&gt;</code> is used as a widget the user can retrieve additional information.</p>
+                    <p>Page header is used for styling a the header of a page.</p>
 
                   </div>
                 </div>
@@ -248,164 +245,22 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <details>
-  <summary class="[modifier class]">Opening Times</summary>
-  <div>
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
+                        <header class="page-header">
+  <h1>Heading Level 1</h1>
+  <h2>Heading Level 2</h2>
+</header>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
-  &lt;summary class=&quot;[modifier class]&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
-                      </div>
-                    </div>
-
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.summary</h2>
-                      <div class="comp-lib-description">
-                        Details with underlined links
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <details>
-  <summary class="summary">Opening Times</summary>
-  <div>
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
-  &lt;summary class=&quot;summary&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.summary--black</h2>
-                      <div class="comp-lib-description">
-                        Details with black arrows and text within summary
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <details>
-  <summary class="summary--black">Opening Times</summary>
-  <div>
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
-  &lt;summary class=&quot;summary--black&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
-                      </div>
-                    </div>
-                  </div>
-
-                  </div>
-                  <section id="kssref-details-alternative">
-                <div>
-                  <h2><a href="#kssref-details-alternative" class="comp-lib-menu-link">Alternative</a></h2>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <p>In comparison to the default details component, this component has differing class attributes and the selectors used
-for this component add extra padding at the bottom of the opened details section.</p>
-
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
-                  <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <details class="details">
-  <summary class="summary">Opening Times</summary>
-  <div class="details__inner">
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details class=&quot;details&quot;&gt;
-  &lt;summary class=&quot;summary&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div class=&quot;details__inner&quot;&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;header class=&quot;page-header&quot;&gt;
+  &lt;h1&gt;Heading Level 1&lt;/h1&gt;
+  &lt;h2&gt;Heading Level 2&lt;/h2&gt;
+&lt;/header&gt;</code></pre>
                       </div>
                     </div>
 
                   </div>
 
-                  </section>
+                  </div>
           </article>
         </div>
     </div>

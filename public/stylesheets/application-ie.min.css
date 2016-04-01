@@ -8223,7 +8223,20 @@ Styleguide Panel.form
   width: 92%;
 }
 
-/* line 2, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-page-header.scss */
+/*
+Page Header
+
+Page header is used for styling a the header of a page.
+
+Markup:
+<header class="page-header">
+  <h1>Heading Level 1</h1>
+  <h2>Heading Level 2</h2>
+</header>
+
+Styleguide Page Header
+*/
+/* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
 .page-header h1, .page-header .h1-heading {
   margin-top: 0;
   font-family: "nta", Arial, sans-serif;
@@ -8236,14 +8249,14 @@ Styleguide Panel.form
 }
 
 @media (max-width: 640px) {
-  /* line 2, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-page-header.scss */
+  /* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
   .page-header h1, .page-header .h1-heading {
     font-size: 32px;
     line-height: 1.09375;
   }
 }
 
-/* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-page-header.scss */
+/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
 .page-header h2, .page-header .h2-heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -8255,7 +8268,7 @@ Styleguide Panel.form
 }
 
 @media (max-width: 640px) {
-  /* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-page-header.scss */
+  /* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
   .page-header h2, .page-header .h2-heading {
     font-size: 24px;
     line-height: 1.04167;
@@ -10972,18 +10985,45 @@ Styleguide Textarea Input.Counter
   text-align: right;
 }
 
-/* line 3, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_add-remove.scss */
+/*
+Add Remove
+
+A component to add and remove inputs on a page. You have the option of sending in custom attributes for:
+- `data-can-delete="true"` to add delete buttons
+- `data-delete-btn-text` to send in custom delete button text, this defaults to **Delete** and will only work when the
+ `data-can-delete="true"` is set
+- `data-add-btn-text` to send in custom add button text, this defaults to **Add another redirect URI**
+
+Markup:
+<div data-add-remove
+     data-max="5"
+     data-can-delete="true"
+     data-add-btn-text="Add me"
+     data-delete-btn-text="Delete me">
+  <ul class="add-remove__list" data-add-remove-list>
+    <li class="add-remove__item" data-add-remove-item>
+      <input name="example[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input />
+    </li>
+    <li class="add-remove__item" data-add-remove-item>
+      <input name="example[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input />
+    </li>
+  </ul>
+</div>
+
+Styleguide Add remove
+*/
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_add-remove.scss */
 .add-remove__list {
   margin: 0.52632em 0 0.52632em 0;
 }
 
-/* line 7, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_add-remove.scss */
-.add-remove__field {
-  width: 80%;
-  width: 20em;
-}
-
-/* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_add-remove.scss */
+/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_add-remove.scss */
 .add-remove__remove-btn {
   margin: 0 0 0 0.26316em;
 }
