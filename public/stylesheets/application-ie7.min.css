@@ -10568,12 +10568,12 @@ Markup:
 
 Styleguide Hero
 */
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero {
   background-color: #005ea5;
 }
 
-/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content {
   display: block;
   max-width: 960px;
@@ -10590,25 +10590,25 @@ Styleguide Hero
 }
 
 @media (max-width: 640px) {
-  /* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+  /* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
   .hero__content {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content .hero__heading-large,
 .hero__content .hero__heading-small {
   color: #fff;
 }
 
-/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content .hero__heading-large {
   margin: 0;
 }
 
-/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content .hero__heading-small {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -10618,14 +10618,14 @@ Styleguide Hero
 }
 
 @media (max-width: 640px) {
-  /* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+  /* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
   .hero__content .hero__heading-small {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content .hero__heading-large {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -10636,14 +10636,14 @@ Styleguide Hero
 }
 
 @media (max-width: 640px) {
-  /* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+  /* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
   .hero__content .hero__heading-large {
     font-size: 24px;
     line-height: 1.04167;
   }
 }
 
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content .hero__heading-large {
   font-family: "nta", Arial, sans-serif;
   font-size: 48px;
@@ -10654,7 +10654,7 @@ Styleguide Hero
 }
 
 @media (max-width: 640px) {
-  /* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+  /* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
   .hero__content .hero__heading-large {
     font-size: 32px;
     line-height: 1.09375;
