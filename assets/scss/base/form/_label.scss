@@ -14,9 +14,9 @@ Label
 Labels are used to describe an input or group of inputs.
 
 Markup:
-<label class="{{modifier_class}}" for="label_example">
+<label class="{{modifier_class}}">
   First Name
-  <input id="label_example" class="input--cleared" name="example" type="text" value="example value" />
+  <input class="input--cleared" name="example" type="text" value="example value" />
 </label>
 
 .indent                   - An indented label
@@ -87,9 +87,9 @@ Radio input
 Labels containing a `radio` input.
 
 Markup:
-<label class="block-label {{modifier_class}}" for="label_radio_example">
+<label class="block-label {{modifier_class}}">
   Purple
-  <input id="label_radio_example" name="example" type="radio" />
+  <input name="example" type="radio" />
 </label>
 
 .label--inlineRadio                   - An inline radio label
@@ -135,9 +135,9 @@ Radio expanded
 Labels containing a `radio` input and a `span` wrapping the labels text.
 
 Markup:
-<label class="block-label label--inlineRadio--expanded" for="label_radio_expanded_example">
+<label class="block-label label--inlineRadio--expanded">
   <span class="label__text">Yellow</span>
-  <input id="label_radio_expanded_example" name="example" type="radio" />
+  <input name="example" type="radio" />
 </label>
 
 Styleguide Label.radio expanded
@@ -167,8 +167,8 @@ Select input
 Labels containing a `select` input.
 
 Markup:
-<label class="label--inlineDropDown" for="label_select_example">
-  <select id="label_select_example" class="select" name="example">
+<label class="label--inlineDropDown">
+  <select class="select" name="example">
     <option value="one">Option One</option>
     <option value="two">Option Two</option>
     <option value="three">Option Three</option>
@@ -190,7 +190,7 @@ Date
 Labels containing a `date`.
 
 Markup:
-<label for="example_label_date" class=" label--dateField-group">
+<label for="example_label_date" class="label--dateField-group">
   <span>Month</span>
 </label>
 <input type="text" name="month" id="example_label_date">
@@ -210,9 +210,9 @@ Aligned
 Labels containing a `radio` input with alignment.
 
 Markup:
-<label class="block-label" for="label_aligned_example">
+<label class="block-label">
   London
-  <input class="{{modifier_class}}" id="label_aligned_example" name="example" type="radio" />
+  <input class="{{modifier_class}}" name="example" type="radio" />
 </label>
 
 .vertically-aligned-input   - A vertically aligned input
@@ -241,12 +241,12 @@ Block
 Labels containing a `radio` input and a `span` wrapping the labels text.
 
 Markup:
-<label class="block-label {{modifier_class}}" for="label_block_example">
-  <input id="label_block_example" name="example" type="radio" />
+<label class="block-label {{modifier_class}}">
+  <input name="example" type="radio" />
   Blue
 </label>
-<label class="block-label {{modifier_class}}" for="label_block_example_other">
-  <input id="label_block_example_other" name="example" type="radio" />
+<label class="block-label {{modifier_class}}">
+  <input name="example" type="radio" />
   Green
 </label>
 
@@ -326,12 +326,12 @@ A container element using the `.form-date` css selector will change how a child 
 
 Markup:
 <div class="form-date">
-  <label for="label_form_date_example">
-    <input class="input--xxsmall input--no-spinner" id="label_form_date_example" name="example" type="number" />
+  <label>
+    <input class="input--xxsmall input--no-spinner" name="example" type="number" />
     Yellow
   </label>
-  <label for="label_form_date_example_other">
-    <input class="input--xxsmall input--no-spinner" id="label_form_date_example_other" name="example" type="number" />
+  <label>
+    <input class="input--xxsmall input--no-spinner" name="example" type="number" />
     Orange
   </label>
 </div>
