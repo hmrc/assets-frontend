@@ -1,0 +1,41 @@
+/*
+Add Remove
+
+A component to add and remove inputs on a page. You have the option of sending in custom attributes for:
+- `data-can-delete="true"` to add delete buttons
+- `data-delete-btn-text` to send in custom delete button text, this defaults to **Delete** and will only work when the
+ `data-can-delete="true"` is set
+- `data-add-btn-text` to send in custom add button text, this defaults to **Add another redirect URI**
+
+Markup:
+<div data-add-remove
+     data-max="5"
+     data-can-delete="true"
+     data-add-btn-text="Add me"
+     data-delete-btn-text="Delete me">
+  <ul class="add-remove__list" data-add-remove-list>
+    <li class="add-remove__item" data-add-remove-item>
+      <input name="example[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input />
+    </li>
+    <li class="add-remove__item" data-add-remove-item>
+      <input name="example[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input />
+    </li>
+  </ul>
+</div>
+
+Styleguide Add remove
+*/
+
+.add-remove__list {
+  margin: em(10) 0 em(10) 0;
+}
+
+.add-remove__remove-btn {
+  margin: 0 0 0 em(5);
+}
