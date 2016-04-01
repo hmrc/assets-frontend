@@ -22,11 +22,6 @@ body {
   @include page-slice();
 }
 
-.full-width-banner {
-  background-color: $govuk-blue-colour;
-  position: relative;
-}
-
 .content__body {
 
   .full-width & {
