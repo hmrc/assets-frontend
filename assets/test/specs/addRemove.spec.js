@@ -3,114 +3,126 @@
  */
 
 require('jquery');
+var $container1;
+var $container2;
+var $container3;
+var addRemove;
 
-describe("Given I have a list of inputs to add/remove", function() {
+var setup = function () {
+  $container1 = $('#addRemove1');
+  $container2 = $('#addRemove2');
+  $container3 = $('#addRemove3');
+  addRemove();
+};
 
-  jasmine.getFixtures().fixturesPath = "base/specs/fixtures/";
-  var addRemove = require('../../javascripts/modules/addRemove.js');
-  var $container1,
-      $container2;
+describe('Given I have a list of inputs to add/remove', function() {
 
-  describe("When I load the page", function() {
+  beforeEach(function() {
+    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/';
+    loadFixtures('addRemove-fixture.html');
+    addRemove = require('../../javascripts/modules/addRemove.js');
+  });
 
-    beforeEach(function() {
-      loadFixtures('addRemove-fixture.html');
-      addRemove();
-      $container1 = $('#addRemove1');
-      $container2 = $('#addRemove2');
+  describe('When I load the page', function() {
+    beforeEach(setup);
+
+    it('When delete attribute specified delete buttons should be added to all items except the first', function() {
+      expect($container1.find('li a[data-remove-btn]').length).toBe(2);
     });
-
-    it("Then Delete buttons are added to each item in first container", function() {
-      expect($container1.find('li a[data-remove-btn]').length).toBe(3);
-    });
-
-    it("Then Delete buttons are added to each item in second container", function() {
+    
+    it('No Delete Buttons should be added', function() {
       expect($container2.find('li a[data-remove-btn]').length).toBe(0);
     });
 
-    it("Then Add buttons are inserted in both containers", function() {
+    it('Add buttons should be inserted', function() {
       expect($container1.find('a[data-add-btn]').length).toBe(1);
       expect($container2.find('a[data-add-btn]').length).toBe(1);
     });
 
-    it("Then Add button has the specified text in both containers", function() {
-      expect($container1.find('a[data-add-btn]').text()).toBe('Add another redirect URI');
+    it('Add button should have the custom specified text', function() {
       expect($container2.find('a[data-add-btn]').text()).toBe('Add Item');
     });
 
+    it('Add button should have the default text', function() {
+      expect($container1.find('a[data-add-btn]').text()).toBe('Add another redirect URI');
+    });
+
+    it('Delete button should have the custom specified text', function() {
+      expect($container1.find('a[data-remove-btn]').first().text()).toBe('Press');
+    });
+
+    it('Delete button should have the default text', function() {
+      expect($container3.find('a[data-remove-btn]').text()).toBe('Delete');
+    });
   });
 
-  describe("When I click the Add button within the first container", function() {
+  describe('When I click the Add button', function() {
 
-    beforeEach(function() {
-      loadFixtures('addRemove-fixture.html');
-      addRemove();
-      $container1 = $('#addRemove1');
+    beforeEach(function () {
+      setup();
       $container1.find('a[data-add-btn]').trigger('click');
     });
 
-    it("Then an additional input is added to the list", function() {
-      expect($container1.find('li:nth-child(4)')).toBeVisible();
+    it('An additional input should be added to the list', function() {
+      expect($container1.find('[data-add-remove-item]').length).toBe(4);
     });
 
-    it("Then the additional input has the correct name and id attributes", function() {
-      expect($container1.find('li:nth-child(4) [data-add-remove-unique]').attr('name')).toBe('redirectUris[3]');
+    it('Additional input should have the expected name attribute', function() {
+      var $lastInput = $container1.find('[data-add-remove-input]').last();
+
+      expect($lastInput).toExist();
+      expect($lastInput.attr('name')).toBe('exampleOne[]');
     });
 
-    it("Then a corresponding Delete button is added beside the input", function() {
-      expect($container1.find('li:nth-child(4) a[data-remove-btn]')).toBeVisible();
-    });
+    it('Delete button should be added with the input', function() {
+      var $lastInput = $container1.find('[data-add-remove-item]').last();
+      var $lastInputDeleteBtn = $lastInput.find('[data-remove-btn]')
 
+      expect($lastInput).toExist();
+      expect($lastInputDeleteBtn).toExist();
+    });
   });
 
-  describe("When I add two items in the first container", function() {
+  describe('When I add max number of items', function() {
 
-    beforeEach(function() {
-      loadFixtures('addRemove-fixture.html');
-      addRemove();
-      $container1 = $('#addRemove1');
+    beforeEach(setup);
+
+    it('Then the Add button should be hidden', function() {
       $container1.find('a[data-add-btn]').trigger('click').trigger('click');
-    });
 
-    it("Then the Add button no longer exists", function() {
-      expect($container1.find('[data-add-btn]').length).toBe(0);
+      expect($container1.find('[data-add-btn]')).not.toBeVisible();
     });
-
   });
 
-  describe("When I remove an item from a full list", function() {
+  describe('When I remove an item from a full list', function() {
+    beforeEach(setup);
 
-    beforeEach(function() {
-      loadFixtures('addRemove-fixture.html');
-      addRemove();
-      $container1 = $('#addRemove1');
-      $container1.find('a[data-add-btn]').trigger('click').trigger('click');
+    it('The Add button should exist', function() {
+      var $addBtn = $container1.find('[data-add-btn]');
+
+      $addBtn.trigger('click').trigger('click');
+
+      expect($addBtn).not.toBeVisible();
+
       $container1.find('li:last-child a[data-remove-btn]').trigger('click');
-    });
 
-    it("Then the Add button exists", function() {
-      expect($container1.find('[data-add-btn]')).toBeVisible();
+      expect($addBtn).toBeVisible();
     });
-
   });
 
-  describe("When I click the Add button within the second container", function() {
+  describe('When I click the Add button when delete attribute is not specified', function() {
 
-    beforeEach(function() {
-      loadFixtures('addRemove-fixture.html');
-      addRemove();
-      $container2 = $('#addRemove2');
-      $container2.find('a[data-add-btn]').trigger('click');
+    beforeEach(function () {
+        setup();
+        $container2.find('a[data-add-btn]').trigger('click');
     });
 
-    it("An additional item is added to the list", function() {
-      expect($container2.find('li:nth-child(2)')).toBeVisible();
+    it('An additional item should be added to the list', function() {
+      expect($container2.find('[data-add-remove-item]').length).toBe(3);
     });
 
-    it("No delete button is added", function() {
-      expect($container2.find('li:last-child a[data-remove-btn]').length).toBe(0);
+    it('A delete button should NOT be added', function() {
+      expect($container2.find('[data-remove-btn]').length).toBe(0);
     });
-
   });
-
 });
