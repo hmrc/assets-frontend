@@ -1,0 +1,71 @@
+/*
+Page Header
+
+Deprecated: Page header is used for styling a the header of a page.
+**Page Header styles are being overridden by other styles.
+PLEASE DO NOT USE THIS CSS**
+
+Markup:
+<header class="page-header">
+  <div class="group">
+    <div class="hgroup">
+      <h1>Heading level 1</h1>
+      <h2>Heading level 2</h2>
+    </div>
+    <div class="service-info">
+      <h2>Service Information</h2>
+      <div class="service-info__help">
+      Service Information Help
+      </div>
+    </div>
+ </div>
+</header>
+
+Styleguide Page Header
+*/
+
+.page-header {
+  padding-bottom: 2em;
+
+  h1 {
+    margin-top: 30px;
+    @include media(tablet) {
+      @include bold-48;
+    }
+  }
+
+  h2 {
+    @include media(tablet) {
+      @include bold-36;
+      padding: 0;
+    }
+  }
+
+  .hgroup {
+    width: 64%;
+    float: left;
+  }
+
+  .service-info {
+    float: right;
+    width: 31%;
+
+    padding: 1em 0;
+
+    &>div {
+      padding-bottom: 1em;
+    }
+  }
+
+  .service-info__help {
+    float: right;
+    width: 31%;
+
+    @include core-16;
+    margin: 0;
+  }
+
+  .group {
+    clear: both;
+  }
+}
