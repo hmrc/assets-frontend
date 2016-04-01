@@ -18,7 +18,7 @@
 }
 
 /* line 46, ./assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
   content: "";
   display: block;
   clear: both;
@@ -59,7 +59,7 @@
 }
 
 /* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
   content: "";
   display: block;
   clear: both;
@@ -82,7 +82,7 @@
 }
 
 /* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
   content: "";
   display: block;
   clear: both;
@@ -97,7 +97,7 @@
 }
 
 /* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
   content: "";
   display: block;
   clear: both;
@@ -1741,7 +1741,7 @@ ol li {
 }
 
 /* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
   content: "";
   display: block;
   clear: both;
@@ -1764,7 +1764,7 @@ ol li {
 }
 
 /* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
   content: "";
   display: block;
   clear: both;
@@ -1787,7 +1787,7 @@ ol li {
 }
 
 /* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
   content: "";
   display: block;
   clear: both;
@@ -3717,14 +3717,14 @@ body {
   display: block;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 0.78947em 1.68421em 0.78947em;
+  padding: 0em 0.78947em 1.68421em 0.78947em;
   line-height: 1.5;
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
   line-height: 1.31579;
   font-weight: 400;
   text-transform: none;
-  padding: 0 1.57895em 1.68421em 1.57895em;
+  padding: 0em 1.57895em 1.68421em 1.57895em;
 }
 
 @media (max-width: 640px) {
@@ -3740,14 +3740,14 @@ body {
   display: block;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 0.78947em 0em 0.78947em;
+  padding: 0em 0.78947em 0em 0.78947em;
   line-height: 1.5;
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
   line-height: 1.31579;
   font-weight: 400;
   text-transform: none;
-  padding: 0 1.57895em 0em 1.57895em;
+  padding: 0em 1.57895em 0em 1.57895em;
 }
 
 @media (max-width: 640px) {
@@ -3759,73 +3759,67 @@ body {
 }
 
 /* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
-.full-width-banner {
-  background-color: #005ea5;
-  position: relative;
-}
-
-/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .content__body {
   float: left;
   width: 61.666667%;
 }
 
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .full-width .content__body {
   float: none;
   width: 100%;
 }
 
-/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .content__body .messages-box,
 .content__body .service-info__related-subsection {
   display: none;
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .brand-border--top {
   border-top: 10px solid #005ea5;
 }
 
-/* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .section, .section--branded {
   margin-bottom: 1em;
   padding: 1em 0;
 }
 
-/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .section h2, .section--branded h2, .section .h2-heading, .section--branded .h2-heading {
   margin-top: 0 !important;
 }
 
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .subsection {
   margin: 1.5em 0;
 }
 
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .subsection--wide {
   margin: 2.5em 0;
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .section--branded h2, .section--branded .h2-heading {
   border-bottom: 5px solid #005ea5;
   margin-top: 0 !important;
   margin-bottom: 0.65em;
 }
 
-/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .section--blue-top {
   border-top: 10px solid #005ea5;
 }
 
-/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .full-width {
   width: 100%;
 }
 
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
 .row {
   margin-bottom: 20px;
 }
@@ -10454,26 +10448,69 @@ Styleguide Code.tag
   border-radius: 5px;
 }
 
-/* line 4, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+/*
+Hero
+
+A blue hero banner which stretches the full width of the viewport.
+The hero's content sits centered to line up with other page content.
+Typically used on the landing page of a service.
+Provides classes for a heading and a subheading.
+
+Markup:
+<header class="hero">  
+    <section class="hero__content">        
+        <h1 class="hero__heading-large">HMRC API Developer Hub</h1>
+        <h2 class="hero__heading-small">
+          Tax-related APIs for building smarter software
+        </h2>
+    </section>
+</header>
+
+
+Styleguide Hero
+*/
+/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
 .hero {
-  position: relative;
-  padding-bottom: 0;
-  padding-bottom: 20px;
+  background-color: #005ea5;
 }
 
-/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
-.hero .heading-large,
-.hero .heading-small {
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+.hero__content {
+  display: block;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.05263em 0.78947em 1.05263em 0.78947em;
+  line-height: 1.5;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  padding: 1.05263em 1.57895em 1.05263em 1.57895em;
+  padding-top: 35px;
+}
+
+@media (max-width: 640px) {
+  /* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+  .hero__content {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+.hero__content .hero__heading-large,
+.hero__content .hero__heading-small {
   color: #fff;
 }
 
-/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
-.hero .heading-large {
-  margin: 35px 0 0 0;
+/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+.hero__content .hero__heading-large {
+  margin: 0;
 }
 
-/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
-.hero .heading-small {
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+.hero__content .hero__heading-small {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
   line-height: 1.31579;
@@ -10482,15 +10519,15 @@ Styleguide Code.tag
 }
 
 @media (max-width: 640px) {
-  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
-  .hero .heading-small {
+  /* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+  .hero__content .hero__heading-small {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
-.hero .heading-large {
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+.hero__content .hero__heading-large {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
   line-height: 1.11111;
@@ -10500,15 +10537,15 @@ Styleguide Code.tag
 }
 
 @media (max-width: 640px) {
-  /* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
-  .hero .heading-large {
+  /* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+  .hero__content .hero__heading-large {
     font-size: 24px;
     line-height: 1.04167;
   }
 }
 
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
-.hero .heading-large {
+/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+.hero__content .hero__heading-large {
   font-family: "nta", Arial, sans-serif;
   font-size: 48px;
   line-height: 1.04167;
@@ -10518,33 +10555,11 @@ Styleguide Code.tag
 }
 
 @media (max-width: 640px) {
-  /* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
-  .hero .heading-large {
+  /* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
+  .hero__content .hero__heading-large {
     font-size: 32px;
     line-height: 1.09375;
   }
-}
-
-/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
-.hero .side-content {
-  position: static;
-  float: right;
-  background-color: #0b0c0c;
-  padding: 18px 20px 18px 20px;
-  width: 45%;
-}
-
-/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
-.hero .side-content {
-  position: absolute;
-  right: 30px;
-  bottom: 0;
-  width: 23%;
-}
-
-/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_hero.scss */
-.hero .side-content--link {
-  color: #fff;
 }
 
 /*
