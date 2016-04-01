@@ -208,6 +208,10 @@
 
                 </li>
                 <li class="comp-lib-menu-item">
+                  <a href="section-template-page-header.html" class="comp-lib-menu-link">Template Page Header</a>
+
+                </li>
+                <li class="comp-lib-menu-item">
                   <a href="section-template-sidebar.html" class="comp-lib-menu-link">Template Sidebar</a>
 
                 </li>
@@ -235,12 +239,14 @@
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
                               
-                              ">
+                               comp-lib-description--deprecated">
                     <h2 class="comp-lib-warning">
                       
-                      
+                      Deprecated!
                     </h2>
-                    <p>Page header is used for styling a the header of a page.</p>
+                    <p>Page header is used for styling a the header of a page.
+<strong>Page Header styles are being overridden by other styles.
+PLEASE DO NOT USE THIS CSS</strong></p>
 
                   </div>
                 </div>
@@ -250,14 +256,34 @@
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <header class="page-header">
-  <h1>Heading Level 1</h1>
-  <h2>Heading Level 2</h2>
+  <div class="group">
+    <div class="hgroup">
+      <h1>Heading level 1</h1>
+      <h2>Heading level 2</h2>
+    </div>
+    <div class="service-info">
+      <h2>Service Information</h2>
+      <div class="service-info__help">
+      Service Information Help
+      </div>
+    </div>
+ </div>
 </header>
                       </div>
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;header class=&quot;page-header&quot;&gt;
-  &lt;h1&gt;Heading Level 1&lt;/h1&gt;
-  &lt;h2&gt;Heading Level 2&lt;/h2&gt;
+  &lt;div class=&quot;group&quot;&gt;
+    &lt;div class=&quot;hgroup&quot;&gt;
+      &lt;h1&gt;Heading level 1&lt;/h1&gt;
+      &lt;h2&gt;Heading level 2&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;service-info&quot;&gt;
+      &lt;h2&gt;Service Information&lt;/h2&gt;
+      &lt;div class=&quot;service-info__help&quot;&gt;
+      Service Information Help
+      &lt;/div&gt;
+    &lt;/div&gt;
+ &lt;/div&gt;
 &lt;/header&gt;</code></pre>
                       </div>
                     </div>

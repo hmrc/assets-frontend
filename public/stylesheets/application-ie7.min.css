@@ -8309,9 +8309,9 @@ Styleguide Panel.form
 }
 
 /*
-Page Header
+Template Page Header
 
-Page header is used for styling a the header of a page.
+Template page header is used for styling a the header of a page.
 
 Markup:
 <header class="page-header">
@@ -8319,7 +8319,7 @@ Markup:
   <h2>Heading Level 2</h2>
 </header>
 
-Styleguide Page Header
+Styleguide Template Page Header
 */
 /* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
 .page-header h1, .page-header .h1-heading {
