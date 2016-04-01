@@ -281,16 +281,16 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <label for="control">
+                        <label>
   Surname
-  <input type="text" id="control"
+  <input type="text"
          name="surname" class="form-control [modifier class]"/>
 </label>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;label for=&quot;control&quot;&gt;
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;label&gt;
   Surname
-  &lt;input type=&quot;text&quot; id=&quot;control&quot;
+  &lt;input type=&quot;text&quot;
          name=&quot;surname&quot; class=&quot;form-control [modifier class]&quot;/&gt;
 &lt;/label&gt;</code></pre>
                       </div>
@@ -302,16 +302,16 @@
                         A block control
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <label for="control">
+                        <label>
   Surname
-  <input type="text" id="control"
+  <input type="text"
          name="surname" class="form-control form-control--block"/>
 </label>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;label for=&quot;control&quot;&gt;
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;label&gt;
   Surname
-  &lt;input type=&quot;text&quot; id=&quot;control&quot;
+  &lt;input type=&quot;text&quot;
          name=&quot;surname&quot; class=&quot;form-control form-control--block&quot;/&gt;
 &lt;/label&gt;</code></pre>
                       </div>
@@ -341,8 +341,9 @@
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <div class="form-date">
   <div class="form-group form-group-year">
-    <label for="year" class="block-label">
-      <input class="input--xsmall" type="number" pattern="[0-9]*" min="0" max="12" id="year" name="year"/>
+    <label class="block-label">
+      <input class="input--xsmall" type="number" pattern="[0-9]*"
+             min="0" max="12" name="year"/>
       Year
     </label>
   </div>
@@ -351,8 +352,9 @@
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;form-date&quot;&gt;
   &lt;div class=&quot;form-group form-group-year&quot;&gt;
-    &lt;label for=&quot;year&quot; class=&quot;block-label&quot;&gt;
-      &lt;input class=&quot;input--xsmall&quot; type=&quot;number&quot; pattern=&quot;[0-9]*&quot; min=&quot;0&quot; max=&quot;12&quot; id=&quot;year&quot; name=&quot;year&quot;/&gt;
+    &lt;label class=&quot;block-label&quot;&gt;
+      &lt;input class=&quot;input--xsmall&quot; type=&quot;number&quot; pattern=&quot;[0-9]*&quot;
+             min=&quot;0&quot; max=&quot;12&quot; name=&quot;year&quot;/&gt;
       Year
     &lt;/label&gt;
   &lt;/div&gt;
@@ -381,15 +383,15 @@
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <fieldset class="dynamically-displayed">
-  <label for="textarea">
-    <textarea id="textarea" name="details" cols="40" rows="6"></textarea>
+  <label>
+    <textarea name="details" cols="40" rows="6"></textarea>
   </label>
 </fieldset>
                       </div>
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;dynamically-displayed&quot;&gt;
-  &lt;label for=&quot;textarea&quot;&gt;
-    &lt;textarea id=&quot;textarea&quot; name=&quot;details&quot; cols=&quot;40&quot; rows=&quot;6&quot;&gt;&lt;/textarea&gt;
+  &lt;label&gt;
+    &lt;textarea name=&quot;details&quot; cols=&quot;40&quot; rows=&quot;6&quot;&gt;&lt;/textarea&gt;
   &lt;/label&gt;
 &lt;/fieldset&gt;</code></pre>
                       </div>
@@ -417,15 +419,15 @@
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <fieldset class="form-field-group">
   <div class="form-field [modifier class]">
-    <label for="first-name">
+    <label>
       First Name
-      <input type="text" id="first-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
   <div class="form-field [modifier class]">
-    <label for="second-name">
+    <label>
       Second Name
-      <input type="text" id="second-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
   <div class="form-field [modifier class]">
@@ -436,15 +438,15 @@
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;form-field-group&quot;&gt;
   &lt;div class=&quot;form-field [modifier class]&quot;&gt;
-    &lt;label for=&quot;first-name&quot;&gt;
+    &lt;label&gt;
       First Name
-      &lt;input type=&quot;text&quot; id=&quot;first-name&quot; value=&quot;&quot;/&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot;/&gt;
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-field [modifier class]&quot;&gt;
-    &lt;label for=&quot;second-name&quot;&gt;
+    &lt;label&gt;
       Second Name
-      &lt;input type=&quot;text&quot; id=&quot;second-name&quot; value=&quot;&quot;/&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot;/&gt;
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-field [modifier class]&quot;&gt;
@@ -462,15 +464,15 @@
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <fieldset class="form-field-group">
   <div class="form-field form-field--tall">
-    <label for="first-name">
+    <label>
       First Name
-      <input type="text" id="first-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
   <div class="form-field form-field--tall">
-    <label for="second-name">
+    <label>
       Second Name
-      <input type="text" id="second-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
   <div class="form-field form-field--tall">
@@ -481,15 +483,15 @@
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;form-field-group&quot;&gt;
   &lt;div class=&quot;form-field form-field--tall&quot;&gt;
-    &lt;label for=&quot;first-name&quot;&gt;
+    &lt;label&gt;
       First Name
-      &lt;input type=&quot;text&quot; id=&quot;first-name&quot; value=&quot;&quot;/&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot;/&gt;
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-field form-field--tall&quot;&gt;
-    &lt;label for=&quot;second-name&quot;&gt;
+    &lt;label&gt;
       Second Name
-      &lt;input type=&quot;text&quot; id=&quot;second-name&quot; value=&quot;&quot;/&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot;/&gt;
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-field form-field--tall&quot;&gt;
@@ -520,15 +522,15 @@
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <fieldset class="[modifier class]">
   <div class="form-field">
-    <label for="first-name">
+    <label>
       First Name
-      <input type="text" id="first-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
  <div class="form-field">
-    <label for="second-name">
+    <label>
       Second Name
-      <input type="text" id="second-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
   <div class="form-field">
@@ -539,15 +541,15 @@
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;[modifier class]&quot;&gt;
   &lt;div class=&quot;form-field&quot;&gt;
-    &lt;label for=&quot;first-name&quot;&gt;
+    &lt;label&gt;
       First Name
-      &lt;input type=&quot;text&quot; id=&quot;first-name&quot; value=&quot;&quot;/&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot;/&gt;
     &lt;/label&gt;
   &lt;/div&gt;
  &lt;div class=&quot;form-field&quot;&gt;
-    &lt;label for=&quot;second-name&quot;&gt;
+    &lt;label&gt;
       Second Name
-      &lt;input type=&quot;text&quot; id=&quot;second-name&quot; value=&quot;&quot;/&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot;/&gt;
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-field&quot;&gt;
@@ -565,15 +567,15 @@
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <fieldset class="form-field-group">
   <div class="form-field">
-    <label for="first-name">
+    <label>
       First Name
-      <input type="text" id="first-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
  <div class="form-field">
-    <label for="second-name">
+    <label>
       Second Name
-      <input type="text" id="second-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
   <div class="form-field">
@@ -584,15 +586,15 @@
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;form-field-group&quot;&gt;
   &lt;div class=&quot;form-field&quot;&gt;
-    &lt;label for=&quot;first-name&quot;&gt;
+    &lt;label&gt;
       First Name
-      &lt;input type=&quot;text&quot; id=&quot;first-name&quot; value=&quot;&quot;/&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot;/&gt;
     &lt;/label&gt;
   &lt;/div&gt;
  &lt;div class=&quot;form-field&quot;&gt;
-    &lt;label for=&quot;second-name&quot;&gt;
+    &lt;label&gt;
       Second Name
-      &lt;input type=&quot;text&quot; id=&quot;second-name&quot; value=&quot;&quot;/&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot;/&gt;
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-field&quot;&gt;
@@ -609,15 +611,15 @@
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <fieldset class="form-field-single">
   <div class="form-field">
-    <label for="first-name">
+    <label>
       First Name
-      <input type="text" id="first-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
  <div class="form-field">
-    <label for="second-name">
+    <label>
       Second Name
-      <input type="text" id="second-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
   <div class="form-field">
@@ -628,15 +630,15 @@
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;form-field-single&quot;&gt;
   &lt;div class=&quot;form-field&quot;&gt;
-    &lt;label for=&quot;first-name&quot;&gt;
+    &lt;label&gt;
       First Name
-      &lt;input type=&quot;text&quot; id=&quot;first-name&quot; value=&quot;&quot;/&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot;/&gt;
     &lt;/label&gt;
   &lt;/div&gt;
  &lt;div class=&quot;form-field&quot;&gt;
-    &lt;label for=&quot;second-name&quot;&gt;
+    &lt;label&gt;
       Second Name
-      &lt;input type=&quot;text&quot; id=&quot;second-name&quot; value=&quot;&quot;/&gt;
+      &lt;input type=&quot;text&quot; value=&quot;&quot;/&gt;
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-field&quot;&gt;
@@ -694,14 +696,14 @@
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <fieldset class="form-field-group">
   <div class="[modifier class]">
-    <label for="blue" class="block-label">
-      <input type="radio" id="blue"/>
+    <label class="block-label">
+      <input type="radio"/>
       Blue
     </label>
   </div>
   <div class="[modifier class]">
-    <label for="green" class="block-label">
-      <input type="radio" id="green"/>
+    <label class="block-label">
+      <input type="radio"/>
       Green
     </label>
   </div>
@@ -713,14 +715,14 @@
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;form-field-group&quot;&gt;
   &lt;div class=&quot;[modifier class]&quot;&gt;
-    &lt;label for=&quot;blue&quot; class=&quot;block-label&quot;&gt;
-      &lt;input type=&quot;radio&quot; id=&quot;blue&quot;/&gt;
+    &lt;label class=&quot;block-label&quot;&gt;
+      &lt;input type=&quot;radio&quot;/&gt;
       Blue
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;[modifier class]&quot;&gt;
-    &lt;label for=&quot;green&quot; class=&quot;block-label&quot;&gt;
-      &lt;input type=&quot;radio&quot; id=&quot;green&quot;/&gt;
+    &lt;label class=&quot;block-label&quot;&gt;
+      &lt;input type=&quot;radio&quot;/&gt;
       Green
     &lt;/label&gt;
   &lt;/div&gt;
@@ -739,14 +741,14 @@
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <fieldset class="form-field-group">
   <div class="form-field--inline">
-    <label for="blue" class="block-label">
-      <input type="radio" id="blue"/>
+    <label class="block-label">
+      <input type="radio"/>
       Blue
     </label>
   </div>
   <div class="form-field--inline">
-    <label for="green" class="block-label">
-      <input type="radio" id="green"/>
+    <label class="block-label">
+      <input type="radio"/>
       Green
     </label>
   </div>
@@ -758,14 +760,14 @@
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;form-field-group&quot;&gt;
   &lt;div class=&quot;form-field--inline&quot;&gt;
-    &lt;label for=&quot;blue&quot; class=&quot;block-label&quot;&gt;
-      &lt;input type=&quot;radio&quot; id=&quot;blue&quot;/&gt;
+    &lt;label class=&quot;block-label&quot;&gt;
+      &lt;input type=&quot;radio&quot;/&gt;
       Blue
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-field--inline&quot;&gt;
-    &lt;label for=&quot;green&quot; class=&quot;block-label&quot;&gt;
-      &lt;input type=&quot;radio&quot; id=&quot;green&quot;/&gt;
+    &lt;label class=&quot;block-label&quot;&gt;
+      &lt;input type=&quot;radio&quot;/&gt;
       Green
     &lt;/label&gt;
   &lt;/div&gt;
@@ -783,14 +785,14 @@
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <fieldset class="form-field-group">
   <div class="form-field--inline-text-input">
-    <label for="blue" class="block-label">
-      <input type="radio" id="blue"/>
+    <label class="block-label">
+      <input type="radio"/>
       Blue
     </label>
   </div>
   <div class="form-field--inline-text-input">
-    <label for="green" class="block-label">
-      <input type="radio" id="green"/>
+    <label class="block-label">
+      <input type="radio"/>
       Green
     </label>
   </div>
@@ -802,14 +804,14 @@
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;form-field-group&quot;&gt;
   &lt;div class=&quot;form-field--inline-text-input&quot;&gt;
-    &lt;label for=&quot;blue&quot; class=&quot;block-label&quot;&gt;
-      &lt;input type=&quot;radio&quot; id=&quot;blue&quot;/&gt;
+    &lt;label class=&quot;block-label&quot;&gt;
+      &lt;input type=&quot;radio&quot;/&gt;
       Blue
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-field--inline-text-input&quot;&gt;
-    &lt;label for=&quot;green&quot; class=&quot;block-label&quot;&gt;
-      &lt;input type=&quot;radio&quot; id=&quot;green&quot;/&gt;
+    &lt;label class=&quot;block-label&quot;&gt;
+      &lt;input type=&quot;radio&quot;/&gt;
       Green
     &lt;/label&gt;
   &lt;/div&gt;
@@ -827,14 +829,14 @@
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <fieldset class="form-field-group">
   <div class="form-field--inline-spaced-right">
-    <label for="blue" class="block-label">
-      <input type="radio" id="blue"/>
+    <label class="block-label">
+      <input type="radio"/>
       Blue
     </label>
   </div>
   <div class="form-field--inline-spaced-right">
-    <label for="green" class="block-label">
-      <input type="radio" id="green"/>
+    <label class="block-label">
+      <input type="radio"/>
       Green
     </label>
   </div>
@@ -846,14 +848,14 @@
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;form-field-group&quot;&gt;
   &lt;div class=&quot;form-field--inline-spaced-right&quot;&gt;
-    &lt;label for=&quot;blue&quot; class=&quot;block-label&quot;&gt;
-      &lt;input type=&quot;radio&quot; id=&quot;blue&quot;/&gt;
+    &lt;label class=&quot;block-label&quot;&gt;
+      &lt;input type=&quot;radio&quot;/&gt;
       Blue
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-field--inline-spaced-right&quot;&gt;
-    &lt;label for=&quot;green&quot; class=&quot;block-label&quot;&gt;
-      &lt;input type=&quot;radio&quot; id=&quot;green&quot;/&gt;
+    &lt;label class=&quot;block-label&quot;&gt;
+      &lt;input type=&quot;radio&quot;/&gt;
       Green
     &lt;/label&gt;
   &lt;/div&gt;
@@ -871,14 +873,14 @@
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
                         <fieldset class="form-field-group">
   <div class="form-field--inline-spaced-left">
-    <label for="blue" class="block-label">
-      <input type="radio" id="blue"/>
+    <label class="block-label">
+      <input type="radio"/>
       Blue
     </label>
   </div>
   <div class="form-field--inline-spaced-left">
-    <label for="green" class="block-label">
-      <input type="radio" id="green"/>
+    <label class="block-label">
+      <input type="radio"/>
       Green
     </label>
   </div>
@@ -890,14 +892,14 @@
                       <div class="comp-lib-code-example">
                         <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;form-field-group&quot;&gt;
   &lt;div class=&quot;form-field--inline-spaced-left&quot;&gt;
-    &lt;label for=&quot;blue&quot; class=&quot;block-label&quot;&gt;
-      &lt;input type=&quot;radio&quot; id=&quot;blue&quot;/&gt;
+    &lt;label class=&quot;block-label&quot;&gt;
+      &lt;input type=&quot;radio&quot;/&gt;
       Blue
     &lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;form-field--inline-spaced-left&quot;&gt;
-    &lt;label for=&quot;green&quot; class=&quot;block-label&quot;&gt;
-      &lt;input type=&quot;radio&quot; id=&quot;green&quot;/&gt;
+    &lt;label class=&quot;block-label&quot;&gt;
+      &lt;input type=&quot;radio&quot;/&gt;
       Green
     &lt;/label&gt;
   &lt;/div&gt;

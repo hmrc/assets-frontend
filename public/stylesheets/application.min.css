@@ -6198,20 +6198,18 @@ Markup:
   <legend>Please enter your full name</legend>
   <div class="form-field form-field--error {{modifier_class}}">
     <span class="error-notification">Please enter your first name</span>
-    <label for="firstname">
+    <label>
         Full Name
         <input type="text"
-               class="input--medium error-field"
-               id="firstname" />
+               class="input--medium error-field"/>
     </label>
   </div>
   <div class="form-field form-field--error {{modifier_class}}">
     <span class="error-notification">Please enter your surname</span>
-    <label for="surname">
+    <label>
         Full Name
         <input type="text"
-               class="input--medium error-field"
-               id="surname" />
+               class="input--medium error-field"/>
     </label>
   </div>
 </fieldset>
@@ -6221,7 +6219,7 @@ Markup:
 
 Styleguide Errors.Form Field
 */
-/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error {
   background-color: #fff;
   border-left: 3px solid #df3034;
@@ -6230,19 +6228,19 @@ Styleguide Errors.Form Field
   padding: 0.63158em 0.84211em 0.63158em 0.84211em;
 }
 
-/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 108, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error.numbered {
   margin-left: 1.15789em !important;
   width: 90%;
 }
 
-/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error.fields-aligned {
   margin-left: -1.15789em;
 }
 
 @media (max-width: 640px) {
-  /* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+  /* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
   .form-field--error.fields-aligned {
     border-left: none;
     padding-left: 0;
@@ -6250,7 +6248,7 @@ Styleguide Errors.Form Field
   }
 }
 
-/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error .error-notification {
   display: block;
   font-family: "nta", Arial, sans-serif;
@@ -6261,14 +6259,14 @@ Styleguide Errors.Form Field
 }
 
 @media (max-width: 640px) {
-  /* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+  /* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
   .form-field--error .error-notification {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error .error-field {
   border: 3px solid #df3034;
 }
@@ -6283,28 +6281,26 @@ Markup:
 <fieldset class="form-field-group form-field-group--error">
   <legend>Please enter your full name</legend>
   <div class="form-field">
-    <label for="firstname">
+    <label>
         First Name
         <span class="error-notification">Please enter your first name</span>
         <input type="text"
-               class="form-control"
-               id="firstname" />
+               class="form-control"/>
     </label>
   </div>
   <div class="form-field">
-    <label for="surname">
+    <label>
         Surname
         <span class="error-notification">Please enter your surname</span>
         <input type="text"
-               class="form-control"
-               id="surname" />
+               class="form-control"/>
     </label>
   </div>
 </fieldset>
 
 Styleguide Errors.Form Field Group
 */
-/* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 163, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error,
 .form-field-group--error {
   background-color: #fff;
@@ -6313,7 +6309,7 @@ Styleguide Errors.Form Field Group
   margin: 0 -0.84211em 0.42105em -0.84211em;
 }
 
-/* line 172, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 168, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error .error-notification,
 .form-field-group--error .error-notification {
   display: block;
@@ -6689,13 +6685,13 @@ Radio Input
 Radio Inputs are used to enable users to make a choice in a form.
 
 Markup:
-<label for="example-radio" class="block-label {{modifier_class}}">
+<label class="block-label {{modifier_class}}">
   Yes
-  <input name="example_text_input" type="radio" value="example value" id="example-radio"/>
+  <input name="example_text_input" type="radio" value="example value"/>
 </label>
-<label for="example-radio" class="block-label {{modifier_class}}">
+<label class="block-label {{modifier_class}}">
   No
-  <input name="example_text_input" type="radio" value="example value" id="example-radio"/>
+  <input name="example_text_input" type="radio" value="example value"/>
 </label>
 
 Styleguide Radio Input
@@ -6794,9 +6790,9 @@ Label
 Labels are used to describe an input or group of inputs.
 
 Markup:
-<label class="{{modifier_class}}" for="label_example">
+<label class="{{modifier_class}}">
   First Name
-  <input id="label_example" class="input--cleared" name="example" type="text" value="example value" />
+  <input class="input--cleared" name="example" type="text" value="example value" />
 </label>
 
 .indent                   - An indented label
@@ -6868,9 +6864,9 @@ Radio input
 Labels containing a `radio` input.
 
 Markup:
-<label class="block-label {{modifier_class}}" for="label_radio_example">
+<label class="block-label {{modifier_class}}">
   Purple
-  <input id="label_radio_example" name="example" type="radio" />
+  <input name="example" type="radio" />
 </label>
 
 .label--inlineRadio                   - An inline radio label
@@ -6911,9 +6907,9 @@ Radio expanded
 Labels containing a `radio` input and a `span` wrapping the labels text.
 
 Markup:
-<label class="block-label label--inlineRadio--expanded" for="label_radio_expanded_example">
+<label class="block-label label--inlineRadio--expanded">
   <span class="label__text">Yellow</span>
-  <input id="label_radio_expanded_example" name="example" type="radio" />
+  <input name="example" type="radio" />
 </label>
 
 Styleguide Label.radio expanded
@@ -6942,8 +6938,8 @@ Select input
 Labels containing a `select` input.
 
 Markup:
-<label class="label--inlineDropDown" for="label_select_example">
-  <select id="label_select_example" class="select" name="example">
+<label class="label--inlineDropDown">
+  <select class="select" name="example">
     <option value="one">Option One</option>
     <option value="two">Option Two</option>
     <option value="three">Option Three</option>
@@ -6959,7 +6955,7 @@ Date
 Labels containing a `date`.
 
 Markup:
-<label for="example_label_date" class=" label--dateField-group">
+<label for="example_label_date" class="label--dateField-group">
   <span>Month</span>
 </label>
 <input type="text" name="month" id="example_label_date">
@@ -6978,9 +6974,9 @@ Aligned
 Labels containing a `radio` input with alignment.
 
 Markup:
-<label class="block-label" for="label_aligned_example">
+<label class="block-label">
   London
-  <input class="{{modifier_class}}" id="label_aligned_example" name="example" type="radio" />
+  <input class="{{modifier_class}}" name="example" type="radio" />
 </label>
 
 .vertically-aligned-input   - A vertically aligned input
@@ -7006,12 +7002,12 @@ Block
 Labels containing a `radio` input and a `span` wrapping the labels text.
 
 Markup:
-<label class="block-label {{modifier_class}}" for="label_block_example">
-  <input id="label_block_example" name="example" type="radio" />
+<label class="block-label {{modifier_class}}">
+  <input name="example" type="radio" />
   Blue
 </label>
-<label class="block-label {{modifier_class}}" for="label_block_example_other">
-  <input id="label_block_example_other" name="example" type="radio" />
+<label class="block-label {{modifier_class}}">
+  <input name="example" type="radio" />
   Green
 </label>
 
@@ -7100,12 +7096,12 @@ A container element using the `.form-date` css selector will change how a child 
 
 Markup:
 <div class="form-date">
-  <label for="label_form_date_example">
-    <input class="input--xxsmall input--no-spinner" id="label_form_date_example" name="example" type="number" />
+  <label>
+    <input class="input--xxsmall input--no-spinner" name="example" type="number" />
     Yellow
   </label>
-  <label for="label_form_date_example_other">
-    <input class="input--xxsmall input--no-spinner" id="label_form_date_example_other" name="example" type="number" />
+  <label>
+    <input class="input--xxsmall input--no-spinner" name="example" type="number" />
     Orange
   </label>
 </div>
@@ -7142,15 +7138,15 @@ A Form field is used to group several controls or elements within a web form.
 Markup:
 <fieldset class="{{modifier_class}}">
   <div class="form-field">
-    <label for="first-name">
+    <label>
       First Name
-      <input type="text" id="first-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
  <div class="form-field">
-    <label for="second-name">
+    <label>
       Second Name
-      <input type="text" id="second-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
   <div class="form-field">
@@ -7209,15 +7205,15 @@ A Form field is used to group several controls or elements within a web form.
 Markup:
 <fieldset class="form-field-group">
   <div class="form-field {{modifier_class}}">
-    <label for="first-name">
+    <label>
       First Name
-      <input type="text" id="first-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
   <div class="form-field {{modifier_class}}">
-    <label for="second-name">
+    <label>
       Second Name
-      <input type="text" id="second-name" value=""/>
+      <input type="text" value=""/>
     </label>
   </div>
   <div class="form-field {{modifier_class}}">
@@ -7250,14 +7246,14 @@ For a inline elements you have a few choices.
 Markup:
 <fieldset class="form-field-group">
   <div class="{{modifier_class}}">
-    <label for="blue" class="block-label">
-      <input type="radio" id="blue"/>
+    <label class="block-label">
+      <input type="radio"/>
       Blue
     </label>
   </div>
   <div class="{{modifier_class}}">
-    <label for="green" class="block-label">
-      <input type="radio" id="green"/>
+    <label class="block-label">
+      <input type="radio"/>
       Green
     </label>
   </div>
@@ -7345,8 +7341,9 @@ For displaying a date you can use the following markup.
 Markup:
 <div class="form-date">
   <div class="form-group form-group-year">
-    <label for="year" class="block-label">
-      <input class="input--xsmall" type="number" pattern="[0-9]*" min="0" max="12" id="year" name="year"/>
+    <label class="block-label">
+      <input class="input--xsmall" type="number" pattern="[0-9]*"
+             min="0" max="12" name="year"/>
       Year
     </label>
   </div>
@@ -7354,17 +7351,17 @@ Markup:
 
 Styleguide Form.date
 */
-/* line 222, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 223, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-date {
   display: inline-block;
 }
 
-/* line 231, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 232, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-date .form-group-year {
   width: 70px;
 }
 
-/* line 235, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 236, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-date .form-group {
   width: 56px;
   float: left;
@@ -7380,14 +7377,14 @@ For dynamically displayed markup.
 
 Markup:
 <fieldset class="dynamically-displayed">
-  <label for="textarea">
-    <textarea id="textarea" name="details" cols="40" rows="6"></textarea>
+  <label>
+    <textarea name="details" cols="40" rows="6"></textarea>
   </label>
 </fieldset>
 
 Styleguide Form.dynamic
 */
-/* line 259, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 260, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .dynamically-displayed {
   border-left: 5px solid #DEE0E2;
   clear: both;
@@ -7396,7 +7393,7 @@ Styleguide Form.dynamic
 }
 
 @media (max-width: 640px) {
-  /* line 259, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  /* line 260, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
   .dynamically-displayed {
     padding: 0.5em 15px;
     box-sizing: border-box;
@@ -7409,9 +7406,9 @@ Control
 For displaying form controls.
 
 Markup:
-<label for="control">
+<label>
   Surname
-  <input type="text" id="control"
+  <input type="text"
          name="surname" class="form-control {{modifier_class}}"/>
 </label>
 
@@ -7419,7 +7416,7 @@ Markup:
 
 Styleguide Form.control
 */
-/* line 289, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-control {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -7436,7 +7433,7 @@ Styleguide Form.control
 }
 
 @media (max-width: 640px) {
-  /* line 289, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  /* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
   .form-control {
     font-size: 16px;
     line-height: 1.25;
@@ -7444,13 +7441,13 @@ Styleguide Form.control
 }
 
 @media (min-width: 641px) {
-  /* line 289, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  /* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
   .form-control {
     width: 50%;
   }
 }
 
-/* line 307, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 308, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-control--block {
   display: block;
 }
@@ -7467,7 +7464,7 @@ Markup:
 
 Styleguide Form.legend
 */
-/* line 326, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 327, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .questionnaire legend {
   margin: 0 0 0.75em;
 }
