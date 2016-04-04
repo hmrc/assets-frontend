@@ -136,14 +136,3 @@ a.back-link {
   
 }
 
-
-
-a.back-to-top-link {
-  @include bold-16;
-  margin: 0 0 em(10) 0;
-
-  &:visited {
-    color: $govuk-blue-colour;
-  }
-
-}
