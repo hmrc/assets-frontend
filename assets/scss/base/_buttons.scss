@@ -8,12 +8,14 @@ If you are using an `<a>` element please also apply the `role="button"` attribut
 Markup:
 <button class="button {{modifier_class}}">Button text</button>
 
-.button--get-started   - For a button to start a user journey
-.button--secondary     - A secondary button
-.button--alert         - An alert button
-.button--small         - A smaller button
-.button--table         - A button within a table
-.button.button--link   - To make a button appear like a link
+.button--get-started           - For a button to start a user journey
+.button--secondary             - A secondary button
+.button--alert                 - An alert button
+.button--small                 - A smaller button
+.button--table                 - A button within a table
+.button.button--link           - To make a button appear like a link
+.button--link.button--flush    - Button that looks like link with margin and padding removed
+
 
 Styleguide Buttons
 */
@@ -66,7 +68,12 @@ button, .button {
 // adds margin on left and right of button for situations
 // where button is sitting inline with other elements
 .button--spaced {
-  margin: 0 em(10) 0 em(10);
+  margin: em(10) 0 0 0;
+
+  @include media(tablet) {
+    margin: 0 em(10) 0 em(10);  
+  }
+
 }
 
 // adds left and right padding for buttons whose text is extremely short
@@ -74,6 +81,7 @@ button, .button {
   padding-left: em(30);
   padding-right: em(30);
 }
+
 
 /**
  * For links that need to be positioned beside buttons
@@ -108,6 +116,12 @@ button, .button {
   @include media(mobile) {
     margin-top: 10px;
   }
+}
+
+.button--link.button--flush {
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
 }
 
 /* Transforms button into a link */
