@@ -34,7 +34,7 @@ Markup:
   </div>
 </div>
 
-.grid-layout--flush      - Remove margins for cases where they're not needed
+.grid-layout--flush      - Remove margins for cases where they're not needed. This class is temporary until margin zero is default on the component.
 .grid-layout--stacked    - Stack columns in mobile
 
 Styleguide Grids
@@ -44,6 +44,8 @@ Styleguide Grids
   @extend %grid-row-table;
 }
 
+// temporary selector for reseting margin
+// this class is temporary until margin is zero by default on the component
 .grid-layout--flush {
   margin: 0;
 }
