@@ -2,13 +2,13 @@ require('jquery');
 
 /*
 
-Suggestions AutoComplete module
+AutoComplete module
 - Create an autoComplete with the following markup
-- Create a global suggestions object, the structure is demonstrated below
+- Create a JSON object as a global variable, the structure is demonstrated below
 - Optionally provide a target input to update with suggestions value
 
 
-Suggestions auto complete html markup:
+Auto complete html markup:
 
  <div class="suggestions-input-container">
     <input type="text"
@@ -28,16 +28,15 @@ Suggestions auto complete html markup:
  </div>
 
 
-Suggestions Data format:
+Data format:
 
- <script type="application/json">
+<script type="text/javascript">
   var countries = [{"title":"United Kingdom","value":"44"}]
- </script>
+</script>
 
 */
 
 var suggestions;
-var $suggestionsData;
 var $suggestionsContainer;
 var $autoCompleteInputElem;
 var $targetInput;
@@ -315,22 +314,8 @@ var suggestionsEvent = function () {
 };
 
 /**
- * setup variables and get suggestion data
- * @param $elem
- * @param $targetElem
- */
-var setup = function ($elem, suggestionsData, $targetElem, suggestionFormat) {
-  $autoCompleteInputElem = $elem;
-  $targetInput = $targetElem;
-  suggestionDisplayFormat = suggestionFormat;
-  suggestions = suggestionsData;
-  $clearInputButton = $('.js-suggestions-clear');
-  $suggestionsContainer = $('.js-suggestions').first();
-  $suggestionsStatusMessage = $('.js-suggestions-status-message').first();
-};
-
-/**
- * create the autoComplete
+ * setup variables and create the autoComplete
+ *
  * @param $autoCompleteInputElem
  *
  * @param suggestionsData
@@ -344,11 +329,18 @@ var setup = function ($elem, suggestionsData, $targetElem, suggestionFormat) {
  * Format for the suggestion to be displayed in the suggestion list, this will default to suggestion.title if a format is not supplied
  *
  */
-var build = function ($autoCompleteInputElem, suggestionsData, $targetInputElem, suggestionFormat) {
-  if ($autoCompleteInputElem.length) {
-    setup($autoCompleteInputElem, suggestionsData, $targetInputElem, suggestionFormat);
+var setup = function ($elem, suggestionsData, $targetInputElem, suggestionFormat) {
+  if ($elem.length) {
+    $autoCompleteInputElem = $elem;
+    $targetInput = $targetInputElem;
+    suggestionDisplayFormat = suggestionFormat;
+    suggestions = suggestionsData;
+    $clearInputButton = $('.js-suggestions-clear');
+    $suggestionsContainer = $('.js-suggestions').first();
+    $suggestionsStatusMessage = $('.js-suggestions-status-message').first();
+
     addEventListeners();
   }
 };
 
-module.exports = build;
+module.exports = setup;
