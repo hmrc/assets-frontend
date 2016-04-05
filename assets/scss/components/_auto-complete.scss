@@ -2,6 +2,7 @@
 Auto Complete
 
 The Auto complete is used to aid a user with a large amount of choices they may have to make.
+The example shown here has country information for the `United Kingdom`, `Afghanistan`, `Sierra Leone and Wallis` and `Futuna`.
 
 Markup:
 <fieldset class="form-field-group">
@@ -28,6 +29,9 @@ Markup:
     </div>
   </label>
 </fieldset>
+
+ExampleData:
+var countries = [{"title": "United Kingdom","value": "44"},{"title": "Afghanistan","value": "93"},{"title": "Sierra Leone","value": "232"},{"title": "Wallis and Futuna","value": "681"}];
 
 Styleguide AutoComplete
 */
