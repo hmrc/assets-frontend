@@ -319,31 +319,22 @@ var suggestionsEvent = function () {
  * @param $elem
  * @param $targetElem
  */
-var setup = function ($elem, $targetElem, suggestionFormat) {
+var setup = function ($elem, suggestionsData, $targetElem, suggestionFormat) {
   $autoCompleteInputElem = $elem;
   $targetInput = $targetElem;
   suggestionDisplayFormat = suggestionFormat;
-  $suggestionsData = $('#suggestions');
+  suggestions = suggestionsData;
   $clearInputButton = $('.js-suggestions-clear');
   $suggestionsContainer = $('.js-suggestions').first();
   $suggestionsStatusMessage = $('.js-suggestions-status-message').first();
-  getSuggestions();
-};
-
-/**
- * parse suggestions JSON data
- */
-var getSuggestions = function () {
-  try {
-    suggestions = JSON.parse($suggestionsData.html());
-  } catch (error) {
-    //TODO - add reporting?
-  }
 };
 
 /**
  * create the autoComplete
  * @param $autoCompleteInputElem
+ *
+ * @param suggestionsData
+ * The suggestion data used in the autoComplete. Typically this will be a global variable.
  *
  * @param $targetInputElem - [optional]
  * Input element to apply the suggestion.value too when a suggestion is selected. If this is not supplied then the autoComplete input will contain the
@@ -351,10 +342,11 @@ var getSuggestions = function () {
  *
  * @param suggestionFormat - [optional]
  * Format for the suggestion to be displayed in the suggestion list, this will default to suggestion.title if a format is not supplied
+ *
  */
-var build = function ($autoCompleteInputElem, $targetInputElem, suggestionFormat) {
+var build = function ($autoCompleteInputElem, suggestionsData, $targetInputElem, suggestionFormat) {
   if ($autoCompleteInputElem.length) {
-    setup($autoCompleteInputElem, $targetInputElem, suggestionFormat);
+    setup($autoCompleteInputElem, suggestionsData, $targetInputElem, suggestionFormat);
     addEventListeners();
   }
 };
