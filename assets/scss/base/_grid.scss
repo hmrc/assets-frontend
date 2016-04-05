@@ -7,6 +7,7 @@ fraction class `.grid-layout__column--1-4`.
 * Add a `.grid-layout` container.
 * Add your columns with individual `.grid-layout__column`.
 * Add your fractional width classes to set the width of the columns e.g. `.grid-layout__column--1-4`.
+* IMPORTANT: To avoid clashing with other components that may have layout properties, do not place other component classes on the same element as `.grid-layout`.
 
 Markup:
 <div class="grid-layout {{modifier_class}}">
