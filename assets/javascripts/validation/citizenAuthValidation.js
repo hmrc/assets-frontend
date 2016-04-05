@@ -5,33 +5,59 @@ module.exports = function() {
   var $identityVerificationForm = $('.form-identity-verification-options'), 
     $userDetailsForm = $('.ca-user-details-form'),
     setup = function() {
-
       if ($identityVerificationForm) {
+        // enable elements not to be submitted on form post (i.e., the grouping checkbox which opens group of radio buttons)
+        $identityVerificationForm.find('[data-no-submit="true"]')
+          .prop('disabled', false)
+          .prop('checked', false)
+          .closest('label').removeClass('selected');
+        
+        var toggleTarget = $identityVerificationForm.find('.js-toggle').data('target');
+        $('#' + toggleTarget).addClass('hidden').removeClass('js-hidden');
+        
         $identityVerificationForm.validate({
-          errorPlacement: function(error, element) { },
+          onkeyup: false,
+          onclick: false,
+          onfocusout: false,
+          onsubmit: true,
 
-          highlight: function(element) { },
-
-          invalidHandler: function(evt, validator) {
-            //When invalid submission, re-enable the submit button
-            $identityVerificationForm.find('.button[type=submit]').prop('disabled', false);
+          errorPlacement: function ($error, $element) {
+            // show summary &  ignore error text (message is not passed in jQuery.validator.addMethod("require_from_group", fn)
+            $('.error-summary', $identityVerificationForm)
+              .addClass('error-summary--show')
+              .removeClass('visuallyhidden')
+              .find('.js-error-summary-messages')
+              .append('<li>' + $element.data('msg-required') + '</li>');
           },
 
-          submitHandler: function(form) { /* for ajax: form.submit(); */ }
-        });
-        
-        $.validator.addMethod("require_from_group", function(value, element, params) {
-          var options = params.replace(/\s*,\s*/g, ',').split(','), 
-            $fields = $(options[1], element.form),
-            $fieldsFirst = $fields.eq(0),
-            validator = $fieldsFirst.data("validator_require_group") ? $fieldsFirst.data("validator_require_group") : $.extend({}, this),
-            isValid = $fields.filter(function() {return $(this).is(':checked')}).length >= options[0];
-              
-          // Store cloned validator for future validation
-          $fieldsFirst.data("validator_require_group", validator);
+          highlight: function (element) {
+            // show inline error
+            $(element).closest('.form-field-group').addClass('form-field-group--error');
+          },
+          
+          invalidHandler: function(evt, validator) {
+            // remove summary errors and hide summary
+            $('.error-summary', $identityVerificationForm)
+              .addClass('visuallyhidden')
+              .removeClass('error-summary--show')
+              .find('.js-error-summary-messages').empty();
 
-          return isValid;
-        }, $identityVerificationForm.find('input[data-msg-required]').data('msg-required'));
+            // hide inline error
+            $identityVerificationForm.find('.form-field-group').removeClass('form-field-group--error')
+            
+            // When invalid submission, re-enable the submit button
+            $identityVerificationForm.find('.button[type=submit]').prop('disabled', false);
+            
+            // and any elements set to disabled in validator method (i.e., the grouping checkbox which opens a group of radio buttons)
+            $identityVerificationForm.find('[data-no-submit="true"]').prop('disabled', false);
+          },
+
+          submitHandler: function(form) {
+            // disable element so value isn't passed in form (i.e., the grouping checkbox which opens a group of radio buttons)
+            $identityVerificationForm.find('[data-no-submit="true"]').prop('disabled', true);
+            form.submit();
+          }
+        });
       }
 
       if ($userDetailsForm) {

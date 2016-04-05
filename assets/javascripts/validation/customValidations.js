@@ -36,5 +36,21 @@ module.exports = function () {
 
     return regex.test(value);
   });
-  
+
+  // Test required number of check-able elements is correct  
+  jQuery.validator.addMethod("require_from_group", function(value, element, params) {
+    var options = params.replace(/\s*,\s*/g, ',').split(','),
+      $fields = $(options[1], element.form),
+      $fieldsFirst = $fields.eq(0),
+      validator = $fieldsFirst.data("validator_require_group") ? $fieldsFirst.data("validator_require_group") : $.extend({}, this);
+
+    var isValid = $fields.filter(function() {
+        return $(this).is(':checked');
+      }).length === Number(options[0]);
+
+    // Store cloned validator for future validation
+    $fieldsFirst.data("validator_require_group", validator);
+
+    return isValid;
+  });
 };
