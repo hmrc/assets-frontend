@@ -9986,108 +9986,110 @@ Styleguide Notification.Highlight dark
   background-image: url("../images/statements-flag3.png");
   background-repeat: no-repeat;
   background-position: 3px 4px;
-  padding-left: 3px;
+  padding-left: 0.63158em;
 }
 
 /* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .icon--flag:before {
-  content: "\f104";
+  content: "\00a0";
+  height: 0.73684em;
+  width: 0.57895em;
 }
 
-/* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .statements__table__cell, .annual-summaries--group .statements__table__head__cell {
   padding-right: 0;
 }
 
-/* line 144, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 146, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell {
   vertical-align: bottom;
 }
 
-/* line 147, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell:first-child {
   padding-left: 21px;
 }
 
-/* line 151, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 153, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell:last-child {
   padding-right: 24px;
 }
 
-/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 158, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell,
 .annual-summaries--group .summary__cell {
   text-align: right;
   width: 24.4%;
 }
 
-/* line 161, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 163, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell.payments,
 .annual-summaries--group .summary__cell.payments {
   width: 26.2%;
 }
 
-/* line 166, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 168, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__cell--group {
   padding: 0;
 }
 
-/* line 170, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 172, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__container {
   padding-top: 10px;
   background-color: #f8f8f8;
 }
 
-/* line 175, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .statement__summary {
   margin: 0;
   width: 100%;
   display: block;
 }
 
-/* line 181, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 183, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .summary__table {
   border-bottom-width: 0;
   margin: 0;
 }
 
-/* line 186, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 188, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .summary__cell {
   border-bottom-width: 0;
   padding: 12px 3px 10px;
 }
 
-/* line 191, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 193, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .summary__cell:last-child {
   padding-right: 24px;
 }
 
-/* line 195, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 197, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .summary__cell--content {
   color: #0b0c0c;
   margin-bottom: 0.26316em;
   white-space: nowrap;
 }
 
-/* line 201, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 203, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .summary__cell--no-content {
   padding-left: 18px;
   white-space: nowrap;
 }
 
-/* line 206, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 208, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table {
   border-bottom-width: 0;
   margin: 0;
 }
 
-/* line 211, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 213, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__head--item,
 .annual-summaries--group .summary__table__head {
   border-bottom-color: #bfc1c3;
 }
 
-/* line 216, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 218, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__head__cell--item,
 .annual-summaries--group .details__table__cell--item,
 .annual-summaries--group .summary__table__head__cell,
@@ -10096,7 +10098,7 @@ Styleguide Notification.Highlight dark
   color: #0b0c0c;
 }
 
-/* line 222, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 224, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__head__cell--item:nth-child(even),
 .annual-summaries--group .details__table__cell--item:nth-child(even),
 .annual-summaries--group .summary__table__head__cell:nth-child(even),
@@ -10106,12 +10108,12 @@ Styleguide Notification.Highlight dark
   padding-right: 0;
 }
 
-/* line 228, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 230, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content {
   border-bottom-width: 0;
 }
 
-/* line 232, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 234, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .cell__label--content {
   color: #6f777b;
   display: block;
@@ -10124,76 +10126,76 @@ Styleguide Notification.Highlight dark
 }
 
 @media (max-width: 640px) {
-  /* line 232, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+  /* line 234, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
   .annual-summaries--group .cell__label--content {
     font-size: 12px;
     line-height: 1.25;
   }
 }
 
-/* line 239, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 241, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__row,
 .annual-summaries--group .summary__table__row {
   vertical-align: top;
 }
 
-/* line 244, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 246, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .statements__table__head__cell--black {
   color: #0b0c0c;
 }
 
-/* line 248, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 250, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__summary--black {
   color: #0b0c0c;
   text-decoration: underline;
 }
 
-/* line 253, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 255, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table--content-container {
   border-bottom-width: 0;
 }
 
-/* line 257, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 259, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container {
   border-bottom-width: 0;
   padding: 0 24px;
 }
 
-/* line 261, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 263, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .statements__table {
   margin: 0;
   border-bottom-width: 1px;
 }
 
-/* line 265, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 267, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .statements__table .statements__table__cell, .annual-summaries--group .details__table__cell--content-container .statements__table .statements__table__head__cell {
   vertical-align: top;
 }
 
-/* line 269, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 271, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .statements__table > .statements__table__body .statements__table__row:last-child .statements__table__cell {
   border-bottom-width: 1px;
 }
 
-/* line 274, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 276, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .details__table--total {
   border-top: 1px solid #bfc1c3;
   border-bottom: 2px solid #bfc1c3;
 }
 
-/* line 280, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 282, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--total {
   padding: 12px 0 10px;
 }
 
-/* line 284, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 286, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__list--notices {
   list-style-type: disc;
   margin: 0.75em;
   max-width: 30em;
 }
 
-/* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 292, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__list--notices-item {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -10204,72 +10206,72 @@ Styleguide Notification.Highlight dark
 }
 
 @media (max-width: 640px) {
-  /* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+  /* line 292, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
   .annual-summaries--group .details__list--notices-item {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 297, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 299, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .summary__table .statements__table__head {
   border-bottom-width: 0;
 }
 
-/* line 302, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 304, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statement__details--group > .panel-indent > .statements__table, .statement__details--group > .email-notifications__indent > .statements__table {
   border-bottom-width: 0;
   width: 100%;
 }
 
-/* line 307, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 309, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .summary__table--payments {
   width: 59%;
 }
 
-/* line 313, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 315, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .h1-heading {
   margin-bottom: .8em;
 }
 
-/* line 317, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 319, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .h2-heading {
   margin-bottom: .25em;
 }
 
-/* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 323, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .h4-heading {
   margin-top: .5em;
   margin-bottom: .25em;
 }
 
-/* line 326, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 328, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .annual-summaries--group {
   margin-top: 0;
 }
 
-/* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 332, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links {
   margin-bottom: 1.6em;
   margin-right: .8em;
 }
 
-/* line 334, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 336, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links:first-child {
   margin-top: 3.6em;
 }
 
-/* line 339, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 341, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__heading {
   margin: .65em 0 .375em .15em;
 }
 
-/* line 342, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 344, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__heading:first-child {
   margin-top: 0;
 }
 
-/* line 347, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 349, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__item {
   border-bottom: 1px solid #bfc1c3;
   font-size: 19px;
@@ -10278,28 +10280,28 @@ Styleguide Notification.Highlight dark
   margin: 0;
 }
 
-/* line 354, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 356, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__item.selected {
   background-color: #005ea5;
 }
 
-/* line 357, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 359, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__item.selected .sidebar-links__link {
   color: #fff;
 }
 
-/* line 359, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 361, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__item.selected .sidebar-links__link:hover, .paye-statements .sidebar-links__item.selected .sidebar-links__link:focus, .paye-statements .sidebar-links__item.selected .sidebar-links__link:active {
   color: #fff;
 }
 
-/* line 366, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 368, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__link {
   text-decoration: none;
   padding-left: .25em;
 }
 
-/* line 370, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 372, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__link:hover, .paye-statements .sidebar-links__link:focus, .paye-statements .sidebar-links__link:active {
   text-decoration: underline;
 }
