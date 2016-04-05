@@ -4,7 +4,7 @@ require('jquery');
 
 Suggestions AutoComplete module
 - Create an autoComplete with the following markup
-- Create a JSON suggestions object with the following markup
+- Create a global suggestions object, the structure is demonstrated below
 - Optionally provide a target input to update with suggestions value
 
 
@@ -28,10 +28,10 @@ Suggestions auto complete html markup:
  </div>
 
 
-Suggestions JSON data format:
+Suggestions Data format:
 
- <script type="application/json" id="suggestions">
-  [{"title":"United Kingdom","value":"44"}]
+ <script type="application/json">
+  var countries = [{"title":"United Kingdom","value":"44"}]
  </script>
 
 */
