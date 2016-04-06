@@ -14,5 +14,5 @@
   "helpers": [
     "node_modules/hmrc-component-library-template/helpers/"
   ],
-  "custom": ["ExampleData"]
+  "custom": ["Example Data"]
 }
