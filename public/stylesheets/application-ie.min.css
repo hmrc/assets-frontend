@@ -8223,7 +8223,9 @@ Styleguide Panel.form
 /*
 Template Page Header
 
-Template page header is used for styling a the header of a page.
+Deprecated: Template Page header is used for styling a the header of a page.
+**Template page Header styles are being overridden by other styles.
+PLEASE DO NOT USE THIS CSS**
 
 Markup:
 <header class="page-header">
@@ -8233,7 +8235,7 @@ Markup:
 
 Styleguide Template Page Header
 */
-/* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
+/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
 .page-header h1, .page-header .h1-heading {
   margin-top: 0;
   font-family: "nta", Arial, sans-serif;
@@ -8246,14 +8248,14 @@ Styleguide Template Page Header
 }
 
 @media (max-width: 640px) {
-  /* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
+  /* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
   .page-header h1, .page-header .h1-heading {
     font-size: 32px;
     line-height: 1.09375;
   }
 }
 
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
+/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
 .page-header h2, .page-header .h2-heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -8265,7 +8267,7 @@ Styleguide Template Page Header
 }
 
 @media (max-width: 640px) {
-  /* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
+  /* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-page-header.scss */
   .page-header h2, .page-header .h2-heading {
     font-size: 24px;
     line-height: 1.04167;
