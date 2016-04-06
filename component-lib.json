@@ -13,5 +13,6 @@
   "homepage": "../../styleguide.md",
   "helpers": [
     "node_modules/hmrc-component-library-template/helpers/"
-  ]
+  ],
+  "custom": ["Example Data"]
 }
