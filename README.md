@@ -37,6 +37,22 @@ $ sm --start ASSETS_FRONTEND
 
 Please install node.js and npm. 
 You may find it easier to use the Node Version Manager [nvm](https://github.com/creationix/nvm)
+http://localhost:9032
+
+The recommended version of node is 0.12.7.
+
+Check your version of node:
+
+```
+$ node -v
+```
+
+Using nvm install and use a specific node version:
+
+```
+$ nvm install 0.12.7
+$ nvm use 0.12.7
+```
 
 #### nodemon
 
