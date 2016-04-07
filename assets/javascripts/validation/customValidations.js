@@ -9,14 +9,8 @@ module.exports = function () {
 
   // Check if value of input is correctly contained in suggestion data
   jQuery.validator.addMethod('suggestion', function (value, element) {
-    var suggestions;
+    var suggestions = window[element.getAttribute('data-suggestions')];
     var validSuggestion = false;
-
-    try {
-      suggestions = JSON.parse($('#suggestions').html())
-    } catch (e) {
-      //TODO add reporting?
-    }
 
     $(suggestions).each(function (index, suggestion) {
         if (value.toLowerCase() === suggestion.title.toLowerCase() || value === suggestion.value) {

@@ -18,6 +18,7 @@ Auto complete html markup:
            autocomplete="off"
            spellcheck="false"
            required
+           data-suggestions="countries"
            data-rule-suggestion="true"
            aria-autocomplete="list"
            aria-haspopup="country-code-suggestions"
