@@ -6,12 +6,14 @@ require('jquery');
 var $container1;
 var $container2;
 var $container3;
+var $container4;
 var addRemove;
 
 var setup = function () {
   $container1 = $('#addRemove1');
   $container2 = $('#addRemove2');
   $container3 = $('#addRemove3');
+  $container4 = $('#addRemove4');
   addRemove();
 };
 
@@ -44,7 +46,7 @@ describe('Given I have a list of inputs to add/remove', function() {
     });
 
     it('Add button should have the default text', function() {
-      expect($container1.find('a[data-add-btn]').text()).toBe('Add another redirect URI');
+      expect($container1.find('a[data-add-btn]').text()).toBe('Add');
     });
 
     it('Delete button should have the custom specified text', function() {
@@ -54,6 +56,19 @@ describe('Given I have a list of inputs to add/remove', function() {
     it('Delete button should have the default text', function() {
       expect($container3.find('a[data-remove-btn]').text()).toBe('Delete');
     });
+
+    it('Delete buttons should not be present on container 2', function() {
+      expect($container2.find('a[data-remove-btn]').length).toBe(0);
+    });
+
+    it('Delete buttons should be present on container 3', function() {
+      expect($container3.find('a[data-remove-btn]').length).toBe(1);
+    });
+
+    it('Delete buttons should not be present on container 4', function() {
+      expect($container4.find('a[data-remove-btn]').length).toBe(0);
+    });
+
   });
 
   describe('When I click the Add button', function() {
@@ -81,6 +96,7 @@ describe('Given I have a list of inputs to add/remove', function() {
       expect($lastInput).toExist();
       expect($lastInputDeleteBtn).toExist();
     });
+
   });
 
   describe('When I add max number of items', function() {
@@ -92,6 +108,7 @@ describe('Given I have a list of inputs to add/remove', function() {
 
       expect($container1.find('[data-add-btn]')).not.toBeVisible();
     });
+
   });
 
   describe('When I remove an item from a full list', function() {
@@ -108,6 +125,7 @@ describe('Given I have a list of inputs to add/remove', function() {
 
       expect($addBtn).toBeVisible();
     });
+
   });
 
   describe('When I click the Add button when delete attribute is not specified', function() {
@@ -124,5 +142,6 @@ describe('Given I have a list of inputs to add/remove', function() {
     it('A delete button should NOT be added', function() {
       expect($container2.find('[data-remove-btn]').length).toBe(0);
     });
+
   });
 });
