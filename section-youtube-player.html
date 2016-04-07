@@ -212,14 +212,9 @@
                   <a href="section-template-sidebar.html" class="comp-lib-menu-link">Template Sidebar</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-text-input.html" class="comp-lib-menu-link">Text Input</a>
 
-                  <ul>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-text-input.html#kssref-text-input-number">Number</a>
-                      </li>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-textarea-input.html" class="comp-lib-menu-link">Textarea Input</a>
@@ -229,18 +224,20 @@
                   <a href="section-toggle-button.html" class="comp-lib-menu-link">Toggle Button</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-youtube-player.html" class="comp-lib-menu-link">Youtube Player</a>
 
+                  <ul>
+                  </ul>
                 </li>
               </ul>
             </nav>
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-text-input">
+                  <div id="kssref-youtube-player">
                 <div>
-                  <h1><a href="#kssref-text-input" class="comp-lib-menu-link">Text Input</a></h1>
+                  <h1><a href="#kssref-youtube-player" class="comp-lib-menu-link">Youtube Player</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
@@ -250,7 +247,14 @@
                       
                       
                     </h2>
-                    <p>Text Inputs are used for obtaining information from users in a form.</p>
+                    <p>Embed a Youtube iframe in the page. Attributes required for player parameters:</p>
+<ul>
+<li><strong>id:</strong> required to render the iframe, value does not make a difference.</li>
+<li><strong>data-video-id:</strong> the id of the Youtube video to play.</li>
+<li><strong>data-ga-play-event:</strong> <em>[optional]</em> Google Analytics event to fire when video is played, should be in <code>data-ga-play-event=&quot;category:event:label&quot;</code> format.
+<hr/>
+The JavacScript for the YouTube player work can be found here: <a href="https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/youtubePlayer.js">youtubePlayer.js</a></li>
+</ul>
 
                   </div>
                 </div>
@@ -259,145 +263,22 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <input name="example_text_input" type="text" class="[modifier class]" value="example value" />
+                        <div class="youtube-player-container">
+  <div id="example" class="js-youtube-player"
+       data-video-id="MlMnz0Omosk"></div>
+</div>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;input name=&quot;example_text_input&quot; type=&quot;text&quot; class=&quot;[modifier class]&quot; value=&quot;example value&quot; /&gt;</code></pre>
-                      </div>
-                    </div>
-
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.input--xxsmall</h2>
-                      <div class="comp-lib-description">
-                        An extra extra! small input
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <input name="example_text_input" type="text" class="input--xxsmall" value="example value" />
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;input name=&quot;example_text_input&quot; type=&quot;text&quot; class=&quot;input--xxsmall&quot; value=&quot;example value&quot; /&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.input--xsmall</h2>
-                      <div class="comp-lib-description">
-                        An extra small input
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <input name="example_text_input" type="text" class="input--xsmall" value="example value" />
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;input name=&quot;example_text_input&quot; type=&quot;text&quot; class=&quot;input--xsmall&quot; value=&quot;example value&quot; /&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.input--small</h2>
-                      <div class="comp-lib-description">
-                        An small input
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <input name="example_text_input" type="text" class="input--small" value="example value" />
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;input name=&quot;example_text_input&quot; type=&quot;text&quot; class=&quot;input--small&quot; value=&quot;example value&quot; /&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.input--normal</h2>
-                      <div class="comp-lib-description">
-                        An normal input
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <input name="example_text_input" type="text" class="input--normal" value="example value" />
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;input name=&quot;example_text_input&quot; type=&quot;text&quot; class=&quot;input--normal&quot; value=&quot;example value&quot; /&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.input--fullwidth</h2>
-                      <div class="comp-lib-description">
-                        An full width input
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <input name="example_text_input" type="text" class="input--fullwidth" value="example value" />
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;input name=&quot;example_text_input&quot; type=&quot;text&quot; class=&quot;input--fullwidth&quot; value=&quot;example value&quot; /&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.input--no-spinner</h2>
-                      <div class="comp-lib-description">
-                        An input without a spinner
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <input name="example_text_input" type="text" class="input--no-spinner" value="example value" />
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;input name=&quot;example_text_input&quot; type=&quot;text&quot; class=&quot;input--no-spinner&quot; value=&quot;example value&quot; /&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.input--cleared</h2>
-                      <div class="comp-lib-description">
-                        To make an input <code>{display: block}</code>
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <input name="example_text_input" type="text" class="input--cleared" value="example value" />
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;input name=&quot;example_text_input&quot; type=&quot;text&quot; class=&quot;input--cleared&quot; value=&quot;example value&quot; /&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.input--link</h2>
-                      <div class="comp-lib-description">
-                        To make an input appear like a link
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <input name="example_text_input" type="text" class="input--link" value="example value" />
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;input name=&quot;example_text_input&quot; type=&quot;text&quot; class=&quot;input--link&quot; value=&quot;example value&quot; /&gt;</code></pre>
-                      </div>
-                    </div>
-                  </div>
-
-                  </div>
-
-
-                  <section id="kssref-text-input-number">
-                <div>
-                  <h2><a href="#kssref-text-input-number" class="comp-lib-menu-link">Number</a></h2>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <h2 class="comp-lib-warning">
-                      
-                      
-                    </h2>
-                    <p>Number Inputs are used for entering a floating point number.</p>
-
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
-                  <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <input name="example_number_input" type="number" class="input--xxsmall input--no-spinner" value="example value" />
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;input name=&quot;example_number_input&quot; type=&quot;number&quot; class=&quot;input--xxsmall input--no-spinner&quot; value=&quot;example value&quot; /&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;youtube-player-container&quot;&gt;
+  &lt;div id=&quot;example&quot; class=&quot;js-youtube-player&quot;
+       data-video-id=&quot;MlMnz0Omosk&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
                       </div>
                     </div>
 
                   </div>
 
-                  </section>
+                  </div>
 
 
           </article>

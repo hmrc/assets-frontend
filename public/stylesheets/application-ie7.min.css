@@ -10854,7 +10854,25 @@ Styleguide Breadcrumbs
   color: #005ea5;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_youtube-player.scss */
+/*
+Youtube Player
+
+Embed a Youtube iframe in the page. Attributes required for player parameters:
+- **id:** required to render the iframe, value does not make a difference.
+- **data-video-id:** the id of the Youtube video to play.
+- **data-ga-play-event:** *[optional]* Google Analytics event to fire when video is played, should be in `data-ga-play-event="category:event:label"` format.
+<hr/>
+The JavacScript for the YouTube player work can be found here: [youtubePlayer.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/youtubePlayer.js)
+
+Markup:
+<div class="youtube-player-container">
+  <div id="example" class="js-youtube-player"
+       data-video-id="MlMnz0Omosk"></div>
+</div>
+
+Styleguide Youtube Player
+*/
+/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_youtube-player.scss */
 .youtube-player-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -10863,7 +10881,7 @@ Styleguide Breadcrumbs
   max-width: 100%;
 }
 
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_youtube-player.scss */
+/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_youtube-player.scss */
 .youtube-player-container iframe, .youtube-player-container object, .youtube-player-container embed {
   position: absolute;
   top: 0;
