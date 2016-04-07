@@ -79,6 +79,7 @@
     "minifyify": "^6.0.0",
     "modernizr": "^3.0.0-alpha.4",
     "napa": "^1.2.0",
+    "phantomjs-prebuilt": "^2.1.7",
     "pretty-hrtime": "^1.0.0",
     "require-dir": "^0.2.0",
     "run-sequence": "^1.0.2",
