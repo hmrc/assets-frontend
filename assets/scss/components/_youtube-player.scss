@@ -1,0 +1,36 @@
+/*
+Youtube Player
+
+Embed a Youtube iframe in the page. Attributes required for player parameters:
+- **id:** required to render the iframe, value does not make a difference.
+- **data-video-id:** the id of the Youtube video to play.
+- **data-ga-play-event:** *[optional]* Google Analytics event to fire when video is played, should be in `data-ga-play-event="category:event:label"` format.
+<hr/>
+The JavacScript for the YouTube player work can be found here: [youtubePlayer.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/youtubePlayer.js)
+
+Markup:
+<div class="youtube-player-container">
+  <div id="example" class="js-youtube-player"
+       data-video-id="MlMnz0Omosk"></div>
+</div>
+
+Styleguide Youtube Player
+*/
+
+.youtube-player-container {
+
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+
+  & iframe, & object, & embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+}
