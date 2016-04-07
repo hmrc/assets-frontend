@@ -135,7 +135,7 @@ var createItem = function ($container) {
 };
 
 var deleteIsEnabled = function ($container) {
-  return $container.attr('data-can-delete') === "true";
+  return $container.attr('data-can-delete') === 'true';
 };
 
 var addDeleteBtn = function ($listItem, $container) {

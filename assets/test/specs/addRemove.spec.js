@@ -57,15 +57,15 @@ describe('Given I have a list of inputs to add/remove', function() {
       expect($container3.find('a[data-remove-btn]').text()).toBe('Delete');
     });
 
-    it("Delete buttons should not be present on container 2", function() {
+    it('Delete buttons should not be present on container 2', function() {
       expect($container2.find('a[data-remove-btn]').length).toBe(0);
     });
 
-    it("Delete buttons should be present on container 3", function() {
+    it('Delete buttons should be present on container 3', function() {
       expect($container3.find('a[data-remove-btn]').length).toBe(1);
     });
 
-    it("Delete buttons should not be present on container 4", function() {
+    it('Delete buttons should not be present on container 4', function() {
       expect($container4.find('a[data-remove-btn]').length).toBe(0);
     });
 
