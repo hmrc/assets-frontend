@@ -11025,15 +11025,10 @@ Markup:
      data-max="5"
      data-can-delete="true"
      data-add-btn-text="Add me"
-     data-delete-btn-text="Delete me">
+     data-delete-btn-text="Delete me"
+     data-template-item="data-template">
   <ul class="add-remove__list" data-add-remove-list>
-    <li class="add-remove__item" data-add-remove-item>
-      <input name="example[]"
-             type="text"
-             class="form-input input--medium"
-             data-add-remove-input />
-    </li>
-    <li class="add-remove__item" data-add-remove-item>
+    <li class="add-remove__item" data-add-remove-item data-template>
       <input name="example[]"
              type="text"
              class="form-input input--medium"
@@ -11044,12 +11039,12 @@ Markup:
 
 Styleguide Add remove
 */
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_add-remove.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_add-remove.scss */
 .add-remove__list {
   margin: 0.52632em 0 0.52632em 0;
 }
 
-/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_add-remove.scss */
+/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_add-remove.scss */
 .add-remove__remove-btn {
   margin: 0 0 0 0.26316em;
 }
