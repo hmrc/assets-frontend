@@ -123,7 +123,7 @@ var createItem = function ($container) {
   var $listItemClone,
       $input;
 
-  $listItemClone = $container.find(addRemoveItem).first().clone();
+  $listItemClone = $container.find(addRemoveItem).last().clone();
   $input = $listItemClone.find(addRemoveInput);
   $input.val('');
 
