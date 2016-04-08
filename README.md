@@ -29,23 +29,25 @@ $ sm --start ASSETS_FRONTEND
 
 ### Requirements
 
-* [node.js](https://nodejs.org/en/)
-* [npm](https://www.npmjs.com/)
-* [nodemon](https://github.com/remy/nodemon) (for [working on the Component Library](working-on-the-component-library))
+* [Node.js](https://nodejs.org/en/) `>= 0.12.7`
+* [npm](https://www.npmjs.com/) `>= 2.11.3`
 
-#### [node.js](https://nodejs.org/en/) & [npm](https://www.npmjs.com/)
+#### [Node.js](https://nodejs.org/en/) & [npm](https://www.npmjs.com/)
 
-Please install node.js and npm. 
-You may find it easier to use the Node Version Manager [nvm](https://github.com/creationix/nvm)
+To install multiple versions of Node.js, you may find it easier to use a node version manager:
 
-#### nodemon
+* [nvm](https://github.com/creationix/nvm)
+* [n](https://github.com/tj/n)
+
+#### [nodemon](http://nodemon.io/) (optional)
+
+`nodemon` is used to develop [the Component Library](working-on-the-component-library).
 
 It is recommended to install nodemon globally.
 
 ```
 $ npm install -g nodemon
 ```
-
 
 ### Running Locally (Development mode)
 
