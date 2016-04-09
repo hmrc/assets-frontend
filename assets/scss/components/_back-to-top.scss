@@ -1,0 +1,21 @@
+/*
+Back To Top
+
+A link which typically sits at the bottom of the page, or the bottom of a long section.
+Clicking this link scrolls the user back to the top of the page.
+
+Markup:
+<div class="back-to-top">
+  <a href="#">Back to top</a>
+</div>
+
+Styleguide Back To Top
+*/
+
+.back-to-top {
+  margin-top: em(40);
+  padding-top: em(20);
+  border-top: 2px solid $border-colour;
+  text-align: right;
+  @include bold-16;  
+}
