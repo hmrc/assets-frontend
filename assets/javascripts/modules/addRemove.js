@@ -7,9 +7,11 @@ A component to add and remove inputs on a page. You have the option of sending i
   `data-can-delete="true"` is set
 - `data-add-btn-text` to send in custom add button text, this defaults to **Add**
 - `data-max` Maximum items allowed in the list
+- each instance's outer div MUST have an ID so that the cloneable item html can be cached for that instance
 
 Markup:
-<div data-add-remove
+<div id="uniqueId"
+     data-add-remove
      data-max="5"
      data-can-delete="true"
      data-delete-btn-text="Delete Me"
@@ -40,7 +42,8 @@ var DEFAULT_ADD_BTN_TEXT = 'Add',
     addRemoveInput = '[data-add-remove-input]',
     template = '[data-template]',
     addButton = '[data-add-btn]',
-    maxItems = 'data-max';
+    maxItems = 'data-max',
+    cachedTemplate = [];
 
 var init = function () {
   var $addRemoveContainers = $(addRemoveContainer);
@@ -48,7 +51,15 @@ var init = function () {
   if ($addRemoveContainers.length) {
 
     $addRemoveContainers.each(function (i, container) {
-      var $container = $(container);
+      var $container = $(container),
+          $cloneableItem = $container.find('[' + $container.attr('data-template-item') + ']');
+
+      if($cloneableItem.length > 0) {
+
+        // cache this AddRemove instance's item template for when Add is clicked
+        cachedTemplate[$container.attr('id')] = $cloneableItem[0].outerHTML;
+
+      }
 
       if (deleteIsEnabled($container)) {
         $container.find(addRemoveItem).each(function (index, listItem) {
@@ -64,7 +75,9 @@ var init = function () {
         insertAddButton($container);
       }
     });
+
   }
+
 };
 
 /**
@@ -123,12 +136,11 @@ var addListItem = function ($container) {
  */
 var createItem = function ($container) {
   var $listItemClone,
-      $input,
-      dataTemplateItem;
-  
-  dataTemplateItem = $container.attr('data-template-item');
-  $listItemClone = $container.find('[' + dataTemplateItem + ']').clone();
-  $listItemClone.removeAttr('data-template');
+      $input;
+
+  // cloneable item is cached for this instance of AddRemove
+  $listItemClone = $(cachedTemplate[$container.attr('id')]);
+
   $input = $listItemClone.find(addRemoveInput);
 
   $input.val('');

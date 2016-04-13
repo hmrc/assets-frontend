@@ -6,9 +6,11 @@ A component to add and remove inputs on a page. You have the option of sending i
 - `data-delete-btn-text` to send in custom delete button text, this defaults to **Delete** and will only work when the
  `data-can-delete="true"` is set
 - `data-add-btn-text` to send in custom add button text, this defaults to **Add another redirect URI**
+- each instance's outer div MUST have an ID so that the cloneable item html can be cached for that instance
 
 Markup:
-<div data-add-remove
+<div id="uniqueId"
+     data-add-remove
      data-max="5"
      data-can-delete="true"
      data-add-btn-text="Add me"
