@@ -227,6 +227,16 @@ Styleguide Form.date
   @include ie-lte(7) {
     zoom: 1;
   }
+
+  input[type="text"] {
+    margin-left: 0;
+  }
+
+  .form-group {
+    @include media(mobile) {
+      width: 100%;
+    }
+  }
 }
 
 .form-date .form-group-year {
