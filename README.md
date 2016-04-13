@@ -85,6 +85,8 @@ $ ./server.sh build
 
 ### Viewing the Component Library
 
+It is available at [http://hmrc.github.io/assets-frontend](http://hmrc.github.io/assets-frontend).
+
 If you're running assets-frontend locally using `./server dev` or `npm start`, then you can view the Component Library by opening a browser at http://localhost:9032/component-library/
 
 ### Running Component Library with watch
