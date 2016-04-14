@@ -3,38 +3,77 @@ require('jquery');
 /*
 Helper to enable elements to toggle other elements on the page specified by data attribute
 Attach event to parent as delegate, open close dependant on triggers id.
+Two usages:
+ 1. Toggle visibility of one element
+ 2. Alternate visibility of two elements
 
-Toggle markup example:
+Toggle visibility of one element example:
 
 <fieldset class="form-field-group visible-javascript-on js-aria-show js-toggle"
-          id="uk-number"
-          data-target="uk-phone-number-toggle-target"
+          data-target="target-element"
           data-trigger="js-toggle-trigger"
-          data-open="uk-phone-number-toggle-open"
-          data-close="uk-phone-number-toggle-close">
+          data-open="radio-button-to-open"
+          data-close="radio-button-to-close">
 
-    <label class="block-label block-label--inline" for="uk-phone-number-toggle-close">Yes
+    <label class="block-label block-label--inline">Yes
         <input type="radio"
-               id="uk-phone-number-toggle-close"
+               id="radio-button-to-open"
                class="js-toggle-trigger"
                value="yes"
                name="uk-number"
                required />
     </label>
-    <label class="block-label block-label--inline" for="uk-phone-number-toggle-open">No
+    <label class="block-label block-label--inline">No
         <input type="radio"
-               id="uk-phone-number-toggle-open"
+               id="radio-button-to-close"
                class="js-toggle-trigger"
                value="no"
                name="uk-number"
                required
-               aria-controls="uk-phone-number-toggle-target"/>
+               aria-controls="target-element"/>
     </label>
 </fieldset>
 
-Target markup example:
+Target markup:
 
-<div id="uk-phone-number-toggle-target" class="hidden">
+<div id="target-element" class="hidden">
+......
+</div>
+
+Alternate visibility of two elements example:
+
+<fieldset class="form-field-group visible-javascript-on js-aria-show js-toggle"
+          data-target="target-element-1"
+          data-target-closed="target-element-2"
+          data-trigger="js-toggle-trigger"
+          data-open="radio-button-to-open"
+          data-close="radio-button-to-close">
+
+    <label class="block-label block-label--inline">Yes
+        <input type="radio"
+               id="radio-button-to-open"
+               class="js-toggle-trigger"
+               value="yes"
+               name="uk-number"
+               required />
+    </label>
+    <label class="block-label block-label--inline">No
+        <input type="radio"
+               id="radio-button-to-close"
+               class="js-toggle-trigger"
+               value="no"
+               name="uk-number"
+               required
+               aria-controls="target-element"/>
+    </label>
+</fieldset>
+
+Target markup:
+
+<div id="target-element-1">
+......
+</div>
+<div id="target-element-2" class="hidden">
 ......
 </div>
  */
@@ -47,8 +86,9 @@ var $toggleElems;
  * @param $elem
  */
 var toggleEvent = function ($elem) {
-  var $triggerElemSelector = $($elem.data('trigger'));
+  var $triggerElemSelector = $($elem.data('trigger'));  
   var $targetElem = $('#' + $elem.data('target'));
+  var $targetWhenClosed = $('#' + $elem.data('target-closed'));
   var openId = $elem.data('open');
   var closeId = $elem.data('close');
   var target;
@@ -60,8 +100,10 @@ var toggleEvent = function ($elem) {
 
       if (target.id === openId) {
         $targetElem.removeClass('hidden').attr('aria-expanded', 'true').attr('aria-visible', 'true');
+        $targetWhenClosed.addClass('hidden').attr('aria-expanded', 'false').attr('aria-visible', 'false');
       } else if (target.id === closeId) {
         $targetElem.addClass('hidden').attr('aria-expanded', 'false').attr('aria-visible', 'false');
+        $targetWhenClosed.removeClass('hidden').attr('aria-expanded', 'true').attr('aria-visible', 'true');
       }
     }
   });
