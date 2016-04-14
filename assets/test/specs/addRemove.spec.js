@@ -144,4 +144,19 @@ describe('Given I have a list of inputs to add/remove', function() {
     });
 
   });
+
+  describe('When I add to list of container #4', function() {
+
+    beforeEach(function () {
+        setup();
+        $container4.find('a[data-add-btn]').trigger('click');
+    });
+
+    it('The addtional item is of the correct template', function() {      
+      expect($container4.find('[data-add-remove-item]:nth-child(3) p')).toExist();
+    });
+
+  });
+
+
 });
