@@ -53,8 +53,6 @@ var init = function () {
       var $container = $(container),
           $cloneableItem = $container.find('[' + $container.attr('data-template-item') + ']');
 
-      //$container.data('index', i);
-
       if($cloneableItem.length > 0) {
       
         // cache this AddRemove instance's item template for when Add is clicked
@@ -136,11 +134,13 @@ var addListItem = function ($container) {
  * @returns {*}
  */
 var createItem = function ($container) {
-  var $listItemClone,
+  var cachedTemplateIndex,
+      $listItemClone,
       $input;
 
-  // cloneable item is cached for this instance of AddRemove
-  $listItemClone = $addRemoveContainers.index($container);
+  cachedTemplateIndex = $addRemoveContainers.index($container);
+
+  $listItemClone = $(cachedTemplate[cachedTemplateIndex]);
 
   $input = $listItemClone.find(addRemoveInput);
 
