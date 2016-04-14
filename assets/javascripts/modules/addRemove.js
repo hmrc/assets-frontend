@@ -7,11 +7,9 @@ A component to add and remove inputs on a page. You have the option of sending i
   `data-can-delete="true"` is set
 - `data-add-btn-text` to send in custom add button text, this defaults to **Add**
 - `data-max` Maximum items allowed in the list
-- each instance's outer div MUST have an ID so that the cloneable item html can be cached for that instance
 
 Markup:
-<div id="uniqueId"
-     data-add-remove
+<div data-add-remove
      data-max="5"
      data-can-delete="true"
      data-delete-btn-text="Delete Me"
@@ -54,11 +52,13 @@ var init = function () {
       var $container = $(container),
           $cloneableItem = $container.find('[' + $container.attr('data-template-item') + ']');
 
+      $container.data('index', i);
+
       if($cloneableItem.length > 0) {
-
+      
         // cache this AddRemove instance's item template for when Add is clicked
-        cachedTemplate[$container.attr('id')] = $cloneableItem[0].outerHTML;
-
+        cachedTemplate[i] = $cloneableItem[0].outerHTML;
+      
       }
 
       if (deleteIsEnabled($container)) {
@@ -139,7 +139,7 @@ var createItem = function ($container) {
       $input;
 
   // cloneable item is cached for this instance of AddRemove
-  $listItemClone = $(cachedTemplate[$container.attr('id')]);
+  $listItemClone = $(cachedTemplate[$container.data('index')]);
 
   $input = $listItemClone.find(addRemoveInput);
 
