@@ -32,7 +32,8 @@ Markup:
 </div>
  */
 
-var DEFAULT_ADD_BTN_TEXT = 'Add',
+var $addRemoveContainers, 
+    DEFAULT_ADD_BTN_TEXT = 'Add',
     DEFAULT_DELETE_BTN_TEXT = 'Delete',
     addRemoveContainer = '[data-add-remove]',
     addRemoveList = '[data-add-remove-list]',
@@ -44,7 +45,7 @@ var DEFAULT_ADD_BTN_TEXT = 'Add',
     cachedTemplate = [];
 
 var init = function () {
-  var $addRemoveContainers = $(addRemoveContainer);
+  $addRemoveContainers = $(addRemoveContainer);
 
   if ($addRemoveContainers.length) {
 
@@ -52,12 +53,12 @@ var init = function () {
       var $container = $(container),
           $cloneableItem = $container.find('[' + $container.attr('data-template-item') + ']');
 
-      $container.data('index', i);
+      //$container.data('index', i);
 
       if($cloneableItem.length > 0) {
       
         // cache this AddRemove instance's item template for when Add is clicked
-        cachedTemplate[i] = $cloneableItem[0].outerHTML;
+        cachedTemplate.push($cloneableItem[0].outerHTML);
       
       }
 
@@ -139,7 +140,7 @@ var createItem = function ($container) {
       $input;
 
   // cloneable item is cached for this instance of AddRemove
-  $listItemClone = $(cachedTemplate[$container.data('index')]);
+  $listItemClone = $addRemoveContainers.index($container);
 
   $input = $listItemClone.find(addRemoveInput);
 
