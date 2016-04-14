@@ -1,13 +1,13 @@
 require('jquery');
 
 /*
-Helper to enable elements to toggle other elements on the page specified by data attribute
+Helper to enable elements to toggle other elements on the page specified by one or two data attributes.
 Attach event to parent as delegate, open close dependant on triggers id.
 Two usages:
  1. Toggle visibility of one element
  2. Alternate visibility of two elements
 
-Toggle visibility of one element example:
+Example #1 - Toggle visibility of one element:
 
 <fieldset class="form-field-group visible-javascript-on js-aria-show js-toggle"
           data-target="target-element"
@@ -40,7 +40,7 @@ Target markup:
 ......
 </div>
 
-Alternate visibility of two elements example:
+Example #2 - Alternate visibility of two elements:
 
 <fieldset class="form-field-group visible-javascript-on js-aria-show js-toggle"
           data-target="target-element-1"
@@ -55,7 +55,8 @@ Alternate visibility of two elements example:
                class="js-toggle-trigger"
                value="yes"
                name="uk-number"
-               required />
+               required 
+               aria-controls="target-element-1"/>
     </label>
     <label class="block-label block-label--inline">No
         <input type="radio"
@@ -64,7 +65,7 @@ Alternate visibility of two elements example:
                value="no"
                name="uk-number"
                required
-               aria-controls="target-element"/>
+               aria-controls="target-element-2"/>
     </label>
 </fieldset>
 
