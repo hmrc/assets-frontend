@@ -8,6 +8,7 @@
   }
 }
 
+
 /*
 Label
 
@@ -226,7 +227,13 @@ Styleguide Label.aligned
   @extend %vertically-aligned-input;
 }
 
-
+// to align radio button with top line of content, not centred
+input.top-aligned-input {
+  top: em(31);
+  @include media(tablet) {
+    top: em(29);
+  }
+}
 
 
 /*
@@ -269,18 +276,19 @@ Styleguide Label.block
     @extend %vertically-aligned-input;
   }
 
-  // to align radio button with top line of content, not centred
-  input.top-aligned-input {
-    top: em(31);
-    @include media(tablet) {
-      top: em(29);
-    }
-  }
-
   @include media(tablet) {
     float: left;
     margin-top: 5px;
     margin-bottom: 5px;
+  }
+}
+
+// to align radio button with top line of content, not centred
+// NOTE: element is specified due to competing selector above: .block-label input {...}
+input.top-aligned-input {
+  top: em(31);
+  @include media(tablet) {
+    top: em(29);
   }
 }
 
