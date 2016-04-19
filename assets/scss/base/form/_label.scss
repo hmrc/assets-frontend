@@ -227,14 +227,6 @@ Styleguide Label.aligned
   @extend %vertically-aligned-input;
 }
 
-// to align radio button with top line of content, not centred
-input.top-aligned-input {
-  top: em(31);
-  @include media(tablet) {
-    top: em(29);
-  }
-}
-
 
 /*
 Block
