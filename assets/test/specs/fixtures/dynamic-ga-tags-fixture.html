@@ -1,0 +1,29 @@
+<form id="container1" action="/some/amazing/endpoint" data-journey-dynamic-radios>
+
+	<fieldset>
+    <label>
+      <input type="radio" id="approveBtn" name="radioBtn" value="APPROVE" data-journey-val="Approved" checked/>
+      Approve
+    </label>
+		<label>
+      <input type="radio" id="rejectBtn" name="radioBtn" value="REJECT" data-journey-val="Rejected"/>
+      Reject
+    </label>
+	</fieldset>
+
+	<input type="submit" value="Submit" data-journey-click="gate-keeper:Click:Approved" data-journey-target/>
+
+</form>
+
+<form id="container2" action="/another/amazing/endpoint" data-journey-dynamic-radios>
+
+	<fieldset>
+	  <legend>Please select a most delicious fruit</legend>
+		<input type="radio" id="appleBtn" name="radioBtn" value="APPLE" data-journey-val="apple" checked/>
+		<input type="radio" id="orangeBtn" name="radioBtn" value="ORANGE" data-journey-val="orange"/>
+		<input type="radio" id="pineappleBtn" name="radioBtn" value="PINEAPPLE" data-journey-val="pineapple"/>
+	</fieldset>
+
+	<input type="submit" value="Let Me Eat" data-journey-click="gate-keeper:Click:apple" data-journey-target/>
+
+</form>

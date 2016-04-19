@@ -44,7 +44,8 @@ var sso = require('./modules/sso.js'),
     tabs = require('./modules/tabs.js'),
     charCounter = require('./modules/charCounter.js'),
     addRemove = require('./modules/addRemove.js'),
-    modalDialog = require('./modules/modalDialog.js');
+    modalDialog = require('./modules/modalDialog.js'),
+    dynamicGaTags = require('./modules/dynamicGaTags.js');
 
 //initialise mdtpf
 fingerprint();
@@ -169,5 +170,6 @@ $(function() {
   charCounter();
   addRemove();
   modalDialog();
+  dynamicGaTags();
 
 });
