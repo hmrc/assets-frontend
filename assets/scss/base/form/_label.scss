@@ -8,6 +8,7 @@
   }
 }
 
+
 /*
 Label
 
@@ -204,36 +205,6 @@ Styleguide Label.date
 }
 
 
-/*
-Aligned
-
-Labels containing a `radio` input with alignment.
-
-Markup:
-<label class="block-label">
-  London
-  <input class="{{modifier_class}}" name="example" type="radio" />
-</label>
-
-.vertically-aligned-input   - A vertically aligned input
-.top-aligned-input          - A top aligned input
-
-Styleguide Label.aligned
-*/
-
-// Position checkbox within label, to allow text to wrap
-.vertically-aligned-input {
-  @extend %vertically-aligned-input;
-}
-
-// to align radio button with top line of content, not centred
-.top-aligned-input {
-  top: em(31);
-  @include media(tablet) {
-    top: em(29);
-  }
-}
-
 
 /*
 Block
@@ -318,6 +289,36 @@ Styleguide Label.block
   }
 }
 
+/*
+Aligned
+
+Labels containing a `radio` input with alignment.
+
+Markup:
+<label class="block-label">
+  London
+  <input class="{{modifier_class}}" name="example" type="radio" />
+</label>
+
+.vertically-aligned-input   - A vertically aligned input
+.top-aligned-input          - A top aligned input
+
+Styleguide Label.aligned
+*/
+
+// Position checkbox within label, to allow text to wrap
+.vertically-aligned-input {
+  @extend %vertically-aligned-input;
+}
+
+// to align radio button with top line of content, not centred
+// NOTE: element is specified due to competing selector above: .block-label input {...}
+input.top-aligned-input {
+  top: em(31);
+  @include media(tablet) {
+    top: em(29);
+  }
+}
 
 /*
 Form date
