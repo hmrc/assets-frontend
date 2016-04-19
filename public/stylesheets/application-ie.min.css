@@ -6498,7 +6498,7 @@ textarea:focus {
 }
 
 /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
-.vertically-aligned-input, .block-label input, .block-label--stacked input {
+.block-label input, .block-label--stacked input, .vertically-aligned-input {
   display: block;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -6528,7 +6528,7 @@ Markup:
 
 Styleguide Label
 */
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 label {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -6539,24 +6539,24 @@ label {
 }
 
 @media (max-width: 640px) {
-  /* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+  /* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
   label {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 label.bold {
   font-weight: bold;
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 label.indent {
   padding-left: 1.5em;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inline, .label--inline-no-input, .label--inline-tight, .label--inline-right, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .label--full-length {
   display: inline-block;
   margin-top: 0.2em;
@@ -6564,7 +6564,7 @@ label.indent {
   width: 130px;
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inline-no-input {
   margin-left: 16px;
   margin-top: 0.75em;
@@ -6574,13 +6574,13 @@ label.indent {
   width: 60px;
 }
 
-/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inline-tight {
   min-width: 0;
   width: auto;
 }
 
-/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inline-right {
   float: right;
 }
@@ -6603,13 +6603,13 @@ Markup:
 
 Styleguide Label.radio
 */
-/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown {
   min-width: 0;
   width: auto;
 }
 
-/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--overhead, .label--inlineRadio--overhead-wide, .label--dateField-group {
   float: left;
   margin-bottom: 0.75em;
@@ -6618,12 +6618,12 @@ Styleguide Label.radio
   word-spacing: 5.8em;
 }
 
-/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--overhead-wide {
   width: 6.8em;
 }
 
-/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--full-length {
   width: 100%;
   clear: both;
@@ -6642,12 +6642,12 @@ Markup:
 
 Styleguide Label.radio expanded
 */
-/* line 146, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 147, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--expanded {
   width: 100%;
 }
 
-/* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--expanded input {
   float: left;
   margin-right: 0.25em;
@@ -6655,7 +6655,7 @@ Styleguide Label.radio expanded
   margin-top: 0.3em;
 }
 
-/* line 157, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 158, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--expanded .label__text {
   float: left;
   width: 90%;
@@ -6691,32 +6691,10 @@ Markup:
 
 Styleguide Label.date
 */
-/* line 200, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 201, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--dateField-group {
   text-align: left;
   width: 3.5em;
-}
-
-/*
-Aligned
-
-Labels containing a `radio` input with alignment.
-
-Markup:
-<label class="block-label">
-  London
-  <input class="{{modifier_class}}" name="example" type="radio" />
-</label>
-
-.vertically-aligned-input   - A vertically aligned input
-.top-aligned-input          - A top aligned input
-
-Styleguide Label.aligned
-*/
-/* line 230, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
-.top-aligned-input {
-  top: 1.63158em;
-  top: 1.52632em;
 }
 
 /*
@@ -6741,7 +6719,7 @@ Markup:
 
 Styleguide Label.block
 */
-/* line 262, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 233, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label, .block-label--stacked {
   display: block;
   float: none;
@@ -6757,12 +6735,12 @@ Styleguide Label.block
   margin-bottom: 5px;
 }
 
-/* line 285, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 256, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label:hover, .block-label--stacked:hover {
   border-color: #0b0c0c;
 }
 
-/* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 261, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label--inline,
 .block-label--inline-right,
 .inline .block-label,
@@ -6772,7 +6750,7 @@ Styleguide Label.block
   margin-right: 15px;
 }
 
-/* line 300, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 271, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label--stacked {
   clear: none;
   line-height: 1;
@@ -6780,13 +6758,35 @@ Styleguide Label.block
   float: left;
 }
 
-/* line 312, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 283, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label--stacked input {
   display: block;
   margin: 0 auto 0.8em;
   position: relative;
   top: auto;
   left: auto;
+}
+
+/*
+Aligned
+
+Labels containing a `radio` input with alignment.
+
+Markup:
+<label class="block-label">
+  London
+  <input class="{{modifier_class}}" name="example" type="radio" />
+</label>
+
+.vertically-aligned-input   - A vertically aligned input
+.top-aligned-input          - A top aligned input
+
+Styleguide Label.aligned
+*/
+/* line 316, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+input.top-aligned-input {
+  top: 1.63158em;
+  top: 1.52632em;
 }
 
 /*
@@ -6808,23 +6808,23 @@ Markup:
 
 Styleguide Label.form date
 */
-/* line 342, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 343, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .form-date label {
   display: block;
   margin-bottom: 5px;
 }
 
-/* line 353, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 354, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .js-enabled .add-focus {
   outline: 3px solid #ffbf47;
 }
 
-/* line 355, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 356, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .js-enabled .add-focus input {
   outline: none;
 }
 
-/* line 361, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 362, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .js-enabled .selected {
   background: #fff;
   border-color: #0b0c0c;
