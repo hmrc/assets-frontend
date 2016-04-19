@@ -1,29 +1,34 @@
 /*
+Tabular Data
+
  A way to display tabular data of up to three elements.
  At desktop and tablet breakpoints, displayed as one row
  with three columns; and at the mobile breakpoint,
  one column with three rows.
 
- Usage example:
+Markup:
+<div class="tabular-data__entry {{modifier_class}}">
+  <span class="tabular-data__heading tabular-data__heading--label">Name</span>
+  <div class="tabular-data__data-1">John Smith</div>
+  <a class="tabular-data__data-2" href="#edit">Change</a>
+</div>
+<div class="tabular-data__entry">
+  <span class="tabular-data__heading tabular-data__heading--label">Date of birth</span>
+  <span class="tabular-data__data-1 tabular-data__data-1--2-col" href="#changepwd">1 January 1980</span>
+</div>
+<div class="tabular-data__entry">
+  <details class="tabular-data__details">
+      <summary class="tabular-data__heading--label">Mobile phone number</summary>
+      <p>we need this to send a one-time access code by SMS</p>
+  </details>
+  <div class="tabular-data__data-1 tabular-data__data-1--after-details">0755555555</div>
+  <a class="tabular-data__data-2 tabular-data__data-2--after-details" href="#foo.html">Change</a>
+</div>
 
-  <div class="tabular-data__entry>
-    <span class="tabular-data__heading tabular-data__heading--label">Name</span>
-    <div class="tabular-data__data-1">John Smith</div>
-    <a class="tabular-data__data-2" href="#edit">Change</a>
-  </div>
-  <div class="tabular-data__entry>
-    <span class="tabular-data__heading tabular-data__heading--label">Password</span>
-    <a class="tabular-data__data-1 tabular-data__data-1--2-col" href="#changepwd">Change</a>
-  </div>
-  <div class="tabular-data__entry>
-    <details class="tabular-data__details">
-        <summary class="tabular-data__heading--label">Mobile phone number</summary>
-        <p>we need this to send a one-time access code by SMS</p>
-    </details>
-    <div class="tabular-data__data-1 tabular-data__data-1--after-details">test@testy.com</div>
-    <a class="tabular-data__data-2 tabular-data__data-2--after-details" href="#foo.html">Change</a>
-  </div>
+.tabular-data__entry--short-top - less padding at the top to place sections closer together
+.tabular-data__entry--short-bottom - less padding at the bottom to place sections closer together
 
+Styleguide Tabular Data
  */
 
 /** each data entry */
@@ -32,6 +37,14 @@
   width: 100%;
   position: relative;
   padding: em(15) 0;
+}
+
+.tabular-data__entry--short-top {
+  padding-top: em(5);
+}
+
+.tabular-data__entry--short-bottom {
+  padding-bottom: em(5);
 }
 
 .tabular-data__entry * {
