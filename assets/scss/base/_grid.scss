@@ -7,9 +7,10 @@ fraction class `.grid-layout__column--1-4`.
 * Add a `.grid-layout` container.
 * Add your columns with individual `.grid-layout__column`.
 * Add your fractional width classes to set the width of the columns e.g. `.grid-layout__column--1-4`.
+* IMPORTANT: To avoid clashing with other components that may have layout properties, do not place other component classes on the same element as `.grid-layout`.
 
 Markup:
-<div class="grid-layout">
+<div class="grid-layout {{modifier_class}}">
   <div class="grid-layout__column grid-layout__column--1-4">
     .grid-layout__column--1-4
   </div>
@@ -17,7 +18,7 @@ Markup:
     .grid-layout__column--3-4
   </div>
 </div>
-<div class="grid-layout">
+<div class="grid-layout {{modifier_class}}">
   <div class="grid-layout__column grid-layout__column--1-3">
     .grid-layout__column--1-3
   </div>
@@ -25,7 +26,7 @@ Markup:
     .grid-layout__column--2-3
   </div>
 </div>
-<div class="grid-layout">
+<div class="grid-layout {{modifier_class}}">
   <div class="grid-layout__column grid-layout__column--1-2">
     .grid-layout__column--1-2
   </div>
@@ -34,11 +35,21 @@ Markup:
   </div>
 </div>
 
+.grid-layout--stacked    - Stack columns in mobile
+
 Styleguide Grids
 */
 
 .grid-layout {
   @extend %grid-row-table;
+}
+
+.grid-layout--stacked {
+  @include media(mobile) {
+    .grid-layout__column {
+      display: block;      
+    }
+  }
 }
 
 .grid-layout__column {

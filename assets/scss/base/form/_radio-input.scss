@@ -1,0 +1,36 @@
+/*
+Radio Input
+
+Radio Inputs are used to enable users to make a choice in a form.
+
+Markup:
+<label class="block-label {{modifier_class}}">
+  Yes
+  <input name="example_text_input" type="radio" value="example value"/>
+</label>
+<label class="block-label {{modifier_class}}">
+  No
+  <input name="example_text_input" type="radio" value="example value"/>
+</label>
+
+Styleguide Radio Input
+*/
+
+input[type="radio"] {
+  border: 1px solid $black;
+  margin-right: 5px;
+}
+
+input[type="radio"]:checked {
+  background-color: $black;
+}
+
+//POTENTIALLY-NOT-IN-USE
+.input--radio-inline {
+  margin-right: 5px
+}
+
+// Remove focus styles from radio and checkbox inputs
+.js-enabled .block-label input:focus {
+  outline: none;
+}

@@ -1,0 +1,365 @@
+%vertically-aligned-input {
+  @include vertically-centered();
+  left: $gutter-half;
+  cursor: pointer;
+
+  @include ie-lte(9){
+    top: 38%;
+  }
+}
+
+
+/*
+Label
+
+Labels are used to describe an input or group of inputs.
+
+Markup:
+<label class="{{modifier_class}}">
+  First Name
+  <input class="input--cleared" name="example" type="text" value="example value" />
+</label>
+
+.indent                   - An indented label
+.bold                     - A bold label
+.label--inline            - An inline label
+.label--inline-tight      - A tight inline label
+.label--inline-right      - A right aligned inline label
+
+
+Styleguide Label
+*/
+
+label {
+  @include core-19();
+  display: block;
+}
+
+label {
+  &.bold {
+    font-weight: bold;
+  }
+}
+
+label.indent {
+  padding-left: 1.5em;
+}
+
+.label--inline {
+  display: inline-block;
+  margin-top: 0.2em;
+  min-width: 130px;
+  @include ie-lte(8) {
+    width: 130px;
+  }
+
+}
+
+//POTENTIALLY-NOT-IN-USE
+.label--inline-no-input {
+  @extend .label--inline;
+  margin-left: 16px;
+  margin-top: 0.75em;
+  min-width: 60px;
+  clear: none;
+  float: left;
+  @include ie-lte(8) {
+    width: 60px;
+  }
+}
+
+.label--inline-tight {
+  @extend .label--inline;
+  min-width: 0;
+  @include ie-lte(8) {
+    width: auto;
+  }
+
+}
+
+.label--inline-right {
+  @extend .label--inline;
+  float: right;
+}
+
+/*
+Radio input
+
+Labels containing a `radio` input.
+
+Markup:
+<label class="block-label {{modifier_class}}">
+  Purple
+  <input name="example" type="radio" />
+</label>
+
+.label--inlineRadio                   - An inline radio label
+.label--inlineRadio--overhead         - A inline radio overhead label
+.label--inlineRadio--overhead-wide    - A wide inline radio overhead label
+.label--full-length                   - A full length label
+
+Styleguide Label.radio
+*/
+
+.label--inlineRadio {
+  @extend .label--inline;
+  @extend %contain-floats;
+  min-width: 0;
+  @include ie-lte(8) {
+    width: auto;
+  }
+}
+
+.label--inlineRadio--overhead {
+  float: left;
+  margin-bottom: 0.75em;
+  text-align: center;
+  width: 5.8em;
+  word-spacing: 5.8em;
+}
+
+.label--inlineRadio--overhead-wide {
+  @extend .label--inlineRadio--overhead;
+  width: 6.8em;
+}
+
+.label--full-length {
+  @extend .label--inline;
+  width: 100%;
+  clear: both;
+}
+
+
+/*
+Radio expanded
+
+Labels containing a `radio` input and a `span` wrapping the labels text.
+
+Markup:
+<label class="block-label label--inlineRadio--expanded">
+  <span class="label__text">Yellow</span>
+  <input name="example" type="radio" />
+</label>
+
+Styleguide Label.radio expanded
+*/
+
+.label--inlineRadio--expanded {
+  @extend .label--inlineRadio;
+  width: 100%;
+  input {
+    float: left;
+    margin-right: 0.25em;
+    margin-top: 0.15em;
+    @include ie-lte(8) {
+      margin-top: 0.3em;
+    }
+  }
+  .label__text {
+    float: left;
+    width: 90%;
+  }
+}
+
+
+/*
+Select input
+
+Labels containing a `select` input.
+
+Markup:
+<label class="label--inlineDropDown">
+  <select class="select" name="example">
+    <option value="one">Option One</option>
+    <option value="two">Option Two</option>
+    <option value="three">Option Three</option>
+    <option value="four">Option Four</option>
+  </select>
+</label>
+
+Styleguide Label.select
+*/
+
+.label--inlineDropDown {
+  @extend .label--inlineRadio;
+}
+
+
+/*
+Date
+
+Labels containing a `date`.
+
+Markup:
+<label for="example_label_date" class="label--dateField-group">
+  <span>Month</span>
+</label>
+<input type="text" name="month" id="example_label_date">
+
+Styleguide Label.date
+*/
+.label--dateField-group {
+  @extend .label--inlineRadio--overhead;
+  text-align: left;
+  width: 3.5em;
+}
+
+
+
+/*
+Block
+
+Labels containing a `radio` input and a `span` wrapping the labels text.
+
+Markup:
+<label class="block-label {{modifier_class}}">
+  <input name="example" type="radio" />
+  Blue
+</label>
+<label class="block-label {{modifier_class}}">
+  <input name="example" type="radio" />
+  Green
+</label>
+
+.block-label:hover            - Hover status
+.block-label--inline          - An inline block label
+.block-label--inline-right    - An inline block label right
+.block-label--stacked         - A stacked block label
+
+Styleguide Label.block
+*/
+
+
+.block-label {
+  display: block;
+  float: none;
+  clear: left;
+  position: relative;
+
+  background: $panel-colour;
+  border: 1px solid $panel-colour;
+  padding: (18px $gutter $gutter-half $gutter*1.5);
+  margin: 10px 10px 10px 0;
+  cursor: pointer;
+
+  input {
+    @extend %vertically-aligned-input;
+  }
+
+  @include media(tablet) {
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.block-label:hover {
+  border-color: $black;
+}
+
+// Use inline, to sit block labels next to each other
+.block-label--inline,
+.block-label--inline-right,
+.inline .block-label {
+  margin:0 10px 10px 0;
+  clear: none;
+  @include media(tablet) {
+    margin-right: $gutter-half;
+  }
+}
+
+.block-label--stacked {
+  @extend .block-label;
+  clear: none;
+  line-height: 1;
+  padding-left: 30px;
+  float: left;
+
+  @include media(mobile) {
+    float: none;
+    text-align: center;
+  }
+
+  input {
+    display: block;
+    margin: 0 auto 0.8em;
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+}
+
+/*
+Aligned
+
+Labels containing a `radio` input with alignment.
+
+Markup:
+<label class="block-label">
+  London
+  <input class="{{modifier_class}}" name="example" type="radio" />
+</label>
+
+.vertically-aligned-input   - A vertically aligned input
+.top-aligned-input          - A top aligned input
+
+Styleguide Label.aligned
+*/
+
+// Position checkbox within label, to allow text to wrap
+.vertically-aligned-input {
+  @extend %vertically-aligned-input;
+}
+
+// to align radio button with top line of content, not centred
+// NOTE: element is specified due to competing selector above: .block-label input {...}
+input.top-aligned-input {
+  top: em(31);
+  @include media(tablet) {
+    top: em(29);
+  }
+}
+
+/*
+Form date
+
+A container element using the `.form-date` css selector will change how a child label appears.
+
+Markup:
+<div class="form-date">
+  <label>
+    <input class="input--xxsmall input--no-spinner" name="example" type="number" />
+    Yellow
+  </label>
+  <label>
+    <input class="input--xxsmall input--no-spinner" name="example" type="number" />
+    Orange
+  </label>
+</div>
+
+Styleguide Label.form date
+*/
+
+.form-date label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+// Add focus styles to block labels
+.js-enabled .add-focus {
+  outline: 3px solid $yellow;
+  input {
+    outline: none;
+  }
+}
+
+// Add selected state to block labels
+.js-enabled .selected {
+  background: $white;
+  border-color: $black;
+}

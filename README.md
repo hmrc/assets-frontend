@@ -29,23 +29,25 @@ $ sm --start ASSETS_FRONTEND
 
 ### Requirements
 
-* [node.js](https://nodejs.org/en/)
-* [npm](https://www.npmjs.com/)
-* [nodemon](https://github.com/remy/nodemon) (for [working on the Component Library](working-on-the-component-library))
+* [Node.js](https://nodejs.org/en/) `>= 0.12.7`
+* [npm](https://www.npmjs.com/) `>= 2.11.3`
 
-#### [node.js](https://nodejs.org/en/) & [npm](https://www.npmjs.com/)
+#### [Node.js](https://nodejs.org/en/) & [npm](https://www.npmjs.com/)
 
-Please install node.js and npm. 
-You may find it easier to use the Node Version Manager [nvm](https://github.com/creationix/nvm)
+To install multiple versions of Node.js, you may find it easier to use a node version manager:
 
-#### nodemon
+* [nvm](https://github.com/creationix/nvm)
+* [n](https://github.com/tj/n)
+
+#### [nodemon](http://nodemon.io/) (optional)
+
+`nodemon` is used to develop [the Component Library](working-on-the-component-library).
 
 It is recommended to install nodemon globally.
 
 ```
 $ npm install -g nodemon
 ```
-
 
 ### Running Locally (Development mode)
 
@@ -82,6 +84,8 @@ $ ./server.sh build
 ## Component Library
 
 ### Viewing the Component Library
+
+It is available at [http://hmrc.github.io/assets-frontend](http://hmrc.github.io/assets-frontend).
 
 If you're running assets-frontend locally using `./server dev` or `npm start`, then you can view the Component Library by opening a browser at http://localhost:9032/component-library/
 
@@ -135,13 +139,26 @@ $ cd ../assets-frontend
 $ npm run comp-lib:watch -- -w ../component-library-template
 ```
 
+### Updating the Component Library dependency
+If you wish to update the component library in assets frontend because there have been changes in the component
+library.
+
+```
+$ rm -rf node_modules/hmrc-component-library-template
+$ npm install hmrc/component-library-template
+```
+
+or
+
+```
+$ npm install --force hmrc/component-library-template
+```
+
 
 ## Contributing
 
-1. Fork this repo
-2. Create a feature branch
-3. Push to your fork
-4. Open a pull request back to this repo
+Please take a few minutes to review the process and guidelines before you submit your request, otherwise it may be rejected.
+[CONTRIBUTING.md](CONTRIBUTING.md)
 
 
 ## More info

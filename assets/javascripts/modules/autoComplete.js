@@ -2,13 +2,13 @@ require('jquery');
 
 /*
 
-Suggestions AutoComplete module
+AutoComplete module
 - Create an autoComplete with the following markup
-- Create a JSON suggestions object with the following markup
+- Create a JSON object as a global variable, the structure is demonstrated below
 - Optionally provide a target input to update with suggestions value
 
 
-Suggestions auto complete html markup:
+Auto complete html markup:
 
  <div class="suggestions-input-container">
     <input type="text"
@@ -18,6 +18,7 @@ Suggestions auto complete html markup:
            autocomplete="off"
            spellcheck="false"
            required
+           data-suggestions="countries"
            data-rule-suggestion="true"
            aria-autocomplete="list"
            aria-haspopup="country-code-suggestions"
@@ -28,16 +29,15 @@ Suggestions auto complete html markup:
  </div>
 
 
-Suggestions JSON data format:
+Data format:
 
- <script type="application/json" id="suggestions">
-  [{"title":"United Kingdom","value":"44"}]
- </script>
+<script type="text/javascript">
+  var countries = [{"title":"United Kingdom","value":"44"}]
+</script>
 
 */
 
 var suggestions;
-var $suggestionsData;
 var $suggestionsContainer;
 var $autoCompleteInputElem;
 var $targetInput;
@@ -76,8 +76,9 @@ var displaySuggestions = function ($suggestionsContainer, matches, match) {
     li.className = 'suggestion ' + positionalClassNames.join(' ');
     li.setAttribute('data-suggestion-value', suggestion.value);
     li.setAttribute('data-suggestion-title', suggestion.title);
-    li.setAttribute('role', 'presentation');
+    li.setAttribute('role', 'option');
     ulHtmlFragment.className = 'suggestions-list';
+    ulHtmlFragment.setAttribute('role', 'listbox');
     ulHtmlFragment.appendChild(li);
   };
 
@@ -160,18 +161,18 @@ var suggestionsKeyControl = function (keyCode, $suggestionsContainer) {
 
     if (!$selected.length) {
       if (keyCode === 40) {
-        $next = $suggestionsContainer.find('li').first().addClass('suggestion--selected');
+        $next = $suggestionsContainer.find('li').first().addClass('suggestion--selected').attr('aria-selected', true);
         updateAutoCompleteInput($next);
       }
     } else {
       $next = (keyCode === 40) ? $selected.next() : $selected.prev();
       if ($next.length) {
-        $selected.removeClass('suggestion--selected');
-        $next.addClass('suggestion--selected');
+        $selected.removeClass('suggestion--selected').removeAttr('aria-selected');
+        $next.addClass('suggestion--selected').attr('aria-selected', true);
         updateAutoCompleteInput($next);
       } else {
         if ($selected.prev().length === 0 && keyCode === 38) { //hide when reaching top of suggestions
-          $selected.removeClass('suggestion--selected');
+          $selected.removeClass('suggestion--selected').removeAttr('aria-selected');
           closeSuggestionsAndFocus();
         }
       }
@@ -314,35 +315,12 @@ var suggestionsEvent = function () {
 };
 
 /**
- * setup variables and get suggestion data
- * @param $elem
- * @param $targetElem
- */
-var setup = function ($elem, $targetElem, suggestionFormat) {
-  $autoCompleteInputElem = $elem;
-  $targetInput = $targetElem;
-  suggestionDisplayFormat = suggestionFormat;
-  $suggestionsData = $('#suggestions');
-  $clearInputButton = $('.js-suggestions-clear');
-  $suggestionsContainer = $('.js-suggestions').first();
-  $suggestionsStatusMessage = $('.js-suggestions-status-message').first();
-  getSuggestions();
-};
-
-/**
- * parse suggestions JSON data
- */
-var getSuggestions = function () {
-  try {
-    suggestions = JSON.parse($suggestionsData.html());
-  } catch (error) {
-    //TODO - add reporting?
-  }
-};
-
-/**
- * create the autoComplete
+ * setup variables and create the autoComplete
+ *
  * @param $autoCompleteInputElem
+ *
+ * @param suggestionsData
+ * The suggestion data used in the autoComplete. Typically this will be a global variable.
  *
  * @param $targetInputElem - [optional]
  * Input element to apply the suggestion.value too when a suggestion is selected. If this is not supplied then the autoComplete input will contain the
@@ -350,12 +328,20 @@ var getSuggestions = function () {
  *
  * @param suggestionFormat - [optional]
  * Format for the suggestion to be displayed in the suggestion list, this will default to suggestion.title if a format is not supplied
+ *
  */
-var build = function ($autoCompleteInputElem, $targetInputElem, suggestionFormat) {
-  if ($autoCompleteInputElem.length) {
-    setup($autoCompleteInputElem, $targetInputElem, suggestionFormat);
+var setup = function ($elem, suggestionsData, $targetInputElem, suggestionFormat) {
+  if ($elem.length) {
+    $autoCompleteInputElem = $elem;
+    $targetInput = $targetInputElem;
+    suggestionDisplayFormat = suggestionFormat;
+    suggestions = suggestionsData;
+    $clearInputButton = $('.js-suggestions-clear');
+    $suggestionsContainer = $('.js-suggestions').first();
+    $suggestionsStatusMessage = $('.js-suggestions-status-message').first();
+
     addEventListeners();
   }
 };
 
-module.exports = build;
+module.exports = setup;

@@ -1,0 +1,216 @@
+/*
+Side Navigation
+
+A left-hand side navigation.
+The navigation is not displayed at mobile breakpoint.
+
+Markup:
+<div class="side-nav {{modifier_class}}">
+  <ul class="side-nav__component">
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Self Assessment</a>
+    </li>
+    <li class="side-nav__list side-nav__list--selected">
+      <span class="side-nav__link">Corporation Tax</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Problems with this website</a>
+    </li>
+  </ul>
+</div>
+
+.side-nav--mobile-visible - makes the navigation visible at mobile breakpoint, and shows only the rightmost present element with the .side-nav__component class. It also increases the height of the nav links to make them more clickable on touch screen devices.
+
+Styleguide Side Navigation
+*/
+
+.side-nav {
+  overflow: hidden;
+  display: none;
+  @include media(tablet) {
+    display: block;
+  }
+}
+
+.side-nav--mobile-visible {
+  display: block;
+  .side-nav__component {
+    display: none;
+    @include media(tablet) {
+      display: block;
+    }
+    &:last-child {
+      display: block;
+    }
+  }
+  .side-nav__link {
+    padding: $gutter/1.5 $gutter $gutter/1.5 $gutter/2;
+    @include media(tablet) {
+      padding: $gutter/2.5 $gutter $gutter/3.75 $gutter/2;
+    }
+  }
+}
+
+.side-nav--tall {
+  .side-nav__component {
+    @include media(tablet) {
+      min-height: em(275);
+    }
+  }
+}
+
+.side-nav__list {
+  position: relative;
+  list-style: none;
+}
+
+.side-nav__list--selected, .side-nav__list--selected:hover {
+  .side-nav__link {
+    color: $white;
+    background-color: $govuk-blue;
+  }
+}
+
+.side-nav__link {
+  padding: $gutter/2.5 $gutter $gutter/3.75 $gutter/2;
+  text-decoration: none;
+  display: block;
+  background-color: transparent;
+  @include core-16;
+  &:hover {
+    background-color: $grey-8;
+  }
+  &:after {
+    position: absolute;
+    right: $gutter/3;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "\203A";
+  }
+}
+
+.side-nav--child {
+  margin-top: 0;
+  border-right: none;
+  border-left: 4px solid $light-grey;
+
+  .side-nav__link {
+    padding-left: $gutter/1.25;
+  }
+
+  .side-nav__list--selected {
+    .side-nav__link {
+      color: $govuk-blue;
+      @include bold-16;
+      background-color: transparent;
+    }
+  }
+}
+
+/*
+Two-level
+
+Two-level navigation shows a submenu to the right of the primary menu.
+
+Markup:
+<div class="side-nav {{modifier_class}}">
+  <ul class="side-nav__component side-nav__quarter-width">
+    <li class="side-nav__list side-nav__list--selected">
+      <span class="side-nav__link">Self Assessment</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Corporation Tax</a>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Problems with this website</a>
+    </li>
+  </ul>
+  <ul class="side-nav__component side-nav__quarter-width">
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Tax return help</a>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Refund requests</a>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Questions about Self Assessment</a>
+    </li>
+  </ul>
+</div>
+
+.side-nav--tall - gives the components' left border a minimum height. Useful when nav to left may be taller than the component's content.
+
+Styleguide Side Navigation.two_level
+*/
+
+.side-nav__quarter-width {
+  width: 100%;
+  @include media(tablet) {
+    position: relative;
+    float: left;
+    width: 25%;
+    min-width: em(160);
+  }
+}
+
+.side-nav__component {
+  border-left: 0;
+  &:first-child {
+    border-left: 0;
+  }
+  @include media(tablet) {
+    border-left: 1px solid #bfc1c3;
+  }
+}
+
+/*
+Overlapping two-level
+
+When displaying a menu, submenu and content, the submenu overlaps the primary, to allow more space for content to the right.
+
+Markup:
+<div class="side-nav">
+  <ul class="side-nav__component side-nav__quarter-width">
+    <li class="side-nav__list side-nav__list--selected">
+      <span class="side-nav__link">Self Assessment</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Corporation Tax</a>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Problems with this website</a>
+    </li>
+  </ul>
+  <ul class="side-nav__component side-nav__quarter-width side-nav__left--overlap">
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Tax return help</a>
+    </li>
+    <li class="side-nav__list side-nav__list--selected">
+      <span class="side-nav__link">Refund requests</span>
+    </li>
+    <li class="side-nav__list">
+      <a class="side-nav__link" href="#">Questions about Self Assessment</a>
+    </li>
+  </ul>
+  <div class="side-nav__component side-nav__right-side-content">
+    <h2>Refund requests</h2>
+    <p>We'll refund you automatically if you paid your tax by credit or debit card. You need to request a refund online if you didn't pay by card. How long refunds take Credit and debit card refunds take 3 working days. You'll get a confirmation letter. If you requested a refund online, you'll usually get it within 5 weeks. It can take longer if HMRC needs to make anti-fraud checks. Don't make a new online refund request - it will slow down your original request.</p>
+  </div>
+</div>
+
+Styleguide Side Navigation.overlapping
+*/
+
+.side-nav__left--overlap {
+  background-color: $white;
+  margin-left: em(-100);
+}
+
+.side-nav__right-side-content {
+  padding-left: 0;
+  @include media(tablet) {
+    margin-top: em(14);
+    padding-left: em(30);
+    overflow: hidden;
+  }
+}

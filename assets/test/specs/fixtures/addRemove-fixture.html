@@ -1,56 +1,84 @@
 <div id="addRemove1"
-     class="add-remove"
      data-add-remove
-     data-add-remove-max="5"
-     data-attr-name="redirectUris[$]">
-
-  <script type="text/template" data-item-template>
-    <li class="add-remove--item" data-add-remove-item data-removable>
-      <input type="text" value="" data-add-remove-unique/>
+     data-max="5"
+     data-can-delete="true"
+     data-delete-btn-text="Press"
+     data-template-item="data-template">
+  <ul class="add-remove__list" data-add-remove-list>
+    <li class="add-remove__item" data-add-remove-item data-template>
+      <input name="exampleOne[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input/>
     </li>
-  </script>
-  <script type="text/template" data-remove-btn-template>
-    <a href="#" class="add-remove__remove-btn" data-remove-btn>Delete</a>
-  </script>
-  <script type="text/template" data-add-btn-template>
-    <a href="#" data-add-btn>Add another redirect URI</a>
-  </script>
-
-  <ul data-add-remove-list>
-    <li data-add-remove-item data-removable>
-      <input type="text" value="Value 1" name="redirectUris[0]" data-add-remove-unique/>
+    <li class="add-remove__item" data-add-remove-item>
+      <input name="exampleOne[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input/>
     </li>
-    <li data-add-remove-item data-removable>
-      <input type="text" value="Value 2" name="redirectUris[1]" data-add-remove-unique/>
-    </li>
-    <li data-add-remove-item data-removable>
-      <input type="text" value="Value 3" name="redirectUris[2]" data-add-remove-unique/>
+    <li class="add-remove__item" data-add-remove-item>
+      <input name="exampleOne[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input/>
     </li>
   </ul>
 </div>
 
-
 <div id="addRemove2"
-     class="add-remove"
      data-add-remove
-     data-add-remove-max="10">
-
-  <script type="text/template" data-item-template>
-    <li data-add-remove-item>
-      <p>Item 1</p>
+     data-max="10"
+     data-add-btn-text="Add Item"
+     data-template-item="data-template">
+  <ul class="add-remove__list" data-add-remove-list>
+    <li class="add-remove__item" data-add-remove-item data-template>
+      <input name="exampleTwo[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input />
     </li>
-  </script>
-  <script type="text/template" data-remove-btn-template>
-    <a href="#" class="add-remove__remove-btn" data-remove-btn>Delete</a>
-  </script>
-  <script type="text/template" data-add-btn-template>
-    <a href="#" data-add-btn>Add Item</a>
-  </script>
-
-  <ul data-add-remove-list>
-    <li data-add-remove-item>
-      <p>Item 1</p>
+    <li class="add-remove__item" data-add-remove-item>
+      <input name="exampleTwo[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input />
     </li>
   </ul>
+</div>
 
+<div id="addRemove3"
+     data-add-remove
+     data-max="4"
+     data-can-delete="true"
+     data-template-item="data-template">
+  <ul class="add-remove__list" data-add-remove-list>
+    <li class="add-remove__item" data-add-remove-item data-template>
+      <input name="exampleThree[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input />
+    </li>
+    <li class="add-remove__item" data-add-remove-item>
+      <input name="exampleThree[]"
+             type="text"
+             class="form-input input--medium"
+             data-add-remove-input />
+    </li>
+  </ul>
+</div>
+
+<div id="addRemove4"
+     data-add-remove
+     data-max="4"
+     data-can-delete="false"
+     data-template-item="data-template">
+  <ul class="add-remove__list" data-add-remove-list>
+    <li class="add-remove__item" data-add-remove-item data-template>
+      <p>Item</p>
+    </li>
+    <li class="add-remove__item" data-add-remove-item>
+      <p>Item</p>
+    </li>
+  </ul>
 </div>

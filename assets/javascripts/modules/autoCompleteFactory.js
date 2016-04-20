@@ -8,7 +8,9 @@ var createAutoCompleteCountries = function () {
     return title + ' (+' + value + ')';
   };
 
-  autoComplete($chooseCountryAutoCompleteElem.first(), $countryCodeInput, suggestionDisplayTemplate);
+  if ($chooseCountryAutoCompleteElem.length && countries) {
+    autoComplete($chooseCountryAutoCompleteElem.first(), countries, $countryCodeInput, suggestionDisplayTemplate);
+  }
 };
 
 module.exports = function () {

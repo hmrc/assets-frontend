@@ -1,5 +1,11 @@
 require('jquery');
-require('datatables');
+
+/* 
+Parentheses required - since v1.10.11+ DataTables exports a function for improved modularity. 
+See issue "Uncaught TypeError: $(...).DataTable is not a function(…) · Issue #791 · DataTables/DataTables"
+https://github.com/DataTables/DataTables/issues/791 
+ */
+require('datatables')();
 
 var sticky = require('./sticky-header.js');
 
