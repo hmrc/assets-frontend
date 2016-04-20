@@ -12,7 +12,7 @@ Markup:
   <div class="tabular-data__data-1">John Smith</div>
   <a class="tabular-data__data-2" href="#edit">Change</a>
 </div>
-<div class="tabular-data__entry">
+<div class="tabular-data__entry {{modifier_class}}">
   <span class="tabular-data__heading tabular-data__heading--label">Date of birth</span>
   <span class="tabular-data__data-1 tabular-data__data-1--2-col" href="#changepwd">1 January 1980</span>
 </div>
@@ -25,8 +25,7 @@ Markup:
   <a class="tabular-data__data-2 tabular-data__data-2--after-details" href="#foo.html">Change</a>
 </div>
 
-.tabular-data__entry--short-top - less padding at the top to place sections closer together
-.tabular-data__entry--short-bottom - less padding at the bottom to place sections closer together
+.tabular-data__entry--grouped - less padding between sections with the 'tabular-data__entry--grouped' class
 
 Styleguide Tabular Data
  */
@@ -39,12 +38,39 @@ Styleguide Tabular Data
   padding: em(15) 0;
 }
 
-.tabular-data__entry--short-top {
-  padding-top: em(5);
+.tabular-data__entry--grouped:first-child {
+  padding-top: em(15);
+}
+.tabular-data__entry--grouped:last-child {
+  padding-bottom: em(15);
 }
 
-.tabular-data__entry--short-bottom {
+.tabular-data__entry--grouped + .tabular-data__entry:not(.tabular-data__entry--grouped) {
+  padding-top: em(30);
+
+  .tabular-data__data-1--after-details {
+    top: em(20);
+  }
+
+  .tabular-data__data-2--after-details {
+    top: em(20);
+  }
+}
+
+.tabular-data__entry--grouped {
   padding-bottom: em(5);
+
+  & + & {
+    padding-top: em(5);
+  }
+
+  .tabular-data__data-1 {
+    margin-top: 0;
+  }
+  
+  .tabular-data__data-2 {
+    margin-top: 0;
+  }
 }
 
 .tabular-data__entry * {
