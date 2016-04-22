@@ -221,7 +221,7 @@ Styleguide Form.date
 
 
 .form-date {
-  @extend %contains-floats;
+  @extend %contain-floats;
   display: inline-block;
 
   @include ie-lte(7) {

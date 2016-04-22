@@ -65,7 +65,7 @@ a[rel="external"].external-link-16-bold-no-hover {
 }
 
 a[rel="external"].external-link-19 {
-  @extend %external-link-default;
+  @include external-link-default;
   @include external-link-19;
 }
 a[rel="external"].external-link-19-bold-no-hover {
