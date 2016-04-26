@@ -11,7 +11,11 @@ Example:
     <span class="js-visible js-mask-secret">mask</span>
     <span class="js-hidden js-mask-revealed">secret</span>
   </span>
-  <a href="#" class="js-visible js-mask-control" data-text-show="Show" data-text-hide="Hide">Show</a>
+  <a href="#" class="js-visible js-mask-control" 
+     data-text-show="Show" 
+     data-text-hide="Hide"
+     data-accessible-text="accessible text">
+    <span data-toggle-text>Show</span> <span>accessible text</span></a>
 </div>
  */
 
@@ -29,7 +33,7 @@ var maskControlEvent = function ($containerElem) {
   var secondsToTimeout = $containerElem.data('mask-timer');
 
   $control.on('click', function(event) {
-    var text = $control.text();
+    var text = $control.find('[data-toggle-text]').text();
 
     event.preventDefault();
 
@@ -54,10 +58,13 @@ var toggleState = function(text, $control, $publicContent, $secretContent) {
 
   var showText = $control.data('textShow');
   var hideText = $control.data('textHide');
+  var newText  = text === showText ? hideText : showText;
+  var accessibleText = $control.data('accessible-text');
+  var anchorText = '<span data-toggle-text>' + newText + '</span> <span class="visuallyhidden">' + accessibleText + '</span>';
 
   $publicContent.toggleClass('js-visible').toggleClass('js-hidden');
   $secretContent.toggleClass('js-visible').toggleClass('js-hidden');
-  $control.text(text === showText ? hideText : showText);
+  $control.html(anchorText);
 
 };
 
