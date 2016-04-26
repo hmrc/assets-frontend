@@ -39,13 +39,17 @@ var setup = function () {
 
   fixtureOneMaskText = $fixtureOneQaMask.text();
   fixtureOneSecretText = $fixtureOneQaSecret.text();
-  fixtureOneControlTextShow = $fixtureOneControl.data('textShow');
-  fixtureOneControlTextHide = $fixtureOneControl.data('textHide');
+  fixtureOneControlTextShow = $fixtureOneControl.data('textShow') + ' ' +
+                              $fixtureOneControl.data('accessibleText');
+  fixtureOneControlTextHide = $fixtureOneControl.data('textHide') + ' ' +
+                              $fixtureOneControl.data('accessibleText');
 
   fixtureTwoMaskText = $fixtureTwoQaMask.text();
   fixtureTwoSecretText = $fixtureTwoQaSecret.text();
-  fixtureTwoControlTextShow = $fixtureTwoControl.data('textShow');
-  fixtureTwoControlTextHide = $fixtureTwoControl.data('textHide');
+  fixtureTwoControlTextShow = $fixtureTwoControl.data('textShow') + ' ' +
+                              $fixtureTwoControl.data('accessibleText');
+  fixtureTwoControlTextHide = $fixtureTwoControl.data('textHide') + ' ' +
+                              $fixtureTwoControl.data('accessibleText');
 
 };
 
