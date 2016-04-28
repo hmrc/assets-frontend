@@ -120,9 +120,8 @@ var flushHiddenElementErrors = function (invalidInputs) {
   for(var inputName in invalidInputs) {
     var $elem = $('[name="' + inputName + '"]');
 
-    if ($elem.is(':hidden')) {
+    if ($elem.is(':hidden') && ($elem.length > 1 && $elem.is('visible'))) {
       delete invalidInputs[inputName];
-      $elem.val('');
       $elem.closest('.form-field-group').removeClass('form-field-group--error');
     }
   }

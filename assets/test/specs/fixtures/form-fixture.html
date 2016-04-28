@@ -1,4 +1,4 @@
-<form class="js-form" autocomplete="off" novalidate="novalidate">
+<form class="js-form" autocomplete="off" novalidate="novalidate"  data-dynamic-form>
 
   <div class="flash error-summary" id="Search-failure" role="group" aria-labelledby="errorSummaryHeading" tabindex="-1">
     <h2 id="errorSummaryHeading" class="h3-heading">There are errors on the page.</h2>
@@ -46,6 +46,38 @@
              required/>
     </label>
   </fieldset>
-
+  
+  <fieldset class="form-field-group">
+    <label class="block-label" for="other-group-toggle">
+      <input type="checkbox" id="other-group-toggle" data-dynamic-fields="dynamic-group" data-dynamic-fields-hide="false" />
+      Grouped options:
+    </label>
+    <div class="js-hidden data-dynamic-group" id="other-group">
+      <fieldset class="form-field-group">
+        <span id="radio-group-error-message" class="error-notification" role="tooltip">
+            Required selection
+        </span>
+        <label class="block-label" for="radio-group-yes">
+        <input type="radio" 
+               data-rule-required="true" 
+               data-msg-required="You must select an option continue."
+               id="radio-group-yes" 
+               name="group-item"
+               value="yes" aria-required="true" />
+        Yes
+      </label>
+      <label class="block-label" for="radio-group-no">
+        <input type="radio" 
+               data-rule-required="true" 
+               data-msg-required="You must select an option continue."
+               id="radio-group-no" 
+               name="group-item"
+               value="no" aria-required="true" />
+        No
+      </label>
+      </fieldset>
+    </div>
+  </fieldset>
+  
   <button id="submit-button" type="submit">Submit</button>
 </form>
