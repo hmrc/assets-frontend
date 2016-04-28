@@ -41,9 +41,7 @@ To install multiple versions of Node.js, you may find it easier to use a node ve
 
 #### [nodemon](http://nodemon.io/) (optional)
 
-`nodemon` is used to develop [the Component Library][1].
-
-[1]: https://github.com/hmrc/assets-frontend#user-content-component-library
+`nodemon` is used to develop [the Component Library]("#component-library")
 
 It is recommended to install nodemon globally.
 
