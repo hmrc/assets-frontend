@@ -10335,7 +10335,6 @@ Styleguide Notification.Highlight
 .highlight-message--light {
   background-color: #fff;
   color: #0b0c0c;
-  padding-bottom: 1.57895em;
 }
 
 /*
@@ -10352,14 +10351,13 @@ Markup:
 
 Styleguide Notification.Highlight dark
 */
-/* line 302, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 301, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--dark {
   background-color: #005ea5;
   color: #fff;
-  padding-bottom: 1.57895em;
 }
 
-/* line 303, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 302, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--dark .highlight-message--dark-text {
   color: #fff;
 }
