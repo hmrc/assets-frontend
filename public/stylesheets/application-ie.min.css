@@ -10716,7 +10716,112 @@ Styleguide Breadcrumbs
   margin: 0;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/*
+Accordion
+
+Expand/collapse content with optional row/column structure.
+
+**TODO:** The BEM for this should be reviewed and made more concise. There's currently triple child jazz going on (e.g. `.accordion__body__row__right`).
+
+Mandatory JS hooks:
+ * `data-accordion` - main outer container hook to init accordion JS module
+ * `data-accordion-button` - button clicked to expand/collapse 
+ * `data-accordion-body` - the main body content to be expanded/collapsed
+ * `data-accordion-animate` - animate body expansion/collapse
+ * **BUG**: animate should be optional but currently the non-animate has a bug. Issue raised here: https://github.com/hmrc/assets-frontend/issues/553
+
+Optional JS hooks:
+ * `data-accordion-arrow` - arrow icon element which will be animated on state change
+ * `data-accordion-reveal` - non-body content to be revealed on expand
+ * `data-accordion-set-hash` - will cause URL hash to be updated with ID of accordion upon expand
+ * `data-accordion-expanded` - hard-code to expand on init, useful for server-side rendering
+
+Mandatory classes:
+ * `accordion` - placed on the outer container
+ * `accordion__button` - placed on the...yeah you guessed it...accordion button. Well done.
+ * `accordion__body` - placed on the body of content which will expand/collapse
+ * `accordion__row` - structural styling on the container of the accordion button
+
+Optional Classes:
+ * `accordion__row__left` - left row contained in `accordion__row`
+ * `accordion__indicator` - for arrow styling, used in conjunction with `arrow` component 
+ * `accordion__row__right` - right row container in `accordion__row`
+ * `accordion__body__row` - a row of content in the body
+ * `accordion__body__row__left` - left column of body row
+ * `accordion__body__row__right` - right column of body row
+
+Styleguide Accordion
+*/
+/*
+Simple Accordion
+
+Using only mandatory JS hooks and classes.
+
+Markup:
+  <div data-accordion
+       data-accordion-animate
+       aria-expanded="false"
+       class="accordion">
+    <div class="accordion__row">
+      <div class="accordion__row__left">                
+        <a class="accordion__button link--no-underline bold-small" href="" data-accordion-button role="button">
+          Accordion Button
+        </a>
+      </div>
+      <div class="accordion__row__right align--top">
+        <p class="font-xsmall flush--top">Top right content</p>
+      </div>
+    </div>
+    <div class="accordion__body hidden" data-accordion-body aria-hidden="true">
+      <p>Accordion body</p>
+    </div>
+  </div>
+
+Styleguide Accordion.Simple
+*/
+/*
+Full Accordion
+
+Using all optional classes.
+
+Markup:
+  <div id="accordionId" 
+       data-accordion  
+       data-accordion-animate     
+       data-accordion-set-hash
+       aria-expanded="false"
+       class="accordion">
+    <div class="accordion__row">
+      <div class="accordion__row__left">        
+        <i class="accordion__indicator arrow arrow--right font-small" data-accordion-arrow></i>
+        <a class="accordion__button link--no-underline bold-small" href="" data-accordion-button role="button">
+          Accordion Button
+        </a>
+      </div>
+      <div class="accordion__row__right align--top">
+        <p class="font-xsmall flush--top">Top right content</p>
+        <div data-accordion-reveal class="hidden">  
+          <p class="font-xsmall flush--bottom">Optionally revealed on expand</p>                  
+        </div>
+      </div>
+    </div>
+    <div class="accordion__body hidden" data-accordion-body aria-hidden="false">
+      <ul>
+        <li class="accordion__body__row">
+          <div class="accordion__body__row__left">
+            <span class="font-xsmall">Body row left column content</span>
+          </div>
+          <div class="accordion__body__row__right">
+            <span class="font-xsmall">Body row right column content</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+Styleguide Accordion.Full
+*/
+/* line 111, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion {
   margin: 0;
   overflow: auto;
@@ -10724,27 +10829,27 @@ Styleguide Breadcrumbs
   border-bottom: 1px solid #bfc1c3;
 }
 
-/* line 7, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion .tag {
   margin: 0 0.36842em 0.36842em 0;
 }
 
-/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion.accordion--expanded .accordion__body {
   border-top: 1px solid #bfc1c3;
 }
 
-/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion--stacked {
   border-bottom: none;
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion--stacked--last {
   border-bottom: 1px solid #bfc1c3;
 }
 
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row {
   padding: 0.78947em 0.63158em 0.78947em 0.63158em;
   background-color: #f8f8f8;
@@ -10753,7 +10858,7 @@ Styleguide Breadcrumbs
   box-sizing: border-box;
 }
 
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row__left {
   width: 35%;
   display: table-cell;
@@ -10761,27 +10866,27 @@ Styleguide Breadcrumbs
   box-sizing: border-box;
 }
 
-/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row__left .accordion__indicator {
   float: left;
   margin: -0.21053em 0.26316em 0.26316em 0;
   margin-top: -0.10526em;
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 168, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row__right {
   width: 50%;
   display: table-cell;
   box-sizing: border-box;
 }
 
-/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 174, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body {
   overflow: hidden;
   border-top: 1px solid #f8f8f8;
 }
 
-/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row {
   border-bottom: 1px solid #bfc1c3;
   overflow: auto;
@@ -10790,12 +10895,12 @@ Styleguide Breadcrumbs
   width: 100%;
 }
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 186, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row:last-child {
   border-bottom: none;
 }
 
-/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 192, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__left {
   padding: 0.52632em 0.63158em 0.52632em 1.57895em;
   width: 42%;
@@ -10804,24 +10909,24 @@ Styleguide Breadcrumbs
   display: table-cell;
 }
 
-/* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 199, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__left.spaced {
   padding: 0.78947em 0.63158em 0.78947em 1.57895em;
 }
 
-/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 216, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__right {
   padding: 0.52632em 0.63158em 0.52632em 0;
   background-color: white;
   display: table-cell;
 }
 
-/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 227, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__right.spaced {
   padding: 0.78947em 0.63158em 0.78947em 0;
 }
 
-/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_accordion.scss */
+/* line 238, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__button:visited {
   color: #005ea5;
 }
