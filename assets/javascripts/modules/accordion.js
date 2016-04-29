@@ -1,42 +1,58 @@
 /**
- * Accordion Module
- * 
- * Usage:
- *
- *  <div id="accordion1" class="accordion"
- *       data-accordion data-accordion-expanded data-accordion-set-hash>
- *
- *    <div class="accordion__row">
- *      <i class="arrow arrow--right" data-accordion-arrow></i>
- *      <a href="#" data-accordion-button>Accordion Title</a>  
- *      <div data-accordion-reveal>
- *        <p>Optionally reveal content on expand that is not part of the body</p>
- *      </div>
- *    </div>
- *
- *    <div id="accordion1-body" class="accordion__body hidden" data-accordion-body>                        
- *      <p>Accordion Body</p>
- *    </div>
- *
- *   </div>
- *
- * NOTES:
- * 
- *  - Mandatory attributes:
- *     - id on main container       unique identifier used for anchoring to accordion based on URL hash
-       - id on body element         unique identified used for accessibility reasons (ties button to content)
- *     - data-accordion             main hook into accordion, placed on outer-most container
- *     - data-accordion-button      expand/collapse event will be bound to this element
- *     - data-accordion-body        element contains content that will be expanded/collapsed
- *  - Optional attributes:
- *     - data-accordion-arrow       arrow icon element which will be animated on state change
- *     - data-accordion-reveal      any sections outside of the body that should be revealed on expand
- *     - data-accordion-expanded    hard-code to expand on init, useful for server-side rendering
- *     - data-accordion-set-hash    will cause URL hash to be updated with ID of accordion upon expand
- *  - Mandatory classes:            accordion, accordion__body, hidden
- *  - Optional classes:             arrow, arrow--right
- *  - Column classes:               there are additional classes in _accordion.scss for accordions whose layout
- *                                  demands left and right columns both at the button level and within the body
+  Accordion
+
+  Expand/collapse content with optional row/column structure.
+
+  Mandatory JS hooks:
+   * `data-accordion` - main outer container hook to init accordion JS module
+   * `data-accordion-button` - button clicked to expand/collapse 
+   * `data-accordion-body` - the main body content to be expanded/collapsed
+   * `data-accordion-animate` - animate body expansion/collapse
+   * **BUG**: animate should be optional but currently the non-animate has a bug. Issue raised here: https://github.com/hmrc/assets-frontend/issues/553
+
+  Optional JS hooks:
+   * `data-accordion-arrow` - arrow icon element which will be animated on state change
+   * `data-accordion-reveal` - non-body content to be revealed on expand
+   * `data-accordion-set-hash` - will cause URL hash to be updated with ID of accordion upon expand
+   * `data-accordion-expanded` - hard-code to expand on init, useful for server-side rendering
+
+  Mandatory classes:
+   * `accordion` - placed on the outer container
+   * `accordion__button` - placed on the...yeah you guessed it...accordion button. Well done.
+   * `accordion__body` - placed on the body of content which will expand/collapse
+   * `accordion__row` - structural styling on the container of the accordion button
+
+  Optional Classes:
+   * `accordion__row__left` - left row contained in `accordion__row`
+   * `accordion__indicator` - for arrow styling, used in conjunction with `arrow` component 
+   * `accordion__row__right` - right row container in `accordion__row`
+   * `accordion__body__row` - a row of content in the body
+   * `accordion__body__row__left` - left column of body row
+   * `accordion__body__row__right` - right column of body row
+
+  Basic Usage:
+
+  <div data-accordion
+       data-accordion-animate
+       aria-expanded="false"
+       class="accordion">
+    <div class="accordion__row">
+      <div class="accordion__row__left">                
+        <a class="accordion__button link--no-underline bold-small" href="" data-accordion-button role="button">
+          Accordion Button
+        </a>
+      </div>
+      <div class="accordion__row__right align--top">
+        <p class="font-xsmall flush--top">Top right content</p>
+      </div>
+    </div>
+    <div class="accordion__body hidden" data-accordion-body aria-hidden="true">
+      <p>Accordion body</p>
+    </div>
+  </div>
+
+  More details on usage can be found in the component library.
+
  */
 
 
