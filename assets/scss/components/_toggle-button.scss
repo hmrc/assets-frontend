@@ -3,7 +3,7 @@ Toggle Button
 
 Markup:
 <span class="toggle">
-  <span class="toggle__error">Error state</span>
+  <span class="error-notification inline-block toggle__error">Error state</span>
   <a href="#" class="toggle__btn">link</a>
   <button class="toggle__btn">link</button>
   <span class="toggle--on">on</span>
@@ -13,6 +13,10 @@ Markup:
 
 Styleguide Toggle Button
 */
+
+.toggle {
+  display: inline-block;
+}
 
 .toggle__btn {
   background-color: transparent;
