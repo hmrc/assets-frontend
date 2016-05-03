@@ -57,6 +57,51 @@ var ajaxCallbacks = {
       }
     }
   },
+  apiSubscribeResponse: {
+    callbacks: {
+      success: function(response, $element, data, helpers) {
+        var $onDisabled = $('<span class="toggle--on">On</span>'),
+          $offDisabled = $('<span class="toggle--disabled">Off</span>'),
+          $parent = $element.parent(),
+          $off = $element.next(),
+          formContext = $element.find('[name=context]').val(),
+          formVersion = $element.find('[name=version]').val(),
+          isAdmin =  $element.is('[data-role-admin]'),
+          offUrl =  $element.data('off-url'),
+          $offLink;
+
+        // add "On" element
+        $parent.prepend($onDisabled);
+
+        // remove subscribe form
+        $element.remove();
+
+        // clear the off container
+        $off.remove();
+
+        // if active user is administrator then provide a link to allow un-subscribe
+        if (isAdmin) {
+          $offLink = $('<a>Off</a>')
+            .addClass('toggle__btn')
+            .attr('href', offUrl)
+            .data('api-unsubscribe', formContext + '-' + formVersion);
+
+          // add 'off' link
+          $parent.append($offLink);
+        } else {
+          // add disabled 'off' text for developers
+          $parent.append($offDisabled);
+        }
+
+        helpers.base.success.apply(null, arguments);
+      },
+      error: function(response, $element, data, helpers, targets, container, type) {
+        // show error message
+        $element.find('.toggle__error').addClass('inline-block');
+        helpers.base.error.apply(null, arguments);
+      }
+    }
+  },
   helpers: {
     base: {
       beforeSend: function($element, data, helpers, targets, container, type, actions) {

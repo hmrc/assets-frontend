@@ -93,14 +93,14 @@ var ajaxFormSubmit = {
     handlers.fn = _this.getCallback(handlers.config, serializedData);
 
     if (!!handlers) {
-      _this.doSubmit(path, serializedData, handlers.fn);
+      _this.doSubmit(path, serializedData, handlers.fn, $form);
     }
   },
 
-  doSubmit: function(path, data, callback) {
+  doSubmit: function(path, data, callback, $form) {
     $.ajax({
       url: path,
-      type: 'POST',
+      type: $form.attr('method') || 'POST',
       data: data,
       beforeSend: function() {
         if (!!callback) {
@@ -140,6 +140,8 @@ var ajaxFormSubmit = {
         helpers = config.helpers,
         $element = config.$element,
         targets = config.targets;
+
+    config.parameters = [];
 
     if (!!config.name) {
       if (!!config.args) {
