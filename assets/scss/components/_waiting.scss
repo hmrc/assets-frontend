@@ -1,0 +1,19 @@
+/*
+Waiting State
+
+Markup:
+<span class="waiting"></span>
+
+Styleguide Waiting State
+*/
+
+.waiting {
+  background-image: url('../images/loading.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+  height: em(28);
+  width: em(26);
+  vertical-align: middle;
+  display: inline-block;
+}
