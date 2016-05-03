@@ -70,6 +70,9 @@ var ajaxCallbacks = {
           offUrl =  $element.data('off-url'),
           $offLink;
 
+        // remove any error already displayed
+        $element.find('.toggle__error').removeClass('inline-block');
+
         // add "On" element
         $parent.prepend($onDisabled);
 
