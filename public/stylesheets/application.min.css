@@ -7471,7 +7471,12 @@ Styleguide Form.control
   }
 }
 
-/* line 308, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 309, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+select.form-control {
+  -webkit-appearance: menulist;
+}
+
+/* line 313, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-control--block {
   display: block;
 }
@@ -7488,7 +7493,7 @@ Markup:
 
 Styleguide Form.legend
 */
-/* line 327, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 332, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .questionnaire legend {
   margin: 0 0 0.75em;
 }
