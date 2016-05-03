@@ -60,6 +60,12 @@ var ajaxCallbacks = {
   helpers: {
     base: {
       beforeSend: function($element, data, helpers, targets, container, type, actions) {
+        // add waiting state component
+        var showWaiting = $element.data('ajax-waiting');
+        if (showWaiting) {
+          $element.prepend($('<span class="waiting"></span>'));
+        }
+
         helpers.utilities.setFormState($element, true);
       },
 
@@ -77,6 +83,12 @@ var ajaxCallbacks = {
       },
 
       always: function(response, $element, data, helpers, targets, container, type, actions) {
+        // clean waiting state
+        var showWaiting = $element.data('ajax-waiting');
+        if (showWaiting) {
+          $element.find('.waiting').remove();
+        }
+
         if (helpers.hasErrorType !== 'service') {
           helpers.resetForms(helpers, type, data, container);
         }
