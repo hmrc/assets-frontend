@@ -29,7 +29,8 @@ Styleguide Toggle Button
     top: 0;
     box-shadow: none;
   }
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     outline: none;
     color: $link-hover-colour;
     background-color: transparent;
@@ -37,6 +38,10 @@ Styleguide Toggle Button
   &:disabled,
   [disabled] {
     background-color: transparent;
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
   }
 }
 
