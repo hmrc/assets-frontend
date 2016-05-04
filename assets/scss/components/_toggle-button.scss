@@ -16,6 +16,7 @@ Styleguide Toggle Button
 
 .toggle {
   display: inline-block;
+  white-space: nowrap;
 }
 
 .toggle__btn {
@@ -31,6 +32,10 @@ Styleguide Toggle Button
   &:hover, &:focus {
     outline: none;
     color: $link-hover-colour;
+    background-color: transparent;
+  }
+  &:disabled,
+  [disabled] {
     background-color: transparent;
   }
 }
