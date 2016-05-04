@@ -63,7 +63,7 @@ var ajaxCallbacks = {
         var $onDisabled = $('<span class="toggle--on">On</span>'),
           $offDisabled = $('<span class="toggle--disabled">Off</span>'),
           $parent = $element.parent(),
-          $off = $element.next(),
+          $off = $parent.find('[data-toggle-subscribe="off"]'),
           formContext = $element.find('[name=context]').val(),
           formVersion = $element.find('[name=version]').val(),
           isAdmin =  $element.is('[data-role-admin]'),
