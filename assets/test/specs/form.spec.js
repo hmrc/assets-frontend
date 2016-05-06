@@ -12,9 +12,14 @@ var $errorSummaryHeading;
 var $textInputExample;
 var $radioYesElement;
 var $radioNoElement;
+var $radioYesGroupElement;
+var $radioNoGroupElement;
+var $groupToggle;
+var toggleDynamic;
 
 var setup = function () {
   form.init();
+  toggleDynamic();
   $formElement = $('.js-form');
   customValidations();
   $errorSummary = $('.error-summary');
@@ -24,6 +29,9 @@ var setup = function () {
   $textInputExample = $('#text-input-example');
   $radioYesElement = $('#radio-yes');
   $radioNoElement = $('#radio-no');
+  $radioYesGroupElement = $('#radio-group-yes');
+  $radioNoGroupElement = $('#radio-group-no');
+  $groupToggle = $('#other-group-toggle');
 };
 
 describe('Form Validation', function () {
@@ -32,6 +40,8 @@ describe('Form Validation', function () {
     jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/';
     loadFixtures('form-fixture.html');
     form = require('../../javascripts/validation/form.js');
+    toggleDynamic = require('../../javascripts/modules/toggleDynamicFormFields.js');
+    document.getElementById(jasmine.getFixtures().containerId).classList.add('js');
     customValidations = require('../../javascripts/validation/customValidations.js');
   });
 
@@ -51,7 +61,7 @@ describe('Form Validation', function () {
           expect(form.getErrorMessages().length).toBe(0)
       });
     });
-
+    
     describe('When I submit the form without filling it out', function () {
 
       beforeEach(function () {
@@ -100,8 +110,7 @@ describe('Form Validation', function () {
         expect(form.getErrorMessages().length).toBe(0);
       });
     });
-
-
+    
     describe('When I enter the wrong pattern on text input and submit', function () {
 
       beforeEach(function () {
@@ -220,5 +229,61 @@ describe('Form Validation', function () {
       });
     });
 
+    describe('When I open the grouped input elements, do not select an item in the group and submit', function () {
+      beforeEach(function () {
+        $groupToggle.click();
+
+        $submitButton.click();
+      });
+
+      it('The radio group inline error should be visible', function () {
+        expect($radioYesGroupElement.closest('.form-field-group.form-field-group--error').is(":visible")).toBe(true);
+      });
+
+
+      it('The form should have the grouped radio required error message', function () {
+        var $errorMessages = $errorSummaryMessages.find('> li');
+        expect($errorMessages.text()).not.toBe($radioYesGroupElement.attr('data-msg-required'));
+      });
+    });
+
+    describe('When I open the grouped input elements, select an item, close the group and submit', function () {
+      
+      beforeEach(function () {
+        $groupToggle.click();
+        $radioYesGroupElement.click();
+        $groupToggle.click();
+        $submitButton.click();
+      });
+
+      it('The form should not have the radio group inline error', function () {
+        expect($radioYesGroupElement.closest('.form-field-group')).not.toHaveClass('form-field-group--error');
+      });
+
+      it('The form should not have the grouped radio required error message', function () {
+        var $errorMessages = $errorSummaryMessages.find('> li');
+
+        for (var e = 0; e < $errorMessages.length; e++) {
+          expect($errorMessages.eq(e).text()).not.toBe($radioNoGroupElement.attr('data-msg-required'));
+        }
+      });
+    });
+
+    describe('When I open the grouped input elements, hit submit and cause an error, then close the grouped input elements', function (){
+      beforeEach(function () {
+        $groupToggle.click();
+        $submitButton.click();
+        $groupToggle.click();
+      });
+
+      it('The radio group inline error should not be visible', function () {
+        expect($('#radio-group-yes').closest('.form-field-group.form-field-group--error').is(":visible")).toBe(false);
+      });
+      
+      it('The form should have the grouped radio required error message', function () {
+        var $errorMessages = $errorSummaryMessages.find('> li');
+        expect($errorMessages.text()).not.toBe($radioYesGroupElement.attr('data-msg-required'));
+      });    
+    });
   });
 });
