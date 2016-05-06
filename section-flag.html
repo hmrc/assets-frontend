@@ -124,11 +124,9 @@
                   <a href="section-beta.html" class="comp-lib-menu-link">Beta</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-breadcrumbs.html" class="comp-lib-menu-link">Breadcrumbs</a>
 
-                  <ul>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-buttons.html" class="comp-lib-menu-link">Buttons</a>
@@ -150,9 +148,14 @@
                   <a href="section-external-markup.html" class="comp-lib-menu-link">External Markup</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-flag.html" class="comp-lib-menu-link">Flag</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-flag.html#kssref-flag-left">Flag on left</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-form.html" class="comp-lib-menu-link">Form</a>
@@ -255,9 +258,9 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-breadcrumbs">
+                  <div id="kssref-flag">
                 <div>
-                  <h1><a href="#kssref-breadcrumbs" class="comp-lib-menu-link">Breadcrumbs</a></h1>
+                  <h1><a href="#kssref-flag" class="comp-lib-menu-link">Flag</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
@@ -267,8 +270,7 @@
                       
                       
                     </h2>
-                    <p>The breadcrumb nav is styled using the <code>.breadcrumb-nav</code> selector. You can also have a <em>slimmer</em> version by adding
-the <code>.breadcrumb-nav--slim</code> modifier.</p>
+                    <p>To create a flag to highlight content to a user</p>
 
                   </div>
                 </div>
@@ -277,64 +279,107 @@ the <code>.breadcrumb-nav--slim</code> modifier.</p>
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                            <nav class="breadcrumb-nav [modifier class]">
-        <ul class="breadcrumb-nav__list">
-                    <li class="breadcrumb-nav__item">
-                      <a href="/component-library">Home</a>
-                    </li>
-                    <li class="breadcrumb-nav__item
-                               breadcrumb-nav__item--trail"></li>
-            <li class="breadcrumb-nav__item">Breadcrumbs</li>
-        </ul>
-    </nav>
+                        <p> Example content for the flag component in the component library.
+  <span class="flag [modifier class]">Example flag text.</span>
+</p>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">    &lt;nav class=&quot;breadcrumb-nav [modifier class]&quot;&gt;
-        &lt;ul class=&quot;breadcrumb-nav__list&quot;&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;
-                      &lt;a href=&quot;/component-library&quot;&gt;Home&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item
-                               breadcrumb-nav__item--trail&quot;&gt;&lt;/li&gt;
-            &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;Breadcrumbs&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;p&gt; Example content for the flag component in the component library.
+  &lt;span class=&quot;flag [modifier class]&quot;&gt;Example flag text.&lt;/span&gt;
+&lt;/p&gt;</code></pre>
                       </div>
                     </div>
 
                     <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.breadcrumb-nav--slim</h2>
+                      <h2 class="comp-lib-heading-2">.flag--soon</h2>
                       <div class="comp-lib-description">
-                        A <em>slimmer</em> version of the breadcrumb with less <code>margin</code> and <code>padding</code>
+                        A flag to indicate action needed soon
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                            <nav class="breadcrumb-nav breadcrumb-nav--slim">
-        <ul class="breadcrumb-nav__list">
-                    <li class="breadcrumb-nav__item">
-                      <a href="/component-library">Home</a>
-                    </li>
-                    <li class="breadcrumb-nav__item
-                               breadcrumb-nav__item--trail"></li>
-            <li class="breadcrumb-nav__item">Breadcrumbs</li>
-        </ul>
-    </nav>
+                        <p> Example content for the flag component in the component library.
+  <span class="flag flag--soon">Example flag text.</span>
+</p>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">    &lt;nav class=&quot;breadcrumb-nav breadcrumb-nav--slim&quot;&gt;
-        &lt;ul class=&quot;breadcrumb-nav__list&quot;&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;
-                      &lt;a href=&quot;/component-library&quot;&gt;Home&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;breadcrumb-nav__item
-                               breadcrumb-nav__item--trail&quot;&gt;&lt;/li&gt;
-            &lt;li class=&quot;breadcrumb-nav__item&quot;&gt;Breadcrumbs&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;p&gt; Example content for the flag component in the component library.
+  &lt;span class=&quot;flag flag--soon&quot;&gt;Example flag text.&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+                      </div>
+                    </div>
+                    <div class="comp-lib-pattern-example">
+                      <h2 class="comp-lib-heading-2">.flag--urgent</h2>
+                      <div class="comp-lib-description">
+                        A flag to indicate urgent action
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <p> Example content for the flag component in the component library.
+  <span class="flag flag--urgent">Example flag text.</span>
+</p>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;p&gt; Example content for the flag component in the component library.
+  &lt;span class=&quot;flag flag--urgent&quot;&gt;Example flag text.&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+                      </div>
+                    </div>
+                    <div class="comp-lib-pattern-example">
+                      <h2 class="comp-lib-heading-2">.flag--on-right-side</h2>
+                      <div class="comp-lib-description">
+                        A flag positioned on the right of content
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <p> Example content for the flag component in the component library.
+  <span class="flag flag--on-right-side">Example flag text.</span>
+</p>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;p&gt; Example content for the flag component in the component library.
+  &lt;span class=&quot;flag flag--on-right-side&quot;&gt;Example flag text.&lt;/span&gt;
+&lt;/p&gt;</code></pre>
                       </div>
                     </div>
                   </div>
 
                   </div>
+
+
+                  <section id="kssref-flag-left">
+                <div>
+                  <h2><a href="#kssref-flag-left" class="comp-lib-menu-link">Flag on left</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <h2 class="comp-lib-warning">
+                      
+                      
+                    </h2>
+                    <p>A flag positioned on the left of content</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <p>
+  <span class="flag flag--on-left-side">Example flag text.</span>
+  Example content for the flag component in the component library.
+</p>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;p&gt;
+  &lt;span class=&quot;flag flag--on-left-side&quot;&gt;Example flag text.&lt;/span&gt;
+  Example content for the flag component in the component library.
+&lt;/p&gt;</code></pre>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  </section>
 
 
           </article>
