@@ -11629,6 +11629,18 @@ Styleguide App Info.Status
   color: #F47738;
 }
 
+/* line 2, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_waiting.scss */
+.waiting {
+  background-image: url("../images/loading.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+  height: 1.47368em;
+  width: 1.36842em;
+  vertical-align: middle;
+  display: inline-block;
+}
+
 /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_messages.scss */
 table.messages {
   width: 100%;
