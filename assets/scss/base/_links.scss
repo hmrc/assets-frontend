@@ -1,12 +1,12 @@
 /*
-Links
+No underline
 
 A link takes you to a location on the same page or any other page on the Web.
 
 Markup:
 <a class="link--no-underline">Example link</a>
 
-Styleguide Links
+Styleguide Links.No underline
 */
 
 .link--no-underline {
@@ -15,6 +15,45 @@ Styleguide Links
   &:focus {
     text-decoration: underline;
   }
+}
+
+
+/*
+Link
+
+To make an element appear as a link.
+
+Markup:
+<span class="link-style">Example Link</span>
+
+Styleguide Links.Link
+*/
+
+.link-style {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+/*
+Print
+
+Add a print image to a print link.
+
+Markup:
+<a href="javascript:window.print()" class="print-link print-hidden js-visible">Print me</a>
+
+Styleguide Links.Print
+*/
+
+.print-link {
+  background: transparent no-repeat 0 50%;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASAgMAAAAvVbb5AAAACVBMVEX///////8KDAwmYEUdAAAAAXRSTlMAQObYZgAAADBJREFUCFtjYOBa1cDAoBkKJFYCCSYwEYpCrAICZCI0FEhkrURmQRRnrYRpW7WqAQAlGR86Ip1rwwAAAABJRU5ErkJggg==');
+  padding: 0.5em 0 0.5em 28px;
+  zoom: 1;
 }
 
 
@@ -37,7 +76,7 @@ Markup:
 .external-link-19                 - External Link font size 19
 .external-link-19-bold-no-hover   - External Link font size 19 bold without hover
 
-Styleguide Links.external
+Styleguide Links.External
 */
 a[rel="external"].external-link-12 {
   @include external-link-12;

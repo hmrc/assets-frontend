@@ -1,0 +1,28 @@
+/*
+Indent
+
+To create indented content
+
+Markup:
+<p class="{{modifier_class}}">Example indent text for the indent content component in the component library. Example indent text for the indent content component in the component library.</p>
+
+.indent - Indented content
+.indent-warning - Indented warning content
+
+Styleguide Indent
+*/
+
+.indent {
+  @include core-16();
+  border-left: em(10) solid $grey-8;
+  display: block;
+  margin: em(8) 0 em(16);
+  overflow: hidden;
+  padding: em(4) em(8);
+}
+
+.indent-warning {
+  background: transparent no-repeat 0 0;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAQAAAC00HvSAAABZklEQVR4Aa3WsWoTUBTG8V9v4yQElywRAlYzJVCQdMrgmKVDce3m3mfI0ofoY7QQfAOngmQIOGgzOGRpQYhLUynHZjb3JtL7/+8f53DhfmfPZlqGjvR1tTUtLXw3c+2LWzsycG4qNjp1bmArHWM3ouiNsY4CIxOxkxMjGU7NxM7OnG4OmYv/cv5v0KgwSWmiEdAAHWd6NvLeHsJXG+g5881PgLHI+RBrHkLOMcCg9MS/Y82y9PwDEk4cyHIPVrIcOCFpOVZgtS2GY61k6PCZMYeGyRFsW+pekaOkzzOnoZ90K8R0k3aFpdpJs8I0zWRZIWaZLCosteBKlNyPF0/uh5JXyUyRR3+efFRk1nCtyBufrFy4U+CalqnI+Tp+xZof8TLknGoltyayfPQKvPVBlonbhEtzGe4A8kvNXW79/RrxOdZc7PD70cn301704l2przoVm6FCT1VozQodXuuiqH/fVLq2/gLNMwwtCpJpLgAAAABJRU5ErkJggg==');
+  padding-left: em(45);
+}

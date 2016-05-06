@@ -1,0 +1,52 @@
+/*
+Faded Text
+
+To create text that has a *faded* appearance
+
+Markup:
+<p class="faded-text {{modifier_class}}">Example Text</p>
+
+.faded-text--small - Small *faded* text
+
+Styleguide Typography.faded
+*/
+
+.faded-text {
+  color: #6f777b;
+}
+
+.faded-text--small {
+  @extend .faded-text;
+  @include core-16;
+}
+
+
+/*
+Text Size
+
+To alter the size of your typography
+
+Markup:
+<p class="font-xxsmall">Example Text</p>
+
+Styleguide Typography.size
+*/
+
+.font-xxsmall {
+  @include core-14;
+}
+
+
+/*
+Small element
+
+The small element represents so-called `small print` such as legal disclaimers and caveats.
+
+Markup:
+<small>Example Text</small>
+
+Styleguide Typography.small
+*/
+small {
+  @include core-16;
+}

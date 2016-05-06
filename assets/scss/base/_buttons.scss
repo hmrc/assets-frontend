@@ -13,7 +13,8 @@ Markup:
 .button--alert         - An alert button
 .button--small         - A smaller button
 .button--table         - A button within a table
-.button.button--link   - To make a button appear like a link
+.button--link   - To make a button appear like a link
+.button--link-style    - To make a button appear like a link with white text
 
 Styleguide Buttons
 */
@@ -111,7 +112,7 @@ button, .button {
 }
 
 /* Transforms button into a link */
-/* //TODO potentially remove these over rides if the styles on the global button element selector is removed */
+// POTENTIALLY-NOT-IN-USE
 .pseudo-link {
   padding: 0;
   background: none;
@@ -127,3 +128,18 @@ button, .button {
   }
 }
 
+.button--link-style {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: none;
+  }
+}

@@ -24,6 +24,11 @@ body {
 
 .content__body {
 
+  p {
+    @include core-19();
+    margin: em(12px) 0;
+  }
+
   .full-width & {
     float: none;
     width: 100%;
