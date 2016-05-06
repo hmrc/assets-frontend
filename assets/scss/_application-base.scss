@@ -26,8 +26,9 @@ $path: "../images/icons/";
 
 // HMRC Specific
 @import "base/colours";
-@import "base/fonts";
-@import "base/typography";
+@import "base/typography/fonts";
+@import "base/typography/text";
+@import "base/typography/headings";
 @import "base/layouts";
 @import "base/grid";
 @import "base/buttons";
@@ -86,6 +87,8 @@ $path: "../images/icons/";
 @import "components/modal-dialog";
 @import "components/app-info";
 @import "components/waiting";
+@import "components/flag";
+@import "components/indent";
 
 // Page Specific Styles
 @import "pages/messages";

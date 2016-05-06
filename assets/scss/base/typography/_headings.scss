@@ -1,0 +1,123 @@
+/*
+Headings
+
+Headings introduce the section following the header to a user.
+
+Markup:
+<h1>h1 example</h1>
+<h2>h2 example</h2>
+<h3>h3 example</h3>
+<h4>h4 example</h4>
+
+Styleguide Typography.Heading
+*/
+
+/*
+Heading Elements
+
+You can also add the following `CSS` selectors to non html heading elements to provide header styling.
+
+Markup:
+<div class="h1-heading">h1 example</div>
+<p class="h2-heading">h2 example</p>
+<div class="h3-heading">h3 example</div>
+<p class="h4-heading">h4 example</p>
+
+Styleguide Typography.Heading Elements
+*/
+
+h1,
+.h1-heading {
+  @include bold-36;
+  margin-top: em(8);
+  margin-bottom: em(12);
+}
+
+h2,
+.h2-heading {
+  @include bold-24;
+  margin-top: em(8) !important; //remove importance when govuk_frontend_static is killed
+  margin-bottom: em(4);
+}
+
+h3,
+.h3-heading {
+  @include bold-19;
+  margin-top: em(8);
+  margin-bottom: em(4);
+}
+
+h4,
+.h4-heading {
+  @include core-19;
+  margin-top: em(8);
+  margin-bottom: em(4);
+}
+
+
+/*
+Heading Sizes
+
+There are also other `CSS` selectors you can add to your headings to provide different sizes.
+
+Markup:
+<h1 class="{{modifier_class}}">header example</h1>
+
+.heading-48 - a bold font size 48px header
+.heading-36 - a bold font size 36px header
+.heading-24 - a bold font size 24px header
+
+Styleguide Typography.Heading Sizes
+*/
+
+.heading-48 {
+  @include bold-48();
+  margin: em(10) 0 em(10) 0;
+}
+
+.heading-36 {
+  @include bold-36();
+}
+
+.heading-24,
+.heading-24--normal {
+  @include core-24();
+}
+
+
+/*
+Underlined Headings
+
+Adding an underline to a header.
+
+Markup:
+<h1 class="heading-48 heading--underlined">header example</h1>
+
+Styleguide Typography.Heading underlined
+*/
+
+.heading--underlined {
+  border-bottom: solid em(5) $govuk-blue;
+}
+
+
+/*
+Pre Headings
+
+To add a `pre` heading to your header.
+
+Markup:
+<h1 class="heading-large">
+  <span class="pre-heading">Pre Heading Example</span>
+  h1 example
+</h1>
+
+Styleguide Typography.Pre Heading
+*/
+
+.pre-heading {
+  @include core-27();
+  display: block;
+  color: #6f777b;
+  margin-bottom: em(8);
+}

@@ -1,0 +1,77 @@
+/*
+Flag
+
+To create a flag to highlight content to a user
+
+Markup:
+<p> Example content for the flag component in the component library.
+  <span class="flag {{modifier_class}}">Example flag text.</span>
+</p>
+
+.flag--soon           - A flag to indicate action needed soon
+.flag--urgent         - A flag to indicate urgent action
+.flag--on-right-side  - A flag positioned on the right of content
+
+Styleguide Flag
+*/
+
+.flag {
+  display: inline-block;
+  color: $white;
+  padding: em(7) em(8) em(5);
+  @include core-16();
+  line-height: em(16);
+  text-decoration: none;
+
+  @include ie-lte(7) {
+    zoom: 1;
+  }
+
+  &.flag--soon {
+    background-color: $grey-1;
+  }
+
+  &.flag--urgent {
+    background-color: $red;
+  }
+
+  &.flag--on-right-side {
+    margin-left: em(6);
+  }
+
+
+  /*
+  Flag on left
+
+  A flag positioned on the left of content
+
+  Markup:
+  <p>
+    <span class="flag flag--on-left-side">Example flag text.</span>
+    Example content for the flag component in the component library.
+  </p>
+
+  Styleguide Flag.left
+  */
+  &.flag--on-left-side {
+    margin-right: em(6);
+  }
+}
+
+.highlight-block--red {
+  display: inline-block;
+  color: $white;
+  padding: em(7) em(8) em(5);
+  @include core-16();
+  line-height: em(16);
+  text-decoration: none;
+  background-color: $red;
+
+  @include ie-lte(7) {
+    zoom: 1;
+  }
+}
+
+
+
+
