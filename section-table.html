@@ -188,32 +188,9 @@
                   <a href="section-links.html" class="comp-lib-menu-link">Links</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-notification.html" class="comp-lib-menu-link">Notification</a>
 
-                  <ul>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-notification.html#kssref-notification-alert">Alert</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-notification.html#kssref-notification-alert-info">Alert Info</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-notification.html#kssref-notification-alert-toggle">Alert toggle</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-notification.html#kssref-notification-flash">Flash</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-notification.html#kssref-notification-flash-error">Error Summary</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-notification.html#kssref-notification-highlight">Highlight</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-notification.html#kssref-notification-highlight-dark">Highlight Dark</a>
-                      </li>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-notification-banner.html" class="comp-lib-menu-link">Notification banner</a>
@@ -239,9 +216,29 @@
                   <a href="section-side-navigation.html" class="comp-lib-menu-link">Side Navigation</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-table.html" class="comp-lib-menu-link">Table</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-table.html#kssref-table-cell">Cell</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-table.html#kssref-table-cell-highlight">Cell Highlight</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-table.html#kssref-table-heading-highlight">Highlight</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-table.html#kssref-table-marker">Marker</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-table.html#kssref-table-modifiers">Modifiers</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-table.html#kssref-table-row-bold">Row Bold</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-tabular-data.html" class="comp-lib-menu-link">Tabular Data</a>
@@ -280,20 +277,9 @@
           </aside>
 
           <article class="comp-lib-main">
-                  <div id="kssref-notification">
+                  <div id="kssref-table">
                 <div>
-                  <h1><a href="#kssref-notification" class="comp-lib-menu-link">Notification</a></h1>
-
-                </div>
-
-                <!-- pattern examples -->
-
-                  </div>
-
-
-                  <section id="kssref-notification-alert">
-                <div>
-                  <h2><a href="#kssref-notification-alert" class="comp-lib-menu-link">Alert</a></h2>
+                  <h1><a href="#kssref-table" class="comp-lib-menu-link">Table</a></h1>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
@@ -303,7 +289,7 @@
                       
                       
                     </h2>
-                    <p>An alert is used to communicate an <strong>important</strong> message to a user.</p>
+                    <p>To display a table of data</p>
 
                   </div>
                 </div>
@@ -312,111 +298,162 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="alert [modifier class]" role="alert">
-  <p class="alert__message">Alert example text</p>
-</div>
+                        <table>
+  <caption>Table Caption</caption>
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;alert [modifier class]&quot; role=&quot;alert&quot;&gt;
-  &lt;p class=&quot;alert__message&quot;&gt;Alert example text&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table&gt;
+  &lt;caption&gt;Table Caption&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;First Table Heading&lt;/th&gt;
+      &lt;th&gt;Second Table Heading&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table Cell&lt;/td&gt;
+      &lt;td&gt;Table Cell
+        &lt;p&gt;First Paragraph&lt;/p&gt;
+        &lt;p&gt;Second Paragraph&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  </div>
+
+
+                  <section id="kssref-table-cell">
+                <div>
+                  <h2><a href="#kssref-table-cell" class="comp-lib-menu-link">Cell</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <h2 class="comp-lib-warning">
+                      
+                      
+                    </h2>
+                    <p>A cell in a table containing data</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <table>
+  <tr>
+    <td class="[modifier class]">First Table Cell</td>
+    <td>Second Table Cell</td>
+    <td>Third Table Cell</td>
+  </tr>
+</table>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;[modifier class]&quot;&gt;First Table Cell&lt;/td&gt;
+    &lt;td&gt;Second Table Cell&lt;/td&gt;
+    &lt;td&gt;Third Table Cell&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
 
                     <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.alert--success</h2>
+                      <h2 class="comp-lib-heading-2">.table-cell--light</h2>
                       <div class="comp-lib-description">
-                        A successful message
+                        A cell with a light background colour
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="alert alert--success" role="alert">
-  <p class="alert__message">Alert example text</p>
-</div>
+                        <table>
+  <tr>
+    <td class="table-cell--light">First Table Cell</td>
+    <td>Second Table Cell</td>
+    <td>Third Table Cell</td>
+  </tr>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;alert alert--success&quot; role=&quot;alert&quot;&gt;
-  &lt;p class=&quot;alert__message&quot;&gt;Alert example text&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;table-cell--light&quot;&gt;First Table Cell&lt;/td&gt;
+    &lt;td&gt;Second Table Cell&lt;/td&gt;
+    &lt;td&gt;Third Table Cell&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
                     <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.alert--failure</h2>
+                      <h2 class="comp-lib-heading-2">.table-cell--padded</h2>
                       <div class="comp-lib-description">
-                        A failure message
+                        A cell with extra padding
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="alert alert--failure" role="alert">
-  <p class="alert__message">Alert example text</p>
-</div>
+                        <table>
+  <tr>
+    <td class="table-cell--padded">First Table Cell</td>
+    <td>Second Table Cell</td>
+    <td>Third Table Cell</td>
+  </tr>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;alert alert--failure&quot; role=&quot;alert&quot;&gt;
-  &lt;p class=&quot;alert__message&quot;&gt;Alert example text&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;table-cell--padded&quot;&gt;First Table Cell&lt;/td&gt;
+    &lt;td&gt;Second Table Cell&lt;/td&gt;
+    &lt;td&gt;Third Table Cell&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
                     <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.alert--important</h2>
+                      <h2 class="comp-lib-heading-2">.table-cell--indented</h2>
                       <div class="comp-lib-description">
-                        A message of importance
+                        An indented table cell
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="alert alert--important" role="alert">
-  <p class="alert__message">Alert example text</p>
-</div>
+                        <table>
+  <tr>
+    <td class="table-cell--indented">First Table Cell</td>
+    <td>Second Table Cell</td>
+    <td>Third Table Cell</td>
+  </tr>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;alert alert--important&quot; role=&quot;alert&quot;&gt;
-  &lt;p class=&quot;alert__message&quot;&gt;Alert example text&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.alert--info</h2>
-                      <div class="comp-lib-description">
-                        A message containing information
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="alert alert--info" role="alert">
-  <p class="alert__message">Alert example text</p>
-</div>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;alert alert--info&quot; role=&quot;alert&quot;&gt;
-  &lt;p class=&quot;alert__message&quot;&gt;Alert example text&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.alert--borderless</h2>
-                      <div class="comp-lib-description">
-                        A borderless message
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="alert alert--borderless" role="alert">
-  <p class="alert__message">Alert example text</p>
-</div>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;alert alert--borderless&quot; role=&quot;alert&quot;&gt;
-  &lt;p class=&quot;alert__message&quot;&gt;Alert example text&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.alert--slim</h2>
-                      <div class="comp-lib-description">
-                        A <em>slim</em> message
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="alert alert--slim" role="alert">
-  <p class="alert__message">Alert example text</p>
-</div>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;alert alert--slim&quot; role=&quot;alert&quot;&gt;
-  &lt;p class=&quot;alert__message&quot;&gt;Alert example text&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;table-cell--indented&quot;&gt;First Table Cell&lt;/td&gt;
+    &lt;td&gt;Second Table Cell&lt;/td&gt;
+    &lt;td&gt;Third Table Cell&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
                   </div>
@@ -424,9 +461,9 @@
                   </section>
 
 
-                  <section id="kssref-notification-alert-info">
+                  <section id="kssref-table-cell-highlight">
                 <div>
-                  <h2><a href="#kssref-notification-alert-info" class="comp-lib-menu-link">Alert Info</a></h2>
+                  <h2><a href="#kssref-table-cell-highlight" class="comp-lib-menu-link">Cell Highlight</a></h2>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
@@ -436,7 +473,7 @@
                       
                       
                     </h2>
-                    <p>The information alert has differing markup to <code>.alert</code>. This is why this currently has a separate markup example.</p>
+                    <p>Highlighted cells</p>
 
                   </div>
                 </div>
@@ -445,175 +482,22 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="alert alert--info alert--info__light" role="alert">
-  <p class="alert__message">Alert example text</p>
-</div>
+                        <table>
+  <tr class="highlight">
+    <td>First Table Cell</td>
+    <td>Second Table Cell</td>
+    <td>Third Table Cell</td>
+  </tr>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;alert alert--info alert--info__light&quot; role=&quot;alert&quot;&gt;
-  &lt;p class=&quot;alert__message&quot;&gt;Alert example text&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  </section>
-
-
-                  <section id="kssref-notification-alert-toggle">
-                <div>
-                  <h2><a href="#kssref-notification-alert-toggle" class="comp-lib-menu-link">Alert toggle</a></h2>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <h2 class="comp-lib-warning">
-                      
-                      
-                    </h2>
-                    <p>An example of an alert with toggle functionality to demonstrate the use of the <code>.minimise</code> selector.</p>
-
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
-                  <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <a href="#" class="js-visible" data-toggle-details="js-toggle-example">Open Alert</a>
-<div class="alert js-hidden js-toggle-example">
-    <a class="minimise js-visible" href="#">Close Alert</a>
-    <p class="alert__message">Example Alert Message with toggle</p>
-</div>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a href=&quot;#&quot; class=&quot;js-visible&quot; data-toggle-details=&quot;js-toggle-example&quot;&gt;Open Alert&lt;/a&gt;
-&lt;div class=&quot;alert js-hidden js-toggle-example&quot;&gt;
-    &lt;a class=&quot;minimise js-visible&quot; href=&quot;#&quot;&gt;Close Alert&lt;/a&gt;
-    &lt;p class=&quot;alert__message&quot;&gt;Example Alert Message with toggle&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  </section>
-
-
-                  <section id="kssref-notification-flash">
-                <div>
-                  <h2><a href="#kssref-notification-flash" class="comp-lib-menu-link">Flash</a></h2>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <h2 class="comp-lib-warning">
-                      
-                      
-                    </h2>
-                    <p>A flash message is used to communicate a message to a user.</p>
-
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
-                  <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="flash [modifier class]">
-    <h2>Heading level 2</h2>
-    <h3>Heading level 3</h3>
-    <ul>
-      <li><a href="">Example list item</a></li>
-      <li><a href="">Example list item</a></li>
-    </ul>
-</div>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;flash [modifier class]&quot;&gt;
-    &lt;h2&gt;Heading level 2&lt;/h2&gt;
-    &lt;h3&gt;Heading level 3&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;&quot;&gt;Example list item&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;&quot;&gt;Example list item&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-                      </div>
-                    </div>
-
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.success</h2>
-                      <div class="comp-lib-description">
-                        A flash message used for a successful action
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="flash success">
-    <h2>Heading level 2</h2>
-    <h3>Heading level 3</h3>
-    <ul>
-      <li><a href="">Example list item</a></li>
-      <li><a href="">Example list item</a></li>
-    </ul>
-</div>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;flash success&quot;&gt;
-    &lt;h2&gt;Heading level 2&lt;/h2&gt;
-    &lt;h3&gt;Heading level 3&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;&quot;&gt;Example list item&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;&quot;&gt;Example list item&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-                      </div>
-                    </div>
-                  </div>
-
-                  </section>
-
-
-                  <section id="kssref-notification-flash-error">
-                <div>
-                  <h2><a href="#kssref-notification-flash-error" class="comp-lib-menu-link">Error Summary</a></h2>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <h2 class="comp-lib-warning">
-                      
-                      
-                    </h2>
-                    <p>A flash message used with the <code>.error-summary</code> for an error summary item.</p>
-
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
-                  <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="flash error-summary error-summary--show">
-    <h2>Heading level 2</h2>
-    <h3>Heading level 3</h3>
-    <ul>
-      <li><a href="">Example list item</a></li>
-      <li><a href="">Example list item</a></li>
-    </ul>
-</div>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;flash error-summary error-summary--show&quot;&gt;
-    &lt;h2&gt;Heading level 2&lt;/h2&gt;
-    &lt;h3&gt;Heading level 3&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;&quot;&gt;Example list item&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;&quot;&gt;Example list item&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table&gt;
+  &lt;tr class=&quot;highlight&quot;&gt;
+    &lt;td&gt;First Table Cell&lt;/td&gt;
+    &lt;td&gt;Second Table Cell&lt;/td&gt;
+    &lt;td&gt;Third Table Cell&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
 
@@ -622,9 +506,9 @@
                   </section>
 
 
-                  <section id="kssref-notification-highlight">
+                  <section id="kssref-table-heading-highlight">
                 <div>
-                  <h2><a href="#kssref-notification-highlight" class="comp-lib-menu-link">Highlight</a></h2>
+                  <h2><a href="#kssref-table-heading-highlight" class="comp-lib-menu-link">Highlight</a></h2>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
@@ -634,7 +518,7 @@
                       
                       
                     </h2>
-                    <p>A highlight is used when you wish to highlight content to a user.</p>
+                    <p>A header for a group of cells in a table that is highlighted</p>
 
                   </div>
                 </div>
@@ -643,95 +527,443 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="highlight-message [modifier class]">
-  <p>An example paragraph for the highlight message content. </p>
-</div>
+                        <table>
+  <tr>
+    <th class="table__header--highlight">First Table Heading</th>
+    <th>Second Table Heading</th>
+  </tr>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;highlight-message [modifier class]&quot;&gt;
-  &lt;p&gt;An example paragraph for the highlight message content. &lt;/p&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;table__header--highlight&quot;&gt;First Table Heading&lt;/th&gt;
+    &lt;th&gt;Second Table Heading&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  </section>
+
+
+                  <section id="kssref-table-marker">
+                <div>
+                  <h2><a href="#kssref-table-marker" class="comp-lib-menu-link">Marker</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <h2 class="comp-lib-warning">
+                      
+                      
+                    </h2>
+                    <p>A Marker for a table cell</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <table>
+  <tr>
+    <td class="marker-column">
+      <span class="marker-column__marker">Marker</span>
+    </td>
+    <td>First Table Cell</td>
+    <td>Second Example Table Cell</td>
+  </tr>
+</table>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;marker-column&quot;&gt;
+      &lt;span class=&quot;marker-column__marker&quot;&gt;Marker&lt;/span&gt;
+    &lt;/td&gt;
+    &lt;td&gt;First Table Cell&lt;/td&gt;
+    &lt;td&gt;Second Example Table Cell&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  </section>
+
+
+                  <section id="kssref-table-modifiers">
+                <div>
+                  <h2><a href="#kssref-table-modifiers" class="comp-lib-menu-link">Modifiers</a></h2>
+
+                  <div class="comp-lib-description
+                              comp-lib-pattern-markdown
+                              
+                              ">
+                    <h2 class="comp-lib-warning">
+                      
+                      
+                    </h2>
+                    <p>Various modifiers available for tables.</p>
+
+                  </div>
+                </div>
+
+                <!-- pattern examples -->
+                  <div>
+                    <div class="comp-lib-pattern-example">
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <table class="[modifier class]">
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table class=&quot;[modifier class]&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;First Table Heading&lt;/th&gt;
+      &lt;th&gt;Second Table Heading&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table Cell&lt;/td&gt;
+      &lt;td&gt;Table Cell
+        &lt;p&gt;First Paragraph&lt;/p&gt;
+        &lt;p&gt;Second Paragraph&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
 
                     <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.highlight-message--content-body</h2>
+                      <h2 class="comp-lib-heading-2">.table--borderless</h2>
                       <div class="comp-lib-description">
-                        A content body width
+                        Table without borders
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="highlight-message highlight-message--content-body">
-  <p>An example paragraph for the highlight message content. </p>
-</div>
+                        <table class="table--borderless">
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;highlight-message highlight-message--content-body&quot;&gt;
-  &lt;p&gt;An example paragraph for the highlight message content. &lt;/p&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table class=&quot;table--borderless&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;First Table Heading&lt;/th&gt;
+      &lt;th&gt;Second Table Heading&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table Cell&lt;/td&gt;
+      &lt;td&gt;Table Cell
+        &lt;p&gt;First Paragraph&lt;/p&gt;
+        &lt;p&gt;Second Paragraph&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
                     <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.highlight-message--full-width</h2>
+                      <h2 class="comp-lib-heading-2">.table--font-reset</h2>
                       <div class="comp-lib-description">
-                        Full width highlight
+                        Reset table cells font size to base
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="highlight-message highlight-message--full-width">
-  <p>An example paragraph for the highlight message content. </p>
-</div>
+                        <table class="table--font-reset">
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;highlight-message highlight-message--full-width&quot;&gt;
-  &lt;p&gt;An example paragraph for the highlight message content. &lt;/p&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table class=&quot;table--font-reset&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;First Table Heading&lt;/th&gt;
+      &lt;th&gt;Second Table Heading&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table Cell&lt;/td&gt;
+      &lt;td&gt;Table Cell
+        &lt;p&gt;First Paragraph&lt;/p&gt;
+        &lt;p&gt;Second Paragraph&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
                     <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.highlight-message--indent</h2>
+                      <h2 class="comp-lib-heading-2">.table--spaced-top</h2>
                       <div class="comp-lib-description">
-                        Indented highlight
+                        For tables that need to have a larger margin-top
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="highlight-message highlight-message--indent">
-  <p>An example paragraph for the highlight message content. </p>
-</div>
+                        <table class="table--spaced-top">
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;highlight-message highlight-message--indent&quot;&gt;
-  &lt;p&gt;An example paragraph for the highlight message content. &lt;/p&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table class=&quot;table--spaced-top&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;First Table Heading&lt;/th&gt;
+      &lt;th&gt;Second Table Heading&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table Cell&lt;/td&gt;
+      &lt;td&gt;Table Cell
+        &lt;p&gt;First Paragraph&lt;/p&gt;
+        &lt;p&gt;Second Paragraph&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
                     <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.highlight-message--icon-top</h2>
+                      <h2 class="comp-lib-heading-2">.table--top-border</h2>
                       <div class="comp-lib-description">
-                        Highlight with an icon aligned to the top
+                        A table with a top border
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="highlight-message highlight-message--icon-top">
-  <p>An example paragraph for the highlight message content. </p>
-</div>
+                        <table class="table--top-border">
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;highlight-message highlight-message--icon-top&quot;&gt;
-  &lt;p&gt;An example paragraph for the highlight message content. &lt;/p&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table class=&quot;table--top-border&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;First Table Heading&lt;/th&gt;
+      &lt;th&gt;Second Table Heading&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table Cell&lt;/td&gt;
+      &lt;td&gt;Table Cell
+        &lt;p&gt;First Paragraph&lt;/p&gt;
+        &lt;p&gt;Second Paragraph&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
                     <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.highlight-message--light</h2>
+                      <h2 class="comp-lib-heading-2">.table--light-header</h2>
                       <div class="comp-lib-description">
-                        A light highlight
+                        A table with a light header
                       </div>
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="highlight-message highlight-message--light">
-  <p>An example paragraph for the highlight message content. </p>
-</div>
+                        <table class="table--light-header">
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;highlight-message highlight-message--light&quot;&gt;
-  &lt;p&gt;An example paragraph for the highlight message content. &lt;/p&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table class=&quot;table--light-header&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;First Table Heading&lt;/th&gt;
+      &lt;th&gt;Second Table Heading&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table Cell&lt;/td&gt;
+      &lt;td&gt;Table Cell
+        &lt;p&gt;First Paragraph&lt;/p&gt;
+        &lt;p&gt;Second Paragraph&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                      </div>
+                    </div>
+                    <div class="comp-lib-pattern-example">
+                      <h2 class="comp-lib-heading-2">.table--heavy-footer</h2>
+                      <div class="comp-lib-description">
+                        A table with a heavy footer
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <table class="table--heavy-footer">
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table class=&quot;table--heavy-footer&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;First Table Heading&lt;/th&gt;
+      &lt;th&gt;Second Table Heading&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table Cell&lt;/td&gt;
+      &lt;td&gt;Table Cell
+        &lt;p&gt;First Paragraph&lt;/p&gt;
+        &lt;p&gt;Second Paragraph&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                      </div>
+                    </div>
+                    <div class="comp-lib-pattern-example">
+                      <h2 class="comp-lib-heading-2">.table--col-one-third</h2>
+                      <div class="comp-lib-description">
+                        A one third column table
+                      </div>
+                      <div class="comp-lib-pattern-component comp-lib-clearfix">
+                        <table class="table--col-one-third">
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+                      </div>
+                      <div class="comp-lib-code-example">
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table class=&quot;table--col-one-third&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;First Table Heading&lt;/th&gt;
+      &lt;th&gt;Second Table Heading&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table Cell&lt;/td&gt;
+      &lt;td&gt;Table Cell
+        &lt;p&gt;First Paragraph&lt;/p&gt;
+        &lt;p&gt;Second Paragraph&lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
                   </div>
@@ -739,9 +971,9 @@
                   </section>
 
 
-                  <section id="kssref-notification-highlight-dark">
+                  <section id="kssref-table-row-bold">
                 <div>
-                  <h2><a href="#kssref-notification-highlight-dark" class="comp-lib-menu-link">Highlight Dark</a></h2>
+                  <h2><a href="#kssref-table-row-bold" class="comp-lib-menu-link">Row Bold</a></h2>
 
                   <div class="comp-lib-description
                               comp-lib-pattern-markdown
@@ -751,10 +983,7 @@
                       
                       
                     </h2>
-                    <p>A highlight is used when you wish to highlight content to a user.</p>
-<blockquote>
-<p>The dark highlight has differing markup to <code>.highlight</code>. This is why this currently has a separate markup example.</p>
-</blockquote>
+                    <p>A row of cells in a table with a larger <code>font-weight</code></p>
 
                   </div>
                 </div>
@@ -763,16 +992,20 @@
                   <div>
                     <div class="comp-lib-pattern-example">
                       <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="highlight-message highlight-message--dark">
-  <p>Example highlight text</p>
-  <p class="highlight-message--dark-text">Example dark highlight text</p>
-</div>
+                        <table>
+  <tr class="table__row--bold">
+    <td>First Table Cell</td>
+    <td>Second Table Cell</td>
+  </tr>
+</table>
                       </div>
                       <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;highlight-message highlight-message--dark&quot;&gt;
-  &lt;p&gt;Example highlight text&lt;/p&gt;
-  &lt;p class=&quot;highlight-message--dark-text&quot;&gt;Example dark highlight text&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table&gt;
+  &lt;tr class=&quot;table__row--bold&quot;&gt;
+    &lt;td&gt;First Table Cell&lt;/td&gt;
+    &lt;td&gt;Second Table Cell&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
                       </div>
                     </div>
 

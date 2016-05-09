@@ -5139,17 +5139,44 @@ ul li, nav ul li {
   margin-bottom: 15px;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/*
+Table
+
+To display a table of data
+
+Markup:
+<table>
+  <caption>Table Caption</caption>
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Styleguide Table
+*/
+/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 table {
-  margin-bottom: 30px;
+  margin-bottom: 1.57895em;
 }
 
-/* line 5, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 table td.right-aligned, table th.right-aligned {
   text-align: right;
 }
 
-/* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 table p {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -5159,46 +5186,74 @@ table p {
 }
 
 @media (max-width: 640px) {
-  /* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+  /* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
   table p {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 15, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 table td p:first-child {
   margin-top: 0;
 }
 
-/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 table td p:last-child {
   margin-bottom: 0;
 }
 
-/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-table caption,
-table .highlight td {
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+table caption {
   font-weight: 700;
 }
 
-/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-table details {
-  margin: 0;
-}
+/*
+Modifiers
 
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+Various modifiers available for tables.
+
+Markup:
+<table class="{{modifier_class}}">
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+.table--borderless    - Table without borders
+.table--font-reset    - Reset table cells font size to base
+.table--spaced-top    - For tables that need to have a larger margin-top
+.table--top-border    - A table with a top border
+.table--light-header  - A table with a light header
+.table--heavy-footer  - A table with a heavy footer
+.table--col-one-third - A one third column table
+
+Styleguide Table.Modifiers
+*/
+/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--borderless td, .table--borderless th {
   border: none;
-  padding: 0.5em 0;
+  padding: 0.42105em 0;
 }
 
-/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--borderless th {
   border-bottom: 1px solid #a1acb2;
 }
 
-/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--font-reset td {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -5208,60 +5263,176 @@ table details {
 }
 
 @media (max-width: 640px) {
-  /* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+  /* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
   .table--font-reset td {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--spaced-top {
   margin-top: 1.57895em;
 }
 
-/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.table-cell--light {
-  background-color: #f8f8f8;
-}
-
-/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--top-border {
   border-top: 1px solid #bfc1c3;
 }
 
-/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.table-cell--padded {
-  padding: 20px 12px 20px 12px;
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+.table--light-header {
+  border-bottom: 2px solid #bfc1c3;
 }
 
-/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.table-cell--indented {
-  padding-left: 33px;
+/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+.table--light-header thead {
+  border-bottom: 3px solid #005ea5;
 }
 
-/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.table__row--bold td, .table__row--bold th {
-  font-weight: 700;
+/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+.table--light-header th {
+  color: #6f777b;
+  font-weight: 400;
 }
 
-/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.table__row--bold a {
-  color: inherit;
+/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+.table--heavy-footer {
+  border-bottom: 3px solid #a1acb2;
 }
 
-/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--col-one-third {
   width: 38%;
 }
 
-/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/*
+Highlight
+
+A header for a group of cells in a table that is highlighted
+
+Markup:
+<table>
+  <tr>
+    <th class="table__header--highlight">First Table Heading</th>
+    <th>Second Table Heading</th>
+  </tr>
+</table>
+
+Styleguide Table.Heading Highlight
+*/
+/* line 159, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+.table__header--highlight {
+  border-bottom: 0.10526em solid #005ea5;
+}
+
+/*
+Cell
+
+A cell in a table containing data
+
+Markup:
+<table>
+  <tr>
+    <td class="{{modifier_class}}">First Table Cell</td>
+    <td>Second Table Cell</td>
+    <td>Third Table Cell</td>
+  </tr>
+</table>
+
+.table-cell--light    - A cell with a light background colour
+.table-cell--padded   - A cell with extra padding
+.table-cell--indented - An indented table cell
+
+Styleguide Table.Cell
+*/
+/* line 185, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+.table-cell--light {
+  background-color: #f8f8f8;
+}
+
+/* line 189, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+.table-cell--padded {
+  padding: 1.05263em 0.63158em 1.05263em 0.63158em;
+}
+
+/* line 193, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+.table-cell--indented {
+  padding-left: 1.73684em;
+}
+
+/*
+Cell Highlight
+
+Highlighted cells
+
+Markup:
+<table>
+  <tr class="highlight">
+    <td>First Table Cell</td>
+    <td>Second Table Cell</td>
+    <td>Third Table Cell</td>
+  </tr>
+</table>
+
+Styleguide Table.Cell Highlight
+*/
+/* line 216, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+table .highlight td {
+  font-weight: 700;
+}
+
+/*
+Row Bold
+
+A row of cells in a table with a larger `font-weight`
+
+Markup:
+<table>
+  <tr class="table__row--bold">
+    <td>First Table Cell</td>
+    <td>Second Table Cell</td>
+  </tr>
+</table>
+
+Styleguide Table.Row Bold
+*/
+/* line 239, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+.table__row--bold td, .table__row--bold th {
+  font-weight: 700;
+}
+
+/* line 243, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+.table__row--bold a {
+  color: inherit;
+}
+
+/*
+Marker
+
+A Marker for a table cell
+
+Markup:
+<table>
+  <tr>
+    <td class="marker-column">
+      <span class="marker-column__marker">Marker</span>
+    </td>
+    <td>First Table Cell</td>
+    <td>Second Example Table Cell</td>
+  </tr>
+</table>
+
+
+Styleguide Table.Marker
+*/
+/* line 269, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .marker-column {
   padding: 0;
   vertical-align: middle;
 }
 
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 274, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .marker-column__marker {
   background-color: #b10e1e;
   display: block;
@@ -5271,42 +5442,6 @@ table details {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-}
-
-/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.table--light-header {
-  border-bottom: 2px solid #bfc1c3;
-}
-
-/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.table--light-header thead {
-  border-bottom: 3px solid #005ea5;
-}
-
-/* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.table--light-header th {
-  color: #6f777b;
-  font-weight: 400;
-}
-
-/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.table__header--highlight {
-  border-bottom: 0.10526em solid #005ea5;
-}
-
-/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.table--heavy-footer {
-  border-bottom: 3px solid #a1acb2;
-}
-
-/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.controlpanel {
-  margin-bottom: 1.57895em;
-}
-
-/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.js-datatable-wrapper .controlpanel {
-  float: left;
 }
 
 /*------------------------------------*    $HELPER
@@ -6083,7 +6218,7 @@ Styleguide Details
 */
 /* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 details {
-  margin: 15px 0;
+  margin: 0.78947em 0;
 }
 
 /* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
@@ -6134,9 +6269,42 @@ Markup:
 
 Styleguide Details.alternative
 */
-/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .details .details__inner {
-  padding-bottom: 2em;
+  padding-bottom: 1.68421em;
+}
+
+/*
+In Table Row
+
+Details placed inside of a table row.
+
+Markup:
+<table>
+  <tr>
+    <td>
+    <details>
+      <summary class="summary">Opening Times</summary>
+      <div class="details__inner">
+        <h3>The office is open:</h3>
+        <p>9am - 5pm Monday to friday.</p>
+        <h3>The office is closed:</h3>
+        <ul>
+          <li>On Saturdays and Sundays.<li>
+          <li>On Bank Holidays and National holidays.<li>
+        </ul>
+        <a href="">More Details</a>
+      </div>
+    </details>
+    </td>
+  </tr>
+</table>
+
+Styleguide Details.Table
+*/
+/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+table details {
+  margin: 0;
 }
 
 /*
@@ -6144,22 +6312,22 @@ NON-COMP-LIB
 Details fall back work. When details is not supported in the browser then apply the following to the polyfill
 implementation
 */
-/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details summary .arrow-closed {
   display: inline-block;
 }
 
-/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details summary .arrow-open {
   display: none;
 }
 
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details.open summary .arrow-closed {
   display: none;
 }
 
-/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+/* line 137, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details.open summary .arrow-open {
   display: inline-block;
 }
@@ -9655,6 +9823,16 @@ Styleguide Side Navigation.overlapping
 /* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
 .dataTable tbody .status--confirm-success {
   background-color: #e9f5f4;
+}
+
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+.controlpanel {
+  margin-bottom: 1.57895em;
+}
+
+/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+.js-datatable-wrapper .controlpanel {
+  float: left;
 }
 
 /* line 2, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
