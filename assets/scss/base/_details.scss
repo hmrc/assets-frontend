@@ -25,7 +25,7 @@ Styleguide Details
 */
 
 details {
-  margin: 15px 0;
+  margin: em(15) 0;
 
   .summary {
     text-decoration: underline;
@@ -44,6 +44,7 @@ details {
     }
   }
 }
+
 
 /*
 Alternative
@@ -71,7 +72,43 @@ Styleguide Details.alternative
 
 .details {
   .details__inner {
-    padding-bottom: 2em;
+    padding-bottom: em(32);
+  }
+}
+
+
+/*
+In Table Row
+
+Details placed inside of a table row.
+
+Markup:
+<table>
+  <tr>
+    <td>
+    <details>
+      <summary class="summary">Opening Times</summary>
+      <div class="details__inner">
+        <h3>The office is open:</h3>
+        <p>9am - 5pm Monday to friday.</p>
+        <h3>The office is closed:</h3>
+        <ul>
+          <li>On Saturdays and Sundays.<li>
+          <li>On Bank Holidays and National holidays.<li>
+        </ul>
+        <a href="">More Details</a>
+      </div>
+    </details>
+    </td>
+  </tr>
+</table>
+
+Styleguide Details.Table
+*/
+
+table {
+  details {
+    margin: 0;
   }
 }
 
