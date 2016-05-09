@@ -1,5 +1,33 @@
+/*
+Table
+
+To display a table of data
+
+Markup:
+<table>
+  <caption>Table Caption</caption>
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Styleguide Table
+*/
+
 table {
-  margin-bottom: 30px;
+  margin-bottom: em(30);
 
   td, th {
     &.right-aligned {
@@ -21,21 +49,51 @@ table {
     }
   }
 
-  caption,
-  .highlight td {
+  caption {
     font-weight: 700;
-  }
-
-  details {
-    margin: 0;
   }
 }
 
-//TODO refactor out when messages used by yta/sa designs are finalised
+
+/*
+Modifiers
+
+Various modifiers available for tables.
+
+Markup:
+<table class="{{modifier_class}}">
+  <thead>
+    <tr>
+      <th>First Table Heading</th>
+      <th>Second Table Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table Cell</td>
+      <td>Table Cell
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+.table--borderless    - Table without borders
+.table--font-reset    - Reset table cells font size to base
+.table--spaced-top    - For tables that need to have a larger margin-top
+.table--top-border    - A table with a top border
+.table--light-header  - A table with a light header
+.table--heavy-footer  - A table with a heavy footer
+.table--col-one-third - A one third column table
+
+Styleguide Table.Modifiers
+*/
+
 .table--borderless {
   td, th {
     border: none;
-    padding: 0.5em 0;
+    padding: em(8) 0;
   }
 
   th {
@@ -45,11 +103,9 @@ table {
 
 // resets table cell's font size to base
 .table--font-reset {
-
   td {
     @include core-19;
   }
-
 }
 
 // for tables that need to be spaced from above element
@@ -57,23 +113,128 @@ table {
   margin-top: em(30);
 }
 
-.table-cell--light {
-  background-color: $highlight-colour;
-}
-
 .table--top-border {
   border-top: 1px solid $border-colour;
 }
 
+.table--light-header {
+  border-bottom: 2px solid $light-grey;
+
+  thead {
+    border-bottom: 3px solid $govuk-blue;
+  }
+
+  th {
+    color: $grey-1;
+    font-weight: 400;
+  }
+}
+
+.table--heavy-footer {
+  border-bottom: 3px solid $grey-6;
+}
+
+// POTENTIALLY NOT IN USE
+.table--col-one-third {
+  width: 38%;
+}
+
+
+/*
+Highlight
+
+A header for a group of cells in a table that is highlighted
+
+Markup:
+<table>
+  <tr>
+    <th class="table__header--highlight">First Table Heading</th>
+    <th>Second Table Heading</th>
+  </tr>
+</table>
+
+Styleguide Table.Heading Highlight
+*/
+
+.table__header--highlight {
+  border-bottom: em(2) solid $govuk-blue-colour;
+}
+
+
+/*
+Cell
+
+A cell in a table containing data
+
+Markup:
+<table>
+  <tr>
+    <td class="{{modifier_class}}">First Table Cell</td>
+    <td>Second Table Cell</td>
+    <td>Third Table Cell</td>
+  </tr>
+</table>
+
+.table-cell--light    - A cell with a light background colour
+.table-cell--padded   - A cell with extra padding
+.table-cell--indented - An indented table cell
+
+Styleguide Table.Cell
+*/
+
+.table-cell--light {
+  background-color: $highlight-colour;
+}
+
 .table-cell--padded {
-  padding: 20px 12px 20px 12px;
+  padding: em(20) em(12) em(20) em(12);
 }
 
 .table-cell--indented {
-  padding-left: 33px;
+  padding-left: em(33);
 }
 
-//TODO refactor out when messages used by yta/sa designs are finalised
+
+/*
+Cell Highlight
+
+Highlighted cells
+
+Markup:
+<table>
+  <tr class="highlight">
+    <td>First Table Cell</td>
+    <td>Second Table Cell</td>
+    <td>Third Table Cell</td>
+  </tr>
+</table>
+
+Styleguide Table.Cell Highlight
+*/
+
+table {
+  .highlight td {
+    font-weight: 700;
+  }
+}
+
+
+/*
+Row Bold
+
+A row of cells in a table with a larger `font-weight`
+
+Markup:
+<table>
+  <tr class="table__row--bold">
+    <td>First Table Cell</td>
+    <td>Second Table Cell</td>
+  </tr>
+</table>
+
+Styleguide Table.Row Bold
+*/
+
 .table__row--bold {
   td, th {
     font-weight: 700;
@@ -84,9 +245,26 @@ table {
   }
 }
 
-.table--col-one-third {
-  width: 38%;
-}
+
+/*
+Marker
+
+A Marker for a table cell
+
+Markup:
+<table>
+  <tr>
+    <td class="marker-column">
+      <span class="marker-column__marker">Marker</span>
+    </td>
+    <td>First Table Cell</td>
+    <td>Second Example Table Cell</td>
+  </tr>
+</table>
+
+
+Styleguide Table.Marker
+*/
 
 .marker-column {
   padding: 0;
@@ -105,33 +283,3 @@ table {
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-
-.table--light-header {
-  border-bottom: 2px solid $light-grey;
-
-  thead {
-    border-bottom: 3px solid $govuk-blue;
-  }
-
-  th {
-    color: $grey-1;
-    font-weight: 400;
-  }
-}
-
-.table__header--highlight {
-    border-bottom: em(2) solid $govuk-blue-colour;
-}
-
-.table--heavy-footer{
-  border-bottom: 3px solid $grey-6;
-}
-
-.controlpanel {
-  margin-bottom: em(30);
-
-  .js-datatable-wrapper & {
-    float: left;
-  }
-}
-
