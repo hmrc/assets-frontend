@@ -4,8 +4,8 @@ Toggle Button
 Markup:
 <span class="toggle">
   <span class="error-notification inline-block toggle__error">Error state</span>
-  <a href="#" class="toggle_button">link</a>
-  <button class="toggle_button">link</button>
+  <a href="#" class="toggle__button">link</a>
+  <button class="toggle__button">link</button>
   <span class="toggle--on">on</span>
   <span class="toggle--off">off</span>
   <span class="toggle--disabled">disabled</span>
@@ -19,7 +19,7 @@ Styleguide Toggle Button
   white-space: nowrap;
 }
 
-.toggle_button {
+.toggle__button {
   background-color: transparent;
   box-shadow: none;
   text-decoration: underline;
@@ -63,7 +63,7 @@ Styleguide Toggle Button
   color: #6f777b;
 }
 
-.toggle_button,
+.toggle__button,
 .toggle--on,
 .toggle--off,
 .toggle--disabled {
