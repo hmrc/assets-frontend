@@ -269,208 +269,208 @@
               </ul>
             </nav>
           </aside>
-
-          <article class="comp-lib-main">
-                  <div id="kssref-errors">
-                <div>
-                  <h1><a href="#kssref-errors" class="comp-lib-menu-link">Errors</a></h1>
-
-                </div>
-
-                <!-- pattern examples -->
+          <div id="content">
+            <article class="comp-lib-main">
+                    <div id="kssref-errors">
+                  <div>
+                    <h1><a href="#kssref-errors" class="comp-lib-menu-link">Errors</a></h1>
 
                   </div>
 
+                  <!-- pattern examples -->
 
-                  <section id="kssref-errors-form-field">
-                <div>
-                  <h2><a href="#kssref-errors-form-field" class="comp-lib-menu-link">Form Field</a></h2>
+                    </div>
 
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <h2 class="comp-lib-warning">
-                      
-                      
-                    </h2>
-                    <p>The form field in error state is demonstrated by using the <code>.form-field--error</code> selector. Styles are also provide for
+
+                    <section id="kssref-errors-form-field">
+                  <div>
+                    <h2><a href="#kssref-errors-form-field" class="comp-lib-menu-link">Form Field</a></h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>The form field in error state is demonstrated by using the <code>.form-field--error</code> selector. Styles are also provide for
 <code>.error-notification</code> and <code>.error-field</code> to highlight the communication of errors to the user.</p>
 
+                    </div>
                   </div>
-                </div>
 
-                <!-- pattern examples -->
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <fieldset>
+  <legend>Please enter your full name</legend>
+  <div class="form-field form-field--error [modifier class]">
+    <span class="error-notification">Please enter your first name</span>
+    <label>
+        Full Name
+        <input type="text"
+               class="input--medium error-field"/>
+    </label>
+  </div>
+  <div class="form-field form-field--error [modifier class]">
+    <span class="error-notification">Please enter your surname</span>
+    <label>
+        Full Name
+        <input type="text"
+               class="input--medium error-field"/>
+    </label>
+  </div>
+</fieldset>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset&gt;
+  &lt;legend&gt;Please enter your full name&lt;/legend&gt;
+  &lt;div class=&quot;form-field form-field--error [modifier class]&quot;&gt;
+    &lt;span class=&quot;error-notification&quot;&gt;Please enter your first name&lt;/span&gt;
+    &lt;label&gt;
+        Full Name
+        &lt;input type=&quot;text&quot;
+               class=&quot;input--medium error-field&quot;/&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-field form-field--error [modifier class]&quot;&gt;
+    &lt;span class=&quot;error-notification&quot;&gt;Please enter your surname&lt;/span&gt;
+    &lt;label&gt;
+        Full Name
+        &lt;input type=&quot;text&quot;
+               class=&quot;input--medium error-field&quot;/&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+                        </div>
+                      </div>
+
+                      <div class="comp-lib-pattern-example">
+                        <h2 class="comp-lib-heading-2">.numbered</h2>
+                        <div class="comp-lib-description">
+                          fieldset with a different margin
+                        </div>
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <fieldset>
+  <legend>Please enter your full name</legend>
+  <div class="form-field form-field--error numbered">
+    <span class="error-notification">Please enter your first name</span>
+    <label>
+        Full Name
+        <input type="text"
+               class="input--medium error-field"/>
+    </label>
+  </div>
+  <div class="form-field form-field--error numbered">
+    <span class="error-notification">Please enter your surname</span>
+    <label>
+        Full Name
+        <input type="text"
+               class="input--medium error-field"/>
+    </label>
+  </div>
+</fieldset>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset&gt;
+  &lt;legend&gt;Please enter your full name&lt;/legend&gt;
+  &lt;div class=&quot;form-field form-field--error numbered&quot;&gt;
+    &lt;span class=&quot;error-notification&quot;&gt;Please enter your first name&lt;/span&gt;
+    &lt;label&gt;
+        Full Name
+        &lt;input type=&quot;text&quot;
+               class=&quot;input--medium error-field&quot;/&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-field form-field--error numbered&quot;&gt;
+    &lt;span class=&quot;error-notification&quot;&gt;Please enter your surname&lt;/span&gt;
+    &lt;label&gt;
+        Full Name
+        &lt;input type=&quot;text&quot;
+               class=&quot;input--medium error-field&quot;/&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+                        </div>
+                      </div>
+                      <div class="comp-lib-pattern-example">
+                        <h2 class="comp-lib-heading-2">.fields-aligned</h2>
+                        <div class="comp-lib-description">
+                          flush aligned fieldset
+                        </div>
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <fieldset>
+  <legend>Please enter your full name</legend>
+  <div class="form-field form-field--error fields-aligned">
+    <span class="error-notification">Please enter your first name</span>
+    <label>
+        Full Name
+        <input type="text"
+               class="input--medium error-field"/>
+    </label>
+  </div>
+  <div class="form-field form-field--error fields-aligned">
+    <span class="error-notification">Please enter your surname</span>
+    <label>
+        Full Name
+        <input type="text"
+               class="input--medium error-field"/>
+    </label>
+  </div>
+</fieldset>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset&gt;
+  &lt;legend&gt;Please enter your full name&lt;/legend&gt;
+  &lt;div class=&quot;form-field form-field--error fields-aligned&quot;&gt;
+    &lt;span class=&quot;error-notification&quot;&gt;Please enter your first name&lt;/span&gt;
+    &lt;label&gt;
+        Full Name
+        &lt;input type=&quot;text&quot;
+               class=&quot;input--medium error-field&quot;/&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-field form-field--error fields-aligned&quot;&gt;
+    &lt;span class=&quot;error-notification&quot;&gt;Please enter your surname&lt;/span&gt;
+    &lt;label&gt;
+        Full Name
+        &lt;input type=&quot;text&quot;
+               class=&quot;input--medium error-field&quot;/&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+
+                    </section>
+
+
+                    <section id="kssref-errors-form-field-group">
                   <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <fieldset>
-  <legend>Please enter your full name</legend>
-  <div class="form-field form-field--error [modifier class]">
-    <span class="error-notification">Please enter your first name</span>
-    <label>
-        Full Name
-        <input type="text"
-               class="input--medium error-field"/>
-    </label>
-  </div>
-  <div class="form-field form-field--error [modifier class]">
-    <span class="error-notification">Please enter your surname</span>
-    <label>
-        Full Name
-        <input type="text"
-               class="input--medium error-field"/>
-    </label>
-  </div>
-</fieldset>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset&gt;
-  &lt;legend&gt;Please enter your full name&lt;/legend&gt;
-  &lt;div class=&quot;form-field form-field--error [modifier class]&quot;&gt;
-    &lt;span class=&quot;error-notification&quot;&gt;Please enter your first name&lt;/span&gt;
-    &lt;label&gt;
-        Full Name
-        &lt;input type=&quot;text&quot;
-               class=&quot;input--medium error-field&quot;/&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;form-field form-field--error [modifier class]&quot;&gt;
-    &lt;span class=&quot;error-notification&quot;&gt;Please enter your surname&lt;/span&gt;
-    &lt;label&gt;
-        Full Name
-        &lt;input type=&quot;text&quot;
-               class=&quot;input--medium error-field&quot;/&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-&lt;/fieldset&gt;</code></pre>
-                      </div>
-                    </div>
+                    <h2><a href="#kssref-errors-form-field-group" class="comp-lib-menu-link">Form Field Group</a></h2>
 
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.numbered</h2>
-                      <div class="comp-lib-description">
-                        fieldset with a different margin
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <fieldset>
-  <legend>Please enter your full name</legend>
-  <div class="form-field form-field--error numbered">
-    <span class="error-notification">Please enter your first name</span>
-    <label>
-        Full Name
-        <input type="text"
-               class="input--medium error-field"/>
-    </label>
-  </div>
-  <div class="form-field form-field--error numbered">
-    <span class="error-notification">Please enter your surname</span>
-    <label>
-        Full Name
-        <input type="text"
-               class="input--medium error-field"/>
-    </label>
-  </div>
-</fieldset>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset&gt;
-  &lt;legend&gt;Please enter your full name&lt;/legend&gt;
-  &lt;div class=&quot;form-field form-field--error numbered&quot;&gt;
-    &lt;span class=&quot;error-notification&quot;&gt;Please enter your first name&lt;/span&gt;
-    &lt;label&gt;
-        Full Name
-        &lt;input type=&quot;text&quot;
-               class=&quot;input--medium error-field&quot;/&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;form-field form-field--error numbered&quot;&gt;
-    &lt;span class=&quot;error-notification&quot;&gt;Please enter your surname&lt;/span&gt;
-    &lt;label&gt;
-        Full Name
-        &lt;input type=&quot;text&quot;
-               class=&quot;input--medium error-field&quot;/&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-&lt;/fieldset&gt;</code></pre>
-                      </div>
-                    </div>
-                    <div class="comp-lib-pattern-example">
-                      <h2 class="comp-lib-heading-2">.fields-aligned</h2>
-                      <div class="comp-lib-description">
-                        flush aligned fieldset
-                      </div>
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <fieldset>
-  <legend>Please enter your full name</legend>
-  <div class="form-field form-field--error fields-aligned">
-    <span class="error-notification">Please enter your first name</span>
-    <label>
-        Full Name
-        <input type="text"
-               class="input--medium error-field"/>
-    </label>
-  </div>
-  <div class="form-field form-field--error fields-aligned">
-    <span class="error-notification">Please enter your surname</span>
-    <label>
-        Full Name
-        <input type="text"
-               class="input--medium error-field"/>
-    </label>
-  </div>
-</fieldset>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset&gt;
-  &lt;legend&gt;Please enter your full name&lt;/legend&gt;
-  &lt;div class=&quot;form-field form-field--error fields-aligned&quot;&gt;
-    &lt;span class=&quot;error-notification&quot;&gt;Please enter your first name&lt;/span&gt;
-    &lt;label&gt;
-        Full Name
-        &lt;input type=&quot;text&quot;
-               class=&quot;input--medium error-field&quot;/&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;form-field form-field--error fields-aligned&quot;&gt;
-    &lt;span class=&quot;error-notification&quot;&gt;Please enter your surname&lt;/span&gt;
-    &lt;label&gt;
-        Full Name
-        &lt;input type=&quot;text&quot;
-               class=&quot;input--medium error-field&quot;/&gt;
-    &lt;/label&gt;
-  &lt;/div&gt;
-&lt;/fieldset&gt;</code></pre>
-                      </div>
-                    </div>
-                  </div>
-
-                  </section>
-
-
-                  <section id="kssref-errors-form-field-group">
-                <div>
-                  <h2><a href="#kssref-errors-form-field-group" class="comp-lib-menu-link">Form Field Group</a></h2>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <h2 class="comp-lib-warning">
-                      
-                      
-                    </h2>
-                    <p>The form field group in error state is demonstrated by using the <code>.form-field-group--error</code> selector. Styles are also provide for
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>The form field group in error state is demonstrated by using the <code>.form-field-group--error</code> selector. Styles are also provide for
 <code>.error-notification</code> to highlight the communication of errors to the user.</p>
 
+                    </div>
                   </div>
-                </div>
 
-                <!-- pattern examples -->
-                  <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <fieldset class="form-field-group form-field-group--error">
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <fieldset class="form-field-group form-field-group--error">
   <legend>Please enter your full name</legend>
   <div class="form-field">
     <label>
@@ -489,9 +489,9 @@
     </label>
   </div>
 </fieldset>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;form-field-group form-field-group--error&quot;&gt;
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;fieldset class=&quot;form-field-group form-field-group--error&quot;&gt;
   &lt;legend&gt;Please enter your full name&lt;/legend&gt;
   &lt;div class=&quot;form-field&quot;&gt;
     &lt;label&gt;
@@ -510,69 +510,69 @@
     &lt;/label&gt;
   &lt;/div&gt;
 &lt;/fieldset&gt;</code></pre>
+                        </div>
                       </div>
+
                     </div>
 
-                  </div>
-
-                  </section>
+                    </section>
 
 
-                  <section id="kssref-errors-overview-heading">
-                <div>
-                  <h2><a href="#kssref-errors-overview-heading" class="comp-lib-menu-link">Overview Heading</a></h2>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <h2 class="comp-lib-warning">
-                      
-                      
-                    </h2>
-                    <p>Used as a heading in an error overview</p>
-
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
+                    <section id="kssref-errors-overview-heading">
                   <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <h1 class="error-overview__heading">Example heading level 1 error</h1>
+                    <h2><a href="#kssref-errors-overview-heading" class="comp-lib-menu-link">Overview Heading</a></h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>Used as a heading in an error overview</p>
+
+                    </div>
+                  </div>
+
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <h1 class="error-overview__heading">Example heading level 1 error</h1>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;h1 class=&quot;error-overview__heading&quot;&gt;Example heading level 1 error&lt;/h1&gt;</code></pre>
+                        </div>
                       </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;h1 class=&quot;error-overview__heading&quot;&gt;Example heading level 1 error&lt;/h1&gt;</code></pre>
-                      </div>
+
                     </div>
 
-                  </div>
-
-                  </section>
+                    </section>
 
 
-                  <section id="kssref-errors-summary">
-                <div>
-                  <h2><a href="#kssref-errors-summary" class="comp-lib-menu-link">Summary</a></h2>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <h2 class="comp-lib-warning">
-                      
-                      
-                    </h2>
-                    <p>Errors are used to display information to the user about incorrect entries within a form.</p>
-
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
+                    <section id="kssref-errors-summary">
                   <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                        <div class="flash error-summary error-summary--show"
+                    <h2><a href="#kssref-errors-summary" class="comp-lib-menu-link">Summary</a></h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>Errors are used to display information to the user about incorrect entries within a form.</p>
+
+                    </div>
+                  </div>
+
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <div class="flash error-summary error-summary--show"
      id="error-summary-display"
      role="alert"
      aria-labelledby="error-summary-heading"
@@ -583,9 +583,9 @@
       <li role="tooltip"><a href="">Please enter your surname</a></li>
     </ul>
 </div>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;flash error-summary error-summary--show&quot;
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;flash error-summary error-summary--show&quot;
      id=&quot;error-summary-display&quot;
      role=&quot;alert&quot;
      aria-labelledby=&quot;error-summary-heading&quot;
@@ -596,15 +596,16 @@
       &lt;li role=&quot;tooltip&quot;&gt;&lt;a href=&quot;&quot;&gt;Please enter your surname&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
+                        </div>
                       </div>
+
                     </div>
 
-                  </div>
-
-                  </section>
+                    </section>
 
 
-          </article>
+            </article>
+          </div>
         </div>
     </div>
   </main>

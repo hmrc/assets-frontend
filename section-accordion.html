@@ -263,21 +263,21 @@
               </ul>
             </nav>
           </aside>
+          <div id="content">
+            <article class="comp-lib-main">
+                    <div id="kssref-accordion">
+                  <div>
+                    <h1><a href="#kssref-accordion" class="comp-lib-menu-link">Accordion</a></h1>
 
-          <article class="comp-lib-main">
-                  <div id="kssref-accordion">
-                <div>
-                  <h1><a href="#kssref-accordion" class="comp-lib-menu-link">Accordion</a></h1>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <h2 class="comp-lib-warning">
-                      
-                      
-                    </h2>
-                    <p>Expand/collapse content with optional row/column structure.</p>
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>Expand/collapse content with optional row/column structure.</p>
 <p><strong>TODO:</strong> The BEM for this should be reviewed and made more concise. There&#39;s currently triple child jazz going on (e.g. <code>.accordion__body__row__right</code>).</p>
 <p>Mandatory JS hooks:</p>
 <ul>
@@ -311,36 +311,36 @@
 <li><code>accordion__body__row__right</code> - right column of body row</li>
 </ul>
 
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
-
+                    </div>
                   </div>
 
+                  <!-- pattern examples -->
 
-                  <section id="kssref-accordion-full">
-                <div>
-                  <h2><a href="#kssref-accordion-full" class="comp-lib-menu-link">Full Accordion</a></h2>
+                    </div>
 
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <h2 class="comp-lib-warning">
-                      
-                      
-                    </h2>
-                    <p>Using all optional classes.</p>
 
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
+                    <section id="kssref-accordion-full">
                   <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <div id="accordionId"
+                    <h2><a href="#kssref-accordion-full" class="comp-lib-menu-link">Full Accordion</a></h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>Using all optional classes.</p>
+
+                    </div>
+                  </div>
+
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                            <div id="accordionId"
        data-accordion
        data-accordion-animate
        data-accordion-set-hash
@@ -373,9 +373,9 @@
       </ul>
     </div>
   </div>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">  &lt;div id=&quot;accordionId&quot;
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">  &lt;div id=&quot;accordionId&quot;
        data-accordion
        data-accordion-animate
        data-accordion-set-hash
@@ -408,36 +408,36 @@
       &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;</code></pre>
+                        </div>
                       </div>
+
                     </div>
 
-                  </div>
-
-                  </section>
+                    </section>
 
 
-                  <section id="kssref-accordion-simple">
-                <div>
-                  <h2><a href="#kssref-accordion-simple" class="comp-lib-menu-link">Simple Accordion</a></h2>
-
-                  <div class="comp-lib-description
-                              comp-lib-pattern-markdown
-                              
-                              ">
-                    <h2 class="comp-lib-warning">
-                      
-                      
-                    </h2>
-                    <p>Using only mandatory JS hooks and classes.</p>
-
-                  </div>
-                </div>
-
-                <!-- pattern examples -->
+                    <section id="kssref-accordion-simple">
                   <div>
-                    <div class="comp-lib-pattern-example">
-                      <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <div data-accordion
+                    <h2><a href="#kssref-accordion-simple" class="comp-lib-menu-link">Simple Accordion</a></h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>Using only mandatory JS hooks and classes.</p>
+
+                    </div>
+                  </div>
+
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                            <div data-accordion
        data-accordion-animate
        aria-expanded="false"
        class="accordion">
@@ -455,9 +455,9 @@
       <p>Accordion body</p>
     </div>
   </div>
-                      </div>
-                      <div class="comp-lib-code-example">
-                        <pre class="comp-lib-pre"><code class="comp-lib-code html">  &lt;div data-accordion
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">  &lt;div data-accordion
        data-accordion-animate
        aria-expanded=&quot;false&quot;
        class=&quot;accordion&quot;&gt;
@@ -475,15 +475,16 @@
       &lt;p&gt;Accordion body&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;</code></pre>
+                        </div>
                       </div>
+
                     </div>
 
-                  </div>
-
-                  </section>
+                    </section>
 
 
-          </article>
+            </article>
+          </div>
         </div>
     </div>
   </main>

@@ -6192,6 +6192,27 @@ Styleguide Icons.Verify
 }
 
 /*
+Print
+
+Icon used for 'print this page' links.
+
+Markup:
+<span class="print"></span>
+
+Styleguide Icons.Print
+*/
+/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+.print {
+  width: 25px;
+  height: 25px;
+  margin-right: 0.52632em;
+  display: inline-block;
+  vertical-align: bottom;
+  background-image: url("../images/icon_printer.svg");
+  background-size: 100%;
+}
+
+/*
 Details
 
 The HTML Details Element `<details>` is used as a widget the user can retrieve additional information.
@@ -7787,7 +7808,17 @@ Styleguide Header.Transaction
   text-align: center;
 }
 
-/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+@media print {
+  /* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  .transaction-banner--complete {
+    background-color: #fff;
+    color: #0b0c0c;
+    text-align: left;
+    padding: 0;
+  }
+}
+
+/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .transaction-banner__heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -7799,7 +7830,7 @@ Styleguide Header.Transaction
 }
 
 @media (max-width: 640px) {
-  /* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  /* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
   .transaction-banner__heading {
     font-size: 24px;
     line-height: 1.04167;
