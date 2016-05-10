@@ -20,3 +20,23 @@
      data-text-hide="Hide"
      data-accessible-text="accessible text"><span data-toggle-text>Show</span> <span class="visuallyhidden">accessible text</span></a>
 </div>
+<div id="fixture-three" class="js-mask-container" data-mask-timer="0.145">
+  <span>
+    <span class="js-visible js-mask-secret qa-mask">*******************</span>
+    <span class="js-hidden js-mask-revealed qa-secret">aDifferentSecret</span>
+  </span>
+  <a href="#"
+     class="js-visible js-mask-control qa-mask-control"
+     data-text-show="Show"
+     data-text-hide="Hide"
+     data-mask-toggle-target="qa-mask-target"
+     data-accessible-text="accessible text"><span data-toggle-text>Show</span> <span class="visuallyhidden">accessible text</span></a>
+  <form method="GET" class="js-mask-form js-hidden qa-mask-target">
+    <div class="form-field soft--right">
+      <label class="label--full-length bold">Enter your password</label>
+      <p class="error-notification qa-error-message" data-error-message-placeholder></p>
+      <input class="form-input input--medium" name="password" type="password" />
+      <button type="submit" class="button button--padded float--right flush--right">Submit</button>
+    </div>
+  </form>
+</div>

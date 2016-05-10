@@ -75,6 +75,7 @@ var ajaxFormSubmit = {
       path = $form.data('formaction') || $form.attr('formaction') || $form.attr('action'),
       $scope = $form.data('container') || $this,
       serializedData = _this.serializeForAjax($scope),
+      headerData = _this.headerFromInput($form),
       handlers = {
         config: {
           name: $form.data('callback-name'),
@@ -93,15 +94,16 @@ var ajaxFormSubmit = {
     handlers.fn = _this.getCallback(handlers.config, serializedData);
 
     if (!!handlers) {
-      _this.doSubmit(path, serializedData, handlers.fn, $form);
+      _this.doSubmit(path, serializedData, headerData, handlers.fn, $form);
     }
   },
 
-  doSubmit: function(path, data, callback, $form) {
+  doSubmit: function(path, data, headers, callback, $form) {
     $.ajax({
       url: path,
       type: $form.attr('method') || 'POST',
       data: data,
+      headers: headers,
       beforeSend: function() {
         if (!!callback) {
           callback('beforeSend');
@@ -128,10 +130,26 @@ var ajaxFormSubmit = {
   serializeForAjax: function(formScope) {
     var ret = ['isajax=true'];
     $.each($(formScope).find(':input'), function() {
-      ret.push(encodeURIComponent(this.name) + '=' + encodeURIComponent($(this).val()));
+      var input = $(this);
+      if (!input.data('ajax-header')) {
+        ret.push(encodeURIComponent(this.name) + '=' + encodeURIComponent(input.val()));
+      }
     });
 
     return ret.join('&').replace(/%20/g, '+').replace(/=$/, '').replace(/&$/, '');
+  },
+
+  // read ajax header value from input fields
+  headerFromInput: function(formScope) {
+    var headers = {};
+    $.each($(formScope).find(':input'), function() {
+      var input = $(this);
+      if (input.data('ajax-header')) {
+        headers[this.name] = input.val();
+      }
+    });
+
+    return headers;
   },
 
   getCallback: function(config, data) {

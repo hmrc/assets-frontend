@@ -57,6 +57,56 @@ var ajaxCallbacks = {
       }
     }
   },
+  clientSecretResponse: {
+    callbacks: {
+      success: function(response, $element, data, helpers, targets, container, type, actions) {
+        var $containerElem = $element.parent('.js-mask-container').first();
+        var $control = $containerElem.find('.js-mask-control').first();
+        var $validationMessage = $containerElem.find('[data-error-message-placeholder]').first();
+
+        // trigger success event
+        $control.trigger('unmask', response.clientSecret);
+
+        // hide form
+        $element.toggleClass('js-visible').toggleClass('js-hidden');
+        
+        // remove any error state on the input
+        $element.find('.form-field').removeClass('form-field--error');
+        $validationMessage.empty();
+        
+        // reset form state
+        helpers.utilities.setFormState($element, false);
+        helpers.resetForms(helpers, type, data, container);
+        $element[0].reset();
+
+        // call super
+        helpers.base.success.apply(null, arguments);
+      },
+      error: function(response, $element, data, helpers, targets, container, type) {
+        var $containerElem = $element.parent('.js-mask-container').first();
+        var redirectUrl = $element.data('error-redirect-url');
+        var $validationMessage = $containerElem.find('[data-error-message-placeholder]').first();
+
+        // redirect to locked account url
+        if (response.responseJSON.code === 'LOCKED_ACCOUNT') {
+           window.location = redirectUrl;
+        }
+
+        // add error state
+        $element.find('.form-field').addClass('form-field--error');
+
+        // show error message
+        $validationMessage.text(response.responseJSON.message);
+        
+        // reset form state
+        helpers.utilities.setFormState($element, false);
+
+        // call super
+        helpers.base.error.apply(null, arguments);
+
+      }
+    }
+  },
   apiSubscribeResponse: {
     callbacks: {
       success: function(response, $element, data, helpers) {
@@ -66,8 +116,8 @@ var ajaxCallbacks = {
           $off = $parent.find('[data-toggle-subscribe="off"]'),
           formContext = $element.find('[name=context]').val(),
           formVersion = $element.find('[name=version]').val(),
-          isAdmin =  $element.is('[data-role-admin]'),
-          offUrl =  $element.data('off-url'),
+          isAdmin = $element.is('[data-role-admin]'),
+          offUrl = $element.data('off-url'),
           $offLink;
 
         // remove any error already displayed
