@@ -109,3 +109,26 @@ Styleguide Icons.Verify
     background-image: url("../images/govuk-verify-2x.png");
   }
 }
+
+
+/*
+Print
+
+Icon used for 'print this page' links.
+
+Markup:
+<span class="print"></span>
+
+Styleguide Icons.Print
+*/
+.print {
+  width: 25px;
+  height: 25px;
+  margin-right: em(10);
+  display: inline-block;
+  vertical-align: bottom;
+  background: {
+    image: url("../images/icon_printer.svg");
+    size: 100%;
+  }
+}

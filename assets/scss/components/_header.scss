@@ -81,6 +81,14 @@ Styleguide Header.Transaction
   margin-bottom: 30px;
   text-align: center;
 }
+@media print {
+  .transaction-banner--complete {
+      background-color: $white;
+      color: $black;
+      text-align: left;
+      padding: 0;
+  }
+}
 
 .transaction-banner__heading {
   @include bold-36();
