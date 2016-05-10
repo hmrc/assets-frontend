@@ -96,6 +96,9 @@ var ajaxCallbacks = {
           $parent.append($offDisabled);
         }
 
+        // update no of subscriptions
+        $('[data-api-subscriptions="'+ response.apiName +'"]').text(response.numberOfSubscriptionText);
+
         helpers.base.success.apply(null, arguments);
       },
       error: function(response, $element, data, helpers, targets, container, type) {
