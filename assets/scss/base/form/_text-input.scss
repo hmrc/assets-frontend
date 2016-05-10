@@ -8,12 +8,13 @@ Markup:
 
 .input--xxsmall      - An extra extra! small input
 .input--xsmall       - An extra small input
-.input--small        - An small input
-.input--normal       - An normal input
-.input--fullwidth    - An full width input
+.input--small        - A small input
+.input--normal       - A normal input
+.input--fullwidth    - A full width input
 .input--no-spinner   - An input without a spinner
 .input--cleared      - To make an input `{display: block}`
 .input--link         - To make an input appear like a link
+.input--left-padding - An input with left padding giving space for symbols
 
 Styleguide Text Input
 */
@@ -62,6 +63,10 @@ input {
   display: block;
 }
 
+.input--left-padding {
+  padding-left: em(19);
+}
+
 // POTENTIALLY-NOT-IN-USE
 .input--link {
   background: none;
@@ -102,5 +107,28 @@ Styleguide Text Input.number
 .input--no-spinner::-webkit-inner-spin-button,
 .input--no-spinner::-webkit-outer-spin-button {
   -webkit-appearance: none;
+}
+
+/*
+Currency
+
+Currency inputs add the **£** symbol visually within the input field
+
+Markup:
+<span class="input-currency">
+  <input name="example_monetary_input" type="number" class="input--small input--no-spinner input--left-padding" value="0.99" />
+</span>
+
+Styleguide Text Input.Currency
+*/
+.input-currency {
+  position: relative;
+
+  &::before {
+    content: '\00a3';
+    left: em(6.4);
+    position: absolute;
+    top: em(1.6);
+  }
 }
 
