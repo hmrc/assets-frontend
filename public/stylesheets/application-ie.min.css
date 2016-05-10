@@ -6490,16 +6490,17 @@ Markup:
 
 .input--xxsmall      - An extra extra! small input
 .input--xsmall       - An extra small input
-.input--small        - An small input
-.input--normal       - An normal input
-.input--fullwidth    - An full width input
+.input--small        - A small input
+.input--normal       - A normal input
+.input--fullwidth    - A full width input
 .input--no-spinner   - An input without a spinner
 .input--cleared      - To make an input `{display: block}`
 .input--link         - To make an input appear like a link
+.input--left-padding - An input with left padding giving space for symbols
 
 Styleguide Text Input
 */
-/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 input {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -6514,60 +6515,65 @@ input {
 }
 
 @media (max-width: 640px) {
-  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+  /* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
   input {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 input.text--right {
   padding: 0.1em 0.4em 0.1em 0;
 }
 
-/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 input:focus {
   outline: 3px solid #ffbf47;
 }
 
-/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--xxsmall {
   max-width: 2.2em;
 }
 
-/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--xsmall {
   max-width: 4em;
 }
 
-/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--small {
   max-width: 6em;
 }
 
-/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--normal {
   max-width: 8em;
 }
 
-/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--medium {
   width: 100%;
   width: 20em;
 }
 
-/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--fullwidth {
   width: 98.2%;
 }
 
-/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--cleared {
   display: block;
 }
 
 /* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input--left-padding {
+  padding-left: 1em;
+}
+
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--link {
   background: none;
   border: none;
@@ -6578,17 +6584,17 @@ input:focus {
   outline: none;
 }
 
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--link:hover, .input--link:active {
   color: #2e8aca;
 }
 
-/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--link:visited {
   color: #2e3191;
 }
 
-/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .form-date .form-group input {
   width: 100%;
 }
@@ -6603,15 +6609,40 @@ Markup:
 
 Styleguide Text Input.number
 */
-/* line 98, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--no-spinner {
   -moz-appearance: textfield;
 }
 
-/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--no-spinner::-webkit-inner-spin-button,
 .input--no-spinner::-webkit-outer-spin-button {
   -webkit-appearance: none;
+}
+
+/*
+Currency
+
+Currency inputs add the **£** symbol visually within the input field
+
+Markup:
+<span class="input-currency">
+  <input name="example_monetary_input" type="number" class="input--small input--no-spinner input--left-padding" value="0.99" />
+</span>
+
+Styleguide Text Input.Currency
+*/
+/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input-currency {
+  position: relative;
+}
+
+/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+.input-currency::before {
+  content: '\00a3';
+  left: 0.33684em;
+  position: absolute;
+  top: 0.08421em;
 }
 
 /*
