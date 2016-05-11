@@ -80,13 +80,12 @@ Styleguide Header.Transaction
   padding: 30px;
   margin-bottom: 30px;
   text-align: center;
-}
-@media print {
-  .transaction-banner--complete {
-      background-color: $white;
-      color: $black;
-      text-align: left;
-      padding: 0;
+
+  @media print {
+    background-color: $white;
+    color: $black;
+    text-align: left;
+    padding: 0;
   }
 }
 
