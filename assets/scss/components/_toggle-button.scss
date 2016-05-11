@@ -2,39 +2,45 @@
 Toggle Button
 
 Markup:
-<span class="toggle-buttons">
+<span class="toggle">
   <span class="error-notification inline-block toggle__error">Error state</span>
   <a href="#" class="toggle__button">link</a>
   <button class="toggle__button">link</button>
-  <span class="toggle--on">on</span>
-  <span class="toggle--off">off</span>
-  <span class="toggle--disabled">disabled</span>
+  <span class="toggle__button toggle__button--active">on</span>
+  <span class="toggle__button toggle__button--inactive">off</span>
+  <span class="toggle__button toggle__button--disabled">disabled</span>
 </span>
 
 Styleguide Toggle Button
 */
 
-.toggle-buttons {
+.toggle {
   display: inline-block;
   white-space: nowrap;
 }
 
 .toggle__button {
+  @include core-16;
+  padding: em(5) em(10) em(3) em(10);
   background-color: transparent;
-  box-shadow: none;
   text-decoration: underline;
+  display: inline-block;
+  line-height: 1.4em;
   color: $link-colour;
+  box-shadow: none;
   border: none;
   &:active {
     top: 0;
     box-shadow: none;
   }
+
   &:hover,
   &:focus {
     outline: none;
     color: $link-hover-colour;
     background-color: transparent;
   }
+
   &:disabled,
   [disabled] {
     background-color: transparent;
@@ -43,32 +49,41 @@ Styleguide Toggle Button
       background-color: transparent;
     }
   }
+
 }
 
 .toggle__error {
   padding: em(5) em(40) em(3) em(10);
 }
 
-.toggle--on {
+.toggle__button--active {
   background-color: $button-colour;
   color: $white;
   margin: 0 em(15) 0 0;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $button-colour;
+  }
 }
 
-.toggle--off {
+.toggle__button--inactive {
+  color: $text-colour;
   background-color: $light-grey;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $text-colour;
+    background-color: $light-grey;
+  }
 }
 
-.toggle--disabled {
+.toggle__button--disabled {
   color: #6f777b;
-}
-
-.toggle__button,
-.toggle--on,
-.toggle--off,
-.toggle--disabled {
-  padding: em(5) em(10) em(3) em(10);
-  display: inline-block;
-  line-height: 1.4em;
-  @include core-16;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: #6f777b;
+  }
 }
