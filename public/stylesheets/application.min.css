@@ -12279,31 +12279,115 @@ Styleguide Add remove
 Toggle Button
 
 Markup:
-<span class="toggle-btn {{modifier_class}}">Toggle Button</span>
-
-.toggle-btn--on - The toggle button is on
-.toggle-btn--off - The toggle button is off
+<span class="toggle">
+  <span class="error-notification inline-block toggle__error">Error state</span>
+  <a href="#" class="toggle__button">link</a>
+  <button class="toggle__button">link</button>
+  <span class="toggle__button toggle__button--active">on</span>
+  <span class="toggle__button toggle__button--inactive">off</span>
+  <span class="toggle__button toggle__button--disabled">disabled</span>
+</span>
 
 Styleguide Toggle Button
 */
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
-.toggle-btn {
+/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__button {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
   padding: 0.26316em 0.52632em 0.15789em 0.52632em;
+  background-color: transparent;
+  text-decoration: underline;
   display: inline-block;
   line-height: 1.4em;
+  color: #005ea5;
+  box-shadow: none;
+  border: none;
 }
 
-/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
-.toggle-btn--on {
+@media (max-width: 640px) {
+  /* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+  .toggle__button {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__button:active {
+  top: 0;
+  box-shadow: none;
+}
+
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__button:hover, .toggle__button:focus {
+  outline: none;
+  color: #2e8aca;
+  background-color: transparent;
+}
+
+/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__button:disabled,
+.toggle__button [disabled] {
+  background-color: transparent;
+}
+
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__button:disabled:hover, .toggle__button:disabled:focus,
+.toggle__button [disabled]:hover,
+.toggle__button [disabled]:focus {
+  background-color: transparent;
+}
+
+/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__error {
+  padding: 0.26316em 2.10526em 0.15789em 0.52632em;
+}
+
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__button--active {
   background-color: #00823b;
   color: #fff;
-  margin: 0 0.52632em 0 0;
+  margin: 0 0.78947em 0 0;
+  text-decoration: none;
 }
 
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
-.toggle-btn--off {
+/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__button--active:hover, .toggle__button--active:focus {
+  color: #fff;
+  background-color: #00823b;
+}
+
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__button--inactive {
+  color: #0b0c0c;
   background-color: #bfc1c3;
-  margin: 0 0 0 0.52632em;
+  text-decoration: none;
+}
+
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__button--inactive:hover, .toggle__button--inactive:focus {
+  color: #0b0c0c;
+  background-color: #bfc1c3;
+}
+
+/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__button--disabled {
+  color: #6f777b;
+  text-decoration: none;
+}
+
+/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_toggle-button.scss */
+.toggle__button--disabled:hover, .toggle__button--disabled:focus {
+  color: #6f777b;
 }
 
 /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
