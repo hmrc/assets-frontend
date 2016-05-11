@@ -2,7 +2,7 @@
 Toggle Button
 
 Markup:
-<span class="toggle">
+<span class="toggle-buttons">
   <span class="error-notification inline-block toggle__error">Error state</span>
   <a href="#" class="toggle__button">link</a>
   <button class="toggle__button">link</button>
@@ -14,7 +14,7 @@ Markup:
 Styleguide Toggle Button
 */
 
-.toggle {
+.toggle-buttons {
   display: inline-block;
   white-space: nowrap;
 }
