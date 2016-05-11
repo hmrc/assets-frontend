@@ -60,8 +60,8 @@ var ajaxCallbacks = {
   apiSubscribeResponse: {
     callbacks: {
       success: function(response, $element, data, helpers) {
-        var $onDisabled = $('<span class="toggle--on">On</span>'),
-          $offDisabled = $('<span class="toggle--disabled">Off</span>'),
+        var $onDisabled = $('<span class="toggle__button toggle__button--active">On</span>'),
+          $offDisabled = $('<span class="toggle__button toggle__button--disabled">Off</span>'),
           $parent = $element.parent(),
           $off = $parent.find('[data-toggle-subscribe="off"]'),
           formContext = $element.find('[name=context]').val(),
