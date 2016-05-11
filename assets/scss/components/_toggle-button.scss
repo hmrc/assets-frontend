@@ -2,28 +2,88 @@
 Toggle Button
 
 Markup:
-<span class="toggle-btn {{modifier_class}}">Toggle Button</span>
-
-.toggle-btn--on - The toggle button is on
-.toggle-btn--off - The toggle button is off
+<span class="toggle">
+  <span class="error-notification inline-block toggle__error">Error state</span>
+  <a href="#" class="toggle__button">link</a>
+  <button class="toggle__button">link</button>
+  <span class="toggle__button toggle__button--active">on</span>
+  <span class="toggle__button toggle__button--inactive">off</span>
+  <span class="toggle__button toggle__button--disabled">disabled</span>
+</span>
 
 Styleguide Toggle Button
 */
 
+.toggle {
+  display: inline-block;
+  white-space: nowrap;
+}
 
-.toggle-btn {
+.toggle__button {
+  @include core-16;
   padding: em(5) em(10) em(3) em(10);
+  background-color: transparent;
+  text-decoration: underline;
   display: inline-block;
   line-height: 1.4em;
+  color: $link-colour;
+  box-shadow: none;
+  border: none;
+  &:active {
+    top: 0;
+    box-shadow: none;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $link-hover-colour;
+    background-color: transparent;
+  }
+
+  &:disabled,
+  [disabled] {
+    background-color: transparent;
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+
 }
 
-.toggle-btn--on {
+.toggle__error {
+  padding: em(5) em(40) em(3) em(10);
+}
+
+.toggle__button--active {
   background-color: $button-colour;
   color: $white;
-  margin: 0 em(10) 0 0;
+  margin: 0 em(15) 0 0;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $button-colour;
+  }
 }
 
-.toggle-btn--off {
+.toggle__button--inactive {
+  color: $text-colour;
   background-color: $light-grey;
-  margin: 0 0 0 em(10);
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $text-colour;
+    background-color: $light-grey;
+  }
+}
+
+.toggle__button--disabled {
+  color: #6f777b;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: #6f777b;
+  }
 }

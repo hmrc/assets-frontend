@@ -85,7 +85,7 @@ var ajaxCallbacks = {
         // if active user is administrator then provide a link to allow un-subscribe
         if (isAdmin) {
           $offLink = $('<a>Off</a>')
-            .addClass('toggle__btn')
+            .addClass('toggle__button')
             .attr('href', offUrl)
             .data('api-unsubscribe', formContext + '-' + formVersion);
 
