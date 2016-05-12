@@ -87,6 +87,7 @@ Markup:
 </ul>
 
 .form-hint-list-item--valid - A valid form hint (used in conjunction with `formHintHelper.js`)
+.form-hint-list-item--indented - Longer text following a hint indicator wraps below the text, not the indicator.
 
 Styleguide Form Hint.list
 */
@@ -125,4 +126,9 @@ Styleguide Form Hint.list
       background-image: url("../images/valid-icon.png");
     }
   }
+}
+
+.form-hint-list-item--indented {
+  margin-left: em(30);
+  text-indent: em(-30);
 }
