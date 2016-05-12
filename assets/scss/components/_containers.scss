@@ -1,0 +1,40 @@
+/*
+Bordered Box
+
+Applies a border to a content container
+
+Markup:
+<div class="bordered-box {{modifier_class}}"><p>Example Content</p></div>
+
+.bordered-box--shaded - Bordered Box with Shading
+
+Styleguide Containers.Bordered Box
+*/
+
+.bordered-box {
+  border: 1px solid $border-colour;
+  padding: em(19) em(19) em(9.5);
+}
+
+.bordered-box--shaded {
+  @extend .bordered-box;
+  background-color: $shaded-bg-grey;
+}
+
+
+/*
+Box Shaded
+
+Adds shading to a content container
+
+Markup:
+<div class="box--shaded"><p>Example Content</p></div>
+
+Styleguide Containers.Shaded Box
+*/
+
+.box--shaded {
+  padding: em(9.5) em(19);
+  background-color: $grey-8;
+  border: none;
+}

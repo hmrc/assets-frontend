@@ -1,0 +1,47 @@
+/*
+Divider
+
+Dividers allow visual sectioning of content.
+
+Markup:
+<div class="{{modifier_class}}">Example Content</div>
+
+.divider--bottom     - Selector that adds a bottom border
+.divider--top        - Selector that adds a top border
+.divider--top--thick - Selector that adds a thick top border
+
+Styleguide Dividers
+*/
+
+.divider--bottom {
+  border-bottom: 1px solid $border-colour;
+}
+
+.divider--top {
+  border-top: 1px solid $border-colour;
+}
+
+.divider--top--thick {
+  padding-top: em(20);
+  border-top: 2px solid $border-colour;
+}
+
+
+/*
+Divider Left
+
+Divider Left is used to apply a left border to a content container
+
+Markup:
+<div class="divider-left"><p>Example Content</p></div>
+
+Styleguide Dividers.Left
+*/
+
+.divider-left {
+  border-left: none;
+
+  @include media(tablet) {
+    border-left: 1px solid $light-grey;
+  }
+}
