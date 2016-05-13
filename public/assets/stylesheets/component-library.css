@@ -43,8 +43,7 @@
 .comp-lib-menu-link:active {
   color: #000;
 }
-.comp-lib-description,
-.comp-lib-description p {
+.comp-lib-description {
   line-height: 1.5;
   padding-bottom: 1em;
 }
@@ -73,9 +72,6 @@
 }
 .comp-lib-pattern-example {
   margin-bottom: 4em;
-}
-.comp-lib-heading-2 {
-  border-bottom: 1px solid #d8d8d8;
 }
 .comp-lib-pattern-component .grid-layout__column {
   background-color: #dee0e2;
@@ -111,7 +107,8 @@
   margin-bottom: 2em;
 }
 .comp-lib-pattern-markdown p {
-  margin-bottom: 1.6em;
+  line-height: 1.5;
+  margin-bottom: 1em;
 }
 .comp-lib-pattern-markdown h1 {
   padding-top: 1.6em;

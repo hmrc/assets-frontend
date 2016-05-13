@@ -3713,17 +3713,17 @@ Styleguide Typography.Pre Heading
 * @tested       N/A
 * @requires     [ toolkit/_colours.scss ]
 */
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 body {
   counter-reset: section;
 }
 
-/* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 #wrapper {
   text-align: left;
 }
 
-/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 #content {
   display: block;
   max-width: 960px;
@@ -3739,14 +3739,14 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+  /* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
   #content {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .centered-content {
   display: block;
   max-width: 960px;
@@ -3762,20 +3762,20 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
   .centered-content {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .content__body {
   float: left;
   width: 61.666667%;
 }
 
-/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .content__body p {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -3786,71 +3786,87 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+  /* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
   .content__body p {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .full-width .content__body {
   float: none;
   width: 100%;
 }
 
-/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .content__body .messages-box,
 .content__body .service-info__related-subsection {
   display: none;
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .brand-border--top {
   border-top: 10px solid #005ea5;
 }
 
-/* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .section, .section--branded {
   margin-bottom: 1em;
   padding: 1em 0;
 }
 
-/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .section h2, .section--branded h2 {
   margin-top: 0 !important;
 }
 
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .subsection {
   margin: 1.5em 0;
 }
 
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .subsection--wide {
   margin: 2.5em 0;
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .section--branded h2 {
   border-bottom: 5px solid #005ea5;
   margin-top: 0 !important;
   margin-bottom: 0.65em;
 }
 
-/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .section--blue-top {
   border-top: 10px solid #005ea5;
 }
 
-/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .full-width {
   width: 100%;
 }
 
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_layouts.scss */
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .row {
   margin-bottom: 20px;
+}
+
+/*
+Gutter Left
+
+Gutter left applies a left margin to a content box
+
+Markup:
+<div class="gutter-left"><p>Example Content</p></div>
+
+Styleguide Layouts.Gutter Left
+*/
+/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_gutters.scss */
+.gutter-left {
+  margin-left: 0;
+  margin-left: 30px;
 }
 
 /*
@@ -8501,7 +8517,7 @@ Markup:
 
 Styleguide Panel
 */
-/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent, .email-notifications__indent {
   margin: 0;
   zoom: 1;
@@ -8517,17 +8533,17 @@ Styleguide Panel
   clear: both;
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent p:first-child, .email-notifications__indent p:first-child {
   margin-top: 0;
 }
 
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent--gutter {
   margin: 30px 15px 45px 0;
 }
 
-/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent--info {
   background-color: #d5e8f3;
   margin: 15px 0 20px 0;
@@ -8535,7 +8551,7 @@ Styleguide Panel
   border-left: 0.21053em solid #005ea5;
 }
 
-/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent p:only-child, .email-notifications__indent p:only-child,
 .panel-indent p:last-child, .email-notifications__indent p:last-child {
   margin-bottom: 0;
@@ -8561,21 +8577,61 @@ Markup:
   </fieldset>
 </div>
 
-Styleguide Panel.form
+Styleguide Panel.Form
 */
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent legend, .email-notifications__indent legend {
   margin-top: 0;
 }
 
-/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent .form-group:last-child, .email-notifications__indent .form-group:last-child {
   margin-bottom: 0;
 }
 
-/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent .form-control, .email-notifications__indent .form-control {
   width: 92%;
+}
+
+/*
+Bordered
+
+Applies a border to content
+
+Markup:
+<div class="bordered-box {{modifier_class}}"><p>Example Content</p></div>
+
+.bordered-box--shaded - Bordered Panel with Shading
+
+Styleguide Panel.Bordered
+*/
+/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+.bordered-box, .bordered-box--shaded {
+  border: 1px solid #bfc1c3;
+  padding: 1em 1em 0.5em;
+}
+
+/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+.bordered-box--shaded {
+  background-color: #f8f8f8;
+}
+
+/*
+Shaded
+
+Adds shading to content
+
+Markup:
+<div class="box--shaded"><p>Example Content</p></div>
+
+Styleguide Panel.Shaded
+*/
+/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+.box--shaded {
+  padding: 0.5em 1em;
+  background-color: #DEE0E2;
+  border: none;
 }
 
 /*
@@ -9071,51 +9127,50 @@ Styleguide Side Navigation.overlapping
   overflow: hidden;
 }
 
-/* ==========================================================================
-   Dividers
-   ========================================================================== */
-/* line 5, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dividers.scss */
-.divider-left {
-  border-left: 1px solid #bfc1c3;
-}
+/*
+Divider
 
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dividers.scss */
-.gutter-left {
-  margin-left: 30px;
-}
+Dividers allow visual sectioning of content.
 
-/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dividers.scss */
-.bordered-box, .bordered-box--shaded {
-  border: 1px solid #bfc1c3;
-  padding: 1em 1em 0.5em;
-}
+Markup:
+<div class="{{modifier_class}}">Example Content</div>
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dividers.scss */
-.bordered-box--shaded {
-  background-color: #f8f8f8;
-}
+.divider--bottom     - Selector that adds a bottom border
+.divider--top        - Selector that adds a top border
+.divider--top--thick - Selector that adds a thick top border
 
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dividers.scss */
-.box--shaded {
-  padding: 0.5em 1em;
-  background-color: #DEE0E2;
-  border: none;
-}
-
-/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dividers.scss */
+Styleguide Dividers
+*/
+/* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_dividers.scss */
 .divider--bottom {
   border-bottom: 1px solid #bfc1c3;
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dividers.scss */
+/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_dividers.scss */
 .divider--top {
   border-top: 1px solid #bfc1c3;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dividers.scss */
+/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_dividers.scss */
 .divider--top--thick {
-  padding-top: 20px;
+  padding-top: 1.05263em;
   border-top: 2px solid #bfc1c3;
+}
+
+/*
+Divider Left
+
+Divider Left is used to apply a left border to a content container
+
+Markup:
+<div class="divider-left"><p>Example Content</p></div>
+
+Styleguide Dividers.Left
+*/
+/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_dividers.scss */
+.divider-left {
+  border-left: none;
+  border-left: 1px solid #bfc1c3;
 }
 
 /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */

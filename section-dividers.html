@@ -140,9 +140,14 @@
                   <a href="section-details.html" class="comp-lib-menu-link">Details</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-dividers.html" class="comp-lib-menu-link">Divider</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-dividers.html#kssref-dividers-left">Divider Left</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-errors.html" class="comp-lib-menu-link">Errors</a>
@@ -192,23 +197,9 @@
                   <a href="section-layouts.html" class="comp-lib-menu-link">Layouts</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-links.html" class="comp-lib-menu-link">Links</a>
 
-                  <ul>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-links.html#kssref-links-external">External</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-links.html#kssref-links-link">Link</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-links.html#kssref-links-no-underline">No underline</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-links.html#kssref-links-print">Print</a>
-                      </li>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-notification.html" class="comp-lib-menu-link">Notification</a>
@@ -279,20 +270,9 @@
           </aside>
           <div id="content">
             <article class="comp-lib-main">
-                    <div id="kssref-links">
+                    <div id="kssref-dividers">
                   <div>
-                    <h1><a href="#kssref-links" class="comp-lib-menu-link">Links</a></h1>
-
-                  </div>
-
-                  <!-- pattern examples -->
-
-                    </div>
-
-
-                    <section id="kssref-links-external">
-                  <div>
-                    <h2><a href="#kssref-links-external" class="comp-lib-menu-link">External</a></h2>
+                    <h1><a href="#kssref-dividers" class="comp-lib-menu-link">Divider</a></h1>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
@@ -302,7 +282,7 @@
                         
                         
                       </h2>
-                      <p>An external link indicates you it will take you to a location on an external site to the one you are currently on.</p>
+                      <p>Dividers allow visual sectioning of content.</p>
 
                     </div>
                   </div>
@@ -311,141 +291,57 @@
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="[modifier class]" rel="external">Example external link</a>
+                          <div class="[modifier class]">Example Content</div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;[modifier class]&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;[modifier class]&quot;&gt;Example Content&lt;/div&gt;</code></pre>
                         </div>
                       </div>
 
                       <div class="comp-lib-pattern-example">
-                        <h2>.external-link-12</h2>
+                        <h2>.divider--bottom</h2>
                         <div class="comp-lib-description">
-                          External Link font size 12
+                          Selector that adds a bottom border
                         </div>
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="external-link-12" rel="external">Example external link</a>
+                          <div class="divider--bottom">Example Content</div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-12&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;divider--bottom&quot;&gt;Example Content&lt;/div&gt;</code></pre>
                         </div>
                       </div>
                       <div class="comp-lib-pattern-example">
-                        <h2>.external-link-12-no-hover</h2>
+                        <h2>.divider--top</h2>
                         <div class="comp-lib-description">
-                          External Link font size 12 without hover
+                          Selector that adds a top border
                         </div>
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="external-link-12-no-hover" rel="external">Example external link</a>
+                          <div class="divider--top">Example Content</div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-12-no-hover&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;divider--top&quot;&gt;Example Content&lt;/div&gt;</code></pre>
                         </div>
                       </div>
                       <div class="comp-lib-pattern-example">
-                        <h2>.external-link-13</h2>
+                        <h2>.divider--top--thick</h2>
                         <div class="comp-lib-description">
-                          External Link font size 13
+                          Selector that adds a thick top border
                         </div>
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="external-link-13" rel="external">Example external link</a>
+                          <div class="divider--top--thick">Example Content</div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-13&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                        </div>
-                      </div>
-                      <div class="comp-lib-pattern-example">
-                        <h2>.external-link-13-no-hover</h2>
-                        <div class="comp-lib-description">
-                          External Link font size 13 without hover
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="external-link-13-no-hover" rel="external">Example external link</a>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-13-no-hover&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                        </div>
-                      </div>
-                      <div class="comp-lib-pattern-example">
-                        <h2>.external-link-14</h2>
-                        <div class="comp-lib-description">
-                          External Link font size 14
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="external-link-14" rel="external">Example external link</a>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-14&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                        </div>
-                      </div>
-                      <div class="comp-lib-pattern-example">
-                        <h2>.external-link-14-bold-no-hover</h2>
-                        <div class="comp-lib-description">
-                          External Link font size 14 without hover
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="external-link-14-bold-no-hover" rel="external">Example external link</a>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-14-bold-no-hover&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                        </div>
-                      </div>
-                      <div class="comp-lib-pattern-example">
-                        <h2>.external-link-16</h2>
-                        <div class="comp-lib-description">
-                          External Link font size 16
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="external-link-16" rel="external">Example external link</a>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-16&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                        </div>
-                      </div>
-                      <div class="comp-lib-pattern-example">
-                        <h2>.external-link-16-bold-no-hover</h2>
-                        <div class="comp-lib-description">
-                          External Link font size 16 bold without hover
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="external-link-16-bold-no-hover" rel="external">Example external link</a>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-16-bold-no-hover&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                        </div>
-                      </div>
-                      <div class="comp-lib-pattern-example">
-                        <h2>.external-link-19</h2>
-                        <div class="comp-lib-description">
-                          External Link font size 19
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="external-link-19" rel="external">Example external link</a>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-19&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
-                        </div>
-                      </div>
-                      <div class="comp-lib-pattern-example">
-                        <h2>.external-link-19-bold-no-hover</h2>
-                        <div class="comp-lib-description">
-                          External Link font size 19 bold without hover
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="external-link-19-bold-no-hover" rel="external">Example external link</a>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;external-link-19-bold-no-hover&quot; rel=&quot;external&quot;&gt;Example external link&lt;/a&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;divider--top--thick&quot;&gt;Example Content&lt;/div&gt;</code></pre>
                         </div>
                       </div>
                     </div>
 
-                    </section>
+                    </div>
 
 
-                    <section id="kssref-links-link">
+                    <section id="kssref-dividers-left">
                   <div>
-                    <h2><a href="#kssref-links-link" class="comp-lib-menu-link">Link</a></h2>
+                    <h2><a href="#kssref-dividers-left" class="comp-lib-menu-link">Divider Left</a></h2>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
@@ -455,7 +351,7 @@
                         
                         
                       </h2>
-                      <p>To make an element appear as a link.</p>
+                      <p>Divider Left is used to apply a left border to a content container</p>
 
                     </div>
                   </div>
@@ -464,76 +360,10 @@
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <span class="link-style">Example Link</span>
+                          <div class="divider-left"><p>Example Content</p></div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;link-style&quot;&gt;Example Link&lt;/span&gt;</code></pre>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    </section>
-
-
-                    <section id="kssref-links-no-underline">
-                  <div>
-                    <h2><a href="#kssref-links-no-underline" class="comp-lib-menu-link">No underline</a></h2>
-
-                    <div class="comp-lib-description
-                                comp-lib-pattern-markdown
-                                
-                                ">
-                      <h2 class="comp-lib-warning">
-                        
-                        
-                      </h2>
-                      <p>A link takes you to a location on the same page or any other page on the Web.</p>
-
-                    </div>
-                  </div>
-
-                  <!-- pattern examples -->
-                    <div>
-                      <div class="comp-lib-pattern-example">
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a class="link--no-underline">Example link</a>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a class=&quot;link--no-underline&quot;&gt;Example link&lt;/a&gt;</code></pre>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    </section>
-
-
-                    <section id="kssref-links-print">
-                  <div>
-                    <h2><a href="#kssref-links-print" class="comp-lib-menu-link">Print</a></h2>
-
-                    <div class="comp-lib-description
-                                comp-lib-pattern-markdown
-                                
-                                ">
-                      <h2 class="comp-lib-warning">
-                        
-                        
-                      </h2>
-                      <p>Add a print image to a print link.</p>
-
-                    </div>
-                  </div>
-
-                  <!-- pattern examples -->
-                    <div>
-                      <div class="comp-lib-pattern-example">
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <a href="javascript:window.print()" class="print-link print-hidden js-visible">Print me</a>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;a href=&quot;javascript:window.print()&quot; class=&quot;print-link print-hidden js-visible&quot;&gt;Print me&lt;/a&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;divider-left&quot;&gt;&lt;p&gt;Example Content&lt;/p&gt;&lt;/div&gt;</code></pre>
                         </div>
                       </div>
 
