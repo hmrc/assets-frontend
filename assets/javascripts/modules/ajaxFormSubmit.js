@@ -55,6 +55,11 @@ var ajaxFormSubmit = {
         $form.on('keypress', 'input[type="text"], textarea', eventData, _this.keypressHandler);
       }
     }
+
+    $('[data-ajax-submit-delegate]').on('submit click', 'input[type="submit"], button[type="submit"]', {
+      context: _this,
+      config: config
+    }, _this.submitHandler);
   },
 
   keypressHandler: function(event) {
@@ -128,15 +133,22 @@ var ajaxFormSubmit = {
   },
 
   serializeForAjax: function(formScope) {
-    var ret = ['isajax=true'];
+    var result = ['isajax=true'];
     $.each($(formScope).find(':input'), function() {
       var input = $(this);
+      var param = encodeURIComponent(this.name) + '=' + encodeURIComponent(input.val());
       if (!input.data('ajax-header')) {
-        ret.push(encodeURIComponent(this.name) + '=' + encodeURIComponent(input.val()));
+        if (input.attr('type').toLowerCase() === 'radio') {
+          if (input.prop('checked')) {
+            result.push(param);
+          }
+        } else {
+          result.push(param);
+        }
       }
     });
 
-    return ret.join('&').replace(/%20/g, '+').replace(/=$/, '').replace(/&$/, '');
+    return result.join('&').replace(/%20/g, '+').replace(/=$/, '').replace(/&$/, '');
   },
 
   // read ajax header value from input fields
@@ -177,6 +189,10 @@ var ajaxFormSubmit = {
 
       return function(type, response) {
         var fn = method[type] || config.helpers.base[type];
+
+        if (type === 'success' || type == 'error') {
+          response = response || {};
+        }
 
         if (!!response) {
           config.parameters.unshift(response);
