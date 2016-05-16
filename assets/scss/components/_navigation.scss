@@ -1,3 +1,21 @@
+/*
+Header
+
+Header Navigation is used to display information such as title and links to the user.
+
+Markup:
+<nav role="navigation">
+  <a href="#" class="header__menu__proposition-name">Title</a>
+  <ul class="header__menu__proposition-links">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+  </ul>
+</nav>
+
+Styleguide Navigation.Header
+*/
+
 .header__menu__proposition-name {
   @include bold-24;
   text-decoration: none;
@@ -27,7 +45,7 @@ a.header__menu__proposition-name {
 
   li {
     display: inline;
-    padding-right: 15px;
+    padding-right: em(15);
   }
 
   a {
@@ -36,6 +54,32 @@ a.header__menu__proposition-name {
     text-decoration: none;
   }
 }
+
+
+/*
+Page
+
+Navigation for the page. As shown this can use markup with an `ol` or `ul`.
+
+Markup:
+<nav class="page-navigation">
+  <ul>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+  </ul>
+</nav>
+<nav class="page-navigation">
+  <ol>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+    <li><span>Link Text</span></li>
+  </ol>
+</nav>
+
+Styleguide Navigation.Page
+
+*/
 
 .page-navigation {
   @include media-down(mobile) {
@@ -50,7 +94,7 @@ a.header__menu__proposition-name {
     padding: 0;
     display: inline;
     overflow: hidden;
-    width:50%;
+    width: 50%;
 
     @include ie-lte(7) {
       width: 49%;
@@ -101,49 +145,4 @@ a.header__menu__proposition-name {
       }
     }
   }
-}
-
-.back-link {
-  @include core-19();
-  border-bottom: 1px solid $black;
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: em(30);
-
-  &:before {
-    content: "\2039"; // Unicode &lsaquo;
-    padding-right: em(5);
-  }
-
-}
-
-a.back-link {
-  color: $black;
-}
-
-#global-breadcrumb {
-  margin:0;
-  padding-top:0;
-  
-  &.global-breadcrumb--no-border {
-    padding-bottom: 1.5em;
-    border-bottom: 0;
-  }
-  
-  li {
-    margin-bottom: 0;
-  }
-  
-}
-
-
-
-a.back-to-top-link {
-  @include bold-16;
-  margin: 0 0 em(10) 0;
-
-  &:visited {
-    color: $govuk-blue-colour;
-  }
-
 }
