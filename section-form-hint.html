@@ -371,7 +371,9 @@
                         
                       </h2>
                       <p>A Form hint list. The form hint list can also be used in conjunction with <code>formHintHelper.js</code> for instance if you
-had a password text input and wanted to check the hints have been correctly matched.</p>
+had a password text input and wanted to check the hints have been correctly matched.
+Optionally wrap the <code>.form-hint-list-item__indicator</code> element in a <code>.form-hint-list-item__primary</code> element to give a
+2 column layout to avoid text wrapping under the indicator.</p>
 
                     </div>
                   </div>
@@ -382,7 +384,9 @@ had a password text input and wanted to check the hints have been correctly matc
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
                           <ul class="form-hint-list">
   <li class="form-hint-list-item">
-    <span class="form-hint-list-item__indicator"></span>
+    <span class="form-hint-list-item__primary">
+      <span class="form-hint-list-item__indicator"></span>
+    </span>
     An example form hint, providing extra information to a user
   </li>
   <li class="form-hint-list-item [modifier class]">
@@ -394,7 +398,9 @@ had a password text input and wanted to check the hints have been correctly matc
                         <div class="comp-lib-code-example">
                           <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;ul class=&quot;form-hint-list&quot;&gt;
   &lt;li class=&quot;form-hint-list-item&quot;&gt;
-    &lt;span class=&quot;form-hint-list-item__indicator&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;form-hint-list-item__primary&quot;&gt;
+      &lt;span class=&quot;form-hint-list-item__indicator&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
     An example form hint, providing extra information to a user
   &lt;/li&gt;
   &lt;li class=&quot;form-hint-list-item [modifier class]&quot;&gt;
@@ -413,7 +419,9 @@ had a password text input and wanted to check the hints have been correctly matc
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
                           <ul class="form-hint-list">
   <li class="form-hint-list-item">
-    <span class="form-hint-list-item__indicator"></span>
+    <span class="form-hint-list-item__primary">
+      <span class="form-hint-list-item__indicator"></span>
+    </span>
     An example form hint, providing extra information to a user
   </li>
   <li class="form-hint-list-item form-hint-list-item--valid">
@@ -425,7 +433,9 @@ had a password text input and wanted to check the hints have been correctly matc
                         <div class="comp-lib-code-example">
                           <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;ul class=&quot;form-hint-list&quot;&gt;
   &lt;li class=&quot;form-hint-list-item&quot;&gt;
-    &lt;span class=&quot;form-hint-list-item__indicator&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;form-hint-list-item__primary&quot;&gt;
+      &lt;span class=&quot;form-hint-list-item__indicator&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
     An example form hint, providing extra information to a user
   &lt;/li&gt;
   &lt;li class=&quot;form-hint-list-item form-hint-list-item--valid&quot;&gt;

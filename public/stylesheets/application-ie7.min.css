@@ -6492,11 +6492,15 @@ List
 
 A Form hint list. The form hint list can also be used in conjunction with `formHintHelper.js` for instance if you
 had a password text input and wanted to check the hints have been correctly matched.
+Optionally wrap the `.form-hint-list-item__indicator` element in a `.form-hint-list-item__primary` element to give a
+2 column layout to avoid text wrapping under the indicator.
 
 Markup:
 <ul class="form-hint-list">
   <li class="form-hint-list-item">
-    <span class="form-hint-list-item__indicator"></span>
+    <span class="form-hint-list-item__primary">
+      <span class="form-hint-list-item__indicator"></span>
+    </span>
     An example form hint, providing extra information to a user
   </li>
   <li class="form-hint-list-item {{modifier_class}}">
@@ -6509,17 +6513,18 @@ Markup:
 
 Styleguide Form Hint.list
 */
-/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/* line 98, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint-list {
   margin-bottom: 0.63158em;
 }
 
-/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint-list-item {
   margin: 0 0 0.31579em 0;
+  display: table;
 }
 
-/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/* line 108, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint-list-item__indicator {
   vertical-align: middle;
   margin-right: 0.26316em;
@@ -6532,15 +6537,20 @@ Styleguide Form Hint.list
   background-image: url("../images/bullet-icon.png");
 }
 
-/* line 118, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint-list-item--valid {
   color: #00823B;
 }
 
-/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
 .form-hint-list-item--valid .form-hint-list-item__indicator {
   background-image: url("../images/valid-icon.svg");
   background-image: url("../images/valid-icon.png");
+}
+
+/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_hint.scss */
+.form-hint-list-item__primary {
+  display: table-cell;
 }
 
 /*
