@@ -73,11 +73,15 @@ List
 
 A Form hint list. The form hint list can also be used in conjunction with `formHintHelper.js` for instance if you
 had a password text input and wanted to check the hints have been correctly matched.
+Optionally wrap the `.form-hint-list-item__indicator` element in a `.form-hint-list-item__primary` element to give a
+2 column layout to avoid text wrapping under the indicator.
 
 Markup:
 <ul class="form-hint-list">
   <li class="form-hint-list-item">
-    <span class="form-hint-list-item__indicator"></span>
+    <span class="form-hint-list-item__primary">
+      <span class="form-hint-list-item__indicator"></span>
+    </span>
     An example form hint, providing extra information to a user
   </li>
   <li class="form-hint-list-item {{modifier_class}}">
@@ -87,7 +91,6 @@ Markup:
 </ul>
 
 .form-hint-list-item--valid - A valid form hint (used in conjunction with `formHintHelper.js`)
-.form-hint-list-item--indented - Longer text following a hint indicator wraps below the text, not the indicator.
 
 Styleguide Form Hint.list
 */
@@ -99,6 +102,7 @@ Styleguide Form Hint.list
 
 .form-hint-list-item {
   margin: 0 0 em(6) 0;
+  display: table;
 }
 
 .form-hint-list-item__indicator {
@@ -128,7 +132,7 @@ Styleguide Form Hint.list
   }
 }
 
-.form-hint-list-item--indented {
-  margin-left: em(30);
-  text-indent: em(-30);
+.form-hint-list-item__primary {
+  display: table-cell;
 }
+
