@@ -93,6 +93,12 @@ body {
   width: $full-width;
 }
 
+.full-width--small {
+  @include media(mobile) {
+    width: $full-width;
+  }
+}
+
 .row {
   margin-bottom: 20px;
 }
