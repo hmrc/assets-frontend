@@ -52,3 +52,38 @@ Styleguide Breadcrumbs
     margin: 0;
   }
 }
+
+
+/*
+Breadcrumbs
+
+Deprecated: Breadcrumbs is the `play-ui` version of breadcrumbs
+
+Markup:
+<div id="global-breadcrumb" class="header-context {{modifier_class}}">
+  <nav>
+    <ol>
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+      <li>Text</li>
+    </ol>
+  </nav>
+</div>
+
+.global-breadcrumb--no-border - remove border from the global breadcrumb
+
+*/
+
+#global-breadcrumb {
+  margin:0;
+  padding-top:0;
+
+  &.global-breadcrumb--no-border {
+    padding-bottom: 1.5em;
+    border-bottom: 0;
+  }
+
+  li {
+    margin-bottom: 0;
+  }
+}

@@ -58,6 +58,56 @@ Styleguide Links.Print
 
 
 /*
+Back
+
+A back link.
+
+Markup:
+<a class="back-link" href="#">Back</a>
+
+Styleguide Links.Back
+*/
+
+.back-link {
+  @include core-19();
+  border-bottom: 1px solid $black;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: em(30);
+
+  &:before {
+    content: "\2039"; // Unicode &lsaquo;
+    padding-right: em(5);
+  }
+}
+
+a.back-link {
+  color: $black;
+}
+
+
+/*
+Back to Top
+
+A back to top link.
+
+Markup:
+<a class="back-to-top-link" href="#">Back to Top</a>
+
+Styleguide Links.Back to Top
+*/
+
+a.back-to-top-link {
+  @include bold-16;
+  margin: 0 0 em(10) 0;
+
+  &:visited {
+    color: $govuk-blue-colour;
+  }
+}
+
+
+/*
 External
 
 An external link indicates you it will take you to a location on an external site to the one you are currently on.

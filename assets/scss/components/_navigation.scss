@@ -4,16 +4,19 @@ Header
 Header Navigation is used to display information such as title and links to the user.
 
 Markup:
-<nav role="navigation">
-  <a href="#" class="header__menu__proposition-name">Title</a>
-  <ul class="header__menu__proposition-links">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-  </ul>
-</nav>
+<header id="global-header">
+  <div class="header-wrapper">
+    <nav role="navigation">
+      <a href="#" class="header__menu__proposition-name">Title</a>
+      <ul class="header__menu__proposition-links">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-Styleguide Navigation.Header
 */
 
 .header__menu__proposition-name {
@@ -29,7 +32,6 @@ a.header__menu__proposition-name {
   &:active {
     text-decoration: underline;
   }
-
 }
 
 .header__menu__proposition-links {
