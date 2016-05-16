@@ -1,0 +1,40 @@
+/*
+Bordered
+
+Applies a border to content
+
+Markup:
+<div class="bordered-box {{modifier_class}}"><p>Example Content</p></div>
+
+.bordered-box--shaded - Bordered Panel with Shading
+
+Styleguide Panel.Bordered
+*/
+
+.bordered-box {
+  border: 1px solid $border-colour;
+  padding: em(19) em(19) em(9.5);
+}
+
+.bordered-box--shaded {
+  @extend .bordered-box;
+  background-color: $shaded-bg-grey;
+}
+
+
+/*
+Shaded
+
+Adds shading to content
+
+Markup:
+<div class="box--shaded"><p>Example Content</p></div>
+
+Styleguide Panel.Shaded
+*/
+
+.box--shaded {
+  padding: em(9.5) em(19);
+  background-color: $grey-8;
+  border: none;
+}
