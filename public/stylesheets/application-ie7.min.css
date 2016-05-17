@@ -5766,6 +5766,82 @@ Styleguide Links.Print
 }
 
 /*
+Back
+
+A back link.
+
+Markup:
+<a class="back-link" href="#">Back</a>
+
+Styleguide Links.Back
+*/
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.back-link {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  border-bottom: 1px solid #0b0c0c;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1.57895em;
+}
+
+@media (max-width: 640px) {
+  /* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+  .back-link {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.back-link:before {
+  content: "\2039";
+  padding-right: 0.26316em;
+}
+
+/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+a.back-link {
+  color: #0b0c0c;
+}
+
+/*
+Back to Top
+
+A back to top link.
+
+Markup:
+<a class="back-to-top-link" href="#">Back to Top</a>
+
+Styleguide Links.Back to Top
+*/
+/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+a.back-to-top-link {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  font-weight: 700;
+  margin: 0 0 0.52632em 0;
+}
+
+@media (max-width: 640px) {
+  /* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+  a.back-to-top-link {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+a.back-to-top-link:visited {
+  color: #005ea5;
+}
+
+/*
 External
 
 An external link indicates you it will take you to a location on an external site to the one you are currently on.
@@ -7619,6 +7695,99 @@ Styleguide Header.Transaction
 }
 
 /*
+Header
+
+Header Navigation is used to display information such as title and links to the user.
+
+Markup:
+<header id="global-header">
+  <div class="header-wrapper">
+    <nav role="navigation">
+      <a href="#" class="header__menu__proposition-name">Title</a>
+      <ul class="header__menu__proposition-links">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+*/
+/* line 119, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+.header__menu__proposition-name {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  /* line 119, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  .header__menu__proposition-name {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+a.header__menu__proposition-name:hover, a.header__menu__proposition-name:focus, a.header__menu__proposition-name:active {
+  text-decoration: underline;
+}
+
+/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+.header__menu__proposition-links {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  font-weight: 700;
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  /* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  .header__menu__proposition-links {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+.header__menu__proposition-links li {
+  display: inline;
+  padding-right: 0.78947em;
+}
+
+/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+.header__menu__proposition-links a {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  /* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  .header__menu__proposition-links a {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/*
 Attorney Banner
 
 The Attorney Banner adds a persistent floating banner to display additional login information.
@@ -8698,86 +8867,37 @@ Styleguide Template Page Header
   }
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-.header__menu__proposition-name {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 24px;
-  line-height: 1.25;
-  font-weight: 400;
-  text-transform: none;
-  font-weight: 700;
-  text-decoration: none;
-  color: #fff;
-}
+/*
+Page
 
-@media (max-width: 640px) {
-  /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-  .header__menu__proposition-name {
-    font-size: 20px;
-    line-height: 1.2;
-  }
-}
+Navigation for the page. As shown this can use markup with an `ol` or `ul`.
 
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-a.header__menu__proposition-name:hover, a.header__menu__proposition-name:focus, a.header__menu__proposition-name:active {
-  text-decoration: underline;
-}
+Markup:
+<nav class="page-navigation">
+  <ul>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+  </ul>
+</nav>
+<nav class="page-navigation">
+  <ol>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+    <li><span>Link Text</span></li>
+  </ol>
+</nav>
 
-/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-.header__menu__proposition-links {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 300;
-  text-transform: none;
-  font-weight: 700;
-  float: right;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+Styleguide Navigation.Page
 
-@media (max-width: 640px) {
-  /* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-  .header__menu__proposition-links {
-    font-size: 14px;
-    line-height: 1.14286;
-  }
-}
-
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-.header__menu__proposition-links li {
-  display: inline;
-  padding-right: 15px;
-}
-
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-.header__menu__proposition-links a {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 300;
-  text-transform: none;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: none;
-}
-
-@media (max-width: 640px) {
-  /* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-  .header__menu__proposition-links a {
-    font-size: 14px;
-    line-height: 1.14286;
-  }
-}
-
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
+*/
+/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
 .page-navigation {
   width: 64%;
   float: left;
 }
 
-/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
+/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
 .page-navigation ol {
   margin: 0;
   padding: 0;
@@ -8787,7 +8907,7 @@ a.header__menu__proposition-name:hover, a.header__menu__proposition-name:focus, 
   width: 49%;
 }
 
-/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
 .page-navigation li {
   list-style: decimal;
   list-style-position: outside;
@@ -8799,7 +8919,7 @@ a.header__menu__proposition-name:hover, a.header__menu__proposition-name:focus, 
   display: list-item;
 }
 
-/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
 .page-navigation li a {
   padding: 0.25em 1em 0.25em 0;
   font-family: "nta", Arial, sans-serif;
@@ -8812,84 +8932,11 @@ a.header__menu__proposition-name:hover, a.header__menu__proposition-name:focus, 
 }
 
 @media (max-width: 640px) {
-  /* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
+  /* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
   .page-navigation li a {
     font-size: 14px;
     line-height: 1.14286;
   }
-}
-
-/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-.back-link {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 19px;
-  line-height: 1.31579;
-  font-weight: 400;
-  text-transform: none;
-  border-bottom: 1px solid #0b0c0c;
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: 1.57895em;
-}
-
-@media (max-width: 640px) {
-  /* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-  .back-link {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-.back-link:before {
-  content: "\2039";
-  padding-right: 0.26316em;
-}
-
-/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-a.back-link {
-  color: #0b0c0c;
-}
-
-/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-#global-breadcrumb {
-  margin: 0;
-  padding-top: 0;
-}
-
-/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-#global-breadcrumb.global-breadcrumb--no-border {
-  padding-bottom: 1.5em;
-  border-bottom: 0;
-}
-
-/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-#global-breadcrumb li {
-  margin-bottom: 0;
-}
-
-/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-a.back-to-top-link {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 300;
-  text-transform: none;
-  font-weight: 700;
-  margin: 0 0 0.52632em 0;
-}
-
-@media (max-width: 640px) {
-  /* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-  a.back-to-top-link {
-    font-size: 14px;
-    line-height: 1.14286;
-  }
-}
-
-/* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_navigation.scss */
-a.back-to-top-link:visited {
-  color: #005ea5;
 }
 
 /*
@@ -11131,6 +11178,42 @@ Styleguide Breadcrumbs
 /* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav--slim .breadcrumb-nav__item {
   margin: 0;
+}
+
+/*
+Breadcrumbs
+
+Deprecated: Breadcrumbs is the `play-ui` version of breadcrumbs
+
+Markup:
+<div id="global-breadcrumb" class="header-context {{modifier_class}}">
+  <nav>
+    <ol>
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+      <li>Text</li>
+    </ol>
+  </nav>
+</div>
+
+.global-breadcrumb--no-border - remove border from the global breadcrumb
+
+*/
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+#global-breadcrumb {
+  margin: 0;
+  padding-top: 0;
+}
+
+/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+#global-breadcrumb.global-breadcrumb--no-border {
+  padding-bottom: 1.5em;
+  border-bottom: 0;
+}
+
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+#global-breadcrumb li {
+  margin-bottom: 0;
 }
 
 /*

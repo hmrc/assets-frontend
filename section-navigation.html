@@ -196,9 +196,14 @@
                   <a href="section-links.html" class="comp-lib-menu-link">Links</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-navigation.html" class="comp-lib-menu-link">Navigation</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-navigation.html#kssref-navigation-page">Page</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-notification.html" class="comp-lib-menu-link">Notification</a>
@@ -232,11 +237,9 @@
                   <a href="section-table.html" class="comp-lib-menu-link">Table</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-tabular-data.html" class="comp-lib-menu-link">Tabular Data</a>
 
-                  <ul>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-template-page-header.html" class="comp-lib-menu-link">Template Page Header</a>
@@ -271,9 +274,20 @@
           </aside>
           <div id="content">
             <article class="comp-lib-main">
-                    <div id="kssref-tabular-data">
+                    <div id="kssref-navigation">
                   <div>
-                    <h1><a href="#kssref-tabular-data" class="comp-lib-menu-link">Tabular Data</a></h1>
+                    <h1><a href="#kssref-navigation" class="comp-lib-menu-link">Navigation</a></h1>
+
+                  </div>
+
+                  <!-- pattern examples -->
+
+                    </div>
+
+
+                    <section id="kssref-navigation-page">
+                  <div>
+                    <h2><a href="#kssref-navigation-page" class="comp-lib-menu-link">Page</a></h2>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
@@ -283,10 +297,7 @@
                         
                         
                       </h2>
-                      <p> A way to display tabular data of up to three elements.
- At desktop and tablet breakpoints, displayed as one row
- with three columns; and at the mobile breakpoint,
- one column with three rows.</p>
+                      <p>Navigation for the page. As shown this can use markup with an <code>ol</code> or <code>ul</code>.</p>
 
                     </div>
                   </div>
@@ -295,92 +306,42 @@
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <div class="tabular-data__entry [modifier class]">
-  <span class="tabular-data__heading tabular-data__heading--label">Name</span>
-  <div class="tabular-data__data-1">John Smith</div>
-  <a class="tabular-data__data-2" href="#edit">Change</a>
-</div>
-<div class="tabular-data__entry [modifier class]">
-  <span class="tabular-data__heading tabular-data__heading--label">Date of birth</span>
-  <span class="tabular-data__data-1 tabular-data__data-1--2-col" href="#changepwd">1 January 1980</span>
-</div>
-<div class="tabular-data__entry">
-  <details class="tabular-data__details">
-      <summary class="tabular-data__heading--label">Mobile phone number</summary>
-      <p>we need this to send a one-time access code by SMS</p>
-  </details>
-  <div class="tabular-data__data-1 tabular-data__data-1--after-details">0755555555</div>
-  <a class="tabular-data__data-2 tabular-data__data-2--after-details" href="#foo.html">Change</a>
-</div>
+                          <nav class="page-navigation">
+  <ul>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+  </ul>
+</nav>
+<nav class="page-navigation">
+  <ol>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+    <li><span>Link Text</span></li>
+  </ol>
+</nav>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;tabular-data__entry [modifier class]&quot;&gt;
-  &lt;span class=&quot;tabular-data__heading tabular-data__heading--label&quot;&gt;Name&lt;/span&gt;
-  &lt;div class=&quot;tabular-data__data-1&quot;&gt;John Smith&lt;/div&gt;
-  &lt;a class=&quot;tabular-data__data-2&quot; href=&quot;#edit&quot;&gt;Change&lt;/a&gt;
-&lt;/div&gt;
-&lt;div class=&quot;tabular-data__entry [modifier class]&quot;&gt;
-  &lt;span class=&quot;tabular-data__heading tabular-data__heading--label&quot;&gt;Date of birth&lt;/span&gt;
-  &lt;span class=&quot;tabular-data__data-1 tabular-data__data-1--2-col&quot; href=&quot;#changepwd&quot;&gt;1 January 1980&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class=&quot;tabular-data__entry&quot;&gt;
-  &lt;details class=&quot;tabular-data__details&quot;&gt;
-      &lt;summary class=&quot;tabular-data__heading--label&quot;&gt;Mobile phone number&lt;/summary&gt;
-      &lt;p&gt;we need this to send a one-time access code by SMS&lt;/p&gt;
-  &lt;/details&gt;
-  &lt;div class=&quot;tabular-data__data-1 tabular-data__data-1--after-details&quot;&gt;0755555555&lt;/div&gt;
-  &lt;a class=&quot;tabular-data__data-2 tabular-data__data-2--after-details&quot; href=&quot;#foo.html&quot;&gt;Change&lt;/a&gt;
-&lt;/div&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;nav class=&quot;page-navigation&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link Text&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link Text&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link Text&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;nav class=&quot;page-navigation&quot;&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link Text&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link Text&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Link Text&lt;/span&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
                         </div>
                       </div>
 
-                      <div class="comp-lib-pattern-example">
-                        <h2>.tabular-data__entry--grouped</h2>
-                        <div class="comp-lib-description">
-                          less padding between sections with the &#39;tabular-data__entry--grouped&#39; class
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <div class="tabular-data__entry tabular-data__entry--grouped">
-  <span class="tabular-data__heading tabular-data__heading--label">Name</span>
-  <div class="tabular-data__data-1">John Smith</div>
-  <a class="tabular-data__data-2" href="#edit">Change</a>
-</div>
-<div class="tabular-data__entry tabular-data__entry--grouped">
-  <span class="tabular-data__heading tabular-data__heading--label">Date of birth</span>
-  <span class="tabular-data__data-1 tabular-data__data-1--2-col" href="#changepwd">1 January 1980</span>
-</div>
-<div class="tabular-data__entry">
-  <details class="tabular-data__details">
-      <summary class="tabular-data__heading--label">Mobile phone number</summary>
-      <p>we need this to send a one-time access code by SMS</p>
-  </details>
-  <div class="tabular-data__data-1 tabular-data__data-1--after-details">0755555555</div>
-  <a class="tabular-data__data-2 tabular-data__data-2--after-details" href="#foo.html">Change</a>
-</div>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;tabular-data__entry tabular-data__entry--grouped&quot;&gt;
-  &lt;span class=&quot;tabular-data__heading tabular-data__heading--label&quot;&gt;Name&lt;/span&gt;
-  &lt;div class=&quot;tabular-data__data-1&quot;&gt;John Smith&lt;/div&gt;
-  &lt;a class=&quot;tabular-data__data-2&quot; href=&quot;#edit&quot;&gt;Change&lt;/a&gt;
-&lt;/div&gt;
-&lt;div class=&quot;tabular-data__entry tabular-data__entry--grouped&quot;&gt;
-  &lt;span class=&quot;tabular-data__heading tabular-data__heading--label&quot;&gt;Date of birth&lt;/span&gt;
-  &lt;span class=&quot;tabular-data__data-1 tabular-data__data-1--2-col&quot; href=&quot;#changepwd&quot;&gt;1 January 1980&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class=&quot;tabular-data__entry&quot;&gt;
-  &lt;details class=&quot;tabular-data__details&quot;&gt;
-      &lt;summary class=&quot;tabular-data__heading--label&quot;&gt;Mobile phone number&lt;/summary&gt;
-      &lt;p&gt;we need this to send a one-time access code by SMS&lt;/p&gt;
-  &lt;/details&gt;
-  &lt;div class=&quot;tabular-data__data-1 tabular-data__data-1--after-details&quot;&gt;0755555555&lt;/div&gt;
-  &lt;a class=&quot;tabular-data__data-2 tabular-data__data-2--after-details&quot; href=&quot;#foo.html&quot;&gt;Change&lt;/a&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                      </div>
                     </div>
 
-                    </div>
+                    </section>
 
 
             </article>
