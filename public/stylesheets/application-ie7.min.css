@@ -11571,11 +11571,10 @@ Styleguide AutoComplete
   height: 22px;
   position: absolute;
   top: 5px;
-  right: 9%;
+  right: 9.4%;
   z-index: 100;
   cursor: pointer;
   top: 7px;
-  right: 9.4%;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
@@ -11586,12 +11585,12 @@ Styleguide AutoComplete
   }
 }
 
-/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 108, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions-clear:hover {
   background-position: bottom right;
 }
 
-/* line 114, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .has-suggestions {
   border-bottom: 1px solid #fff;
 }
