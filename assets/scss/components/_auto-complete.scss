@@ -92,7 +92,7 @@ Styleguide AutoComplete
   height: 22px;
   position: absolute;
   top: 5px;
-  right: 9%;
+  right: 9.4%;
   z-index: 100;
   cursor: pointer;
 
@@ -103,7 +103,6 @@ Styleguide AutoComplete
 
   @include media(tablet) {
     top: 7px;
-    right: 9.4%;
   }
 
   &:hover {
