@@ -72,3 +72,19 @@ Styleguide Attorney Banner
   font-size: 19px;
   margin: 0;
 }
+
+//to override background-colour and border-left of attorneyBanner
+.attorneyBanner--accepted {
+  border-left: 3px solid #006435;
+  background-color: #BFD8CD;
+}
+
+.attorneyBanner--requested {
+  border-left: 3px solid #F47738;
+  background-color: #FCDDCD;
+}
+
+.attorneyBanner--rejected {
+  border-left: 3px solid #B10E1E;
+  background-color: #ECC3C7;
+}
