@@ -127,5 +127,8 @@
     "mdtpdf": {
       "depends": "json3"
     }
+  },
+  "devDependencies": {
+    "gulp-stylelint": "^2.0.2"
   }
 }
