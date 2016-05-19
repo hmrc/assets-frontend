@@ -28,7 +28,6 @@ Markup:
 Styleguide Form.group
 */
 
-
 fieldset {
   @include core-19();
   margin: 0;
@@ -53,7 +52,6 @@ fieldset {
 .form-field-single {
   @extend .form-field-group;
 }
-
 
 /*
 Field
@@ -95,7 +93,6 @@ Styleguide Form.field
 .form-field--tall {
   margin: 0 0 em(30) 0;
 }
-
 
 /*
 Inline
@@ -158,7 +155,6 @@ Styleguide Form.inline
   margin-left: 15px;
 }
 
-
 /*
 Submit
 
@@ -180,7 +176,6 @@ Styleguide Form.submit
   margin-top: 15px;
 }
 
-
 /*
 Field hint
 
@@ -197,7 +192,6 @@ Styleguide Form.hint
   display: block;
   margin-bottom: 0.75em;
 }
-
 
 /*
 Date
@@ -219,7 +213,6 @@ Markup:
 Styleguide Form.date
 */
 
-
 .form-date {
   @extend %contain-floats;
   display: inline-block;
@@ -240,7 +233,6 @@ Styleguide Form.date
   margin-bottom: 0;
   clear: none;
 }
-
 
 /*
 Dynamic
@@ -268,7 +260,6 @@ Styleguide Form.dynamic
     box-sizing: border-box;
   }
 }
-
 
 /*
 Control
@@ -305,6 +296,7 @@ Styleguide Form.control
   }
 
 }
+
 // fix the select element on Webkit which is broken in govuk_elements' version of this file
 select.form-control {
   -webkit-appearance: menulist;
@@ -313,7 +305,6 @@ select.form-control {
 .form-control--block {
   display: block;
 }
-
 
 /*
 Legend

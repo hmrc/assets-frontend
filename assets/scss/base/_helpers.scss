@@ -11,109 +11,253 @@
  * out over other selectors.
  */
 
-
 /**
  * Add/remove floats
  */
-.float--right   { float:right!important; }
-.float--left    { float:left !important; }
-.float--none    { float:none !important; }
+.float--right {
+  float: right !important;
+}
 
+.float--left {
+  float: left !important;
+}
+
+.float--none {
+  float: none !important;
+}
 
 /**
  * Text alignment
  */
-.text--left     { text-align:left  !important; }
-.text--center   { text-align:center!important; }
-.text--right    { text-align:right !important; }
+.text--left {
+  text-align: left !important;
+}
 
+.text--center {
+  text-align: center !important;
+}
 
+.text--right {
+  text-align: right !important;
+}
 
 /**
  * Add/remove margins
  */
-.push           { margin:       0!important; }
-.push--top      { margin-top:   0!important; }
-.push--right    { margin-right: 0!important; }
-.push--bottom   { margin-bottom:0!important; }
-.push--left     { margin-left:  0!important; }
-.push--ends     { margin-top:   0!important; margin-bottom:0!important; }
-.push--sides    { margin-right: 0!important; margin-left:  0!important; }
+.push {
+  margin: 0 !important;
+}
 
-.push-half          { margin:       0!important; }
-.push-half--top     { margin-top:   0!important; }
-.push-half--right   { margin-right: 0!important; }
-.push-half--bottom  { margin-bottom:0!important; }
-.push-half--left    { margin-left:  0!important; }
-.push-half--ends    { margin-top:   0!important; margin-bottom:0!important; }
-.push-half--sides   { margin-right: 0!important; margin-left:  0!important; }
+.push--top {
+  margin-top: 0 !important;
+}
 
-.flush          { margin:       0!important; }
-.flush--top     { margin-top:   0!important; }
-.flush--right   { margin-right: 0!important; }
-.flush--bottom  { margin-bottom:0!important; }
-.flush--left    { margin-left:  0!important; }
-.flush--ends    { margin-top:   0!important; margin-bottom:0!important; }
-.flush--sides   { margin-right: 0!important; margin-left:  0!important; }
+.push--right {
+  margin-right: 0 !important;
+}
 
+.push--bottom {
+  margin-bottom: 0 !important;
+}
+
+.push--left {
+  margin-left: 0 !important;
+}
+
+.push--ends {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.push--sides {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.push-half {
+  margin: 0 !important;
+}
+
+.push-half--top {
+  margin-top: 0 !important;
+}
+
+.push-half--right {
+  margin-right: 0 !important;
+}
+
+.push-half--bottom {
+  margin-bottom: 0 !important;
+}
+
+.push-half--left {
+  margin-left: 0 !important;
+}
+
+.push-half--ends {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.push-half--sides {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.flush {
+  margin: 0 !important;
+}
+
+.flush--top {
+  margin-top: 0 !important;
+}
+
+.flush--right {
+  margin-right: 0 !important;
+}
+
+.flush--bottom {
+  margin-bottom: 0 !important;
+}
+
+.flush--left {
+  margin-left: 0 !important;
+}
+
+.flush--ends {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.flush--sides {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
 
 /**
  * Add/remove paddings
  */
-.soft           { padding:       0!important; }
-.soft--top      { padding-top:   0!important; }
-.soft--right    { padding-right: 0!important; }
-.soft--bottom   { padding-bottom:0!important; }
-.soft--left     { padding-left:  0!important; }
-.soft--ends     { padding-top:   0!important; padding-bottom:0!important; }
-.soft--sides    { padding-right: 0!important; padding-left:  0!important; }
+.soft {
+  padding: 0 !important;
+}
 
-.soft-half           { padding:       0!important; }
-.soft-half--top      { padding-top:   0!important; }
-.soft-half--right    { padding-right: 0!important; }
-.soft-half--bottom   { padding-bottom:0!important; }
-.soft-half--left     { padding-left:  0!important; }
-.soft-half--ends     { padding-top:   0!important; padding-bottom:0!important; }
-.soft-half--sides    { padding-right: 0!important; padding-left:  0!important; }
+.soft--top {
+  padding-top: 0 !important;
+}
 
-.hard           { padding:       0!important; }
-.hard--top      { padding-top:   0!important; }
-.hard--right    { padding-right: 0!important; }
-.hard--bottom   { padding-bottom:0!important; }
-.hard--left     { padding-left:  0!important; }
-.hard--ends     { padding-top:   0!important; padding-bottom:0!important; }
-.hard--sides    { padding-right: 0!important; padding-left:  0!important; }
+.soft--right {
+  padding-right: 0 !important;
+}
 
-.align--middle { vertical-align: middle !important; }
-.align--top { vertical-align: top !important; }
+.soft--bottom {
+  padding-bottom: 0 !important;
+}
+
+.soft--left {
+  padding-left: 0 !important;
+}
+
+.soft--ends {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.soft--sides {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.soft-half {
+  padding: 0 !important;
+}
+
+.soft-half--top {
+  padding-top: 0 !important;
+}
+
+.soft-half--right {
+  padding-right: 0 !important;
+}
+
+.soft-half--bottom {
+  padding-bottom: 0 !important;
+}
+
+.soft-half--left {
+  padding-left: 0 !important;
+}
+
+.soft-half--ends {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.soft-half--sides {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.hard {
+  padding: 0 !important;
+}
+
+.hard--top {
+  padding-top: 0 !important;
+}
+
+.hard--right {
+  padding-right: 0 !important;
+}
+
+.hard--bottom {
+  padding-bottom: 0 !important;
+}
+
+.hard--left {
+  padding-left: 0 !important;
+}
+
+.hard--ends {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.hard--sides {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.align--middle {
+  vertical-align: middle !important;
+}
+
+.align--top {
+  vertical-align: top !important;
+}
 
 .inline-block {
-    display: inline-block !important;
+  display: inline-block !important;
 }
 
 .display-block {
   display: block !important;
 }
 
-
-
 /**
  * Add a help cursor to any element that gives the user extra information on
  * `:hover`.
  */
-.informative{
-    cursor:help!important;
+.informative {
+  cursor: help !important;
 }
-
 
 /**
  * Mute an object by reducing its opacity.
  */
-.muted{
-    opacity:0.5!important;
-    filter:alpha(opacity = 50)!important;
+.muted {
+  opacity: 0.5 !important;
+  filter: alpha(opacity=50) !important;
 }
-
 
 /**
  * Align items to the right where they imply progression/movement forward, e.g.:
@@ -121,10 +265,9 @@
    <p class=proceed><a href=#>Read more...</a></p>
  *
  */
-.proceed{
-    text-align:right!important;
+.proceed {
+  text-align: right !important;
 }
-
 
 /**
  * Add a right-angled quote to links that imply movement, e.g.:
@@ -132,32 +275,33 @@
    <a href=# class=go>Read more</a>
  *
  */
-.go:after{
-    content:"\00A0" "\00BB"!important;
+.go:after {
+  content: "\00A0" "\00BB" !important;
 }
-
 
 /**
  * Apply capital case to an element (usually a `strong`).
  */
-.caps{
-    text-transform:uppercase!important;
+.caps {
+  text-transform: uppercase !important;
 }
+
 /**
  * Underline text
 */
 .underline {
-    text-decoration: underline!important;
+  text-decoration: underline !important;
 }
 
 .no--underline {
-  text-decoration:none !important;
+  text-decoration: none !important;
 }
+
 /**
  * Force no wrap on text
  */
 .no-wrap {
-  white-space:nowrap !important;
+  white-space: nowrap !important;
 }
 
 /**
@@ -173,19 +317,20 @@
  * Hide content off-screen without resorting to `display:none;`, also provide
  * breakpoint specific hidden elements.
  */
-@mixin accessibility{
-    border:0!important;
-    clip:rect(0 0 0 0)!important;
-    height:1px!important;
-    margin:-1px!important;
-    overflow:hidden!important;
-    padding:0!important;
-    position: absolute!important;
-    width:1px!important;
+@mixin accessibility {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
 }
+
 .accessibility,
-.visuallyhidden{
-    @include accessibility;
+.visuallyhidden {
+  @include accessibility;
 }
 
 .hidden,
@@ -201,17 +346,18 @@
 }
 
 %no-bullet {
-	list-style: none;
+  list-style: none;
 }
+
 .no-bullets {
-	@extend %no-bullet;
+  @extend %no-bullet;
 }
 
 /**
  * Truncate text with an ellipsis
  */
 .truncate {
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
   overflow: hidden;
 }
 

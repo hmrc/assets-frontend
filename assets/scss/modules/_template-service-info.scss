@@ -1,6 +1,6 @@
 .service-info {
   border-top: 10px solid $mainstream-brand;
-  padding-bottom:0.5em;
+  padding-bottom: 0.5em;
   @extend %contain-floats;
 
   .inner {
@@ -18,7 +18,7 @@
     .logo {
       float: left;
       width: 33.33%;
-      margin-bottom:em(10);
+      margin-bottom: em(10);
     }
   }
 
@@ -68,9 +68,9 @@
 }
 
 .last-login {
-  margin-bottom:em(10);
+  margin-bottom: em(10);
 }
 
 .last-login__more-details {
-  margin:em(5) 0 0 0;
+  margin: em(5) 0 0 0;
 }

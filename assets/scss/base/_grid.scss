@@ -47,7 +47,7 @@ Styleguide Grids
 .grid-layout--stacked {
   @include media(mobile) {
     .grid-layout__column {
-      display: block;      
+      display: block;
     }
   }
 }

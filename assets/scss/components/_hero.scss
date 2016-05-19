@@ -1,4 +1,3 @@
-
 /*
 Hero
 
@@ -21,9 +20,7 @@ Markup:
 Styleguide Hero
 */
 
-
-
-.hero { 
+.hero {
   background-color: $govuk-blue-colour;
 }
 
@@ -44,7 +41,7 @@ Styleguide Hero
   }
 
   @include media(tablet) {
-    padding-top: 35px;    
+    padding-top: 35px;
 
     .hero__heading-large {
       @include bold-36;

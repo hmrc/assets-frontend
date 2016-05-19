@@ -29,10 +29,9 @@ Styleguide Errors.Summary
 
 //POTENTIALLY-NOT-IN-USE
 .error-overview {
-    @include error-box;
-    margin-bottom: em(20);
+  @include error-box;
+  margin-bottom: em(20);
 }
-
 
 /*
 Overview Heading
@@ -45,19 +44,19 @@ Markup:
 Styleguide Errors.Overview Heading
 */
 .error-overview__heading {
-    font-size: em(22);
-    margin: 0;
+  font-size: em(22);
+  margin: 0;
 }
 
 //POTENTIALLY-NOT-IN-USE
 .error-overview__list-item {
-    color: $error-color;
-    font-size: em(15);
-    margin-left: em(20);
+  color: $error-color;
+  font-size: em(15);
+  margin-left: em(20);
 
-    a {
-        color: inherit;
-    }
+  a {
+    color: inherit;
+  }
 }
 
 .error-notification {
@@ -106,7 +105,7 @@ Styleguide Errors.Form Field
   padding: em(12) em(16) em(12) em(16);
 
   &.numbered {
-    margin-left: em(22)!important;
+    margin-left: em(22) !important;
     width: 90%;
   }
 

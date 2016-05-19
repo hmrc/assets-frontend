@@ -8,9 +8,9 @@
 }
 
 .delegation-banner {
-  background-color:$info-bg-color; 
+  background-color: $info-bg-color;
   border-left: 3px solid $govuk-blue;
-  padding: 0.6em 1em 0.5em; 
+  padding: 0.6em 1em 0.5em;
   max-width: 900px;
   float: none;
   clear: both;
@@ -27,31 +27,30 @@
 
 .paye-header > .h1-heading {
   padding: 10px 0 5px 0;
-  margin-bottom: 10px;      
+  margin-bottom: 10px;
 }
-
 
 .statements-balance {
   .balance-message {
     margin: 0;
-  }  
+  }
   &.alert {
     padding: 0.8em 1em 0.6em 1em;
-    margin: 1.5em 0 20px 0;    
+    margin: 1.5em 0 20px 0;
   }
-  
+
   &.alert--info {
     position: inherit;
   }
 }
 
 .statements-year-message {
-  float:left;
+  float: left;
   width: 50%;
 }
 
 .statements-year-navigation {
-  float:right;
+  float: right;
   text-align: right;
   width: 50%;
 }
@@ -74,7 +73,7 @@
   width: 24.4%;
   padding-right: 0;
   text-align: right;
-  
+
   &.totals {
     padding-right: 0;
     text-align: left;
@@ -93,20 +92,20 @@
 .wrapper .annual-summaries--group {
   @include border-bottom-zero;
   margin-bottom: 10px;
-  
+
   .statements__table__row:last-child > .statements__table__cell {
     @include border-bottom-zero;
-  }   
+  }
 }
 
 // **** STATEMENTS - account-overview AND annual-statement pages
 .annual-summaries--group {
   border-bottom-width: 1px;
-  
+
   .statement__summary--parent {
     // "summary-arrow-styles" mixin at top of file
     @include multi-line-summary-block(22%);
-    
+
     .summary__table {
       @include border-bottom-zero;
       margin: 0;
@@ -118,20 +117,20 @@
     padding: 0;
   }
 
-  .statement__summary--parent[aria-expanded=true]{
+  .statement__summary--parent[aria-expanded=true] {
     background-color: $grey-8;
   }
-    
+
   .alert--text {
     color: $alert-bg-red;
   }
-  
+
   .icon--flag {
     background-image: url("../images/statements-flag3.png");
     background-repeat: no-repeat;
     background-position: 3px 4px;
     padding-left: em(12);
-    
+
     &:before {
       content: "\00a0";
       height: em(14);
@@ -142,7 +141,7 @@
   .statements__table__cell, .statements__table__head__cell {
     padding-right: 0;
   }
-  
+
   .annual-summaries__header--cell {
     vertical-align: bottom;
 
@@ -164,16 +163,16 @@
       width: 26.2%;
     }
   }
-  
+
   .annual-summaries__cell--group {
     padding: 0;
   }
-  
+
   .details__container {
     padding-top: 10px;
     background-color: $shaded-bg-grey;
   }
-  
+
   .statement__summary {
     margin: 0;
     width: 100%;
@@ -196,7 +195,7 @@
 
   .summary__cell--content {
     color: $grey-0;
-    margin-bottom:0.26316em;
+    margin-bottom: 0.26316em;
     white-space: nowrap;
   }
 
@@ -204,7 +203,7 @@
     padding-left: 18px;
     white-space: nowrap;
   }
-  
+
   .details__table {
     @include border-bottom-zero;
     margin: 0;
@@ -226,11 +225,11 @@
       padding-right: 0;
     }
   }
-  
+
   .details__table__cell--content {
     @include border-bottom-zero;
   }
-  
+
   .cell__label--content {
     color: $grey-1;
     display: block;
@@ -245,13 +244,13 @@
 
   .statements__table__head__cell--black {
     color: $black;
-  } 
-  
+  }
+
   .details__summary--black {
-    color:$black;
+    color: $black;
     text-decoration: underline;
   }
-  
+
   .details__table--content-container {
     @include border-bottom-zero;
   }
@@ -278,10 +277,10 @@
       border-bottom: 2px solid $light-grey;
     }
   }
-  
+
   .details__table__cell--total {
     padding: 12px 0 10px;
-  }  
+  }
 
   .details__list--notices {
     list-style-type: disc;
@@ -324,11 +323,11 @@
     margin-top: .5em;
     margin-bottom: .25em;
   }
-  
+
   .annual-summaries--group {
     margin-top: 0;
   }
-  
+
   .sidebar-links {
     margin-bottom: 1.6em;
     margin-right: .8em;
@@ -337,7 +336,7 @@
       margin-top: 3.6em;
     }
   }
-  
+
   .sidebar-links__heading {
     margin: .65em 0 .375em .15em;
 
@@ -345,14 +344,14 @@
       margin-top: 0;
     }
   }
-  
+
   .sidebar-links__item {
     border-bottom: 1px solid $border-colour;
     font-size: 19px;
     line-height: 1.25;
     padding: 0.3em 0;
     margin: 0;
-    
+
     &.selected {
       background-color: $govuk-blue;
 
@@ -364,14 +363,14 @@
       }
     }
   }
-  
+
   .sidebar-links__link {
     text-decoration: none;
     padding-left: .25em;
-    
+
     &:hover, &:focus, &:active {
       text-decoration: underline;
     }
-  }  
+  }
 }
 

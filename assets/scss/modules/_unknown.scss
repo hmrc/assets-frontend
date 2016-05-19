@@ -38,6 +38,7 @@ label.selectable input {
   color: $alert-bg-red;
   border-left: 3px solid $alert-bg-red;
 }
+
 .js .email-form-errors .error-notification {
   display: none;
 }
@@ -52,7 +53,7 @@ label.selectable input {
 }
 
 .connected {
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 #content > .full-width {
@@ -185,13 +186,13 @@ body.paye .has-paye {
 }
 
 table details {
-  margin:0;
+  margin: 0;
 }
 
 /************************* Styling for important notices *************************/
 
 .important-notice {
   padding-left: 2.5em;
-  background:no-repeat left top url(../images/icons/icon-important.png);
-  font-weight:700;
+  background: no-repeat left top url(../images/icons/icon-important.png);
+  font-weight: 700;
 }

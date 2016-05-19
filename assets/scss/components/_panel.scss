@@ -33,11 +33,11 @@ Styleguide Panel
   margin: ($gutter $gutter-half $gutter*1.5 0);
 }
 
-.panel-indent--info{
-    background-color: $light-blue-25;
-    margin: $gutter-half 0 $gutter-two-thirds 0;
-    padding: $gutter-half $gutter-half $gutter-two-thirds $gutter-half;
-    border-left: em(4) solid $govuk-blue-colour;
+.panel-indent--info {
+  background-color: $light-blue-25;
+  margin: $gutter-half 0 $gutter-two-thirds 0;
+  padding: $gutter-half $gutter-half $gutter-two-thirds $gutter-half;
+  border-left: em(4) solid $govuk-blue-colour;
 }
 
 // Remove bottom margin on last paragraph
@@ -45,7 +45,6 @@ Styleguide Panel
 .panel-indent p:last-child {
   margin-bottom: 0;
 }
-
 
 /*
 Form
@@ -69,7 +68,6 @@ Markup:
 
 Styleguide Panel.Form
 */
-
 
 .panel-indent legend {
   margin-top: 0;
