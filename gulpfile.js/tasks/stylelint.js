@@ -18,6 +18,7 @@ gulp.task('stylelint', function() {
       this.emit('end');
     })))
     .pipe(stylelint({
+      syntax: 'scss',
       failAfterError: !isDev,
       reporters: [{
         formatter: 'string',
