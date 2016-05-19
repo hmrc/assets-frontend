@@ -136,17 +136,9 @@
                   <a href="section-code.html" class="comp-lib-menu-link">Code</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-details.html" class="comp-lib-menu-link">Details</a>
 
-                  <ul>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-details.html#kssref-details-alternative">Alternative</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-details.html#kssref-details-table">In Table Row</a>
-                      </li>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-dividers.html" class="comp-lib-menu-link">Divider</a>
@@ -240,9 +232,11 @@
                   <a href="section-table.html" class="comp-lib-menu-link">Table</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-tabs.html" class="comp-lib-menu-link">Tabs</a>
 
+                  <ul>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-tabular-data.html" class="comp-lib-menu-link">Tabular Data</a>
@@ -281,9 +275,9 @@
           </aside>
           <div id="content">
             <article class="comp-lib-main">
-                    <div id="kssref-details">
+                    <div id="kssref-tabs">
                   <div>
-                    <h1><a href="#kssref-details" class="comp-lib-menu-link">Details</a></h1>
+                    <h1><a href="#kssref-tabs" class="comp-lib-menu-link">Tabs</a></h1>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
@@ -293,7 +287,7 @@
                         
                         
                       </h2>
-                      <p>The HTML Details Element <code>&lt;details&gt;</code> is used as a widget the user can retrieve additional information.</p>
+                      <p>Tabs are useful for displaying navigational links.</p>
 
                     </div>
                   </div>
@@ -302,239 +296,132 @@
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <details>
-  <summary class="[modifier class]">Opening Times</summary>
-  <div>
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
+                          <div data-tabs>
+  <ul class="tabs-nav" role="tablist">
+    <li id="tab1" role="tab"
+                  data-tab-link="tab1"
+                  aria-selected="true"
+                  aria-controls="tabContent1">
+        <span class="tabs-nav__tab tabs-nav__tab--active"
+              href="#">Tab 1</span>
+    </li>
+    <li id="tab2" role="tab"
+                  data-tab-link="tab2"
+                  aria-selected="false"
+                  aria-controls="tabContent2">
+        <a class="tabs-nav__tab" href="#">Tab 2</a>
+    </li>
+    <li id="tab3" role="tab"
+                  data-tab-link="tab3"
+                  aria-selected="false"
+                  aria-controls="tabContent3">
+        <a class="tabs-nav__tab" href="#">Tab 3</a>
+    </li>
+    <li id="tab4" role="tab"
+                  data-tab-link="tab4"
+                  aria-selected="false"
+                  aria-controls="tabContent4">
+        <a class="tabs-nav__tab" href="#">Tab 4</a>
+    </li>
+  </ul>
+  <ul>
+    <li id="tabContent1"
+        data-tab-content="tab1"
+        class="tab-content"
+        role="tabpanel"
+        aria-labelledby="tab1">
+      <p class="tab-content__first">Content for Tab 1</p>
+    </li>
+    <li id="tabContent2"
+        data-tab-content="tab2"
+        class="tab-content"
+        role="tabpanel"
+        aria-labelledby="tab2">
+      <p class="tab-content__first">Content for Tab 2</p>
+    </li>
+    <li id="tabContent3"
+        data-tab-content="tab3"
+        class="tab-content"
+        role="tabpanel"
+        aria-labelledby="tab3">
+      <p class="tab-content__first">Content for Tab 3</p>
+    </li>
+    <li id="tabContent4"
+        data-tab-content="tab4"
+        class="tab-content"
+        role="tabpanel"
+        aria-labelledby="tab4">
+      <p class="tab-content__first">Content for Tab 4</p>
+    </li>
+  </ul>
+</div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
-  &lt;summary class=&quot;[modifier class]&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
-                        </div>
-                      </div>
-
-                      <div class="comp-lib-pattern-example">
-                        <h2>.summary</h2>
-                        <div class="comp-lib-description">
-                          Details with underlined links
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <details>
-  <summary class="summary">Opening Times</summary>
-  <div>
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
-  &lt;summary class=&quot;summary&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
-                        </div>
-                      </div>
-                      <div class="comp-lib-pattern-example">
-                        <h2>.summary--black</h2>
-                        <div class="comp-lib-description">
-                          Details with black arrows and text within summary
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <details>
-  <summary class="summary--black">Opening Times</summary>
-  <div>
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details&gt;
-  &lt;summary class=&quot;summary--black&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
-                        </div>
-                      </div>
-                    </div>
-
-                    </div>
-
-
-                    <section id="kssref-details-alternative">
-                  <div>
-                    <h2><a href="#kssref-details-alternative" class="comp-lib-menu-link">Alternative</a></h2>
-
-                    <div class="comp-lib-description
-                                comp-lib-pattern-markdown
-                                
-                                ">
-                      <h2 class="comp-lib-warning">
-                        
-                        
-                      </h2>
-                      <p>In comparison to the default details component, this component has differing class attributes and the selectors used
-for this component add extra padding at the bottom of the opened details section.</p>
-
-                    </div>
-                  </div>
-
-                  <!-- pattern examples -->
-                    <div>
-                      <div class="comp-lib-pattern-example">
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <details class="details">
-  <summary class="summary">Opening Times</summary>
-  <div class="details__inner">
-    <h3>The office is open:</h3>
-    <p>9am - 5pm Monday to friday.</p>
-    <h3>The office is closed:</h3>
-    <ul>
-      <li>On Saturdays and Sundays.<li>
-      <li>On Bank Holidays and National holidays.<li>
-    </ul>
-    <a href="">More Details</a>
-  </div>
-</details>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;details class=&quot;details&quot;&gt;
-  &lt;summary class=&quot;summary&quot;&gt;Opening Times&lt;/summary&gt;
-  &lt;div class=&quot;details__inner&quot;&gt;
-    &lt;h3&gt;The office is open:&lt;/h3&gt;
-    &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-    &lt;h3&gt;The office is closed:&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-      &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-    &lt;/ul&gt;
-    &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/details&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div data-tabs&gt;
+  &lt;ul class=&quot;tabs-nav&quot; role=&quot;tablist&quot;&gt;
+    &lt;li id=&quot;tab1&quot; role=&quot;tab&quot;
+                  data-tab-link=&quot;tab1&quot;
+                  aria-selected=&quot;true&quot;
+                  aria-controls=&quot;tabContent1&quot;&gt;
+        &lt;span class=&quot;tabs-nav__tab tabs-nav__tab--active&quot;
+              href=&quot;#&quot;&gt;Tab 1&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;tab2&quot; role=&quot;tab&quot;
+                  data-tab-link=&quot;tab2&quot;
+                  aria-selected=&quot;false&quot;
+                  aria-controls=&quot;tabContent2&quot;&gt;
+        &lt;a class=&quot;tabs-nav__tab&quot; href=&quot;#&quot;&gt;Tab 2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;tab3&quot; role=&quot;tab&quot;
+                  data-tab-link=&quot;tab3&quot;
+                  aria-selected=&quot;false&quot;
+                  aria-controls=&quot;tabContent3&quot;&gt;
+        &lt;a class=&quot;tabs-nav__tab&quot; href=&quot;#&quot;&gt;Tab 3&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;tab4&quot; role=&quot;tab&quot;
+                  data-tab-link=&quot;tab4&quot;
+                  aria-selected=&quot;false&quot;
+                  aria-controls=&quot;tabContent4&quot;&gt;
+        &lt;a class=&quot;tabs-nav__tab&quot; href=&quot;#&quot;&gt;Tab 4&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul&gt;
+    &lt;li id=&quot;tabContent1&quot;
+        data-tab-content=&quot;tab1&quot;
+        class=&quot;tab-content&quot;
+        role=&quot;tabpanel&quot;
+        aria-labelledby=&quot;tab1&quot;&gt;
+      &lt;p class=&quot;tab-content__first&quot;&gt;Content for Tab 1&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;tabContent2&quot;
+        data-tab-content=&quot;tab2&quot;
+        class=&quot;tab-content&quot;
+        role=&quot;tabpanel&quot;
+        aria-labelledby=&quot;tab2&quot;&gt;
+      &lt;p class=&quot;tab-content__first&quot;&gt;Content for Tab 2&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;tabContent3&quot;
+        data-tab-content=&quot;tab3&quot;
+        class=&quot;tab-content&quot;
+        role=&quot;tabpanel&quot;
+        aria-labelledby=&quot;tab3&quot;&gt;
+      &lt;p class=&quot;tab-content__first&quot;&gt;Content for Tab 3&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;tabContent4&quot;
+        data-tab-content=&quot;tab4&quot;
+        class=&quot;tab-content&quot;
+        role=&quot;tabpanel&quot;
+        aria-labelledby=&quot;tab4&quot;&gt;
+      &lt;p class=&quot;tab-content__first&quot;&gt;Content for Tab 4&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
                         </div>
                       </div>
 
                     </div>
 
-                    </section>
-
-
-                    <section id="kssref-details-table">
-                  <div>
-                    <h2><a href="#kssref-details-table" class="comp-lib-menu-link">In Table Row</a></h2>
-
-                    <div class="comp-lib-description
-                                comp-lib-pattern-markdown
-                                
-                                ">
-                      <h2 class="comp-lib-warning">
-                        
-                        
-                      </h2>
-                      <p>Details placed inside of a table row.</p>
-
                     </div>
-                  </div>
-
-                  <!-- pattern examples -->
-                    <div>
-                      <div class="comp-lib-pattern-example">
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <table>
-  <tr>
-    <td>
-    <details>
-      <summary class="summary">Opening Times</summary>
-      <div class="details__inner">
-        <h3>The office is open:</h3>
-        <p>9am - 5pm Monday to friday.</p>
-        <h3>The office is closed:</h3>
-        <ul>
-          <li>On Saturdays and Sundays.<li>
-          <li>On Bank Holidays and National holidays.<li>
-        </ul>
-        <a href="">More Details</a>
-      </div>
-    </details>
-    </td>
-  </tr>
-</table>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-    &lt;details&gt;
-      &lt;summary class=&quot;summary&quot;&gt;Opening Times&lt;/summary&gt;
-      &lt;div class=&quot;details__inner&quot;&gt;
-        &lt;h3&gt;The office is open:&lt;/h3&gt;
-        &lt;p&gt;9am - 5pm Monday to friday.&lt;/p&gt;
-        &lt;h3&gt;The office is closed:&lt;/h3&gt;
-        &lt;ul&gt;
-          &lt;li&gt;On Saturdays and Sundays.&lt;li&gt;
-          &lt;li&gt;On Bank Holidays and National holidays.&lt;li&gt;
-        &lt;/ul&gt;
-        &lt;a href=&quot;&quot;&gt;More Details&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/details&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    </section>
 
 
             </article>

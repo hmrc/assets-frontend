@@ -11829,14 +11829,82 @@ Styleguide Toggle Button
   color: #6f777b;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/*
+Tabs
+
+Tabs are useful for displaying navigational links.
+
+Markup:
+<div data-tabs>
+  <ul class="tabs-nav" role="tablist">
+    <li id="tab1" role="tab"
+                  data-tab-link="tab1"
+                  aria-selected="true"
+                  aria-controls="tabContent1">
+        <span class="tabs-nav__tab tabs-nav__tab--active"
+              href="#">Tab 1</span>
+    </li>
+    <li id="tab2" role="tab"
+                  data-tab-link="tab2"
+                  aria-selected="false"
+                  aria-controls="tabContent2">
+        <a class="tabs-nav__tab" href="#">Tab 2</a>
+    </li>
+    <li id="tab3" role="tab"
+                  data-tab-link="tab3"
+                  aria-selected="false"
+                  aria-controls="tabContent3">
+        <a class="tabs-nav__tab" href="#">Tab 3</a>
+    </li>
+    <li id="tab4" role="tab"
+                  data-tab-link="tab4"
+                  aria-selected="false"
+                  aria-controls="tabContent4">
+        <a class="tabs-nav__tab" href="#">Tab 4</a>
+    </li>
+  </ul>
+  <ul>
+    <li id="tabContent1"
+        data-tab-content="tab1"
+        class="tab-content"
+        role="tabpanel"
+        aria-labelledby="tab1">
+      <p class="tab-content__first">Content for Tab 1</p>
+    </li>
+    <li id="tabContent2"
+        data-tab-content="tab2"
+        class="tab-content"
+        role="tabpanel"
+        aria-labelledby="tab2">
+      <p class="tab-content__first">Content for Tab 2</p>
+    </li>
+    <li id="tabContent3"
+        data-tab-content="tab3"
+        class="tab-content"
+        role="tabpanel"
+        aria-labelledby="tab3">
+      <p class="tab-content__first">Content for Tab 3</p>
+    </li>
+    <li id="tabContent4"
+        data-tab-content="tab4"
+        class="tab-content"
+        role="tabpanel"
+        aria-labelledby="tab4">
+      <p class="tab-content__first">Content for Tab 4</p>
+    </li>
+  </ul>
+</div>
+
+Styleguide Tabs
+*/
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav {
   margin: 2em 0 1em 0;
   overflow: hidden;
   position: relative;
 }
 
-/* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav .tabs-nav__tab {
   margin-bottom: 0;
   display: block;
@@ -11857,34 +11925,34 @@ Styleguide Toggle Button
   border-bottom: 6px solid white;
 }
 
-/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav .tabs-nav__tab:focus, .tabs-nav .tabs-nav__tab:hover, .tabs-nav .tabs-nav__tab:active {
   background-color: #DEE0E2;
 }
 
-/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav .tabs-nav__tab:visited {
   color: #005ea5;
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 98, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav .tabs-nav__tab .count {
   background-color: #b10e1e;
   color: #fff;
   padding: 0 0.26316em;
 }
 
-/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 114, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav li.tabs-nav__tab {
   margin-bottom: 0;
 }
 
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav a.tabs-nav__tab:focus, .tabs-nav a.tabs-nav__tab:hover, .tabs-nav a.tabs-nav__tab:active {
   background-color: #DEE0E2;
 }
 
-/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav .tabs-nav__tab--active {
   z-index: 2;
   color: #0b0c0c;
@@ -11897,12 +11965,12 @@ Styleguide Toggle Button
   border-bottom: none;
 }
 
-/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav .tabs-nav__tab--active:focus, .tabs-nav .tabs-nav__tab--active:hover, .tabs-nav .tabs-nav__tab--active:active {
   background-color: #fff;
 }
 
-/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 147, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav:before {
   content: "";
   position: absolute;
@@ -11913,28 +11981,28 @@ Styleguide Toggle Button
   width: 100%;
 }
 
-/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 157, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav [data-tab-link] {
   display: block;
   margin-bottom: 0 !important;
   display: inline-block;
 }
 
-/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav__tab {
   color: #005ea5;
   text-decoration: underline;
   cursor: pointer;
 }
 
-/* line 108, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 173, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tabs-nav__tab--active {
   color: #0b0c0c;
   text-decoration: none;
   cursor: default;
 }
 
-/* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_tabs.scss */
+/* line 180, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
 .tab-content .tab-content__first {
   margin-top: 1.57895em;
 }
