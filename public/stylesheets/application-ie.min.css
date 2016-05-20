@@ -7725,7 +7725,7 @@ The Attorney Banner adds a persistent floating banner to display additional logi
 
 Markup:
 <div class="grid-wrapper attorneyContainer">
-    <div class="attorneyBanner grid">
+    <div class="attorneyBanner grid {{modifier_class}}">
         <div class="grid grid-2-3">
             <div class="inner-block">
                 You're using this service for
@@ -7740,9 +7740,13 @@ Markup:
     </div>
 </div>
 
+.attorneyBanner--client-request-accepted      - If agent has accepted the client request
+.attorneyBanner--client-request-requested     - When client has requested an agent, but the agent hasn't accepted the client request yet. its pending
+.attorneyBanner--client-request-rejected      - When an agent rejects a client request to act on his/her behalf
+
 Styleguide Attorney Banner
 */
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .attorneyBanner {
   z-index: 999;
   border-left: 3px solid #005ea5;
@@ -7752,12 +7756,30 @@ Styleguide Attorney Banner
   max-width: 960px;
 }
 
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .grid-wrapper.attorneyContainer {
   margin: 0 0 30px 0;
 }
 
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+.attorneyBanner--client-request-accepted {
+  border-left: 3px solid #006435;
+  background-color: #BFD8CD;
+}
+
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+.attorneyBanner--client-request-requested {
+  border-left: 3px solid #F47738;
+  background-color: #FCDDCD;
+}
+
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+.attorneyBanner--client-request-rejected {
+  border-left: 3px solid #B10E1E;
+  background-color: #ECC3C7;
+}
+
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .stickyBanner {
   top: 0px;
   position: fixed;
@@ -7765,7 +7787,7 @@ Styleguide Attorney Banner
 }
 
 @media (max-width: 1020px) {
-  /* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+  /* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
   .stickyBanner {
     left: 0;
     right: 0;
@@ -7774,24 +7796,24 @@ Styleguide Attorney Banner
   }
 }
 
-/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .banner-links {
   color: #005ea5;
   float: right;
 }
 
 @media (max-width: 641px) {
-  /* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+  /* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
   .stickyBanner {
     margin: 0 15px;
   }
-  /* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+  /* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
   .banner-links {
     float: left;
   }
 }
 
-/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .attorneyPara {
   padding: 20px 10px;
   font-size: 19px;
