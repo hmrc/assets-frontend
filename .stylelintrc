@@ -1,5 +1,10 @@
 {
   "rules": {
-    "indentation": 2
+    "indentation": 2,
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "value-keyword-case": "lower",
+    "unit-case": "lower",
+    "value-no-vendor-prefix": true
   }
 }
