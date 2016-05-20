@@ -5,6 +5,7 @@
     "declaration-colon-space-before": "never",
     "value-keyword-case": "lower",
     "unit-case": "lower",
-    "value-no-vendor-prefix": true
+    "value-no-vendor-prefix": true,
+    "string-quotes": "double"
   }
 }
