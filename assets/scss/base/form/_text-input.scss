@@ -127,7 +127,7 @@ Styleguide Text Input.Currency
   position: relative;
 
   &::before {
-    content: '\00a3';
+    content: "\00a3";
     left: em(6.4);
     position: absolute;
     top: em(1.6);
