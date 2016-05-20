@@ -20,9 +20,9 @@ Markup:
     </div>
 </div>
 
-.attorneyBanner--accepted      - if agent has accepted the client request
-.attorneyBanner--requested     - when client has requested an agent, but the agent hasn't accepted the client request yet. its pending
-.attorneyBanner--rejected      - when an agent rejects a client request to act on his/her behalf
+.attorneyBanner--client-request-accepted      - if agent has accepted the client request
+.attorneyBanner--client-request-requested     - when client has requested an agent, but the agent hasn't accepted the client request yet. its pending
+.attorneyBanner--client-request-rejected      - when an agent rejects a client request to act on his/her behalf
 
 Styleguide Attorney Banner
 */
@@ -39,19 +39,19 @@ Styleguide Attorney Banner
 .grid-wrapper.attorneyContainer{
   margin:0 0 30px 0;
 }
-.attorneyBanner--accepted {
-  border-left: 3px solid $attorney-border-left-accepted;
-  background-color: $attorney-bg-accepted;
+.attorneyBanner--client-request-accepted {
+  border-left: 3px solid $attorney-border-left-client-request-accepted;
+  background-color: $attorney-bg-client-request-accepted;
 }
 
-.attorneyBanner--requested {
-  border-left: 3px solid $attorney-border-left-requested;
-  background-color: $attorney-bg-requested;
+.attorneyBanner--client-request-requested {
+  border-left: 3px solid $attorney-border-left-client-request-requested;
+  background-color: $attorney-bg-client-request-requested;
 }
 
-.attorneyBanner--rejected {
-  border-left: 3px solid $attorney-border-left-rejected;
-  background-color: $attorney-bg-rejected;
+.attorneyBanner--client-request-rejected {
+  border-left: 3px solid $attorney-border-left-client-request-rejected;
+  background-color: $attorney-bg-client-request-rejected;
 }
 
 
