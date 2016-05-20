@@ -103,12 +103,12 @@ Markup:
 Styleguide Text Input.number
 */
 .input--no-spinner {
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .input--no-spinner::-webkit-inner-spin-button,
 .input--no-spinner::-webkit-outer-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 /*
