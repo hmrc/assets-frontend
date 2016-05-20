@@ -93,7 +93,6 @@ Styleguide Notification.Flash error
   }
 }
 
-
 /*
 Alert
 
@@ -114,7 +113,6 @@ Markup:
 Styleguide Notification.Alert
 */
 
-
 .alert {
   clear: both;
   border-left-width: em(3);
@@ -127,7 +125,7 @@ Styleguide Notification.Alert
     @include core-19();
 
     &:last-of-type {
-      margin-bottom:0;
+      margin-bottom: 0;
     }
   }
 
@@ -186,7 +184,6 @@ Styleguide Notification.Alert toggle
   border-left-width: em(4);
 }
 
-
 /*
 Alert Info
 
@@ -200,7 +197,6 @@ Markup:
 Styleguide Notification.Alert info
 */
 
-
 .alert--info {
   background-color: $info-bg-color;
   border-color: $info-border-color;
@@ -212,7 +208,6 @@ Styleguide Notification.Alert info
     border-color: $light-grey;
   }
 }
-
 
 /*
 Highlight
@@ -232,7 +227,6 @@ Markup:
 
 Styleguide Notification.Highlight
 */
-
 
 .highlight-message {
   width: 100%;
@@ -282,7 +276,6 @@ Styleguide Notification.Highlight
   color: $black;
 }
 
-
 /*
 Highlight Dark
 
@@ -302,7 +295,7 @@ Styleguide Notification.Highlight dark
   .highlight-message--dark-text {
     color: $white;
   }
-  
+
   background-color: $govuk-blue-colour;
   color: $white;
 }

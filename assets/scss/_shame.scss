@@ -1,4 +1,3 @@
-
 /*------------------------------------*\
 
     SHAME ON US!!!!!
@@ -7,59 +6,58 @@
 \*------------------------------------*/
 
 article h1 {
-	@include bold-36();
-	margin-top: 0;
+  @include bold-36();
+  margin-top: 0;
 }
 
 article ul {
-	list-style: none;
-	margin: 0.75em 0;
-	padding: 0;
+  list-style: none;
+  margin: 0.75em 0;
+  padding: 0;
 }
 
 article ol {
-margin: 0.75em 0;
+  margin: 0.75em 0;
 }
 
 ol {
-padding: 0 0 0 40px;
+  padding: 0 0 0 40px;
 }
 
 li {
-list-style-position: outside;
+  list-style-position: outside;
 }
 
 article li {
-	padding-left: 0;
+  padding-left: 0;
 }
 
 .service-info__organisation-logo {
-	line-height: 1.15em;
+  line-height: 1.15em;
 }
 
 a.header__menu__proposition-name, a:visited.header__menu__proposition-name {
-	color: #fff;
+  color: #fff;
 }
 
 .l-bodyRightColumn p, .l-bodyRightColumn li {
-	width: 15em;
+  width: 15em;
 }
 
 .l-bodyRightColumn h2 {
-	width: 10em;
+  width: 10em;
 }
 
 abbr[title] {
-	border-bottom: 0px;
+  border-bottom: 0px;
 }
 
-
 .email {
-	font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 div.email {
-	margin: 2em 0em;
+  margin: 2em 0em;
 }
 
 .list--numbered li {
@@ -67,16 +65,16 @@ div.email {
   overflow: hidden;
 }
 
-.inline-form  .form-field {
+.inline-form .form-field {
   line-height: 1.3em;
   margin: 0.2em 0 0 0;
 }
 
-.inline-form  .form-field input[type="text"] {
+.inline-form .form-field input[type="text"] {
   margin: 0 10px;
 }
 
-.inline-form  .form-field--inline input[type="text"] {
+.inline-form .form-field--inline input[type="text"] {
   margin: 0 10px;
 }
 
@@ -90,21 +88,18 @@ div.email {
   color: $black;
 }
 
-
-
 .explore--inline {
   border-top: 0;
   margin: 0;
 }
-
 
 /*------------------------------------*\
     form validations
 \*------------------------------------*/
 
 // THIS IS DEPRECATED PLEASE USE THE WORK IN base/form/errors.scss
-.form-field.error , .form-field-group.error{
-  @include error-box( 3px );
+.form-field.error, .form-field-group.error {
+  @include error-box(3px);
   margin: 0 -1em 0.5em -1em;
 }
 
@@ -122,9 +117,12 @@ div.email {
 
 }
 
-
-
 /* Add grey footer when page is too short */
 
-html { background: $grey-8; }
-body { background: $white; }
+html {
+  background: $grey-8;
+}
+
+body {
+  background: $white;
+}

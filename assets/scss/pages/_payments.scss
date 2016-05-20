@@ -20,11 +20,11 @@
   }
 
   fieldset legend {
-    float:none; // all legends are floated left for some reason, so resetting this for payments
+    float: none; // all legends are floated left for some reason, so resetting this for payments
   }
 
   .button {
-    margin:0 0 em(12) 0;
+    margin: 0 0 em(12) 0;
   }
 
   .form-label-bold {
@@ -37,18 +37,18 @@
 
   .pay-now,
   .pay-now + img {
-    display:inline-block;
+    display: inline-block;
   }
 
   .pay-now {
-    vertical-align:top;
-    margin:0 em(5) 0 0;
+    vertical-align: top;
+    margin: 0 em(5) 0 0;
   }
 
   .tab {
-    width:em(160);
+    width: em(160);
     padding: em(14) 0 em(6);
-    text-align:center;
+    text-align: center;
     margin-bottom: 0;
     margin-right: em(20);
     color: #005EA5;
@@ -58,7 +58,7 @@
 
   .tab.ui-tabs-active {
     border-bottom: 2px solid #6F777B;
-    color:#0B0C0C;
+    color: #0B0C0C;
     cursor: initial;
   }
 
@@ -73,8 +73,8 @@
 
   .table-label.selected,
   .table-label:hover {
-    outline:0;
-    background-color:$grey-8;
+    outline: 0;
+    background-color: $grey-8;
   }
 
   a.ui-tabs-anchor {
@@ -124,13 +124,13 @@
   }
 
   .summary__amount-cell {
-    position:relative;
+    position: relative;
   }
 
   .summary__amounts {
-    position:absolute;
-    left:0;
-    top:0;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
   .worldpay-logo {
@@ -157,13 +157,13 @@
       @include media(mobile) {
         padding: em(22) em(20) em(22) 0;
       }
-        
+
     }
 
   }
 
   // Chrome only hack to resolve differences in padding cross-browser
-  @media screen and (-webkit-min-device-pixel-ratio:0) {
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
     .summary__amounts__item {
       padding: em(13) em(20) em(12) 0;
 

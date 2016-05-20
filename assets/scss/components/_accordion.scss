@@ -106,8 +106,6 @@ Markup:
 Styleguide Accordion.Full
 */
 
-
-
 .accordion {
   margin: 0;
   overflow: auto;
@@ -128,7 +126,7 @@ Styleguide Accordion.Full
       border-top: 1px solid #bfc1c3;
     }
   }
-  
+
 }
 
 .accordion--stacked {
@@ -148,7 +146,7 @@ Styleguide Accordion.Full
 }
 
 .accordion__row__left {
-  width:35%;
+  width: 35%;
   display: table-cell;
   padding: 0 em(10) 0 0;
   box-sizing: border-box;
@@ -165,8 +163,8 @@ Styleguide Accordion.Full
 
 }
 
-.accordion__row__right {  
-  width:50%;
+.accordion__row__right {
+  width: 50%;
   display: table-cell;
   box-sizing: border-box;
 }

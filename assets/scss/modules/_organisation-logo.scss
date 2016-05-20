@@ -56,7 +56,7 @@ a.organisation-logo {
 
 // Single identity Medium
 .organisation-logo-medium {
-  @include media(tablet){
+  @include media(tablet) {
     font-size: 18px;
     line-height: 22px;
     padding: 3px 0 2px 38px;
@@ -72,16 +72,17 @@ a.organisation-logo {
     background-image: url("../images/icons/crests/hmrc_crest_13px.png");
   }
 }
+
 .organisation-logo-stacked-medium {
   @extend .organisation-logo-medium;
-  @include media(tablet){
+  @include media(tablet) {
     padding: 25px 0 0 7px;
     background-image: url("../images/icons/crests/hmrc_crest_18px.png");
     background-position: 6px top;
   }
 }
 
-@include media(tablet){
+@include media(tablet) {
   .organisation-logo-stacked-medium span {
     display: block;
     position: relative;

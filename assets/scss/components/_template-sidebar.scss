@@ -72,11 +72,13 @@ Styleguide Template Sidebar
     padding: 0;
   }
 }
+
 //POTENTIALLY-NOT-IN-USE
 .sidebar__heading {
   @include bold-24;
   margin-top: 15px;
 }
+
 //POTENTIALLY-NOT-IN-USE
 .sidebar--helpful {
   color: $secondary-text-colour;

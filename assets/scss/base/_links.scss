@@ -17,7 +17,6 @@ Styleguide Links.No underline
   }
 }
 
-
 /*
 Link
 
@@ -37,7 +36,6 @@ Styleguide Links.Link
   text-decoration: underline;
 }
 
-
 /*
 Print
 
@@ -55,7 +53,6 @@ Styleguide Links.Print
   padding: 0.5em 0 0.5em 28px;
   zoom: 1;
 }
-
 
 /*
 Back
@@ -85,7 +82,6 @@ a.back-link {
   color: $black;
 }
 
-
 /*
 Back to Top
 
@@ -105,7 +101,6 @@ a.back-to-top-link {
     color: $govuk-blue-colour;
   }
 }
-
 
 /*
 External
@@ -131,24 +126,31 @@ Styleguide Links.External
 a[rel="external"].external-link-12 {
   @include external-link-12;
 }
+
 a[rel="external"].external-link-12-no-hover {
   @include external-link-12-no-hover;
 }
+
 a[rel="external"].external-link-13 {
   @include external-link-13;
 }
+
 a[rel="external"].external-link-13-no-hover {
   @include external-link-13-no-hover;
 }
+
 a[rel="external"].external-link-14 {
   @include external-link-14;
 }
+
 a[rel="external"].external-link-14-bold-no-hover {
   @include external-link-14-bold-no-hover;
 }
+
 a[rel="external"].external-link-16 {
   @include external-link-16;
 }
+
 a[rel="external"].external-link-16-bold-no-hover {
   @include external-link-16-bold-no-hover;
 }
@@ -157,6 +159,7 @@ a[rel="external"].external-link-19 {
   @include external-link-default;
   @include external-link-19;
 }
+
 a[rel="external"].external-link-19-bold-no-hover {
   @include external-link-19-bold-no-hover;
 }

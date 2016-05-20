@@ -45,6 +45,7 @@ body {
     width: 100%;
   }
 }
+
 .modal-dialog {
   &.modal-dialog--hidden {
     @include set-square-clip(true, 1);
@@ -72,6 +73,7 @@ body {
   top: 0;
   z-index: 1;
 }
+
 .modal-dialog__content {
   &:focus {
     outline: 3px solid $modal-dialog-yellow;
@@ -84,6 +86,7 @@ body {
     }
   }
 }
+
 .modal-dialog__inner {
   background-color: $white;
   border: em(5) solid $black;

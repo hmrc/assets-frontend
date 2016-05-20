@@ -1,46 +1,46 @@
 table.messages {
-	width: 100%;
+  width: 100%;
 
   td:last-child,
   th:last-child {
-    padding-right:0;
+    padding-right: 0;
   }
 
-	th {
-		font-weight: 400;
-	}
-	
-	.marker-column {
-		width: 5%;
-	}
+  th {
+    font-weight: 400;
+  }
+
+  .marker-column {
+    width: 5%;
+  }
 
   // TODO: Replace these nth-of-types with classes
-	th:nth-of-type(2) {
-		width: 50%;
-	}
-	th:nth-of-type(3) {
-		width: 25%;
-	}
-	th:nth-of-type(4) {
-		width: 20%;
-	}
+  th:nth-of-type(2) {
+    width: 50%;
+  }
+  th:nth-of-type(3) {
+    width: 25%;
+  }
+  th:nth-of-type(4) {
+    width: 20%;
+  }
 
-	a {
-		color: #000;
-	}
+  a {
+    color: #000;
+  }
 
 }
 
 .message-details {
   h3 {
-    margin:30px 0 0 0;
+    margin: 30px 0 0 0;
   }
 }
 
 .penalty-details {
-  margin-top:em(10);
-  padding:0.8em 1em 0.6em;
-  background-color:$shaded-bg-grey;
+  margin-top: em(10);
+  padding: 0.8em 1em 0.6em;
+  background-color: $shaded-bg-grey;
   table {
     border-bottom: hidden;
     margin-bottom: 0

@@ -10,7 +10,7 @@ var gulp         = require('gulp'),
     gutil        = require('gulp-util'),
     rename       = require('gulp-rename');
 
-gulp.task('sass', function() {
+gulp.task('sass', ['stylelint'], function() {
   var env   = global.runmode,
       isDev = (env === 'dev');
 

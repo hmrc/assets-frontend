@@ -109,11 +109,11 @@
       float: right;
     }
   }
-  
+
   .grid-wrapper {
     padding-bottom: 0;
   }
-  
+
   .content__body, .sidebar {
     margin-top: 1.25em;
   }
@@ -145,11 +145,11 @@
         margin-top: 0;
       }
     }
-  }    
+  }
 
   .sidebar-links--list {
     margin: 0.75em 0;
-    
+
     @include media(mobile) {
       margin-bottom: 0;
     }
@@ -173,7 +173,7 @@
       padding: 0;
     }
   }
-  
+
   .service-options--heading {
     margin-bottom: 0.25em;
   }
@@ -199,7 +199,7 @@
     }
 
     &:last-child .service-option--item {
-        margin: 1em 0;
+      margin: 1em 0;
     }
 
     .service-option--link:link {

@@ -3,11 +3,10 @@
   left: $gutter-half;
   cursor: pointer;
 
-  @include ie-lte(9){
+  @include ie-lte(9) {
     top: 38%;
   }
 }
-
 
 /*
 Label
@@ -129,7 +128,6 @@ Styleguide Label.radio
   clear: both;
 }
 
-
 /*
 Radio expanded
 
@@ -161,7 +159,6 @@ Styleguide Label.radio expanded
   }
 }
 
-
 /*
 Select input
 
@@ -184,7 +181,6 @@ Styleguide Label.select
   @extend .label--inlineRadio;
 }
 
-
 /*
 Date
 
@@ -203,8 +199,6 @@ Styleguide Label.date
   text-align: left;
   width: 3.5em;
 }
-
-
 
 /*
 Block
@@ -228,7 +222,6 @@ Markup:
 
 Styleguide Label.block
 */
-
 
 .block-label {
   display: block;
@@ -261,7 +254,7 @@ Styleguide Label.block
 .block-label--inline,
 .block-label--inline-right,
 .inline .block-label {
-  margin:0 10px 10px 0;
+  margin: 0 10px 10px 0;
   clear: none;
   @include media(tablet) {
     margin-right: $gutter-half;
@@ -344,11 +337,6 @@ Styleguide Label.form date
   display: block;
   margin-bottom: 5px;
 }
-
-
-
-
-
 
 // Add focus styles to block labels
 .js-enabled .add-focus {

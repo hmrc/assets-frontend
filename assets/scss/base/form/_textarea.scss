@@ -21,7 +21,7 @@ textarea {
   @include box-sizing(border-box);
 
   @include media(mobile) {
-    width:100%;
+    width: 100%;
   }
 
   &:focus {
@@ -34,5 +34,5 @@ textarea {
 }
 
 .textarea--fullwidth {
-  width:100%;
+  width: 100%;
 }
