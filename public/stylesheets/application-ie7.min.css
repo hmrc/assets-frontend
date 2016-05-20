@@ -1992,7 +1992,7 @@ mark {
 /*
  * Corrects font family set oddly in Safari 5 and Chrome.
  */
-/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 code,
 kbd,
 pre,
@@ -2004,7 +2004,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers.
  */
-/* line 162, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 161, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -2014,7 +2014,7 @@ pre {
 /*
  * Sets consistent quote types.
  */
-/* line 172, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 171, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
@@ -2022,7 +2022,7 @@ q {
 /*
  * Addresses inconsistent and variable font size in all browsers.
  */
-/* line 180, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 small {
   font-size: 80%;
 }
@@ -2030,7 +2030,7 @@ small {
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 188, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 187, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -2039,12 +2039,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 196, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 195, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 200, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 199, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 sub {
   bottom: -0.25em;
 }
@@ -2055,7 +2055,7 @@ sub {
 /*
  * Removes border when inside `a` element in IE 8/9.
  */
-/* line 212, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 211, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 img {
   border: 0;
 }
@@ -2063,7 +2063,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE 9.
  */
-/* line 220, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 219, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -2074,7 +2074,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE 8/9 and Safari 5.
  */
-/* line 232, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 231, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 figure {
   margin: 0;
 }
@@ -2085,7 +2085,7 @@ figure {
 /*
  * Define consistent border, margin, and padding.
  */
-/* line 244, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 243, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -2096,7 +2096,7 @@ fieldset {
  * 1. Corrects color not being inherited in IE 8/9.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 255, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 254, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 legend {
   border: 0;
   /* 1 */
@@ -2109,7 +2109,7 @@ legend {
  * 2. Corrects font size not being inherited in all browsers.
  * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
  */
-/* line 266, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 265, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 button,
 input,
 select,
@@ -2126,7 +2126,7 @@ textarea {
  * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 280, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 279, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 button,
 input {
   line-height: normal;
@@ -2139,7 +2139,7 @@ input {
  * 3. Improves usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 293, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 292, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -2153,7 +2153,7 @@ input[type="submit"] {
 /*
  * Re-set default cursor for disabled elements.
  */
-/* line 305, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 304, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -2163,7 +2163,7 @@ input[disabled] {
  * 1. Addresses box sizing set to `content-box` in IE 8/9.
  * 2. Removes excess padding in IE 8/9.
  */
-/* line 315, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 314, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -2177,7 +2177,7 @@ input[type="radio"] {
  * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 327, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 326, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -2189,7 +2189,7 @@ input[type="search"] {
  * Removes inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-/* line 339, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 338, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -2198,7 +2198,7 @@ input[type="search"]::-webkit-search-decoration {
 /*
  * Removes inner padding and border in Firefox 4+.
  */
-/* line 348, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 347, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -2209,7 +2209,7 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE 8/9.
  * 2. Improves readability and alignment in all browsers.
  */
-/* line 359, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 358, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -2223,7 +2223,7 @@ textarea {
 /*
  * Remove most spacing between table cells.
  */
-/* line 372, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 371, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -3431,7 +3431,7 @@ Markup:
 
 Styleguide Typography.size
 */
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_text.scss */
+/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_text.scss */
 .font-xxsmall {
   font-family: "nta", Arial, sans-serif;
   font-size: 14px;
@@ -3441,7 +3441,7 @@ Styleguide Typography.size
 }
 
 @media (max-width: 640px) {
-  /* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_text.scss */
+  /* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_text.scss */
   .font-xxsmall {
     font-size: 12px;
     line-height: 1.25;
@@ -3458,7 +3458,7 @@ Markup:
 
 Styleguide Typography.small
 */
-/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_text.scss */
+/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_text.scss */
 small {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -3468,7 +3468,7 @@ small {
 }
 
 @media (max-width: 640px) {
-  /* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_text.scss */
+  /* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_text.scss */
   small {
     font-size: 14px;
     line-height: 1.14286;
@@ -3602,7 +3602,7 @@ Markup:
 
 Styleguide Typography.Heading Sizes
 */
-/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
 .heading-48 {
   font-family: "nta", Arial, sans-serif;
   font-size: 48px;
@@ -3614,14 +3614,14 @@ Styleguide Typography.Heading Sizes
 }
 
 @media (max-width: 640px) {
-  /* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
+  /* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
   .heading-48 {
     font-size: 32px;
     line-height: 1.09375;
   }
 }
 
-/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
 .heading-36 {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -3632,14 +3632,14 @@ Styleguide Typography.Heading Sizes
 }
 
 @media (max-width: 640px) {
-  /* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
+  /* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
   .heading-36 {
     font-size: 24px;
     line-height: 1.04167;
   }
 }
 
-/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
+/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
 .heading-24,
 .heading-24--normal {
   font-family: "nta", Arial, sans-serif;
@@ -3650,7 +3650,7 @@ Styleguide Typography.Heading Sizes
 }
 
 @media (max-width: 640px) {
-  /* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
+  /* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
   .heading-24,
   .heading-24--normal {
     font-size: 20px;
@@ -3668,7 +3668,7 @@ Markup:
 
 Styleguide Typography.Heading underlined
 */
-/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
+/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
 .heading--underlined {
   border-bottom: solid 0.26316em #005ea5;
 }
@@ -3686,7 +3686,7 @@ Markup:
 
 Styleguide Typography.Pre Heading
 */
-/* line 118, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
+/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
 .pre-heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 27px;
@@ -3699,7 +3699,7 @@ Styleguide Typography.Pre Heading
 }
 
 @media (max-width: 640px) {
-  /* line 118, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
+  /* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/typography/_headings.scss */
   .pre-heading {
     font-size: 18px;
     line-height: 1.11111;
@@ -4661,23 +4661,23 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
 * @tested       N/A
 * @requires     N/A
 */
-/* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 ul {
   padding: 0;
   margin: 0;
 }
 
-/* line 15, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 li {
   list-style-position: inside;
 }
 
-/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 ul, nav ul {
   list-style-type: none;
 }
 
-/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 ul li, nav ul li {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -4687,27 +4687,27 @@ ul li, nav ul li {
 }
 
 @media (max-width: 640px) {
-  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+  /* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
   ul li, nav ul li {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered {
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 25px;
 }
 
-/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered .numbered {
   margin: 0 0 20px 25px;
   padding-left: 15px;
 }
 
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered .numbered:before {
   counter-increment: section;
   /* Increment the section counter */
@@ -4719,29 +4719,29 @@ ul li, nav ul li {
   padding-right: 10px;
 }
 
-/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered .numbered:last-child {
   margin-bottom: 0;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .bullets {
   list-style-type: disc;
   list-style-position: inside;
   margin-left: 1em;
 }
 
-/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .lower-letters {
   list-style-type: lower-alpha;
 }
 
-/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--ticks {
   padding-left: 1.5em;
 }
 
-/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--ticks li::before {
   color: #00823B;
   content: "\2713";
@@ -4750,17 +4750,17 @@ ul li, nav ul li {
   width: 1.5em;
 }
 
-/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--inline li {
   display: inline;
 }
 
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list {
   padding-left: 0;
 }
 
-/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list li {
   display: inline-block;
 }
@@ -4778,29 +4778,29 @@ ul li, nav ul li {
   font-weight: bold;
 }
 
-/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list__date--highlight {
   font-weight: bold;
 }
 
-/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list__description {
   float: left;
   width: 400px;
 }
 
-/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .coms-alerts img {
   margin-right: 10px;
 }
 
-/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .dl--label-value {
   margin-bottom: 1em;
   overflow: hidden;
 }
 
-/* line 108, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .dl--label-value dt, .dl--label-value dd {
   float: left;
   margin-left: 0;
@@ -4808,7 +4808,7 @@ ul li, nav ul li {
   width: 50%;
 }
 
-/* line 114, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .dl--label-value dd {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -4817,7 +4817,7 @@ ul li, nav ul li {
   text-align: right;
 }
 
-/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list {
   list-style: none;
   margin: 0;
@@ -4825,7 +4825,7 @@ ul li, nav ul li {
   clear: both;
 }
 
-/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list li {
   border-top: 1px solid #bfc1c3;
   padding: 0.5em 0;
@@ -4833,49 +4833,49 @@ ul li, nav ul li {
   overflow: hidden;
 }
 
-/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list li:first-child {
   border-top: 1px solid #bfc1c3;
 }
 
-/* line 139, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list__grouped {
   border-top: none;
 }
 
-/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 143, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list__grouped p {
   margin: 0.4em 0;
   padding: 0;
 }
 
-/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list-noborder li {
   border-top: 0;
 }
 
-/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 152, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list-noborder li:first-child {
   border-top: 0;
 }
 
-/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 158, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list {
   display: inline-block;
 }
 
-/* line 158, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 160, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col {
   width: auto;
   float: none;
 }
 
-/* line 163, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 165, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list ul {
   margin: 0;
 }
 
-/* line 165, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list ul li {
   margin: 0.7em 0;
   font-family: "nta", Arial, sans-serif;
@@ -4886,51 +4886,51 @@ ul li, nav ul li {
 }
 
 @media (max-width: 640px) {
-  /* line 165, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+  /* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
   .two-col-list ul li {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 169, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 171, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list ul.two-col-list--padded {
   margin-bottom: 30px;
 }
 
-/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col {
   width: 48%;
 }
 
-/* line 180, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 182, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col--left {
   float: left;
 }
 
-/* line 183, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 185, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col--right {
   float: right;
 }
 
-/* line 191, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 193, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list {
   margin: 20px 0 0 0;
   display: inline-block;
 }
 
-/* line 194, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 196, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list .three-col-list__col {
   width: auto;
   float: none;
 }
 
-/* line 199, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 201, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list ul {
   margin: 0;
 }
 
-/* line 201, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 203, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list ul li {
   margin: 0.7em 0;
   font-family: "nta", Arial, sans-serif;
@@ -4941,32 +4941,32 @@ ul li, nav ul li {
 }
 
 @media (max-width: 640px) {
-  /* line 201, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+  /* line 203, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
   .three-col-list ul li {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 210, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 212, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list .three-col-list__col {
   width: 29%;
   margin-right: 6.5%;
   float: left;
 }
 
-/* line 215, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 217, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list .three-col-list__col--right {
   margin-right: 0;
 }
 
-/* line 223, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 225, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .link-list {
   display: inline-block;
   margin-bottom: 15px;
 }
 
-/* line 228, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 230, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .link-list__item {
   display: block;
   margin-bottom: 15px;
@@ -5075,18 +5075,18 @@ Markup:
 
 Styleguide Table.Modifiers
 */
-/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--borderless td, .table--borderless th {
   border: none;
   padding: 0.42105em 0;
 }
 
-/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 98, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--borderless th {
   border-bottom: 1px solid #a1acb2;
 }
 
-/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--font-reset td {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -5096,45 +5096,45 @@ Styleguide Table.Modifiers
 }
 
 @media (max-width: 640px) {
-  /* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+  /* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
   .table--font-reset td {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 111, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--spaced-top {
   margin-top: 1.57895em;
 }
 
-/* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--top-border {
   border-top: 1px solid #bfc1c3;
 }
 
-/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 119, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--light-header {
   border-bottom: 2px solid #bfc1c3;
 }
 
-/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--light-header thead {
   border-bottom: 3px solid #005ea5;
 }
 
-/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--light-header th {
   color: #6f777b;
   font-weight: 400;
 }
 
-/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--heavy-footer {
   border-bottom: 3px solid #a1acb2;
 }
 
-/* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 137, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table--col-one-third {
   width: 38%;
 }
@@ -5154,7 +5154,7 @@ Markup:
 
 Styleguide Table.Heading Highlight
 */
-/* line 159, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 157, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table__header--highlight {
   border-bottom: 0.10526em solid #005ea5;
 }
@@ -5179,17 +5179,17 @@ Markup:
 
 Styleguide Table.Cell
 */
-/* line 185, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 182, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table-cell--light {
   background-color: #f8f8f8;
 }
 
-/* line 189, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 186, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table-cell--padded {
   padding: 1.05263em 0.63158em 1.05263em 0.63158em;
 }
 
-/* line 193, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 190, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table-cell--indented {
   padding-left: 1.73684em;
 }
@@ -5210,7 +5210,7 @@ Markup:
 
 Styleguide Table.Cell Highlight
 */
-/* line 216, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 212, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 table .highlight td {
   font-weight: 700;
 }
@@ -5230,12 +5230,12 @@ Markup:
 
 Styleguide Table.Row Bold
 */
-/* line 239, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 234, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table__row--bold td, .table__row--bold th {
   font-weight: 700;
 }
 
-/* line 243, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 238, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .table__row--bold a {
   color: inherit;
 }
@@ -5259,13 +5259,13 @@ Markup:
 
 Styleguide Table.Marker
 */
-/* line 269, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 263, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .marker-column {
   padding: 0;
   vertical-align: middle;
 }
 
-/* line 274, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
+/* line 268, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
 .marker-column__marker {
   background-color: #b10e1e;
   display: block;
@@ -5291,17 +5291,17 @@ Styleguide Table.Marker
 /**
  * Add/remove floats
  */
-/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .float--right {
   float: right !important;
 }
 
-/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .float--left {
   float: left !important;
 }
 
-/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .float--none {
   float: none !important;
 }
@@ -5309,17 +5309,17 @@ Styleguide Table.Marker
 /**
  * Text alignment
  */
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .text--left {
-  text-align: left  !important;
+  text-align: left !important;
 }
 
-/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .text--center {
   text-align: center !important;
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .text--right {
   text-align: right !important;
 }
@@ -5327,112 +5327,112 @@ Styleguide Table.Marker
 /**
  * Add/remove margins
  */
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push {
   margin: 0 !important;
 }
 
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push--top {
   margin-top: 0 !important;
 }
 
-/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push--right {
   margin-right: 0 !important;
 }
 
-/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push--bottom {
   margin-bottom: 0 !important;
 }
 
-/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push--left {
   margin-left: 0 !important;
 }
 
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push--ends {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push--sides {
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push-half {
   margin: 0 !important;
 }
 
-/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push-half--top {
   margin-top: 0 !important;
 }
 
-/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push-half--right {
   margin-right: 0 !important;
 }
 
-/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push-half--bottom {
   margin-bottom: 0 !important;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push-half--left {
   margin-left: 0 !important;
 }
 
-/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push-half--ends {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .push-half--sides {
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
 
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .flush {
   margin: 0 !important;
 }
 
-/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 111, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .flush--top {
   margin-top: 0 !important;
 }
 
-/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .flush--right {
   margin-right: 0 !important;
 }
 
-/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 119, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .flush--bottom {
   margin-bottom: 0 !important;
 }
 
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .flush--left {
   margin-left: 0 !important;
 }
 
-/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .flush--ends {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .flush--sides {
   margin-right: 0 !important;
   margin-left: 0 !important;
@@ -5441,133 +5441,133 @@ Styleguide Table.Marker
 /**
  * Add/remove paddings
  */
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft {
   padding: 0 !important;
 }
 
-/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 144, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft--top {
   padding-top: 0 !important;
 }
 
-/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft--right {
   padding-right: 0 !important;
 }
 
-/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 152, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft--bottom {
   padding-bottom: 0 !important;
 }
 
-/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft--left {
   padding-left: 0 !important;
 }
 
-/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 160, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft--ends {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
-/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 165, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft--sides {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
 
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 170, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft-half {
   padding: 0 !important;
 }
 
-/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 174, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft-half--top {
   padding-top: 0 !important;
 }
 
-/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 178, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft-half--right {
   padding-right: 0 !important;
 }
 
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 182, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft-half--bottom {
   padding-bottom: 0 !important;
 }
 
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 186, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft-half--left {
   padding-left: 0 !important;
 }
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 190, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft-half--ends {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
-/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 195, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .soft-half--sides {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
 
-/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 200, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .hard {
   padding: 0 !important;
 }
 
-/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 204, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .hard--top {
   padding-top: 0 !important;
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 208, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .hard--right {
   padding-right: 0 !important;
 }
 
-/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 212, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .hard--bottom {
   padding-bottom: 0 !important;
 }
 
-/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 216, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .hard--left {
   padding-left: 0 !important;
 }
 
-/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 220, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .hard--ends {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
-/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 225, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .hard--sides {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
 
-/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 230, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .align--middle {
   vertical-align: middle !important;
 }
 
-/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 234, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .align--top {
   vertical-align: top !important;
 }
 
-/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 238, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .inline-block {
   display: inline-block !important;
 }
 
-/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 242, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .display-block {
   display: block !important;
 }
@@ -5576,7 +5576,7 @@ Styleguide Table.Marker
  * Add a help cursor to any element that gives the user extra information on
  * `:hover`.
  */
-/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 250, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .informative {
   cursor: help !important;
 }
@@ -5584,7 +5584,7 @@ Styleguide Table.Marker
 /**
  * Mute an object by reducing its opacity.
  */
-/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 257, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .muted {
   opacity: 0.5 !important;
   filter: alpha(opacity=50) !important;
@@ -5596,7 +5596,7 @@ Styleguide Table.Marker
    <p class=proceed><a href=#>Read more...</a></p>
  *
  */
-/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 268, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .proceed {
   text-align: right !important;
 }
@@ -5607,15 +5607,15 @@ Styleguide Table.Marker
    <a href=# class=go>Read more</a>
  *
  */
-/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 278, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .go:after {
-  content: " " "»" !important;
+  content: "\00A0" "\00BB" !important;
 }
 
 /**
  * Apply capital case to an element (usually a `strong`).
  */
-/* line 143, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 285, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .caps {
   text-transform: uppercase !important;
 }
@@ -5623,12 +5623,12 @@ Styleguide Table.Marker
 /**
  * Underline text
 */
-/* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 292, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .underline {
   text-decoration: underline !important;
 }
 
-/* line 153, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 296, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .no--underline {
   text-decoration: none !important;
 }
@@ -5636,7 +5636,7 @@ Styleguide Table.Marker
 /**
  * Force no wrap on text
  */
-/* line 159, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 303, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .no-wrap {
   white-space: nowrap !important;
 }
@@ -5644,7 +5644,7 @@ Styleguide Table.Marker
 /**
 * Force long character sequences to split over lines, e.g. email addresses
 */
-/* line 166, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 310, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .word-wrap {
   white-space: pre-line;
   word-wrap: break-word;
@@ -5655,7 +5655,7 @@ Styleguide Table.Marker
  * Hide content off-screen without resorting to `display:none;`, also provide
  * breakpoint specific hidden elements.
  */
-/* line 186, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 331, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .accessibility,
 .visuallyhidden {
   border: 0 !important;
@@ -5668,19 +5668,19 @@ Styleguide Table.Marker
   width: 1px !important;
 }
 
-/* line 191, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 336, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .hidden,
 .no-js .js-visible,
 .js .js-hidden {
   display: none !important;
 }
 
-/* line 197, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 342, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .hidden--tablet {
   display: none !important;
 }
 
-/* line 203, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 348, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .no-bullets {
   list-style: none;
 }
@@ -5688,7 +5688,7 @@ Styleguide Table.Marker
 /**
  * Truncate text with an ellipsis
  */
-/* line 213, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 359, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .truncate {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -5698,12 +5698,12 @@ Styleguide Table.Marker
  * Table cells need this hack in order
  * for truncation to work normally
  */
-/* line 222, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 368, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .truncate--table-cell {
   max-width: 1px;
 }
 
-/* line 226, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
+/* line 372, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_helpers.scss */
 .truncate--small {
   max-width: 125px;
 }
@@ -5738,7 +5738,7 @@ Markup:
 
 Styleguide Links.Link
 */
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
 .link-style {
   margin: 0;
   padding: 0;
@@ -5757,7 +5757,7 @@ Markup:
 
 Styleguide Links.Print
 */
-/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
 .print-link {
   background: transparent no-repeat 0 50%;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASAgMAAAAvVbb5AAAACVBMVEX///////8KDAwmYEUdAAAAAXRSTlMAQObYZgAAADBJREFUCFtjYOBa1cDAoBkKJFYCCSYwEYpCrAICZCI0FEhkrURmQRRnrYRpW7WqAQAlGR86Ip1rwwAAAABJRU5ErkJggg==");
@@ -5775,7 +5775,7 @@ Markup:
 
 Styleguide Links.Back
 */
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
 .back-link {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -5789,20 +5789,20 @@ Styleguide Links.Back
 }
 
 @media (max-width: 640px) {
-  /* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+  /* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
   .back-link {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
 .back-link:before {
   content: "\2039";
   padding-right: 0.26316em;
 }
 
-/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
 a.back-link {
   color: #0b0c0c;
 }
@@ -5817,7 +5817,7 @@ Markup:
 
 Styleguide Links.Back to Top
 */
-/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
 a.back-to-top-link {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -5829,14 +5829,14 @@ a.back-to-top-link {
 }
 
 @media (max-width: 640px) {
-  /* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+  /* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
   a.back-to-top-link {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
 a.back-to-top-link:visited {
   color: #005ea5;
 }
@@ -6052,7 +6052,7 @@ Markup:
 
 Styleguide Icons.Exclamation
 */
-/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .exclamation {
   width: 35px;
   height: 35px;
@@ -6063,7 +6063,7 @@ Styleguide Icons.Exclamation
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+  /* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
   .exclamation {
     background-image: url("../images/icons/icon-important-2x.png");
     background-size: cover;
@@ -6080,7 +6080,7 @@ Markup:
 
 Styleguide Icons.Verify
 */
-/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .govuk-verify {
   background-image: url("../images/govuk-verify.png");
   background-position: center;
@@ -6092,7 +6092,7 @@ Styleguide Icons.Verify
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+  /* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
   .govuk-verify {
     background-image: url("../images/govuk-verify-2x.png");
   }
@@ -6176,7 +6176,7 @@ Markup:
 
 Styleguide Details.alternative
 */
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .details .details__inner {
   padding-bottom: 1.68421em;
 }
@@ -6209,7 +6209,7 @@ Markup:
 
 Styleguide Details.Table
 */
-/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+/* line 108, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 table details {
   margin: 0;
 }
@@ -6219,22 +6219,22 @@ NON-COMP-LIB
 Details fall back work. When details is not supported in the browser then apply the following to the polyfill
 implementation
 */
-/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details summary .arrow-closed {
   display: inline-block;
 }
 
-/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details summary .arrow-open {
   display: none;
 }
 
-/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details.open summary .arrow-closed {
   display: none;
 }
 
-/* line 137, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
+/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_details.scss */
 .no-details details.open summary .arrow-open {
   display: inline-block;
 }
@@ -6288,25 +6288,25 @@ Markup:
 
 Styleguide Errors.Overview Heading
 */
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error-overview__heading {
   font-size: 1.15789em;
   margin: 0;
 }
 
-/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error-overview__list-item {
   color: #af1324;
   font-size: 0.78947em;
   margin-left: 1.05263em;
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error-overview__list-item a {
   color: inherit;
 }
 
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error-notification {
   color: #af1324;
   display: none;
@@ -6319,7 +6319,7 @@ Styleguide Errors.Overview Heading
 }
 
 @media (max-width: 640px) {
-  /* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+  /* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
   .error-notification {
     font-size: 14px;
     line-height: 1.14286;
@@ -6358,7 +6358,7 @@ Markup:
 
 Styleguide Errors.Form Field
 */
-/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error {
   background-color: #fff;
   border-left: 3px solid #df3034;
@@ -6367,18 +6367,18 @@ Styleguide Errors.Form Field
   padding: 0.63158em 0.84211em 0.63158em 0.84211em;
 }
 
-/* line 108, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error.numbered {
   margin-left: 1.15789em !important;
   width: 90%;
 }
 
-/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error.fields-aligned {
   margin-left: -1.15789em;
 }
 
-/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error .error-notification {
   display: block;
   font-family: "nta", Arial, sans-serif;
@@ -6389,14 +6389,14 @@ Styleguide Errors.Form Field
 }
 
 @media (max-width: 640px) {
-  /* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+  /* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
   .form-field--error .error-notification {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .form-field--error .error-field {
   border: 3px solid #df3034;
 }
@@ -6430,7 +6430,7 @@ Markup:
 
 Styleguide Errors.Form Field Group
 */
-/* line 163, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 162, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error,
 .form-field-group--error {
   background-color: #fff;
@@ -6439,7 +6439,7 @@ Styleguide Errors.Form Field Group
   margin: 0 -0.84211em 0.42105em -0.84211em;
 }
 
-/* line 168, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+/* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
 .error .error-notification,
 .form-field-group--error .error-notification {
   display: block;
@@ -6676,53 +6676,53 @@ input.text--right {
   padding: 0.1em 0.4em 0.1em 0;
 }
 
-/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 input:focus {
   outline: 3px solid #ffbf47;
 }
 
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--xxsmall {
   max-width: 2.2em;
 }
 
-/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--xsmall {
   max-width: 4em;
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--small {
   max-width: 6em;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--normal {
   max-width: 8em;
 }
 
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--medium {
   width: 100%;
   width: 20em;
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--fullwidth {
   width: 98.2%;
 }
 
-/* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--cleared {
   display: block;
 }
 
-/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--left-padding {
   padding-left: 1em;
 }
 
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--link {
   background: none;
   border: none;
@@ -6733,17 +6733,17 @@ input:focus {
   outline: none;
 }
 
-/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--link:hover, .input--link:active {
   color: #2e8aca;
 }
 
-/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--link:visited {
   color: #2e3191;
 }
 
-/* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .form-date .form-group input {
   width: 100%;
 }
@@ -6758,12 +6758,12 @@ Markup:
 
 Styleguide Text Input.number
 */
-/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--no-spinner {
   -moz-appearance: textfield;
 }
 
-/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--no-spinner::-webkit-inner-spin-button,
 .input--no-spinner::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -6781,12 +6781,12 @@ Markup:
 
 Styleguide Text Input.Currency
 */
-/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input-currency {
   position: relative;
 }
 
-/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+/* line 129, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input-currency::before {
   content: '\00a3';
   left: 0.33684em;
@@ -6951,7 +6951,7 @@ Markup:
 
 Styleguide Label
 */
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 label {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -6962,24 +6962,24 @@ label {
 }
 
 @media (max-width: 640px) {
-  /* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+  /* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
   label {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 label.bold {
   font-weight: bold;
 }
 
-/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 label.indent {
   padding-left: 1.5em;
 }
 
-/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inline, .label--inline-no-input, .label--inline-tight, .label--inline-right, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .label--full-length {
   display: inline-block;
   margin-top: 0.2em;
@@ -6987,7 +6987,7 @@ label.indent {
   width: 130px;
 }
 
-/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inline-no-input {
   margin-left: 16px;
   margin-top: 0.75em;
@@ -6997,13 +6997,13 @@ label.indent {
   width: 60px;
 }
 
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inline-tight {
   min-width: 0;
   width: auto;
 }
 
-/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inline-right {
   float: right;
 }
@@ -7026,13 +7026,13 @@ Markup:
 
 Styleguide Label.radio
 */
-/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown {
   min-width: 0;
   width: auto;
 }
 
-/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--overhead, .label--inlineRadio--overhead-wide, .label--dateField-group {
   float: left;
   margin-bottom: 0.75em;
@@ -7041,12 +7041,12 @@ Styleguide Label.radio
   word-spacing: 5.8em;
 }
 
-/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--overhead-wide {
   width: 6.8em;
 }
 
-/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--full-length {
   width: 100%;
   clear: both;
@@ -7065,12 +7065,12 @@ Markup:
 
 Styleguide Label.radio expanded
 */
-/* line 147, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--expanded {
   width: 100%;
 }
 
-/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--expanded input {
   float: left;
   margin-right: 0.25em;
@@ -7078,7 +7078,7 @@ Styleguide Label.radio expanded
   margin-top: 0.3em;
 }
 
-/* line 158, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--expanded .label__text {
   float: left;
   width: 90%;
@@ -7114,7 +7114,7 @@ Markup:
 
 Styleguide Label.date
 */
-/* line 201, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 197, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--dateField-group {
   text-align: left;
   width: 3.5em;
@@ -7142,7 +7142,7 @@ Markup:
 
 Styleguide Label.block
 */
-/* line 233, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 226, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label, .block-label--stacked {
   display: block;
   float: none;
@@ -7158,12 +7158,12 @@ Styleguide Label.block
   margin-bottom: 5px;
 }
 
-/* line 256, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 249, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label:hover, .block-label--stacked:hover {
   border-color: #0b0c0c;
 }
 
-/* line 261, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 254, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label--inline,
 .block-label--inline-right,
 .inline .block-label,
@@ -7173,7 +7173,7 @@ Styleguide Label.block
   margin-right: 15px;
 }
 
-/* line 271, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 264, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label--stacked {
   clear: none;
   line-height: 1;
@@ -7181,7 +7181,7 @@ Styleguide Label.block
   float: left;
 }
 
-/* line 283, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 276, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label--stacked input {
   display: block;
   margin: 0 auto 0.8em;
@@ -7206,7 +7206,7 @@ Markup:
 
 Styleguide Label.aligned
 */
-/* line 316, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 309, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 input.top-aligned-input {
   top: 1.63158em;
   top: 1.52632em;
@@ -7231,23 +7231,23 @@ Markup:
 
 Styleguide Label.form date
 */
-/* line 343, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 336, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .form-date label {
   display: block;
   margin-bottom: 5px;
 }
 
-/* line 354, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 342, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .js-enabled .add-focus {
   outline: 3px solid #ffbf47;
 }
 
-/* line 356, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 344, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .js-enabled .add-focus input {
   outline: none;
 }
 
-/* line 362, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 350, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .js-enabled .selected {
   background: #fff;
   border-color: #0b0c0c;
@@ -7282,7 +7282,7 @@ Markup:
 
 Styleguide Form.group
 */
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 fieldset {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -7295,25 +7295,25 @@ fieldset {
 }
 
 @media (max-width: 640px) {
-  /* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  /* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
   fieldset {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 fieldset legend {
   width: 100%;
   margin-bottom: 0.75em;
 }
 
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 fieldset legend.h2-heading {
   margin: 0 0 0.25em 0;
 }
 
-/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field-group, .form-field-single {
   margin-bottom: 0.75em;
   line-height: 1.6em;
@@ -7348,7 +7348,7 @@ Markup:
 
 Styleguide Form.field
 */
-/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left {
   float: left;
   margin-bottom: 0.75em;
@@ -7356,7 +7356,7 @@ Styleguide Form.field
   width: 100%;
 }
 
-/* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--tall {
   margin: 0 0 1.57895em 0;
 }
@@ -7395,7 +7395,7 @@ Styleguide Form.inline
 /**
  *  Allows you to stack input blocks side by side
  */
-/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left {
   clear: none;
   float: left;
@@ -7403,17 +7403,17 @@ Styleguide Form.inline
   position: relative;
 }
 
-/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 139, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--inline input[type="text"], .form-field--inline-text-input input[type="text"], .form-field--inline-spaced-right input[type="text"], .form-field--inline-spaced-left input[type="text"], .form-field--inline input[type="password"], .form-field--inline-text-input input[type="password"], .form-field--inline-spaced-right input[type="password"], .form-field--inline-spaced-left input[type="password"] {
   margin: 0 0.52em;
 }
 
-/* line 151, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--inline-spaced-right {
   margin-right: 15px;
 }
 
-/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 153, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--inline-spaced-left {
   margin-left: 15px;
 }
@@ -7434,7 +7434,7 @@ Styleguide Form.submit
  * Wrap action elements of form (submit button, cancel link)
  * to provide space between these and last inputs of form
  */
-/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 175, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--submit {
   margin-top: 15px;
 }
@@ -7449,7 +7449,7 @@ Markup:
 
 Styleguide Form.hint
 */
-/* line 195, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 190, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--hint {
   display: block;
   margin-bottom: 0.75em;
@@ -7474,18 +7474,18 @@ Markup:
 
 Styleguide Form.date
 */
-/* line 223, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 216, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-date {
   display: inline-block;
   zoom: 1;
 }
 
-/* line 232, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 225, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-date .form-group-year {
   width: 70px;
 }
 
-/* line 236, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 229, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-date .form-group {
   width: 56px;
   float: left;
@@ -7508,7 +7508,7 @@ Markup:
 
 Styleguide Form.dynamic
 */
-/* line 260, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 252, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .dynamically-displayed {
   border-left: 5px solid #DEE0E2;
   clear: both;
@@ -7532,7 +7532,7 @@ Markup:
 
 Styleguide Form.control
 */
-/* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 281, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-control {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -7550,19 +7550,19 @@ Styleguide Form.control
 }
 
 @media (max-width: 640px) {
-  /* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  /* line 281, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
   .form-control {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 309, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 301, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 select.form-control {
   -webkit-appearance: menulist;
 }
 
-/* line 313, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 305, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-control--block {
   display: block;
 }
@@ -7579,7 +7579,7 @@ Markup:
 
 Styleguide Form.legend
 */
-/* line 332, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 323, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .questionnaire legend {
   margin: 0 0 0.75em;
 }
@@ -7656,7 +7656,7 @@ Markup:
 
 Styleguide Header.Transaction
 */
-/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .transaction-banner--complete {
   background-color: #28a197;
   color: #fff;
@@ -7666,7 +7666,7 @@ Styleguide Header.Transaction
 }
 
 @media print {
-  /* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  /* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
   .transaction-banner--complete {
     background-color: #fff;
     color: #0b0c0c;
@@ -7675,7 +7675,7 @@ Styleguide Header.Transaction
   }
 }
 
-/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .transaction-banner__heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -7687,7 +7687,7 @@ Styleguide Header.Transaction
 }
 
 @media (max-width: 640px) {
-  /* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  /* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
   .transaction-banner__heading {
     font-size: 24px;
     line-height: 1.04167;
@@ -7714,7 +7714,7 @@ Markup:
 </header>
 
 */
-/* line 119, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header__menu__proposition-name {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -7727,19 +7727,19 @@ Markup:
 }
 
 @media (max-width: 640px) {
-  /* line 119, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  /* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
   .header__menu__proposition-name {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 a.header__menu__proposition-name:hover, a.header__menu__proposition-name:focus, a.header__menu__proposition-name:active {
   text-decoration: underline;
 }
 
-/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header__menu__proposition-links {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -7754,20 +7754,20 @@ a.header__menu__proposition-name:hover, a.header__menu__proposition-name:focus, 
 }
 
 @media (max-width: 640px) {
-  /* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  /* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
   .header__menu__proposition-links {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 143, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header__menu__proposition-links li {
   display: inline;
   padding-right: 0.78947em;
 }
 
-/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header__menu__proposition-links a {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -7780,7 +7780,7 @@ a.header__menu__proposition-name:hover, a.header__menu__proposition-name:focus, 
 }
 
 @media (max-width: 640px) {
-  /* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  /* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
   .header__menu__proposition-links a {
     font-size: 14px;
     line-height: 1.14286;
@@ -7811,7 +7811,7 @@ Markup:
 
 Styleguide Attorney Banner
 */
-/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .attorneyBanner {
   z-index: 999;
   border-left: 3px solid #005ea5;
@@ -7834,7 +7834,7 @@ Styleguide Attorney Banner
 }
 
 @media (max-width: 1020px) {
-  /* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+  /* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
   .stickyBanner {
     left: 0;
     right: 0;
@@ -7843,24 +7843,24 @@ Styleguide Attorney Banner
   }
 }
 
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .banner-links {
   color: #005ea5;
   float: right;
 }
 
 @media (max-width: 641px) {
-  /* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+  /* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
   .stickyBanner {
     margin: 0 15px;
   }
-  /* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+  /* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
   .banner-links {
     float: left;
   }
 }
 
-/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
+/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_attorney-banner.scss */
 .attorneyPara {
   padding: 20px 10px;
   font-size: 19px;
@@ -7954,24 +7954,24 @@ Styleguide Notification banner
   clear: none;
 }
 
-/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .explore--inside-government {
   width: 31%;
   margin-right: 0;
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .explore--inside-government li {
   width: 100%;
 }
 
-/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .explore--inside-government li:nth-child(even) {
   float: left;
   clear: both;
 }
 
-/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .explore--inline {
   border-top: 0;
   padding-bottom: 60px;
@@ -7979,14 +7979,14 @@ Styleguide Notification banner
   width: 100%;
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .explore--inline ul {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .explore--inline li {
   display: inline;
   float: none;
@@ -7994,20 +7994,20 @@ Styleguide Notification banner
   width: auto;
 }
 
-/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .explore--inline li:nth-child(even) {
   float: none;
   clear: none;
 }
 
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .explore--inline__links {
   color: #454a4c;
   padding-top: 106px;
   width: 75%;
 }
 
-/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .explore--inline__copyright {
   padding-top: 30px;
   width: 25%;
@@ -8016,7 +8016,7 @@ Styleguide Notification banner
   text-align: center;
 }
 
-/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .explore--inline__copyright__logo {
   background: url("/assets/images/govuk-crest-2x.png") no-repeat 50% 0;
   background-size: 125px 102px;
@@ -8025,7 +8025,7 @@ Styleguide Notification banner
   padding-top: 11.5rem;
 }
 
-/* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .explore__heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -8036,26 +8036,26 @@ Styleguide Notification banner
 }
 
 @media (max-width: 640px) {
-  /* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+  /* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
   .explore__heading {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 #footer .open-government-licence h2 {
   margin-top: 0 !important;
 }
 
-/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 .open-government-licence-logo {
   padding-right: 10px;
   width: 43px;
   height: 17px;
 }
 
-/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
 #footer .footer-meta .footer-meta-inner {
   margin-top: 90px;
 }
@@ -8076,7 +8076,7 @@ Markup:
 
 Styleguide Alpha.Phase Banner
 */
-/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-alpha.scss */
+/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-alpha.scss */
 .alpha-banner {
   padding: 10px 0 8px 0;
   padding-bottom: 10px;
@@ -8145,7 +8145,7 @@ Styleguide Alpha.Phase Banner
   vertical-align: baseline;
 }
 
-/* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-alpha.scss */
+/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-alpha.scss */
 .alpha-banner .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -8169,7 +8169,7 @@ Styleguide Alpha.Phase Banner
 }
 
 @media (max-width: 640px) {
-  /* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-alpha.scss */
+  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-alpha.scss */
   .alpha-banner .phase-tag {
     font-size: 14px;
     line-height: 1.14286;
@@ -8280,7 +8280,7 @@ Markup:
 
 Styleguide Beta.Phase Tag
 */
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-beta.scss */
+/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-beta.scss */
 .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
@@ -8304,14 +8304,14 @@ Styleguide Beta.Phase Tag
 }
 
 @media (max-width: 640px) {
-  /* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-beta.scss */
+  /* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-beta.scss */
   .phase-tag {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-beta.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_phase-beta.scss */
 .header__menu .beta {
   vertical-align: top;
   margin: 0.15789em 0 0 0.26316em;
@@ -8758,17 +8758,17 @@ Markup:
 
 Styleguide Panel.Form
 */
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent legend, .email-notifications__indent legend {
   margin-top: 0;
 }
 
-/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent .form-group:last-child, .email-notifications__indent .form-group:last-child {
   margin-bottom: 0;
 }
 
-/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
+/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_panel.scss */
 .panel-indent .form-control, .email-notifications__indent .form-control {
   width: 92%;
 }
@@ -8806,7 +8806,7 @@ Markup:
 
 Styleguide Panel.Shaded
 */
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_boxes.scss */
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_boxes.scss */
 .box--shaded {
   padding: 0.5em 1em;
   background-color: #DEE0E2;
@@ -9224,7 +9224,7 @@ Markup:
 
 Styleguide Dividers.Left
 */
-/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_dividers.scss */
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_dividers.scss */
 .divider-left {
   border-left: none;
   border-left: 1px solid #bfc1c3;
@@ -9546,14 +9546,14 @@ a.organisation-logo:hover, a.organisation-logo-stacked:hover, a.organisation-log
   white-space: nowrap;
 }
 
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
 .organisation-logo-stacked-medium {
   padding: 25px 0 0 7px;
   background-image: url("../images/icons/crests/hmrc_crest_18px.png");
   background-position: 6px top;
 }
 
-/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
 .organisation-logo-stacked-medium span {
   display: block;
   position: relative;
@@ -9561,7 +9561,7 @@ a.organisation-logo:hover, a.organisation-logo-stacked:hover, a.organisation-log
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 2) {
-  /* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+  /* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
   .organisation-logo-medium, .organisation-logo-stacked-medium,
   .organisation-logo-stacked-medium {
     background-image: url("../images/icons/crests/hmrc_crest_18px_x2.png");
@@ -9787,7 +9787,7 @@ Styleguide Template Sidebar
   padding: 0;
 }
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar__heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -9799,14 +9799,14 @@ Styleguide Template Sidebar
 }
 
 @media (max-width: 640px) {
-  /* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+  /* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar__heading {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar--helpful {
   color: #6f777b;
   font-family: "nta", Arial, sans-serif;
@@ -9818,7 +9818,7 @@ Styleguide Template Sidebar
 }
 
 @media (max-width: 640px) {
-  /* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+  /* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar--helpful {
     font-size: 14px;
     line-height: 1.14286;
@@ -9949,7 +9949,7 @@ Markup:
 
 Styleguide Notification.Alert
 */
-/* line 118, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert {
   clear: both;
   border-left-width: 0.15789em;
@@ -9958,7 +9958,7 @@ Styleguide Notification.Alert
   padding: 0.89474em 0.78947em;
 }
 
-/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert .alert__message {
   margin: 0 0 0.52632em;
   font-family: "nta", Arial, sans-serif;
@@ -9969,19 +9969,19 @@ Styleguide Notification.Alert
 }
 
 @media (max-width: 640px) {
-  /* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+  /* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
   .alert .alert__message {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 129, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert .alert__message:last-of-type {
   margin-bottom: 0;
 }
 
-/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert .minimise {
   float: right;
   text-align: right;
@@ -10003,32 +10003,32 @@ Markup:
 
 Styleguide Notification.Alert toggle
 */
-/* line 163, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 161, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--success {
   background-color: #e9f5f4;
   border-color: #28a197;
 }
 
-/* line 168, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 166, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--failure {
   background-color: #fff;
   border-color: #af1324;
   color: #af1324;
 }
 
-/* line 174, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 172, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--important {
   background-color: #b10e1e;
   color: #fff;
 }
 
-/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--borderless {
   border: 0;
   border-left-style: none;
 }
 
-/* line 184, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 182, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--slim {
   padding: 0.4em 0.8em 0.3em;
   border-left-width: 0.21053em;
@@ -10046,7 +10046,7 @@ Markup:
 
 Styleguide Notification.Alert info
 */
-/* line 204, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 200, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--info {
   background-color: #ddeeff;
   border-color: #005EA4;
@@ -10054,7 +10054,7 @@ Styleguide Notification.Alert info
   margin: 0.52632em 0;
 }
 
-/* line 210, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 206, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .alert--info.alert--info__light {
   background-color: #f8f8f8;
   border-color: #bfc1c3;
@@ -10078,7 +10078,7 @@ Markup:
 
 Styleguide Notification.Highlight
 */
-/* line 237, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 231, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message {
   width: 100%;
   box-sizing: border-box;
@@ -10089,14 +10089,14 @@ Styleguide Notification.Highlight
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 237, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+  /* line 231, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
   .highlight-message {
     background-image: url("../images/icons/icon-important-2x.png");
     background-size: 27px 27px;
   }
 }
 
-/* line 249, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 243, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message span {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -10108,20 +10108,20 @@ Styleguide Notification.Highlight
 }
 
 @media (max-width: 640px) {
-  /* line 249, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+  /* line 243, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
   .highlight-message span {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 256, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 250, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--content-body {
   width: 61.66%;
   min-width: 28em;
 }
 
-/* line 263, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 257, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--full-width {
   padding-top: 0.78947em;
   padding-bottom: 0.78947em;
@@ -10129,17 +10129,17 @@ Styleguide Notification.Highlight
   min-width: 100%;
 }
 
-/* line 272, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 266, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--indent {
   margin: 1.05263em 2.10526em 1.05263em 0;
 }
 
-/* line 276, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 270, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--icon-top {
   background-position: 20px 20px;
 }
 
-/* line 280, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 274, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--light {
   background-color: #fff;
   color: #0b0c0c;
@@ -10159,13 +10159,13 @@ Markup:
 
 Styleguide Notification.Highlight dark
 */
-/* line 301, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 294, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--dark {
   background-color: #005ea5;
   color: #fff;
 }
 
-/* line 302, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+/* line 295, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--dark .highlight-message--dark-text {
   color: #fff;
 }
@@ -10197,48 +10197,48 @@ Styleguide Notification.Highlight dark
   margin-bottom: 10px;
 }
 
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statements-balance .balance-message {
   margin: 0;
 }
 
-/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statements-balance.alert {
   padding: 0.8em 1em 0.6em 1em;
   margin: 1.5em 0 20px 0;
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statements-balance.alert--info {
   position: inherit;
 }
 
-/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statements-year-message {
   float: left;
   width: 50%;
 }
 
-/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statements-year-navigation {
   float: right;
   text-align: right;
   width: 50%;
 }
 
-/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statements-year--text:first-child, .statements-year__link:first-child {
   margin-right: 0.5em;
 }
 
-/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statements__table--totals {
   border: 2px solid #bfc1c3;
   border-left-width: 0;
   border-right-width: 0;
 }
 
-/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statements__table__cell--totals {
   font-weight: bold;
   width: 24.4%;
@@ -10246,34 +10246,34 @@ Styleguide Notification.Highlight dark
   text-align: right;
 }
 
-/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statements__table__cell--totals.totals {
   padding-right: 0;
   text-align: left;
 }
 
-/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statements__table__cell--totals.amount-paid {
   width: 26.2%;
 }
 
-/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statements__table__cell--totals.balance {
   padding-right: 24px;
 }
 
-/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .wrapper .annual-summaries--group {
   border-bottom-width: 0;
   margin-bottom: 10px;
 }
 
-/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .wrapper .annual-summaries--group .statements__table__row:last-child > .statements__table__cell {
   border-bottom-width: 0;
 }
 
-/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group {
   border-bottom-width: 1px;
 }
@@ -10317,13 +10317,13 @@ Styleguide Notification.Highlight dark
   display: block;
 }
 
-/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .statement__summary--parent .summary__table {
   border-bottom-width: 0;
   margin: 0;
 }
 
-/* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .statement__summary {
   padding: 0;
 }
@@ -10363,17 +10363,17 @@ Styleguide Notification.Highlight dark
   display: block;
 }
 
-/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .statement__summary--parent[aria-expanded=true] {
   background-color: #DEE0E2;
 }
 
-/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .alert--text {
   color: #b10e1e;
 }
 
-/* line 129, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .icon--flag {
   background-image: url("../images/statements-flag3.png");
   background-repeat: no-repeat;
@@ -10381,107 +10381,107 @@ Styleguide Notification.Highlight dark
   padding-left: 0.63158em;
 }
 
-/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .icon--flag:before {
   content: "\00a0";
   height: 0.73684em;
   width: 0.57895em;
 }
 
-/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .statements__table__cell, .annual-summaries--group .statements__table__head__cell {
   padding-right: 0;
 }
 
-/* line 146, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell {
   vertical-align: bottom;
 }
 
-/* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell:first-child {
   padding-left: 21px;
 }
 
-/* line 153, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 152, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell:last-child {
   padding-right: 24px;
 }
 
-/* line 158, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 157, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell,
 .annual-summaries--group .summary__cell {
   text-align: right;
   width: 24.4%;
 }
 
-/* line 163, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 162, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell.payments,
 .annual-summaries--group .summary__cell.payments {
   width: 26.2%;
 }
 
-/* line 168, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__cell--group {
   padding: 0;
 }
 
-/* line 172, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 171, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__container {
   padding-top: 10px;
   background-color: #f8f8f8;
 }
 
-/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 176, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .statement__summary {
   margin: 0;
   width: 100%;
   display: block;
 }
 
-/* line 183, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 182, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .summary__table {
   border-bottom-width: 0;
   margin: 0;
 }
 
-/* line 188, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 187, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .summary__cell {
   border-bottom-width: 0;
   padding: 12px 3px 10px;
 }
 
-/* line 193, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 192, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .summary__cell:last-child {
   padding-right: 24px;
 }
 
-/* line 197, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 196, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .summary__cell--content {
   color: #0b0c0c;
   margin-bottom: 0.26316em;
   white-space: nowrap;
 }
 
-/* line 203, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 202, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .summary__cell--no-content {
   padding-left: 18px;
   white-space: nowrap;
 }
 
-/* line 208, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 207, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table {
   border-bottom-width: 0;
   margin: 0;
 }
 
-/* line 213, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 212, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__head--item,
 .annual-summaries--group .summary__table__head {
   border-bottom-color: #bfc1c3;
 }
 
-/* line 218, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 217, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__head__cell--item,
 .annual-summaries--group .details__table__cell--item,
 .annual-summaries--group .summary__table__head__cell,
@@ -10490,7 +10490,7 @@ Styleguide Notification.Highlight dark
   color: #0b0c0c;
 }
 
-/* line 224, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 223, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__head__cell--item:nth-child(even),
 .annual-summaries--group .details__table__cell--item:nth-child(even),
 .annual-summaries--group .summary__table__head__cell:nth-child(even),
@@ -10500,12 +10500,12 @@ Styleguide Notification.Highlight dark
   padding-right: 0;
 }
 
-/* line 230, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 229, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content {
   border-bottom-width: 0;
 }
 
-/* line 234, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 233, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .cell__label--content {
   color: #6f777b;
   display: block;
@@ -10518,76 +10518,76 @@ Styleguide Notification.Highlight dark
 }
 
 @media (max-width: 640px) {
-  /* line 234, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+  /* line 233, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
   .annual-summaries--group .cell__label--content {
     font-size: 12px;
     line-height: 1.25;
   }
 }
 
-/* line 241, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 240, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__row,
 .annual-summaries--group .summary__table__row {
   vertical-align: top;
 }
 
-/* line 246, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 245, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .statements__table__head__cell--black {
   color: #0b0c0c;
 }
 
-/* line 250, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 249, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__summary--black {
   color: #0b0c0c;
   text-decoration: underline;
 }
 
-/* line 255, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 254, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table--content-container {
   border-bottom-width: 0;
 }
 
-/* line 259, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 258, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container {
   border-bottom-width: 0;
   padding: 0 24px;
 }
 
-/* line 263, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 262, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .statements__table {
   margin: 0;
   border-bottom-width: 1px;
 }
 
-/* line 267, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 266, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .statements__table .statements__table__cell, .annual-summaries--group .details__table__cell--content-container .statements__table .statements__table__head__cell {
   vertical-align: top;
 }
 
-/* line 271, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 270, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .statements__table > .statements__table__body .statements__table__row:last-child .statements__table__cell {
   border-bottom-width: 1px;
 }
 
-/* line 276, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 275, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .details__table--total {
   border-top: 1px solid #bfc1c3;
   border-bottom: 2px solid #bfc1c3;
 }
 
-/* line 282, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 281, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--total {
   padding: 12px 0 10px;
 }
 
-/* line 286, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 285, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__list--notices {
   list-style-type: disc;
   margin: 0.75em;
   max-width: 30em;
 }
 
-/* line 292, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 291, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .annual-summaries--group .details__list--notices-item {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -10598,72 +10598,72 @@ Styleguide Notification.Highlight dark
 }
 
 @media (max-width: 640px) {
-  /* line 292, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+  /* line 291, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
   .annual-summaries--group .details__list--notices-item {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 299, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 298, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .summary__table .statements__table__head {
   border-bottom-width: 0;
 }
 
-/* line 304, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 303, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .statement__details--group > .panel-indent > .statements__table, .statement__details--group > .email-notifications__indent > .statements__table {
   border-bottom-width: 0;
   width: 100%;
 }
 
-/* line 309, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 308, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .summary__table--payments {
   width: 59%;
 }
 
-/* line 315, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 314, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .h1-heading {
   margin-bottom: .8em;
 }
 
-/* line 319, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 318, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .h2-heading {
   margin-bottom: .25em;
 }
 
-/* line 323, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 322, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .h4-heading {
   margin-top: .5em;
   margin-bottom: .25em;
 }
 
-/* line 328, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 327, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .annual-summaries--group {
   margin-top: 0;
 }
 
-/* line 332, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 331, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links {
   margin-bottom: 1.6em;
   margin-right: .8em;
 }
 
-/* line 336, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 335, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links:first-child {
   margin-top: 3.6em;
 }
 
-/* line 341, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 340, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__heading {
   margin: .65em 0 .375em .15em;
 }
 
-/* line 344, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 343, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__heading:first-child {
   margin-top: 0;
 }
 
-/* line 349, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 348, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__item {
   border-bottom: 1px solid #bfc1c3;
   font-size: 19px;
@@ -10672,28 +10672,28 @@ Styleguide Notification.Highlight dark
   margin: 0;
 }
 
-/* line 356, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 355, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__item.selected {
   background-color: #005ea5;
 }
 
-/* line 359, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 358, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__item.selected .sidebar-links__link {
   color: #fff;
 }
 
-/* line 361, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 360, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__item.selected .sidebar-links__link:hover, .paye-statements .sidebar-links__item.selected .sidebar-links__link:focus, .paye-statements .sidebar-links__item.selected .sidebar-links__link:active {
   color: #fff;
 }
 
-/* line 368, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 367, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__link {
   text-decoration: none;
   padding-left: .25em;
 }
 
-/* line 372, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 371, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
 .paye-statements .sidebar-links__link:hover, .paye-statements .sidebar-links__link:focus, .paye-statements .sidebar-links__link:active {
   text-decoration: underline;
 }
@@ -10743,47 +10743,47 @@ Styleguide Tabular Data
   padding-top: 0.78947em;
 }
 
-/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__entry--grouped:last-child {
   padding-bottom: 0.78947em;
 }
 
-/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__entry--grouped + .tabular-data__entry:not(.tabular-data__entry--grouped) {
   padding-top: 1.57895em;
 }
 
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__entry--grouped + .tabular-data__entry:not(.tabular-data__entry--grouped) .tabular-data__data-1--after-details {
   top: 1.05263em;
 }
 
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__entry--grouped + .tabular-data__entry:not(.tabular-data__entry--grouped) .tabular-data__data-2--after-details {
   top: 1.05263em;
 }
 
-/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__entry--grouped {
   padding-bottom: 0.26316em;
 }
 
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__entry--grouped + .tabular-data__entry--grouped {
   padding-top: 0.26316em;
 }
 
-/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__entry--grouped .tabular-data__data-1 {
   margin-top: 0;
 }
 
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__entry--grouped .tabular-data__data-2 {
   margin-top: 0;
 }
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__entry * {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -10793,14 +10793,14 @@ Styleguide Tabular Data
 }
 
 @media (max-width: 640px) {
-  /* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+  /* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
   .tabular-data__entry * {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__heading--label {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -10811,7 +10811,7 @@ Styleguide Tabular Data
 }
 
 @media (max-width: 640px) {
-  /* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+  /* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
   .tabular-data__heading--label {
     font-size: 14px;
     line-height: 1.14286;
@@ -10819,7 +10819,7 @@ Styleguide Tabular Data
 }
 
 /** first position */
-/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__heading {
   display: inline-block;
   display: table-cell;
@@ -10827,18 +10827,18 @@ Styleguide Tabular Data
 }
 
 /** details element in first position */
-/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__details {
   margin: 0;
 }
 
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__details summary {
   width: 38%;
 }
 
 /** second position */
-/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__data-1 {
   display: block;
   margin: 0.52632em 0;
@@ -10846,13 +10846,13 @@ Styleguide Tabular Data
   width: 50%;
 }
 
-/* line 111, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__data-1 li {
   margin: 0;
 }
 
 /** need to use absolute positioning where the heading uses a details element */
-/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 118, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__data-1--after-details {
   position: absolute;
   left: 40%;
@@ -10860,7 +10860,7 @@ Styleguide Tabular Data
 }
 
 /** third position */
-/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__data-2 {
   display: block;
   margin: 0.52632em 0;
@@ -10871,7 +10871,7 @@ Styleguide Tabular Data
 }
 
 /** need to use absolute positioning where the heading uses a details element */
-/* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 139, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__data-2--after-details {
   position: absolute;
   top: 0.26316em;
@@ -10879,13 +10879,13 @@ Styleguide Tabular Data
 }
 
 /** when second position spans two columns */
-/* line 147, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__data-1--2-col {
   width: 60%;
 }
 
 /** reduce spacing between multi-entry rows in same grouping */
-/* line 154, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 155, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__cell--multi-entry + .tabular-data__cell--multi-entry {
   padding-top: 0;
   margin-top: 0;
@@ -10893,20 +10893,20 @@ Styleguide Tabular Data
 }
 
 /** cell in vertical centre */
-/* line 163, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 164, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__cell--centred {
   vertical-align: middle;
 }
 
 /** simulate cell in vertical centre */
-/* line 168, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 169, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__cell--pull-up {
   position: absolute;
   top: -1.57895em;
   right: 0;
 }
 
-/* line 176, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__tab-content {
   border-bottom: 1px solid #bfc1c3;
   padding: 1.05263em 0 0;
@@ -10915,7 +10915,7 @@ Styleguide Tabular Data
   padding: 0.26316em 0.78947em 0;
 }
 
-/* line 187, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
+/* line 188, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabular-data.scss */
 .tabular-data__divider--full-width {
   border-bottom: 1px solid #bfc1c3;
   margin: 0 -0.68421em;
@@ -10958,7 +10958,7 @@ Markup:
 
 Styleguide Code.pre
 */
-/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_code.scss */
+/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_code.scss */
 .snippet--block {
   margin: 10px 0 20px 0;
   padding: 20px;
@@ -10967,7 +10967,7 @@ Styleguide Code.pre
   line-height: 2em;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_code.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_code.scss */
 pre.snippet--block {
   font-size: 14px;
 }
@@ -10982,7 +10982,7 @@ Markup:
 
 Styleguide Code.tag
 */
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_code.scss */
+/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_code.scss */
 .tag {
   background-color: #DEE0E2;
   color: #0b0c0c;
@@ -11011,12 +11011,12 @@ Markup:
 
 Styleguide Hero
 */
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
+/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero {
   background-color: #005ea5;
 }
 
-/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
+/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content {
   display: block;
   max-width: 960px;
@@ -11033,25 +11033,25 @@ Styleguide Hero
 }
 
 @media (max-width: 640px) {
-  /* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
+  /* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
   .hero__content {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content .hero__heading-large,
 .hero__content .hero__heading-small {
   color: #fff;
 }
 
-/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content .hero__heading-large {
   margin: 0;
 }
 
-/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
+/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content .hero__heading-small {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -11061,14 +11061,14 @@ Styleguide Hero
 }
 
 @media (max-width: 640px) {
-  /* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
+  /* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
   .hero__content .hero__heading-small {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content .hero__heading-large {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -11079,14 +11079,14 @@ Styleguide Hero
 }
 
 @media (max-width: 640px) {
-  /* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
+  /* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
   .hero__content .hero__heading-large {
     font-size: 24px;
     line-height: 1.04167;
   }
 }
 
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
 .hero__content .hero__heading-large {
   font-family: "nta", Arial, sans-serif;
   font-size: 48px;
@@ -11097,7 +11097,7 @@ Styleguide Hero
 }
 
 @media (max-width: 640px) {
-  /* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
+  /* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_hero.scss */
   .hero__content .hero__heading-large {
     font-size: 32px;
     line-height: 1.09375;
@@ -11126,12 +11126,12 @@ Markup:
 
 Styleguide Breadcrumbs
 */
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav {
   padding: 0.52632em 0 2.10526em 0;
 }
 
-/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav__item {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -11146,36 +11146,36 @@ Styleguide Breadcrumbs
 }
 
 @media (max-width: 640px) {
-  /* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+  /* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
   .breadcrumb-nav__item {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav__item--trail {
   margin-left: 6px;
   margin-right: 6px;
 }
 
-/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav__item--trail:after {
   content: "›";
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav--slim {
   padding-top: 0.26316em;
   padding-bottom: 0.52632em;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav--slim .breadcrumb-nav__list {
   margin: 0;
 }
 
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 .breadcrumb-nav--slim .breadcrumb-nav__item {
   margin: 0;
 }
@@ -11199,19 +11199,19 @@ Markup:
 .global-breadcrumb--no-border - remove border from the global breadcrumb
 
 */
-/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 #global-breadcrumb {
   margin: 0;
   padding-top: 0;
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 #global-breadcrumb.global-breadcrumb--no-border {
   padding-bottom: 1.5em;
   border-bottom: 0;
 }
 
-/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
+/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_breadcrumb.scss */
 #global-breadcrumb li {
   margin-bottom: 0;
 }
@@ -11321,7 +11321,7 @@ Markup:
 
 Styleguide Accordion.Full
 */
-/* line 111, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion {
   margin: 0;
   overflow: auto;
@@ -11329,27 +11329,27 @@ Styleguide Accordion.Full
   border-bottom: 1px solid #bfc1c3;
 }
 
-/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion .tag {
   margin: 0 0.36842em 0.36842em 0;
 }
 
-/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion.accordion--expanded .accordion__body {
   border-top: 1px solid #bfc1c3;
 }
 
-/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion--stacked {
   border-bottom: none;
 }
 
-/* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 136, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion--stacked--last {
   border-bottom: 1px solid #bfc1c3;
 }
 
-/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row {
   padding: 0.78947em 0.63158em 0.78947em 0.63158em;
   background-color: #f8f8f8;
@@ -11358,7 +11358,7 @@ Styleguide Accordion.Full
   box-sizing: border-box;
 }
 
-/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row__left {
   width: 35%;
   display: table-cell;
@@ -11366,27 +11366,27 @@ Styleguide Accordion.Full
   box-sizing: border-box;
 }
 
-/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 154, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row__left .accordion__indicator {
   float: left;
   margin: -0.21053em 0.26316em 0.26316em 0;
   margin-top: -0.10526em;
 }
 
-/* line 168, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 166, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row__right {
   width: 50%;
   display: table-cell;
   box-sizing: border-box;
 }
 
-/* line 174, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 172, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body {
   overflow: hidden;
   border-top: 1px solid #f8f8f8;
 }
 
-/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row {
   border-bottom: 1px solid #bfc1c3;
   overflow: auto;
@@ -11395,12 +11395,12 @@ Styleguide Accordion.Full
   width: 100%;
 }
 
-/* line 186, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 184, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row:last-child {
   border-bottom: none;
 }
 
-/* line 192, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 190, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__left {
   padding: 0.52632em 0.63158em 0.52632em 1.57895em;
   width: 42%;
@@ -11409,24 +11409,24 @@ Styleguide Accordion.Full
   display: table-cell;
 }
 
-/* line 199, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 197, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__left.spaced {
   padding: 0.78947em 0.63158em 0.78947em 1.57895em;
 }
 
-/* line 216, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 214, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__right {
   padding: 0.52632em 0.63158em 0.52632em 0;
   background-color: white;
   display: table-cell;
 }
 
-/* line 227, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 225, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__right.spaced {
   padding: 0.78947em 0.63158em 0.78947em 0;
 }
 
-/* line 238, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 236, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__button:visited {
   color: #005ea5;
 }
@@ -11504,7 +11504,7 @@ var countries = [{"title": "United Kingdom","value": "44"},{"title": "Afghanista
 
 Styleguide AutoComplete
 */
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions {
   position: absolute;
   z-index: 1000;
@@ -11512,57 +11512,57 @@ Styleguide AutoComplete
   width: 92%;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions-input-container {
   position: relative;
 }
 
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions-input {
   width: 92%;
 }
 
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions-list {
   margin: 0;
   list-style: none;
   border: 1px solid #bfc1c3;
 }
 
-/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion {
   padding: 0.42105em 0.52632em;
   margin: 0 !important;
 }
 
-/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion:hover {
   background-color: #2b8cc4;
   color: #fff;
 }
 
-/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion__highlight {
   font-weight: bold;
 }
 
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion--selected {
   background-color: #2b8cc4;
   color: #fff;
 }
 
-/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion--first {
   margin-top: 0;
 }
 
-/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestion--last {
   margin-bottom: 0;
 }
 
-/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions-clear {
   background-image: url("../images/clear_all_button.png");
   background-repeat: no-repeat;
@@ -11578,19 +11578,19 @@ Styleguide AutoComplete
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+  /* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
   .suggestions-clear {
     background-image: url("../images/clear_all_button_x2.png");
     background-size: 22px 44px;
   }
 }
 
-/* line 108, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .suggestions-clear:hover {
   background-position: bottom right;
 }
 
-/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
+/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_auto-complete.scss */
 .has-suggestions {
   border-bottom: 1px solid #fff;
 }
@@ -11610,7 +11610,7 @@ Markup:
 
 Styleguide External Markup
 */
-/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
+/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
 .external-markup h2 {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -11621,14 +11621,14 @@ Styleguide External Markup
 }
 
 @media (max-width: 640px) {
-  /* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
+  /* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
   .external-markup h2 {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
+/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
 .external-markup p, .external-markup a {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -11638,7 +11638,7 @@ Styleguide External Markup
 }
 
 @media (max-width: 640px) {
-  /* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
+  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
   .external-markup p, .external-markup a {
     font-size: 14px;
     line-height: 1.14286;
@@ -12053,7 +12053,7 @@ body.scroll-off {
   width: 100%;
 }
 
-/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog {
   background-color: rgba(89, 89, 89, 0.7);
   left: 0;
@@ -12063,7 +12063,7 @@ body.scroll-off {
   z-index: 1;
 }
 
-/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
+/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog.modal-dialog--hidden {
   clip: rect(0.05263em 0.05263em 0.05263em 0.05263em);
   clip: rect(0.05263em, 0.05263em, 0.05263em, 0.05263em);
@@ -12077,7 +12077,7 @@ body.scroll-off {
   z-index: 0;
 }
 
-/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
+/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog.modal-dialog--hidden:focus {
   clip: auto;
   height: auto;
@@ -12086,18 +12086,18 @@ body.scroll-off {
   width: auto;
 }
 
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog__content {
   padding: 0.36842em 1.68421em;
   position: static;
 }
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
+/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog__content:focus {
   outline: 3px solid #FFBF47;
 }
 
-/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
+/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_modal-dialog.scss */
 .modal-dialog__inner {
   background-color: #fff;
   border: 0.26316em solid #0b0c0c;
@@ -12166,14 +12166,14 @@ Markup:
 
 Styleguide App Info.Approved
 */
-/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
 .app-info {
   display: table;
   width: 100%;
   border-bottom: 1px solid #bfc1c3;
 }
 
-/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
 .app-info__primary,
 .app-info__secondary {
   display: table-cell;
@@ -12186,7 +12186,7 @@ Styleguide App Info.Approved
 }
 
 @media (max-width: 640px) {
-  /* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+  /* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
   .app-info__primary,
   .app-info__secondary {
     font-size: 16px;
@@ -12194,12 +12194,12 @@ Styleguide App Info.Approved
   }
 }
 
-/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
 .app-info__secondary {
   text-align: right;
 }
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
 .app-info__heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -12210,14 +12210,14 @@ Styleguide App Info.Approved
 }
 
 @media (max-width: 640px) {
-  /* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+  /* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
   .app-info__heading {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
 .app-info__info {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -12228,7 +12228,7 @@ Styleguide App Info.Approved
 }
 
 @media (max-width: 640px) {
-  /* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+  /* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
   .app-info__info {
     font-size: 14px;
     line-height: 1.14286;
@@ -12248,7 +12248,7 @@ Markup:
 
 Styleguide App Info.Status
 */
-/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
 .status {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -12258,19 +12258,19 @@ Styleguide App Info.Status
 }
 
 @media (max-width: 640px) {
-  /* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+  /* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
   .status {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
 .status--verified {
   color: #009900;
 }
 
-/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
 .status--not-verified {
   color: #F47738;
 }
@@ -12354,12 +12354,12 @@ Styleguide Flag
   margin-left: 0.31579em;
 }
 
-/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
+/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
 .flag.flag--on-left-side {
   margin-right: 0.31579em;
 }
 
-/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
+/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
 .highlight-block--red {
   display: inline-block;
   color: #fff;
@@ -12376,7 +12376,7 @@ Styleguide Flag
 }
 
 @media (max-width: 640px) {
-  /* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
+  /* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
   .highlight-block--red {
     font-size: 14px;
     line-height: 1.14286;
@@ -13091,7 +13091,7 @@ p.email-notifications__p {
     TODO: refactor styles back to SASS
 
 \*------------------------------------*/
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 8, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 article h1 {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -13103,110 +13103,110 @@ article h1 {
 }
 
 @media (max-width: 640px) {
-  /* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+  /* line 8, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
   article h1 {
     font-size: 24px;
     line-height: 1.04167;
   }
 }
 
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 article ul {
   list-style: none;
   margin: 0.75em 0;
   padding: 0;
 }
 
-/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 article ol {
   margin: 0.75em 0;
 }
 
-/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 ol {
   padding: 0 0 0 40px;
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 li {
   list-style-position: outside;
 }
 
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 article li {
   padding-left: 0;
 }
 
-/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .service-info__organisation-logo {
   line-height: 1.15em;
 }
 
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 a.header__menu__proposition-name, a:visited.header__menu__proposition-name {
   color: #fff;
 }
 
-/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .l-bodyRightColumn p, .l-bodyRightColumn li {
   width: 15em;
 }
 
-/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .l-bodyRightColumn h2 {
   width: 10em;
 }
 
-/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 abbr[title] {
   border-bottom: 0px;
 }
 
-/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .email {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 div.email {
   margin: 2em 0em;
 }
 
-/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .list--numbered li {
   display: list-item;
   overflow: hidden;
 }
 
-/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .inline-form .form-field, .inline-form .form-field--inline, .inline-form .form-field--inline-text-input, .inline-form .form-field--inline-spaced-right, .inline-form .form-field--inline-spaced-left {
   line-height: 1.3em;
   margin: 0.2em 0 0 0;
 }
 
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .inline-form .form-field input[type="text"], .inline-form .form-field--inline input[type="text"], .inline-form .form-field--inline-text-input input[type="text"], .inline-form .form-field--inline-spaced-right input[type="text"], .inline-form .form-field--inline-spaced-left input[type="text"] {
   margin: 0 10px;
 }
 
-/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .inline-form .form-field--inline input[type="text"], .inline-form .form-field--inline-text-input input[type="text"], .inline-form .form-field--inline-spaced-right input[type="text"], .inline-form .form-field--inline-spaced-left input[type="text"] {
   margin: 0 10px;
 }
 
-/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .service-info__help a {
   font-size: 16px;
   line-height: 1.25;
   font-weight: 300;
 }
 
-/* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .service-info__help {
   color: #0b0c0c;
 }
 
-/* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .explore--inline {
   border-top: 0;
   margin: 0;
@@ -13214,7 +13214,7 @@ div.email {
 
 /*------------------------------------*    form validations
 \*------------------------------------*/
-/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .form-field.error, .error.form-field--inline, .error.form-field--inline-text-input, .error.form-field--inline-spaced-right, .error.form-field--inline-spaced-left, .form-field-group.error, .error.form-field-single {
   background-color: #fff;
   border-left: 3px solid #df3034;
@@ -13222,7 +13222,7 @@ div.email {
   margin: 0 -1em 0.5em -1em;
 }
 
-/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .client-error-notification {
   color: #af1324;
   display: none;
@@ -13230,7 +13230,7 @@ div.email {
   padding-bottom: 0.5em;
 }
 
-/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .error .client-error-notification {
   display: block;
   float: none;
@@ -13242,7 +13242,7 @@ div.email {
 }
 
 @media (max-width: 640px) {
-  /* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+  /* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
   .error .client-error-notification {
     font-size: 14px;
     line-height: 1.14286;
@@ -13250,12 +13250,12 @@ div.email {
 }
 
 /* Add grey footer when page is too short */
-/* line 129, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 html {
   background: #DEE0E2;
 }
 
-/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 body {
   background: #fff;
 }
@@ -13307,12 +13307,12 @@ label.selectable input {
   border-left: 3px solid #b10e1e;
 }
 
-/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .js .email-form-errors .error-notification {
   display: none;
 }
 
-/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .connected,
 .answer .optional-section {
   border-left: 3px solid #999;
@@ -13322,24 +13322,24 @@ label.selectable input {
   overflow: hidden;
 }
 
-/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .connected {
   box-sizing: border-box;
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 #content > .full-width {
   width: auto;
   float: none;
 }
 
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .important-dates .important-date {
   border-bottom: 1px solid #ccc;
   padding: 1em 0;
 }
 
-/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .important-dates .date-wrap {
   width: 200px;
   margin-right: -200px;
@@ -13349,27 +13349,27 @@ label.selectable input {
   text-align: center;
 }
 
-/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .important-dates .date-wrap time {
   display: block;
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .important-dates .date-wrap time span {
   display: block;
 }
 
-/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .important-dates .date-wrap time .day {
   font-size: 2.0em;
 }
 
-/* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .important-dates .date-wrap time .month {
   font-weight: bold;
 }
 
-/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .important-dates .date-wrap strong {
   color: #fff;
   background: #000;
@@ -13378,23 +13378,23 @@ label.selectable input {
   margin: 0.2em 0;
 }
 
-/* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .important-dates .date-message {
   padding: 0 20px 0 200px;
 }
 
-/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .important-dates .date-message h3, .important-dates .date-message .h3-heading {
   margin-top: 0.3em;
 }
 
-/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .important-dates-wrap .footer-message {
   text-align: center;
   padding: 2em;
 }
 
-/* line 114, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .has-self-assessment,
 .has-corporation,
 .has-vat,
@@ -13402,7 +13402,7 @@ label.selectable input {
   display: none;
 }
 
-/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 body.self-assessment .has-self-assessment,
 body.corporation .has-corporation,
 body.vat .has-vat,
@@ -13410,13 +13410,13 @@ body.paye .has-paye {
   display: block;
 }
 
-/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 129, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .main-nav {
   border-bottom: 1px solid #ccc;
   margin: 2em 0;
 }
 
-/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .main-nav .tab {
   display: inline-block;
   padding: 12px 20px;
@@ -13424,7 +13424,7 @@ body.paye .has-paye {
   position: relative;
 }
 
-/* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .main-nav .tab.selected {
   border: 1px solid #ccc;
   border-bottom: none;
@@ -13435,19 +13435,19 @@ body.paye .has-paye {
   margin-bottom: -1px;
 }
 
-/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 151, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .main-nav .messages,
 .main-nav .messages.selected {
   padding-right: 40px;
 }
 
-/* line 155, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .main-nav .messages.no-unread,
 .main-nav .messages.selected.no-unread {
   padding-right: 19px;
 }
 
-/* line 160, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 161, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .main-nav .count {
   position: absolute;
   background: #b10e1e;
@@ -13460,31 +13460,31 @@ body.paye .has-paye {
   line-height: 16px;
 }
 
-/* line 172, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 173, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .full-message {
   width: 64%;
   float: left;
 }
 
-/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 178, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .full-message li {
   list-style: disc;
   margin-left: 1.5em;
 }
 
-/* line 182, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 183, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .full-message .date-sent {
   font-size: 16px;
   color: #454a4c;
 }
 
-/* line 187, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 188, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 table details {
   margin: 0;
 }
 
 /************************* Styling for important notices *************************/
-/* line 193, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 194, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
 .important-notice {
   padding-left: 2.5em;
   background: no-repeat left top url(../images/icons/icon-important.png);
