@@ -41,11 +41,20 @@ $modal-dialog-yellow: $attorney-yellow;
 // NOTE this is a grey from govuk_elements, which will be removed, so adding a version of it here
 $govuk-grey-3: #DEE0E2;
 
-$attorney-border-left-client-request-accepted: #006435;
-$attorney-bg-client-request-accepted: #BFD8CD;
+$lime-green: #006435;
+$light-lime-green: #BFD8CD;
 
-$attorney-border-left-client-request-requested: #F47738;
-$attorney-bg-client-request-requested: #FCDDCD;
+$light-orange: #F47738;
+$light-salmon-orange:#FCDDCD;
 
-$attorney-border-left-client-request-rejected: #B10E1E;
-$attorney-bg-client-request-rejected: #ECC3C7;
+$scarlet-red: #B10E1E;
+$pale-violet-red: #ECC3C7;
+
+$client-request-accepted-border: $lime-green;
+$client-request-accepted-bg: $light-lime-green;
+
+$client-request-requested-border: $light-orange;
+$client-request-requested-bg: $light-salmon-orange;
+
+$client-request-rejected-border: $scarlet-red;
+$client-request-rejected-bg: $pale-violet-red;
