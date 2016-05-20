@@ -5,7 +5,7 @@ The Attorney Banner adds a persistent floating banner to display additional logi
 
 Markup:
 <div class="grid-wrapper attorneyContainer">
-    <div class="attorneyBanner grid">
+    <div class="attorneyBanner grid {{modifier_class}}">
         <div class="grid grid-2-3">
             <div class="inner-block">
                 You're using this service for
@@ -19,6 +19,10 @@ Markup:
         </div>
     </div>
 </div>
+
+.attorneyBanner--accepted      - if agent has accepted the client request
+.attorneyBanner--requested     - when client has requested an agent, but the agent hasn't accepted the client request yet. its pending
+.attorneyBanner--rejected      - when an agent rejects a client request to act on his/her behalf
 
 Styleguide Attorney Banner
 */
@@ -35,6 +39,21 @@ Styleguide Attorney Banner
 .grid-wrapper.attorneyContainer{
   margin:0 0 30px 0;
 }
+.attorneyBanner--accepted {
+  border-left: 3px solid $attorney-border-left-accepted;
+  background-color: $attorney-bg-accepted;
+}
+
+.attorneyBanner--requested {
+  border-left: 3px solid $attorney-border-left-requested;
+  background-color: $attorney-bg-requested;
+}
+
+.attorneyBanner--rejected {
+  border-left: 3px solid $attorney-border-left-rejected;
+  background-color: $attorney-bg-rejected;
+}
+
 
 //POTENTIALLY-NOT-IN-USE
 .stickyBanner {
@@ -71,20 +90,4 @@ Styleguide Attorney Banner
   padding: 20px 10px;
   font-size: 19px;
   margin: 0;
-}
-
-//to override background-colour and border-left of attorneyBanner
-.attorneyBanner--accepted {
-  border-left: 3px solid #006435;
-  background-color: #BFD8CD;
-}
-
-.attorneyBanner--requested {
-  border-left: 3px solid #F47738;
-  background-color: #FCDDCD;
-}
-
-.attorneyBanner--rejected {
-  border-left: 3px solid #B10E1E;
-  background-color: #ECC3C7;
 }
