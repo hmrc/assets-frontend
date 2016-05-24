@@ -64,7 +64,7 @@ var maskControlEvent = function ($containerElem) {
     event.preventDefault();
 
     // if toggle target selector is provided
-    if (targetSelector.length > 0) {
+    if (targetSelector && targetSelector.length > 0) {
       var $target = $containerElem.find('.' + targetSelector).first();
 
       // hide is already visible
