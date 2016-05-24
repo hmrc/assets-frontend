@@ -2,6 +2,9 @@ require('jquery');
 
 var JS_VISIBLE_SELECTOR = 'js-visible';
 var JS_HIDDEN_SELECTOR = 'js-hidden';
+var SECRET_KEY = 'secret-key';
+var ERROR_MESSAGE = 'Invalid credential';
+
 var fixtureOneMaskText;
 var fixtureOneSecretText;
 var fixtureOneControlTextShow;
@@ -11,6 +14,12 @@ var fixtureTwoMaskText;
 var fixtureTwoSecretText;
 var fixtureTwoControlTextShow;
 var fixtureTwoControlTextHide;
+
+var $fixtureThreeMaskToggleTarget;
+var fixtureThreeMaskText;
+var fixtureThreeSecretText;
+var fixtureThreeControlTextShow;
+var fixtureThreeControlTextHide;
 
 var $fixtureOne;
 var $fixtureOneQaMask;
@@ -23,6 +32,12 @@ var $fixtureTwoQaSecret;
 var $fixtureTwoControl;
 var mask;
 
+var $fixtureThree;
+var $fixtureThreeQaMask;
+var $fixtureThreeQaSecret;
+var $fixtureThreeControl;
+var $fixtureThreeTarget;
+var $fixtureThreeErrorMessage;
 
 var setup = function () {
   mask();
@@ -37,6 +52,13 @@ var setup = function () {
   $fixtureTwoQaSecret = $fixtureTwo.find('.qa-secret');
   $fixtureTwoControl = $fixtureTwo.find('.qa-mask-control');
 
+  $fixtureThree = $('#fixture-three');
+  $fixtureThreeQaMask = $fixtureThree.find('.qa-mask');
+  $fixtureThreeQaSecret = $fixtureThree.find('.qa-secret');
+  $fixtureThreeControl = $fixtureThree.find('.qa-mask-control');
+  $fixtureThreeTarget = $fixtureThree.find('.qa-mask-target');
+  $fixtureThreeErrorMessage = $fixtureThree.find('.qa-error-message');
+
   fixtureOneMaskText = $fixtureOneQaMask.text();
   fixtureOneSecretText = $fixtureOneQaSecret.text();
   fixtureOneControlTextShow = $fixtureOneControl.data('textShow') + ' ' +
@@ -50,6 +72,15 @@ var setup = function () {
                               $fixtureTwoControl.data('accessibleText');
   fixtureTwoControlTextHide = $fixtureTwoControl.data('textHide') + ' ' +
                               $fixtureTwoControl.data('accessibleText');
+
+
+  $fixtureThreeMaskToggleTarget = $fixtureThreeControl.data('mask-toggle-target');
+  fixtureThreeMaskText = $fixtureThreeQaMask.text();
+  fixtureThreeSecretText = $fixtureThreeQaSecret.text();
+  fixtureThreeControlTextShow = $fixtureThreeControl.data('textShow') + ' ' +
+                                $fixtureThreeControl.data('accessibleText');
+  fixtureThreeControlTextHide = $fixtureThreeControl.data('textHide') + ' ' +
+                                $fixtureThreeControl.data('accessibleText');
 
 };
 
@@ -72,6 +103,11 @@ describe('Mask', function () {
       expect(fixtureTwoMaskText).toBe(fixtureTwoMaskText);
       expect(fixtureTwoSecretText).toBe(fixtureTwoSecretText);
       expect($fixtureTwoControl.text()).toBe(fixtureTwoControlTextShow);
+
+      expect(fixtureThreeMaskText).toBe(fixtureThreeMaskText);
+      expect(fixtureThreeSecretText).toBe(fixtureThreeSecretText);
+      expect($fixtureThreeControl.text()).toBe(fixtureThreeControlTextShow);
+      expect($fixtureThreeMaskToggleTarget).toBe('qa-mask-target');
     });
 
     it('components visibility is correctly set up', function () {
@@ -80,6 +116,8 @@ describe('Mask', function () {
 
       expect($fixtureTwoQaMask).toHaveClass(JS_VISIBLE_SELECTOR);
       expect($fixtureTwoQaSecret).toHaveClass(JS_HIDDEN_SELECTOR);
+
+      expect($fixtureThreeTarget).toHaveClass(JS_HIDDEN_SELECTOR);
     });
   });
 
@@ -114,6 +152,17 @@ describe('Mask', function () {
       expect($fixtureTwoControl.text()).toBe(fixtureTwoControlTextShow);
     });
 
+    it('should show target (if defined) when control', function () {
+      $fixtureThreeControl.click();
+      expect($fixtureThreeQaMask).toHaveClass(JS_VISIBLE_SELECTOR);
+      expect($fixtureThreeQaSecret).toHaveClass(JS_HIDDEN_SELECTOR);
+      expect($fixtureThreeTarget).toHaveClass(JS_VISIBLE_SELECTOR);
+    });
+
+    it('should set secret key on "unmask" event', function () {
+      $fixtureThreeControl.trigger('unmask', SECRET_KEY);
+      expect($fixtureThreeQaSecret.text()).toBe(SECRET_KEY);
+    });
   });
 
   describe('on revealing a timer-configured secret', function() {
