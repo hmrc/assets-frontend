@@ -1,4 +1,17 @@
-// HMRC
+/*
+Organisation Logo
+
+Adds HMRC crest logo and green left hand border.
+
+Markup:
+<div class="organisation-logo {{modifier_class}}">
+  <span>HMRC Revenue & Customs</span>
+</div>
+
+.organisation-logo-medium - larger logo and font
+
+Styleguide Organisation Logo
+*/
 .organisation-logo {
   font-family: Helvetica, Arial;
   font-weight: 400;
@@ -6,7 +19,6 @@
   position: relative;
   font-size: 13px;
   line-height: 16px;
-  padding: 3px 0 2px 0;
   text-decoration: none;
 
   padding: 3px 0 2px 30px;
@@ -32,6 +44,20 @@ a.organisation-logo {
   }
 }
 
+/*
+Stacked
+
+Text appears below the logo.
+
+Markup:
+<div class="organisation-logo-stacked {{modifier_class}}">
+  <span>HMRC Revenue & Customs</span>
+</div>
+
+.organisation-logo-stacked-medium - Larger logo and font
+
+Styleguide Organisation Logo.Stacked
+*/
 .organisation-logo-stacked {
   @extend .organisation-logo;
 
@@ -54,7 +80,6 @@ a.organisation-logo {
   }
 }
 
-// Single identity Medium
 .organisation-logo-medium {
   @include media(tablet) {
     font-size: 18px;
