@@ -208,9 +208,14 @@
                   <a href="section-notification-banner.html" class="comp-lib-menu-link">Notification banner</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-organisation-logo.html" class="comp-lib-menu-link">Organisation Logo</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-organisation-logo.html#kssref-organisation-logo-stacked">Stacked</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-page-header.html" class="comp-lib-menu-link">Page Header</a>
@@ -248,11 +253,9 @@
                   <a href="section-template-page-header.html" class="comp-lib-menu-link">Template Page Header</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-template-sidebar.html" class="comp-lib-menu-link">Template Sidebar</a>
 
-                  <ul>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-text-input.html" class="comp-lib-menu-link">Text Input</a>
@@ -279,9 +282,9 @@
           </aside>
           <div id="content">
             <article class="comp-lib-main">
-                    <div id="kssref-template-sidebar">
+                    <div id="kssref-organisation-logo">
                   <div>
-                    <h1><a href="#kssref-template-sidebar" class="comp-lib-menu-link">Template Sidebar</a></h1>
+                    <h1><a href="#kssref-organisation-logo" class="comp-lib-menu-link">Organisation Logo</a></h1>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
@@ -291,7 +294,7 @@
                         
                         
                       </h2>
-                      <p>An example of a right floated sidebar.</p>
+                      <p>Adds HMRC crest logo and green left hand border.</p>
 
                     </div>
                   </div>
@@ -300,94 +303,89 @@
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <div class="sidebar [modifier class]">
-  <ul class="sidebar__list">
-    <li class="sidebar__list-item">
-      Sidebar list item
-    </li>
-    <li class="sidebar__list-item">
-      <p class="sidebar__list-item--small-indent">Indented sidebar list item</p>
-    </li>
-  </ul>
+                          <div class="organisation-logo [modifier class]">
+  <span>HMRC Revenue & Customs</span>
 </div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;sidebar [modifier class]&quot;&gt;
-  &lt;ul class=&quot;sidebar__list&quot;&gt;
-    &lt;li class=&quot;sidebar__list-item&quot;&gt;
-      Sidebar list item
-    &lt;/li&gt;
-    &lt;li class=&quot;sidebar__list-item&quot;&gt;
-      &lt;p class=&quot;sidebar__list-item--small-indent&quot;&gt;Indented sidebar list item&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;organisation-logo [modifier class]&quot;&gt;
+  &lt;span&gt;HMRC Revenue &amp; Customs&lt;/span&gt;
 &lt;/div&gt;</code></pre>
                         </div>
                       </div>
 
                       <div class="comp-lib-pattern-example">
-                        <h2>.sidebar--full-width</h2>
+                        <h2>.organisation-logo-medium</h2>
                         <div class="comp-lib-description">
-                          Full width sidebar
+                          larger logo and font
                         </div>
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <div class="sidebar sidebar--full-width">
-  <ul class="sidebar__list">
-    <li class="sidebar__list-item">
-      Sidebar list item
-    </li>
-    <li class="sidebar__list-item">
-      <p class="sidebar__list-item--small-indent">Indented sidebar list item</p>
-    </li>
-  </ul>
+                          <div class="organisation-logo organisation-logo-medium">
+  <span>HMRC Revenue & Customs</span>
 </div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;sidebar sidebar--full-width&quot;&gt;
-  &lt;ul class=&quot;sidebar__list&quot;&gt;
-    &lt;li class=&quot;sidebar__list-item&quot;&gt;
-      Sidebar list item
-    &lt;/li&gt;
-    &lt;li class=&quot;sidebar__list-item&quot;&gt;
-      &lt;p class=&quot;sidebar__list-item--small-indent&quot;&gt;Indented sidebar list item&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                      </div>
-                      <div class="comp-lib-pattern-example">
-                        <h2>.sidebar--hidden-sm</h2>
-                        <div class="comp-lib-description">
-                          Sidebar hidden in <code>small</code> viewport
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <div class="sidebar sidebar--hidden-sm">
-  <ul class="sidebar__list">
-    <li class="sidebar__list-item">
-      Sidebar list item
-    </li>
-    <li class="sidebar__list-item">
-      <p class="sidebar__list-item--small-indent">Indented sidebar list item</p>
-    </li>
-  </ul>
-</div>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;sidebar sidebar--hidden-sm&quot;&gt;
-  &lt;ul class=&quot;sidebar__list&quot;&gt;
-    &lt;li class=&quot;sidebar__list-item&quot;&gt;
-      Sidebar list item
-    &lt;/li&gt;
-    &lt;li class=&quot;sidebar__list-item&quot;&gt;
-      &lt;p class=&quot;sidebar__list-item--small-indent&quot;&gt;Indented sidebar list item&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;organisation-logo organisation-logo-medium&quot;&gt;
+  &lt;span&gt;HMRC Revenue &amp; Customs&lt;/span&gt;
 &lt;/div&gt;</code></pre>
                         </div>
                       </div>
                     </div>
 
                     </div>
+
+
+                    <section id="kssref-organisation-logo-stacked">
+                  <div>
+                    <h2><a href="#kssref-organisation-logo-stacked" class="comp-lib-menu-link">Stacked</a></h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>Text appears below the logo.</p>
+
+                    </div>
+                  </div>
+
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <div class="organisation-logo-stacked [modifier class]">
+  <span>HMRC Revenue & Customs</span>
+</div>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;organisation-logo-stacked [modifier class]&quot;&gt;
+  &lt;span&gt;HMRC Revenue &amp; Customs&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+
+                      <div class="comp-lib-pattern-example">
+                        <h2>.organisation-logo-stacked-medium</h2>
+                        <div class="comp-lib-description">
+                          Larger logo and font
+                        </div>
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <div class="organisation-logo-stacked organisation-logo-stacked-medium">
+  <span>HMRC Revenue & Customs</span>
+</div>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;organisation-logo-stacked organisation-logo-stacked-medium&quot;&gt;
+  &lt;span&gt;HMRC Revenue &amp; Customs&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+
+                    </section>
 
 
             </article>

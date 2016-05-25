@@ -9409,7 +9409,21 @@ Styleguide Dividers.Left
   float: left;
 }
 
-/* line 2, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/*
+Organisation Logo
+
+Adds HMRC crest logo and green left hand border.
+
+Markup:
+<div class="organisation-logo {{modifier_class}}">
+  <span>HMRC Revenue & Customs</span>
+</div>
+
+.organisation-logo-medium - larger logo and font
+
+Styleguide Organisation Logo
+*/
+/* line 15, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
 .organisation-logo, .organisation-logo-stacked {
   font-family: Helvetica, Arial;
   font-weight: 400;
@@ -9417,7 +9431,6 @@ Styleguide Dividers.Left
   position: relative;
   font-size: 13px;
   line-height: 16px;
-  padding: 3px 0 2px 0;
   text-decoration: none;
   padding: 3px 0 2px 30px;
   background-image: url("../images/icons/crests/hmrc_crest_13px.png");
@@ -9426,29 +9439,43 @@ Styleguide Dividers.Left
   border-left: 2px solid #009390;
 }
 
-/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
 .organisation-logo:link, .organisation-logo-stacked:link, .organisation-logo:visited, .organisation-logo-stacked:visited {
   color: #0b0c0c;
 }
 
-/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
 .organisation-logo a, .organisation-logo-stacked a, .organisation-logo span, .organisation-logo-stacked span {
   color: #0b0c0c;
 }
 
-/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
 a.organisation-logo:hover, a.organisation-logo-stacked:hover, a.organisation-logo:focus, a.organisation-logo-stacked:focus {
   text-decoration: underline;
 }
 
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/*
+Stacked
+
+Text appears below the logo.
+
+Markup:
+<div class="organisation-logo-stacked {{modifier_class}}">
+  <span>HMRC Revenue & Customs</span>
+</div>
+
+.organisation-logo-stacked-medium - Larger logo and font
+
+Styleguide Organisation Logo.Stacked
+*/
+/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
 .organisation-logo-stacked {
   padding: 20px 0 0 6px;
   background-image: url("../images/icons/crests/hmrc_crest_13px.png");
   background-position: 5px top;
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
 .organisation-logo-stacked span {
   display: block;
   position: relative;
@@ -9456,7 +9483,7 @@ a.organisation-logo:hover, a.organisation-logo-stacked:hover, a.organisation-log
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 2) {
-  /* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+  /* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
   .organisation-logo, .organisation-logo-stacked,
   .organisation-logo-stacked {
     background-image: url("../images/icons/crests/hmrc_crest_13px_x2.png");
@@ -9464,7 +9491,7 @@ a.organisation-logo:hover, a.organisation-logo-stacked:hover, a.organisation-log
   }
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
 .organisation-logo-medium, .organisation-logo-stacked-medium {
   font-size: 18px;
   line-height: 22px;
@@ -9475,19 +9502,19 @@ a.organisation-logo:hover, a.organisation-logo-stacked:hover, a.organisation-log
   white-space: nowrap;
 }
 
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
 .organisation-logo-medium, .organisation-logo-stacked-medium {
   background-image: url("../images/icons/crests/hmrc_crest_13px.png");
 }
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
 .organisation-logo-stacked-medium {
   padding: 25px 0 0 7px;
   background-image: url("../images/icons/crests/hmrc_crest_18px.png");
   background-position: 6px top;
 }
 
-/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+/* line 111, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
 .organisation-logo-stacked-medium span {
   display: block;
   position: relative;
@@ -9495,7 +9522,7 @@ a.organisation-logo:hover, a.organisation-logo-stacked:hover, a.organisation-log
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 2) {
-  /* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_organisation-logo.scss */
+  /* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
   .organisation-logo-medium, .organisation-logo-stacked-medium,
   .organisation-logo-stacked-medium {
     background-image: url("../images/icons/crests/hmrc_crest_18px_x2.png");
