@@ -287,8 +287,8 @@ Styleguide Form.control
   background-color: $white;
   border: 1px solid $border-colour;
 
-  // Disable webkit appearance and remove rounded corners
-  -webkit-appearance: none;
+  // Disable appearance and remove rounded corners
+  appearance: none;
   border-radius: 0;
 
   @include media(tablet) {
@@ -299,7 +299,7 @@ Styleguide Form.control
 
 // fix the select element on Webkit which is broken in govuk_elements' version of this file
 select.form-control {
-  -webkit-appearance: menulist;
+  appearance: menulist;
 }
 
 .form-control--block {

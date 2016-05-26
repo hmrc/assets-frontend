@@ -21,7 +21,7 @@ gulp.task('sass', ['stylelint'], function() {
          this.emit('end');
        }))
        .pipe(sass(config[env].settings))
-       .pipe(autoprefixer())
+       .pipe(autoprefixer({browsers: ['last 2 versions', 'IE >= 8']}))
        .pipe(rename({suffix: '.min'}))
        .pipe(gulpif(isDev, sourceMaps.write(config[env].sourceMapsDir)))
        .pipe(gulp.dest(config[env].dest));
