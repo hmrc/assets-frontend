@@ -1,8 +1,25 @@
+/*
+Report Error
+
+Display 'Get help with this page' form, and loading spinner while form is loaded by ajax.
+
+Markup:
+<div class="report-error">
+    <a class="report-error__toggle">Get help with this page</a>
+    <div class="report-error__content">
+        <div class="report-error__loading"></div>
+    </div>
+</div>
+
+Styleguide Report Error
+*/
+
 .report-error {
   display: inline-block;
   clear: both;
   width: 100%;
   margin: 2em 0 1.5em 0;
+
   .report-error__toggle {
     @include core-16;
     color: #454a4c;
