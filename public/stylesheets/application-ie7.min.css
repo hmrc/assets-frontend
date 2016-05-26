@@ -5,15 +5,7 @@
   width: device-width;
 }
 
-@-o-viewport {
-  width: device-width;
-}
-
 @-ms-viewport {
-  width: device-width;
-}
-
-@-o-viewport {
   width: device-width;
 }
 
@@ -38,10 +30,6 @@
   width: device-width;
 }
 
-@-o-viewport {
-  width: device-width;
-}
-
 @font-face {
   font-family: GDS-Logo;
   src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
@@ -51,15 +39,7 @@
   width: device-width;
 }
 
-@-o-viewport {
-  width: device-width;
-}
-
 @-ms-viewport {
-  width: device-width;
-}
-
-@-o-viewport {
   width: device-width;
 }
 
@@ -79,15 +59,7 @@
   width: device-width;
 }
 
-@-o-viewport {
-  width: device-width;
-}
-
 @-ms-viewport {
-  width: device-width;
-}
-
-@-o-viewport {
   width: device-width;
 }
 
@@ -107,10 +79,6 @@
   width: device-width;
 }
 
-@-o-viewport {
-  width: device-width;
-}
-
 /* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/govuk/public/sass/_shims.scss */
 #content, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content {
   zoom: 1;
@@ -124,10 +92,6 @@
 }
 
 @-ms-viewport {
-  width: device-width;
-}
-
-@-o-viewport {
   width: device-width;
 }
 
@@ -1733,7 +1697,12 @@ ol li {
   width: device-width;
 }
 
-@-o-viewport {
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
   width: device-width;
 }
 
@@ -1746,28 +1715,7 @@ ol li {
   width: device-width;
 }
 
-@-o-viewport {
-  width: device-width;
-}
-
-@font-face {
-  font-family: GDS-Logo;
-  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
-}
-
 @-ms-viewport {
-  width: device-width;
-}
-
-@-o-viewport {
-  width: device-width;
-}
-
-@-ms-viewport {
-  width: device-width;
-}
-
-@-o-viewport {
   width: device-width;
 }
 
@@ -1787,15 +1735,7 @@ ol li {
   width: device-width;
 }
 
-@-o-viewport {
-  width: device-width;
-}
-
 @-ms-viewport {
-  width: device-width;
-}
-
-@-o-viewport {
   width: device-width;
 }
 
@@ -1823,10 +1763,6 @@ ol li {
   width: device-width;
 }
 
-@-o-viewport {
-  width: device-width;
-}
-
 /* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
 #content, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content {
   zoom: 1;
@@ -1843,10 +1779,7 @@ ol li {
   width: device-width;
 }
 
-@-o-viewport {
-  width: device-width;
-}
-
+/*stylelint-disable*/
 /*! normalize.css v2.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -1854,7 +1787,7 @@ ol li {
 /*
  * Corrects `block` display not defined in IE 8/9.
  */
-/* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 article,
 aside,
 details,
@@ -1872,7 +1805,7 @@ summary {
 /*
  * Corrects `inline-block` display not defined in IE 8/9.
  */
-/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 audio,
 canvas,
 video {
@@ -1883,7 +1816,7 @@ video {
  * Prevents modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -1892,7 +1825,7 @@ audio:not([controls]) {
 /*
  * Addresses styling for `hidden` attribute not present in IE 8/9.
  */
-/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 [hidden] {
   display: none;
 }
@@ -1905,7 +1838,7 @@ audio:not([controls]) {
  * 2. Prevents iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -1918,7 +1851,7 @@ html {
 /*
  * Removes default margin.
  */
-/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 body {
   margin: 0;
 }
@@ -1929,7 +1862,7 @@ body {
 /*
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
-/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 a:focus {
   outline: thin dotted;
 }
@@ -1937,7 +1870,7 @@ a:focus {
 /*
  * Improves readability when focused and also mouse hovered in all browsers.
  */
-/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 a:active,
 a:hover {
   outline: 0;
@@ -1950,7 +1883,7 @@ a:hover {
  * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
  * Safari 5, and Chrome.
  */
-/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 108, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 h1 {
   font-size: 2em;
 }
@@ -1958,7 +1891,7 @@ h1 {
 /*
  * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
  */
-/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -1966,7 +1899,7 @@ abbr[title] {
 /*
  * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 b,
 strong {
   font-weight: bold;
@@ -1975,7 +1908,7 @@ strong {
 /*
  * Addresses styling not present in Safari 5 and Chrome.
  */
-/* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 dfn {
   font-style: italic;
 }
@@ -1983,7 +1916,7 @@ dfn {
 /*
  * Addresses styling not present in IE 8/9.
  */
-/* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 mark {
   background: #ff0;
   color: #000;
@@ -1992,7 +1925,7 @@ mark {
 /*
  * Corrects font family set oddly in Safari 5 and Chrome.
  */
-/* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 code,
 kbd,
 pre,
@@ -2004,7 +1937,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers.
  */
-/* line 161, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 162, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -2014,7 +1947,7 @@ pre {
 /*
  * Sets consistent quote types.
  */
-/* line 171, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 172, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
@@ -2022,7 +1955,7 @@ q {
 /*
  * Addresses inconsistent and variable font size in all browsers.
  */
-/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 180, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 small {
   font-size: 80%;
 }
@@ -2030,7 +1963,7 @@ small {
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 187, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 188, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -2039,12 +1972,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 195, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 196, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 199, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 200, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 sub {
   bottom: -0.25em;
 }
@@ -2055,7 +1988,7 @@ sub {
 /*
  * Removes border when inside `a` element in IE 8/9.
  */
-/* line 211, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 212, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 img {
   border: 0;
 }
@@ -2063,7 +1996,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE 9.
  */
-/* line 219, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 220, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -2074,7 +2007,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE 8/9 and Safari 5.
  */
-/* line 231, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 232, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 figure {
   margin: 0;
 }
@@ -2085,7 +2018,7 @@ figure {
 /*
  * Define consistent border, margin, and padding.
  */
-/* line 243, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 244, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -2096,7 +2029,7 @@ fieldset {
  * 1. Corrects color not being inherited in IE 8/9.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 254, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 255, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 legend {
   border: 0;
   /* 1 */
@@ -2109,7 +2042,7 @@ legend {
  * 2. Corrects font size not being inherited in all browsers.
  * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
  */
-/* line 265, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 266, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 button,
 input,
 select,
@@ -2126,7 +2059,7 @@ textarea {
  * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 279, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 280, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 button,
 input {
   line-height: normal;
@@ -2139,7 +2072,7 @@ input {
  * 3. Improves usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 292, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 293, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -2153,7 +2086,7 @@ input[type="submit"] {
 /*
  * Re-set default cursor for disabled elements.
  */
-/* line 304, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 305, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -2163,7 +2096,7 @@ input[disabled] {
  * 1. Addresses box sizing set to `content-box` in IE 8/9.
  * 2. Removes excess padding in IE 8/9.
  */
-/* line 314, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 315, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -2177,7 +2110,7 @@ input[type="radio"] {
  * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 326, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 327, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -2189,7 +2122,7 @@ input[type="search"] {
  * Removes inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-/* line 338, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 339, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -2198,7 +2131,7 @@ input[type="search"]::-webkit-search-decoration {
 /*
  * Removes inner padding and border in Firefox 4+.
  */
-/* line 347, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 348, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -2209,7 +2142,7 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE 8/9.
  * 2. Improves readability and alignment in all browsers.
  */
-/* line 358, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 359, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -2223,7 +2156,7 @@ textarea {
 /*
  * Remove most spacing between table cells.
  */
-/* line 371, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
+/* line 372, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -6010,8 +5943,7 @@ Styleguide Icons.Arrow
   height: 23px;
   margin: 0 3px 0 0;
   display: inline-block;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 /* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
@@ -6036,10 +5968,9 @@ Styleguide Icons.Arrow
 
 /* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .arrow--expand {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+  transition-duration: 0.2s;
 }
 
 /*
@@ -6052,7 +5983,7 @@ Markup:
 
 Styleguide Icons.Exclamation
 */
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .exclamation {
   width: 35px;
   height: 35px;
@@ -6063,7 +5994,7 @@ Styleguide Icons.Exclamation
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+  /* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
   .exclamation {
     background-image: url("../images/icons/icon-important-2x.png");
     background-size: cover;
@@ -6080,7 +6011,7 @@ Markup:
 
 Styleguide Icons.Verify
 */
-/* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .govuk-verify {
   background-image: url("../images/govuk-verify.png");
   background-position: center;
@@ -6092,7 +6023,7 @@ Styleguide Icons.Verify
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+  /* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
   .govuk-verify {
     background-image: url("../images/govuk-verify-2x.png");
   }
@@ -6760,13 +6691,14 @@ Styleguide Text Input.number
 */
 /* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--no-spinner {
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 /* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--no-spinner::-webkit-inner-spin-button,
 .input--no-spinner::-webkit-outer-spin-button {
   -webkit-appearance: none;
+          appearance: none;
 }
 
 /*
@@ -6924,8 +6856,8 @@ textarea:focus {
 .block-label input, .block-label--stacked input, .vertically-aligned-input {
   display: block;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
   left: 15px;
   cursor: pointer;
   top: 38%;
@@ -7545,6 +7477,8 @@ Styleguide Form.control
   background-color: #fff;
   border: 1px solid #bfc1c3;
   -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border-radius: 0;
   width: 50%;
 }
@@ -7559,7 +7493,7 @@ Styleguide Form.control
 
 /* line 301, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 select.form-control {
-  -webkit-appearance: menulist;
+  appearance: menulist;
 }
 
 /* line 305, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
@@ -9063,8 +8997,8 @@ Styleguide Side Navigation
   position: absolute;
   right: 10px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
   content: "\203A";
 }
 
@@ -10327,7 +10261,7 @@ Styleguide Notification.Highlight dark
   border-bottom-width: 1px;
 }
 
-/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent > .arrow {
   top: 22%;
   position: absolute;
@@ -10335,7 +10269,7 @@ Styleguide Notification.Highlight dark
   padding: 0 2px;
 }
 
-/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent::-webkit-details-marker {
   top: 22%;
   position: absolute;
@@ -10343,23 +10277,23 @@ Styleguide Notification.Highlight dark
   padding: 0 2px;
 }
 
-/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent[aria-disabled=true] {
   cursor: default;
   outline: none;
 }
 
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent[aria-disabled=true]::-webkit-details-marker {
   visibility: hidden;
 }
 
-/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent[aria-disabled=true] > .arrow {
   display: none;
 }
 
-/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary--parent:after {
   clear: both;
   content: "";
@@ -10377,35 +10311,35 @@ Styleguide Notification.Highlight dark
   padding: 0;
 }
 
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary > .arrow {
   color: #0b0c0c;
   padding: 0 2px;
 }
 
-/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary::-webkit-details-marker {
   color: #0b0c0c;
   padding: 0 2px;
 }
 
-/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary[aria-disabled=true] {
   cursor: default;
   outline: none;
 }
 
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary[aria-disabled=true]::-webkit-details-marker {
   visibility: hidden;
 }
 
-/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary[aria-disabled=true] > .arrow {
   display: none;
 }
 
-/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_mixins.scss */
 .annual-summaries--group .statement__summary:after {
   clear: both;
   content: "";
@@ -11964,8 +11898,7 @@ Styleguide Tabs
   box-sizing: border-box;
   position: relative;
   border-top: 1px solid #bfc1c3;
-  -webkit-transition: background .25s ease-in-out;
-          transition: background .25s ease-in-out;
+  transition: background .25s ease-in-out;
   height: 2.78947em;
   display: inline-block;
   margin: 0 0.15789em 0 0;
@@ -12006,8 +11939,7 @@ Styleguide Tabs
   z-index: 2;
   color: #0b0c0c;
   background-color: #fff;
-  -webkit-transition: none;
-          transition: none;
+  transition: none;
   height: 2.84211em;
   padding: 0.7em;
   border: 1px solid #bfc1c3;
@@ -12542,6 +12474,7 @@ table.messages a {
 .payments input[type=number]::-webkit-inner-spin-button,
 .payments input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
+          appearance: none;
   margin: 0;
 }
 
