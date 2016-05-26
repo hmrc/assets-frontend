@@ -1,7 +1,10 @@
 /*
-Report Error
+Load Partial
 
-Display 'Get help with this page' form, and loading spinner while form is loaded by ajax.
+Styles to contain a page partial loaded into the current page by AJAX, and a loading spinner to be displayed while the content is being loaded.
+This is used on the 'Get help with this page' content on the templates of many front-ends.
+The spinner is shown while loading, then removed and replaced with the loaded content.
+The component requires Javascript module: [/javascripts/modules/reportAProblem.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/reportAProblem.js).
 
 Markup:
 <div class="report-error">
@@ -11,7 +14,7 @@ Markup:
     </div>
 </div>
 
-Styleguide Report Error
+Styleguide Load Partial
 */
 
 .report-error {
