@@ -9605,37 +9605,37 @@ Styleguide Organisation Logo.Stacked
   padding: 32px 32px 0 0;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
+/* line 3, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
 nav.help-contents {
   position: relative;
   width: 100%;
   z-index: 1;
 }
 
-/* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
+/* line 8, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
 nav.help-contents .inner {
   padding: 0;
   width: auto;
 }
 
-/* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
+/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
 nav.help-contents .inner p {
   margin-bottom: 0.75em;
   padding-bottom: 1em;
 }
 
-/* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
+/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
 nav.help-contents .inner p {
   padding-bottom: 1.5em;
 }
 
-/* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
+/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
 nav.help-contents ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
 nav.help-contents ul li {
   display: block;
   float: left;
@@ -9644,12 +9644,12 @@ nav.help-contents ul li {
   width: 48.75%;
 }
 
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
 nav.help-contents ul li:nth-child(2n) {
   margin-right: 0;
 }
 
-/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
 nav.help-contents ul li a {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -9668,7 +9668,7 @@ nav.help-contents ul li a {
 }
 
 @media (max-width: 640px) {
-  /* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
+  /* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
   nav.help-contents ul li a {
     font-size: 20px;
     line-height: 1.2;
@@ -9676,14 +9676,14 @@ nav.help-contents ul li a {
 }
 
 @media (max-width: 640px) {
-  /* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
+  /* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
   nav.help-contents ul li a {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
+/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
 nav.help-contents ul li p {
   margin-top: 0.2em;
 }
