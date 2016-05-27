@@ -1,0 +1,16 @@
+/*
+Images
+
+Because displays now come at different pixel densities, we require higher res imagery to display clearly for all browsers.  This means:
+Use images at least 1200px wide if they are to sit in a full column;
+Use tools like optiPNG or imageOptim to minify the file size of the image if using PNG.
+Use lossy compression sparingly for images containing many colours, and double check quality with a designer.
+
+Markup:
+<div>
+  <img src="/assets/images/bank-account-last-4-digits.png"/>
+</div>
+
+Styleguide Images
+*/
+img {max-width:100%}
