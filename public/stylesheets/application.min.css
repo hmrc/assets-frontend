@@ -114,7 +114,9 @@
 /* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/_reset.scss */
 div, span,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
+a,
+.link-style,
+.button--link-style, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
@@ -1059,7 +1061,7 @@ fieldset {
 }
 
 /* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-validation.scss */
-.validation-summary a {
+.validation-summary a, .validation-summary .link-style, .validation-summary .button--link-style {
   color: #df3034;
 }
 
@@ -1944,7 +1946,7 @@ body {
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
 /* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
-a:focus {
+a:focus, .link-style:focus, .button--link-style:focus {
   outline: thin dotted;
 }
 
@@ -1952,8 +1954,10 @@ a:focus {
  * Improves readability when focused and also mouse hovered in all browsers.
  */
 /* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_normalize.scss */
-a:active,
-a:hover {
+a:active, .link-style:active, .button--link-style:active,
+a:hover,
+.link-style:hover,
+.button--link-style:hover {
   outline: 0;
 }
 
@@ -2306,58 +2310,58 @@ fieldset {
 }
 
 /* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_static/_basic.scss */
-a {
+a, .link-style, .button--link-style {
   color: #005ea5;
 }
 
 /* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_static/_basic.scss */
-a:visited {
+a:visited, .link-style:visited, .button--link-style:visited {
   color: #4c2c92;
 }
 
 /* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_static/_basic.scss */
-a:hover {
+a:hover, .link-style:hover, .button--link-style:hover {
   color: #2e8aca;
 }
 
 /* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_static/_basic.scss */
-a:active {
+a:active, .link-style:active, .button--link-style:active {
   color: #2e8aca;
 }
 
 /* line 380, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"]:after {
+a[rel="external"]:after, [rel="external"].link-style:after, [rel="external"].button--link-style:after {
   background-image: url("../images/icons/external-links/external-link.png");
   background-repeat: no-repeat;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   /* line 380, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-  a[rel="external"]:after {
+  a[rel="external"]:after, [rel="external"].link-style:after, [rel="external"].button--link-style:after {
     background-image: url("../images/icons/external-links/external-link-24x24.png");
     background-size: 12px 400px;
   }
 }
 
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"]:after {
+a[rel="external"]:after, [rel="external"].link-style:after, [rel="external"].button--link-style:after {
   content: "    ";
   background-position: right 6px;
 }
 
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"]:hover:after {
+a[rel="external"]:hover:after, [rel="external"].link-style:hover:after, [rel="external"].button--link-style:hover:after {
   background-position: right -382px;
 }
 
 @media (max-width: 640px) {
   /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-  a[rel="external"]:after {
+  a[rel="external"]:after, [rel="external"].link-style:after, [rel="external"].button--link-style:after {
     content: "     ";
     background-position: right 3px;
   }
   /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-  a[rel="external"]:hover:after {
+  a[rel="external"]:hover:after, [rel="external"].link-style:hover:after, [rel="external"].button--link-style:hover:after {
     background-position: right -385px;
   }
 }
@@ -2907,12 +2911,12 @@ article .help-notice p {
 }
 
 /* line 302, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_static/_template-text.scss */
-article .help-notice p a {
+article .help-notice p a, article .help-notice p .link-style, article .help-notice p .button--link-style {
   font-weight: 600;
 }
 
 /* line 308, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_static/_template-text.scss */
-article a.important {
+article a.important, article .important.link-style, article .important.button--link-style {
   background: image-url("../images/icon-important.png") no-repeat scroll 100% 0 #FFF;
 }
 
@@ -2960,7 +2964,7 @@ article p + .info-notice {
 }
 
 /* line 347, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_static/_template-text.scss */
-article .info-notice a[rel="external"] {
+article .info-notice a[rel="external"], article .info-notice [rel="external"].link-style, article .info-notice [rel="external"].button--link-style {
   display: inline;
 }
 
@@ -2975,7 +2979,7 @@ article .form-download p {
 }
 
 /* line 358, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_static/_template-text.scss */
-article .form-download a {
+article .form-download a, article .form-download .link-style, article .form-download .button--link-style {
   display: block;
   font-weight: 600;
   background: image-url("../images/icon-file-download.png") no-repeat scroll 0 0;
@@ -2985,14 +2989,14 @@ article .form-download a {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   /* line 358, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_static/_template-text.scss */
-  article .form-download a {
+  article .form-download a, article .form-download .link-style, article .form-download .button--link-style {
     background-image: image-url("../images/icon-file-download-2x.png");
     background-size: 25px 25px;
   }
 }
 
 /* line 371, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_static/_template-text.scss */
-article .form-download a[rel="external"]:after {
+article .form-download a[rel="external"]:after, article .form-download [rel="external"].link-style:after, article .form-download [rel="external"].button--link-style:after {
   content: none;
 }
 
@@ -3110,7 +3114,7 @@ article .place .additional-information {
 }
 
 /* line 460, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_static/_template-text.scss */
-article .place .additional-information a {
+article .place .additional-information a, article .place .additional-information .link-style, article .place .additional-information .button--link-style {
   display: block;
 }
 
@@ -3496,7 +3500,7 @@ article ol.steps > li:nth-child(14) {
 }
 
 /* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/service-design-manual/helpers/_breadcrumbs.scss */
-#global-breadcrumb nav ol li a {
+#global-breadcrumb nav ol li a, #global-breadcrumb nav ol li .link-style, #global-breadcrumb nav ol li .button--link-style {
   color: #0b0c0c;
 }
 
@@ -4169,12 +4173,11 @@ Markup:
 .button--alert         - An alert button
 .button--small         - A smaller button
 .button--table         - A button within a table
-.button--link   - To make a button appear like a link
-.button--link-style    - To make a button appear like a link with white text
+.button--link          - To make a button appear like a link
 
 Styleguide Buttons
 */
-/* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 button, .button, .button--get-started {
   text-transform: capitalize;
   background-color: #00823b;
@@ -4267,14 +4270,14 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
 }
 
 @media (max-width: 640px) {
-  /* line 22, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
   button, .button, .button--get-started {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--alert {
   background-color: #b10e1e;
   position: relative;
@@ -4365,14 +4368,14 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
 }
 
 @media (max-width: 640px) {
-  /* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  /* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
   .button--alert {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--get-started {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -4388,21 +4391,21 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
 }
 
 @media (max-width: 640px) {
-  /* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  /* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
   .button--get-started {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--get-started:hover {
   background-image: url("../images/icons/icon-pointer.png");
   background-position: 100% 50%;
   background-repeat: no-repeat;
 }
 
-/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--secondary {
   background-color: #DEE0E2;
   position: relative;
@@ -4493,14 +4496,14 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
 }
 
 @media (max-width: 640px) {
-  /* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  /* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
   .button--secondary {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--small {
   background-color: #00823b;
   position: relative;
@@ -4592,14 +4595,14 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
 }
 
 @media (max-width: 640px) {
-  /* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  /* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
   .button--small {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--table {
   background-color: #f8f8f8;
   position: relative;
@@ -4686,12 +4689,12 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
   margin-right: 0;
 }
 
-/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--spaced {
   margin: 0 0.52632em 0 0.52632em;
 }
 
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--padded {
   padding-left: 1.57895em;
   padding-right: 1.57895em;
@@ -4701,7 +4704,7 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
  * For links that need to be positioned beside buttons
  * Used in conjunction with button class
  */
-/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button.button--link, .button--link.button--get-started {
   background-color: transparent;
   box-shadow: none;
@@ -4710,37 +4713,37 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
   border: none;
 }
 
-/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button.button--link.button--link-table, .button--link.button--link-table.button--get-started {
   color: #0b0c0c;
 }
 
-/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button.button--link:hover, .button--link.button--get-started:hover, .button.button--link:active, .button--link.button--get-started:active {
   top: 0;
   outline: none;
   background-color: transparent;
 }
 
-/* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button.button--link:hover, .button--link.button--get-started:hover, .button.button--link:focus, .button--link.button--get-started:focus {
   color: #2e8aca;
 }
 
-/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button.button--link:active, .button--link.button--get-started:active {
   color: #2e8aca;
 }
 
 @media (max-width: 640px) {
-  /* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  /* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
   .button.button--link, .button--link.button--get-started {
     margin-top: 10px;
   }
 }
 
 /* Transforms button into a link */
-/* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .pseudo-link {
   padding: 0;
   background: none;
@@ -4751,24 +4754,29 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
   text-decoration: underline;
 }
 
-/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .pseudo-link:hover, .pseudo-link:focus {
   color: #2e8aca;
   background-color: transparent;
 }
 
-/* line 131, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/*
+Link Style
+
+Make a button appear like a link
+
+Markup:
+<button class="button--link-style">Button text</button>
+
+Styleguide Buttons.Link Style
+*/
+/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--link-style {
-  margin: 0;
-  padding: 0;
-  border: none;
   background: none;
   box-shadow: none;
-  cursor: pointer;
-  text-decoration: underline;
 }
 
-/* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 146, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--link-style:hover, .button--link-style:focus, .button--link-style:active {
   background: none;
 }
@@ -5358,7 +5366,7 @@ Styleguide Table.Row Bold
 }
 
 /* line 238, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_table.scss */
-.table__row--bold a {
+.table__row--bold a, .table__row--bold .link-style, .table__row--bold .button--link-style {
   color: inherit;
 }
 
@@ -5857,13 +5865,15 @@ Link
 
 To make an element appear as a link.
 
+**NOTE:** This relies on `a` from govuk_frontend_static/basic
+
 Markup:
 <span class="link-style">Example Link</span>
 
 Styleguide Links.Link
 */
-/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
-.link-style {
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.link-style, .button--link-style {
   margin: 0;
   padding: 0;
   border: none;
@@ -5881,7 +5891,7 @@ Markup:
 
 Styleguide Links.Print
 */
-/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
 .print-link {
   background: transparent no-repeat 0 50%;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASAgMAAAAvVbb5AAAACVBMVEX///////8KDAwmYEUdAAAAAXRSTlMAQObYZgAAADBJREFUCFtjYOBa1cDAoBkKJFYCCSYwEYpCrAICZCI0FEhkrURmQRRnrYRpW7WqAQAlGR86Ip1rwwAAAABJRU5ErkJggg==");
@@ -5899,7 +5909,7 @@ Markup:
 
 Styleguide Links.Back
 */
-/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
 .back-link {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -5913,21 +5923,21 @@ Styleguide Links.Back
 }
 
 @media (max-width: 640px) {
-  /* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+  /* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
   .back-link {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
 .back-link:before {
   content: "\2039";
   padding-right: 0.26316em;
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
-a.back-link {
+/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+a.back-link, .back-link.link-style, .back-link.button--link-style {
   color: #0b0c0c;
 }
 
@@ -5941,8 +5951,8 @@ Markup:
 
 Styleguide Links.Back to Top
 */
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
-a.back-to-top-link {
+/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+a.back-to-top-link, .back-to-top-link.link-style, .back-to-top-link.button--link-style {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -5953,15 +5963,15 @@ a.back-to-top-link {
 }
 
 @media (max-width: 640px) {
-  /* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
-  a.back-to-top-link {
+  /* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+  a.back-to-top-link, .back-to-top-link.link-style, .back-to-top-link.button--link-style {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
-a.back-to-top-link:visited {
+/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+a.back-to-top-link:visited, .back-to-top-link.link-style:visited, .back-to-top-link.button--link-style:visited {
   color: #005ea5;
 }
 
@@ -5987,126 +5997,126 @@ Markup:
 Styleguide Links.External
 */
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-12:after {
+a[rel="external"].external-link-12:after, [rel="external"].external-link-12.link-style:after, [rel="external"].external-link-12.button--link-style:after {
   content: "        ";
   background-position: right 0px;
 }
 
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-12:hover:after {
+a[rel="external"].external-link-12:hover:after, [rel="external"].external-link-12.link-style:hover:after, [rel="external"].external-link-12.button--link-style:hover:after {
   background-position: right -388px;
 }
 
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-12-no-hover:after {
+a[rel="external"].external-link-12-no-hover:after, [rel="external"].external-link-12-no-hover.link-style:after, [rel="external"].external-link-12-no-hover.button--link-style:after {
   content: "        ";
   background-position: right 0px;
 }
 
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-12-no-hover:hover:after {
+a[rel="external"].external-link-12-no-hover:hover:after, [rel="external"].external-link-12-no-hover.link-style:hover:after, [rel="external"].external-link-12-no-hover.button--link-style:hover:after {
   background-position: right 0px;
 }
 
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-13:after {
+a[rel="external"].external-link-13:after, [rel="external"].external-link-13.link-style:after, [rel="external"].external-link-13.button--link-style:after {
   content: "     ";
   background-position: right 1px;
 }
 
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-13:hover:after {
+a[rel="external"].external-link-13:hover:after, [rel="external"].external-link-13.link-style:hover:after, [rel="external"].external-link-13.button--link-style:hover:after {
   background-position: right -387px;
 }
 
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-13-no-hover:after {
+a[rel="external"].external-link-13-no-hover:after, [rel="external"].external-link-13-no-hover.link-style:after, [rel="external"].external-link-13-no-hover.button--link-style:after {
   content: "     ";
   background-position: right 1px;
 }
 
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-13-no-hover:hover:after {
+a[rel="external"].external-link-13-no-hover:hover:after, [rel="external"].external-link-13-no-hover.link-style:hover:after, [rel="external"].external-link-13-no-hover.button--link-style:hover:after {
   background-position: right 1px;
 }
 
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-14:after {
+a[rel="external"].external-link-14:after, [rel="external"].external-link-14.link-style:after, [rel="external"].external-link-14.button--link-style:after {
   content: "     ";
   background-position: right 1px;
 }
 
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-14:hover:after {
+a[rel="external"].external-link-14:hover:after, [rel="external"].external-link-14.link-style:hover:after, [rel="external"].external-link-14.button--link-style:hover:after {
   background-position: right -387px;
 }
 
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-14-bold-no-hover:after {
+a[rel="external"].external-link-14-bold-no-hover:after, [rel="external"].external-link-14-bold-no-hover.link-style:after, [rel="external"].external-link-14-bold-no-hover.button--link-style:after {
   content: "      ";
   background-position: right 2px;
 }
 
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-14-bold-no-hover:hover:after {
+a[rel="external"].external-link-14-bold-no-hover:hover:after, [rel="external"].external-link-14-bold-no-hover.link-style:hover:after, [rel="external"].external-link-14-bold-no-hover.button--link-style:hover:after {
   background-position: right 2px;
 }
 
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-16:after {
+a[rel="external"].external-link-16:after, [rel="external"].external-link-16.link-style:after, [rel="external"].external-link-16.button--link-style:after {
   content: "     ";
   background-position: right 3px;
 }
 
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-16:hover:after {
+a[rel="external"].external-link-16:hover:after, [rel="external"].external-link-16.link-style:hover:after, [rel="external"].external-link-16.button--link-style:hover:after {
   background-position: right -385px;
 }
 
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-16-bold-no-hover:after {
+a[rel="external"].external-link-16-bold-no-hover:after, [rel="external"].external-link-16-bold-no-hover.link-style:after, [rel="external"].external-link-16-bold-no-hover.button--link-style:after {
   content: "      ";
   background-position: right 3px;
 }
 
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-16-bold-no-hover:hover:after {
+a[rel="external"].external-link-16-bold-no-hover:hover:after, [rel="external"].external-link-16-bold-no-hover.link-style:hover:after, [rel="external"].external-link-16-bold-no-hover.button--link-style:hover:after {
   background-position: right 3px;
 }
 
 /* line 380, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-19:after {
+a[rel="external"].external-link-19:after, [rel="external"].external-link-19.link-style:after, [rel="external"].external-link-19.button--link-style:after {
   background-image: url("../images/icons/external-links/external-link.png");
   background-repeat: no-repeat;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   /* line 380, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-  a[rel="external"].external-link-19:after {
+  a[rel="external"].external-link-19:after, [rel="external"].external-link-19.link-style:after, [rel="external"].external-link-19.button--link-style:after {
     background-image: url("../images/icons/external-links/external-link-24x24.png");
     background-size: 12px 400px;
   }
 }
 
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-19:after {
+a[rel="external"].external-link-19:after, [rel="external"].external-link-19.link-style:after, [rel="external"].external-link-19.button--link-style:after {
   content: "    ";
   background-position: right 6px;
 }
 
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-19:hover:after {
+a[rel="external"].external-link-19:hover:after, [rel="external"].external-link-19.link-style:hover:after, [rel="external"].external-link-19.button--link-style:hover:after {
   background-position: right -382px;
 }
 
 /* line 321, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-19-bold-no-hover:after {
+a[rel="external"].external-link-19-bold-no-hover:after, [rel="external"].external-link-19-bold-no-hover.link-style:after, [rel="external"].external-link-19-bold-no-hover.button--link-style:after {
   content: "      ";
   background-position: right 6px;
 }
 
 /* line 330, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
-a[rel="external"].external-link-19-bold-no-hover:hover:after {
+a[rel="external"].external-link-19-bold-no-hover:hover:after, [rel="external"].external-link-19-bold-no-hover.link-style:hover:after, [rel="external"].external-link-19-bold-no-hover.button--link-style:hover:after {
   background-position: right 6px;
 }
 
@@ -6424,7 +6434,7 @@ Styleguide Errors.Overview Heading
 }
 
 /* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
-.error-overview__list-item a {
+.error-overview__list-item a, .error-overview__list-item .link-style, .error-overview__list-item .button--link-style {
   color: inherit;
 }
 
@@ -7800,7 +7810,7 @@ Styleguide Form.legend
 }
 
 /* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
-.header__logo a {
+.header__logo a, .header__logo .link-style, .header__logo .button--link-style {
   float: left;
   position: relative;
   width: 166px;
@@ -7809,7 +7819,7 @@ Styleguide Form.legend
 }
 
 /* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
-.header__logo a img {
+.header__logo a img, .header__logo .link-style img, .header__logo .button--link-style img {
   position: absolute;
   left: -166px;
   top: 0;
@@ -7930,7 +7940,7 @@ Markup:
 }
 
 /* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
-a.header__menu__proposition-name:hover, a.header__menu__proposition-name:focus, a.header__menu__proposition-name:active {
+a.header__menu__proposition-name:hover, .header__menu__proposition-name.link-style:hover, .header__menu__proposition-name.button--link-style:hover, a.header__menu__proposition-name:focus, .header__menu__proposition-name.link-style:focus, .header__menu__proposition-name.button--link-style:focus, a.header__menu__proposition-name:active, .header__menu__proposition-name.link-style:active, .header__menu__proposition-name.button--link-style:active {
   text-decoration: underline;
 }
 
@@ -7970,7 +7980,7 @@ a.header__menu__proposition-name:hover, a.header__menu__proposition-name:focus, 
 }
 
 /* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
-.header__menu__proposition-links a {
+.header__menu__proposition-links a, .header__menu__proposition-links .link-style, .header__menu__proposition-links .button--link-style {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -7983,7 +7993,7 @@ a.header__menu__proposition-name:hover, a.header__menu__proposition-name:focus, 
 
 @media (max-width: 640px) {
   /* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
-  .header__menu__proposition-links a {
+  .header__menu__proposition-links a, .header__menu__proposition-links .link-style, .header__menu__proposition-links .button--link-style {
     font-size: 14px;
     line-height: 1.14286;
   }
@@ -8131,7 +8141,7 @@ Styleguide Notification banner
 }
 
 /* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notice-banner.scss */
-.notice-banner__content a {
+.notice-banner__content a, .notice-banner__content .link-style, .notice-banner__content .button--link-style {
   color: #fff;
 }
 
@@ -8152,12 +8162,12 @@ Styleguide Notification banner
 }
 
 /* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
-.explore a, .explore--inside-government a, .explore--inline a {
+.explore a, .explore--inside-government a, .explore--inline a, .explore .link-style, .explore--inside-government .link-style, .explore--inline .link-style, .explore .button--link-style, .explore--inside-government .button--link-style, .explore--inline .button--link-style {
   color: #454a4c;
 }
 
 /* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
-.explore a:hover, .explore--inside-government a:hover, .explore--inline a:hover {
+.explore a:hover, .explore--inside-government a:hover, .explore--inline a:hover, .explore .link-style:hover, .explore--inside-government .link-style:hover, .explore--inline .link-style:hover, .explore .button--link-style:hover, .explore--inside-government .button--link-style:hover, .explore--inline .button--link-style:hover {
   color: #6f777b;
 }
 
@@ -9312,7 +9322,7 @@ Styleguide Navigation.Page
 }
 
 /* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
-.page-navigation li a {
+.page-navigation li a, .page-navigation li .link-style, .page-navigation li .button--link-style {
   padding: 0.25em 1em 0.25em 0;
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -9323,7 +9333,7 @@ Styleguide Navigation.Page
 
 @media (max-width: 640px) {
   /* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
-  .page-navigation li a {
+  .page-navigation li a, .page-navigation li .link-style, .page-navigation li .button--link-style {
     font-size: 14px;
     line-height: 1.14286;
   }
@@ -9350,7 +9360,7 @@ Styleguide Navigation.Page
 
 @media (max-width: 640px) {
   /* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
-  .page-navigation li span, .page-navigation li a {
+  .page-navigation li span, .page-navigation li a, .page-navigation li .link-style, .page-navigation li .button--link-style {
     border-top: solid 1px #a1acb2;
     margin: 0 -1em 0 -2.25em;
     padding: 1em 1em 1em 2.75em;
@@ -9743,7 +9753,7 @@ Styleguide Dividers.Left
 }
 
 /* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
-.reminder a {
+.reminder a, .reminder .link-style, .reminder .button--link-style {
   color: #fff;
   display: block;
   padding: 0.7em 1em;
@@ -9751,7 +9761,7 @@ Styleguide Dividers.Left
 }
 
 /* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
-.reminder.urgent a {
+.reminder.urgent a, .reminder.urgent .link-style, .reminder.urgent .button--link-style {
   background-color: #b10e1e;
 }
 
@@ -9852,18 +9862,18 @@ Styleguide Dividers.Left
 }
 
 /* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
-.dataTables_paginate span, .dataTables_paginate a {
+.dataTables_paginate span, .dataTables_paginate a, .dataTables_paginate .link-style, .dataTables_paginate .button--link-style {
   margin-right: 5px;
 }
 
 /* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
-.dataTables_paginate a {
+.dataTables_paginate a, .dataTables_paginate .link-style, .dataTables_paginate .button--link-style {
   color: #005ea5;
   cursor: pointer;
 }
 
 /* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
-.dataTables_paginate a:hover {
+.dataTables_paginate a:hover, .dataTables_paginate .link-style:hover, .dataTables_paginate .button--link-style:hover {
   color: #2e8aca;
 }
 
@@ -9978,12 +9988,12 @@ Styleguide Organisation Logo
 }
 
 /* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
-.organisation-logo a, .organisation-logo-stacked a, .organisation-logo span, .organisation-logo-stacked span {
+.organisation-logo a, .organisation-logo-stacked a, .organisation-logo .link-style, .organisation-logo-stacked .link-style, .organisation-logo .button--link-style, .organisation-logo-stacked .button--link-style, .organisation-logo span, .organisation-logo-stacked span {
   color: #0b0c0c;
 }
 
 /* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_organisation-logo.scss */
-a.organisation-logo:hover, a.organisation-logo-stacked:hover, a.organisation-logo:focus, a.organisation-logo-stacked:focus {
+a.organisation-logo:hover, .organisation-logo.link-style:hover, .organisation-logo.button--link-style:hover, .button--link-style.organisation-logo-stacked:hover, .link-style.organisation-logo-stacked:hover, a.organisation-logo-stacked:hover, a.organisation-logo:focus, .organisation-logo.link-style:focus, .organisation-logo.button--link-style:focus, .button--link-style.organisation-logo-stacked:focus, .link-style.organisation-logo-stacked:focus, a.organisation-logo-stacked:focus {
   text-decoration: underline;
 }
 
@@ -10179,7 +10189,7 @@ nav.help-contents ul li:nth-child(2n) {
 }
 
 /* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
-nav.help-contents ul li a {
+nav.help-contents ul li a, nav.help-contents ul li .link-style, nav.help-contents ul li .button--link-style {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
   line-height: 1.25;
@@ -10198,7 +10208,7 @@ nav.help-contents ul li a {
 
 @media (max-width: 640px) {
   /* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
-  nav.help-contents ul li a {
+  nav.help-contents ul li a, nav.help-contents ul li .link-style, nav.help-contents ul li .button--link-style {
     font-size: 20px;
     line-height: 1.2;
   }
@@ -10206,7 +10216,7 @@ nav.help-contents ul li a {
 
 @media (max-width: 640px) {
   /* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_help-contents.scss */
-  nav.help-contents ul li a {
+  nav.help-contents ul li a, nav.help-contents ul li .link-style, nav.help-contents ul li .button--link-style {
     font-size: 20px;
     line-height: 1.2;
   }
@@ -10453,12 +10463,12 @@ Styleguide Notification.Flash error
 }
 
 /* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
-.flash.error-summary a {
+.flash.error-summary a, .flash.error-summary .link-style, .flash.error-summary .button--link-style {
   color: #af1324;
 }
 
 /* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
-.flash.error-summary a:hover {
+.flash.error-summary a:hover, .flash.error-summary .link-style:hover, .flash.error-summary .button--link-style:hover {
   text-decoration: none;
 }
 
@@ -12291,7 +12301,7 @@ Styleguide External Markup
 }
 
 /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
-.external-markup p, .external-markup a {
+.external-markup p, .external-markup a, .external-markup .link-style, .external-markup .button--link-style {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
@@ -12301,7 +12311,7 @@ Styleguide External Markup
 
 @media (max-width: 640px) {
   /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_external-markup.scss */
-  .external-markup p, .external-markup a {
+  .external-markup p, .external-markup a, .external-markup .link-style, .external-markup .button--link-style {
     font-size: 14px;
     line-height: 1.14286;
   }
@@ -12621,7 +12631,7 @@ Styleguide Tabs
 }
 
 /* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_tabs.scss */
-.tabs-nav a.tabs-nav__tab:focus, .tabs-nav a.tabs-nav__tab:hover, .tabs-nav a.tabs-nav__tab:active {
+.tabs-nav a.tabs-nav__tab:focus, .tabs-nav .tabs-nav__tab.link-style:focus, .tabs-nav .tabs-nav__tab.button--link-style:focus, .tabs-nav a.tabs-nav__tab:hover, .tabs-nav .tabs-nav__tab.link-style:hover, .tabs-nav .tabs-nav__tab.button--link-style:hover, .tabs-nav a.tabs-nav__tab:active, .tabs-nav .tabs-nav__tab.link-style:active, .tabs-nav .tabs-nav__tab.button--link-style:active {
   background-color: #DEE0E2;
 }
 
@@ -13157,7 +13167,7 @@ table.messages th:nth-of-type(4) {
 }
 
 /* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_messages.scss */
-table.messages a {
+table.messages a, table.messages .link-style, table.messages .button--link-style {
   color: #000;
 }
 
@@ -13276,7 +13286,7 @@ table.messages a {
 }
 
 /* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_payments.scss */
-.payments a.ui-tabs-anchor {
+.payments a.ui-tabs-anchor, .payments .ui-tabs-anchor.link-style, .payments .ui-tabs-anchor.button--link-style {
   text-decoration: none;
 }
 
@@ -13527,7 +13537,7 @@ table.messages a {
 }
 
 /* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_business-tax-home.scss */
-.business-tax .section__li a {
+.business-tax .section__li a, .business-tax .section__li .link-style, .business-tax .section__li .button--link-style {
   margin: 0.9em 0;
 }
 
@@ -13592,12 +13602,12 @@ table.messages a {
 }
 
 /* line 4, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_business-tax-home.scss */
-.business-tax .link-list__link a:link {
+.business-tax .link-list__link a:link, .business-tax .link-list__link .link-style:link, .business-tax .link-list__link .button--link-style:link {
   text-decoration: none;
 }
 
 /* line 7, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_business-tax-home.scss */
-.business-tax .link-list__link a:hover {
+.business-tax .link-list__link a:hover, .business-tax .link-list__link .link-style:hover, .business-tax .link-list__link .button--link-style:hover {
   text-decoration: underline;
 }
 
@@ -13610,7 +13620,7 @@ table.messages a {
 }
 
 /* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_business-tax-home.scss */
-.business-tax .link-list__link a:visited {
+.business-tax .link-list__link a:visited, .business-tax .link-list__link .link-style:visited, .business-tax .link-list__link .button--link-style:visited {
   color: #4c2c92;
 }
 
@@ -13906,7 +13916,7 @@ article li {
 }
 
 /* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
-a.header__menu__proposition-name, a:visited.header__menu__proposition-name {
+a.header__menu__proposition-name, .header__menu__proposition-name.link-style, .header__menu__proposition-name.button--link-style, a:visited.header__menu__proposition-name, .link-style:visited.header__menu__proposition-name, .button--link-style:visited.header__menu__proposition-name {
   color: #fff;
 }
 
@@ -13958,7 +13968,7 @@ div.email {
 }
 
 /* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
-.service-info__help a {
+.service-info__help a, .service-info__help .link-style, .service-info__help .button--link-style {
   font-size: 16px;
   line-height: 1.25;
   font-weight: 300;
