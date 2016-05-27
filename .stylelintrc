@@ -3,6 +3,7 @@
     "indentation": 2,
     "declaration-colon-space-after": "always",
     "declaration-colon-space-before": "never",
+    "declaration-block-trailing-semicolon": "always",
     "value-keyword-case": "lower",
     "unit-case": "lower",
     "value-no-vendor-prefix": true,
