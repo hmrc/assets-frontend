@@ -128,14 +128,21 @@ button, .button {
   }
 }
 
+/*
+Link Style
+
+Make a button appear like a link
+
+Markup:
+<button class="button--link-style">Button text</button>
+
+Styleguide Buttons.Link Style
+*/
+
 .button--link-style {
-  margin: 0;
-  padding: 0;
-  border: none;
+  @extend .link-style;
   background: none;
   box-shadow: none;
-  cursor: pointer;
-  text-decoration: underline;
 
   &:hover,
   &:focus,
