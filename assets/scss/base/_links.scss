@@ -23,6 +23,8 @@ Link
 
 To make an element appear as a link.
 
+**NOTE:** This relies on `a` from govuk_frontend_static/basic
+
 Markup:
 <span class="link-style">Example Link</span>
 
@@ -30,6 +32,7 @@ Styleguide Links.Link
 */
 
 .link-style {
+  @extend a;
   margin: 0;
   padding: 0;
   border: none;
