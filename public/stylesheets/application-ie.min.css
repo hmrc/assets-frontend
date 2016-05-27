@@ -4527,6 +4527,11 @@ Styleguide Buttons.Link Style
   background: none;
 }
 
+/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_images.scss */
+img {
+  max-width: 100%;
+}
+
 /**
 * @desc         lists.
 * @name         layouts
