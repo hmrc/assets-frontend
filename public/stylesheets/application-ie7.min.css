@@ -9201,19 +9201,34 @@ Styleguide Dividers.Left
   border-left: 1px solid #bfc1c3;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+/*
+Reminder List
+
+Display an Unordered List of reminder items with time formatted in a new line.
+
+Markup:
+<ul class="reminder-list">
+  <li>Reminder List Item 1</li>
+  <li>Reminder List Item 2</li>
+  <li>Reminder List Item 3 <time>Reminder Time</time></li>
+</ul>
+
+
+Styleguide Reminders.Reminder List
+*/
+/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
 .reminder-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
 .reminder-list li {
   padding: 0.5em 0;
 }
 
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
 .reminder-list li time {
   display: block;
   color: #6f777b;
@@ -9225,14 +9240,48 @@ Styleguide Dividers.Left
 }
 
 @media (max-width: 640px) {
-  /* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+  /* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
   .reminder-list li time {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+/*
+Reminder
+
+Formats containing elements with a background highlight.
+
+Markup:
+<div class="reminder">
+  <div class="label">Example label</div>
+  <p>Example paragraph</p>
+  <a href="#">Example Link</a>
+  <i>Example Italic words</i>
+  <div class="action">Example Action</div>
+</div>
+
+Styleguide Reminders.Reminder
+
+*/
+/*
+Urgent
+
+Is used in conjunction with the reminder class to add further highlighting of links
+
+Markup:
+<div class="reminder urgent">
+  <div class="label">Example Label</div>
+  <p>Example Paragraph</p>
+  <a href="#">Example Link</a>
+  <i>Example Italic</i>
+  <div class="action">Example Action</div>
+</div>
+
+Styleguide Reminders.Urgent
+
+*/
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
 .reminder {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -9244,14 +9293,14 @@ Styleguide Dividers.Left
 }
 
 @media (max-width: 640px) {
-  /* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+  /* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
   .reminder {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
 .reminder a, .reminder .link-style, .reminder .button--link-style {
   color: #fff;
   display: block;
@@ -9259,23 +9308,23 @@ Styleguide Dividers.Left
   text-decoration: none;
 }
 
-/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
 .reminder.urgent a, .reminder.urgent .link-style, .reminder.urgent .button--link-style {
   background-color: #b10e1e;
 }
 
-/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
 .reminder i {
   margin-left: 5px;
 }
 
-/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
 .reminder p {
   margin-top: 0;
   display: inline-block;
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
 .reminder .label {
   background-color: #000;
   color: #fff;
@@ -9284,12 +9333,22 @@ Styleguide Dividers.Left
   margin-right: -5px;
 }
 
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
 .reminder .action {
   text-decoration: underline;
 }
 
-/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_reminders.scss */
+/*
+Alert Block
+
+Highlights some text as an alert as an inline style.
+
+Markup:
+<div class="alert-block">Example Alert Block.</div>
+
+Styleguide Reminders.Alert Block
+*/
+/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_reminders.scss */
 .alert-block {
   background: #b10e1e;
   color: #fff;
