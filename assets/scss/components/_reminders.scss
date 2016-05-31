@@ -1,0 +1,130 @@
+/*
+Reminder List
+
+Display an Unordered List of reminder items with time formatted in a new line.
+
+Markup:
+<ul class="reminder-list">
+  <li>Reminder List Item 1</li>
+  <li>Reminder List Item 2</li>
+  <li>Reminder List Item 3 <time>Reminder Time</time></li>
+</ul>
+
+
+Styleguide Reminders.Reminder List
+*/
+
+
+.reminder-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 0.5em 0;
+
+    time {
+      display: block;
+      color: $secondary-text-colour;
+
+      @include core-16;
+    }
+  }
+}
+
+
+/*
+Reminder
+
+Formats containing elements with a background highlight.
+
+Markup:
+<div class="reminder">
+  <div class="label">Example label</div>
+  <p>Example paragraph</p>
+  <a href="#">Example Link</a>
+  <i>Example Italic words</i>
+  <div class="action">Example Action</div>
+</div>
+
+Styleguide Reminders.Reminder
+
+*/
+
+/*
+Urgent
+
+Is used in conjunction with the reminder class to add further highlighting of links
+
+Markup:
+<div class="reminder urgent">
+  <div class="label">Example Label</div>
+  <p>Example Paragraph</p>
+  <a href="#">Example Link</a>
+  <i>Example Italic</i>
+  <div class="action">Example Action</div>
+</div>
+
+Styleguide Reminders.Urgent
+
+*/
+
+.reminder {
+  @include core-19;
+  background-color: $light-blue;
+  margin-bottom: 1em;
+
+  a {
+    color: #fff;
+    display: block;
+    padding: 0.7em 1em;
+    text-decoration: none;
+  }
+
+  &.urgent a {
+    background-color: $red;
+  }
+
+  i {
+    margin-left: 5px;
+  }
+
+  p {
+    margin-top: 0;
+    display: inline-block;
+  }
+
+  .label {
+    background-color: #000;
+    color: #fff;
+    padding: 0.7em 1em;
+    display: inline-block;
+    margin-right: -5px;
+  }
+
+  .action {
+    text-decoration: underline;
+  }
+
+}
+
+
+/*
+Alert Block
+
+Highlights some text as an alert as an inline style.
+
+Markup:
+<div class="alert-block">Example Alert Block.</div>
+
+Styleguide Reminders.Alert Block
+*/
+
+.alert-block {
+  background: $alert-bg-red;
+  color: #fff;
+  padding: 0.15em 0.3em;
+  margin: 0 0.2em;
+  text-decoration: none;
+  line-height: 16px;
+}
