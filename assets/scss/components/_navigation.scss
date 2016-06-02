@@ -196,17 +196,18 @@ Page Navigation
 A page navigation element with a previous and next link.
 
 Markup:
-<nav class="page-nav" role="navigation" aria-label="Page navigation">
+<nav class="page-navigation--previous-next" role="navigation"
+     aria-label="Page navigation">
   <ul>
     <li class="page-nav__item page-nav__item--previous">
-      <a class="page-nav__link page-nav__link-previous"
+      <a class="page-nav__link page-nav__link--previous"
          title="Navigate to previous part" rel="prev" href="#">
         <span class="page-nav__label">Previous </span>
         <span class="page-nav__title">Overview</span>
       </a>
     </li>
     <li class="page-nav__item page-nav__item--next">
-      <a class="page-nav__link page-nav__link-next"
+      <a class="page-nav__link page-nav__link--next"
          title="Navigate to next part" rel="next" href="#">
         <span class="page-nav__label">Next</span>
         <span class="page-nav__title">Inheritance Tax reliefs</span>
@@ -217,33 +218,31 @@ Markup:
 
 Styleguide Navigation.Page Navigation
 */
-.page-nav {
+
+.page-navigation--previous-next {
   display: block;
-  margin: em(64) 0 0 0;
+  margin: em(32, 16) 0 0 0;
   padding: em(12) 0;
   border-bottom: 1px solid $light-grey;
-
   @include contain-floats;
 
-  @include media(mobile) {
-    margin: em(32) 0 0 0
+  @include media(tablet) {
+    margin: em(64) 0 0 0;
   }
 }
 
 .page-nav__item {
-  @include core-19;
-  line-height: 1.25;
-  float: left;
+  @include core-14;
+  float: none;
   text-align: right;
   margin: em(5) 0;
   padding: 0;
-  width: 49%;
+  width: 100%;
 
-  @include media(mobile) {
-    @include core-14;
-    line-height: 1.14286;
-    float: none;
-    width: 100%
+  @include media(tablet) {
+    @include core-19;
+    float: left;
+    width: 49%;
   }
 }
 
@@ -252,84 +251,7 @@ Styleguide Navigation.Page Navigation
   text-align: left;
 }
 
-.page-nav__link {
-  display: block;
-  color: $govuk-blue-colour;
-  text-decoration: none;
-
-  &:hover, &:active {
-    background-color: $shaded-bg-grey;
-  }
-
-  &:focus {
-    outline: em(3) solid $yellow;
-    background-color: transparent;
-
-    @include media(mobile) {
-      outline-width: em(3, 16);
-    }
-  }
-
-  @include media(mobile) {
-    @include core-19;
-  }
-}
-
-.page-nav__link-previous {
-  padding: em(14) 0 em(14) em(48);
-
-  &:before {
-    background: transparent url(../images/icons/arrow-sprite.png) no-repeat em(-20) em(-11);
-    margin: em(-4) 0 0 em(-32);
-    float: left;
-    width: em(30);
-    height: em(38);
-    content: " ";
-
-    @include media(mobile) {
-      font-size: 19px;
-    }
-  }
-}
-
 .page-nav__item--next {
   float: right;
   text-align: right;
-}
-
-.page-nav__link-next {
-  padding: em(14) em(48) em(14) 0;
-
-  &:before {
-    background: transparent url(../images/icons/arrow-sprite.png) no-repeat em(-102) em(-11);
-    margin: em(-4) em(-32) 0 0;
-    float: right;
-    width: em(30);
-    height: em(38);
-    content: " ";
-  }
-
-  @include media(mobile) {
-    font-size: 19px;
-    text-align: right
-  }
-}
-
-.page-nav__label {
-  @include core-27;
-  line-height: 1.25;
-  margin-bottom: em(3, 27);
-  display: block;
-
-  @include media(mobile) {
-    @include core-24;
-  }
-}
-
-.page-nav__title {
-  text-decoration: underline;
-
-  @include media(mobile) {
-    @include core-19;
-  }
 }
