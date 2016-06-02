@@ -1,0 +1,42 @@
+/*
+Load Partial
+
+Styles to contain a page partial loaded into the current page by AJAX, and a loading spinner to be displayed while the content is being loaded.
+This is used on the 'Get help with this page' content on the templates of many front-ends.
+The spinner is shown while loading, then removed and replaced with the loaded content.
+The component requires Javascript module: [/javascripts/modules/reportAProblem.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/reportAProblem.js).
+
+Markup:
+<div class="report-error">
+    <a class="report-error__toggle">Get help with this page</a>
+    <div class="report-error__content">
+        <div class="report-error__loading"></div>
+    </div>
+</div>
+
+Styleguide Load Partial
+*/
+
+.report-error {
+  display: inline-block;
+  clear: both;
+  width: 100%;
+  margin: 2em 0 1.5em 0;
+
+  .report-error__toggle {
+    @include core-16;
+    color: #454a4c;
+  }
+
+  @include media(tablet) {
+    width: 66%;
+    float: left;
+  }
+}
+
+.report-error__content .report-error__loading {
+  background-image: url("../images/loading.gif");
+  background-repeat: no-repeat;
+  margin-top: 0.5em;
+  padding: 32px 32px 0 0;
+}
