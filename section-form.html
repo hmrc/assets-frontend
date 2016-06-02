@@ -187,6 +187,9 @@
                       <li class="comp-lib-menu-item--indented">
                         <a href="section-form.html#kssref-form-submit">Submit</a>
                       </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-form.html#kssref-form-validation">Validation</a>
+                      </li>
                   </ul>
                 </li>
                 <li class="comp-lib-menu-item">
@@ -1081,6 +1084,169 @@
                           <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;form-field form-field--submit&quot;&gt;
   &lt;button class=&quot;button&quot; type=&quot;submit&quot;&gt;Send&lt;/button&gt;
 &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    </section>
+
+
+                    <section id="kssref-form-validation">
+                  <div>
+                    <h2><a href="#kssref-form-validation" class="comp-lib-menu-link">Validation</a></h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>Frontend form validation example</p>
+
+                    </div>
+                  </div>
+
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <form action="/" class="js-form" autocomplete="off"
+      novalidate="novalidate">
+  <div class="flash error-summary" id="error-summary-display"
+       role="alert" aria-labelledby="error-summary-heading"
+       tabindex="-1">
+    <h2 id="error-summary-heading" class="h3-heading">Summary Heading</h2>
+    <ul class="js-error-summary-messages">
+    </ul>
+  </div>
+  <fieldset class="form-field-group">
+        <span id="gender-error-message"
+              class="error-notification"
+              role="alert"
+              data-input-name="gender">
+              Default inline error Message
+        </span>
+    <legend class="form-element-bold">Gender</legend>
+    <div class="form-field--inline">
+      <label class="block-label">
+        <input type="radio"
+               name="gender"
+               required
+               data-msg-required="Please choose your gender"/>
+        Male
+      </label>
+    </div>
+    <div class="form-field--inline">
+      <label class="block-label">
+        <input type="radio" name="gender"/>
+        Female
+      </label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-field-group">
+      <label class="form-element-bold" for="firstname">
+        First Name
+        <span class="form-hint">
+            Enter your first name
+        </span>
+        <span id="firstname-error-message"
+              class="error-notification"
+              role="alert"
+              data-input-name="firstname">
+              Default inline first name error Message
+        </span>
+        <input type="text"
+               name="firstname"
+               id="firstname"
+               class="form-control"
+               aria-required="true"
+               minlength="2"
+               maxlength="30"
+               required
+               pattern="^[\w\d]{2,30}$"
+               data-msg-pattern="Please use a correct name format"
+               data-msg-required="Please enter your first name"
+               data-msg-minlength="Please enter 2 or more characters"
+               data-msg-maxlength="Please enter less than 30 characters"/>
+      </label>
+    </div>
+  </fieldset>
+  <div class="form-group">
+    <button id="continue" class="button" type="submit" value="continue">Continue</button>
+  </div>
+</form>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;form action=&quot;/&quot; class=&quot;js-form&quot; autocomplete=&quot;off&quot;
+      novalidate=&quot;novalidate&quot;&gt;
+  &lt;div class=&quot;flash error-summary&quot; id=&quot;error-summary-display&quot;
+       role=&quot;alert&quot; aria-labelledby=&quot;error-summary-heading&quot;
+       tabindex=&quot;-1&quot;&gt;
+    &lt;h2 id=&quot;error-summary-heading&quot; class=&quot;h3-heading&quot;&gt;Summary Heading&lt;/h2&gt;
+    &lt;ul class=&quot;js-error-summary-messages&quot;&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;fieldset class=&quot;form-field-group&quot;&gt;
+        &lt;span id=&quot;gender-error-message&quot;
+              class=&quot;error-notification&quot;
+              role=&quot;alert&quot;
+              data-input-name=&quot;gender&quot;&gt;
+              Default inline error Message
+        &lt;/span&gt;
+    &lt;legend class=&quot;form-element-bold&quot;&gt;Gender&lt;/legend&gt;
+    &lt;div class=&quot;form-field--inline&quot;&gt;
+      &lt;label class=&quot;block-label&quot;&gt;
+        &lt;input type=&quot;radio&quot;
+               name=&quot;gender&quot;
+               required
+               data-msg-required=&quot;Please choose your gender&quot;/&gt;
+        Male
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-field--inline&quot;&gt;
+      &lt;label class=&quot;block-label&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;gender&quot;/&gt;
+        Female
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;fieldset&gt;
+    &lt;div class=&quot;form-field-group&quot;&gt;
+      &lt;label class=&quot;form-element-bold&quot; for=&quot;firstname&quot;&gt;
+        First Name
+        &lt;span class=&quot;form-hint&quot;&gt;
+            Enter your first name
+        &lt;/span&gt;
+        &lt;span id=&quot;firstname-error-message&quot;
+              class=&quot;error-notification&quot;
+              role=&quot;alert&quot;
+              data-input-name=&quot;firstname&quot;&gt;
+              Default inline first name error Message
+        &lt;/span&gt;
+        &lt;input type=&quot;text&quot;
+               name=&quot;firstname&quot;
+               id=&quot;firstname&quot;
+               class=&quot;form-control&quot;
+               aria-required=&quot;true&quot;
+               minlength=&quot;2&quot;
+               maxlength=&quot;30&quot;
+               required
+               pattern=&quot;^[\w\d]{2,30}$&quot;
+               data-msg-pattern=&quot;Please use a correct name format&quot;
+               data-msg-required=&quot;Please enter your first name&quot;
+               data-msg-minlength=&quot;Please enter 2 or more characters&quot;
+               data-msg-maxlength=&quot;Please enter less than 30 characters&quot;/&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;button id=&quot;continue&quot; class=&quot;button&quot; type=&quot;submit&quot; value=&quot;continue&quot;&gt;Continue&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
                         </div>
                       </div>
 
