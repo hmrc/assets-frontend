@@ -172,11 +172,9 @@
                   <a href="section-header.html" class="comp-lib-menu-link">Header</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-hero.html" class="comp-lib-menu-link">Hero</a>
 
-                  <ul>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-icons.html" class="comp-lib-menu-link">Icons</a>
@@ -198,9 +196,11 @@
                   <a href="section-links.html" class="comp-lib-menu-link">Links</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-load-partial.html" class="comp-lib-menu-link">Load Partial</a>
 
+                  <ul>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-navigation.html" class="comp-lib-menu-link">Navigation</a>
@@ -287,9 +287,9 @@
           </aside>
           <div id="content">
             <article class="comp-lib-main">
-                    <div id="kssref-hero">
+                    <div id="kssref-load-partial">
                   <div>
-                    <h1><a href="#kssref-hero" class="comp-lib-menu-link">Hero</a></h1>
+                    <h1><a href="#kssref-load-partial" class="comp-lib-menu-link">Load Partial</a></h1>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
@@ -299,10 +299,10 @@
                         
                         
                       </h2>
-                      <p>A blue hero banner which stretches the full width of the viewport.
-The hero&#39;s content sits centered to line up with other page content.
-Typically used on the landing page of a service.
-Provides classes for a heading and a subheading.</p>
+                      <p>Styles to contain a page partial loaded into the current page by AJAX, and a loading spinner to be displayed while the content is being loaded.
+This is used on the &#39;Get help with this page&#39; content on the templates of many front-ends.
+The spinner is shown while loading, then removed and replaced with the loaded content.
+The component requires Javascript module: <a href="https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/reportAProblem.js">/javascripts/modules/reportAProblem.js</a>.</p>
 
                     </div>
                   </div>
@@ -311,24 +311,20 @@ Provides classes for a heading and a subheading.</p>
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <header class="hero">
-    <section class="hero__content">
-        <h1 class="hero__heading-large">Hero Heading</h1>
-        <h2 class="hero__heading-small">
-          Hero subheading
-        </h2>
-    </section>
-</header>
+                          <div class="report-error">
+    <a class="report-error__toggle">Get help with this page</a>
+    <div class="report-error__content">
+        <div class="report-error__loading"></div>
+    </div>
+</div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;header class=&quot;hero&quot;&gt;
-    &lt;section class=&quot;hero__content&quot;&gt;
-        &lt;h1 class=&quot;hero__heading-large&quot;&gt;Hero Heading&lt;/h1&gt;
-        &lt;h2 class=&quot;hero__heading-small&quot;&gt;
-          Hero subheading
-        &lt;/h2&gt;
-    &lt;/section&gt;
-&lt;/header&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;report-error&quot;&gt;
+    &lt;a class=&quot;report-error__toggle&quot;&gt;Get help with this page&lt;/a&gt;
+    &lt;div class=&quot;report-error__content&quot;&gt;
+        &lt;div class=&quot;report-error__loading&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
                         </div>
                       </div>
 

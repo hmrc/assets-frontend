@@ -8289,40 +8289,40 @@ Styleguide Beta.Phase Tag
   color: #fff;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .service-info {
   border-top: 10px solid #005ea5;
   padding-bottom: 0.5em;
 }
 
-/* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .service-info .inner {
   max-width: 990px;
   margin: 0 auto;
 }
 
-/* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .service-info .logo,
 .service-info .last-login,
 .service-info .service-info__agent-name {
   margin-top: 0.78947em;
 }
 
-/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .service-info .logo {
   float: left;
   width: 33.33%;
   margin-bottom: 0.52632em;
 }
 
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .service-info .service-info__help {
   margin-top: 10px;
   float: left;
   width: 66.66%;
 }
 
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .service-info .service-info__help p {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -8336,14 +8336,14 @@ Styleguide Beta.Phase Tag
 }
 
 @media (max-width: 640px) {
-  /* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+  /* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
   .service-info .service-info__help p {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .service-info__agent-name .agent-name,
 .service-info__agent-name .delegate-info {
   font-family: "nta", Arial, sans-serif;
@@ -8356,7 +8356,7 @@ Styleguide Beta.Phase Tag
 }
 
 @media (max-width: 640px) {
-  /* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+  /* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
   .service-info__agent-name .agent-name,
   .service-info__agent-name .delegate-info {
     font-size: 16px;
@@ -8364,7 +8364,7 @@ Styleguide Beta.Phase Tag
   }
 }
 
-/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .service-info__agent-name .agent-name .client-name,
 .service-info__agent-name .delegate-info .client-name {
   color: #0b0c0c;
@@ -8377,7 +8377,7 @@ Styleguide Beta.Phase Tag
 }
 
 @media (max-width: 640px) {
-  /* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+  /* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
   .service-info__agent-name .agent-name .client-name,
   .service-info__agent-name .delegate-info .client-name {
     font-size: 16px;
@@ -8385,7 +8385,7 @@ Styleguide Beta.Phase Tag
   }
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .service-info__agent-name .acting-agent {
   color: #6f777b;
   display: block;
@@ -8397,25 +8397,25 @@ Styleguide Beta.Phase Tag
 }
 
 @media (max-width: 640px) {
-  /* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+  /* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
   .service-info__agent-name .acting-agent {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .service-info__agent-name .client-name {
   color: #0b0c0c;
   display: block;
 }
 
-/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .last-login {
   margin-bottom: 0.52632em;
 }
 
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-service-info.scss */
+/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
 .last-login__more-details {
   margin: 0.26316em 0 0 0;
 }
@@ -9643,7 +9643,25 @@ Styleguide Organisation Logo.Stacked
   }
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_report-error.scss */
+/*
+Load Partial
+
+Styles to contain a page partial loaded into the current page by AJAX, and a loading spinner to be displayed while the content is being loaded.
+This is used on the 'Get help with this page' content on the templates of many front-ends.
+The spinner is shown while loading, then removed and replaced with the loaded content.
+The component requires Javascript module: [/javascripts/modules/reportAProblem.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/reportAProblem.js).
+
+Markup:
+<div class="report-error">
+    <a class="report-error__toggle">Get help with this page</a>
+    <div class="report-error__content">
+        <div class="report-error__loading"></div>
+    </div>
+</div>
+
+Styleguide Load Partial
+*/
+/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_report-error.scss */
 .report-error {
   display: inline-block;
   clear: both;
@@ -9653,7 +9671,7 @@ Styleguide Organisation Logo.Stacked
   float: left;
 }
 
-/* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_report-error.scss */
+/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_report-error.scss */
 .report-error .report-error__toggle {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -9664,14 +9682,14 @@ Styleguide Organisation Logo.Stacked
 }
 
 @media (max-width: 640px) {
-  /* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_report-error.scss */
+  /* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_report-error.scss */
   .report-error .report-error__toggle {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_report-error.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_report-error.scss */
 .report-error__content .report-error__loading {
   background-image: url("../images/loading.gif");
   background-repeat: no-repeat;
