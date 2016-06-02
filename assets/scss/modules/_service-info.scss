@@ -1,55 +1,76 @@
-
-.service-info__organisation-logo {
-  background-image: url("../images/icons/crests/hmrc_crest_27px.png");
-  background-repeat: no-repeat;
-  border-left: 2px solid #bbb;
-  border-color: #009390;
-  padding: 50px 0 0 9px;
-  margin-top: 5px;
-  background-position: 9px top;
-  background-size: auto 40px;
-
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  line-height: 20px;
-}
-
-.service-info__related-subsection {
+.service-info {
   border-top: 10px solid $mainstream-brand;
-  margin-top: 3em;
-}
+  padding-bottom: 0.5em;
+  @extend %contain-floats;
 
-.service-info__help {
-  @include core-16();
-  color: #6f777b;
-}
+  .inner {
+    max-width: 990px;
+    margin: 0 auto;
+  }
 
-.service-info__navigation {
-  a {
-    @include core-16();
+  .logo,
+  .last-login,
+  .service-info__agent-name {
+    margin-top: em(15);
+  }
+
+  @include media(tablet) {
+    .logo {
+      float: left;
+      width: 33.33%;
+      margin-bottom: em(10);
+    }
+  }
+
+  .service-info__help {
+    margin-top: 10px;
+
+    @include media(tablet) {
+      float: left;
+      width: 66.66%;
+    }
+
+    p {
+      @include core-16(20/16);
+      color: $secondary-text-colour;
+      margin: 1em 0;
+
+      @include media(tablet) {
+        margin: 0;
+        padding-top: 5px;
+      }
+    }
   }
 }
 
-.service-info__navigation__more {
-  padding: 0 0.5em;
-  background-color: $light-blue-25;
-  text-decoration: none;;
+.service-info__agent-name {
+  .agent-name,
+  .delegate-info {
+    @include bold-19();
+    float: right;
+
+    .client-name {
+      color: $grey-0;
+      @include bold-19();
+    }
+  }
+
+  .acting-agent {
+    color: $grey-1;
+    display: block;
+    @include core-16();
+  }
+
+  .client-name {
+    color: $black;
+    display: block;
+  }
 }
 
-.organisation-logo span {
-  margin-left: 0;
-  padding-top: 5px;
+.last-login {
+  margin-bottom: em(10);
 }
 
-#legacy-sources {
-  position: relative;
-
-  left: 43.3em;
-}
-
-.organisation-logo-stacked-hmrc-large {
-  padding: 40px 0 0 10px;
-  background-image: url("../images/icons/crests/hmrc_crest_27px.png");
-  background-position: 9px top;
-  background-size: auto 40px;
+.last-login__more-details {
+  margin: em(5) 0 0 0;
 }
