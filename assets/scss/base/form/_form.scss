@@ -1,4 +1,80 @@
 /*
+Validation
+
+Frontend form validation example
+
+Markup:
+<form action="/" class="js-form" autocomplete="off"
+      novalidate="novalidate">
+  <div class="flash error-summary" id="error-summary-display"
+       role="alert" aria-labelledby="error-summary-heading"
+       tabindex="-1">
+    <h2 id="error-summary-heading" class="h3-heading">Summary Heading</h2>
+    <ul class="js-error-summary-messages">
+    </ul>
+  </div>
+  <fieldset class="form-field-group">
+        <span id="gender-error-message"
+              class="error-notification"
+              role="alert"
+              data-input-name="gender">
+              Default inline error Message
+        </span>
+    <legend class="form-element-bold">Gender</legend>
+    <div class="form-field--inline">
+      <label class="block-label">
+        <input type="radio"
+               name="gender"
+               required
+               data-msg-required="Please choose your gender"/>
+        Male
+      </label>
+    </div>
+    <div class="form-field--inline">
+      <label class="block-label">
+        <input type="radio" name="gender"/>
+        Female
+      </label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-field-group">
+      <label class="form-element-bold" for="firstname">
+        First Name
+        <span class="form-hint">
+            Enter your first name
+        </span>
+        <span id="firstname-error-message"
+              class="error-notification"
+              role="alert"
+              data-input-name="firstname">
+              Default inline first name error Message
+        </span>
+        <input type="text"
+               name="firstname"
+               id="firstname"
+               class="form-control"
+               aria-required="true"
+               minlength="2"
+               maxlength="30"
+               required
+               pattern="^[\w\d]{2,30}$"
+               data-msg-pattern="Please use a correct name format"
+               data-msg-required="Please enter your first name"
+               data-msg-minlength="Please enter 2 or more characters"
+               data-msg-maxlength="Please enter less than 30 characters"/>
+      </label>
+    </div>
+  </fieldset>
+  <div class="form-group">
+    <button id="continue" class="button" type="submit" value="continue">Continue</button>
+  </div>
+</form>
+
+Styleguide Form.Validation
+*/
+
+/*
 Group
 
 A Form field is used to group several controls or elements within a web form.
