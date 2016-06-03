@@ -168,23 +168,32 @@ a[rel="external"].external-link-19-bold-no-hover {
 }
 
 /*
-Previous/Next Links
+Previous
 
-Link navigation element with a previous and next link modifiers.
+Link navigation element with a previous modifier.
 
 Markup:
-      <a class="page-nav__link page-nav__link--previous"
-         title="Navigate to previous part" rel="prev" href="#">
-        <span class="page-nav__label">Previous </span>
-        <span class="page-nav__title">Overview</span>
-      </a>
-      <a class="page-nav__link page-nav__link--next"
-         title="Navigate to next part" rel="next" href="#">
-        <span class="page-nav__label">Next</span>
-        <span class="page-nav__title">Inheritance Tax reliefs</span>
-      </a>
+<a class="page-nav__link page-nav__link--previous"
+   title="Navigate to previous part" rel="prev" href="#">
+  <span class="page-nav__label">Previous</span>
+  <span class="page-nav__title">Overview</span>
+</a>
 
-Styleguide Links.Previous/Next Links
+Styleguide Links.Previous
+*/
+/*
+Next
+
+Link navigation element with a next link modifier.
+
+Markup:
+<a class="page-nav__link page-nav__link--next"
+   title="Navigate to next part" rel="next" href="#">
+  <span class="page-nav__label">Next</span>
+  <span class="page-nav__title">Inheritance Tax reliefs</span>
+</a>
+
+Styleguide Links.Next
 */
 
 .page-nav__link {
