@@ -1,62 +1,4 @@
 /*
-Header
-
-Header Navigation is used to display information such as title and links to the user.
-
-Markup:
-<nav role="navigation">
-  <a href="#" class="header__menu__proposition-name">Title</a>
-  <ul class="header__menu__proposition-links">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-  </ul>
-</nav>
-
-Styleguide Navigation.Header
-*/
-
-.header__menu__proposition-name {
-  @include bold-24;
-  text-decoration: none;
-  color: $white;
-}
-
-a.header__menu__proposition-name {
-
-  &:hover,
-  &:focus,
-  &:active {
-    text-decoration: underline;
-  }
-
-}
-
-.header__menu__proposition-links {
-  @include bold-16;
-  float: right;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-
-  @include media-down(tablet) {
-    width: 100%;
-  }
-
-  li {
-    display: inline;
-    padding-right: em(15);
-  }
-
-  a {
-    @include bold-16;
-    color: $white;
-    text-decoration: none;
-  }
-}
-
-
-/*
 Page
 
 Navigation for the page. As shown this can use markup with an `ol` or `ul`.
@@ -147,48 +89,6 @@ Styleguide Navigation.Page
   }
 }
 
-.back-link {
-  @include core-19();
-  border-bottom: 1px solid $black;
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: em(30);
-
-  &:before {
-    content: "\2039"; // Unicode &lsaquo;
-    padding-right: em(5);
-  }
-
-}
-
-a.back-link {
-  color: $black;
-}
-
-#global-breadcrumb {
-  margin:0;
-  padding-top:0;
-  
-  &.global-breadcrumb--no-border {
-    padding-bottom: 1.5em;
-    border-bottom: 0;
-  }
-  
-  li {
-    margin-bottom: 0;
-  }
-  
-}
-
-a.back-to-top-link {
-  @include bold-16;
-  margin: 0 0 em(10) 0;
-
-  &:visited {
-    color: $govuk-blue-colour;
-  }
-
-}
 
 /*
 Page Navigation
