@@ -5867,6 +5867,163 @@ a[rel="external"].external-link-19-bold-no-hover:hover:after, [rel="external"].e
 }
 
 /*
+Previous
+
+Link navigation element with a previous modifier.
+
+Markup:
+<a class="page-nav__link page-nav__link--previous"
+   title="Navigate to previous part" rel="prev" href="#">
+  <span class="page-nav__label">Previous</span>
+  <span class="page-nav__title">Overview</span>
+</a>
+
+Styleguide Links.Previous
+*/
+/*
+Next
+
+Link navigation element with a next link modifier.
+
+Markup:
+<a class="page-nav__link page-nav__link--next"
+   title="Navigate to next part" rel="next" href="#">
+  <span class="page-nav__label">Next</span>
+  <span class="page-nav__title">Inheritance Tax reliefs</span>
+</a>
+
+Styleguide Links.Next
+*/
+/* line 199, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.page-nav__link {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  color: #005ea5;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  /* line 199, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+  .page-nav__link {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 205, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.page-nav__link:hover, .page-nav__link:active {
+  background-color: #f8f8f8;
+}
+
+/* line 210, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.page-nav__link:focus {
+  outline: 3px solid #ffbf47;
+  background-color: transparent;
+  outline-width: 0.15789em;
+}
+
+/* line 220, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.page-nav__link--previous {
+  padding: 0.73684em 0 0.73684em 2.52632em;
+}
+
+/* line 223, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.page-nav__link--previous:before {
+  font-size: 19px;
+  background: transparent url(../images/icons/arrow-sprite.png) no-repeat -1.05263em -0.57895em;
+  margin: -0.21053em 0 0 -1.68421em;
+  float: left;
+  width: 1.57895em;
+  height: 2em;
+  content: " ";
+}
+
+/* line 234, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.page-nav__link--next {
+  padding: 0.73684em 2.52632em 0.73684em 0;
+  font-size: 19px;
+  text-align: right;
+}
+
+/* line 238, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.page-nav__link--next:before {
+  background: transparent url(../images/icons/arrow-sprite.png) no-repeat -5.36842em -0.57895em;
+  margin: -0.21053em -1.68421em 0 0;
+  float: right;
+  width: 1.57895em;
+  height: 2em;
+  content: " ";
+}
+
+/* line 248, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.page-nav__label {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  line-height: 1.25;
+  margin-bottom: 0.11111em;
+  display: block;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 27px;
+  line-height: 1.11111;
+  font-weight: 400;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 248, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+  .page-nav__label {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 640px) {
+  /* line 248, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+  .page-nav__label {
+    font-size: 18px;
+    line-height: 1.11111;
+  }
+}
+
+/* line 259, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+.page-nav__title {
+  text-decoration: underline;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 259, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+  .page-nav__title {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+@media (max-width: 640px) {
+  /* line 259, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_links.scss */
+  .page-nav__title {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/*
 Arrow
 
 The arrow icon is used to represent an open or closed child element.
@@ -8890,6 +9047,99 @@ Styleguide Navigation.Page
     font-size: 14px;
     line-height: 1.14286;
   }
+}
+
+/*
+Page Navigation
+
+A page navigation element with a previous and next link.
+
+Markup:
+<nav class="page-navigation--previous-next" role="navigation"
+     aria-label="Page navigation">
+  <ul>
+    <li class="page-nav__item page-nav__item--previous">
+      <a class="page-nav__link page-nav__link--previous"
+         title="Navigate to previous part" rel="prev" href="#">
+        <span class="page-nav__label">Previous</span>
+        <span class="page-nav__title">Overview</span>
+      </a>
+    </li>
+    <li class="page-nav__item page-nav__item--next">
+      <a class="page-nav__link page-nav__link--next"
+         title="Navigate to next part" rel="next" href="#">
+        <span class="page-nav__label">Next</span>
+        <span class="page-nav__title">Inheritance Tax reliefs</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+Styleguide Navigation.Page Navigation
+*/
+/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+.page-navigation--previous-next {
+  display: block;
+  margin: 2em 0 0 0;
+  padding: 0.63158em 0;
+  border-bottom: 1px solid #bfc1c3;
+  margin: 3.36842em 0 0 0;
+}
+
+/* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/_helpers.scss */
+.page-navigation--previous-next:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+.page-nav__item {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  font-weight: 400;
+  text-transform: none;
+  float: none;
+  text-align: right;
+  margin: 0.26316em 0;
+  padding: 0;
+  width: 100%;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  float: left;
+  width: 49%;
+}
+
+@media (max-width: 640px) {
+  /* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+  .page-nav__item {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 640px) {
+  /* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+  .page-nav__item {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+.page-nav__item--previous {
+  float: left;
+  text-align: left;
+}
+
+/* line 154, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+.page-nav__item--next {
+  float: right;
+  text-align: right;
 }
 
 /*
