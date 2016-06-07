@@ -70,8 +70,7 @@
   padding: 1em !important;
 }
 .comp-lib-pattern-component {
-  padding: 1em;
-  border: 1px solid #d8d8d8;
+  padding-bottom: 1em;
 }
 .comp-lib-pattern-example {
   margin-bottom: 4em;

@@ -7627,6 +7627,16 @@ Styleguide Label.form date
 Validation
 
 Frontend form validation example
+- To enable frontend validation add the class `.js-form` to your form
+- Place relevant validation attributes on form inputs
+- Add messages for errors via `data-msg-<error_type>` on specific input
+- Inline error messages added in your markup using the `.error-notification` within a `.form-field-group` element
+- Add error summary element to show errors at the top of the page
+- Custom Validation possible
+
+## Further Reading
+- https://jqueryvalidation.org/validate
+- http://johnnycode.com/2014/03/27/using-jquery-validate-plugin-html5-data-attribute-rules/
 
 Markup:
 <form action="/" class="js-form" autocomplete="off"
@@ -7727,7 +7737,7 @@ Markup:
 
 Styleguide Form.group
 */
-/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 fieldset {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -7740,25 +7750,25 @@ fieldset {
 }
 
 @media (max-width: 640px) {
-  /* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  /* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
   fieldset {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 fieldset legend {
   width: 100%;
   margin-bottom: 0.75em;
 }
 
-/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 fieldset legend.h2-heading {
   margin: 0 0 0.25em 0;
 }
 
-/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 131, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field-group, .form-field-single {
   margin-bottom: 0.75em;
   line-height: 1.6em;
@@ -7793,7 +7803,7 @@ Markup:
 
 Styleguide Form.field
 */
-/* line 161, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 171, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left {
   float: left;
   margin-bottom: 0.75em;
@@ -7801,7 +7811,7 @@ Styleguide Form.field
   width: 100%;
 }
 
-/* line 169, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--tall {
   margin: 0 0 1.57895em 0;
 }
@@ -7840,7 +7850,7 @@ Styleguide Form.inline
 /**
  *  Allows you to stack input blocks side by side
  */
-/* line 208, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 218, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left {
   clear: none;
   float: left;
@@ -7848,17 +7858,17 @@ Styleguide Form.inline
   position: relative;
 }
 
-/* line 215, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 225, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--inline input[type="text"], .form-field--inline-text-input input[type="text"], .form-field--inline-spaced-right input[type="text"], .form-field--inline-spaced-left input[type="text"], .form-field--inline input[type="password"], .form-field--inline-text-input input[type="password"], .form-field--inline-spaced-right input[type="password"], .form-field--inline-spaced-left input[type="password"] {
   margin: 0 0.52em;
 }
 
-/* line 224, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 234, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--inline-spaced-right {
   margin-right: 15px;
 }
 
-/* line 229, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 239, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--inline-spaced-left {
   margin-left: 15px;
 }
@@ -7879,7 +7889,7 @@ Styleguide Form.submit
  * Wrap action elements of form (submit button, cancel link)
  * to provide space between these and last inputs of form
  */
-/* line 251, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 261, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--submit {
   margin-top: 15px;
 }
@@ -7894,7 +7904,7 @@ Markup:
 
 Styleguide Form.hint
 */
-/* line 266, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 276, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-field--hint {
   display: block;
   margin-bottom: 0.75em;
@@ -7919,17 +7929,17 @@ Markup:
 
 Styleguide Form.date
 */
-/* line 292, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 302, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-date {
   display: inline-block;
 }
 
-/* line 301, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 311, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-date .form-group-year {
   width: 70px;
 }
 
-/* line 305, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 315, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-date .form-group {
   width: 56px;
   float: left;
@@ -7952,7 +7962,7 @@ Markup:
 
 Styleguide Form.dynamic
 */
-/* line 328, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 338, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .dynamically-displayed {
   border-left: 5px solid #DEE0E2;
   clear: both;
@@ -7961,7 +7971,7 @@ Styleguide Form.dynamic
 }
 
 @media (max-width: 640px) {
-  /* line 328, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  /* line 338, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
   .dynamically-displayed {
     padding: 0.5em 15px;
     box-sizing: border-box;
@@ -7984,7 +7994,7 @@ Markup:
 
 Styleguide Form.control
 */
-/* line 357, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 367, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-control {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -8003,7 +8013,7 @@ Styleguide Form.control
 }
 
 @media (max-width: 640px) {
-  /* line 357, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  /* line 367, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
   .form-control {
     font-size: 16px;
     line-height: 1.25;
@@ -8011,18 +8021,18 @@ Styleguide Form.control
 }
 
 @media (min-width: 641px) {
-  /* line 357, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  /* line 367, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
   .form-control {
     width: 50%;
   }
 }
 
-/* line 377, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 387, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 select.form-control {
   appearance: menulist;
 }
 
-/* line 381, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 391, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-control--block {
   display: block;
 }
@@ -8039,7 +8049,7 @@ Markup:
 
 Styleguide Form.legend
 */
-/* line 399, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 409, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .questionnaire legend {
   margin: 0 0 0.75em;
 }
