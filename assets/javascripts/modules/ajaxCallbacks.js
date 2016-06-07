@@ -107,6 +107,112 @@ var ajaxCallbacks = {
       }
     }
   },
+  apiCollaboratorResponse: {
+    callbacks: {
+      success: function(response, $element, data, helpers, targets, container, type) {
+        var $email = $element.find('[name=email]');
+        var email = $email.val();
+        var $list = $('[data-collaborator-list]');
+        var $tr = $('<tr></tr>').attr('data-collaborator-row', email);
+        var $name = $('<td></td>').text(email).addClass('table--large');
+        var $permission = $('<td></td>').addClass('table--large text--right hard--right');
+        var $action = $('<td></td>').addClass('text--right hard--right');
+        var $form = $('<form></form>')
+          .attr('action', $list.data('collaborator-remove-url') + email)
+          .attr('data-ajax-submit', true)
+          .attr('data-callback-args', '')
+          .attr('data-callback-name', 'apiCollaboratorRemoveResponse.callbacks')
+          .addClass('form');
+        var $span = $('<span></span>')
+            .text('Server error, please try again')
+            .addClass('error-notification js-remove-error');
+        var $button = $('<button type="submit"></button>')
+            .text('Remove')
+            .attr('data-remove-collaborator-link', email)
+            .addClass('button button--link button--small flush hard--right');
+        var $info = $element.find('.js-info');
+        var $message = $info.find('.alert__message');
+        var emailMessage = 'We have sent an email to <strong>'+ email +'</strong>';
+        var message =  emailMessage + (response.registeredUser ?
+                    ' confirming they have been added to this application.' :
+                    ' inviting them to register with the API Developer Hub. They cannot access the application until they register.');
+
+        if ($element.find('[name=role]:checked').val() === 'ADMINISTRATOR') {
+          $permission.append($('<span class="faded-text">Admin</span>'));
+        }
+
+        // add to the list
+        $form.append($span, $button);
+        $action.append($form);
+        $tr.append($name, $permission, $action);
+        $list.append($tr);
+
+        // remove any error validation
+        $element.find('.form-field--error').removeClass('form-field--error');
+
+        // display alert info
+        $message.html(message);
+        $info.removeClass('hidden');
+
+        // reset form state & clear value
+        helpers.resetForms(helpers, type, data, container);
+        $email.val('');
+
+        helpers.base.success.apply(null, arguments);
+      },
+
+      error: function(response, $element, data, helpers, targets, container, type) {
+        var $parent = $element.find('.js-email-field');
+        var $email = $parent.find('[name=email]');
+        var $error = $parent.find('.error-notification');
+        var $info = $element.find('.js-info');
+        var $message = $info.find('.alert__message');
+
+        // add error state class
+        $parent.addClass('form-field--error');
+
+        // add error message
+        if ($error.length === 0) {
+          $('<p class="error-notification" data-field-error-email>'+ response.responseJSON.message + '</p>').insertBefore($email);
+        } else {
+          $error.text(response.responseJSON.message);
+        }
+
+        // hide alert info
+        $info.addClass('hidden');
+        $message.empty();
+
+        helpers.base.error.apply(null, arguments);
+      },
+
+      always: function(response, $element, data, helpers, targets, container, type, actions) {
+        // reset form state
+        helpers.utilities.setFormState($element, false);
+      }
+    }
+  },
+  apiCollaboratorRemoveResponse: {
+    callbacks: {
+      success: function(response, $element, data, helpers, targets, container, type) {
+        var $button = $element.find('[type=submit]');
+        var email = $button.data('remove-collaborator-link');
+
+        // remove row
+        $('[data-collaborator-row="' + email + '"]').remove();
+
+        helpers.base.success.apply(null, arguments);
+      },
+
+      error: function(response, $element, data, helpers, targets, container, type) {
+        // reset form state
+        helpers.utilities.setFormState($element, false);
+
+        // show error message
+        $element.find('.js-remove-error').addClass('inline-block');
+        helpers.base.error.apply(null, arguments);
+      }
+    }
+  },
   apiSubscribeResponse: {
     callbacks: {
       success: function(response, $element, data, helpers) {
