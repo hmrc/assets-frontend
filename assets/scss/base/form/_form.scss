@@ -2,6 +2,16 @@
 Validation
 
 Frontend form validation example
+- To enable frontend validation add the class `.js-form` to your form
+- Place relevant validation attributes on form inputs
+- Add messages for errors via `data-msg-<error_type>` on specific input
+- Inline error messages added in your markup using the `.error-notification` within a `.form-field-group` element
+- Add error summary element to show errors at the top of the page
+- Custom Validation possible
+
+## Further Reading
+- https://jqueryvalidation.org/validate
+- http://johnnycode.com/2014/03/27/using-jquery-validate-plugin-html5-data-attribute-rules/
 
 Markup:
 <form action="/" class="js-form" autocomplete="off"
