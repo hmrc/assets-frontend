@@ -1,3 +1,54 @@
+/*
+DataTable
+
+The data tables work is provided via the `datatables` npm package. You can apply custom styles to your table rows by
+adding the selectors `.status--unconfirmed` or `.status--confirm-success` as demonstrated in the example below.
+More information for implementation can be found at https://datatables.net
+
+Markup:
+<table class="js-datatable dataTable no-footer"
+       data-dom="<'dataTables-filter__block'f>tip"
+       data-order='[3,"asc"]'
+       data-fixed-Header="true"
+       data-page-Length="200"
+       data-auto-Width="false"
+       data-column-Defs='[{"targets": [0], "width": "30%"},{"targets": [1],"width": "20%"},{"targets": [2,3],"width": "15%"}]'
+       data-language='{"sSearchPlaceholder":"Search by client name / reference","sSearch":"<span class=\"full-width shim text--left\"><strong>Search Client list</strong></span>"}'>
+  <thead>
+  <tr role="row">
+    <th tabindex="0">Name</th>
+    <th data-orderable="false" data-search="false">Gender</th>
+    <th tabindex="0">Age</th>
+    <th tabindex="0">Nationality</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr class="tabular-data__cell--centred" role="row">
+      <td>Ben Smith</td>
+      <td>male</td>
+      <td>38</td>
+      <td>British</td>
+    </tr>
+    <tr class="tabular-data__cell--centred status--confirm-success"
+        role="row">
+      <td>Anna Rose</td>
+      <td>female</td>
+      <td>27</td>
+      <td>French</td>
+    </tr>
+    <tr class="tabular-data__cell--centred status--unconfirmed"
+        role="row">
+      <td>George wells</td>
+      <td>male</td>
+      <td>43</td>
+      <td>South African</td>
+    </tr>
+  </tbody>
+</table>
+
+Styleguide dataTable
+*/
+
 .dataTables_wrapper {
   position: relative;
   display: inline-block;
