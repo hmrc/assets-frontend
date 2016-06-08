@@ -1,12 +1,11 @@
-/*------------------------------------*\
-    footer
-\*------------------------------------*/
+// POTENTIALLY NOT IN USE
 .footer {
   background-color: $grey-8;
   border-top: 10px solid $mainstream-brand;
   padding-top: 0;
 }
 
+// POTENTIALLY NOT IN USE
 .explore {
   float: left;
   margin-right: 7%;
@@ -34,9 +33,9 @@
       clear: none;
     }
   }
-
 }
 
+// POTENTIALLY NOT IN USE
 .explore--inside-government {
   @extend .explore;
   width: 31%;
@@ -50,6 +49,7 @@
   }
 }
 
+// POTENTIALLY NOT IN USE
 .explore--inline {
   @extend .explore;
   border-top: 0;
@@ -73,21 +73,23 @@
   }
 }
 
+// POTENTIALLY NOT IN USE
 .explore--inline__links {
   color: $grey-3;
   padding-top: 106px;
   width: 75%;
 }
 
+// POTENTIALLY NOT IN USE
 .explore--inline__copyright {
   padding-top: 30px;
   width: 25%;
   min-height: 150px;
   min-height: 15rem;
   text-align: center;
-
 }
 
+// POTENTIALLY NOT IN USE
 .explore--inline__copyright__logo {
   background: url("/assets/images/govuk-crest-2x.png") no-repeat 50% 0;
   background-size: 125px 102px;
@@ -96,29 +98,14 @@
   padding-top: 11.5rem;
 }
 
+// POTENTIALLY NOT IN USE
 .explore__heading {
   @include bold-24;
 }
 
-#footer .open-government-licence h2 {
-  margin-top: 0 !important;
-}
-
-@include media(mobile) {
-  #footer .footer-meta .footer-meta-inner .open-government-licence h2 {
-    height: auto;
-  }
-}
-
+// POTENTIALLY NOT IN USE
 .open-government-licence-logo {
   padding-right: 10px;
   width: 43px;
   height: 17px;
-}
-
-@include ie(7) {
-  #footer .footer-meta .footer-meta-inner {
-    margin-top: 90px;
-  }
-
 }

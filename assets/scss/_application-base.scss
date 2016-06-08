@@ -40,6 +40,7 @@ $path: "../images/icons/";
 @import "base/links";
 @import "base/icons";
 @import "base/details";
+@import "base/footer";
 
 // Form
 @import "base/form/errors";
@@ -55,7 +56,7 @@ $path: "../images/icons/";
 @import "components/header";
 @import "components/attorney-banner";
 @import "components/notice-banner";
-@import "modules/footer";
+@import "components/footer";
 @import "components/phase-alpha";
 @import "components/phase-beta";
 @import "modules/service-info";
@@ -69,7 +70,6 @@ $path: "../images/icons/";
 @import "components/reminders";
 @import "modules/datatables";
 @import "components/organisation-logo";
-@import "modules/template-footer";
 @import "components/report-error";
 @import "modules/help-contents";
 @import "components/template-sidebar";
