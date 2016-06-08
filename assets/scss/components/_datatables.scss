@@ -5,6 +5,11 @@ The data tables work is provided via the `datatables` npm package. You can apply
 adding the selectors `.status--unconfirmed` or `.status--confirm-success` as demonstrated in the example below.
 More information for implementation can be found at https://datatables.net
 
+The JavaScript work in [enhancedDatatables.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/enhancedTables.js) provides HMRC specific default settings and functionality. If you wish to override these you can via `data-` attributes information can be found:
+* https://datatables.net/examples/advanced_init/html5-data-attributes.html
+* https://datatables.net/examples/advanced_init/html5-data-options.html
+
+
 Markup:
 <table class="js-datatable dataTable no-footer"
        data-dom="<'dataTables-filter__block'f>tip"
