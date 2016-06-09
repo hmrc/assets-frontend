@@ -132,21 +132,15 @@
                   <a href="section-buttons.html" class="comp-lib-menu-link">Buttons</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-code.html" class="comp-lib-menu-link">Code</a>
 
-                  <ul>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-code.html#kssref-code-pre">Code</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-code.html#kssref-code-tag">Tag</a>
-                      </li>
-                  </ul>
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-datatable.html" class="comp-lib-menu-link">DataTable</a>
 
+                  <ul>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-details.html" class="comp-lib-menu-link">Details</a>
@@ -297,9 +291,9 @@
           </aside>
           <div id="content">
             <article class="comp-lib-main">
-                    <div id="kssref-code">
+                    <div id="kssref-datatable">
                   <div>
-                    <h1><a href="#kssref-code" class="comp-lib-menu-link">Code</a></h1>
+                    <h1><a href="#kssref-datatable" class="comp-lib-menu-link">DataTable</a></h1>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
@@ -309,7 +303,14 @@
                         
                         
                       </h2>
-                      <p>The <code>code</code> element is used to show a fragment of computer code. The</p>
+                      <p>The data tables work is provided via the <code>datatables</code> npm package. You can apply custom styles to your table rows by
+adding the selectors <code>.status--unconfirmed</code> or <code>.status--confirm-success</code> as demonstrated in the example below.
+More information for implementation can be found at <a href="https://datatables.net">https://datatables.net</a></p>
+<p>The JavaScript work in <a href="https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/enhancedTables.js">enhancedDatatables.js</a> provides HMRC specific default settings and functionality. If you wish to override these you can via <code>data-</code> attributes information can be found:</p>
+<ul>
+<li><a href="https://datatables.net/examples/advanced_init/html5-data-attributes.html">https://datatables.net/examples/advanced_init/html5-data-attributes.html</a></li>
+<li><a href="https://datatables.net/examples/advanced_init/html5-data-options.html">https://datatables.net/examples/advanced_init/html5-data-options.html</a></li>
+</ul>
 
                     </div>
                   </div>
@@ -318,106 +319,92 @@
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <code class="[modifier class]">{exampleCode: true}</code>
+                          <table class="js-datatable dataTable no-footer"
+       data-dom="<'dataTables-filter__block'f>tip"
+       data-order='[3,"asc"]'
+       data-fixed-Header="true"
+       data-page-Length="200"
+       data-auto-Width="false"
+       data-column-Defs='[{"targets": [0], "width": "30%"},{"targets": [1],"width": "20%"},{"targets": [2,3],"width": "15%"}]'
+       data-language='{"sSearchPlaceholder":"Search by client name / reference","sSearch":"<span class=\"full-width shim text--left\"><strong>Search Client list</strong></span>"}'>
+  <thead>
+  <tr role="row">
+    <th tabindex="0">Name</th>
+    <th data-orderable="false" data-search="false">Gender</th>
+    <th tabindex="0">Age</th>
+    <th tabindex="0">Nationality</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr class="tabular-data__cell--centred" role="row">
+      <td>Ben Smith</td>
+      <td>male</td>
+      <td>38</td>
+      <td>British</td>
+    </tr>
+    <tr class="tabular-data__cell--centred status--confirm-success"
+        role="row">
+      <td>Anna Rose</td>
+      <td>female</td>
+      <td>27</td>
+      <td>French</td>
+    </tr>
+    <tr class="tabular-data__cell--centred status--unconfirmed"
+        role="row">
+      <td>George wells</td>
+      <td>male</td>
+      <td>43</td>
+      <td>South African</td>
+    </tr>
+  </tbody>
+</table>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;code class=&quot;[modifier class]&quot;&gt;{exampleCode: true}&lt;/code&gt;</code></pre>
-                        </div>
-                      </div>
-
-                      <div class="comp-lib-pattern-example">
-                        <h2>.snippet--inline</h2>
-                        <div class="comp-lib-description">
-                          Display the code element inline
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <code class="snippet--inline">{exampleCode: true}</code>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;code class=&quot;snippet--inline&quot;&gt;{exampleCode: true}&lt;/code&gt;</code></pre>
-                        </div>
-                      </div>
-                    </div>
-
-                    </div>
-
-
-                    <section id="kssref-code-pre">
-                  <div>
-                    <h2><a href="#kssref-code-pre" class="comp-lib-menu-link">Code</a></h2>
-
-                    <div class="comp-lib-description
-                                comp-lib-pattern-markdown
-                                
-                                ">
-                      <h2 class="comp-lib-warning">
-                        
-                        
-                      </h2>
-                      <p>The <code>pre</code> element is used to show preformatted text.</p>
-
-                    </div>
-                  </div>
-
-                  <!-- pattern examples -->
-                    <div>
-                      <div class="comp-lib-pattern-example">
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <pre class="[modifier class]">https://api.service.hmrc.gov.uk/</pre>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;pre class=&quot;[modifier class]&quot;&gt;https://api.service.hmrc.gov.uk/&lt;/pre&gt;</code></pre>
-                        </div>
-                      </div>
-
-                      <div class="comp-lib-pattern-example">
-                        <h2>.snippet--block</h2>
-                        <div class="comp-lib-description">
-                          Display the <code>pre</code> element as block
-                        </div>
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <pre class="snippet--block">https://api.service.hmrc.gov.uk/</pre>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;pre class=&quot;snippet--block&quot;&gt;https://api.service.hmrc.gov.uk/&lt;/pre&gt;</code></pre>
-                        </div>
-                      </div>
-                    </div>
-
-                    </section>
-
-
-                    <section id="kssref-code-tag">
-                  <div>
-                    <h2><a href="#kssref-code-tag" class="comp-lib-menu-link">Tag</a></h2>
-
-                    <div class="comp-lib-description
-                                comp-lib-pattern-markdown
-                                
-                                ">
-                      <h2 class="comp-lib-warning">
-                        
-                        
-                      </h2>
-                      <p>The <code>.tag</code> selector is used to highlight content.</p>
-
-                    </div>
-                  </div>
-
-                  <!-- pattern examples -->
-                    <div>
-                      <div class="comp-lib-pattern-example">
-                        <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <span class="tag">Example Tag</span>
-                        </div>
-                        <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;span class=&quot;tag&quot;&gt;Example Tag&lt;/span&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;table class=&quot;js-datatable dataTable no-footer&quot;
+       data-dom=&quot;&lt;&#x27;dataTables-filter__block&#x27;f&gt;tip&quot;
+       data-order=&#x27;[3,&quot;asc&quot;]&#x27;
+       data-fixed-Header=&quot;true&quot;
+       data-page-Length=&quot;200&quot;
+       data-auto-Width=&quot;false&quot;
+       data-column-Defs=&#x27;[{&quot;targets&quot;: [0], &quot;width&quot;: &quot;30%&quot;},{&quot;targets&quot;: [1],&quot;width&quot;: &quot;20%&quot;},{&quot;targets&quot;: [2,3],&quot;width&quot;: &quot;15%&quot;}]&#x27;
+       data-language=&#x27;{&quot;sSearchPlaceholder&quot;:&quot;Search by client name / reference&quot;,&quot;sSearch&quot;:&quot;&lt;span class=\&quot;full-width shim text--left\&quot;&gt;&lt;strong&gt;Search Client list&lt;/strong&gt;&lt;/span&gt;&quot;}&#x27;&gt;
+  &lt;thead&gt;
+  &lt;tr role=&quot;row&quot;&gt;
+    &lt;th tabindex=&quot;0&quot;&gt;Name&lt;/th&gt;
+    &lt;th data-orderable=&quot;false&quot; data-search=&quot;false&quot;&gt;Gender&lt;/th&gt;
+    &lt;th tabindex=&quot;0&quot;&gt;Age&lt;/th&gt;
+    &lt;th tabindex=&quot;0&quot;&gt;Nationality&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr class=&quot;tabular-data__cell--centred&quot; role=&quot;row&quot;&gt;
+      &lt;td&gt;Ben Smith&lt;/td&gt;
+      &lt;td&gt;male&lt;/td&gt;
+      &lt;td&gt;38&lt;/td&gt;
+      &lt;td&gt;British&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class=&quot;tabular-data__cell--centred status--confirm-success&quot;
+        role=&quot;row&quot;&gt;
+      &lt;td&gt;Anna Rose&lt;/td&gt;
+      &lt;td&gt;female&lt;/td&gt;
+      &lt;td&gt;27&lt;/td&gt;
+      &lt;td&gt;French&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class=&quot;tabular-data__cell--centred status--unconfirmed&quot;
+        role=&quot;row&quot;&gt;
+      &lt;td&gt;George wells&lt;/td&gt;
+      &lt;td&gt;male&lt;/td&gt;
+      &lt;td&gt;43&lt;/td&gt;
+      &lt;td&gt;South African&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
                         </div>
                       </div>
 
                     </div>
 
-                    </section>
+                    </div>
 
 
             </article>

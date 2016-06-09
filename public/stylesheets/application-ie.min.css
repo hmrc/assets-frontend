@@ -6830,6 +6830,13 @@ Styleguide Text Input.Currency
   top: 0.08421em;
 }
 
+/* line 137, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
+::-webkit-input-placeholder {
+  color: #6f777b;
+  font-size: 0.78947em;
+  padding: 0.26316em 0 0 0.26316em;
+}
+
 /*
 Select Input
 
@@ -9600,7 +9607,62 @@ Styleguide Reminders.Alert Block
   line-height: 16px;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/*
+DataTable
+
+The data tables work is provided via the `datatables` npm package. You can apply custom styles to your table rows by
+adding the selectors `.status--unconfirmed` or `.status--confirm-success` as demonstrated in the example below.
+More information for implementation can be found at https://datatables.net
+
+The JavaScript work in [enhancedDatatables.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/enhancedTables.js) provides HMRC specific default settings and functionality. If you wish to override these you can via `data-` attributes information can be found:
+* https://datatables.net/examples/advanced_init/html5-data-attributes.html
+* https://datatables.net/examples/advanced_init/html5-data-options.html
+
+
+Markup:
+<table class="js-datatable dataTable no-footer"
+       data-dom="<'dataTables-filter__block'f>tip"
+       data-order='[3,"asc"]'
+       data-fixed-Header="true"
+       data-page-Length="200"
+       data-auto-Width="false"
+       data-column-Defs='[{"targets": [0], "width": "30%"},{"targets": [1],"width": "20%"},{"targets": [2,3],"width": "15%"}]'
+       data-language='{"sSearchPlaceholder":"Search by client name / reference","sSearch":"<span class=\"full-width shim text--left\"><strong>Search Client list</strong></span>"}'>
+  <thead>
+  <tr role="row">
+    <th tabindex="0">Name</th>
+    <th data-orderable="false" data-search="false">Gender</th>
+    <th tabindex="0">Age</th>
+    <th tabindex="0">Nationality</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr class="tabular-data__cell--centred" role="row">
+      <td>Ben Smith</td>
+      <td>male</td>
+      <td>38</td>
+      <td>British</td>
+    </tr>
+    <tr class="tabular-data__cell--centred status--confirm-success"
+        role="row">
+      <td>Anna Rose</td>
+      <td>female</td>
+      <td>27</td>
+      <td>French</td>
+    </tr>
+    <tr class="tabular-data__cell--centred status--unconfirmed"
+        role="row">
+      <td>George wells</td>
+      <td>male</td>
+      <td>43</td>
+      <td>South African</td>
+    </tr>
+  </tbody>
+</table>
+
+Styleguide dataTable
+*/
+/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables_wrapper {
   position: relative;
   display: inline-block;
@@ -9608,22 +9670,22 @@ Styleguide Reminders.Alert Block
   margin-top: 2.63158em;
 }
 
-/* line 8, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables_info {
   float: left;
 }
 
-/* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables_info.no-float {
   float: none;
 }
 
-/* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables-filter__block {
   padding: 1.57895em 0 0;
 }
 
-/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables_filter {
   text-align: right;
   position: absolute;
@@ -9631,7 +9693,7 @@ Styleguide Reminders.Alert Block
   top: -2.10526em;
 }
 
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables_filter input {
   background-image: url("../images/icon-search-dark.png");
   background-repeat: no-repeat;
@@ -9642,112 +9704,105 @@ Styleguide Reminders.Alert Block
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+  /* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
   .dataTables_filter input {
     background-image: url("../images/icon-search-dark-2x.png");
     background-size: 16px 16px;
   }
 }
 
-/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
-::-webkit-input-placeholder {
-  color: #6f777b;
-  font-size: 0.78947em;
-  padding: 0.26316em 0 0 0.26316em;
-}
-
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables_paginate {
   text-align: right;
 }
 
-/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables_paginate span, .dataTables_paginate a, .dataTables_paginate .link-style, .dataTables_paginate .button--link-style {
   margin-right: 5px;
 }
 
-/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables_paginate a, .dataTables_paginate .link-style, .dataTables_paginate .button--link-style {
   color: #005ea5;
   cursor: pointer;
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 108, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables_paginate a:hover, .dataTables_paginate .link-style:hover, .dataTables_paginate .button--link-style:hover {
   color: #2e8aca;
 }
 
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables_paginate .current {
   color: #0b0c0c;
 }
 
-/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTables_paginate .disabled {
   display: none;
 }
 
-/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable thead .sorting {
   background: url("../images/sort_both.png") no-repeat scroll center right;
 }
 
-/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable thead .sorting_asc {
   background: url("../images/sort_asc.png") no-repeat scroll center right;
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 131, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable thead .sorting_desc {
   background: url("../images/sort_desc.png") no-repeat scroll center right;
 }
 
-/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable thead .sorting_asc_disabled {
   background: url("../images/sort_asc_disabled.png") no-repeat scroll center right;
 }
 
-/* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 139, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable thead .sorting_desc_disabled {
   background: url("../images/sort_desc_disabled.png") no-repeat scroll center right;
 }
 
-/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 143, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable thead th:first-child {
   background-position-x: 57px;
 }
 
-/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 147, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable thead th:nth-child(3) {
   background-position-x: 120px;
 }
 
-/* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 151, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable thead th:nth-child(4) {
   background-position-x: 87px;
 }
 
-/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 155, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable thead label, .dataTable thead th {
   cursor: pointer;
 }
 
-/* line 111, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 161, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable tbody .status--unconfirmed {
   background-color: #DEE0E2;
 }
 
-/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 165, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable tbody .status--confirm-success {
   background-color: #e9f5f4;
 }
 
-/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 171, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .controlpanel {
   margin-bottom: 1.57895em;
 }
 
-/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_datatables.scss */
+/* line 174, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .js-datatable-wrapper .controlpanel {
   float: left;
 }
