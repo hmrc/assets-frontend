@@ -1,0 +1,180 @@
+/*
+DataTable
+
+The data tables work is provided via the `datatables` npm package. You can apply custom styles to your table rows by
+adding the selectors `.status--unconfirmed` or `.status--confirm-success` as demonstrated in the example below.
+More information for implementation can be found at https://datatables.net
+
+The JavaScript work in [enhancedDatatables.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/enhancedTables.js) provides HMRC specific default settings and functionality. If you wish to override these you can via `data-` attributes information can be found:
+* https://datatables.net/examples/advanced_init/html5-data-attributes.html
+* https://datatables.net/examples/advanced_init/html5-data-options.html
+
+
+Markup:
+<table class="js-datatable dataTable no-footer"
+       data-dom="<'dataTables-filter__block'f>tip"
+       data-order='[3,"asc"]'
+       data-fixed-Header="true"
+       data-page-Length="200"
+       data-auto-Width="false"
+       data-column-Defs='[{"targets": [0], "width": "30%"},{"targets": [1],"width": "20%"},{"targets": [2,3],"width": "15%"}]'
+       data-language='{"sSearchPlaceholder":"Search by client name / reference","sSearch":"<span class=\"full-width shim text--left\"><strong>Search Client list</strong></span>"}'>
+  <thead>
+  <tr role="row">
+    <th tabindex="0">Name</th>
+    <th data-orderable="false" data-search="false">Gender</th>
+    <th tabindex="0">Age</th>
+    <th tabindex="0">Nationality</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr class="tabular-data__cell--centred" role="row">
+      <td>Ben Smith</td>
+      <td>male</td>
+      <td>38</td>
+      <td>British</td>
+    </tr>
+    <tr class="tabular-data__cell--centred status--confirm-success"
+        role="row">
+      <td>Anna Rose</td>
+      <td>female</td>
+      <td>27</td>
+      <td>French</td>
+    </tr>
+    <tr class="tabular-data__cell--centred status--unconfirmed"
+        role="row">
+      <td>George wells</td>
+      <td>male</td>
+      <td>43</td>
+      <td>South African</td>
+    </tr>
+  </tbody>
+</table>
+
+Styleguide dataTable
+*/
+
+.dataTables_wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-top: em(50);
+}
+
+.dataTables_info {
+  float: left;
+
+  &.no-float {
+    float: none;
+  }
+}
+
+.dataTables-filter__block {
+  padding: em(30) 0 0;
+}
+
+.dataTables_filter {
+  text-align: right;
+  position: absolute;
+  right: auto;
+  top: em(-40);
+
+  input {
+    background-image: url("../images/icon-search-dark.png");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    border: 1px solid $grey-1;
+    padding-left: 30px;
+    width: em(300);
+
+    @include device-pixel-ratio() {
+      background-image: url("../images/icon-search-dark-2x.png");
+      background-size: 16px 16px;
+    }
+  }
+}
+
+.dataTables_paginate {
+  text-align: right;
+
+  span, a {
+    margin-right: 5px;
+  }
+
+  a {
+    color: $link-colour;
+    cursor: pointer;
+
+    &:hover {
+      color: $link-hover-colour;
+    }
+  }
+
+  .current {
+    color: $text-colour;
+  }
+
+  .disabled {
+    display: none;
+  }
+}
+
+.dataTable thead {
+  .sorting {
+    background: url("../images/sort_both.png") no-repeat scroll center right;
+  }
+
+  .sorting_asc {
+    background: url("../images/sort_asc.png") no-repeat scroll center right;
+  }
+
+  .sorting_desc {
+    background: url("../images/sort_desc.png") no-repeat scroll center right;
+  }
+
+  .sorting_asc_disabled {
+    background: url("../images/sort_asc_disabled.png") no-repeat scroll center right;
+  }
+
+  .sorting_desc_disabled {
+    background: url("../images/sort_desc_disabled.png") no-repeat scroll center right;
+  }
+
+  th:first-child {
+    background-position-x: 57px;
+  }
+
+  th:nth-child(3) {
+    background-position-x: 120px;
+  }
+
+  th:nth-child(4) {
+    background-position-x: 87px;
+  }
+
+  label, th {
+    cursor: pointer;
+  }
+}
+
+.dataTable tbody {
+  .status--unconfirmed {
+    background-color: $grey-8;
+  }
+
+  .status--confirm-success {
+    background-color: $success-bg-color;
+  }
+}
+
+// POTENTIALLY NOT IN USE
+.controlpanel {
+  margin-bottom: em(30);
+
+  .js-datatable-wrapper & {
+    float: left;
+  }
+}
+
+
+

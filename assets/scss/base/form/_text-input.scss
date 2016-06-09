@@ -134,3 +134,8 @@ Styleguide Text Input.Currency
   }
 }
 
+::-webkit-input-placeholder {
+  color: $grey-1;
+  font-size: em(15);
+  padding: em(5) 0 0 em(5);
+}
