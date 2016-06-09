@@ -110,18 +110,7 @@ Bare in mind that in order to see the output in a browser you'll have to serve t
 
 ### Working on the Component Library
 
-If you're working on the [templates](https://github.com/hmrc/component-library-template) for the Component Library, there is a helpful watch task using [nodemon](https://github.com/remy/nodemon). This makes development easier and faster.
-
-```
-$ npm install -g nodemon
-$ npm run comp-lib:watch -- -w ./path/to/hmrc/component-library-template
-```
-
-You need to give it the path to a local checkout of [hmrc-component-library-template](https://github.com/hmrc/component-library-template/), relative to the assets-frontend's `package.json`
-
-The watch task then automatically links this local copy [hmrc/component-library-template](https://github.com/hmrc/component-library-template.git) and then builds the Component Library using the [npm script above](#manually-building-the-component-library).
-
-The steps for the whole process are as follows:
+The steps for working with a local copy of the component library template are:
 
 1. Remove the npm installed dependancy
 2. Clone the [hmrc/component-library-template](https://github.com/hmrc/component-library-template/)
@@ -137,6 +126,24 @@ $ cd component-library-template && npm link
 $ cd ../assets-frontend
 $ npm run comp-lib:watch -- -w ../component-library-template
 ```
+
+If you're working extensively on the [templates](https://github.com/hmrc/component-library-template) for the Component Library, there is a helpful watch task using [nodemon](https://github.com/remy/nodemon). This makes development easier and faster.
+
+You need to of linked your local version of the component library template
+```
+$ cd component-library-template && npm link && cd -
+```
+
+Assuming you're in the root of your local assets-frontend it would look like this:
+```
+$ npm install -g nodemon
+$ npm run comp-lib:watch -- -w ./path/to/hmrc/component-library-template
+```
+
+You need to give it the path to a local checkout of [hmrc-component-library-template](https://github.com/hmrc/component-library-template/), relative to the assets-frontend's `package.json`
+
+The watch task then automatically links this local copy [hmrc/component-library-template](https://github.com/hmrc/component-library-template.git) and then builds the Component Library using the [npm script above](#manually-building-the-component-library).
+
 
 ### Updating the Component Library dependency
 If you wish to update the component library in assets frontend because there have been changes in the component
