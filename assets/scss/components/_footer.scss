@@ -1,12 +1,45 @@
-/*------------------------------------*\
-    footer
-\*------------------------------------*/
+/*
+Footer
+
+Deprecated: These footer styles are no longer in use and are
+awaiting removal
+
+.footer            - Footer styles
+.footer-meta       - Meta info wrapper
+.footer-meta-inner - Meta info container
+*/
 .footer {
   background-color: $grey-8;
   border-top: 10px solid $mainstream-brand;
   padding-top: 0;
 }
 
+.footer-meta {
+  ul li {
+    @include core-16;
+  }
+}
+
+@include ie(7) {
+  #footer .footer-meta .footer-meta-inner {
+    margin-top: 90px;
+  }
+}
+
+/*
+Explore
+
+Deprecated: These explore styles are no longer in use and are
+awaiting removal
+
+.explore                          - Explore GOV.UK footer nav links
+.explore--inside-government       - Positions the inside gov link
+.explore--inline                  - Inline link modifier
+.explore--inline__links           - Another inline modifier
+.explore--inline__copyright       - Inlines the copyright info
+.explore--inline__copyright__logo - Inlines the copyright logo
+.explore__heading                 - Heading for explore links
+*/
 .explore {
   float: left;
   margin-right: 7%;
@@ -34,7 +67,6 @@
       clear: none;
     }
   }
-
 }
 
 .explore--inside-government {
@@ -85,7 +117,6 @@
   min-height: 150px;
   min-height: 15rem;
   text-align: center;
-
 }
 
 .explore--inline__copyright__logo {
@@ -100,6 +131,20 @@
   @include bold-24;
 }
 
+/*
+Open Government Licence Logo
+
+Deprecated: These OGL logo styles are no longer in use and are
+awaiting removal
+
+.open-government-licence-logo - the OGL logo in the footer
+*/
+.open-government-licence-logo {
+  padding-right: 10px;
+  width: 43px;
+  height: 17px;
+}
+
 #footer .open-government-licence h2 {
   margin-top: 0 !important;
 }
@@ -108,17 +153,4 @@
   #footer .footer-meta .footer-meta-inner .open-government-licence h2 {
     height: auto;
   }
-}
-
-.open-government-licence-logo {
-  padding-right: 10px;
-  width: 43px;
-  height: 17px;
-}
-
-@include ie(7) {
-  #footer .footer-meta .footer-meta-inner {
-    margin-top: 90px;
-  }
-
 }
