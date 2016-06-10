@@ -1,8 +1,12 @@
 /*
+Question/Answer
 
-* Not sure where these styles are used. They ware out of sync with the assets frontend
+Deprecated: These styles are no longer in use and are awaiting removal
 
+.question - found in prototypes only or in personal repos
+.answer   - found in prototypes only or in personal repos
 */
+
 .question {
   margin: 0 0 10px 0;
   padding: 10px 0;
@@ -12,6 +16,19 @@
   margin: 1em 0 0 0;
 }
 
+
+/*
+Label
+
+A stylised Label with radio input element.
+
+Markup:
+<label class="selectable">
+    <input type="radio"/>No thank you
+</label>
+
+Styleguide Unknown.Label
+*/
 label.selectable {
   position: relative;
   display: inline-block;
@@ -26,9 +43,37 @@ label.selectable input {
   cursor: pointer;
 }
 
+
+/*
+Optional Section
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.optional-section         - found in prototypes only or in personal repos
+.answer .optional-section - found in prototypes only or in personal repos
+*/
 .optional-section {
   display: none;
 }
+
+
+/*
+Email Errors
+
+Styles to display email errors. Associated JavaScript can be found in [validation/saEmailPrefs.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/validation/saEmailPrefs.js#L59)
+
+**Note** the inline style `style="display: block"` has been added to this example because when JavaScript is on this
+element is hidden. You do not need to use this inline style in your markup.
+
+Markup:
+<div class="email-form-errors">
+    <label class="error-notification" style="display: block">
+    Enter a valid email address
+    </label>
+</div>
+
+Styleguide Unknown.Email Errors
+*/
 
 .email-form-errors .error-notification {
   display: block;
@@ -43,6 +88,28 @@ label.selectable input {
   display: none;
 }
 
+
+/*
+Connected
+
+Custom styled email signup form.
+
+Markup:
+<fieldset class="connected">
+  <label>Email address
+    <input type="text" class="input--medium input--cleared"/>
+  </label>
+  <p>By signing up you:</p>
+  <ul class="bullets form-hint">
+    <li>want to receive statutory notices, decisions, estimates and
+    reminders electronically</li>
+    <li>will keep your communications preferences and email address up to
+    date</li>
+  </ul>
+</fieldset>
+
+Styleguide Unknown.Connected
+*/
 .connected,
 .answer .optional-section {
   border-left: 3px solid #999;
@@ -60,6 +127,15 @@ label.selectable input {
   width: auto;
   float: none;
 }
+
+/*
+Important Dates
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.important-dates      - not found
+.important-dates-wrap - not found
+*/
 
 .important-dates .important-date {
   border-bottom: 1px solid #ccc;
@@ -112,6 +188,23 @@ label.selectable input {
   padding: 2em;
 }
 
+
+/*
+Has-* HMRC service
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.has-self-assessment - found in prototypes only or in personal repos
+.has-corporation     - found in prototypes only or in personal repos
+.has-vat             - found in prototypes only or in personal repos
+.has-paye            - found in prototypes only or in personal repos
+
+body.self-assessment .has-self-assessment - not found
+body.corporation .has-corporation         - not found
+body.vat .has-vat                         - not found
+body.paye .has-paye                       - not found
+*/
+
 .has-self-assessment,
 .has-corporation,
 .has-vat,
@@ -125,6 +218,24 @@ body.vat .has-vat,
 body.paye .has-paye {
   display: block;
 }
+
+
+/*
+Main Nav
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.main-nav                    - found in prototypes only or in personal repos
+.main-nav .tab               - found in prototypes only or in personal repos
+.main-nav .tab.selected      - found in prototypes only or in personal repos
+.main-nav .messages          - found in prototypes only or in personal repos
+.main-nav .messages.selected - found in prototypes only or in personal repos
+
+.main-nav .messages.no-unread          - not found
+.main-nav .messages.selected.no-unread - not found
+.main-nav .count                       - not found
+*/
+
 
 .main-nav {
   border-bottom: 1px solid #ccc;
@@ -170,6 +281,15 @@ body.paye .has-paye {
   line-height: 16px;
 }
 
+
+/*
+Full Message
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.full-message - found in prototypes only
+*/
+
 .full-message {
   width: 64%;
   float: left;
@@ -185,11 +305,22 @@ body.paye .has-paye {
   color: #454a4c;
 }
 
-table details {
-  margin: 0;
-}
 
-/************************* Styling for important notices *************************/
+/*
+Important Notice
+
+Important notice styles. This is similar to the `notification` work.
+
+Markup:
+<div class="form-group">
+  <p class="important-notice">
+  An important notice for the user to read and take notice of.
+  Please make sure you take the time to consume this important message.
+  </p>
+</div>
+
+Styleguide Unknown.Important Notice
+*/
 
 .important-notice {
   padding-left: 2.5em;
