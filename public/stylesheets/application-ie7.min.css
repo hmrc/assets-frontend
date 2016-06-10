@@ -8127,40 +8127,84 @@ Styleguide Notification banner
   color: #fff;
 }
 
-/*------------------------------------*    footer
-\*------------------------------------*/
-/* line 4, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/*
+Footer
+
+Deprecated: These footer styles are no longer in use and are
+awaiting removal
+
+.footer            - Footer styles
+.footer-meta       - Meta info wrapper
+.footer-meta-inner - Meta info container
+*/
+/* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .footer {
   background-color: #DEE0E2;
   border-top: 10px solid #005ea5;
   padding-top: 0;
 }
 
-/* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
+.footer-meta ul li {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
+  .footer-meta ul li {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 24, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
+#footer .footer-meta .footer-meta-inner {
+  margin-top: 90px;
+}
+
+/*
+Explore
+
+Deprecated: These explore styles are no longer in use and are
+awaiting removal
+
+.explore                          - Explore GOV.UK footer nav links
+.explore--inside-government       - Positions the inside gov link
+.explore--inline                  - Inline link modifier
+.explore--inline__links           - Another inline modifier
+.explore--inline__copyright       - Inlines the copyright info
+.explore--inline__copyright__logo - Inlines the copyright logo
+.explore__heading                 - Heading for explore links
+*/
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore, .explore--inside-government, .explore--inline {
   float: left;
   margin-right: 7%;
   width: 62%;
 }
 
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore a, .explore--inside-government a, .explore--inline a, .explore .link-style, .explore--inside-government .link-style, .explore--inline .link-style, .explore .button--link-style, .explore--inside-government .button--link-style, .explore--inline .button--link-style {
   color: #454a4c;
 }
 
-/* line 16, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore a:hover, .explore--inside-government a:hover, .explore--inline a:hover, .explore .link-style:hover, .explore--inside-government .link-style:hover, .explore--inline .link-style:hover, .explore .button--link-style:hover, .explore--inside-government .button--link-style:hover, .explore--inline .button--link-style:hover {
   color: #6f777b;
 }
 
-/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore ul, .explore--inside-government ul, .explore--inline ul {
   border-top: 1px solid #a1acb2;
   padding-top: 20px;
   margin-top: 20px;
 }
 
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore li, .explore--inside-government li, .explore--inline li {
   display: block;
   float: left;
@@ -8170,30 +8214,30 @@ Styleguide Notification banner
   width: 45.5%;
 }
 
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore li:nth-child(even), .explore--inside-government li:nth-child(even), .explore--inline li:nth-child(even) {
   float: right;
   clear: none;
 }
 
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore--inside-government {
   width: 31%;
   margin-right: 0;
 }
 
-/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore--inside-government li {
   width: 100%;
 }
 
-/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore--inside-government li:nth-child(even) {
   float: left;
   clear: both;
 }
 
-/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore--inline {
   border-top: 0;
   padding-bottom: 60px;
@@ -8201,14 +8245,14 @@ Styleguide Notification banner
   width: 100%;
 }
 
-/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore--inline ul {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore--inline li {
   display: inline;
   float: none;
@@ -8216,20 +8260,20 @@ Styleguide Notification banner
   width: auto;
 }
 
-/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore--inline li:nth-child(even) {
   float: none;
   clear: none;
 }
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 108, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore--inline__links {
   color: #454a4c;
   padding-top: 106px;
   width: 75%;
 }
 
-/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 114, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore--inline__copyright {
   padding-top: 30px;
   width: 25%;
@@ -8238,7 +8282,7 @@ Styleguide Notification banner
   text-align: center;
 }
 
-/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore--inline__copyright__logo {
   background: url("/assets/images/govuk-crest-2x.png") no-repeat 50% 0;
   background-size: 125px 102px;
@@ -8247,7 +8291,7 @@ Styleguide Notification banner
   padding-top: 11.5rem;
 }
 
-/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .explore__heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -8258,28 +8302,31 @@ Styleguide Notification banner
 }
 
 @media (max-width: 640px) {
-  /* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+  /* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
   .explore__heading {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
-#footer .open-government-licence h2 {
-  margin-top: 0 !important;
-}
+/*
+Open Government Licence Logo
 
-/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
+Deprecated: These OGL logo styles are no longer in use and are
+awaiting removal
+
+.open-government-licence-logo - the OGL logo in the footer
+*/
+/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
 .open-government-licence-logo {
   padding-right: 10px;
   width: 43px;
   height: 17px;
 }
 
-/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_footer.scss */
-#footer .footer-meta .footer-meta-inner {
-  margin-top: 90px;
+/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_footer.scss */
+#footer .open-government-licence h2 {
+  margin-top: 0 !important;
 }
 
 /*
@@ -10016,23 +10063,6 @@ Styleguide Organisation Logo.Stacked
   .organisation-logo-stacked-medium {
     background-image: url("../images/icons/crests/hmrc_crest_18px_x2.png");
     background-size: auto 26px;
-  }
-}
-
-/* line 2, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-footer.scss */
-.footer-meta ul li {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 300;
-  text-transform: none;
-}
-
-@media (max-width: 640px) {
-  /* line 2, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_template-footer.scss */
-  .footer-meta ul li {
-    font-size: 14px;
-    line-height: 1.14286;
   }
 }
 
