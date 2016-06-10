@@ -1,16 +1,22 @@
-#footer .open-government-licence h2 {
-  margin-top: 0 !important;
+/*
+Footer
+
+Deprecated: These footer styles are no longer in use and are
+awaiting removal
+
+.footer - Footer styles
+.footer-meta - Meta info wrapper
+.footer-meta-inner - Meta info container
+*/
+.footer {
+  background-color: $grey-8;
+  border-top: 10px solid $mainstream-brand;
+  padding-top: 0;
 }
 
 .footer-meta {
   ul li {
     @include core-16;
-  }
-}
-
-@include media(mobile) {
-  #footer .footer-meta .footer-meta-inner .open-government-licence h2 {
-    height: auto;
   }
 }
 
@@ -20,14 +26,20 @@
   }
 }
 
-// POTENTIALLY NOT IN USE
-.footer {
-  background-color: $grey-8;
-  border-top: 10px solid $mainstream-brand;
-  padding-top: 0;
-}
+/*
+Explore
 
-// POTENTIALLY NOT IN USE
+Deprecated: These explore styles are no longer in use and are
+awaiting removal
+
+.explore - Explore GOV.UK footer nav links
+.explore--inside-government - Positions the inside gov link
+.explore--inline - Inline link modifier
+.explore--inline__links - Another inline modifier
+.explore--inline__copyright - Inlines the copyright info
+.explore--inline__copyright__logo - Inlines the copyright logo
+.explore__heading - Heading for explore links
+*/
 .explore {
   float: left;
   margin-right: 7%;
@@ -57,7 +69,6 @@
   }
 }
 
-// POTENTIALLY NOT IN USE
 .explore--inside-government {
   @extend .explore;
   width: 31%;
@@ -71,7 +82,6 @@
   }
 }
 
-// POTENTIALLY NOT IN USE
 .explore--inline {
   @extend .explore;
   border-top: 0;
@@ -95,14 +105,12 @@
   }
 }
 
-// POTENTIALLY NOT IN USE
 .explore--inline__links {
   color: $grey-3;
   padding-top: 106px;
   width: 75%;
 }
 
-// POTENTIALLY NOT IN USE
 .explore--inline__copyright {
   padding-top: 30px;
   width: 25%;
@@ -111,7 +119,6 @@
   text-align: center;
 }
 
-// POTENTIALLY NOT IN USE
 .explore--inline__copyright__logo {
   background: url("/assets/images/govuk-crest-2x.png") no-repeat 50% 0;
   background-size: 125px 102px;
@@ -120,14 +127,30 @@
   padding-top: 11.5rem;
 }
 
-// POTENTIALLY NOT IN USE
 .explore__heading {
   @include bold-24;
 }
 
-// POTENTIALLY NOT IN USE
+/*
+Open Government Licence Logo
+
+Deprecated: These OGL logo styles are no longer in use and are
+awaiting removal
+
+.open-government-licence-logo - the OGL logo in the footer
+*/
 .open-government-licence-logo {
   padding-right: 10px;
   width: 43px;
   height: 17px;
+}
+
+#footer .open-government-licence h2 {
+  margin-top: 0 !important;
+}
+
+@include media(mobile) {
+  #footer .footer-meta .footer-meta-inner .open-government-licence h2 {
+    height: auto;
+  }
 }
