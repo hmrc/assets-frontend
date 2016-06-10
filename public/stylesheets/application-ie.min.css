@@ -8501,40 +8501,73 @@ Styleguide Beta.Phase Tag
   color: #fff;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/*
+Service Info
+
+Service Info provides an area to provide details about the service.
+
+Markup:
+<div class="service-info">
+  <div class="logo">
+    <span class="organisation-logo organisation-logo-medium">
+    HM Revenue &amp; Customs
+    </span>
+  </div>
+</div>
+
+Styleguide Service Info
+*/
+/*
+Help
+
+Service Info with `.service-info__help` provides a section to provide help information.
+
+Markup:
+<div class="service-info">
+  <h2>Service Information</h2>
+  <div class="service-info__help">
+    <p>You last signed in: Tuesday, 31 May 2016 at 2:44pm
+    <br><a href="#">Sign out</a>
+    </p>
+  </div>
+</div>
+
+Styleguide Service Info.With Help
+*/
+/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .service-info {
   border-top: 10px solid #005ea5;
   padding-bottom: 0.5em;
 }
 
-/* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/* line 41, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .service-info .inner {
   max-width: 990px;
   margin: 0 auto;
 }
 
-/* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .service-info .logo,
 .service-info .last-login,
 .service-info .service-info__agent-name {
   margin-top: 0.78947em;
 }
 
-/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .service-info .logo {
   float: left;
   width: 33.33%;
   margin-bottom: 0.52632em;
 }
 
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .service-info .service-info__help {
   margin-top: 10px;
   float: left;
   width: 66.66%;
 }
 
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .service-info .service-info__help p {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -8548,14 +8581,59 @@ Styleguide Beta.Phase Tag
 }
 
 @media (max-width: 640px) {
-  /* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+  /* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
   .service-info .service-info__help p {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/*
+Agent Name
+
+Service Info with `.service-info__agent-name` provides highlighting for `.acting-agent`
+
+Markup:
+<div class="service-info">
+  <div class="logo">
+    <span class="organisation-logo organisation-logo-medium">
+    HM Revenue &amp; Customs
+    </span>
+  </div>
+  <div class="service-info__agent-name">
+    <p class="agent-name">
+      <span>Agent Name</span>
+      <span class="acting-agent"><a href="#">Account link</a></span>
+    </p>
+  </div>
+</div>
+
+Styleguide Service Info.Agent Name
+*/
+/*
+Delegate
+
+Service Info with `.service-info__agent-name` provides highlighting for `.acting-agent`
+The CSS selector `.delegate-info` provides highlighting for `.client-name`
+
+Markup:
+<div class="service-info">
+  <div class="logo">
+    <span class="organisation-logo organisation-logo-medium">
+    HM Revenue &amp; Customs
+    </span>
+  </div>
+  <div class="service-info__agent-name">
+    <div class="delegate-info">
+      <span class="acting-agent">Agent Name</span>
+      <span class="client-name">Client Name</span>
+    </div>
+  </div>
+</div>
+
+Styleguide Service Info.Delegate
+*/
+/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .service-info__agent-name .agent-name,
 .service-info__agent-name .delegate-info {
   font-family: "nta", Arial, sans-serif;
@@ -8568,7 +8646,7 @@ Styleguide Beta.Phase Tag
 }
 
 @media (max-width: 640px) {
-  /* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+  /* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
   .service-info__agent-name .agent-name,
   .service-info__agent-name .delegate-info {
     font-size: 16px;
@@ -8576,7 +8654,7 @@ Styleguide Beta.Phase Tag
   }
 }
 
-/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .service-info__agent-name .agent-name .client-name,
 .service-info__agent-name .delegate-info .client-name {
   color: #0b0c0c;
@@ -8589,7 +8667,7 @@ Styleguide Beta.Phase Tag
 }
 
 @media (max-width: 640px) {
-  /* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+  /* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
   .service-info__agent-name .agent-name .client-name,
   .service-info__agent-name .delegate-info .client-name {
     font-size: 16px;
@@ -8597,7 +8675,7 @@ Styleguide Beta.Phase Tag
   }
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .service-info__agent-name .acting-agent {
   color: #6f777b;
   display: block;
@@ -8609,25 +8687,59 @@ Styleguide Beta.Phase Tag
 }
 
 @media (max-width: 640px) {
-  /* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+  /* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
   .service-info__agent-name .acting-agent {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/* line 147, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .service-info__agent-name .client-name {
   color: #0b0c0c;
   display: block;
 }
 
-/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/*
+Logged In
+
+Experimental: This example shows a service info element with login details. This component needs a refactor to combine
+the multiple classes into a component. It is not recommended to use it in its current state.
+
+Markup:
+<div class="service-info ">
+  <div class="logo">
+    <span class="organisation-logo organisation-logo-medium">
+    HM Revenue &amp; Customs
+    </span>
+  </div>
+  <div class="last-login">
+    <p class="text--right h3-heading">John Smith</p>
+    <p class="last-login__more-details text--right font-xsmall js-visible"
+       data-toggle-details="last-login-details">
+    Last sign in: 31 May 2016 - <a href="#">not right?</a>
+    </p>
+  </div>
+  <section class="last-login-details alert alert--slim alert--info js-hidden">
+    <a class="minimise js-visible" href="#">Minimise</a>
+    <p class="alert__message">
+    Last sign in: Tuesday, 31 May 2016 at 2:44pm
+    </p>
+    <p class="alert__message">
+      <a href="https://www.gov.uk/hmrc-online-services-helpdesk">
+      Contact HMRC</a> if it wasn't you.
+    </p>
+  </section>
+</div>
+
+Styleguide Service Info.Logged In
+*/
+/* line 189, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .last-login {
   margin-bottom: 0.52632em;
 }
 
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_service-info.scss */
+/* line 193, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .last-login__more-details {
   margin: 0.26316em 0 0 0;
 }

@@ -232,31 +232,31 @@
                   <a href="section-radio-input.html" class="comp-lib-menu-link">Radio Input</a>
 
                 </li>
-                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
+                <li class="comp-lib-menu-item">
                   <a href="section-reminders.html" class="comp-lib-menu-link">Reminders</a>
 
-                  <ul>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-reminders.html#kssref-reminders-alert-block">Alert Block</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-reminders.html#kssref-reminders-reminder">Reminder</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-reminders.html#kssref-reminders-reminder-list">Reminder List</a>
-                      </li>
-                      <li class="comp-lib-menu-item--indented">
-                        <a href="section-reminders.html#kssref-reminders-urgent">Urgent</a>
-                      </li>
-                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-select-input.html" class="comp-lib-menu-link">Select Input</a>
 
                 </li>
-                <li class="comp-lib-menu-item">
+                <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
                   <a href="section-service-info.html" class="comp-lib-menu-link">Service Info</a>
 
+                  <ul>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-service-info.html#kssref-service-info-agent-name">Agent Name</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-service-info.html#kssref-service-info-delegate">Delegate</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-service-info.html#kssref-service-info-logged-in">Logged In</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-service-info.html#kssref-service-info-with-help">Help</a>
+                      </li>
+                  </ul>
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-side-navigation.html" class="comp-lib-menu-link">Side Navigation</a>
@@ -307,20 +307,9 @@
           </aside>
           <div id="content">
             <article class="comp-lib-main">
-                    <div id="kssref-reminders">
+                    <div id="kssref-service-info">
                   <div>
-                    <h1><a href="#kssref-reminders" class="comp-lib-menu-link">Reminders</a></h1>
-
-                  </div>
-
-                  <!-- pattern examples -->
-
-                    </div>
-
-
-                    <section id="kssref-reminders-alert-block">
-                  <div>
-                    <h2><a href="#kssref-reminders-alert-block" class="comp-lib-menu-link">Alert Block</a></h2>
+                    <h1><a href="#kssref-service-info" class="comp-lib-menu-link">Service Info</a></h1>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
@@ -330,7 +319,7 @@
                         
                         
                       </h2>
-                      <p>Highlights some text as an alert as an inline style.</p>
+                      <p>Service Info provides an area to provide details about the service.</p>
 
                     </div>
                   </div>
@@ -339,21 +328,33 @@
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <div class="alert-block">Example Alert Block.</div>
+                          <div class="service-info">
+  <div class="logo">
+    <span class="organisation-logo organisation-logo-medium">
+    HM Revenue &amp; Customs
+    </span>
+  </div>
+</div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;alert-block&quot;&gt;Example Alert Block.&lt;/div&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;service-info&quot;&gt;
+  &lt;div class=&quot;logo&quot;&gt;
+    &lt;span class=&quot;organisation-logo organisation-logo-medium&quot;&gt;
+    HM Revenue &amp;amp; Customs
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
                         </div>
                       </div>
 
                     </div>
 
-                    </section>
+                    </div>
 
 
-                    <section id="kssref-reminders-reminder">
+                    <section id="kssref-service-info-agent-name">
                   <div>
-                    <h2><a href="#kssref-reminders-reminder" class="comp-lib-menu-link">Reminder</a></h2>
+                    <h2><a href="#kssref-service-info-agent-name" class="comp-lib-menu-link">Agent Name</a></h2>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
@@ -363,7 +364,7 @@
                         
                         
                       </h2>
-                      <p>Formats containing elements with a background highlight.</p>
+                      <p>Service Info with <code>.service-info__agent-name</code> provides highlighting for <code>.acting-agent</code></p>
 
                     </div>
                   </div>
@@ -372,21 +373,33 @@
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <div class="reminder">
-  <div class="label">Example label</div>
-  <p>Example paragraph</p>
-  <a href="#">Example Link</a>
-  <i>Example Italic words</i>
-  <div class="action">Example Action</div>
+                          <div class="service-info">
+  <div class="logo">
+    <span class="organisation-logo organisation-logo-medium">
+    HM Revenue &amp; Customs
+    </span>
+  </div>
+  <div class="service-info__agent-name">
+    <p class="agent-name">
+      <span>Agent Name</span>
+      <span class="acting-agent"><a href="#">Account link</a></span>
+    </p>
+  </div>
 </div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;reminder&quot;&gt;
-  &lt;div class=&quot;label&quot;&gt;Example label&lt;/div&gt;
-  &lt;p&gt;Example paragraph&lt;/p&gt;
-  &lt;a href=&quot;#&quot;&gt;Example Link&lt;/a&gt;
-  &lt;i&gt;Example Italic words&lt;/i&gt;
-  &lt;div class=&quot;action&quot;&gt;Example Action&lt;/div&gt;
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;service-info&quot;&gt;
+  &lt;div class=&quot;logo&quot;&gt;
+    &lt;span class=&quot;organisation-logo organisation-logo-medium&quot;&gt;
+    HM Revenue &amp;amp; Customs
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;service-info__agent-name&quot;&gt;
+    &lt;p class=&quot;agent-name&quot;&gt;
+      &lt;span&gt;Agent Name&lt;/span&gt;
+      &lt;span class=&quot;acting-agent&quot;&gt;&lt;a href=&quot;#&quot;&gt;Account link&lt;/a&gt;&lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                         </div>
                       </div>
@@ -396,9 +409,9 @@
                     </section>
 
 
-                    <section id="kssref-reminders-reminder-list">
+                    <section id="kssref-service-info-delegate">
                   <div>
-                    <h2><a href="#kssref-reminders-reminder-list" class="comp-lib-menu-link">Reminder List</a></h2>
+                    <h2><a href="#kssref-service-info-delegate" class="comp-lib-menu-link">Delegate</a></h2>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
@@ -408,7 +421,8 @@
                         
                         
                       </h2>
-                      <p>Display an Unordered List of reminder items with time formatted in a new line.</p>
+                      <p>Service Info with <code>.service-info__agent-name</code> provides highlighting for <code>.acting-agent</code>
+The CSS selector <code>.delegate-info</code> provides highlighting for <code>.client-name</code></p>
 
                     </div>
                   </div>
@@ -417,18 +431,34 @@
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <ul class="reminder-list">
-  <li>Reminder List Item 1</li>
-  <li>Reminder List Item 2</li>
-  <li>Reminder List Item 3 <time>Reminder Time</time></li>
-</ul>
+                          <div class="service-info">
+  <div class="logo">
+    <span class="organisation-logo organisation-logo-medium">
+    HM Revenue &amp; Customs
+    </span>
+  </div>
+  <div class="service-info__agent-name">
+    <div class="delegate-info">
+      <span class="acting-agent">Agent Name</span>
+      <span class="client-name">Client Name</span>
+    </div>
+  </div>
+</div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;ul class=&quot;reminder-list&quot;&gt;
-  &lt;li&gt;Reminder List Item 1&lt;/li&gt;
-  &lt;li&gt;Reminder List Item 2&lt;/li&gt;
-  &lt;li&gt;Reminder List Item 3 &lt;time&gt;Reminder Time&lt;/time&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;service-info&quot;&gt;
+  &lt;div class=&quot;logo&quot;&gt;
+    &lt;span class=&quot;organisation-logo organisation-logo-medium&quot;&gt;
+    HM Revenue &amp;amp; Customs
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;service-info__agent-name&quot;&gt;
+    &lt;div class=&quot;delegate-info&quot;&gt;
+      &lt;span class=&quot;acting-agent&quot;&gt;Agent Name&lt;/span&gt;
+      &lt;span class=&quot;client-name&quot;&gt;Client Name&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
                         </div>
                       </div>
 
@@ -437,9 +467,89 @@
                     </section>
 
 
-                    <section id="kssref-reminders-urgent">
+                    <section id="kssref-service-info-logged-in">
                   <div>
-                    <h2><a href="#kssref-reminders-urgent" class="comp-lib-menu-link">Urgent</a></h2>
+                    <h2><a href="#kssref-service-info-logged-in" class="comp-lib-menu-link">Logged In</a></h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                 comp-lib-description--experimental
+                                ">
+                      <h2 class="comp-lib-warning">
+                        Experimental!
+                        
+                      </h2>
+                      <p>This example shows a service info element with login details. This component needs a refactor to combine
+the multiple classes into a component. It is not recommended to use it in its current state.</p>
+
+                    </div>
+                  </div>
+
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <div class="service-info ">
+  <div class="logo">
+    <span class="organisation-logo organisation-logo-medium">
+    HM Revenue &amp; Customs
+    </span>
+  </div>
+  <div class="last-login">
+    <p class="text--right h3-heading">John Smith</p>
+    <p class="last-login__more-details text--right font-xsmall js-visible"
+       data-toggle-details="last-login-details">
+    Last sign in: 31 May 2016 - <a href="#">not right?</a>
+    </p>
+  </div>
+  <section class="last-login-details alert alert--slim alert--info js-hidden">
+    <a class="minimise js-visible" href="#">Minimise</a>
+    <p class="alert__message">
+    Last sign in: Tuesday, 31 May 2016 at 2:44pm
+    </p>
+    <p class="alert__message">
+      <a href="https://www.gov.uk/hmrc-online-services-helpdesk">
+      Contact HMRC</a> if it wasn't you.
+    </p>
+  </section>
+</div>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;service-info &quot;&gt;
+  &lt;div class=&quot;logo&quot;&gt;
+    &lt;span class=&quot;organisation-logo organisation-logo-medium&quot;&gt;
+    HM Revenue &amp;amp; Customs
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;last-login&quot;&gt;
+    &lt;p class=&quot;text--right h3-heading&quot;&gt;John Smith&lt;/p&gt;
+    &lt;p class=&quot;last-login__more-details text--right font-xsmall js-visible&quot;
+       data-toggle-details=&quot;last-login-details&quot;&gt;
+    Last sign in: 31 May 2016 - &lt;a href=&quot;#&quot;&gt;not right?&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;section class=&quot;last-login-details alert alert--slim alert--info js-hidden&quot;&gt;
+    &lt;a class=&quot;minimise js-visible&quot; href=&quot;#&quot;&gt;Minimise&lt;/a&gt;
+    &lt;p class=&quot;alert__message&quot;&gt;
+    Last sign in: Tuesday, 31 May 2016 at 2:44pm
+    &lt;/p&gt;
+    &lt;p class=&quot;alert__message&quot;&gt;
+      &lt;a href=&quot;https://www.gov.uk/hmrc-online-services-helpdesk&quot;&gt;
+      Contact HMRC&lt;/a&gt; if it wasn&#x27;t you.
+    &lt;/p&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    </section>
+
+
+                    <section id="kssref-service-info-with-help">
+                  <div>
+                    <h2><a href="#kssref-service-info-with-help" class="comp-lib-menu-link">Help</a></h2>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
@@ -449,7 +559,7 @@
                         
                         
                       </h2>
-                      <p>Is used in conjunction with the reminder class to add further highlighting of links</p>
+                      <p>Service Info with <code>.service-info__help</code> provides a section to provide help information.</p>
 
                     </div>
                   </div>
@@ -458,21 +568,23 @@
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <div class="reminder urgent">
-  <div class="label">Example Label</div>
-  <p>Example Paragraph</p>
-  <a href="#">Example Link</a>
-  <i>Example Italic</i>
-  <div class="action">Example Action</div>
+                          <div class="service-info">
+  <h2>Service Information</h2>
+  <div class="service-info__help">
+    <p>You last signed in: Tuesday, 31 May 2016 at 2:44pm
+    <br><a href="#">Sign out</a>
+    </p>
+  </div>
 </div>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;reminder urgent&quot;&gt;
-  &lt;div class=&quot;label&quot;&gt;Example Label&lt;/div&gt;
-  &lt;p&gt;Example Paragraph&lt;/p&gt;
-  &lt;a href=&quot;#&quot;&gt;Example Link&lt;/a&gt;
-  &lt;i&gt;Example Italic&lt;/i&gt;
-  &lt;div class=&quot;action&quot;&gt;Example Action&lt;/div&gt;
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;service-info&quot;&gt;
+  &lt;h2&gt;Service Information&lt;/h2&gt;
+  &lt;div class=&quot;service-info__help&quot;&gt;
+    &lt;p&gt;You last signed in: Tuesday, 31 May 2016 at 2:44pm
+    &lt;br&gt;&lt;a href=&quot;#&quot;&gt;Sign out&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                         </div>
                       </div>
