@@ -14,6 +14,8 @@ Markup:
 .button--small         - A smaller button
 .button--table         - A button within a table
 .button--link          - To make a button appear like a link
+.button--spaced        - Adds spacing for when inline with other elements
+.button--padded        - Wider button for extremely short text
 
 Styleguide Buttons
 */
@@ -63,13 +65,10 @@ button, .button {
   box-shadow: 0 0 0 $grey-4;
 }
 
-// adds margin on left and right of button for situations
-// where button is sitting inline with other elements
 .button--spaced {
   margin: 0 em(10) 0 em(10);
 }
 
-// adds left and right padding for buttons whose text is extremely short
 .button--padded {
   padding-left: em(30);
   padding-right: em(30);
