@@ -3857,10 +3857,12 @@ Markup:
 .button--small         - A smaller button
 .button--table         - A button within a table
 .button--link          - To make a button appear like a link
+.button--spaced        - Adds spacing for when inline with other elements
+.button--padded        - Wider button for extremely short text
 
 Styleguide Buttons
 */
-/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 button, .button, .button--get-started {
   text-transform: capitalize;
   background-color: #00823b;
@@ -3967,14 +3969,14 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
 }
 
 @media (max-width: 640px) {
-  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  /* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
   button, .button, .button--get-started {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--alert {
   background-color: #b10e1e;
   position: relative;
@@ -4079,14 +4081,14 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
 }
 
 @media (max-width: 640px) {
-  /* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  /* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
   .button--alert {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--get-started {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -4102,21 +4104,21 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
 }
 
 @media (max-width: 640px) {
-  /* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  /* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
   .button--get-started {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--get-started:hover {
   background-image: url("../images/icons/icon-pointer.png");
   background-position: 100% 50%;
   background-repeat: no-repeat;
 }
 
-/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--secondary {
   background-color: #DEE0E2;
   position: relative;
@@ -4221,14 +4223,14 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
 }
 
 @media (max-width: 640px) {
-  /* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  /* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
   .button--secondary {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--small {
   background-color: #00823b;
   position: relative;
@@ -4334,14 +4336,14 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
 }
 
 @media (max-width: 640px) {
-  /* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  /* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
   .button--small {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--table {
   background-color: #f8f8f8;
   position: relative;
@@ -4447,7 +4449,7 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
   margin: 0 0.52632em 0 0.52632em;
 }
 
-/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--padded {
   padding-left: 1.57895em;
   padding-right: 1.57895em;
@@ -4457,7 +4459,7 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
  * For links that need to be positioned beside buttons
  * Used in conjunction with button class
  */
-/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button.button--link, .button--link.button--get-started {
   background-color: transparent;
   box-shadow: none;
@@ -4466,30 +4468,30 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
   border: none;
 }
 
-/* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button.button--link.button--link-table, .button--link.button--link-table.button--get-started {
   color: #0b0c0c;
 }
 
-/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button.button--link:hover, .button--link.button--get-started:hover, .button.button--link:active, .button--link.button--get-started:active {
   top: 0;
   outline: none;
   background-color: transparent;
 }
 
-/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button.button--link:hover, .button--link.button--get-started:hover, .button.button--link:focus, .button--link.button--get-started:focus {
   color: #2e8aca;
 }
 
-/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 103, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button.button--link:active, .button--link.button--get-started:active {
   color: #2e8aca;
 }
 
 /* Transforms button into a link */
-/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 114, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .pseudo-link {
   padding: 0;
   background: none;
@@ -4500,7 +4502,7 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
   text-decoration: underline;
 }
 
-/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .pseudo-link:hover, .pseudo-link:focus {
   color: #2e8aca;
   background-color: transparent;
@@ -4516,13 +4518,13 @@ Markup:
 
 Styleguide Buttons.Link Style
 */
-/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--link-style {
   background: none;
   box-shadow: none;
 }
 
-/* line 146, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+/* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
 .button--link-style:hover, .button--link-style:focus, .button--link-style:active {
   background: none;
 }
