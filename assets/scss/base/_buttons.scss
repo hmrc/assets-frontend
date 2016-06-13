@@ -16,6 +16,7 @@ Markup:
 .button--link          - To make a button appear like a link
 .button--spaced        - Adds spacing for when inline with other elements
 .button--padded        - Wider button for extremely short text
+.button--blue          - A large blue button
 
 Styleguide Buttons
 */
@@ -30,6 +31,24 @@ button, .button {
 .button--alert {
   @include button($red);
   @include core-19();
+}
+
+.button--blue {
+  @extend .button--get-started;
+  @include button($govuk-blue-colour);
+  @include bold-27();
+  width:100%;
+  padding-left:3em;
+  padding-top:0.65em;
+  height:2.2em;
+  box-sizing:border-box;
+}
+
+.button--blue:before {
+  background: url('../images/calendar.png');
+  background-position:0.8em 0.1em;
+  background-size: 40px;
+  background-repeat: no-repeat;
 }
 
 .button--get-started {
@@ -47,6 +66,7 @@ button, .button {
     background-repeat: no-repeat;
   }
 }
+
 
 .button--secondary {
   @include button($grey-8);
