@@ -8744,237 +8744,6 @@ Styleguide Service Info.Logged In
   margin: 0.26316em 0 0 0;
 }
 
-/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard {
-  text-align: left;
-}
-
-/* line 4, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .overview {
-  margin: 0 auto;
-  max-width: 960px;
-}
-
-/* line 8, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .overview .wrapper {
-  float: left;
-  width: 69%;
-}
-
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .overview .wrapper article {
-  margin: 0 0 3em 0;
-  min-height: 0;
-  margin-right: 60px;
-}
-
-/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .overview .wrapper article .inner {
-  padding: 0;
-  margin: 0 4em 0 0;
-}
-
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .overview .wrapper article h2 {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 36px;
-  line-height: 1.11111;
-  font-weight: 400;
-  text-transform: none;
-  font-weight: 700;
-  padding: 0;
-  margin-top: 0;
-}
-
-@media (max-width: 640px) {
-  /* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-  .dashboard .overview .wrapper article h2 {
-    font-size: 24px;
-    line-height: 1.04167;
-  }
-}
-
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .calendar li {
-  border: none;
-}
-
-/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .summary {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .summary li {
-  display: block;
-  padding: 0;
-  margin: 0 0 1em 0;
-}
-
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .summary li span {
-  display: block;
-  font-family: "nta", Arial, sans-serif;
-  font-size: 48px;
-  line-height: 1.04167;
-  font-weight: 400;
-  text-transform: none;
-  font-weight: 700;
-}
-
-@media (max-width: 640px) {
-  /* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-  .dashboard .summary li span {
-    font-size: 32px;
-    line-height: 1.09375;
-  }
-}
-
-/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .summary li p {
-  margin: 0.5em 0 1em 0;
-}
-
-/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .activity {
-  list-style: none;
-  margin: 0 0 1em 0;
-  padding: 0;
-}
-
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .activity li {
-  display: block;
-  padding: 0;
-  border-bottom: 1px solid #bfc1c3;
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 300;
-  text-transform: none;
-}
-
-@media (max-width: 640px) {
-  /* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-  .dashboard .activity li {
-    font-size: 14px;
-    line-height: 1.14286;
-  }
-}
-
-/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .activity li time {
-  display: block;
-  width: 25%;
-  float: left;
-}
-
-/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .activity li p {
-  float: left;
-  width: 75%;
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 300;
-  text-transform: none;
-}
-
-@media (max-width: 640px) {
-  /* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-  .dashboard .activity li p {
-    font-size: 14px;
-    line-height: 1.14286;
-  }
-}
-
-/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.dashboard .service-info__related-subsection {
-  border: none;
-}
-
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.account-summary {
-  margin-bottom: 1.5em;
-  padding-top: 1em;
-}
-
-/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .grid-wrapper {
-  padding-bottom: 0;
-}
-
-/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .content__body, .services-dashboard .sidebar {
-  margin-top: 1.25em;
-}
-
-/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .sidebar {
-  width: 33%;
-}
-
-/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .sidebar-links {
-  width: 100%;
-  border-top-width: 8px;
-  border-bottom: none;
-  padding-bottom: 0.5em;
-  margin-bottom: 1.25em;
-}
-
-/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .sidebar-links--list {
-  margin: 0.75em 0;
-}
-
-/* line 158, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .sidebar-links--item {
-  font-size: 19px;
-  line-height: 1.31579;
-  margin: .4em 0;
-}
-
-/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .service-options--heading {
-  margin-bottom: 0.25em;
-}
-
-/* line 181, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .service-option--links {
-  border-top: 4px solid #2b8cc4;
-  padding-bottom: 0.5em;
-}
-
-/* line 186, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .service-option--links:first-child .service-option--link {
-  font-weight: 700;
-}
-
-/* line 190, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .service-option--links:first-child .service-option--item {
-  border-bottom: 1px solid #DEE0E2;
-  padding: .438em 0 .625em 0;
-  width: 90%;
-}
-
-/* line 195, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .service-option--links:first-child .service-option--item:last-child {
-  border-bottom: none;
-}
-
-/* line 201, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .service-option--links:last-child .service-option--item {
-  margin: 1em 0;
-}
-
-/* line 205, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_dashboard.scss */
-.services-dashboard .service-option--links .service-option--link:link {
-  color: #005ea5;
-}
-
 /*
 Panel
 
@@ -10691,7 +10460,7 @@ Styleguide Notification.Highlight dark
   color: #fff;
 }
 
-/* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .delegation-banner {
   background-color: #ddeeff;
   border-left: 3px solid #005ea5;
@@ -10702,64 +10471,64 @@ Styleguide Notification.Highlight dark
   z-index: 999;
 }
 
-/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .delegation-banner.panel-indent, .delegation-banner.email-notifications__indent {
   margin: 0 0 1em 10px;
 }
 
-/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .delegation-banner .client-list {
   margin-left: 19px;
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-header > .h1-heading {
   padding: 10px 0 5px 0;
   margin-bottom: 10px;
 }
 
-/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statements-balance .balance-message {
   margin: 0;
 }
 
-/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statements-balance.alert {
   padding: 0.8em 1em 0.6em 1em;
   margin: 1.5em 0 20px 0;
 }
 
-/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statements-balance.alert--info {
   position: inherit;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statements-year-message {
   float: left;
   width: 50%;
 }
 
-/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statements-year-navigation {
   float: right;
   text-align: right;
   width: 50%;
 }
 
-/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statements-year--text:first-child, .statements-year__link:first-child {
   margin-right: 0.5em;
 }
 
-/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statements__table--totals {
   border: 2px solid #bfc1c3;
   border-left-width: 0;
   border-right-width: 0;
 }
 
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statements__table__cell--totals {
   font-weight: bold;
   width: 24.4%;
@@ -10767,34 +10536,34 @@ Styleguide Notification.Highlight dark
   text-align: right;
 }
 
-/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statements__table__cell--totals.totals {
   padding-right: 0;
   text-align: left;
 }
 
-/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statements__table__cell--totals.amount-paid {
   width: 26.2%;
 }
 
-/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statements__table__cell--totals.balance {
   padding-right: 24px;
 }
 
-/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .wrapper .annual-summaries--group {
   border-bottom-width: 0;
   margin-bottom: 10px;
 }
 
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .wrapper .annual-summaries--group .statements__table__row:last-child > .statements__table__cell {
   border-bottom-width: 0;
 }
 
-/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group {
   border-bottom-width: 1px;
 }
@@ -10838,13 +10607,13 @@ Styleguide Notification.Highlight dark
   display: block;
 }
 
-/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .statement__summary--parent .summary__table {
   border-bottom-width: 0;
   margin: 0;
 }
 
-/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .statement__summary {
   padding: 0;
 }
@@ -10884,17 +10653,17 @@ Styleguide Notification.Highlight dark
   display: block;
 }
 
-/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .statement__summary--parent[aria-expanded=true] {
   background-color: #DEE0E2;
 }
 
-/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .alert--text {
   color: #b10e1e;
 }
 
-/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .icon--flag {
   background-image: url("../images/statements-flag3.png");
   background-repeat: no-repeat;
@@ -10902,107 +10671,107 @@ Styleguide Notification.Highlight dark
   padding-left: 0.63158em;
 }
 
-/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .icon--flag:before {
   content: "\00a0";
   height: 0.73684em;
   width: 0.57895em;
 }
 
-/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .statements__table__cell, .annual-summaries--group .statements__table__head__cell {
   padding-right: 0;
 }
 
-/* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell {
   vertical-align: bottom;
 }
 
-/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell:first-child {
   padding-left: 21px;
 }
 
-/* line 152, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 152, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell:last-child {
   padding-right: 24px;
 }
 
-/* line 157, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 157, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell,
 .annual-summaries--group .summary__cell {
   text-align: right;
   width: 24.4%;
 }
 
-/* line 162, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 162, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__header--cell.payments,
 .annual-summaries--group .summary__cell.payments {
   width: 26.2%;
 }
 
-/* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__cell--group {
   padding: 0;
 }
 
-/* line 171, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 171, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__container {
   padding-top: 10px;
   background-color: #f8f8f8;
 }
 
-/* line 176, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 176, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .statement__summary {
   margin: 0;
   width: 100%;
   display: block;
 }
 
-/* line 182, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 182, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .summary__table {
   border-bottom-width: 0;
   margin: 0;
 }
 
-/* line 187, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 187, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .summary__cell {
   border-bottom-width: 0;
   padding: 12px 3px 10px;
 }
 
-/* line 192, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 192, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .summary__cell:last-child {
   padding-right: 24px;
 }
 
-/* line 196, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 196, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .summary__cell--content {
   color: #0b0c0c;
   margin-bottom: 0.26316em;
   white-space: nowrap;
 }
 
-/* line 202, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 202, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .summary__cell--no-content {
   padding-left: 18px;
   white-space: nowrap;
 }
 
-/* line 207, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 207, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table {
   border-bottom-width: 0;
   margin: 0;
 }
 
-/* line 212, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 212, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table__head--item,
 .annual-summaries--group .summary__table__head {
   border-bottom-color: #bfc1c3;
 }
 
-/* line 217, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 217, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table__head__cell--item,
 .annual-summaries--group .details__table__cell--item,
 .annual-summaries--group .summary__table__head__cell,
@@ -11011,7 +10780,7 @@ Styleguide Notification.Highlight dark
   color: #0b0c0c;
 }
 
-/* line 223, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 223, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table__head__cell--item:nth-child(even),
 .annual-summaries--group .details__table__cell--item:nth-child(even),
 .annual-summaries--group .summary__table__head__cell:nth-child(even),
@@ -11021,12 +10790,12 @@ Styleguide Notification.Highlight dark
   padding-right: 0;
 }
 
-/* line 229, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 229, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content {
   border-bottom-width: 0;
 }
 
-/* line 233, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 233, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .cell__label--content {
   color: #6f777b;
   display: block;
@@ -11039,76 +10808,76 @@ Styleguide Notification.Highlight dark
 }
 
 @media (max-width: 640px) {
-  /* line 233, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+  /* line 233, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
   .annual-summaries--group .cell__label--content {
     font-size: 12px;
     line-height: 1.25;
   }
 }
 
-/* line 240, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 240, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .annual-summaries__row,
 .annual-summaries--group .summary__table__row {
   vertical-align: top;
 }
 
-/* line 245, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 245, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .statements__table__head__cell--black {
   color: #0b0c0c;
 }
 
-/* line 249, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 249, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__summary--black {
   color: #0b0c0c;
   text-decoration: underline;
 }
 
-/* line 254, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 254, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table--content-container {
   border-bottom-width: 0;
 }
 
-/* line 258, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 258, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container {
   border-bottom-width: 0;
   padding: 0 24px;
 }
 
-/* line 262, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 262, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .statements__table {
   margin: 0;
   border-bottom-width: 1px;
 }
 
-/* line 266, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 266, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .statements__table .statements__table__cell, .annual-summaries--group .details__table__cell--content-container .statements__table .statements__table__head__cell {
   vertical-align: top;
 }
 
-/* line 270, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 270, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .statements__table > .statements__table__body .statements__table__row:last-child .statements__table__cell {
   border-bottom-width: 1px;
 }
 
-/* line 275, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 275, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--content-container .details__table--total {
   border-top: 1px solid #bfc1c3;
   border-bottom: 2px solid #bfc1c3;
 }
 
-/* line 281, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 281, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__table__cell--total {
   padding: 12px 0 10px;
 }
 
-/* line 285, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 285, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__list--notices {
   list-style-type: disc;
   margin: 0.75em;
   max-width: 30em;
 }
 
-/* line 291, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 291, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .annual-summaries--group .details__list--notices-item {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -11119,72 +10888,72 @@ Styleguide Notification.Highlight dark
 }
 
 @media (max-width: 640px) {
-  /* line 291, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+  /* line 291, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
   .annual-summaries--group .details__list--notices-item {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 298, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 298, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .summary__table .statements__table__head {
   border-bottom-width: 0;
 }
 
-/* line 303, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 303, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .statement__details--group > .panel-indent > .statements__table, .statement__details--group > .email-notifications__indent > .statements__table {
   border-bottom-width: 0;
   width: 100%;
 }
 
-/* line 308, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 308, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .summary__table--payments {
   width: 59%;
 }
 
-/* line 314, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 314, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .h1-heading {
   margin-bottom: .8em;
 }
 
-/* line 318, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 318, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .h2-heading {
   margin-bottom: .25em;
 }
 
-/* line 322, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 322, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .h4-heading {
   margin-top: .5em;
   margin-bottom: .25em;
 }
 
-/* line 327, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 327, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .annual-summaries--group {
   margin-top: 0;
 }
 
-/* line 331, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 331, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .sidebar-links {
   margin-bottom: 1.6em;
   margin-right: .8em;
 }
 
-/* line 335, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 335, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .sidebar-links:first-child {
   margin-top: 3.6em;
 }
 
-/* line 340, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 340, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .sidebar-links__heading {
   margin: .65em 0 .375em .15em;
 }
 
-/* line 343, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 343, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .sidebar-links__heading:first-child {
   margin-top: 0;
 }
 
-/* line 348, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 348, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .sidebar-links__item {
   border-bottom: 1px solid #bfc1c3;
   font-size: 19px;
@@ -11193,28 +10962,28 @@ Styleguide Notification.Highlight dark
   margin: 0;
 }
 
-/* line 355, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 355, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .sidebar-links__item.selected {
   background-color: #005ea5;
 }
 
-/* line 358, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 358, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .sidebar-links__item.selected .sidebar-links__link {
   color: #fff;
 }
 
-/* line 360, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 360, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .sidebar-links__item.selected .sidebar-links__link:hover, .paye-statements .sidebar-links__item.selected .sidebar-links__link:focus, .paye-statements .sidebar-links__item.selected .sidebar-links__link:active {
   color: #fff;
 }
 
-/* line 367, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 367, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .sidebar-links__link {
   text-decoration: none;
   padding-left: .25em;
 }
 
-/* line 371, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_epaye-statements.scss */
+/* line 371, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
 .paye-statements .sidebar-links__link:hover, .paye-statements .sidebar-links__link:focus, .paye-statements .sidebar-links__link:active {
   text-decoration: underline;
 }
@@ -13602,6 +13371,237 @@ p.email-notifications__p {
 /* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_email-notifications.scss */
 .email-notifications__indent {
   margin: 30px 0 35px 0;
+}
+
+/* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard {
+  text-align: left;
+}
+
+/* line 4, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .overview {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+/* line 8, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .overview .wrapper {
+  float: left;
+  width: 69%;
+}
+
+/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .overview .wrapper article {
+  margin: 0 0 3em 0;
+  min-height: 0;
+  margin-right: 60px;
+}
+
+/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .overview .wrapper article .inner {
+  padding: 0;
+  margin: 0 4em 0 0;
+}
+
+/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .overview .wrapper article h2 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 1.11111;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+  padding: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  /* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+  .dashboard .overview .wrapper article h2 {
+    font-size: 24px;
+    line-height: 1.04167;
+  }
+}
+
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .calendar li {
+  border: none;
+}
+
+/* line 45, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .summary {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .summary li {
+  display: block;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .summary li span {
+  display: block;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1.04167;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  /* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+  .dashboard .summary li span {
+    font-size: 32px;
+    line-height: 1.09375;
+  }
+}
+
+/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .summary li p {
+  margin: 0.5em 0 1em 0;
+}
+
+/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .activity {
+  list-style: none;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .activity li {
+  display: block;
+  padding: 0;
+  border-bottom: 1px solid #bfc1c3;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+  .dashboard .activity li {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .activity li time {
+  display: block;
+  width: 25%;
+  float: left;
+}
+
+/* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .activity li p {
+  float: left;
+  width: 75%;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 83, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+  .dashboard .activity li p {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.dashboard .service-info__related-subsection {
+  border: none;
+}
+
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.account-summary {
+  margin-bottom: 1.5em;
+  padding-top: 1em;
+}
+
+/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .grid-wrapper {
+  padding-bottom: 0;
+}
+
+/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .content__body, .services-dashboard .sidebar {
+  margin-top: 1.25em;
+}
+
+/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .sidebar {
+  width: 33%;
+}
+
+/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .sidebar-links {
+  width: 100%;
+  border-top-width: 8px;
+  border-bottom: none;
+  padding-bottom: 0.5em;
+  margin-bottom: 1.25em;
+}
+
+/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .sidebar-links--list {
+  margin: 0.75em 0;
+}
+
+/* line 158, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .sidebar-links--item {
+  font-size: 19px;
+  line-height: 1.31579;
+  margin: .4em 0;
+}
+
+/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .service-options--heading {
+  margin-bottom: 0.25em;
+}
+
+/* line 181, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .service-option--links {
+  border-top: 4px solid #2b8cc4;
+  padding-bottom: 0.5em;
+}
+
+/* line 186, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .service-option--links:first-child .service-option--link {
+  font-weight: 700;
+}
+
+/* line 190, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .service-option--links:first-child .service-option--item {
+  border-bottom: 1px solid #DEE0E2;
+  padding: .438em 0 .625em 0;
+  width: 90%;
+}
+
+/* line 195, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .service-option--links:first-child .service-option--item:last-child {
+  border-bottom: none;
+}
+
+/* line 201, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .service-option--links:last-child .service-option--item {
+  margin: 1em 0;
+}
+
+/* line 205, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_agent-dashboard.scss */
+.services-dashboard .service-option--links .service-option--link:link {
+  color: #005ea5;
 }
 
 /*------------------------------------*
