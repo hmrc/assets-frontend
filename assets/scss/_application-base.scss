@@ -59,7 +59,6 @@ $path: "../images/icons/";
 @import "components/phase-alpha";
 @import "components/phase-beta";
 @import "components/service-info";
-@import "modules/dashboard";
 @import "components/panel";
 @import "components/boxes";
 @import "components/template-page-header";
@@ -98,6 +97,7 @@ $path: "../images/icons/";
 @import "pages/business-tax-home";
 @import "pages/risk-triage";
 @import "pages/email-notifications";
+@import "pages/agent-dashboard";
 
 // Overrides
 @import "shame";
