@@ -1,7 +1,76 @@
 /*
+Page Navigation
+
+A page navigation element with a previous and next link.
+
+Markup:
+<nav class="page-navigation--previous-next" role="navigation"
+     aria-label="Page navigation">
+  <ul>
+    <li class="page-nav__item page-nav__item--previous">
+      <a class="page-nav__link page-nav__link--previous"
+         title="Navigate to previous part" rel="prev" href="#">
+        <span class="page-nav__label">Previous</span>
+        <span class="page-nav__title">Overview</span>
+      </a>
+    </li>
+    <li class="page-nav__item page-nav__item--next">
+      <a class="page-nav__link page-nav__link--next"
+         title="Navigate to next part" rel="next" href="#">
+        <span class="page-nav__label">Next</span>
+        <span class="page-nav__title">Inheritance Tax reliefs</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+Styleguide Navigation.Page Navigation
+*/
+
+.page-navigation--previous-next {
+  display: block;
+  margin: em(32, 16) 0 0 0;
+  padding: em(12) 0;
+  border-bottom: 1px solid $light-grey;
+  @include contain-floats;
+
+  @include media(tablet) {
+    margin: em(64) 0 0 0;
+  }
+}
+
+.page-nav__item {
+  @include core-14;
+  float: none;
+  text-align: right;
+  margin: em(5) 0;
+  padding: 0;
+  width: 100%;
+
+  @include media(tablet) {
+    @include core-19;
+    float: left;
+    width: 49%;
+  }
+}
+
+.page-nav__item--previous {
+  float: left;
+  text-align: left;
+}
+
+.page-nav__item--next {
+  float: right;
+  text-align: right;
+}
+
+/*
 Page
 
 Navigation for the page. As shown this can use markup with an `ol` or `ul`.
+
+DEPRECATED: These page navigation styles are *NO LONGER BEING USED* and will be
+removed in an upcoming version.
 
 Markup:
 <nav class="page-navigation">
@@ -19,8 +88,9 @@ Markup:
   </ol>
 </nav>
 
-Styleguide Navigation.Page
+Weight: 1
 
+Styleguide Navigation.Page
 */
 
 .page-navigation {
@@ -87,71 +157,4 @@ Styleguide Navigation.Page
       }
     }
   }
-}
-
-
-/*
-Page Navigation
-
-A page navigation element with a previous and next link.
-
-Markup:
-<nav class="page-navigation--previous-next" role="navigation"
-     aria-label="Page navigation">
-  <ul>
-    <li class="page-nav__item page-nav__item--previous">
-      <a class="page-nav__link page-nav__link--previous"
-         title="Navigate to previous part" rel="prev" href="#">
-        <span class="page-nav__label">Previous</span>
-        <span class="page-nav__title">Overview</span>
-      </a>
-    </li>
-    <li class="page-nav__item page-nav__item--next">
-      <a class="page-nav__link page-nav__link--next"
-         title="Navigate to next part" rel="next" href="#">
-        <span class="page-nav__label">Next</span>
-        <span class="page-nav__title">Inheritance Tax reliefs</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-Styleguide Navigation.Page Navigation
-*/
-
-.page-navigation--previous-next {
-  display: block;
-  margin: em(32, 16) 0 0 0;
-  padding: em(12) 0;
-  border-bottom: 1px solid $light-grey;
-  @include contain-floats;
-
-  @include media(tablet) {
-    margin: em(64) 0 0 0;
-  }
-}
-
-.page-nav__item {
-  @include core-14;
-  float: none;
-  text-align: right;
-  margin: em(5) 0;
-  padding: 0;
-  width: 100%;
-
-  @include media(tablet) {
-    @include core-19;
-    float: left;
-    width: 49%;
-  }
-}
-
-.page-nav__item--previous {
-  float: left;
-  text-align: left;
-}
-
-.page-nav__item--next {
-  float: right;
-  text-align: right;
 }
