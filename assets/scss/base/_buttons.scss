@@ -150,9 +150,9 @@ Styleguide Buttons.Link Style
 }
 
 /*
-Experimental: Notification button
+Notification button
 
-Additional button styles to provide blue.
+Experimental: Additional button styles to provide blue.
 
 Markup:
 <button class="button--notification">Button text</button>
@@ -166,9 +166,9 @@ Styleguide Buttons.Notification style
 }
 
 /*
-Experimental: Full width style
+Full width style
 
-Additional button styles to provide full width options.
+Experimental: Additional button styles to provide full width options.
 
 Markup:
 <button class="button--full-width">Button text</button>
@@ -179,7 +179,6 @@ Styleguide Buttons.Full width style
 .button--full-width {
   width: $full-width;
   box-sizing: border-box;
-  padding: 0.65em 0em 0.6em 3em;
 }
 
 @media (max-width: 640px) {

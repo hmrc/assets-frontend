@@ -55,23 +55,26 @@ Styleguide Icons.Arrow
 }
 
 /*
-Experimental: Calendar
+Calendar
 
-A Calendar icon
+Experimental: A Calendar icon
 
 Markup:
-<div class="icon--calendar">Calendar</div>
+<span class="icon--calendar"></span>
 
 Background: dark
 
 Styleguide Icons.Calendar
 */
 
-.icon--calendar:before {
-  background: url("../images/calendar.svg");
+.icon--calendar {
+  background-image: url("../images/calendar.svg");
   background-position: 0.8em 30%;
-  background-size: 40px;
   background-repeat: no-repeat;
+  display: inline-block;
+  width: 3em;
+  height: 1.8em;
+  vertical-align:middle;
 
   @include ie-lte(9) {
     background-image: url("../images/calendar.png");
@@ -79,7 +82,7 @@ Styleguide Icons.Calendar
 }
 
 @media (max-width: 640px) {
-  .icon--calendar:before {
+  .icon--calendar {
     background: none;
   }
 }
