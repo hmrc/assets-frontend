@@ -55,6 +55,34 @@ Styleguide Icons.Arrow
 }
 
 /*
+Experimental: Calendar
+
+A Calendar icon
+
+Markup:
+<span class="icon--calendar">Calendar</span>
+
+Styleguide Icons.Calendar
+*/
+
+.icon--calendar:before {
+  background: url("../images/calendar.svg");
+  background-position: 0.8em 30%;
+  background-size: 40px;
+  background-repeat: no-repeat;
+
+  @include ie-lte(9) {
+    background-image: url("../images/calendar.png");
+  }
+}
+
+@media (max-width: 640px) {
+  .icon--calendar:before {
+    background: none;
+  }
+}
+
+/*
 Exclamation
 
 The exclamation icon is used to highlight content to the user.
