@@ -12587,11 +12587,10 @@ Markup:
 
 .flag--soon           - A flag to indicate action needed soon
 .flag--urgent         - A flag to indicate urgent action
-.flag--on-right-side  - A flag positioned on the right of content
 
 Styleguide Flag
 */
-/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
+/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
 .flag {
   display: inline-block;
   color: #fff;
@@ -12604,6 +12603,20 @@ Styleguide Flag
   line-height: 0.84211em;
   text-decoration: none;
   /*
+  Flag on right
+
+  A flag positioned on the right of content
+
+  Markup:
+  <p> Example content for the flag component in the component library.
+    <span class="flag flag--on-right-side">Example flag text.</span>
+  </p>
+
+  Background: dark
+
+  Styleguide Flag.right
+  */
+  /*
   Flag on left
 
   A flag positioned on the left of content
@@ -12614,39 +12627,41 @@ Styleguide Flag
     Example content for the flag component in the component library.
   </p>
 
+  Background: dark
+
   Styleguide Flag.left
   */
 }
 
 @media (max-width: 640px) {
-  /* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
+  /* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
   .flag {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
+/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
 .flag.flag--soon {
   background-color: #6f777b;
 }
 
-/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
 .flag.flag--urgent {
   background-color: #b10e1e;
 }
 
-/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
 .flag.flag--on-right-side {
   margin-left: 0.31579em;
 }
 
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
 .flag.flag--on-left-side {
   margin-right: 0.31579em;
 }
 
-/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
 .highlight-block--red {
   display: inline-block;
   color: #fff;
@@ -12662,7 +12677,7 @@ Styleguide Flag
 }
 
 @media (max-width: 640px) {
-  /* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
+  /* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_flag.scss */
   .highlight-block--red {
     font-size: 14px;
     line-height: 1.14286;

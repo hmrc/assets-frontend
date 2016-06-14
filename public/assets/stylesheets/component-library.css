@@ -83,6 +83,9 @@
 .comp-lib-pattern-component .grid-layout {
   font-size: .8em;
 }
+.comp-lib-pattern-component--dark {
+  background-color: #6f777b;
+}
 .comp-lib-description code,
 .comp-lib-pattern-markdown code {
   border: none !important;
