@@ -10,7 +10,6 @@ Markup:
 
 .flag--soon           - A flag to indicate action needed soon
 .flag--urgent         - A flag to indicate urgent action
-.flag--on-right-side  - A flag positioned on the right of content
 
 Styleguide Flag
 */
@@ -35,6 +34,21 @@ Styleguide Flag
     background-color: $red;
   }
 
+  /*
+  Flag on right
+
+  A flag positioned on the right of content
+
+  Markup:
+  <p> Example content for the flag component in the component library.
+    <span class="flag flag--on-right-side">Example flag text.</span>
+  </p>
+
+  Background: dark
+
+  Styleguide Flag.right
+  */
+
   &.flag--on-right-side {
     margin-left: em(6);
   }
@@ -49,6 +63,8 @@ Styleguide Flag
     <span class="flag flag--on-left-side">Example flag text.</span>
     Example content for the flag component in the component library.
   </p>
+
+  Background: dark
 
   Styleguide Flag.left
   */
