@@ -8931,72 +8931,6 @@ Styleguide Template Page Header
 }
 
 /*
-Page
-
-Navigation for the page. As shown this can use markup with an `ol` or `ul`.
-
-Markup:
-<nav class="page-navigation">
-  <ul>
-    <li><a href="#">Link Text</a></li>
-    <li><a href="#">Link Text</a></li>
-    <li><a href="#">Link Text</a></li>
-  </ul>
-</nav>
-<nav class="page-navigation">
-  <ol>
-    <li><a href="#">Link Text</a></li>
-    <li><a href="#">Link Text</a></li>
-    <li><span>Link Text</span></li>
-  </ol>
-</nav>
-
-Styleguide Navigation.Page
-
-*/
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
-.page-navigation {
-  width: 64%;
-  float: left;
-}
-
-/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
-.page-navigation ol {
-  margin: 0;
-  padding: 0;
-  display: inline;
-  overflow: hidden;
-  width: 50%;
-}
-
-/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
-.page-navigation li {
-  list-style: decimal;
-  list-style-position: outside;
-  margin-right: 0.75em;
-  margin-left: 1.5em;
-  clear: left;
-}
-
-/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
-.page-navigation li a, .page-navigation li .link-style, .page-navigation li .button--link-style {
-  padding: 0.25em 1em 0.25em 0;
-  font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 300;
-  text-transform: none;
-}
-
-@media (max-width: 640px) {
-  /* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
-  .page-navigation li a, .page-navigation li .link-style, .page-navigation li .button--link-style {
-    font-size: 14px;
-    line-height: 1.14286;
-  }
-}
-
-/*
 Page Navigation
 
 A page navigation element with a previous and next link.
@@ -9024,7 +8958,7 @@ Markup:
 
 Styleguide Navigation.Page Navigation
 */
-/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
 .page-navigation--previous-next {
   display: block;
   margin: 2em 0 0 0;
@@ -9040,7 +8974,7 @@ Styleguide Navigation.Page Navigation
   clear: both;
 }
 
-/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
 .page-nav__item {
   font-family: "nta", Arial, sans-serif;
   font-size: 14px;
@@ -9062,7 +8996,7 @@ Styleguide Navigation.Page Navigation
 }
 
 @media (max-width: 640px) {
-  /* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+  /* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
   .page-nav__item {
     font-size: 12px;
     line-height: 1.25;
@@ -9070,23 +9004,93 @@ Styleguide Navigation.Page Navigation
 }
 
 @media (max-width: 640px) {
-  /* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+  /* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
   .page-nav__item {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
 .page-nav__item--previous {
   float: left;
   text-align: left;
 }
 
-/* line 154, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+/* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
 .page-nav__item--next {
   float: right;
   text-align: right;
+}
+
+/*
+Page
+
+Navigation for the page. As shown this can use markup with an `ol` or `ul`.
+
+DEPRECATED: These page navigation styles are *NO LONGER BEING USED* and will be
+removed in an upcoming version.
+
+Markup:
+<nav class="page-navigation">
+  <ul>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+  </ul>
+</nav>
+<nav class="page-navigation">
+  <ol>
+    <li><a href="#">Link Text</a></li>
+    <li><a href="#">Link Text</a></li>
+    <li><span>Link Text</span></li>
+  </ol>
+</nav>
+
+Weight: 1
+
+Styleguide Navigation.Page
+*/
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+.page-navigation {
+  width: 64%;
+  float: left;
+}
+
+/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+.page-navigation ol {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  overflow: hidden;
+  width: 50%;
+}
+
+/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+.page-navigation li {
+  list-style: decimal;
+  list-style-position: outside;
+  margin-right: 0.75em;
+  margin-left: 1.5em;
+  clear: left;
+}
+
+/* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+.page-navigation li a, .page-navigation li .link-style, .page-navigation li .button--link-style {
+  padding: 0.25em 1em 0.25em 0;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 140, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_navigation.scss */
+  .page-navigation li a, .page-navigation li .link-style, .page-navigation li .button--link-style {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
 }
 
 /*
