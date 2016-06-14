@@ -16,8 +16,6 @@ Markup:
 .button--link          - To make a button appear like a link
 .button--spaced        - Adds spacing for when inline with other elements
 .button--padded        - Wider button for extremely short text
-.button--notification  - Experimental: A blue alert button
-.button--full-width    - Experimental: A full width button
 
 Styleguide Buttons
 */
@@ -32,23 +30,6 @@ button, .button {
 .button--alert {
   @include button($red);
   @include core-19();
-}
-
-.button--notification {
-  @include button($govuk-blue-colour);
-  @include bold-27();
-}
-
-.button--full-width {
-  width: $full-width;
-  box-sizing: border-box;
-  padding: 0.65em 0em 0.6em 3em;
-}
-
-@media (max-width: 640px) {
-  .button--full-width {
-    padding-left: 0.5em;
-  }
 }
 
 .button--get-started {
@@ -165,5 +146,44 @@ Styleguide Buttons.Link Style
   &:focus,
   &:active {
     background: none;
+  }
+}
+
+/*
+Experimental: Notification button
+
+Additional button styles to provide blue.
+
+Markup:
+<button class="button--notification">Button text</button>
+
+Styleguide Buttons.Notification style
+*/
+
+.button--notification {
+  @include button($govuk-blue-colour);
+  @include bold-27();
+}
+
+/*
+Experimental: Full width style
+
+Additional button styles to provide full width options.
+
+Markup:
+<button class="button--full-width">Button text</button>
+
+Styleguide Buttons.Full width style
+*/
+
+.button--full-width {
+  width: $full-width;
+  box-sizing: border-box;
+  padding: 0.65em 0em 0.6em 3em;
+}
+
+@media (max-width: 640px) {
+  .button--full-width {
+    padding-left: 0.5em;
   }
 }
