@@ -49,19 +49,4 @@ small {
   @include core-16;
 }
 
-/*
-Bold regular text
-
-Experimental: Bold regular text
-
-Markup:
-<p class="bold-regular">Some text</p>
-
-Styleguide Typography.bold
-*/
-
-.bold-regular {
-  @include bold-19();
-}
-
 
