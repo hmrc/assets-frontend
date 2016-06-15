@@ -83,23 +83,6 @@ Styleguide Typography.Heading Sizes
   @include core-24();
 }
 
-
-/*
-Bold h3 heading
-
-Experimental: Bold h3 heading for tcs-payments
-
-Markup:
-<h3 class="{{modifier_class}}">header example</h3>
-
-.heading-24-bold - a bold font size 24px header
-*/
-
-.heading-24-bold {
-  @include bold-24();
-  margin-bottom: 0;
-}
-
 /*
 Underlined Headings
 
