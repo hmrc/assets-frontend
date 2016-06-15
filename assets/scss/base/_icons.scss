@@ -74,7 +74,7 @@ Styleguide Icons.Calendar
   display: inline-block;
   width: 3em;
   height: 1.8em;
-  vertical-align:middle;
+  vertical-align: middle;
 
   @include ie-lte(9) {
     background-image: url("../images/calendar.png");
