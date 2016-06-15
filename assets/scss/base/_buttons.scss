@@ -148,3 +148,41 @@ Styleguide Buttons.Link Style
     background: none;
   }
 }
+
+/*
+Notification button
+
+Experimental: Additional button styles to provide blue.
+
+Markup:
+<button class="button--notification">Button text</button>
+
+Styleguide Buttons.Notification style
+*/
+
+.button--notification {
+  @include button($govuk-blue-colour);
+  @include bold-27();
+}
+
+/*
+Full width style
+
+Experimental: Additional button styles to provide full width options.
+
+Markup:
+<button class="button--full-width">Button text</button>
+
+Styleguide Buttons.Full width style
+*/
+
+.button--full-width {
+  width: $full-width;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .button--full-width {
+    padding-left: 0.5em;
+  }
+}
