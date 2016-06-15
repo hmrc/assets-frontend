@@ -100,7 +100,7 @@ body {
 /*
 Half column container component
 
-Experimental: Half column component
+Experimental: Half column component.
 
 Markup:
 <div class="column-half-container">
@@ -114,19 +114,14 @@ Markup:
     </div>
 </div>
 
-.column-half-container - component containing two half column grids redefining parts of row-border and grid-wrapper elements
+Styleguide Layouts.column half
 */
-.column-half-container {
-  margin-bottom: em(25);
 
+.column-half-container {
   .row-border {
     border-bottom: 1px solid $light-grey;
     margin: 0;
     padding: em(14.25) 0 em(10.68) 0;
-  }
-
-  .grid-wrapper p {
-    margin: 0.25em 0;
   }
 }
 

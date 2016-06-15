@@ -373,18 +373,3 @@
   max-width: 125px;
 }
 
-/*
-Equally spaced out container element
-
-Experimental: Equal top and bottom spacing for container element
-
-Markup:
-<div class="{{modifier_class}}">Content</div>
-
-.equal-spacing - equal top and bottom spacing for container element
-*/
-.equal-spacing {
-  margin-bottom: em(30);
-  margin-top: em(30);
-}
-
