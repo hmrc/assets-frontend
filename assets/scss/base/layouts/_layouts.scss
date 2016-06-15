@@ -103,7 +103,7 @@ Half column container component
 Experimental: Half column component
 
 Markup:
-<div class="{{modifier_class}}">
+<div class="column-half-container">
     <div class="grid-wrapper row-border">
         <div class="grid grid-1-2">
             <div>Some content</div>
@@ -114,7 +114,7 @@ Markup:
     </div>
 </div>
 
-.column-half-container - component for tcs account details redefining parts of row-border and grid-wrapper elements
+.column-half-container - component containing two half column grids redefining parts of row-border and grid-wrapper elements
 */
 .column-half-container {
   margin-bottom: em(25);
@@ -133,7 +133,7 @@ Markup:
 @media(max-width: 966px){
   .column-half-container  {
     .grid.grid-1-2 {
-      width: 50%;
+      width: $half;
     }
   }
 }

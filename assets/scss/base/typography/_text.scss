@@ -58,9 +58,9 @@ Markup:
 <p class="bold-regular">Some text</p>
 */
 
- .bold-regular {
-    @include bold-19();
-  }
+.bold-regular {
+  @include bold-19();
+}
 
 /*
 Regular paragraph text
@@ -72,6 +72,7 @@ Markup:
 */
 
 .regular-text {
-    @include core-19();
-    @extend .push;
-  }
+  @include core-19();
+  @extend .push;
+}
+
