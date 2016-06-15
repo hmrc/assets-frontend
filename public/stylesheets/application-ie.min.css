@@ -4529,6 +4529,152 @@ Styleguide Buttons.Link Style
   background: none;
 }
 
+/*
+Notification button
+
+Experimental: Additional button styles to provide blue.
+
+Markup:
+<button class="button--notification">Button text</button>
+
+Styleguide Buttons.Notification style
+*/
+/* line 163, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+.button--notification {
+  background-color: #005ea5;
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: 0.35em 0.5em 0.15em 0.5em;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  box-shadow: 0 2px 0 #003259;
+  border-bottom: 2px solid #003259;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: #fff;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 27px;
+  line-height: 1.11111;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+}
+
+/* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification:visited {
+  background-color: #005ea5;
+}
+
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification:hover, .button--notification:focus {
+  background-color: #004f8c;
+}
+
+/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification:active {
+  top: 2px;
+  box-shadow: 0 0 0 #005ea5;
+}
+
+/* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification.disabled, .button--notification[disabled="disabled"], .button--notification[disabled] {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+
+/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification.disabled:hover, .button--notification[disabled="disabled"]:hover, .button--notification[disabled]:hover {
+  cursor: default;
+  background-color: #005ea5;
+}
+
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification.disabled:active, .button--notification[disabled="disabled"]:active, .button--notification[disabled]:active {
+  top: 0;
+  box-shadow: 0 2px 0 #003259;
+  border-bottom: 2px solid #003259;
+}
+
+/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification:link, .button--notification:hover, .button--notification:focus, .button--notification:visited {
+  color: #fff;
+}
+
+/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification:before {
+  content: "";
+  height: 110%;
+  width: 100%;
+  display: block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification:active:before {
+  top: -10%;
+  height: 120%;
+}
+
+/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification[rel="external"]:after {
+  display: none;
+  content: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification[type="submit"], .button--notification[type="reset"], .button--notification[type="button"] {
+  -webkit-filter: chroma(color=#000000);
+          filter: chroma(color=#000000);
+}
+
+/* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button--notification[type=submit].button, .button--notification[type=submit].button--get-started {
+  -webkit-filter: none;
+          filter: none;
+}
+
+@media (max-width: 640px) {
+  /* line 163, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  .button--notification {
+    font-size: 18px;
+    line-height: 1.11111;
+  }
+}
+
+/*
+Full width style
+
+Experimental: Additional button styles to provide full width options.
+
+Markup:
+<button class="button--full-width">Button text</button>
+
+Styleguide Buttons.Full width style
+*/
+/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+.button--full-width {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  /* line 185, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
+  .button--full-width {
+    padding-left: 0.5em;
+  }
+}
+
 /* line 1, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_images.scss */
 img {
   max-width: 100%;
@@ -6080,6 +6226,37 @@ Styleguide Icons.Arrow
 }
 
 /*
+Calendar
+
+Experimental: A Calendar icon
+
+Markup:
+<span class="icon--calendar"></span>
+
+Background: dark
+
+Styleguide Icons.Calendar
+*/
+/* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+.icon--calendar {
+  background-image: url("../images/calendar.svg");
+  background-position: 0.8em 30%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 3em;
+  height: 1.8em;
+  vertical-align: middle;
+  background-image: url("../images/calendar.png");
+}
+
+@media (max-width: 640px) {
+  /* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+  .icon--calendar {
+    background: none;
+  }
+}
+
+/*
 Exclamation
 
 The exclamation icon is used to highlight content to the user.
@@ -6089,7 +6266,7 @@ Markup:
 
 Styleguide Icons.Exclamation
 */
-/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .exclamation {
   width: 35px;
   height: 35px;
@@ -6100,7 +6277,7 @@ Styleguide Icons.Exclamation
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+  /* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
   .exclamation {
     background-image: url("../images/icons/icon-important-2x.png");
     background-size: cover;
@@ -6117,7 +6294,7 @@ Markup:
 
 Styleguide Icons.Verify
 */
-/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .govuk-verify {
   background-image: url("../images/govuk-verify.png");
   background-position: center;
@@ -6129,7 +6306,7 @@ Styleguide Icons.Verify
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+  /* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
   .govuk-verify {
     background-image: url("../images/govuk-verify-2x.png");
   }
