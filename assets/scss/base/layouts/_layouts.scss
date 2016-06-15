@@ -96,3 +96,33 @@ body {
 .row {
   margin-bottom: 20px;
 }
+
+/*
+Half column container component
+
+Experimental: Half column component.
+
+Markup:
+<div class="column-half-container">
+    <div class="grid-wrapper row-border">
+        <div class="grid grid-1-2">
+            <div>Some content</div>
+        </div>
+        <div class="grid grid-1-2">
+            <div>Some content</a>
+        </div>
+    </div>
+</div>
+
+Styleguide Layouts.column half
+*/
+
+.column-half-container {
+  .row-border {
+    border-bottom: 1px solid $light-grey;
+    margin: 0;
+    padding: em(14.25) 0 em(10.68) 0;
+  }
+}
+
+
