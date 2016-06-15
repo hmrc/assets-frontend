@@ -135,3 +135,18 @@ Styleguide Typography.Pre Heading
   color: #6f777b;
   margin-bottom: em(8);
 }
+
+/*
+Blue large heading
+
+Experimental: Large blue title heading
+
+Markup:
+<h2 class="{{modifier_class}}">Currency value</h2>
+
+.Blue large heading - container for payment currency
+*/
+.heading-large--blue {
+  @include bold-48();
+  color: $govuk-blue-colour;
+}

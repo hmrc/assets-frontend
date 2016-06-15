@@ -48,3 +48,30 @@ Styleguide Typography.small
 small {
   @include core-16;
 }
+
+/*
+Bold regular text
+
+Experimental: Bold regular text
+
+Markup:
+<p class="bold-regular">Some text</p>
+*/
+
+ .bold-regular {
+    @include bold-19();
+  }
+
+/*
+Regular paragraph text
+
+Experimental: Regular text with no margins
+
+Markup:
+<p class="regular-text">Some text</p>
+*/
+
+.regular-text {
+    @include core-19();
+    @extend .push;
+  }

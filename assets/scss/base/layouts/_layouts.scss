@@ -98,63 +98,25 @@ body {
 }
 
 /*
-Payment summary container
+Half column container component
 
-Experimental: Div container tcs-payments
-
-Markup:
-<div class="{{modifier_class}}">
-    <h3>Payment tytle</h3>
-    <p>Payment content</p>
-</div>
-
-.payment-summary - container for tcs payments with top and bottom margin
-*/
-.payment-summary {
-  margin-bottom: em(35);
-  margin-top: em(30);
-
-  p {
-    @include core-19();
-    margin: 0;
-  }
-}
-
-/*
-Payment currency element
-
-Experimental: Div payment currency element
-
-Markup:
-<div class="{{modifier_class}}">Currency value</div>
-
-.currency-large - container for payment currency
-*/
-.currency-large {
-  @include bold-48();
-  color: $govuk-blue-colour;
-}
-
-/*
-Account details component
-
-Experimental: Account details component
+Experimental: Half column component
 
 Markup:
 <div class="{{modifier_class}}">
     <div class="grid-wrapper row-border">
         <div class="grid grid-1-2">
-            <div class="ac-details>Account name</div>
+            <div>Some content</div>
         </div>
         <div class="grid grid-1-2">
-            <a href="#">Account details link</a>
+            <div>Some content</a>
         </div>
     </div>
 </div>
 
-.account-details - component for tcs account details redefining parts of row-border and grid-wrapper elements
+.column-half-container - component for tcs account details redefining parts of row-border and grid-wrapper elements
 */
-.account-details {
+.column-half-container {
   margin-bottom: em(25);
 
   .row-border {
@@ -166,17 +128,15 @@ Markup:
   .grid-wrapper p {
     margin: 0.25em 0;
   }
-
-  .ac-details {
-    @include bold-19();
-  }
 }
 
 @media(max-width: 966px){
-  .account-details {
+  .column-half-container  {
     .grid.grid-1-2 {
       width: 50%;
     }
   }
 }
+
+
 
