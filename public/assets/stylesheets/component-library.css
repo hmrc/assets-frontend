@@ -46,6 +46,7 @@
 .comp-lib-description {
   line-height: 1.5;
   padding-bottom: 1em;
+  margin-bottom: 1em;
 }
 .comp-lib-description--experimental {
   border-left: 4px solid #af1324;

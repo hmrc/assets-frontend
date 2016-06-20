@@ -4805,30 +4805,42 @@ img {
   max-width: 100%;
 }
 
-/**
-* @desc         lists.
-* @name         layouts
-* @author       Anthony Munene
-* @tested       N/A
-* @requires     N/A
+/*
+Lists
+
+Unordered lists are used for representing data in a list format.
+
+Markup:
+<ul class="{{modifier_class}}">
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ul>
+
+.bullets       - A bulleted list
+.lower-letters - A lowercase ASCII lettered list (a, b, c, etc)
+.list--ticks   - A ticked list item with custom tick icons
+.list--inline  - An inline list
+
+Styleguide Lists
 */
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 ul {
   padding: 0;
   margin: 0;
 }
 
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 li {
   list-style-position: inside;
 }
 
-/* line 18, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 ul, nav ul {
   list-style-type: none;
 }
 
-/* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 ul li, nav ul li {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -4838,27 +4850,82 @@ ul li, nav ul li {
 }
 
 @media (max-width: 640px) {
-  /* line 20, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+  /* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
   ul li, nav ul li {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+.bullets {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 1em;
+}
+
+/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+.lower-letters {
+  list-style-type: lower-alpha;
+}
+
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+.list--ticks {
+  padding-left: 1.5em;
+}
+
+/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+.list--ticks li::before {
+  color: #00823B;
+  content: "\2713";
+  display: inline-block;
+  margin-left: -1.5em;
+  width: 1.5em;
+}
+
+/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+.list--inline li {
+  display: inline;
+}
+
+/*
+Numbered
+
+Experimental: Defining sections in markup with numbers associated against them using `.list--numbered` on the container
+and `.numbered` on the element to identify its position. **This has been marked as experimental because this markup is
+in need of a refactor. There is an issue in github around the problems found with this work**
+Github issue [#649](https://github.com/hmrc/assets-frontend/issues/649)
+
+Markup:
+<fieldset class="list--numbered">
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+</fieldset>
+*/
+/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered {
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 25px;
 }
 
-/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered .numbered {
   margin: 0 0 20px 25px;
   padding-left: 15px;
 }
 
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered .numbered:before {
   counter-increment: section;
   /* Increment the section counter */
@@ -4870,53 +4937,39 @@ ul li, nav ul li {
   padding-right: 10px;
 }
 
-/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered .numbered:last-child {
   margin-bottom: 0;
 }
 
-/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
-.bullets {
-  list-style-type: disc;
-  list-style-position: inside;
-  margin-left: 1em;
-}
+/*
+Activity
 
-/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
-.lower-letters {
-  list-style-type: lower-alpha;
-}
+A list of dates with associated descriptions for that date, the date has the class `.activity-list__date` and the
+description has the class `.activity-list__description`.
 
-/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
-.list--ticks {
-  padding-left: 1.5em;
-}
+Markup:
+<ul class="activity-list">
+  <li class="{{modifier_class}}">14th March 2016</li>
+  <li class="activity-list__description">event for 14th March 2016</li>
+</ul>
 
-/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
-.list--ticks li::before {
-  color: #00823B;
-  content: "\2713";
-  display: inline-block;
-  margin-left: -1.5em;
-  width: 1.5em;
-}
+.activity-list__date            - A list item which represents a date
+.activity-list__date--highlight - A highlighted list item which represents a date
 
-/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
-.list--inline li {
-  display: inline;
-}
-
-/* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+Styleguide Lists.Activity
+*/
+/* line 129, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list {
   padding-left: 0;
 }
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 131, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list li {
   display: inline-block;
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 136, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list__date, .activity-list__date--highlight {
   float: left;
   text-align: left;
@@ -4924,34 +4977,67 @@ ul li, nav ul li {
   margin-right: 10px;
 }
 
-/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list__date > *, .activity-list__date--highlight > * {
   font-weight: bold;
 }
 
-/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 146, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list__date--highlight {
   font-weight: bold;
 }
 
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 151, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list__description {
   float: left;
   width: 400px;
 }
 
-/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/*
+Coms Alerts
+
+Communication alerts, this applies a margin right after the image using the class `.coms-alerts`
+
+Markup:
+<ul class="coms-alerts">
+  <li>
+    <img src="./public/images/icons/icon-important.png" alt="coms alert"/>
+    List item 1
+  </li>
+</ul>
+
+Styleguide Lists.Coms Alerts
+*/
+/* line 173, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .coms-alerts img {
   margin-right: 10px;
 }
 
-/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/*
+Definition
+
+Definition list with a modifier of `dl--label-value` where the definition title is floated left and definition
+descriptions are floated right and bold
+
+Markup:
+<dl class="dl--label-value">
+  <dt>List item 1</dt>
+  <dd>List item 1 description</dd>
+  <dt>List item 2</dt>
+  <dd>List item 2 description</dd>
+  <dt>List item 3</dt>
+  <dd>List item 3 description</dd>
+</dl>
+
+Styleguide Lists.Definiton
+*/
+/* line 197, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .dl--label-value {
   margin-bottom: 1em;
   overflow: hidden;
 }
 
-/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 200, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .dl--label-value dt, .dl--label-value dd {
   float: left;
   margin-left: 0;
@@ -4959,7 +5045,7 @@ ul li, nav ul li {
   width: 50%;
 }
 
-/* line 116, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 206, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .dl--label-value dd {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -4968,7 +5054,30 @@ ul li, nav ul li {
   text-align: right;
 }
 
-/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/*
+Action
+
+An action list `.action-list` with each element having a top border
+
+Markup:
+<ul class="action-list">
+  <li>
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li>
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li>
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+</ul>
+
+Styleguide Lists.Action
+*/
+/* line 239, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list {
   list-style: none;
   margin: 0;
@@ -4976,7 +5085,7 @@ ul li, nav ul li {
   clear: both;
 }
 
-/* line 130, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 244, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list li {
   border-top: 1px solid #bfc1c3;
   padding: 0.5em 0;
@@ -4984,49 +5093,99 @@ ul li, nav ul li {
   overflow: hidden;
 }
 
-/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 249, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list li:first-child {
   border-top: 1px solid #bfc1c3;
 }
 
-/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/*
+Grouped Action
+
+An action list that is grouped with each element having a top border and reduced margin between the elements content
+
+Markup:
+<ul class="list-noborder action-list">
+  <li class="action-list__grouped">
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li class="action-list__grouped">
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li class="action-list__grouped">
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+</ul>
+
+Styleguide Lists.Grouped Action
+*/
+/* line 279, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list__grouped {
   border-top: none;
 }
 
-/* line 143, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 281, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list__grouped p {
   margin: 0.4em 0;
   padding: 0;
 }
 
-/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 288, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list-noborder li {
   border-top: 0;
 }
 
-/* line 152, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list-noborder li:first-child {
   border-top: 0;
 }
 
-/* line 158, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/*
+Two Column
+
+A list that has two columns
+
+Markup:
+<div class="two-col-list">
+  <div class="two-col-list__col two-col-list__col--left">
+    <ul class="{{modifier_class}}">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+  </div>
+  <div class="two-col-list__col two-col-list__col--right">
+    <ul class="{{modifier_class}}">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+  </div>
+</div>
+
+.two-col-list--padded - A column with bottom padding
+
+Styleguide Lists.Two Column
+*/
+/* line 324, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list {
   display: inline-block;
 }
 
-/* line 160, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 326, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col {
   width: auto;
   float: none;
 }
 
-/* line 165, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 331, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list ul {
   margin: 0;
 }
 
-/* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 333, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list ul li {
   margin: 0.7em 0;
   font-family: "nta", Arial, sans-serif;
@@ -5037,51 +5196,83 @@ ul li, nav ul li {
 }
 
 @media (max-width: 640px) {
-  /* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+  /* line 333, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
   .two-col-list ul li {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 171, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 337, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list ul.two-col-list--padded {
   margin-bottom: 30px;
 }
 
-/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 345, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col {
   width: 48%;
 }
 
-/* line 182, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 348, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col--left {
   float: left;
 }
 
-/* line 185, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 351, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col--right {
   float: right;
 }
 
-/* line 193, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/*
+Three Column
+
+A list that has three columns
+
+Markup:
+<div class="three-col-list">
+  <div class="three-col-list__col">
+    <ul class="{{modifier_class}}">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+  </div>
+  <div class="three-col-list__col">
+    <ul class="{{modifier_class}}">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+  </div>
+  <div class="three-col-list__col three-col-list__col--right">
+    <ul class="{{modifier_class}}">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+  </div>
+</div>
+
+Styleguide Lists.Three Column
+*/
+/* line 392, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list {
   margin: 20px 0 0 0;
   display: inline-block;
 }
 
-/* line 196, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 395, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list .three-col-list__col {
   width: auto;
   float: none;
 }
 
-/* line 201, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 400, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list ul {
   margin: 0;
 }
 
-/* line 203, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 402, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list ul li {
   margin: 0.7em 0;
   font-family: "nta", Arial, sans-serif;
@@ -5092,32 +5283,46 @@ ul li, nav ul li {
 }
 
 @media (max-width: 640px) {
-  /* line 203, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+  /* line 402, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
   .three-col-list ul li {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 212, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 411, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list .three-col-list__col {
   width: 29%;
   margin-right: 6.5%;
   float: left;
 }
 
-/* line 217, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 416, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list .three-col-list__col--right {
   margin-right: 0;
 }
 
-/* line 225, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/*
+Link
+
+For creating a list of links where the markup may not be list items
+
+Markup:
+<div class="link-list">
+  <a class="link-list__item" href="#">Item 1</a>
+  <a class="link-list__item" href="#">Item 2</a>
+  <a class="link-list__item" href="#">Item 3</a>
+</div>
+
+Styleguide Lists.Link
+*/
+/* line 437, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .link-list {
   display: inline-block;
   margin-bottom: 15px;
 }
 
-/* line 230, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 442, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .link-list__item {
   display: block;
   margin-bottom: 15px;
