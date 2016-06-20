@@ -68,28 +68,12 @@ Numbered List
 Defining sections in markup with numbers associated against them using `.list--numbered` on the container and `.numbered` on the element to identify its position
 
 Markup:
-<fieldset class="list--numbered">
-  <legend>Section 1</legend>
-  <div class="form-field-group numbered">
-    <label class="bold-small" for="example-1">
-      Question 1
-      <div class="form-field">
-        <input type="text" class="form-control" id="example-1" />
-      </div>
-    </label>
-  </div>
-</fieldset>
-<fieldset class="list--numbered">
-  <legend>Section 2</legend>
-  <div class="form-field-group numbered">
-    <label class="bold-small" for="example-2">
-      Question 1
-      <div class="form-field">
-        <input type="text" class="form-control" id="example-2" />
-      </div>
-    </label>
-  </div>
-</fieldset>
+<ol class="list--numbered">
+  <li class="numbered">item 1</li>
+  <li class="numbered">item 2</li>
+  <li class="numbered">item 3</li>
+  <li class="numbered">item 4</li>
+</ol>
 
 Styleguide Lists.Numbered List
 */
@@ -101,6 +85,7 @@ Styleguide Lists.Numbered List
   .numbered {
     margin: 0 0 20px 25px;
     padding-left: 15px;
+    position: relative;
     &:before {
       counter-increment: section; /* Increment the section counter */
       content: counter(section) ". "; /* Display the counter */
