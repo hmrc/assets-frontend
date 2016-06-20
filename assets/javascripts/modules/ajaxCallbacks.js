@@ -253,7 +253,7 @@ var ajaxCallbacks = {
         }
 
         // update no of subscriptions
-        $('[data-api-subscriptions="'+ response.apiName +'"]').text(response.numberOfSubscriptionText);
+        $('[data-api-subscriptions="'+ response.apiName +'-' + response.group + '"]').text(response.numberOfSubscriptionText);
 
         helpers.base.success.apply(null, arguments);
       },
