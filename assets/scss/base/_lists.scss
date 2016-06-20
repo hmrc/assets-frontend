@@ -10,10 +10,10 @@ Markup:
   <li>List item 3</li>
 </ul>
 
-.bullets                      - A bulleted list
-.lower-letters                - A lowercase ASCII lettered list (a, b, c, etc)
-.list--ticks                  - A ticked list item with custom tick icons
-.list--inline                 - An inline list
+.bullets       - A bulleted list
+.lower-letters - A lowercase ASCII lettered list (a, b, c, etc)
+.list--ticks   - A ticked list item with custom tick icons
+.list--inline  - An inline list
 
 Styleguide Lists
 */
@@ -63,11 +63,12 @@ ul, nav ul {
 }
 
 /*
-Numbered List
+Numbered
 
 Experimental: Defining sections in markup with numbers associated against them using `.list--numbered` on the container
 and `.numbered` on the element to identify its position. **This has been marked as experimental because this markup is
 in need of a refactor. There is an issue in github around the problems found with this work**
+Github issue [#649](https://github.com/hmrc/assets-frontend/issues/649)
 
 Markup:
 <fieldset class="list--numbered">
@@ -84,7 +85,6 @@ Markup:
       <input type="text"/>
   </fieldset>
 </fieldset>
-
 */
 
 .list--numbered {
@@ -109,9 +109,10 @@ Markup:
 }
 
 /*
-Activity List
+Activity
 
-A list of dates with associated descriptions for that date, the date has the class `.activity-list__date` and the description has the class `.activity-list__description`
+A list of dates with associated descriptions for that date, the date has the class `.activity-list__date` and the
+description has the class `.activity-list__description`.
 
 Markup:
 <ul class="activity-list">
@@ -119,10 +120,10 @@ Markup:
   <li class="activity-list__description">event for 14th March 2016</li>
 </ul>
 
-.activity-list__date                      - A list item which represents a date
-.activity-list__date--highlight           - A highlighted list item which represents a date
+.activity-list__date            - A list item which represents a date
+.activity-list__date--highlight - A highlighted list item which represents a date
 
-Styleguide Lists.Activity List
+Styleguide Lists.Activity
 */
 
 .activity-list {
@@ -175,9 +176,10 @@ Styleguide Lists.Coms Alerts
 }
 
 /*
-Definition List
+Definition
 
-Definition list with a modifier of `dl--label-value` where the definition title is floated left and definition descriptions are floated right and bold 
+Definition list with a modifier of `dl--label-value` where the definition title is floated left and definition
+descriptions are floated right and bold
 
 Markup:
 <dl class="dl--label-value">
@@ -189,7 +191,7 @@ Markup:
   <dd>List item 3 description</dd>
 </dl>
 
-Styleguide Lists.Definiton List
+Styleguide Lists.Definiton
 */
 
 .dl--label-value {
@@ -211,7 +213,7 @@ Styleguide Lists.Definiton List
 }
 
 /*
-Action List
+Action
 
 An action list `.action-list` with each element having a top border
 
@@ -231,7 +233,7 @@ Markup:
   </li>
 </ul>
 
-Styleguide Lists.Action List
+Styleguide Lists.Action
 */
 
 .action-list {
@@ -251,7 +253,7 @@ Styleguide Lists.Action List
 }
 
 /*
-Action List Grouped
+Grouped Action
 
 An action list that is grouped with each element having a top border and reduced margin between the elements content
 
@@ -271,7 +273,7 @@ Markup:
   </li>
 </ul>
 
-Styleguide Lists.Action List Grouped
+Styleguide Lists.Grouped Action
 */
 
 .action-list__grouped {
@@ -292,7 +294,7 @@ Styleguide Lists.Action List Grouped
 }
 
 /*
-Two Column List
+Two Column
 
 A list that has two columns
 
@@ -314,9 +316,9 @@ Markup:
   </div>
 </div>
 
-.two-col-list--padded               - A column with bottom padding
+.two-col-list--padded - A column with bottom padding
 
-Styleguide Lists.Two Column List
+Styleguide Lists.Two Column
 */
 
 .two-col-list {
@@ -355,7 +357,7 @@ Styleguide Lists.Two Column List
 }
 
 /*
-Three Column List
+Three Column
 
 A list that has three columns
 
@@ -384,7 +386,7 @@ Markup:
   </div>
 </div>
 
-Styleguide Lists.Three Column List
+Styleguide Lists.Three Column
 */
 
 .three-col-list {
@@ -414,13 +416,11 @@ Styleguide Lists.Three Column List
     .three-col-list__col--right {
       margin-right: 0;
     }
-
   }
-
 }
 
 /*
-Link List
+Link
 
 For creating a list of links where the markup may not be list items
 
@@ -431,7 +431,7 @@ Markup:
   <a class="link-list__item" href="#">Item 3</a>
 </div>
 
-Styleguide Lists.Link Lists
+Styleguide Lists.Link
 */
 
 .link-list {
