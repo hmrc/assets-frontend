@@ -65,14 +65,16 @@ ul, nav ul {
 /*
 Numbered List
 
-Defining sections in markup with numbers associated against them using `.list--numbered` on the container and `.numbered` on the element to identify its position
+Experimental: Defining sections in markup with numbers associated against them using `.list--numbered` on the container
+and `.numbered` on the element to identify its position. **This has been marked as experimental because this markup is
+in need of a refactor.**
 
 Markup:
 <ol class="list--numbered">
-  <li class="numbered">item 1</li>
-  <li class="numbered">item 2</li>
-  <li class="numbered">item 3</li>
-  <li class="numbered">item 4</li>
+  <li><p class="numbered">item 1</p></li>
+  <li><p class="numbered">item 2</p></li>
+  <li><p class="numbered">item 3</p></li>
+  <li><p class="numbered">item 4</p></li>
 </ol>
 
 Styleguide Lists.Numbered List
