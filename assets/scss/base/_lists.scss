@@ -87,7 +87,6 @@ Styleguide Lists.Numbered List
   .numbered {
     margin: 0 0 20px 25px;
     padding-left: 15px;
-    position: relative;
     &:before {
       counter-increment: section; /* Increment the section counter */
       content: counter(section) ". "; /* Display the counter */
