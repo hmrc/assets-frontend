@@ -36,6 +36,7 @@ Markup:
 </div>
 
 .grid-layout--stacked    - Stack columns in mobile
+.grid-layout--half       - Enforce half width columns on mobile
 
 Styleguide Grids
 */
@@ -48,6 +49,14 @@ Styleguide Grids
   @include media(mobile) {
     .grid-layout__column {
       display: block;
+    }
+  }
+}
+
+.grid-layout--half {
+  @include media(mobile) {
+    .grid-layout__column--1-2 {
+      width: $half;
     }
   }
 }
