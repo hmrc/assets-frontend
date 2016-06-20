@@ -67,17 +67,24 @@ Numbered List
 
 Experimental: Defining sections in markup with numbers associated against them using `.list--numbered` on the container
 and `.numbered` on the element to identify its position. **This has been marked as experimental because this markup is
-in need of a refactor.**
+in need of a refactor. There is an issue in github around the problems found with this work**
 
 Markup:
-<ol class="list--numbered">
-  <li><p class="numbered">item 1</p></li>
-  <li><p class="numbered">item 2</p></li>
-  <li><p class="numbered">item 3</p></li>
-  <li><p class="numbered">item 4</p></li>
-</ol>
+<fieldset class="list--numbered">
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+</fieldset>
 
-Styleguide Lists.Numbered List
 */
 
 .list--numbered {
