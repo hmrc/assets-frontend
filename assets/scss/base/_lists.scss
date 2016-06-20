@@ -1,9 +1,21 @@
-/**
-* @desc         lists.
-* @name         layouts
-* @author       Anthony Munene
-* @tested       N/A
-* @requires     N/A
+/*
+Lists
+
+Unordered lists are used for representing data in a list format.
+
+Markup:
+<ul class="{{modifier_class}}">
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ul>
+
+.bullets       - A bulleted list
+.lower-letters - A lowercase ASCII lettered list (a, b, c, etc)
+.list--ticks   - A ticked list item with custom tick icons
+.list--inline  - An inline list
+
+Styleguide Lists
 */
 
 ul {
@@ -21,6 +33,59 @@ ul, nav ul {
     @include core-19();
   }
 }
+
+.bullets {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 1em;
+}
+
+.lower-letters {
+  list-style-type: lower-alpha;
+}
+
+.list--ticks {
+  padding-left: 1.5em;
+
+  li::before {
+    color: $primary-green;
+    content: "\2713";// code for '✓'
+    display: inline-block;
+    margin-left: -1.5em;
+    width: 1.5em;
+  }
+}
+
+.list--inline {
+  li {
+    display: inline;
+  }
+}
+
+/*
+Numbered
+
+Experimental: Defining sections in markup with numbers associated against them using `.list--numbered` on the container
+and `.numbered` on the element to identify its position. **This has been marked as experimental because this markup is
+in need of a refactor. There is an issue in github around the problems found with this work**
+Github issue [#649](https://github.com/hmrc/assets-frontend/issues/649)
+
+Markup:
+<fieldset class="list--numbered">
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+  <fieldset class="numbered">
+      <input type="text"/>
+  </fieldset>
+</fieldset>
+*/
 
 .list--numbered {
   list-style-type: none;
@@ -43,33 +108,23 @@ ul, nav ul {
   }
 }
 
-.bullets {
-  list-style-type: disc;
-  list-style-position: inside;
-  margin-left: 1em;
-}
+/*
+Activity
 
-.lower-letters {
-  list-style-type: lower-alpha;
-}
+A list of dates with associated descriptions for that date, the date has the class `.activity-list__date` and the
+description has the class `.activity-list__description`.
 
-.list--ticks {
-  padding-left: 1.5em;
+Markup:
+<ul class="activity-list">
+  <li class="{{modifier_class}}">14th March 2016</li>
+  <li class="activity-list__description">event for 14th March 2016</li>
+</ul>
 
-  li::before {
-    color: $primary-green;
-    content: "\2713"; // code for '✓'
-    display: inline-block;
-    margin-left: -1.5em;
-    width: 1.5em;
-  }
-}
+.activity-list__date            - A list item which represents a date
+.activity-list__date--highlight - A highlighted list item which represents a date
 
-.list--inline {
-  li {
-    display: inline;
-  }
-}
+Styleguide Lists.Activity
+*/
 
 .activity-list {
   padding-left: 0;
@@ -98,11 +153,46 @@ ul, nav ul {
   width: 400px;
 }
 
+/*
+Coms Alerts
+
+Communication alerts, this applies a margin right after the image using the class `.coms-alerts`
+
+Markup:
+<ul class="coms-alerts">
+  <li>
+    <img src="./public/images/icons/icon-important.png" alt="coms alert"/>
+    List item 1
+  </li>
+</ul>
+
+Styleguide Lists.Coms Alerts
+*/
+
 .coms-alerts {
   img {
     margin-right: 10px;
   }
 }
+
+/*
+Definition
+
+Definition list with a modifier of `dl--label-value` where the definition title is floated left and definition
+descriptions are floated right and bold
+
+Markup:
+<dl class="dl--label-value">
+  <dt>List item 1</dt>
+  <dd>List item 1 description</dd>
+  <dt>List item 2</dt>
+  <dd>List item 2 description</dd>
+  <dt>List item 3</dt>
+  <dd>List item 3 description</dd>
+</dl>
+
+Styleguide Lists.Definiton
+*/
 
 .dl--label-value {
   margin-bottom: 1em;
@@ -122,6 +212,30 @@ ul, nav ul {
   }
 }
 
+/*
+Action
+
+An action list `.action-list` with each element having a top border
+
+Markup:
+<ul class="action-list">
+  <li>
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li>
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li>
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+</ul>
+
+Styleguide Lists.Action
+*/
+
 .action-list {
   list-style: none;
   margin: 0;
@@ -137,6 +251,30 @@ ul, nav ul {
     }
   }
 }
+
+/*
+Grouped Action
+
+An action list that is grouped with each element having a top border and reduced margin between the elements content
+
+Markup:
+<ul class="list-noborder action-list">
+  <li class="action-list__grouped">
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li class="action-list__grouped">
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+  <li class="action-list__grouped">
+    <p>First paragraph<p>
+    <p>Second paragraph</p>
+  </li>
+</ul>
+
+Styleguide Lists.Grouped Action
+*/
 
 .action-list__grouped {
   border-top: none;
@@ -154,6 +292,34 @@ ul, nav ul {
     }
   }
 }
+
+/*
+Two Column
+
+A list that has two columns
+
+Markup:
+<div class="two-col-list">
+  <div class="two-col-list__col two-col-list__col--left">
+    <ul class="{{modifier_class}}">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+  </div>
+  <div class="two-col-list__col two-col-list__col--right">
+    <ul class="{{modifier_class}}">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+  </div>
+</div>
+
+.two-col-list--padded - A column with bottom padding
+
+Styleguide Lists.Two Column
+*/
 
 .two-col-list {
 
@@ -190,6 +356,39 @@ ul, nav ul {
 
 }
 
+/*
+Three Column
+
+A list that has three columns
+
+Markup:
+<div class="three-col-list">
+  <div class="three-col-list__col">
+    <ul class="{{modifier_class}}">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+  </div>
+  <div class="three-col-list__col">
+    <ul class="{{modifier_class}}">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+  </div>
+  <div class="three-col-list__col three-col-list__col--right">
+    <ul class="{{modifier_class}}">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+  </div>
+</div>
+
+Styleguide Lists.Three Column
+*/
+
 .three-col-list {
   margin: 20px 0 0 0;
 
@@ -217,10 +416,23 @@ ul, nav ul {
     .three-col-list__col--right {
       margin-right: 0;
     }
-
   }
-
 }
+
+/*
+Link
+
+For creating a list of links where the markup may not be list items
+
+Markup:
+<div class="link-list">
+  <a class="link-list__item" href="#">Item 1</a>
+  <a class="link-list__item" href="#">Item 2</a>
+  <a class="link-list__item" href="#">Item 3</a>
+</div>
+
+Styleguide Lists.Link
+*/
 
 .link-list {
   display: inline-block;
