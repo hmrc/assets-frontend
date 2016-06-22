@@ -181,7 +181,7 @@ Styleguide Buttons.Full width style
   box-sizing: border-box;
 }
 
-@media (max-width: 640px) {
+@include media(mobile) {
   .button--full-width {
     padding-left: 0.5em;
   }

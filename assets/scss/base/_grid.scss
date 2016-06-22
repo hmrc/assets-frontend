@@ -35,7 +35,8 @@ Markup:
   </div>
 </div>
 
-.grid-layout--stacked    - Stack columns in mobile
+.grid-layout--stacked           - Stack columns in mobile
+.grid-layout--maintain-width    - Maintain half width columns on mobile
 
 Styleguide Grids
 */
@@ -48,6 +49,28 @@ Styleguide Grids
   @include media(mobile) {
     .grid-layout__column {
       display: block;
+    }
+  }
+}
+
+.grid-layout--maintain-width {
+  @include media(mobile) {
+    display: table;
+    float: left;
+    .grid-layout__column--1-2 {
+      width: $half;
+    }
+    .grid-layout__column--1-4 {
+      width: $one-quarter;
+    }
+    .grid-layout__column--3-4 {
+      width: $three-quarters;
+    }
+    .grid-layout__column--1-3 {
+      width: $one-third;
+    }
+    .grid-layout__column--2-3 {
+      width: $two-thirds;
     }
   }
 }

@@ -81,7 +81,7 @@ Styleguide Icons.Calendar
   }
 }
 
-@media (max-width: 640px) {
+@include media(mobile) {
   .icon--calendar {
     background: none;
   }
