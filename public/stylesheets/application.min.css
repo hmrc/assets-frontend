@@ -4125,25 +4125,54 @@ Markup:
   </div>
 </div>
 
-.grid-layout--stacked    - Stack columns in mobile
+.grid-layout--stacked           - Stack columns in mobile
+.grid-layout--maintain-width    - Maintain half width columns on mobile
 
 Styleguide Grids
 */
 @media (max-width: 640px) {
-  /* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout--stacked .grid-layout__column {
     display: block;
   }
 }
 
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+@media (max-width: 640px) {
+  /* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  .grid-layout--maintain-width {
+    display: table;
+    float: left;
+  }
+  /* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  .grid-layout--maintain-width .grid-layout__column--1-2 {
+    width: 50%;
+  }
+  /* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  .grid-layout--maintain-width .grid-layout__column--1-4 {
+    width: 25%;
+  }
+  /* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  .grid-layout--maintain-width .grid-layout__column--3-4 {
+    width: 75%;
+  }
+  /* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  .grid-layout--maintain-width .grid-layout__column--1-3 {
+    width: 33.33333%;
+  }
+  /* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  .grid-layout--maintain-width .grid-layout__column--2-3 {
+    width: 66.66667%;
+  }
+}
+
+/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column {
   vertical-align: top;
   display: table-cell;
   width: 100%;
 }
 
-/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column--1-4 {
   vertical-align: top;
   display: table-cell;
@@ -4151,13 +4180,13 @@ Styleguide Grids
 }
 
 @media (min-width: 641px) {
-  /* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout__column--1-4 {
     width: 25%;
   }
 }
 
-/* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column--3-4 {
   vertical-align: top;
   display: table-cell;
@@ -4165,13 +4194,13 @@ Styleguide Grids
 }
 
 @media (min-width: 641px) {
-  /* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout__column--3-4 {
     width: 75%;
   }
 }
 
-/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column--1-2 {
   vertical-align: top;
   display: table-cell;
@@ -4179,13 +4208,13 @@ Styleguide Grids
 }
 
 @media (min-width: 641px) {
-  /* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout__column--1-2 {
     width: 50%;
   }
 }
 
-/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column--1-3 {
   vertical-align: top;
   display: table-cell;
@@ -4193,13 +4222,13 @@ Styleguide Grids
 }
 
 @media (min-width: 641px) {
-  /* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout__column--1-3 {
     width: 33.33333%;
   }
 }
 
-/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column--2-3 {
   vertical-align: top;
   display: table-cell;
@@ -4207,7 +4236,7 @@ Styleguide Grids
 }
 
 @media (min-width: 641px) {
-  /* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout__column--2-3 {
     width: 66.66667%;
   }
