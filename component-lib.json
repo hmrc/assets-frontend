@@ -14,5 +14,9 @@
   "helpers": [
     "node_modules/hmrc-component-library-template/helpers/"
   ],
-  "custom": ["Example Data", "Background"]
+  "custom": [
+    "Discussion",
+    "Example Data",
+    "Background"
+  ]
 }
