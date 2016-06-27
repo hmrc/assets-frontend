@@ -36,13 +36,7 @@ module.exports = function(element, ssoUrl, ssoMethod) {
 
     if (clientSso || serverSso) {
 
-      destinationUrl = element.formaction || element.href;
-
-      //if destinationUrl is still not defined then the elemnt should be a button and we are using a non HTML5 compliant browser that cannot access the element.formaction attribute
-      if (!destinationUrl) {
-        var buttonParentForm = $element.closest('form')[0];
-        destinationUrl = (buttonParentForm) ? buttonParentForm.action : '';
-      }
+      destinationUrl = (element.form && element.form.action) || element.href;
 
       elementTarget = element.target;
       winId = element.id;
