@@ -25,7 +25,7 @@ module.exports = function(element, ssoUrl, ssoMethod) {
   var winId;
   var openInNewWindow;
   var allowLinkCLickEvent = true;
-  var elementActionOrHref;
+  var destinationUrl;
   var elementTarget;
   var useGet = ssoMethod === 'GET';
 
@@ -36,7 +36,14 @@ module.exports = function(element, ssoUrl, ssoMethod) {
 
     if (clientSso || serverSso) {
 
-      elementActionOrHref = element.action || element.href;
+      destinationUrl = element.formaction || element.href;
+
+      //if destinationUrl is still not defined then the elemnt should be a button and we are using a non HTML5 compliant browser that cannot access the element.formaction attribute
+      if (!destinationUrl) {
+        var buttonParentForm = $element.closest('form')[0];
+        destinationUrl = (buttonParentForm) ? buttonParentForm.action : '';
+      }
+
       elementTarget = element.target;
       winId = element.id;
 
@@ -46,11 +53,11 @@ module.exports = function(element, ssoUrl, ssoMethod) {
       destination = serverSso ? {
         ssoRedirect: true
       } : {
-        destinationUrl: elementActionOrHref
+        destinationUrl: destinationUrl
       };
 
       $.ajax({
-        url: serverSso ? elementActionOrHref : '/ssoout',
+        url: serverSso ? destinationUrl : '/ssoout',
         data: destination, 
         type: 'GET',
         async: false,
