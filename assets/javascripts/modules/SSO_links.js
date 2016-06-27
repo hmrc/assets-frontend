@@ -3,7 +3,7 @@ require('jquery');
 /**
  * SSO encryption process file
  * Use Cases:
- * Customer clicks a link
+ * Customer clicks a link or button on a form with GET
  * Customer is sent to a page which contains a redirect element
  *
  * SSO GET call is successful then let the SSO redirect manage that.
@@ -25,7 +25,7 @@ module.exports = function(element, ssoUrl, ssoMethod) {
   var winId;
   var openInNewWindow;
   var allowLinkCLickEvent = true;
-  var elementHref;
+  var destinationUrl;
   var elementTarget;
   var useGet = ssoMethod === 'GET';
 
@@ -36,7 +36,8 @@ module.exports = function(element, ssoUrl, ssoMethod) {
 
     if (clientSso || serverSso) {
 
-      elementHref = element.href;
+      destinationUrl = (element.form && element.form.action) || element.href;
+
       elementTarget = element.target;
       winId = element.id;
 
@@ -46,11 +47,11 @@ module.exports = function(element, ssoUrl, ssoMethod) {
       destination = serverSso ? {
         ssoRedirect: true
       } : {
-        destinationUrl: elementHref
+        destinationUrl: destinationUrl
       };
 
       $.ajax({
-        url: serverSso ? elementHref : '/ssoout',
+        url: serverSso ? destinationUrl : '/ssoout',
         data: destination, 
         type: 'GET',
         async: false,

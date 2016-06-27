@@ -19,7 +19,7 @@ module.exports = function () {
 
   var addListeners = function () {
     // TODO-rory: fix error thrown when clicking a [data-sso] links
-    $(document).on('click', 'a[data-sso]', function (event) {
+    $(document).on('click', '[data-sso]', function (event) {
       return setSSOLinks(event.target, window.ssoUrl, window.ssoMethod);
     });
   };
