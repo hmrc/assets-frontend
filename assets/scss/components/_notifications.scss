@@ -301,3 +301,26 @@ Styleguide Notification.Highlight dark
   background-color: $govuk-blue-colour;
   color: $white;
 }
+
+/*
+Important Notice
+
+A way of communicating an Important notice to the user that displays the notice in bold with an important icon shown on
+the left hand side.
+
+Markup:
+<div class="form-group">
+  <p class="important-notice">
+  An important notice for the user to read and take notice of.
+  Please make sure you take the time to consume this important message.
+  </p>
+</div>
+
+Styleguide Notification.Important Notice
+*/
+
+.important-notice {
+  padding-left: 2.5em;
+  background: no-repeat left top url(../images/icons/icon-important.png);
+  font-weight: 700;
+}

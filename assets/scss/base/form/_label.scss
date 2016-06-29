@@ -83,6 +83,35 @@ label.indent {
 }
 
 /*
+Selectable
+
+Deprecated: A stylised Label with radio input element. **This component appears to be very similar to .block-label
+until this has been resolved it is advised to use .block-label instead**
+
+Markup:
+<label class="selectable">
+    <input type="radio"/>No thank you
+</label>
+
+Styleguide Label.Selectable
+*/
+
+label.selectable {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background: #F0F0F0;
+  padding: 12px 14px 10px 16px;
+  border: 1px solid #F0F0F0;
+  margin: 1em 1em 0 0;
+}
+
+label.selectable input {
+  cursor: pointer;
+}
+
+
+/*
 Radio input
 
 Labels containing a `radio` input.

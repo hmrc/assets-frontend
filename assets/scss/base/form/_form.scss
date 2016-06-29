@@ -350,6 +350,38 @@ Styleguide Form.dynamic
 }
 
 /*
+Connected
+
+Connect an Input to information below.
+
+Markup:
+<fieldset class="connected">
+  <label>Example Input
+    <input type="text" class="input--medium input--cleared"/>
+  </label>
+  <p>These bullet points are connected to the input above</p>
+  <ul class="bullets form-hint">
+    <li>Bullet point 1</li>
+    <li>Bullet point 2</li>
+  </ul>
+</fieldset>
+
+Styleguide Form.Connected
+*/
+.connected {
+  border-left: 3px solid #999;
+  float: none;
+  margin: 1em 0 0 0;
+  padding: 1em 1em 0 15px;
+  overflow: hidden;
+}
+
+.connected {
+  box-sizing: border-box;
+}
+
+
+/*
 Control
 
 For displaying form controls.
