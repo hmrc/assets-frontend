@@ -1,0 +1,83 @@
+/*
+Brand border top
+
+Deprecated: duplicate (almost) of `.section--blue-top`
+*/
+
+.brand-border--top {
+  border-top: 10px solid $mainstream-brand;
+}
+
+
+/*
+Sub Section
+
+Subsections provide margin for elements. They are useful for layout and providing sections visually with white space.
+
+Markup:
+<section class="subsection {{modifier_class}}">
+  <h2>Subsection Title</h2>
+  <p>Subsection content</p>
+</section>
+
+.subsection--wide - A subsection with larger margin.
+
+Styleguide Section.Sub Section
+*/
+
+.subsection {
+  margin: 1.5em 0;
+}
+
+.subsection--wide {
+  margin: 2.5em 0;
+}
+
+
+/*
+Section
+
+Sections provide margin and padding for elements.
+
+Markup:
+<section class="section {{modifier_class}}">
+  <h2>Section Title</h2>
+  <p>Section content</p>
+</section>
+
+.section--branded  - A section with gov branding.
+.section--blue-top - A top border for a section.
+
+Styleguide Section.Section
+*/
+
+.section {
+  margin-bottom: 1em;
+  padding: 1em 0;
+
+  h2 {
+    margin-top: 0 !important;
+  }
+}
+
+.section--branded {
+  @extend .section;
+  h2 {
+    border-bottom: 5px solid $mainstream-brand;
+    margin-top: 0 !important;
+    margin-bottom: 0.65em;
+  }
+}
+
+.section--blue-top {
+  border-top: 10px solid $govuk-blue;
+}
+
+/*
+Row
+
+Deprecated: this needs removing but is incredibly hard to search for.
+*/
+.row {
+  margin-bottom: 20px;
+}

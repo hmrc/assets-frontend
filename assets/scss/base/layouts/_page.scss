@@ -1,0 +1,325 @@
+/*
+Basic
+
+The basic page layout containing a BETA banner, the service info banner with HMRC logo and example body content.
+
+Markup:
+<main id="wrapper" role="main">
+  <div class="centered-content">
+    <div class="service-info">
+      <div class="beta-banner">
+        <p>
+          <strong class="phase-tag">BETA</strong>
+            <span>
+              This is a new service. Help us improve it - send your
+              <a id="feedback-link" href="#">feedback</a>.
+            </span>
+        </p>
+      </div>
+      <div class="logo">
+        <span class="organisation-logo organisation-logo-medium">
+          HM Revenue &amp; Customs
+        </span>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <article class="content__body">
+      <header>
+        <h1>Page Title</h1>
+      </header>
+      <section>
+        <p>Page content</p>
+      </section>
+    </article>
+  </div>
+</main>
+
+Discussion: https://hmrcdigital.hackpad.com/Layouts-H4b5EgRDPYL
+
+Styleguide Layouts.Basic
+*/
+
+
+/*
+Sidebar
+
+The basic page layout containing the service info banner with HMRC logo and example body content. This layout
+demonstrates the use of `.subsection` and `.subsection--wide` styles with example body content and a sidebar with
+example content demonstrating the `.section` styles available.
+
+Markup:
+<main id="wrapper" role="main">
+  <div class="centered-content">
+    <div class="service-info">
+      <div class="logo">
+        <span class="organisation-logo organisation-logo-medium">
+          HM Revenue &amp; Customs
+        </span>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <article class="content__body">
+      <header>
+        <h1>Page Title</h1>
+      </header>
+      <section>
+        <p>Page content</p>
+      </section>
+      <section class="subsection">
+        <h2>Subsection Title</h2>
+        <p>Subsection content</p>
+      </section>
+      <section class="subsection--wide">
+        <h2>Wide Subsection Title</h2>
+        <p>Wide Subsection content</p>
+      </section>
+    </article>
+    <aside class="sidebar">
+      <section class="section section--blue-top">
+        <h2>Section Title</h2>
+        <p>Section content</p>
+      </section>
+      <section class="section section--branded">
+        <h2>Section Title</h2>
+        <p>Section content</p>
+      </section>
+    </aside>
+  </div>
+</main>
+
+Styleguide Layouts.Sidebar
+*/
+
+
+/*
+Hero
+
+The basic page layout containing the [Hero component](http://hmrc.github.io/assets-frontend/section-hero.html), a BETA
+banner, the service info banner with HMRC logo and example body content.
+
+Markup:
+<div class="centered-content">
+  <div class="beta-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>
+        This is a new service. Help us improve it - send your
+        <a id="feedback-link" href="#">feedback</a>.
+    </span>
+    </p>
+  </div>
+</div>
+<section class="full-width-banner">
+  <header class="hero">
+    <section class="hero__content">
+      <h1 class="hero__heading-large">Hero Heading</h1>
+      <h2 class="hero__heading-small">
+        Hero subheading
+      </h2>
+    </section>
+  </header>
+</section>
+<div id="wrapper" role="main">
+  <div class="centered-content">
+    <div class="service-info">
+      <div class="logo">
+        <span class="organisation-logo organisation-logo-medium">
+          HM Revenue &amp; Customs
+        </span>
+      </div>
+    </div>
+  </div>
+  <main id="content">
+    <article class="content__body">
+      <header>
+        <h1>Page Title</h1>
+      </header>
+      <section>
+        <p>Example page content</p>
+      </section>
+    </article>
+  </main>
+</div>
+
+Styleguide Layouts.Hero
+*/
+
+
+/*
+Full width
+
+The basic page layout containing the service info banner with HMRC logo with a `.full-width` example of body content.
+
+Markup:
+<main id="wrapper" role="main">
+  <div class="centered-content">
+    <div class="service-info">
+      <div class="logo">
+        <span class="organisation-logo organisation-logo-medium">
+          HM Revenue &amp; Customs
+        </span>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <article class="content__body full-width">
+      <div class="full-width">
+        <section class="section">
+          <p>
+          An example of having the content body full width on the page so it stretches right across the content__body
+          element.
+          </p>
+        </section>
+      </div>
+    </article>
+  </div>
+</main>
+
+Styleguide Layouts.Full width
+*/
+
+
+
+//TODO not convinced that this is needed
+
+/*
+Three column
+
+The basic page layout containing the service info banner with HMRC logo with a `.full-width` example of body content
+consisting of a `.three-col-list` example.
+
+Markup:
+<main id="wrapper" role="main">
+  <div class="centered-content">
+    <div class="service-info">
+      <div class="logo">
+        <span class="organisation-logo organisation-logo-medium">
+          HM Revenue &amp; Customs
+        </span>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <article class="content__body full-width">
+      <div class="three-col-list full-width">
+        <section class="section
+                    section--branded
+                    three-col-list__col
+                    three-col-list__col--left">
+          <h2>Column One</h2>
+          <ul>
+            <li><a href="#">List Item One</a></li>
+            <li><a href="#">List Item Two</a></li>
+            <li><a href="#">List Item Three</a></li>
+          </ul>
+        </section>
+        <section class="section
+                        section--branded
+                        three-col-list__col
+                        three-col-list__col--middle">
+          <h2>Column Two</h2>
+          <ul>
+            <li><a href="#">List Item One</a></li>
+            <li><a href="#">List Item Two</a></li>
+            <li><a href="#">List Item Three</a></li>
+          </ul>
+        </section>
+        <section class="section
+                        section--branded
+                        three-col-list__col
+                        three-col-list__col--right">
+          <h2>Column Three</h2>
+          <ul>
+            <li><a href="#">List Item One</a></li>
+            <li><a href="#">List Item Two</a></li>
+            <li><a href="#">List Item Three</a></li>
+          </ul>
+        </section>
+      </div>
+    </article>
+  </div>
+</main>
+
+Styleguide Layouts.Three Column
+*/
+
+body {
+  counter-reset: section;
+}
+
+#wrapper {
+  text-align: left;
+}
+
+#content {
+  @include page-slice(32);
+}
+
+.centered-content {
+  @include page-slice();
+}
+
+.content__body {
+
+  p {
+    @include core-19();
+    margin: em(12) 0;
+  }
+
+  .full-width & {
+    float: none;
+    width: 100%;
+  }
+
+  @include media(tablet) {
+    float: left;
+    width: 61.666667%;
+  }
+  
+  .messages-box,
+  .service-info__related-subsection {
+    display: none;
+  }
+
+  @include media(mobile) {
+
+    .messages-box,
+    .service-info__related-subsection {
+      display: block;
+    }
+  }
+}
+
+.full-width {
+  width: $full-width;
+}
+
+/*
+Half column container component
+
+Deprecated: Half column component. This work has come in from TCS and is using the grid work found in our old
+[govuk_elements](https://github.com/hmrc/assets-frontend/blob/0551d318fe24a4ddb1fca4f45ff64a6ece265b11/assets/govuk_elements/public/sass/elements/_layout.scss#L139)
+dependency. It could use `.diver--bottom` and new `.subsection--large` styles considering the styles shown below.
+
+Markup:
+<div class="column-half-container">
+    <div class="grid-wrapper row-border">
+        <div class="grid grid-1-2">
+            <div>Some content</div>
+        </div>
+        <div class="grid grid-1-2">
+            <div>Some content</a>
+        </div>
+    </div>
+</div>
+*/
+
+.column-half-container {
+  .row-border {
+    border-bottom: 1px solid $light-grey;
+    margin: 0;
+    padding: em(14.25) 0 em(10.68) 0;
+  }
+}
