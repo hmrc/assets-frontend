@@ -110,7 +110,7 @@ var createErrorSummaryListItem = function ($liElement, validator, errorDetail) {
                 .attr('href', '#' + errorDetail.name)
                 .text(errorDetail.message);
   $errorSummaryMessages.append($liElement);
-}
+};
 
 /**
  * Clear the following for hidden inputs error messages, reset inputs and remove errors from validator.invalid
@@ -191,6 +191,7 @@ var getErrorMessages = function () {
 var setupForm = function ($formElem) {
   var submitted = false;
   var validator = $formElem.validate({
+    onfocusout: false,
     errorPlacement: function ($error, $element) {
       var $formFieldGroup = $element.closest('.form-field-group');
       $formFieldGroup.find('.error-notification').text($error.text());
@@ -238,4 +239,4 @@ var init = function () {
 module.exports = {
   init: init,
   getErrorMessages: getErrorMessages
-}
+};
