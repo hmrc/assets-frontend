@@ -107,8 +107,7 @@ module.exports = {
   images: {
     govuk: govuk.images + '**/*',
     dev: {
-      src: src + 'images/**/*',
-      exclude: '!' + src + 'images/**/*.svg',
+      src: [src + 'images/**/*', '!' + src + 'images/**/*.svg'],
       dest: snapshotDir + 'images'
     },
     prod: {
