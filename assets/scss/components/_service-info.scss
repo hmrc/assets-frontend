@@ -195,3 +195,68 @@ Styleguide Service Info.Logged In
 .last-login__more-details {
   margin: em(5) 0 0 0;
 }
+
+/*
+Nav
+
+This example shows a service info element with inline navigation links. On mobile the elements are stacked in a block fashion
+
+Markup:
+<div class="service-info ">
+  <div class="service-info--nav">
+      <a class="service-info--nav__left-component font-xsmall" href="#">Left side content</a>
+      <ul class="service-info--nav__right-component service-info--nav__list">
+          <li class="bold-xsmall">Right side content List item 1</li>
+          <li class="font-xsmall">
+              <a href="#">Right side content List item 2</a>
+          </li>
+          <li class="font-xsmall">
+              <a href="#">Right side content List item 3</a>
+          </li>
+      </ul>
+  </div>
+</div>
+
+Styleguide Service Info.Logged In
+*/
+.service-info--nav {
+  margin-top: em(15);
+
+  @include media(tablet) {
+    .service-info--nav__left-component {
+      float: left;
+    }
+
+    .service-info--nav__right-component {
+      float: right;
+    }
+
+    .service-info--nav__left-component + .service-info--nav__right-component {
+      margin-left: em(45);
+    } 
+  }
+
+  .service-info--nav__list {
+
+    & li {
+
+      @include media(tablet) {
+        margin-right: em(15);
+        display: inline;
+        
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      & a {
+        @include core-16();
+      }
+
+      .client-name {
+        @include bold-16();
+      }
+    }
+
+  }
+}
