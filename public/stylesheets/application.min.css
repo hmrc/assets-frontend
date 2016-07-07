@@ -3972,6 +3972,12 @@ body {
   width: 100%;
 }
 
+/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+.content__body > .full-width {
+  width: auto;
+  float: none;
+}
+
 @media (min-width: 641px) {
   /* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
   .content__body {
@@ -3980,64 +3986,64 @@ body {
   }
 }
 
-/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .content__body .messages-box,
 .content__body .service-info__related-subsection {
   display: none;
 }
 
 @media (max-width: 640px) {
-  /* line 49, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+  /* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
   .content__body .messages-box,
   .content__body .service-info__related-subsection {
     display: block;
   }
 }
 
-/* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .brand-border--top {
   border-top: 10px solid #005ea5;
 }
 
-/* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .section, .section--branded {
   margin-bottom: 1em;
   padding: 1em 0;
 }
 
-/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .section h2, .section--branded h2 {
   margin-top: 0 !important;
 }
 
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .subsection {
   margin: 1.5em 0;
 }
 
-/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .subsection--wide {
   margin: 2.5em 0;
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .section--branded h2 {
   border-bottom: 5px solid #005ea5;
   margin-top: 0 !important;
   margin-bottom: 0.65em;
 }
 
-/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .section--blue-top {
   border-top: 10px solid #005ea5;
 }
 
-/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .full-width {
   width: 100%;
 }
 
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .row {
   margin-bottom: 20px;
 }
@@ -4063,7 +4069,7 @@ Discussion: https://hmrcdigital.hackpad.com/Layouts-H4b5EgRDPYL
 
 Styleguide Layouts.column half
 */
-/* line 123, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
 .column-half-container .row-border {
   border-bottom: 1px solid #bfc1c3;
   margin: 0;
@@ -7239,6 +7245,34 @@ Styleguide Errors.Form Field Group
 }
 
 /*
+Email Errors
+
+Deprecated: Styles to display email errors. Associated JavaScript can be found in [validation/saEmailPrefs.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/validation/saEmailPrefs.js#L59)
+Please see github issue [#654](https://github.com/hmrc/assets-frontend/issues/654)
+
+Markup:
+<div class="email-form-errors">
+    <label class="error-notification">
+    Enter a valid email address
+    </label>
+</div>
+*/
+/* line 188, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+.email-form-errors .error-notification {
+  display: block;
+  font-size: 19px;
+  padding: 1em 0 1em 15px;
+  margin: 1em 0;
+  color: #b10e1e;
+  border-left: 3px solid #b10e1e;
+}
+
+/* line 197, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_errors.scss */
+.js .email-form-errors .error-notification {
+  display: none;
+}
+
+/*
 Form Hint
 
 Form hints are used for providing extra information to a user about a form input.
@@ -7842,6 +7876,35 @@ label.indent {
 }
 
 /*
+Selectable
+
+Deprecated: A stylised Label with radio input element. **This component appears to be very similar to .block-label
+until this has been resolved it is advised to use .block-label instead**
+
+Markup:
+<label class="selectable">
+    <input type="radio"/>No thank you
+</label>
+
+Styleguide Label.Selectable
+*/
+/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+label.selectable {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background: #F0F0F0;
+  padding: 12px 14px 10px 16px;
+  border: 1px solid #F0F0F0;
+  margin: 1em 1em 0 0;
+}
+
+/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+label.selectable input {
+  cursor: pointer;
+}
+
+/*
 Radio input
 
 Labels containing a `radio` input.
@@ -7859,12 +7922,12 @@ Markup:
 
 Styleguide Label.radio
 */
-/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown {
   min-width: 0;
 }
 
-/* line 113, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--overhead, .label--inlineRadio--overhead-wide, .label--dateField-group {
   float: left;
   margin-bottom: 0.75em;
@@ -7873,12 +7936,12 @@ Styleguide Label.radio
   word-spacing: 5.8em;
 }
 
-/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--overhead-wide {
   width: 6.8em;
 }
 
-/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 155, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--full-length {
   width: 100%;
   clear: both;
@@ -7897,19 +7960,19 @@ Markup:
 
 Styleguide Label.radio expanded
 */
-/* line 146, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 175, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--expanded {
   width: 100%;
 }
 
-/* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 178, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--expanded input {
   float: left;
   margin-right: 0.25em;
   margin-top: 0.15em;
 }
 
-/* line 157, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 186, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--inlineRadio--expanded .label__text {
   float: left;
   width: 90%;
@@ -7945,7 +8008,7 @@ Markup:
 
 Styleguide Label.date
 */
-/* line 198, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 227, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .label--dateField-group {
   text-align: left;
   width: 3.5em;
@@ -7973,7 +8036,7 @@ Markup:
 
 Styleguide Label.block
 */
-/* line 227, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 256, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label, .block-label--stacked {
   display: block;
   float: none;
@@ -7987,7 +8050,7 @@ Styleguide Label.block
 }
 
 @media (min-width: 641px) {
-  /* line 227, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+  /* line 256, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
   .block-label, .block-label--stacked {
     float: left;
     margin-top: 5px;
@@ -7995,12 +8058,12 @@ Styleguide Label.block
   }
 }
 
-/* line 250, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 279, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label:hover, .block-label--stacked:hover {
   border-color: #0b0c0c;
 }
 
-/* line 255, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 284, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label--inline,
 .block-label--inline-right,
 .inline .block-label,
@@ -8010,7 +8073,7 @@ Styleguide Label.block
 }
 
 @media (min-width: 641px) {
-  /* line 255, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+  /* line 284, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
   .block-label--inline,
   .block-label--inline-right,
   .inline .block-label,
@@ -8019,7 +8082,7 @@ Styleguide Label.block
   }
 }
 
-/* line 265, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 294, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label--stacked {
   clear: none;
   line-height: 1;
@@ -8028,14 +8091,14 @@ Styleguide Label.block
 }
 
 @media (max-width: 640px) {
-  /* line 265, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+  /* line 294, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
   .block-label--stacked {
     float: none;
     text-align: center;
   }
 }
 
-/* line 277, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 306, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .block-label--stacked input {
   display: block;
   margin: 0 auto 0.8em;
@@ -8060,13 +8123,13 @@ Markup:
 
 Styleguide Label.aligned
 */
-/* line 310, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 339, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 input.top-aligned-input {
   top: 1.63158em;
 }
 
 @media (min-width: 641px) {
-  /* line 310, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+  /* line 339, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
   input.top-aligned-input {
     top: 1.52632em;
   }
@@ -8091,23 +8154,23 @@ Markup:
 
 Styleguide Label.form date
 */
-/* line 337, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 366, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .form-date label {
   display: block;
   margin-bottom: 5px;
 }
 
-/* line 343, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 372, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .js-enabled .add-focus {
   outline: 3px solid #ffbf47;
 }
 
-/* line 345, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 374, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .js-enabled .add-focus input {
   outline: none;
 }
 
-/* line 351, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
+/* line 380, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_label.scss */
 .js-enabled .selected {
   background: #fff;
   border-color: #0b0c0c;
@@ -8471,6 +8534,39 @@ Styleguide Form.dynamic
 }
 
 /*
+Connected
+
+Connect an Input to information below.
+
+Markup:
+<fieldset class="connected">
+  <label>Example Input
+    <input type="text" class="input--medium input--cleared"/>
+  </label>
+  <p>These bullet points are connected to the input above</p>
+  <ul class="bullets form-hint">
+    <li>Bullet point 1</li>
+    <li>Bullet point 2</li>
+  </ul>
+</fieldset>
+
+Styleguide Form.Connected
+*/
+/* line 371, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.connected {
+  border-left: 3px solid #999;
+  float: none;
+  margin: 1em 0 0 0;
+  padding: 1em 1em 0 15px;
+  overflow: hidden;
+}
+
+/* line 379, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+.connected {
+  box-sizing: border-box;
+}
+
+/*
 Control
 
 For displaying form controls.
@@ -8486,7 +8582,7 @@ Markup:
 
 Styleguide Form.control
 */
-/* line 369, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 401, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-control {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -8505,7 +8601,7 @@ Styleguide Form.control
 }
 
 @media (max-width: 640px) {
-  /* line 369, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  /* line 401, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
   .form-control {
     font-size: 16px;
     line-height: 1.25;
@@ -8513,18 +8609,18 @@ Styleguide Form.control
 }
 
 @media (min-width: 641px) {
-  /* line 369, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+  /* line 401, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
   .form-control {
     width: 50%;
   }
 }
 
-/* line 389, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 421, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 select.form-control {
   appearance: menulist;
 }
 
-/* line 393, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 425, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .form-control--block {
   display: block;
 }
@@ -8541,7 +8637,7 @@ Markup:
 
 Styleguide Form.legend
 */
-/* line 411, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
+/* line 443, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 .questionnaire legend {
   margin: 0 0 0.75em;
 }
@@ -11579,6 +11675,29 @@ Styleguide Notification.Highlight dark
 /* line 297, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
 .highlight-message--dark .highlight-message--dark-text {
   color: #fff;
+}
+
+/*
+Important Notice
+
+A way of communicating an Important notice to the user that displays the notice in bold with an important icon shown on
+the left hand side.
+
+Markup:
+<div class="form-group">
+  <p class="important-notice">
+  An important notice for the user to read and take notice of.
+  Please make sure you take the time to consume this important message.
+  </p>
+</div>
+
+Styleguide Notification.Important Notice
+*/
+/* line 322, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_notifications.scss */
+.important-notice {
+  padding-left: 2.5em;
+  background: no-repeat left top url(../images/icons/icon-important.png);
+  font-weight: 700;
 }
 
 /* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/pages/_epaye-statements.scss */
@@ -15242,59 +15361,38 @@ body {
 }
 
 /*
+Question/Answer
 
-* Not sure where these styles are used. They ware out of sync with the assets frontend
+Deprecated: These styles are no longer in use and are awaiting removal
 
+.question - found in prototypes only or in personal repos
+.answer   - found in prototypes only or in personal repos
 */
-/* line 6, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 10, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .question {
   margin: 0 0 10px 0;
   padding: 10px 0;
 }
 
-/* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 15, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .answer {
   margin: 1em 0 0 0;
 }
 
-/* line 15, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
-label.selectable {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  background: #F0F0F0;
-  padding: 12px 14px 10px 16px;
-  border: 1px solid #F0F0F0;
-  margin: 1em 1em 0 0;
-}
+/*
+Optional Section
 
-/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
-label.selectable input {
-  cursor: pointer;
-}
+Deprecated: These styles are no longer in use and are awaiting removal
 
-/* line 29, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+.optional-section         - found in prototypes only or in personal repos
+.answer .optional-section - found in prototypes only or in personal repos
+*/
+/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .optional-section {
   display: none;
 }
 
-/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
-.email-form-errors .error-notification {
-  display: block;
-  font-size: 19px;
-  padding: 1em 0 1em 15px;
-  margin: 1em 0;
-  color: #b10e1e;
-  border-left: 3px solid #b10e1e;
-}
-
-/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
-.js .email-form-errors .error-notification {
-  display: none;
-}
-
-/* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
-.connected,
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .answer .optional-section {
   border-left: 3px solid #999;
   float: none;
@@ -15303,24 +15401,21 @@ label.selectable input {
   overflow: hidden;
 }
 
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
-.connected {
-  box-sizing: border-box;
-}
+/*
+Important Dates
 
-/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
-#content > .full-width {
-  width: auto;
-  float: none;
-}
+Deprecated: These styles are no longer in use and are awaiting removal
 
-/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+.important-dates      - not found
+.important-dates-wrap - not found
+*/
+/* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .important-dates .important-date {
   border-bottom: 1px solid #ccc;
   padding: 1em 0;
 }
 
-/* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .important-dates .date-wrap {
   width: 200px;
   margin-right: -200px;
@@ -15330,27 +15425,27 @@ label.selectable input {
   text-align: center;
 }
 
-/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .important-dates .date-wrap time {
   display: block;
 }
 
-/* line 82, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .important-dates .date-wrap time span {
   display: block;
 }
 
-/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .important-dates .date-wrap time .day {
   font-size: 2.0em;
 }
 
-/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .important-dates .date-wrap time .month {
   font-weight: bold;
 }
 
-/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .important-dates .date-wrap strong {
   color: #fff;
   background: #000;
@@ -15359,23 +15454,38 @@ label.selectable input {
   margin: 0.2em 0;
 }
 
-/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .important-dates .date-message {
   padding: 0 20px 0 200px;
 }
 
-/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .important-dates .date-message h3, .important-dates .date-message .h3-heading {
   margin-top: 0.3em;
 }
 
-/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .important-dates-wrap .footer-message {
   text-align: center;
   padding: 2em;
 }
 
-/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/*
+Has-* HMRC service
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.has-self-assessment - found in prototypes only or in personal repos
+.has-corporation     - found in prototypes only or in personal repos
+.has-vat             - found in prototypes only or in personal repos
+.has-paye            - found in prototypes only or in personal repos
+
+body.self-assessment .has-self-assessment - not found
+body.corporation .has-corporation         - not found
+body.vat .has-vat                         - not found
+body.paye .has-paye                       - not found
+*/
+/* line 118, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .has-self-assessment,
 .has-corporation,
 .has-vat,
@@ -15383,7 +15493,7 @@ label.selectable input {
   display: none;
 }
 
-/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 body.self-assessment .has-self-assessment,
 body.corporation .has-corporation,
 body.vat .has-vat,
@@ -15391,13 +15501,28 @@ body.paye .has-paye {
   display: block;
 }
 
-/* line 129, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/*
+Main Nav
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.main-nav                    - found in prototypes only or in personal repos
+.main-nav .tab               - found in prototypes only or in personal repos
+.main-nav .tab.selected      - found in prototypes only or in personal repos
+.main-nav .messages          - found in prototypes only or in personal repos
+.main-nav .messages.selected - found in prototypes only or in personal repos
+
+.main-nav .messages.no-unread          - not found
+.main-nav .messages.selected.no-unread - not found
+.main-nav .count                       - not found
+*/
+/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .main-nav {
   border-bottom: 1px solid #ccc;
   margin: 2em 0;
 }
 
-/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 155, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .main-nav .tab {
   display: inline-block;
   padding: 12px 20px;
@@ -15405,7 +15530,7 @@ body.paye .has-paye {
   position: relative;
 }
 
-/* line 141, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 162, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .main-nav .tab.selected {
   border: 1px solid #ccc;
   border-bottom: none;
@@ -15416,19 +15541,19 @@ body.paye .has-paye {
   margin-bottom: -1px;
 }
 
-/* line 151, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 172, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .main-nav .messages,
 .main-nav .messages.selected {
   padding-right: 40px;
 }
 
-/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .main-nav .messages.no-unread,
 .main-nav .messages.selected.no-unread {
   padding-right: 19px;
 }
 
-/* line 161, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 182, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .main-nav .count {
   position: absolute;
   background: #b10e1e;
@@ -15441,35 +15566,29 @@ body.paye .has-paye {
   line-height: 16px;
 }
 
-/* line 173, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/*
+Full Message
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.full-message - found in prototypes only
+*/
+/* line 203, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .full-message {
   width: 64%;
   float: left;
 }
 
-/* line 178, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 208, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .full-message li {
   list-style: disc;
   margin-left: 1.5em;
 }
 
-/* line 183, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
+/* line 213, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_unknown.scss */
 .full-message .date-sent {
   font-size: 16px;
   color: #454a4c;
-}
-
-/* line 188, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
-table details {
-  margin: 0;
-}
-
-/************************* Styling for important notices *************************/
-/* line 194, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/modules/_unknown.scss */
-.important-notice {
-  padding-left: 2.5em;
-  background: no-repeat left top url(../images/icons/icon-important.png);
-  font-weight: 700;
 }
 
 /*# sourceMappingURL=maps/application.min.css.map */
