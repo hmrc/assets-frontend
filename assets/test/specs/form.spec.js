@@ -209,8 +209,36 @@ describe('Form Validation', function () {
         expect($errorSummary).not.toHaveClass('error-summary--show');
       });
 
-      it('The error summary should be visible for accessibility users', function () {
-        expect($errorSummary).toHaveClass('visuallyhidden');
+      it('The error summary should not be visible for accessibility users', function () {
+        expect($errorSummary).not.toHaveClass('visuallyhidden');
+      });
+
+      it('The error summary should not contain errors', function () {
+        var $errorMessages = $errorSummaryMessages.find('> li');
+        expect($errorMessages.length).toBe(0);
+      });
+
+      it('The form should have no error', function () {
+        expect(form.getErrorMessages().length).toBe(0);
+      });
+    });
+    
+    describe('When I enter value below min length and submit', function () {
+
+      beforeEach(function () {
+        // select radio button, add value below min length to text input
+        $radioYesElement.click();
+        $textInputExample.val('55').blur();
+        $submitButton.click();
+      });
+
+      it('The error summary should be visible', function () {
+        expect($errorSummary).toHaveClass('error-summary--show');
+      });
+
+      it('The error summary should not be hidden for accessibility users', function () {
+      
+        expect($errorSummary).not.toHaveClass('visuallyhidden');
       });
 
       it('The error summary should contain 1 errors', function () {
