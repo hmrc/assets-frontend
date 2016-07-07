@@ -1,34 +1,8 @@
 /*
-
-/*
-Sub Section
-
-Subsections provide margin for elements. They are useful for layout and providing sections visually with white space.
-
-Markup:
-<section class="subsection {{modifier_class}}">
-  <h2>Subsection Title</h2>
-  <p>Subsection content</p>
-</section>
-
-.subsection--wide - A subsection with larger margin.
-
-Styleguide Section.Sub Section
-*/
-
-.subsection {
-  margin: 1.5em 0;
-}
-
-.subsection--wide {
-  margin: 2.5em 0;
-}
-
-
-/*
 Section
 
-Sections provide margin and padding for elements.
+Denotes a section of a screen.
+Usually with a level 2 heading and one or more paragraphs of content.
 
 Markup:
 <section class="section {{modifier_class}}">
@@ -53,6 +27,7 @@ Styleguide Section.Section
 
 .section--branded {
   @extend .section;
+
   h2 {
     border-bottom: 5px solid $mainstream-brand;
     margin-top: 0 !important;
@@ -63,6 +38,32 @@ Styleguide Section.Section
 .brand-border--top,
 .section--blue-top {
   border-top: 10px solid $govuk-blue;
+}
+
+/*
+Sub Section
+
+Subsections provide extra margin for elements.
+They are useful for layout and providing sections with more white space on the
+top and bottom of its contained elements.
+
+Markup:
+<section class="subsection {{modifier_class}}">
+  <h2>Subsection Title</h2>
+  <p>Subsection content</p>
+</section>
+
+.subsection--wide - A subsection with larger margin.
+
+Styleguide Section.Sub Section
+*/
+
+.subsection {
+  margin: 1.5em 0;
+}
+
+.subsection--wide {
+  margin: 2.5em 0;
 }
 
 /*
