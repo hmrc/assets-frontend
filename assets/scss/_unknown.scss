@@ -1,8 +1,12 @@
 /*
+Question/Answer
 
-* Not sure where these styles are used. They ware out of sync with the assets frontend
+Deprecated: These styles are no longer in use and are awaiting removal
 
+.question - found in prototypes only or in personal repos
+.answer   - found in prototypes only or in personal repos
 */
+
 .question {
   margin: 0 0 10px 0;
   padding: 10px 0;
@@ -12,38 +16,19 @@
   margin: 1em 0 0 0;
 }
 
-label.selectable {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  background: #F0F0F0;
-  padding: 12px 14px 10px 16px;
-  border: 1px solid #F0F0F0;
-  margin: 1em 1em 0 0;
-}
 
-label.selectable input {
-  cursor: pointer;
-}
+/*
+Optional Section
 
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.optional-section         - found in prototypes only or in personal repos
+.answer .optional-section - found in prototypes only or in personal repos
+*/
 .optional-section {
   display: none;
 }
 
-.email-form-errors .error-notification {
-  display: block;
-  font-size: 19px;
-  padding: 1em 0 1em 15px;
-  margin: 1em 0;
-  color: $alert-bg-red;
-  border-left: 3px solid $alert-bg-red;
-}
-
-.js .email-form-errors .error-notification {
-  display: none;
-}
-
-.connected,
 .answer .optional-section {
   border-left: 3px solid #999;
   float: none;
@@ -52,14 +37,15 @@ label.selectable input {
   overflow: hidden;
 }
 
-.connected {
-  box-sizing: border-box;
-}
 
-#content > .full-width {
-  width: auto;
-  float: none;
-}
+/*
+Important Dates
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.important-dates      - not found
+.important-dates-wrap - not found
+*/
 
 .important-dates .important-date {
   border-bottom: 1px solid #ccc;
@@ -112,6 +98,23 @@ label.selectable input {
   padding: 2em;
 }
 
+
+/*
+Has-* HMRC service
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.has-self-assessment - found in prototypes only or in personal repos
+.has-corporation     - found in prototypes only or in personal repos
+.has-vat             - found in prototypes only or in personal repos
+.has-paye            - found in prototypes only or in personal repos
+
+body.self-assessment .has-self-assessment - not found
+body.corporation .has-corporation         - not found
+body.vat .has-vat                         - not found
+body.paye .has-paye                       - not found
+*/
+
 .has-self-assessment,
 .has-corporation,
 .has-vat,
@@ -125,6 +128,24 @@ body.vat .has-vat,
 body.paye .has-paye {
   display: block;
 }
+
+
+/*
+Main Nav
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.main-nav                    - found in prototypes only or in personal repos
+.main-nav .tab               - found in prototypes only or in personal repos
+.main-nav .tab.selected      - found in prototypes only or in personal repos
+.main-nav .messages          - found in prototypes only or in personal repos
+.main-nav .messages.selected - found in prototypes only or in personal repos
+
+.main-nav .messages.no-unread          - not found
+.main-nav .messages.selected.no-unread - not found
+.main-nav .count                       - not found
+*/
+
 
 .main-nav {
   border-bottom: 1px solid #ccc;
@@ -170,6 +191,15 @@ body.paye .has-paye {
   line-height: 16px;
 }
 
+
+/*
+Full Message
+
+Deprecated: These styles are no longer in use and are awaiting removal
+
+.full-message - found in prototypes only
+*/
+
 .full-message {
   width: 64%;
   float: left;
@@ -183,16 +213,4 @@ body.paye .has-paye {
 .full-message .date-sent {
   font-size: 16px;
   color: #454a4c;
-}
-
-table details {
-  margin: 0;
-}
-
-/************************* Styling for important notices *************************/
-
-.important-notice {
-  padding-left: 2.5em;
-  background: no-repeat left top url(../images/icons/icon-important.png);
-  font-weight: 700;
 }
