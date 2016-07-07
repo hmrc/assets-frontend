@@ -1,13 +1,4 @@
 /*
-Brand border top
-
-Deprecated: duplicate (almost) of `.section--blue-top`
-*/
-
-.brand-border--top {
-  border-top: 10px solid $mainstream-brand;
-}
-
 
 /*
 Sub Section
@@ -69,6 +60,7 @@ Styleguide Section.Section
   }
 }
 
+.brand-border--top,
 .section--blue-top {
   border-top: 10px solid $govuk-blue;
 }
