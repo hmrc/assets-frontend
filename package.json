@@ -84,7 +84,8 @@
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0",
     "watchify": "^2.6.0",
-    "gulp-stylelint": "^2.0.2"
+    "gulp-stylelint": "^2.0.2",
+    "gulp-svgmin": "^1.2.2"
   },
   "browserify": {
     "transform": [

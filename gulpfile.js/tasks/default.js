@@ -5,7 +5,7 @@ var gulp        = require('gulp'),
 
 gulp.task('default', ['clean'], function () {
   runSequence(
-    ['sass', 'images', 'concatEncryption'],
+    ['sass', 'images', 'svg', 'concatEncryption'],
     'modernizr',
     'component-library',
     'watch'

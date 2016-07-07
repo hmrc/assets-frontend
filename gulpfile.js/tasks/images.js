@@ -5,6 +5,6 @@ var gulp   = require('gulp'),
 
 gulp.task('images', function() {
   var env = global.runmode;
-  return gulp.src([config.images.govuk, config.images.dev.src])
+  return gulp.src([config.images.govuk].concat(config.images.dev.src))
 				.pipe(gulp.dest(config.images[env].dest));
 });

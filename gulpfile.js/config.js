@@ -94,10 +94,20 @@ module.exports = {
     }
   },
 
+  svg: {
+    dev: {
+      src: src + 'images/**/*.svg',
+      dest: snapshotDir + 'images'
+    },
+    prod: {
+      dest: distDir + 'images'
+    }
+  },
+  
   images: {
     govuk: govuk.images + '**/*',
     dev: {
-      src: src + 'images/**/*',
+      src: [src + 'images/**/*', '!' + src + 'images/**/*.svg'],
       dest: snapshotDir + 'images'
     },
     prod: {
