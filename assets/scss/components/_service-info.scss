@@ -202,38 +202,62 @@ Nav
 This example shows a service info element with inline navigation links. On mobile the elements are stacked in a block fashion
 
 Markup:
-<div class="service-info ">
+<div class="service-info">
   <div class="service-info--nav">
-      <a class="service-info--nav__left-component font-xsmall" href="#">Left side content</a>
+      <a class="service-info--nav__left-component font-xsmall "href="#">Left side content</a>
       <ul class="service-info--nav__right-component service-info--nav__list">
-          <li class="bold-xsmall">Right side content List item 1</li>
-          <li class="font-xsmall">
-              <a href="#">Right side content List item 2</a>
+          <li>
+              <span class="client-name">Right side content List item 1</span>
           </li>
-          <li class="font-xsmall">
-              <a href="#">Right side content List item 3</a>
+          <li>
+              <a href="#">List item 2</a>
+          </li>
+          <li>
+              <a href="#">List item 3</a>
           </li>
       </ul>
   </div>
 </div>
 
-Styleguide Service Info.Logged In
+Styleguide Service Info.Nav
 */
 .service-info--nav {
   margin-top: em(15);
 
+  .service-info--nav__left-component,
+  .service-info--nav__right-component {
+    display: block;
+    margin-bottom: em(15);
+  }
+
   @include media(tablet) {
     .service-info--nav__left-component {
       float: left;
+      margin-bottom: 0;
     }
 
     .service-info--nav__right-component {
       float: right;
+      margin-bottom: 0;
     }
 
     .service-info--nav__left-component + .service-info--nav__right-component {
       margin-left: em(45);
-    } 
+    }
+
+    .service-info--nav__details-summary {
+      display: none;
+    }
+
+    & details[open] {
+      & summary {
+        display: none;
+      }
+    }
+  }
+
+  .client-name {
+    @include bold-16();
   }
 
   .service-info--nav__list {
@@ -254,6 +278,7 @@ Styleguide Service Info.Logged In
       }
 
       .client-name {
+        margin-top: 0;
         @include bold-16();
       }
     }
