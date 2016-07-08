@@ -1,0 +1,77 @@
+/*
+Responsive Inline Details
+
+A details tag like behaviour on mobile breakpoints that expands to an inline list at larger breakpoints
+
+Markup:
+<ul class="responsive-inline-details hide-inline-details-targets" data-responsive-inline-details="component-name-inline-details-target">
+  <li class="responsive-inline-details hide-inline-details-targets">
+    <span class="inline-details-toggle">Toggle me on mobile</span>
+  </li>
+  <li class="inline-details-toggle-target component-name-inline-details-target">
+    <a href="#">I'm a link</a>
+  </li>
+  <li class="inline-details-toggle-target component-name-inline-details-target">
+    <a href="#">I'm a link too</a>
+  </li>
+</ul>
+
+Styleguide Responsive Inline Details
+*/
+.responsive-inline-details {
+  & li {
+    @include media(tablet) {
+      margin-right: em(15);
+      display: inline;
+      
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    & a {
+      @include core-16();
+    }
+
+    .inline-details-toggle {
+      margin-top: 0;
+      @include bold-16();
+      cursor: pointer;
+
+      @include media(tablet) {
+        cursor: auto;
+      }
+
+      @include media(mobile) {
+        &:after {
+          content: "  \25b2";
+        }
+      }
+    }
+
+    .inline-details-toggle-down-arrow {
+
+    }
+
+    .inline-details-toggle-up-arrow {
+
+    }
+  }
+
+  &.hide-inline-details-targets {
+    & li {
+      @include media(mobile) {
+        .inline-details-toggle {
+          &:after {
+            content: "  \25bc";
+          }
+        }
+      }
+      &.inline-details-toggle-target {
+        @include media(mobile) {
+          display: none;
+        }
+      }
+    }
+  } 
+}
