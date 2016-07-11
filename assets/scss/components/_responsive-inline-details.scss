@@ -43,18 +43,21 @@ Styleguide Responsive Inline Details
       }
 
       @include media(mobile) {
-        &:after {
-          content: "  \25b2";
+        text-decoration: underline;
+
+        &:before {
+          content: "\25BE\2002";
+          display: inline-block;
         }
       }
     }
 
-    .inline-details-toggle-down-arrow {
-
-    }
-
-    .inline-details-toggle-up-arrow {
-
+    &.inline-details-toggle-target {
+      @include media(mobile) {
+        &:before {
+          content: "\2003";
+        }
+      }
     }
   }
 
@@ -62,8 +65,9 @@ Styleguide Responsive Inline Details
     & li {
       @include media(mobile) {
         .inline-details-toggle {
-          &:after {
-            content: "  \25bc";
+          &:before {
+            content: "\25B8\2002";
+            display: inline-block;
           }
         }
       }

@@ -207,7 +207,7 @@ Markup:
       <a class="service-info--nav__left-component font-xsmall "href="#">Left side content</a>
       <ul class="service-info--nav__right-component service-info--nav__list">
           <li>
-              <span class="client-name">Right side content List item 1</span>
+              <span class="client-name">Right side 1</span>
           </li>
           <li>
               <a href="#">List item 2</a>
@@ -262,7 +262,11 @@ Styleguide Service Info.Nav
 
   .service-info--nav__list {
 
+    margin-top: 0;
+
     & li {
+
+      margin-left: 0;
 
       @include media(tablet) {
         margin-right: em(15);
