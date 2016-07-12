@@ -249,8 +249,8 @@ Styleguide Service Info.Nav
       display: none;
     }
 
-    & details[open] {
-      & summary {
+    details[open] {
+      summary {
         display: none;
       }
     }
@@ -264,7 +264,7 @@ Styleguide Service Info.Nav
 
     margin-top: 0;
 
-    & li {
+    li {
 
       margin-left: 0;
 
@@ -277,7 +277,7 @@ Styleguide Service Info.Nav
         }
       }
 
-      & a {
+      a {
         @include core-16();
       }
 

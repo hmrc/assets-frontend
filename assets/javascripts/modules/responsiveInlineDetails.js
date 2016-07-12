@@ -1,17 +1,13 @@
 module.exports = function() {
 
-  $('[data-responsive-inline-details]').each(function() {
-    var $detailsHolder,
-    $detailsTargets,
+  $('[data-responsive-inline-details]').each(function(index, elemnt) {
+    var $detailsTargets,
     $detailsButton;
 
     $detailsHolder = $(this);
     $detailsButton = $detailsHolder.find('.inline-details-toggle');
-    $detailsTargets = $('.' + $detailsHolder.data('responsive-inline-details'));
 
-    $detailsButton.on('click', function(e) {
-      detailsButtonClick(e);
-    });
+    $detailsButton.on('click', detailsButtonClick);
 
     function detailsButtonClick(e) {
       e.preventDefault();

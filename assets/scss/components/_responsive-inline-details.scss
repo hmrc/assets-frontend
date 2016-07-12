@@ -4,7 +4,7 @@ Responsive Inline Details
 A details tag like behaviour on mobile breakpoints that expands to an inline list at larger breakpoints
 
 Markup:
-<ul class="responsive-inline-details hide-inline-details-targets" data-responsive-inline-details="component-name-inline-details-target">
+<ul class="responsive-inline-details hide-inline-details-targets" data-responsive-inline-details>
   <li class="responsive-inline-details hide-inline-details-targets">
     <span class="inline-details-toggle">Toggle me on mobile</span>
   </li>
@@ -19,7 +19,7 @@ Markup:
 Styleguide Responsive Inline Details
 */
 .responsive-inline-details {
-  & li {
+  li {
     @include media(tablet) {
       margin-right: em(15);
       display: inline;
@@ -29,7 +29,7 @@ Styleguide Responsive Inline Details
       }
     }
 
-    & a {
+    a {
       @include core-16();
     }
 
@@ -62,17 +62,15 @@ Styleguide Responsive Inline Details
   }
 
   &.hide-inline-details-targets {
-    & li {
-      @include media(mobile) {
+    @include media(mobile) {
+      li {
         .inline-details-toggle {
           &:before {
             content: "\25B8\2002";
             display: inline-block;
           }
         }
-      }
-      &.inline-details-toggle-target {
-        @include media(mobile) {
+        &.inline-details-toggle-target {
           display: none;
         }
       }
