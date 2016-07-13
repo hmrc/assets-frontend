@@ -197,95 +197,46 @@ Styleguide Service Info.Logged In
 }
 
 /*
-Nav
+Floated items
 
-This example shows a service info element with inline navigation links. On mobile the elements are stacked in a block fashion
+Service Info with `.service-info__floated-items` allows for content to be floated on the left and right sides with adequate margins. On mobile breakpoints content is displayed block
 
 Markup:
-<div class="service-info">
-  <div class="service-info--nav">
-      <a class="service-info--nav__left-component font-xsmall "href="#">Left side content</a>
-      <ul class="service-info--nav__right-component service-info--nav__list">
-          <li>
-              <span class="client-name">Right side 1</span>
-          </li>
-          <li>
-              <a href="#">List item 2</a>
-          </li>
-          <li>
-              <a href="#">List item 3</a>
-          </li>
-      </ul>
+<div class="service-info ">
+  <div class="service-info__floated-items">
+    <div class="service-info__left-item">
+      <span>Left Side</span>
+    </div>
+    <div class="service-info__right-item">
+      <span>Right Side</span>
+    </div>
   </div>
 </div>
 
-Styleguide Service Info.Nav
+Styleguide Service Info.Left and Right Items
 */
-.service-info--nav {
+.service-info__floated-items {
   margin-top: em(15);
 
-  .service-info--nav__left-component,
-  .service-info--nav__right-component {
+  .service-info__left-item,
+  .service-info__right-item {
     display: block;
     margin-bottom: em(15);
   }
 
   @include media(tablet) {
-    .service-info--nav__left-component {
+    .service-info__left-item {
       float: left;
       margin-bottom: 0;
     }
 
-    .service-info--nav__right-component {
+    .service-info__right-item {
       float: right;
       margin-bottom: 0;
     }
 
-    .service-info--nav__left-component + .service-info--nav__right-component {
+    .service-info__left-item + .service-info__right-item {
       margin-left: em(45);
     }
-
-    .service-info--nav__details-summary {
-      display: none;
-    }
-
-    details[open] {
-      summary {
-        display: none;
-      }
-    }
-  }
-
-  .client-name {
-    @include bold-16();
-  }
-
-  .service-info--nav__list {
-
-    margin-top: 0;
-
-    li {
-
-      margin-left: 0;
-
-      @include media(tablet) {
-        margin-right: em(15);
-        display: inline;
-        
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-
-      a {
-        @include core-16();
-      }
-
-      .client-name {
-        margin-top: 0;
-        @include bold-16();
-      }
-    }
-
   }
 }
