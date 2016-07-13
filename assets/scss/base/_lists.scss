@@ -72,8 +72,7 @@ ul, nav ul {
 /*
 .list--collapse
 
-A list of dates with associated descriptions for that date, the date has the class `.activity-list__date` and the
-description has the class `.activity-list__description`.
+A collapsable list element that displays inline on larger (Desktop) breakpoints and block with a toggle to collapse/exapand the list children. All of the list items have the 'list__item' class and the toggle item has the attribute 'data-list--collapse-toggle'
 
 Markup:
 <ul class="list--collapse hide-inline-list--collapse-targets">
