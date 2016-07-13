@@ -1,18 +1,11 @@
 /*
-Template Sidebar
+Sidebar
 
-An example of a right floated sidebar.
+An example of a 1/3 column sidebar. It's positioned on the right of the page.
 
 Markup:
 <div class="sidebar {{modifier_class}}">
-  <ul class="sidebar__list">
-    <li class="sidebar__list-item">
-      Sidebar list item
-    </li>
-    <li class="sidebar__list-item">
-      <p class="sidebar__list-item--small-indent">Indented sidebar list item</p>
-    </li>
-  </ul>
+  Sidebar content
 </div>
 
 .sidebar--full-width  - Full width sidebar
@@ -20,7 +13,7 @@ Markup:
 
 Discussion: https://hmrcdigital.hackpad.com/Template-Sidebar-SaFrhwmSDEx
 
-Styleguide Template Sidebar
+Styleguide Layout.Sidebar
 */
 
 .sidebar {
