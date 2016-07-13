@@ -41,6 +41,25 @@ Styleguide Layout.Sidebar
   }
 }
 
+/*
+Sidebar List
+
+A list that is intended to be used in the sidebar of a page
+
+Markup:
+<div class="sidebar">
+  <ul class="sidebar__list">
+    <li class="sidebar__list-item">
+      Sidebar list item
+    </li>
+    <li class="sidebar__list-item">
+      <p class="sidebar__list-item--small-indent">Indented sidebar list item</p>
+    </li>
+  </ul>
+</div>
+
+Styleguide Lists.Sidebar List
+*/
 .sidebar__list {
   list-style: none;
   padding: 0;
