@@ -29,9 +29,11 @@ $path: "../images/icons/";
 @import "base/typography/fonts";
 @import "base/typography/text";
 @import "base/typography/headings";
-@import "base/layouts/page";
-@import "base/layouts/gutters";
-@import "base/layouts/section";
+
+@import "layouts/page";
+@import "layouts/gutters";
+@import "layouts/section";
+
 @import "base/grid";
 @import "base/buttons";
 @import "base/images";
