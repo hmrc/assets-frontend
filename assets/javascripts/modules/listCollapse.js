@@ -4,7 +4,7 @@
   Expand/collapse list content on smaller breakpoints, remain inline non interactive list at larger breakpoints.
 
   Mandatory JS hooks:
-   * `data-list--collapse-toggle` - list toggle element hook to init ListCollapse click listener
+   * `data-list-collapse-toggle` - list toggle element hook to init ListCollapse click listener
 
   Mandatory classes:
    * `list--collapse` - placed on the outer container
@@ -16,7 +16,7 @@
   Basic Usage:
 
   <ul class="list--collapse hide-inline-list--collapse-targets">
-      <li class="list__item" data-list--collapse-toggle>
+      <li class="list__item" data-list-collapse-toggle>
           <span>list toggle</span>
       </li>
       <li class="list__item">
@@ -35,7 +35,7 @@ module.exports = function() {
   $('.list--collapse').each(function(index, elemnt) {
 
     var $listHolder = $(this);
-    var $listToggle = $listHolder.find('[data-list--collapse-toggle]');
+    var $listToggle = $listHolder.find('[data-list-collapse-toggle]');
 
     $listToggle.on('click', listToggleClick);
 

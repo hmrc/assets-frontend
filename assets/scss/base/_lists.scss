@@ -72,7 +72,9 @@ ul, nav ul {
 /*
 .list--collapse
 
-A collapsable list element that displays inline on larger (Desktop) breakpoints and block with a toggle to collapse/exapand the list children. All of the list items have the 'list__item' class and the toggle item has the attribute 'data-list--collapse-toggle'
+A collapsable list element on smaller breakpoints.
+Inline list at larger breakpoints.
+List items have 'list__item' class and toggle item has attribute 'data-list--collapse-toggle'
 
 Markup:
 <ul class="list--collapse hide-inline-list--collapse-targets">
@@ -96,7 +98,7 @@ Styleguide Lists.Collapse
     display: block;
   }
 
-  [data-list--collapse-toggle] {
+  [data-list-collapse-toggle] {
     padding-left: 0;
     @include bold-16();
   }
@@ -117,7 +119,7 @@ Styleguide Lists.Collapse
 
 .js-enabled .list--collapse {
   @include media(mobile) {
-    [data-list--collapse-toggle] {
+    [data-list-collapse-toggle] {
       text-decoration: underline;
 
       &:before {
@@ -134,7 +136,7 @@ Styleguide Lists.Collapse
   }
   &.hide-inline-list--collapse-targets {
     @include media(mobile) {
-      [data-list--collapse-toggle] {
+      [data-list-collapse-toggle] {
         &:before {
           content: "\25B8\2002";
           display: inline-block;
