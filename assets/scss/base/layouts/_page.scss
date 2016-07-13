@@ -1,248 +1,30 @@
 /*
-Basic
+Basic Page
 
-The basic page layout containing a BETA banner, the service info banner with HMRC logo and example body content.
+The basic page layout consists of a 2/3rds left column on wider viewports that
+collapses to full width on narrow viewports.
+
+It also includes a `.centered-content` block for the service info banner
+for the BETA banner and the (oprional) HMRC branding.
+
+**Notes:**
+* This is provided by play-ui's [main_content](https://github.com/hmrc/play-ui/blob/master/src/main/twirl/uk/gov/hmrc/play/views/layouts/main_content.scala.html#L26-L28) template
 
 Markup:
 <main id="wrapper" role="main">
   <div class="centered-content">
-    <div class="service-info">
-      <div class="beta-banner">
-        <p>
-          <strong class="phase-tag">BETA</strong>
-            <span>
-              This is a new service. Help us improve it - send your
-              <a id="feedback-link" href="#">feedback</a>.
-            </span>
-        </p>
-      </div>
-      <div class="logo">
-        <span class="organisation-logo organisation-logo-medium">
-          HM Revenue &amp; Customs
-        </span>
-      </div>
-    </div>
+    Area for the beta banner and HMRC branding
   </div>
   <div id="content">
     <article class="content__body">
-      <header>
-        <h1>Page Title</h1>
-      </header>
-      <section>
-        <p>Page content</p>
-      </section>
+      <p>Page content</p>
     </article>
   </div>
 </main>
 
 Discussion: https://hmrcdigital.hackpad.com/Layouts-H4b5EgRDPYL
 
-Styleguide Layouts.Basic
-*/
-
-
-/*
-Sidebar
-
-The basic page layout containing the service info banner with HMRC logo and example body content. This layout
-demonstrates the use of `.subsection` and `.subsection--wide` styles with example body content and a sidebar with
-example content demonstrating the `.section` styles available.
-
-Markup:
-<main id="wrapper" role="main">
-  <div class="centered-content">
-    <div class="service-info">
-      <div class="logo">
-        <span class="organisation-logo organisation-logo-medium">
-          HM Revenue &amp; Customs
-        </span>
-      </div>
-    </div>
-  </div>
-  <div id="content">
-    <article class="content__body">
-      <header>
-        <h1>Page Title</h1>
-      </header>
-      <section>
-        <p>Page content</p>
-      </section>
-      <section class="subsection">
-        <h2>Subsection Title</h2>
-        <p>Subsection content</p>
-      </section>
-      <section class="subsection--wide">
-        <h2>Wide Subsection Title</h2>
-        <p>Wide Subsection content</p>
-      </section>
-    </article>
-    <aside class="sidebar">
-      <section class="section section--blue-top">
-        <h2>Section Title</h2>
-        <p>Section content</p>
-      </section>
-      <section class="section section--branded">
-        <h2>Section Title</h2>
-        <p>Section content</p>
-      </section>
-    </aside>
-  </div>
-</main>
-
-Styleguide Layouts.Sidebar
-*/
-
-
-/*
-Hero
-
-The basic page layout containing the [Hero component](http://hmrc.github.io/assets-frontend/section-hero.html), a BETA
-banner, the service info banner with HMRC logo and example body content.
-
-Markup:
-<div class="centered-content">
-  <div class="beta-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>
-        This is a new service. Help us improve it - send your
-        <a id="feedback-link" href="#">feedback</a>.
-    </span>
-    </p>
-  </div>
-</div>
-<section class="full-width-banner">
-  <header class="hero">
-    <section class="hero__content">
-      <h1 class="hero__heading-large">Hero Heading</h1>
-      <h2 class="hero__heading-small">
-        Hero subheading
-      </h2>
-    </section>
-  </header>
-</section>
-<div id="wrapper" role="main">
-  <div class="centered-content">
-    <div class="service-info">
-      <div class="logo">
-        <span class="organisation-logo organisation-logo-medium">
-          HM Revenue &amp; Customs
-        </span>
-      </div>
-    </div>
-  </div>
-  <main id="content">
-    <article class="content__body">
-      <header>
-        <h1>Page Title</h1>
-      </header>
-      <section>
-        <p>Example page content</p>
-      </section>
-    </article>
-  </main>
-</div>
-
-Styleguide Layouts.Hero
-*/
-
-
-/*
-Full width
-
-The basic page layout containing the service info banner with HMRC logo with a `.full-width` example of body content.
-
-Markup:
-<main id="wrapper" role="main">
-  <div class="centered-content">
-    <div class="service-info">
-      <div class="logo">
-        <span class="organisation-logo organisation-logo-medium">
-          HM Revenue &amp; Customs
-        </span>
-      </div>
-    </div>
-  </div>
-  <div id="content">
-    <article class="content__body full-width">
-      <div class="full-width">
-        <section class="section">
-          <p>
-          An example of having the content body full width on the page so it stretches right across the content__body
-          element.
-          </p>
-        </section>
-      </div>
-    </article>
-  </div>
-</main>
-
-Styleguide Layouts.Full width
-*/
-
-
-
-//TODO not convinced that this is needed
-
-/*
-Three column
-
-The basic page layout containing the service info banner with HMRC logo with a `.full-width` example of body content
-consisting of a `.three-col-list` example.
-
-Markup:
-<main id="wrapper" role="main">
-  <div class="centered-content">
-    <div class="service-info">
-      <div class="logo">
-        <span class="organisation-logo organisation-logo-medium">
-          HM Revenue &amp; Customs
-        </span>
-      </div>
-    </div>
-  </div>
-  <div id="content">
-    <article class="content__body full-width">
-      <div class="three-col-list full-width">
-        <section class="section
-                    section--branded
-                    three-col-list__col
-                    three-col-list__col--left">
-          <h2>Column One</h2>
-          <ul>
-            <li><a href="#">List Item One</a></li>
-            <li><a href="#">List Item Two</a></li>
-            <li><a href="#">List Item Three</a></li>
-          </ul>
-        </section>
-        <section class="section
-                        section--branded
-                        three-col-list__col
-                        three-col-list__col--middle">
-          <h2>Column Two</h2>
-          <ul>
-            <li><a href="#">List Item One</a></li>
-            <li><a href="#">List Item Two</a></li>
-            <li><a href="#">List Item Three</a></li>
-          </ul>
-        </section>
-        <section class="section
-                        section--branded
-                        three-col-list__col
-                        three-col-list__col--right">
-          <h2>Column Three</h2>
-          <ul>
-            <li><a href="#">List Item One</a></li>
-            <li><a href="#">List Item Two</a></li>
-            <li><a href="#">List Item Three</a></li>
-          </ul>
-        </section>
-      </div>
-    </article>
-  </div>
-</main>
-
-Styleguide Layouts.Three Column
+Styleguide Layout.Basic Page
 */
 
 body {
@@ -277,7 +59,7 @@ body {
     float: left;
     width: 61.666667%;
   }
-  
+
   .messages-box,
   .service-info__related-subsection {
     display: none;
@@ -291,6 +73,25 @@ body {
     }
   }
 }
+
+/*
+Full width
+
+Use the `.full-width` class when you want the page content to use the full width of the page
+
+Markup:
+<main id="wrapper" role="main">
+  <div id="content" class="full-width">
+    <article class="content__body">
+      <div>
+        <p>Page content</p>
+      </div>
+    </article>
+  </div>
+</main>
+
+Styleguide Layout.Full width
+*/
 
 .full-width {
   width: $full-width;
