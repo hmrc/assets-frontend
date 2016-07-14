@@ -1,0 +1,78 @@
+/*
+Section
+
+Denotes a section of a screen.
+Usually with a level 2 heading and one or more paragraphs of content.
+
+Markup:
+<section class="section {{modifier_class}}">
+  <h2>Section Title</h2>
+  <p>Section content</p>
+</section>
+
+.section--branded  - A section with gov branding.
+.section--blue-top - A top border for a section.
+
+Discussion: https://hmrcdigital.hackpad.com/Section-AP4cjxqCEJf
+
+Styleguide Section.Section
+*/
+
+.section {
+  margin-bottom: 1em;
+  padding: 1em 0;
+
+  h2 {
+    margin-top: 0 !important;
+  }
+}
+
+.section--branded {
+  @extend .section;
+
+  h2 {
+    border-bottom: 5px solid $mainstream-brand;
+    margin-top: 0 !important;
+    margin-bottom: 0.65em;
+  }
+}
+
+.brand-border--top,
+.section--blue-top {
+  border-top: 10px solid $govuk-blue;
+}
+
+/*
+Sub Section
+
+Subsections provide extra margin for elements.
+They are useful for layout and providing sections with more white space on the
+top and bottom of its contained elements.
+
+Markup:
+<section class="subsection {{modifier_class}}">
+  <h2>Subsection Title</h2>
+  <p>Subsection content</p>
+</section>
+
+.subsection--wide - A subsection with larger margin.
+
+Styleguide Section.Sub Section
+*/
+
+.subsection {
+  margin: 1.5em 0;
+}
+
+.subsection--wide {
+  margin: 2.5em 0;
+}
+
+/*
+Row
+
+Deprecated: this needs removing but is incredibly hard to search for.
+*/
+.row {
+  margin-bottom: 20px;
+}
