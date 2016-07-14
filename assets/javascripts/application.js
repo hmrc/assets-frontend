@@ -45,7 +45,8 @@ var sso = require('./modules/sso.js'),
     charCounter = require('./modules/charCounter.js'),
     addRemove = require('./modules/addRemove.js'),
     modalDialog = require('./modules/modalDialog.js'),
-    dynamicGaTags = require('./modules/dynamicGaTags.js');
+    dynamicGaTags = require('./modules/dynamicGaTags.js'),
+    listCollapse = require('./modules/listCollapse.js');
 
 //initialise mdtpf
 fingerprint();
@@ -171,5 +172,6 @@ $(function() {
   addRemove();
   modalDialog();
   dynamicGaTags();
+  listCollapse();
 
 });

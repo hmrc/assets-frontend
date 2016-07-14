@@ -62,6 +62,94 @@ ul, nav ul {
   li {
     display: inline;
   }
+
+  .list__item + .list__item {
+    margin-left: em(15);
+  }
+}
+
+
+/*
+.list--collapse
+
+A collapsable list element on smaller breakpoints.
+Inline list at larger breakpoints.
+List items have 'list__item' class and toggle item has attribute 'data-list--collapse-toggle'
+
+Markup:
+<ul class="list--collapse hide-inline-list--collapse-targets">
+    <li class="list__item" data-list--collapse-toggle>
+        <span>I'm the toggle</span>
+    </li>
+    <li class="list__item">
+        <a href="#">list item link</a>
+    </li>
+    <li class="list__item">
+        <a href="#">another list item link</a>
+    </li>
+</ul>
+
+Styleguide Lists.Collapse
+*/
+
+.list--collapse {
+
+  .list__item {
+    display: block;
+  }
+
+  a {
+    @include core-16();
+  }
+
+  @include media(tablet) {
+    .list__item {
+      display: inline;
+    }
+    .list__item + .list__item {
+      margin-left: em(15);
+    }
+  }
+}
+
+[data-list-collapse-toggle] {
+  padding-left: 0;
+  @include bold-16();
+}
+
+.js-enabled {
+  [data-list-collapse-toggle] {
+    @include media(mobile) {
+      text-decoration: underline;
+
+      &:before {
+        content: "\25BE\2002";
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.js-enabled .list--collapse {
+  .list__item + .list__item {
+    padding-left: em(30);
+    @include media(tablet) {
+      padding-left: 0;
+    }
+  }
+  &.hide-inline-list--collapse-targets {
+    @include media(mobile) {
+      [data-list-collapse-toggle] {
+        &:before {
+          content: "\25B8\2002";
+          display: inline-block;
+        }
+      }
+      .list__item + .list__item {
+        display: none;
+      }
+    }
+  }
 }
 
 /*
