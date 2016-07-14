@@ -94,13 +94,8 @@ Styleguide Lists.Collapse
 
 .list--collapse {
 
-  li {
+  .list__item {
     display: block;
-  }
-
-  [data-list-collapse-toggle] {
-    padding-left: 0;
-    @include bold-16();
   }
 
   a {
@@ -108,7 +103,7 @@ Styleguide Lists.Collapse
   }
 
   @include media(tablet) {
-    li {
+    .list__item {
       display: inline;
     }
     .list__item + .list__item {
@@ -117,9 +112,14 @@ Styleguide Lists.Collapse
   }
 }
 
-.js-enabled .list--collapse {
-  @include media(mobile) {
-    [data-list-collapse-toggle] {
+[data-list-collapse-toggle] {
+  padding-left: 0;
+  @include bold-16();
+}
+
+.js-enabled {
+  [data-list-collapse-toggle] {
+    @include media(mobile) {
       text-decoration: underline;
 
       &:before {
@@ -128,6 +128,9 @@ Styleguide Lists.Collapse
       }
     }
   }
+}
+
+.js-enabled .list--collapse {
   .list__item + .list__item {
     padding-left: em(30);
     @include media(tablet) {

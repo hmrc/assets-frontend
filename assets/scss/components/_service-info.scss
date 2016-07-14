@@ -204,10 +204,10 @@ Service Info with `.service-info__floated-items` allows for content to be floate
 Markup:
 <div class="service-info ">
   <div class="service-info__floated-items">
-    <div class="service-info__left">
+    <div class="service-info__item service-info__left">
       <span>Left Side</span>
     </div>
-    <div class="service-info__right">
+    <div class="service-info__item service-info__right">
       <span>Right Side</span>
     </div>
   </div>
@@ -216,7 +216,6 @@ Markup:
 Styleguide Service Info.Left and Right Items
 */
 .service-info__floated-items {
-  margin-top: em(15);
 
   .service-info__left,
   .service-info__right {
@@ -239,4 +238,8 @@ Styleguide Service Info.Left and Right Items
       margin-left: em(45);
     }
   }
+}
+
+.service-info__item {
+  margin-top: em(15);
 }
