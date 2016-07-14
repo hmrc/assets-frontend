@@ -169,10 +169,6 @@
 
                 </li>
                 <li class="comp-lib-menu-item">
-                  <a href="section-grids.html" class="comp-lib-menu-link">Grids</a>
-
-                </li>
-                <li class="comp-lib-menu-item">
                   <a href="section-header.html" class="comp-lib-menu-link">Header</a>
 
                 </li>
@@ -193,14 +189,23 @@
 
                 </li>
                 <li class="comp-lib-menu-item comp-lib-menu-item--highlighted">
-                  <a href="section-layouts.html" class="comp-lib-menu-link">Layouts</a>
+                  <a href="section-layout.html" class="comp-lib-menu-link">Layout</a>
 
                   <ul>
                       <li class="comp-lib-menu-item--indented">
-                        <a href="section-layouts.html#kssref-layouts-column-half">Half column container component</a>
+                        <a href="section-layout.html#kssref-layout-basic-page">Basic Page</a>
                       </li>
                       <li class="comp-lib-menu-item--indented">
-                        <a href="section-layouts.html#kssref-layouts-gutter-left">Gutter Left</a>
+                        <a href="section-layout.html#kssref-layout-full-width">Full width</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-layout.html#kssref-layout-grid">Grids</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-layout.html#kssref-layout-gutter-left">Gutter Left</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
+                        <a href="section-layout.html#kssref-layout-sidebar">Sidebar</a>
                       </li>
                   </ul>
                 </li>
@@ -249,6 +254,10 @@
 
                 </li>
                 <li class="comp-lib-menu-item">
+                  <a href="section-section.html" class="comp-lib-menu-link">Section</a>
+
+                </li>
+                <li class="comp-lib-menu-item">
                   <a href="section-select-input.html" class="comp-lib-menu-link">Select Input</a>
 
                 </li>
@@ -274,10 +283,6 @@
                 </li>
                 <li class="comp-lib-menu-item">
                   <a href="section-template-page-header.html" class="comp-lib-menu-link">Template Page Header</a>
-
-                </li>
-                <li class="comp-lib-menu-item">
-                  <a href="section-template-sidebar.html" class="comp-lib-menu-link">Template Sidebar</a>
 
                 </li>
                 <li class="comp-lib-menu-item">
@@ -307,10 +312,10 @@
             <article class="comp-lib-main">
                     
 
-                    <div id="kssref-layouts">
+                    <div id="kssref-layout">
                   <div>
                     <h1>
-                      <a href="#kssref-layouts" class="comp-lib-menu-link">Layouts</a>
+                      <a href="#kssref-layout" class="comp-lib-menu-link">Layout</a>
                     </h1>
                         <div class="alert alert--info alert--info__light" role="alert">
                           <p class="alert__message">Discuss this component on <a href="https://hmrcdigital.hackpad.com/Layouts-H4b5EgRDPYL">Hackpad</a></p>
@@ -323,21 +328,28 @@
                     </div>
 
 
-                    <section id="kssref-layouts-column-half">
+                    <section id="kssref-layout-basic-page">
                   <div>
                     <h2>
-                      <a href="#kssref-layouts-column-half" class="comp-lib-menu-link">Half column container component</a>
+                      <a href="#kssref-layout-basic-page" class="comp-lib-menu-link">Basic Page</a>
                     </h2>
 
                     <div class="comp-lib-description
                                 comp-lib-pattern-markdown
-                                 comp-lib-description--experimental
+                                
                                 ">
                       <h2 class="comp-lib-warning">
-                        Experimental!
+                        
                         
                       </h2>
-                      <p>Half column component.</p>
+                      <p>The basic page layout consists of a 2/3rds left column on wider viewports that
+collapses to full width on narrow viewports.</p>
+<p>It also includes a <code>.centered-content</code> block for the service info banner
+for the BETA banner and the (oprional) HMRC branding.</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>This is provided by play-ui&#39;s <a href="https://github.com/hmrc/play-ui/blob/master/src/main/twirl/uk/gov/hmrc/play/views/layouts/main_content.scala.html#L26-L28">main_content</a> template</li>
+</ul>
 
                     </div>
                   </div>
@@ -346,28 +358,28 @@
                     <div>
                       <div class="comp-lib-pattern-example">
                         <div class="comp-lib-pattern-component comp-lib-clearfix">
-                          <div class="column-half-container">
-    <div class="grid-wrapper row-border">
-        <div class="grid grid-1-2">
-            <div>Some content</div>
-        </div>
-        <div class="grid grid-1-2">
-            <div>Some content</a>
-        </div>
-    </div>
-</div>
+                          <main id="wrapper" role="main">
+  <div class="centered-content">
+    Area for the beta banner and HMRC branding
+  </div>
+  <div id="content">
+    <article class="content__body">
+      <p>Page content</p>
+    </article>
+  </div>
+</main>
                         </div>
                         <div class="comp-lib-code-example">
-                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;column-half-container&quot;&gt;
-    &lt;div class=&quot;grid-wrapper row-border&quot;&gt;
-        &lt;div class=&quot;grid grid-1-2&quot;&gt;
-            &lt;div&gt;Some content&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;grid grid-1-2&quot;&gt;
-            &lt;div&gt;Some content&lt;/a&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;main id=&quot;wrapper&quot; role=&quot;main&quot;&gt;
+  &lt;div class=&quot;centered-content&quot;&gt;
+    Area for the beta banner and HMRC branding
+  &lt;/div&gt;
+  &lt;div id=&quot;content&quot;&gt;
+    &lt;article class=&quot;content__body&quot;&gt;
+      &lt;p&gt;Page content&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/div&gt;
+&lt;/main&gt;</code></pre>
                         </div>
                       </div>
 
@@ -376,10 +388,265 @@
                     </section>
 
 
-                    <section id="kssref-layouts-gutter-left">
+                    <section id="kssref-layout-full-width">
                   <div>
                     <h2>
-                      <a href="#kssref-layouts-gutter-left" class="comp-lib-menu-link">Gutter Left</a>
+                      <a href="#kssref-layout-full-width" class="comp-lib-menu-link">Full width</a>
+                    </h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>Use the <code>.full-width</code> class when you want the page content to use the full width of the page</p>
+
+                    </div>
+                  </div>
+
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <main id="wrapper" role="main">
+  <div id="content" class="full-width">
+    <article class="content__body">
+      <div>
+        <p>Page content</p>
+      </div>
+    </article>
+  </div>
+</main>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;main id=&quot;wrapper&quot; role=&quot;main&quot;&gt;
+  &lt;div id=&quot;content&quot; class=&quot;full-width&quot;&gt;
+    &lt;article class=&quot;content__body&quot;&gt;
+      &lt;div&gt;
+        &lt;p&gt;Page content&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+  &lt;/div&gt;
+&lt;/main&gt;</code></pre>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    </section>
+
+
+                    <section id="kssref-layout-grid">
+                  <div>
+                    <h2>
+                      <a href="#kssref-layout-grid" class="comp-lib-menu-link">Grids</a>
+                    </h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>You create the grid with <code>.grid-layout</code> and individual columns with a column class <code>.grid-layout__column</code> and
+fraction class <code>.grid-layout__column--1-4</code>.</p>
+<ul>
+<li>Add a <code>.grid-layout</code> container.</li>
+<li>Add your columns with individual <code>.grid-layout__column</code>.</li>
+<li>Add your fractional width classes to set the width of the columns e.g. <code>.grid-layout__column--1-4</code>.</li>
+<li>IMPORTANT: To avoid clashing with other components that may have layout properties, do not place other component classes on the same element as <code>.grid-layout</code>.</li>
+</ul>
+
+                    </div>
+                  </div>
+
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <div class="grid-layout [modifier class]">
+  <div class="grid-layout__column grid-layout__column--1-4">
+    .grid-layout__column--1-4
+  </div>
+  <div class="grid-layout__column grid-layout__column--3-4">
+    .grid-layout__column--3-4
+  </div>
+</div>
+<div class="grid-layout [modifier class]">
+  <div class="grid-layout__column grid-layout__column--1-3">
+    .grid-layout__column--1-3
+  </div>
+  <div class="grid-layout__column grid-layout__column--2-3">
+    .grid-layout__column--2-3
+  </div>
+</div>
+<div class="grid-layout [modifier class]">
+  <div class="grid-layout__column grid-layout__column--1-2">
+    .grid-layout__column--1-2
+  </div>
+  <div class="grid-layout__column grid-layout__column--1-2">
+    .grid-layout__column--1-2
+  </div>
+</div>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;grid-layout [modifier class]&quot;&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-4&quot;&gt;
+    .grid-layout__column--1-4
+  &lt;/div&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--3-4&quot;&gt;
+    .grid-layout__column--3-4
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-layout [modifier class]&quot;&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-3&quot;&gt;
+    .grid-layout__column--1-3
+  &lt;/div&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--2-3&quot;&gt;
+    .grid-layout__column--2-3
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-layout [modifier class]&quot;&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
+    .grid-layout__column--1-2
+  &lt;/div&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
+    .grid-layout__column--1-2
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+
+                      <div class="comp-lib-pattern-example">
+                        <h2>.grid-layout--stacked</h2>
+                        <div class="comp-lib-description">
+                          Stack columns in mobile
+                        </div>
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <div class="grid-layout grid-layout--stacked">
+  <div class="grid-layout__column grid-layout__column--1-4">
+    .grid-layout__column--1-4
+  </div>
+  <div class="grid-layout__column grid-layout__column--3-4">
+    .grid-layout__column--3-4
+  </div>
+</div>
+<div class="grid-layout grid-layout--stacked">
+  <div class="grid-layout__column grid-layout__column--1-3">
+    .grid-layout__column--1-3
+  </div>
+  <div class="grid-layout__column grid-layout__column--2-3">
+    .grid-layout__column--2-3
+  </div>
+</div>
+<div class="grid-layout grid-layout--stacked">
+  <div class="grid-layout__column grid-layout__column--1-2">
+    .grid-layout__column--1-2
+  </div>
+  <div class="grid-layout__column grid-layout__column--1-2">
+    .grid-layout__column--1-2
+  </div>
+</div>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;grid-layout grid-layout--stacked&quot;&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-4&quot;&gt;
+    .grid-layout__column--1-4
+  &lt;/div&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--3-4&quot;&gt;
+    .grid-layout__column--3-4
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-layout grid-layout--stacked&quot;&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-3&quot;&gt;
+    .grid-layout__column--1-3
+  &lt;/div&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--2-3&quot;&gt;
+    .grid-layout__column--2-3
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-layout grid-layout--stacked&quot;&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
+    .grid-layout__column--1-2
+  &lt;/div&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
+    .grid-layout__column--1-2
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                      <div class="comp-lib-pattern-example">
+                        <h2>.grid-layout--maintain-width</h2>
+                        <div class="comp-lib-description">
+                          Maintain half width columns on mobile
+                        </div>
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <div class="grid-layout grid-layout--maintain-width">
+  <div class="grid-layout__column grid-layout__column--1-4">
+    .grid-layout__column--1-4
+  </div>
+  <div class="grid-layout__column grid-layout__column--3-4">
+    .grid-layout__column--3-4
+  </div>
+</div>
+<div class="grid-layout grid-layout--maintain-width">
+  <div class="grid-layout__column grid-layout__column--1-3">
+    .grid-layout__column--1-3
+  </div>
+  <div class="grid-layout__column grid-layout__column--2-3">
+    .grid-layout__column--2-3
+  </div>
+</div>
+<div class="grid-layout grid-layout--maintain-width">
+  <div class="grid-layout__column grid-layout__column--1-2">
+    .grid-layout__column--1-2
+  </div>
+  <div class="grid-layout__column grid-layout__column--1-2">
+    .grid-layout__column--1-2
+  </div>
+</div>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;grid-layout grid-layout--maintain-width&quot;&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-4&quot;&gt;
+    .grid-layout__column--1-4
+  &lt;/div&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--3-4&quot;&gt;
+    .grid-layout__column--3-4
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-layout grid-layout--maintain-width&quot;&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-3&quot;&gt;
+    .grid-layout__column--1-3
+  &lt;/div&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--2-3&quot;&gt;
+    .grid-layout__column--2-3
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;grid-layout grid-layout--maintain-width&quot;&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
+    .grid-layout__column--1-2
+  &lt;/div&gt;
+  &lt;div class=&quot;grid-layout__column grid-layout__column--1-2&quot;&gt;
+    .grid-layout__column--1-2
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+
+                    </section>
+
+
+                    <section id="kssref-layout-gutter-left">
+                  <div>
+                    <h2>
+                      <a href="#kssref-layout-gutter-left" class="comp-lib-menu-link">Gutter Left</a>
                     </h2>
 
                     <div class="comp-lib-description
@@ -406,6 +673,77 @@
                         </div>
                       </div>
 
+                    </div>
+
+                    </section>
+
+
+                    <section id="kssref-layout-sidebar">
+                  <div>
+                    <h2>
+                      <a href="#kssref-layout-sidebar" class="comp-lib-menu-link">Sidebar</a>
+                    </h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>An example of a 1/3 column sidebar. It&#39;s positioned on the right of the page.</p>
+
+                    </div>
+                  </div>
+
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <div class="sidebar [modifier class]">
+  Sidebar content
+</div>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;sidebar [modifier class]&quot;&gt;
+  Sidebar content
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+
+                      <div class="comp-lib-pattern-example">
+                        <h2>.sidebar--full-width</h2>
+                        <div class="comp-lib-description">
+                          Full width sidebar
+                        </div>
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <div class="sidebar sidebar--full-width">
+  Sidebar content
+</div>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;sidebar sidebar--full-width&quot;&gt;
+  Sidebar content
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                      <div class="comp-lib-pattern-example">
+                        <h2>.sidebar--hidden-sm</h2>
+                        <div class="comp-lib-description">
+                          Sidebar hidden in <code>small</code> viewport
+                        </div>
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <div class="sidebar sidebar--hidden-sm">
+  Sidebar content
+</div>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;div class=&quot;sidebar sidebar--hidden-sm&quot;&gt;
+  Sidebar content
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
                     </div>
 
                     </section>

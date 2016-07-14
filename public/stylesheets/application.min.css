@@ -3873,24 +3873,45 @@ Styleguide Typography.Blue Big Heading
   }
 }
 
-/**
-* @desc         layout classes.
-* @name         layouts
-* @author       Anthony Munene
-* @tested       N/A
-* @requires     [ toolkit/_colours.scss ]
+/*
+Basic Page
+
+The basic page layout consists of a 2/3rds left column on wider viewports that
+collapses to full width on narrow viewports.
+
+It also includes a `.centered-content` block for the service info banner
+for the BETA banner and the (oprional) HMRC branding.
+
+**Notes:**
+* This is provided by play-ui's [main_content](https://github.com/hmrc/play-ui/blob/master/src/main/twirl/uk/gov/hmrc/play/views/layouts/main_content.scala.html#L26-L28) template
+
+Markup:
+<main id="wrapper" role="main">
+  <div class="centered-content">
+    Area for the beta banner and HMRC branding
+  </div>
+  <div id="content">
+    <article class="content__body">
+      <p>Page content</p>
+    </article>
+  </div>
+</main>
+
+Discussion: https://hmrcdigital.hackpad.com/Layouts-H4b5EgRDPYL
+
+Styleguide Layout.Basic Page
 */
-/* line 9, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 30, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
 body {
   counter-reset: section;
 }
 
-/* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 34, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
 #wrapper {
   text-align: left;
 }
 
-/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
 #content {
   display: block;
   max-width: 960px;
@@ -3905,7 +3926,7 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+  /* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
   #content {
     font-size: 16px;
     line-height: 1.25;
@@ -3913,13 +3934,13 @@ body {
 }
 
 @media (min-width: 641px) {
-  /* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+  /* line 38, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
   #content {
     padding: 0em 1.57895em 1.68421em 1.57895em;
   }
 }
 
-/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
 .centered-content {
   display: block;
   max-width: 960px;
@@ -3934,7 +3955,7 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+  /* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
   .centered-content {
     font-size: 16px;
     line-height: 1.25;
@@ -3942,13 +3963,13 @@ body {
 }
 
 @media (min-width: 641px) {
-  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+  /* line 42, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
   .centered-content {
     padding: 0em 1.57895em 0em 1.57895em;
   }
 }
 
-/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
 .content__body p {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -3959,99 +3980,70 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+  /* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
   .content__body p {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 53, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
 .full-width .content__body {
   float: none;
   width: 100%;
 }
 
-/* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
-.content__body > .full-width {
-  width: auto;
-  float: none;
-}
-
 @media (min-width: 641px) {
-  /* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+  /* line 46, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
   .content__body {
     float: left;
     width: 61.666667%;
   }
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
 .content__body .messages-box,
 .content__body .service-info__related-subsection {
   display: none;
 }
 
 @media (max-width: 640px) {
-  /* line 54, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+  /* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
   .content__body .messages-box,
   .content__body .service-info__related-subsection {
     display: block;
   }
 }
 
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
-.brand-border--top {
-  border-top: 10px solid #005ea5;
-}
+/*
+Full width
 
-/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
-.section, .section--branded {
-  margin-bottom: 1em;
-  padding: 1em 0;
-}
+Use the `.full-width` class when you want the page content to use the full width of the page
 
-/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
-.section h2, .section--branded h2 {
-  margin-top: 0 !important;
-}
+Markup:
+<main id="wrapper" role="main">
+  <div id="content" class="full-width">
+    <article class="content__body">
+      <div>
+        <p>Page content</p>
+      </div>
+    </article>
+  </div>
+</main>
 
-/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
-.subsection {
-  margin: 1.5em 0;
-}
-
-/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
-.subsection--wide {
-  margin: 2.5em 0;
-}
-
-/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
-.section--branded h2 {
-  border-bottom: 5px solid #005ea5;
-  margin-top: 0 !important;
-  margin-bottom: 0.65em;
-}
-
-/* line 93, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
-.section--blue-top {
-  border-top: 10px solid #005ea5;
-}
-
-/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+Styleguide Layout.Full width
+*/
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
 .full-width {
   width: 100%;
-}
-
-/* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
-.row {
-  margin-bottom: 20px;
 }
 
 /*
 Half column container component
 
-Experimental: Half column component.
+Deprecated: Half column component. This work has come in from TCS and is using the grid work found in our old
+[govuk_elements](https://github.com/hmrc/assets-frontend/blob/0551d318fe24a4ddb1fca4f45ff64a6ece265b11/assets/govuk_elements/public/sass/elements/_layout.scss#L139)
+dependency. It could use `.diver--bottom` and new `.subsection--large` styles considering the styles shown below.
 
 Markup:
 <div class="column-half-container">
@@ -4064,12 +4056,8 @@ Markup:
         </div>
     </div>
 </div>
-
-Discussion: https://hmrcdigital.hackpad.com/Layouts-H4b5EgRDPYL
-
-Styleguide Layouts.column half
 */
-/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_layouts.scss */
+/* line 121, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_page.scss */
 .column-half-container .row-border {
   border-bottom: 1px solid #bfc1c3;
   margin: 0;
@@ -4084,18 +4072,98 @@ Gutter left applies a left margin to a content box
 Markup:
 <div class="gutter-left"><p>Example Content</p></div>
 
-Styleguide Layouts.Gutter Left
+Styleguide Layout.Gutter Left
 */
-/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_gutters.scss */
+/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_gutters.scss */
 .gutter-left {
   margin-left: 0;
 }
 
 @media (min-width: 641px) {
-  /* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/layouts/_gutters.scss */
+  /* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_gutters.scss */
   .gutter-left {
     margin-left: 30px;
   }
+}
+
+/*
+Section
+
+Denotes a section of a screen.
+Usually with a level 2 heading and one or more paragraphs of content.
+
+Markup:
+<section class="section {{modifier_class}}">
+  <h2>Section Title</h2>
+  <p>Section content</p>
+</section>
+
+.section--branded  - A section with gov branding.
+.section--blue-top - A top border for a section.
+
+Discussion: https://hmrcdigital.hackpad.com/Section-AP4cjxqCEJf
+
+Styleguide Section.Section
+*/
+/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_section.scss */
+.section, .section--branded {
+  margin-bottom: 1em;
+  padding: 1em 0;
+}
+
+/* line 25, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_section.scss */
+.section h2, .section--branded h2 {
+  margin-top: 0 !important;
+}
+
+/* line 33, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_section.scss */
+.section--branded h2 {
+  border-bottom: 5px solid #005ea5;
+  margin-top: 0 !important;
+  margin-bottom: 0.65em;
+}
+
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_section.scss */
+.brand-border--top,
+.section--blue-top {
+  border-top: 10px solid #005ea5;
+}
+
+/*
+Sub Section
+
+Subsections provide extra margin for elements.
+They are useful for layout and providing sections with more white space on the
+top and bottom of its contained elements.
+
+Markup:
+<section class="subsection {{modifier_class}}">
+  <h2>Subsection Title</h2>
+  <p>Subsection content</p>
+</section>
+
+.subsection--wide - A subsection with larger margin.
+
+Styleguide Section.Sub Section
+*/
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_section.scss */
+.subsection {
+  margin: 1.5em 0;
+}
+
+/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_section.scss */
+.subsection--wide {
+  margin: 2.5em 0;
+}
+
+/*
+Row
+
+Deprecated: this needs removing but is incredibly hard to search for.
+*/
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/layouts/_section.scss */
+.row {
+  margin-bottom: 20px;
 }
 
 /*
@@ -4138,53 +4206,51 @@ Markup:
 .grid-layout--stacked           - Stack columns in mobile
 .grid-layout--maintain-width    - Maintain half width columns on mobile
 
-Discussion: https://hmrcdigital.hackpad.com/Grids-bDe0hdp0Zm5
-
-Styleguide Grids
+Styleguide Layout.Grid
 */
 @media (max-width: 640px) {
-  /* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 50, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout--stacked .grid-layout__column {
     display: block;
   }
 }
 
 @media (max-width: 640px) {
-  /* line 58, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout--maintain-width {
     display: table;
     float: left;
   }
-  /* line 62, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout--maintain-width .grid-layout__column--1-2 {
     width: 50%;
   }
-  /* line 65, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout--maintain-width .grid-layout__column--1-4 {
     width: 25%;
   }
-  /* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout--maintain-width .grid-layout__column--3-4 {
     width: 75%;
   }
-  /* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 69, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout--maintain-width .grid-layout__column--1-3 {
     width: 33.33333%;
   }
-  /* line 74, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout--maintain-width .grid-layout__column--2-3 {
     width: 66.66667%;
   }
 }
 
-/* line 80, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+/* line 78, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column {
   vertical-align: top;
   display: table-cell;
   width: 100%;
 }
 
-/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+/* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column--1-4 {
   vertical-align: top;
   display: table-cell;
@@ -4192,13 +4258,13 @@ Styleguide Grids
 }
 
 @media (min-width: 641px) {
-  /* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 84, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout__column--1-4 {
     width: 25%;
   }
 }
 
-/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+/* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column--3-4 {
   vertical-align: top;
   display: table-cell;
@@ -4206,13 +4272,13 @@ Styleguide Grids
 }
 
 @media (min-width: 641px) {
-  /* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 88, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout__column--3-4 {
     width: 75%;
   }
 }
 
-/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column--1-2 {
   vertical-align: top;
   display: table-cell;
@@ -4220,13 +4286,13 @@ Styleguide Grids
 }
 
 @media (min-width: 641px) {
-  /* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout__column--1-2 {
     width: 50%;
   }
 }
 
-/* line 98, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column--1-3 {
   vertical-align: top;
   display: table-cell;
@@ -4234,13 +4300,13 @@ Styleguide Grids
 }
 
 @media (min-width: 641px) {
-  /* line 98, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout__column--1-3 {
     width: 33.33333%;
   }
 }
 
-/* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
 .grid-layout__column--2-3 {
   vertical-align: top;
   display: table-cell;
@@ -4248,7 +4314,7 @@ Styleguide Grids
 }
 
 @media (min-width: 641px) {
-  /* line 102, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
+  /* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_grid.scss */
   .grid-layout__column--2-3 {
     width: 66.66667%;
   }
@@ -11172,12 +11238,62 @@ nav.help-contents ul li p {
 }
 
 /*
-Template Sidebar
+Sidebar
 
-An example of a right floated sidebar.
+An example of a 1/3 column sidebar. It's positioned on the right of the page.
 
 Markup:
 <div class="sidebar {{modifier_class}}">
+  Sidebar content
+</div>
+
+.sidebar--full-width  - Full width sidebar
+.sidebar--hidden-sm   - Sidebar hidden in `small` viewport
+
+Styleguide Layout.Sidebar
+*/
+/* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+.sidebar {
+  width: auto;
+  margin: 30px 0 0 0;
+}
+
+@media (min-width: 641px) {
+  /* line 17, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+  .sidebar {
+    float: right;
+    width: 33.333333%;
+    margin: 0;
+  }
+}
+
+@media (min-width: 641px) {
+  /* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+  .sidebar--full-width {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+.sidebar--hidden-sm {
+  display: none;
+}
+
+@media (min-width: 641px) {
+  /* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+  .sidebar--hidden-sm {
+    display: block;
+  }
+}
+
+/*
+Sidebar List
+
+A list that is intended to be used in the sidebar of a page
+
+Markup:
+<div class="sidebar">
   <ul class="sidebar__list">
     <li class="sidebar__list-item">
       Sidebar list item
@@ -11188,49 +11304,9 @@ Markup:
   </ul>
 </div>
 
-.sidebar--full-width  - Full width sidebar
-.sidebar--hidden-sm   - Sidebar hidden in `small` viewport
-
-Discussion: https://hmrcdigital.hackpad.com/Template-Sidebar-SaFrhwmSDEx
-
-Styleguide Template Sidebar
+Styleguide Lists.Sidebar List
 */
-/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
-.sidebar {
-  width: auto;
-  margin: 30px 0 0 0;
-}
-
-@media (min-width: 641px) {
-  /* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
-  .sidebar {
-    float: right;
-    width: 33.333333%;
-    margin: 0;
-  }
-}
-
-@media (min-width: 641px) {
-  /* line 37, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
-  .sidebar--full-width {
-    width: 100%;
-    min-width: 100%;
-  }
-}
-
-/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
-.sidebar--hidden-sm {
-  display: none;
-}
-
-@media (min-width: 641px) {
-  /* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
-  .sidebar--hidden-sm {
-    display: block;
-  }
-}
-
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar__list {
   list-style: none;
   padding: 0;
@@ -11242,25 +11318,25 @@ Styleguide Template Sidebar
 }
 
 @media (max-width: 640px) {
-  /* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+  /* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar__list {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 57, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar__list-item {
   padding: 0;
   margin: 0 0 0.75em 0;
 }
 
-/* line 61, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+/* line 71, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar__list-item .sidebar__list-item--small-indent {
   margin-left: 0.15789em;
 }
 
-/* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar__list-item--lined-sm {
   display: block;
   border-top: solid 1px #bfc1c3;
@@ -11268,14 +11344,14 @@ Styleguide Template Sidebar
 }
 
 @media (min-width: 641px) {
-  /* line 67, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+  /* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar__list-item--lined-sm {
     border: none;
     padding: 0;
   }
 }
 
-/* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+/* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar__heading {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -11287,14 +11363,14 @@ Styleguide Template Sidebar
 }
 
 @media (max-width: 640px) {
-  /* line 79, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+  /* line 89, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar__heading {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-/* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+/* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
 .sidebar--helpful {
   color: #6f777b;
   font-family: "nta", Arial, sans-serif;
@@ -11306,7 +11382,7 @@ Styleguide Template Sidebar
 }
 
 @media (max-width: 640px) {
-  /* line 85, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
+  /* line 95, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_template-sidebar.scss */
   .sidebar--helpful {
     font-size: 14px;
     line-height: 1.14286;
