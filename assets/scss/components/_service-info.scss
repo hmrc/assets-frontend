@@ -199,44 +199,39 @@ Styleguide Service Info.Logged In
 /*
 Floated items
 
-Service Info with `.service-info__floated-items` allows for content to be floated on the left and right sides with adequate margins. On mobile breakpoints content is displayed block
+Service Info with `.service-info__left` `.service-info__right` allows for content to be floated on the left and right sides with adequate margins. On mobile breakpoints content is displayed block
 
 Markup:
 <div class="service-info ">
-  <div class="service-info__floated-items">
-    <div class="service-info__item service-info__left">
-      <span>Left Side</span>
-    </div>
-    <div class="service-info__item service-info__right">
-      <span>Right Side</span>
-    </div>
+  <div class="service-info__item service-info__left">
+    <span>Left Side</span>
+  </div>
+  <div class="service-info__item service-info__right">
+    <span>Right Side</span>
   </div>
 </div>
 
 Styleguide Service Info.Left and Right Items
 */
-.service-info__floated-items {
+.service-info__left,
+.service-info__right {
+  display: block;
+  margin-bottom: em(15);
+}
 
-  .service-info__left,
-  .service-info__right {
-    display: block;
-    margin-bottom: em(15);
+@include media(tablet) {
+  .service-info__left {
+    float: left;
+    margin-bottom: 0;
   }
 
-  @include media(tablet) {
-    .service-info__left {
-      float: left;
-      margin-bottom: 0;
-    }
+  .service-info__right {
+    float: right;
+    margin-bottom: 0;
+  }
 
-    .service-info__right {
-      float: right;
-      margin-bottom: 0;
-    }
-
-    .service-info__left + .service-info__right {
-      margin-left: em(45);
-    }
+  .service-info__left + .service-info__right {
+    margin-left: em(45);
   }
 }
 
