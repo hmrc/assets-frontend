@@ -4894,6 +4894,90 @@ ul li, nav ul li {
   display: inline;
 }
 
+/* line 66, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+.list--inline .list__item + .list__item {
+  margin-left: 0.78947em;
+}
+
+/*
+.list--collapse
+
+A collapsable list element on smaller breakpoints.
+Inline list at larger breakpoints.
+List items have 'list__item' class and toggle item has attribute 'data-list--collapse-toggle'
+
+Markup:
+<ul class="list--collapse hide-inline-list--collapse-targets">
+    <li class="list__item" data-list--collapse-toggle>
+        <span>I'm the toggle</span>
+    </li>
+    <li class="list__item">
+        <a href="#">list item link</a>
+    </li>
+    <li class="list__item">
+        <a href="#">another list item link</a>
+    </li>
+</ul>
+
+Styleguide Lists.Collapse
+*/
+/* line 97, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+.list--collapse .list__item {
+  display: block;
+}
+
+/* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+.list--collapse a, .list--collapse .link-style, .list--collapse .button--link-style {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+  .list--collapse a, .list--collapse .link-style, .list--collapse .button--link-style {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+.list--collapse .list__item {
+  display: inline;
+}
+
+/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+.list--collapse .list__item + .list__item {
+  margin-left: 0.78947em;
+}
+
+/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+[data-list-collapse-toggle] {
+  padding-left: 0;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  /* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+  [data-list-collapse-toggle] {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+.js-enabled .list--collapse .list__item + .list__item {
+  padding-left: 1.57895em;
+  padding-left: 0;
+}
+
 /*
 Numbered
 
@@ -4918,20 +5002,20 @@ Markup:
   </fieldset>
 </fieldset>
 */
-/* line 92, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 180, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered {
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 25px;
 }
 
-/* line 96, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 184, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered .numbered {
   margin: 0 0 20px 25px;
   padding-left: 15px;
 }
 
-/* line 99, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 187, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered .numbered:before {
   counter-increment: section;
   /* Increment the section counter */
@@ -4943,7 +5027,7 @@ Markup:
   padding-right: 10px;
 }
 
-/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 195, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list--numbered .numbered:last-child {
   margin-bottom: 0;
 }
@@ -4965,17 +5049,17 @@ Markup:
 
 Styleguide Lists.Activity
 */
-/* line 131, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 219, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list {
   padding-left: 0;
 }
 
-/* line 133, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 221, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list li {
   display: inline-block;
 }
 
-/* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 226, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list__date, .activity-list__date--highlight {
   float: left;
   text-align: left;
@@ -4983,17 +5067,17 @@ Styleguide Lists.Activity
   margin-right: 10px;
 }
 
-/* line 143, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 231, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list__date > *, .activity-list__date--highlight > * {
   font-weight: bold;
 }
 
-/* line 148, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 236, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list__date--highlight {
   font-weight: bold;
 }
 
-/* line 153, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 241, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .activity-list__description {
   float: left;
   width: 400px;
@@ -5014,7 +5098,7 @@ Markup:
 
 Styleguide Lists.Coms Alerts
 */
-/* line 175, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 263, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .coms-alerts img {
   margin-right: 10px;
 }
@@ -5037,13 +5121,13 @@ Markup:
 
 Styleguide Lists.Definiton
 */
-/* line 199, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 287, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .dl--label-value {
   margin-bottom: 1em;
   overflow: hidden;
 }
 
-/* line 202, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .dl--label-value dt, .dl--label-value dd {
   float: left;
   margin-left: 0;
@@ -5051,7 +5135,7 @@ Styleguide Lists.Definiton
   width: 50%;
 }
 
-/* line 208, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 296, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .dl--label-value dd {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
@@ -5083,7 +5167,7 @@ Markup:
 
 Styleguide Lists.Action
 */
-/* line 241, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 329, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list {
   list-style: none;
   margin: 0;
@@ -5091,7 +5175,7 @@ Styleguide Lists.Action
   clear: both;
 }
 
-/* line 246, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 334, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list li {
   border-top: 1px solid #bfc1c3;
   padding: 0.5em 0;
@@ -5099,7 +5183,7 @@ Styleguide Lists.Action
   overflow: hidden;
 }
 
-/* line 251, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 339, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list li:first-child {
   border-top: 1px solid #bfc1c3;
 }
@@ -5127,23 +5211,23 @@ Markup:
 
 Styleguide Lists.Grouped Action
 */
-/* line 281, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 369, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list__grouped {
   border-top: none;
 }
 
-/* line 283, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 371, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .action-list__grouped p {
   margin: 0.4em 0;
   padding: 0;
 }
 
-/* line 290, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 378, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list-noborder li {
   border-top: 0;
 }
 
-/* line 292, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 380, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .list-noborder li:first-child {
   border-top: 0;
 }
@@ -5175,23 +5259,23 @@ Markup:
 
 Styleguide Lists.Two Column
 */
-/* line 326, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 414, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list {
   display: inline-block;
 }
 
-/* line 328, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 416, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col {
   width: auto;
   float: none;
 }
 
-/* line 333, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 421, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list ul {
   margin: 0;
 }
 
-/* line 335, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 423, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list ul li {
   margin: 0.7em 0;
   font-family: "nta", Arial, sans-serif;
@@ -5202,29 +5286,29 @@ Styleguide Lists.Two Column
 }
 
 @media (max-width: 640px) {
-  /* line 335, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+  /* line 423, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
   .two-col-list ul li {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 339, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 427, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list ul.two-col-list--padded {
   margin-bottom: 30px;
 }
 
-/* line 347, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 435, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col {
   width: 48%;
 }
 
-/* line 350, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 438, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col--left {
   float: left;
 }
 
-/* line 353, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 441, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .two-col-list .two-col-list__col--right {
   float: right;
 }
@@ -5261,24 +5345,24 @@ Markup:
 
 Styleguide Lists.Three Column
 */
-/* line 394, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 482, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list {
   margin: 20px 0 0 0;
   display: inline-block;
 }
 
-/* line 397, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 485, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list .three-col-list__col {
   width: auto;
   float: none;
 }
 
-/* line 402, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 490, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list ul {
   margin: 0;
 }
 
-/* line 404, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 492, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list ul li {
   margin: 0.7em 0;
   font-family: "nta", Arial, sans-serif;
@@ -5289,21 +5373,21 @@ Styleguide Lists.Three Column
 }
 
 @media (max-width: 640px) {
-  /* line 404, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+  /* line 492, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
   .three-col-list ul li {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 413, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 501, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list .three-col-list__col {
   width: 29%;
   margin-right: 6.5%;
   float: left;
 }
 
-/* line 418, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 506, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .three-col-list .three-col-list__col--right {
   margin-right: 0;
 }
@@ -5322,13 +5406,13 @@ Markup:
 
 Styleguide Lists.Link
 */
-/* line 439, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 527, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .link-list {
   display: inline-block;
   margin-bottom: 15px;
 }
 
-/* line 444, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
+/* line 532, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_lists.scss */
 .link-list__item {
   display: block;
   margin-bottom: 15px;
@@ -9372,6 +9456,52 @@ Styleguide Service Info.Logged In
 /* line 195, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
 .last-login__more-details {
   margin: 0.26316em 0 0 0;
+}
+
+/*
+Floated items
+
+Service Info with `.service-info__left` `.service-info__right` allows for content to be floated on the left and right sides with adequate margins. On mobile breakpoints content is displayed block
+
+Markup:
+<div class="service-info ">
+  <div class="service-info__item service-info__left">
+    <span>Left Side</span>
+  </div>
+  <div class="service-info__item service-info__right">
+    <span>Right Side</span>
+  </div>
+</div>
+
+Styleguide Service Info.Left and Right Items
+*/
+/* line 216, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
+.service-info__left,
+.service-info__right {
+  display: block;
+  margin-bottom: 0.78947em;
+}
+
+/* line 223, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
+.service-info__left {
+  float: left;
+  margin-bottom: 0;
+}
+
+/* line 228, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
+.service-info__right {
+  float: right;
+  margin-bottom: 0;
+}
+
+/* line 233, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
+.service-info__left + .service-info__right {
+  margin-left: 2.36842em;
+}
+
+/* line 238, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_service-info.scss */
+.service-info__item {
+  margin-top: 0.78947em;
 }
 
 /*

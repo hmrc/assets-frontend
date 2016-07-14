@@ -207,6 +207,9 @@
                         <a href="section-lists.html#kssref-lists-activity">Activity</a>
                       </li>
                       <li class="comp-lib-menu-item--indented">
+                        <a href="section-lists.html#kssref-lists-collapse">.list--collapse</a>
+                      </li>
+                      <li class="comp-lib-menu-item--indented">
                         <a href="section-lists.html#kssref-lists-coms-alerts">Coms Alerts</a>
                       </li>
                       <li class="comp-lib-menu-item--indented">
@@ -584,6 +587,63 @@ description has the class <code>.activity-list__description</code>.</p>
 &lt;/ul&gt;</code></pre>
                         </div>
                       </div>
+                    </div>
+
+                    </section>
+
+
+                    <section id="kssref-lists-collapse">
+                  <div>
+                    <h2>
+                      <a href="#kssref-lists-collapse" class="comp-lib-menu-link">.list--collapse</a>
+                    </h2>
+
+                    <div class="comp-lib-description
+                                comp-lib-pattern-markdown
+                                
+                                ">
+                      <h2 class="comp-lib-warning">
+                        
+                        
+                      </h2>
+                      <p>A collapsable list element on smaller breakpoints.
+Inline list at larger breakpoints.
+List items have &#39;list__item&#39; class and toggle item has attribute &#39;data-list--collapse-toggle&#39;</p>
+
+                    </div>
+                  </div>
+
+                  <!-- pattern examples -->
+                    <div>
+                      <div class="comp-lib-pattern-example">
+                        <div class="comp-lib-pattern-component comp-lib-clearfix">
+                          <ul class="list--collapse hide-inline-list--collapse-targets">
+    <li class="list__item" data-list--collapse-toggle>
+        <span>I'm the toggle</span>
+    </li>
+    <li class="list__item">
+        <a href="#">list item link</a>
+    </li>
+    <li class="list__item">
+        <a href="#">another list item link</a>
+    </li>
+</ul>
+                        </div>
+                        <div class="comp-lib-code-example">
+                          <pre class="comp-lib-pre"><code class="comp-lib-code html">&lt;ul class=&quot;list--collapse hide-inline-list--collapse-targets&quot;&gt;
+    &lt;li class=&quot;list__item&quot; data-list--collapse-toggle&gt;
+        &lt;span&gt;I&#x27;m the toggle&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;list__item&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;list item link&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;list__item&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;another list item link&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+                      </div>
+
                     </div>
 
                     </section>
