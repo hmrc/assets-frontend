@@ -76,6 +76,12 @@
 .comp-lib-pattern-example {
   margin-bottom: 4em;
 }
+.comp-lib-pattern-component #wrapper,
+.comp-lib-pattern-component .sidebar,
+.comp-lib-pattern-component .content__body,
+.comp-lib-pattern-component .centered-content {
+  background: rgba(127,127,127,0.2);
+}
 .comp-lib-pattern-component .grid-layout__column {
   background-color: #dee0e2;
   padding: 1em;
