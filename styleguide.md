@@ -4,10 +4,11 @@ This Component Library demonstrates styles and components for **HMRC** applicati
 * [Support Channels](#support-channels)
 * [Adding Components](#adding-components)
 * [Discussing Changes](#discussing-changes)
-* [Reporting Issues / Actioning work - Components](#reporting-issues-actioning-work-components)
+* [Reporting Issues / Actioning work](#reporting-issues--actioning-work)
+   * [Components](#components)
+   * [Template](#template)
 * [Development details](#development-details)
 * [Component Library Template](#component-library-template)
-* [Reporting Issues / Actioning work - Template](#reporting-issues-actioning-work-template)
 * [Developing on the template](#developing-on-the-template)
 
 
@@ -33,9 +34,14 @@ You can see information about how to add a comment which will enable a component
 We have setup a **Components** collection on the [HMRC Digital Hackpad](https://hmrcdigital.hackpad.com/collection/EU4v7qZDRel). Every component page in the Component Library will have a hackpad page of the same name. This will be the place to discuss what you would like for you components.
 
 
-## Reporting Issues / Actioning work - Components
+## Reporting Issues / Actioning work
+### Components
 
 Once a decision has been made by the design team on a component the work needs to be raised and the component needs to be written/changed. To do this please raise an issue in [HMRC assets-fronted issues](https://github.com/hmrc/assets-frontend/issues) and attach the `component library` label to it.
+
+### Template
+
+If you would like to discuss extra features or the design of the template itself please raise an issue in [HMRC component-library-template issues](https://github.com/hmrc/component-library-template/issues).
 
 
 ## Development details
@@ -46,11 +52,6 @@ All the information you need to know for developing and enabling Components with
 # Component Library Template
 
 This library uses the [hmrc-component-library-template](https://github.com/hmrc/component-library-template).
-
-
-## Reporting Issues / Actioning work - Template
-
-If you would like to discuss extra features or the design of the template itself please raise an issue in [HMRC component-library-template issues](https://github.com/hmrc/component-library-template/issues).
 
 
 ## Developing on the template
