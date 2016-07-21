@@ -1,6 +1,7 @@
 This Component Library demonstrates styles and components for **HMRC** applications. It is built on top of the [GOV.UK frontend toolkit](https://github.com/alphagov/govuk_frontend_toolkit) and the [GOV.UK template](https://github.com/alphagov/govuk_template) and it uses the [hmrc-component-library-template](https://github.com/hmrc/component-library-template).
 
 * [What is the Component Library?](#what-is-the-component-library)
+* [Support Channels](#support-channels)
 * [Adding Components](#adding-components)
 * [Discussing Changes](#discussing-changes)
 * [Reporting Issues / Actioning work - Components](#reporting-issues-actioning-work-components)
@@ -13,6 +14,13 @@ This Component Library demonstrates styles and components for **HMRC** applicati
 ## What is the Component Library?
 
 The Component Library is the generated output of [HMRC assets-fronted](https://github.com/hmrc/assets-frontend) stylesheets. It allows Designers and Developers to see what components we have across the Tax Platform.
+
+
+## Support Channels
+
+We have Slack channels for questions around the Component Library. You'll need a government email address to join them.
+* [Slack channel for Community UX](https://hmrcdigital.slack.com/messages/community-ux/)
+* [Slack channel for Community Frontend](https://hmrcdigital.slack.com/messages/community-frontend/)
 
 
 ## Adding Components
