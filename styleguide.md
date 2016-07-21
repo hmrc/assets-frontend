@@ -31,7 +31,7 @@ You can see information about how to add a comment which will enable a component
 
 ## Discussing Changes
 
-We have setup a **Components** collection on the [HMRC Digital Hackpad](https://hmrcdigital.hackpad.com/collection/EU4v7qZDRel). Every component page in the Component Library will have a hackpad page of the same name. This will be the place to discuss what you would like for you components.
+We have setup a **Components** collection on the [HMRC Digital Hackpad](https://hmrcdigital.hackpad.com/collection/EU4v7qZDRel). Every component page in the Component Library has a link to the hackpad page of the same name. This is the place to discuss what you would like for you components.
 
 
 ## Reporting Issues / Actioning work
