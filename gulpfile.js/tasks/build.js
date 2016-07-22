@@ -8,7 +8,7 @@ gulp.task('build', ['clean', 'test'], function() {
   global.runmode = 'prod';
   global.location = undefined;
   runSequence(
-    ['sass', 'images'],
+    ['sass', 'images', 'svg'],
     ['browserify', 'concatEncryption'],
     'modernizr',
     'version',
