@@ -7783,7 +7783,9 @@ Styleguide Text Input.number
 */
 /* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
 .input--no-spinner {
-  appearance: textfield;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
 }
 
 /* line 111, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_text-input.scss */
@@ -8798,7 +8800,9 @@ Styleguide Form.control
 
 /* line 421, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
 select.form-control {
-  appearance: menulist;
+  -webkit-appearance: menulist;
+     -moz-appearance: menulist;
+          appearance: menulist;
 }
 
 /* line 425, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/form/_form.scss */
