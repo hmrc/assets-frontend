@@ -78,6 +78,51 @@
       </fieldset>
     </div>
   </fieldset>
+
+
+  <fieldset class="form-field-group" id="dob">
+    <label class="form-field ">
+      <span class="form-label-bold">Date of birth</span>
+      <div class="form-date">
+        <span class="form-hint">For example, 31 3 1980</span>
+        <ul class="error-notification--group">
+          <li class="error-notification--group-item">
+            <span id="dob-error-message" class="error-notification" role="alert" data-input-name="dob">
+                  Enter your date of birth.
+            </span>
+          </li>
+        </ul>
+
+        <div class="form-date" id="date-fields">
+          <div class="form-group form-group-day">
+            <label for="dob-day" class="form-group form-group-day">Day</label>
+            <input type="number" class="dob input--xsmall required input--no-spinner" name="dob.day" id="dob-day"
+                   data-rule-required="true"
+                   data-msg-required="Enter your date of birth."
+                   data-rule-require_from_group='[3,".dob"]'
+                   data-msg-require_from_group="Enter your date of birth.">
+          </div>
+
+          <div class="form-group form-group-month">
+            <label for="dob-month" class="form-group form-group-month">Month</label>
+            <input type="number" class="dob input--normal required  input--no-spinner" name="dob.month" id="dob-month"
+                   data-rule-required="true"
+                   data-msg-required="Enter your date of birth."
+                   data-rule-require_from_group='[3,".dob"]'
+                   data-msg-require_from_group="Enter your date of birth.">
+          </div>
+          <div class="form-date form-group-year">
+            <label for="dob-year" class="form-date form-group-year flush--bottom">Year</label>
+            <input type="number" class="dob input--xsmall form-group-year required input--no-spinner" name="dob.year" id="dob-year" 
+                   data-rule-required="true"
+                   data-msg-required="Enter your date of birth."
+                   data-rule-require_from_group='[3,".dob"]'
+                   data-msg-require_from_group="Enter your date of birth.">
+          </div>
+        </div>
+      </div>
+    </label>
+  </fieldset>
   
   <button id="submit-button" type="submit">Submit</button>
 </form>
