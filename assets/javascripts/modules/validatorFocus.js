@@ -7,9 +7,12 @@
     }
 
     $('.error-summary a').on('click', function(e) {
+      var focusId = $(this).attr('data-focuses');
+      if (!focusId)
+        return;
+
       e.preventDefault();
-      var focusId = $(this).attr('data-focuses'),
-        inputToFocus = $('#' + focusId),
+      var inputToFocus = $('#' + focusId),
         inputTagName = inputToFocus.prop("tagName").toLowerCase(),
         nodeToScrollTo = inputToFocus;
 
