@@ -7,10 +7,24 @@
     }
 
     $('.error-summary a').on('click', function(e) {
+      var $this = $(this);
+      var focusId = $this.attr('data-focuses');
+      if (!focusId) {
+        focusId = $this.attr("href") || "";
+        if (focusId.indexOf("#") !== 0)
+          return;
+      }
+      else {
+        focusId = "#" + focusId;
+      }
+
+      var inputToFocus = $(focusId);
+      if (!inputToFocus.length)
+        return;
+
       e.preventDefault();
-      var focusId = $(this).attr('data-focuses'),
-        inputToFocus = $('#' + focusId),
-        inputTagName = inputToFocus.prop("tagName").toLowerCase(),
+
+      var inputTagName = inputToFocus.prop("tagName").toLowerCase(),
         nodeToScrollTo = inputToFocus;
 
       if (["input", "select", "button"].indexOf(inputTagName) !== -1) {
