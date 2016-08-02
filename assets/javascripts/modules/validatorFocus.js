@@ -9,14 +9,12 @@
     $('.error-summary a').on('click', function(e) {
       var $this = $(this);
       var focusId = $this.attr('data-focuses');
-      if (!focusId)
-      {
+      if (!focusId) {
         focusId = ("" + $this.attr("href")).trim();
         if (focusId.indexOf("#") !== 0)
           return;
       }
-      else
-      {
+      else {
         focusId = "#" + focusId;
       }
 
