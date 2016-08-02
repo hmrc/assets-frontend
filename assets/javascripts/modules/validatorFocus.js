@@ -19,7 +19,7 @@
       }
 
       var inputToFocus = $(focusId);
-      if (!inputToFocus.size())
+      if (!inputToFocus.length)
         return;
 
       e.preventDefault();
