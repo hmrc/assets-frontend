@@ -7,13 +7,26 @@
     }
 
     $('.error-summary a').on('click', function(e) {
-      var focusId = $(this).attr('data-focuses');
+      var $this = $(this);
+      var focusId = $this.attr('data-focuses');
       if (!focusId)
+      {
+        focusId = ("" + $this.attr("href")).trim();
+        if (focusId.indexOf("#") !== 0)
+          return;
+      }
+      else
+      {
+        focusId = "#" + focusId;
+      }
+
+      var inputToFocus = $(focusId);
+      if (!inputToFocus.size())
         return;
 
       e.preventDefault();
-      var inputToFocus = $('#' + focusId),
-        inputTagName = inputToFocus.prop("tagName").toLowerCase(),
+
+      var inputTagName = inputToFocus.prop("tagName").toLowerCase(),
         nodeToScrollTo = inputToFocus;
 
       if (["input", "select", "button"].indexOf(inputTagName) !== -1) {
