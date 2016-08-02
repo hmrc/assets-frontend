@@ -10,7 +10,7 @@
       var $this = $(this);
       var focusId = $this.attr('data-focuses');
       if (!focusId) {
-        focusId = ("" + $this.attr("href")).trim();
+        focusId = $this.attr("href") || "";
         if (focusId.indexOf("#") !== 0)
           return;
       }
