@@ -14642,6 +14642,46 @@ body {
   background: #fff;
 }
 
+/* Headings with `p` added due to the specificity of `.content__body p`.
+ * To be removed once specificity lowered. */
+/* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+p.heading-48 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1.04167;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+  margin: 0.52632em 0 0.52632em 0;
+}
+
+@media (max-width: 640px) {
+  /* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+  p.heading-48 {
+    font-size: 32px;
+    line-height: 1.09375;
+  }
+}
+
+/* line 137, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+p.heading-24,
+p.heading-24--normal {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 137, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+  p.heading-24,
+  p.heading-24--normal {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
 /*
 Question/Answer
 
