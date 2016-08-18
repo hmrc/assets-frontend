@@ -126,3 +126,15 @@ html {
 body {
   background: $white;
 }
+
+/* Headings with `p` added due to the specificity of `.content__body p`.
+ * To be removed once specificity lowered. */
+p.heading-48 {
+  @include bold-48();
+  margin: em(10) 0 em(10) 0;
+}
+
+p.heading-24,
+p.heading-24--normal {
+  @include core-24();
+}
