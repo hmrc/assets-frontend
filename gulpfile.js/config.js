@@ -27,7 +27,8 @@ var src = './assets/',
     govuk = {
       elements: src + 'govuk_elements',
       template: src + 'govuk_elements/govuk',
-      images: src + 'govuk_elements/govuk/public/images/'
+      images: src + 'govuk_elements/govuk/public/images/',
+      cssimgs: src + 'govuk_elements/govuk/public/stylesheets/images/'
     };
 
 module.exports = {
@@ -105,7 +106,7 @@ module.exports = {
   },
   
   images: {
-    govuk: govuk.images + '**/*',
+    govuk: [govuk.images, govuk.cssimgs].map(function (folder) { return folder  + '**/*'; }),
     dev: {
       src: [src + 'images/**/*', '!' + src + 'images/**/*.svg'],
       dest: snapshotDir + 'images'
