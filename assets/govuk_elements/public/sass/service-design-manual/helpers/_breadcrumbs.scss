@@ -44,7 +44,7 @@
         line-height: 1.25;
         font-weight: 300;
         text-transform: none;
-        background-image: url(https://assets.digital.cabinet-office.gov.uk/static/separator-73822610794bc3a64871f144d93d6526.png);
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAALCAYAAABcUvyWAAAANElEQVQYlWPYvH3H7b37DyUwoIN9Bw8t2Hfw8H96Sm7asu3dvoOH/xPWQaEgAwMDAy6fAwA24VeCFlDvTgAAAABJRU5ErkJggg==);
         background-position: 100% 50%;
         background-repeat: no-repeat;
         float: left;
@@ -59,7 +59,7 @@
         }
 
         @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-          background-image: url(https://assets.digital.cabinet-office.gov.uk/static/separator-2x-2ff66846b80b66edba8ce56d29daa935.png);
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAWCAYAAAD0OH0aAAAAZklEQVQ4jWPYtX+/wb4Dh97v2r/fgIEYsO/Aoff7Dh7+T7SmvfsPJew7ePj/ENG0fv9+ASI0HWxAaDp8njhNBw7NH0KaqKuBJCeRpvjgoX7iFaPG9n1SFONPT4NEMQMDGVmU1EIAAAjtK5BETq5FAAAAAElFTkSuQmCC);
           background-size: 6px 11px;
         }
 

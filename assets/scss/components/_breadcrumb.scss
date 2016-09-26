@@ -62,7 +62,7 @@ Deprecated: Breadcrumbs is the `play-ui` version of breadcrumbs
 Markup:
 <div id="global-breadcrumb" class="header-context {{modifier_class}}">
   <nav>
-    <ol>
+    <ol class="group">
       <li><a href="#">Link</a></li>
       <li><a href="#">Link</a></li>
       <li>Text</li>
