@@ -10525,7 +10525,7 @@ Adds HMRC crest logo and green left hand border.
 
 Markup:
 <div class="organisation-logo {{modifier_class}}">
-  <span>HMRC Revenue & Customs</span>
+  <span>HM Revenue & Customs</span>
 </div>
 
 .organisation-logo-medium - larger logo and font
@@ -10572,7 +10572,7 @@ Text appears below the logo.
 
 Markup:
 <div class="organisation-logo-stacked {{modifier_class}}">
-  <span>HMRC Revenue & Customs</span>
+  <span>HM Revenue & Customs</span>
 </div>
 
 .organisation-logo-stacked-medium - Larger logo and font
