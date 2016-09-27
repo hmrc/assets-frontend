@@ -12457,6 +12457,7 @@ Optional Classes:
  * `accordion__indicator` - for arrow styling, used in conjunction with `arrow` component 
  * `accordion__row__right` - right row container in `accordion__row`
  * `accordion__body__row` - a row of content in the body
+ * `accordion__body__row--no-border` - modifier style used in conjunction with `accordion__body__row` to suppress bottom border
  * `accordion__body__row__left` - left column of body row
  * `accordion__body__row__right` - right column of body row
 
@@ -12519,6 +12520,14 @@ Markup:
     </div>
     <div class="accordion__body hidden" data-accordion-body aria-hidden="false">
       <ul>
+        <li class="accordion__body__row accordion__body__row--no-border">
+          <div class="accordion__body__row__left">
+            <span class="font-xsmall">Borderless body row left column content</span>
+          </div>
+          <div class="accordion__body__row__right">
+            <span class="font-xsmall">Borderless body row right column content</span>
+          </div>
+        </li>
         <li class="accordion__body__row">
           <div class="accordion__body__row__left">
             <span class="font-xsmall">Body row left column content</span>
@@ -12533,7 +12542,7 @@ Markup:
 
 Styleguide Accordion.Full
 */
-/* line 111, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion {
   margin: 0;
   overflow: auto;
@@ -12541,27 +12550,27 @@ Styleguide Accordion.Full
   border-bottom: 1px solid #bfc1c3;
 }
 
-/* line 117, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion .tag {
   margin: 0 0.36842em 0.36842em 0;
 }
 
-/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 136, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion.accordion--expanded .accordion__body {
   border-top: 1px solid #bfc1c3;
 }
 
-/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 143, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion--stacked {
   border-bottom: none;
 }
 
-/* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 147, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion--stacked--last {
   border-bottom: 1px solid #bfc1c3;
 }
 
-/* line 142, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 151, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row {
   padding: 0.78947em 0.63158em 0.78947em 0.63158em;
   background-color: #f8f8f8;
@@ -12570,7 +12579,7 @@ Styleguide Accordion.Full
   box-sizing: border-box;
 }
 
-/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 159, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row__left {
   width: 35%;
   display: table-cell;
@@ -12578,27 +12587,27 @@ Styleguide Accordion.Full
   box-sizing: border-box;
 }
 
-/* line 156, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 165, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row__left .accordion__indicator {
   float: left;
   margin: -0.21053em 0.26316em 0.26316em 0;
   margin-top: -0.10526em;
 }
 
-/* line 168, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__row__right {
   width: 50%;
   display: table-cell;
   box-sizing: border-box;
 }
 
-/* line 174, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 183, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body {
   overflow: hidden;
   border-top: 1px solid #f8f8f8;
 }
 
-/* line 179, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 188, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row {
   border-bottom: 1px solid #bfc1c3;
   overflow: auto;
@@ -12607,12 +12616,17 @@ Styleguide Accordion.Full
   width: 100%;
 }
 
-/* line 186, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 195, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row:last-child {
   border-bottom: none;
 }
 
-/* line 192, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 201, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+.accordion__body__row--no-border {
+  border: none;
+}
+
+/* line 205, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__left {
   padding: 0.52632em 0.63158em 0.52632em 1.57895em;
   width: 42%;
@@ -12621,24 +12635,24 @@ Styleguide Accordion.Full
   display: table-cell;
 }
 
-/* line 199, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 212, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__left.spaced {
   padding: 0.78947em 0.63158em 0.78947em 1.57895em;
 }
 
-/* line 216, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 229, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__right {
   padding: 0.52632em 0.63158em 0.52632em 0;
   background-color: white;
   display: table-cell;
 }
 
-/* line 227, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 240, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__body__row__right.spaced {
   padding: 0.78947em 0.63158em 0.78947em 0;
 }
 
-/* line 238, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
+/* line 251, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_accordion.scss */
 .accordion__button:visited {
   color: #005ea5;
 }

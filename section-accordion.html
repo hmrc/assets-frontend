@@ -360,6 +360,7 @@
 <li><code>accordion__indicator</code> - for arrow styling, used in conjunction with <code>arrow</code> component</li>
 <li><code>accordion__row__right</code> - right row container in <code>accordion__row</code></li>
 <li><code>accordion__body__row</code> - a row of content in the body</li>
+<li><code>accordion__body__row--no-border</code> - modifier style used in conjunction with <code>accordion__body__row</code> to suppress bottom border</li>
 <li><code>accordion__body__row__left</code> - left column of body row</li>
 <li><code>accordion__body__row__right</code> - right column of body row</li>
 </ul>
@@ -417,6 +418,14 @@
     </div>
     <div class="accordion__body hidden" data-accordion-body aria-hidden="false">
       <ul>
+        <li class="accordion__body__row accordion__body__row--no-border">
+          <div class="accordion__body__row__left">
+            <span class="font-xsmall">Borderless body row left column content</span>
+          </div>
+          <div class="accordion__body__row__right">
+            <span class="font-xsmall">Borderless body row right column content</span>
+          </div>
+        </li>
         <li class="accordion__body__row">
           <div class="accordion__body__row__left">
             <span class="font-xsmall">Body row left column content</span>
@@ -452,6 +461,14 @@
     &lt;/div&gt;
     &lt;div class=&quot;accordion__body hidden&quot; data-accordion-body aria-hidden=&quot;false&quot;&gt;
       &lt;ul&gt;
+        &lt;li class=&quot;accordion__body__row accordion__body__row--no-border&quot;&gt;
+          &lt;div class=&quot;accordion__body__row__left&quot;&gt;
+            &lt;span class=&quot;font-xsmall&quot;&gt;Borderless body row left column content&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;accordion__body__row__right&quot;&gt;
+            &lt;span class=&quot;font-xsmall&quot;&gt;Borderless body row right column content&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
         &lt;li class=&quot;accordion__body__row&quot;&gt;
           &lt;div class=&quot;accordion__body__row__left&quot;&gt;
             &lt;span class=&quot;font-xsmall&quot;&gt;Body row left column content&lt;/span&gt;
