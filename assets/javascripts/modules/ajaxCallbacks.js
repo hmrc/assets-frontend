@@ -136,9 +136,12 @@ var ajaxCallbacks = {
         var message =  emailMessage + (response.registeredUser ?
                     ' confirming they have been added to this application.' :
                     ' inviting them to register with the API Developer Hub. They cannot access the application until they register.');
+        var role = $element.find('[name=role]:checked').val();
 
-        if ($element.find('[name=role]:checked').val() === 'ADMINISTRATOR') {
+        if (role === 'ADMINISTRATOR') {
           $permission.append($('<span class="faded-text">Admin</span>'));
+        } else if (role === 'DEVELOPER') {
+          $permission.append($('<span class="faded-text">Developer</span>'));
         }
 
         // add to the list
