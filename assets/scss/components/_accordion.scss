@@ -29,6 +29,7 @@ Optional Classes:
  * `accordion__indicator` - for arrow styling, used in conjunction with `arrow` component 
  * `accordion__row__right` - right row container in `accordion__row`
  * `accordion__body__row` - a row of content in the body
+ * `accordion__body__row--no-border` - modifier style used in conjunction with `accordion__body__row` to suppress bottom border
  * `accordion__body__row__left` - left column of body row
  * `accordion__body__row__right` - right column of body row
 
@@ -93,6 +94,14 @@ Markup:
     </div>
     <div class="accordion__body hidden" data-accordion-body aria-hidden="false">
       <ul>
+        <li class="accordion__body__row accordion__body__row--no-border">
+          <div class="accordion__body__row__left">
+            <span class="font-xsmall">Borderless body row left column content</span>
+          </div>
+          <div class="accordion__body__row__right">
+            <span class="font-xsmall">Borderless body row right column content</span>
+          </div>
+        </li>
         <li class="accordion__body__row">
           <div class="accordion__body__row__left">
             <span class="font-xsmall">Body row left column content</span>
