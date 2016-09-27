@@ -189,6 +189,10 @@ Styleguide Accordion.Full
 
 }
 
+.accordion__body__row--no-border {
+  border: none;
+}
+
 .accordion__body__row__left {
   padding: em(10) em(12) em(10) em(30);
   width: 42%;
