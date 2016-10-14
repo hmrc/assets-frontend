@@ -47,9 +47,12 @@ Print
 Add a print image to a print link.
 
 Markup:
-<a href="javascript:window.print()" class="print-link print-hidden js-visible">Print me</a>
+<a href="javascript:window.print()" class="print-link print-hidden js-visible {{modifier_class}}">Print me</a>
+
+.print-link--float-right  - Float the link to the right of the container
 
 Styleguide Links.Print
+
 */
 
 .print-link {
@@ -57,7 +60,12 @@ Styleguide Links.Print
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASAgMAAAAvVbb5AAAACVBMVEX///////8KDAwmYEUdAAAAAXRSTlMAQObYZgAAADBJREFUCFtjYOBa1cDAoBkKJFYCCSYwEYpCrAICZCI0FEhkrURmQRRnrYRpW7WqAQAlGR86Ip1rwwAAAABJRU5ErkJggg==");
   padding: 0.5em 0 0.5em 28px;
   zoom: 1;
+
+  &.print-link--float-right {
+    float: right;
+  }
 }
+
 
 /*
 Back
