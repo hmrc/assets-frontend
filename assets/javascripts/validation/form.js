@@ -86,8 +86,9 @@ Summary Error Markup example:
  )
  */
 
-var $forms;
-
+var $forms,
+    submitted = false;
+    
 var renderGlobalErrorSummary = function (validator, errorMessages) {
   var $template = $('<li role="tooltip"><a></a></li>');
   var $errorSummaryListElement;
@@ -95,8 +96,10 @@ var renderGlobalErrorSummary = function (validator, errorMessages) {
   if (errorMessages.length) {
 
     $(errorMessages).each(function (index, errorDetail) {
-      $errorSummaryListElement = $template.clone();
-      createErrorSummaryListItem($errorSummaryListElement, validator, errorDetail);
+      if (errorDetail.name &&!$('[data-input-name="'+errorDetail.name+'"]').hasClass('error-summary--ignore')) {
+        $errorSummaryListElement = $template.clone();
+        createErrorSummaryListItem($errorSummaryListElement, validator, errorDetail);
+      }
     });
   }
 };
@@ -189,18 +192,26 @@ var getErrorMessages = function () {
 
 
 var setupForm = function ($formElem) {
-  var submitted = false;
   var validator = $formElem.validate({
     onfocusout: false,
     errorPlacement: function ($error, $element) {
       var $formFieldGroup = $element.closest('.form-field-group');
+
+      // don't set error text if the element is in a group
+      if (!$element.data('group')) {
       $formFieldGroup.find('.error-notification').text($error.text());
+      }
     },
     highlight: function (element) {
       $(element).closest('.form-field-group').addClass('form-field-group--error');
     },
     unhighlight: function (element) {
-      $(element).closest('.form-field-group').removeClass('form-field-group--error');
+      var $element = $(element);
+
+      // don't remove error class if the element is in a group
+      if (!$element.data('group')) {
+        $element.closest('.form-field-group').removeClass('form-field-group--error');
+      }
     },
     showErrors: function () {
       handleErrors(validator, submitted);
@@ -238,5 +249,7 @@ var init = function () {
 
 module.exports = {
   init: init,
-  getErrorMessages: getErrorMessages
+  getErrorMessages: getErrorMessages,
+  handleErrors: handleErrors,
+  submitted: submitted
 };
