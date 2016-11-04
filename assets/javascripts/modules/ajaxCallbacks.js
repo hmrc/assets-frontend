@@ -69,11 +69,11 @@ var ajaxCallbacks = {
 
         // hide form
         $element.toggleClass('js-visible').toggleClass('js-hidden');
-        
+
         // remove any error state on the input
         $element.find('.form-field').removeClass('form-field--error');
         $validationMessage.empty();
-        
+
         // reset form state
         helpers.utilities.setFormState($element, false);
         helpers.resetForms(helpers, type, data, container);
@@ -97,7 +97,7 @@ var ajaxCallbacks = {
 
         // show error message
         $validationMessage.text(response.responseJSON.message);
-        
+
         // reset form state
         helpers.utilities.setFormState($element, false);
 
@@ -137,8 +137,11 @@ var ajaxCallbacks = {
                     ' confirming they have been added to this application.' :
                     ' inviting them to register with the API Developer Hub. They cannot access the application until they register.');
 
-        if ($element.find('[name=role]:checked').val() === 'ADMINISTRATOR') {
+        var role = $element.find('[name=role]:checked').val();
+        if (role === 'ADMINISTRATOR') {
           $permission.append($('<span class="faded-text">Admin</span>'));
+        } else if (role === 'DEVELOPER') {
+          $permission.append($('<span class="faded-text">Developer</span>'));
         }
 
         // add to the list

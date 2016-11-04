@@ -396,14 +396,14 @@ describe('AjaxCallbacks', function() {
         });
 
       });
-      
+
       describe('.hasSessionLapsed', function() {
         var response = { 'status': 401, 'responseJSON': { 'redirectUri': '#' } };
         it('returns true if status in specified in valid response object is 401 ("Unauthorized")', function() {
           helpers.utilities.redirect(response);
           expect(/#$/.test(window.location.href)).toBe(true);
         });
-        
+
         it('returns false if status is not 401', function() {
           response.status = 200;
           helpers.utilities.redirect(response);
@@ -412,7 +412,7 @@ describe('AjaxCallbacks', function() {
 
         it('returns false if response object is invalid', function() {
           var currentUri = window.location.href;
-          
+
           response.status = undefined;
           helpers.utilities.redirect(response);
           expect(window.location.href).toBe(currentUri);
@@ -435,9 +435,9 @@ describe('AjaxCallbacks', function() {
           expect(window.location.href).toBe(currentUri);
         });
       });
-      
+
       describe('.redirect', function() {
-        var response = { 'responseJSON': { 'redirectUri': '#' } };  
+        var response = { 'responseJSON': { 'redirectUri': '#' } };
 
         it('loads page at ".responseJSON.redirectUri" specified in valid response object', function() {
           helpers.utilities.redirect(response);
@@ -463,7 +463,7 @@ describe('AjaxCallbacks', function() {
           expect(window.location.href).toBe(currentUri);
         });
       });
-      
+
       describe('.setFormState', function() {
         var $form = $('<form style="visibility:hidden">' +
           '<input name="value1" value="something 1"/>' +
@@ -475,13 +475,13 @@ describe('AjaxCallbacks', function() {
 
         it('disables form fields', function() {
           helpers.utilities.setFormState($form, true);
-          
+
           $form.find('input, textarea, button').each(function(idx, element) {
             expect($(element).prop('disabled')).toBe(true);
             expect($(element).attr('aria-disabled')).toBe('true');
           });
         });
-          
+
         it('enables disabled form fields', function() {
           helpers.utilities.setFormState($form, true);
           helpers.utilities.setFormState($form, false);
@@ -491,7 +491,7 @@ describe('AjaxCallbacks', function() {
             expect($(element).attr('aria-disabled')).toBe('false');
           });
         });
-        
+
         it('disables form button', function() {
 
           helpers.utilities.setFormState($button, false);
@@ -503,11 +503,72 @@ describe('AjaxCallbacks', function() {
         it('enables disabled form button', function() {
           helpers.utilities.setFormState($button, false);
           helpers.utilities.setFormState($button, true);
-          
+
           expect($button.prop('disabled')).toBe(true);
           expect($button.attr('aria-disabled')).toBe('true');
         });
-      });      
+      });
+    });
+  });
+
+  describe('.apiCollaboratorResponse', function() {
+    describe('.callbacks', function() {
+      describe('.success', function() {
+        var $container;
+        var underTest = ajaxCallbacks.apiCollaboratorResponse.callbacks.success;
+        var targets = {
+          success: null
+        };
+        var response = {
+          registeredUser: false
+        };
+
+        beforeEach(function() {
+          $container = setFixtures('<tbody data-collaborator-list></tbody>');
+        });
+
+        afterEach(function() {
+          $container.empty();
+        });
+
+        it('appends "Admin" when Administrator checked', function() {
+          var $form = $('<form>'+
+            '<input name="email" value="user1@example.com"/>'+
+            '<input type="radio" checked name="role" value="ADMINISTRATOR"/>'+
+            '<input type="radio" name="role" value="DEVELOPER"/>'+
+            '</form>');
+          var data = $form.serialize();
+          underTest(response, $form, data, helpers, targets, null, null);
+          var $td = $container.find("td");
+          expect($td[0].innerText).toBe("user1@example.com");
+          expect($td[1].innerText).toBe("Admin");
+        });
+
+        it('appends "Developer" when Developer checked', function() {
+          var $form = $('<form>'+
+            '<input name="email" value="user2@example.com"/>'+
+            '<input type="radio" name="role" value="ADMINISTRATOR"/>'+
+            '<input type="radio" checked name="role" value="DEVELOPER"/>'+
+            '</form>');
+          var data = $form.serialize();
+          underTest(response, $form, data, helpers, targets, null, null);
+          var $td = $container.find("td");
+          expect($td[0].innerText).toBe("user2@example.com");
+          expect($td[1].innerText).toBe("Developer");
+        });
+        it('appends nothing when role not set', function() {
+          var $form = $('<form>'+
+            '<input name="email" value="user3@example.com"/>'+
+            '<input type="radio" name="role" value="ADMINISTRATOR"/>'+
+            '<input type="radio" name="role" value="DEVELOPER"/>'+
+            '</form>');
+          var data = $form.serialize();
+          underTest(response, $form, data, helpers, targets, null, null);
+          var $td = $container.find("td");
+          expect($td[0].innerText).toBe("user3@example.com");
+          expect($td[1].innerText).toBe("");
+        });
+      });
     });
   });
 });
