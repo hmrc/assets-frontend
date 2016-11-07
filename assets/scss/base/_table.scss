@@ -277,3 +277,77 @@ Styleguide Table.Marker
   height: 10px;
   border-radius: 50%;
 }
+
+/*
+Responsive
+
+Responsive Table
+
+Markup:
+<table>
+  <thead>
+    <tr class="table__row--desktop-headings">
+      <th>Heading 1</th>
+      <th>Heading 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table__row--responsive">
+      <td class="table__detail--responsive" data-heading="Heading 1">Row 1 Detail 1</td>
+      <td class="table__detail--responsive" data-heading="Heading 2">Row 1 Detail 2</td>
+    </tr>
+    <tr class="table__row--responsive">
+      <td class="table__detail--responsive" data-heading="Heading 1">Row 2 Detail 1</td>
+      <td class="table__detail--responsive" data-heading="Heading 2">Row 2 Detail 2</td>
+    </tr>
+  </tbody>
+</table>
+
+
+Styleguide Table.Responsive
+*/
+
+@media (max-width: 639px) {
+  .table__row--desktop-headings {
+    display: none;
+  }
+
+  .table__row--responsive {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .table__row--responsive:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .table__row--responsive:before {
+    display: block;
+    border-bottom: 2px solid $border-colour;
+  }
+
+  .table__detail--responsive {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    clear: left;
+    width: 100%;
+    border: none;
+  }
+
+  .table__detail--responsive:before {
+    content: attr(data-heading);
+    font-weight: normal;
+    color: $grey-1;
+    float: left;
+    width: 35%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .table__detail--responsive:last-of-type {
+    border-bottom: 1px solid $border-colour;
+  }
+}
