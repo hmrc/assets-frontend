@@ -6,7 +6,7 @@ Frontend assets for the Tax Platform
 
 - [Using service-manager](#using-service-manager)
 - [Requirements](#requirements)
-- [Running Locally](#running-locally)
+- [Running Locally](#running-locally-development-mode)
 - [Running JS Tests](#running-js-tests)
 - [Running tests whilst developing](#running-js-tests-whilst-developing)
 - [Running a Production build](#running-a-production-build)
