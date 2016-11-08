@@ -1213,14 +1213,12 @@ table th {
 
 /* line 132, ./assets/govuk_elements/govuk/public/sass/design-patterns/_buttons.scss */
 .button[type="submit"], [type="submit"].button--get-started, .button[type="reset"], [type="reset"].button--get-started, .button[type="button"], [type="button"].button--get-started {
-  -webkit-filter: chroma(color=#000000);
-          filter: chroma(color=#000000);
+  filter: chroma(color=#000000);
 }
 
 /* line 138, ./assets/govuk_elements/govuk/public/sass/design-patterns/_buttons.scss */
 .button[type=submit].button, [type=submit].button--get-started {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 /* line 11, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/_buttons.scss */
@@ -4154,14 +4152,12 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
 
 /* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 button[type="submit"], button[type="reset"], button[type="button"], .button[type="submit"], [type="submit"].button--get-started, .button[type="reset"], [type="reset"].button--get-started, .button[type="button"], [type="button"].button--get-started {
-  -webkit-filter: chroma(color=#000000);
-          filter: chroma(color=#000000);
+  filter: chroma(color=#000000);
 }
 
 /* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 button[type=submit].button, button[type=submit].button--get-started, .button[type=submit].button, [type=submit].button--get-started {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 @media (max-width: 640px) {
@@ -4268,14 +4264,12 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
 
 /* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .button--alert[type="submit"], .button--alert[type="reset"], .button--alert[type="button"] {
-  -webkit-filter: chroma(color=#000000);
-          filter: chroma(color=#000000);
+  filter: chroma(color=#000000);
 }
 
 /* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .button--alert[type=submit].button, .button--alert[type=submit].button--get-started {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 @media (max-width: 640px) {
@@ -4412,14 +4406,12 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
 
 /* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .button--secondary[type="submit"], .button--secondary[type="reset"], .button--secondary[type="button"] {
-  -webkit-filter: chroma(color=#000000);
-          filter: chroma(color=#000000);
+  filter: chroma(color=#000000);
 }
 
 /* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .button--secondary[type=submit].button, .button--secondary[type=submit].button--get-started {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 @media (max-width: 640px) {
@@ -4527,14 +4519,12 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
 
 /* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .button--small[type="submit"], .button--small[type="reset"], .button--small[type="button"] {
-  -webkit-filter: chroma(color=#000000);
-          filter: chroma(color=#000000);
+  filter: chroma(color=#000000);
 }
 
 /* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .button--small[type=submit].button, .button--small[type=submit].button--get-started {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 @media (max-width: 640px) {
@@ -4638,14 +4628,12 @@ button[type=submit].button, button[type=submit].button--get-started, .button[typ
 
 /* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .button--table[type="submit"], .button--table[type="reset"], .button--table[type="button"] {
-  -webkit-filter: chroma(color=#000000);
-          filter: chroma(color=#000000);
+  filter: chroma(color=#000000);
 }
 
 /* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .button--table[type=submit].button, .button--table[type=submit].button--get-started {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 /* line 70, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_buttons.scss */
@@ -4840,14 +4828,12 @@ Styleguide Buttons.Notification style
 
 /* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .button--notification[type="submit"], .button--notification[type="reset"], .button--notification[type="button"] {
-  -webkit-filter: chroma(color=#000000);
-          filter: chroma(color=#000000);
+  filter: chroma(color=#000000);
 }
 
 /* line 138, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
 .button--notification[type=submit].button, .button--notification[type=submit].button--get-started {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 @media (max-width: 640px) {
@@ -12485,7 +12471,7 @@ Markup:
         <p class="font-xsmall flush--top">Top right content</p>
       </div>
     </div>
-    <div class="accordion__body hidden" data-accordion-body aria-hidden="true">
+    <div class="accordion__body" data-accordion-body aria-hidden="true">
       <p>Accordion body</p>
     </div>
   </div>
@@ -12513,12 +12499,12 @@ Markup:
       </div>
       <div class="accordion__row__right align--top">
         <p class="font-xsmall flush--top">Top right content</p>
-        <div data-accordion-reveal class="hidden">  
+        <div data-accordion-reveal>  
           <p class="font-xsmall flush--bottom">Optionally revealed on expand</p>                  
         </div>
       </div>
     </div>
-    <div class="accordion__body hidden" data-accordion-body aria-hidden="false">
+    <div class="accordion__body" data-accordion-body aria-hidden="false">
       <ul>
         <li class="accordion__body__row accordion__body__row--no-border">
           <div class="accordion__body__row__left">

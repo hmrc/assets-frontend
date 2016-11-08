@@ -13118,7 +13118,7 @@ Markup:
         <p class="font-xsmall flush--top">Top right content</p>
       </div>
     </div>
-    <div class="accordion__body hidden" data-accordion-body aria-hidden="true">
+    <div class="accordion__body" data-accordion-body aria-hidden="true">
       <p>Accordion body</p>
     </div>
   </div>
@@ -13146,12 +13146,12 @@ Markup:
       </div>
       <div class="accordion__row__right align--top">
         <p class="font-xsmall flush--top">Top right content</p>
-        <div data-accordion-reveal class="hidden">  
+        <div data-accordion-reveal>  
           <p class="font-xsmall flush--bottom">Optionally revealed on expand</p>                  
         </div>
       </div>
     </div>
-    <div class="accordion__body hidden" data-accordion-body aria-hidden="false">
+    <div class="accordion__body" data-accordion-body aria-hidden="false">
       <ul>
         <li class="accordion__body__row accordion__body__row--no-border">
           <div class="accordion__body__row__left">
