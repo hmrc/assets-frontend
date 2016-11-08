@@ -5,10 +5,7 @@ module.exports = function() {
       var feedbackForms = require('./feedbackForms.js');
   
       var showErrorMessage = function() {
-        var response = '<p>There was a problem sending your query.</p>' +
-          '<p>Please try again later or email ' +
-          '<a href="mailto:hmrcsupport@tax.service.gov.uk">hmrcsupport@tax.service.gov.uk</a> ' +
-          'if you need technical help with this website.</p>';
+        var response = '<p>There was a problem sending your query.</p><p>Please try again later.</p>';
         reportErrorContainer().html(response);
         enableSubmitButton();
       },
