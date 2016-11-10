@@ -13388,6 +13388,7 @@ Styleguide App Info.Status
   line-height: 1.31579;
   font-weight: 400;
   text-transform: none;
+  white-space: nowrap;
 }
 
 @media (max-width: 640px) {
@@ -13398,12 +13399,12 @@ Styleguide App Info.Status
   }
 }
 
-/* line 105, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
 .status--verified {
   color: #009900;
 }
 
-/* line 109, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
+/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_app-info.scss */
 .status--not-verified {
   color: #F47738;
 }
