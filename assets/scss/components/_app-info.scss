@@ -100,6 +100,7 @@ Styleguide App Info.Status
 
 .status {
   @include core-19;
+  white-space: nowrap;
 }
 
 .status--verified {
