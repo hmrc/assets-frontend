@@ -5,7 +5,7 @@
 .idea
 
 npm-debug.log
-node_modules/
+node_modules*
 *_git-remotes/
 dist/
 logs/
