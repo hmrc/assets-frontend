@@ -281,7 +281,8 @@ Styleguide Table.Marker
 /*
 Responsive
 
-Responsive Table
+Responsive Table: shrink the browser to see how rows and columns behave
+with examples of different lengths of content in headings and details
 
 Markup:
 <table>
@@ -309,32 +310,32 @@ Markup:
       </td>
     </tr>
     <tr class="table__row--responsive">
-      <td class="table__detail--responsive" data-heading="Really quite a long heading for column 1">
+      <td class="table__detail--responsive" data-heading="Heading 1 - Example heading that exceeds cell width">
         <p class="table__cell-content--responsive">Row 3 Detail 1</p>
       </td>
-      <td class="table__detail--responsive" data-heading="Really quite a long heading for column 2">
+      <td class="table__detail--responsive" data-heading="Heading 2 - Example heading that exceeds cell width">
         <p class="table__cell-content--responsive">Row 3 Detail 2</p>
       </td>
     </tr>
     <tr class="table__row--responsive">
       <td class="table__detail--responsive" data-heading="Heading 1">
-        <p class="table__cell-content--responsive">Row 4 Detail 1 - has really quite a lot of content to include.</p>
+        <p class="table__cell-content--responsive">Row 4 Detail 1 - example content that exceeds cell width to create multiple lines</p>
       </td>
       <td class="table__detail--responsive" data-heading="Heading 2">
-        <p class="table__cell-content--responsive">Row 4 Detail 2 - has really quite a lot of content to include also.</p>
+        <p class="table__cell-content--responsive">Row 4 Detail 2 - example content that exceeds cell width to create multiple lines</p>
       </td>
     </tr>
     <tr class="table__row--responsive">
       <td class="table__detail--responsive" data-heading="Heading 1">
         <div class="table__cell-content--responsive">
-          <p>Row 5 Detail 1 - paragraph One</p>
+          <p>Row 5 Detail 1 - example content with multiple paragraphs</p>
           <p>Row 5 Detail 1 - paragraph Two</p>
           <p>Row 5 Detail 1 - paragraph Three</p>
         </div>
       </td>
       <td class="table__detail--responsive" data-heading="Heading 2">
         <div class="table__cell-content--responsive">
-          <p>Row 5 Detail 2 - paragraph One</p>
+          <p>Row 5 Detail 2 - example content with multiple paragraphs</p>
           <p>Row 5 Detail 2 - paragraph Two</p>
           <p>Row 5 Detail 2 - paragraph Three</p>
         </div>
@@ -347,13 +348,13 @@ Markup:
 Styleguide Table.Responsive
 */
 
-@media (max-width: 639px) {
+@include media(mobile) {
   .table__row--desktop-headings {
     display: none;
   }
 
   .table__row--responsive {
-    margin-bottom: 10px;
+    margin-bottom: em(8);
     display: block;
   }
 
@@ -386,12 +387,13 @@ Styleguide Table.Responsive
   }
 
   .table__detail--responsive:last-of-type {
+    padding-bottom: em(16);
     border-bottom: 1px solid $border-colour;
   }
 
   .table__cell-content--responsive {
     display: block;
     margin-left: 30%;
-    padding-left: 8px;
+    padding-left: em(12);
   }
 }
