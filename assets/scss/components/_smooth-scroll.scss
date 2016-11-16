@@ -1,0 +1,31 @@
+/*
+Smooth Scroll
+
+<<<<<<< ours
+Scrolls the page smoothly between anchor links and page content rather than jumping stright to the content.
+
+=======
+Scrolls the page smoothly between anchor links and page content rather then jumping stright to the content.
+>>>>>>> theirs
+
+Mandatory JS hooks:
+ * `data-smooth-scroll` - adds smooth scrolling functionality to the link.
+
+Optional JS hooks:
+ * `data-smooth-scroll-offset` - adds some white space above/below the target at the final scroll position.
+ 
+<hr/>
+The JavacScript for Smooth Scroll can be found here: [smoothScroll.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/smoothScroll.js)
+
+
+Markup:
+<a data-smooth-scroll data-smooth-scroll-offset='20' href="#heading">Scroll to the header</a>
+
+<h2 id='heading'>Scroll to me</h2>
+
+Styleguide Smooth Scroll
+<<<<<<< ours
+*/
+=======
+*/
+>>>>>>> theirs
