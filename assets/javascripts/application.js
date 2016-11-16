@@ -47,7 +47,7 @@ var sso = require('./modules/sso.js'),
     modalDialog = require('./modules/modalDialog.js'),
     dynamicGaTags = require('./modules/dynamicGaTags.js'),
     listCollapse = require('./modules/listCollapse.js'),
-    smooth = require('./modules/smoothScroll.js');
+    smoothScroll = require('./modules/smoothScroll.js');
 
 //initialise mdtpf
 fingerprint();
@@ -174,6 +174,6 @@ $(function() {
   modalDialog();
   dynamicGaTags();
   listCollapse();
-  smooth();
+  smoothScroll();
 
 });

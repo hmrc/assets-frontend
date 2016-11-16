@@ -3,7 +3,7 @@ require('jquery');
 /**
  * Smooth Scroll
  * Smooth scroll makes the page automatically scroll to page content 
- * when anchor links are cliked rather then a jerky jump to the content.
+ * when anchor links are clicked rather than a jerky jump to the content.
  * 
  * With javascript disabled the page will simply jump to the content,
  * but javascript users will get the smoother experience.
