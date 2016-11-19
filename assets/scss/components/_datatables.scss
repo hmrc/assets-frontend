@@ -157,6 +157,10 @@ Styleguide dataTable
   label, th {
     cursor: pointer;
   }
+
+  .sorting_disabled {
+    cursor: default;
+  }
 }
 
 .dataTable tbody {
