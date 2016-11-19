@@ -142,19 +142,6 @@ Styleguide dataTable
     background: url("../images/sort_desc_disabled.png") no-repeat scroll center right;
   }
 
-  th:first-child {
-    background-position-x: 57px;
-  }
-
-  th:nth-child(3) {
-    background-position-x: 120px;
-  }
-
-  th:nth-child(4) {
-    background-position-x: 87px;
-  }
-
-  label, th {
     cursor: pointer;
   }
 }
