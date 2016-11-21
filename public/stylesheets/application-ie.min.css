@@ -10484,22 +10484,27 @@ Styleguide dataTable
   cursor: pointer;
 }
 
-/* line 163, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
+/* line 161, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
+.dataTable thead .sorting_disabled {
+  cursor: default;
+}
+
+/* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable tbody .status--unconfirmed {
   background-color: #DEE0E2;
 }
 
-/* line 167, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
+/* line 171, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .dataTable tbody .status--confirm-success {
   background-color: #e9f5f4;
 }
 
-/* line 173, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
+/* line 177, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .controlpanel {
   margin-bottom: 1.57895em;
 }
 
-/* line 176, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
+/* line 180, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_datatables.scss */
 .js-datatable-wrapper .controlpanel {
   float: left;
 }
