@@ -114,6 +114,7 @@ var closeSuggestionsAndFocus = function () {
  */
 var clearInput = function () {
   $autoCompleteInputElem.val('').focus();
+  updateAutoCompleteAttribData('suggestionValue', '');
   closeSuggestions();
   updateTargetInput(0);
 };
@@ -125,6 +126,7 @@ var clearInput = function () {
  */
 var updateInput = function (title, value) {
   $autoCompleteInputElem.val(title).val($autoCompleteInputElem.val()); //place cursor at end of input text
+  updateAutoCompleteAttribData('suggestionValue', value.toString());
   updateTargetInput(value);
 };
 
@@ -137,6 +139,15 @@ var updateTargetInput = function (value) {
   if ($targetInput) {
     $targetInput.val(value);
   }
+};
+
+/**
+  update a data attribute on the autoCompleteInputElem
+  @param dataEl
+  @param value
+  */
+var updateAutoCompleteAttribData = function (dataEl, value) {
+  $autoCompleteInputElem.data(dataEl, value);
 };
 
 /**
@@ -226,6 +237,10 @@ var inputKeyupEvent = function () {
     var matches = [];
     var keyCode = event.which;
 
+    if(inputVal.length < 2) {
+      updateAutoCompleteAttribData('suggestionValue', '');
+    }
+
     if ((keyCode !== 36 && keyCode !== 38 && keyCode !== 40 && keyCode !== 13 && keyCode !== 27) && inputVal) {
 
       $clearInputButton.removeClass('hidden');
@@ -276,15 +291,25 @@ var isMatchingSuggestion = function (value) {
 
   if (value) {
     $(suggestions).each(function (index, suggestion) {
+    var returnValue = true;
+
       if (value.toLowerCase() === suggestion.title.toLowerCase()) {
-        updateInput(suggestion.title, suggestion.value);
-        matchFound = true;
-        return false;
+        if ($autoCompleteInputElem.data('suggestionValue') === suggestion.value) {
+          matchFound = true;
+          returnValue = false;
+        } else if ($autoCompleteInputElem.data('suggestionValue') === '') {
+          updateInput(suggestion.title, suggestion.value);
+          matchFound = true;
+          returnValue = false;
+        }
+
+        return returnValue;
       }
     });
 
     if (!matchFound) { //clear out the input
       updateTargetInput(0);
+      updateAutoCompleteAttribData('suggestionValue', '');
     }
   }
 };
@@ -296,6 +321,7 @@ var clearSuggestionsEvent = function () {
   $clearInputButton.on('mousedown', function (event) {
     event.preventDefault();
     clearInput();
+    updateAutoCompleteAttribData('suggestionValue','');
     $clearInputButton.addClass('hidden');
   });
 };
