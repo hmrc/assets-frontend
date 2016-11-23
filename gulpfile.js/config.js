@@ -169,6 +169,17 @@ module.exports = {
     karmaConfig: src + 'test/config/karma.conf.js'
   },
 
+  compLib: {
+    port: '9042',
+    host: 'http://localhost',
+    baseDir: './component-library/',
+  },
+
+  vrt: {
+    backstopConfigTemplate: './gulpfile.js/util/backstop/backstop.template.json',
+    backstopConfig: './backstop.json'
+  },
+
   browserSync: {
     ui: false,
     port: 9032,
