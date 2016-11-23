@@ -11,6 +11,7 @@ Frontend assets for the Tax Platform
 - [Running tests whilst developing](#running-js-tests-whilst-developing)
 - [Running a Production build](#running-a-production-build)
 - [Component Library](#component-library)
+- [Component Library](#component-library)
 - [Contributing](#contributing)
 - [More info](#more-info)
 - [License](#license)
@@ -159,6 +160,23 @@ or
 ```
 $ npm install --force hmrc/component-library-template
 ```
+
+## Visual Regression Testing
+Provides a tool to visually compare Component Library changes from Assets Frontend.
+
+## Usage
+To get a base reference for your visual regression tests please save any work on your development branch, checkout your master branch and capture the baseline component screen shots via:
+
+```
+$ npm run vrt:baseline
+```
+
+To compare your changes please checkout the branch with your changes on then run the comparision tests.
+```
+$ npm run vrt:compare
+```
+
+Your results will be output to `vrt-output/report`
 
 
 ## Contributing
