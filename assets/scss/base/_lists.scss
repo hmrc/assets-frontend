@@ -27,6 +27,10 @@ ul {
 
 li {
   list-style-position: inside;
+
+  &:empty {
+    display: none;
+  }
 }
 
 ul, nav ul {
