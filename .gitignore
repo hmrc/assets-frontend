@@ -16,3 +16,5 @@ assets/public/
 target/
 assets/error_pages/assets/
 component-library/
+vrt-output/
+backstop.json
