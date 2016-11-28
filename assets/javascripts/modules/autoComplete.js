@@ -18,7 +18,16 @@ Auto complete html markup:
            autocomplete="off"
            spellcheck="false"
            required
+
+           // Either pass a global js object to data-suggestions (see schema below):
            data-suggestions="countries"
+           // or specify a select input ID to act as source of data:
+           data-select-elem="mySelectID"
+
+           // Optionally specify an input ID to be sent the selected suggestion when picked
+           // This can be the select input specified in data-select-elem
+           data-target-elem="myOutputID"
+
            data-rule-suggestion="true"
            aria-autocomplete="list"
            aria-haspopup="country-code-suggestions"
@@ -314,28 +323,86 @@ var suggestionsEvent = function () {
   });
 };
 
+
+/**
+  * Either grab a given global variable or generate one from a given select input
+*/
+var getSuggestions = function (el) {
+  var suggestions;
+  var dataLinked = $('select[id="' + el.attr("data-select-elem") + '"]');
+  if(dataLinked.length > 0){
+    // using a select input in-page as the source for the suggestions
+    // this is useful when using a select as a fallback for the autocomplete
+    suggestions = [];
+    dataLinked.find('option').each(function(){
+      if($(this).text() > ""){
+        suggestions.push({"title":$(this).text(), "value":$(this).attr("value")});
+      }
+    });
+    // need to populate the data-suggestions attribute from this for validation
+    // generate a global variable to hold the data and insert into data-suggestions attribute
+    window.hmrcAutocompleteData = suggestions;
+    el.attr("data-suggestions", "hmrcAutocompleteData");
+  } else {
+    // allow custom variable
+    // this works in the same way as the legacy version by passing in an existing global object name
+    suggestions = window[el.attr("data-suggestions")];
+  }
+  return suggestions;
+};
+
+/**
+  * Find input to post value back to
+*/
+var getTargetInput = function (el) {
+  var target;
+  // input to post back a selection from the autocomplete
+  var dataPostTo = $('[id="' + el.attr("data-target-elem") + '"]');
+  if(dataPostTo.length > 0){
+    target = dataPostTo;
+  }
+  return target;
+};
+
 /**
  * setup variables and create the autoComplete
  *
  * @param $autoCompleteInputElem
- *
- * @param suggestionsData
- * The suggestion data used in the autoComplete. Typically this will be a global variable.
- *
- * @param $targetInputElem - [optional]
- * Input element to apply the suggestion.value too when a suggestion is selected. If this is not supplied then the autoComplete input will contain the
- * suggestion.title which will be sent to the backend as the value of the $autoCompleteInputElem
  *
  * @param suggestionFormat - [optional]
  * Format for the suggestion to be displayed in the suggestion list, this will default to suggestion.title if a format is not supplied
  *
  */
 var setup = function ($elem, suggestionsData, $targetInputElem, suggestionFormat) {
+  /*
+  * Note:
+  * $targetInputElem and suggestionsData are for legacy support only
+  * please use data attributes (data-suggestions and data-target-elem) to pass their values
+  */
+
   if ($elem.length) {
     $autoCompleteInputElem = $elem;
-    $targetInput = $targetInputElem;
+
+    /*
+    * This is set via the data-target-elem attribute on $autoCompleteInputElem
+    * Optional input/select element to apply the suggestion.value to when a suggestion is selected.
+    * If this is not supplied then the autoComplete input will contain the
+    * suggestion.title which will be sent to the backend as the value of the $autoCompleteInputElem
+    */
+    $targetInput = $targetInputElem || getTargetInput($elem);
+
+    /*
+    * This is set via the data-suggestions attribute on $autoCompleteInputElem
+    * e.g. data-suggestions="countries"
+    * This holds the suggestions in a global js object (in the above case 'countries')
+    * Format is [{title: "United Kingdom", value: "UK"}, {title: "United States", value: "USA"}]
+    * This is also used for validation
+    * If the id of a select input is provided instead via the data-select-elem attribute then the data-suggestions
+    * attribute will be auto-generated (should not be supplied as will be overridden) and a suggestions object generated from its options
+    */
+    suggestions = suggestionsData || getSuggestions($elem);
+
     suggestionDisplayFormat = suggestionFormat;
-    suggestions = suggestionsData;
     $clearInputButton = $('.js-suggestions-clear');
     $suggestionsContainer = $('.js-suggestions').first();
     $suggestionsStatusMessage = $('.js-suggestions-status-message').first();
