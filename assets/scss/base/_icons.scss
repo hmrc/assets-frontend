@@ -126,10 +126,10 @@ Styleguide Icons.Tick
 .tick {
   color: $primary-green;
   font-style: normal;
-  font-size: 24px;
-  width: 20px;
-  height: 24px;
-  margin: 0 0 0 3px;
+  font-size: em(24);
+  width: em(20);
+  height: em(24);
+  margin: 0 0 0 em(3);
   display: inline-block;
   &:after {
     content: "\2714";
