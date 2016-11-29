@@ -20,6 +20,7 @@ Auto complete html markup:
            required
            data-suggestions="countries"
            data-rule-suggestion="true"
+           data-targets='["#countryCode","#country-code-prefix"]'
            aria-autocomplete="list"
            aria-haspopup="country-code-suggestions"
            aria-activedescendant />
@@ -40,7 +41,7 @@ Data format:
 var suggestions;
 var $suggestionsContainer;
 var $autoCompleteInputElem;
-var $targetInput;
+var $targetInputs;
 var suggestionDisplayFormat;
 var $suggestionsStatusMessage;
 var $clearInputButton;
@@ -136,9 +137,12 @@ var updateInput = function (title, value) {
  * @param value
  */
 var updateTargetInput = function (value) {
-  if ($targetInput) {
-    $targetInput.val(value);
-  }
+ var formattedString = (typeof suggestionDisplayFormat === 'function') ? suggestionDisplayFormat('',value) : value;
+ var isFormattedContent;
+  $.each($targetInputs, function (index, targetEl) {
+    isFormattedContent = ($(targetEl).prop('tagName') === "SELECT") ? value : formattedString;
+    $(targetEl).val(isFormattedContent);
+  });
 };
 
 /**
@@ -348,18 +352,18 @@ var suggestionsEvent = function () {
  * @param suggestionsData
  * The suggestion data used in the autoComplete. Typically this will be a global variable.
  *
- * @param $targetInputElem - [optional]
- * Input element to apply the suggestion.value too when a suggestion is selected. If this is not supplied then the autoComplete input will contain the
+ * @param $targetInputElems - [optional]
+ * Input elements to apply the suggestion.value too when a suggestion is selected. If this is not supplied then the autoComplete input will contain the
  * suggestion.title which will be sent to the backend as the value of the $autoCompleteInputElem
  *
  * @param suggestionFormat - [optional]
  * Format for the suggestion to be displayed in the suggestion list, this will default to suggestion.title if a format is not supplied
  *
  */
-var setup = function ($elem, suggestionsData, $targetInputElem, suggestionFormat) {
+var setup = function ($elem, suggestionsData, $targetInputElems, suggestionFormat) {
   if ($elem.length) {
     $autoCompleteInputElem = $elem;
-    $targetInput = $targetInputElem;
+    $targetInputs = $targetInputElems;
     suggestionDisplayFormat = suggestionFormat;
     suggestions = suggestionsData;
     $clearInputButton = $('.js-suggestions-clear');
