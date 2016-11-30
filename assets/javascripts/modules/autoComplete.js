@@ -440,5 +440,5 @@ var setup = function ($elem, suggestionsData, $targetInputElem, suggestionFormat
     addEventListeners();
   }
 };
-
+// comment to force git commit
 module.exports = setup;
