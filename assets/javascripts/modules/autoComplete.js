@@ -24,9 +24,9 @@ Auto complete html markup:
            // or specify a select input ID to act as source of data:
            data-select-elem="mySelectID"
 
-           // Optionally specify an input ID to be sent the selected suggestion when picked
+           // Optionally specify one or more space separated input IDs to be updated with the selected suggestion when picked
            // This can be the select input specified in data-select-elem
-           data-target-elem="myOutputID"
+           data-target-elem="#countryCode #country-code-prefix"
 
            data-rule-suggestion="true"
            aria-autocomplete="list"
@@ -49,7 +49,7 @@ Data format:
 var suggestions;
 var $suggestionsContainer;
 var $autoCompleteInputElem;
-var $targetInput;
+var $targetInputs;
 var suggestionDisplayFormat;
 var $suggestionsStatusMessage;
 var $clearInputButton;
@@ -140,14 +140,16 @@ var updateInput = function (title, value) {
 };
 
 /**
- * Allow auto complete to control and pass over the .value of your suggestion to another optional input
+ * Allow auto complete to control and pass over the .value of your suggestion to one or more optional inputs
  * specified on creation of the autoComplete
+ * if the input is a select, pass the value, otherwise if there is a suggestionDisplayFormat, use that
  * @param value
  */
 var updateTargetInput = function (value) {
-  if ($targetInput) {
-    $targetInput.val(value);
-  }
+  var formattedString = (typeof suggestionDisplayFormat === 'function') ? suggestionDisplayFormat('',value) : value;
+  $.each($targetInputs, function (index, targetEl) {
+    $(targetEl).val($(targetEl).prop('tagName') === "SELECT" ? value : formattedString);
+  });
 };
 
 /**
@@ -379,15 +381,11 @@ var getSuggestions = function (el) {
 
 /**
   * Find input to post value back to
+  * @param el
 */
 var getTargetInput = function (el) {
-  var target;
-  // input to post back a selection from the autocomplete
-  var dataPostTo = $('[id="' + el.attr("data-target-elem") + '"]');
-  if(dataPostTo.length > 0){
-    target = dataPostTo;
-  }
-  return target;
+  var $targets = el.first().data('target-elem') ? el.first().data('target-elem') : $targetInputElem;
+  return $targets;
 };
 
 /**
@@ -415,8 +413,9 @@ var setup = function ($elem, suggestionsData, $targetInputElem, suggestionFormat
     * If this is not supplied then the autoComplete input will contain the
     * suggestion.title which will be sent to the backend as the value of the $autoCompleteInputElem
     */
-    $targetInput = $targetInputElem || getTargetInput($elem);
-
+    $targetInputs = getTargetInput($elem) || $targetInputElem;
+    $targetInputs = $targetInputs.split(" ");
+    
     /*
     * This is set via the data-suggestions attribute on $autoCompleteInputElem
     * e.g. data-suggestions="countries"
@@ -436,5 +435,4 @@ var setup = function ($elem, suggestionsData, $targetInputElem, suggestionFormat
     addEventListeners();
   }
 };
-
 module.exports = setup;
