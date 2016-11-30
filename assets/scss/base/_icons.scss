@@ -114,6 +114,29 @@ Styleguide Icons.Exclamation
 }
 
 /*
+Tick
+
+The tick icon is used to highlight actioned content to the user.
+
+Markup:
+<span class="tick" role="img" aria-label="tick"></span>
+
+Styleguide Icons.Tick
+*/
+.tick {
+  color: $primary-green;
+  font-style: normal;
+  font-size: em(24);
+  width: em(20);
+  height: em(24);
+  margin: 0 0 0 em(3);
+  display: inline-block;
+  &:after {
+    content: "\2714";
+  }
+}
+
+/*
 GOVUK Verify
 
 This is the icon used for GOVUK Verify.
