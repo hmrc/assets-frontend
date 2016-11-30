@@ -6767,6 +6767,32 @@ Styleguide Icons.Exclamation
 }
 
 /*
+Tick
+
+The tick icon is used to highlight actioned content to the user.
+
+Markup:
+<span class="tick" role="img" aria-label="tick"></span>
+
+Styleguide Icons.Tick
+*/
+/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+.tick {
+  color: #00823B;
+  font-style: normal;
+  font-size: 1.26316em;
+  width: 1.05263em;
+  height: 1.26316em;
+  margin: 0 0 0 0.15789em;
+  display: inline-block;
+}
+
+/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+.tick:after {
+  content: "\2714";
+}
+
+/*
 GOVUK Verify
 
 This is the icon used for GOVUK Verify.
@@ -6776,7 +6802,7 @@ Markup:
 
 Styleguide Icons.Verify
 */
-/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+/* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
 .govuk-verify {
   background-image: url("../images/govuk-verify.png");
   background-position: center;
@@ -6788,7 +6814,7 @@ Styleguide Icons.Verify
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
+  /* line 149, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/base/_icons.scss */
   .govuk-verify {
     background-image: url("../images/govuk-verify-2x.png");
   }
