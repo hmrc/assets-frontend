@@ -11,7 +11,6 @@ Frontend assets for the Tax Platform
 - [Running tests whilst developing](#running-js-tests-whilst-developing)
 - [Running a Production build](#running-a-production-build)
 - [Component Library](#component-library)
-- [Component Library](#component-library)
 - [Contributing](#contributing)
 - [More info](#more-info)
 - [License](#license)
