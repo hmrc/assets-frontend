@@ -14,6 +14,9 @@ var $radioYesElement;
 var $radioNoElement;
 var $radioYesGroupElement;
 var $radioNoGroupElement;
+var $dobDayElement;
+var $dobMonthElement;
+var $dobYearElement;
 var $groupToggle;
 var toggleDynamic;
 
@@ -31,6 +34,9 @@ var setup = function () {
   $radioNoElement = $('#radio-no');
   $radioYesGroupElement = $('#radio-group-yes');
   $radioNoGroupElement = $('#radio-group-no');
+  $dobDayElement = $('#dob-day');
+  $dobMonthElement = $('#dob-month');
+  $dobYearElement = $('#dob-year');
   $groupToggle = $('#other-group-toggle');
 };
 
@@ -73,16 +79,17 @@ describe('Form Validation', function () {
         expect($errorSummaryHeading.text()).toBe(ERROR_SUMMARY_HEADER_TEXT);
       });
 
-      it('The error summary should contain 2 errors', function () {
+      it('The error summary should contain 3 errors', function () {
         var $errorMessages = $errorSummaryMessages.find('> li');
 
-        expect($errorMessages.length).toBe(2);
+        expect($errorMessages.length).toBe(3);
         expect($errorMessages.eq(0).text()).toBe($textInputExample.attr('data-msg-required'));
         expect($errorMessages.eq(1).text()).toBe($radioYesElement.attr('data-msg-required'));
+        expect($errorMessages.eq(2).text()).toBe($dobDayElement.attr('data-msg-required'));
       });
 
-      it('The form should have 2 errors', function () {
-        expect(form.getErrorMessages().length).toBe(2);
+      it('The form should have 3 errors', function () {
+        expect(form.getErrorMessages().length).toBe(3);
       });
     });
 
@@ -91,6 +98,9 @@ describe('Form Validation', function () {
       beforeEach(function () {
         $textInputExample.val('4567878');
         $radioYesElement.click();
+        $dobDayElement.val('31');
+        $dobMonthElement.val('12');
+        $dobYearElement.val('1970');
         $submitButton.on('click', function (event) {
             event.preventDefault();
             // prevent form submission - will cause page reload error in jasmine
@@ -117,6 +127,9 @@ describe('Form Validation', function () {
         // select radio button, add wrong format value to text input
         $textInputExample.val('wrong!');
         $radioYesElement.click();
+        $dobDayElement.val('31');
+        $dobMonthElement.val('12');
+        $dobYearElement.val('1970');
         $submitButton.click();
       });
 
@@ -146,6 +159,9 @@ describe('Form Validation', function () {
         // select radio button, add value below min length to text input
         $textInputExample.val('55');
         $radioYesElement.click();
+        $dobDayElement.val('31');
+        $dobMonthElement.val('12');
+        $dobYearElement.val('1970');        
         $submitButton.click();
       });
 
@@ -174,6 +190,9 @@ describe('Form Validation', function () {
       beforeEach(function () {
         // do not select radio button, add correct value for text input
         $textInputExample.val('55888');
+        $dobDayElement.val('31');
+        $dobMonthElement.val('12');
+        $dobYearElement.val('1970');
         $submitButton.click();
       });
 
@@ -228,6 +247,9 @@ describe('Form Validation', function () {
       beforeEach(function () {
         // select radio button, add value below min length to text input
         $radioYesElement.click();
+        $dobDayElement.val('31');
+        $dobMonthElement.val('12');
+        $dobYearElement.val('1970');
         $textInputExample.val('55').blur();
         $submitButton.click();
       });
@@ -254,6 +276,120 @@ describe('Form Validation', function () {
       it('The form should have the invalid pattern inline error message', function () {
         var $inlineErrorMessage = $('#text-input-example-error-message');
         expect($inlineErrorMessage.text()).toBe($textInputExample.attr('data-msg-minlength'));
+      });
+    });
+
+    describe('When I do not enter any of the date fields', function() {
+      beforeEach(function () {
+        $textInputExample.val('4567878');
+        $radioYesElement.click();
+        $submitButton.click();
+      });
+
+      it('The error summary should be visible', function () {
+        expect($errorSummary).toHaveClass('error-summary--show');
+      });
+
+      it('The error summary should not be hidden for accessibility users', function () {
+
+        expect($errorSummary).not.toHaveClass('visuallyhidden');
+      });
+
+      it('The error summary should contain 1 errors', function () {
+        var $errorMessages = $errorSummaryMessages.find('> li');
+        expect($errorMessages.length).toBe(1);
+        expect($errorMessages.eq(0).text()).toBe($dobDayElement.attr('data-msg-required'));
+      });
+
+      it('The form should have 1 error', function () {
+        expect(form.getErrorMessages().length).toBe(1);
+      });
+    });
+
+    describe('When I enter invalid value for the day date field', function() {
+      beforeEach(function () {
+        $textInputExample.val('4567878');
+        $radioYesElement.click();
+        $dobDayElement.val('');
+        $dobMonthElement.val('12');
+        $dobYearElement.val('1970');
+        $submitButton.click();
+      });
+
+      it('The error summary should be visible', function () {
+        expect($errorSummary).toHaveClass('error-summary--show');
+      });
+
+      it('The error summary should not be hidden for accessibility users', function () {
+        expect($errorSummary).not.toHaveClass('visuallyhidden');
+      });
+
+      it('The error summary should contain 1 errors', function () {
+        var $errorMessages = $errorSummaryMessages.find('> li');
+        expect($errorMessages.length).toBe(1);
+        expect($errorMessages.eq(0).text()).toBe($dobDayElement.attr('data-msg-required'));
+      });
+
+      it('The form should have 1 error', function () {
+        expect(form.getErrorMessages().length).toBe(1);
+      });
+    });
+
+    describe('When I enter invalid value for the month date field', function() {
+      beforeEach(function () {
+        $textInputExample.val('4567878');
+        $radioYesElement.click();
+        $dobDayElement.val('31');
+        $dobMonthElement.val('');
+        $dobYearElement.val('1970');
+        $submitButton.click();
+      });
+
+      it('The error summary should be visible', function () {
+        expect($errorSummary).toHaveClass('error-summary--show');
+      });
+
+      it('The error summary should not be hidden for accessibility users', function () {
+        expect($errorSummary).not.toHaveClass('visuallyhidden');
+      });
+
+      it('The error summary should contain 1 errors', function () {
+        var $errorMessages = $errorSummaryMessages.find('> li');
+        expect($errorMessages.length).toBe(1);
+        expect($errorMessages.eq(0).text()).toBe($dobMonthElement.attr('data-msg-required'));
+      });
+
+      it('The form should have 1 error', function () {
+        expect(form.getErrorMessages().length).toBe(1);
+      });
+    });
+
+    describe('When I enter invalid value for the year date field', function() {
+      beforeEach(function () {
+        $textInputExample.val('4567878');
+        $radioYesElement.click();
+        $dobDayElement.val('31');
+        $dobMonthElement.val('12');
+        $dobYearElement.val('');
+        $submitButton.click();
+      });
+
+      it('The error summary should be visible', function () {
+        expect($errorSummary).toHaveClass('error-summary--show');
+      });
+
+      it('The error summary should not be hidden for accessibility users', function () {
+        expect($errorSummary).not.toHaveClass('visuallyhidden');
+      });
+
+      it('The error summary should contain 1 errors', function () {
+        var $errorMessages = $errorSummaryMessages.find('> li');
+        expect($errorMessages.length).toBe(1);
+        expect($errorMessages.eq(0).text()).toBe($dobYearElement.attr('data-msg-required'));
+      });
+
+      it('The form should have 1 error', function () {
+        expect(form.getErrorMessages().length).toBe(1);
       });
     });
 
