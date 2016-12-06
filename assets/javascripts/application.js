@@ -10,6 +10,7 @@ var sso = require('./modules/sso.js'),
     visibility = require('./modules/visibility.js'),
     mask = require('./modules/mask.js'),
     form = require('./validation/form.js'),
+    formInlineGroup = require('./validation/formInlineGroup'),
     toggle = require('./modules/toggle.js'),
     autoCompleteFactory = require('./modules/autoCompleteFactory.js'),
     passwordReveal = require('./modules/passwordReveal.js'),
@@ -142,6 +143,8 @@ $(function() {
   sso().init();
   visibility();
   form.init();
+  formInlineGroup.init();
+
   mask();
   toggle();
   autoCompleteFactory();

@@ -1,0 +1,252 @@
+<form class="js-form js-form-inline-group" autocomplete="off" novalidate="novalidate"  data-dynamic-form data-groups="fromDate: fromDate-day fromDate-month fromDate-year,toDate:toDate-day toDate-month toDate-year, noMinMaxDate: noMinMaxDate-day noMinMaxDate-month noMinMaxDate-year">
+
+  <div class="flash error-summary" id="Search-failure" role="group" aria-labelledby="errorSummaryHeading" tabindex="-1">
+    <h2 id="errorSummaryHeading" class="h3-heading">There are errors on the page.</h2>
+    <ul class="js-error-summary-messages"></ul>
+  </div>
+
+  <fieldset class="form-field-group touch" id="fromDate">
+    <legend class="form-label-bold">From Date</legend>
+    <div class="form-date form-field-group  full-width">
+      <span class="form-hint">For example, 31 DEC 16</span>
+      <ul class="error-notification error-notification--group list--inline group" data-group-error-list="fromDate">
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="fromDate-error-message" class="error-notification flush hard float--left" role="alert" data-input-name="fromDate">
+                Enter a ‘from date’.
+          </span>
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="fromDate-parse-error-message" class="error-notification hidden flush hard float--left" role="alert" data-input-name="fromDate-parse">
+                Enter a valid ‘from date’.
+          </span>        
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="fromDate-day-error-message" class="error-notification error-summary--ignore flush hard float--left" role="alert" data-input-name="fromDate-day"></span>
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="fromDate-month-error-message" class="error-notification error-summary--ignore flush hard float--left" role="alert" data-input-name="fromDate-month"></span>
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="fromDate-year-error-message" class="error-notification error-summary--ignore flush hard float--left" role="alert" data-input-name="fromDate-year"></span>
+        </li>
+      </ul>
+      <div class="no-touch native-date-picker" id="from-date-fields">
+        <div class="form-group form-group-day">
+          <label for="fromDate-day" class="form-group form-group-day">Day</label>
+          <input
+            id="fromDate-day"
+            data-group="fromDate"
+            name="fromDate.day"
+            type="number"
+            class="fromDate input--xsmall input--no-spinner"
+            data-msg-range= "The ‘from date’ day entered is not valid. Enter a number between 1 and 31."
+            data-msg-dategroupvalid="Enter a valid ‘from date’."
+            data-msg-required="Enter the day of month for the ‘from date’."
+            data-rule-required="true"
+            data-rule-range="1,31"
+            data-rule-dategroupvalid="2016/01/01,2016/12/31"
+            tabindex="1">
+        </div>
+        <div class="form-group form-group-month">
+          <label for="fromDate-month" class="form-group form-group-month">Month</label>
+          <input
+            id="fromDate-month"
+            data-group="fromDate"
+            name="fromDate.month"
+            type="text"
+            class="fromDate input--normal"
+            maxlength="3"
+            data-month-strings="JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC"
+            data-msg-pattern="The ‘from date’ month you have entered is invalid. Enter the first 3 letters of the month or write the month as a number between 1 and 12."
+            data-msg-required="Enter the month for the ‘from date’."
+            data-msg-dategroupvalid="Enter a valid ‘from date’."
+            data-rule-required="true"
+            data-rule-pattern="^(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC|0?[1-9]|1[012])$"
+            data-pattern-flags="i"
+            data-rule-dategroupvalid="2016/01/01,2016/12/31"
+            tabindex="1">
+        </div>
+        <div class="form-date form-group-year">
+          <label for="fromDate-year" class="form-date form-group-year flush--bottom">Year</label>
+          <input
+            id="fromDate-year"
+            data-group="fromDate"
+            name="fromDate.year"
+            type="number"
+            class="fromDate input--xsmall form-group-year input--no-spinner"
+            data-msg-pattern= "The ‘from date’ year entered is not valid. Enter the year as a 4 digit number."
+            data-msg-dategroupvalid="Enter a valid ‘from date’."
+            data-msg-required="Enter the year for the ‘from date’."
+            data-rule-required="true"
+            data-rule-pattern="^(\d{4})$"
+            data-rule-dategroupvalid="2016/01/01,2016/12/31"
+            tabindex="1">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  
+  <fieldset class="form-field-group touch" id="toDate">
+    <legend class="form-label-bold">To Date</legend>
+    <div class="form-date form-field-group  full-width">
+      <span class="form-hint">For example, 31 12 17</span>
+      <ul class="error-notification error-notification--group list--inline group" data-group-error-list="toDate">
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="toDate-error-message" class="error-notification flush hard float--left" role="alert" data-input-name="toDate">
+                Enter a ‘to date’.
+          </span>
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="toDate-parse-error-message" class="error-notification hidden flush hard float--left" role="alert" data-input-name="toDate-parse">
+                Enter a valid ‘to date’.
+          </span>
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="toDate-day-error-message" class="error-notification error-summary--ignore flush hard float--left" role="alert" data-input-name="toDate-day"></span>
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="toDate-month-error-message" class="error-notification error-summary--ignore flush hard float--left" role="alert" data-input-name="toDate-month"></span>
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="toDate-year-error-message" class="error-notification error-summary--ignore flush hard float--left" role="alert" data-input-name="toDate-year"></span>
+        </li>
+      </ul>
+      <div class="no-touch native-date-picker" id="to-date-fields">
+        <div class="form-group form-group-day">
+          <label for="toDate-day" class="form-group form-group-day">Day</label>
+          <input
+            id="toDate-day"
+            data-group="toDate"
+            name="toDate.day"
+            type="number"
+            class="toDate input--xsmall input--no-spinner"
+            data-msg-range= "The ‘to date’ day entered is not valid. Enter a number between 1 and 31."
+            data-msg-dategroupvalid="Enter a valid ‘to date’."
+            data-msg-required="Enter the day of month for the ‘to date’."
+            data-rule-required="true"
+            data-rule-range="1,31"
+            data-rule-dategroupvalid="2017/01/01,2017/12/31"
+            >
+        </div>
+        <div class="form-group form-group-month">
+          <label for="toDate-month" class="form-group form-group-month">Month</label>
+          <input
+            id="toDate-month"
+            data-group="toDate"
+            name="toDate.month"
+            type="number"
+            class="toDate input--normal"
+            data-msg-range= "The ‘to date’ month entered is not valid. Enter a number between 1 and 12"
+            data-rule-range="1,12"
+            data-rule-pattern="^(0?[1-9]|1[012])$"
+            data-msg-pattern="The ‘to date’ month you have entered is invalid. Enter the month as a number between 1 and 12."
+            data-msg-dategroupvalid="Enter a valid ‘to date’."
+            data-msg-required="Enter the month for the ‘to date’."
+            data-rule-dategroupvalid="2017/01/01,2017/12/31"
+            >
+        </div>
+        <div class="form-date form-group-year">
+          <label for="toDate-year" class="form-date form-group-year flush--bottom">Year</label>
+          <input
+            id="toDate-year"
+            data-group="toDate"
+            name="toDate.year"
+            type="number"
+            class="toDate input--xsmall form-group-year input--no-spinner"
+            max="2017"
+            min="0"
+            data-msg-pattern= "The ‘to date’ year entered is not valid. Enter the year as a 2 or 4 digit number."
+            data-msg-dategroupvalid="Enter a valid ‘to date’."
+            data-msg-required="Enter the year for the ‘to date’."
+            data-rule-required="true"
+            data-rule-pattern="^((?:19|20)?\d{2})$"
+            data-rule-dategroupvalid="2017/01/01,2017/12/31"
+            >
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-field-group touch" id="noMinMaxDate">
+    <legend class="form-label-bold">No Min Max Date</legend>
+    <div class="form-date form-field-group  full-width">
+      <span class="form-hint">For example, 31 12 17</span>
+      <ul class="error-notification error-notification--group list--inline group" data-group-error-list="noMinMaxDate">
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="noMinMaxDate-error-message" class="error-notification flush hard float--left" role="alert" data-input-name="noMinMaxDate">
+                Enter a ‘no min/max date’.
+          </span>
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="noMinMaxDate-parse-error-message" class="error-notification hidden flush hard float--left" role="alert" data-input-name="noMinMaxDate-parse">
+                Enter a valid ‘no min/max date’.
+          </span>
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="noMinMaxDate-day-error-message" class="error-notification error-summary--ignore flush hard float--left" role="alert" data-input-name="noMinMaxDate-day"></span>
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="noMinMaxDate-month-error-message" class="error-notification error-summary--ignore flush hard float--left" role="alert" data-input-name="noMinMaxDate-month"></span>
+        </li>
+        <li class="error-notification--group-item list__item inline-block flush">
+          <span id="noMinMaxDate-year-error-message" class="error-notification error-summary--ignore flush hard float--left" role="alert" data-input-name="noMinMaxDate-year"></span>
+        </li>
+      </ul>
+      <div class="no-touch native-date-picker" id="noMinMax-date-fields">
+        <div class="form-group form-group-day">
+          <label for="noMinMaxDate-day" class="form-group form-group-day">Day</label>
+          <input
+            id="noMinMaxDate-day"
+            data-group="noMinMaxDate"
+            name="noMinMaxDate.day"
+            type="number"
+            class="noMinMaxDate input--xsmall input--no-spinner"
+            data-msg-range= "The ‘no min/max date’ day entered is not valid. Enter a number between 1 and 31."
+            data-msg-dategroupvalid="Enter a valid ‘no min/max date’."
+            data-msg-required="Enter the day of month for the ‘no min/max date’."
+            data-rule-required="true"
+            data-rule-range="1,31"
+            data-rule-dategroupvalid
+          >
+        </div>
+        <div class="form-group form-group-month">
+          <label for="noMinMaxDate-month" class="form-group form-group-month">Month</label>
+          <input
+            id="noMinMaxDate-month"
+            data-group="noMinMaxDate"
+            name="noMinMaxDate.month"
+            type="number"
+            class="noMinMaxDate input--normal"
+            data-msg-range= "The ‘no min/max date’ month entered is not valid. Enter a number between 1 and 12"
+            data-rule-range="1,12"
+            data-rule-pattern="^(0?[1-9]|1[012])$"
+            data-msg-pattern="The ‘no min/max date’ month you have entered is invalid. Enter the month as a number between 1 and 12."
+            data-msg-dategroupvalid="Enter a valid ‘no min/max date’."
+            data-msg-required="Enter the month for the ‘no min/max date’."
+            data-rule-dategroupvalid
+          >
+        </div>
+        <div class="form-date form-group-year">
+          <label for="noMinMaxDate-year" class="form-date form-group-year flush--bottom">Year</label>
+          <input
+            id="noMinMaxDate-year"
+            data-group="noMinMaxDate"
+            name="noMinMaxDate.year"
+            type="number"
+            class="noMinMaxDate input--xsmall form-group-year input--no-spinner"
+            max="2017"
+            min="0"
+            data-msg-pattern= "The ‘no min/max date’ year entered is not valid. Enter the year as a 2 or 4 digit number."
+            data-msg-dategroupvalid="Enter a valid ‘no min/max date’."
+            data-msg-required="Enter the year for the ‘no min/max date’."
+            data-rule-required="true"
+            data-rule-pattern="^((?:19|20)?\d{2})$"
+            data-rule-dategroupvalid
+          >
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <button id="submit-button" type="submit">Submit</button>
+</form>
