@@ -359,7 +359,7 @@ var loadExistingValue = function () {
     if(selectedOption.value > ""){
         $autoCompleteInputElem.val(selectedOption.text);
     }
-}
+};
 
 /**
   * Either grab a given global variable or generate one from a given select input
