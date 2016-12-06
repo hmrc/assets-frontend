@@ -11,6 +11,7 @@ var sso = require('./modules/sso.js'),
     mask = require('./modules/mask.js'),
     form = require('./validation/form.js'),
     toggle = require('./modules/toggle.js'),
+    toggleOnValue = require('./modules/toggleOnValue.js'),
     autoCompleteFactory = require('./modules/autoCompleteFactory.js'),
     passwordReveal = require('./modules/passwordReveal.js'),
     formHintHelper = require('./modules/formHintHelper.js'),
@@ -144,6 +145,7 @@ $(function() {
   form.init();
   mask();
   toggle();
+  toggleOnValue();
   autoCompleteFactory();
   control();
   masker();
