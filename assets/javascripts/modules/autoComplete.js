@@ -351,6 +351,17 @@ var suggestionsEvent = function () {
 
 
 /**
+  * If a select elem is being used, load value from there
+**/
+var loadExistingValue = function () {
+    var dataLinked = $('select[id="' + $autoCompleteInputElem.attr("data-select-elem") + '"]');
+    var selectedOption = dataLinked.find('option:selected')[0];
+    if(selectedOption.value > ""){
+        $autoCompleteInputElem.val(selectedOption.text);
+    }
+}
+
+/**
   * Either grab a given global variable or generate one from a given select input
 */
 var getSuggestions = function (el) {
@@ -369,6 +380,8 @@ var getSuggestions = function (el) {
     // generate a global variable to hold the data and insert into data-suggestions attribute
     window.hmrcAutocompleteData = suggestions;
     el.attr("data-suggestions", "hmrcAutocompleteData");
+    // update text input with a pre-selected select option
+    loadExistingValue();
   } else {
     // allow custom variable
     // this works in the same way as the legacy version by passing in an existing global object name
