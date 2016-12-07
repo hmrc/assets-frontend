@@ -30,11 +30,12 @@ Auto complete html markup:
 
            data-rule-suggestion="true"
            aria-autocomplete="list"
-           aria-haspopup="country-code-suggestions"
+           aria-haspopup="true"
+           aria-controls="suggestions-list-container"
            aria-activedescendant />
     <i class="suggestions-clear js-suggestions-clear"></i>
-    <span role="status" aria-live="polite" class="visuallyhidden js-suggestions-status"></span>
-    <div class="suggestions js-suggestions" id="country-code-suggestions"></div>
+    <span role="status" aria-live="assertive" aria-relevant="additions" class="visuallyhidden js-suggestions-status-message" id="autoCompleteSuggestionStatus"></span>
+    <div class="suggestions js-suggestions" id="suggestions-list-container" aria-describedby="autoCompleteSuggestionStatus"></div>
  </div>
 
 
@@ -86,6 +87,7 @@ var displaySuggestions = function ($suggestionsContainer, matches, match) {
     li.setAttribute('data-suggestion-value', suggestion.value);
     li.setAttribute('data-suggestion-title', suggestion.title);
     li.setAttribute('role', 'option');
+    li.setAttribute('tabindex', '-1');
     ulHtmlFragment.className = 'suggestions-list';
     ulHtmlFragment.setAttribute('role', 'listbox');
     ulHtmlFragment.appendChild(li);
@@ -95,7 +97,7 @@ var displaySuggestions = function ($suggestionsContainer, matches, match) {
     createSuggestion(index, suggestion);
   });
 
-  $suggestionsStatusMessage.text(matches.length + ' suggestion' + (matches.length > 1 ? 's' : '') + ' available, please navigate by using up and down');
+  $suggestionsStatusMessage.text(matches.length + ' suggestion' + (matches.length > 1 ? 's' : '') + ' available, please navigate moving up and down');
   $autoCompleteInputElem.addClass('has-suggestions');
 
   containerFragment.appendChild(ulHtmlFragment);
@@ -107,6 +109,7 @@ var displaySuggestions = function ($suggestionsContainer, matches, match) {
  */
 var closeSuggestions = function () {
   $suggestionsContainer.html('');
+  $suggestionsStatusMessage.text("");
   $autoCompleteInputElem.removeClass('has-suggestions');
 };
 
@@ -286,7 +289,6 @@ var inputKeyupEvent = function () {
 var inputBlurEvent = function () {
   $autoCompleteInputElem.on('blur', function (event) {
     isMatchingSuggestion(event.target.value);
-    closeSuggestions();
   });
 };
 
@@ -345,7 +347,7 @@ var suggestionsEvent = function () {
     event.preventDefault();
 
     updateInput($suggestion.data('suggestion-title'), $suggestion.data('suggestion-value'));
-    closeSuggestions();
+    closeSuggestionsAndFocus();
   });
 };
 
