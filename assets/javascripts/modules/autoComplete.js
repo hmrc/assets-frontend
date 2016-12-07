@@ -217,10 +217,12 @@ var addEventListeners = function () {
  * keydown event for auto complete input
  * keydown used to capture enter key (13) before form is submitted if we have suggestions
  * allow suggestion list key controls through
+ * tab key will close the suggestions
  * 40 (down)
  * 38 (up)
  * 27 (esc)
  * 13 (enter)
+ * 9  (tab)
  */
 var inputKeyDownEvent = function () {
   $autoCompleteInputElem.on('keydown', function (event) {
@@ -228,6 +230,10 @@ var inputKeyDownEvent = function () {
 
     if (keyCode === 13 && $suggestionsContainer.html()) {
       event.preventDefault();
+    }
+
+    if (keyCode === 9 && $suggestionsContainer.html()) {
+      closeSuggestions();
     }
 
     if (keyCode === 38 || keyCode === 40 || keyCode === 13 || keyCode === 27) {
