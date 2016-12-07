@@ -349,15 +349,22 @@ var suggestionsEvent = function () {
   });
 };
 
+/**
+  * Get a linked select input
+**/
+var getDataLinked = function(el){
+  var dataLinked = $('select[id="' + el.attr("data-select-elem") + '"]');
+  return dataLinked;
+};
 
 /**
   * If a select elem is being used, load value from there
 **/
-var loadExistingValue = function () {
-    var dataLinked = $('select[id="' + $autoCompleteInputElem.attr("data-select-elem") + '"]');
+var loadExistingValue = function (el) {
+    var dataLinked = getDataLinked(el);
     var selectedOption = dataLinked.find('option:selected')[0];
-    if(selectedOption.value > ""){
-        $autoCompleteInputElem.val(selectedOption.text);
+    if(selectedOption.value !== ""){
+        el.val(selectedOption.text);
     }
 };
 
@@ -366,7 +373,7 @@ var loadExistingValue = function () {
 */
 var getSuggestions = function (el) {
   var suggestions;
-  var dataLinked = $('select[id="' + el.attr("data-select-elem") + '"]');
+  var dataLinked = getDataLinked(el);
   if(dataLinked.length > 0){
     // using a select input in-page as the source for the suggestions
     // this is useful when using a select as a fallback for the autocomplete
@@ -381,7 +388,7 @@ var getSuggestions = function (el) {
     window.hmrcAutocompleteData = suggestions;
     el.attr("data-suggestions", "hmrcAutocompleteData");
     // update text input with a pre-selected select option
-    loadExistingValue();
+    loadExistingValue(el);
   } else {
     // allow custom variable
     // this works in the same way as the legacy version by passing in an existing global object name
