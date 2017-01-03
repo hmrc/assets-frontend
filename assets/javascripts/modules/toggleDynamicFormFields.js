@@ -19,6 +19,7 @@ module.exports = function() {
 
       $toggledField.addClass('js-hidden');
       $toggledField.find(':text').val('');
+      $toggledField.find(':input[type="number"]').val('');
       $toggledField.find(':checked').prop('checked', false);
       $toggledField.find('*[data-default]').prop('checked', true);
     } else {
