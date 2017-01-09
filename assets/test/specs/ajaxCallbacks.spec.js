@@ -570,7 +570,7 @@ describe('AjaxCallbacks', function() {
         });
 
         it('invites user to register with deb hub when adding a collaborator', function() {
-          setFixtures('<data id="application" title="Application Title"/>');
+          setFixtures('<h1 id="application" data-title="Application Title"/>');
           var $form = $('<form>'+
             '<div class="alert alert--info hidden js-info" role="alert">'+
             '<p class="alert__message"></p>'+

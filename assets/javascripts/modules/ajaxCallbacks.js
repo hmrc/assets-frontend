@@ -134,10 +134,10 @@ var ajaxCallbacks = {
         var $info = $element.find('.js-info');
         var $message = $info.find('.alert__message');
         var emailMessage = 'We have sent an email to <strong>'+ email +'</strong>';
-        var applicationName = $("#application").attr("title");
+        var applicationTitle = $("#application").data("title");
         var message =  emailMessage + (response.registeredUser ?
                     ' confirming they have been added to this application.' :
-                    ' inviting them to register with the ' + applicationName + '. They cannot access the application until they register.');
+                    ' inviting them to register with the ' + applicationTitle + '. They cannot access the application until they register.');
 
         var role = $element.find('[name=role]:checked').val();
         if (role === 'ADMINISTRATOR') {
