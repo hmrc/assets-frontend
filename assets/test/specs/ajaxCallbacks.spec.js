@@ -568,6 +568,19 @@ describe('AjaxCallbacks', function() {
           expect($td[0].innerText).toBe("user3@example.com");
           expect($td[1].innerText).toBe("");
         });
+
+        it('invites user to register with deb hub when adding a collaborator', function() {
+          setFixtures('<h1 id="application" data-title="Application Title"/>');
+          var $form = $('<form>'+
+            '<div class="alert alert--info hidden js-info" role="alert">'+
+            '<p class="alert__message"></p>'+
+            '</div>'+
+            '</form>');
+          var data = $form.serialize();
+          underTest(response, $form, data, helpers, targets, null, null);
+          var $message = $form.find("p");
+          expect($message[0].innerText).toContain('inviting them to register with the Application Title.');
+        });
       });
     });
   });
