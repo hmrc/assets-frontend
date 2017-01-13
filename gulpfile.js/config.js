@@ -60,7 +60,6 @@ module.exports = {
     dest: snapshotDir + 'javascripts',
     entryPoint: src + 'javascripts/application.js',
     jshintExclude: '!' + src + 'javascripts/**/{base64v1_0,details.polyfill,mdtpdf}.js',
-    jscsSrc: '.jscsrc',
     gulpTasks: 'gulpfile.js/**/*.js',
     encryptionSrc: src + 'javascripts/encryption/**/*.js',
     encryptionDest: {

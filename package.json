@@ -40,7 +40,6 @@
     "gulp-autoprefixer": "^3.0.0",
     "gulp-concat": "^2.5.2",
     "gulp-if": "^1.2.5",
-    "gulp-jscs": "^1.6.0",
     "gulp-jshint": "^1.9.4",
     "gulp-jshint-cached": "^1.4.2",
     "gulp-json-editor": "^2.2.1",
