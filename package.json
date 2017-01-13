@@ -48,8 +48,11 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.0",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.3.0",
     "gulp-sourcemaps": "^1.5.1",
+    "gulp-stylelint": "^2.0.2",
+    "gulp-svgmin": "^1.2.2",
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.4",
     "gulp-zip": "^2.0.3",
@@ -87,9 +90,7 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0",
-    "watchify": "^2.6.0",
-    "gulp-stylelint": "^2.0.2",
-    "gulp-svgmin": "^1.2.2"
+    "watchify": "^2.6.0"
   },
   "browserify": {
     "transform": [

@@ -35,10 +35,10 @@ module.exports = {
   distDir: distDir,
 
   dev: {
-    dest: snapshotDir,
+    dest: snapshotDir
   },
   prod: {
-    dest: distDir,
+    dest: distDir
   },
 
   production: {
@@ -85,7 +85,7 @@ module.exports = {
         'flash',
         'hidden'
       ],
-      files : {
+      files: {
         src: [
           src + '{javascripts,scss,govuk_*}/**/*.{js,scss}',
           '!**[^node_modules]/**/modernizr.js'
@@ -103,7 +103,7 @@ module.exports = {
       dest: distDir + 'images'
     }
   },
-  
+
   images: {
     govuk: govuk.images + '**/*',
     dev: {
@@ -149,7 +149,8 @@ module.exports = {
         dest: distDir + 'javascripts'
       },
       outputName: 'application.js'
-    },{
+    },
+    {
       entries: [
         src + 'javascripts/export/fingerprint.js'
       ],
@@ -169,10 +170,22 @@ module.exports = {
     karmaConfig: src + 'test/config/karma.conf.js'
   },
 
+  errorPages: {
+    src: src + 'error_pages/*.html',
+    dev:{
+      dest: snapshotDir,
+      assetsPath: '/' + snapshotDir
+    },
+    prod:{
+      dest: distDir,
+      assetsPath: process.env.TAG ? '/assets/' + process.env.TAG + '/' : '/assets/999-SNAPSHOT/'
+    }
+  },
+
   compLib: {
     port: '9042',
     host: 'http://localhost',
-    baseDir: './component-library/',
+    baseDir: './component-library/'
   },
 
   vrt: {
