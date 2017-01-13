@@ -8,7 +8,7 @@ var config   = require('../config'),
 	gulp     = require('gulp');
 
 gulp.task('watch', ['watchify', 'server'], function(callback) {
-  gulp.watch(config.scripts.src, ['jshint', 'component-library']);
+  gulp.watch(config.scripts.src, ['component-library']);
   gulp.watch(config.test.src,  ['test']);
   gulp.watch(config.sass.src,  ['sass', 'component-library']);
 
