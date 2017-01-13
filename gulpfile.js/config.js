@@ -173,10 +173,12 @@ module.exports = {
   errorPages: {
     src: src + 'error_pages/*.html',
     dev:{
-      dest: snapshotDir
+      dest: snapshotDir,
+      assetsPath: '/' + snapshotDir
     },
     prod:{
-      dest: distDir
+      dest: distDir,
+      assetsPath: process.env.TAG ? '/assets/' + process.env.TAG + '/' : '/assets/999-SNAPSHOT/'
     }
   },
 
