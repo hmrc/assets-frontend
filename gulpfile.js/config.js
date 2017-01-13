@@ -170,6 +170,16 @@ module.exports = {
     karmaConfig: src + 'test/config/karma.conf.js'
   },
 
+  errorPages: {
+    src: src + 'error_pages/*.html',
+    dev:{
+      dest: snapshotDir
+    },
+    prod:{
+      dest: distDir
+    }
+  },
+
   compLib: {
     port: '9042',
     host: 'http://localhost',
