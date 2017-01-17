@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /*
 - Clean all generated dirs
@@ -20,15 +20,15 @@ Test:
 - Spec reporter
 */
 
-var src = './assets/',
-    dest = src + 'public/',
-    distDir = src + 'dist/',
-    snapshotDir = dest + '999-SNAPSHOT/',
-    govuk = {
-      elements: src + 'govuk_elements',
-      template: src + 'govuk_elements/govuk',
-      images: src + 'govuk_elements/govuk/public/images/'
-    };
+var src = './assets/'
+var dest = src + 'public/'
+var distDir = src + 'dist/'
+var snapshotDir = dest + '999-SNAPSHOT/'
+var govuk = {
+  elements: src + 'govuk_elements',
+  template: src + 'govuk_elements/govuk',
+  images: src + 'govuk_elements/govuk/public/images/'
+}
 
 module.exports = {
   dest: dest,
@@ -170,11 +170,11 @@ module.exports = {
 
   errorPages: {
     src: src + 'error_pages/*.html',
-    dev:{
+    dev: {
       dest: snapshotDir,
       assetsPath: '/' + snapshotDir
     },
-    prod:{
+    prod: {
       dest: distDir,
       assetsPath: process.env.TAG ? '/assets/' + process.env.TAG + '/' : '/assets/999-SNAPSHOT/'
     }
@@ -203,4 +203,4 @@ module.exports = {
       }
     }
   }
-};
+}

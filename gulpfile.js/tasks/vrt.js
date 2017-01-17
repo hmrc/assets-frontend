@@ -1,17 +1,17 @@
-'use strict';
+'use strict'
 
-var gulp = require('gulp');
-var backstop = require('backstopjs');
-var runSequence = require('run-sequence');
-var st = require('st');
-var http = require('http');
-var config = require('../config');
-var backstopConfigGenerator = require('./../util/backstop/configGenerator');
-var compLibServer;
+var gulp = require('gulp')
+var backstop = require('backstopjs')
+var runSequence = require('run-sequence')
+var st = require('st')
+var http = require('http')
+var config = require('../config')
+var backstopConfigGenerator = require('./../util/backstop/configGenerator')
+var compLibServer
 
 gulp.task('build-vrt-config', function () {
-  return backstopConfigGenerator();
-});
+  return backstopConfigGenerator()
+})
 
 gulp.task('vrt-baseline', function () {
   runSequence(
@@ -21,15 +21,15 @@ gulp.task('vrt-baseline', function () {
     function () {
       backstop('reference')
         .then(function () {
-          compLibServer.close();
+          compLibServer.close()
         })
         .catch(function (err) {
-          console.log(err);
-          compLibServer.close();
-        });
+          console.log(err)
+          compLibServer.close()
+        })
     }
-  );
-});
+  )
+})
 
 gulp.task('vrt-compare', function () {
   runSequence(
@@ -42,15 +42,15 @@ gulp.task('vrt-compare', function () {
           compLibServer.close()
         })
         .catch(function (err) {
-          console.log(err);
-          compLibServer.close();
-        });
+          console.log(err)
+          compLibServer.close()
+        })
     }
-  );
-});
+  )
+})
 
 gulp.task('vrt-server', function () {
   compLibServer = http.createServer(
     st(config.compLib.baseDir)
-  ).listen(config.compLib.port);
-});
+  ).listen(config.compLib.port)
+})

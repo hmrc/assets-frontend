@@ -130,5 +130,8 @@
     "mdtpdf": {
       "depends": "json3"
     }
+  },
+  "devDependencies": {
+    "gulp-standard": "^8.0.3"
   }
 }
