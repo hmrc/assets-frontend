@@ -2,42 +2,44 @@ module.exports = {
   expires: '',
   cookieDomain: '',
 
-  setCookie: function(name, value, duration, domain) {
-    var secure = window.location.protocol.indexOf('https') ? '' : '; secure';
+  setCookie: function (name, value, duration, domain) {
+    var secure = window.location.protocol.indexOf('https') ? '' : '; secure'
 
     if (domain) {
-      this.cookieDomain = '; domain=' + domain;
+      this.cookieDomain = '; domain=' + domain
     }
 
     if (duration) {
-      var date = new Date();
-      date.setTime(date.getTime() + (duration * 24 * 60 * 60 * 1000));
-      this.expires = '; expires=' + date.toGMTString();
+      var date = new Date()
+      date.setTime(date.getTime() + (duration * 24 * 60 * 60 * 1000))
+      this.expires = '; expires=' + date.toGMTString()
     }
 
-    document.cookie = name + '=' + value + this.expires + this.cookieDomain + '; path=/' + secure;
+    document.cookie = name + '=' + value + this.expires + this.cookieDomain + '; path=/' + secure
   },
 
-  getCookie: function(name) {
-    var i, c, nameEQ = name + '=',
-        ca = document.cookie.split(';');
+  getCookie: function (name) {
+    var i, c
+    var nameEQ = name + '='
+    var ca = document.cookie.split(';')
 
     for (i = 0; i < ca.length; i += 1) {
-      c = ca[i];
+      c = ca[i]
+
       while (c.charAt(0) === ' ') {
-        c = c.substring(1, c.length);
+        c = c.substring(1, c.length)
       }
 
       if (c.indexOf(nameEQ) === 0) {
-        return c.substring(nameEQ.length, c.length);
+        return c.substring(nameEQ.length, c.length)
       }
     }
 
-    return null;
+    return null
   },
 
   // TODO: remove this if it isn't being used
-  eraseCookie: function(name) {
-    this.setCookie(name, '', -1);
+  eraseCookie: function (name) {
+    this.setCookie(name, '', -1)
   }
-};
+}

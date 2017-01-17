@@ -1,22 +1,23 @@
-require('jquery');
+/* eslint-env jquery */
 
-module.exports = function() {
+require('jquery')
 
-  var $checkboxToggle = $('[data-toggle-button]'),
-      buttonName = $checkboxToggle.data('toggle-button'),
-      $toggleButton = $('[name=' + buttonName + ']');
+module.exports = function () {
+  var $checkboxToggle = $('[data-toggle-button]')
+  var buttonName = $checkboxToggle.data('toggle-button')
+  var $toggleButton = $('[name=' + buttonName + ']')
 
-  if (!$checkboxToggle.length) { return false; }
+  if (!$checkboxToggle.length) {
+    return false
+  }
 
-  $toggleButton.prop('disabled', true);
+  $toggleButton.prop('disabled', true)
 
-  $checkboxToggle.on('click', function() {
+  $checkboxToggle.on('click', function () {
     if ($(this).is(':checked')) {
-      $toggleButton.prop('disabled', false);
+      $toggleButton.prop('disabled', false)
+    } else {
+      $toggleButton.prop('disabled', true)
     }
-    else {
-      $toggleButton.prop('disabled', true);
-    }
-  });
-
-};
+  })
+}

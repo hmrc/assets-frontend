@@ -2,15 +2,19 @@
    - gulp/tasks/browserify.js handles js recompiling with watchify
 */
 
-'use strict';
+'use strict'
 
-var config   = require('../config'),
-	gulp     = require('gulp');
+var gulp = require('gulp')
+var config = require('../config')
 
-gulp.task('watch', ['watchify', 'server'], function(callback) {
-  gulp.watch(config.scripts.src, ['jshint', 'component-library']);
-  gulp.watch(config.test.src,  ['test']);
-  gulp.watch(config.sass.src,  ['sass', 'component-library']);
+gulp.task('watch', ['watchify', 'server'], function (callback) {
+  gulp.watch(config.scripts.gulpTasks, ['lint:config'])
+  gulp.watch([
+    config.scripts.src,
+    config.scripts.entryPoint,
+  ], ['component-library'])
+  gulp.watch(config.test.src, ['test'])
+  gulp.watch(config.sass.src, ['sass', 'component-library'])
 
   // Watchify will watch and recompile our JS, so no need to gulp.watch it
-});
+})

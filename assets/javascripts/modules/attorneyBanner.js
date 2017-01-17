@@ -1,3 +1,5 @@
+/* eslint-env jquery */
+
 /**
  * Attorney Banner
  *
@@ -20,21 +22,17 @@
  *
  *
  **/
+require('jquery')
 
-require('jquery');
+var sticky = require('./sticky-header.js')
 
-var sticky = require('./sticky-header.js');
-
-module.exports = function(el) {
-
+module.exports = function (el) {
   if ($('.attorneyBanner').length === 0) {
-    return;
+    return
   }
 
   sticky({
     el: '.attorneyBanner',
     className: 'stickyBanner'
-  });
-
-};
-
+  })
+}

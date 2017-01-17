@@ -1,17 +1,18 @@
-'use strict';
+'use strict'
 
-var fs        = require('fs'),
-    gulp      = require('gulp'),
-  	karma     = require('karma').server,
-  	config    = require('../config').test,
-    karmaTask = function(done) {
-      karma.start({
-        configFile: fs.realpathSync(config.karmaConfig),
-        singleRun: true
-      },
-      function() {
-        done ();
-      });
-    };
+var fs = require('fs')
+var gulp = require('gulp')
+var karma = require('karma').server
+var config = require('../config').test
 
-gulp.task('test', ['sass', 'jshint'],  karmaTask);
+var karmaTask = function (done) {
+  karma.start({
+    configFile: fs.realpathSync(config.karmaConfig),
+    singleRun: true
+  },
+  function () {
+    done()
+  })
+}
+
+gulp.task('test', ['sass', 'lint:tests', 'lint:scripts'], karmaTask)

@@ -40,9 +40,6 @@
     "gulp-autoprefixer": "^3.0.0",
     "gulp-concat": "^2.5.2",
     "gulp-if": "^1.2.5",
-    "gulp-jscs": "^1.6.0",
-    "gulp-jshint": "^1.9.4",
-    "gulp-jshint-cached": "^1.4.2",
     "gulp-json-editor": "^2.2.1",
     "gulp-modernizr": "^1.0.0-alpha",
     "gulp-notify": "^2.2.0",
@@ -61,7 +58,6 @@
     "jquery": "^1.11.2",
     "jquery-validation": "1.13.1",
     "js-base64": "^2.1.7",
-    "jshint-stylish": "~0.1.5",
     "json3": "^3.3.2",
     "karma": "^0.13.19",
     "karma-browserify": "^4.4.2",
@@ -134,5 +130,8 @@
     "mdtpdf": {
       "depends": "json3"
     }
+  },
+  "devDependencies": {
+    "gulp-standard": "^8.0.3"
   }
 }

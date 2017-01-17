@@ -1,10 +1,10 @@
-var del     = require('del'),
-    gulp    = require('gulp'),
-    config  = require('../config');
+var del = require('del')
+var gulp = require('gulp')
+var config = require('../config')
 
-gulp.task('clean', function(cb) {
+gulp.task('clean', function (cb) {
   del([
     config.dest,
     config.distDir
-  ], cb);
-});
+  ], cb)
+})

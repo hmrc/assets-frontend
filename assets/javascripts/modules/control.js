@@ -1,4 +1,6 @@
-require('jquery');
+/* eslint-env jquery */
+
+require('jquery')
 
 /*
 Helper to enable elements to control the value of an input else where on the page specified by a data attribute
@@ -24,31 +26,32 @@ Target markup example:
         <option value="@countryCode.code"@isSelected(countryCode.code)>@countryCode.country</option>
     }
 </select>
- */
-var $controlElems;
+*/
+var $controlElems
 
 var setup = function () {
-  $controlElems = $('.js-control');
-};
+  $controlElems = $('.js-control')
+}
 
 var controlEvent = function ($controlElem) {
-  var $controlTarget = $('#' + $controlElem.data('controlTarget'));
-  var $controlValue = $controlElem.data('controlValue');
+  var $controlTarget = $('#' + $controlElem.data('controlTarget'))
+  var $controlValue = $controlElem.data('controlValue')
 
   $controlElem.on('click', function () {
-    $controlTarget.val($controlValue);
-  });
-};
+    $controlTarget.val($controlValue)
+  })
+}
 
 var addListeners = function () {
   $controlElems.each(function (index, elem) {
-    controlEvent($(elem));
-  });
-};
+    controlEvent($(elem))
+  })
+}
 
 module.exports = function () {
-  setup();
+  setup()
+
   if ($controlElems.length) {
-    addListeners();
+    addListeners()
   }
-};
+}

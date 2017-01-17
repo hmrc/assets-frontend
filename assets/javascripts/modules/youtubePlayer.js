@@ -1,5 +1,8 @@
-require('jquery');
-var GOVUK = require('stageprompt');
+/* eslint-env jquery */
+/* global YT */
+
+require('jquery')
+var GOVUK = require('stageprompt')
 
 /**
  * Embed a Youtube iframe in the page, replacing a div with the js-youtube-player class.
@@ -17,7 +20,6 @@ var GOVUK = require('stageprompt');
        <div id='tax-help' class='js-youtube-player' data-video-id='MlMnz0Omosk' data-ga-play-event='tax-return-help:Click:play'></div>
     </div>
 
-
  * Links decorated with js-youtube-skip class will make the player seek ahead to the time given and start.
  * data-player-id is required to identify which player is to be controlled.
  * Usage example:
@@ -26,17 +28,16 @@ var GOVUK = require('stageprompt');
 
  */
 
-var $youtubePlayerElems;
-var $playerChangeLinks;
-var YoutubePlayers;
+var $youtubePlayerElems
+var $playerChangeLinks
+var YoutubePlayers
 
 /**
  * Called by Youtube script to create players on page. Needs to be set on the root object
  */
-window.onYouTubeIframeAPIReady = function() {
-
-  $youtubePlayerElems.each(function() {
-    elementId = $(this).attr('id');
+window.onYouTubeIframeAPIReady = function () {
+  $youtubePlayerElems.each(function () {
+    var elementId = $(this).attr('id')
 
     YoutubePlayers[elementId].player = new YT.Player(
       elementId, {
@@ -44,103 +45,99 @@ window.onYouTubeIframeAPIReady = function() {
         events: {
           'onStateChange': onPlayerStateChange
         }
-      });
-  });
-};
-
+      })
+  })
+}
 
 /**
  * Fires Google Analytics event via GDS Stageprompt library.
  * Event values provided by data-ga-play-event attribute on player containing element.
  * @param event
  */
-var onPlayerStateChange = function(event) {
-
-  var playerId = event.target.getIframe().id;
-  var youtubePlayer = YoutubePlayers[playerId];
+var onPlayerStateChange = function (event) {
+  var playerId = event.target.getIframe().id
+  var youtubePlayer = YoutubePlayers[playerId]
 
   if (youtubePlayer && !youtubePlayer.started && event.data === YT.PlayerState.PLAYING) {
-    youtubePlayer.started = true;
-    var gaEventFields = youtubePlayer.params.gaEvent.split(':');
+    youtubePlayer.started = true
+    var gaEventFields = youtubePlayer.params.gaEvent.split(':')
     if (gaEventFields.length === 3) {
-      GOVUK.performance.sendGoogleAnalyticsEvent(gaEventFields[0], gaEventFields[1], gaEventFields[2]);
+      GOVUK.performance.sendGoogleAnalyticsEvent(gaEventFields[0], gaEventFields[1], gaEventFields[2])
     }
   }
-};
+}
 
 /**
  * Find all players on page and initialise them from the data attribute values
  */
-var initialisePlayers = function() {
-  var elementId;
-  var player;
+var initialisePlayers = function () {
+  var elementId
+  var player
 
-  YoutubePlayers = {};
+  YoutubePlayers = {}
 
-  $youtubePlayerElems.each(function(index, elem) {
-      elementId = $(this).attr('id');
-      player = YoutubePlayers[elementId] = {};
+  $youtubePlayerElems.each(function (index, elem) {
+    elementId = $(this).attr('id')
+    player = YoutubePlayers[elementId] = {}
 
-      player.started = false;
-      player.params = {
-        elementId: elementId,
-        videoId: $(this).data('video-id') || '',
-        gaEvent: $(this).data('ga-play-event') || ''
-      };
+    player.started = false
+    player.params = {
+      elementId: elementId,
+      videoId: $(this).data('video-id') || '',
+      gaEvent: $(this).data('ga-play-event') || ''
     }
-  );
-};
+  })
+}
 
 /**
  * Brings in JS API script from Youtube.
  */
-var addYouTubeAPIScript = function() {
-  var tag = document.createElement('script');
-  tag.src = 'https://www.youtube.com/iframe_api';
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-};
+var addYouTubeAPIScript = function () {
+  var tag = document.createElement('script')
+  tag.src = 'https://www.youtube.com/iframe_api'
+  var firstScriptTag = document.getElementsByTagName('script')[0]
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+}
 
 /**
  * handle click events for jump links
  */
-var addListeners = function() {
-
-  $playerChangeLinks.click(function(event) {
-    event.preventDefault();
-    var time = $(this).data('skip-time');
-    var videoId = $(this).data('video-id');
-    var playerId = $(this).data('player-id');
-    var youtubePlayer = YoutubePlayers[playerId];
-    youtubePlayer.started = true;
+var addListeners = function () {
+  $playerChangeLinks.click(function (event) {
+    event.preventDefault()
+    var time = $(this).data('skip-time')
+    var videoId = $(this).data('video-id')
+    var playerId = $(this).data('player-id')
+    var youtubePlayer = YoutubePlayers[playerId]
+    youtubePlayer.started = true
     if (youtubePlayer.player) {
       if (videoId) {
-        youtubePlayer.player.loadVideoById({'videoId': videoId});
+        youtubePlayer.player.loadVideoById({'videoId': videoId})
       }
       if (time) {
-        youtubePlayer.player.seekTo(time);
+        youtubePlayer.player.seekTo(time)
       }
-      youtubePlayer.player.playVideo();
+      youtubePlayer.player.playVideo()
     }
-  });
-};
+  })
+}
 
 /**
  * if players present on page, initialise and bring in API script
  */
-var init = function() {
-  $youtubePlayerElems = $('.js-youtube-player');
-  $playerChangeLinks = $('.js-youtube-link');
+var init = function () {
+  $youtubePlayerElems = $('.js-youtube-player')
+  $playerChangeLinks = $('.js-youtube-link')
 
   if ($youtubePlayerElems.length) {
-    initialisePlayers();
-    addYouTubeAPIScript();
-    addListeners();
+    initialisePlayers()
+    addYouTubeAPIScript()
+    addListeners()
   }
-};
+}
 
-module.exports = function() {
+module.exports = function () {
   return {
     init: init
-  };
-};
+  }
+}

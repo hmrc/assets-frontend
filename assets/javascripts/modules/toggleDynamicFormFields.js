@@ -1,34 +1,36 @@
-require('jquery');
+/* eslint-env jquery */
 
-module.exports = function() {
-  var $dynamicForm = $('form[data-dynamic-form]');
+require('jquery')
 
-  $dynamicForm.find('*[data-dynamic-fields-hide="true"]').each(function() {
+module.exports = function () {
+  var $dynamicForm = $('form[data-dynamic-form]')
+
+  $dynamicForm.find('*[data-dynamic-fields-hide="true"]').each(function () {
     if ($(this).prop('checked')) {
-      var $toggledField = $('.data-' + $(this).data('dynamic-fields'));
-      $toggledField.addClass('js-hidden');
+      var $toggledField = $('.data-' + $(this).data('dynamic-fields'))
+      $toggledField.addClass('js-hidden')
     }
-  });
+  })
 
-  $dynamicForm.on('click', '*[data-dynamic-fields]', function() {
-    var $toggledField = $('.data-' + $(this).data('dynamic-fields'));
+  $dynamicForm.on('click', '*[data-dynamic-fields]', function () {
+    var $toggledField = $('.data-' + $(this).data('dynamic-fields'))
     if ($(this).data('dynamic-fields-hide')) {
       if ($(this).attr('type') === 'checkbox') {
-        $(this).data('dynamic-fields-hide', false);
+        $(this).data('dynamic-fields-hide', false)
       }
 
-      $toggledField.addClass('js-hidden');
-      $toggledField.find(':text').val('');
-      $toggledField.find(':input[type="number"]').val('');
-      $toggledField.find(':checked').prop('checked', false);
-      $toggledField.find('*[data-default]').prop('checked', true);
+      $toggledField.addClass('js-hidden')
+      $toggledField.find(':text').val('')
+      $toggledField.find(':input[type="number"]').val('')
+      $toggledField.find(':checked').prop('checked', false)
+      $toggledField.find('*[data-default]').prop('checked', true)
     } else {
       if ($(this).attr('type') === 'checkbox') {
-        $(this).data('dynamic-fields-hide', true);
+        $(this).data('dynamic-fields-hide', true)
       }
 
-      $toggledField.removeClass('js-hidden');
-      $toggledField.find(':checked').prop('checked', false);
+      $toggledField.removeClass('js-hidden')
+      $toggledField.find(':checked').prop('checked', false)
     }
-  });
-};
+  })
+}

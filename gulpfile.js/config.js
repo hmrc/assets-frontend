@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /*
 - Clean all generated dirs
@@ -20,15 +20,15 @@ Test:
 - Spec reporter
 */
 
-var src = './assets/',
-    dest = src + 'public/',
-    distDir = src + 'dist/',
-    snapshotDir = dest + '999-SNAPSHOT/',
-    govuk = {
-      elements: src + 'govuk_elements',
-      template: src + 'govuk_elements/govuk',
-      images: src + 'govuk_elements/govuk/public/images/'
-    };
+var src = './assets/'
+var dest = src + 'public/'
+var distDir = src + 'dist/'
+var snapshotDir = dest + '999-SNAPSHOT/'
+var govuk = {
+  elements: src + 'govuk_elements',
+  template: src + 'govuk_elements/govuk',
+  images: src + 'govuk_elements/govuk/public/images/'
+}
 
 module.exports = {
   dest: dest,
@@ -59,8 +59,6 @@ module.exports = {
     src: src + 'javascripts/modules/**/*.js',
     dest: snapshotDir + 'javascripts',
     entryPoint: src + 'javascripts/application.js',
-    jshintExclude: '!' + src + 'javascripts/**/{base64v1_0,details.polyfill,mdtpdf}.js',
-    jscsSrc: '.jscsrc',
     gulpTasks: 'gulpfile.js/**/*.js',
     encryptionSrc: src + 'javascripts/encryption/**/*.js',
     encryptionDest: {
@@ -165,6 +163,7 @@ module.exports = {
   },
 
   test: {
+    src: src + 'test/**/*.js',
     specsScr: src + 'test/specs/unit/**/*.js',
     fixturesScr: src + 'test/specs/fixtures/*.html',
     karmaConfig: src + 'test/config/karma.conf.js'
@@ -172,11 +171,11 @@ module.exports = {
 
   errorPages: {
     src: src + 'error_pages/*.html',
-    dev:{
+    dev: {
       dest: snapshotDir,
       assetsPath: '/' + snapshotDir
     },
-    prod:{
+    prod: {
       dest: distDir,
       assetsPath: process.env.TAG ? '/assets/' + process.env.TAG + '/' : '/assets/999-SNAPSHOT/'
     }
@@ -205,4 +204,4 @@ module.exports = {
       }
     }
   }
-};
+}

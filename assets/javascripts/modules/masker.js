@@ -1,5 +1,8 @@
-require('jquery');
-var caretPosition = require('../utils/caretPosition.js');
+/* eslint-env jquery */
+
+require('jquery')
+
+var caretPosition = require('../utils/caretPosition.js')
 
 /**
  Input Masker
@@ -21,40 +24,41 @@ var caretPosition = require('../utils/caretPosition.js');
         aria-required="true"
         />
  */
-var $maskedElems;
+var $maskedElems
 
 var masker = function () {
-  var cursorPosition;
-  return function () {
-    var rule = this.getAttribute('data-masker-rule');
-    var regEx = new RegExp(rule, 'g');
-    var matches = this.value.match(regEx);
-    var returnValue = matches && matches.join('') || '';
+  var cursorPosition
 
-    cursorPosition = caretPosition.get(this);
-    this.value = returnValue;
-    caretPosition.set(this, cursorPosition);
-  };
-};
+  return function () {
+    var rule = this.getAttribute('data-masker-rule')
+    var regEx = new RegExp(rule, 'g')
+    var matches = this.value.match(regEx)
+    var returnValue = matches && matches.join('') || ''
+
+    cursorPosition = caretPosition.get(this)
+    this.value = returnValue
+    caretPosition.set(this, cursorPosition)
+  }
+}
 
 var maskerEvent = function ($input) {
-  $input.on('keyup', masker());
-};
+  $input.on('keyup', masker())
+}
 
 var addListeners = function () {
   $maskedElems.each(function (index, input) {
-    maskerEvent($(input));
-  });
-};
+    maskerEvent($(input))
+  })
+}
 
 var setup = function () {
-  $maskedElems = $('.js-masker');
-};
+  $maskedElems = $('.js-masker')
+}
 
 module.exports = function () {
-  setup();
+  setup()
 
   if ($maskedElems.length) {
-    addListeners();
+    addListeners()
   }
-};
+}

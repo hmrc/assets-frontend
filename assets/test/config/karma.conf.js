@@ -1,14 +1,13 @@
 // Karma configuration
 // Generated on Tue Aug 26 2014 11:01:22 GMT+0100 (BST)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
-
     // base path, that will be used to resolve files and exclude
     basePath: '..',
 
     // frameworks to use
-    frameworks:  [
+    frameworks: [
       'jasmine-jquery',
       'jasmine',
       'jasmine-matchers',
@@ -79,5 +78,5 @@ module.exports = function(config) {
       'karma-jasmine-jquery',
       'karma-jasmine-matchers'
     ]
-  });
-};
+  })
+}
