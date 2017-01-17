@@ -26,3 +26,11 @@ gulp.task('lint:scripts', function () {
       breakOnError: true
     }))
 })
+
+gulp.task('lint:tests', function () {
+  return gulp.src(config.test.src)
+    .pipe(standard())
+    .pipe(standard.reporter('default', {
+      breakOnError: true
+    }))
+})

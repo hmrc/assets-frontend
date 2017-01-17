@@ -1,78 +1,92 @@
-require('jquery');
+/* eslint-env jasmine, jquery */
+
+require('jquery')
 
 var Mdtpdf = require('../../javascripts/modules/mdtpdf.js')
-describe("Device Fingerprint", function() {
-    var fingerprint;
 
-    beforeEach(function() {
-        fingerprint = new Mdtpdf();
-    });
-    afterEach(function() {
-        fingerprint = undefined;
-    });
+describe('Device Fingerprint', function () {
+  var fingerprint
 
-    it("should return a device fingerprint object", function() {
-        expect(fingerprint).not.toBeUndefined();
-    });
-    it("method get() was called", function() {
+  beforeEach(function () {
+    fingerprint = new Mdtpdf()
+  })
 
-        spyOn(fingerprint, "get");
-        fingerprint.get();
-        expect(fingerprint.get).toHaveBeenCalled();
-    });
+  afterEach(function () {
+    fingerprint = undefined
+  })
 
-    describe("returns", function() {
-        var fpDetails;
-        var originalNavigator = navigator;
+  it('should return a device fingerprint object', function () {
+    expect(fingerprint).not.toBeUndefined()
+  })
 
-        beforeEach(function() {
-            fingerprint = new Mdtpdf( { screen_resolution: true } );
+  it('method get() was called', function () {
+    spyOn(fingerprint, 'get')
+    fingerprint.get()
+    expect(fingerprint.get).toHaveBeenCalled()
+  })
 
-            var attributes = { userAgent: 'Mock user agent', language: 'Some language', platform: 'The os', cpuClass: 'The cpu class', doNotTrack: 'true', plugins: [{name: 'plugin name', description: 'plugin description'}]};
-            $.each(attributes, function(key, value){
-                navigator.__defineGetter__(key, function(){
-                    return value;
-                })
-            });
-        });
+  describe('returns', function () {
+    var fpDetails
 
-        afterEach(function() {
-            //fingerprint = undefined;
-            //navigator = undefined;
-            //screen = undefined;
-            //fpDetails = undefined;
-        });
+    beforeEach(function () {
+      fingerprint = new Mdtpdf({
+        screen_resolution: true
+      })
 
-        it("userAgent attribute", function() {
-            fpDetails = $.parseJSON(fingerprint.get());
-            expect(fpDetails.userAgent).toBeString();
-        });
-        it("language attribute", function() {
-            fpDetails = $.parseJSON(fingerprint.get());
-            expect(fpDetails.language).toBeString();
-        });
-        it("platform attribute", function() {
-            fpDetails = $.parseJSON(fingerprint.get());
-            expect(fpDetails.platform).toBeString();
-        });
-        it("cpuClass attribute", function() {
-            fpDetails = $.parseJSON(fingerprint.get());
-            expect(fpDetails.cpuClass).toBeString();
-        });
-        it("doNotTrack attribute", function() {
-            fpDetails = $.parseJSON(fingerprint.get());
-            expect(fpDetails.doNotTrack).toBeBoolean();
-        });
-        it("number of plugins", function() {
-            fpDetails = $.parseJSON(fingerprint.get());
-            expect(fpDetails.numberOfPlugins).toBeNumber();
-        });
-        it("list of plugins", function() {
-            spyOn(fingerprint, "getPluginsString");
-            fpDetails = $.parseJSON(fingerprint.get());
-            expect(fingerprint.getPluginsString).toHaveBeenCalled();
-            expect(fpDetails.plugins).not.toBe(null);
-        });
+      var attributes = {
+        userAgent: 'Mock user agent',
+        language: 'Some language',
+        platform: 'The os',
+        cpuClass: 'The cpu class',
+        doNotTrack: 'true',
+        plugins: [{
+          name: 'plugin name',
+          description: 'plugin description'
+        }]
+      }
 
-    });
-});
+      $.each(attributes, function (key, value) {
+        navigator.__defineGetter__(key, function () {
+          return value
+        })
+      })
+    })
+
+    it('userAgent attribute', function () {
+      fpDetails = $.parseJSON(fingerprint.get())
+      expect(fpDetails.userAgent).toBeString()
+    })
+
+    it('language attribute', function () {
+      fpDetails = $.parseJSON(fingerprint.get())
+      expect(fpDetails.language).toBeString()
+    })
+
+    it('platform attribute', function () {
+      fpDetails = $.parseJSON(fingerprint.get())
+      expect(fpDetails.platform).toBeString()
+    })
+
+    it('cpuClass attribute', function () {
+      fpDetails = $.parseJSON(fingerprint.get())
+      expect(fpDetails.cpuClass).toBeString()
+    })
+
+    it('doNotTrack attribute', function () {
+      fpDetails = $.parseJSON(fingerprint.get())
+      expect(fpDetails.doNotTrack).toBeBoolean()
+    })
+
+    it('number of plugins', function () {
+      fpDetails = $.parseJSON(fingerprint.get())
+      expect(fpDetails.numberOfPlugins).toBeNumber()
+    })
+
+    it('list of plugins', function () {
+      spyOn(fingerprint, 'getPluginsString')
+      fpDetails = $.parseJSON(fingerprint.get())
+      expect(fingerprint.getPluginsString).toHaveBeenCalled()
+      expect(fpDetails.plugins).not.toBe(null)
+    })
+  })
+})

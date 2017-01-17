@@ -15,4 +15,4 @@ var karmaTask = function (done) {
   })
 }
 
-gulp.task('test', ['sass'], karmaTask)
+gulp.task('test', ['sass', 'lint:tests', 'lint:scripts'], karmaTask)

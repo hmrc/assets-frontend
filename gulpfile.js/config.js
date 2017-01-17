@@ -163,6 +163,7 @@ module.exports = {
   },
 
   test: {
+    src: src + 'test/**/*.js',
     specsScr: src + 'test/specs/unit/**/*.js',
     fixturesScr: src + 'test/specs/fixtures/*.html',
     karmaConfig: src + 'test/config/karma.conf.js'
