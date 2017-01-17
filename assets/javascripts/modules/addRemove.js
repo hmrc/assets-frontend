@@ -1,3 +1,5 @@
+/* eslint-env jquery */
+
 /*
 Add Remove
 
@@ -32,67 +34,61 @@ Markup:
 </div>
  */
 
-var $addRemoveContainers, 
-    DEFAULT_ADD_BTN_TEXT = 'Add',
-    DEFAULT_DELETE_BTN_TEXT = 'Delete',
-    addRemoveContainer = '[data-add-remove]',
-    addRemoveList = '[data-add-remove-list]',
-    addRemoveItem = '[data-add-remove-item]',
-    addRemoveInput = '[data-add-remove-input]',
-    template = '[data-template]',
-    addButton = '[data-add-btn]',
-    maxItems = 'data-max',
-    cachedTemplate = [];
+var $addRemoveContainers
+var DEFAULT_ADD_BTN_TEXT = 'Add'
+var DEFAULT_DELETE_BTN_TEXT = 'Delete'
+var addRemoveContainer = '[data-add-remove]'
+var addRemoveList = '[data-add-remove-list]'
+var addRemoveItem = '[data-add-remove-item]'
+var addRemoveInput = '[data-add-remove-input]'
+var addButton = '[data-add-btn]'
+var maxItems = 'data-max'
+var cachedTemplate = []
 
 var init = function () {
-  $addRemoveContainers = $(addRemoveContainer);
+  $addRemoveContainers = $(addRemoveContainer)
 
   if ($addRemoveContainers.length) {
-
     $addRemoveContainers.each(function (i, container) {
-      var $container = $(container),
-          $cloneableItem = $container.find('[' + $container.attr('data-template-item') + ']');
+      var $container = $(container)
+      var $cloneableItem = $container.find('[' + $container.attr('data-template-item') + ']')
 
-      if($cloneableItem.length > 0) {
-      
+      if ($cloneableItem.length > 0) {
         // cache this AddRemove instance's item template for when Add is clicked
-        cachedTemplate.push($cloneableItem[0].outerHTML);
-      
+        cachedTemplate.push($cloneableItem[0].outerHTML)
       }
 
       if (deleteIsEnabled($container)) {
         $container.find(addRemoveItem).each(function (index, listItem) {
           // must always be at least one input on the page for cloning new ones
           if (index > 0) {
-            addDeleteBtn($(listItem), $container);
+            addDeleteBtn($(listItem), $container)
           }
-        });
+        })
       }
 
       // only insert Add button if list has space
       if (!maxLengthReached($container)) {
-        insertAddButton($container);
+        insertAddButton($container)
       }
-    });
-
+    })
   }
-
-};
+}
 
 /**
  * Insert a Add button after the list of items
  * @param $container
  */
 var insertAddButton = function ($container) {
-  var addBtnText = $container.attr('data-add-btn-text') || DEFAULT_ADD_BTN_TEXT;
+  var addBtnText = $container.attr('data-add-btn-text') || DEFAULT_ADD_BTN_TEXT
   var $addInputBtn = $('<a href="#" data-add-btn>' + addBtnText + '</a>')
     .click(function (event) {
-      event.preventDefault();
-      addListItem($container);
-    });
+      event.preventDefault()
+      addListItem($container)
+    })
 
-  $container.append($addInputBtn);
-};
+  $container.append($addInputBtn)
+}
 
 /**
  * Show the add input button
@@ -100,9 +96,9 @@ var insertAddButton = function ($container) {
  */
 var showAddButton = function ($container) {
   if (!maxLengthReached($container)) {
-    $container.find(addButton).show();
+    $container.find(addButton).show()
   }
-};
+}
 
 /**
  * Hide the add input button
@@ -110,22 +106,21 @@ var showAddButton = function ($container) {
  */
 var hideAddButton = function ($container) {
   if (maxLengthReached($container)) {
-    $container.find(addButton).hide();
+    $container.find(addButton).hide()
   }
-};
+}
 
 /**
  * Add a new list item to list
  * @param $container
  */
 var addListItem = function ($container) {
-  var $list = $container.find(addRemoveList),
-      $lisItem = createItem($container);
+  var $list = $container.find(addRemoveList)
+  var $lisItem = createItem($container)
 
-  $list.append($lisItem);
-  hideAddButton($container);
-};
-
+  $list.append($lisItem)
+  hideAddButton($container)
+}
 
 /**
  * Create new list item containing input. If the attribute data-can-delete="true" has been added to the container
@@ -134,42 +129,35 @@ var addListItem = function ($container) {
  * @returns {*}
  */
 var createItem = function ($container) {
-  var cachedTemplateIndex,
-      $listItemClone,
-      $input;
+  var cachedTemplateIndex = $addRemoveContainers.index($container)
+  var $listItemClone = $(cachedTemplate[cachedTemplateIndex])
+  var $input = $listItemClone.find(addRemoveInput)
 
-  cachedTemplateIndex = $addRemoveContainers.index($container);
-
-  $listItemClone = $(cachedTemplate[cachedTemplateIndex]);
-
-  $input = $listItemClone.find(addRemoveInput);
-
-  $input.val('');
+  $input.val('')
 
   if (deleteIsEnabled($container)) {
-    addDeleteBtn($listItemClone, $container);
+    addDeleteBtn($listItemClone, $container)
   }
 
-  return $listItemClone;
-};
+  return $listItemClone
+}
 
 var deleteIsEnabled = function ($container) {
-  return $container.attr('data-can-delete') === 'true';
-};
+  return $container.attr('data-can-delete') === 'true'
+}
 
 var addDeleteBtn = function ($listItem, $container) {
-  var deleteBtnText = $container.attr('data-delete-btn-text') || DEFAULT_DELETE_BTN_TEXT,
-      $deleteBtn;
+  var deleteBtnText = $container.attr('data-delete-btn-text') || DEFAULT_DELETE_BTN_TEXT
 
-  $deleteBtn = $('<a href="#" class="add-remove__remove-btn" data-remove-btn>' + deleteBtnText + '</a>')
+  var $deleteBtn = $('<a href="#" class="add-remove__remove-btn" data-remove-btn>' + deleteBtnText + '</a>')
     .click(function (event) {
-      event.preventDefault();
-      $listItem.remove();
-      showAddButton($container);
-    });
+      event.preventDefault()
+      $listItem.remove()
+      showAddButton($container)
+    })
 
-  $listItem.append($deleteBtn);
-};
+  $listItem.append($deleteBtn)
+}
 
 /**
  * Returns whether or not list is full based on data-max attribute
@@ -177,10 +165,10 @@ var addDeleteBtn = function ($listItem, $container) {
  * @returns {boolean}
  */
 var maxLengthReached = function ($container) {
-  var listLength = $container.find(addRemoveItem).length;
-  var maxListsAllowed = parseInt($container.attr(maxItems), 10);
+  var listLength = $container.find(addRemoveItem).length
+  var maxListsAllowed = parseInt($container.attr(maxItems), 10)
 
-  return listLength === maxListsAllowed;
-};
+  return listLength === maxListsAllowed
+}
 
-module.exports = init;
+module.exports = init

@@ -1,18 +1,20 @@
-require('jquery');
+/* eslint-env jquery */
 
-module.exports = function(hash) {
-  var targetElement;
+require('jquery')
+
+module.exports = function (hash) {
+  var targetElement
+
   try {
-    targetElement = $(hash);
-  }
-  catch (ex) {
+    targetElement = $(hash)
+  } catch (ex) {
     /* This can only happen if selector from 'hash' is not valid. */
-    return;
+    return
   }
 
   if (targetElement.length === 1) {
     if (targetElement.css('top') === 'auto' || '0') {
-      $(window).scrollTop(targetElement.offset().top - $('#global-header').height());
+      $(window).scrollTop(targetElement.offset().top - $('#global-header').height())
     }
   }
-};
+}

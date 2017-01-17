@@ -1,4 +1,6 @@
-require('jquery');
+/* eslint-env jquery */
+
+require('jquery')
 
 /**
  * Allow links to update the src of an embedded youtube iFrame.
@@ -8,17 +10,15 @@ require('jquery');
  * usage example:
  * <a class="js-video-link" href="https://youtu.be/MlMnz0Omosk?start=395&autoplay=1">How to apply online</a>
  */
-module.exports = function() {
-
-  var $videoIframe = $('#video-iframe');
+module.exports = function () {
+  var $videoIframe = $('#video-iframe')
   if ($($videoIframe).length) {
-    $('.js-video-link').click(function(e) {
-      e.preventDefault();
-      var iframeUrl = $(this).attr('href').replace(/.*\//, 'https://www.youtube.com/embed/');
+    $('.js-video-link').click(function (e) {
+      e.preventDefault()
+      var iframeUrl = $(this).attr('href').replace(/.*\//, 'https://www.youtube.com/embed/')
       if (iframeUrl) {
-        $videoIframe.attr('src', iframeUrl);
+        $videoIframe.attr('src', iframeUrl)
       }
-    });
+    })
   }
-
-};
+}

@@ -1,41 +1,47 @@
-  module.exports = function() {
-    var bannerId = $('.attorneyBanner').attr('id'),
-      topOffset = 0;
+/* eslint-env jquery */
 
-    if (bannerId) {
-      topOffset = $('#' + bannerId).parent().height();
+module.exports = function () {
+  var bannerId = $('.attorneyBanner').attr('id')
+  var topOffset = 0
+
+  if (bannerId) {
+    topOffset = $('#' + bannerId).parent().height()
+  }
+
+  $('.error-summary a').on('click', function (e) {
+    var $this = $(this)
+    var focusId = $this.attr('data-focuses')
+
+    if (!focusId) {
+      focusId = $this.attr('href') || ''
+
+      if (focusId.indexOf('#') !== 0) {
+        return
+      }
+    } else {
+      focusId = '#' + focusId
     }
 
-    $('.error-summary a').on('click', function(e) {
-      var $this = $(this);
-      var focusId = $this.attr('data-focuses');
-      if (!focusId) {
-        focusId = $this.attr("href") || "";
-        if (focusId.indexOf("#") !== 0)
-          return;
-      }
-      else {
-        focusId = "#" + focusId;
-      }
+    var inputToFocus = $(focusId)
 
-      var inputToFocus = $(focusId);
-      if (!inputToFocus.length)
-        return;
+    if (!inputToFocus.length) {
+      return
+    }
 
-      e.preventDefault();
+    e.preventDefault()
 
-      var inputTagName = inputToFocus.prop("tagName").toLowerCase(),
-        nodeToScrollTo = inputToFocus;
+    var inputTagName = inputToFocus.prop('tagName').toLowerCase()
+    var nodeToScrollTo = inputToFocus
 
-      if (["input", "select", "button"].indexOf(inputTagName) !== -1) {
-        nodeToScrollTo = inputToFocus.parent();
-      }
+    if (['input', 'select', 'button'].indexOf(inputTagName) !== -1) {
+      nodeToScrollTo = inputToFocus.parent()
+    }
 
-      $('html, body').animate({
-        scrollTop: nodeToScrollTo.offset().top - topOffset
-      }, 500);
+    $('html, body').animate({
+      scrollTop: nodeToScrollTo.offset().top - topOffset
+    }, 500)
 
-      nodeToScrollTo.find(':input').first().focus();
-    });
-  };
+    nodeToScrollTo.find(':input').first().focus()
+  })
+}
 

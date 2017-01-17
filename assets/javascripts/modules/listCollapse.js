@@ -1,3 +1,5 @@
+/* eslint-env jquery */
+
 /**
   ListCollapse
 
@@ -30,32 +32,28 @@
   More details on usage can be found in the component library.
 
  */
-module.exports = function() {
+module.exports = function () {
+  $('.list--collapse').each(function (index, elemnt) {
+    var $listHolder = $(this)
+    var $listToggle = $listHolder.find('[data-list-collapse-toggle]')
 
-  $('.list--collapse').each(function(index, elemnt) {
+    $listToggle.on('click', listToggleClick)
 
-    var $listHolder = $(this);
-    var $listToggle = $listHolder.find('[data-list-collapse-toggle]');
-
-    $listToggle.on('click', listToggleClick);
-
-    function listToggleClick(e) {
-      e.preventDefault();
+    function listToggleClick (e) {
+      e.preventDefault()
 
       /*
        * Check to see if the display property of the list toggle element is set to block.
        * If it is then we know that we are on a mobile breakpoint and can continue toggling the 'hide-inline-list--collapse-targets' class on the outer container
        * If the display property is not set to block then we can assume that we are in a larger breakpoint and return out of the funciton without toggling the 'hide-inline-list--collapse-targets' class
       */
-      var isListToggleDisplayBlock = $listToggle.css('display') === 'block';
+      var isListToggleDisplayBlock = $listToggle.css('display') === 'block'
 
       if (!isListToggleDisplayBlock) {
-        return;
+        return
       }
 
-      $listHolder.toggleClass('hide-inline-list--collapse-targets');
+      $listHolder.toggleClass('hide-inline-list--collapse-targets')
     }
-
-  });
-
-};
+  })
+}

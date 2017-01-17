@@ -1,177 +1,178 @@
-require('jquery');
-require('details');
-require('validate');
-require('basicpunc');
-require('govuk-template');
+/* eslint-env jquery */
 
-window._gaq = window._gaq || [];
+require('jquery')
+require('details')
+require('validate')
+require('basicpunc')
+require('govuk-template')
 
-var sso = require('./modules/sso.js'),
-    visibility = require('./modules/visibility.js'),
-    mask = require('./modules/mask.js'),
-    form = require('./validation/form.js'),
-    toggle = require('./modules/toggle.js'),
-    autoCompleteFactory = require('./modules/autoCompleteFactory.js'),
-    passwordReveal = require('./modules/passwordReveal.js'),
-    formHintHelper = require('./modules/formHintHelper.js'),
-    control = require('./modules/control.js'),
-    masker = require('./modules/masker.js'),
-    contentNudge = require('./modules/contentNudge.js'),
-    tableRowClick = require('./modules/tableRowClick.js'),
-    feedbackForms = require('./modules/feedbackForms.js'),
-    reportAProblem = require('./modules/reportAProblem.js'),
-    ajaxFormSubmit = require('./modules/ajaxFormSubmit.js'),
-    ajaxCallbacks = require('./modules/ajaxCallbacks.js'),
-    preventDoubleSubmit = require('./modules/preventDoubleSubmit.js'),
-    toggleContextualFields = require('./modules/toggleContextualFields.js'),
-    toggleDynamicFormFields = require('./modules/toggleDynamicFormFields.js'),
-    conditionallyDisableButton = require('./modules/conditionallyDisableButton.js'),
-    simpleToggleDynamicFormFields = require('./modules/simpleToggleDynamicFormFields.js'),
-    questionnaireSubmission = require('./modules/questionnaireSubmission.js'),
-    registerBlockInputFields = require('./modules/registerBlockInputFields.js'),
-    customValidations = require('./validation/customValidations.js'),
-    exitSurveyValidation = require('./validation/exitSurveyValidation.js'),
-    citizenAuthValidation = require('./validation/citizenAuthValidation.js'),
-    saEmailPrefs = require('./validation/saEmailPrefs.js'),
-    GOVUK = require('stageprompt'),
-    toggleDetails = require('./modules/toggleDetails.js'),
-    fingerprint = require('./modules/fingerprint.js'),
-    validatorFocus = require('./modules/validatorFocus.js'),
-    enhancedTables = require('./modules/enhancedTables.js'),
-    attorneyBanner = require('./modules/attorneyBanner.js'),
-    youtubePlayer = require('./modules/youtubePlayer.js'),
-    accordion = require('./modules/accordion.js'),
-    tabs = require('./modules/tabs.js'),
-    charCounter = require('./modules/charCounter.js'),
-    addRemove = require('./modules/addRemove.js'),
-    modalDialog = require('./modules/modalDialog.js'),
-    dynamicGaTags = require('./modules/dynamicGaTags.js'),
-    listCollapse = require('./modules/listCollapse.js');
+window._gaq = window._gaq || []
 
-//initialise mdtpf
-fingerprint();
+var sso = require('./modules/sso.js')
+var visibility = require('./modules/visibility.js')
+var mask = require('./modules/mask.js')
+var form = require('./validation/form.js')
+var toggle = require('./modules/toggle.js')
+var autoCompleteFactory = require('./modules/autoCompleteFactory.js')
+var passwordReveal = require('./modules/passwordReveal.js')
+var formHintHelper = require('./modules/formHintHelper.js')
+var control = require('./modules/control.js')
+var masker = require('./modules/masker.js')
+var contentNudge = require('./modules/contentNudge.js')
+var tableRowClick = require('./modules/tableRowClick.js')
+var feedbackForms = require('./modules/feedbackForms.js')
+var reportAProblem = require('./modules/reportAProblem.js')
+var ajaxFormSubmit = require('./modules/ajaxFormSubmit.js')
+var ajaxCallbacks = require('./modules/ajaxCallbacks.js')
+var preventDoubleSubmit = require('./modules/preventDoubleSubmit.js')
+var toggleContextualFields = require('./modules/toggleContextualFields.js')
+var toggleDynamicFormFields = require('./modules/toggleDynamicFormFields.js')
+var conditionallyDisableButton = require('./modules/conditionallyDisableButton.js')
+var simpleToggleDynamicFormFields = require('./modules/simpleToggleDynamicFormFields.js')
+var questionnaireSubmission = require('./modules/questionnaireSubmission.js')
+var registerBlockInputFields = require('./modules/registerBlockInputFields.js')
+var customValidations = require('./validation/customValidations.js')
+var exitSurveyValidation = require('./validation/exitSurveyValidation.js')
+var citizenAuthValidation = require('./validation/citizenAuthValidation.js')
+var saEmailPrefs = require('./validation/saEmailPrefs.js')
+var GOVUK = require('stageprompt')
+var toggleDetails = require('./modules/toggleDetails.js')
+var fingerprint = require('./modules/fingerprint.js')
+var validatorFocus = require('./modules/validatorFocus.js')
+var enhancedTables = require('./modules/enhancedTables.js')
+var attorneyBanner = require('./modules/attorneyBanner.js')
+var youtubePlayer = require('./modules/youtubePlayer.js')
+var accordion = require('./modules/accordion.js')
+var tabs = require('./modules/tabs.js')
+var charCounter = require('./modules/charCounter.js')
+var addRemove = require('./modules/addRemove.js')
+var modalDialog = require('./modules/modalDialog.js')
+var dynamicGaTags = require('./modules/dynamicGaTags.js')
+var listCollapse = require('./modules/listCollapse.js')
 
-$(function() {
-  var datatable,
-      $searchFocus,
-      $clickableRow;
+// initialise mdtpf
+fingerprint()
 
-  conditionallyDisableButton();
+$(function () {
+  var datatable
+  var $searchFocus
+  var $clickableRow
+
+  conditionallyDisableButton()
 
   // feedback forms require a hidden field denoting if javascript is enabled
-  $searchFocus      = $('.js-search-focus');
-  $clickableRow     = $('.clickable-row');
-  
+  $searchFocus = $('.js-search-focus')
+  $clickableRow = $('.clickable-row')
+
   if ($clickableRow.length) {
-    tableRowClick($clickableRow);
+    tableRowClick($clickableRow)
   }
 
-  preventDoubleSubmit();
+  preventDoubleSubmit()
 
   // datatables init
-  datatable = $('.js-datatable');
+  datatable = $('.js-datatable')
 
   if (datatable.length) {
-    enhancedTables(datatable);
+    enhancedTables(datatable)
   }
 
   // initialise stageprompt for Analytics
-  GOVUK.performance.stageprompt.setupForGoogleAnalytics();
+  GOVUK.performance.stageprompt.setupForGoogleAnalytics()
 
-  $('.print-link a').attr('target', '_blank');
+  $('.print-link a').attr('target', '_blank')
 
   if ($searchFocus.val() !== '') {
-    $searchFocus.addClass('focus');
+    $searchFocus.addClass('focus')
   }
 
-  $searchFocus.on('focus', function(e) {
-    $(e.target).addClass('focus');
-  });
+  $searchFocus.on('focus', function (e) {
+    $(e.target).addClass('focus')
+  })
 
-  $searchFocus.on('blur', function(e) {
+  $searchFocus.on('blur', function (e) {
     if ($searchFocus.val() === '') {
-      $(e.target).removeClass('focus');
+      $(e.target).removeClass('focus')
     }
-  });
+  })
 
   if (window.location.hash && $('.design-principles').length !== 1 && $('.section-page').length !== 1) {
-    contentNudge(window.location.hash);
+    contentNudge(window.location.hash)
   }
 
-  $('nav').delegate('a', 'click', function() {
-    var hash,
-      href = $(this).attr('href');
+  $('nav').delegate('a', 'click', function () {
+    var hash
+    var href = $(this).attr('href')
 
     if (href.charAt(0) === '#') {
-      hash = href;
+      hash = href
     } else if (href.indexOf('#') > 0) {
-      hash = '#' + href.split('#')[1];
+      hash = '#' + href.split('#')[1]
     }
 
     if ($(hash).length === 1) {
       $('html, body').animate({
         scrollTop: $(hash).offset().top - $('#global-header').height()
-      }, 10);
+      }, 10)
     }
-  });
+  })
 
   // hover, active and focus states for buttons in IE<8
   if (!$.support.leadingWhitespace) {
     $('.button').not('a')
-      .on('click focus', function() {
-        $(this).addClass('button-active');
+      .on('click focus', function () {
+        $(this).addClass('button-active')
       })
-      .on('blur', function() {
-        $(this).removeClass('button-active');
-      });
+      .on('blur', function () {
+        $(this).removeClass('button-active')
+      })
 
     $('.button')
-      .on('mouseover', function() {
-        $(this).addClass('button-hover');
+      .on('mouseover', function () {
+        $(this).addClass('button-hover')
       })
-      .on('mouseout', function() {
-        $(this).removeClass('button-hover');
-      });
+      .on('mouseout', function () {
+        $(this).removeClass('button-hover')
+      })
   }
 
   if ($('*[data-contextual-helpers]').length) {
     // setup showing/hiding of contextual fields
-    toggleContextualFields().setup();
+    toggleContextualFields().setup()
   }
 
-  sso().init();
-  visibility();
-  form.init();
-  mask();
-  toggle();
-  autoCompleteFactory();
-  control();
-  masker();
-  passwordReveal();
-  formHintHelper();
-  toggleDynamicFormFields();
+  sso().init()
+  visibility()
+  form.init()
+  mask()
+  toggle()
+  autoCompleteFactory()
+  control()
+  masker()
+  passwordReveal()
+  formHintHelper()
+  toggleDynamicFormFields()
 
-  //TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
-  simpleToggleDynamicFormFields();
-  questionnaireSubmission();
-  registerBlockInputFields();
-  customValidations();
-  exitSurveyValidation().setup();
-  citizenAuthValidation().setup();
-  feedbackForms().setup();
-  reportAProblem().setup();
-  saEmailPrefs().setup();
-  toggleDetails();
-  validatorFocus();
-  attorneyBanner();
-  youtubePlayer().init();
-  ajaxFormSubmit.init(ajaxCallbacks); 
-  tabs();
-  accordion();
-  charCounter();
-  addRemove();
-  modalDialog();
-  dynamicGaTags();
-  listCollapse();
-
-});
+  // TODO: replace toggleDynamicFormField usage in all exemplars and rename this function
+  simpleToggleDynamicFormFields()
+  questionnaireSubmission()
+  registerBlockInputFields()
+  customValidations()
+  exitSurveyValidation().setup()
+  citizenAuthValidation().setup()
+  feedbackForms().setup()
+  reportAProblem().setup()
+  saEmailPrefs().setup()
+  toggleDetails()
+  validatorFocus()
+  attorneyBanner()
+  youtubePlayer().init()
+  ajaxFormSubmit.init(ajaxCallbacks)
+  tabs()
+  accordion()
+  charCounter()
+  addRemove()
+  modalDialog()
+  dynamicGaTags()
+  listCollapse()
+})

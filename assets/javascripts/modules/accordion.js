@@ -1,3 +1,5 @@
+/* eslint-env jquery */
+
 /**
   Accordion
 
@@ -5,7 +7,7 @@
 
   Mandatory JS hooks:
    * `data-accordion` - main outer container hook to init accordion JS module
-   * `data-accordion-button` - button clicked to expand/collapse 
+   * `data-accordion-button` - button clicked to expand/collapse
    * `data-accordion-body` - the main body content to be expanded/collapsed
    * `data-accordion-animate` - animate body expansion/collapse
    * **BUG**: animate should be optional but currently the non-animate has a bug. Issue raised here: https://github.com/hmrc/assets-frontend/issues/553
@@ -24,7 +26,7 @@
 
   Optional Classes:
    * `accordion__row__left` - left row contained in `accordion__row`
-   * `accordion__indicator` - for arrow styling, used in conjunction with `arrow` component 
+   * `accordion__indicator` - for arrow styling, used in conjunction with `arrow` component
    * `accordion__row__right` - right row container in `accordion__row`
    * `accordion__body__row` - a row of content in the body
    * `accordion__body__row__left` - left column of body row
@@ -37,7 +39,7 @@
        aria-expanded="false"
        class="accordion">
     <div class="accordion__row">
-      <div class="accordion__row__left">                
+      <div class="accordion__row__left">
         <a class="accordion__button link--no-underline bold-small" href="" data-accordion-button role="button">
           Accordion Button
         </a>
@@ -52,66 +54,58 @@
   </div>
 
   More details on usage can be found in the component library.
-
  */
 
-
-module.exports = function() {
-
+module.exports = function () {
   // for each accordion in the page
-  $('[data-accordion]').each(function() {
+  $('[data-accordion]').each(function () {
+    var $accordion = $(this)
+    var $button = $accordion.find('[data-accordion-button]')
+    var $body = $accordion.find('[data-accordion-body]')
+    var $arrow = $accordion.find('[data-accordion-arrow]')
+    var expandedClass = 'accordion--expanded'
 
-    var $accordion    = $(this),
-        $button       = $accordion.find('[data-accordion-button]'),
-        $body         = $accordion.find('[data-accordion-body]'),
-        $arrow        = $accordion.find('[data-accordion-arrow]'),
-        expandedClass = 'accordion--expanded';
-    
     // hide any elements flagged to be revealed only on expand
-    $accordion.find('[data-accordion-reveal]').addClass('hidden');
+    $accordion.find('[data-accordion-reveal]').addClass('hidden')
 
     // accordion links behave as expand/collapse buttons
-    $button.attr('role', 'button');
+    $button.attr('role', 'button')
 
     // tell screen-readers that button controls content
-    $button.attr('aria-controls', $body.attr('id'));
+    $button.attr('aria-controls', $body.attr('id'))
 
     // expand any accordions that have been flagged
-    if($accordion.is('[data-accordion-expanded]') || isAnchored($accordion)) {
-      expand($accordion, $body, $arrow, expandedClass, false);
+    if ($accordion.is('[data-accordion-expanded]') || isAnchored($accordion)) {
+      expand($accordion, $body, $arrow, expandedClass, false)
     }
 
     // bind accordion click
-    $button.click(function(e) {
-      buttonClick(e, $accordion);
-    });
-
-  });
+    $button.click(function (e) {
+      buttonClick(e, $accordion)
+    })
+  })
 
   /**
    * Triggered on click of accordion for expand/collapse of body
-   * 
+   *
    * @param  {Object} e            event object
    * @param  {Object} $accordion   jQuery object of accordion element
    */
-  function buttonClick(e, $accordion) {
+  function buttonClick (e, $accordion) {
+    var $body = $accordion.find('[data-accordion-body]')
+    var $arrow = $accordion.find('[data-accordion-arrow]')
+    var expandedClass = 'accordion--expanded'
+    var animate = $accordion.is('[data-accordion-animate]')
 
-    var $body         = $accordion.find('[data-accordion-body]'),
-        $arrow        = $accordion.find('[data-accordion-arrow]'),
-        expandedClass = 'accordion--expanded',
-        animate       = $accordion.is('[data-accordion-animate]');
-
-    e.preventDefault();
+    e.preventDefault()
 
     // if accordion is collapsed
-    if($body.hasClass('hidden')) {
-      expand($accordion, $body, $arrow, expandedClass, animate);
+    if ($body.hasClass('hidden')) {
+      expand($accordion, $body, $arrow, expandedClass, animate)
+    } else {
+      // if accordion is expanded
+      collapse($accordion, $body, $arrow, expandedClass, animate)
     }
-    // if accordion is expanded
-    else {
-      collapse($accordion, $body, $arrow, expandedClass, animate);
-    }
-
   }
 
   /**
@@ -120,43 +114,40 @@ module.exports = function() {
    * @param    $accordion     jQuery object of accordion element
    * @returns  {boolean}      whether or not id and hash match
      */
-  function isAnchored($accordion) {
-
+  function isAnchored ($accordion) {
     // get accordion's ID
-    var id = $accordion.attr('id');
+    var id = $accordion.attr('id')
 
     // get hash from url
-    var hash = location.hash.substring(1);
+    var hash = window.location.hash.substring(1)
 
-    return id === hash;
-
+    return id === hash
   }
 
   /**
    * Expand Accordion
-   * 
+   *
    * @param  {Object} $accordion    jQuery object of accordion element
    * @param  {Object} $body         jQuery object of accordion body (expanded section)
-   * @param  {Object} $arrow        jQuery object of accordion arrow 
+   * @param  {Object} $arrow        jQuery object of accordion arrow
    * @param  {String} expandedClass Class to handle visual differences in expand/collapse states
    * @param  {Boolean} animate      To animate or not, that is the question
    */
-  function expand($accordion, $body, $arrow, expandedClass, animate) {
-
+  function expand ($accordion, $body, $arrow, expandedClass, animate) {
     // height of accordion body once expanded
-    var newHeight = getHeight($body);
+    var newHeight = getHeight($body)
 
     // set class to handle subtle style differences (borders)
-    $accordion.addClass(expandedClass);
+    $accordion.addClass(expandedClass)
 
     // update aria expanded state
-    $accordion.attr('aria-expanded', true);
+    $accordion.attr('aria-expanded', true)
 
     // animates arrow to pointing down state
-    $arrow.addClass('arrow--expand');
+    $arrow.addClass('arrow--expand')
 
     // reveal any elements flagged as such
-    $accordion.find('[data-accordion-reveal]').removeClass('hidden');
+    $accordion.find('[data-accordion-reveal]').removeClass('hidden')
 
     // ensure first element of right row has margin for content below it
     $accordion
@@ -164,94 +155,81 @@ module.exports = function() {
       .children()
       .first()
       .addClass('flush--top')
-      .removeClass('flush');
+      .removeClass('flush')
 
-    // body must be height 0 and visible before expanding 
-    $body.height(0).removeClass('hidden');
+    // body must be height 0 and visible before expanding
+    $body.height(0).removeClass('hidden')
 
     // make body visible to screen-readers
-    $body.attr('aria-hidden', false);
+    $body.attr('aria-hidden', false)
 
-    if(animate) {
-
+    if (animate) {
       // animate expand to new height
       $body.animate({
-        height: newHeight        
-      }, 200, function() {
-        $accordion.addClass(expandedClass);
-        $body.css({height: 'auto'});
-      });
-
-    }
-    else {
-      $accordion.addClass(expandedClass);
-      $body.height(newHeight);
-      $body.css({height: 'auto'});
+        height: newHeight
+      }, 200, function () {
+        $accordion.addClass(expandedClass)
+        $body.css({height: 'auto'})
+      })
+    } else {
+      $accordion.addClass(expandedClass)
+      $body.height(newHeight)
+      $body.css({height: 'auto'})
     }
 
     // if configured to update url hash
-    if($accordion.is('[data-accordion-set-hash]')) {
-      updateHash($accordion);
+    if ($accordion.is('[data-accordion-set-hash]')) {
+      updateHash($accordion)
     }
-
   }
 
   /**
    * Collapse Accordion
-   * 
+   *
    * @param  {Object} $accordion    jQuery object of accordion element
    * @param  {Object} $body         jQuery object of accordion body (expanded section)
-   * @param  {Object} $arrow        jQuery object of accordion arrow 
+   * @param  {Object} $arrow        jQuery object of accordion arrow
    * @param  {String} expandedClass Class to handle visual differences in expand/collapse states
    * @param  {Boolean} animate      To animate or not, that is the question
    */
-  function collapse($accordion, $body, $arrow, expandedClass, animate) {
+  function collapse ($accordion, $body, $arrow, expandedClass, animate) {
+    var expandedHeight = $body.height()
+    var newHeight = 0
 
-    var expandedHeight = $body.height(),
-        newHeight      = 0;
-
-    $arrow.removeClass('arrow--expand'); 
+    $arrow.removeClass('arrow--expand')
 
     // update aria expanded state
-    $accordion.attr('aria-expanded', false);
+    $accordion.attr('aria-expanded', false)
 
-    $accordion.find('[data-accordion-reveal]').addClass('hidden');
+    $accordion.find('[data-accordion-reveal]').addClass('hidden')
 
     $accordion
       .find('.accordion__row__right')
       .children()
       .first()
       .removeClass('flush--top')
-      .addClass('flush');
+      .addClass('flush')
 
     // make body hidden to screen-readers
-    $body.attr('aria-hidden', true);
+    $body.attr('aria-hidden', true)
 
-    if(animate) {
-
+    if (animate) {
       $body.animate({
-        height: newHeight        
-      }, 200, function() {
-
+        height: newHeight
+      }, 200, function () {
         // adjust borders
-        $accordion.removeClass(expandedClass);
+        $accordion.removeClass(expandedClass)
 
         // hide body and restore height to 0 for next expand
-        $body.addClass('hidden').height(expandedHeight);        
-
-      });
-
-    }
-    else {
-
+        $body.addClass('hidden').height(expandedHeight)
+      })
+    } else {
       // adjust borders
-      $accordion.removeClass(expandedClass);
+      $accordion.removeClass(expandedClass)
 
       // collapse accordion body
-      $body.height(newHeight);
-
+      $body.height(newHeight)
     }
-
   }
 
   /**
@@ -259,36 +237,29 @@ module.exports = function() {
    *
    * @param $accordion     jQuery object of accordion element
      */
-  function updateHash($accordion) {
-
+  function updateHash ($accordion) {
     // get id of accordion which contains unique accordion name
-    var hashVal = $.trim($accordion.attr('id'));
+    var hashVal = $.trim($accordion.attr('id'))
 
-    if(history.replaceState) {
-      history.replaceState(null, null, '#' + hashVal);
-    }
-    else {
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, '#' + hashVal)
+    } else {
       // warning: for older browsers, this causes the accordion to be scrolled to
-      location.hash = hashVal;
+      window.location.hash = hashVal
     }
-
   }
 
   /**
-   * Helper to get actual height of element 
-   * 
-   * @param  {Object} $element jQuery object of element 
+   * Helper to get actual height of element
+   *
+   * @param  {Object} $element jQuery object of element
    * @return {Number} height   height of element
    */
-  function getHeight($element) {
+  function getHeight ($element) {
+    var height = $element.removeClass('hidden').height()
 
-    var height = $element.removeClass('hidden').height();
+    $element.addClass('hidden')
 
-    $element.addClass('hidden');
-
-    return height;
-
+    return height
   }
-
-};
-
+}

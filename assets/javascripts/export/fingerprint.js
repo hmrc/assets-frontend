@@ -1,3 +1,3 @@
-var fingerprint = require('./../modules/fingerprint.js');
+var fingerprint = require('./../modules/fingerprint.js')
 
-fingerprint();
+fingerprint()

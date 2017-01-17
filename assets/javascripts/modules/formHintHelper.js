@@ -1,4 +1,6 @@
-require('jquery');
+/* eslint-env jquery */
+
+require('jquery')
 
 /*
 Form Hint Helper is a visual aid to guide users on requirements for inputs it allows rules with a regex and flags to be
@@ -30,67 +32,67 @@ Form Hint Helper markup example:
     <span class="form-hint-list-item__indicator"></span>should not contain the word 'password'
   </li>
  </ul>
- */
-var $formHintHelperInputs;
+*/
+var $formHintHelperInputs
 
 var buildRules = function ($ruleElements) {
-  var rules = [];
+  var rules = []
 
   $ruleElements.each(function (index, ruleElement) {
-    var $ruleElement = $(ruleElement);
-    var rule = $ruleElement.attr('data-hint-rule');
-    var ruleFlag = $ruleElement.attr('data-hint-rule-flag');
-    var flag = ruleFlag || '';
-    var pattern;
+    var $ruleElement = $(ruleElement)
+    var rule = $ruleElement.attr('data-hint-rule')
+    var ruleFlag = $ruleElement.attr('data-hint-rule-flag')
+    var flag = ruleFlag || ''
+    var pattern
 
     try {
-      pattern = new RegExp(rule, flag);
+      pattern = new RegExp(rule, flag)
     } catch (e) {
-      //TODO add reporting?
+      // TODO add reporting?
     }
 
     rules.push({
       $elem: $ruleElement,
       pattern: pattern
-    });
-  });
+    })
+  })
 
-  return rules;
-};
+  return rules
+}
 
 var $formHintHelperEvent = function ($formHintHelperInput) {
-  var $ruleElements = $('.' + $formHintHelperInput.attr('data-hint-rules'));
-  var rules = buildRules($ruleElements);
+  var $ruleElements = $('.' + $formHintHelperInput.attr('data-hint-rules'))
+  var rules = buildRules($ruleElements)
 
   $formHintHelperInput.on('keyup', function () {
-    var inputValue = $formHintHelperInput.val();
+    var inputValue = $formHintHelperInput.val()
 
-    for(var value in rules) {
-      var rule = rules[value];
+    for (var value in rules) {
+      var rule = rules[value]
 
       if (rule.pattern.test(inputValue)) {
-        rule.$elem.addClass('form-hint-list-item--valid');
+        rule.$elem.addClass('form-hint-list-item--valid')
       } else {
-        rule.$elem.removeClass('form-hint-list-item--valid');
+        rule.$elem.removeClass('form-hint-list-item--valid')
       }
     }
-  });
-};
+  })
+}
 
 var addListeners = function () {
   $formHintHelperInputs.each(function (index, formHintHelperInput) {
-    $formHintHelperEvent($(formHintHelperInput));
-  });
-};
+    $formHintHelperEvent($(formHintHelperInput))
+  })
+}
 
 var setup = function () {
-  $formHintHelperInputs = $('.js-form-hint-helper');
-};
+  $formHintHelperInputs = $('.js-form-hint-helper')
+}
 
 module.exports = function () {
-  setup();
+  setup()
 
   if ($formHintHelperInputs.length) {
-    addListeners();
+    addListeners()
   }
-};
+}

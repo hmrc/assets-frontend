@@ -1,3 +1,5 @@
+/* global ActiveXObject */
+
 /*
 * Based on:
 * fingerprintJS 0.5.0 - Fast browser fingerprint library
@@ -5,111 +7,120 @@
 * Copyright (c) 2013 Valentin Vasilyev (iamvalentin@gmail.com)
 * Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) license.
 */
-/*jslint browser: true, indent: 2, maxerr: 50, maxlen: 120 */
 (function (scope) {
-  'use strict';
+  'use strict'
 
   var Mdtpdf = function (options) {
-    var nativeForEach, nativeMap;
-    nativeForEach = Array.prototype.forEach;
-    nativeMap = Array.prototype.map;
+    var nativeForEach = Array.prototype.forEach
+    var nativeMap = Array.prototype.map
 
     this.each = function (obj, iterator, context) {
       if (obj === null) {
-        return;
+        return
       }
       if (nativeForEach && obj.forEach === nativeForEach) {
-        obj.forEach(iterator, context);
+        obj.forEach(iterator, context)
       } else if (obj.length === +obj.length) {
         for (var i = 0, l = obj.length; i < l; i++) {
           if (iterator.call(context, obj[i], i, obj) === {}) {
-            return;
+            return
           }
         }
       } else {
         for (var key in obj) {
           if (obj.hasOwnProperty(key)) {
             if (iterator.call(context, obj[key], key, obj) === {}) {
-              return;
+              return
             }
           }
         }
       }
-    };
+    }
 
-    this.map = function(obj, iterator, context) {
-      var results = [];
+    this.map = function (obj, iterator, context) {
+      var results = []
+
       // Not using strict equality so that this acts as a
       // shortcut to checking for `null` and `undefined`.
       if (obj == null) {
-        return results;
+        return results
       }
       if (nativeMap && obj.map === nativeMap) {
-        return obj.map(iterator, context);
+        return obj.map(iterator, context)
       }
-      this.each(obj, function(value, index, list) {
-        results[results.length] = iterator.call(context, value, index, list);
-      });
-      return results;
-    };
 
-    if (typeof options === 'object'){
-      this.debug = options.debug;
-      this.hasher = options.hasher;
-      this.openDB = options.openDB;
-      this.addBehavior = options.addBehavior;
-      this.screen_resolution = options.screen_resolution;
-      this.canvas = options.canvas;
-      this.ie_activex = options.ie_activex;
-    } else if(typeof options === 'function'){
-      this.hasher = options;
+      this.each(obj, function (value, index, list) {
+        results[results.length] = iterator.call(context, value, index, list)
+      })
+
+      return results
     }
-  };
+
+    if (typeof options === 'object') {
+      this.debug = options.debug
+      this.hasher = options.hasher
+      this.openDB = options.openDB
+      this.addBehavior = options.addBehavior
+      this.screen_resolution = options.screen_resolution
+      this.canvas = options.canvas
+      this.ie_activex = options.ie_activex
+    } else if (typeof options === 'function') {
+      this.hasher = options
+    }
+  }
 
   Mdtpdf.prototype = {
-    get: function(){
-      var keys = {};
-      keys.version = 1;
-      keys.userAgent = navigator.userAgent;
-      keys.language = navigator.language;
-      keys.colorDepth = screen.colorDepth;
+    get: function () {
+      var keys = {}
+
+      keys.version = 1
+      keys.userAgent = navigator.userAgent
+      keys.language = navigator.language
+      keys.colorDepth = window.screen.colorDepth
+
       if (this.screen_resolution) {
-        var resolution = this.getScreenResolution();
-        if (typeof resolution !== 'undefined'){ // headless browsers, such as phantomjs
-          keys.resolution = this.getScreenResolution().join('x');
+        var resolution = this.getScreenResolution()
+
+        if (typeof resolution !== 'undefined') { // headless browsers, such as phantomjs
+          keys.resolution = this.getScreenResolution().join('x')
         }
       }
-      keys.timezone = new Date().getTimezoneOffset();
-      keys.clientSideTimestamp = new Date().getTime();
-      keys.sessionStorage = this.hasSessionStorage();
-      keys.localStorage = this.hasLocalStorage();
-      keys.indexedDB = !!window.indexedDB;
-      if( this.addBehavior ) {
-        keys.addBehavior = typeof(document.body.addBehavior);
+
+      keys.timezone = new Date().getTimezoneOffset()
+      keys.clientSideTimestamp = new Date().getTime()
+      keys.sessionStorage = this.hasSessionStorage()
+      keys.localStorage = this.hasLocalStorage()
+      keys.indexedDB = !!window.indexedDB
+
+      if (this.addBehavior) {
+        keys.addBehavior = typeof document.body.addBehavior
       }
-      if( this.openDB ) {
-        keys.openDatabase = typeof(window.openDatabase);
+
+      if (this.openDB) {
+        keys.openDatabase = typeof window.openDatabase
       }
-      keys.cpuClass = navigator.cpuClass;
-      keys.platform = navigator.platform;
-      keys.doNotTrack = !!navigator.doNotTrack;
-      keys.numberOfPlugins = navigator.plugins.length;
-      keys.plugins = this.getPluginsString();
-      if(this.canvas && this.isCanvasSupported()){
-        keys.canvas = this.getCanvasFingerprint();
+
+      keys.cpuClass = navigator.cpuClass
+      keys.platform = navigator.platform
+      keys.doNotTrack = !!navigator.doNotTrack
+      keys.numberOfPlugins = navigator.plugins.length
+      keys.plugins = this.getPluginsString()
+
+      if (this.canvas && this.isCanvasSupported()) {
+        keys.canvas = this.getCanvasFingerprint()
       }
-      if ( this.debug ) {
-        return keys;
+      if (this.debug) {
+        return keys
       }
-      if(this.hasher){
-        if( typeof this.hasher === "string" ) {
-          return this.hasher(keys.join('###'), 31);
+      if (this.hasher) {
+        if (typeof this.hasher === 'string') {
+          return this.hasher(keys.join('###'), 31)
         } else {
-          return this.murmurhash3_32_gc(keys.join('###'), 31);
+          return this.murmurhash3_32_gc(keys.join('###'), 31)
         }
       } else {
-        return JSON.stringify( keys );
-//        return this.map(keys, function(k) { return k + "" }).join('###');
+        return JSON.stringify(keys)
+        // return this.map(keys, function(k) { return k + "" }).join('###');
       }
     },
 
@@ -126,15 +137,17 @@
      * @return {number} 32-bit positive integer hash
      */
 
-    murmurhash3_32_gc: function(key, seed) {
-      var remainder, bytes, h1, h1b, c1, c2, k1, i;
+    murmurhash3_32_gc: function (key, seed) {
+      /* eslint-disable */
+      var h1b
+      var k1
 
-      remainder = key.length & 3; // key.length % 4
-      bytes = key.length - remainder;
-      h1 = seed;
-      c1 = 0xcc9e2d51;
-      c2 = 0x1b873593;
-      i = 0;
+      var remainder = key.length & 3 // key.length % 4
+      var bytes = key.length - remainder
+      var h1 = seed
+      var c1 = 0xcc9e2d51
+      var c2 = 0x1b873593
+      var i = 0
 
       while (i < bytes) {
         k1 =
@@ -176,58 +189,60 @@
       h1 ^= h1 >>> 16;
 
       return h1 >>> 0;
+      /* eslint-enable */
     },
 
     // https://bugzilla.mozilla.org/show_bug.cgi?id=781447
     hasLocalStorage: function () {
-      try{
-        return !!scope.localStorage;
-      } catch(e) {
-        return true; // SecurityError when referencing it means it exists
+      try {
+        return !!scope.localStorage
+      } catch (e) {
+        return true // SecurityError when referencing it means it exists
       }
     },
 
     hasSessionStorage: function () {
-      try{
-        return !!scope.sessionStorage;
-      } catch(e) {
-        return true; // SecurityError when referencing it means it exists
+      try {
+        return !!scope.sessionStorage
+      } catch (e) {
+        return true // SecurityError when referencing it means it exists
       }
     },
 
     isCanvasSupported: function () {
-      var elem = document.createElement('canvas');
-      return !!(elem.getContext && elem.getContext('2d'));
+      var elem = document.createElement('canvas')
+      return !!(elem.getContext && elem.getContext('2d'))
     },
 
     isIE: function () {
-      if(navigator.appName === 'Microsoft Internet Explorer') {
-        return true;
-      } else if(navigator.appName === 'Netscape' && /Trident/.test(navigator.userAgent)){// IE 11
-        return true;
+      if (navigator.appName === 'Microsoft Internet Explorer') {
+        return true
+      } else if (navigator.appName === 'Netscape' && /Trident/.test(navigator.userAgent)) { // IE 11
+        return true
       }
-      return false;
+
+      return false
     },
 
     getPluginsString: function () {
-      if(this.isIE()){
-        return this.getIEPluginsString();
+      if (this.isIE()) {
+        return this.getIEPluginsString()
       } else {
-        return this.getRegularPluginsString();
+        return this.getRegularPluginsString()
       }
     },
 
     getRegularPluginsString: function () {
       return this.map(navigator.plugins, function (p) {
-        var mimeTypes = this.map(p, function(mt){
-          return [mt.type, mt.suffixes].join('~');
-        }).join(',');
-        return p.name;
-      }, this);
+        this.map(p, function (mt) {
+          return [mt.type, mt.suffixes].join('~')
+        }).join(',')
+        return p.name
+      }, this)
     },
 
     getIEPluginsString: function () {
-      var names = ['ShockwaveFlash.ShockwaveFlash',//flash plugin
+      var names = ['ShockwaveFlash.ShockwaveFlash', // flash plugin
         'AcroPDF.PDF', // Adobe PDF reader 7+
         'PDF.PdfCtrl', // Adobe PDF reader 6 and earlier, brrr
         'QuickTime.QuickTime', // QuickTime
@@ -240,47 +255,50 @@
         'SWCtl.SWCtl', // ShockWave player
         'WMPlayer.OCX', // Windows media player
         'AgControl.AgControl', // Silverlight
-        'Skype.Detection'];
-      if(this.ie_activex && scope.ActiveXObject){
+        'Skype.Detection']
+
+      if (this.ie_activex && scope.ActiveXObject) {
         // starting to detect plugins in IE
-        return this.map(names, function(name){
-          try{
-            new ActiveXObject(name);
-            return name;
-          } catch(e){
-            return null;
+        return this.map(names, function (name) {
+          try {
+            /* eslint-disable no-new */
+            new ActiveXObject(name)
+            return name
+          } catch (e) {
+            return null
           }
-        }).join(';');
+        }).join(';')
       } else {
-        return ""; // behavior prior version 0.5.0, not breaking backwards compat.
+        return '' // behavior prior version 0.5.0, not breaking backwards compat.
       }
     },
 
     getScreenResolution: function () {
-      return [screen.height, screen.width];
+      return [window.screen.height, window.screen.width]
     },
 
     getCanvasFingerprint: function () {
-      var canvas = document.createElement('canvas');
-      var ctx = canvas.getContext('2d');
+      var canvas = document.createElement('canvas')
+      var ctx = canvas.getContext('2d')
       // https://www.browserleaks.com/canvas#how-does-it-work
-      var txt = 'http://valve.github.io';
-      ctx.textBaseline = "top";
-      ctx.font = "14px 'Arial'";
-      ctx.textBaseline = "alphabetic";
-      ctx.fillStyle = "#f60";
-      ctx.fillRect(125,1,62,20);
-      ctx.fillStyle = "#069";
-      ctx.fillText(txt, 2, 15);
-      ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
-      ctx.fillText(txt, 4, 17);
-      var canvasData = canvas.toDataURL();
-      return canvasData.substr( canvasData.indexOf( ',' ) + 1 );
+      var txt = 'http://valve.github.io'
+      ctx.textBaseline = 'top'
+      ctx.font = '14px \'Arial\''
+      ctx.textBaseline = 'alphabetic'
+      ctx.fillStyle = '#f60'
+      ctx.fillRect(125, 1, 62, 20)
+      ctx.fillStyle = '#069'
+      ctx.fillText(txt, 2, 15)
+      ctx.fillStyle = 'rgba(102, 204, 0, 0.7)'
+      ctx.fillText(txt, 4, 17)
+      var canvasData = canvas.toDataURL()
+      return canvasData.substr(canvasData.indexOf(',') + 1)
     }
-  };
+  }
 
   if (typeof module === 'object' && typeof exports === 'object') {
-    module.exports = Mdtpdf;
+    module.exports = Mdtpdf
   }
-  scope.Mdtpdf = Mdtpdf;
-})(window);
+
+  scope.Mdtpdf = Mdtpdf
+})(window)

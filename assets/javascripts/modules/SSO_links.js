@@ -1,4 +1,6 @@
-require('jquery');
+/* eslint-env jquery */
+
+require('jquery')
 
 /**
  * SSO encryption process file
@@ -16,109 +18,104 @@ require('jquery');
  * @param ssoMethod
  * @returns {boolean}
  */
-module.exports = function(element, ssoUrl, ssoMethod) {
-  var $element;
-  var payload;
-  var clientSso;
-  var serverSso;
-  var destination;
-  var winId;
-  var openInNewWindow;
-  var allowLinkCLickEvent = true;
-  var destinationUrl;
-  var elementTarget;
-  var useGet = ssoMethod === 'GET';
+module.exports = function (element, ssoUrl, ssoMethod) {
+  var $element
+  var payload
+  var clientSso
+  var serverSso
+  var destination
+  var winId
+  var openInNewWindow
+  var allowLinkCLickEvent = true
+  var destinationUrl
+  var elementTarget
+  var useGet = ssoMethod === 'GET'
 
   if (element) {
-    $element = $(element);
-    clientSso = $element.data('sso') === true || $element.data('sso') === 'client';
-    serverSso = $element.data('sso') === 'server';
+    $element = $(element)
+    clientSso = $element.data('sso') === true || $element.data('sso') === 'client'
+    serverSso = $element.data('sso') === 'server'
 
     if (clientSso || serverSso) {
+      destinationUrl = (element.form && element.form.action) || element.href
 
-      destinationUrl = (element.form && element.form.action) || element.href;
+      elementTarget = element.target
+      winId = element.id
 
-      elementTarget = element.target;
-      winId = element.id;
+      // accept custom target attribute values
+      openInNewWindow = !!elementTarget && (elementTarget !== '_self' && elementTarget !== '_top' && elementTarget !== '_parent')
 
-      //accept custom target attribute values
-      openInNewWindow = !!elementTarget && (elementTarget !== '_self' && elementTarget !== '_top' && elementTarget !== '_parent');
-
-      destination = serverSso ? {
-        ssoRedirect: true
-      } : {
-        destinationUrl: destinationUrl
-      };
+      destination = serverSso ? { ssoRedirect: true } : { destinationUrl: destinationUrl }
 
       $.ajax({
         url: serverSso ? destinationUrl : '/ssoout',
-        data: destination, 
+        data: destination,
         type: 'GET',
         async: false,
         cache: false,
-        success: function(data, status, jqXHR) {
-          var win = window,
-              getUrl = ssoUrl + '?payload=' + encodeURIComponent(data);
+        success: function (data, status, jqXHR) {
+          var win = window
+          var getUrl = ssoUrl + '?payload=' + encodeURIComponent(data)
 
-          allowLinkCLickEvent = false;
+          allowLinkCLickEvent = false
 
           if (useGet) {
             if (openInNewWindow) {
-              win.open(getUrl, !!winId ? winId : elementTarget);
-              win.focus();
+              win.open(getUrl, winId || elementTarget)
+              win.focus()
             } else {
-              win.location = getUrl;
+              win.location = getUrl
             }
           } else {
-            var form = document.createElement('form');
-            form.method = 'POST';
-            form.action = ssoUrl;
+            var form = document.createElement('form')
+            form.method = 'POST'
+            form.action = ssoUrl
 
             if (openInNewWindow) {
-              form.target = !!winId ? winId : elementTarget;
+              form.target = winId || elementTarget
             }
 
-            payload = document.createElement('input');
-            payload.type = 'hidden';
-            payload.name = 'payload';
-            payload.value = data;
-            document.body.appendChild(form);
-            form.appendChild(payload);
+            payload = document.createElement('input')
+            payload.type = 'hidden'
+            payload.name = 'payload'
+            payload.value = data
+            document.body.appendChild(form)
+            form.appendChild(payload)
 
             // POST form
-            form.submit();
+            form.submit()
 
             if (openInNewWindow) {
-              win.focus();
+              win.focus()
             }
           }
         },
 
-        error: function(jqXHR, textStatus, errorThrown) {
-          var statusCode = jqXHR.status;
-          var responseText = jqXHR.responseText;
-          var htmlFragment;
+        error: function (jqXHR, textStatus, errorThrown) {
+          var statusCode = jqXHR.status
+          var responseText = jqXHR.responseText
+          var htmlFragment
 
-          allowLinkCLickEvent = false;
+          allowLinkCLickEvent = false
 
           if (statusCode === 401) {
             // Unauthorised from a page link click
-            window.location.reload();
+            window.location.reload()
           } else {
             if (responseText) {
-              htmlFragment = document.createElement('html');
-              htmlFragment.lang = 'en';
-              htmlFragment.innerHTML = responseText;
+              htmlFragment = document.createElement('html')
+              htmlFragment.lang = 'en'
+              htmlFragment.innerHTML = responseText
 
               // place returned failure html into page
-              document.replaceChild(htmlFragment, document.documentElement);
+              document.replaceChild(htmlFragment, document.documentElement)
             }
           }
         }
-      });
+      })
     }
 
     // control link event
-    return allowLinkCLickEvent;
+    return allowLinkCLickEvent
   }
-};
+}

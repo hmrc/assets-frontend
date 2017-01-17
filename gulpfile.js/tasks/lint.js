@@ -11,3 +11,18 @@ gulp.task('lint:config', function () {
       breakOnError: true
     }))
 })
+
+gulp.task('lint:scripts', function () {
+  var scripts = [
+    config.scripts.src
+  ].concat([
+    config.scripts.entryPoint,
+    '!**/*.polyfill.js'
+  ])
+
+  return gulp.src(scripts)
+    .pipe(standard())
+    .pipe(standard.reporter('default', {
+      breakOnError: true
+    }))
+})

@@ -1,3 +1,5 @@
+/* eslint-env jquery */
+
 /**
  * @name modalDialog
  * @module javascripts/modules/modaldialog
@@ -49,34 +51,35 @@
  *  <a class="" href="#" data-modaldialog-action="id-selector-of-content" data-journey-click="category:Event:id">click to open</a>
  *
  */
-require('jquery');
-var GOVUK = require('stageprompt');
+require('jquery')
 
-module.exports = function() {
-  var $modalDialog = $('.modal-dialog'),
-    $container = $modalDialog.find('.modal-dialog__inner'),
-    $modalContents = $container.find('.modal-dialog__content'),
-    contentShowing = '.modal-dialog__content:not([hidden])',
-    $doc = $(document),
-    $body = $('body'),
-    $returnFocus;
+var GOVUK = require('stageprompt')
+
+module.exports = function () {
+  var $modalDialog = $('.modal-dialog')
+  var $container = $modalDialog.find('.modal-dialog__inner')
+  var $modalContents = $container.find('.modal-dialog__content')
+  var contentShowing = '.modal-dialog__content:not([hidden])'
+  var $doc = $(document)
+  var $body = $('body')
+  var $returnFocus
 
   /**
    * Hide modal-dialog and return focus to previously active element.
    */
-  function hide() {
+  function hide () {
     // set showing content "hidden" attr
-    setHidden($(contentShowing), true);
+    setHidden($(contentShowing), true)
 
     // un-fix body the position so that it can scroll
-    $body.removeClass('scroll-off');
+    $body.removeClass('scroll-off')
 
     // 'hide' $modalDialog
-    $modalDialog.addClass('modal-dialog--hidden');
+    $modalDialog.addClass('modal-dialog--hidden')
 
     // return focus to the active element before modal was shown
     if ($returnFocus && $returnFocus.length) {
-      $returnFocus.focus();
+      $returnFocus.focus()
     }
   }
 
@@ -86,29 +89,31 @@ module.exports = function() {
    *                    passed by dom elements which display / close modal-dialog
    *                    using data-modaldialog-action=[open|close] and data-modaldialog-target="modal-dialog__content-id"
    */
-  function show(e) {
+  function show (e) {
     // get content to be shown - from event if it is passed, or from element with attribute hidden=false
-    var $content = !e ? $modalContents.filter(function() { return getHidden($(this)); }) : getContentToShow(e);
+    var $content = !e ? $modalContents.filter(function () {
+      return getHidden($(this))
+    }) : getContentToShow(e)
 
     if (!!$content && $content.length) {
       // set currently focussed element for return focus on modal-dialog hide
-      $returnFocus = $(document.activeElement);
+      $returnFocus = $(document.activeElement)
 
       // fix body position
-      $body.addClass('scroll-off');
+      $body.addClass('scroll-off')
 
       // 'show' $modalDialog
-      $modalDialog.removeClass('modal-dialog--hidden');
+      $modalDialog.removeClass('modal-dialog--hidden')
 
       // set $modalDialog size (with height dimension relative to content height)
-      setDimensions($content);
+      setDimensions($content)
 
       // shift focus to showing content
-      $(contentShowing).focus();
+      $(contentShowing).focus()
 
       // send google analytics event
       if ($(contentShowing).length) {
-        fireEventTracking($(contentShowing).data('gaOpenEvent'));
+        fireEventTracking($(contentShowing).data('gaOpenEvent'))
       }
     }
   }
@@ -118,181 +123,180 @@ module.exports = function() {
    * @param {Event} e - optional event passed by dom event trigger from element with [data-modaldialog-action="open | close"] attribute)
    * @returns {HTMLElement}
    */
-  function getContentToShow(e) {
-    var $content, $target;
+  function getContentToShow (e) {
+    var $content
+    var $target
 
     // if event is passed by dom event trigger
     // from element with [data-modaldialog-action="open | close"] and [data-modaldialog-target] attributes
     if (e && e.target && $(e.target).data('modaldialogTarget') && $(e.target).data('modaldialogAction')) {
       // get element which triggered the event
-      $target = $(e.target);
+      $target = $(e.target)
 
       // get target element to be opened /closed
-      $content = $('#' + $target.data('modaldialogTarget'));
+      $content = $('#' + $target.data('modaldialogTarget'))
 
       // if the target element exists
       if ($content.length) {
         // set the target element hidden attribute
-        setHidden($content, $target.data('modaldialogAction') !== 'open');
+        setHidden($content, $target.data('modaldialogAction') !== 'open')
       }
     }
 
     // return the target element or undefined
-    return $content;
+    return $content
   }
 
   /**
    * Set the dimensions of the modal dialog's inner container to fit the view-port, with scrolling for smaller resolutions.
    * @param {HTMLElement} $element - content element
    */
-  function setDimensions($element) {
+  function setDimensions ($element) {
     // distance from top of view-port (less the top and bottom border)
-    var offset = Math.floor($container.offset().top) - ($container.css('border-width').replace('px', '') * 2),
+    var offset = Math.floor($container.offset().top) - ($container.css('border-width').replace('px', '') * 2)
 
         // iterate modal content to calc the max height of required for tallest content
-        maxHeight = Math.max.apply(null, $modalContents.map(
-          function() {
-            // content height
-            var thisHeight = Math.min.apply(null, [$(this).outerHeight(false), $element.outerHeight(false)]);
+    var maxHeight = Math.max.apply(null, $modalContents.map(
+      function () {
+        // content height
+        var thisHeight = Math.min.apply(null, [$(this).outerHeight(false), $element.outerHeight(false)])
 
-            // return the greater of the content or modal dialog height
-            return thisHeight > $modalDialog.outerHeight(false) ? $modalDialog.outerHeight(false) : thisHeight;
-          }).get()),
+        // return the greater of the content or modal dialog height
+        return thisHeight > $modalDialog.outerHeight(false) ? $modalDialog.outerHeight(false) : thisHeight
+      }).get()
+    )
 
-        // if maxHeight is less than the window height less the offset, use maxHeight, else use maxHeight less offset
-        containerHeight = maxHeight < $(window).height() - offset ? maxHeight : maxHeight - offset;
+    // if maxHeight is less than the window height less the offset, use maxHeight, else use maxHeight less offset
+    var containerHeight = maxHeight < $(window).height() - offset ? maxHeight : maxHeight - offset
 
     // if calc height is > 0
     if (containerHeight) {
-      $container.css({'max-height': containerHeight + 'px'});
+      $container.css({'max-height': containerHeight + 'px'})
     }
   }
 
   /**
    * Set the dimensions of the modal dialog element to fit the view-port
    */
-  function setModalDialogDimensions() {
+  function setModalDialogDimensions () {
     // set height and width to mask to fill up the whole document
-    $modalDialog.css({width: $doc.width() + 'px', height: $doc.height() + 'px'});
+    $modalDialog.css({width: $doc.width() + 'px', height: $doc.height() + 'px'})
   }
 
   /**
    * Window resize event handler to re-calculate the modal-dialog element's dimensions
    * @param {Function} setMaskDimensions - callback function
    */
-  $(window).on('resize', function() {
+  $(window).on('resize', function () {
     // stretch opacity mask to fit page
-    setModalDialogDimensions();
-  });
+    setModalDialogDimensions()
+  })
 
   /**
    * Event handler to capture [esc] key press in modal-dialog
    **/
-  $modalDialog.on('keyup', contentShowing, function(e) {
+  $modalDialog.on('keyup', contentShowing, function (e) {
     // escape key press to close modal-dialog
     if ($(contentShowing).length && e.which === 27) {
       // send google analytics event - assume the same value data-journey-click value as the close button
-      var $closeButton = $(contentShowing).find('[data-modaldialog-action="close"]');
+      var $closeButton = $(contentShowing).find('[data-modaldialog-action="close"]')
 
       // if the close button exists
       if ($closeButton.length) {
         // use the close button / links data-journey-click attribute value to fire a GA event
-        fireEventTracking($closeButton.data('journeyClick'));
+        fireEventTracking($closeButton.data('journeyClick'))
       }
 
-      hide();
+      hide()
     }
-  });
+  })
 
   /**
    * Event handler to capture tab key press in modal-dialog - needs to be in doc context to capture tab outside modal-dialog.
    */
-  $doc.on('keydown', function(e) {
+  $doc.on('keydown', function (e) {
     // if there is showing content in the modal dialog and the tab key is pressed
     if ($(contentShowing).length && e.which === 9) {
-      e.preventDefault();
+      e.preventDefault()
 
-      var $src = $(e.target), // the element losing focus by the tab key press
-        isBack = e.shiftKey, // is the shift key being held down (is the focus moving to previous or next element in tab order)
-        $tabs = $(contentShowing).find('[tabindex="1"]').addBack(), // the elements in the content's tab order
-        inc = $tabs.index($src) + (isBack ? -1 : 1), // incremental value to move through the tab order by
-        $focus; // element to move focus to
+      var $src = $(e.target) // the element losing focus by the tab key press
+      var isBack = e.shiftKey // is the shift key being held down (is the focus moving to previous or next element in tab order)
+      var $tabs = $(contentShowing).find('[tabindex="1"]').addBack() // the elements in the content's tab order
+      var inc = $tabs.index($src) + (isBack ? -1 : 1) // incremental value to move through the tab order by
+      var $focus // element to move focus to
 
       // if focus has moved out of modal-dialog bring it back
       if (inc < 0) {
         // if increment is negative move back in tab order, move to last element in the tab order
-        $focus = $tabs.last();
-      }
-      else if (inc > $tabs.length - 1) {
+        $focus = $tabs.last()
+      } else if (inc > $tabs.length - 1) {
         // if increment is greater than the number of elements in the tab order, move to first element in the tab order
-        $focus = $tabs.first();
-        $container.scrollTop(0);
-      }
-      else {
+        $focus = $tabs.first()
+        $container.scrollTop(0)
+      } else {
         // else use the increment to move to the element in the tab order by index
-        $focus = $tabs.eq(inc);
+        $focus = $tabs.eq(inc)
       }
 
-      $focus.focus();
+      $focus.focus()
     }
-  });
+  })
 
   /**
    * Event handler for document click to return focus to modal-dialog when content showing.
    */
-  $doc.on('click', function(e) {
+  $doc.on('click', function (e) {
     // if content is showing in the modal, and doesn't contain the element clicked on
     if ($(contentShowing).length && !$(contentShowing).find($(e.target)).length) {
-
       // if the shown content contains a element which is in the tab order
       if ($(contentShowing).find('[tabindex="1"]:focus').length) {
         // move the focus to it
-        $(contentShowing).find('[tabindex="1"]:focus').focus();
+        $(contentShowing).find('[tabindex="1"]:focus').focus()
       } else {
         // move the focus to the content element itself
-        $(contentShowing).focus();
-        e.stopPropagation();
+        $(contentShowing).focus()
+        e.stopPropagation()
       }
     }
-  });
+  })
 
   /**
    * Event handler for hiding modal-dialog & content.
    */
-  $body.find($modalContents).addBack().on('click', '[data-modaldialog-action="close"]', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
+  $body.find($modalContents).addBack().on('click', '[data-modaldialog-action="close"]', function (e) {
+    e.preventDefault()
+    e.stopPropagation()
 
     // hide the modal
-    hide();
-  });
+    hide()
+  })
 
   /**
    * Event handler for showing modal-dialog & content.
    */
-  $body.find($modalContents).addBack().on('click', '[data-modaldialog-action="open"]', function(e) {
+  $body.find($modalContents).addBack().on('click', '[data-modaldialog-action="open"]', function (e) {
     // stop default event and propagation
-    e.preventDefault();
-    e.stopPropagation();
+    e.preventDefault()
+    e.stopPropagation()
 
     // hide the content showing in the modal
-    setHidden($(contentShowing), true);
+    setHidden($(contentShowing), true)
 
-    //show the modal
-    show(e);
-  });
+    // show the modal
+    show(e)
+  })
 
   /**
    * Fire Google Analytics event tracking
    */
-  function fireEventTracking(gaEvent) {
+  function fireEventTracking (gaEvent) {
     // get the GA event fields
-    var gaEventFields = gaEvent.split(':');
+    var gaEventFields = gaEvent.split(':')
 
     // if three GA fields defined
     if (gaEventFields.length === 3) {
       // fire a GA event
-      GOVUK.performance.sendGoogleAnalyticsEvent(gaEventFields[0], gaEventFields[1], gaEventFields[2]);
+      GOVUK.performance.sendGoogleAnalyticsEvent(gaEventFields[0], gaEventFields[1], gaEventFields[2])
     }
   }
 
@@ -301,37 +305,36 @@ module.exports = function() {
    * @param {HTMLElement} $el
    * @param {boolean} isHidden
    */
-  function setHidden($el, isHidden) {
+  function setHidden ($el, isHidden) {
     // if not hidden
     if (!isHidden) {
       // remove the "hidden" attribute
-      $el.removeAttr('hidden');
-    }
-    else {
+      $el.removeAttr('hidden')
+    } else {
       // set the "hidden" attribute (as string for IE compat)
-      $el.attr('hidden', 'true');
+      $el.attr('hidden', 'true')
     }
 
     // set the aria-hidden attribute
-    $el.attr('aria-hidden', isHidden);
+    $el.attr('aria-hidden', isHidden)
   }
 
   /**
    * Get the value of the "hidden" attribute
    * @returns {boolean|string}
    */
-  function getHidden($el) {
-    return $el.attr('hidden');
+  function getHidden ($el) {
+    return $el.attr('hidden')
   }
 
   // initialize if the modal dialog and modal dialog content exist
   if ($modalDialog.length && $modalContents.length) {
     // set the dimensions of the modal dialog element
-    setModalDialogDimensions();
+    setModalDialogDimensions()
 
     // if there is modal content to show (when page loads)
     if ($(contentShowing).length) {
-      show();
+      show()
     }
   }
-};
+}

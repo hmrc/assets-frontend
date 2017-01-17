@@ -105,7 +105,7 @@ var browserifyTask = function (callback, devMode) {
   config.bundleConfigs.forEach(browserifyThis)
 }
 
-gulp.task('browserify', browserifyTask)
+gulp.task('browserify', ['lint:scripts'], browserifyTask)
 
 // Exporting the task so we can call it directly in our watch task, with the 'devMode' option
 module.exports = browserifyTask

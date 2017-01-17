@@ -1,3 +1,5 @@
+/* eslint-env jquery */
+
 /**
  * Toggle Details Module
  *
@@ -23,47 +25,41 @@
  *
  **/
 
-module.exports = function() {
-
-  var hidden = 'js-hidden';
+module.exports = function () {
+  var hidden = 'js-hidden'
 
   // for each toggle link in the pge
-  $('[data-toggle-details]').each(function() {
-
-    var $link,
-        $container,
-        $linkContainer = $(this);
+  $('[data-toggle-details]').each(function () {
+    var $link
+    var $container
+    var $linkContainer = $(this)
 
     // link is either this element or the anchor inside it
-    $link = $linkContainer.is('a') ? $linkContainer : $linkContainer.find('a');
+    $link = $linkContainer.is('a') ? $linkContainer : $linkContainer.find('a')
 
     // target container is the class specified in link's data attribute
-    $container = $('.' + $linkContainer.data('toggle-details'));
+    $container = $('.' + $linkContainer.data('toggle-details'))
 
     // container should be hidden on page load
-    $container.addClass(hidden);
+    $container.addClass(hidden)
 
     // bind toggle link click
-    $link.bind('click', function(e) {
-      toggleClick(e);
-    });
+    $link.bind('click', function (e) {
+      toggleClick(e)
+    })
 
-    //// show minimise link (hidden for non-JS) and bind  click
-    $container.find('.minimise').bind('click', function(e) {
-      toggleClick(e);
-    });
+    // show minimise link (hidden for non-JS) and bind  click
+    $container.find('.minimise').bind('click', function (e) {
+      toggleClick(e)
+    })
 
-    function toggleClick(e) {
+    function toggleClick (e) {
+      e.preventDefault()
 
-      e.preventDefault();
+      $container.toggleClass(hidden)
 
-      $container.toggleClass(hidden);
-
-      $linkContainer.toggleClass(hidden);
-
+      $linkContainer.toggleClass(hidden)
     }
-
-  });
-
-};
+  })
+}
 
