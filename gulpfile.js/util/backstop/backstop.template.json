@@ -1,4 +1,5 @@
 {
+  "onReadyScript": "./gulpfile.js/util/backstop/onReady.js",
   "id": "assets-frontend-vrt",
   "viewports": [
     {
