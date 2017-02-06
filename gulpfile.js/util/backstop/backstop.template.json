@@ -5,8 +5,8 @@
   "viewports": [
     {
       "name": "desktop",
-      "width": 770,
-      "height": 768
+      "width": 1280,
+      "height": 800
     }
   ],
   "scenarios": [],
