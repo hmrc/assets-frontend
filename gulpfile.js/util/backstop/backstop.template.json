@@ -1,10 +1,12 @@
 {
+  "debug": false,
+  "onReadyScript": "./gulpfile.js/util/backstop/onReady.js",
   "id": "assets-frontend-vrt",
   "viewports": [
     {
       "name": "desktop",
-      "width": 770,
-      "height": 768
+      "width": 1280,
+      "height": 800
     }
   ],
   "scenarios": [],
@@ -22,7 +24,6 @@
   "casperFlags": [],
   "engine": "phantomjs",
   "report": ["browser", "CI"],
-  "debug": false,
   "resembleOutputOptions": {
     "errorColor": {
       "red": 255,
