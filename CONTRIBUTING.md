@@ -31,19 +31,19 @@ Please follow these contribution guidelines to maintain the quality of the code:
 **Before a Pull Request**
 
 * Follow style guides
-	* Use EditorConfig
-	* Lint the code
-* Write tests
-* Write documentation
-* Write good commit messages
-* Add an entry to Unreleased section in CHANGELOG
-* Squash related commits before a PR merge
-* Don't bump the `package.json` version
+	* [Use EditorConfig](#use-editorconfig)
+	* [Lint the code](#lint-the-code)
+* [Write tests](#tests)
+* [Write documentation](#documentation)
+* [Write good commit messages](#commit-messages)
+* [Squash related commits before a PR merge](#squash-related-commits)
+* [Don't bump the `package.json` version](#versioning)
 
 **Opening a Pull Request**
 
-* Follow the Pull Request template
-* Find and link to issues
+* [Follow the Pull Request template](#description)
+* [Find and link to issues](#closing-issues)
+* [Once merged, we'll cut the release](#releasing)
 
 ## Code Style Guide
 
@@ -141,6 +141,19 @@ When filling out the description for your Pull Request, [follow the template](ht
 Search for **all** issues relating to your work that may have been raised prior to your pull request and [link to them](https://github.com/blog/957-introducing-issue-mentions) so we can keep our issue backlog tidy.
 
 If your pull request *closes* an issue then follow [this guide on GitHub](https://help.github.com/articles/closing-issues-via-commit-messages/)
+
+### Versioning
+
+Our internal build and release tooling is responsible for bumping the versions of the project.
+
+### Releasing
+
+Once the pull request has been merged, it is the joint responsibility of the Contributor and the Owning Team to:
+
+* Discuss the optimal timing of pre-production and production releases
+* Validate the functional and operational impact once the release reaches pre-production and production
+
+It's the responsibility of the Owning Team alone to deploy/schedule the release into the relevant pre-production and production environment(s).
 
 ## Frontend Principles
 
