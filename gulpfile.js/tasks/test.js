@@ -10,8 +10,8 @@ var karmaTask = function (done) {
     configFile: fs.realpathSync(config.karmaConfig),
     singleRun: true
   },
-  function () {
-    done()
+  function (exitCode) {
+    done(exitCode)
   })
 }
 
