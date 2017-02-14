@@ -17,12 +17,12 @@ We’re always looking for feedback, and help is always welcome. These are the a
 
 **Before** starting on a piece of work, **please get in touch**. 
 
-We may already have what you’re planning to do on our backlog, or already be working on it.
+We may already have what you’re planning to do in our backlog, or already be working on it.
 
 Communicating early can also help with design decisions and direction for your approach, increasing the chance of us accepting your work.
 
 * [Raise an issue](https://github.com/hmrc/assets-frontend/issues/new)
-* [Slack channel for getting in touch with frontend developers](https://hmrcdigital.slack.com/archives/community-frontend)
+* [Slack channel for getting in touch with frontend developers](https://hmrcdigital.slack.com/archives/community-frontend) (requires an HMRC slack account)
 
 ## Contributing code
 
@@ -98,6 +98,7 @@ Make sure that your work hasn’t changed anything visually without you knowing,
 
 The project’s files are documented using [kss-node](http://kss-node.github.io/kss-node/).
 
+[The live documentation lives on GitHub pages](http://hmrc.github.io/assets-frontend/)  
 [Details on generating and viewing the documentation](https://github.com/hmrc/assets-frontend#component-library)
 
 If you’ve added a new component, then document it following our [documentation guidelines](https://github.com/hmrc/assets-frontend/wiki/Component-Library#addingdocumenting-a-component)
