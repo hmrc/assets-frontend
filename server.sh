@@ -15,6 +15,12 @@ if [[ -n $1 ]]; then
   "dev") deps && output "Starting gulp in dev mode..."
     npm run dev
     ;;
+  "vrt") output "Starting vrts..."
+    COMMIT=$(git rev-parse HEAD) \
+    BRANCHPOINT=$(git merge-base master HEAD) &&
+    git checkout $BRANCHPOINT &&
+    npm run vrt:baseline
+    ;;
   "build") deps && output "Starting gulp build task..."
     if [[ -n $2 ]]; then
       npm run build $2
@@ -22,10 +28,10 @@ if [[ -n $1 ]]; then
       npm run build
     fi
     ;;
-  "test-dev")  deps && output "Auto watch tests..."
+  "test-dev") deps && output "Auto watch tests..."
     npm run test:dev
     ;;
-  "test")  deps && output "Starting gulp test task..."
+  "test") deps && output "Starting gulp test task..."
     npm run test
     ;;
   *)  echo "invalid parameter '$1'"

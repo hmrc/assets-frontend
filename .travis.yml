@@ -2,5 +2,4 @@ sudo: false
 language: node_js
 node_js:
   - 4.4.5
-before_install: npm i -g npm@2.4.1
-script: ./server.sh build
+script: ./server.sh vrt && ./server.sh build
