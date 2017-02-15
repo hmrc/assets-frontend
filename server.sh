@@ -16,9 +16,18 @@ if [[ -n $1 ]]; then
     npm run dev
     ;;
   "vrt") output "Starting vrts..."
+    # make sure we're not on master
+    BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
+    if [ "$BRANCH" = "master" ]; then
+      output "Vrts not run on $BRANCH branch."
+      exit 0
+    fi
+
+    # Store some vars for later
     COMMIT=$(git rev-parse HEAD) \
     BRANCHPOINT=$(git merge-base master HEAD) \
     PARENT=$(git log --pretty=%P -n 1 $BRANCHPOINT) &&
+    # run VRTs
     git checkout $PARENT &&
     npm run vrt:baseline &&
     git checkout $COMMIT &&
