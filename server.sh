@@ -18,8 +18,8 @@ if [[ -n $1 ]]; then
   "vrt") output "Starting vrts..."
     COMMIT=$(git rev-parse HEAD) \
     BRANCHPOINT=$(git merge-base master HEAD) &&
-    git checkout $BRANCHPOINT &&
-    npm run vrt:baseline
+    git checkout $BRANCHPOINT
+    # npm run vrt:baseline
     ;;
   "build") deps && output "Starting gulp build task..."
     if [[ -n $2 ]]; then
