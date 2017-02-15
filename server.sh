@@ -20,7 +20,9 @@ if [[ -n $1 ]]; then
     BRANCHPOINT=$(git merge-base master HEAD) \
     PARENT=$(git log --pretty=%P -n 1 $BRANCHPOINT) &&
     git checkout $PARENT &&
-    npm run vrt:baseline
+    npm run vrt:baseline &&
+    git checkout $COMMIT &&
+    npm run vrt:compare
     ;;
   "build") deps && output "Starting gulp build task..."
     if [[ -n $2 ]]; then
