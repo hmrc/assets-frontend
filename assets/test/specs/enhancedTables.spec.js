@@ -7,11 +7,12 @@ describe('Given I have an enhanced table on the page', function () {
   jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
   loadFixtures('enhanced-tables-fixture.html')
 
-  var tableSelector = '.js-datatable'
-  var $table = $(tableSelector)
+  var enhancedTables = require('../../javascripts/modules/enhancedTables.js')
+  var $table = $('.js-datatable')
   var objDataTable
 
   beforeEach(function () {
+    enhancedTables($table)
     objDataTable = $table.DataTable()
     // reset search results
     objDataTable.columns().search('').draw()
