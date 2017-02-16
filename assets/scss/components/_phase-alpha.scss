@@ -18,9 +18,9 @@ Styleguide Alpha.Phase Banner
 */
 
 .alpha-banner {
-  @include phase-banner(beta);
+  @include phase-banner(alpha);
 
   .phase-tag {
-    @include phase-tag(beta);
+    @include phase-tag(alpha);
   }
 }
