@@ -28,7 +28,7 @@ if [[ -n $1 ]]; then
     BRANCHPOINT=$(git merge-base master HEAD) \
     PARENT=$(git log --pretty=%P -n 1 $BRANCHPOINT) &&
     # run VRTs
-    git checkout $PARENT &&
+    git checkout $BRANCHPOINT &&
     npm run vrt:baseline &&
     git checkout $COMMIT &&
     npm run vrt:compare
