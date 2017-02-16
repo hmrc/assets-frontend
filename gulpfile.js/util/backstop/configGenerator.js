@@ -7,22 +7,22 @@ var BuildScenarios = require('./buildScenarios')
 // var Transform = require('stream').Transform
 // var util = require('util')
 
-var RemoveBrowserReportOnCI = function (options) {
-  Transform.call(this, options)
-}
+// var RemoveBrowserReportOnCI = function (options) {
+//   Transform.call(this, options)
+// }
 
-util.inherits(RemoveBrowserReportOnCI, Transform)
+// util.inherits(RemoveBrowserReportOnCI, Transform)
 
-RemoveBrowserReportOnCI.prototype._transform = function (chunk, enc, cb) {
-  var json = JSON.parse(chunk)
+// RemoveBrowserReportOnCI.prototype._transform = function (chunk, enc, cb) {
+//   var json = JSON.parse(chunk)
 
-  if (process.env.COMMIT) {
-    json.report.splice(json.report.indexOf('browser'), 1)
-  }
+//   if (process.env.COMMIT) {
+//     json.report.splice(json.report.indexOf('browser'), 1)
+//   }
 
-  this.push(JSON.stringify(json))
-  cb()
-}
+//   this.push(JSON.stringify(json))
+//   cb()
+// }
 
 var getCompLibPaths = function () {
   var files = fs.readdirSync(config.compLib.baseDir)
@@ -42,7 +42,7 @@ module.exports = function () {
   return new Promise(function (resolve, reject) {
     readConfig.setEncoding('utf8')
     readConfig
-      .pipe(removeBrowserReportOnCI)
+      // .pipe(removeBrowserReportOnCI)
       .pipe(addScenarios)
       .pipe(writeConfig)
       .on('finish', function () {
