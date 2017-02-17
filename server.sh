@@ -24,9 +24,9 @@ if [[ -n $1 ]]; then
     fi
 
     # Store some vars for later
-    COMMIT=$(git rev-parse HEAD) \
-    BRANCHPOINT=$(git merge-base master HEAD) \
-    PARENT=$(git log --pretty=%P -n 1 $BRANCHPOINT) &&
+    COMMIT=${TRAVIS_PULL_REQUEST_BRANCH:-$BRANCH} \
+    BRANCHPOINT=$(git merge-base master HEAD) &&
+
     # run VRTs
     git checkout $BRANCHPOINT &&
     npm run vrt:baseline &&
