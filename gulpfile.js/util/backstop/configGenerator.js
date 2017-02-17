@@ -28,7 +28,7 @@ var getCompLibPaths = function () {
   var files = fs.readdirSync(config.compLib.baseDir)
 
   return files.filter(function (file) {
-    return file !== 'index.html' && file.includes('.html')
+    return file !== ('index.html' || '') && file.includes('.html')
   })
 }
 
