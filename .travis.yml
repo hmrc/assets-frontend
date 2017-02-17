@@ -2,4 +2,4 @@ sudo: false
 language: node_js
 node_js:
   - 4.4.5
-script: ./server.sh vrt && ./server.sh build
+script: ./server.sh build
