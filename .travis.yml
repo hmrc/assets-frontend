@@ -3,4 +3,4 @@ language: node_js
 node_js:
   - 4.4.5
 before_install: git fetch origin master:master
-script: ./server.sh vrt
+script: ./server.sh build
