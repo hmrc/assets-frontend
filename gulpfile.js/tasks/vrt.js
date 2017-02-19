@@ -31,7 +31,7 @@ gulp.task('vrt-baseline', function () {
   )
 })
 
-gulp.task('vrt-compare', function () {
+gulp.task('vrt-compare', function (done) {
   runSequence(
     'component-library',
     'vrt-server',
@@ -42,8 +42,8 @@ gulp.task('vrt-compare', function () {
           compLibServer.close()
         })
         .catch(function (err) {
-          console.log(err)
           compLibServer.close()
+          done('[FAIL] gulp VRT task failed')
         })
     }
   )

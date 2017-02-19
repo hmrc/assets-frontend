@@ -23,7 +23,7 @@
   },
   "casperFlags": [],
   "engine": "phantomjs",
-  "report": ["browser", "CI"],
+  "report": ["CI"],
   "resembleOutputOptions": {
     "errorColor": {
       "red": 255,
