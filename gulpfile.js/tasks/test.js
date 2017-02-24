@@ -17,11 +17,16 @@ var karmaTask = function (done) {
   })
 }
 
-gulp.task('test', ['sass', 'lint:tests', 'lint:scripts'], karmaTask)
-
 gulp.task('test:gulpTasks', function () {
   return gulp.src(config.gulpTasks)
     .pipe(tape({
       reporter: tapSpec()
     }))
 })
+
+gulp.task('test', [
+  'sass',
+  'lint:tests',
+  'lint:scripts',
+  'test:gulpTasks'
+], karmaTask)
