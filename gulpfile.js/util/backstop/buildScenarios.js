@@ -4,8 +4,6 @@ var mergeObj = require('./../mergeObj')
 var sep = require('path').sep
 var Transform = require('stream').Transform
 var util = require('util')
-var config = require('./../../config')
-var componentLibraryUrl = config.compLib.host + ':' + config.compLib.port
 var scenarioTemplate = {
   selectors: [
     '.comp-lib-pattern-component'
@@ -13,10 +11,11 @@ var scenarioTemplate = {
   misMatchThreshold: 0.1,
   'selectorExpansion': true
 }
-var AddScenarios = function (options, pagePaths) {
+var BuildScenarios = function (options, pagePaths, config) {
   Transform.call(this, options)
   this.pagePaths = pagePaths
   this.data = []
+  this.componentLibraryUrl = config.compLib.host + ':' + config.compLib.port
 }
 
 util.inherits(AddScenarios, Transform)
