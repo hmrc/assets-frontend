@@ -1,8 +1,7 @@
 'use strict'
 
 var fs = require('fs')
-var config = require('./../../config')
-var BuildScenarios = require('./buildScenarios')
+var BuildScenarios = require('./BuildScenarios')
 
 var getCompLibPaths = function (config) {
   var files = fs.readdirSync(config.compLib.baseDir)
