@@ -20,13 +20,12 @@ module.exports = function (config) {
   return new Promise(function (resolve, reject) {
     readConfig.setEncoding('utf8')
     readConfig
-      .pipe(addScenarios)
+      .pipe(buildScenarios)
+      .on('error', reject)
       .pipe(writeConfig)
+      .on('error', reject)
       .on('finish', function () {
         resolve('backstop.json created')
-      })
-      .on('error', function (err) {
-        reject(err)
       })
   })
 }
