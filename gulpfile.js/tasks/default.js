@@ -6,7 +6,7 @@ var runSequence = require('run-sequence')
 gulp.task('default', ['clean'], function () {
   runSequence(
     ['lint:config', 'sass', 'images', 'svg', 'concatEncryption', 'error-pages'],
-    'test',
+    ['test', 'test:gulpTasks'],
     'modernizr',
     'component-library',
     'watch'
