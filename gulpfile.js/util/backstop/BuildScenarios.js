@@ -4,8 +4,6 @@ var mergeObj = require('./../mergeObj')
 var sep = require('path').sep
 var Transform = require('stream').Transform
 var util = require('util')
-var config = require('./../../config')
-var componentLibraryUrl = config.compLib.host + ':' + config.compLib.port
 var scenarioTemplate = {
   selectors: [
     '.comp-lib-pattern-component'
@@ -13,42 +11,39 @@ var scenarioTemplate = {
   misMatchThreshold: 0.1,
   'selectorExpansion': true
 }
-var AddScenarios = function (options, pagePaths) {
+var BuildScenarios = function (options, pagePaths, config) {
   Transform.call(this, options)
   this.pagePaths = pagePaths
   this.data = []
+  this.componentLibraryUrl = config.compLib.host + ':' + config.compLib.port
 }
 
-util.inherits(AddScenarios, Transform)
+util.inherits(BuildScenarios, Transform)
 
-AddScenarios.prototype._transform = function (chunk, encoding, done) {
+BuildScenarios.prototype._transform = function (chunk, encoding, done) {
   this.data.push(chunk)
   done()
 }
 
-AddScenarios.prototype._flush = function (done) {
-  let jsonData
-  let stringData
+BuildScenarios.prototype._flush = function (done) {
+  var jsonData
+  var dataAsString
 
   try {
     jsonData = JSON.parse(this.data)
+    jsonData.scenarios = jsonData.scenarios.concat(this.createScenarios())
+    dataAsString = JSON.stringify(jsonData, null, 2)
   } catch (err) {
-    throw err
+    this.emit('error', err)
   }
 
-  Array.prototype.push.apply(jsonData.scenarios, this.createScenarios())
-
-  try {
-    stringData = JSON.stringify(jsonData, null, 2)
-  } catch (err) {
-    throw err
-  }
-
-  this.push(stringData)
+  this.push(dataAsString || this.data)
   done()
 }
 
-AddScenarios.prototype.createScenarios = function () {
+BuildScenarios.prototype.createScenarios = function () {
+  var componentLibraryUrl = this.componentLibraryUrl
+
   return this.pagePaths.map(function (path) {
     var pageName = path.slice(8, -5)
     var scenario = mergeObj({
@@ -60,4 +55,4 @@ AddScenarios.prototype.createScenarios = function () {
   })
 }
 
-module.exports = AddScenarios
+module.exports = BuildScenarios

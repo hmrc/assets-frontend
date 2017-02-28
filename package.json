@@ -132,6 +132,9 @@
     }
   },
   "devDependencies": {
-    "gulp-standard": "^8.0.3"
+    "gulp-standard": "^8.0.3",
+    "gulp-tape": "0.0.9",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
   }
 }

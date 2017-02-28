@@ -8,7 +8,7 @@ var gulp = require('gulp')
 var config = require('../config')
 
 gulp.task('watch', ['watchify', 'server'], function (callback) {
-  gulp.watch(config.scripts.gulpTasks, ['lint:config'])
+  gulp.watch(config.scripts.gulpTasks, ['lint:gulpTasks', 'test:gulpTasks'])
   gulp.watch([
     config.scripts.src,
     config.scripts.entryPoint

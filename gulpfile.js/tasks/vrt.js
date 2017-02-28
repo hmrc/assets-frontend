@@ -10,7 +10,7 @@ var backstopConfigGenerator = require('./../util/backstop/configGenerator')
 var compLibServer
 
 gulp.task('build-vrt-config', function () {
-  return backstopConfigGenerator()
+  return backstopConfigGenerator(config)
 })
 
 gulp.task('vrt-baseline', function () {

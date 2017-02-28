@@ -1,10 +1,9 @@
 'use strict'
 
 var fs = require('fs')
-var config = require('./../../config')
-var BuildScenarios = require('./buildScenarios')
+var BuildScenarios = require('./BuildScenarios')
 
-var getCompLibPaths = function () {
+var getCompLibPaths = function (config) {
   var files = fs.readdirSync(config.compLib.baseDir)
 
   return files.filter(function (file) {
@@ -12,22 +11,21 @@ var getCompLibPaths = function () {
   })
 }
 
-module.exports = function () {
-  var compLibPaths = getCompLibPaths()
-  var addScenarios = new BuildScenarios({objectMode: true}, compLibPaths)
+module.exports = function (config) {
+  var compLibPaths = getCompLibPaths(config)
+  var buildScenarios = new BuildScenarios({objectMode: true}, compLibPaths, config)
   var readConfig = fs.createReadStream(config.vrt.backstopConfigTemplate)
   var writeConfig = fs.createWriteStream(config.vrt.backstopConfig)
 
   return new Promise(function (resolve, reject) {
     readConfig.setEncoding('utf8')
     readConfig
-      .pipe(addScenarios)
+      .pipe(buildScenarios)
+      .on('error', reject)
       .pipe(writeConfig)
+      .on('error', reject)
       .on('finish', function () {
         resolve('backstop.json created')
-      })
-      .on('error', function (err) {
-        reject(err)
       })
   })
 }
