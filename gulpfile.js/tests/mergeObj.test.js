@@ -8,7 +8,7 @@ test('mergeObj - objects should merged as expected', function (t) {
 
   t.plan(4)
 
-  t.equal(typeof resultObj.parent, 'string', 'parent key value should be a string')
+  t.notEqual(typeof resultObj.parent, 'string', 'parent key value should be a string')
   t.equal(resultObj.parent, 'parent', 'parent key value should equal "parent"')
   t.equal(typeof resultObj.child, 'string', 'child value should be a string')
   t.equal(resultObj.child, 'child', 'child value should equal "child"')
