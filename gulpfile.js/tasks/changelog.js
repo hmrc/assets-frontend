@@ -37,18 +37,26 @@ var getChangedFiles = function (branch) {
 }
 
 var checkForChangelog = function (files) {
+  console.log('files', files)
+
   if (!files.includes('CHANGELOG.md')) {
     throw new Error(gutil.log(gutil.colors.red('ERROR: No CHANGELOG.md update')))
   }
 
-  return true
+  return Promise.resolve(true)
 }
 
 gulp.task('changelog', function (done) {
   getCurrentBranch(process.env.TRAVIS_BRANCH)
     .then(getChangedFiles)
     .then(checkForChangelog)
-    .catch(done)
+    .then(function () {
+      done()
+    })
+    .catch(function (err) {
+      console.log('err', err)
+      done(err)
+    })
 })
 
 module.exports = {
