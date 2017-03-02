@@ -8,6 +8,7 @@ gulp.task('build', ['clean', 'test'], function () {
   global.location = undefined
 
   runSequence(
+    'changelog',
     ['sass', 'images', 'svg', 'error-pages'],
     ['browserify', 'concatEncryption'],
     'modernizr',
