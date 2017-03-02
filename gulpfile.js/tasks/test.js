@@ -20,6 +20,7 @@ var karmaTask = function (done) {
 gulp.task('test:gulpTasks', function () {
   return gulp.src(config.gulpTasks)
     .pipe(tape({
+      bail: true,
       reporter: tapSpec()
     }))
 })
