@@ -19,23 +19,23 @@ test('changelog - runCommand', function (t) {
 })
 
 test('changelog - getCurrentBranch', function (t) {
-  t.plan(4)
+  t.plan(5)
 
   var execStub = sinon.stub(proc, 'exec').callsArgWith(1, null, 'test', null)
 
   var givenBranch = changelog.getCurrentBranch('master')
   var currentBranch = changelog.getCurrentBranch()
 
-  t.throws(function () {
-    givenBranch.then()
-  }, TypeError, 'does not return a Promise when given a branch name')
-
-  t.equal(givenBranch, 'master', 'returns the branch when given one')
-
+  t.ok(givenBranch.then(), 'returns a Promise when given a branch name')
   t.ok(currentBranch.then(), 'returns a Promise when not given a branch name')
+  t.ok(execStub.calledOnce, 'only calls git when not given a branch')
+
+  givenBranch.then(function (branch) {
+    t.equal(branch, 'master', 'returns the branch name exactly when given a branch')
+  })
 
   currentBranch.then(function (branch) {
-    t.equal(branch, 'test', 'returns the Promise value exactly')
+    t.equal(branch, 'test', 'returns the result of git exactly when not given a branch')
   })
 
   proc.exec.restore()
@@ -44,13 +44,12 @@ test('changelog - getCurrentBranch', function (t) {
 test('changelog - getChangedFiles', function (t) {
   t.plan(3)
 
-  sinon.stub(gutil, 'log')
-
   var files = 'file-one.html\n' +
     'file-two.js\n' +
     'file-three'
 
-  var execStub = sinon.stub(proc, 'exec').callsArgWith(1, null, files, null)
+  sinon.stub(gutil, 'log')
+  sinon.stub(proc, 'exec').callsArgWith(1, null, files, null)
 
   var noBranch = changelog.getChangedFiles(null)
   var changedFiles = changelog.getChangedFiles('branch')
