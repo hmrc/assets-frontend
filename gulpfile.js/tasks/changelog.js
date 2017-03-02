@@ -20,7 +20,7 @@ var runCommand = function (cmd) {
 
 var getCurrentBranch = function (travisBranch) {
   if (travisBranch) {
-    return travisBranch
+    return Promise.resolve(travisBranch)
   }
 
   var cmd = 'git symbolic-ref HEAD | sed \'s!refs/heads/!!\''
@@ -45,7 +45,7 @@ var checkForChangelog = function (files) {
 }
 
 gulp.task('changelog', function (done) {
-  getCurrentBranch(process.env.TRAVIS_PULL_REQUEST_BRANCH)
+  getCurrentBranch(process.env.TRAVIS_BRANCH)
     .then(getChangedFiles)
     .then(checkForChangelog)
     .catch(done)
