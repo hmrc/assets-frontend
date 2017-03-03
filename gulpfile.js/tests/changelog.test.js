@@ -53,11 +53,11 @@ test('changelog - getChangedFiles', function (t) {
   sinon.stub(proc, 'exec').callsArgWith(1, null, files, null)
 
   var noBranch = changelog.getChangedFiles()
-  var changedFiles = changelog.getChangedFiles('master...test')
+  var changedFiles = changelog.getChangedFiles('test')
 
-  t.throws(function () {
-    noBranch.then()
-  }, TypeError, 'throws an error when not given a branch')
+  noBranch.catch(function (err) {
+    t.ok(err instanceof Error, 'throws an error when not given a branch')
+  })
 
   t.ok(changedFiles.then(), 'returns a Promise when given a branch')
 
@@ -72,16 +72,21 @@ test('changelog - getChangedFiles', function (t) {
 test('changelog - checkForChangelog', function (t) {
   t.plan(2)
 
+  var files = 'file-one.html\n' +
+    'CHANGELOG.md\n' +
+    'file-three'
+
   sinon.stub(gutil, 'log')
 
   t.true(
-    changelog.checkForChangelog('CHANGELOG.md'),
+    changelog.checkForChangelog(files),
     'returns true when CHANGELOG.md is found'
   )
 
-  t.throws(function () {
-    changelog.checkForChangelog('CHANGELOG')
-  }, Error, 'throws an Error when CHANGELOG.md cannot be found')
+  changelog.checkForChangelog('CHANGELOG')
+    .catch(function (err) {
+      t.ok(err instanceof Error, 'returns an Error when CHANGELOG.md cannot be found')
+    })
 
   gutil.log.restore()
 })

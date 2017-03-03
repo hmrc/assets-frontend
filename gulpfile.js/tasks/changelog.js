@@ -34,7 +34,7 @@ var getCurrentCommit = function (commit) {
 
 var getChangedFiles = function (commit) {
   if (!commit) {
-    return new Error(gutil.log(gutil.colors.red('ERROR: No commit given')))
+    return Promise.reject(new Error('No commit given'))
   }
 
   var cmd = 'git diff --name-only master ' + commit
@@ -43,7 +43,7 @@ var getChangedFiles = function (commit) {
 
 var checkForChangelog = function (files) {
   if (!files.includes('CHANGELOG.md')) {
-    throw new Error(gutil.log(gutil.colors.red('ERROR: No CHANGELOG.md update')))
+    return Promise.reject(new Error('No CHANGELOG.md update'))
   }
 
   return Promise.resolve(true)
@@ -57,6 +57,7 @@ gulp.task('changelog', function (done) {
       done()
     })
     .catch(function (err) {
+      gutil.log(gutil.colors.red(err))
       done(err)
     })
 })
