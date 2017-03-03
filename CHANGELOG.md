@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- `standard` formatting for JavaScript [#736]
-- Interaction for visual regression tests [#748]
+- [standardjs](http://standardjs.com) formatting for JavaScript [#736](https://github.com/hmrc/assets-frontend/pull/736)
+- Interaction for visual regression tests [#748](https://github.com/hmrc/assets-frontend/pull/748)
+- Check for a `CHANGELOG.md` update during the build [#759](https://github.com/hmrc/assets-frontend/pull/759)
 
 ## [2.241.0] - 2017-01-20
 ### Fixed
