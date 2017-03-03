@@ -18,21 +18,26 @@ var runCommand = function (cmd) {
   })
 }
 
-var getCurrentBranch = function (travisBranch) {
-  if (travisBranch) {
-    return Promise.resolve(travisBranch)
-  }
-
-  var cmd = 'git symbolic-ref HEAD | sed \'s!refs/heads/!!\''
-  return runCommand(cmd)
+var getCurrentCommit = function (commit) {
+  return new Promise(function (resolve, reject) {
+    if (commit) {
+      resolve(commit)
+    } else {
+      var cmd = 'git rev-parse HEAD'
+      runCommand(cmd)
+        .then(function (commit) {
+          resolve(commit)
+        })
+    }
+  })
 }
 
-var getChangedFiles = function (branch) {
-  if (!branch) {
-    return new Error(gutil.log(gutil.colors.red('ERROR: No branch given')))
+var getChangedFiles = function (commit) {
+  if (!commit) {
+    return new Error(gutil.log(gutil.colors.red('ERROR: No commit given')))
   }
 
-  var cmd = 'git diff --name-only master ' + branch
+  var cmd = 'git diff --name-only master ' + commit
   return runCommand(cmd)
 }
 
@@ -41,19 +46,24 @@ var checkForChangelog = function (files) {
     throw new Error(gutil.log(gutil.colors.red('ERROR: No CHANGELOG.md update')))
   }
 
-  return true
+  return Promise.resolve(true)
 }
 
 gulp.task('changelog', function (done) {
-  getCurrentBranch(process.env.TRAVIS_BRANCH)
+  getCurrentCommit(process.env.TRAVIS_COMMIT)
     .then(getChangedFiles)
     .then(checkForChangelog)
-    .catch(done)
+    .then(function () {
+      done()
+    })
+    .catch(function (err) {
+      done(err)
+    })
 })
 
 module.exports = {
   runCommand: runCommand,
-  getCurrentBranch: getCurrentBranch,
+  getCurrentCommit: getCurrentCommit,
   getChangedFiles: getChangedFiles,
   checkForChangelog: checkForChangelog
 }

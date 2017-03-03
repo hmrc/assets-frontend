@@ -18,24 +18,25 @@ test('changelog - runCommand', function (t) {
     })
 })
 
-test('changelog - getCurrentBranch', function (t) {
+test('changelog - getCurrentCommit', function (t) {
   t.plan(5)
 
-  var execStub = sinon.stub(proc, 'exec').callsArgWith(1, null, 'test', null)
+  var sha = 'abcd123'
+  var execStub = sinon.stub(proc, 'exec').callsArgWith(1, null, sha, null)
 
-  var givenBranch = changelog.getCurrentBranch('master')
-  var currentBranch = changelog.getCurrentBranch()
+  var givenCommit = changelog.getCurrentCommit(sha)
+  var currentCommit = changelog.getCurrentCommit()
 
-  t.ok(givenBranch.then(), 'returns a Promise when given a branch name')
-  t.ok(currentBranch.then(), 'returns a Promise when not given a branch name')
-  t.ok(execStub.calledOnce, 'only calls git when not given a branch')
+  t.ok(givenCommit.then(), 'returns a Promise when given a commit sha')
+  t.ok(currentCommit.then(), 'returns a Promise when not given a commit sha')
+  t.ok(execStub.calledOnce, 'only calls git when not given a commit sha')
 
-  givenBranch.then(function (branch) {
-    t.equal(branch, 'master', 'returns the branch name exactly when given a branch')
+  givenCommit.then(function (branch) {
+    t.equal(branch, sha, 'returns the result of git exactly when given a sha')
   })
 
-  currentBranch.then(function (branch) {
-    t.equal(branch, 'test', 'returns the result of git exactly when not given a branch')
+  currentCommit.then(function (branch) {
+    t.equal(branch, sha, 'returns the result of git exactly when not given a sha')
   })
 
   proc.exec.restore()
@@ -51,8 +52,8 @@ test('changelog - getChangedFiles', function (t) {
   sinon.stub(gutil, 'log')
   sinon.stub(proc, 'exec').callsArgWith(1, null, files, null)
 
-  var noBranch = changelog.getChangedFiles(null)
-  var changedFiles = changelog.getChangedFiles('branch')
+  var noBranch = changelog.getChangedFiles()
+  var changedFiles = changelog.getChangedFiles('master...test')
 
   t.throws(function () {
     noBranch.then()
