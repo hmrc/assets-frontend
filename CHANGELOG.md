@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `standard` formatting for JavaScript [#736]
 - Interaction for visual regression tests [#748]
 
+### Fixed
+- Fixed the youtube failing visual regression test [#761]
+
 ## [2.241.0] - 2017-01-20
 ### Fixed
 - URLs for `govuk_template` assets in nginx error pages [#735]
