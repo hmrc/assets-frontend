@@ -44,7 +44,7 @@ test('changelog - getCurrentCommit', function (t) {
 })
 
 test('changelog - getChangedFiles', function (t) {
-  t.plan(4)
+  t.plan(3)
 
   var files = 'file-one.html\n' +
     'file-two.js\n' +
@@ -52,13 +52,12 @@ test('changelog - getChangedFiles', function (t) {
 
   sinon.stub(proc, 'exec').callsArgWith(1, null, files, null)
 
-  var noBranch = changelog.getChangedFiles()
+  // var noCommit = changelog.getChangedFiles()
   var changedFiles = changelog.getChangedFiles('test')
 
-  noBranch.catch(function (err) {
-    t.ok(err instanceof Error, 'returns an error when not given a branch')
-    t.ok(err.message.includes('No commit given'), 'returns an approptiate error message')
-  })
+  t.throws(function() {
+    changelog.getChangedFiles()
+  }, /No commit given/, 'throws an error when not given a branch')
 
   t.ok(changedFiles.then(), 'returns a Promise when given a branch')
 
@@ -70,20 +69,22 @@ test('changelog - getChangedFiles', function (t) {
 })
 
 test('changelog - checkForChangelog', function (t) {
-  t.plan(3)
+  t.plan(2)
 
-  var files = 'file-one.html\n' +
+  var files1 = 'file-one.html\n' +
     'CHANGELOG.md\n' +
-    'file-three'
+    'file-two.js'
+
+  var files2 = 'file-one.html\n' +
+    'file-two.js\n' +
+    'file-three.css'
 
   t.true(
-    changelog.checkForChangelog(files),
+    changelog.checkForChangelog(files1),
     'returns true when CHANGELOG.md is found'
   )
 
-  changelog.checkForChangelog('CHANGELOG')
-    .catch(function (err) {
-      t.ok(err instanceof Error, 'returns an Error when CHANGELOG.md cannot be found')
-      t.equal(err.message, 'No CHANGELOG.md update', 'returns an approptiate error message')
-    })
+  t.throws(function () {
+    changelog.checkForChangelog(files2)
+  }, /No CHANGELOG\.md update/, 'returns an Error when CHANGELOG.md cannot be found')
 })

@@ -30,17 +30,17 @@ var getCurrentCommit = function (commit) {
 }
 
 var getChangedFiles = function (commit) {
-  if (commit) {
-    var cmd = 'git diff --name-only master ' + commit
-    return runCommand(cmd)
+  if (!commit) {
+    throw new Error('No commit given')
   }
 
-  return Promise.reject(new Error('No commit given'))
+  var cmd = 'git diff --name-only master ' + commit
+  return runCommand(cmd)
 }
 
 var checkForChangelog = function (files) {
   if (!files.includes('CHANGELOG.md')) {
-    return Promise.reject(new Error('No CHANGELOG.md update'))
+    throw new Error('No CHANGELOG.md update')
   }
 
   return true
