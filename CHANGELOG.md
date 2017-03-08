@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Interaction for visual regression tests [#748](https://github.com/hmrc/assets-frontend/pull/748)
 - Check for a `CHANGELOG.md` update during the build [#759](https://github.com/hmrc/assets-frontend/pull/759)
 
+### Fixed
+- Fixed the youtube failing visual regression test [#761]
+
 ## [2.241.0] - 2017-01-20
 ### Fixed
 - URLs for `govuk_template` assets in nginx error pages [#735]
