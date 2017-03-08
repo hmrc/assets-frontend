@@ -24,21 +24,18 @@ var getCurrentCommit = function (commit) {
       resolve(commit)
     } else {
       var cmd = 'git rev-parse HEAD'
-      runCommand(cmd)
-        .then(function (commit) {
-          resolve(commit)
-        })
+      runCommand(cmd).then(resolve)
     }
   })
 }
 
 var getChangedFiles = function (commit) {
-  if (!commit) {
-    return Promise.reject(new Error('No commit given'))
+  if (commit) {
+    var cmd = 'git diff --name-only master ' + commit
+    return runCommand(cmd)
   }
 
-  var cmd = 'git diff --name-only master ' + commit
-  return runCommand(cmd)
+  return Promise.reject(new Error('No commit given'))
 }
 
 var checkForChangelog = function (files) {
@@ -46,7 +43,7 @@ var checkForChangelog = function (files) {
     return Promise.reject(new Error('No CHANGELOG.md update'))
   }
 
-  return Promise.resolve(true)
+  return true
 }
 
 gulp.task('changelog', function (done) {
