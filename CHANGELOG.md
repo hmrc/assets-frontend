@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- This change log! [#753](https://github.com/hmrc/assets-frontend/pull/753)
+- This change log! :boom: [#753](https://github.com/hmrc/assets-frontend/pull/753)
 - [standardjs](http://standardjs.com) formatting for JavaScript [#736](https://github.com/hmrc/assets-frontend/pull/736)
 - Interaction for visual regression tests [#748](https://github.com/hmrc/assets-frontend/pull/748)
 - Gulpfile JavaScript tests (using [tape](https://www.npmjs.com/package/tape)) [#756](https://github.com/hmrc/assets-frontend/pull/756)
