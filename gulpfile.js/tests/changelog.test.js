@@ -1,6 +1,5 @@
 var test = require('tape')
 var sinon = require('sinon')
-var gutil = require('gulp-util')
 var proc = require('child_process')
 var changelog = require('../tasks/changelog')
 
@@ -55,7 +54,7 @@ test('changelog - getChangedFiles', function (t) {
   // var noCommit = changelog.getChangedFiles()
   var changedFiles = changelog.getChangedFiles('test')
 
-  t.throws(function() {
+  t.throws(function () {
     changelog.getChangedFiles()
   }, /No commit given/, 'throws an error when not given a branch')
 
