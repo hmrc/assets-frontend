@@ -7,8 +7,8 @@
    different sources, and to use Watchify when run from the default task.
    See browserify.bundleConfigs in gulp/config.js
 */
-
 var browserify = require('browserify')
+var collapse = require('bundle-collapser/plugin')
 var watchify = require('watchify')
 var bundleLogger = require('../util/bundleLogger')
 var gulp = require('gulp')
@@ -37,6 +37,9 @@ var browserifyTask = function (callback, devMode) {
       // `gulp browserify` directly will properly require and externalize.
       bundleConfig = _.omit(bundleConfig, ['external', 'require'])
     }
+
+    // stop absolute urls appearing in prod browserify'd bundles
+    _.extend(bundleConfig, {plugin: collapse})
 
     var b = browserify(bundleConfig)
 
