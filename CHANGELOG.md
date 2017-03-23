@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Continuous Integration builds weren't failing when JavaScript acceptance tests failed [#754](https://github.com/hmrc/assets-frontend/pull/754)
 - The Youtube-player Visual regression test was always failing [#761](https://github.com/hmrc/assets-frontend/pull/761)
 - Changelog test class, lint errors [#764](https://github.com/hmrc/assets-frontend/pull/764)
+- Date year text box width specificity bug [#766](https://github.com/hmrc/assets-frontend/pull/766) 
 
 ## [2.241.0] - 2017-01-20
 ### Fixed
