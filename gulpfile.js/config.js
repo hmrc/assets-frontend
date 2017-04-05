@@ -50,14 +50,17 @@ module.exports = {
   },
 
   scripts: {
+    src: [
+      src + 'javascripts/modules/**/*.js',
+      src + 'components/**/*.js'
+    ],
+    dest: snapshotDir + 'javascripts',
     dev: {
       dest: snapshotDir + 'javascripts'
     },
     prod: {
       dest: distDir + 'javascripts'
     },
-    src: src + 'javascripts/modules/**/*.js',
-    dest: snapshotDir + 'javascripts',
     entryPoint: src + 'javascripts/application.js',
     gulpTasks: 'gulpfile.js/**/*.js',
     encryptionSrc: src + 'javascripts/encryption/**/*.js',

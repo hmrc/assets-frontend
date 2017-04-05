@@ -8,7 +8,7 @@ require('jquery')
 
 describe('Given I have two empty textarea elements set up with a char counter', function () {
   jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
-  var charCounter = require('../../javascripts/modules/charCounter.js')
+  var charCounter = require('../../components/character-counter/character-counter.js')
 
   describe('When I load the page', function () {
     beforeEach(function () {

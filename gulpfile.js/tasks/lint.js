@@ -13,9 +13,7 @@ gulp.task('lint:gulpTasks', function () {
 })
 
 gulp.task('lint:scripts', function () {
-  var scripts = [
-    config.scripts.src
-  ].concat([
+  var scripts = config.scripts.src.concat([
     config.scripts.entryPoint,
     '!**/*.polyfill.js'
   ])
