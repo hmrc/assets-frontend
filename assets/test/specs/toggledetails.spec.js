@@ -12,7 +12,7 @@ describe('Given I have a toggle details module and two targets on the page', fun
   var $target2
 
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('toggle-details-fixture.html')
 
     toggleDetails = require('../../javascripts/modules/toggleDetails.js')

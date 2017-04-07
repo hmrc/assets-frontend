@@ -9,7 +9,7 @@ describe('Given there is a checkbox that must be checked to continue', function 
   var conditionallyDisableButton
 
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('toggle-button-fixture.html')
 
     conditionallyDisableButton = require('../../javascripts/modules/conditionallyDisableButton.js')

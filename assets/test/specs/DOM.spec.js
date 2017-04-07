@@ -11,7 +11,7 @@ describe('More DOM', function () {
 
 describe('Loading fixtures', function () {
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
   })
 
   describe('Loading a test fixture', function () {

@@ -7,7 +7,7 @@ describe('Given I have an accordion module on the page', function () {
   var accordion, $acc1, $acc2, $acc3
 
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('accordion-fixtures.html')
 
     accordion = require('../../javascripts/modules/accordion.js')

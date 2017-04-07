@@ -4,7 +4,7 @@
 module.exports = function (config) {
   config.set({
     // base path, that will be used to resolve files and exclude
-    basePath: '..',
+    basePath: '../..',
 
     // frameworks to use
     frameworks: [
@@ -16,12 +16,16 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'specs/*.js',
-      'specs/fixtures/*.html',
-      '../public/999-SNAPSHOT/stylesheets/application.min.css'
+      'test/specs/fixtures/*.html',
+      'test/specs/*.js',
+      'components/**/**.html',
+      'components/**/**.test.js',
+      'public/999-SNAPSHOT/stylesheets/application.min.css'
     ],
+
     preprocessors: {
-      'specs/*.js': ['browserify']
+      'test/specs/*.js': ['browserify'],
+      'components/**/*.test.js': ['browserify']
     },
 
     // test results reporter to use
@@ -30,7 +34,7 @@ module.exports = function (config) {
 
     junitReporter: {
       // will be resolved to basePath (in the same way as files/exclude patterns)
-      outputFile: '../../test_results/TEST-javascript-test-results.xml'
+      outputFile: '../test_results/TEST-javascript-test-results.xml'
     },
     // browserify configuration
     browserify: {
@@ -65,18 +69,6 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false,
-
-    plugins: [
-      'karma-jasmine',
-      'karma-spec-reporter',
-      'karma-junit-reporter',
-      'karma-chrome-launcher',
-      'karma-firefox-launcher',
-      'karma-phantomjs-launcher',
-      'karma-browserify',
-      'karma-jasmine-jquery',
-      'karma-jasmine-matchers'
-    ]
+    singleRun: false
   })
 }

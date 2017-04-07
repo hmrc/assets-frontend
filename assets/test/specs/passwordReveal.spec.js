@@ -21,7 +21,7 @@ var setup = function () {
 
 describe('Password Reveal', function () {
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('password-reveal-fixture.html')
     passwordReveal = require('../../javascripts/modules/passwordReveal.js')
   })

@@ -9,7 +9,7 @@ describe('Tests for the <details> polyfill for pre-historic browsers.', function
   var selectors = details1 + ', ' + details2
 
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
 
     loadFixtures('details-polyfill-fixture.html')
 
