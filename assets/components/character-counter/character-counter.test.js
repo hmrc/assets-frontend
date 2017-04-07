@@ -7,45 +7,56 @@
 require('jquery')
 
 describe('Given I have two empty textarea elements set up with a char counter', function () {
-  var charCounter = require('./character-counter.js')
+  var characterCounter = require('./character-counter.js')
+  var characterCount = 0
 
   beforeEach(function () {
     jasmine.getFixtures().fixturesPath = 'base/components/character-counter'
-    loadFixtures('character-counter.fixture.html')
-    charCounter()
+    loadFixtures('character-counter.html')
+    characterCount = $('.char-counter [data-char-field]').attr('maxLength')
   })
 
-  describe('When I load the page', function () {
-    it('The first counter should read 10 remaining characters', function () {
-      expect($('#fieldContainer1 [data-counter]').text()).toBe('10')
+  describe('When the page is loaded', function () {
+    it('An empty character counter should show all the remaining characters', function () {
+      characterCounter()
+      expect($('.char-counter [data-counter]').text()).toBe(characterCount)
     })
 
-    it('The second counter should read 2 remaining characters', function () {
-      expect($('#fieldContainer2 [data-counter]').text()).toBe('2')
+    it('A pre-populated character counter should show only the remaining characters', function () {
+      var text = 'Pre-populated text'
+      $('.char-counter [data-char-field]').val(text)
+      characterCounter()
+      expect(parseInt($('.char-counter [data-counter]').text())).toBe(characterCount - text.length)
     })
   })
 
-  describe('When I type some text in the first field', function () {
+  describe('When some text is typed into the character counter', function () {
+    var text
+
     beforeEach(function () {
-      $('#fieldContainer1 [data-char-field]').val('Some text').trigger('input')
+      $('.char-counter [data-char-field]').val('')
     })
 
-    it('The first counter should read 1 remaining character', function () {
-      expect($('#fieldContainer1 [data-counter]').text()).toBe('1')
+    it('The remaining character count should update', function () {
+      text = 'Some text'
+      characterCounter()
+      $('.char-counter [data-char-field]').val(text).trigger('input')
+      expect(parseInt($('.char-counter [data-counter]').text())).toBe(characterCount - text.length)
     })
 
-    it('The first counter text should read "character"', function () {
-      expect($('#fieldContainer1 [data-char-text]').text()).toBe('character')
-    })
-  })
-
-  describe('When I type two characters in the second field', function () {
-    beforeEach(function () {
-      $('#fieldContainer1 [data-char-field]').val('AB').trigger('input')
+    it('The text should be plural for more than 1 remaining character', function () {
+      text = 'Some text'
+      characterCounter()
+      $('.char-counter [data-char-field]').val(text).trigger('input')
+      expect($('.char-counter [data-char-text]').text()).toBe('characters')
     })
 
-    it('The counter text should read "characters"', function () {
-      expect($('#fieldContainer1 [data-char-text]').text()).toBe('characters')
+    it('The text should be singular for 1 remaining character', function () {
+      text = Array(parseInt(characterCount)).join('x')
+      characterCounter()
+      $('.char-counter [data-char-field]').val(text).trigger('input')
+      expect($('.char-counter [data-counter]').text()).toBe('1')
+      expect($('.char-counter [data-char-text]').text()).toBe('character')
     })
   })
 })
