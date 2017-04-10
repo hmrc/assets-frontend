@@ -114,14 +114,20 @@ module.exports = {
   },
 
   sass: {
-    src: src + 'scss/**/*.scss',
+    src: [
+      src + 'scss/**/*.scss',
+      src + 'components/**/*.scss'
+    ],
     govukSrc: govuk.template + '/public/sass/**/*.scss',
     govukElementsSrc: govuk.elements + '/public/sass/**/*.scss',
     dev: {
       dest: snapshotDir + 'stylesheets/',
       settings: {
         sourceComments: true,
-        includePaths: [govuk.template + '/public/sass'],
+        includePaths: [
+          src,
+          govuk.template + '/public/sass'
+        ],
         outputStyle: 'expanded'
       },
       sourceMapsDir: './maps'
@@ -129,7 +135,10 @@ module.exports = {
     prod: {
       dest: distDir + 'stylesheets/',
       settings: {
-        includePaths: [govuk.template + '/public/sass'],
+        includePaths: [
+          src,
+          govuk.template + '/public/sass'
+        ],
         outputStyle: 'compressed'
       }
     }
