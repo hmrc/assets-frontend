@@ -600,7 +600,7 @@ describe('AjaxCallbacks', function () {
           expect($message[0].innerText).toContain('inviting them to register with the Application Title.')
         })
 
-        it('includes a hidden email field and removal button', function() {
+        it('includes a hidden email field and removal button', function () {
           var $form = $(
             '<form>' +
               '<input name="email" value="user2@example.com"/>' +
@@ -618,13 +618,10 @@ describe('AjaxCallbacks', function () {
 
           expect($removeButton[0].innerText).toBe('Remove')
           expect($($removeHiddenField[0]).val()).toBe('user2@example.com')
-
         })
-
       })
     })
   })
-
 
   describe('.apiCollaboratorRemoveResponse', function () {
     describe('.callbacks', function () {
@@ -659,29 +656,16 @@ describe('AjaxCallbacks', function () {
           $container.empty()
         })
 
-        it('can remove a collaborator from the table', function() {
-
+        it('can remove a collaborator from the table', function () {
           // Add row to the table to setup test
           $container.append($row)
-
           var $form = $row.find('form')
-
           var data = $form.serialize()
-
           underTest(response, $row, data, helpers, targets, null, null)
-
           var $td = $container.find('td')
-
           expect($td[0]).toBeUndefined()
-
         })
-
       })
     })
   })
-
-
-
-
-
 })
