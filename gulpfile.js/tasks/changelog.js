@@ -34,7 +34,7 @@ var getChangedFiles = function (commit) {
     throw new Error('No commit given')
   }
 
-  var ref = process.env.GIT_PREVIOUS_SUCCESSFUL_COMMIT || 'master'
+  var ref = process.env.GIT_PREVIOUS_SUCCESSFUL_COMMIT || 'origin/master'
 
   var cmd = 'git diff --name-only ' + ref + ' ' + commit
   return runCommand(cmd)
