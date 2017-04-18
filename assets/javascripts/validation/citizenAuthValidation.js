@@ -2,42 +2,61 @@ require('jquery');
 
 module.exports = function() {
 
-  var $riskTriageForm = $('.form--risk-triage'),
+  var $identityVerificationForm = $('.form-identity-verification-options'), 
     $userDetailsForm = $('.ca-user-details-form'),
     setup = function() {
-
-      if ($riskTriageForm) {
-        $riskTriageForm.validate({
+      if ($identityVerificationForm) {
+        // enable elements not to be submitted on form post (i.e., the grouping checkbox which opens group of radio buttons)
+        $identityVerificationForm.find('[data-no-submit="true"]')
+          .prop('disabled', false)
+          .prop('checked', false)
+          .closest('label').removeClass('selected');
+        
+        var toggleTarget = $identityVerificationForm.find('.js-toggle').data('target');
+        $('#' + toggleTarget).addClass('hidden').removeClass('js-hidden');
+        
+        $identityVerificationForm.validate({
           onkeyup: false,
           onclick: false,
           onfocusout: false,
-          rules: {
-            risk_triage_question: {
-              minlength: 4,
-              maxlength: 4,
-              number: true,
-              required: true
-            }
+          onsubmit: true,
+
+          errorPlacement: function ($error, $element) {
+            // show summary &  ignore error text (message is not passed in jQuery.validator.addMethod("require_from_group", fn)
+            $('.error-summary', $identityVerificationForm)
+              .addClass('error-summary--show')
+              .removeClass('visuallyhidden')
+              .find('.js-error-summary-messages')
+              .append('<li>' + $element.data('msg-required') + '</li>');
           },
 
-          errorPlacement: function(error, element) {
-            // error messages shown by revealing hidden content in markup
+          highlight: function (element) {
+            // show inline error
+            $(element).closest('.form-field-group').addClass('form-field-group--error');
           },
+          
+          invalidHandler: function(evt, validator) {
+            // remove summary errors and hide summary
+            $('.error-summary', $identityVerificationForm)
+              .addClass('visuallyhidden')
+              .removeClass('error-summary--show')
+              .find('.js-error-summary-messages').empty();
 
-          highlight: function(element) {
-            $(element).parent().addClass('form-field--error');
-            $(element).closest('.client-validated').addClass('error');
-          },
-
-          //When invalid submission, re-enable the submit button
-          invalidHandler: function() {
-            $riskTriageForm.find('.button[type=submit]').prop('disabled', false);
+            // hide inline error
+            $identityVerificationForm.find('.form-field-group').removeClass('form-field-group--error')
+            
+            // When invalid submission, re-enable the submit button
+            $identityVerificationForm.find('.button[type=submit]').prop('disabled', false);
+            
+            // and any elements set to disabled in validator method (i.e., the grouping checkbox which opens a group of radio buttons)
+            $identityVerificationForm.find('[data-no-submit="true"]').prop('disabled', false);
           },
 
           submitHandler: function(form) {
+            // disable element so value isn't passed in form (i.e., the grouping checkbox which opens a group of radio buttons)
+            $identityVerificationForm.find('[data-no-submit="true"]').prop('disabled', true);
             form.submit();
           }
-
         });
       }
 
