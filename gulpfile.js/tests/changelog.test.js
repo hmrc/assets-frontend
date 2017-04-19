@@ -68,7 +68,7 @@ test('changelog - getChangedFiles', function (t) {
 })
 
 test('changelog - checkForChangelog', function (t) {
-  t.plan(2)
+  t.plan(3)
 
   var files1 = 'file-one.html\n' +
     'CHANGELOG.md\n' +
@@ -77,6 +77,11 @@ test('changelog - checkForChangelog', function (t) {
   var files2 = 'file-one.html\n' +
     'file-two.js\n' +
     'file-three.css'
+
+  t.true(
+    changelog.checkForChangelog(''),
+    'returns true when CHANGELOG.md is empty'
+  )
 
   t.true(
     changelog.checkForChangelog(files1),
