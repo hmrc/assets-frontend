@@ -4,7 +4,7 @@
 require('jquery')
 
 describe('Given I have an enhanced table on the page', function () {
-  jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+  jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
   loadFixtures('enhanced-tables-fixture.html')
 
   var enhancedTables = require('../../javascripts/modules/enhancedTables.js')

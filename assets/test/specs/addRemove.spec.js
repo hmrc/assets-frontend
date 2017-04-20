@@ -23,7 +23,7 @@ var setup = function () {
 
 describe('Given I have a list of inputs to add/remove', function () {
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('addRemove-fixture.html')
     addRemove = require('../../javascripts/modules/addRemove.js')
   })

@@ -3,7 +3,7 @@
 
 require('jquery')
 
-jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
 
 preloadFixtures('ajax-form-client-access-request.html')
 

@@ -3,7 +3,7 @@
 
 require('jquery')
 
-jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
 
 preloadFixtures('ajax-form-client-access-request.html', 'client-access-request-responses.html')
 
@@ -13,11 +13,11 @@ var forms
 var formCount = 0
 var responseHtml = {
   'clientAccessSuccess': responseHelper({
-    file: 'base/specs/fixtures/client-access-request-responses.html',
+    file: 'base/test/specs/fixtures/client-access-request-responses.html',
     dom: '#access--response'
   }),
   'missingClientSuccess': responseHelper({
-    file: 'base/specs/fixtures/client-access-request-responses.html',
+    file: 'base/test/specs/fixtures/client-access-request-responses.html',
     dom: '#missing--response'
   })
 }

@@ -39,7 +39,7 @@ var setup = function () {
 
 describe('Register Block Input Fields', function () {
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('register-block-input-fields-fixture.html')
     registerBlockInputFields = require('../../javascripts/modules/registerBlockInputFields.js')
   })

@@ -31,7 +31,7 @@ var setup = function () {
 
 describe('Form Hint Helper', function () {
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('form-hint-helper-fixture.html')
     formHintHelper = require('../../javascripts/modules/formHintHelper.js')
   })

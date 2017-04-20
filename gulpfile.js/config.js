@@ -50,14 +50,17 @@ module.exports = {
   },
 
   scripts: {
+    src: [
+      src + 'javascripts/modules/**/*.js',
+      src + 'components/**/*.js'
+    ],
+    dest: snapshotDir + 'javascripts',
     dev: {
       dest: snapshotDir + 'javascripts'
     },
     prod: {
       dest: distDir + 'javascripts'
     },
-    src: src + 'javascripts/modules/**/*.js',
-    dest: snapshotDir + 'javascripts',
     entryPoint: src + 'javascripts/application.js',
     gulpTasks: 'gulpfile.js/**/*.js',
     encryptionSrc: src + 'javascripts/encryption/**/*.js',
@@ -114,14 +117,20 @@ module.exports = {
   },
 
   sass: {
-    src: src + 'scss/**/*.scss',
+    src: [
+      src + 'scss/**/*.scss',
+      src + 'components/**/*.scss'
+    ],
     govukSrc: govuk.template + '/public/sass/**/*.scss',
     govukElementsSrc: govuk.elements + '/public/sass/**/*.scss',
     dev: {
       dest: snapshotDir + 'stylesheets/',
       settings: {
         sourceComments: true,
-        includePaths: [govuk.template + '/public/sass'],
+        includePaths: [
+          src,
+          govuk.template + '/public/sass'
+        ],
         outputStyle: 'expanded'
       },
       sourceMapsDir: './maps'
@@ -129,7 +138,10 @@ module.exports = {
     prod: {
       dest: distDir + 'stylesheets/',
       settings: {
-        includePaths: [govuk.template + '/public/sass'],
+        includePaths: [
+          src,
+          govuk.template + '/public/sass'
+        ],
         outputStyle: 'compressed'
       }
     }

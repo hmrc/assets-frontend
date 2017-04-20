@@ -4,7 +4,7 @@
 require('jquery')
 
 describe('Given I have a tabs module on the page', function () {
-  jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+  jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
 
   var tabs = require('../../javascripts/modules/tabs.js')
 

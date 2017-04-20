@@ -14,7 +14,7 @@ var $content2
 
 describe('Given I have a modal-dialog module on the page', function () {
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('modal-dialog.html')
 
     modalDialog = require('../../javascripts/modules/modalDialog.js')
