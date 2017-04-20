@@ -12815,14 +12815,11 @@ Character Counter
 
 A character counter for textareas.
 
-Markup:
-<div class="char-counter" data-char-counter>
-  <textarea cols="40" rows="2" maxLength="250" data-char-field></textarea>
-</div>
+Markup: character-counter.html
 
 Styleguide Textarea Input.Counter
 */
-/* line 14, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_character-counter.scss */
+/* line 11, ./assets/components/character-counter/_character-counter.scss */
 .char-counter {
   position: relative;
   margin-bottom: 1.5em;
@@ -12830,12 +12827,12 @@ Styleguide Textarea Input.Counter
   display: inline-block;
 }
 
-/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_character-counter.scss */
+/* line 16, ./assets/components/character-counter/_character-counter.scss */
 .char-counter [data-char-field] {
   height: 70px;
 }
 
-/* line 28, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_character-counter.scss */
+/* line 25, ./assets/components/character-counter/_character-counter.scss */
 .char-counter-text {
   color: #6f777b;
   text-align: right;
