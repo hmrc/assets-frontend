@@ -34,12 +34,14 @@ var getChangedFiles = function (commit) {
     throw new Error('No commit given')
   }
 
-  var cmd = 'git diff --name-only master ' + commit
+  var ref = process.env.GIT_PREVIOUS_SUCCESSFUL_COMMIT || 'master'
+
+  var cmd = 'git diff --name-only ' + ref + ' ' + commit
   return runCommand(cmd)
 }
 
 var checkForChangelog = function (files) {
-  if (!files.includes('CHANGELOG.md')) {
+  if (files.length && !files.includes('CHANGELOG.md')) {
     throw new Error('No CHANGELOG.md update')
   }
 
@@ -47,7 +49,11 @@ var checkForChangelog = function (files) {
 }
 
 gulp.task('changelog', function (done) {
-  getCurrentCommit(process.env.TRAVIS_COMMIT)
+  var commit = process.env.TRAVIS
+    ? process.env.TRAVIS_COMMIT
+    : process.env.GIT_COMMIT
+
+  getCurrentCommit(commit)
     .then(getChangedFiles)
     .then(checkForChangelog)
     .then(function () {

@@ -599,6 +599,72 @@ describe('AjaxCallbacks', function () {
           var $message = $form.find('p')
           expect($message[0].innerText).toContain('inviting them to register with the Application Title.')
         })
+
+        it('includes a hidden email field and removal button', function () {
+          var $form = $(
+            '<form>' +
+              '<input name="email" value="user2@example.com"/>' +
+              '<input type="radio" name="role" value="ADMINISTRATOR"/>' +
+              '<input type="radio" checked name="role" value="DEVELOPER"/>' +
+            '</form>'
+          )
+          var data = $form.serialize()
+          underTest(response, $form, data, helpers, targets, null, null)
+          var $td = $container.find('td')
+
+          var $removeCell = $($td[2])
+          var $removeButton = $($removeCell[0]).find('button')
+          var $removeHiddenField = $($removeCell[0]).find('input[name="email"]')
+
+          expect($removeButton[0].innerText).toBe('Remove')
+          expect($($removeHiddenField[0]).val()).toBe('user2@example.com')
+        })
+      })
+    })
+  })
+
+  describe('.apiCollaboratorRemoveResponse', function () {
+    describe('.callbacks', function () {
+      describe('.success', function () {
+        var $container
+        var underTest = ajaxCallbacks.apiCollaboratorRemoveResponse.callbacks.success
+        var targets = {
+          success: null
+        }
+        var response = {
+          registeredUser: false
+        }
+
+        var $row = $('<tr data-collaborator-row="user2@example.com">' +
+                  '<td class="table--large">user2@example.com</td>' +
+                  '<td class="table--large text--right hard--right">' +
+                  '<span class="faded-text">Developer</span>' +
+                  '</td><td class="text--right hard--right">' +
+                  '<form method="POST" class="form" data-ajax-submit="true" data-callback-name="apiCollaboratorRemoveResponse.callbacks" data-callback-args="" data-container="js-remove-collaborator-data">' +
+                  '<span class="error-notification js-remove-error">Server error, please try again</span>' +
+                  '<input name="email" type="hidden" value="user2@example.com" />' +
+                  '<button data-remove-collaborator-link="user2@example.com" class="button button--link button--small flush hard--right" type="submit">Remove</button>' +
+                  '</form>' +
+                  '</td>' +
+                  '</tr>')
+
+        beforeEach(function () {
+          $container = setFixtures('<tbody data-collaborator-list></tbody>')
+        })
+
+        afterEach(function () {
+          $container.empty()
+        })
+
+        it('can remove a collaborator from the table', function () {
+          // Add row to the table to setup test
+          $container.append($row)
+          var $form = $row.find('form')
+          var data = $form.serialize()
+          underTest(response, $row, data, helpers, targets, null, null)
+          var $td = $container.find('td')
+          expect($td[0]).toBeUndefined()
+        })
       })
     })
   })

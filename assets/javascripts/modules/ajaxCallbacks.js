@@ -121,15 +121,18 @@ var ajaxCallbacks = {
         var $action = $('<td></td>').addClass('text--right hard--right')
 
         var $form = $('<form></form>')
-          .attr('action', $list.data('collaborator-remove-url') + email)
+          .attr('action', $list.data('collaborator-remove-url'))
           .attr('data-ajax-submit', true)
           .attr('data-callback-args', '')
           .attr('data-callback-name', 'apiCollaboratorRemoveResponse.callbacks')
-          .addClass('form')
+          .attr('data-container', '.js-remove-collaborator-data')
+          .addClass('form js-remove-collaborator-data')
 
         var $span = $('<span></span>')
             .text('Server error, please try again')
             .addClass('error-notification js-remove-error')
+
+        var $emailField = '<input name="email" type="hidden" value="' + email + '" />'
 
         var $button = $('<button type="submit"></button>')
             .text('Remove')
@@ -152,7 +155,7 @@ var ajaxCallbacks = {
         }
 
         // add to the list
-        $form.append($span, $button)
+        $form.append($span, $emailField, $button)
         $action.append($form)
         $tr.append($name, $permission, $action)
         $list.append($tr)
