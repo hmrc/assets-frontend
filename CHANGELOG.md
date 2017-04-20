@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Fixed
-- Change log check passes if no files have been changed (mostly for CI) [#771](https://github.com/hmrc/assets-frontend/pull/771)
+- Pass the change log check if no files have been changed (mostly for CI) [#771](https://github.com/hmrc/assets-frontend/pull/771)
 
 ## [2.242.0] - 2017-04-13
 ### Added
