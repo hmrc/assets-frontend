@@ -41,7 +41,7 @@ var getChangedFiles = function (commit) {
 }
 
 var checkForChangelog = function (files) {
-  if (!files.includes('CHANGELOG.md')) {
+  if (files.length && !files.includes('CHANGELOG.md')) {
     throw new Error('No CHANGELOG.md update')
   }
 
