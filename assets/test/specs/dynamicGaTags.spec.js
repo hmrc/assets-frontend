@@ -9,7 +9,7 @@ describe('Given I have two sets of radio buttons and corresponding submit button
   var $container2
 
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('dynamic-ga-tags-fixture.html')
 
     dynamicGaTags = require('../../javascripts/modules/dynamicGaTags.js')

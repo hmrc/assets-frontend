@@ -78,7 +78,7 @@ var setup = function () {
 
 describe('Mask', function () {
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('mask-fixture.html')
     mask = require('../../javascripts/modules/mask.js')
   })

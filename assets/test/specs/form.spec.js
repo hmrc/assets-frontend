@@ -35,7 +35,7 @@ var setup = function () {
 
 describe('Form Validation', function () {
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('form-fixture.html')
     form = require('../../javascripts/validation/form.js')
     toggleDynamic = require('../../javascripts/modules/toggleDynamicFormFields.js')
