@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Fixed
-- Updated the README with the supported Node version
+- Updated the README with the supported Node version [#775](https://github.com/hmrc/assets-frontend/pull/775)
 
 ## [2.242.2] - 2017-04-21
 ## [2.242.1] - 2017-04-20
