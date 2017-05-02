@@ -92,6 +92,7 @@ Styleguide Header.Transaction
 
 .transaction-banner__heading {
   @include bold-36();
+  color: $white;
   margin: 15px 0;
 }
 
