@@ -8612,6 +8612,7 @@ Styleguide Header.Transaction
   font-weight: 400;
   text-transform: none;
   font-weight: 700;
+  color: #fff;
   margin: 15px 0;
 }
 
@@ -8643,7 +8644,7 @@ Markup:
 </header>
 
 */
-/* line 119, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header__menu__proposition-name {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -8656,19 +8657,19 @@ Markup:
 }
 
 @media (max-width: 640px) {
-  /* line 119, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  /* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
   .header__menu__proposition-name {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-/* line 127, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 128, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 a.header__menu__proposition-name:hover, .header__menu__proposition-name.link-style:hover, .header__menu__proposition-name.button--link-style:hover, a.header__menu__proposition-name:focus, .header__menu__proposition-name.link-style:focus, .header__menu__proposition-name.button--link-style:focus, a.header__menu__proposition-name:active, .header__menu__proposition-name.link-style:active, .header__menu__proposition-name.button--link-style:active {
   text-decoration: underline;
 }
 
-/* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header__menu__proposition-links {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -8683,20 +8684,20 @@ a.header__menu__proposition-name:hover, .header__menu__proposition-name.link-sty
 }
 
 @media (max-width: 640px) {
-  /* line 134, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  /* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
   .header__menu__proposition-links {
     font-size: 14px;
     line-height: 1.14286;
   }
 }
 
-/* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 146, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header__menu__proposition-links li {
   display: inline;
   padding-right: 0.78947em;
 }
 
-/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+/* line 151, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
 .header__menu__proposition-links a, .header__menu__proposition-links .link-style, .header__menu__proposition-links .button--link-style {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -8709,7 +8710,7 @@ a.header__menu__proposition-name:hover, .header__menu__proposition-name.link-sty
 }
 
 @media (max-width: 640px) {
-  /* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
+  /* line 151, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/components/_header.scss */
   .header__menu__proposition-links a, .header__menu__proposition-links .link-style, .header__menu__proposition-links .button--link-style {
     font-size: 14px;
     line-height: 1.14286;
