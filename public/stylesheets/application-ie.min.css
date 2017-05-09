@@ -13002,7 +13002,7 @@ Tabs
 Tabs are useful for displaying navigational links.
 
 Markup:
-<div data-tabs>
+<div data-tabs class="js-hash-selected-tab">
   <ul class="tabs-nav" role="tablist">
     <li id="tab1" role="tab"
                   data-tab-link="tab1"
