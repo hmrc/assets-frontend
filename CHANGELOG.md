@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Added the correct class to the Tab component to enable targetting an open tab via the url with a fragment [#778](https://github.com/hmrc/assets-frontend/issues/778)
+- Increased font size in transaction banner headers to match the GDS example banner to fix an accessibility issue [#781](https://github.com/hmrc/assets-frontend/pull/781)
 
 ## [2.245.0] - 2017-05-09
 ### Fixed
