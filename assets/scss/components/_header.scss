@@ -88,10 +88,16 @@ Styleguide Header.Transaction
     text-align: left;
     padding: 0;
   }
+
+  p {
+    @include core-36();
+    color: $white;
+    text-decoration: none;
+  }
 }
 
 .transaction-banner__heading {
-  @include bold-36();
+  @include bold-48();
   color: $white;
   margin: 15px 0;
 }
