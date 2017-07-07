@@ -4,6 +4,12 @@ var gulp = require('gulp')
 var standard = require('gulp-standard')
 var config = require('../config')
 
+gulp.task('lint', [
+  'lint:gulpTasks',
+  'lint:scripts',
+  'lint:tests'
+])
+
 gulp.task('lint:gulpTasks', function () {
   return gulp.src(config.scripts.gulpTasks)
     .pipe(standard())
