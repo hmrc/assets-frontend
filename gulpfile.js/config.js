@@ -84,7 +84,8 @@ module.exports = {
       ],
       excludeTests: [
         'flash',
-        'hidden'
+        'hidden',
+        'arrow'
       ],
       files: {
         src: [
