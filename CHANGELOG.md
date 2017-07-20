@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.246.0] - 2017-07-20
 ### Fixed
 - Ignore the arrow test from modernizr as it was setting the page width to 12px [#783](https://github.com/hmrc/assets-frontend/pull/783)
 
@@ -51,7 +53,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.242.2...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.246.0...master
+[2.246.0]: https://github.com/hmrc/assets-frontend/compare/release/2.245.0...release/2.246.0
+[2.245.0]: https://github.com/hmrc/assets-frontend/compare/release/2.242.2...release/2.245.0
 [2.242.2]: https://github.com/hmrc/assets-frontend/compare/release/2.242.1...release/2.242.2
 [2.242.1]: https://github.com/hmrc/assets-frontend/compare/release/2.242.0...release/2.242.1
 [2.242.0]: https://github.com/hmrc/assets-frontend/compare/release/2.241.0...release/2.242.0
