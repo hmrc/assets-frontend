@@ -6,13 +6,15 @@ var changelog = require('../tasks/changelog')
 test('changelog - runCommand', function (t) {
   t.plan(3)
 
-  changelog.runCommand()
+  changelog
+    .runCommand()
     .catch(function (err) {
       t.ok(err instanceof Error, 'returns an Error if the command fails')
-      t.ok(err.message.includes('Command failed'), 'returns exec\'s error message')
+      t.ok(err.message.includes('No command specified'), 'returns exec\'s error message')
     })
 
-  changelog.runCommand('echo "test"')
+  changelog
+    .runCommand('echo "test"')
     .then(function (stdout) {
       t.equal(stdout, 'test\n', 'should return a Promise if given a command to run')
     })
