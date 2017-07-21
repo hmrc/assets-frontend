@@ -4,8 +4,8 @@
 *.iml
 .idea
 
-npm-debug.log
-node_modules*
+*.log
+node_modules/
 *_git-remotes/
 dist/
 logs/
