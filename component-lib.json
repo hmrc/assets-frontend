@@ -1,7 +1,6 @@
 {
   "source": [
-    "assets/scss",
-    "assets/components"
+    "assets/scss"
   ],
   "destination": "component-library",
   "template": "node_modules/hmrc-component-library-template",
