@@ -1,7 +1,7 @@
 var fs = require('gulp')
 var path = require('path')
 var test = require('tape')
-var componentParser = require('../util/componentParser')
+var componentParser = require('../util/component-library/componentParser')
 
 test('Parses a directory of components', function (t) {
   t.plan(6)
