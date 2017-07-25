@@ -339,7 +339,8 @@
   display: none !important;
 }
 
-&.hidden--tablet {
+// Base-level rules cannot contain the parent-selector-referencing character '&'.
+.hidden--tablet {
   @include media(tablet) {
     display: none !important;
   }

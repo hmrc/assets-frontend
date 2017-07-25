@@ -112,6 +112,8 @@ var ajaxFormSubmit = {
   },
 
   doSubmit: function (path, data, headers, callback, $form) {
+    var message
+
     $.ajax({
       url: path,
       type: $form.attr('method') || 'POST',
@@ -119,23 +121,27 @@ var ajaxFormSubmit = {
       headers: headers,
       beforeSend: function () {
         if (!!callback) {
-          callback('beforeSend')
+          message = 'beforeSend'
+          callback(message)
         }
       }
     })
     .done(function (result) {
       if (!!callback) {
-        callback('success', result)
+        message = 'success'
+        callback(message, result)
       }
     })
     .fail(function (result) {
       if (!!callback) {
-        callback('error', result)
+        message = 'error'
+        callback(message, result)
       }
     })
     .always(function () {
       if (!!callback) {
-        callback('always')
+        message = 'always'
+        callback(message)
       }
     })
   },

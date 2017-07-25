@@ -44,4 +44,3 @@ module.exports = function () {
     nodeToScrollTo.find(':input').first().focus()
   })
 }
-
