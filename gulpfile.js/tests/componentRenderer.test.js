@@ -3,7 +3,38 @@ var test = require('tape')
 var PassThrough = require('stream').PassThrough
 var componentRenderer = require('../util/component-library/componentRenderer')
 
-test('Converts a component to a component library file', function (t) {
+test('componentRenderer - Errors when', function (t) {
+  t.plan(3)
+
+  var component = new PassThrough({
+    objectMode: true
+  })
+
+  component.write({})
+  component.end()
+
+  component
+    .pipe(componentRenderer())
+    .on('error', function (error) {
+      t.ok(error, 'no options object given')
+    })
+
+  component
+    .pipe(componentRenderer({}))
+    .on('error', function (error) {
+      t.ok(error, 'no template option given')
+    })
+
+  component
+    .pipe(componentRenderer({
+      template: path.join('non-existent', 'template.html')
+    }))
+    .on('error', function (error) {
+      t.ok(error, 'a non-existent template path given')
+    })
+})
+
+test('componentRenderer - Converts a component to a component library file', function (t) {
   t.plan(3)
 
   var component = new PassThrough({

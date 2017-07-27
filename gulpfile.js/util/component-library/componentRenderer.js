@@ -7,7 +7,7 @@ var Transform = require('stream').Transform
 util.inherits(RenderComponent, Transform)
 
 function RenderComponent (options) {
-  this.template = options.template
+  this.template = (options) ? options.template : ''
 
   Transform.call(this, {
     objectMode: true
@@ -15,41 +15,45 @@ function RenderComponent (options) {
 }
 
 RenderComponent.prototype._transform = function (components, encoding, done) {
-  var source = fs.readFileSync(this.template)
-  var $ = cheerio.load(source)
+  try {
+    var template = fs.readFileSync(this.template)
+    var $ = cheerio.load(template)
 
-  Object.keys(components).map((component) => {
-    var content = $('<div class="comp-lib-main"></div>')
+    Object.keys(components).map((component) => {
+      var content = $('<div class="comp-lib-main"></div>')
 
-    var markup = $(
-      '<div class="comp-lib-pattern-example">' +
-        '<div class="comp-lib-pattern-component">' +
-          components[component].markup +
-        '</div>' +
-        '<div class="comp-lib-code-example">' +
-          '<pre class="comp-lib-pre">' +
-            '<code class="comp-lib-code html">' +
-              components[component].markup +
-            '</code>' +
-          '</pre>' +
-        '</div>' +
-      '</div>'
-    )
+      var markup = $(
+        '<div class="comp-lib-pattern-example">' +
+          '<div class="comp-lib-pattern-component">' +
+            components[component].markup +
+          '</div>' +
+          '<div class="comp-lib-code-example">' +
+            '<pre class="comp-lib-pre">' +
+              '<code class="comp-lib-code html">' +
+                components[component].markup +
+              '</code>' +
+            '</pre>' +
+          '</div>' +
+        '</div>'
+      )
 
-    content.append(components[component].description)
-    content.append(markup)
+      content.append(components[component].description)
+      content.append(markup)
 
-    $('.comp-lib-main').replaceWith(content)
+      $('.comp-lib-main').replaceWith(content)
 
-    var file = new gutil.File({
-      path: 'components/' + component + '.html',
-      contents: new Buffer($.html())
+      var file = new gutil.File({
+        path: 'components/' + component + '.html',
+        contents: new Buffer($.html())
+      })
+
+      this.push(file)
     })
 
-    this.push(file)
-  })
-
-  done()
+    done()
+  } catch (error) {
+    done(error)
+  }
 }
 
 module.exports = function (options) {
