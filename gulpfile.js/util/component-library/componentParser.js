@@ -23,8 +23,7 @@ ComponentParser.prototype._transform = function (file, encoding, done) {
     var component = path.parse(path.dirname(file.path)).name
 
     this.components[component] = this.components[component] || {
-      markup: '',
-      description: ''
+      assetsPath: '../'
     }
 
     switch (fileExtension) {
