@@ -3,6 +3,7 @@ var util = require('util')
 var gutil = require('gulp-util')
 var cheerio = require('cheerio')
 var Transform = require('stream').Transform
+var Handlebars = require('handlebars')
 
 util.inherits(RenderComponent, Transform)
 
@@ -16,35 +17,15 @@ function RenderComponent (options) {
 
 RenderComponent.prototype._transform = function (components, encoding, done) {
   try {
-    var template = fs.readFileSync(this.template)
-    var $ = cheerio.load(template)
+    var source = fs.readFileSync(this.template).toString()
+    var template = Handlebars.compile(source)
 
     Object.keys(components).map((component) => {
-      var content = $('<div class="comp-lib-main"></div>')
-
-      var markup = $(
-        '<div class="comp-lib-pattern-example">' +
-          '<div class="comp-lib-pattern-component">' +
-            components[component].markup +
-          '</div>' +
-          '<div class="comp-lib-code-example">' +
-            '<pre class="comp-lib-pre">' +
-              '<code class="comp-lib-code html">' +
-                components[component].markup +
-              '</code>' +
-            '</pre>' +
-          '</div>' +
-        '</div>'
-      )
-
-      content.append(components[component].description)
-      content.append(markup)
-
-      $('.comp-lib-main').replaceWith(content)
+      var html = template(components[component])
 
       var file = new gutil.File({
         path: 'components/' + component + '.html',
-        contents: new Buffer($.html())
+        contents: new Buffer(html)
       })
 
       this.push(file)

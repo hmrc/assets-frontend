@@ -37,28 +37,31 @@ test('componentRenderer - Errors when', function (t) {
 test('componentRenderer - Converts a component to a component library file', function (t) {
   t.plan(3)
 
-  var component = new PassThrough({
+  var component = {
+    assetsPath: '../',
+    markup: '<h1>Example</h1>',
+    description: '<h1>Example content</h1>\n<p>A test description</p>'
+  }
+
+  var componentParserMock = new PassThrough({
     objectMode: true
   })
 
-  component.write({
-    component: {
-      markup: '<h1>Example</h1>',
-      description: '<h1>Example content</h1>\n<p>A test description</p>'
-    }
+  componentParserMock.write({
+    component: component
   })
 
-  component.end()
+  componentParserMock.end()
 
-  component
+  componentParserMock
     .pipe(componentRenderer({
-      template: path.join(__dirname, 'fixtures', 'component-library', 'index.html')
+      template: path.join(__dirname, 'fixtures', 'component-library', 'template.html')
     }))
     .on('data', function (file) {
       var html = file.contents.toString()
 
-      t.ok(html.includes('<h1>Example content</h1>'), 'with a description')
-      t.ok(html.includes('<h1>Example</h1>'), 'a visual example of the component')
-      t.ok(html.includes('comp-lib-pattern-example'), 'and an example of the markup')
+      t.ok(html.includes(component.assetsPath + 'styles.css'), 'with a full style path')
+      t.ok(html.includes(component.description), 'with a description')
+      t.ok(html.includes(component.markup), 'a visual example of the component')
     })
 })
