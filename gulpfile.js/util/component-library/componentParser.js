@@ -2,6 +2,8 @@ var path = require('path')
 var util = require('util')
 var marked = require('marked')
 var Transform = require('stream').Transform
+var config = require('../../../component-lib.json')
+var prepareAssets = require('./prepareAssetPaths')
 
 util.inherits(ComponentParser, Transform)
 
@@ -10,6 +12,7 @@ function ComponentParser () {
     objectMode: true
   }
 
+  this.assetsPath = '../'
   this.fileTypes = ['.md', '.html']
   this.components = {}
 
@@ -23,7 +26,9 @@ ComponentParser.prototype._transform = function (file, encoding, done) {
     var component = path.parse(path.dirname(file.path)).name
 
     this.components[component] = this.components[component] || {
-      assetsPath: '../'
+      assetsPath: this.assetsPath,
+      styles: prepareAssets(config.css, this.assetsPath),
+      scripts: prepareAssets(config.js, this.assetsPath)
     }
 
     switch (fileExtension) {
