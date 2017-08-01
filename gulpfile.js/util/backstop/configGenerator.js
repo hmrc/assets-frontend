@@ -21,9 +21,13 @@ module.exports = function (config) {
     readConfig.setEncoding('utf8')
     readConfig
       .pipe(buildScenarios)
-      .on('error', reject)
+      .on('error', function () {
+        reject('Bad data in template config')
+      })
       .pipe(writeConfig)
-      .on('error', reject)
+      .on('error', function () {
+        reject('Bad data in template config')
+      })
       .on('finish', function () {
         resolve('backstop.json created')
       })

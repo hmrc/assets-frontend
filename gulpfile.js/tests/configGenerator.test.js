@@ -105,9 +105,8 @@ test('configGenerator - bad template data should throw', function (t) {
       return configGenerator(brokenConfig)
     })
     .catch(function (err) {
-      t.true(err instanceof Error, 'Error type should of been thrown')
       t.equal(
-        err.message, 'Unexpected token N',
+        err, 'Bad data in template config',
         'bad data in template config should throw error'
       )
       t.end()
