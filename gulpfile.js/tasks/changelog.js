@@ -6,6 +6,10 @@ var proc = require('child_process')
 
 var runCommand = function (cmd) {
   return new Promise(function (resolve, reject) {
+    if (!cmd) {
+      reject(new Error('No command specified.'))
+    }
+
     proc.exec(cmd, function (err, stdout, stderr) {
       if (err) {
         reject(err)
