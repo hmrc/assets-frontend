@@ -33,7 +33,7 @@ var masker = function () {
     var rule = this.getAttribute('data-masker-rule')
     var regEx = new RegExp(rule, 'g')
     var matches = this.value.match(regEx)
-    var returnValue = matches && matches.join('') || ''
+    var returnValue = (matches && matches.join('')) || ''
 
     cursorPosition = caretPosition.get(this)
     this.value = returnValue

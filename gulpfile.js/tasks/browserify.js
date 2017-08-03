@@ -4,12 +4,11 @@
    ---------------
    Bundle javascripty things with browserify!
    This task is set up to generate multiple separate bundles, from
-   different sources, and to use Watchify when run from the default task.
+   different sources
    See browserify.bundleConfigs in gulp/config.js
 */
 var browserify = require('browserify')
 var collapse = require('bundle-collapser/plugin')
-var watchify = require('watchify')
 var bundleLogger = require('../util/bundleLogger')
 var gulp = require('gulp')
 var handleErrors = require('../util/handleErrors')
@@ -29,13 +28,7 @@ var browserifyTask = function (callback, devMode) {
 
   var browserifyThis = function (bundleConfig) {
     if (devMode) {
-      // Add watchify args and debug (sourcemaps) option
-      _.extend(bundleConfig, watchify.args, { debug: true })
-
-      // A watchify require/external bug that prevents proper recompiling,
-      // so (for now) we'll ignore these options during development. Running
-      // `gulp browserify` directly will properly require and externalize.
-      bundleConfig = _.omit(bundleConfig, ['external', 'require'])
+      _.extend(bundleConfig, { debug: true })
     }
 
     // stop absolute urls appearing in prod browserify'd bundles
@@ -68,7 +61,7 @@ var browserifyTask = function (callback, devMode) {
     }
 
     var reportFinished = function () {
-      gutil.log('ending')
+      gutil.log('Bundling complete')
 
       // Log when bundling completes
       bundleLogger.end(bundleConfig.outputName)
@@ -84,22 +77,13 @@ var browserifyTask = function (callback, devMode) {
       }
     }
 
-    if (devMode) {
-      // Wrap with watchify and rebundle on changes
-      b = watchify(b)
+    // Sort out shared dependencies.
+    // b.require exposes modules externally
+    if (bundleConfig.require) b.require(bundleConfig.require)
 
-      // Rebundle on update
-      b.on('update', bundle)
-      bundleLogger.watch(bundleConfig.outputName)
-    } else {
-      // Sort out shared dependencies.
-      // b.require exposes modules externally
-      if (bundleConfig.require) b.require(bundleConfig.require)
-
-      // b.external excludes modules from the bundle, and expects
-      // they'll be available externally
-      if (bundleConfig.external) b.external(bundleConfig.external)
-    }
+    // b.external excludes modules from the bundle, and expects
+    // they'll be available externally
+    if (bundleConfig.external) b.external(bundleConfig.external)
 
     return bundle()
   }
@@ -112,4 +96,3 @@ gulp.task('browserify', ['lint:scripts'], browserifyTask)
 
 // Exporting the task so we can call it directly in our watch task, with the 'devMode' option
 module.exports = browserifyTask
-

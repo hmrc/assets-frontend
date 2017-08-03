@@ -3,13 +3,12 @@
 var gulp = require('gulp')
 var runSequence = require('run-sequence')
 
-gulp.task('build', ['clean', 'test'], function () {
+gulp.task('build', ['changelog', 'clean', 'test'], function () {
   global.runmode = 'prod'
   global.location = undefined
 
   runSequence(
-    'changelog',
-    ['sass', 'images', 'svg', 'error-pages'],
+    ['images', 'svg', 'error-pages'],
     ['browserify', 'concatEncryption'],
     'modernizr',
     'version',

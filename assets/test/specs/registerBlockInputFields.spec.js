@@ -72,11 +72,11 @@ describe('Register Block Input Fields', function () {
       expect($noRadioLabel).toHaveClass('selected')
       expect($noRadioLabel).toHaveClass('add-focus')
 
-      expect($ofCourseRadio).not.toBeChecked
+      expect($ofCourseRadio).not.toBeChecked()
       expect($ofCourseRadioLabel).not.toHaveClass('selected')
       expect($ofCourseRadioLabel).not.toHaveClass('add-focus')
 
-      expect($maybeCheckbox).not.toBeChecked
+      expect($maybeCheckbox).not.toBeChecked()
       expect($maybeCheckboxLabel).not.toHaveClass('selected')
       expect($maybeCheckboxLabel).not.toHaveClass('add-focus')
     })
