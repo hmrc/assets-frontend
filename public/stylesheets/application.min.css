@@ -3515,6 +3515,163 @@ article ol.steps > li:nth-child(14) {
   margin-right: 0;
 }
 
+/* line 4, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice {
+  display: block;
+  float: none;
+  clear: left;
+  position: relative;
+  padding: 0 0 0 38px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 641px) {
+  /* line 4, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+  .multiple-choice {
+    float: left;
+  }
+}
+
+/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice input {
+  position: absolute;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  width: 38px;
+  height: 38px;
+  z-index: 1;
+  margin: 0;
+  zoom: 1;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice label {
+  cursor: pointer;
+  padding: 8px 10px 9px 12px;
+  display: block;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+@media (min-width: 641px) {
+  /* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+  .multiple-choice label {
+    float: left;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+}
+
+/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice [type=radio] + label::before {
+  content: "";
+  border: 2px solid;
+  background: transparent;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice [type=radio] + label::after {
+  content: "";
+  border: 10px solid;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  border-radius: 50%;
+  zoom: 1;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+/* line 75, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice [type=checkbox] + label::before {
+  content: "";
+  border: 2px solid;
+  background: transparent;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice [type=checkbox] + label::after {
+  content: "";
+  border: solid;
+  border-width: 0 0 5px 5px;
+  background: transparent;
+  border-top-color: transparent;
+  width: 17px;
+  height: 7px;
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  zoom: 1;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+/* line 106, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice [type=radio]:focus + label::before {
+  box-shadow: 0 0 0 4px #ffbf47;
+}
+
+/* line 110, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice [type=checkbox]:focus + label::before {
+  box-shadow: 0 0 0 3px #ffbf47;
+}
+
+/* line 115, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice input:checked + label::after {
+  zoom: 1;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice input:disabled {
+  cursor: default;
+}
+
+/* line 124, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice input:disabled + label {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* line 129, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.multiple-choice:last-child, .multiple-choice:last-of-type {
+  margin-bottom: 0;
+}
+
+/* line 136, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+.inline .multiple-choice {
+  clear: none;
+}
+
+@media (min-width: 641px) {
+  /* line 136, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/govuk_elements/public/sass/elements/forms/_form-multiple-choice.scss */
+  .inline .multiple-choice {
+    margin-bottom: 0;
+    margin-right: 30px;
+  }
+}
+
 /* Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */
 @font-face {
   font-family: "ntatabularnumbers";
@@ -15483,7 +15640,17 @@ p.email-notifications__p {
     TODO: refactor styles back to SASS
 
 \*------------------------------------*/
-/* line 8, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/*. CSS reset/overrides for block-label when using new radio buttons
+    and checkboxes styles wrapped in a .multiple-choice div */
+/* line 12, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+.multiple-choice .block-label, .multiple-choice .block-label--stacked,
+.multiple-choice .block-label--stacked {
+  position: static;
+  background: transparent;
+  border: 0;
+}
+
+/* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 article h1 {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
@@ -15495,110 +15662,110 @@ article h1 {
 }
 
 @media (max-width: 640px) {
-  /* line 8, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+  /* line 21, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
   article h1 {
     font-size: 24px;
     line-height: 1.04167;
   }
 }
 
-/* line 13, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 26, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 article ul {
   list-style: none;
   margin: 0.75em 0;
   padding: 0;
 }
 
-/* line 19, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 32, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 article ol {
   margin: 0.75em 0;
 }
 
-/* line 23, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 36, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 ol {
   padding: 0 0 0 40px;
 }
 
-/* line 27, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 40, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 li {
   list-style-position: outside;
 }
 
-/* line 31, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 44, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 article li {
   padding-left: 0;
 }
 
-/* line 35, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 48, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .service-info__organisation-logo {
   line-height: 1.15em;
 }
 
-/* line 39, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 52, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 a.header__menu__proposition-name, .header__menu__proposition-name.link-style, .header__menu__proposition-name.button--link-style, a:visited.header__menu__proposition-name, .link-style:visited.header__menu__proposition-name, .button--link-style:visited.header__menu__proposition-name {
   color: #fff;
 }
 
-/* line 43, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 56, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .l-bodyRightColumn p, .l-bodyRightColumn li {
   width: 15em;
 }
 
-/* line 47, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 60, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .l-bodyRightColumn h2 {
   width: 10em;
 }
 
-/* line 51, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 64, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 abbr[title] {
   border-bottom: 0px;
 }
 
-/* line 55, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .email {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-/* line 59, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 72, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 div.email {
   margin: 2em 0em;
 }
 
-/* line 63, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 76, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .list--numbered li {
   display: list-item;
   overflow: hidden;
 }
 
-/* line 68, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .inline-form .form-field, .inline-form .form-field--inline, .inline-form .form-field--inline-text-input, .inline-form .form-field--inline-spaced-right, .inline-form .form-field--inline-spaced-left {
   line-height: 1.3em;
   margin: 0.2em 0 0 0;
 }
 
-/* line 73, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 86, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .inline-form .form-field input[type="text"], .inline-form .form-field--inline input[type="text"], .inline-form .form-field--inline-text-input input[type="text"], .inline-form .form-field--inline-spaced-right input[type="text"], .inline-form .form-field--inline-spaced-left input[type="text"] {
   margin: 0 10px;
 }
 
-/* line 77, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 90, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .inline-form .form-field--inline input[type="text"], .inline-form .form-field--inline-text-input input[type="text"], .inline-form .form-field--inline-spaced-right input[type="text"], .inline-form .form-field--inline-spaced-left input[type="text"] {
   margin: 0 10px;
 }
 
-/* line 81, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 94, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .service-info__help a, .service-info__help .link-style, .service-info__help .button--link-style {
   font-size: 16px;
   line-height: 1.25;
   font-weight: 300;
 }
 
-/* line 87, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 100, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .service-info__help {
   color: #0b0c0c;
 }
 
-/* line 91, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 104, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .explore--inline {
   border-top: 0;
   margin: 0;
@@ -15606,7 +15773,7 @@ div.email {
 
 /*------------------------------------*    form validations
 \*------------------------------------*/
-/* line 101, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 114, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .form-field.error, .error.form-field--inline, .error.form-field--inline-text-input, .error.form-field--inline-spaced-right, .error.form-field--inline-spaced-left, .form-field-group.error, .error.form-field-single {
   background-color: #fff;
   border-left: 3px solid #df3034;
@@ -15614,7 +15781,7 @@ div.email {
   margin: 0 -1em 0.5em -1em;
 }
 
-/* line 107, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 120, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .client-error-notification {
   color: #af1324;
   display: none;
@@ -15622,7 +15789,7 @@ div.email {
   padding-bottom: 0.5em;
 }
 
-/* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 .error .client-error-notification {
   display: block;
   float: none;
@@ -15634,7 +15801,7 @@ div.email {
 }
 
 @media (max-width: 640px) {
-  /* line 112, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+  /* line 125, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
   .error .client-error-notification {
     font-size: 14px;
     line-height: 1.14286;
@@ -15642,19 +15809,19 @@ div.email {
 }
 
 /* Add grey footer when page is too short */
-/* line 122, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 135, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 html {
   background: #DEE0E2;
 }
 
-/* line 126, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 139, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 body {
   background: #fff;
 }
 
 /* Headings with `p` added due to the specificity of `.content__body p`.
  * To be removed once specificity lowered. */
-/* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 p.heading-48 {
   font-family: "nta", Arial, sans-serif;
   font-size: 48px;
@@ -15666,14 +15833,14 @@ p.heading-48 {
 }
 
 @media (max-width: 640px) {
-  /* line 132, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+  /* line 145, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
   p.heading-48 {
     font-size: 32px;
     line-height: 1.09375;
   }
 }
 
-/* line 137, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+/* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
 p.heading-24,
 p.heading-24--normal {
   font-family: "nta", Arial, sans-serif;
@@ -15684,7 +15851,7 @@ p.heading-24--normal {
 }
 
 @media (max-width: 640px) {
-  /* line 137, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
+  /* line 150, /var/lib/jenkins/workspace/github.com_assets-frontend/assets/scss/_shame.scss */
   p.heading-24,
   p.heading-24--normal {
     font-size: 20px;
