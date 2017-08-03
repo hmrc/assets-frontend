@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Component library Test</title>
+    <link rel="stylesheet" href="styles.css">
+    {{{ styles }}}
+  </head>
+
+  <body>
+    <main id="wrapper">
+      <div class="comp-lib-content">
+        <h1 class="heading-48">Component Library Test</h1>
+
+        <div class="comp-lib">
+          <aside class="comp-lib-sidebar"></aside>
+
+          <div id="content">
+            <article class="comp-lib-main">
+              {{#if description}}
+              <div class="comp-lib-description comp-lib-pattern-markdown">
+                {{{description}}}
+              </div>
+              {{/if}}
+
+              <!-- pattern examples -->
+              {{#if markup}}
+              <div>
+                <div class="comp-lib-pattern-example">
+                  <div class="comp-lib-pattern-component comp-lib-clearfix">
+                    {{{markup}}}
+                  </div>
+                  <div class="comp-lib-code-example">
+                    <pre class="comp-lib-pre"><code class="comp-lib-code html">{{markup}}</code></pre>
+                  </div>
+                </div>
+              </div>
+              {{/if}}
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    {{{ scripts }}}
+  </body>
+</html>
+

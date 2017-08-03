@@ -24,7 +24,7 @@ RenderComponent.prototype._transform = function (components, encoding, done) {
       var html = template(components[component])
 
       var file = new gutil.File({
-        path: 'components/' + component + '.html',
+        path: 'section-' + component + '.html',
         contents: new Buffer(html)
       })
 
