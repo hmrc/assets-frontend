@@ -34,7 +34,7 @@ BuildScenarios.prototype._flush = function (done) {
     jsonData.scenarios = jsonData.scenarios.concat(this.createScenarios())
     dataAsString = JSON.stringify(jsonData, null, 2)
   } catch (err) {
-    this.emit('error', err)
+    this.emit('error', 'Malformed JSON error')
   }
 
   this.push(dataAsString || this.data)

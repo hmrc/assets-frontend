@@ -64,13 +64,8 @@ test('buildScenarios - JSON parse error caught as expected', function (t) {
     .pipe(buildScenarios)
     .on('error', function (err) {
       t.equal(
-        err.message, 'Unexpected end of input',
-        'error message should be "Unexpected end of input"')
-      t.true(
-        err instanceof SyntaxError,
-        'error message should be of type "SyntaxError"'
-      )
-
+        err, 'Malformed JSON error',
+        'error message should be "Malformed JSON error"')
       t.end()
     })
 })
