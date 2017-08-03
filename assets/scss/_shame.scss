@@ -5,6 +5,19 @@
 
 \*------------------------------------*/
 
+
+/*. CSS reset/overrides for block-label when using new radio buttons
+    and checkboxes styles wrapped in a .multiple-choice div */
+.multiple-choice {
+  .block-label,
+  .block-label--stacked {
+    position: static;
+    background: transparent;
+    border: 0;
+  }
+}
+
+
 article h1 {
   @include bold-36();
   margin-top: 0;
