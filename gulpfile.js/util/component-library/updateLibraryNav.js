@@ -53,7 +53,7 @@ UpdateLibraryNav.prototype._transform = function (newFile, encoding, done) {
   $newNavItem.addClass('comp-lib-menu-item--highlighted')
   $newPageNav.children().first().after($newNavItem)
 
-  newFile.contents = new Buffer($newPage.html())
+  newFile.contents = Buffer.from($newPage.html())
 
   this.push(newFile)
   done()

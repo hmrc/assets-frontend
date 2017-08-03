@@ -1,7 +1,8 @@
+'use strict'
+
 var fs = require('fs')
 var util = require('util')
 var gutil = require('gulp-util')
-var cheerio = require('cheerio')
 var Transform = require('stream').Transform
 var Handlebars = require('handlebars')
 
@@ -20,12 +21,12 @@ RenderComponent.prototype._transform = function (components, encoding, done) {
     var source = fs.readFileSync(this.template).toString()
     var template = Handlebars.compile(source)
 
-    Object.keys(components).map((component) => {
+    Object.keys(components).forEach((component) => {
       var html = template(components[component])
 
       var file = new gutil.File({
         path: 'section-' + component + '.html',
-        contents: new Buffer(html)
+        contents: Buffer.from(html)
       })
 
       this.push(file)

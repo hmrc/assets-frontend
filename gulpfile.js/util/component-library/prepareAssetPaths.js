@@ -1,3 +1,5 @@
+'use strict'
+
 var path = require('path')
 
 module.exports = function (assetPaths, prefix) {
@@ -17,7 +19,7 @@ module.exports = function (assetPaths, prefix) {
         break
 
       default:
-        ''
+        markup = ''
     }
 
     return markup
