@@ -39,16 +39,6 @@ To install multiple versions of Node.js, you may find it easier to use a node ve
 * [nvm](https://github.com/creationix/nvm)
 * [n](https://github.com/tj/n)
 
-#### [nodemon](http://nodemon.io/) (optional)
-
-`nodemon` is used to develop [the Component Library]("#component-library")
-
-It is recommended to install nodemon globally.
-
-```
-$ npm install -g nodemon
-```
-
 ### Running Locally (Development mode)
 
 The command below will kick off a local node.js server on a predefined port (`9032`). This serves the assets with sourcemaps via the gulp task runner.
@@ -107,8 +97,7 @@ $ npm run comp-lib
 
 Bare in mind that in order to see the output in a browser you'll have to serve the files manually from the `component-library` directory with something like [http-server](https://www.npmjs.com/package/http-server) (for node.js) or [SimpleHTTPServer](https://docs.python.org/2/library/simplehttpserver.html) (for python)
 
-
-### Working on the Component Library
+### Working on the Component Library Template
 
 The steps for working with a local copy of the component library template are:
 
@@ -144,10 +133,10 @@ You need to give it the path to a local checkout of [hmrc-component-library-temp
 
 The watch task then automatically links this local copy [hmrc/component-library-template](https://github.com/hmrc/component-library-template.git) and then builds the Component Library using the [npm script above](#manually-building-the-component-library).
 
+### Updating the Component Library Template dependency
 
-### Updating the Component Library dependency
 If you wish to update the component library in assets frontend because there have been changes in the component
-library.
+library template.
 
 ```
 $ rm -rf node_modules/hmrc-component-library-template
@@ -163,7 +152,8 @@ $ npm install --force hmrc/component-library-template
 ## Visual Regression Testing
 Provides a tool to visually compare Component Library changes from Assets Frontend.
 
-## Usage
+### Usage
+
 To get a base reference for your visual regression tests please save any work on your development branch, checkout your master branch and capture the baseline component screen shots via:
 
 ```
@@ -182,7 +172,6 @@ Your results will be output to `vrt-output/report`
 
 Please take a few minutes to review the process and guidelines before you submit your request, otherwise it may be rejected.
 [CONTRIBUTING.md](CONTRIBUTING.md)
-
 
 ## More info
 
