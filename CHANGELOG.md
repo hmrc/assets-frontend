@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.247.0] - 2017-08-01
+### Added
+- Add latest GOV.UK radio buttons and checkboxes [#789](https://github.com/hmrc/assets-frontend/pull/789)
+
 ### Fixed
 - Tests pass when run against nodejs 4.8.4 [#784](https://github.com/hmrc/assets-frontend/pull/784)
 
@@ -58,7 +63,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.246.0...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.247.0...master
+[2.247.0]: https://github.com/hmrc/assets-frontend/compare/release/2.246.0...release/2.247.0
 [2.246.0]: https://github.com/hmrc/assets-frontend/compare/release/2.245.0...release/2.246.0
 [2.245.0]: https://github.com/hmrc/assets-frontend/compare/release/2.242.2...release/2.245.0
 [2.242.2]: https://github.com/hmrc/assets-frontend/compare/release/2.242.1...release/2.242.2
