@@ -199,6 +199,7 @@ module.exports = {
   },
 
   compLib: {
+    src: src + 'components/**/*',
     port: 9042,
     host: 'http://localhost',
     baseDir: './component-library/'
