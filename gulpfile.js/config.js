@@ -180,7 +180,10 @@ module.exports = {
     specsScr: src + 'test/specs/unit/**/*.js',
     fixturesScr: src + 'test/specs/fixtures/*.html',
     karmaConfig: src + 'test/config/karma.conf.js',
-    gulpTasks: 'gulpfile.js/tests/**/*.test.js'
+    gulpTasks: [
+      'gulpfile.js/tests/**/*.test.js',
+      '!gulpfile.js/tests/fixtures/**/*'
+    ]
   },
 
   errorPages: {
@@ -196,6 +199,7 @@ module.exports = {
   },
 
   compLib: {
+    src: src + 'components/**/*',
     port: 9042,
     host: 'http://localhost',
     baseDir: './component-library/'

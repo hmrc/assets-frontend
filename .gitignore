@@ -4,8 +4,8 @@
 *.iml
 .idea
 
-npm-debug.log
-node_modules*
+*.log
+node_modules/
 *_git-remotes/
 dist/
 logs/
@@ -14,6 +14,7 @@ test_results/
 test_coverage/
 assets/public/
 target/
-component-library/
+component-library/*
+!gulpfile.js/util/component-library/
 vrt-output/
 backstop.json

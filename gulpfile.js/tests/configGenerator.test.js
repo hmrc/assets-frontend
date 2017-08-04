@@ -106,7 +106,7 @@ test('configGenerator - bad template data should throw', function (t) {
     })
     .catch(function (err) {
       t.equal(
-        err, 'Bad data in template config',
+        err.message, 'Bad data in template config',
         'bad data in template config should throw error'
       )
       t.end()
