@@ -30,7 +30,7 @@
   "author": "HMRC",
   "license": "Apache-2.0",
   "dependencies": {
-    "backstopjs": "^2.3.3",
+    "backstopjs": "hmrc/BackstopJS",
     "browser-sync": "^2.4.0",
     "browserify": "^14.4.0",
     "browserify-shim": "^3.8.14",
@@ -83,7 +83,9 @@
     "sticky-header": "^0.2.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "vinyl-transform": "^1.0.0"
+    "vinyl-transform": "^1.0.0",
+    "watchify": "^3.9.0",
+    "yargs": "^8.0.2"
   },
   "browserify": {
     "transform": [
