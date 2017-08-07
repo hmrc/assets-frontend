@@ -29,8 +29,8 @@ $ sm --start ASSETS_FRONTEND
 
 ### Requirements
 
-* [Node.js](https://nodejs.org/en/) `== 4.4.5`
-* [npm](https://www.npmjs.com/) `>= 2.11.3`
+* [Node.js](https://nodejs.org/en/) `== 4.8.4`
+* [npm](https://www.npmjs.com/) `>= 2.15.11`
 
 #### [Node.js](https://nodejs.org/en/) & [npm](https://www.npmjs.com/)
 
