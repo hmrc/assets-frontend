@@ -42,4 +42,6 @@ gulp.task('component-library', ['kss-node'], function (cb) {
         library: path.join(compLibConfig.destination)
       }))
       .pipe(gulp.dest(compLibConfig.destination))
+
+  cb()
 })
