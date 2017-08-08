@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Added in colour new variables for discovery and live badges and banners
+- updated link colour variables to match gov.uk [#795](https://github.com/hmrc/assets-frontend/pull/795)
 
 ## [2.248.1] - 2017-09-04
 ### Fixed
