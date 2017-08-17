@@ -95,6 +95,9 @@ $path: "../images/icons/";
 @import "components/flag";
 @import "components/indent";
 
+//Patterns
+@import "patterns/header/header";
+
 // Page Specific Styles
 @import "pages/messages";
 @import "pages/payments";

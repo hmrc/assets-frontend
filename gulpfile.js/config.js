@@ -120,7 +120,8 @@ module.exports = {
   sass: {
     src: [
       src + 'scss/**/*.scss',
-      src + 'components/**/*.scss'
+      src + 'components/**/*.scss',
+      src + 'patterns/**/*.scss'
     ],
     govukSrc: govuk.template + '/public/sass/**/*.scss',
     govukElementsSrc: govuk.elements + '/public/sass/**/*.scss',
