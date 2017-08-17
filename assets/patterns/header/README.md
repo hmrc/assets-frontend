@@ -24,11 +24,12 @@ More user research is needed to prove if the HMRC logo reassures users.
 
 <div class="scale-wrapper">
   <div class="scale">
-    {% include "header.html" %}
+     {% include "header-with-cookie.html" %} 
   </div>
 </div>
 
-[View in a new window](header.html)
+[View in a new window](blank/header.html)
+
 This is essentially just the GOV.UK header but it's included here for completeness.
 
 ---
