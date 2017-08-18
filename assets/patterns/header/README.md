@@ -22,9 +22,9 @@ More user research is needed to prove if the HMRC logo reassures users.
 
 ### Header with cookie
 
-<div class="scale-wrapper">
-  <div class="scale">
-     {% include "header-with-cookie.html" %} 
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale">{% include "header-with-cookie.html" %}</div>
   </div>
 </div>
 
@@ -36,9 +36,9 @@ This is essentially just the GOV.UK header but it's included here for completene
 
 ### Header signed out
 
-<div class="scale-wrapper">
-  <div class="scale">
-    {% include "header--signed-out.html" %}
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale">{% include "header--signed-out.html" %}</div>
   </div>
 </div>
 
@@ -57,9 +57,9 @@ This version of the header should contain:
 
 ### Header signed in
 
-<div class="scale-wrapper">
-  <div class="scale">
-    {% include "header--signed-in.html" %}
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale">{% include "header--signed-in.html" %}</div>
   </div>
 </div>
 
