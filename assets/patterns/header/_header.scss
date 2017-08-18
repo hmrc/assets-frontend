@@ -1,6 +1,6 @@
 /* For header styled see https://github.com/alphagov/govuk_template/blob/master/source/assets/stylesheets/_header.scss */
 
-/* HMRC banner */
+/* Language select - may need to be abstracted out as a separate component */
 
 .lang-select {
   float: right;
@@ -17,6 +17,8 @@
   margin-left: 8px;
 }
 
+/* Logged in status */
+
 .logged-in-status {
   padding: 10px 0 0 0;
   p {
@@ -25,6 +27,8 @@
     margin: 0;
   }
 }
+
+/* HMRC banner */
 
 .organisation-logo {
   font: 13px/16px Helvetica, Arial;
