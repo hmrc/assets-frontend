@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Generate component library files from components in new file structure without kss-node [#791](https://github.com/hmrc/assets-frontend/pull/791)
 - Fixes builds silently failing [#798](https://github.com/hmrc/assets-frontend/pull/798)
 - Optional quiet logging for VRT tests using --quiet flag [#798](https://github.com/hmrc/assets-frontend/pull/800)
+- Added image and scoped styles to update back links [#799](https://github.com/hmrc/assets-frontend/pull/799/)
 
 ### Changed
 - Updated the README.md as node version has been bumped up
