@@ -140,3 +140,27 @@
   color: #df3034;
   text-decoration: underline;
 }
+
+/* Scaled component examples */
+.scale-wrapper {
+  margin-bottom: em(20, 16);
+  overflow: hidden;
+}
+
+.scale {
+  -ms-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+
+  -ms-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  width: 200%;
+  border: 2px solid #bfc1c3;
+  padding: 20px;
+  box-sizing: border-box;
+}
