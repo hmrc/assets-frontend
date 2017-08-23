@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.248.0] - 2017-08-23
 ### Added
 - Generate component library files from components in new file structure without kss-node [#791](https://github.com/hmrc/assets-frontend/pull/791)
 - Fixes builds silently failing [#798](https://github.com/hmrc/assets-frontend/pull/798)
@@ -72,7 +74,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.247.0...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.248.0...master
+[2.248.0]: https://github.com/hmrc/assets-frontend/compare/release/2.247.0...release/2.248.0
 [2.247.0]: https://github.com/hmrc/assets-frontend/compare/release/2.246.0...release/2.247.0
 [2.246.0]: https://github.com/hmrc/assets-frontend/compare/release/2.245.0...release/2.246.0
 [2.245.0]: https://github.com/hmrc/assets-frontend/compare/release/2.242.2...release/2.245.0
