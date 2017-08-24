@@ -28,9 +28,11 @@ More user research is needed to prove if the HMRC logo reassures users.
   </div>
 </div>
 
-[View in a new window](blank/header.html)
+[View in a new window](blank/header-with-cookie.html)
 
 This is essentially just the GOV.UK header but it's included here for completeness.
+
+The link to the cookie policy should go to the [HMRC cookie policy](#) information on adding service spesific cookie information should be added to your servies *where should services add cookies that are service spesific?*
 
 ---
 
