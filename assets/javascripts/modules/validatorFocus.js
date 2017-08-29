@@ -33,7 +33,7 @@ module.exports = function () {
     var inputTagName = inputToFocus.prop('tagName').toLowerCase()
     var nodeToScrollTo = inputToFocus
 
-    if (['input', 'select', 'button'].indexOf(inputTagName) !== -1) {
+    if ($.inArray(inputTagName, ['input', 'select', 'button']) !== -1) {
       nodeToScrollTo = inputToFocus.parent()
     }
 
