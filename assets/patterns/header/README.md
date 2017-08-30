@@ -16,19 +16,19 @@ More user research is needed to prove if the HMRC logo reassures users.
 
 ## Header examples
 
-* [Header - with cookie](#header-with-cookie)
+* [Header](#header)
 * [Header - signed out](#header-signed-out)
 * [Header - signed in](#header-signed-in)
 
-### Header with cookie
+### Header
 
 <div class="example">
   <div class="scale-wrapper">
-    <div class="scale">{% include "header-with-cookie.html" %}</div>
+    <div class="scale">{% include "header.html" %}</div>
   </div>
 </div>
 
-[View in a new window](blank/header-with-cookie.html)
+[View in a new window](blank/header.html)
 
 This is essentially just the GOV.UK header but it's included here for completeness.
 
