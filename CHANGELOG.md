@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.248.1] - 2017-09-04
 ### Fixed
 - Production styles not being generated on CI [#804](https://github.com/hmrc/assets-frontend/pull/804)
 
@@ -76,7 +78,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.248.0...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.248.1...master
+[2.248.1]: https://github.com/hmrc/assets-frontend/compare/release/2.248.0...release/2.248.1
 [2.248.0]: https://github.com/hmrc/assets-frontend/compare/release/2.247.0...release/2.248.0
 [2.247.0]: https://github.com/hmrc/assets-frontend/compare/release/2.246.0...release/2.247.0
 [2.246.0]: https://github.com/hmrc/assets-frontend/compare/release/2.245.0...release/2.246.0
