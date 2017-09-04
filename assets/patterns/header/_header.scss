@@ -35,6 +35,23 @@
   }
 }
 
+.logged-in-status {
+  float: right;
+
+  @include media(tablet) {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    padding: 4px 0;
+  }
+
+  p {
+    color: #6f777b;
+    font: 16px/1.25 nta, Arial, sans-serif;
+    margin: 0;
+  }
+}
+
 .lang-select {
   float: right;
 
