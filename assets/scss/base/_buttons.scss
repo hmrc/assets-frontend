@@ -1,14 +1,18 @@
 /*
 Buttons
 
-Buttons are used for *calls to actions* to start a journey or to *submit* information on a form. Simply place the
-`.button` selector on your `<button>` element.
+Buttons are used for *calls to actions* to start a journey or to *submit* information on a form.
+Simply place the `.button` selector on your `<button>` element in the case of submitting a form or
+place the selector on your `<a>` element in the case that it's a generic link that should be styled
+as a button.
+
 If you are using an `<a>` element please also apply the `role="button"` attribute.
+
 
 Markup:
 <button class="button {{modifier_class}}">Button text</button>
+<a class="button {{modifier_class}}" role="button">Button text</a>
 
-.button--get-started   - For a button to start a user journey
 .button--secondary     - A secondary button
 .button--alert         - An alert button
 .button--small         - A smaller button
@@ -21,7 +25,6 @@ Discussion: https://hmrcdigital.hackpad.com/Buttons-7vsvMQBdhVN
 
 Styleguide Buttons
 */
-
 button, .button {
   text-transform: capitalize;
   @include button($button-colour);
@@ -34,6 +37,17 @@ button, .button {
   @include core-19();
 }
 
+/*
+Get started link
+
+For a button to start a user journey
+
+Markup:
+<button class="button button--get-started">Button text</button>
+<a class="button button--get-started" role="button">Button text</a>
+
+Styleguide Buttons.Get Started
+*/
 .button--get-started {
   @extend .button;
   @include bold-24();
@@ -138,7 +152,6 @@ Markup:
 
 Styleguide Buttons.Link Style
 */
-
 .button--link-style {
   @extend .link-style;
   background: none;
@@ -158,10 +171,10 @@ Experimental: Additional button styles to provide blue.
 
 Markup:
 <button class="button--notification">Button text</button>
+<a class="button button--notification" role="button">Button text</a>
 
 Styleguide Buttons.Notification style
 */
-
 .button--notification {
   @include button($govuk-blue-colour);
   @include bold-27();
@@ -173,11 +186,11 @@ Full width style
 Experimental: Additional button styles to provide full width options.
 
 Markup:
-<button class="button--full-width">Button text</button>
+<button class="button button--full-width">Button text</button>
+<a class="button button--full-width" role="button">Button text</a>
 
 Styleguide Buttons.Full width style
 */
-
 .button--full-width {
   width: $full-width;
   box-sizing: border-box;
