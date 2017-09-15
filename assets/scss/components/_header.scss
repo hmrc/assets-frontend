@@ -90,14 +90,13 @@ Styleguide Header.Transaction
   }
 
   p {
-    @include core-36();
-    color: $white;
+    @include core-36;
     text-decoration: none;
   }
 }
 
 .transaction-banner__heading {
-  @include bold-48();
+  @include bold-48;
   color: $white;
   margin: 15px 0;
 }
