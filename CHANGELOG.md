@@ -6,8 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-### Fixed
-- Production styles not being generated on CI [#804](https://github.com/hmrc/assets-frontend/pull/804)
+### Added
+- HMRC header pattern [#808](https://github.com/hmrc/assets-frontend/pull/808)
 
 ## [2.249.0] - 2017-09-18
 ### Changed
