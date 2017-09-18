@@ -1,48 +1,50 @@
 # HMRC Header
 
-<div class="alert alert--info">
+<!-- <div class="alert alert--info">
   <p class="alert__message">This patterns is work in progress.</p>
   <p class="alert__message">View the to do list for this pattern on <a href="https://github.com/hmrc/design-language-documentation/issues/4">GitHub</a>.</p>
-</div>
+</div> -->
   
 
 ## Header design
 
-The HMRC header is an variant of the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) all elements that are imported from the GOV.UK header should be consistent and should not be changed in any way.
+The HMRC header is a variant of the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) all elements that are imported from the GOV.UK header should be consistent and should not be changed in any way.
 
-### HMRC Logo
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale">{% include "header.html" %}</div>
+  </div>
+</div>
 
-The HMRC logo is included for services where there is a user need to reassure users that they are using an HMRC service.
-For example, when they are making a payment and need to be sure that the money is going to the right government department.
-
-More user research is needed to prove if the HMRC logo reassures users.
-
-## Choosing the right header
+## Choosing the right header.
 
 There are 2 different headers that you can use in your service:
 
 1. the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer)
 2. the HMRC header
 
-You should start by using the GOV.UK header.
-
-If you find - through user research - there is a user need for the HMRC header to be used, for example, because users need to know that they are dealing with HRMC then you should use the HMRC header.
+Start with the GOV.UK header.
 
 ## GOV.UK Header
 
-You can see the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) in the service manual
+You can see the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) in the service manual.
 
 ## HMRC Header
 
-There are 2 versions of this header one that is used when a user is not signed in to a service and one that is used when a user is signed in to a service. We do not have a signed out version of the header.
+Only use the HMRC header if there is a user need for people to know they are dealing with HMRC.
 
-### Header
+The HMRC header has two states:
+
+-  signed out
+-  signed in
+
+### Signed out state
 
 Use this:
 
-* in services that do not require users to authenticate
-* when a user is not signed in to a service
-* when it's important to users that they know they are using an HMRC service
+- in services that do not require users to sign in
+- when a user is signed out from a service
+- when it's important to users that they know they are using an HMRC service
 
 <div class="example">
   <div class="scale-wrapper">
@@ -52,18 +54,20 @@ Use this:
 
 [View in a new window](blank/header.html)
 
-The link to the cookie policy should go to the [HMRC cookie policy](#) information on adding service spesific cookie information should be added to your services *where should services add cookies that are service spesific?*
-
 This version of the header should contain:
 
-* the GOV.UK header
-* a phase banner unless the service is live
-* HMRC logo
-* Welsh toggle
+- [the cookie banner](#the-cookie-banner)
+- [the GOV.UK header](#the-gov.uk-header)
+- [a phase banner](#phase-banner) unless the service is live
+- [HMRC logo](#hmrc-logo)
+- [the language selector](#language-selector)
 
----
+### Signed in state
 
-### Header signed in
+Use this:
+
+- when it's important to users that they know they are using an HMRC service
+- when people are signed in to the service
 
 <div class="example">
   <div class="scale-wrapper">
@@ -73,13 +77,66 @@ This version of the header should contain:
 
 [View in a new window](header--signed-in.html)
 
-Should be used for services when there is a need to identify the service as an HMRC service and when users can have a signed in state.
-
 This version of the header should contain:
 
-* the GOV.UK header
-* a sign out link
-* a phase banner unless the service is live
-* HMRC logo
-* Last logged in status
-* Welsh toggle
+- [the cookie banner](#the-cookie-banner)
+- [the GOV.UK header](#the-gov.uk-header)
+- [a sign out link](#sign-out-link)
+- [a phase banner](#phase-banner) unless the service is live
+- [HMRC logo](#hmrc-logo)
+- [last logged in status](#last-logged-in-status)
+- [the language selector](#language-selector)
+
+## Header elements
+
+### The cookie banner
+
+#### Current behaviour
+
+
+
+
+
+The link to the cookie policy should go to the [HMRC cookie policy](#) page. You should add information on service specific cookie information should be added to your services.
+
+*Where should services talk about cookies that are service specific?*
+
+The cookie banner is displayed the first time a person visits GOV.UK on the page they land on first. It's not displayed on subsequent pages unless the cookies change
+
+*Is the above statement true?*
+
+### The GOV.UK header
+
+The GOV.UK header should be used without changing anything.
+
+### Sign out link
+
+Only used if users are signed in.
+
+### Phase banner
+
+The phase banner comes from GOV.UK and should be used without changing anything.
+
+### HMRC logo
+
+The HMRC logo is included for services where there is a user need to reassure people that they are using an HMRC service.
+
+For example, when they are making a payment and need to be sure that the money is going to the right government department.
+
+More user research is needed to prove that the HMRC logo reassures users and meets this need.
+
+### Last logged in status
+
+The last logged in status tells users the time and date that they signed in.
+
+At the moment it's not possible to present names across all HMRC services in a consistent way which may cause people confusion. We stopped using peoples names in September 2016.
+
+More research is needed to understand if displaying a persons name is important.
+
+### Language selector
+
+Should be used if the service or page has been translated into another language. 
+
+Welsh is the only language we support at the moment. We call this the Language selector because we don't know if it will be used for other languages in the future. 
+
+The Language selector is sometimes referred to as the Welsh toggle.
