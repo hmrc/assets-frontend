@@ -728,7 +728,7 @@ code {
   letter-spacing: 1px;
   text-decoration: none;
   color: #fff;
-  background-color: #d53880;
+  background-color: #005ea5;
 }
 
 @media (min-width: 641px) {
@@ -1108,7 +1108,7 @@ fieldset {
 
 /* line 4, assets/govuk_elements/public/sass/elements/forms/_form-validation.scss */
 .validation-summary {
-  border: 3px solid #df3034;
+  border: 3px solid #b10e1e;
   padding: 15px 30px;
   margin-bottom: 30px;
 }
@@ -1145,7 +1145,7 @@ fieldset {
 
 /* line 28, assets/govuk_elements/public/sass/elements/forms/_form-validation.scss */
 .validation-summary a, .validation-summary .link-style, .validation-summary .button--link-style {
-  color: #df3034;
+  color: #b10e1e;
 }
 
 /* line 35, assets/govuk_elements/public/sass/elements/forms/_form-validation.scss */
@@ -1161,7 +1161,7 @@ fieldset {
   line-height: 1.25;
   font-weight: 300;
   text-transform: none;
-  color: #df3034;
+  color: #b10e1e;
 }
 
 @media (max-width: 640px) {
@@ -1461,7 +1461,7 @@ details summary {
 
 /* line 16, assets/govuk_elements/public/sass/elements/_details.scss */
 details summary:hover {
-  color: #2e8aca;
+  color: #2b8cc4;
 }
 
 /* line 20, assets/govuk_elements/public/sass/elements/_details.scss */
@@ -1871,6 +1871,59 @@ ol li {
   }
 }
 
+/* line 3, assets/govuk_elements/public/sass/elements/_components.scss */
+.govuk-box-highlight {
+  margin: 1em 0;
+  padding: 2em 1em;
+  color: #fff;
+  background: #28a197;
+  text-align: center;
+}
+
+/* line 13, assets/govuk_elements/public/sass/elements/_components.scss */
+.govuk-box-highlight h1 {
+  color: #fff;
+}
+
+/* line 19, assets/govuk_elements/public/sass/elements/_components.scss */
+.govuk-box-highlight p.font-large {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 1.11111;
+  font-weight: 400;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 19, assets/govuk_elements/public/sass/elements/_components.scss */
+  .govuk-box-highlight p.font-large {
+    font-size: 24px;
+    line-height: 1.04167;
+  }
+}
+
+/*
+
+Use of .govuk-box-highlight
+
+For reference see:
+https://govuk-prototype-kit.herokuapp.com/docs/examples/confirmation-page
+and
+http://govuk-elements.herokuapp.com/colour/#examples
+
+
+The above styles and overwrites means you can simplify the markup to the following:
+
+<div class="govuk-box-highlight">
+  <h1 class="heading-xlarge">Application complete</h1>
+  <p class="font-large">
+    Your reference number is
+    <br>
+    <strong class="bold">HDJ2123F</strong>
+  </p>
+</div>
+
+*/
 @-ms-viewport {
   width: device-width;
 }
@@ -2441,12 +2494,12 @@ a:visited, .link-style:visited, .button--link-style:visited {
 
 /* line 59, assets/govuk_frontend_static/_basic.scss */
 a:hover, .link-style:hover, .button--link-style:hover {
-  color: #2e8aca;
+  color: #2b8cc4;
 }
 
 /* line 63, assets/govuk_frontend_static/_basic.scss */
 a:active, .link-style:active, .button--link-style:active {
-  color: #2e8aca;
+  color: #2b8cc4;
 }
 
 /* line 380, assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
@@ -5202,12 +5255,12 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
 
 /* line 101, assets/scss/base/_buttons.scss */
 .button.button--link:hover, .button--link.button--get-started:hover, .button.button--link:focus, .button--link.button--get-started:focus {
-  color: #2e8aca;
+  color: #2b8cc4;
 }
 
 /* line 105, assets/scss/base/_buttons.scss */
 .button.button--link:active, .button--link.button--get-started:active {
-  color: #2e8aca;
+  color: #2b8cc4;
 }
 
 @media (max-width: 640px) {
@@ -5226,13 +5279,13 @@ button[rel="external"]:after, .button[rel="external"]:after, [rel="external"].bu
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #2e8aca;
+  color: #2b8cc4;
   text-decoration: underline;
 }
 
 /* line 125, assets/scss/base/_buttons.scss */
 .pseudo-link:hover, .pseudo-link:focus {
-  color: #2e8aca;
+  color: #2b8cc4;
   background-color: transparent;
 }
 
@@ -9271,11 +9324,29 @@ Styleguide Header.Transaction
   }
 }
 
-/* line 93, assets/scss/components/_header.scss */
-.transaction-banner__heading {
+/* line 92, assets/scss/components/_header.scss */
+.transaction-banner--complete p {
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
   line-height: 1.11111;
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  /* line 92, assets/scss/components/_header.scss */
+  .transaction-banner--complete p {
+    font-size: 24px;
+    line-height: 1.04167;
+  }
+}
+
+/* line 98, assets/scss/components/_header.scss */
+.transaction-banner__heading {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1.04167;
   font-weight: 400;
   text-transform: none;
   font-weight: 700;
@@ -9284,10 +9355,10 @@ Styleguide Header.Transaction
 }
 
 @media (max-width: 640px) {
-  /* line 93, assets/scss/components/_header.scss */
+  /* line 98, assets/scss/components/_header.scss */
   .transaction-banner__heading {
-    font-size: 24px;
-    line-height: 1.04167;
+    font-size: 32px;
+    line-height: 1.09375;
   }
 }
 
@@ -9311,7 +9382,7 @@ Markup:
 </header>
 
 */
-/* line 120, assets/scss/components/_header.scss */
+/* line 125, assets/scss/components/_header.scss */
 .header__menu__proposition-name {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -9324,19 +9395,19 @@ Markup:
 }
 
 @media (max-width: 640px) {
-  /* line 120, assets/scss/components/_header.scss */
+  /* line 125, assets/scss/components/_header.scss */
   .header__menu__proposition-name {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-/* line 128, assets/scss/components/_header.scss */
+/* line 133, assets/scss/components/_header.scss */
 a.header__menu__proposition-name:hover, .header__menu__proposition-name.link-style:hover, .header__menu__proposition-name.button--link-style:hover, a.header__menu__proposition-name:focus, .header__menu__proposition-name.link-style:focus, .header__menu__proposition-name.button--link-style:focus, a.header__menu__proposition-name:active, .header__menu__proposition-name.link-style:active, .header__menu__proposition-name.button--link-style:active {
   text-decoration: underline;
 }
 
-/* line 135, assets/scss/components/_header.scss */
+/* line 140, assets/scss/components/_header.scss */
 .header__menu__proposition-links {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -9351,7 +9422,7 @@ a.header__menu__proposition-name:hover, .header__menu__proposition-name.link-sty
 }
 
 @media (max-width: 640px) {
-  /* line 135, assets/scss/components/_header.scss */
+  /* line 140, assets/scss/components/_header.scss */
   .header__menu__proposition-links {
     font-size: 14px;
     line-height: 1.14286;
@@ -9359,19 +9430,19 @@ a.header__menu__proposition-name:hover, .header__menu__proposition-name.link-sty
 }
 
 @media (max-width: 800px) {
-  /* line 135, assets/scss/components/_header.scss */
+  /* line 140, assets/scss/components/_header.scss */
   .header__menu__proposition-links {
     width: 100%;
   }
 }
 
-/* line 146, assets/scss/components/_header.scss */
+/* line 151, assets/scss/components/_header.scss */
 .header__menu__proposition-links li {
   display: inline;
   padding-right: 0.78947em;
 }
 
-/* line 151, assets/scss/components/_header.scss */
+/* line 156, assets/scss/components/_header.scss */
 .header__menu__proposition-links a, .header__menu__proposition-links .link-style, .header__menu__proposition-links .button--link-style {
   font-family: "nta", Arial, sans-serif;
   font-size: 16px;
@@ -9384,7 +9455,7 @@ a.header__menu__proposition-name:hover, .header__menu__proposition-name.link-sty
 }
 
 @media (max-width: 640px) {
-  /* line 151, assets/scss/components/_header.scss */
+  /* line 156, assets/scss/components/_header.scss */
   .header__menu__proposition-links a, .header__menu__proposition-links .link-style, .header__menu__proposition-links .button--link-style {
     font-size: 14px;
     line-height: 1.14286;
@@ -9813,7 +9884,7 @@ Styleguide Alpha.Phase Banner
   letter-spacing: 1px;
   text-decoration: none;
   color: #fff;
-  background-color: #d53880;
+  background-color: #005ea5;
 }
 
 @media (min-width: 641px) {
@@ -9864,7 +9935,7 @@ Styleguide Alpha.Phase Banner
   letter-spacing: 1px;
   text-decoration: none;
   color: #fff;
-  background-color: #d53880;
+  background-color: #005ea5;
 }
 
 @media (min-width: 641px) {
@@ -9949,7 +10020,7 @@ Styleguide Beta.Phase Banner
   letter-spacing: 1px;
   text-decoration: none;
   color: #fff;
-  background-color: #f47738;
+  background-color: #005ea5;
 }
 
 @media (min-width: 641px) {
@@ -10019,7 +10090,7 @@ Styleguide Beta.Phase Tag
   letter-spacing: 1px;
   text-decoration: none;
   color: #fff;
-  background-color: #f47738;
+  background-color: #005ea5;
 }
 
 @media (min-width: 641px) {
@@ -11398,7 +11469,7 @@ Styleguide dataTable
 
 /* line 110, assets/scss/components/_datatables.scss */
 .dataTables_paginate a:hover, .dataTables_paginate .link-style:hover, .dataTables_paginate .button--link-style:hover {
-  color: #2e8aca;
+  color: #2b8cc4;
 }
 
 /* line 115, assets/scss/components/_datatables.scss */
@@ -14045,7 +14116,7 @@ Styleguide Toggle Button
 /* line 39, assets/scss/components/_toggle-button.scss */
 .toggle__button:hover, .toggle__button:focus {
   outline: none;
-  color: #2e8aca;
+  color: #2b8cc4;
   background-color: transparent;
 }
 
