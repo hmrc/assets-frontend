@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- HMRC header pattern [#808](https://github.com/hmrc/assets-frontend/pull/808)
+- HMRC header component [#808](https://github.com/hmrc/assets-frontend/pull/808)
 
 ## [2.249.0] - 2017-09-18
 ### Changed
