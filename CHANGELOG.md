@@ -6,8 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.249.0] - 2017-09-18
 ### Changed
 - Updated existing link colour variables to match gov.uk [#795](https://github.com/hmrc/assets-frontend/pull/795)
+
+### Fixed
 - Increased font size in transaction banner headers to match the GDS example banner to fix an accessibility issue [#781](https://github.com/hmrc/assets-frontend/pull/781)
 
 ## [2.248.1] - 2017-09-04
@@ -81,7 +85,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.248.1...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.249.0...master
+[2.249.0]: https://github.com/hmrc/assets-frontend/compare/release/2.248.1...release/2.249.0
 [2.248.1]: https://github.com/hmrc/assets-frontend/compare/release/2.248.0...release/2.248.1
 [2.248.0]: https://github.com/hmrc/assets-frontend/compare/release/2.247.0...release/2.248.0
 [2.247.0]: https://github.com/hmrc/assets-frontend/compare/release/2.246.0...release/2.247.0
