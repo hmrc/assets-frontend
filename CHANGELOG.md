@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Changed
 - Updated existing link colour variables to match gov.uk [#795](https://github.com/hmrc/assets-frontend/pull/795)
+- Increased font size in transaction banner headers to match the GDS example banner to fix an accessibility issue [#781](https://github.com/hmrc/assets-frontend/pull/781)
 
 ## [2.248.1] - 2017-09-04
 ### Fixed
