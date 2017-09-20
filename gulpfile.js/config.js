@@ -204,6 +204,11 @@ module.exports = {
     baseDir: './component-library/'
   },
 
+  patternLibrary: {
+    src: src + 'components',
+    dest: 'design-pattern-library'
+  },
+
   vrt: {
     backstopConfigTemplate: './gulpfile.js/util/backstop/backstop.template.json',
     backstopConfig: './backstop.json'

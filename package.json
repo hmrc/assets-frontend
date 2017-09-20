@@ -18,6 +18,7 @@
     "test:dev": "karma start assets/test/config/karma.conf.js no-single-run",
     "test:gulp": "gulp lint:gulpTasks && gulp test:gulpTasks",
     "comp-lib": "gulp component-library",
+    "pattern-library": "gulp pattern-library",
     "vrt:baseline": "gulp vrt-baseline",
     "vrt:compare": "gulp vrt-compare"
   },
