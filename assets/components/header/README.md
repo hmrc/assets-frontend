@@ -1,9 +1,9 @@
 # HMRC Header
 
-<!-- <div class="alert alert--info">
+<div class="alert alert--info">
   <p class="alert__message">This patterns is work in progress.</p>
   <p class="alert__message">View the to do list for this pattern on <a href="https://github.com/hmrc/design-language-documentation/issues/4">GitHub</a>.</p>
-</div> -->
+</div>
   
 
 ## Header design
@@ -18,10 +18,11 @@ The HMRC header is a variant of the [GOV.UK header](https://www.gov.uk/service-m
 
 ## Choosing the right header.
 
-There are 2 different headers that you can use in your service:
+There are 3 different headers that you can use in your service:
 
 1. the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer)
 2. the HMRC header
+3. the Personal tax account header
 
 Start with the GOV.UK header.
 
@@ -87,15 +88,15 @@ This version of the header should contain:
 - [last logged in status](#last-logged-in-status)
 - [the language selector](#language-selector)
 
+## Personal tax account header
+
+If you are working on a service that is planned to be part of the personal tax account you should use the header used in the [Personal tax account](#)
+
 ## Header elements
 
 ### The cookie banner
 
 #### Current behaviour
-
-
-
-
 
 The link to the cookie policy should go to the [HMRC cookie policy](#) page. You should add information on service specific cookie information should be added to your services.
 
