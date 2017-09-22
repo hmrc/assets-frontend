@@ -120,7 +120,8 @@ module.exports = {
   sass: {
     src: [
       src + 'scss/**/*.scss',
-      src + 'components/**/*.scss'
+      src + 'components/**/*.scss',
+      src + 'patterns/**/*.scss'
     ],
     govukSrc: govuk.template + '/public/sass/**/*.scss',
     govukElementsSrc: govuk.elements + '/public/sass/**/*.scss',
@@ -199,7 +200,10 @@ module.exports = {
   },
 
   compLib: {
-    src: src + 'components/**/*',
+    src: [
+      src + 'components/**/*',
+      src + 'patterns/**/*'
+    ],
     port: 9042,
     host: 'http://localhost',
     baseDir: './component-library/'

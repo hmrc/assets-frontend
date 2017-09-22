@@ -71,7 +71,6 @@ $path: "../images/icons/";
 @import "components/dividers";
 @import "components/reminders";
 @import "components/datatables";
-@import "components/organisation-logo";
 @import "components/report-error";
 @import "components/help-contents";
 @import "components/template-sidebar";
@@ -94,6 +93,9 @@ $path: "../images/icons/";
 @import "components/waiting";
 @import "components/flag";
 @import "components/indent";
+@import "components/header/header";
+
+// Patterns
 
 // Page Specific Styles
 @import "pages/messages";

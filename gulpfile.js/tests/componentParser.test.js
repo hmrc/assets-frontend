@@ -3,6 +3,7 @@ var gulp = require('gulp')
 var path = require('path')
 var test = require('tape')
 var marked = require('marked')
+var nunjucks = require('nunjucks')
 var componentParser = require('../util/component-library/componentParser')
 
 test('componentParser - Parses a directory of components', function (t) {
@@ -18,6 +19,9 @@ test('componentParser - Parses a directory of components', function (t) {
   var expectedMarkdown = fs.readFileSync(
     path.join(dir, 'component', 'README.md')
   ).toString()
+
+  nunjucks.configure(path.join(dir, 'component'))
+  expectedMarkdown = nunjucks.renderString(expectedMarkdown)
 
   gulp.src(files)
     .pipe(componentParser())

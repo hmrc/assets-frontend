@@ -1,6 +1,7 @@
 var path = require('path')
 var util = require('util')
 var marked = require('marked')
+var nunjucks = require('nunjucks')
 var Transform = require('stream').Transform
 var config = require('../../../component-lib.json')
 var prepareAssetPaths = require('./prepareAssetPaths')
@@ -31,7 +32,9 @@ ComponentParser.prototype._transform = function (file, encoding, done) {
 
     switch (fileExtension) {
       case this.fileTypes[0]:
-        this.components[component].description = marked(file.contents.toString())
+        nunjucks.configure(path.dirname(file.path))
+        var readme = nunjucks.renderString(file.contents.toString())
+        this.components[component].description = marked(readme)
         break
 
       case this.fileTypes[1]:
