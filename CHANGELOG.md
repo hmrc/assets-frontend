@@ -6,9 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-
-## [2.250.0] - 2017-09-27
-### Changed
+### Added
 - Adds an updated page heading pattern [#809](https://github.com/hmrc/assets-frontend/pull/809)
 
 ## [2.249.0] - 2017-09-18
