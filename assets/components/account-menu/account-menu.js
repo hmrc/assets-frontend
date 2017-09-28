@@ -59,8 +59,7 @@
         .focus()
 
         e.preventDefault()
-
-        return false
+        e.stopPropagation()
       },
 
       focusout: function () {
