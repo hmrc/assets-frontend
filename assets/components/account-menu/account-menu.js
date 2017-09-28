@@ -45,6 +45,8 @@
           $(this).toggleClass('account-menu__link--more-expanded')
         }
 
+        navAccount.addClass('is-open')
+
         $(this).attr('aria-expanded', function (index, attr) {
           return attr === 'true' ? 'false' : 'true'
         })
@@ -54,10 +56,11 @@
         .attr('aria-hidden', function (index, attr) {
           return attr === 'true' ? 'false' : 'true'
         })
-        .find('a:first')
         .focus()
 
         e.preventDefault()
+
+        return false
       },
 
       focusout: function () {
@@ -70,6 +73,8 @@
           'aria-expanded': 'false'
         })
           }.bind(this), 0))
+
+          navAccount.removeClass('is-open')
         }
       },
 
@@ -106,6 +111,8 @@
           'aria-expanded': 'false'
         })
           }.bind(this), 0))
+
+          navAccount.removeClass('is-open')
         }
       },
 
