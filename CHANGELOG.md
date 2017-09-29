@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- Added new account menu for use across services [#810](https://github.com/hmrc/assets-frontend/pull/810)
 - Adds an updated page heading pattern [#809](https://github.com/hmrc/assets-frontend/pull/809)
 
 ## [2.249.0] - 2017-09-18
