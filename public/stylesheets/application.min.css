@@ -18,7 +18,7 @@
 }
 
 /* line 46, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -59,7 +59,7 @@
 }
 
 /* line 46, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -82,7 +82,7 @@
 }
 
 /* line 46, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -97,7 +97,7 @@
 }
 
 /* line 46, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -1967,7 +1967,7 @@ The above styles and overwrites means you can simplify the markup to the followi
 }
 
 /* line 46, assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -1990,7 +1990,7 @@ The above styles and overwrites means you can simplify the markup to the followi
 }
 
 /* line 46, assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -2019,7 +2019,7 @@ The above styles and overwrites means you can simplify the markup to the followi
 }
 
 /* line 46, assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after {
+#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -14017,6 +14017,364 @@ Styleguide External Markup
   text-align: right;
 }
 
+/* line 1, assets/components/account-menu/_account-menu.scss */
+.grid-row {
+  margin: 0 -15px;
+}
+
+/* line 5, assets/components/account-menu/_account-menu.scss */
+.column-quarter,
+.column-one-quarter {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  /* line 12, assets/components/account-menu/_account-menu.scss */
+  .column-quarter,
+  .column-one-quarter {
+    float: left;
+    width: 25%;
+  }
+}
+
+/* line 19, assets/components/account-menu/_account-menu.scss */
+.column-half,
+.column-one-half {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  /* line 26, assets/components/account-menu/_account-menu.scss */
+  .column-half,
+  .column-one-half {
+    float: left;
+    width: 50%;
+  }
+}
+
+/* line 33, assets/components/account-menu/_account-menu.scss */
+.column-third,
+.column-one-third {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  /* line 40, assets/components/account-menu/_account-menu.scss */
+  .column-third,
+  .column-one-third {
+    float: left;
+    width: 33.33333%;
+  }
+}
+
+/* line 47, assets/components/account-menu/_account-menu.scss */
+.column-two-thirds {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  /* line 53, assets/components/account-menu/_account-menu.scss */
+  .column-two-thirds {
+    float: left;
+    width: 66.66667%;
+  }
+}
+
+/* line 59, assets/components/account-menu/_account-menu.scss */
+.column-full {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  /* line 65, assets/components/account-menu/_account-menu.scss */
+  .column-full {
+    float: left;
+    width: 100%;
+  }
+}
+
+/* line 71, assets/components/account-menu/_account-menu.scss */
+.account-icon {
+  background-repeat: no-repeat;
+}
+
+/* line 75, assets/components/account-menu/_account-menu.scss */
+.account-icon--home {
+  background-image: url("../images/icon-home.svg");
+  background-position: left -2px;
+  background-size: 24px;
+  padding-left: 28px;
+}
+
+/* line 86, assets/components/account-menu/_account-menu.scss */
+.account-menu {
+  border-bottom: 1px solid #bfc1c3;
+  position: relative;
+}
+
+/* line 91, assets/components/account-menu/_account-menu.scss */
+.account-menu.is-open {
+  margin-bottom: 5em;
+}
+
+/* line 94, assets/components/account-menu/_account-menu.scss */
+.account-menu.is-open.is-smaller {
+  margin-bottom: 0;
+}
+
+/* line 101, assets/components/account-menu/_account-menu.scss */
+.account-menu__link,
+.account-menu__link:visited {
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  border-bottom: 4px solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #6f777b;
+  display: block;
+  text-decoration: none;
+  padding: 12px 28px 8px;
+}
+
+/* line 114, assets/components/account-menu/_account-menu.scss */
+.account-menu__link:hover, .account-menu__link:focus,
+.account-menu__link:visited:hover,
+.account-menu__link:visited:focus {
+  border-bottom: 4px solid #DEE0E2;
+}
+
+/* line 119, assets/components/account-menu/_account-menu.scss */
+.account-menu__link:hover,
+.account-menu__link:visited:hover {
+  color: #2b8cc4;
+}
+
+/* line 123, assets/components/account-menu/_account-menu.scss */
+.account-menu__link:focus,
+.account-menu__link:visited:focus {
+  background-color: transparent;
+  color: #0b0c0c;
+  outline: 3px solid #ffbf47;
+}
+
+/* line 131, assets/components/account-menu/_account-menu.scss */
+.account-menu__link--home,
+.account-menu__link--home:visited {
+  float: left;
+  padding: 12px 18px 8px 0;
+}
+
+/* line 137, assets/components/account-menu/_account-menu.scss */
+.account-menu__link--menu,
+.account-menu__link--menu:visited {
+  border-bottom: 4px solid transparent;
+  float: right;
+  padding: 12px 20px 8px 0;
+}
+
+/* line 144, assets/components/account-menu/_account-menu.scss */
+.account-menu__link--active,
+.account-menu__link--active:visited {
+  color: #0b0c0c;
+  border-bottom: 4px solid #005ea5;
+}
+
+/* line 150, assets/components/account-menu/_account-menu.scss */
+.account-menu__main {
+  float: right;
+  margin: auto;
+  margin: initial;
+}
+
+/* line 155, assets/components/account-menu/_account-menu.scss */
+.account-menu__main li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  margin: auto;
+  margin: initial;
+}
+
+/* line 163, assets/components/account-menu/_account-menu.scss */
+.is-smaller .account-menu__main {
+  background-color: #f8f8f8;
+  clear: both;
+  float: none;
+}
+
+/* line 168, assets/components/account-menu/_account-menu.scss */
+.is-smaller .account-menu__main.is-open {
+  border-top: 1px solid #bfc1c3;
+  position: relative;
+}
+
+/* line 172, assets/components/account-menu/_account-menu.scss */
+.is-smaller .account-menu__main.is-open:before, .is-smaller .account-menu__main.is-open:after {
+  border: solid transparent;
+  bottom: 100%;
+  content: " ";
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 4px;
+  width: 0;
+}
+
+/* line 184, assets/components/account-menu/_account-menu.scss */
+.is-smaller .account-menu__main.is-open:before {
+  border-bottom-color: #bfc1c3;
+  border-width: 7px;
+  right: 3px;
+}
+
+/* line 190, assets/components/account-menu/_account-menu.scss */
+.is-smaller .account-menu__main.is-open:after {
+  border-bottom-color: #f8f8f8;
+  border-width: 6px;
+  margin-left: -6px;
+}
+
+/* line 197, assets/components/account-menu/_account-menu.scss */
+.is-smaller .account-menu__main li {
+  display: block;
+}
+
+/* line 201, assets/components/account-menu/_account-menu.scss */
+.is-smaller .account-menu__main a, .is-smaller .account-menu__main .link-style, .is-smaller .account-menu__main .button--link-style {
+  width: 100%;
+}
+
+/* line 206, assets/components/account-menu/_account-menu.scss */
+.is-smaller .account-menu__link--back {
+  background-image: url("../images/icon-chevron-left.svg");
+  background-position: 10px;
+  background-repeat: no-repeat;
+  background-size: 12px;
+  border-bottom: 1px solid #DEE0E2;
+  padding-left: 20px;
+}
+
+/* line 218, assets/components/account-menu/_account-menu.scss */
+.is-smaller .account-menu__link--back .account-menu__link {
+  padding: 12px 8px 8px;
+}
+
+/* line 224, assets/components/account-menu/_account-menu.scss */
+.subnav {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #bfc1c3;
+  left: 0;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  padding: 0.63158em 0;
+}
+
+@media (max-width: 640px) {
+  /* line 224, assets/components/account-menu/_account-menu.scss */
+  .subnav {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 235, assets/components/account-menu/_account-menu.scss */
+.subnav p {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 235, assets/components/account-menu/_account-menu.scss */
+  .subnav p {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 239, assets/components/account-menu/_account-menu.scss */
+.subnav a:visited, .subnav .link-style:visited, .subnav .button--link-style:visited {
+  color: #2b8cc4;
+}
+
+/* line 244, assets/components/account-menu/_account-menu.scss */
+.is-smaller .subnav {
+  margin: 0 28px;
+  position: relative;
+  top: inherit;
+}
+
+/* line 250, assets/components/account-menu/_account-menu.scss */
+.is-smaller .subnav__section {
+  margin-bottom: 1em;
+  padding: 0;
+}
+
+/* line 255, assets/components/account-menu/_account-menu.scss */
+p.subnav__section__heading {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  /* line 255, assets/components/account-menu/_account-menu.scss */
+  p.subnav__section__heading {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 259, assets/components/account-menu/_account-menu.scss */
+.js-enabled .account-menu__link--menu,
+.js-enabled .is-smaller .account-menu__link--more {
+  background-image: url("../images/icon-chevron-right.svg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 12px;
+}
+
+/* line 271, assets/components/account-menu/_account-menu.scss */
+.js-enabled .account-home--account--is-open,
+.js-enabled .is-smaller .account-menu__link--more-expanded,
+.js-enabled .account-menu__link--more {
+  background-image: url("../images/icon-chevron-down.svg");
+  background-position: right center;
+  background-size: 12px;
+}
+
+/* line 285, assets/components/account-menu/_account-menu.scss */
+.no-js .account-menu__main li {
+  display: inline;
+}
+
+/* line 290, assets/components/account-menu/_account-menu.scss */
+.no-js .subnav {
+  position: static;
+}
+
 /*
 Add Remove
 
@@ -14824,6 +15182,79 @@ Styleguide Indent
   background: transparent no-repeat 0 0;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAQAAAC00HvSAAABZklEQVR4Aa3WsWoTUBTG8V9v4yQElywRAlYzJVCQdMrgmKVDce3m3mfI0ofoY7QQfAOngmQIOGgzOGRpQYhLUynHZjb3JtL7/+8f53DhfmfPZlqGjvR1tTUtLXw3c+2LWzsycG4qNjp1bmArHWM3ouiNsY4CIxOxkxMjGU7NxM7OnG4OmYv/cv5v0KgwSWmiEdAAHWd6NvLeHsJXG+g5881PgLHI+RBrHkLOMcCg9MS/Y82y9PwDEk4cyHIPVrIcOCFpOVZgtS2GY61k6PCZMYeGyRFsW+pekaOkzzOnoZ90K8R0k3aFpdpJs8I0zWRZIWaZLCosteBKlNyPF0/uh5JXyUyRR3+efFRk1nCtyBufrFy4U+CalqnI+Tp+xZof8TLknGoltyayfPQKvPVBlonbhEtzGe4A8kvNXW79/RrxOdZc7PD70cn301704l2przoVm6FCT1VozQodXuuiqH/fVLq2/gLNMwwtCpJpLgAAAABJRU5ErkJggg==");
   padding-left: 2.36842em;
+}
+
+/* line 1, assets/components/page-heading/_page-heading.scss */
+.page-heading {
+  clear: both;
+  display: table;
+  margin-bottom: 0.9375em;
+  margin-top: 1.875em;
+  padding-top: 8px;
+}
+
+@media (min-width: 641px) {
+  /* line 1, assets/components/page-heading/_page-heading.scss */
+  .page-heading {
+    margin-bottom: 1.25em;
+    margin-top: 1.875em;
+  }
+}
+
+/* line 13, assets/components/page-heading/_page-heading.scss */
+.page-heading .heading-xlarge {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1.04167;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: 0.25em;
+}
+
+@media (max-width: 640px) {
+  /* line 13, assets/components/page-heading/_page-heading.scss */
+  .page-heading .heading-xlarge {
+    font-size: 32px;
+    line-height: 1.09375;
+  }
+}
+
+@media (min-width: 641px) {
+  /* line 13, assets/components/page-heading/_page-heading.scss */
+  .page-heading .heading-xlarge {
+    margin-top: 0.125em;
+  }
+}
+
+/* line 23, assets/components/page-heading/_page-heading.scss */
+.page-heading .heading-secondary {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 27px;
+  line-height: 1.11111;
+  font-weight: 400;
+  text-transform: none;
+  padding-top: 8px;
+  padding-bottom: 7px;
+  color: #6f777b;
+  display: table-header-group;
+}
+
+@media (max-width: 640px) {
+  /* line 23, assets/components/page-heading/_page-heading.scss */
+  .page-heading .heading-secondary {
+    font-size: 18px;
+    line-height: 1.11111;
+  }
+}
+
+@media (min-width: 641px) {
+  /* line 23, assets/components/page-heading/_page-heading.scss */
+  .page-heading .heading-secondary {
+    padding-top: 4px;
+    padding-bottom: 6px;
+  }
 }
 
 /* line 1, assets/scss/pages/_messages.scss */
