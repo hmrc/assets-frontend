@@ -1,0 +1,293 @@
+.grid-row {
+  margin: 0 -15px;
+}
+
+.column-quarter,
+.column-one-quarter {
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-quarter,
+  .column-one-quarter {
+    float: left;
+    width: 25%;
+  }
+}
+
+.column-half,
+.column-one-half {
+  padding: 0 15px;
+  box-sizing: border-box; 
+}
+
+@media (min-width: 641px) {
+  .column-half,
+  .column-one-half {
+    float: left;
+    width: 50%;
+  }
+}
+
+.column-third,
+.column-one-third {
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-third,
+  .column-one-third {
+    float: left;
+    width: 33.33333%;
+  }
+}
+
+.column-two-thirds {
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-two-thirds {
+    float: left;
+    width: 66.66667%;
+  }
+}
+
+.column-full {
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-full {
+    float: left;
+    width: 100%;
+  }
+}
+
+.account-icon {
+  background-repeat: no-repeat;
+}
+
+.account-icon--home {
+  background-image: url("../images/icon-home.svg");
+  background-position: left -2px;
+  background-size: 24px;
+  padding-left: 28px;
+
+  @include ie-lte(9) {
+    background-image: url("../images/icon-home.png");
+  }
+}
+
+.account-menu {
+  @extend %contain-floats;
+  border-bottom: 1px solid $light-grey;
+  position: relative;
+
+  &.is-open {
+    margin-bottom: 5em;
+
+    &.is-smaller {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.account-menu__link,
+.account-menu__link:visited {
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  border-bottom: 4px solid transparent;
+  box-sizing: border-box;
+  color: $grey-1;
+  display: block;
+  text-decoration: none;
+  padding: 12px 28px 8px;
+
+  &:hover,
+  &:focus {
+    border-bottom: 4px solid $govuk-grey-3;
+  }
+
+  &:hover {
+    color: $light-blue;
+  }
+
+  &:focus {
+    background-color: transparent;
+    color: $black;
+    outline: 3px solid $focus-colour;
+  }
+}
+
+
+.account-menu__link--home,
+.account-menu__link--home:visited {
+  float: left;
+  padding: 12px 18px 8px 0;
+}
+
+.account-menu__link--menu,
+.account-menu__link--menu:visited {
+  border-bottom: 4px solid transparent;
+  float: right;
+  padding: 12px 20px 8px 0;
+}
+
+.account-menu__link--active,
+.account-menu__link--active:visited {
+  color: $black;
+  border-bottom: 4px solid $govuk-blue;
+}
+
+.account-menu__main {
+  float: right;
+  margin: auto;
+  margin: initial;
+
+  li {
+    @include inline-block;
+    margin: auto;
+    margin: initial;
+  }
+}
+
+.is-smaller {
+  .account-menu__main {
+    background-color: $shaded-bg-grey;
+    clear: both;
+    float: none;
+
+    &.is-open {
+      border-top: 1px solid $light-grey;
+      position: relative;
+
+      &:before,
+      &:after {
+        border: solid transparent;
+        bottom: 100%;
+        content: " ";
+        height: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 4px;
+        width: 0;
+      }
+
+      &:before {
+        border-bottom-color: $light-grey;
+        border-width: 7px;
+        right: 3px;
+      }
+
+      &:after {
+        border-bottom-color: $shaded-bg-grey;
+        border-width: 6px;
+        margin-left: -6px;
+      }
+    }
+
+    li {
+      display: block;
+    }
+
+    a {
+      width: 100%;
+    }
+  }
+
+  .account-menu__link--back {
+    background-image: url("../images/icon-chevron-left.svg");
+    background-position: 10px;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    border-bottom: 1px solid $grey-8;
+    padding-left: 20px;
+
+    @include ie-lte(9) {
+      background-image: url("../images/icon-chevron-left.png");
+    }
+
+    .account-menu__link {
+      padding: 12px 8px 8px;
+    }
+  }
+}
+
+.subnav {
+  @include core-16;
+  @extend %contain-floats;
+  background-color: $shaded-bg-grey;
+  border-bottom: 1px solid $light-grey;
+  left: 0;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  padding: 0.63158em 0;
+
+  p {
+    @include core-16;
+  }
+
+  a:visited {
+    color: $light-blue;
+  }
+}
+
+.is-smaller .subnav {
+  margin: 0 28px;
+  position: relative;
+  top: inherit;
+}
+
+.is-smaller .subnav__section {
+  margin-bottom: 1em;
+  padding: 0;
+}
+
+p.subnav__section__heading {
+  @include bold-19;
+}
+
+.js-enabled .account-menu__link--menu,
+.js-enabled .is-smaller .account-menu__link--more {
+  background-image: url("../images/icon-chevron-right.svg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 12px;
+
+  @include ie-lte(9) {
+    background-image: url("../images/icon-chevron-right.png");
+  }
+}
+
+.js-enabled .account-home--account--is-open,
+.js-enabled .is-smaller .account-menu__link--more-expanded,
+.js-enabled .account-menu__link--more {
+  background-image: url("../images/icon-chevron-down.svg");
+  background-position: right center;
+  background-size: 12px;
+
+  @include ie-lte(9) {
+    background-image: url("../images/icon-chevron-down.png");
+  }
+}
+
+.no-js {
+  .account-menu__main {
+    li {
+      display: inline;
+    }
+  }
+
+  .subnav {
+    position: static;
+  }
+}
