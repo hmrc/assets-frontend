@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Updated padding for button mixin and included outline css [#813](https://github.com/hmrc/assets-frontend/pull/813)
 
 ## [2.250.0] - 2017-09-29
 ### Added
