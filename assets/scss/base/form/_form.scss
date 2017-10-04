@@ -399,22 +399,21 @@ Styleguide Form.control
 */
 
 .form-control {
-  @include core-19;
-
-  width: 100%;
   @include box-sizing(border-box);
-  padding: 4px;
-  background-color: $white;
-  border: 1px solid $border-colour;
+  @include core-19;
+  width: 100%;
 
-  // Disable appearance and remove rounded corners
-  appearance: none;
+  padding: 5px 4px 4px;
+  background-color: $white;
+  border: 2px solid $text-colour;
+
+  // Disable webkit appearance and remove rounded corners
+  -webkit-appearance: none;
   border-radius: 0;
 
   @include media(tablet) {
     width: 50%;
   }
-
 }
 
 // fix the select element on Webkit which is broken in govuk_elements' version of this file
