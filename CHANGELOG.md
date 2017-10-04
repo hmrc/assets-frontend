@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Updated visually hidden mixin to align with GDS [#814](https://github.com/hmrc/assets-frontend/pull/814)
 
+### Changed
+- Increased border with for form control and updated border colour and padding [#812](https://github.com/hmrc/assets-frontend/pull/812)
+- Updated padding for button mixin and included outline css [#813](https://github.com/hmrc/assets-frontend/pull/813)
+
 ## [2.250.0] - 2017-09-29
 ### Added
 - Added new account menu for use across services [#810](https://github.com/hmrc/assets-frontend/pull/810)
