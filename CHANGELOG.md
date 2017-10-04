@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Updated visually hidden mixin to align with GDS [#814](https://github.com/hmrc/assets-frontend/pull/814)
 
 ## [2.250.0] - 2017-09-29
 ### Added
