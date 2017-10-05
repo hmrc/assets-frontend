@@ -912,6 +912,8 @@ fieldset {
   background-color: #fff;
   border: 2px solid #0b0c0c;
   -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border-radius: 0;
   width: 50%;
 }
@@ -8760,17 +8762,17 @@ Styleguide Form.control
 */
 /* line 401, assets/scss/base/form/_form.scss */
 .form-control {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
   line-height: 1.31579;
   font-weight: 400;
   text-transform: none;
   width: 100%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 4px;
+  padding: 5px 4px 4px;
   background-color: #fff;
-  border: 1px solid #bfc1c3;
+  border: 2px solid #0b0c0c;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -8786,14 +8788,14 @@ Styleguide Form.control
   }
 }
 
-/* line 421, assets/scss/base/form/_form.scss */
+/* line 420, assets/scss/base/form/_form.scss */
 select.form-control {
   -webkit-appearance: menulist;
      -moz-appearance: menulist;
           appearance: menulist;
 }
 
-/* line 425, assets/scss/base/form/_form.scss */
+/* line 424, assets/scss/base/form/_form.scss */
 .form-control--block {
   display: block;
 }
@@ -8810,7 +8812,7 @@ Markup:
 
 Styleguide Form.legend
 */
-/* line 443, assets/scss/base/form/_form.scss */
+/* line 442, assets/scss/base/form/_form.scss */
 .questionnaire legend {
   margin: 0 0 0.75em;
 }
