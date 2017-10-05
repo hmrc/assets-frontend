@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.251.1] - 2017-10-05
 ### Changed
 - Updating .form-control styles missed in original PR [#816](https://github.com/hmrc/assets-frontend/pull/816)
 
@@ -100,7 +102,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.251.0...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.251.1...master
+[2.251.1]: https://github.com/hmrc/assets-frontend/compare/release/2.251.0...release/2.251.1
 [2.251.0]: https://github.com/hmrc/assets-frontend/compare/release/2.250.0...release/2.251.0
 [2.250.0]: https://github.com/hmrc/assets-frontend/compare/release/2.249.0...release/2.250.0
 [2.249.0]: https://github.com/hmrc/assets-frontend/compare/release/2.248.1...release/2.249.0
