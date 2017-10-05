@@ -407,8 +407,8 @@ Styleguide Form.control
   background-color: $white;
   border: 2px solid $text-colour;
 
-  // Disable webkit appearance and remove rounded corners
-  -webkit-appearance: none;
+  // Disable appearance and remove rounded corners
+  appearance: none;
   border-radius: 0;
 
   @include media(tablet) {
