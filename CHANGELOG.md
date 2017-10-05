@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Changed
-- Updating .form-control styles missed in origin PR [#816](https://github.com/hmrc/assets-frontend/pull/816)
+- Updating .form-control styles missed in original PR [#816](https://github.com/hmrc/assets-frontend/pull/816)
 
 ## [2.251.0] - 2017-10-04
 ### Added
