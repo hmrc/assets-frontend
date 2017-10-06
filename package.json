@@ -131,6 +131,7 @@
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "globby": "^6.1.0",
     "gulp-standard": "^10.0.0",
     "gulp-stats": "0.0.4",
     "gulp-tape": "0.0.9",
