@@ -6,7 +6,7 @@ test('compileTemplate - compiles a template at a given path', function (t) {
   t.plan(4)
 
   var nonExistentTemplate = path.join('path', 'to', 'non-existent', 'template')
-  var existingTemplate = path.join(__dirname, 'fixtures', 'design-pattern-library-template.html')
+  var existingTemplate = path.join(__dirname, 'fixtures', 'pattern-library', 'design-pattern-library-template.html')
 
   t.throws(
     () => compileTemplate(),

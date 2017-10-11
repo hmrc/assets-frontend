@@ -2,8 +2,8 @@ var path = require('path')
 var test = require('tape')
 var renderLibraryPages = require('../util/pattern-library/lib/renderLibraryPages')
 
-var templatePath = path.join(__dirname, 'fixtures', 'design-pattern-library-template.html')
-var helpersPath = path.join(__dirname, '..', 'util', 'pattern-library', 'helpers')
+var templatePath = path.join(__dirname, 'fixtures', 'pattern-library', 'design-pattern-library-template.html')
+var helpersPath = path.join(__dirname, 'fixtures', 'handlebarsHelpers')
 
 test('renderLibraryPages - takes config and an array of file objects', function (t) {
   t.plan(4)

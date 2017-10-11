@@ -8,7 +8,7 @@ test('registerHandlebarsHelpers - accepts an optional hendlebars helpers directo
   t.plan(6)
 
   var nonExistentHelpersDirectory = path.join(__dirname, 'path', 'to', 'non-existent', 'helpers')
-  var existentHelpersDirectory = path.join(__dirname, '..', 'util', 'pattern-library', 'helpers')
+  var existentHelpersDirectory = path.join(__dirname, 'fixtures', 'handlebarsHelpers')
   var handlebarsSpy = sinon.spy(Handlebars, 'registerHelper')
 
   t.notEqual(
