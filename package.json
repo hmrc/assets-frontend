@@ -136,6 +136,7 @@
     "gulp-tape": "0.0.9",
     "handlebars": "^4.0.10",
     "marked": "^0.3.6",
+    "mkdirp": "^0.5.1",
     "nodemon": "^1.11.0",
     "nunjucks": "^3.0.1",
     "sinon": "^1.17.7",
