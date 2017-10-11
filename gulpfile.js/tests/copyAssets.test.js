@@ -13,7 +13,7 @@ test('copyAssets - throws is not given a config object', function (t) {
   )
 })
 
-test.only('copyAssets - copies a public directory from the template to the destination', function (t) {
+test('copyAssets - copies a public directory from the template to the destination', function (t) {
   t.plan(2)
 
   var template = path.join(__dirname, 'fixtures', 'pattern-library', 'design-pattern-library-template.html')

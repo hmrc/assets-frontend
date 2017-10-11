@@ -8,7 +8,7 @@ var renderPagesFromTemplate = require('../util/pattern-library/lib/renderPagesFr
 test('renderPagesFromTemplate - returns a data object', function (t) {
   t.plan(3)
 
-  var templatePath = path.join(__dirname, 'fixtures', 'design-pattern-library-template.html')
+  var templatePath = path.join(__dirname, 'fixtures', 'pattern-library', 'design-pattern-library-template.html')
   var templateSource = fs.readFileSync(templatePath).toString()
   var compiledTemplate = Handlebars.compile(templateSource)
 
