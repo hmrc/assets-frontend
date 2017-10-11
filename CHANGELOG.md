@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Replace the component library with the design pattern library [#???](#)
 
 ## [2.248.1] - 2017-09-04
 ### Fixed
