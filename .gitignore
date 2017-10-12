@@ -18,3 +18,4 @@ component-library/*
 !gulpfile.js/util/component-library/
 vrt-output/
 backstop.json
+.project
