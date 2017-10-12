@@ -301,6 +301,10 @@ Markup:
 Styleguide Form.date
 */
 
+input[type=number] {
+  appearance: textfield; // removes default value adjusters in Firefox
+}
+
 .form-date {
   @extend %contain-floats;
   display: inline-block;
@@ -310,16 +314,16 @@ Styleguide Form.date
   }
 }
 
-.form-date .form-group-year {
-  width: 70px;
-}
-
 .form-date .form-group {
-  width: 56px;
+  width: 50px;
   float: left;
   margin-right: 20px;
   margin-bottom: 0;
   clear: none;
+}
+
+.form-date .form-group-year {
+  width: 70px;
 }
 
 /*
