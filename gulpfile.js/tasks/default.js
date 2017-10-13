@@ -8,6 +8,7 @@ gulp.task('default', ['clean'], function () {
     ['lint:gulpTasks', 'sass', 'images', 'svg', 'concatEncryption', 'error-pages'],
     'test',
     'modernizr',
+    'pattern-library',
     'watch'
   )
 })
