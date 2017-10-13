@@ -13,14 +13,16 @@ var addHomepage = function (config, files) {
 
   var filePath = (config.sourceBaseDir)
     ? path.join(config.sourceBaseDir, 'index.html')
-    : 'index.html'
+    : path.resolve('index.html')
 
   var homepageFile = new gutil.File({
     path: filePath,
     contents: fs.readFileSync(config.homepage)
   })
 
-  files.push(homepageFile)
+  homepageFile.type = 'section'
+
+  files.unshift(homepageFile)
 
   return files
 }
