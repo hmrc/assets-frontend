@@ -18,8 +18,7 @@
     "test:dev": "karma start assets/test/config/karma.conf.js no-single-run",
     "test:gulp": "gulp lint:gulpTasks && gulp test:gulpTasks",
     "comp-lib": "gulp component-library",
-    "comp-lib:watch": "nodemon -e html,js,css,png,jpeg -x 'npm run comp-lib:link && npm run comp-lib'",
-    "comp-lib:link": "npm link hmrc-component-library-template",
+    "pattern-library": "gulp pattern-library",
     "vrt:baseline": "gulp vrt-baseline",
     "vrt:compare": "gulp vrt-compare"
   },
@@ -132,12 +131,15 @@
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "globby": "^6.1.0",
     "gulp-standard": "^10.0.0",
     "gulp-stats": "0.0.4",
     "gulp-tape": "0.0.9",
-    "marked": "^0.3.6",
     "handlebars": "^4.0.10",
+    "marked": "^0.3.6",
+    "mkdirp": "^0.5.1",
     "nodemon": "^1.11.0",
+    "nunjucks": "^3.0.1",
     "sinon": "^1.17.7",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3"

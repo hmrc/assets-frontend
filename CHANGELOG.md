@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+<<<<<<< HEAD
 ### Added
 - Header component
 
@@ -32,6 +33,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Increased font size in transaction banner headers to match the GDS example banner to fix an accessibility issue [#781](https://github.com/hmrc/assets-frontend/pull/781)
+=======
+### Changed
+- Replace the component library with the design pattern library [#???](#)
+>>>>>>> SDT-644-design-pattern-library
 
 ## [2.248.1] - 2017-09-04
 ### Fixed

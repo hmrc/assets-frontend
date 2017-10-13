@@ -199,10 +199,17 @@ module.exports = {
   },
 
   compLib: {
-    src: src + 'components/**/*',
     port: 9042,
     host: 'http://localhost',
     baseDir: './component-library/'
+  },
+
+  patternLibrary: {
+    sourceBaseDir: src,
+    src: src + 'components',
+    dest: 'design-pattern-library',
+    template: './node_modules/hmrc-component-library-template/design-system.html',
+    homepage: 'styleguide.md'
   },
 
   vrt: {
