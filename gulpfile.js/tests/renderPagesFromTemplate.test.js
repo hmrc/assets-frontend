@@ -21,12 +21,15 @@ var getFiles = function () {
 }
 
 test('renderPagesFromTemplate - renders a homepage', function (t) {
-  t.plan(5)
+  t.plan(6)
 
   var output = renderPagesFromTemplate(getFiles(), compiledTemplate)
   var $ = cheerio.load(output[0].contents)
+  console.log('$', $('#homepage').length)
 
   t.equal($('#documentation').text(), 'Homepage', 'replaces a files object contents with a rendered template')
+
+  t.equal($('#homepage').length, 1, 'with a homepage variable set to true')
 
   t.equal($('#sections a').length, 2, 'with the right number top nav items')
 
@@ -46,12 +49,14 @@ test('renderPagesFromTemplate - renders a homepage', function (t) {
 })
 
 test('renderPagesFromTemplate - renders a section', function (t) {
-  t.plan(7)
+  t.plan(8)
 
   var output = renderPagesFromTemplate(getFiles(), compiledTemplate)
   var $ = cheerio.load(output[3].contents)
 
   t.equal($('#documentation').text(), 'Category One - Section', 'replaces a files object contents with a rendered template')
+
+  t.equal($('#homepage').length, 0, 'with a homepage variable set to false')
 
   t.equal($('#sections a').length, 2, 'with the right number top nav items')
 
@@ -83,12 +88,15 @@ test('renderPagesFromTemplate - renders a section', function (t) {
 })
 
 test('renderPagesFromTemplate - renders a page', function (t) {
-  t.plan(7)
+  t.plan(8)
 
   var output = renderPagesFromTemplate(getFiles(), compiledTemplate)
   var $ = cheerio.load(output[1].contents)
 
   t.equal($('#documentation').text(), 'Category One - Thing', 'with documentation')
+
+  t.equal($('#homepage').length, 0, 'with a homepage variable set to false')
+
   t.equal($('#sections a').length, 2, 'with the right number top nav items')
 
   t.equal(

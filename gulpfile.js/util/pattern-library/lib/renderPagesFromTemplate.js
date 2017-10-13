@@ -6,6 +6,7 @@ var relativeUrl = function (basedir, filePath) {
 
 var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) {
   var data = {}
+  var homepage = 'about'
 
   baseDirectory = baseDirectory || ''
 
@@ -13,12 +14,12 @@ var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) 
     .filter((file) => file.type === 'section')
     .map((file) => ({
       url: relativeUrl(baseDirectory, file.relative),
-      title: path.relative(baseDirectory, path.parse(file.relative).dir) || 'about'
+      title: path.relative(baseDirectory, path.parse(file.relative).dir) || homepage
     }))
 
   return files
     .map((file) => {
-      var currentSection = 'about'
+      var currentSection = homepage
 
       data.sections.forEach((section) => {
         if (file.relative.includes(section.title)) {
@@ -35,6 +36,7 @@ var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) 
         }))
 
       data.documentation = file.contents.toString()
+      data.homepage = currentSection === homepage
 
       file.contents = Buffer.from(compiledTemplate(data))
 
