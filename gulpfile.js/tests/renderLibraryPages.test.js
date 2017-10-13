@@ -9,7 +9,8 @@ test('renderLibraryPages - takes config and an array of file objects', function 
   t.plan(4)
 
   var files = [{
-    path: 'category/thing.html',
+    path: path.resolve('category/thing.html'),
+    relative: 'category/thing.html',
     contents: Buffer.from('<h1>Test content</h1>')
   }]
 
@@ -27,12 +28,12 @@ test('renderLibraryPages - takes config and an array of file objects', function 
 
   renderLibraryPages(getConfig(templatePath, undefined), files)
     .then((files) => {
-      t.equal(files.length, 1, 'optionally takes a path to handlebars helpers')
+      t.equal(files.length, 1, 'optionally takes a path to handlebars helpers - undefined')
     })
 
   renderLibraryPages(getConfig(templatePath, helpersPath), files)
     .then((files) => {
-      t.equal(files.length, 1, 'optionally takes a path to handlebars helpers')
+      t.equal(files.length, 1, 'optionally takes a path to handlebars helpers - path')
     })
 })
 

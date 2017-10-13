@@ -6,12 +6,10 @@ var renderLibraryPages = function (config, files) {
   registerHandlebarsHelpers(config.helpers)
 
   return compileTemplate(config.template)
-    .then(function (compiledTemplate) {
-      return renderPagesFromTemplate(files, compiledTemplate)
-    })
-    .catch(function (error) {
-      return error
-    })
+    .then((compiledTemplate) =>
+      renderPagesFromTemplate(files, compiledTemplate, config.sourceBaseDir)
+    )
+    .catch((error) => error)
 }
 
 module.exports = renderLibraryPages
