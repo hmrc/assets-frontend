@@ -1,13 +1,13 @@
 <div id="sections">
 {{#each sections}}
-  <p>{{this}}</p>
+  <a href="{{ url }}">{{ title }}</a>
 {{/each}}
 </div>
 
 <div id="nav">
 {{#each nav}}
-  <p>{{this}}</p>
+  <a href="{{ url }}">{{ title }}</a>
 {{/each}}
 </div>
 
-<div id="documentation">{{{documentation}}}</div>
+<div id="documentation">{{{ documentation }}}</div>
