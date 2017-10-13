@@ -23,7 +23,7 @@ test('addHomepage - does nothing if not given a homepage', function (t) {
 })
 
 test('addHomepage - adds an index file', function (t) {
-  t.plan(3)
+  t.plan(4)
 
   var files = []
   var homepage = path.join(__dirname, 'fixtures', 'components', 'component', 'README.md')
@@ -32,7 +32,6 @@ test('addHomepage - adds an index file', function (t) {
   }
 
   files = addHomepage(config, files)
-
   t.equal(files.length, 1, 'to the files array given to it')
 
   t.ok(files[0].path.includes('index.html'), 'with the correct filename')
@@ -40,6 +39,12 @@ test('addHomepage - adds an index file', function (t) {
   t.ok(
     files[0].contents.toString().includes('# Test component'),
     'with the contents of the given file'
+  )
+
+  t.equal(
+    files[0].type,
+    'section',
+    'with a type property that has a value of section'
   )
 })
 

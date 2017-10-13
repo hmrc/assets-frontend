@@ -6,7 +6,7 @@ var statAsync = function (fileOrDirectory) {
   return new Promise(function (resolve, reject) {
     fs.stat(fileOrDirectory, function (error, stats) {
       if (error) {
-        resolve([])
+        reject(new Error(error))
       } else {
         resolve(stats)
       }
@@ -16,9 +16,9 @@ var statAsync = function (fileOrDirectory) {
 
 var readdirAsync = function (directory) {
   return new Promise(function (resolve, reject) {
-    fs.readdir(directory, function (err, list) {
-      if (err) {
-        resolve([])
+    fs.readdir(directory, function (error, list) {
+      if (error) {
+        reject(new Error(`Could not read directory ${directory}`))
       } else {
         resolve(list)
       }
@@ -28,9 +28,9 @@ var readdirAsync = function (directory) {
 
 var readFileAsync = function (file) {
   return new Promise(function (resolve, reject) {
-    fs.readFile(file, function (err, contents) {
-      if (err) {
-        resolve([])
+    fs.readFile(file, function (error, contents) {
+      if (error) {
+        reject(new Error(error))
       } else {
         resolve(contents)
       }
@@ -38,44 +38,50 @@ var readFileAsync = function (file) {
   })
 }
 
-var getFiles = function (directoryPaths) {
-  var isString = typeof directoryPaths === 'string'
-  var isArray = Array.isArray(directoryPaths)
-
-  if (!isString && !isArray) {
-    throw new Error('The design pattern library source must be a string or an array.')
+var getFiles = function (config) {
+  if (!config || !config.src) {
+    throw new Error('You must provide a path to source files.')
   }
 
-  if (isString) {
+  var directoryPaths = config.src
+
+  if (!Array.isArray(directoryPaths)) {
     directoryPaths = new Array(directoryPaths)
   }
 
   return Promise.all(directoryPaths.map(function (directoryPath) {
-    return readdirAsync(directoryPath).then(function (list) {
-      return Promise.all(list.map(function (fileOrDirectory) {
-        fileOrDirectory = path.resolve(directoryPath, fileOrDirectory)
+    return readdirAsync(directoryPath)
+      .then(function (list) {
+        return Promise.all(list.map(function (fileOrDirectory) {
+          fileOrDirectory = path.resolve(directoryPath, fileOrDirectory)
 
-        return statAsync(fileOrDirectory).then(function (stat) {
-          if (stat.isDirectory()) {
-            return getFiles(fileOrDirectory)
-          } else if (fileOrDirectory.includes('README.md')) {
-            return readFileAsync(fileOrDirectory).then(function (contents) {
-              directoryPath = path.parse(fileOrDirectory).dir
+          return statAsync(fileOrDirectory)
+            .then(function (stat) {
+              if (stat.isDirectory()) {
+                return getFiles(Object.assign({}, config, { src: fileOrDirectory }))
+              } else if (fileOrDirectory.includes('README.md')) {
+                return readFileAsync(fileOrDirectory)
+                  .then(function (contents) {
+                    directoryPath = path.parse(fileOrDirectory).dir
 
-              return new gutil.File({
-                path: path.join(directoryPath, 'index.html'),
-                contents: contents
-              })
+                    var file = new gutil.File({
+                      path: path.join(directoryPath, 'index.html'),
+                      contents: contents
+                    })
+
+                    return file
+                  })
+              } else {
+                return []
+              }
             })
-          } else {
-            return []
-          }
-        })
-      }))
-    }).then(function (files) {
-      return Array.prototype.concat.apply([], files)
-    })
-  })).then(function (files) {
+        }))
+      })
+      .then(function (files) {
+        return Array.prototype.concat.apply([], files)
+      })
+  }))
+  .then(function (files) {
     return Array.prototype.concat.apply([], files)
   })
 }

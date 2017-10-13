@@ -19,6 +19,8 @@ var registerHandlebarsHelpers = function (helpersDirectoryPaths) {
   }
 
   helpersDirectoryPaths.forEach(function (directoryPath) {
+    directoryPath = path.resolve(directoryPath)
+
     try {
       var helpers = fs.readdirSync(directoryPath)
     } catch (error) {

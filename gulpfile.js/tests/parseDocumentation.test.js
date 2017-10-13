@@ -1,15 +1,20 @@
 var fs = require('fs')
 var path = require('path')
 var test = require('tape')
+var gutil = require('gulp-util')
 var parseDocumentation = require('../util/pattern-library/lib/parseDocumentation')
 
 test('parseDocumentation - returns rendered markdown', function (t) {
   t.plan(1)
 
   var markdown = '# Test component'
-  var files = [{
-    contents: Buffer.from(markdown)
-  }]
+
+  var files = [
+    new gutil.File({
+      path: '/',
+      contents: Buffer.from(markdown)
+    })
+  ]
 
   files = parseDocumentation(files)
 
@@ -24,10 +29,12 @@ test('parseDocumentation - parses an include before returning markdown', functio
   t.plan(2)
 
   var readmeFilePath = path.join(__dirname, 'fixtures', 'components', 'component', 'README.md')
-  var files = [{
-    base: path.parse(readmeFilePath).dir,
-    contents: fs.readFileSync(readmeFilePath)
-  }]
+  var files = [
+    new gutil.File({
+      path: readmeFilePath,
+      contents: fs.readFileSync(readmeFilePath)
+    })
+  ]
 
   files = parseDocumentation(files)
 

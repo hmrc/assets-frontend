@@ -1,29 +1,45 @@
 var path = require('path')
 
-var renderPagesFromTemplate = function (files, compiledTemplate) {
+var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) {
   var data = {}
 
-  data.sections = files.map(function (file) {
-    return path.parse(file.path).dir
-  }).filter(function (value, index, self) {
-    return self.indexOf(value) === index
-  })
+  baseDirectory = baseDirectory || ''
 
-  return files.map(function (file) {
-    var currentSection = path.parse(file.path).dir
+  data.sections = files
+    .filter((file) => {
+      return file.type === 'section'
+    })
+    .map((file) => {
+      var data = {
+        url: `/${path.relative(baseDirectory, file.relative)}`,
+        title: path.relative(baseDirectory, path.parse(file.relative).dir) || 'about'
+      }
 
-    data.nav = files.filter(function (file) {
-      return currentSection === path.parse(file.path).dir
-    }).map(function (file) {
-      return path.parse(file.path).name
+      return data
     })
 
-    data.documentation = file.contents.toString()
+  return files
+    .map((file) => {
+      var currentSection = path.relative(baseDirectory, path.parse(file.relative).dir) || 'about'
 
-    file.contents = Buffer.from(compiledTemplate(data))
+      data.nav = files
+        .filter((file) => {
+          return file.relative.includes(currentSection)
+        })
+        .filter((file) => file.type === 'page')
+        .map((file) => {
+          return {
+            url: `/${path.relative(baseDirectory, file.relative)}`,
+            title: path.parse(path.parse(file.relative).dir).name
+          }
+        })
 
-    return file
-  })
+      data.documentation = file.contents.toString()
+
+      file.contents = Buffer.from(compiledTemplate(data))
+
+      return file
+    })
 }
 
 module.exports = renderPagesFromTemplate
