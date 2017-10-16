@@ -1,5 +1,8 @@
 $path: '/public/assets';
 
+$tablet-breakpoint: 768px !default;
+$desktop-breakpoint: 992px !default;
+
 @import "design-system/utilities/fonts";
 @import "design-system/utilities/printable";
 
@@ -19,6 +22,8 @@ $path: '/public/assets';
 @import "design-system/modules/app-pane";
 @import "design-system/modules/govuk-logo";
 @import "design-system/modules/header";
+@import "design-system/modules/hero";
+@import "design-system/modules/masthead";
 @import "design-system/modules/sub-nav";
 @import "design-system/modules/skip-link";
 @import "design-system/modules/toc";

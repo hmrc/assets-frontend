@@ -8742,23 +8742,30 @@ Markup:
 Styleguide Form.date
 */
 /* line 304, assets/scss/base/form/_form.scss */
+input[type=number] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+
+/* line 308, assets/scss/base/form/_form.scss */
 .form-date {
   display: inline-block;
   zoom: 1;
 }
 
-/* line 313, assets/scss/base/form/_form.scss */
-.form-date .form-group-year {
-  width: 70px;
-}
-
 /* line 317, assets/scss/base/form/_form.scss */
 .form-date .form-group {
-  width: 56px;
+  width: 50px;
   float: left;
   margin-right: 20px;
   margin-bottom: 0;
   clear: none;
+}
+
+/* line 325, assets/scss/base/form/_form.scss */
+.form-date .form-group-year {
+  width: 70px;
 }
 
 /*
@@ -8775,7 +8782,7 @@ Markup:
 
 Styleguide Form.dynamic
 */
-/* line 340, assets/scss/base/form/_form.scss */
+/* line 344, assets/scss/base/form/_form.scss */
 .dynamically-displayed {
   border-left: 5px solid #DEE0E2;
   clear: both;
@@ -8802,7 +8809,7 @@ Markup:
 
 Styleguide Form.Connected
 */
-/* line 371, assets/scss/base/form/_form.scss */
+/* line 375, assets/scss/base/form/_form.scss */
 .connected {
   border-left: 3px solid #999;
   float: none;
@@ -8811,7 +8818,7 @@ Styleguide Form.Connected
   overflow: hidden;
 }
 
-/* line 379, assets/scss/base/form/_form.scss */
+/* line 383, assets/scss/base/form/_form.scss */
 .connected {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -8833,7 +8840,7 @@ Markup:
 
 Styleguide Form.control
 */
-/* line 401, assets/scss/base/form/_form.scss */
+/* line 405, assets/scss/base/form/_form.scss */
 .form-control {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -8854,21 +8861,21 @@ Styleguide Form.control
 }
 
 @media (max-width: 640px) {
-  /* line 401, assets/scss/base/form/_form.scss */
+  /* line 405, assets/scss/base/form/_form.scss */
   .form-control {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
-/* line 420, assets/scss/base/form/_form.scss */
+/* line 424, assets/scss/base/form/_form.scss */
 select.form-control {
   -webkit-appearance: menulist;
      -moz-appearance: menulist;
           appearance: menulist;
 }
 
-/* line 424, assets/scss/base/form/_form.scss */
+/* line 428, assets/scss/base/form/_form.scss */
 .form-control--block {
   display: block;
 }
@@ -8885,7 +8892,7 @@ Markup:
 
 Styleguide Form.legend
 */
-/* line 442, assets/scss/base/form/_form.scss */
+/* line 446, assets/scss/base/form/_form.scss */
 .questionnaire legend {
   margin: 0 0 0.75em;
 }
@@ -9254,8 +9261,23 @@ Styleguide Notification banner
   margin-top: 0;
 }
 
-/* line 34, assets/scss/components/_notice-banner.scss */
-.notice-banner__content a, .notice-banner__content .link-style, .notice-banner__content .button--link-style {
+/* line 37, assets/scss/components/_notice-banner.scss */
+a.notice-banner__content, .notice-banner__content.link-style, .notice-banner__content.button--link-style {
+  color: #fff;
+}
+
+/* line 40, assets/scss/components/_notice-banner.scss */
+a.notice-banner__content:link, .notice-banner__content.link-style:link, .notice-banner__content.button--link-style:link, a.notice-banner__content:visited, .notice-banner__content.link-style:visited, .notice-banner__content.button--link-style:visited {
+  color: #eaedef;
+}
+
+/* line 45, assets/scss/components/_notice-banner.scss */
+a.notice-banner__content:focus, .notice-banner__content.link-style:focus, .notice-banner__content.button--link-style:focus {
+  color: #0b0c0c;
+}
+
+/* line 49, assets/scss/components/_notice-banner.scss */
+a.notice-banner__content:hover, .notice-banner__content.link-style:hover, .notice-banner__content.button--link-style:hover, a.notice-banner__content:active, .notice-banner__content.link-style:active, .notice-banner__content.button--link-style:active {
   color: #fff;
 }
 
@@ -13688,6 +13710,51 @@ p.subnav__section__heading {
   position: static;
 }
 
+/* line 295, assets/components/account-menu/_account-menu.scss */
+.full-width-banner {
+  background-color: #005ea5;
+  color: #fff;
+  display: block;
+}
+
+/* line 300, assets/components/account-menu/_account-menu.scss */
+.full-width-banner__container {
+  padding: 20px .78947em;
+  position: relative;
+}
+
+/* line 304, assets/components/account-menu/_account-menu.scss */
+.full-width-banner a, .full-width-banner .link-style, .full-width-banner .button--link-style {
+  color: #fff;
+}
+
+/* line 307, assets/components/account-menu/_account-menu.scss */
+.full-width-banner__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* line 312, assets/components/account-menu/_account-menu.scss */
+.full-width-banner__close {
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+}
+
+@media (min-width: 641px) {
+  /* line 321, assets/components/account-menu/_account-menu.scss */
+  .full-width-banner__close {
+    right: 35px;
+  }
+  /* line 324, assets/components/account-menu/_account-menu.scss */
+  .full-width-banner__container {
+    padding: 20px 30px 10px;
+  }
+}
+
 /*
 Add Remove
 
@@ -14521,6 +14588,74 @@ Styleguide Indent
     font-size: 18px;
     line-height: 1.11111;
   }
+}
+
+/* line 1, assets/components/check-your-answers/_check-your-answers.scss */
+.govuk-check-your-answers {
+  display: table;
+}
+
+/* line 7, assets/components/check-your-answers/_check-your-answers.scss */
+.govuk-check-your-answers > * {
+  position: relative;
+  border-bottom: 1px solid #bfc1c3;
+  display: table-row;
+  border-bottom-width: 0;
+}
+
+/* line 16, assets/components/check-your-answers/_check-your-answers.scss */
+.govuk-check-your-answers > * > * {
+  display: block;
+  display: table-cell;
+  border-bottom: 1px solid #bfc1c3;
+  padding: 0.63158em 1.05263em 0.47368em 0;
+  margin: 0;
+}
+
+/* line 28, assets/components/check-your-answers/_check-your-answers.scss */
+.govuk-check-your-answers > *:first-child > * {
+  padding-top: 0;
+}
+
+/* line 34, assets/components/check-your-answers/_check-your-answers.scss */
+.govuk-check-your-answers .cya-question {
+  font-weight: bold;
+  margin: 0.63158em 4em 0.21053em 0;
+}
+
+/* line 43, assets/components/check-your-answers/_check-your-answers.scss */
+.govuk-check-your-answers > *:first-child .cya-question {
+  margin-top: 0;
+}
+
+/* line 49, assets/components/check-your-answers/_check-your-answers.scss */
+.govuk-check-your-answers.cya-questions-short, .govuk-check-your-answers.cya-questions-long {
+  width: 100%;
+}
+
+/* line 55, assets/components/check-your-answers/_check-your-answers.scss */
+.govuk-check-your-answers.cya-questions-short .cya-question {
+  width: 30%;
+}
+
+/* line 60, assets/components/check-your-answers/_check-your-answers.scss */
+.govuk-check-your-answers.cya-questions-long .cya-question {
+  width: 50%;
+}
+
+/* line 65, assets/components/check-your-answers/_check-your-answers.scss */
+.govuk-check-your-answers .cya-answer {
+  padding-bottom: 0.47368em;
+}
+
+/* line 69, assets/components/check-your-answers/_check-your-answers.scss */
+.govuk-check-your-answers .cya-change {
+  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  position: static;
+  padding-right: 0;
 }
 
 /* line 1, assets/scss/pages/_messages.scss */

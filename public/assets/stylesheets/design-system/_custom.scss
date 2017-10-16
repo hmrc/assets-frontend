@@ -4,6 +4,28 @@ main {
   -webkit-font-smoothing: antialiased;
 }
 
+.heading-large {
+  font-size: 36px !important;
+  margin: 0 !important;
+
+  @include media(mobile) {
+    font-size: 32px !important;
+  }
+}
+
+// Full width home page
+
+// Centred
+.column-constrained {
+  padding: 0 $gutter-half;
+  @media (min-width: 1200px ) {
+    padding: 0 10%;
+  }
+  @media (min-width: 1367px ) {
+    padding: 0 15%;
+  }
+}
+
 #design-system-content.technical-documentation {
     max-width: none;
     margin-top: 18px; // Hack so the subheadings align nicely with the search box :-)
