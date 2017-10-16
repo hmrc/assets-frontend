@@ -3,7 +3,7 @@ var test = require('tape')
 var PassThrough = require('stream').PassThrough
 var componentRenderer = require('../util/component-library/componentRenderer')
 
-test.skip('componentRenderer - Errors when', function (t) {
+test('componentRenderer - Errors when', function (t) {
   t.plan(3)
 
   var component = new PassThrough({
@@ -34,7 +34,7 @@ test.skip('componentRenderer - Errors when', function (t) {
     })
 })
 
-test.skip('componentRenderer - Converts a component to a component library file', function (t) {
+test('componentRenderer - Converts a component to a component library file', function (t) {
   t.plan(5)
 
   var component = {

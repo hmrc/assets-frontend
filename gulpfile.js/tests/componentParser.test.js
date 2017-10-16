@@ -5,7 +5,7 @@ var test = require('tape')
 var marked = require('marked')
 var componentParser = require('../util/component-library/componentParser')
 
-test.skip('componentParser - Parses a directory of components', function (t) {
+test('componentParser - Parses a directory of components', function (t) {
   t.plan(6)
 
   var dir = path.join(__dirname, 'fixtures', 'components')

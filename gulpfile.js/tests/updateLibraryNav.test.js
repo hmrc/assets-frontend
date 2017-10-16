@@ -8,7 +8,7 @@ var cheerio = require('cheerio')
 var PassThrough = require('stream').PassThrough
 var updateLibraryNav = require('../util/component-library/updateLibraryNav')
 
-test.skip('updateLibraryNav - Updates the library navigation with new components', function (t) {
+test('updateLibraryNav - Updates the library navigation with new components', function (t) {
   t.plan(4)
 
   var compLibPath = path.join(__dirname, 'fixtures', 'component-library')

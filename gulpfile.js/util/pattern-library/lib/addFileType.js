@@ -1,7 +1,7 @@
 var path = require('path')
 
 var addFileType = function (config, files) {
-  if (!config && !config.src) {
+  if (!config || !config.src) {
     throw new Error('You must provide the design pattern library src path')
   }
 

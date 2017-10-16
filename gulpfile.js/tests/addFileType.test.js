@@ -2,6 +2,16 @@ var path = require('path')
 var test = require('tape')
 var addFileType = require('./../util/pattern-library/lib/addFileType')
 
+test('addFileType - throws an error if not given a src', function (t) {
+  t.plan(1)
+
+  t.throws(
+    () => addFileType('', []),
+    /You must provide the design pattern library src path/,
+    'throws an error if not given a src'
+  )
+})
+
 test('addFileType - determines whether a file is a category or a page', function (t) {
   t.plan(4)
 
