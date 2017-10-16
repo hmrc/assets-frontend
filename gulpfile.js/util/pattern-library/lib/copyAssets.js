@@ -47,8 +47,8 @@ var copyAssets = function (config) {
           })
         })
     })
-    .then((stuff) => {
-      return Promise.all(stuff)
+    .then((copiedFiles) => {
+      return Promise.all(copiedFiles)
     })
 }
 

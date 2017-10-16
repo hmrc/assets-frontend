@@ -1,7 +1,7 @@
 var test = require('tape')
 var prepareAssetPaths = require('../util/component-library/prepareAssetPaths')
 
-test.skip('prepareAssetPaths - Creates links from an array of css paths', function (t) {
+test('prepareAssetPaths - Creates links from an array of css paths', function (t) {
   t.plan(2)
 
   var prefix = '../'
@@ -23,7 +23,7 @@ test.skip('prepareAssetPaths - Creates links from an array of css paths', functi
   t.equal(linksWithoutPrefix, expectedWithoutPrefix, 'without a prefix')
 })
 
-test.skip('prepareAssetPaths - Creates links from an array of js paths', function (t) {
+test('prepareAssetPaths - Creates links from an array of js paths', function (t) {
   t.plan(2)
 
   var prefix = '../'

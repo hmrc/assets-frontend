@@ -3,7 +3,7 @@ var path = require('path')
 var mkdirp = require('mkdirp')
 
 var writeFiles = function (config, files) {
-  if (!config.dest) {
+  if (!config && !config.dest) {
     throw new Error('You must provide a destination path for the design pattern library')
   }
 

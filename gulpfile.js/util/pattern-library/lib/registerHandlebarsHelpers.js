@@ -14,7 +14,7 @@ var registerHandlebarsHelpers = function (helpersDirectoryPaths) {
     throw new Error('Handlebars helpers directory must be a string or an array.')
   }
 
-  if (typeof helpersDirectoryPaths === 'string') {
+  if (isString) {
     helpersDirectoryPaths = new Array(helpersDirectoryPaths)
   }
 

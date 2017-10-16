@@ -1,9 +1,13 @@
 var path = require('path')
 var test = require('tape')
+var sinon = require('sinon')
+var Handlebars = require('handlebars')
 var compileTemplate = require('../util/pattern-library/lib/compileTemplate')
 
-test('compileTemplate - compiles a template at a given path', function (t) {
+test('compileTemplate - compiles a template at a given path', (t) => {
   t.plan(4)
+
+  var handlebarsSpy = sinon.spy(Handlebars, 'compile')
 
   var nonExistentTemplate = path.join('path', 'to', 'non-existent', 'template')
   var existingTemplate = path.join(__dirname, 'fixtures', 'pattern-library', 'design-pattern-library-template.html')
@@ -21,7 +25,7 @@ test('compileTemplate - compiles a template at a given path', function (t) {
   )
 
   compileTemplate(nonExistentTemplate)
-    .catch(function (error) {
+    .catch((error) => {
       t.equal(
         error.message,
         'Failed to read template path/to/non-existent/template',
@@ -30,10 +34,9 @@ test('compileTemplate - compiles a template at a given path', function (t) {
     })
 
   compileTemplate(existingTemplate)
-    .then(function (compiledTemplate) {
-      t.equal(
-        {}.toString.call(compiledTemplate),
-        '[object Function]',
+    .then((compiledTemplate) => {
+      t.ok(
+        handlebarsSpy.calledOnce,
         'returns the compiled template as a Promisified function'
       )
     })
