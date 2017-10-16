@@ -5,20 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-
 ## [Unreleased]
+
+## [2.252.0] - 2017-10-16
+
 ### Changed
+
 - Minor updates to input type="number" and fix for Firefox [#821](https://github.com/hmrc/assets-frontend/pull/821)
 - Updating `.notice-banner__content` styles so that they're actually visible [#820](https://github.com/hmrc/assets-frontend/pull/820)
 
 ###Fixed
-- Updated validatorFocus javascript to navigate to the input field in IE8 when there is a valudation error.
+
+- Updated validatorFocus javascript to navigate to the input field in IE8 when there is a valudation error. [#805](https://github.com/hmrc/assets-frontend/pull/805)
 
 ### Added
+
 - Styling for new full width banner on frontend-template-provider [#824](https://github.com/hmrc/assets-frontend/pull/824)
 - Introduced new summary page styling, derived from GOV.UK design pattern. New sass partial `_check-your-answers.scss` [#823](https://github.com/hmrc/assets-frontend/pull/823)
 
 ## [2.251.1] - 2017-10-05
+
 ### Changed
 - Updating .form-control styles missed in 2.251.0 [#816](https://github.com/hmrc/assets-frontend/pull/816)
 
@@ -113,7 +119,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.251.1...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.252.0...master
+[2.252.0]: https://github.com/hmrc/assets-frontend/compare/release/2.251.1...release/2.252.0
 [2.251.1]: https://github.com/hmrc/assets-frontend/compare/release/2.251.0...release/2.251.1
 [2.251.0]: https://github.com/hmrc/assets-frontend/compare/release/2.250.0...release/2.251.0
 [2.250.0]: https://github.com/hmrc/assets-frontend/compare/release/2.249.0...release/2.250.0
