@@ -160,8 +160,7 @@ module.exports = {
         dest: distDir + 'javascripts'
       },
       outputName: 'application.js'
-    },
-    {
+    }, {
       entries: [
         src + 'javascripts/export/fingerprint.js'
       ],
@@ -218,16 +217,25 @@ module.exports = {
     backstopConfig: './backstop.json'
   },
 
-  browserSync: {
+  browserSync: [{
     ui: false,
     port: 9032,
     open: false,
     server: {
       baseDir: '.',
       routes: {
-        '/assets': dest,
-        '/component-library': './component-library'
+        '/assets': dest
       }
     }
-  }
+  }, {
+    ui: false,
+    port: 9033,
+    open: false,
+    server: 'component-library'
+  }, {
+    ui: false,
+    port: 9034,
+    open: false,
+    server: 'design-pattern-library'
+  }]
 }

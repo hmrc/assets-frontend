@@ -10,8 +10,7 @@ gulp.task('clean-pattern-library', function (done) {
   del(config.patternLibrary.dest, done)
 })
 
-// gulp.task('pattern-library', ['clean-pattern-library', 'sass', 'images', 'browserify'], function () {
-gulp.task('pattern-library', ['clean-pattern-library'], function () {
+gulp.task('pattern-library', ['clean-pattern-library', 'sass', 'images', 'browserify'], function () {
   var env = global.runmode
 
   return patternLibrary(config.patternLibrary)
