@@ -291,3 +291,37 @@ p.subnav__section__heading {
     position: static;
   }
 }
+
+.full-width-banner {
+  background-color: #005ea5;
+  color: #fff;
+  display: block;
+}
+.full-width-banner__container {
+  padding: 20px .78947em;
+  position: relative;
+}
+.full-width-banner a {
+  color: #fff;
+}
+.full-width-banner__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.full-width-banner__close {
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+}
+
+@media (min-width: 641px) {
+  .full-width-banner__close {
+    right: 35px;
+  }
+  .full-width-banner__container {
+    padding: 20px 30px 10px;
+  }
+}
