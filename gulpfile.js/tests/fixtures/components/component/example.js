@@ -1,1 +1,1 @@
-console.log('example')
+module.exports = 'JavaScript for example component'
