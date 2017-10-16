@@ -7,12 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [Unreleased]
+### Changed
+- Minor updates to input type="number" and fix for Firefox [#821](https://github.com/hmrc/assets-frontend/pull/821)
+- Updating `.notice-banner__content` styles so that they're actually visible [#820](https://github.com/hmrc/assets-frontend/pull/820)
 
 ###Fixed
 - Updated validatorFocus javascript to navigate to the input field in IE8 when there is a valudation error.
-
-### Changed
-- Updating `.notice-banner__content` styles so that they're actually visible [#820](https://github.com/hmrc/assets-frontend/pull/820)
 
 ### Added
 - Styling for new full width banner on frontend-template-provider [#824](https://github.com/hmrc/assets-frontend/pull/824)
