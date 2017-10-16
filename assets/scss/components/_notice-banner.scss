@@ -31,7 +31,23 @@ Styleguide Notification banner
 .notice-banner__content {
   color: $white;
   margin-top: 0;
-  a {
+}
+
+// needs to be a qualified selector in this instance
+a.notice-banner__content {
+  color: $white;
+
+  &:link,
+  &:visited {
+    color: $grey-9;
+  }
+
+  &:focus {
+    color: $black;
+  }
+
+  &:hover,
+  &:active {
     color: $white;
   }
 }
