@@ -7,7 +7,7 @@ var relativeUrl = function (basedir, filePath) {
 var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) {
   var data = {}
   var homepage = 'about'
-  var pathPrefix = (global.runmode === 'prod') ? '/assets-frontend' : ''
+  var pathPrefix = (process.env.NODE_ENV === 'prod') ? '/assets-frontend' : ''
 
   baseDirectory = baseDirectory || ''
 
