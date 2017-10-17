@@ -1,0 +1,62 @@
+/* For header styled see https://github.com/alphagov/govuk_template/blob/master/source/assets/stylesheets/_header.scss */
+
+#global-header .header-proposition #proposition-link {
+  float: right;
+}
+
+.hmrc-banner {
+  padding: 10px 0 8px;
+  border-bottom: 1px solid $grey-2;
+}
+
+.organisation-logo {
+  display: inline-block;
+  padding: 3px 0 3px 30px;
+  background: url("../images/icons/crests/hmrc_crest_18px.png") 5px center no-repeat;
+  border-left: 2px solid $hm-revenue-customs;
+
+  @media all and (-webkit-min-device-pixel-ratio: 2) {
+    background-image: url("../images/icons/crests/hmrc_crest_18px_x2.png");
+    background-size: auto 20px;
+  }
+
+  @include media(tablet) {
+    background: url("../images/icons/crests/hmrc_crest_18px.png") 5px center no-repeat;
+    padding: 3px 0 3px 38px;
+  }
+
+  p {
+    font: 13px/16px Helvetica, Arial;
+    margin: 0;
+
+    @include media(tablet) {
+      font: 18px/22px Helvetica, Arial;
+    }
+  }
+}
+
+.logged-in-status {
+  float: right;
+
+  @include media(tablet) {
+    padding: 4px 0;
+  }
+
+  p {
+    color: #6f777b;
+    font: 16px/1.25 nta, Arial, sans-serif;
+    margin: 0;
+  }
+}
+
+.lang-select {
+  float: right;
+
+  ul {
+    @extend .list--inline;
+  }
+}
+
+.lang-select li {
+  margin-left: $gutter-one-quarter;
+}
