@@ -7,6 +7,7 @@ var relativeUrl = function (basedir, filePath) {
 var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) {
   var data = {}
   var homepage = 'about'
+  var pathPrefix = (global.runmode === 'prod') ? '/assets-frontend' : ''
 
   baseDirectory = baseDirectory || ''
 
@@ -37,6 +38,7 @@ var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) 
 
       data.documentation = file.contents.toString()
       data.homepage = currentSection === homepage
+      data.pathPrefix = pathPrefix
 
       file.contents = Buffer.from(compiledTemplate(data))
 
