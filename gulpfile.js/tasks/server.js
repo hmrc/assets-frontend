@@ -1,9 +1,9 @@
-'use strict'
+const gulp = require('gulp')
+const browserSync = require('browser-sync')
+const config = require('../config').browserSync
 
-var gulp = require('gulp')
-var browserSync = require('browser-sync')
-var config = require('../config').browserSync
-
-gulp.task('server', function () {
-  browserSync(config)
+gulp.task('server', () => {
+  config.forEach((conf, i) => {
+    browserSync.create(`${i}`).init(conf)
+  })
 })
