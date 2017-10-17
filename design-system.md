@@ -18,7 +18,7 @@
               <div class="column-one-third">
                 <h2 class="heading-large">Components</h2>
                 <p>Re-usable parts of the user interface.</p>
-                <p class="mt_20 mtb_20-m"><a href="/components">See all components</a></p>
+                <p class="mt_20 mtb_20-m"><a href="components">See all components</a></p>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@
       <div class="column-full column-constrained">
         <h2 class="heading-large">Get in touch</h2>
         <p>If you’ve got a question, idea or suggestion share it in <a href="https://hmrcdigital.slack.com/messages/C39V3PH38">#team-sdt</a> on HMRC Slack (<a href="slack://channel?team=T04RY81HB&amp;id=C39V3PH38">open in app</a>) or <a href="hmrc-service-design-tools-g@digital.hmrc.gov.uk">email the Service Design Tools team</a></p>
-      </div>   
+      </div>
     </div>
-  </section>   
+  </section>
 </main>
