@@ -9,10 +9,6 @@ var parseDocumentation = function (files) {
       path.parse(file.path).dir
     ])
 
-    marked.setOptions({
-      gfm: false
-    })
-
     var fileContents = [
       `{% from 'example.html' import example %}`,
       `{% from 'markup.html' import markup %}`,
