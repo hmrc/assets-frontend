@@ -2,4 +2,4 @@
 
 Used for testing the component library generator
 
-{% include "example.html" %}
+{{ example("component.html") }}

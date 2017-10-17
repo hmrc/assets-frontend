@@ -1,0 +1,11 @@
+{% macro example(file, scaled=false) %}
+{% if scaled %}
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale">{% include file %}</div>
+  </div>
+</div>
+{% else %}
+<div class="example">{% include file %}</div>
+{% endif %}
+{% endmacro %}

@@ -2,6 +2,5 @@
 
 A character counter for textareas.
 
-<div class="example">
-  {% include "character-counter.html" %}
-</div>
+{{ example("character-counter.html") }}
+{{ markup("character-counter.html") }}
