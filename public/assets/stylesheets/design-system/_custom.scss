@@ -198,7 +198,7 @@ main {
     p.example-grid {
       width: 100%;
       max-width: none;
-      background: url("/images/grid.png") 0 0 repeat;
+      background: url("../images/grid.png") 0 0 repeat;
       margin: 0;
       height: 30px;
       @include media(tablet) {

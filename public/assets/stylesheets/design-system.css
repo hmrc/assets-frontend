@@ -161,11 +161,11 @@
 
 .design-system-govuk-logo {
   font-weight: bold;
-  background-image: url("/public/assets/images/gov.uk_logotype_crown.png");
+  background-image: url("../images/gov.uk_logotype_crown.png");
   background-repeat: no-repeat; }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .design-system-govuk-logo {
-      background-image: url("/public/assets/images/gov.uk_logotype_crown-2x.png");
+      background-image: url("../images/gov.uk_logotype_crown-2x.png");
       background-size: 36px 32px; } }
   @media (min-width: 768px) {
     .design-system-govuk-logo {
@@ -653,12 +653,12 @@
         width: 20px;
         height: 20px;
         float: right;
-        background-image: url("/public/assetsgovuk-icn-numbered-list.png");
+        background-image: url("../images/govuk-icn-numbered-list.png");
         background-repeat: no-repeat;
         background-position: left center; } }
       @media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 767px) and (min--moz-device-pixel-ratio: 2), only screen and (max-width: 767px) and (-o-min-device-pixel-ratio: 20 / 10), only screen and (max-width: 767px) and (min-device-pixel-ratio: 2), only screen and (max-width: 767px) and (min-resolution: 192dpi), only screen and (max-width: 767px) and (min-resolution: 2dppx) {
         .js .toc-show__icon {
-          background-image: url("/public/assetsgovuk-icn-numbered-list@2x.png");
+          background-image: url("../images/govuk-icn-numbered-list@2x.png");
           background-size: 20px 20px; } }
 
 @media (max-width: 767px) {
@@ -673,12 +673,12 @@
       height: 20px;
       float: right;
       text-indent: -10000px;
-      background-image: url("/public/assetsgovuk-icn-close.png");
+      background-image: url("../images/govuk-icn-close.png");
       background-repeat: no-repeat;
       background-position: left center; } }
     @media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 767px) and (min--moz-device-pixel-ratio: 2), only screen and (max-width: 767px) and (-o-min-device-pixel-ratio: 20 / 10), only screen and (max-width: 767px) and (min-device-pixel-ratio: 2), only screen and (max-width: 767px) and (min-resolution: 192dpi), only screen and (max-width: 767px) and (min-resolution: 2dppx) {
       .js .toc__close {
-        background-image: url("/public/assetsgovuk-icn-close@2x.png");
+        background-image: url("../images/govuk-icn-close@2x.png");
         background-size: 20px 20px; } }
 
 @media (max-width: 767px) {
@@ -989,12 +989,12 @@
   height: 17px;
   overflow: hidden;
   text-indent: -999em;
-  background-image: url("/public/assets/images/open-government-licence.png");
+  background-image: url("../images/open-government-licence.png");
   background-repeat: no-repeat;
   background-size: 41px 17px; }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .footer__licence-logo {
-      background-image: url("/public/assets/images/open-government-licence_2x.png"); } }
+      background-image: url("../images/open-government-licence_2x.png"); } }
   @media (min-width: 768px) {
     .footer__licence-logo {
       float: left;
@@ -1030,7 +1030,7 @@
   white-space: nowrap;
   padding: 115px 0 0 0;
   min-width: 125px;
-  background-image: url("/public/assets/images/govuk-crest.png");
+  background-image: url("../images/govuk-crest.png");
   background-size: 125px 102px;
   background-repeat: no-repeat;
   background-position: 50% 0%;
@@ -1038,7 +1038,7 @@
   text-decoration: none; }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .footer__copyright-logo {
-      background-image: url("/public/assets/images/govuk-crest-2x.png"); } }
+      background-image: url("../images/govuk-crest-2x.png"); } }
 
 @media (min-width: 768px) {
   .flexbox .footer__license, .flexboxtweener .footer__license {
@@ -1190,7 +1190,7 @@ main {
 .markdown p.example-grid {
   width: 100%;
   max-width: none;
-  background: url("/images/grid.png") 0 0 repeat;
+  background: url("../images/grid.png") 0 0 repeat;
   margin: 0;
   height: 30px;
   overflow: hidden;
