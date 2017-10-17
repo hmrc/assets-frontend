@@ -11,6 +11,11 @@ gulp.task('watch', ['server'], function (callback) {
     config.scripts.entryPoint
   ], ['component-library'])
 
+  gulp.watch(
+    config.patternLibrary.src.map((dir) => `${dir}/**/*`),
+    ['pattern-library']
+  )
+
   gulp.watch(config.test.src, ['test'])
 
   gulp.watch(config.sass.src, ['component-library'])
