@@ -1070,13 +1070,13 @@ main {
       font-size: 32px !important; } }
 
 .column-constrained {
-  padding: 0 15px; }
+  padding: 0 15px !important; }
   @media (min-width: 1200px) {
     .column-constrained {
-      padding: 0 10%; } }
+      padding: 0 10% !important; } }
   @media (min-width: 1367px) {
     .column-constrained {
-      padding: 0 15%; } }
+      padding: 0 15% !important; } }
 
 #design-system-content.technical-documentation {
   max-width: none;

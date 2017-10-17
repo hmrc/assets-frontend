@@ -26,7 +26,7 @@
     <script src="/public/assets/javascripts/vendor/modernizr.js"></script>
   </head>
 
-  <body class="homepage">
+  <body class="">
     <div class="app-pane">
       <div class="app-pane__header toc-open-disabled">
         <a href="#content" class="skip-link">Skip to main content</a>
@@ -76,51 +76,77 @@
       <!-- TODO: mobile_nav -->
 
       <div class="app-pane__body">
-
-        <div class="app-pane__content toc-open-disabled">
-          <!--
-  NOTE: This is from the GOV.UK Design System, without the bits that don't apply
--->
-<div class="grid-row masthead">
-  <div class="column-full column-constrained">
-    <h1 class="hero__title">Design your service using GOV.UK styles, components and patterns</h1>
-    <p class="hero__description">Use this design system to make your service consistent with other services. Learn from the research and experience of other service teams and avoid repeating work that’s already been done.</p>
-  </div>
-</div>
-
-<main id="design-system-content" class="technical-documentation markdown" data-module="anchored-headings">
-  <div class="grid-row">
-    <div class="column-full">
-      <section>
-        <div class="grid-row">
-          <div class="column-full column-constrained">
-            <div class="grid-row">
-              <div class="column-one-third">
-                <h2 class="heading-large">Components</h2>
-                <p>Re-usable parts of the user interface.</p>
-                <p class="mt_20 mtb_20-m"><a href="/components">See all components</a></p>
-              </div>
-            </div>
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <nav id="toc" class="js-toc-list toc__list">
+              <ul class="pattern-nav">
+                <li><a href="/components/account-menu/index.html">Account Menu</a></li>
+                <li><a href="/components/character-counter/index.html">Character Counter</a></li>
+                <li><a href="/components/check-your-answers/index.html">Check Your Answers</a></li>
+                <li><a href="/components/page-heading/index.html">Page Heading</a></li>
+              <ul>
+            </nav>
           </div>
         </div>
-      </section>
-      <div class="grid-row">
-        <div class="column-full column-constrained">
-        <hr class="m0-m">
-        </div>
-      </div>
-    </div>
-  </div>
-  <section>
-    <div class="grid-row">
-      <div class="column-full column-constrained">
-        <h2 class="heading-large">Get in touch</h2>
-        <p>If you’ve got a question, idea or suggestion share it in <a href="https://hmrcdigital.slack.com/messages/C39V3PH38">#team-sdt</a> on HMRC Slack (<a href="slack://channel?team=T04RY81HB&amp;id=C39V3PH38">open in app</a>) or <a href="hmrc-service-design-tools-g@digital.hmrc.gov.uk">email the Service Design Tools team</a></p>
-      </div><br>    </div>
-  </section><br></main>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="design-system-content" class="technical-documentation markdown" data-module="anchored-headings">
+            <!--
+            <div class="banner banner__out-of-date">
+              <p>This content has not yet been written using the Design System content guidelines</p>
+            </div>
+             -->
+
+            <!--
+            TODO: set title as data
+
+            <div class="pattern-header">
+              <p class="section-heading"></p>
+              <h1></h1>
+            </div>
+            -->
+
+            <h1 id="account-menu">Account Menu</h1>
+<p>An account menu for services with accounts</p>
 
 
-          <footer class="design-system-footer footer--full-width">
+            <!--
+            TODO: pass the following into the template from AF
+
+            <div id="related-content" class="related-content">
+              <div class="grid-row">
+
+
+
+                <div class="column-one-quarter related-content-grid-item">
+                  <h2>Further resources</h2>
+
+                  <ul class="list">
+
+
+                    <li><a href="#">Edit this guidance on GitHub</a></li>
+                    <li><a href="#">Raise an issue on GitHub</a></li>
+                    <li><a href="#">History of this page</a></li>
+                  </ul>
+                </div>
+
+                <div class="column-one-quarter related-content-grid-item">
+                  <dl class="meta-data-bottom">
+                    <dt>Last reviewed:</dt>
+                    <dd>30 March 2017</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+            -->
+
+            <div class="callout">
+              <h2 class="heading-medium">Get in touch</h2>
+              <p>If you’ve got a question, idea or suggestion share it in <a href="https://hmrcdigital.slack.com/messages/C39V3PH38">#team-sdt</a> on HMRC Slack (<a href="slack://channel?team=T04RY81HB&amp;id=C39V3PH38">open in app</a>) or <a href="hmrc-service-design-tools-g@digital.hmrc.gov.uk">email the Service Design Tools team</a></p>
+            </div>
+          </main>
+
+          <footer class="design-system-footer design-system-footer--full-width">
             <div class="footer-container">
               <div class="footer__navigation">
                 <div class="footer__navigation--column">
