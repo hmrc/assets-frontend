@@ -5,8 +5,7 @@
 }
 
 .hmrc-banner {
-  padding: 10px 0 8px;
-  border-bottom: 1px solid $grey-2;
+  @include phase-banner();
 }
 
 .organisation-logo {
