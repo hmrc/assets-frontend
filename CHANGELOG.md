@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 * Replace the component library with a new design pattern library [#822](https://github.com/hmrc/assets-frontend/pull/822) 
+* Add header component to the new design system
+* Use macros for example and markup rendering in README.md
 
 ## [2.252.0] - 2017-10-16
 
