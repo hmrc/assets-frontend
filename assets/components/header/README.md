@@ -1,14 +1,14 @@
-# HMRC Header
+# Header
 
 <div class="alert alert--info">
-  <p class="alert__message">This patterns is work in progress.</p>
+  <p class="alert__message">This component is work in progress.</p>
+  <p class="alert__message">You can use it in your service but you should [contribute research](https://github.com/hmrc/design-patterns/issues/4).</p>
 </div>
   
 
-The HMRC header is a variant of the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) all elements that are imported from the GOV.UK header should be consistent and should not be changed in any way.
+The HMRC header is a variant of the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) all elements that are imported from the GOV.UK header should be consistent and should not be changed.
 
 {{ example('header.html', true) }}
-{{ markup('header.html') }}
 
 ## When to use the HMRC Header
 
@@ -16,7 +16,7 @@ Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-
 
 Only use the HMRC header if there is a user need for people to know they are dealing with HMRC.
 
-If your service is going to be within the Personal tax account you should use the [Account header](/components/accopunt-header/index.html))
+If your service is going to be within the Personal tax account you should use the [Account header](/components/accopunt-header/index.html).
 
 ## How the HMRC Header works
 
@@ -33,13 +33,7 @@ Use this:
 - when a user is signed out
 - when it's important to people that they know they are using an HMRC service
 
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale">{% include "header.html" %}</div>
-  </div>
-</div>
-
-[View in a new window](blank/header.html)
+{{ example('header.html', true) }}
 
 This version of the header should contain:
 
@@ -49,6 +43,10 @@ This version of the header should contain:
 - [HMRC logo](#hmrc-logo)
 - [the language selector](#language-selector) if your service is avalible in Welsh
 
+#### Markup 
+
+{{ markup('header.html') }}
+
 ### Signed in state
 
 Use this:
@@ -57,8 +55,6 @@ Use this:
 - when people are signed in
 
 {{ example('header--signed-in.html', true) }}
-
-[View in a new window](header--signed-in.html)
 
 This version of the header should contain:
 
@@ -70,15 +66,19 @@ This version of the header should contain:
 - [last logged in status](#last-logged-in-status)
 - [the language selector](#language-selector) if your service is avalible in Welsh
 
+#### Markup 
+
+{{ markup('header--signed-in.html') }}
+
 ### Header elements
 
 #### The HMRC cookie banner
 
-The link to the cookie policy should go to the [HMRC cookie policy](https://www.tax.service.gov.uk/help/cookies) page. You should add information on service specific cookie information to that page.
+The link to the cookie policy should go to the [HMRC cookie policy](https://www.tax.service.gov.uk/help/cookies) page. You should add information on service-specific cookie information to that page.
 
-The cookie banner is displayed the first time a person visits GOV.UK. It's not displayed on subsequent pages unless the cookies change. When people move to an HMRC service the HMRC cookie banner will be displayed the. 
+The cookie banner is displayed the first time a person visits GOV.UK. It's not shown on subsequent pages unless the cookies change. When people move to an HMRC service the HMRC cookie banner will be displayed again. 
 
-Because most people will access HMRC transactional service via a GOV.UK start page they may be displayed the cookie banner twice. This is not ideal as people will not understand they are moving from one site to another. 
+Most people will access HMRC transactional services via a GOV.UK start page. They will be displayed the cookie banner twice. This is not ideal as people will not understand they are moving from one site to another. 
 
 #### The GOV.UK header
 
@@ -90,7 +90,9 @@ Only used if people are signed in.
 
 #### Phase banner
 
-The phase banner comes from GOV.UK and should be used without changing anything.
+The phase banner comes from GOV.UK.
+
+The feedback link in the phase banner should point to [https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name](https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated). Your service name should be appended to the URL so feedback can be directed back to your service team.
 
 #### HMRC logo
 
@@ -124,7 +126,7 @@ We want to know:
 
 - if people are reassured when they seeing the HMRC logo
 - if the last signed in date in the signed in version is necessary
-- what BETA means to people
+- if showing a persons name reassures them 
 
 Contribute your research via this [GitHub issue](https://github.com/hmrc/design-patterns/issues/4).
 
