@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en" class="no-js tech-docs">
+  <head>
+    <base href="/assets-frontend/">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="robots" content="noindex">
+
+    <title>HMRC Design System</title>
+
+    <link rel="icon" type="image/x-icon" href="public/images/favicon.ico" />
+
+    <link rel="stylesheet" href="public/assets/stylesheets/design-system.css">
+    <link rel="stylesheet" href="public/assets/stylesheets/vendor/highlight/github.css">
+
+    <!--[if gt IE 8]><!--><link href="public/assets/stylesheets/govuk-template.css" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <!--[if IE 6]><link href="public/assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]><link href="public/assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]><link href="public/assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <!--[if gt IE 8]><!--><link rel="stylesheet" href="public/stylesheets/application.min.css"><!--<![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="public/stylesheets/application-ie.min.css"><![endif]-->
+
+    
+
+    <script src="public/assets/javascripts/vendor/modernizr.js"></script>
+  </head>
+
+  <body class="">
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="skip-link">Skip to main content</a>
+
+        <header class="design-system-header design-system-header--full-width">
+          <div class="design-system-header__container">
+            <div class="design-system-header__brand">
+                <a href="index.html">
+                  <span class="design-system-govuk-logo">
+                    <img class="design-system-govuk-logo__printable-crown" src="public/assets/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+                    GOV.UK
+                  </span>
+
+                  <span class="design-system-header__title">HMRC Design System</span>
+                </a>
+            </div>
+
+            <!--
+            <div class="pattern-search pattern-search--in-header">
+              <input type="text" name="pattern-query" class="pattern-search__input" placeholder="Search Design System" autocomplete="off">
+              <ul class="search-results js-search-results">
+              </ul>
+            </div>
+           -->
+
+            <div class="mobile-nav-trigger">
+              <input class="button js-mobile-nav-toggle" type="submit" value="Menu">
+            </div>
+          </div>
+        </header>
+
+        <div class="design-system phase-banner">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a prototype</span>
+          </p>
+        </div>
+
+        <div class="sub-nav">
+          <ul class="sub-nav-list">
+            <li><a href="/assets-frontend/index.html">About</a></li>
+            <li><a href="/assets-frontend/components/index.html">Components</a></li>
+           </ul>
+        </div>
+      </div>
+
+      <!-- TODO: mobile_nav -->
+
+      <div class="app-pane__body">
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <nav id="toc" class="js-toc-list toc__list">
+              <ul class="pattern-nav">
+                <li><a href="/assets-frontend/components/account-menu/index.html">Account Menu</a></li>
+                <li><a href="/assets-frontend/components/character-counter/index.html">Character Counter</a></li>
+                <li><a href="/assets-frontend/components/check-your-answers/index.html">Check Your Answers</a></li>
+                <li><a href="/assets-frontend/components/header/index.html">Header</a></li>
+                <li><a href="/assets-frontend/components/page-heading/index.html">Page Heading</a></li>
+              <ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="design-system-content" class="technical-documentation markdown" data-module="anchored-headings">
+            <!--
+            <div class="banner banner__out-of-date">
+              <p>This content has not yet been written using the Design System content guidelines</p>
+            </div>
+             -->
+
+            <!--
+            TODO: set title as data
+
+            <div class="pattern-header">
+              <p class="section-heading"></p>
+              <h1></h1>
+            </div>
+            -->
+
+            <h1 id="header">Header</h1>
+<div class="alert alert--info">
+  <p class="alert__message">This component is work in progress.</p>
+  <p class="alert__message">You can use it in your service but you should <a href="https://github.com/hmrc/design-patterns/issues/4">contribute research</a>.</p>
+</div>
+
+
+<p>The HMRC header is a variant of the <a href="https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer">GOV.UK header</a> all elements that are imported from the GOV.UK header should be consistent and should not be changed.</p>
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<div id="global-cookie-message" style="display: block;">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+    cookies</a></p>
+</div>
+<!-- END COOKIE MESSAGE -->
+
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service name</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+
+<main id="content">
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+
+  <!-- HMRC BANNER -->
+  <div class="hmrc-banner" role="banner">
+    <div class="organisation-logo">
+      <p>HM Revenue &amp; Customs</p>
+    </div>
+  </div>
+  <!-- END HMRC BANNER -->
+
+  <!-- LANGUAGE TOGGLE -->
+  <div class="lang-select">
+    <ul>
+      <li><a href="#">English</a></li>
+      <li><a href="#">Cymraeg</a></li>
+    </ul>
+  </div>
+  <!-- END LANGUAGE TOGGLE -->
+</main>
+</div>
+  </div>
+</div>
+
+
+
+<h2 id="when-to-use-the-hmrc-header">When to use the HMRC Header</h2>
+<p>Start with the <a href="https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer">GOV.UK header</a>.</p>
+<p>Only use the HMRC header if there is a user need for people to know they are dealing with HMRC.</p>
+<p>If your service is going to be within the Personal tax account you should use the <a href="/components/accopunt-header/index.html">Account header</a>.</p>
+<h2 id="how-the-hmrc-header-works">How the HMRC Header works</h2>
+<p>The HMRC header has two states:</p>
+<ul>
+<li><a href="#signed-out-state">signed out</a></li>
+<li><a href="#signed-in-state">signed in</a></li>
+</ul>
+<h3 id="signed-out-state">Signed out state</h3>
+<p>Use this:</p>
+<ul>
+<li>in services that do not require people to sign in</li>
+<li>when a user is signed out</li>
+<li>when it&#39;s important to people that they know they are using an HMRC service</li>
+</ul>
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<div id="global-cookie-message" style="display: block;">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+    cookies</a></p>
+</div>
+<!-- END COOKIE MESSAGE -->
+
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service name</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+
+<main id="content">
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+
+  <!-- HMRC BANNER -->
+  <div class="hmrc-banner" role="banner">
+    <div class="organisation-logo">
+      <p>HM Revenue &amp; Customs</p>
+    </div>
+  </div>
+  <!-- END HMRC BANNER -->
+
+  <!-- LANGUAGE TOGGLE -->
+  <div class="lang-select">
+    <ul>
+      <li><a href="#">English</a></li>
+      <li><a href="#">Cymraeg</a></li>
+    </ul>
+  </div>
+  <!-- END LANGUAGE TOGGLE -->
+</main>
+</div>
+  </div>
+</div>
+
+
+
+<p>This version of the header should contain:</p>
+<ul>
+<li><a href="#the-hmrc-cookie-banner">the HMRC cookie banner</a></li>
+<li><a href="#the-gov.uk-header">the GOV.UK header</a></li>
+<li><a href="#phase-banner">a phase banner</a> unless the service is live</li>
+<li><a href="#hmrc-logo">HMRC logo</a></li>
+<li><a href="#language-selector">the language selector</a> if your service is avalible in Welsh</li>
+</ul>
+<h4 id="markup">Markup</h4>
+<pre><code>&lt;!-- COOKIE MESSAGE --&gt;
+&lt;div id=&quot;global-cookie-message&quot; style=&quot;display: block;&quot;&gt;
+  &lt;p&gt;GOV.UK uses cookies to make the site simpler. &lt;a href=&quot;https://www.gov.uk/help/cookies&quot;&gt;Find out more about
+    cookies&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- END COOKIE MESSAGE --&gt;
+
+&lt;!-- GOV.UK HEADER --&gt;
+&lt;header role=&quot;banner&quot; id=&quot;global-header&quot; class=&quot;with-proposition&quot;&gt;
+  &lt;div class=&quot;header-wrapper&quot;&gt;
+    &lt;div class=&quot;header-global&quot;&gt;
+      &lt;div class=&quot;header-logo&quot;&gt;
+        &lt;a href=&quot;https://www.gov.uk&quot; title=&quot;Go to the GOV.UK homepage&quot; id=&quot;logo&quot; class=&quot;content&quot;&gt;
+          &lt;img src=&quot;images/gov.uk_logotype_crown_invert_trans.png?0.19.2&quot; width=&quot;36&quot; height=&quot;32&quot; alt=&quot;&quot;&gt;GOV.UK&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;header-proposition&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;nav id=&quot;proposition-menu&quot;&gt;
+          &lt;a href=&quot;#&quot; id=&quot;proposition-name&quot;&gt;Service name&lt;/a&gt;
+        &lt;/nav&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+&lt;div id=&quot;global-header-bar&quot;&gt;&lt;/div&gt;
+&lt;!-- END GOV.UK HEADER --&gt;
+
+&lt;main id=&quot;content&quot;&gt;
+  &lt;!-- PHASE BANNER --&gt;
+  &lt;div class=&quot;phase-banner&quot;&gt;
+    &lt;p&gt;
+      &lt;strong class=&quot;phase-tag&quot;&gt;BETA&lt;/strong&gt;
+      &lt;span&gt;This is a new service – your &lt;a href=&quot;#&quot;&gt;feedback&lt;/a&gt; will help us to improve it.&lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;!-- END PHASE BANNER --&gt;
+
+  &lt;!-- HMRC BANNER --&gt;
+  &lt;div class=&quot;hmrc-banner&quot; role=&quot;banner&quot;&gt;
+    &lt;div class=&quot;organisation-logo&quot;&gt;
+      &lt;p&gt;HM Revenue &amp;amp; Customs&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- END HMRC BANNER --&gt;
+
+  &lt;!-- LANGUAGE TOGGLE --&gt;
+  &lt;div class=&quot;lang-select&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;English&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Cymraeg&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;!-- END LANGUAGE TOGGLE --&gt;
+&lt;/main&gt;
+</code></pre><h3 id="signed-in-state">Signed in state</h3>
+<p>Use this:</p>
+<ul>
+<li>when it&#39;s important to people that they know they are using an HMRC service</li>
+<li>when people are signed in</li>
+</ul>
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<div id="global-cookie-message" style="display: block;">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
+</div>
+<!-- END COOKIE MESSAGE -->
+
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service Name</a>
+          <p id="proposition-link">
+            <a href="#">Sign out</a>
+          </p>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+
+<!-- PHASE BANNER -->
+<main id="content">
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+
+  <!-- HMRC BANNER -->
+  <div class="hmrc-banner" role="banner">
+    <div class="organisation-logo">
+      <p>HM Revenue &amp; Customs</p>
+    </div>
+    <div class="logged-in-status mobile-hidden">
+      <p>You last signed in 12:34pm, Monday 5 June 2017</p>
+    </div>
+  </div>
+
+  <!-- END HMRC BANNER -->
+  <!-- LANGUAGE TOGGLE -->
+  <div class="lang-select">
+    <ul>
+      <li><a href="#">English</a></li>
+      <li><a href="#">Cymraeg</a></li>
+    </ul>
+  </div>
+  <!-- END LANGUAGE TOGGLE -->
+</main>
+</div>
+  </div>
+</div>
+
+
+
+<p>This version of the header should contain:</p>
+<ul>
+<li><a href="#the-hmrc-cookie-banner">the HMRC cookie banner</a></li>
+<li><a href="#the-gov.uk-header">the GOV.UK header</a></li>
+<li><a href="#sign-out-link">a sign out link</a></li>
+<li><a href="#phase-banner">a phase banner</a> unless the service is live</li>
+<li><a href="#hmrc-logo">HMRC logo</a></li>
+<li><a href="#last-logged-in-status">last logged in status</a></li>
+<li><a href="#language-selector">the language selector</a> if your service is avalible in Welsh</li>
+</ul>
+<h4 id="markup">Markup</h4>
+<pre><code>&lt;!-- COOKIE MESSAGE --&gt;
+&lt;div id=&quot;global-cookie-message&quot; style=&quot;display: block;&quot;&gt;
+  &lt;p&gt;GOV.UK uses cookies to make the site simpler. &lt;a href=&quot;https://www.gov.uk/help/cookies&quot;&gt;Find out more about cookies&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- END COOKIE MESSAGE --&gt;
+
+&lt;!-- GOV.UK HEADER --&gt;
+&lt;header role=&quot;banner&quot; id=&quot;global-header&quot; class=&quot;with-proposition&quot;&gt;
+  &lt;div class=&quot;header-wrapper&quot;&gt;
+    &lt;div class=&quot;header-global&quot;&gt;
+      &lt;div class=&quot;header-logo&quot;&gt;
+        &lt;a href=&quot;https://www.gov.uk&quot; title=&quot;Go to the GOV.UK homepage&quot; id=&quot;logo&quot; class=&quot;content&quot;&gt;
+        &lt;img src=&quot;images/gov.uk_logotype_crown_invert_trans.png?0.19.2&quot; width=&quot;36&quot; height=&quot;32&quot; alt=&quot;&quot;&gt;GOV.UK&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;header-proposition&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;nav id=&quot;proposition-menu&quot;&gt;
+          &lt;a href=&quot;#&quot; id=&quot;proposition-name&quot;&gt;Service Name&lt;/a&gt;
+          &lt;p id=&quot;proposition-link&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Sign out&lt;/a&gt;
+          &lt;/p&gt;
+        &lt;/nav&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+&lt;div id=&quot;global-header-bar&quot;&gt;&lt;/div&gt;
+&lt;!-- END GOV.UK HEADER --&gt;
+
+&lt;!-- PHASE BANNER --&gt;
+&lt;main id=&quot;content&quot;&gt;
+  &lt;div class=&quot;phase-banner&quot;&gt;
+    &lt;p&gt;
+      &lt;strong class=&quot;phase-tag&quot;&gt;BETA&lt;/strong&gt;
+      &lt;span&gt;This is a new service – your &lt;a href=&quot;#&quot;&gt;feedback&lt;/a&gt; will help us to improve it.&lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;!-- END PHASE BANNER --&gt;
+
+  &lt;!-- HMRC BANNER --&gt;
+  &lt;div class=&quot;hmrc-banner&quot; role=&quot;banner&quot;&gt;
+    &lt;div class=&quot;organisation-logo&quot;&gt;
+      &lt;p&gt;HM Revenue &amp;amp; Customs&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;logged-in-status mobile-hidden&quot;&gt;
+      &lt;p&gt;You last signed in 12:34pm, Monday 5 June 2017&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- END HMRC BANNER --&gt;
+
+  &lt;!-- LANGUAGE TOGGLE --&gt;
+  &lt;div class=&quot;lang-select&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;English&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Cymraeg&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;!-- END LANGUAGE TOGGLE --&gt;
+&lt;/main&gt;
+</code></pre><h3 id="header-elements">Header elements</h3>
+<h4 id="the-hmrc-cookie-banner">The HMRC cookie banner</h4>
+<p>The link to the cookie policy should go to the <a href="https://www.tax.service.gov.uk/help/cookies">HMRC cookie policy</a> page. You should add information on service-specific cookie information to that page.</p>
+<p>The cookie banner is displayed the first time a person visits GOV.UK. It&#39;s not shown on subsequent pages unless the cookies change. When people move to an HMRC service the HMRC cookie banner will be displayed again. </p>
+<p>Most people will access HMRC transactional services via a GOV.UK start page. They will be displayed the cookie banner twice. This is not ideal as people will not understand they are moving from one site to another. </p>
+<h4 id="the-gov-uk-header">The GOV.UK header</h4>
+<p>The GOV.UK header should be used without changing anything.</p>
+<h4 id="sign-out-link">Sign out link</h4>
+<p>Only used if people are signed in.</p>
+<h4 id="phase-banner">Phase banner</h4>
+<p>The phase banner comes from GOV.UK.</p>
+<p>The feedback link in the phase banner should point to <a href="https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated">https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name</a>. Your service name should be appended to the URL so feedback can be directed back to your service team.</p>
+<h4 id="hmrc-logo">HMRC logo</h4>
+<p>The HMRC logo is included for services where there is a user need to reassure people that they are using an HMRC service.</p>
+<p>For example, when they are making a payment and need to be sure that the money is going to the right government department.</p>
+<p>More user research is needed to prove that the HMRC logo reassures people and meets this need.</p>
+<h4 id="last-logged-in-status">Last logged in status</h4>
+<p>The last logged in status tells people the time and date that they signed in.</p>
+<p>At the moment it&#39;s not possible to present names across all HMRC services in a consistent way which may cause people confusion. We stopped using peoples names in September 2016.</p>
+<p>More research is needed to understand if displaying a persons name is important.</p>
+<h4 id="language-selector">Language selector</h4>
+<p>Should be used if the service or page has been translated into another language. </p>
+<p>Welsh is the only language we support at the moment. We call this the Language selector because we don&#39;t know if it will be used for other languages in the future. </p>
+<p>The Language selector is sometimes referred to as the Welsh toggle.</p>
+<h2 id="research-on-this-component">Research on this component</h2>
+<p>We need more user research on the header. </p>
+<p>We want to know:</p>
+<ul>
+<li>if people are reassured when they seeing the HMRC logo</li>
+<li>if the last signed in date in the signed in version is necessary</li>
+<li>if showing a persons name reassures them </li>
+</ul>
+<p>Contribute your research via this <a href="https://github.com/hmrc/design-patterns/issues/4">GitHub issue</a>.</p>
+
+
+            <!--
+            TODO: pass the following into the template from AF
+
+            <div id="related-content" class="related-content">
+              <div class="grid-row">
+
+
+
+                <div class="column-one-quarter related-content-grid-item">
+                  <h2>Further resources</h2>
+
+                  <ul class="list">
+
+
+                    <li><a href="#">Edit this guidance on GitHub</a></li>
+                    <li><a href="#">Raise an issue on GitHub</a></li>
+                    <li><a href="#">History of this page</a></li>
+                  </ul>
+                </div>
+
+                <div class="column-one-quarter related-content-grid-item">
+                  <dl class="meta-data-bottom">
+                    <dt>Last reviewed:</dt>
+                    <dd>30 March 2017</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+            -->
+
+            <div class="callout">
+              <h2 class="heading-medium">Get in touch</h2>
+              <p>If you’ve got a question, idea or suggestion share it in <a href="https://hmrcdigital.slack.com/messages/C39V3PH38">#team-sdt</a> on HMRC Slack (<a href="slack://channel?team=T04RY81HB&amp;id=C39V3PH38">open in app</a>) or <a href="hmrc-service-design-tools-g@digital.hmrc.gov.uk">email the Service Design Tools team</a></p>
+            </div>
+          </main>
+
+          <footer class="design-system-footer design-system-footer--full-width">
+            <div class="footer-container">
+              <div class="footer__navigation">
+                <div class="footer__navigation--column">
+                  <h2 class="heading-medium">GOV.UK Design System</h2>
+                  <ul>
+                    <li><a href="https://govuk-design-system-prototypes.cloudapps.digital/design-patterns/patterns/">Prototype</a></li>
+                  </ul>
+                </div>
+                <div class="footer__navigation--column">
+                  <h2 class="heading-medium">Other design resources</h2>
+                  <ul>
+                    <li><a href="https://www.gov.uk/design-principles">GDS Design Principles</a></li>
+                    <li><a href="https://www.gov.uk/service-manual">GOV.UK Service Manual</a></li>
+                    <li><a href="#">GOV.UK Frontend</a></li>
+                    <li><a href="https://govuk-prototype-kit.herokuapp.com/docs">GOV.UK Prototype kit</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="footer__licence">
+                <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
+                <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+              </div>
+
+              <div class="footer__copyright">
+                <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script src="public/assets/javascripts/vendor/highlight/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+
+      function scaleExampleHeight() {
+        var scaleWrapper = document.querySelectorAll('.scale-wrapper')
+
+        for (var i = 0; i <= scaleWrapper.length - 1; i++) {
+          scaleWrapper[i].style.height = scaleWrapper[i].querySelector('.scale').offsetHeight / 2 + 'px'
+        }
+      }
+
+      window.addEventListener('resize', function() {
+        scaleExampleHeight()
+      })
+
+      scaleExampleHeight()
+    </script>
+
+    
+
+    <script src="public/javascripts/application.min.js"></script>
+  </body>
+</html>

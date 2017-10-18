@@ -5323,12 +5323,12 @@ ul li, nav ul li {
 }
 
 /* line 62, assets/scss/base/_lists.scss */
-.list--inline li {
+.list--inline li, .lang-select ul li {
   display: inline;
 }
 
 /* line 66, assets/scss/base/_lists.scss */
-.list--inline .list__item + .list__item {
+.list--inline .list__item + .list__item, .lang-select ul .list__item + .list__item {
   margin-left: 0.78947em;
 }
 
@@ -13344,6 +13344,129 @@ Styleguide External Markup
 .char-counter-text {
   color: #6f777b;
   text-align: right;
+}
+
+/* For header styled see https://github.com/alphagov/govuk_template/blob/master/source/assets/stylesheets/_header.scss */
+/* line 3, assets/components/header/_header.scss */
+#global-header .header-proposition #proposition-link {
+  float: right;
+}
+
+/* line 7, assets/components/header/_header.scss */
+.hmrc-banner {
+  padding: 10px 0 8px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+/* line 19, assets/govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta.scss */
+.hmrc-banner p {
+  margin: 0;
+  color: #000;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 19, assets/govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta.scss */
+  .hmrc-banner p {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 25, assets/govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta.scss */
+.hmrc-banner .phase-tag {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  display: inline;
+  vertical-align: top;
+  vertical-align: baseline;
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #005ea5;
+}
+
+@media (max-width: 640px) {
+  /* line 25, assets/govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta.scss */
+  .hmrc-banner .phase-tag {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 29, assets/govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta.scss */
+.hmrc-banner span {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  display: inline;
+  width: 75%;
+  vertical-align: top;
+  width: auto;
+  vertical-align: baseline;
+}
+
+/* line 11, assets/components/header/_header.scss */
+.organisation-logo, .organisation-logo-stacked {
+  display: inline-block;
+  padding: 3px 0 3px 30px;
+  background: url("../images/icons/crests/hmrc_crest_18px.png") 5px center no-repeat;
+  border-left: 2px solid #009390;
+  background: url("../images/icons/crests/hmrc_crest_18px.png") 5px center no-repeat;
+  padding: 3px 0 3px 38px;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2) {
+  /* line 11, assets/components/header/_header.scss */
+  .organisation-logo, .organisation-logo-stacked {
+    background-image: url("../images/icons/crests/hmrc_crest_18px_x2.png");
+    background-size: auto 20px;
+  }
+}
+
+/* line 27, assets/components/header/_header.scss */
+.organisation-logo p, .organisation-logo-stacked p {
+  font: 13px/16px Helvetica, Arial;
+  margin: 0;
+  font: 18px/22px Helvetica, Arial;
+}
+
+/* line 37, assets/components/header/_header.scss */
+.logged-in-status {
+  float: right;
+  padding: 4px 0;
+}
+
+/* line 44, assets/components/header/_header.scss */
+.logged-in-status p {
+  color: #6f777b;
+  font: 16px/1.25 nta, Arial, sans-serif;
+  margin: 0;
+}
+
+/* line 51, assets/components/header/_header.scss */
+.lang-select {
+  float: right;
+}
+
+/* line 59, assets/components/header/_header.scss */
+.lang-select li {
+  margin-left: 7.5px;
 }
 
 /* line 1, assets/components/account-menu/_account-menu.scss */
