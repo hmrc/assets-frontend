@@ -7,11 +7,8 @@
 
 The HMRC header is a variant of the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) all elements that are imported from the GOV.UK header should be consistent and should not be changed in any way.
 
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale">{% include "header.html" %}</div>
-  </div>
-</div>
+{{ example('header.html', true) }}
+{{ markup('header.html') }}
 
 ## When to use the HMRC Header
 
@@ -59,11 +56,7 @@ Use this:
 - when it's important to people that they know they are using an HMRC service
 - when people are signed in
 
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale">{% include "header--signed-in.html" %}</div>
-  </div>
-</div>
+{{ example('header--signed-in.html', true) }}
 
 [View in a new window](header--signed-in.html)
 
