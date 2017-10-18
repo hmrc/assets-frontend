@@ -25,8 +25,8 @@ test('parseDocumentation - returns rendered markdown', function (t) {
   )
 })
 
-test('parseDocumentation - parses an include before returning markdown', function (t) {
-  t.plan(1)
+test('parseDocumentation - parses an include and markup', function (t) {
+  t.plan(2)
 
   var readmeFilePath = path.join(__dirname, 'fixtures', 'components', 'component', 'README.md')
   var files = [
@@ -37,10 +37,14 @@ test('parseDocumentation - parses an include before returning markdown', functio
   ]
 
   files = parseDocumentation(files)
-  console.log('files[0].contents.toString()', files[0].contents.toString())
 
   t.ok(
     files[0].contents.toString().includes('<div>Example</div>'),
+    'with the contents of the include'
+  )
+
+  t.ok(
+    files[0].contents.toString().includes('<pre><code>'),
     'with the contents of the include'
   )
 })
