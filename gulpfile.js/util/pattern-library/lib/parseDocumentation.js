@@ -4,9 +4,17 @@ var nunjucks = require('nunjucks')
 
 var parseDocumentation = function (files) {
   files.forEach(function (file) {
-    nunjucks.configure(path.parse(file.path).dir)
+    nunjucks.configure([
+      path.join(__dirname, '..', 'macros'),
+      path.parse(file.path).dir
+    ])
 
-    var fileContents = file.contents.toString()
+    var fileContents = [
+      `{% from 'example.html' import example %}`,
+      `{% from 'markup.html' import markup %}`,
+      file.contents.toString()
+    ].join('\n')
+
     var markdown = nunjucks.renderString(fileContents)
     var html = marked(markdown)
 

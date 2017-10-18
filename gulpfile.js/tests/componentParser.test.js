@@ -12,7 +12,7 @@ test('componentParser - Parses a directory of components', function (t) {
   var files = path.join(dir, '**', '*')
 
   var expectedHtml = fs.readFileSync(
-    path.join(dir, 'component', 'example.html')
+    path.join(dir, 'component', 'component.html')
   ).toString()
 
   var expectedMarkdown = fs.readFileSync(

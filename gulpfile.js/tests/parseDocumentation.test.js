@@ -17,15 +17,15 @@ test('parseDocumentation - returns rendered markdown', function (t) {
   ]
 
   files = parseDocumentation(files)
+  console.log('files[0].contents.toString()', files[0].contents.toString())
 
-  t.equal(
-    files[0].contents.toString(),
-    '<h1 id="test-component">Test component</h1>\n',
+  t.ok(
+    files[0].contents.toString().includes('<h1 id="test-component">Test component</h1>'),
     'markdown is parsed to html and added to the data object'
   )
 })
 
-test('parseDocumentation - parses an include before returning markdown', function (t) {
+test('parseDocumentation - parses an include and markup', function (t) {
   t.plan(2)
 
   var readmeFilePath = path.join(__dirname, 'fixtures', 'components', 'component', 'README.md')
@@ -38,9 +38,13 @@ test('parseDocumentation - parses an include before returning markdown', functio
 
   files = parseDocumentation(files)
 
-  t.ok(files[0].contents instanceof Buffer, 'contents must be a buffer')
   t.ok(
     files[0].contents.toString().includes('<div>Example</div>'),
+    'with the contents of the include'
+  )
+
+  t.ok(
+    files[0].contents.toString().includes('<pre><code>'),
     'with the contents of the include'
   )
 })
