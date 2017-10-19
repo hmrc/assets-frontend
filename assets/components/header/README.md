@@ -15,7 +15,7 @@ Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-
 
 Only use the HMRC header if there is a user need for people to know they are dealing with HMRC.
 
-If your service is in the personal tax account, use the [Account header](/components/accopunt-header/index.html).
+If your service is in the personal tax account, use the [Account header](components/accopunt-header/index.html).
 
 ## How the HMRC header works
 
