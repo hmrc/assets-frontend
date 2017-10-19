@@ -85,7 +85,7 @@
 
 .account-menu {
   @extend %contain-floats;
-  border-bottom: 1px solid $light-grey;
+  border-bottom: 1px solid #dee0e2;
   position: relative;
 
   &.is-open {
@@ -106,10 +106,10 @@
   text-transform: none;
   border-bottom: 4px solid transparent;
   box-sizing: border-box;
-  color: $grey-1;
+  color: #4a4a4a;
   display: block;
   text-decoration: none;
-  padding: 12px 28px 8px;
+  padding: 12px 16px 8px;
 
   &:hover,
   &:focus {
@@ -122,8 +122,8 @@
 
   &:focus {
     background-color: transparent;
-    color: $black;
-    outline: 3px solid $focus-colour;
+    color: $light-blue;
+    border-bottom: 4px solid $focus-colour;
   }
 }
 
@@ -225,19 +225,23 @@
   @include core-16;
   @extend %contain-floats;
   background-color: $shaded-bg-grey;
-  border-bottom: 1px solid $light-grey;
+  border-bottom: 1px solid #DEE0E2 ;
   left: 0;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 0.63158em 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: absolute;
   top: 45px;
   width: 100%;
-  padding: 0.63158em 0;
 
   p {
     @include core-16;
   }
 
   a:visited {
-    color: $light-blue;
+    color: $govuk-blue;
   }
 }
 
@@ -245,15 +249,20 @@
   margin: 0 28px;
   position: relative;
   top: inherit;
+  margin-left: 0px;
 }
 
 .is-smaller .subnav__section {
   margin-bottom: 1em;
   padding: 0;
+  padding-left: 15px;
 }
 
 p.subnav__section__heading {
-  @include bold-19;
+  @include bold-16;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
 .js-enabled .account-menu__link--menu,
@@ -274,6 +283,8 @@ p.subnav__section__heading {
   background-image: url("../images/icon-chevron-down.svg");
   background-position: right center;
   background-size: 12px;
+  padding-right: 18px;
+  margin-right: 16px;
 
   @include ie-lte(9) {
     background-image: url("../images/icon-chevron-down.png");
