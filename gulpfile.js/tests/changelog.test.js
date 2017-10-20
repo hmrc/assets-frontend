@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const test = require('tape')
 const changelog = require('../tasks/changelog')
@@ -24,17 +24,14 @@ test('changelog - getFileChanges', function (t) {
   t.plan(2)
 
   t.throws(() => {
-      changelog.getFileChanges()
-    },
-    /No path given/,
-    'throws an error when not given a path'
-  )
+    changelog.getFileChanges()
+  }, /No path given/, 'throws an error when not given a path')
 
   t.ok(changelog.getFileChanges('string').then(), 'returns a promise')
 })
 
-test('changelog - verifyChangelogChanges', function(t) {
-  t.plan(5);
+test('changelog - verifyChangelogChanges', function (t) {
+  t.plan(5)
 
   changelog.verifyChangelogChanges()
     .catch(function (err) {

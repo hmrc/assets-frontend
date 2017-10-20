@@ -1,10 +1,9 @@
-'use strict';
+'use strict'
 
 const gulp = require('gulp')
-const gutil = require('gulp-util')
 const exec = require('child_process').exec
 
-function runCommand(cmd) {
+function runCommand (cmd) {
   return new Promise((resolve, reject) => {
     if (!cmd) {
       reject(new Error('No command specified.'))
@@ -22,7 +21,7 @@ function runCommand(cmd) {
   })
 }
 
-function getFileChanges(path) {
+function getFileChanges (path) {
   if (!path) {
     throw new Error('No path given')
   }
@@ -32,26 +31,21 @@ function getFileChanges(path) {
   return runCommand(cmd)
 }
 
-function verifyChangelogChanges(lines) {
+function verifyChangelogChanges (lines) {
   return new Promise((resolve, reject) => {
     if (!lines) {
       reject(new Error('No CHANGELOG.md update'))
     } else {
-      resolve(lines);
+      resolve(lines)
     }
   })
 }
 
 gulp.task('changelog', (done) => {
-  getFileChanges('CHANGELOG.md')
+  return getFileChanges('CHANGELOG.md')
     .then(verifyChangelogChanges)
     .then(() => {
-      gutil.log(gutil.colors.green('CHANGELOG.md verified'))
       done()
-    })
-    .catch((err) => {
-      gutil.log(gutil.colors.red(err))
-      done(err)
     })
 })
 
