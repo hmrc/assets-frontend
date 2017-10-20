@@ -46,6 +46,7 @@ gulp.task('changelog', (done) => {
   getFileChanges('CHANGELOG.md')
     .then(verifyChangelogChanges)
     .then(() => {
+      gutil.log(gutil.colors.green('CHANGELOG.md verified'))
       done()
     })
     .catch((err) => {
