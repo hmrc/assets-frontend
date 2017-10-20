@@ -42,7 +42,7 @@ function verifyChangelogChanges (lines) {
 }
 
 gulp.task('changelog', (done) => {
-  return getFileChanges('CHANGELOG.md')
+  getFileChanges('CHANGELOG.md')
     .then(verifyChangelogChanges)
     .then(() => {
       done()
