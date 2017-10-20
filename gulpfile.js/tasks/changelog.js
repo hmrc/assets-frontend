@@ -4,7 +4,7 @@ const gulp = require('gulp')
 const gutil = require('gulp-util')
 const exec = require('child_process').exec
 
-let runCommand = (cmd) => {
+function runCommand(cmd) {
   return new Promise((resolve, reject) => {
     if (!cmd) {
       reject(new Error('No command specified.'))
@@ -22,7 +22,7 @@ let runCommand = (cmd) => {
   })
 }
 
-let getFileChanges = (path) => {
+function getFileChanges(path) {
   if (!path) {
     throw new Error('No path given')
   }
@@ -32,12 +32,12 @@ let getFileChanges = (path) => {
   return runCommand(cmd)
 }
 
-let verifyChangelogChanges = (lines) => {
+function verifyChangelogChanges(lines) {
   return new Promise((resolve, reject) => {
-    if (lines.length === 0) {
+    if (!lines) {
       reject(new Error('No CHANGELOG.md update'))
     } else {
-      resolve();
+      resolve(lines);
     }
   })
 }
