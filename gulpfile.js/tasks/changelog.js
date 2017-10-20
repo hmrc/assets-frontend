@@ -26,7 +26,8 @@ function getFileChanges (path) {
     throw new Error('No path given')
   }
 
-  let cmd = `git diff master -- ${path}`
+  const ref = process.env.GIT_PREVIOUS_SUCCESSFUL_COMMIT || 'master'
+  let cmd = `git diff ${ref} -- ${path}`
 
   return runCommand(cmd)
 }
