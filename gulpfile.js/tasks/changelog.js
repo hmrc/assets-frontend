@@ -27,7 +27,7 @@ function getFileChanges(path) {
     throw new Error('No path given')
   }
 
-  let cmd = `git diff origin/master -- ${path}`
+  let cmd = `git diff master -- ${path}`
 
   return runCommand(cmd)
 }
