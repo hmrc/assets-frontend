@@ -3,6 +3,8 @@
 const gulp = require('gulp')
 const exec = require('child_process').exec
 
+const MASTER_BRANCH = 'master'
+
 function runCommand (cmd) {
   return new Promise((resolve, reject) => {
     if (!cmd) {
@@ -21,37 +23,41 @@ function runCommand (cmd) {
   })
 }
 
-function getFileChanges (path) {
-  if (!path) {
-    throw new Error('No path given')
-  }
-
-  const ref = process.env.GIT_PREVIOUS_SUCCESSFUL_COMMIT || 'master'
-  let cmd = `git diff ${ref} -- ${path}`
-
-  return runCommand(cmd)
+function getCurrentBranch () {
+  return runCommand('git rev-parse --abbrev-ref HEAD')
 }
 
-function verifyChangelogChanges (lines) {
+function getGitDiffs () {
+  return runCommand(`git diff --name-only ${MASTER_BRANCH}`)
+}
+
+function isWhitelistBranch (branch) {
+  return (branch.trim() === MASTER_BRANCH)
+}
+
+function verifyGitDiffs (diffs) {
   return new Promise((resolve, reject) => {
-    if (!lines) {
-      reject(new Error('No CHANGELOG.md update'))
+    if (!diffs || !diffs.includes('CHANGELOG.md')) {
+      reject(new Error('CHANGELOG.md was not updated'))
     } else {
-      resolve(lines)
+      resolve(true)
     }
   })
 }
 
-gulp.task('changelog', (done) => {
-  getFileChanges('CHANGELOG.md')
-    .then(verifyChangelogChanges)
-    .then(() => {
-      done()
+gulp.task('changelog', () => {
+  return getCurrentBranch()
+    .then(branch => {
+      return isWhitelistBranch(branch)
+        ? true
+        : getGitDiffs().then(verifyGitDiffs)
     })
 })
 
 module.exports = {
   runCommand: runCommand,
-  getFileChanges: getFileChanges,
-  verifyChangelogChanges: verifyChangelogChanges
+  getCurrentBranch: getCurrentBranch,
+  getGitDiffs: getGitDiffs,
+  isWhitelistBranch: isWhitelistBranch,
+  verifyGitDiffs: verifyGitDiffs
 }
