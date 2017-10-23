@@ -37,7 +37,7 @@ function isWhitelistBranch (branch) {
   return (branch.trim() === MASTER_BRANCH)
 }
 
-function filterFiles(files) {
+function filterFiles (files) {
   return files.filter(file => !file.includes(README_MD))
 }
 
