@@ -13,13 +13,15 @@ A shutter page is a page that is shown when a service has been switched off on p
 
 ## When to use a Shutter Page
 
-Your service should have a general page that does not include the day, date and time so a service can be shuttered quickly, before the content can be updated. But the content should be updated as fast as possible.
+Your service should have a general page that does not include the day, date and time the service will be avalible again. You should use this version of the Shutter Page if you need to shutter your service quickly.
 
-## How Shutter pages work
+When this Shutter Page is used the content should be updated as fast as possible and should tell users when the service will be avalible again..
+
+## How Shutter Pages work
 
 The page should:
 
-- use the standard [page template](/pages/page-template/index)
+- use the standard [page template](/components/page-template/index)
 - include the phase banner relevent to the service
 - have "Service unavailable" as the page title and H1
 - be clear and concise
@@ -48,7 +50,7 @@ This is a placeholder that can be used quickly if there is no time to change the
 
 {{ example('default.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('default.html') }}
 
@@ -56,7 +58,7 @@ This is a placeholder that can be used quickly if there is no time to change the
 
 {{ example('general-tc.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('general-tc.html') }}
 
@@ -64,7 +66,7 @@ This is a placeholder that can be used quickly if there is no time to change the
 
 {{ example('general-ei.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('general-ei.html') }}
 
@@ -72,39 +74,39 @@ This is a placeholder that can be used quickly if there is no time to change the
 
 This includes the helpful day, date and time information when a service will be available.
 
-### Example service that has a contact page on GOV.UK
+#### Example service that has a contact page on GOV.UK
 
 {{ example('shutter-tc.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('shutter-tc.html') }}
 
-### Example service that has a contact number, but no contact page
+#### Example service that has a contact number, but no contact page
 
 {{ example('shutter-ei.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('shutter-ei.html') }}
 
-### Example service that has no offline support
+#### Example service that has no offline support
 
 {{ example('shutter-amls.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('shutter-amls.html') }}
 
-## End of reporting period
+### End of reporting period
 
 This is for a service, like tax credit renewals, that is only open for part of the year.
 
-### Example service that has a contact page on GOV.UK
+#### Example service that has a contact page on GOV.UK
 
 {{ example('closed-tc.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('closed-tc.html') }}
 
@@ -112,7 +114,7 @@ This is for a service, like tax credit renewals, that is only open for part of t
 
 {{ example('closed-ei.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('closed-ei.html') }}
 
@@ -120,62 +122,62 @@ This is for a service, like tax credit renewals, that is only open for part of t
 
 {{ example('closed-amls.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('closed-amls.html') }}
 
-## Closed forever
+### Closed forever
 
 You should try and provide information about what has replaced it or what people need to do if they have outstanding questions.
 
-### Example service that has a contact page on GOV.UK
+#### Example service that has a contact page on GOV.UK
 
 {{ example('permanent-tc.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('permanent-tc.html') }}
 
-### Example service that has a contact number, but no contact page
+#### Example service that has a contact number, but no contact page
 
 {{ example('permanent-ei.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('permanent-ei.html') }}
 
-### Example service that has no offline support
+#### Example service that has no offline support
 
 {{ example('permanent-amls.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('permanent-amls.html') }}
 
-## Not available yet
+### Not available yet
 
 This is for a service that has not opened yet. This could be for tax credit renewals, which opens in April, or for a service that has been published but is not open until a specific day. These pages may be the same as the day, date and time pages.
 
-### Example service that has a contact page on GOV.UK
+#### Example service that has a contact page on GOV.UK
 
 {{ example('notyet-tc.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('notyet-tc.html') }}
 
-### Example service that has a contact number, but no contact page
+#### Example service that has a contact number, but no contact page
 
 {{ example('notyet-ei.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('notyet-ei.html') }}
 
-### Example service that has no offline support
+#### Example service that has no offline support
 
 {{ example('notyet-amls.html', true) }}
 
-##### Markup 
+##### HTML 
 
 {{ markup('notyet-amls.html') }}
