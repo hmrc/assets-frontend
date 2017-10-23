@@ -69,7 +69,6 @@ test('changelog - verifyGitDiffs', (t) => {
       t.ok(err.message.includes('CHANGELOG.md was not updated'), 'returns an error message')
     })
 
-
   t.ok(changelog.verifyGitDiffs('string').then(), 'returns a promise')
 
   changelog
