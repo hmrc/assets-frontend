@@ -1,10 +1,9 @@
-<!-- SKIP LINK -->
-<div id="skiplink-container">
-  <div>
-    <a href="#content" class="skiplink">Skip to main content</a>
-  </div>
+COOKIE MESSAGE -->
+<div id="global-cookie-message" style="display: block;">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+    cookies</a></p>
 </div>
-<!-- END SKIP LINK -->
+<!-- END COOKIE MESSAGE -->
 
 <!-- GOV.UK HEADER -->
 <header role="banner" id="global-header" class="with-proposition">
@@ -28,15 +27,38 @@
 <!-- END GOV.UK HEADER -->
 
 <main id="content" role="main">
-  <!-- PAGE CONTENTN-->
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+  
+  <!-- PAGE CONTENT   -->
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p>You will be able to use the service later.</p>
-      <p><a href="https://www.gov.uk/contact-the-tax-credit-office" data-sso="false">Contact the Tax Credit Office</a> if you need to make changes to your claim or speak to someone about your tax credits.</p>
+
+      <h1 class="heading-large">{% block h1 %}Service unavailable{% endblock %}</h1>
+
+        <p>You cannot use the online service to renew your tax credits.</p>
+
+        <p><a href="https://www.gov.uk/contact-the-tax-credit-office" data-sso="false">Contact the Tax Credit Office</a> to renew your tax credits by phone or letter.</p>
+
+        <p>You can <a href="#">use the tax credits service</a> to:</p>
+
+        <ul class="list-bullet">
+            <li>find out more about your payments</li>
+            <li>see who is on your claim</li>
+            <li>make changes to your claim</li>
+            <li>check the status of your renewal</li>
+        </ul>
+        
     </div>
+
   </div>
-  <!-- END PAGE CONTENT-->
+  <!-- END PAGE CONTENNT -->
 </main>
 
 <!-- FOOTER   -->
@@ -63,4 +85,4 @@
     </div>
   </div>
 </footer>
-<!-- END FOOTER -->
+<!-- END FOOTER
