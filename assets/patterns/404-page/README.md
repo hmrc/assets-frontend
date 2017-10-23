@@ -1,5 +1,12 @@
 # 404 page
 
+<div class="alert alert--info">
+
+<p class="alert__message">This pattern is work in progress.</p>
+<p class="alert__message">View the todo list for this pattern on [GitHub](https://github.com/hmrc/design-language-documentation/issues/104).</p>
+
+</div>
+
 404 pages (usually described as a 'page not found') tell users that the page they were trying to access is not there.
 
 {{ example("404-page.html", scaled=true) }}
