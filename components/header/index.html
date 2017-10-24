@@ -70,6 +70,7 @@
           <ul class="sub-nav-list">
             <li><a href="/assets-frontend/index.html">About</a></li>
             <li><a href="/assets-frontend/components/index.html">Components</a></li>
+            <li><a href="/assets-frontend/patterns/index.html">Patterns</a></li>
            </ul>
         </div>
       </div>
@@ -110,12 +111,11 @@
 
             <h1 id="header">Header</h1>
 <div class="alert alert--info">
-  <p class="alert__message">This component is work in progress.</p>
+  <p class="alert__message">This is a work in progress.</p>
   <p class="alert__message">You can use it in your service but you should <a href="https://github.com/hmrc/design-patterns/issues/4">contribute research</a>.</p>
 </div>
 
-
-<p>The HMRC header is a variant of the <a href="https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer">GOV.UK header</a> all elements that are imported from the GOV.UK header should be consistent and should not be changed.</p>
+<p>The HMRC header is the same as the <a href="https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer">GOV.UK header</a> but includes the HMRC logo. All elements that are imported from the GOV.UK header must not be changed.</p>
 <div class="example">
   <div class="scale-wrapper">
     <div class="scale"><!-- COOKIE MESSAGE -->
@@ -180,88 +180,12 @@
 
 
 
-<h2 id="when-to-use-the-hmrc-header">When to use the HMRC Header</h2>
+<h2 id="when-to-use-the-hmrc-header">When to use the HMRC header</h2>
 <p>Start with the <a href="https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer">GOV.UK header</a>.</p>
 <p>Only use the HMRC header if there is a user need for people to know they are dealing with HMRC.</p>
-<p>If your service is going to be within the Personal tax account you should use the <a href="/components/accopunt-header/index.html">Account header</a>.</p>
-<h2 id="how-the-hmrc-header-works">How the HMRC Header works</h2>
-<p>The HMRC header has two states:</p>
-<ul>
-<li><a href="#signed-out-state">signed out</a></li>
-<li><a href="#signed-in-state">signed in</a></li>
-</ul>
-<h3 id="signed-out-state">Signed out state</h3>
-<p>Use this:</p>
-<ul>
-<li>in services that do not require people to sign in</li>
-<li>when a user is signed out</li>
-<li>when it&#39;s important to people that they know they are using an HMRC service</li>
-</ul>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!-- COOKIE MESSAGE -->
-<div id="global-cookie-message" style="display: block;">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-    cookies</a></p>
-</div>
-<!-- END COOKIE MESSAGE -->
-
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-
-<main id="content">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-
-  <!-- HMRC BANNER -->
-  <div class="hmrc-banner" role="banner">
-    <div class="organisation-logo">
-      <p>HM Revenue &amp; Customs</p>
-    </div>
-  </div>
-  <!-- END HMRC BANNER -->
-
-  <!-- LANGUAGE TOGGLE -->
-  <div class="lang-select">
-    <ul>
-      <li>English</li>
-      <li>|</li>
-      <li><a href="#">Cymraeg</a></li>
-    </ul>
-  </div>
-  <!-- END LANGUAGE TOGGLE -->
-</main>
-</div>
-  </div>
-</div>
-
-
-
-<p>This version of the header should contain:</p>
+<p>If your service is in the personal tax account, use the <a href="/components/account-header/index.html">Account header</a>.</p>
+<h2 id="how-the-hmrc-header-works">How the HMRC header works</h2>
+<p>There are 2 versions of the header. Both versions must contain:</p>
 <ul>
 <li><a href="#the-hmrc-cookie-banner">the HMRC cookie banner</a></li>
 <li><a href="#the-gov.uk-header">the GOV.UK header</a></li>
@@ -269,6 +193,77 @@
 <li><a href="#hmrc-logo">HMRC logo</a></li>
 <li><a href="#language-selector">the language selector</a> if your service is avalible in Welsh</li>
 </ul>
+<h3 id="version-1-when-someone-is-signed-out">Version 1: When someone is signed out</h3>
+<p>Use this version:</p>
+<ul>
+<li>in services people do not have to sign in to</li>
+<li>before a user signs in</li>
+<li>when a user has signed out</li>
+</ul>
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<div id="global-cookie-message" style="display: block;">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+    cookies</a></p>
+</div>
+<!-- END COOKIE MESSAGE -->
+
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service name</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+
+<main id="content">
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+
+  <!-- HMRC BANNER -->
+  <div class="hmrc-banner" role="banner">
+    <div class="organisation-logo">
+      <p>HM Revenue &amp; Customs</p>
+    </div>
+  </div>
+  <!-- END HMRC BANNER -->
+
+  <!-- LANGUAGE TOGGLE -->
+  <div class="lang-select">
+    <ul>
+      <li>English</li>
+      <li>|</li>
+      <li><a href="#">Cymraeg</a></li>
+    </ul>
+  </div>
+  <!-- END LANGUAGE TOGGLE -->
+</main>
+</div>
+  </div>
+</div>
+
+
+
 <h4 id="markup">Markup</h4>
 <pre><code>&lt;!-- COOKIE MESSAGE --&gt;
 &lt;div id=&quot;global-cookie-message&quot; style=&quot;display: block;&quot;&gt;
@@ -326,12 +321,8 @@
   &lt;/div&gt;
   &lt;!-- END LANGUAGE TOGGLE --&gt;
 &lt;/main&gt;
-</code></pre><h3 id="signed-in-state">Signed in state</h3>
-<p>Use this:</p>
-<ul>
-<li>when it&#39;s important to people that they know they are using an HMRC service</li>
-<li>when people are signed in</li>
-</ul>
+</code></pre><h3 id="version-2-when-someone-is-signed-in">Version 2: When someone is signed in</h3>
+<p>Use this version when people are signed in to a service.</p>
 <div class="example">
   <div class="scale-wrapper">
     <div class="scale"><!-- COOKIE MESSAGE -->
@@ -401,15 +392,10 @@
 
 
 
-<p>This version of the header should contain:</p>
+<p>This version of the header must also contain:</p>
 <ul>
-<li><a href="#the-hmrc-cookie-banner">the HMRC cookie banner</a></li>
-<li><a href="#the-gov.uk-header">the GOV.UK header</a></li>
 <li><a href="#sign-out-link">a sign out link</a></li>
-<li><a href="#phase-banner">a phase banner</a> unless the service is live</li>
-<li><a href="#hmrc-logo">HMRC logo</a></li>
-<li><a href="#last-logged-in-status">last logged in status</a></li>
-<li><a href="#language-selector">the language selector</a> if your service is avalible in Welsh</li>
+<li><a href="#last-signed-in-status">last signed in status</a></li>
 </ul>
 <h4 id="markup">Markup</h4>
 <pre><code>&lt;!-- COOKIE MESSAGE --&gt;
@@ -476,35 +462,34 @@
 &lt;/main&gt;
 </code></pre><h3 id="header-elements">Header elements</h3>
 <h4 id="the-hmrc-cookie-banner">The HMRC cookie banner</h4>
-<p>The link to the cookie policy should go to the <a href="https://www.tax.service.gov.uk/help/cookies">HMRC cookie policy</a> page. You should add information on service-specific cookie information to that page.</p>
-<p>The cookie banner is displayed the first time a person visits GOV.UK. It&#39;s not shown on subsequent pages unless the cookies change. When people move to an HMRC service the HMRC cookie banner will be displayed again. </p>
-<p>Most people will access HMRC transactional services via a GOV.UK start page. They will be displayed the cookie banner twice. This is not ideal as people will not understand they are moving from one site to another. </p>
+<p>Link to <a href="https://www.tax.service.gov.uk/help/cookies">HMRC cookie policy</a>. Add service-specific cookie information to the cookie policy page.</p>
+<p>Because most people get to HMRC services through GOV.UK, they may see GOV.UK’s cookie banner and HMRC’s. Both banners look the same but link to different policies. Both banners are shown once a month or if the cookies change.</p>
 <h4 id="the-gov-uk-header">The GOV.UK header</h4>
-<p>The GOV.UK header should be used without changing anything.</p>
+<p>The GOV.UK header must used without changing anything.</p>
 <h4 id="sign-out-link">Sign out link</h4>
-<p>Only used if people are signed in.</p>
+<p>Only use if people are signed in.</p>
 <h4 id="phase-banner">Phase banner</h4>
 <p>The phase banner comes from GOV.UK.</p>
-<p>The feedback link in the phase banner should point to <a href="https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated">https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name</a>. Your service name should be appended to the URL so feedback can be directed back to your service team.</p>
+<p>The feedback link in the phase banner is <a href="https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated">https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name</a>. Append your service name to the URL so feedback can be directed back to your team.</p>
 <h4 id="hmrc-logo">HMRC logo</h4>
-<p>The HMRC logo is included for services where there is a user need to reassure people that they are using an HMRC service.</p>
-<p>For example, when they are making a payment and need to be sure that the money is going to the right government department.</p>
+<p>The HMRC logo is only where there is a user need to reassure people that they are dealing with HMRC.</p>
+<p>For example, if they are making a payment and need to be sure that the money is going to the right government department.</p>
 <p>More user research is needed to prove that the HMRC logo reassures people and meets this need.</p>
-<h4 id="last-logged-in-status">Last logged in status</h4>
-<p>The last logged in status tells people the time and date that they signed in.</p>
-<p>At the moment it&#39;s not possible to present names across all HMRC services in a consistent way which may cause people confusion. We stopped using peoples names in September 2016.</p>
-<p>More research is needed to understand if displaying a persons name is important.</p>
+<h4 id="last-signed-in-status">Last signed in status</h4>
+<p>The last signed in status tells people the time and date they last signed in.</p>
+<p>At the moment, it is not possible to present people’s names consistently across services. We stopped using names in September 2016.</p>
+<p>More research is needed to understand if displaying a person’s name is important.</p>
 <h4 id="language-selector">Language selector</h4>
-<p>Should be used if the service or page has been translated into another language. </p>
-<p>Welsh is the only language we support at the moment. We call this the Language selector because we don&#39;t know if it will be used for other languages in the future. </p>
-<p>The Language selector is sometimes referred to as the Welsh toggle.</p>
+<p>Use if the service or page is available in another language. </p>
+<p>Welsh is the only language we currently support. We do not know if it will be used for other languages. </p>
+<p>The language selector is sometimes called the Welsh toggle.</p>
 <h2 id="research-on-this-component">Research on this component</h2>
 <p>We need more user research on the header. </p>
-<p>We want to know:</p>
+<p>We want to know if:</p>
 <ul>
-<li>if people are reassured when they seeing the HMRC logo</li>
-<li>if the last signed in date in the signed in version is necessary</li>
-<li>if showing a persons name reassures them </li>
+<li>people are reassured by the HMRC logo</li>
+<li>the last signed in time and date is needed</li>
+<li>displaying a person’s name reassures them </li>
 </ul>
 <p>Contribute your research via this <a href="https://github.com/hmrc/design-patterns/issues/4">GitHub issue</a>.</p>
 
