@@ -25,16 +25,25 @@ function runCommand (cmd) {
   })
 }
 
-function getCurrentBranch () {
-  return runCommand('git rev-parse --abbrev-ref HEAD')
+function getMasterRevision() {
+  return runCommand('git rev-parse master')
+}
+
+function getCurrentBranchRevision () {
+  return runCommand('git rev-parse HEAD')
 }
 
 function getGitDiffs () {
-  return runCommand(`git diff --name-only origin/${MASTER_BRANCH}`)
+  return runCommand(`git diff --name-only ${MASTER_BRANCH}...`)
 }
 
-function isWhitelistBranch (branch) {
-  return (branch.trim() === MASTER_BRANCH)
+function isMaster () {
+  return new Promise((resolve) => {
+    Promise.all([getCurrentBranchRevision(), getMasterRevision()])
+      .then(results => {
+        resolve(results[0].trim() === results[1].trim())
+      })
+  })
 }
 
 function filterFiles (files) {
@@ -59,9 +68,9 @@ function verifyGitDiffs (diffs) {
 }
 
 gulp.task('changelog', () => {
-  return getCurrentBranch()
-    .then(branch => {
-      return isWhitelistBranch(branch)
+  return isMaster()
+    .then(isit => {
+      return isit
         ? true
         : getGitDiffs().then(verifyGitDiffs)
     })
@@ -69,9 +78,7 @@ gulp.task('changelog', () => {
 
 module.exports = {
   runCommand: runCommand,
-  getCurrentBranch: getCurrentBranch,
   getGitDiffs: getGitDiffs,
-  isWhitelistBranch: isWhitelistBranch,
   filterFiles: filterFiles,
   verifyGitDiffs: verifyGitDiffs
 }
