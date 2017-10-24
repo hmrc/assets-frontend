@@ -18,12 +18,12 @@
 }
 
 /* line 45, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
+#content, .panel, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
   zoom: 1;
 }
 
 /* line 46, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
+#content:after, .panel:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -64,12 +64,12 @@
 }
 
 /* line 45, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
+#content, .panel, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
   zoom: 1;
 }
 
 /* line 46, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
+#content:after, .panel:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -92,12 +92,12 @@
 }
 
 /* line 45, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
+#content, .panel, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
   zoom: 1;
 }
 
 /* line 46, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
+#content:after, .panel:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -112,12 +112,12 @@
 }
 
 /* line 45, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
+#content, .panel, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
   zoom: 1;
 }
 
 /* line 46, assets/govuk_elements/govuk/public/sass/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
+#content:after, .panel:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -1431,35 +1431,60 @@ ol li {
   margin-left: 25px;
 }
 
-/* line 5, assets/govuk_elements/public/sass/elements/_panels.scss */
-.panel-indent, .email-notifications__indent {
-  zoom: 1;
+/* line 4, assets/govuk_elements/public/sass/elements/_panels.scss */
+.panel {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   clear: both;
-  border-left: 4px solid #bfc1c3;
-  padding: 10px 0 10px 15px;
-  margin: 30px 15px 45px 0;
-}
-
-/* line 13, assets/govuk_elements/public/sass/elements/_helpers.scss */
-.panel-indent:after, .email-notifications__indent:after {
-  content: "";
-  display: block;
-  clear: both;
+  border-left-style: solid;
+  border-color: #bfc1c3;
+  padding: 0.78947em;
+  margin-bottom: 0.78947em;
 }
 
 /* line 14, assets/govuk_elements/public/sass/elements/_panels.scss */
-.panel-indent legend, .email-notifications__indent legend {
+.panel :first-child {
   margin-top: 0;
 }
 
-/* line 19, assets/govuk_elements/public/sass/elements/_panels.scss */
-.panel-indent p:only-child, .email-notifications__indent p:only-child,
-.panel-indent p:last-child, .email-notifications__indent p:last-child {
+/* line 18, assets/govuk_elements/public/sass/elements/_panels.scss */
+.panel :only-child,
+.panel :last-child {
   margin-bottom: 0;
 }
 
 /* line 24, assets/govuk_elements/public/sass/elements/_panels.scss */
-.panel-indent .form-group:last-child, .email-notifications__indent .form-group:last-child {
+.panel-border-wide {
+  border-left-width: 10px;
+}
+
+/* line 29, assets/govuk_elements/public/sass/elements/_panels.scss */
+.panel-border-narrow {
+  border-left-width: 5px;
+}
+
+/* line 35, assets/govuk_elements/public/sass/elements/_panels.scss */
+.form-group .panel-border-narrow {
+  float: left;
+  width: 100%;
+  padding-bottom: 0;
+}
+
+/* line 46, assets/govuk_elements/public/sass/elements/_panels.scss */
+.form-group .panel-border-narrow:first-child {
+  margin-top: 10px;
+}
+
+/* line 51, assets/govuk_elements/public/sass/elements/_panels.scss */
+.form-group .panel-border-narrow:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 57, assets/govuk_elements/public/sass/elements/_panels.scss */
+.inline .panel-border-narrow,
+.inline .panel-border-narrow:last-child {
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
@@ -1882,12 +1907,12 @@ The above styles and overwrites means you can simplify the markup to the followi
 }
 
 /* line 45, assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
+#content, .panel, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
   zoom: 1;
 }
 
 /* line 46, assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
+#content:after, .panel:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -1910,12 +1935,12 @@ The above styles and overwrites means you can simplify the markup to the followi
 }
 
 /* line 45, assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
+#content, .panel, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
   zoom: 1;
 }
 
 /* line 46, assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
+#content:after, .panel:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
@@ -1938,12 +1963,12 @@ The above styles and overwrites means you can simplify the markup to the followi
 }
 
 /* line 45, assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
+#content, .panel, .centered-content, .label--inlineRadio, .label--inlineRadio--expanded, .label--inlineDropDown, .form-field-group, .form-field-single, .form-field, .form-field--inline, .form-field--inline-text-input, .form-field--inline-spaced-right, .form-field--inline-spaced-left, .form-date, .header, .header__logo, .service-info, nav.help-contents ul, .hero__content, .account-menu, .subnav {
   zoom: 1;
 }
 
 /* line 46, assets/govuk_frontend_toolkit/stylesheets/_shims.scss */
-#content:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
+#content:after, .panel:after, .centered-content:after, .label--inlineRadio:after, .label--inlineRadio--expanded:after, .label--inlineDropDown:after, .form-field-group:after, .form-field-single:after, .form-field:after, .form-field--inline:after, .form-field--inline-text-input:after, .form-field--inline-spaced-right:after, .form-field--inline-spaced-left:after, .form-date:after, .header:after, .header__logo:after, .service-info:after, nav.help-contents ul:after, .hero__content:after, .account-menu:after, .subnav:after {
   content: "";
   display: block;
   clear: both;
