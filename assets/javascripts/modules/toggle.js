@@ -112,7 +112,7 @@ var toggleEvent = function ($elem) {
       if (event.which === 1 || 32) {
         var $input = $(event.target)
         if ($input.prop('tagName') === 'LABEL') $input = $input.find('input').first()
-        if ($input.prop('tagName') === 'INPUT') {
+        if ($input.prop('tagName') === 'INPUT' && $input.data('target')) {
           show($('#' + $input.data('target')))
           $inputs.not($input).each(function (i, input) {
             hide($('#' + $(input).data('target')))
