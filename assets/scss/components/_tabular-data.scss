@@ -38,6 +38,7 @@ Styleguide Tabular Data
   width: 100%;
   position: relative;
   padding: em(15) 0;
+  table-layout: fixed;
 }
 
 .tabular-data__entry--grouped:first-child {
@@ -109,7 +110,7 @@ Styleguide Tabular Data
   margin: em(10) 0;
   @include media(tablet) {
     display: table-cell;
-    width: 50%;
+    width: 44%;
   }
   li {
     margin: 0;
@@ -129,9 +130,10 @@ Styleguide Tabular Data
 .tabular-data__data-2 {
   display: block;
   margin: em(10) 0;
+  white-space: nowrap;
   @include media(tablet) {
     display: table-cell;
-    width: 10%;
+    width: 16%;
     text-align: right;
     padding-right: em(10);
   }

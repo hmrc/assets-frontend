@@ -86,6 +86,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Added the correct class to the Tab component to enable targetting an open tab via the url with a fragment [#778](https://github.com/hmrc/assets-frontend/issues/778)
+- Fixed alignment issues in Tabular Data component at page widths in-between the full desktop and mobile sizes
 
 ## [2.245.0] - 2017-05-09
 ### Fixed
