@@ -4,6 +4,8 @@ const gulp = require('gulp')
 const exec = require('child_process').exec
 
 const MASTER_BRANCH = 'master'
+const CHANGELOG_MD = 'CHANGELOG.md'
+const README_MD = 'README.md'
 
 function runCommand (cmd) {
   return new Promise((resolve, reject) => {
@@ -35,12 +37,23 @@ function isWhitelistBranch (branch) {
   return (branch.trim() === MASTER_BRANCH)
 }
 
+function filterFiles (files) {
+  return files.filter(file => !file.includes(README_MD))
+}
+
 function verifyGitDiffs (diffs) {
+  diffs = diffs || ''
+
+  let files = diffs.trim().split('\n')
+  let filteredFiles = filterFiles(files)
+
   return new Promise((resolve, reject) => {
-    if (!diffs || !diffs.includes('CHANGELOG.md')) {
-      reject(new Error('CHANGELOG.md was not updated'))
-    } else {
+    if (filteredFiles.length === 0) {
       resolve(true)
+    } else if (filteredFiles.indexOf(CHANGELOG_MD) !== -1) {
+      resolve(true)
+    } else {
+      reject(new Error('CHANGELOG.md was not updated'))
     }
   })
 }
@@ -59,5 +72,6 @@ module.exports = {
   getCurrentBranch: getCurrentBranch,
   getGitDiffs: getGitDiffs,
   isWhitelistBranch: isWhitelistBranch,
+  filterFiles: filterFiles,
   verifyGitDiffs: verifyGitDiffs
 }
