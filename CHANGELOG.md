@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-* Added a 404 page pattern [#835](https://github.com/hmrc/assets-frontend/pull/835)
+- 404 page pattern [#835](https://github.com/hmrc/assets-frontend/pull/835)
 - Shutter Page pattern [#838](https://github.com/hmrc/assets-frontend/pull/838)
 
 ### Changed
