@@ -30,7 +30,7 @@ function getCurrentBranch () {
 }
 
 function getGitDiffs () {
-  return runCommand(`git diff --name-only ${MASTER_BRANCH}..`)
+  return runCommand(`git diff --name-only origin/${MASTER_BRANCH}`)
 }
 
 function isWhitelistBranch (branch) {
