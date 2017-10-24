@@ -29,7 +29,6 @@ gulp.task('test:gulpTasks', function () {
 
 gulp.task('test', [
   'sass',
-  'lint:tests',
-  'lint:scripts',
+  'lint',
   'test:gulpTasks'
 ], karmaTask)
