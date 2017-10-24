@@ -3,7 +3,7 @@
 <div class="alert alert--info">
 
 <p class="alert__message">This pattern is work in progress.</p>
-<p class="alert__message">View the todo list for this pattern on [GitHub](https://github.com/hmrc/design-language-documentation/issues/103).</p>
+<p class="alert__message">View the todo list for this pattern on [GitHub](https://github.com/hmrc/design-patterns/issues/103).</p>
 
 </div>
 
@@ -50,25 +50,13 @@ This is a placeholder that can be used quickly if there is no time to change the
 
 {{ example('default.html', true) }}
 
-##### HTML 
-
-{{ markup('default.html') }}
-
 #### Example service that has a contact page on GOV.UK
 
 {{ example('general-tc.html', true) }}
 
-##### HTML 
-
-{{ markup('general-tc.html') }}
-
 #### Example service that has a contact number, but no contact page
 
 {{ example('general-ei.html', true) }}
-
-##### HTML 
-
-{{ markup('general-ei.html') }}
 
 ### Day, date and time
 
@@ -78,25 +66,13 @@ This includes the helpful day, date and time information when a service will be 
 
 {{ example('shutter-tc.html', true) }}
 
-##### HTML 
-
-{{ markup('shutter-tc.html') }}
-
 #### Example service that has a contact number, but no contact page
 
 {{ example('shutter-ei.html', true) }}
 
-##### HTML 
-
-{{ markup('shutter-ei.html') }}
-
 #### Example service that has no offline support
 
 {{ example('shutter-amls.html', true) }}
-
-##### HTML 
-
-{{ markup('shutter-amls.html') }}
 
 ### End of reporting period
 
@@ -106,25 +82,13 @@ This is for a service, like tax credit renewals, that is only open for part of t
 
 {{ example('closed-tc.html', true) }}
 
-##### HTML 
-
-{{ markup('closed-tc.html') }}
-
 ### Example service that has a contact number, but no contact page
 
 {{ example('closed-ei.html', true) }}
 
-##### HTML 
-
-{{ markup('closed-ei.html') }}
-
 ### Example service that has no offline support
 
 {{ example('closed-amls.html', true) }}
-
-##### HTML 
-
-{{ markup('closed-amls.html') }}
 
 ### Closed forever
 
@@ -134,25 +98,13 @@ You should try and provide information about what has replaced it or what people
 
 {{ example('permanent-tc.html', true) }}
 
-##### HTML 
-
-{{ markup('permanent-tc.html') }}
-
 #### Example service that has a contact number, but no contact page
 
 {{ example('permanent-ei.html', true) }}
 
-##### HTML 
-
-{{ markup('permanent-ei.html') }}
-
 #### Example service that has no offline support
 
 {{ example('permanent-amls.html', true) }}
-
-##### HTML 
-
-{{ markup('permanent-amls.html') }}
 
 ### Not available yet
 
@@ -162,22 +114,22 @@ This is for a service that has not opened yet. This could be for tax credit rene
 
 {{ example('notyet-tc.html', true) }}
 
-##### HTML 
-
-{{ markup('notyet-tc.html') }}
-
 #### Example service that has a contact number, but no contact page
 
 {{ example('notyet-ei.html', true) }}
-
-##### HTML 
-
-{{ markup('notyet-ei.html') }}
 
 #### Example service that has no offline support
 
 {{ example('notyet-amls.html', true) }}
 
-##### HTML 
+## Research on Shutter Pages
 
-{{ markup('notyet-amls.html') }}
+We need more user research on Shutter Pages. 
+
+We want to know:
+
+- if people understand what is going on
+- what peoples expectations are having seen a shutter page
+
+Contribute your research via this [GitHub issue](https://github.com/hmrc/design-patterns/issues/103).
+
