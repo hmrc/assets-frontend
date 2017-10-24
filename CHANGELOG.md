@@ -12,9 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 * Replace the component library with a new design pattern library [#822](https://github.com/hmrc/assets-frontend/pull/822) 
-* Add header component to the new design system 
+* Add header component to the new design system  
 * Use macros for example and markup rendering in README.md
 * Modify CHANGELOG.md change verification to stabilise Travis CI [#833](https://github.com/hmrc/assets-frontend/pull/833)
+* Allow README.md only changes to be merged without forcing CHANGELOG.md to be changed [#836](https://github.com/hmrc/assets-frontend/pull/836)
 
 ## [2.252.0] - 2017-10-16
 
