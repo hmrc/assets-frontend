@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added 
+- Shutter Page pattern [#838](https://github.com/hmrc/assets-frontend/pull/838)
+
 ### Changed
 * Replace the component library with a new design pattern library [#822](https://github.com/hmrc/assets-frontend/pull/822) 
 * Add header component to the new design system  
