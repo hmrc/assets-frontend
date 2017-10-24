@@ -3,7 +3,6 @@
 const gulp = require('gulp')
 const exec = require('child_process').exec
 
-const MASTER_BRANCH = 'master'
 const CHANGELOG_MD = 'CHANGELOG.md'
 const README_MD = 'README.md'
 
@@ -25,7 +24,7 @@ function runCommand (cmd) {
   })
 }
 
-function getMasterRevision() {
+function getMasterRevision () {
   return runCommand('git rev-parse master')
 }
 
@@ -34,7 +33,7 @@ function getCurrentBranchRevision () {
 }
 
 function getGitDiffs () {
-  return runCommand(`git diff --name-only ${MASTER_BRANCH}...`)
+  return runCommand(`git diff --name-only master...`)
 }
 
 function isMaster () {
@@ -79,6 +78,8 @@ gulp.task('changelog', () => {
 module.exports = {
   runCommand: runCommand,
   getGitDiffs: getGitDiffs,
+  getCurrentBranchRevision: getCurrentBranchRevision,
+  getMasterRevision: getMasterRevision,
   filterFiles: filterFiles,
   verifyGitDiffs: verifyGitDiffs
 }

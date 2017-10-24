@@ -20,21 +20,19 @@ test('changelog - runCommand', (t) => {
     })
 })
 
-test('changelog - getCurrentBranch', (t) => {
+test('changelog - getCurrentBranchRevision', (t) => {
   t.plan(1)
-  t.ok(changelog.getCurrentBranch().then(), 'returns a promise')
+  t.ok(changelog.getCurrentBranchRevision().then(), 'returns a promise')
+})
+
+test('changelog - getMasterRevision', (t) => {
+  t.plan(1)
+  t.ok(changelog.getMasterRevision().then(), 'returns a promise')
 })
 
 test('changelog - getGitDiffs', (t) => {
   t.plan(1)
   t.ok(changelog.getGitDiffs().then(), 'returns a promise')
-})
-
-test('changelog - isWhitelistBranch', (t) => {
-  t.plan(3)
-  t.notOk(changelog.isWhitelistBranch(''))
-  t.ok(changelog.isWhitelistBranch('  master   \n'))
-  t.ok(changelog.isWhitelistBranch('master'))
 })
 
 test('changelog - filterFiles', (t) => {
