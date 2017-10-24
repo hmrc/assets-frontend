@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added 
 - Shutter Page pattern [#838](https://github.com/hmrc/assets-frontend/pull/838)
+- Added the image `icon-print.svg` [#841](https://github.com/hmrc/assets-frontend/pull/841)
 
 ### Changed
 * Replace the component library with a new design pattern library [#822](https://github.com/hmrc/assets-frontend/pull/822) 
