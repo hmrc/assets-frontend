@@ -4,41 +4,15 @@ main {
   -webkit-font-smoothing: antialiased;
 }
 
-.heading-large {
-  font-size: 36px !important;
-  margin: 0 !important;
-
-  @include media(mobile) {
-    font-size: 32px !important;
-  }
-}
-
-// Full width home page
-
 // Centred
 .column-constrained {
   padding: 0 $gutter-half !important;
-  @media (min-width: 1200px ) {
+  @media (min-width: 1200px) {
     padding: 0 10% !important;
   }
-  @media (min-width: 1367px ) {
+  @media (min-width: 1367px) {
     padding: 0 15% !important;
   }
-}
-
-#design-system-content.technical-documentation {
-    max-width: none;
-    margin-top: 18px; // Hack so the subheadings align nicely with the search box :-)
-
-    .pattern-header + h1 {
-      padding-top: 5px;
-      padding-top: 0px !important;
-      margin-top: 0px !important;
-    }
-
-    pre code {
-      border: none;
-    }
 }
 
 .design-system {
@@ -60,7 +34,7 @@ main {
 }
 
 .toc__list {
-  a:link{
+  a:link {
     padding-left: 11px;
     position: relative;
     padding-right: 60px;
@@ -84,187 +58,110 @@ main {
 }
 
 .toc__list li a,
-.toc__list li li a{
-    border-left: 4px solid transparent;
+.toc__list li li a {
+  border-left: 4px solid transparent;
 }
 
 .toc__list .current-page a {
-    background-color: darken($grey-4, 3%);
-    font-weight: bold !important;
-    letter-spacing: 0;
-    border-left: 4px solid $govuk-blue;
+  background-color: darken($grey-4, 3%);
+  font-weight: bold !important;
+  letter-spacing: 0;
+  border-left: 4px solid $govuk-blue;
 
-    &:hover {
-      border-left-color: $govuk-blue;
-    }
+  &:hover {
+    border-left-color: $govuk-blue;
+  }
 
-    //Copy of pattern status
-    &::after {
-      position: absolute;
-      right: 0;
-      font-size: 12px;
-      padding: 0 10px 0 3px;
-      min-width: 56px;
-      text-align: right;
-      margin-top: 3px;
-      letter-spacing: 1;
-      color: $secondary-text-colour;
-    }
+  //Copy of pattern status
+  &::after {
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+    padding: 0 10px 0 3px;
+    min-width: 56px;
+    text-align: right;
+    margin-top: 3px;
+    letter-spacing: 1;
+    color: $secondary-text-colour;
+  }
 }
 
-.markdown{
+.markdown {
+  margin: 0 32px 30px;
 
-    .section-heading{
-        color: $secondary-text-colour;
-        font-size: 24px;
-        margin: $gutter 0 0;
+  .example {
+    @extend %contain-floats;
+    position: relative;
+    border: 1px solid $border-colour;
+    margin: $gutter 0;
+    padding: $gutter;
 
-        &::first-letter{
-            text-transform: uppercase;
-        }
+    &:before {
+      content: "EXAMPLE";
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 5px 15px 5px 15px;
+      font-family: "nta", Arial, sans-serif;
+      font-weight: 400;
+      text-transform: none;
+      font-size: 12px;
+      line-height: 1.25;
+      background: $grey-1;
+      color: white;
     }
+  }
 
-    .example{
-        @extend %contain-floats;
-        position: relative;
-        border: 1px solid $border-colour;
-        margin: $gutter 0;
-        padding: $gutter*2 $gutter $gutter $gutter;
+  pre {
+    padding: 0;
 
-        p {
-          // margin-bottom: $gutter-half;
-        }
-
-        h1, h2, h3, h4 {
-          margin-top: 0;
-          padding-top: 0;
-        }
-
-        @include media(mobile) {
-          h1:first-child {
-            margin-top: -5px;
-          }
-        }
-
-        // Spacing of Radio and checkboxes examples. This needs looking at.
-        .form-group {
-          margin-bottom: 15px;
-          &:nth-last-of-type(1){
-            margin-bottom: 0px;
-          }
-          & + .form-group, + .multiple-choice {
-            margin-top: $gutter-half;
-          }
-        }
-
-        .form-block {
-            margin-top: 0;
-            margin-bottom: 10px;
-            max-width: 100%;
-        }
-
-        &:before {
-          content: "EXAMPLE";
-          position: absolute;
-          top: 0;
-          left: 0;
-          padding: 5px 15px 5px 15px;
-          font-family: "nta", Arial, sans-serif;
-          font-weight: 400;
-          text-transform: none;
-          font-size: 12px;
-          line-height: 1.25;
-          background: $grey-1;
-          color: white;
-        }
-
-        &.example__mobile {
-          max-width: 320px;
-        }
-
+    code {
+      border: none;
     }
+  }
 
-    .example--date-group {
-      .form-group {
-        margin-top: 15px;
-      }
-      .form-group-month-text {
-        width: 150px;
-      }
-    }
+  p, ul.list, ol.list, blockquote, .example {
+    max-width: 34em;
+  }
 
+  ul {
+    list-style: disc;
+  }
 
+  ul, ol {
+    padding: 0 0 0 40px;
+  }
 
-    p.example-grid {
-      width: 100%;
-      max-width: none;
-      background: url("../images/grid.png") 0 0 repeat;
-      margin: 0;
-      height: 30px;
-      @include media(tablet) {
-        height: 60px;
-      }
-      overflow: hidden;
-      text-indent: -999em;
-    }
+  ol li {
+    list-style-type: decimal;
+  }
 
-    p, ul.list, ol.list, blockquote, .example{
-        max-width: 34em;
-    }
+  ul li {
+    list-style-type: disc;
+  }
 
-    h1{
-        // @extend .heading-xlarge;
-        margin-top: 0;
-        border-top: 0;
-        margin-bottom: $gutter;
-        padding-top: 5px;
-    }
+  .example + pre,
+  .example + .highlight {
+    margin-top: -31px;
+  }
 
-    h1:first-letter{
-        text-transform: uppercase;
-    }
+  .highlight {
+    font-size: 16px;
+  }
 
-    h2{
-        // @extend .heading-medium;
-    }
+  blockquote {
+    margin: 15px 0;
+    border-left: 4px solid #dee0e2;
+  }
 
-    h3{
-        // @extend .heading-small;
-    }
+  strong {
+    font-weight: bold;
+  }
 
-    > ul{
-        // @extend .list;
-        // @extend .list-bullet;
-
-      }
-
-    ul {
-      list-style: disc;
-    }
-
-    .example + pre,
-    .example + .highlight{
-        margin-top: -31px;
-    }
-
-    .highlight{
-        font-size: 16px;
-    }
-
-    blockquote {
-      margin: 15px 0;
-      border-left: 4px solid #dee0e2;
-    }
-
-    strong{
-      font-weight: bold;
-    }
-
-    .list-no-bullet {
-      list-style: none;
-      padding-left: 0px;
-    }
-
+  .list-no-bullet {
+    list-style: none;
+    padding-left: 0px;
+  }
 }
 
 .banner {
@@ -309,10 +206,10 @@ main {
 
 .related-content-grid-item {
   @include media(tablet) {
-      width: 100%;
+    width: 100%;
   }
   @include media(desktop) {
-      width: 25%;
+    width: 25%;
   }
 
 }
@@ -336,7 +233,7 @@ dl.meta-data-bottom {
   margin-top: $gutter;
 
   @include media(mobile) {
-      padding: $gutter-half;
+    padding: $gutter-half;
   }
 
   h2 {
@@ -412,6 +309,6 @@ dl.meta-data-bottom {
   flex: 1;
   max-width: 25%;
   @include media(mobile) {
-      max-width: 100%;
+    max-width: 100%;
   }
 }
