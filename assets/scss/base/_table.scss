@@ -277,3 +277,123 @@ Styleguide Table.Marker
   height: 10px;
   border-radius: 50%;
 }
+
+/*
+Responsive
+
+Responsive Table: shrink the browser to see how rows and columns behave
+with examples of different lengths of content in headings and details
+
+Markup:
+<table>
+  <thead>
+    <tr class="table__row--desktop-headings">
+      <th>Heading 1</th>
+      <th>Heading 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table__row--responsive">
+      <td class="table__detail--responsive" data-heading="Heading 1">
+        <p class="table__cell-content--responsive">Row 1 Detail 1<p>
+      </td>
+      <td class="table__detail--responsive" data-heading="Heading 2">
+        <p class="table__cell-content--responsive">Row 1 Detail 2</p>
+      </td>
+    </tr>
+    <tr class="table__row--responsive">
+      <td class="table__detail--responsive" data-heading="Heading 1">
+        <p class="table__cell-content--responsive">Row 2 Detail 1</p>
+      </td>
+      <td class="table__detail--responsive" data-heading="Heading 2">
+        <p class="table__cell-content--responsive">Row 2 Detail 2</p>
+      </td>
+    </tr>
+    <tr class="table__row--responsive">
+      <td class="table__detail--responsive" data-heading="Heading 1 - Example heading that exceeds cell width">
+        <p class="table__cell-content--responsive">Row 3 Detail 1</p>
+      </td>
+      <td class="table__detail--responsive" data-heading="Heading 2 - Example heading that exceeds cell width">
+        <p class="table__cell-content--responsive">Row 3 Detail 2</p>
+      </td>
+    </tr>
+    <tr class="table__row--responsive">
+      <td class="table__detail--responsive" data-heading="Heading 1">
+        <p class="table__cell-content--responsive">Row 4 Detail 1 - example content that exceeds cell width to create multiple lines</p>
+      </td>
+      <td class="table__detail--responsive" data-heading="Heading 2">
+        <p class="table__cell-content--responsive">Row 4 Detail 2 - example content that exceeds cell width to create multiple lines</p>
+      </td>
+    </tr>
+    <tr class="table__row--responsive">
+      <td class="table__detail--responsive" data-heading="Heading 1">
+        <div class="table__cell-content--responsive">
+          <p>Row 5 Detail 1 - example content with multiple paragraphs</p>
+          <p>Row 5 Detail 1 - paragraph Two</p>
+          <p>Row 5 Detail 1 - paragraph Three</p>
+        </div>
+      </td>
+      <td class="table__detail--responsive" data-heading="Heading 2">
+        <div class="table__cell-content--responsive">
+          <p>Row 5 Detail 2 - example content with multiple paragraphs</p>
+          <p>Row 5 Detail 2 - paragraph Two</p>
+          <p>Row 5 Detail 2 - paragraph Three</p>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+Styleguide Table.Responsive
+*/
+
+@include media(mobile) {
+  .table__row--desktop-headings {
+    display: none;
+  }
+
+  .table__row--responsive {
+    margin-bottom: em(8);
+    display: block;
+  }
+
+  .table__row--responsive:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .table__row--responsive:before {
+    display: block;
+    border-bottom: 2px solid $border-colour;
+  }
+
+  .table__detail--responsive {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    clear: left;
+    width: 100%;
+    border: none;
+  }
+
+  .table__detail--responsive:before {
+    content: attr(data-heading);
+    font-weight: normal;
+    color: $grey-1;
+    float: left;
+    width: 30%;
+  }
+
+  .table__detail--responsive:last-of-type {
+    padding-bottom: em(16);
+    border-bottom: 1px solid $border-colour;
+  }
+
+  .table__cell-content--responsive {
+    display: block;
+    margin-left: 30%;
+    padding-left: em(12);
+  }
+}
