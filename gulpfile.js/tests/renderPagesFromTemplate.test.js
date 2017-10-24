@@ -25,7 +25,6 @@ test('renderPagesFromTemplate - renders a homepage', function (t) {
 
   var output = renderPagesFromTemplate(getFiles(), compiledTemplate)
   var $ = cheerio.load(output[0].contents)
-  console.log('$', $('#homepage').length)
 
   t.equal($('#documentation').text(), 'Homepage', 'replaces a files object contents with a rendered template')
 
