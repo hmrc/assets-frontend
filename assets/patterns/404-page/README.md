@@ -33,23 +33,17 @@ When you design the 404 page for your service you need to consider:
 - the best way for people to solve the problem
 - if there is anything spesific your service can do to help users
 
-{{ example("404-page.html", scaled=true) }}
-
 The page should:
 <!-- @todo add link to the page template -->
-*   use the standard page template
-*   include the phase banner relevent to the service
-*   have "Page not found" as the page title and H1
-*   be clear and concise
-*   an explination of the problem if possible
-*   not have breadcrumbs
-*   not use vague terms
-*   not use red text to warn people
-
-- a heading
-- an explination of the problem 
-- anything the user can do to resolve the problem
-- a link to the most appropriate place in your service 
+- use the standard page template
+- include the phase banner relevent to the service
+- have "Page not found" as the page title and H1
+- be clear and concise
+- an explination of the problem if possible
+- not have breadcrumbs
+- not use vague terms
+- not use red text to warn people
+- optionally display a form for users to tell us about the problem
 
 ## Research on 404 pages
 
@@ -61,6 +55,7 @@ We want to know:
 - if people understand what caused the page
 - if people understand the content 
 - if anything is missing from the content
+- if giving users a form to report the problem helps 
 
 Contribute your research via this [GitHub issue](https://github.com/hmrc/design-patterns/issues/104).
 
