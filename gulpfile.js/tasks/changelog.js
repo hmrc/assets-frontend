@@ -1,16 +1,19 @@
 'use strict'
 
-var gulp = require('gulp')
-var gutil = require('gulp-util')
-var proc = require('child_process')
+const gulp = require('gulp')
+const exec = require('child_process').exec
 
-var runCommand = function (cmd) {
-  return new Promise(function (resolve, reject) {
+const MASTER_BRANCH = 'master'
+const CHANGELOG_MD = 'CHANGELOG.md'
+const README_MD = 'README.md'
+
+function runCommand (cmd) {
+  return new Promise((resolve, reject) => {
     if (!cmd) {
       reject(new Error('No command specified.'))
     }
 
-    proc.exec(cmd, function (err, stdout, stderr) {
+    exec(cmd, function (err, stdout, stderr) {
       if (err) {
         reject(err)
       } else if (stderr) {
@@ -22,56 +25,53 @@ var runCommand = function (cmd) {
   })
 }
 
-var getCurrentCommit = function (commit) {
-  return new Promise(function (resolve, reject) {
-    if (commit) {
-      resolve(commit)
+function getCurrentBranch () {
+  return runCommand('git rev-parse --abbrev-ref HEAD')
+}
+
+function getGitDiffs () {
+  return runCommand(`git diff --name-only ${MASTER_BRANCH}`)
+}
+
+function isWhitelistBranch (branch) {
+  return (branch.trim() === MASTER_BRANCH)
+}
+
+function filterFiles (files) {
+  return files.filter(file => !file.includes(README_MD))
+}
+
+function verifyGitDiffs (diffs) {
+  diffs = diffs || ''
+
+  let files = diffs.trim().split('\n')
+  let filteredFiles = filterFiles(files)
+
+  return new Promise((resolve, reject) => {
+    if (filteredFiles.length === 0) {
+      resolve(true)
+    } else if (filteredFiles.indexOf(CHANGELOG_MD) !== -1) {
+      resolve(true)
     } else {
-      var cmd = 'git rev-parse HEAD'
-      runCommand(cmd).then(resolve)
+      reject(new Error('CHANGELOG.md was not updated'))
     }
   })
 }
 
-var getChangedFiles = function (commit) {
-  if (!commit) {
-    throw new Error('No commit given')
-  }
-
-  var ref = process.env.GIT_PREVIOUS_SUCCESSFUL_COMMIT || 'master'
-
-  var cmd = 'git diff --name-only ' + ref + ' ' + commit
-  return runCommand(cmd)
-}
-
-var checkForChangelog = function (files) {
-  if (files.length && !files.includes('CHANGELOG.md')) {
-    throw new Error('No CHANGELOG.md update')
-  }
-
-  return true
-}
-
-gulp.task('changelog', function (done) {
-  var commit = process.env.TRAVIS
-    ? process.env.TRAVIS_COMMIT
-    : process.env.GIT_COMMIT
-
-  getCurrentCommit(commit)
-    .then(getChangedFiles)
-    .then(checkForChangelog)
-    .then(function () {
-      done()
-    })
-    .catch(function (err) {
-      gutil.log(gutil.colors.red(err))
-      done(err)
+gulp.task('changelog', () => {
+  return getCurrentBranch()
+    .then(branch => {
+      return isWhitelistBranch(branch)
+        ? true
+        : getGitDiffs().then(verifyGitDiffs)
     })
 })
 
 module.exports = {
   runCommand: runCommand,
-  getCurrentCommit: getCurrentCommit,
-  getChangedFiles: getChangedFiles,
-  checkForChangelog: checkForChangelog
+  getCurrentBranch: getCurrentBranch,
+  getGitDiffs: getGitDiffs,
+  isWhitelistBranch: isWhitelistBranch,
+  filterFiles: filterFiles,
+  verifyGitDiffs: verifyGitDiffs
 }

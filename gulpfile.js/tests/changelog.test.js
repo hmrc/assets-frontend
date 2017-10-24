@@ -1,9 +1,9 @@
-var test = require('tape')
-var sinon = require('sinon')
-var proc = require('child_process')
-var changelog = require('../tasks/changelog')
+'use strict'
 
-test('changelog - runCommand', function (t) {
+const test = require('tape')
+const changelog = require('../tasks/changelog')
+
+test('changelog - runCommand', (t) => {
   t.plan(3)
 
   changelog
@@ -20,77 +20,66 @@ test('changelog - runCommand', function (t) {
     })
 })
 
-test('changelog - getCurrentCommit', function (t) {
-  t.plan(5)
-
-  var sha = 'abcd123'
-  var execStub = sinon.stub(proc, 'exec').callsArgWith(1, null, sha, null)
-
-  var givenCommit = changelog.getCurrentCommit(sha)
-  var currentCommit = changelog.getCurrentCommit()
-
-  t.ok(givenCommit.then(), 'returns a Promise when given a commit sha')
-  t.ok(currentCommit.then(), 'returns a Promise when not given a commit sha')
-  t.ok(execStub.calledOnce, 'only calls git when not given a commit sha')
-
-  givenCommit.then(function (branch) {
-    t.equal(branch, sha, 'returns the result of git exactly when given a sha')
-  })
-
-  currentCommit.then(function (branch) {
-    t.equal(branch, sha, 'returns the result of git exactly when not given a sha')
-  })
-
-  proc.exec.restore()
+test('changelog - getCurrentBranch', (t) => {
+  t.plan(1)
+  t.ok(changelog.getCurrentBranch().then(), 'returns a promise')
 })
 
-test('changelog - getChangedFiles', function (t) {
-  t.plan(3)
-
-  var files = 'file-one.html\n' +
-    'file-two.js\n' +
-    'file-three'
-
-  sinon.stub(proc, 'exec').callsArgWith(1, null, files, null)
-
-  // var noCommit = changelog.getChangedFiles()
-  var changedFiles = changelog.getChangedFiles('test')
-
-  t.throws(function () {
-    changelog.getChangedFiles()
-  }, /No commit given/, 'throws an error when not given a branch')
-
-  t.ok(changedFiles.then(), 'returns a Promise when given a branch')
-
-  changedFiles.then(function (value) {
-    t.equal(value, files, 'returns the Promise value exactly')
-  })
-
-  proc.exec.restore()
+test('changelog - getGitDiffs', (t) => {
+  t.plan(1)
+  t.ok(changelog.getGitDiffs().then(), 'returns a promise')
 })
 
-test('changelog - checkForChangelog', function (t) {
+test('changelog - isWhitelistBranch', (t) => {
+  t.plan(3)
+  t.notOk(changelog.isWhitelistBranch(''))
+  t.ok(changelog.isWhitelistBranch('  master   \n'))
+  t.ok(changelog.isWhitelistBranch('master'))
+})
+
+test('changelog - filterFiles', (t) => {
   t.plan(3)
 
-  var files1 = 'file-one.html\n' +
-    'CHANGELOG.md\n' +
-    'file-two.js'
+  t.equal(changelog.filterFiles(['README.md', 'another.md']).length, 1, 'returns 1 as only README has filtered')
+  t.equal(changelog.filterFiles(['README.md', 'README.md', 'README.md', 'README.md', 'another.md']).length, 1, 'returns 1 as only README has filtered')
+  t.equal(changelog.filterFiles(['README.md', 'another.md'])[0], 'another.md', 'returns a string representing the only item')
+})
 
-  var files2 = 'file-one.html\n' +
-    'file-two.js\n' +
-    'file-three.css'
+test('changelog - verifyGitDiffs', (t) => {
+  t.plan(9)
 
-  t.true(
-    changelog.checkForChangelog(''),
-    'returns true when CHANGELOG.md is empty'
-  )
+  changelog
+    .verifyGitDiffs()
+    .catch(function (err) {
+      t.ok(err instanceof Error, 'returns an Error if the command fails')
+      t.ok(err.message.includes('CHANGELOG.md was not updated'), 'returns an error message')
+    })
 
-  t.true(
-    changelog.checkForChangelog(files1),
-    'returns true when CHANGELOG.md is found'
-  )
+  changelog
+    .verifyGitDiffs('file1\nfile2\nfile')
+    .catch(function (err) {
+      t.ok(err instanceof Error, 'returns an Error if the command fails')
+      t.ok(err.message.includes('CHANGELOG.md was not updated'), 'returns an error message')
+    })
 
-  t.throws(function () {
-    changelog.checkForChangelog(files2)
-  }, /No CHANGELOG\.md update/, 'returns an Error when CHANGELOG.md cannot be found')
+  changelog
+    .verifyGitDiffs('file1\nREADME.md\nfolder1/README.md')
+    .catch(function (err) {
+      t.ok(err instanceof Error, 'returns an Error if the command fails')
+      t.ok(err.message.includes('CHANGELOG.md was not updated'), 'returns an error message')
+    })
+
+  t.ok(changelog.verifyGitDiffs('string').then(), 'returns a promise')
+
+  changelog
+    .verifyGitDiffs('file1\nCHANGELOG.md\nfile')
+    .then((res) => {
+      t.ok(res, 'returns true as CHANGELOG.md is in the list')
+    })
+
+  changelog
+    .verifyGitDiffs('README.md\nfolder1/README.md\nfolder2/README.md')
+    .then((res) => {
+      t.ok(res, 'returns true as CHANGELOG.md should not be changed')
+    })
 })
