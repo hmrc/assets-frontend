@@ -3,7 +3,7 @@
 <div class="alert alert--info">
 
 <p class="alert__message">This pattern is work in progress.</p>
-<p class="alert__message">View the todo list for this pattern on [GitHub](https://github.com/hmrc/design-language-documentation/issues/104).</p>
+<p class="alert__message">View the todo list for this pattern on [GitHub](https://github.com/hmrc/design-patterns/issues/104).</p>
 
 </div>
 
@@ -35,15 +35,21 @@ When you design the 404 page for your service you need to consider:
 
 {{ example("404-page.html", scaled=true) }}
 
-A 404 page should contain:
+The page should:
+<!-- @todo add link to the page template -->
+*   use the standard page template
+*   include the phase banner relevent to the service
+*   have "Page not found" as the page title and H1
+*   be clear and concise
+*   an explination of the problem if possible
+*   not have breadcrumbs
+*   not use vague terms
+*   not use red text to warn people
 
 - a heading
 - an explination of the problem 
 - anything the user can do to resolve the problem
 - a link to the most appropriate place in your service 
-
-### HTML
-{{ markup("404-page.html") }}
 
 ## Research on 404 pages
 
