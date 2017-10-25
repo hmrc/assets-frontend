@@ -34,7 +34,7 @@ When displaying a 500 page you should:
 
 ### Example 500 page when there is an alternative channel
 
-{{ example('500-page.html', true) }}
+{{ example('500-page-alternative-channel.html', true) }}
 
 ## Research on 500 pages
 
