@@ -7,17 +7,17 @@
 
 </div>
 
-The Account Header is used in the [Personal Tax Account](https://www.tax.service.gov.uk/personal-account).
+The Account header is used in the [Personal tax account](https://www.tax.service.gov.uk/personal-account).
 
 {{ example('account-header-example.html', true) }}
 
-## When to use the Account Header
+## When to use the Account header
 
-If your service is going to be part of the Personal Tax Account you should use the Account Header. 
+If your service is going to be part of the Personal tax account you should use the Account header. 
 
-*Describe when to use this pattern/component. When is it appropriate to use and what need does it help you meet?*
+### When not to use the Account header
 
-*If necessary, include an additional H3 titled ‘When not to use this pattern’. Use this section to highlight any exceptions or known scenarios where the pattern does not work. If you include this section, explain what to use instead (with a relevant link if we’re suggesting an alternative pattern).*
+You should not use that account header in stand-alone services, use the [Header](components/header/index.html) instead.
 
 ## How it works 
 
