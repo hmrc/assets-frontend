@@ -3,7 +3,6 @@
 const gulp = require('gulp')
 const exec = require('child_process').exec
 
-const MASTER_BRANCH = 'master'
 const CHANGELOG_MD = 'CHANGELOG.md'
 const README_MD = 'README.md'
 
@@ -25,16 +24,25 @@ function runCommand (cmd) {
   })
 }
 
-function getCurrentBranch () {
-  return runCommand('git rev-parse --abbrev-ref HEAD')
+function getMasterRevision () {
+  return runCommand('git rev-parse master')
+}
+
+function getCurrentBranchRevision () {
+  return runCommand('git rev-parse HEAD')
 }
 
 function getGitDiffs () {
-  return runCommand(`git diff --name-only ${MASTER_BRANCH}`)
+  return runCommand(`git diff --name-only master...`)
 }
 
-function isWhitelistBranch (branch) {
-  return (branch.trim() === MASTER_BRANCH)
+function isMaster () {
+  return new Promise((resolve) => {
+    Promise.all([getCurrentBranchRevision(), getMasterRevision()])
+      .then(results => {
+        resolve(results[0].trim() === results[1].trim())
+      })
+  })
 }
 
 function filterFiles (files) {
@@ -59,9 +67,9 @@ function verifyGitDiffs (diffs) {
 }
 
 gulp.task('changelog', () => {
-  return getCurrentBranch()
-    .then(branch => {
-      return isWhitelistBranch(branch)
+  return isMaster()
+    .then(isit => {
+      return isit
         ? true
         : getGitDiffs().then(verifyGitDiffs)
     })
@@ -69,9 +77,9 @@ gulp.task('changelog', () => {
 
 module.exports = {
   runCommand: runCommand,
-  getCurrentBranch: getCurrentBranch,
   getGitDiffs: getGitDiffs,
-  isWhitelistBranch: isWhitelistBranch,
+  getCurrentBranchRevision: getCurrentBranchRevision,
+  getMasterRevision: getMasterRevision,
   filterFiles: filterFiles,
   verifyGitDiffs: verifyGitDiffs
 }
