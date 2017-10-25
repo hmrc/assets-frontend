@@ -1,8 +1,9 @@
-{% macro wip(url) %}
+{% macro wip(issue) %}
 <div class="alert alert--info">
   <p class="alert__message">This component is work in progress.</p>
   <p class="alert__message">
-    You can use it in your service but you should <a href="{{ url }}">contribute research</a>.
+    View the todo list for this pattern on
+    <a href="https://github.com/hmrc/design-patterns/issues/{{ issue }}" target="_blank">GitHub</a>
   </p>
 </div>
 {% endmacro %}

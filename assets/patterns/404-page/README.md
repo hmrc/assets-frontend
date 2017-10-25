@@ -1,6 +1,6 @@
 # 404 page
 
-{{ wip('https://github.com/hmrc/design-patterns/issues/104') }}
+{{ wip(104) }}
 
 404 pages (usually described as a 'page not found') tell users that the page they were trying to access is not there.
 

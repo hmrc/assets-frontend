@@ -1,6 +1,6 @@
 # Account Menu
 
-{{ wip('https://github.com/hmrc/design-patterns/issues/128') }}
+{{ wip(128) }}
 
 An account menu for services with accounts.
 

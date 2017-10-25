@@ -1,6 +1,6 @@
 # Header
 
-{{ wip('https://github.com/hmrc/design-patterns/issues/4') }}
+{{ wip(4) }}
 
 The HMRC header is the same as the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) but includes the HMRC logo. All elements that are imported from the GOV.UK header must not be changed.
 

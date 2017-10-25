@@ -1,6 +1,6 @@
 # Shutter pages
 
-{{ wip('https://github.com/hmrc/design-patterns/issues/103') }}
+{{ wip(103) }}
 
 A shutter page is a page that is shown when a service has been switched off on purpose. These are different to [page not found](/pages/404-pages/index) and [technical difficulties](/pages/500-pages/index) pages.
 
