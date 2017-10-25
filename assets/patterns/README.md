@@ -1,5 +1,4 @@
 # Patterns
-=======
 
 Here you will find best practice guidance and design solutions for specific user tasks and scenarios.
 
