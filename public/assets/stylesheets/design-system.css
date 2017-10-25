@@ -1062,13 +1062,6 @@ main {
       font-size: 19px;
       line-height: 1.31579; } }
 
-.heading-large {
-  font-size: 36px !important;
-  margin: 0 !important; }
-  @media (max-width: 767px) {
-    .heading-large {
-      font-size: 32px !important; } }
-
 .column-constrained {
   padding: 0 15px !important; }
   @media (min-width: 1200px) {
@@ -1077,16 +1070,6 @@ main {
   @media (min-width: 1367px) {
     .column-constrained {
       padding: 0 15% !important; } }
-
-#design-system-content.technical-documentation {
-  max-width: none;
-  margin-top: 18px; }
-  #design-system-content.technical-documentation .pattern-header + h1 {
-    padding-top: 5px;
-    padding-top: 0px !important;
-    margin-top: 0px !important; }
-  #design-system-content.technical-documentation pre code {
-    border: none; }
 
 .design-system.phase-banner {
   padding: 15px; }
@@ -1137,100 +1120,53 @@ main {
     letter-spacing: 1;
     color: #6f777b; }
 
-.markdown .section-heading {
-  color: #6f777b;
-  font-size: 24px;
-  margin: 30px 0 0; }
-  .markdown .section-heading::first-letter {
-    text-transform: uppercase; }
-
-.markdown .example {
-  position: relative;
-  border: 1px solid #bfc1c3;
-  margin: 30px 0;
-  padding: 60px 30px 30px 30px; }
-  .markdown .example h1, .markdown .example h2, .markdown .example h3, .markdown .example h4 {
-    margin-top: 0;
-    padding-top: 0; }
-  @media (max-width: 767px) {
-    .markdown .example h1:first-child {
-      margin-top: -5px; } }
-  .markdown .example .form-group {
-    margin-bottom: 15px; }
-    .markdown .example .form-group:nth-last-of-type(1) {
-      margin-bottom: 0px; }
-    .markdown .example .form-group + .form-group, .markdown .example .form-group + .multiple-choice {
-      margin-top: 15px; }
-  .markdown .example .form-block {
-    margin-top: 0;
-    margin-bottom: 10px;
-    max-width: 100%; }
-  .markdown .example:before {
-    content: "EXAMPLE";
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 5px 15px 5px 15px;
-    font-family: "nta", Arial, sans-serif;
-    font-weight: 400;
-    text-transform: none;
-    font-size: 12px;
-    line-height: 1.25;
-    background: #6f777b;
-    color: white; }
-  .markdown .example.example__mobile {
-    max-width: 320px; }
-
-.markdown .example--date-group .form-group {
-  margin-top: 15px; }
-
-.markdown .example--date-group .form-group-month-text {
-  width: 150px; }
-
-.markdown p.example-grid {
-  width: 100%;
-  max-width: none;
-  background: url("../images/grid.png") 0 0 repeat;
-  margin: 0;
-  height: 30px;
-  overflow: hidden;
-  text-indent: -999em; }
-  @media (min-width: 768px) {
-    .markdown p.example-grid {
-      height: 60px; } }
-
-.markdown p, .markdown ul.list, .markdown ol.list, .markdown blockquote, .markdown .example {
-  max-width: 34em; }
-
-.markdown h1 {
-  margin-top: 0;
-  border-top: 0;
-  margin-bottom: 30px;
-  padding-top: 5px; }
-
-.markdown h1:first-letter {
-  text-transform: uppercase; }
-
-.markdown ul {
-  list-style: disc; }
-
-.markdown .example + pre,
-.markdown .example + .highlight {
-  margin-top: -31px; }
-
-.markdown .highlight {
-  font-size: 16px; }
-
-.markdown blockquote {
-  margin: 15px 0;
-  border-left: 4px solid #dee0e2; }
-
-.markdown strong {
-  font-weight: bold; }
-
-.markdown .list-no-bullet {
-  list-style: none;
-  padding-left: 0px; }
+.markdown {
+  margin: 0 32px 30px; }
+  .markdown .example {
+    position: relative;
+    border: 1px solid #bfc1c3;
+    margin: 30px 0;
+    padding: 30px; }
+    .markdown .example:before {
+      content: "EXAMPLE";
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 5px 15px 5px 15px;
+      font-family: "nta", Arial, sans-serif;
+      font-weight: 400;
+      text-transform: none;
+      font-size: 12px;
+      line-height: 1.25;
+      background: #6f777b;
+      color: white; }
+  .markdown pre {
+    padding: 0; }
+    .markdown pre code {
+      border: none; }
+  .markdown p, .markdown ul.list, .markdown ol.list, .markdown blockquote, .markdown .example {
+    max-width: 34em; }
+  .markdown ul {
+    list-style: disc; }
+  .markdown ul, .markdown ol {
+    padding: 0 0 0 40px; }
+  .markdown ol li {
+    list-style-type: decimal; }
+  .markdown ul li {
+    list-style-type: disc; }
+  .markdown .example + pre,
+  .markdown .example + .highlight {
+    margin-top: -31px; }
+  .markdown .highlight {
+    font-size: 16px; }
+  .markdown blockquote {
+    margin: 15px 0;
+    border-left: 4px solid #dee0e2; }
+  .markdown strong {
+    font-weight: bold; }
+  .markdown .list-no-bullet {
+    list-style: none;
+    padding-left: 0px; }
 
 .banner {
   padding: 10px;
