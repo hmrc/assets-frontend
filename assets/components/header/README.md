@@ -1,9 +1,6 @@
 # Header
 
-<div class="alert alert--info">
-  <p class="alert__message">This is a work in progress.</p>
-  <p class="alert__message">You can use it in your service but you should [contribute research](https://github.com/hmrc/design-patterns/issues/4).</p>
-</div>
+{{ wip('https://github.com/hmrc/design-patterns/issues/4') }}
 
 The HMRC header is the same as the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) but includes the HMRC logo. All elements that are imported from the GOV.UK header must not be changed.
 

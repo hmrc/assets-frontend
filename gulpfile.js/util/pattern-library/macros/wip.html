@@ -1,0 +1,8 @@
+{% macro wip(url) %}
+<div class="alert alert--info">
+  <p class="alert__message">This component is work in progress.</p>
+  <p class="alert__message">
+    You can use it in your service but you should <a href="{{ url }}">contribute research</a>.
+  </p>
+</div>
+{% endmacro %}

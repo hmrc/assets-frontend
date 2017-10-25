@@ -1,11 +1,6 @@
 # 404 page
 
-<div class="alert alert--info">
-
-<p class="alert__message">This pattern is work in progress.</p>
-<p class="alert__message">View the todo list for this pattern on [GitHub](https://github.com/hmrc/design-patterns/issues/104).</p>
-
-</div>
+{{ wip('https://github.com/hmrc/design-patterns/issues/104') }}
 
 404 pages (usually described as a 'page not found') tell users that the page they were trying to access is not there.
 

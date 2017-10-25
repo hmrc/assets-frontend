@@ -12,6 +12,7 @@ var parseDocumentation = function (files) {
     var fileContents = [
       `{% from 'example.html' import example %}`,
       `{% from 'markup.html' import markup %}`,
+      `{% from 'wip.html' import wip %}`,
       file.contents.toString()
     ].join('\n')
 
