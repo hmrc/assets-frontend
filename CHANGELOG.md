@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 404 page pattern [#835](https://github.com/hmrc/assets-frontend/pull/835)
 - Shutter Page pattern [#838](https://github.com/hmrc/assets-frontend/pull/838)
 - Added the image `icon-print.svg` [#841](https://github.com/hmrc/assets-frontend/pull/841)
+- Add WIP macro [#843](https://github.com/hmrc/assets-frontend/pull/843)
 
 ### Changed
 * Replace the component library with a new design pattern library [#822](https://github.com/hmrc/assets-frontend/pull/822) 
