@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 641px) {
+@media (min-width: 784px) {
   .column-quarter,
   .column-one-quarter {
     float: left;
@@ -22,7 +22,7 @@
   box-sizing: border-box; 
 }
 
-@media (min-width: 641px) {
+@media (min-width: 784px) {
   .column-half,
   .column-one-half {
     float: left;
@@ -36,7 +36,7 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 641px) {
+@media (min-width: 784px) {
   .column-third,
   .column-one-third {
     float: left;
@@ -49,7 +49,7 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 641px) {
+@media (min-width: 784px) {
   .column-two-thirds {
     float: left;
     width: 66.66667%;
@@ -61,10 +61,28 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 641px) {
+@media (min-width: 784px) {
   .column-full {
     float: left;
     width: 100%;
+  }
+}
+
+@media (min-width: 784px) {
+  .only-account-menu-lg {
+    display: auto;
+  }
+  .only-account-menu-sm {
+    display: none;
+  }
+}
+
+@media (max-width: 783px) {
+  .only-account-menu-sm {
+    display: auto;
+  }
+  .only-account-menu-lg {
+    display: none;
   }
 }
 
@@ -98,38 +116,66 @@
 
 }
 
+
 .account-menu__link,
 .account-menu__link:visited {
   font-size: 16px;
   line-height: 1.25;
   font-weight: 300;
   text-transform: none;
-  border-bottom: 4px solid transparent;
+  /*border-bottom: 1px solid transparent;*/
   box-sizing: border-box;
   color: #4a4a4a;
   display: block;
   text-decoration: none;
-  padding: 12px 16px 8px;
+  padding: 12px 28px 8px;
 
-  &:hover,
+  /*&:hover,
   &:focus {
-    border-bottom: 4px solid $govuk-grey-3;
-  }
+    //border-bottom: 1px solid transparent;
+  }*/
 
   &:hover {
-    color: $light-blue;
+    color: #4a4a4a;
   }
 
   &:focus {
     background-color: transparent;
     color: $light-blue;
-    border-bottom: 4px solid $focus-colour;
+    /* border-bottom: 1px solid transparent; */
+  }
+
+  &.account-menu__link--menu:hover {
+    border-bottom: 4px solid $govuk-grey-3;
   }
 }
 
+/* TODO: remove? */
+@media (min-width: 784px) {
+
+  .account-menu__link,
+  .account-menu__link:visited {
+    border-bottom: 4px solid transparent;
+    padding: 12px 16px 8px;
+
+    &:hover,
+    &:focus {
+      border-bottom: 4px solid $govuk-grey-3;
+    }
+    &:hover {
+      color: $light-blue;
+    }
+
+    &:focus {
+      border-bottom: 4px solid $focus-colour;
+    }
+
+  }
+}
 
 .account-menu__link--home,
 .account-menu__link--home:visited {
+  border-bottom: 4px solid transparent;
   float: left;
   padding: 12px 18px 8px 0;
 }
@@ -143,8 +189,20 @@
 
 .account-menu__link--active,
 .account-menu__link--active:visited {
+  /*border-bottom: 1px solid $govuk-blue;*/
   color: $black;
-  border-bottom: 4px solid $govuk-blue;
+
+  &.account-menu__link--home {
+    /*border-bottom: 4px solid $govuk-blue;*/
+  }
+}
+
+@media (min-width: 784px) {
+  .account-menu__link--active,
+  .account-menu__link--active:visited {
+    border-bottom: 1px solid $govuk-blue;
+    border-bottom: 4px solid $govuk-blue;
+  }
 }
 
 .account-menu__main {
@@ -156,8 +214,19 @@
     @include inline-block;
     margin: auto;
     margin: initial;
+    border-bottom: 1px solid $govuk-grey-3;
   }
 }
+
+@media (min-width: 784px) {
+  .account-menu__main {
+    li {
+      border-bottom: none;
+    }
+  }
+}
+
+
 
 .is-smaller {
   .account-menu__main {
@@ -225,13 +294,13 @@
   @include core-16;
   @extend %contain-floats;
   background-color: $shaded-bg-grey;
-  border-bottom: 1px solid #DEE0E2 ;
+  border-top: 1px solid #DEE0E2;
+  border-bottom: 1px solid #DEE0E2;
+  color: $black;
   left: 0;
   margin-bottom: 20px;
   outline: none;
-  padding: 0.63158em 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 0;
   position: absolute;
   top: 45px;
   width: 100%;
@@ -246,16 +315,23 @@
 }
 
 .is-smaller .subnav {
-  margin: 0 28px;
+  margin: 0 10px;
+  margin-left: 0px;
   position: relative;
   top: inherit;
-  margin-left: 0px;
 }
 
 .is-smaller .subnav__section {
+  border-bottom: 1px solid $govuk-grey-3;
   margin-bottom: 1em;
-  padding: 0;
-  padding-left: 15px;
+  padding: 0 0 15px 10px;
+}
+
+@media (min-width: 784px) {
+  .is-smaller .subnav__section {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 }
 
 p.subnav__section__heading {
@@ -268,9 +344,10 @@ p.subnav__section__heading {
 .js-enabled .account-menu__link--menu,
 .js-enabled .is-smaller .account-menu__link--more {
   background-image: url("../images/icon-chevron-right.svg");
-  background-position: right center;
+  background-position: 98.5%;
   background-repeat: no-repeat;
   background-size: 12px;
+  margin-right: 2px;
 
   @include ie-lte(9) {
     background-image: url("../images/icon-chevron-right.png");
@@ -281,10 +358,8 @@ p.subnav__section__heading {
 .js-enabled .is-smaller .account-menu__link--more-expanded,
 .js-enabled .account-menu__link--more {
   background-image: url("../images/icon-chevron-down.svg");
-  background-position: right center;
+  background-position: 98.5%;
   background-size: 12px;
-  padding-right: 18px;
-  margin-right: 16px;
 
   @include ie-lte(9) {
     background-image: url("../images/icon-chevron-down.png");
@@ -328,7 +403,7 @@ p.subnav__section__heading {
   top: 20px;
 }
 
-@media (min-width: 641px) {
+@media (min-width: 784px) {
   .full-width-banner__close {
     right: 35px;
   }
