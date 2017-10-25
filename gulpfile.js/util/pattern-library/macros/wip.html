@@ -1,13 +1,11 @@
 {% macro wip(issue) %}
-<div class="wip">
-  <div class="alert alert--info">
-    <p class="alert__message">This component is work in progress.</p>
-    <p class="alert__message">
+  <div class="panel panel-border-narrow">
+    <p class="heading-small">This component is work in progress.</p>
+    <p>
       View the todo list for this pattern on
       <a href="https://github.com/hmrc/design-patterns/issues/{{ issue }}" target="_blank">
         GitHub (opens in a new window or tab)
       </a>
     </p>
   </div>
-</div>
 {% endmacro %}
