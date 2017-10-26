@@ -107,34 +107,32 @@
             </div>
             -->
 
-            <h1 id="404-page">404 page</h1>
-  <div class="panel panel-border-narrow">
-    <p class="heading-small">This component is work in progress.</p>
-    <p>
-      View the todo list for this pattern on
-      <a href="https://github.com/hmrc/design-patterns/issues/104" target="_blank">
-        GitHub (opens in a new window or tab)
-      </a>
-    </p>
-  </div>
+            <h1 id="500-pages">500 Pages</h1>
+<div class="alert alert--info">
 
+<p class="alert__message">This pattern is work in progress.</p>
+<p class="alert__message">View the todo list for this pattern on <a href="https://github.com/hmrc/design-patterns/issues/105">GitHub</a>.</p>
 
-<p>404 pages (usually described as a &#39;page not found&#39;) tell users that the page they were trying to access is not there.</p>
+</div>
+
+<p>500 pages are used to tell users that we [HMRC] have a problem that was not their fault.</p>
+<h3 id="standard-500-page-example">Standard 500 Page example</h3>
 <div class="example">
   <div class="scale-wrapper">
     <div class="scale"><!-- COOKIE MESSAGE -->
-<div id="global-cookie-message">
+<div id="global-cookie-message" style="display: block;">
   <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
+    cookies</a></p>
 </div>
 <!-- END COOKIE MESSAGE -->
+
 <!-- GOV.UK HEADER -->
 <header role="banner" id="global-header" class="with-proposition">
   <div class="header-wrapper">
     <div class="header-global">
       <div class="header-logo">
         <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
       </div>
     </div>
     <div class="header-proposition">
@@ -148,6 +146,7 @@
 </header>
 <div id="global-header-bar"></div>
 <!-- END GOV.UK HEADER -->
+
 <main id="content" role="main">
   <!-- PHASE BANNER -->
   <div class="phase-banner">
@@ -158,46 +157,13 @@
   </div>
   <!-- END PHASE BANNER -->
   <!-- PAGE CONTENT -->
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Page not found</h1>
-      <h2 class="heading-small">If you typed in the web address</h2>
-      <p>Check the address and make sure you typed it in correctly.</p>
-      <h2 class="heading-small">If you selected a link or button or typed in the web address correctly</h2>
-        <!-- FORM FOR USERS TO TELL US THEY GOT A 404 -->
-      <div class="form-group">
-        <details>
-        <summary><span class="summary">Let us know the page was not found.</span></summary>
-        <div class="panel panel-border-narrow">
-          <div class="form-group">
-            <label class="form-label" for="full-name">
-              Full name
-            </label>
-            <input type="text" class="form-control" id="full-name">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="full-name">
-              Email address (optional)
-              <span class="form-hint">We will let you know when the problem is fixed.</span>
-            </label>
-            <input type="text" class="form-control" id="full-name">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="full-name">
-              What were you doing?
-            </label>
-            <input type="text" class="form-control" id="full-name">
-          </div>
-          <div class="form-group">
-            <input type="submit" class="button" value="Send">
-          </div>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">We are experiencing technical problems</h1>
+            <p>Something has gone wrong with this service. It wasn&#39;t your fault.</p>
+            <p>Please try again in a few moments.</p>
         </div>
-        </details>
-      </div>
-      <!-- END FORM FOR USERS TO TELL US THEY GOT A 404 -->
-      <p><a class="button" href="#">Go back to the previous page</a></p>
     </div>
-  </div>
   <!-- END PAGE CONTENT -->
 </main>
 <!-- FOOTER   -->
@@ -228,49 +194,106 @@
 
 
 
-<h2 id="when-to-use-a-404-page">When to use a 404 page</h2>
-<p>There is a chance in all services that people will encounter a 404 page. 
-Processes and systems should be put in place to prevent users encountering 404 pages in the first place.</p>
-<p>The main reasons you would need to show users a 404 page:</p>
-<ol>
-<li>if they followed a link (URL) that is broken or pointing to the wrong location</li>
-<li>if they typed or copied a link incorrectly</li>
-</ol>
-<p>When you design the 404 page for your service you need to consider:</p>
+<h2 id="when-to-use-a-500-page">When to use a 500 page</h2>
+<p>They cover a range of situations when something has gone wrong with the server.</p>
+<p>500 errors should be logged by services and fixed as a matter of priority.</p>
+<p>500 errors should only be displayed to people for a short time. The standard approach within HMRC is to <a href="shutter-pages/index.html">shutter</a> a service, if there is going to be a disruption to users for an extended period of time.</p>
+<p>There are a number of <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_error">standard pages</a> that fall into the category of 500 pages. We do not need different error pages to cover all of these situations.</p>
+<h2 id="how-500-pages-work">How 500 pages work</h2>
+<p>When displaying a 500 page you should:</p>
 <ul>
-<li>the best way for people to solve the problem</li>
-<li>if there is anything spesific your service can do to help users</li>
+<li>use the standard template</li>
+<li>explain to users whats going on</li>
+<li>tell users what they can do, if anything to resolve the issue.</li>
+<li>If there is an alternative channel that they can use to continue their transaction this should be made available to them.</li>
 </ul>
-<h2 id="how-404-pages-work">How 404 pages work</h2>
-<p>When you design the 404 page for your service you need to consider:</p>
-<ul>
-<li>the best way for people to solve the problem</li>
-<li>if there is anything spesific your service can do to help users</li>
-</ul>
-<p>The page should:
-<!-- @todo add link to the page template --></p>
-<ul>
-<li>use the standard page template</li>
-<li>include the phase banner relevent to the service</li>
-<li>have &quot;Page not found&quot; as the page title and H1</li>
-<li>be clear and concise</li>
-<li>an explination of the problem if possible</li>
-<li>not have breadcrumbs</li>
-<li>not use vague terms</li>
-<li>not use red text to warn people</li>
-<li>optionally display a form for users to tell us about the problem</li>
-</ul>
-<h2 id="research-on-404-pages">Research on 404 pages</h2>
-<p>We need more user research on 404 pages. </p>
+<h3 id="example-500-page-when-there-is-an-alternative-channel">Example 500 page when there is an alternative channel</h3>
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<div id="global-cookie-message" style="display: block;">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+    cookies</a></p>
+</div>
+<!-- END COOKIE MESSAGE -->
+
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service name</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+
+<main id="content" role="main">
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+  <!-- PAGE CONTENT -->
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">We are experiencing technical problems</h1>
+            <p>Something has gone wrong with this service. It wasn&#39;t your fault.</p>
+            <p>If you&#39;d like to continue your transaction offline you can contact us on Telephone: 03000 555 995</p>
+      <p>Opening times: 8:30am to 4:30pm, Monday to Friday</p>
+        </div>
+    </div>
+  <!-- END PAGE CONTENT -->
+</main>
+<!-- FOOTER   -->
+<footer class="group js-footer" id="footer" role="contentinfo">
+  <div class="footer-wrapper">
+    <div class="footer-meta">
+      <div class="footer-meta-inner">
+        <ul class="platform-help-links">
+          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
+          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
+          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
+          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
+        </ul>
+        <div class="open-government-licence">
+          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- END FOOTER --></div>
+  </div>
+</div>
+
+
+
+<h2 id="research-on-500-pages">Research on 500 pages</h2>
+<p>We need more user research on 500 Pages. </p>
 <p>We want to know:</p>
 <ul>
-<li>if people are able to resolve the problem on their own</li>
-<li>if people understand what caused the page</li>
-<li>if people understand the content </li>
-<li>if anything is missing from the content</li>
-<li>if giving users a form to report the problem helps </li>
+<li>if people understand what is going on</li>
+<li>what peoples expectations are having seen a 500 page</li>
 </ul>
-<p>Contribute your research via this <a href="https://github.com/hmrc/design-patterns/issues/104">GitHub issue</a>.</p>
+<p>Contribute your research via this <a href="https://github.com/hmrc/design-patterns/issues/105">GitHub issue</a>.</p>
 
 
             <!--
