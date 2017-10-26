@@ -1,11 +1,6 @@
 # Shutter pages
 
-<div class="alert alert--info">
-
-<p class="alert__message">This pattern is work in progress.</p>
-<p class="alert__message">View the todo list for this pattern on [GitHub](https://github.com/hmrc/design-patterns/issues/103).</p>
-
-</div>
+{{ wip(103) }}
 
 A shutter page is a page that is shown when a service has been switched off on purpose. These are different to [page not found](/pages/404-pages/index) and [technical difficulties](/pages/500-pages/index) pages.
 
