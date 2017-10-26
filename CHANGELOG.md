@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 * Modify CHANGELOG.md change verification to stabilise Travis CI [#833](https://github.com/hmrc/assets-frontend/pull/833) 
 * Allow README.md only changes to be merged without forcing CHANGELOG.md to be changed [#836](https://github.com/hmrc/assets-frontend/pull/836)
 * Replaced [_panels.scss](https://github.com/hmrc/assets-frontend/pull/835/commits/31e4c36c1a94e151448b23b34670fff7232d7823) with content from GOV.UK
+* updated the homepage with a description of patterns []
 
 ## [2.252.0] - 2017-10-16
 
