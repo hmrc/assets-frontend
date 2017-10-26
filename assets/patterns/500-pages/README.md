@@ -1,11 +1,6 @@
 # 500 Pages
 
-<div class="alert alert--info">
-
-<p class="alert__message">This pattern is work in progress.</p>
-<p class="alert__message">View the todo list for this pattern on [GitHub](https://github.com/hmrc/design-patterns/issues/105).</p>
-
-</div>
+{{ wip(105) }}
 
 500 pages are used to tell users that we [HMRC] have a problem that was not their fault.
 
