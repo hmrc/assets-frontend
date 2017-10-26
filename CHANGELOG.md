@@ -7,18 +7,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.253.0] - 2017-10-26
+
 ### Added
 - 404 page pattern [#835](https://github.com/hmrc/assets-frontend/pull/835)
 - Shutter Page pattern [#838](https://github.com/hmrc/assets-frontend/pull/838)
+- 500 Pages [#842](https://github.com/hmrc/assets-frontend/pull/842)
 - Added the image `icon-print.svg` [#841](https://github.com/hmrc/assets-frontend/pull/841)
+- Add WIP macro [#843](https://github.com/hmrc/assets-frontend/pull/843)
 
 ### Changed
 * Replace the component library with a new design pattern library [#822](https://github.com/hmrc/assets-frontend/pull/822) 
-* Add header component to the new design system  
-* Use macros for example and markup rendering in README.md
+* Add header component to the new design system  [#829](https://github.com/hmrc/assets-frontend/pull/829)
+* Use macros for example and markup rendering in README.md [#828](https://github.com/hmrc/assets-frontend/pull/828)
 * Modify CHANGELOG.md change verification to stabilise Travis CI [#833](https://github.com/hmrc/assets-frontend/pull/833) 
 * Allow README.md only changes to be merged without forcing CHANGELOG.md to be changed [#836](https://github.com/hmrc/assets-frontend/pull/836)
-* Replaced [_panels.scss](https://github.com/hmrc/assets-frontend/pull/835/commits/31e4c36c1a94e151448b23b34670fff7232d7823) with content from GOV.UK
+* Replaced [_panels.scss](https://github.com/hmrc/assets-frontend/pull/835/commits/31e4c36c1a94e151448b23b34670fff7232d7823) with content from GOV.UK [#835](https://github.com/hmrc/assets-frontend/pull/835)
+* Updated the homepage with a description of patterns [#846](https://github.com/hmrc/assets-frontend/pull/846)
 
 ## [2.252.0] - 2017-10-16
 
@@ -129,7 +134,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.252.0...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.253.0...master
+[2.253.0]: https://github.com/hmrc/assets-frontend/compare/release/2.252.0...release/2.253.0
 [2.252.0]: https://github.com/hmrc/assets-frontend/compare/release/2.251.1...release/2.252.0
 [2.251.1]: https://github.com/hmrc/assets-frontend/compare/release/2.251.0...release/2.251.1
 [2.251.0]: https://github.com/hmrc/assets-frontend/compare/release/2.250.0...release/2.251.0
