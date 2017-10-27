@@ -13587,7 +13587,7 @@ Styleguide External Markup
 
 /* line 75, assets/components/account-menu/_account-menu.scss */
 .account-icon--home {
-  background-image: url("../images/icon-home.svg");
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWlkIj48dGl0bGU+aWNvbi1ob21lPC90aXRsZT48cGF0aCBkPSJNMTIgMkwxIDEyLjVoMy4xOXY5LjM4aDUuNDR2LTcuMTNoNC41djcuMTNoNS40NFYxMi41SDIzTDEyIDJ6Ii8+PC9zdmc+);
   background-position: left -2px;
   background-size: 24px;
   padding-left: 28px;
