@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+- Changed a reference to an svg icon to a data uri
+- Updated .nvmrc file to use up to date node version for AF
 
 ## [2.253.0] - 2017-10-26
 
