@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed a reference to an svg icon to a data uri
 - Updated .nvmrc file to use up to date node version for AF
 
+### Changed
+* Remove style overrides for layout and typography for the Design System [#851](https://github.com/hmrc/assets-frontend/pull/851)  
+
 ## [2.253.0] - 2017-10-26
 
 ### Added
