@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<main id="design-system-content" class="technical-documentation markdown" data-module="anchored-headings">
+<main id="design-system-content" data-module="anchored-headings">
   <div class="grid-row">
     <div class="column-full">
       <section>
