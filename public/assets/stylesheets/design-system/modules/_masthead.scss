@@ -15,8 +15,6 @@
   background-color: $govuk-blue;
   padding: $gutter;
   color: white;
-  width: 101%;
-  margin-left: -32px;
 
   @include media(mobile) {
     padding: $gutter-half;

@@ -192,23 +192,7 @@ added accessibility wins.</p>
     </div>
 
     <script src="public/assets/javascripts/vendor/highlight/highlight.pack.js"></script>
-    <script>
-      hljs.initHighlightingOnLoad();
-
-      function scaleExampleHeight() {
-        var scaleWrapper = document.querySelectorAll('.scale-wrapper')
-
-        for (var i = 0; i <= scaleWrapper.length - 1; i++) {
-          scaleWrapper[i].style.height = scaleWrapper[i].querySelector('.scale').offsetHeight / 2 + 'px'
-        }
-      }
-
-      window.addEventListener('resize', function() {
-        scaleExampleHeight()
-      })
-
-      scaleExampleHeight()
-    </script>
+    <script src="public/assets/javascripts/design-system.js"></script>
 
     
 
