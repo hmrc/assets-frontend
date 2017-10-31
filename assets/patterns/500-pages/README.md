@@ -4,8 +4,6 @@
 
 500 pages are used to tell users that we [HMRC] have a problem that was not their fault.
 
-### Standard 500 Page example
-
 {{ example('500-page.html', true) }}
 
 ## When to use a 500 page 
