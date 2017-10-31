@@ -102,7 +102,7 @@ For detailed information on how the HMRC Design System works, please read the [D
 
 If your service relies on a component or pattern that doesn’t appear in the HMRC Design System then please follow the [Design System contribution guidelines](https://github.com/hmrc/assets-frontend/wiki/HMRC-Design-System#contributing-a-design-pattern).
 
-For detailed information on how the Component Library works, please read the [Component Library guidance in the Wiki](https://github.com/hmrc/assets-frontend/wiki/Component-Library).
+For detailed information on how the Component Library works, please read the [Component Library guidance in the Wiki](https://github.com/hmrc/assets-frontend/wiki/Component-Library-%5BDEPRECATED%5D).
 
 
 # Contributing
