@@ -489,9 +489,7 @@
 .masthead {
   background-color: #005ea5;
   padding: 30px;
-  color: white;
-  width: 101%;
-  margin-left: -32px; }
+  color: white; }
   @media (max-width: 767px) {
     .masthead {
       padding: 15px; } }
@@ -1149,7 +1147,8 @@ main {
   .markdown ul {
     list-style: disc; }
   .markdown ul, .markdown ol {
-    padding: 0 0 0 40px; }
+    padding: 0 0 0 20px;
+    margin: 15px 0 45px; }
   .markdown ol li {
     list-style-type: decimal; }
   .markdown ul li {
