@@ -117,6 +117,57 @@ main {
     margin-top: 15px;
   }
 
+  > h1,
+  > .heading-xlarge {
+    @include bold-48();
+
+    margin-top: em(15, 32);
+    margin-bottom: em(30, 32);
+
+    @include media(tablet) {
+      margin-top: em(30, 48);
+      margin-bottom: em(60, 48);
+    }
+  }
+
+  > h2,
+  > .heading-large {
+    @include bold-36();
+
+    margin-top: em(25, 24);
+    margin-bottom: em(10, 24);
+
+    @include media(tablet) {
+      margin-top: em(45, 36);
+      margin-bottom: em(20, 36);
+    }
+  }
+
+  > h3,
+  > .heading-medium {
+    @include bold-24();
+
+    margin-top: em(25, 20);
+    margin-bottom: em(10, 20);
+
+    @include media(tablet) {
+      margin-top: em(45, 24);
+      margin-bottom: em(20, 24);
+    }
+  }
+
+  > h4,
+  > .heading-small {
+    @include bold-19();
+
+    margin-top: em(10, 16);
+    margin-bottom: em(5, 16);
+
+    @include media(tablet) {
+      margin-top: em(20, 19);
+    }
+  }
+
   pre {
     padding: 0;
 

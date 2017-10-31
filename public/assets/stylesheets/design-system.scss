@@ -15,6 +15,7 @@ $desktop-breakpoint: 992px !default;
 @import "govuk_frontend_toolkit/stylesheets/typography";
 @import "govuk_frontend_toolkit/stylesheets/url-helpers";
 
+@import "govuk-elements-sass/public/sass/elements/helpers";
 @import "govuk-elements-sass/public/sass/elements/layout";
 
 @import "design-system/palette/syntax-highlighting";

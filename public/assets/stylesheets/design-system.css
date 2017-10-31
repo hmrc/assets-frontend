@@ -41,6 +41,17 @@
 .grid-row, .hero__content {
   margin: 0 -15px; }
 
+.visually-hidden,
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0; }
+
 #content {
   padding-bottom: 30px;
   outline: none; }
@@ -1141,6 +1152,81 @@ main {
   .markdown .column-one-third > h2 {
     padding-top: 30px;
     margin-top: 15px; }
+  .markdown > h1,
+  .markdown > .heading-xlarge {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 32px;
+    line-height: 1.09375;
+    margin-top: 0.46875em;
+    margin-bottom: 0.9375em; }
+    @media (min-width: 768px) {
+      .markdown > h1,
+      .markdown > .heading-xlarge {
+        font-size: 48px;
+        line-height: 1.04167; } }
+    @media (min-width: 768px) {
+      .markdown > h1,
+      .markdown > .heading-xlarge {
+        margin-top: 0.625em;
+        margin-bottom: 1.25em; } }
+  .markdown > h2,
+  .markdown > .heading-large {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 24px;
+    line-height: 1.04167;
+    margin-top: 1.04167em;
+    margin-bottom: 0.41667em; }
+    @media (min-width: 768px) {
+      .markdown > h2,
+      .markdown > .heading-large {
+        font-size: 36px;
+        line-height: 1.11111; } }
+    @media (min-width: 768px) {
+      .markdown > h2,
+      .markdown > .heading-large {
+        margin-top: 1.25em;
+        margin-bottom: 0.55556em; } }
+  .markdown > h3,
+  .markdown > .heading-medium {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em; }
+    @media (min-width: 768px) {
+      .markdown > h3,
+      .markdown > .heading-medium {
+        font-size: 24px;
+        line-height: 1.25; } }
+    @media (min-width: 768px) {
+      .markdown > h3,
+      .markdown > .heading-medium {
+        margin-top: 1.875em;
+        margin-bottom: 0.83333em; } }
+  .markdown > h4,
+  .markdown > .heading-small {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-top: 0.625em;
+    margin-bottom: 0.3125em; }
+    @media (min-width: 768px) {
+      .markdown > h4,
+      .markdown > .heading-small {
+        font-size: 19px;
+        line-height: 1.31579; } }
+    @media (min-width: 768px) {
+      .markdown > h4,
+      .markdown > .heading-small {
+        margin-top: 1.05263em; } }
   .markdown pre {
     padding: 0; }
     .markdown pre code {
