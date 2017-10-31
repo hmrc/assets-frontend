@@ -67,7 +67,7 @@ And add the following to `app/views/includes/head.html`
 
 ## Frontends
 
-If your frontend is based on [init-service](https://github.com/hmrc/init-service/), then you just need to make sure the configuration for assets in the [application.conf](https://github.com/hmrc/init-service/blob/f9a55c100faa8b13d2a1a869c0531f6e3a7b556c/templates/service/conf/application.conf#L73-L77) file has the line `version = ${?ASSETS_FRONTEND_VERSION}` after declaring the actual version. 
+If your frontend is based on [init-service](https://github.com/hmrc/init-service/), then you just need to make sure the configuration for assets in the [application.conf](https://github.com/hmrc/init-service/blob/f9a55c100faa8b13d2a1a869c0531f6e3a7b556c/templates/service/conf/application.conf#L73-L77) file has the line `version = ${?ASSETS_FRONTEND_VERSION}` after declaring the actual version.
 
 Once it has, you just need to set an environment variable before running your frontend:
 
@@ -80,7 +80,7 @@ If you’re using [service-manager](https://github.com/hmrc/service-manager), pl
 
 # Using assets in production
 
-Running `npm run build` calls the (build gulp task)[https://github.com/hmrc/assets-frontend/blob/master/gulpfile.js/tasks/build.js] and this happens on our internal Jenkins instances.
+Running `npm run build` calls the [build gulp task](https://github.com/hmrc/assets-frontend/blob/master/gulpfile.js/tasks/build.js) and this happens on our internal Jenkins instances.
 
 The final step of our internal release pipeline is to version and deploy the compiled assets to https://www.tax.service.gov.uk/assets/VERSION/.
 
@@ -98,7 +98,7 @@ For detailed information on how the HMRC Design System works, please read the [D
 
 # Component Library - [DEPRECATED]
 
-:rotating_light: **The Component Library has been deprecated in favour of the [HMRC Design System](http://hmrc.github.io/assets-frontend/).**:rotating_light: 
+:rotating_light: **The Component Library has been deprecated in favour of the [HMRC Design System](http://hmrc.github.io/assets-frontend/).**:rotating_light:
 
 If your service relies on a component or pattern that doesn’t appear in the HMRC Design System then please follow the [Design System contribution guidelines](https://github.com/hmrc/assets-frontend/wiki/HMRC-Design-System#contributing-a-design-pattern).
 
