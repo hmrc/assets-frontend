@@ -1,73 +1,3 @@
-.grid-row {
-  margin: 0 -15px;
-}
-
-.column-quarter,
-.column-one-quarter {
-  padding: 0 15px;
-  box-sizing: border-box;
-}
-
-@media (min-width: 641px) {
-  .column-quarter,
-  .column-one-quarter {
-    float: left;
-    width: 25%;
-  }
-}
-
-.column-half,
-.column-one-half {
-  padding: 0 15px;
-  box-sizing: border-box; 
-}
-
-@media (min-width: 641px) {
-  .column-half,
-  .column-one-half {
-    float: left;
-    width: 50%;
-  }
-}
-
-.column-third,
-.column-one-third {
-  padding: 0 15px;
-  box-sizing: border-box;
-}
-
-@media (min-width: 641px) {
-  .column-third,
-  .column-one-third {
-    float: left;
-    width: 33.33333%;
-  }
-}
-
-.column-two-thirds {
-  padding: 0 15px;
-  box-sizing: border-box;
-}
-
-@media (min-width: 641px) {
-  .column-two-thirds {
-    float: left;
-    width: 66.66667%;
-  }
-}
-
-.column-full {
-  padding: 0 15px;
-  box-sizing: border-box;
-}
-
-@media (min-width: 641px) {
-  .column-full {
-    float: left;
-    width: 100%;
-  }
-}
-
 .account-icon {
   background-repeat: no-repeat;
 }
@@ -149,12 +79,10 @@
 
 .account-menu__main {
   float: right;
-  margin: auto;
   margin: initial;
 
   li {
     @include inline-block;
-    margin: auto;
     margin: initial;
   }
 }
