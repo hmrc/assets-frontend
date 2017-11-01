@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 * Remove style overrides for layout and typography for the Design System [#851](https://github.com/hmrc/assets-frontend/pull/851)  
+* Added new `.link-print` style and a new `icon-print.svg` image [#856](https://github.com/hmrc/assets-frontend/pull/856)  
 
 ## [2.253.0] - 2017-10-26
 
