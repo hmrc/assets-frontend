@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 * Remove style overrides for layout and typography for the Design System [#851](https://github.com/hmrc/assets-frontend/pull/851)  
+* Added IE 8,9,10 shim for flexbox functionality [#857](https://github.com/hmrc/assets-frontend/pull/857)
 
 ## [2.253.0] - 2017-10-26
 
