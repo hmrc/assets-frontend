@@ -2,7 +2,7 @@
 
 {{ wip(128) }}
 
-The Account header is used in the [Personal tax account](https://www.tax.service.gov.uk/personal-account).
+The Account header is used in the [Personal tax account](https://www.tax.service.gov.uk/personal-account). It has been spesifically designed to provide users with access to the features of the Personal tax account.
 
 {{ example('account-header-example.html', true) }}
 
@@ -12,9 +12,20 @@ If your service is going to be part of the Personal tax account you should use t
 
 ### When not to use the Account header
 
-You should not use that account header in stand-alone services, use the [Header](components/header/index.html) instead.
+You should not use that Account header in stand-alone services, use the [Header](components/header/index.html) instead.
 
-## How it works 
+## How the Account header works
+
+The Account header contains:
+
+- [the HMRC cookie banner](/components/header/index.html#the-hmrc-cookie-banner)
+- [the GOV.UK header](/components/header/index.html#the-gov.uk-header)
+- the [Acount menu](#the-account-menu)
+- [the language selector](/components/header/index.html#language-selector) if your service is avalible in Welsh
+
+#### HTML
+
+{{ markup('account-header-example.html') }}
 
 *Use this section to explain how the pattern works. This should include:*
 
