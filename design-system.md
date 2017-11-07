@@ -25,6 +25,11 @@
                 <p>Best practice design solutions for specific user-focused tasks and scenarios.</p>
                 <p class="mt_20 mtb_20-m"><a href="patterns">See all patterns</a></p>
               </div>
+              <div class="column-one-third">
+                <h2 class="heading-large">Styles</h2>
+                <p>If you are looking for the old component library please visit </p>
+                <p class="mt_20 mtb_20-m"><a href="https://hmrc-component-library.herokuapp.com">See all styles</a></p>
+              </div>
             </div>
           </div>
         </div>
