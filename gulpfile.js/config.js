@@ -206,9 +206,10 @@ module.exports = {
   patternLibrary: {
     sourceBaseDir: src,
     src: [
+      src + 'styles',
       src + 'components',
-      src + 'patterns',
-      src + 'styles'
+      src + 'patterns'
+
     ],
     dest: 'design-pattern-library',
     template: './node_modules/hmrc-component-library-template/design-system.html',
