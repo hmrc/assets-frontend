@@ -25,9 +25,8 @@ var dest = src + 'public/'
 var distDir = src + 'dist/'
 var snapshotDir = dest + '999-SNAPSHOT/'
 var govuk = {
-  elements: src + 'govuk_elements',
-  template: src + 'govuk_elements/govuk',
-  images: src + 'govuk_elements/govuk/public/images/'
+  elements: 'node_modules/govuk-elements-sass',
+  toolkit: 'node_modules/govuk_frontend_toolkit'
 }
 
 module.exports = {
@@ -97,8 +96,11 @@ module.exports = {
   },
 
   svg: {
+    src: [
+      src + 'images/**/*.svg',
+      govuk.toolkit + '/images/**/*.svg',
+    ],
     dev: {
-      src: src + 'images/**/*.svg',
       dest: snapshotDir + 'images'
     },
     prod: {
@@ -107,9 +109,13 @@ module.exports = {
   },
 
   images: {
-    govuk: govuk.images + '**/*',
+    src: [
+      src + 'images/**/*',
+      '!' + src + 'images/**/*.svg',
+      govuk.toolkit + '/images/**/*',
+      '!' + govuk.toolkit + '/images/**/*.svg',
+    ],
     dev: {
-      src: [src + 'images/**/*', '!' + src + 'images/**/*.svg'],
       dest: snapshotDir + 'images'
     },
     prod: {
@@ -122,15 +128,14 @@ module.exports = {
       src + 'scss/**/*.scss',
       src + 'components/**/*.scss'
     ],
-    govukSrc: govuk.template + '/public/sass/**/*.scss',
-    govukElementsSrc: govuk.elements + '/public/sass/**/*.scss',
     dev: {
       dest: snapshotDir + 'stylesheets/',
       settings: {
         sourceComments: true,
         includePaths: [
           src,
-          govuk.template + '/public/sass'
+          govuk.elements + '/public/sass',
+          govuk.toolkit + '/stylesheets'
         ],
         outputStyle: 'expanded'
       },
@@ -141,7 +146,8 @@ module.exports = {
       settings: {
         includePaths: [
           src,
-          govuk.template + '/public/sass'
+          govuk.elements + '/public/sass',
+          govuk.toolkit + '/stylesheets'
         ],
         outputStyle: 'compressed'
       }

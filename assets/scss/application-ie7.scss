@@ -2,9 +2,8 @@ $is-ie: true;
 $ie-version: 7;
 
 /*------------------------------------*\
-    IE Version
+  IE Version
 \*------------------------------------*/
-@import "../govuk_elements/public/sass/main-ie7.scss";
 @import "application-base";
 
 /*TODO: cleanup ie styles: currently just pulling in all styles so what's the point? */

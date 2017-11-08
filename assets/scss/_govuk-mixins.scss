@@ -1,0 +1,106 @@
+/*
+  These mixins are for backwards compatibility
+  between versions 3 and 4 of assets-frontend.
+*/
+
+@mixin media-down($size: false, $max-width: false, $min-width: false) {
+  @if $is-ie == false {
+    @if $size == mobile {
+      @media (max-width: 640px){
+        @content;
+      }
+    } @else if $size == tablet {
+      @media (max-width: 800px){
+        @content;
+      }
+    }
+  }
+}
+
+%grid-row-table {
+  width: 100%;
+  @include media(tablet){
+    margin-left: $gutter-half;
+    margin-right: $gutter-half;
+    display: table;
+  }
+}
+
+@mixin grid-column-table($width, $full-width: tablet) {
+  @include media($full-width){
+    width: percentage($width);
+  }
+  @include ie-lte(7){
+    width: (($site-width + $gutter) * $width) - $gutter;
+  }
+  vertical-align: top;
+  display: table-cell;
+  @include box-sizing(border-box);
+}
+
+@mixin external-link-size($content, $top, $top-hover: top) {
+  &:after {
+    content: $content;
+    background-position: right $top;
+  }
+
+  @if $top-hover == top {
+    $top-hover: $top;
+  }
+
+  &:hover:after {
+    background-position: right $top-hover;
+  }
+}
+
+@mixin external-link-12-no-hover {
+  @include external-link-size($content: "\A0\A0\A0\A0\A0\A0\A0\A0", $top: 0px);
+}
+
+@mixin external-link-12 {
+  @include external-link-size($content: "\A0\A0\A0\A0\A0\A0\A0\A0", $top: 0px, $top-hover: -388px);
+}
+
+@mixin external-link-13-no-hover {
+  @include external-link-size($content: "\A0\A0\A0\A0\A0", $top: 1px);
+}
+
+@mixin external-link-13 {
+  @include external-link-size($content: "\A0\A0\A0\A0\A0", $top: 1px, $top-hover: -387px);
+}
+
+@mixin external-link-14 {
+  @include external-link-size($content: "\A0\A0\A0\A0\A0", $top: 1px, $top-hover: -387px);
+}
+
+@mixin external-link-14-bold-no-hover {
+  @include external-link-size($content: "\A0\A0\A0\A0\A0\A0", $top: 2px);
+}
+
+@mixin external-link-16 {
+  @include external-link-size($content: "\A0\A0\A0\A0\A0", $top: 3px, $top-hover: -385px);
+}
+
+@mixin external-link-16-bold-no-hover {
+  @include external-link-size($content: "\A0\A0\A0\A0\A0\A0", $top: 3px);
+}
+
+@mixin external-link-19 {
+  @include external-link-size($content: "\A0\A0\A0\A0", $top: 6px, $top-hover: -382px);
+}
+
+@mixin external-link-19-bold-no-hover {
+  @include external-link-size($content: "\A0\A0\A0\A0\A0\A0", $top: 6px);
+}
+
+@mixin external-link-default {
+  &:after {
+    background-image: file-url("external-links/external-link.png");
+    background-repeat: no-repeat;
+
+    @include device-pixel-ratio() {
+      background-image: file-url("external-links/external-link-24x24.png");
+      background-size: 12px 400px;
+    }
+  }
+}

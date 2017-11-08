@@ -20,7 +20,7 @@ Styleguide Panel
 // Indented panels with a grey left hand border
 .panel-indent {
   margin: 0;
-  @include contain-floats;
+  @extend %contain-floats;
   clear: both;
   border-left: 4px solid $border-colour;
 

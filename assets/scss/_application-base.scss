@@ -1,29 +1,12 @@
-$path: "../images/icons/";
-
-// govuk_frontend_toolkit
-@import "../govuk_frontend_toolkit/stylesheets/_colours";
-@import "../govuk_frontend_toolkit/stylesheets/_conditionals";
-@import "../govuk_frontend_toolkit/stylesheets/_css3";
-@import "../govuk_frontend_toolkit/stylesheets/_device-pixels";
-@import "../govuk_frontend_toolkit/stylesheets/_typography";
-@import "../govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta";
-@import "../govuk_frontend_toolkit/stylesheets/design-patterns/_buttons";
+$path: "../images/";
 
 // Tools
+@import "frontend-toolkit";
+@import "govuk-mixins";
 @import "mixins";
 
 // Reset
-@import "base/normalize";
-
-//Static Specific
-@import "../govuk_frontend_static/colours";
-@import "../govuk_frontend_static/conditionals2";
-@import "../govuk_frontend_static/basic";
-@import "../govuk_frontend_static/template-text";
-
-// govuk_elements
-@import "../govuk_elements/public/sass/service-design-manual/helpers/_breadcrumbs";
-@import "../govuk_elements/public/sass/elements/forms/_form-multiple-choice";
+// @import "base/normalize";
 
 // HMRC Specific
 @import "base/colours";
@@ -85,9 +68,7 @@ $path: "../images/icons/";
 @import "components/youtube-player";
 @import "components/auto-complete";
 @import "components/external-markup";
-@import "components/character-counter/character-counter";
 @import "components/header/header";
-@import "components/account-menu/account-menu";
 @import "components/add-remove";
 @import "components/toggle-button";
 @import "components/tabs";
@@ -96,8 +77,6 @@ $path: "../images/icons/";
 @import "components/waiting";
 @import "components/flag";
 @import "components/indent";
-@import "components/page-heading/page-heading";
-@import "components/check-your-answers/check-your-answers";
 
 // Page Specific Styles
 @import "pages/messages";
@@ -112,3 +91,12 @@ $path: "../images/icons/";
 
 // Unknown CSS
 @import "unknown";
+
+// GOV.UK Dependencies
+@import "elements";
+
+// HMRC Design System
+@import "components/account-menu/account-menu";
+@import "components/character-counter/character-counter";
+@import "components/check-your-answers/check-your-answers";
+@import "components/page-heading/page-heading";
