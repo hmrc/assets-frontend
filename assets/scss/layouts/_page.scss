@@ -35,9 +35,9 @@ body {
   text-align: left;
 }
 
-#content {
-  @include page-slice(32);
-}
+// #content {
+//   @include page-slice(32);
+// }
 
 .centered-content {
   @include page-slice();

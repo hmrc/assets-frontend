@@ -118,12 +118,15 @@ Styleguide Form.group
 
 fieldset {
   @include core-19();
+
   margin: 0;
   position: relative;
   width: 100%;
+
   legend {
-    width: 100%;
-    margin-bottom: 0.75em;
+    // width: 100%;
+    // margin-bottom: 0.75em;
+
     &.h2-heading {
       margin: 0 0 0.25em 0;
     }
