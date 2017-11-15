@@ -1,11 +1,11 @@
 'use strict'
 
-var gulp = require('gulp')
-var config = require('../config')
+const gulp = require('gulp')
+const config = require('../config')
 
-gulp.task('images', function () {
+gulp.task('images', () => {
   var env = global.runmode
 
-  return gulp.src([config.images.govuk].concat(config.images.dev.src))
+  return gulp.src(config.images.src)
     .pipe(gulp.dest(config.images[env].dest))
 })
