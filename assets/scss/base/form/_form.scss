@@ -116,22 +116,22 @@ Markup:
 Styleguide Form.group
 */
 
-fieldset {
-  @include core-19();
-
-  margin: 0;
-  position: relative;
-  width: 100%;
-
-  legend {
-    // width: 100%;
-    // margin-bottom: 0.75em;
-
-    &.h2-heading {
-      margin: 0 0 0.25em 0;
-    }
-  }
-}
+//fieldset {
+//  @include core-19();
+//
+//  margin: 0;
+//  position: relative;
+//  width: 100%;
+//
+//  legend {
+//    // width: 100%;
+//    // margin-bottom: 0.75em;
+//
+//    &.h2-heading {
+//      margin: 0 0 0.25em 0;
+//    }
+//  }
+//}
 
 .form-field-group {
   margin-bottom: 0.75em;
@@ -308,14 +308,14 @@ input[type=number] {
   appearance: textfield; // removes default value adjusters in Firefox
 }
 
-.form-date {
-  @extend %contain-floats;
-  display: inline-block;
-
-  @include ie-lte(7) {
-    zoom: 1;
-  }
-}
+//.form-date {
+//  @extend %contain-floats;
+//  display: inline-block;
+//
+//  @include ie-lte(7) {
+//    zoom: 1;
+//  }
+//}
 
 .form-date .form-group {
   width: 50px;
