@@ -28,33 +28,33 @@ Markup:
 Styleguide Typography.Heading Elements
 */
 
-h1,
-.h1-heading {
-  @include bold-36;
-  margin-top: em(8);
-  margin-bottom: em(12);
-}
-
-h2,
-.h2-heading {
-  @include bold-24;
-  margin-top: em(8) !important; //remove importance when govuk_frontend_static is killed
-  margin-bottom: em(4);
-}
-
-h3,
-.h3-heading {
-  @include bold-19;
-  margin-top: em(8);
-  margin-bottom: em(4);
-}
-
-h4,
-.h4-heading {
-  @include core-19;
-  margin-top: em(8);
-  margin-bottom: em(4);
-}
+//h1,
+//.h1-heading {
+//  @include bold-36;
+//  margin-top: em(8);
+//  margin-bottom: em(12);
+//}
+//
+//h2,
+//.h2-heading {
+//  @include bold-24;
+//  margin-top: em(8) !important; //remove importance when govuk_frontend_static is killed
+//  margin-bottom: em(4);
+//}
+//
+//h3,
+//.h3-heading {
+//  @include bold-19;
+//  margin-top: em(8);
+//  margin-bottom: em(4);
+//}
+//
+//h4,
+//.h4-heading {
+//  @include core-19;
+//  margin-top: em(8);
+//  margin-bottom: em(4);
+//}
 
 /*
 Heading Sizes

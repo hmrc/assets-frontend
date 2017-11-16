@@ -104,3 +104,9 @@
     }
   }
 }
+
+// there is a pem() defined in toolkit and an em() in elements.
+// @FIXME: pem() is not used/imported anywhere
+@function em($px, $base: 19) {
+  @return ($px / $base) + em;
+}
