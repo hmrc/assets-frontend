@@ -19,11 +19,21 @@
     }
   }
 
+  function captureCopyEvents(){
+    var codeBlocks = document.querySelectorAll('code')
+
+    for (var i = 0, n = codeBlocks.length; i < n; i++){
+      codeBlocks[i].addEventListener('copy', ga('send', 'event', 'markup', 'copy', document.location.pathname))
+    }
+
+  }
+
   window.addEventListener('resize', function () {
     scaleExampleHeight()
   })
 
   scaleExampleHeight()
   preventClickOnExample()
+  captureCopyEvents()
   hljs.initHighlightingOnLoad()
 })()
