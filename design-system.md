@@ -16,6 +16,11 @@
           <div class="column-full column-constrained">
             <div class="grid-row">
               <div class="column-one-third">
+                <h2 class="heading-large">Styles</h2>
+                <p>The core styles that will make your service look and feel like GOV.UK. This includes Colour, Typography and Layout.</p>
+                <p class="mt_20 mtb_20-m"><a href="styles">See all styles</a></p>
+              </div>
+              <div class="column-one-third">
                 <h2 class="heading-large">Components</h2>
                 <p>Re-usable parts of the user interface.</p>
                 <p class="mt_20 mtb_20-m"><a href="components">See all components</a></p>
