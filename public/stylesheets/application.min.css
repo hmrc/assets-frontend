@@ -9618,10 +9618,15 @@ Styleguide Attorney Banner
 Notification banner
 
 Markup:
-<div class="notice-banner">
-  <div class="notice-banner__wrapper">
-    <h3 class="notice-banner__content">Please help us improve our service</h3>
-    <a class="notice-banner__content" href="#">Enter our survey</a>
+<div class="js-hidden notice-banner" id="notice-banner">
+  <div class="notice-banner__wrapper grid-layout">
+    <div class="grid-layout__column--2-3">
+      <h3 class="notice-banner__content">Please help us improve our service</h3>
+      <a class="notice-banner__content" href="#">Enter our survey</a>
+    </div>
+    <div class="grid-layout__column--1-3 text--right">
+      <a class="notice-banner__close notice-banner__content" href="#">No thanks</a>
+    </div>
   </div>
 </div>
 
@@ -9629,48 +9634,49 @@ Discussion: https://hmrcdigital.hackpad.com/Notification-Banner-61tbWTMiGZe
 
 Styleguide Notification banner
 */
-/* line 17, assets/scss/components/_notice-banner.scss */
+/* line 22, assets/scss/components/_notice-banner.scss */
 .notice-banner {
   width: 100%;
   background-color: #003e74;
 }
 
-/* line 22, assets/scss/components/_notice-banner.scss */
+/* line 27, assets/scss/components/_notice-banner.scss */
 .notice-banner__wrapper {
-  max-width: 960px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 15px;
 }
 
 @media (min-width: 641px) {
-  /* line 22, assets/scss/components/_notice-banner.scss */
+  /* line 27, assets/scss/components/_notice-banner.scss */
   .notice-banner__wrapper {
     padding: 15px 30px;
   }
 }
 
-/* line 31, assets/scss/components/_notice-banner.scss */
+/* line 36, assets/scss/components/_notice-banner.scss */
 .notice-banner__content {
   color: #fff;
   margin-top: 0;
 }
 
-/* line 37, assets/scss/components/_notice-banner.scss */
+/* line 42, assets/scss/components/_notice-banner.scss */
 a.notice-banner__content, .notice-banner__content.link-style, .notice-banner__content.button--link-style {
   color: #fff;
 }
 
-/* line 40, assets/scss/components/_notice-banner.scss */
+/* line 45, assets/scss/components/_notice-banner.scss */
 a.notice-banner__content:link, .notice-banner__content.link-style:link, .notice-banner__content.button--link-style:link, a.notice-banner__content:visited, .notice-banner__content.link-style:visited, .notice-banner__content.button--link-style:visited {
   color: #eaedef;
 }
 
-/* line 45, assets/scss/components/_notice-banner.scss */
+/* line 50, assets/scss/components/_notice-banner.scss */
 a.notice-banner__content:focus, .notice-banner__content.link-style:focus, .notice-banner__content.button--link-style:focus {
   color: #0b0c0c;
 }
 
-/* line 49, assets/scss/components/_notice-banner.scss */
+/* line 54, assets/scss/components/_notice-banner.scss */
 a.notice-banner__content:hover, .notice-banner__content.link-style:hover, .notice-banner__content.button--link-style:hover, a.notice-banner__content:active, .notice-banner__content.link-style:active, .notice-banner__content.button--link-style:active {
   color: #fff;
 }
