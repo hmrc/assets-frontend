@@ -3,15 +3,16 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
-and this project adheres to [Semantic Versioning](http://semver.org/). 
+and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 - Changed a reference to an svg icon to a data uri
 - Updated .nvmrc file to use up to date node version for AF
+- Adds a close link to the banner, with cookie [#859](https://github.com/hmrc/assets-frontend/pull/859)
 
 ### Changed
-* Remove style overrides for layout and typography for the Design System [#851](https://github.com/hmrc/assets-frontend/pull/851)  
-* Add Styles tab with a reference for Component Library [#858](https://github.com/hmrc/assets-frontend/pull/858)
+- Remove style overrides for layout and typography for the Design System [#851](https://github.com/hmrc/assets-frontend/pull/851)  
+- Add Styles tab with a reference for Component Library [#858](https://github.com/hmrc/assets-frontend/pull/858)
 
 ## [2.253.0] - 2017-10-26
 
@@ -23,10 +24,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add WIP macro [#843](https://github.com/hmrc/assets-frontend/pull/843)
 
 ### Changed
-* Replace the component library with a new design pattern library [#822](https://github.com/hmrc/assets-frontend/pull/822) 
+* Replace the component library with a new design pattern library [#822](https://github.com/hmrc/assets-frontend/pull/822)
 * Add header component to the new design system  [#829](https://github.com/hmrc/assets-frontend/pull/829)
 * Use macros for example and markup rendering in README.md [#828](https://github.com/hmrc/assets-frontend/pull/828)
-* Modify CHANGELOG.md change verification to stabilise Travis CI [#833](https://github.com/hmrc/assets-frontend/pull/833) 
+* Modify CHANGELOG.md change verification to stabilise Travis CI [#833](https://github.com/hmrc/assets-frontend/pull/833)
 * Allow README.md only changes to be merged without forcing CHANGELOG.md to be changed [#836](https://github.com/hmrc/assets-frontend/pull/836)
 * Replaced [_panels.scss](https://github.com/hmrc/assets-frontend/pull/835/commits/31e4c36c1a94e151448b23b34670fff7232d7823) with content from GOV.UK [#835](https://github.com/hmrc/assets-frontend/pull/835)
 * Updated the homepage with a description of patterns [#846](https://github.com/hmrc/assets-frontend/pull/846)
