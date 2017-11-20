@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+- Added new `.link-print` style and a new `icon-print.svg` image, new `.header__menu__language-selection-links` style [#860](https://github.com/hmrc/assets-frontend/pull/860)
 - Changed a reference to an svg icon to a data uri
 - Updated .nvmrc file to use up to date node version for AF
 - Adds a close link to the banner, with cookie [#859](https://github.com/hmrc/assets-frontend/pull/859)
