@@ -237,9 +237,9 @@ Styleguide Notification.Highlight
   padding: em(5) 0 em(5) em(55);
   margin-bottom: em(15);
 
-  background: $yellow-25 url("../images/icons/icon-important.png") no-repeat scroll 10px;
+  background: $yellow-25 url("../images/icon-important.png") no-repeat scroll 10px;
   @include device-pixel-ratio() {
-    background-image: url("../images/icons/icon-important-2x.png");
+    background-image: url("../images/icon-important-2x.png");
     background-size: 27px 27px;
   }
   span {
@@ -321,6 +321,6 @@ Styleguide Notification.Important Notice
 
 .important-notice {
   padding-left: 2.5em;
-  background: no-repeat left top url(../images/icons/icon-important.png);
+  background: no-repeat left top url(../images/icon-important.png);
   font-weight: 700;
 }
