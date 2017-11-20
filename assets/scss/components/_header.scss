@@ -159,3 +159,39 @@ a.header__menu__proposition-name {
     text-decoration: none;
   }
 }
+
+
+.header__menu__language-selection-links {
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 3px 0 0 0;
+
+  @include media-down(tablet) {
+    width: 100%;
+  }
+
+  li {
+    @include bold-16;
+    display: inline;
+  }
+
+  li:last-child {
+    padding-right: em(15);
+  }
+
+  span{
+    color: $grey-8;
+  }
+
+  a {
+    color: $grey-6;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}

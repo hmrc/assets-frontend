@@ -60,6 +60,44 @@ Styleguide Links.Print
 }
 
 /*
+New Print link
+
+Add a print image to a print link.
+
+Markup:
+<a href="javascript:window.print()" class="print-link print-hidden js-visible">Print me</a>
+*/
+
+.link-print-container {
+  margin-top: 0;
+  text-align: left;
+}
+
+@include media(desktop) {
+  .link-print-container {
+    margin-top: 12px;
+    text-align: right;
+  }
+}
+
+.link-print {
+  background-image: url("../images/icon-print.svg");
+  background-position: left 2px;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid $black;
+  color: $black;
+  font-size: 16px;
+  margin-top: 12px;
+  line-height: 1.5;
+  padding-left: 26px;
+  text-decoration: none;
+
+  &:focus {
+    outline: 3px solid $yellow;
+  }
+}
+
+/*
 Back
 
 A back link.
