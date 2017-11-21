@@ -23,9 +23,6 @@ The Account header contains:
 - the [Acount menu](#the-account-menu)
 - [the language selector](/components/header/index.html#language-selector) if your service is avalible in Welsh
 
-#### HTML
-
-{{ markup('account-header-example.html') }}
 
 *Use this section to explain how the pattern works. This should include:*
 
