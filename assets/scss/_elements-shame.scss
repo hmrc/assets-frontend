@@ -6,6 +6,19 @@
   }
 }
 
+/*
+Heading Elements
+
+You can also add the following `CSS` selectors to non html heading elements to provide header styling.
+
+Markup:
+<div class="h1-heading">h1 example</div>
+<p class="h2-heading">h2 example</p>
+<div class="h3-heading">h3 example</div>
+<p class="h4-heading">h4 example</p>
+
+Styleguide Typography.Heading Elements
+*/
 h1, .h1-heading {
   @extend .heading-large;
 }
@@ -17,6 +30,11 @@ h2, .h2-heading {
 h3, .h3-heading,
 h4, .h4-heading {
   @extend .heading-small;
+}
+
+input,
+textarea {
+  @extend .form-control;
 }
 
 // 2. Grid units take 100% width, unless a .grid-width class is applied
@@ -62,4 +80,36 @@ h4, .h4-heading {
   @include media(tablet) {
     margin: 0 $gutter-half;
   }
+}
+
+.inner-block {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.button.button--link {
+  width: auto;
+
+  @include media(mobile) {
+    margin-top: 0;
+  }
+}
+
+.button--link-style {
+  color: $link-colour;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $link-visited-colour;
+  }
+}
+
+pre,
+code {
+  @extend .code;
+}
+
+.dataTable {
+  margin-bottom: em(30);
 }

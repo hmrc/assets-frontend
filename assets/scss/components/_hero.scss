@@ -39,6 +39,7 @@ Styleguide Hero
 
   .hero__heading-small {
     @include core-19;
+    margin: em(8) 0 em(7.6);
   }
 
   @include media(tablet) {

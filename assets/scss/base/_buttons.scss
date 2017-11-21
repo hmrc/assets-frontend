@@ -35,19 +35,7 @@ button, .button {
 }
 
 .button--get-started {
-  @extend .button;
-  @include bold-24();
-  margin: em(10) 0;
-  padding-right: 40px;
-  background-image: url("../images/icon-pointer.png");
-  background-position: 100% 50%;
-  background-repeat: no-repeat;
-
-  &:hover {
-    background-image: url("../images/icon-pointer.png");
-    background-position: 100% 50%;
-    background-repeat: no-repeat;
-  }
+  @extend .button-start;
 }
 
 .button--secondary {

@@ -15,48 +15,6 @@ Styleguide Typography.Heading
 */
 
 /*
-Heading Elements
-
-You can also add the following `CSS` selectors to non html heading elements to provide header styling.
-
-Markup:
-<div class="h1-heading">h1 example</div>
-<p class="h2-heading">h2 example</p>
-<div class="h3-heading">h3 example</div>
-<p class="h4-heading">h4 example</p>
-
-Styleguide Typography.Heading Elements
-*/
-
-//h1,
-//.h1-heading {
-//  @include bold-36;
-//  margin-top: em(8);
-//  margin-bottom: em(12);
-//}
-//
-//h2,
-//.h2-heading {
-//  @include bold-24;
-//  margin-top: em(8) !important; //remove importance when govuk_frontend_static is killed
-//  margin-bottom: em(4);
-//}
-//
-//h3,
-//.h3-heading {
-//  @include bold-19;
-//  margin-top: em(8);
-//  margin-bottom: em(4);
-//}
-//
-//h4,
-//.h4-heading {
-//  @include core-19;
-//  margin-top: em(8);
-//  margin-bottom: em(4);
-//}
-
-/*
 Heading Sizes
 
 There are also other `CSS` selectors you can add to your headings to provide different sizes.
