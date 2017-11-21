@@ -18,7 +18,7 @@ Styleguide Beta.Phase Banner
 */
 
 .beta-banner {
-  @include phase-banner(beta);
+  @include phase-banner();
 }
 
 .beta-banner--borderless {
@@ -41,7 +41,7 @@ Styleguide Beta.Phase Tag
 */
 
 .phase-tag {
-  @include phase-tag(beta);
+  @include phase-tag();
 }
 
 .header__menu {
