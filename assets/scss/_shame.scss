@@ -17,11 +17,10 @@
   }
 }
 
-
-article h1 {
-  @include bold-36();
-  margin-top: 0;
-}
+//article h1 {
+//  @include bold-36();
+//  margin-top: 0;
+//}
 
 article ul {
   list-style: none;
@@ -139,11 +138,9 @@ body {
 /* Headings with `p` added due to the specificity of `.content__body p`.
  * To be removed once specificity lowered. */
 p.heading-48 {
-  @include bold-48();
-  margin: em(10) 0 em(10) 0;
+  @extend .heading-xlarge;
 }
 
-p.heading-24,
-p.heading-24--normal {
-  @include core-24();
+p.heading-24 {
+  @extend .heading-medium;
 }

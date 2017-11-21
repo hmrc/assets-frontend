@@ -72,17 +72,15 @@ Styleguide Typography.Heading Sizes
 */
 
 .heading-48 {
-  @include bold-48();
-  margin: em(10) 0 em(10) 0;
+  @extend .heading-xlarge;
 }
 
 .heading-36 {
-  @include bold-36();
+  @extend .heading-large;
 }
 
-.heading-24,
-.heading-24--normal {
-  @include core-24();
+.heading-24 {
+  @extend .heading-medium;
 }
 
 /*
@@ -132,6 +130,6 @@ Markup:
 Styleguide Typography.Blue Big Heading
 */
 .heading-large--blue {
-  @include bold-48();
+  @extend .heading-xlarge;
   color: $govuk-blue-colour;
 }

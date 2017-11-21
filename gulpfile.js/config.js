@@ -98,7 +98,7 @@ module.exports = {
   svg: {
     src: [
       src + 'images/**/*.svg',
-      govuk.toolkit + '/images/**/*.svg',
+      govuk.toolkit + '/images/**/*.svg'
     ],
     dev: {
       dest: snapshotDir + 'images'
@@ -113,7 +113,7 @@ module.exports = {
       src + 'images/**/*',
       '!' + src + 'images/**/*.svg',
       govuk.toolkit + '/images/**/*',
-      '!' + govuk.toolkit + '/images/**/*.svg',
+      '!' + govuk.toolkit + '/images/**/*.svg'
     ],
     dev: {
       dest: snapshotDir + 'images'
