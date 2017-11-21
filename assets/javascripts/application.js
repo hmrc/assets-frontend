@@ -50,6 +50,7 @@ var addRemove = require('./modules/addRemove.js')
 var modalDialog = require('./modules/modalDialog.js')
 var dynamicGaTags = require('./modules/dynamicGaTags.js')
 var listCollapse = require('./modules/listCollapse.js')
+var noticeBanner = require('./modules/noticeBanner.js')
 
 // initialise mdtpf
 fingerprint()
@@ -177,4 +178,5 @@ $(function () {
   modalDialog()
   dynamicGaTags()
   listCollapse()
+  noticeBanner()
 })
