@@ -45,6 +45,7 @@ module.exports = function () {
 
       success: function (data) {
         showConfirmation(data)
+        setupFormValidation()
       },
 
       error: function (jqXHR, status) {
