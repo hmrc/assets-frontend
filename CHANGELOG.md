@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed a reference to an svg icon to a data uri
 - Updated .nvmrc file to use up to date node version for AF
 - Adds a close link to the banner, with cookie [#859](https://github.com/hmrc/assets-frontend/pull/859)
+- Added the account header [#862](https://github.com/hmrc/assets-frontend/pull/862)
 - Updated reportAProblem to reattach form validation after a successful submission, in case of server side validation failure resulting in the form reloaded [#863](https://github.com/hmrc/assets-frontend/pull/863/files)
 
 ### Changed
