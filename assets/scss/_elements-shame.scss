@@ -6,6 +6,10 @@
   }
 }
 
+.bold-medium {
+  margin: 0;
+}
+
 /*
 Heading Elements
 
@@ -39,9 +43,13 @@ h4, .h4-heading {
   @extend .heading-small;
 }
 
-input,
+input[type="text"],
 textarea {
   @extend .form-control;
+}
+
+input[type="text"].form-control-error {
+  @extend .form-control-error;
 }
 
 // 2. Grid units take 100% width, unless a .grid-width class is applied
