@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Adds a close link to the banner, with cookie [#859](https://github.com/hmrc/assets-frontend/pull/859)
 - Added the account header [#862](https://github.com/hmrc/assets-frontend/pull/862)
 - Updated reportAProblem to reattach form validation after a successful submission, in case of server side validation failure resulting in the form reloaded [#863](https://github.com/hmrc/assets-frontend/pull/863/files)
+- removed the account menu component from the navigation [#865](https://github.com/hmrc/assets-frontend/pull/865)
 
 ### Changed
 - Remove style overrides for layout and typography for the Design System [#851](https://github.com/hmrc/assets-frontend/pull/851)  
