@@ -25,6 +25,13 @@ h1, .h1-heading {
 
 h2, .h2-heading {
   @extend .heading-medium;
+
+  .panel-indent &,
+  .service-info &,
+  .side-nav__right-side-content & {
+    // merged article h2 in _template_text.scss and h2 in _headings.scss
+    margin: 0.42105em 0 0.4em 0;
+  }
 }
 
 h3, .h3-heading,
