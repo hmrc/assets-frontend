@@ -197,3 +197,24 @@ Markup:
 .js .email-form-errors .error-notification {
   display: none;
 }
+
+/*
+ Single checkbox errors
+*/
+.form-field--error{
+    .multiple-choice{
+        [type=checkbox]+label.form-field-single{
+            &::before{
+                top: 27px;
+            }
+            &::after{
+                top: 37px;
+            }
+        }
+    }
+    .form-field-single{
+        .error-notification{
+            margin-left: -3.1em;
+        }
+    }
+}
