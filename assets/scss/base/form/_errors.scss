@@ -207,14 +207,14 @@ Markup:
       &::before{
         top: 27px;
       }
-        &::after{
-          top: 37px;
-        }
+      &::after{
+        top: 37px;
       }
     }
-    .form-field-single{
-      .error-notification{
-        margin-left: -3.1em;
-      }
+  }
+  .form-field-single{
+    .error-notification{
+      margin-left: -3.1em;
     }
+  }
 }
