@@ -96,15 +96,15 @@ textarea {
 }
 
 a,
- .button--link-style {
-   color: $link-colour;
+.button--link-style {
+  color: $link-colour;
 
-   &:hover,
-   &:focus,
-   &:active {
-     color: $link-visited-colour;
-   }
- }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $link-visited-colour;
+  }
+}
 
 pre,
 code {

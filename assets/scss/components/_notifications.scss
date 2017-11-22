@@ -247,6 +247,9 @@ Styleguide Notification.Highlight
     display: block;
     padding: em(2) 0;
   }
+  p {
+    margin: 0.75em 0;
+  }
 }
 
 .highlight-message--content-body {
