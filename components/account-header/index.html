@@ -123,16 +123,152 @@
             </div>
             -->
 
-            <h1 id="accessible-page-heading">Accessible page heading</h1>
-<p>The current design pattern seems like it could be built a little better.
-The page title reads &quot;Contacting you — GOV.UK elements&quot;,
-which isn&#39;t how the <code>h1</code> reads. Having a <code>span</code> in the <code>h1</code> gives
-differing results, depending on the assistive technology used.</p>
-<p>This new version splits the page name (<code>h1</code>) and the section name (<code>p</code>) –
-which are now in the correct source order – and then positions the section
-name above with CSS. This keeps the pattern visually identical, but brings
-added accessibility wins.</p>
-<p>The user can skip to the first header and they&#39;ll hear <em>just</em> the page header. If they then key through the page, they&#39;ll hear which section they&#39;re in.</p>
+            <h1 id="account-header">Account Header</h1>
+  <div class="panel panel-border-wide">
+    <p class="heading-small">This component is work in progress.</p>
+    <p>
+      View the todo list for this pattern on
+      <a href="https://github.com/hmrc/design-patterns/issues/128" target="_blank">
+        GitHub (opens in a new window or tab)
+      </a>
+    </p>
+  </div>
+
+
+<p>The Account header is used in the <a href="https://www.tax.service.gov.uk/personal-account">Personal tax account</a>. It has been spesifically designed to provide users with access to the features of the Personal tax account.</p>
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<div id="global-cookie-message" style="display: block;">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+    cookies</a></p>
+</div>
+<!-- END COOKIE MESSAGE -->
+
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Personal tax account</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+<main id="content" role="main">
+<!-- ACCOUNT MENU -->
+<nav id="secondary-nav" class="account-menu" role="navigation">
+  <a href="#" class="account-menu__link account-menu__link--active account-menu__link--home "><span class="account-icon account-icon--home">Account home</span></a>
+  <a href="#" class="account-menu__link account-menu__link--menu js-hidden js-visible" aria-hidden="true" aria-expanded="false">Account menu</a>
+
+  <ul class="account-menu__main">
+    <li class="account-menu__link--back hidden" aria-hidden="true"><a href="#" class="account-menu__link">Back</a></li>
+
+    <li><a href="messages" class="account-menu__link">Messages</a></li>
+
+    <li><a href="track-your-forms" class="account-menu__link">Check progress</a></li>
+
+    <li>
+      <a href="#subnav-1" id="account-menu__main-1" class="account-menu__link account-icon account-menu__link--more" aria-haspopup="true" aria-owns="subnav-1">Get help</a>
+
+      <div class="subnav js-hidden" id="subnav-1" role="navigation" aria-labelledby="account-menu__main-1" aria-label="Get help">
+        <div class="column-one-third subnav__section">
+          <p class="subnav__section__heading">Live chat</p>
+          <div><a href="#">Chat with us now</a></div>
+          <p>Live chat is available and the queue time is currently around 12 minutes</p>
+        </div>
+        <div class="column-one-third subnav__section">
+          <p class="subnav__section__heading">Phone</p>
+          <div>01234 567 890</div>
+          <p>Lines are currently closed and will reopen tomorrow at 8:00am</p>
+        </div>
+        <div class="column-one-third subnav__section">
+          <p class="subnav__section__heading">Technical problems</p>
+          <div><a href="#">Report a technical problem</a></div>
+          <p>We aim to reply within 72 hours</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <a href="#subnav-2" id="account-menu__main-2" class="account-menu__link account-icon account-menu__link--more" aria-haspopup="true" aria-owns="subnav-2">Your account</a>
+
+      <div class="subnav js-hidden" id="subnav-2" role="navigation" aria-labelledby="account-menu__main-2" aria-label="Your account">
+        <div class="column-one-third subnav__section">
+          <p class="subnav__section__heading">Security settings</p>
+          <div><a href="#">Change your password</a></div>
+          <div><a href="#">Change your phone number</a></div>
+          <div><a href="account-two">Trusted helpers</a></div>
+        </div>
+        <div class="column-one-third subnav__section">
+          <p class="subnav__section__heading">Paperless settings</p>
+          <div><a href="contact-preferences">Go paperless</a></div>
+          <p>
+            You currently receive all correspondence by post
+          </p>
+        </div>
+        <div class="column-one-third subnav__section">
+          <p class="subnav__section__heading">Personal information</p>
+          <div><a href="personal-details">View your personal details</a></div>
+          <p>View or edit your address, phone number and National Insurance.</p>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="#" class="account-menu__link">Sign out</a></li>
+  </ul>
+</nav>
+<!-- END ACCOUNT MENU -->
+
+  <!-- LANGUAGE TOGGLE -->
+  <div class="lang-select">
+    <ul>
+      <li>English</li>
+      <li>|</li>
+      <li><a href="#">Cymraeg</a></li>
+    </ul>
+  </div>
+  <!-- END LANGUAGE TOGGLE -->
+</main></div>
+  </div>
+</div>
+
+
+
+<h2 id="when-to-use-the-account-header">When to use the Account header</h2>
+<p>If your service is going to be part of the Personal tax account you should use the Account header. </p>
+<h3 id="when-not-to-use-the-account-header">When not to use the Account header</h3>
+<p>You should not use that Account header in stand-alone services, use the <a href="components/header/index.html">Header</a> instead.</p>
+<h2 id="how-the-account-header-works">How the Account header works</h2>
+<p>The Account header contains:</p>
+<ul>
+<li><a href="/components/header/index.html#the-hmrc-cookie-banner">the HMRC cookie banner</a></li>
+<li><a href="/components/header/index.html#the-gov.uk-header">the GOV.UK header</a></li>
+<li>the <a href="#the-account-menu">Acount menu</a></li>
+<li><a href="/components/header/index.html#language-selector">the language selector</a> if your service is avalible in Welsh</li>
+</ul>
+<p><em>Use this section to explain how the pattern works. This should include:</em></p>
+<p><em>- (if the pattern/component is too complex to have been fully described in the overview) a full description of how the pattern works (for users)</em>
+<em>- rules/instructions on how to implement it</em>
+<em>- steps to follow</em></p>
+<p><em>It can also include</em></p>
+<p><em>- coded examples</em>
+<em>- things to avoid</em></p>
+<h2 id="why-it-works">Why it works</h2>
+<p><em>If this section is quite long, break it into smaller sections with H3s.</em></p>
+<h2 id="research-on-this-component">Research on this component</h2>
+<p>We need more user research on the Account Header. </p>
+<p>Contribute your research via this <a href="https://github.com/hmrc/design-patterns/issues/128">GitHub issue</a>.</p>
 
 
             <!--
