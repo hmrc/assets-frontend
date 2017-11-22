@@ -202,19 +202,19 @@ Markup:
  Single checkbox errors
 */
 .form-field--error{
-    .multiple-choice{
-        [type=checkbox]+label.form-field-single{
-            &::before{
-                top: 27px;
-            }
-            &::after{
-                top: 37px;
-            }
+  .multiple-choice{
+    [type=checkbox]+label.form-field-single{
+      &::before{
+        top: 27px;
+      }
+        &::after{
+          top: 37px;
         }
+      }
     }
     .form-field-single{
-        .error-notification{
-            margin-left: -3.1em;
-        }
+      .error-notification{
+        margin-left: -3.1em;
+      }
     }
 }
