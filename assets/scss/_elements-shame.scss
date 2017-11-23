@@ -43,22 +43,48 @@ h4, .h4-heading {
   @extend .heading-small;
 }
 
+// Apply widths to component library form elements without overriding govuk-elements styles
+textarea,
 input[type="text"],
-textarea {
+input[type="password"] {
   @extend .form-control;
+
+  &.form-control-3-4 {
+    @extend .form-control-3-4;
+  }
+
+  &.form-control-2-3 {
+    @extend .form-control-2-3;
+  }
+
+  &.form-control-1-2 {
+    @extend .form-control-1-2;
+  }
+
+  &.form-control-1-3 {
+    @extend .form-control-1-3;
+  }
+
+  &.form-control-1-4 {
+    @extend .form-control-1-4;
+  }
+
+  &.form-control-1-8 {
+    @extend .form-control-1-8;
+  }
+
+  &.form-control-error {
+    @extend .form-control-error;
+  }
 }
 
-input[type="text"].form-control-error {
-  @extend .form-control-error;
-}
-
-// 2. Grid units take 100% width, unless a .grid-width class is applied
+// Old grid classes that have been removed from govuk-elements
+// but are still being used in component library
 .grid {
   float: left;
   width: 100%;
 }
 
-// Grid widths
 .grid-1-4 {
   @include media(tablet) {
     width: 25%;
