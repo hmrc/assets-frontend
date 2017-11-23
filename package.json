@@ -101,7 +101,7 @@
     "mdtpdf": "./assets/javascripts/modules/mdtpdf.js",
     "stageprompt": "./node_modules/stageprompt/script/stageprompt.js",
     "details": "./assets/javascripts/modules/details.polyfill.js",
-    "govuk-template": "./assets/govuk_elements/govuk/public/javascripts/govuk-template.js",
+    "govuk-template": "./assets/javascripts/vendor/govuk-template.js",
     "datatables": "./node_modules/datatables/media/js/jquery.dataTables.js",
     "base64": "./node_modules/js-base64/base64.js",
     "json3": "./node_modules/json3/lib/json3.js"
