@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Remove style overrides for layout and typography for the Design System [#851](https://github.com/hmrc/assets-frontend/pull/851)  
 - Add Styles tab with a reference for Component Library [#858](https://github.com/hmrc/assets-frontend/pull/858)
+- Add Styles to fix singleCheckbox error message placement [#864](https://github.com/hmrc/assets-frontend/pull/864)
 
 ## [2.253.0] - 2017-10-26
 
