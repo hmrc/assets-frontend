@@ -7892,6 +7892,24 @@ Markup:
 }
 
 /*
+ Single checkbox errors
+*/
+/* line 207, assets/scss/base/form/_errors.scss */
+.form-field--error .multiple-choice [type=checkbox] + label.form-field-single::before {
+  top: 27px;
+}
+
+/* line 210, assets/scss/base/form/_errors.scss */
+.form-field--error .multiple-choice [type=checkbox] + label.form-field-single::after {
+  top: 37px;
+}
+
+/* line 216, assets/scss/base/form/_errors.scss */
+.form-field--error .form-field-single .error-notification {
+  margin-left: -3.1em;
+}
+
+/*
 Form Hint
 
 Form hints are used for providing extra information to a user about a form input.
