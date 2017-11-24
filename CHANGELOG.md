@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 :rotating_light: **BREAKING CHANGE!!!** :rotating_light:
 
-This entire version is covered by a single pull request. [#866](https://github.com/hmrc/assets-frontend/pull/866)
+This entire version is covered by a single pull request. [#867](https://github.com/hmrc/assets-frontend/pull/867)
 
 ### Added
 - GOV.UK dependencies from npm :tada:
