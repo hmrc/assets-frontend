@@ -1,4 +1,7 @@
 /*------------------------------------*\
-  Non-IE Version
+  IE Version
 \*------------------------------------*/
-@import "application-base";
+$is-ie: true;
+$ie-version: 8;
+
+@import "application"

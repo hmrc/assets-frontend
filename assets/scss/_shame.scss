@@ -140,3 +140,11 @@ p.heading-48 {
 p.heading-24 {
   @extend .heading-medium;
 }
+
+/* TODO: cleanup ie styles: currently just pulling in all styles so what's the point? */
+.report-error {
+  @if $is-ie {
+    display: block;
+    zoom: 1;
+  }
+}

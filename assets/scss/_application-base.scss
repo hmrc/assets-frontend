@@ -1,12 +1,6 @@
-$path: "../images/";
-
 // Tools
-@import "frontend-toolkit";
 @import "govuk-mixins";
 @import "mixins";
-
-// Reset
-// @import "base/normalize";
 
 // HMRC Specific
 @import "base/colours";
@@ -91,15 +85,3 @@ $path: "../images/";
 
 // Unknown CSS
 @import "unknown";
-
-// GOV.UK Dependencies
-@import "elements";
-
-// GOV.UK Elements overrides
-@import "elements-shame";
-
-// HMRC Design System
-@import "components/account-menu/account-menu";
-@import "components/character-counter/character-counter";
-@import "components/check-your-answers/check-your-answers";
-@import "components/page-heading/page-heading";

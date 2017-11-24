@@ -125,6 +125,7 @@ module.exports = {
 
   sass: {
     src: [
+      src + '*.scss',
       src + 'scss/**/*.scss',
       src + 'components/**/*.scss'
     ],
@@ -133,7 +134,6 @@ module.exports = {
       settings: {
         sourceComments: true,
         includePaths: [
-          src,
           govuk.elements + '/public/sass',
           govuk.toolkit + '/stylesheets'
         ],
@@ -145,7 +145,6 @@ module.exports = {
       dest: distDir + 'stylesheets/',
       settings: {
         includePaths: [
-          src,
           govuk.elements + '/public/sass',
           govuk.toolkit + '/stylesheets'
         ],
