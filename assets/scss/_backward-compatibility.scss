@@ -1,0 +1,157 @@
+.heading-small {
+  display: block;
+
+  .attorneyBanner & {
+    display: inline;
+  }
+}
+
+.bold-medium {
+  margin: 0;
+}
+
+/*
+Heading Elements
+
+You can also add the following `CSS` selectors to non html heading elements to provide header styling.
+
+Markup:
+<div class="h1-heading">h1 example</div>
+<p class="h2-heading">h2 example</p>
+<div class="h3-heading">h3 example</div>
+<p class="h4-heading">h4 example</p>
+
+Styleguide Typography.Heading Elements
+*/
+h1, .h1-heading {
+  @extend .heading-large;
+}
+
+h2, .h2-heading {
+  @extend .heading-medium;
+
+  .panel-indent &,
+  .service-info &,
+  .side-nav__right-side-content & {
+    // merged article h2 in _template_text.scss and h2 in _headings.scss
+    margin: 0.42105em 0 0.4em 0;
+  }
+}
+
+h3, .h3-heading,
+h4, .h4-heading {
+  @extend .heading-small;
+}
+
+// Apply widths to component library form elements without overriding govuk-elements styles
+textarea,
+input[type="text"],
+input[type="password"] {
+  @extend .form-control;
+
+  &.form-control-3-4 {
+    @extend .form-control-3-4;
+  }
+
+  &.form-control-2-3 {
+    @extend .form-control-2-3;
+  }
+
+  &.form-control-1-2 {
+    @extend .form-control-1-2;
+  }
+
+  &.form-control-1-3 {
+    @extend .form-control-1-3;
+  }
+
+  &.form-control-1-4 {
+    @extend .form-control-1-4;
+  }
+
+  &.form-control-1-8 {
+    @extend .form-control-1-8;
+  }
+
+  &.form-control-error {
+    @extend .form-control-error;
+  }
+}
+
+// Old grid classes that have been removed from govuk-elements
+// but are still being used in component library
+.grid {
+  float: left;
+  width: 100%;
+}
+
+.grid-1-4 {
+  @include media(tablet) {
+    width: 25%;
+  }
+}
+
+.grid-1-3 {
+  @include media(tablet) {
+    width: 33.333333333%;
+  }
+}
+
+.grid-1-2 {
+  @include media(tablet) {
+    width: 50%;
+  }
+}
+
+.grid-2-3 {
+  @include media(tablet) {
+    width: 66.666666667%;
+  }
+}
+
+.grid-3-4 {
+  @include media(tablet) {
+    width: 75%;
+  }
+}
+
+// Grid 'inner-block' sets spacing between grid cells
+.grid .inner-block {
+  padding: 0;
+  @include media(tablet) {
+    margin: 0 $gutter-half;
+  }
+}
+
+.inner-block {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.button.button--link {
+  width: auto;
+
+  @include media(mobile) {
+    margin-top: 0;
+  }
+}
+
+a,
+.button--link-style {
+  color: $link-colour;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $link-visited-colour;
+  }
+}
+
+pre,
+code {
+  @extend .code;
+}
+
+.dataTable {
+  margin-bottom: em(30);
+}

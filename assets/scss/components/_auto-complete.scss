@@ -42,15 +42,15 @@ Styleguide AutoComplete
   position: absolute;
   z-index: 1000;
   background-color: $white;
-  width: 92%;
+  width: 100%;
+
+  @include media(tablet) {
+    width: 50%;
+  }
 }
 
 .suggestions-input-container {
   position: relative;
-}
-
-.suggestions-input {
-  width: 92%;
 }
 
 .suggestions-list {
@@ -93,7 +93,7 @@ Styleguide AutoComplete
   height: 22px;
   position: absolute;
   top: 5px;
-  right: 9.4%;
+  right: 2%;
   z-index: 100;
   cursor: pointer;
 
@@ -104,6 +104,7 @@ Styleguide AutoComplete
 
   @include media(tablet) {
     top: 7px;
+    right: 51%;
   }
 
   &:hover {

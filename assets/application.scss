@@ -1,0 +1,19 @@
+/*------------------------------------*\
+  Non-IE Version
+\*------------------------------------*/
+$path: "../images/";
+
+// GOV.UK Frontend Toolkit
+@import "frontend-toolkit";
+
+// Component Library - DEPRECATED!!!
+@import "scss/application-base";
+
+// GOV.UK Elements
+@import "elements";
+
+// GOV.UK Elements overrides for backwards compatibility with v2
+@import "scss/backward-compatibility";
+
+// HMRC Design System
+@import "components/all-components"
