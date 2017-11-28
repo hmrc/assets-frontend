@@ -13,17 +13,6 @@ Discussion: https://hmrcdigital.hackpad.com/Form-Hint-0w60nGTRNBs
 Styleguide Form Hint
 */
 
-.form-hint,
-%form-hint {
-  display: block;
-  color: $secondary-text-colour;
-  margin-bottom: em(5);
-
-  @include media (tablet) {
-    margin-top: em(8);
-  }
-}
-
 .form-hint--small {
   @include core-16;
 }
@@ -98,8 +87,7 @@ Styleguide Form Hint.list
 */
 
 .form-hint-list {
-  @extend %form-hint;
-  margin-bottom: em(12);
+  color: $secondary-text-colour;
 }
 
 .form-hint-list-item {

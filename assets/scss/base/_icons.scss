@@ -105,10 +105,10 @@ Styleguide Icons.Exclamation
   margin-right: em(4);
   vertical-align: middle;
   display: inline-block;
-  background-image: url("../images/icons/icon-important.png");
+  background-image: url("../images/icon-important.png");
 
   @include device-pixel-ratio() {
-    background-image: url("../images/icons/icon-important-2x.png");
+    background-image: url("../images/icon-important-2x.png");
     background-size: cover;
   }
 }

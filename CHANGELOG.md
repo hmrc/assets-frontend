@@ -6,19 +6,54 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-- Changed a reference to an svg icon to a data uri
-- Updated .nvmrc file to use up to date node version for AF
+
+## [3.0.0] - 2017-11-24
+
+:rotating_light: **BREAKING CHANGE!!!** :rotating_light:
+
+This entire version is covered by a single pull request. [#867](https://github.com/hmrc/assets-frontend/pull/867)
+
+### Added
+- GOV.UK dependencies from npm :tada:
+- Backward compatibility overrides for component library styles
+- External link images moved to `/assets/images` for backward compatibility
+- `govuk-mixins` file for backward compatibility
+
+### Changed
+- Buttons are now full width on mobile
+- Text inputs are full width on mobile and half width on desktop
+- Text inputs have darker border colour
+- Margin on headings is coming from GOV.UK elements
+- Updated image paths
+- `govuk-template.js` moved to vendor directory
+- Root scss files have been moved and simplified
+
+### Deprecated
+- The Component Library!
+- All styles in `/assets/scss`
+
+### Removed
+- Embedded GOV.UK dependency directories
+- Unnecessary `govuk-elements` update script
+
+## [2.254.0] - 2017-11-23
+## Added
 - Adds a close link to the banner, with cookie [#859](https://github.com/hmrc/assets-frontend/pull/859)
 - Added the account header [#862](https://github.com/hmrc/assets-frontend/pull/862)
 - Updated reportAProblem to reattach form validation after a successful submission, in case of server side validation failure resulting in the form reloaded [#863](https://github.com/hmrc/assets-frontend/pull/863/files)
 - removed the account menu component from the navigation [#865](https://github.com/hmrc/assets-frontend/pull/865)
 
 ### Changed
-- Remove style overrides for layout and typography for the Design System [#851](https://github.com/hmrc/assets-frontend/pull/851)  
+- Changed a reference to an svg icon to a data uri [#848](https://github.com/hmrc/assets-frontend/pull/848)
+- Updated .nvmrc file to use up to date node version for AF [#848](https://github.com/hmrc/assets-frontend/pull/848)
+- Remove style overrides for layout and typography for the Design System [#851](https://github.com/hmrc/assets-frontend/pull/851)
 - Add Styles tab with a reference for Component Library [#858](https://github.com/hmrc/assets-frontend/pull/858)
+- Add Styles to fix singleCheckbox error message placement [#864](https://github.com/hmrc/assets-frontend/pull/864)
+
+## Fixed
+- Updated reportAProblem to reattach form validation after a successful submission, in case of server side validation failure resulting in the form reloaded [#863](https://github.com/hmrc/assets-frontend/pull/863/files)
 
 ## [2.253.0] - 2017-10-26
-
 ### Added
 - 404 page pattern [#835](https://github.com/hmrc/assets-frontend/pull/835)
 - Shutter Page pattern [#838](https://github.com/hmrc/assets-frontend/pull/838)
@@ -27,16 +62,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add WIP macro [#843](https://github.com/hmrc/assets-frontend/pull/843)
 
 ### Changed
-* Replace the component library with a new design pattern library [#822](https://github.com/hmrc/assets-frontend/pull/822)
-* Add header component to the new design system  [#829](https://github.com/hmrc/assets-frontend/pull/829)
-* Use macros for example and markup rendering in README.md [#828](https://github.com/hmrc/assets-frontend/pull/828)
-* Modify CHANGELOG.md change verification to stabilise Travis CI [#833](https://github.com/hmrc/assets-frontend/pull/833)
-* Allow README.md only changes to be merged without forcing CHANGELOG.md to be changed [#836](https://github.com/hmrc/assets-frontend/pull/836)
-* Replaced [_panels.scss](https://github.com/hmrc/assets-frontend/pull/835/commits/31e4c36c1a94e151448b23b34670fff7232d7823) with content from GOV.UK [#835](https://github.com/hmrc/assets-frontend/pull/835)
-* Updated the homepage with a description of patterns [#846](https://github.com/hmrc/assets-frontend/pull/846)
+- Replace the component library with a new design pattern library [#822](https://github.com/hmrc/assets-frontend/pull/822)
+- Add header component to the new design system  [#829](https://github.com/hmrc/assets-frontend/pull/829)
+- Use macros for example and markup rendering in README.md [#828](https://github.com/hmrc/assets-frontend/pull/828)
+- Modify CHANGELOG.md change verification to stabilise Travis CI [#833](https://github.com/hmrc/assets-frontend/pull/833)
+- Allow README.md only changes to be merged without forcing CHANGELOG.md to be changed [#836](https://github.com/hmrc/assets-frontend/pull/836)
+- Replaced [\_panels.scss](https://github.com/hmrc/assets-frontend/pull/835/commits/31e4c36c1a94e151448b23b34670fff7232d7823) with content from GOV.UK [#835](https://github.com/hmrc/assets-frontend/pull/835)
+- Updated the homepage with a description of patterns [#846](https://github.com/hmrc/assets-frontend/pull/846)
 
 ## [2.252.0] - 2017-10-16
-
 ### Changed
 - Minor updates to input type="number" and fix for Firefox [#821](https://github.com/hmrc/assets-frontend/pull/821)
 - Updating `.notice-banner__content` styles so that they're actually visible [#820](https://github.com/hmrc/assets-frontend/pull/820)
@@ -49,7 +83,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Introduced new summary page styling, derived from GOV.UK design pattern. New sass partial `_check-your-answers.scss` [#823](https://github.com/hmrc/assets-frontend/pull/823)
 
 ## [2.251.1] - 2017-10-05
-
 ### Changed
 - Updating .form-control styles missed in 2.251.0 [#816](https://github.com/hmrc/assets-frontend/pull/816)
 
@@ -144,7 +177,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/2.253.0...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/3.0.0...master
+[3.0.0]: https://github.com/hmrc/assets-frontend/compare/release/2.254.0...release/3.0.0
+[2.254.0]: https://github.com/hmrc/assets-frontend/compare/release/2.253.0...release/2.254.0
 [2.253.0]: https://github.com/hmrc/assets-frontend/compare/release/2.252.0...release/2.253.0
 [2.252.0]: https://github.com/hmrc/assets-frontend/compare/release/2.251.1...release/2.252.0
 [2.251.1]: https://github.com/hmrc/assets-frontend/compare/release/2.251.0...release/2.251.1

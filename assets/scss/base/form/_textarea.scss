@@ -14,22 +14,22 @@ Discussion: https://hmrcdigital.hackpad.com/Textarea-Input-LjfZFTrI0ZF
 Styleguide Textarea Input
 */
 
-textarea {
-  @include core-19();
-  background-color: $white;
-  border: 2px solid #6f777b;
-  margin: em(10) 0;
-  padding: 0.1em 0 0.1em 0.4em;
-  @include box-sizing(border-box);
-
-  @include media(mobile) {
-    width: 100%;
-  }
-
-  &:focus {
-    outline: 3px solid $yellow;
-  }
-}
+//textarea {
+//  @include core-19();
+//  background-color: $white;
+//  border: 2px solid #6f777b;
+//  margin: em(10) 0;
+//  padding: 0.1em 0 0.1em 0.4em;
+//  @include box-sizing(border-box);
+//
+//  @include media(mobile) {
+//    width: 100%;
+//  }
+//
+//  &:focus {
+//    outline: 3px solid $yellow;
+//  }
+//}
 
 .textarea--3-4 {
   width: 75%;

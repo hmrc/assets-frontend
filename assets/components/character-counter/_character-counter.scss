@@ -5,6 +5,11 @@
 
   [data-char-field] {
     height: 70px;
+    margin-bottom: em(10);
+
+    @include media(tablet) {
+      width: auto;
+    }
   }
 
   @include media(tablet) {

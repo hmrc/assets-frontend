@@ -1,13 +1,13 @@
 'use strict'
 
-var gulp = require('gulp')
-var svgmin = require('gulp-svgmin')
-var config = require('../config')
+const gulp = require('gulp')
+const svgmin = require('gulp-svgmin')
+const config = require('../config')
 
-gulp.task('svg', function () {
+gulp.task('svg', () => {
   var env = global.runmode
 
-  return gulp.src(config.svg.dev.src)
+  return gulp.src(config.svg.src)
     .pipe(svgmin())
     .pipe(gulp.dest(config.svg[env].dest))
 })
