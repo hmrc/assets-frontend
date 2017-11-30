@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- added work in progress banner to the character counter [#869](https://github.com/hmrc/assets-frontend/pull/869)
+
 ## [3.0.0] - 2017-11-24
 
 :rotating_light: **BREAKING CHANGE!!!** :rotating_light:
@@ -27,6 +30,7 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Updated image paths
 - `govuk-template.js` moved to vendor directory
 - Root scss files have been moved and simplified
+
 
 ### Deprecated
 - The Component Library!
