@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Remove the `.content__body p` selector as it is too specific and overriding other changes in V3
 - Remove changes that had previously been put in place to add specificity to other classes to counteract the effect of `.content__body p`
 
+### Fixed
+- fixed comments on shutter page examples [#870](https://github.com/hmrc/assets-frontend/pull/870)
+
 ## [3.0.0] - 2017-11-24
 
 :rotating_light: **BREAKING CHANGE!!!** :rotating_light:
