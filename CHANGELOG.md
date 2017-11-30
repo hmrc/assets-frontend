@@ -40,6 +40,8 @@ This entire version is covered by a single pull request. [#867](https://github.c
 ## Added
 - Adds a close link to the banner, with cookie [#859](https://github.com/hmrc/assets-frontend/pull/859)
 - Added the account header [#862](https://github.com/hmrc/assets-frontend/pull/862)
+- Updated reportAProblem to reattach form validation after a successful submission, in case of server side validation failure resulting in the form reloaded [#863](https://github.com/hmrc/assets-frontend/pull/863/files)
+- removed the account menu component from the navigation [#865](https://github.com/hmrc/assets-frontend/pull/865)
 
 ### Changed
 - Changed a reference to an svg icon to a data uri [#848](https://github.com/hmrc/assets-frontend/pull/848)
