@@ -354,24 +354,12 @@ body {
 }
 
 /* line 48, assets/scss/layouts/_page.scss */
-.content__body p {
-  font-family: "nta", Arial, sans-serif;
-  font-weight: 400;
-  text-transform: none;
-  font-size: 16px;
-  line-height: 1.25;
-  font-size: 19px;
-  line-height: 1.31579;
-  margin: 0.63158em 0;
-}
-
-/* line 53, assets/scss/layouts/_page.scss */
 .full-width .content__body {
   float: none;
   width: 100%;
 }
 
-/* line 63, assets/scss/layouts/_page.scss */
+/* line 58, assets/scss/layouts/_page.scss */
 .content__body .messages-box,
 .content__body .service-info__related-subsection {
   display: none;
@@ -395,7 +383,7 @@ Markup:
 
 Styleguide Layout.Full width
 */
-/* line 96, assets/scss/layouts/_page.scss */
+/* line 91, assets/scss/layouts/_page.scss */
 .full-width {
   width: 100%;
 }
@@ -419,7 +407,7 @@ Markup:
     </div>
 </div>
 */
-/* line 121, assets/scss/layouts/_page.scss */
+/* line 116, assets/scss/layouts/_page.scss */
 .column-half-container .row-border {
   border-bottom: 1px solid #bfc1c3;
   margin: 0;
@@ -9107,7 +9095,7 @@ Styleguide App Info.Approved
   line-height: 1.14286;
   font-size: 16px;
   line-height: 1.25;
-  margin-top: 0.26316em !important;
+  margin-top: 0.26316em;
 }
 
 /*
@@ -10384,22 +10372,22 @@ table.messages a, table.messages .link-style, table.messages .button--link-style
   line-height: 1.04167;
 }
 
-/* line 18, assets/scss/pages/_email-notifications.scss */
-p.email-notifications__p {
+/* line 17, assets/scss/pages/_email-notifications.scss */
+.email-notifications__p {
   padding: 17px 0 8px 0;
 }
 
-/* line 22, assets/scss/pages/_email-notifications.scss */
+/* line 21, assets/scss/pages/_email-notifications.scss */
 .email-notifications__list-heading {
   padding: 0 0 7px 0;
 }
 
-/* line 26, assets/scss/pages/_email-notifications.scss */
+/* line 25, assets/scss/pages/_email-notifications.scss */
 .email-notifications__list {
   padding: 0 0 3px 0;
 }
 
-/* line 30, assets/scss/pages/_email-notifications.scss */
+/* line 29, assets/scss/pages/_email-notifications.scss */
 .email-notifications__indent {
   margin: 30px 0 35px 0;
 }
@@ -10758,10 +10746,8 @@ body {
   background: #fff;
 }
 
-/* Headings with `p` added due to the specificity of `.content__body p`.
- * To be removed once specificity lowered. */
 /* TODO: cleanup ie styles: currently just pulling in all styles so what's the point? */
-/* line 145, assets/scss/_shame.scss */
+/* line 143, assets/scss/_shame.scss */
 .report-error {
   display: block;
   zoom: 1;
@@ -11354,7 +11340,7 @@ main {
 }
 
 /* line 72, node_modules/govuk-elements-sass/public/sass/elements/_elements-typography.scss */
-.heading-xlarge, .heading-48, .heading-large--blue, p.heading-48 {
+.heading-xlarge, .heading-48, .heading-large--blue {
   font-family: "nta", Arial, sans-serif;
   font-weight: 700;
   text-transform: none;
@@ -11420,7 +11406,7 @@ main {
 }
 
 /* line 112, node_modules/govuk-elements-sass/public/sass/elements/_elements-typography.scss */
-.heading-medium, .heading-24, p.heading-24, h2, .h2-heading {
+.heading-medium, .heading-24, h2, .h2-heading {
   font-family: "nta", Arial, sans-serif;
   font-weight: 700;
   text-transform: none;
