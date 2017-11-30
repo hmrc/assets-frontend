@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+- Remove the `.content__body p` selector as it is too specific and overriding other changes in V3
+- Remove changes that had previously been put in place to add specificity to other classes to counteract the effect of `.content__body p`
 
 ## [3.0.0] - 2017-11-24
 
