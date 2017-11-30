@@ -4,8 +4,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
-
 ## [Unreleased]
+
+## [3.0.1]
 - Remove the `.content__body p` selector as it is too specific and overriding other changes in V3
 - Remove changes that had previously been put in place to add specificity to other classes to counteract the effect of `.content__body p`
 
