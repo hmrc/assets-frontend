@@ -3,10 +3,10 @@
 const gulp = require('gulp')
 const runSequence = require('run-sequence')
 
-gulp.task('default', (cb) => {
+gulp.task('release', ['build'], (cb) => {
   runSequence(
-    'pattern-library',
-    'watch',
+    'changelog',
+    'zip',
     cb
   )
 })

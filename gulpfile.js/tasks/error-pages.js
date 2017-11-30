@@ -1,13 +1,16 @@
 'use strict'
 
-var gulp = require('gulp')
-var replace = require('gulp-replace')
-var config = require('../config').errorPages
+const path = require('path')
+const gulp = require('gulp')
+const gutil = require('gulp-util')
+const replace = require('gulp-replace')
+const config = require('../config')
 
 gulp.task('error-pages', function () {
-  var env = global.runmode
+  const version = process.env.TAG ? process.env.TAG : path.parse(config.dest[gutil.env.version]).name
+  const assetsPath = '/assets/' + version + '/'
 
-  gulp.src(config.src)
-      .pipe(replace('{{ assetsPath }}', config[env].assetsPath))
-      .pipe(gulp.dest(config[env].dest))
+  return gulp.src(config.errorPages.src)
+      .pipe(replace('{{ assetsPath }}', assetsPath))
+      .pipe(gulp.dest(config.dest[gutil.env.version]))
 })

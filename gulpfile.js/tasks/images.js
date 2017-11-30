@@ -1,11 +1,11 @@
 'use strict'
 
+const path = require('path')
 const gulp = require('gulp')
+const gutil = require('gulp-util')
 const config = require('../config')
 
 gulp.task('images', () => {
-  var env = global.runmode
-
   return gulp.src(config.images.src)
-    .pipe(gulp.dest(config.images[env].dest))
+    .pipe(gulp.dest(path.join(config.dest[gutil.env.version], config.images.destDirName)))
 })

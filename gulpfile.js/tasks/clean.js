@@ -1,12 +1,10 @@
 'use strict'
 
-var del = require('del')
-var gulp = require('gulp')
-var config = require('../config')
+const del = require('del')
+const gulp = require('gulp')
+const gutil = require('gulp-util')
+const config = require('../config')
 
-gulp.task('clean', function (cb) {
-  del([
-    config.dest,
-    config.distDir
-  ], cb)
+gulp.task('clean', () => {
+  return del(config.dest[gutil.env.version])
 })

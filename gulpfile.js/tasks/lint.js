@@ -1,8 +1,8 @@
 'use strict'
 
-var gulp = require('gulp')
-var standard = require('gulp-standard')
-var config = require('../config')
+const gulp = require('gulp')
+const standard = require('gulp-standard')
+const config = require('../config')
 
 gulp.task('lint', [
   'lint:gulpTasks',
@@ -10,7 +10,7 @@ gulp.task('lint', [
   'lint:tests'
 ])
 
-gulp.task('lint:gulpTasks', function () {
+gulp.task('lint:gulpTasks', () => {
   return gulp.src(config.scripts.gulpTasks)
     .pipe(standard())
     .pipe(standard.reporter('default', {
@@ -18,8 +18,8 @@ gulp.task('lint:gulpTasks', function () {
     }))
 })
 
-gulp.task('lint:scripts', function () {
-  var scripts = config.scripts.src.concat([
+gulp.task('lint:scripts', () => {
+  let scripts = config.scripts.src.concat([
     config.scripts.entryPoint,
     '!**/*.polyfill.js'
   ])
@@ -31,7 +31,7 @@ gulp.task('lint:scripts', function () {
     }))
 })
 
-gulp.task('lint:tests', function () {
+gulp.task('lint:tests', () => {
   return gulp.src(config.test.src)
     .pipe(standard())
     .pipe(standard.reporter('default', {

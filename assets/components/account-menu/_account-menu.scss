@@ -28,7 +28,7 @@
 .account-menu {
   @extend %contain-floats;
   background-color: $white;
-  border-bottom: 1px solid $grey-8;
+  border-bottom: 1px solid $grey-2;
   border-top: 10px solid $govuk-blue;
   margin-bottom: 0;
   position: relative;
@@ -79,7 +79,7 @@
   }
 
   &:hover {
-    border-bottom-color: $govuk-grey-3;
+    border-bottom-color: $grey-3;
   }
 
   &:focus {
@@ -154,13 +154,13 @@
 
 .is-smaller {
   .account-menu__main {
-    background-color: $shaded-bg-grey;
+    background-color: $canvas-colour;
     clear: both;
     float: none;
 
     &.main-nav-is-open,
     &.subnav-is-open {
-      border-top: 1px solid $grey-8;
+      border-top: 1px solid $grey-2;
       position: relative;
 
       &:before,
@@ -176,13 +176,13 @@
       }
 
       &:before {
-        border-bottom-color: $light-grey;
+        border-bottom-color: $grey-2;
         border-width: 7px;
         right: 3px;
       }
 
       &:after {
-        border-bottom-color: $shaded-bg-grey;
+        border-bottom-color: $canvas-colour;
         border-width: 6px;
         margin-left: -6px;
       }
@@ -213,7 +213,7 @@
     background-position: 10px;
     background-repeat: no-repeat;
     background-size: 12px;
-    border-bottom: 1px solid $grey-8;
+    border-bottom: 1px solid $grey-3;
     padding-left: 20px;
 
     @include ie-lte(9) {
@@ -233,8 +233,8 @@
 .subnav {
   @include core-16;
   @extend %contain-floats;
-  background-color: $shaded-bg-grey;
-  border-bottom: 1px solid $grey-8;
+  background-color: $canvas-colour;
+  border-bottom: 1px solid $grey-2;
   left: 0;
   outline: none;
   position: absolute;

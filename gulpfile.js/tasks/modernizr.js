@@ -1,21 +1,15 @@
 'use strict'
 
-var gulp = require('gulp')
-var config = require('../config')
-var modernizr = require('gulp-modernizr')
-var uglify = require('gulp-uglify')
-var gulpIf = require('gulp-if')
+const path = require('path')
+const gulp = require('gulp')
+const gutil = require('gulp-util')
+const config = require('../config')
+const modernizr = require('gulp-modernizr')
+const uglify = require('gulp-uglify')
 
-gulp.task('modernizr', function (callback) {
-  var env = global.runmode
-  var isDev = (env === 'dev')
-
-  if (!isDev) {
-    config.scripts.modernizr.cache = false
-  }
-
+gulp.task('modernizr', () => {
   return gulp.src(config.scripts.modernizr.files.src)
       .pipe(modernizr(config.scripts.modernizr))
-      .pipe(gulpIf(!isDev, uglify()))
-      .pipe(gulp.dest(config.scripts.vendorDest[env]))
+      .pipe(uglify())
+      .pipe(gulp.dest(path.join(config.dest[gutil.env.version], config.scripts.vendorDestDirName)))
 })

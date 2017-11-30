@@ -1,28 +1,21 @@
 'use strict'
 
-var del = require('del')
-var path = require('path')
-var gulp = require('gulp')
-var config = require('../config')
-var patternLibrary = require('../util/pattern-library')
+const del = require('del')
+const path = require('path')
+const gulp = require('gulp')
+const gutil = require('gulp-util')
+const config = require('../config')
+const patternLibrary = require('../util/pattern-library')
 
-gulp.task('clean-pattern-library', function (done) {
+gulp.task('clean-pattern-library', (done) => {
   del(config.patternLibrary.dest, done)
 })
 
-gulp.task('pattern-library', ['clean-pattern-library', 'sass', 'images', 'browserify'], function () {
-  var env = global.runmode
-
+gulp.task('pattern-library', ['build', 'clean-pattern-library', 'v4'], () => {
   return patternLibrary(config.patternLibrary)
     .then(() => {
-      var files = [
-        config.images[env].dest + '/**/*',
-        config.sass[env].dest + '**/*',
-        config.scripts[env].dest + '/**/*'
-      ]
-
       return gulp
-        .src(files, { base: config[env].dest })
+        .src([config.dest[gutil.env.version] + '/**/*'])
         .pipe(gulp.dest(path.join(config.patternLibrary.dest, 'public')))
     })
 })

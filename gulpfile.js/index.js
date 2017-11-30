@@ -11,8 +11,10 @@
   when you run `gulp`.
 */
 
-var requireDir = require('require-dir')
-global.runmode = 'dev'
+const requireDir = require('require-dir')
+const gutil = require('gulp-util')
 
-// Require all tasks in gulpfile.js/tasks, including subfolders
-requireDir('./tasks', { recurse: true })
+gutil.env['version'] = 'v3'
+
+// Require all tasks in gulpfile.js/tasks
+requireDir('./tasks', { recurse: false })

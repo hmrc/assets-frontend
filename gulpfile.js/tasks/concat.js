@@ -1,21 +1,19 @@
 'use strict'
 
-var gulp = require('gulp')
-var gulpIf = require('gulp-if')
-var config = require('../config')
-var concat = require('gulp-concat')
-var uglify = require('gulp-uglify')
-var rename = require('gulp-rename')
+const path = require('path')
+const gulp = require('gulp')
+const gutil = require('gulp-util')
+const config = require('../config')
+const concat = require('gulp-concat')
+const uglify = require('gulp-uglify')
+const rename = require('gulp-rename')
 
-gulp.task('concatEncryption', function () {
-  var env = global.runmode
-  var isDev = (env === 'dev')
-
+gulp.task('concatEncryption', () => {
   return gulp.src(config.scripts.encryptionSrc)
     .pipe(concat('encryption.js'))
-    .pipe(gulpIf(!isDev, uglify()))
-    .pipe(rename(function (path) {
+    .pipe(uglify())
+    .pipe(rename((path) => {
       path.extname = '.min.js'
     }))
-    .pipe(gulp.dest(config.scripts.encryptionDest[env]))
+    .pipe(gulp.dest(path.join(config.dest[gutil.env.version], config.scripts.destDirName)))
 })

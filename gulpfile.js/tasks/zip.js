@@ -1,11 +1,12 @@
 'use strict'
 
-var gulp = require('gulp')
-var zip = require('gulp-zip')
-var config = require('../config').production
+const gulp = require('gulp')
+const gutil = require('gulp-util')
+const zip = require('gulp-zip')
+const config = require('../config')
 
-gulp.task('zip', function () {
-  return gulp.src(config.dest + '**/*')
-    .pipe(zip('assets-frontend-999-SNAPSHOT.zip'))
-    .pipe(gulp.dest(config.dest))
+gulp.task('zip', () => {
+  return gulp.src(config.dest[gutil.env.version] + '**/*')
+    .pipe(zip(`assets-frontend-${gutil.env.version}.zip`))
+    .pipe(gulp.dest(config.distDir))
 })

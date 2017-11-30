@@ -1,5 +1,7 @@
 'use strict'
 
+// @DEPRECATED
+
 var gulp = require('gulp')
 var rename = require('gulp-rename')
 var jeditor = require('gulp-json-editor')

@@ -1,25 +1,21 @@
 'use strict'
 
-var gulp = require('gulp')
-var gulpif = require('gulp-if')
-var gutil = require('gulp-util')
-var config = require('../config').sass
-var plumber = require('gulp-plumber')
-var stylelint = require('gulp-stylelint')
+const gulp = require('gulp')
+const gutil = require('gulp-util')
+const config = require('../config').sass
+const plumber = require('gulp-plumber')
+const stylelint = require('gulp-stylelint')
 
-gulp.task('stylelint', function () {
-  var env = global.runmode
-  var isDev = (env === 'dev')
-
+gulp.task('stylelint', () => {
   return gulp
     .src(config.src)
-    .pipe(gulpif(isDev, plumber(function (error) {
+    .pipe(plumber((error) => {
       gutil.log(gutil.colors.red(error.message))
       this.emit('end')
-    })))
+    }))
     .pipe(stylelint({
       syntax: 'scss',
-      failAfterError: !isDev,
+      failAfterError: true,
       reporters: [{
         formatter: 'string',
         console: true
