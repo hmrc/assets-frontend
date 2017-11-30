@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+- fixed comments on shutter page examples [#870](https://github.com/hmrc/assets-frontend/pull/870)
+
 ## [3.0.0] - 2017-11-24
 
 :rotating_light: **BREAKING CHANGE!!!** :rotating_light:
