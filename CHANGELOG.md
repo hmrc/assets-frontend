@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
 ## [Unreleased]
+
+### Fixed
+- Fix style for logged in status logo [#872](https://github.com/hmrc/assets-frontend/pull/872)
 
 ## [3.0.1]
 - Remove the `.content__body p` selector as it is too specific and overriding other changes in V3
