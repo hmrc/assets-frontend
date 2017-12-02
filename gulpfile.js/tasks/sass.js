@@ -11,7 +11,7 @@ const replace = require('gulp-replace')
 const gutil = require('gulp-util')
 const rename = require('gulp-rename')
 
-function sassToCss(stream) {
+function sassToCss (stream) {
   return stream
     .pipe(sourceMaps.init())
     .pipe(plumber((error) => {

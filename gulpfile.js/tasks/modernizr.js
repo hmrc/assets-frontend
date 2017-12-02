@@ -8,8 +8,10 @@ const modernizr = require('gulp-modernizr')
 const uglify = require('gulp-uglify')
 
 gulp.task('modernizr', () => {
+  const dest = path.join(config.dest[gutil.env.version], config.scripts.vendorDestDirName)
+
   return gulp.src(config.scripts.modernizr.files.src)
       .pipe(modernizr(config.scripts.modernizr))
       .pipe(uglify())
-      .pipe(gulp.dest(path.join(config.dest[gutil.env.version], config.scripts.vendorDestDirName)))
+      .pipe(gulp.dest(dest))
 })

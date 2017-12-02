@@ -9,11 +9,13 @@ const uglify = require('gulp-uglify')
 const rename = require('gulp-rename')
 
 gulp.task('concatEncryption', () => {
+  const dest = path.join(config.dest[gutil.env.version], config.scripts.destDirName)
+
   return gulp.src(config.scripts.encryptionSrc)
     .pipe(concat('encryption.js'))
     .pipe(uglify())
     .pipe(rename((path) => {
       path.extname = '.min.js'
     }))
-    .pipe(gulp.dest(path.join(config.dest[gutil.env.version], config.scripts.destDirName)))
+    .pipe(gulp.dest(dest))
 })

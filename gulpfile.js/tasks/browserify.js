@@ -43,7 +43,9 @@ gulp.task('browserify:v4', ['v4', 'lint:scripts'], () => {
     bundleConfig = Object.assign(bundleConfig, {plugin: collapse})
 
     return jsToBundle(
-      browserify(bundleConfig).exclude('./javascripts'),
+      browserify(bundleConfig)
+        .exclude('./javascripts')
+        .ignore('./javascripts'),
       bundleConfig
     )
   })

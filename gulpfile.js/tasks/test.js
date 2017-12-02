@@ -19,7 +19,7 @@ const karmaTask = (done) => {
   server.start()
 }
 
-gulp.task('test:gulpTasks', () => {
+gulp.task('test:gulpTasks', ['lint:gulpTasks'], () => {
   return gulp.src(config.gulpTasks)
     .pipe(tape({
       bail: true,

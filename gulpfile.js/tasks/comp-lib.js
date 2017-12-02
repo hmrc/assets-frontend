@@ -1,30 +1,22 @@
 'use strict'
 
-var del = require('del')
-var path = require('path')
-var gulp = require('gulp')
-var exec = require('child_process').exec
-var config = require('../config')
-var compLibConfig = require('../../component-lib.json')
+const path = require('path')
+const exec = require('child_process').exec
+const gulp = require('gulp')
+const gutil = require('gulp-util')
+const config = require('../config')
+const compLibConfig = require('../../component-lib.json')
 
-gulp.task('clean-comp-lib', function (cb) {
-  del(compLibConfig.destination, cb)
-})
+// @FIXME: should this be a step of build:v3?
+gulp.task('kss', (cb) => {
+  const genCompLib = './node_modules/.bin/kss-node --config component-lib.json'
 
-gulp.task('component-library', ['clean-comp-lib', 'sass', 'images', 'browserify'], function (cb) {
-  var env = global.runmode
-  var genCompLib = path.join('.', 'node_modules', '.bin', 'kss-node') + ' --config component-lib.json'
-
-  exec(genCompLib, function (err, stout, sterr) {
-    var files = [
-      config.images[env].dest + '/**/*',
-      config.sass[env].dest + '**/*',
-      config.scripts[env].dest + '/**/*'
-    ]
-
-    gulp.src(files, { base: config[env].dest })
-        .pipe(gulp.dest(path.join(compLibConfig.destination, 'public')))
-
+  exec(genCompLib, (err) => {
     cb(err)
   })
+})
+
+gulp.task('component-library', ['clean:component-library', 'kss', 'build:v3'], () => {
+  return gulp.src([config.dest[gutil.env.version] + '/**/*'])
+    .pipe(gulp.dest(path.join(compLibConfig.destination, 'public')))
 })
