@@ -15,7 +15,7 @@ gulp.task('build', ['lint', 'test:gulpTasks'], (done) => {
 gulp.task('build:v3', ['v3'], (done) => {
   runSequence(
     'clean',
-    ['sass', 'images', 'svg', 'error-pages', 'concatEncryption', 'browserify'],
+    ['style', 'images', 'svg', 'error-pages', 'concatEncryption', 'browserify'],
     'modernizr',
     done
   )
@@ -24,7 +24,7 @@ gulp.task('build:v3', ['v3'], (done) => {
 gulp.task('build:v4', ['v4'], (done) => {
   runSequence(
     'clean',
-    ['sass:v4', 'images', 'svg', 'error-pages', 'concatEncryption', 'browserify:v4'],
+    ['style:v4', 'images', 'svg', 'error-pages', 'concatEncryption', 'browserify:v4'],
     'modernizr',
     done
   )

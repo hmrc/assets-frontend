@@ -25,11 +25,11 @@ function sassToCss (stream) {
     .pipe(gulp.dest(path.join(config.dest[gutil.env.version], config.sass.destDirName)))
 }
 
-gulp.task('sass', ['stylelint'], () => {
+gulp.task('style', ['stylelint'], () => {
   return sassToCss(gulp.src(config.sass.src))
 })
 
-gulp.task('sass:v4', ['v4', 'stylelint'], () => {
+gulp.task('style:v4', ['v4', 'stylelint'], () => {
   return sassToCss(
     gulp.src(config.sass.src).pipe(replace(/^@import.*scss\/.*$/gmi, ''))
   )

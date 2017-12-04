@@ -28,7 +28,7 @@ gulp.task('test:gulpTasks', ['lint:gulpTasks'], () => {
 })
 
 gulp.task('test', [
-  'sass',
+  'style',
   'lint',
   'test:gulpTasks'
 ], karmaTask)
