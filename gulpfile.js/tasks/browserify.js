@@ -12,18 +12,33 @@ const rename = require('gulp-rename')
 const uglify = require('gulp-uglify')
 const sourcemaps = require('gulp-sourcemaps')
 
-function promisifyStream (stream, bundleConfig) {
+/**
+ * @FIXME: it's here to point out an issue with ignore() fn.
+ *
+ * We need a workaround for it.
+ *
+ * @param file
+ * @returns {browserify}
+ */
+browserify.prototype.ignore = function (file) {
+  this._ignore.push(file)
+  return this;
+};
+
+function promisifyStream (browserifyInstance, conf) {
+  const dest = path.join(config.dest[gutil.env.version], conf.destDirName)
+
   return new Promise((resolve, reject) => {
-    stream
+    browserifyInstance
       .bundle()
-      .pipe(source(bundleConfig.outputName))
+      .pipe(source(conf.outputName))
       .pipe(buffer())
       .pipe(sourcemaps.init())
       .pipe(uglify())
       .pipe(rename({suffix: '.min'}))
-      .on('error', reject)
       .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest(path.join(config.dest[gutil.env.version], bundleConfig.destDirName)))
+      .pipe(gulp.dest(dest))
+      .on('error', reject)
       .on('end', resolve)
   })
 }
@@ -40,11 +55,11 @@ gulp.task('browserify:v4', ['v4', 'lint:scripts'], () => {
   return Promise.all(
     config.browserify.bundleConfigs
       .map(config => Object.assign(config, {plugin: collapse}))
-      .map(config => promisifyStream(
-        browserify(config)
-          .exclude('./javascripts')
-          .ignore('./javascripts'),
-        config
-      ))
+      .map(config => {
+        promisifyStream(
+          browserify(config).ignore('./javascripts'),
+          config
+        )
+      })
   )
 })

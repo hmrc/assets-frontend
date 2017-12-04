@@ -110,6 +110,7 @@ module.exports = {
 
   browserify: {
     bundleConfigs: [{
+      basedir: './',
       entries: [
         src + 'application.js'
       ],
