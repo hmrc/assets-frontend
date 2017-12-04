@@ -4,7 +4,6 @@ const path = require('path')
 const browserify = require('browserify')
 const collapse = require('bundle-collapser/plugin')
 const gulp = require('gulp')
-const handleErrors = require('../util/handleErrors')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
 const config = require('../config')
@@ -13,40 +12,39 @@ const rename = require('gulp-rename')
 const uglify = require('gulp-uglify')
 const sourcemaps = require('gulp-sourcemaps')
 
-function jsToBundle (stream, bundleConfig) {
-  return stream
-    .bundle()
-    .pipe(source(bundleConfig.outputName))
-    .pipe(buffer())
-    .pipe(sourcemaps.init())
-    .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
-    .on('error', handleErrors)
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(path.join(config.dest[gutil.env.version], bundleConfig.destDirName)))
+function promisifyStream (stream, bundleConfig) {
+  return new Promise((resolve, reject) => {
+    stream
+      .bundle()
+      .pipe(source(bundleConfig.outputName))
+      .pipe(buffer())
+      .pipe(sourcemaps.init())
+      .pipe(uglify())
+      .pipe(rename({suffix: '.min'}))
+      .on('error', reject)
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest(path.join(config.dest[gutil.env.version], bundleConfig.destDirName)))
+      .on('end', resolve)
+  })
 }
 
 gulp.task('browserify', ['lint:scripts'], () => {
-  const bundleConfigs = config.browserify.bundleConfigs
-
-  bundleConfigs.forEach((bundleConfig) => {
-    bundleConfig = Object.assign(bundleConfig, {plugin: collapse})
-
-    return jsToBundle(browserify(bundleConfig), bundleConfig)
-  })
+  return Promise.all(
+    config.browserify.bundleConfigs
+      .map(config => Object.assign(config, {plugin: collapse}))
+      .map(config => promisifyStream(browserify(config), config))
+  )
 })
 
 gulp.task('browserify:v4', ['v4', 'lint:scripts'], () => {
-  const bundleConfigs = config.browserify.bundleConfigs
-
-  bundleConfigs.forEach((bundleConfig) => {
-    bundleConfig = Object.assign(bundleConfig, {plugin: collapse})
-
-    return jsToBundle(
-      browserify(bundleConfig)
-        .exclude('./javascripts')
-        .ignore('./javascripts'),
-      bundleConfig
-    )
-  })
+  return Promise.all(
+    config.browserify.bundleConfigs
+      .map(config => Object.assign(config, {plugin: collapse}))
+      .map(config => promisifyStream(
+        browserify(config)
+          .exclude('./javascripts')
+          .ignore('./javascripts'),
+        config
+      ))
+  )
 })

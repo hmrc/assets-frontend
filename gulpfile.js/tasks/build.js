@@ -4,29 +4,29 @@ const gulp = require('gulp')
 const gutil = require('gulp-util')
 const runSequence = require('run-sequence')
 
-gulp.task('build', (cb) => {
+gulp.task('build', ['lint', 'test:gulpTasks'], (done) => {
   runSequence(
     'build:v3',
     'build:v4',
-    cb
+    done
   )
 })
 
-gulp.task('build:v3', ['v3'], (cb) => {
+gulp.task('build:v3', ['v3'], (done) => {
   runSequence(
     'clean',
-    // ['lint', 'test:gulpTasks'],
     ['sass', 'images', 'svg', 'error-pages', 'concatEncryption', 'browserify'],
-    cb
+    'modernizr',
+    done
   )
 })
 
-gulp.task('build:v4', ['v4'], (cb) => {
+gulp.task('build:v4', ['v4'], (done) => {
   runSequence(
     'clean',
-    // ['lint', 'test:gulpTasks'],
     ['sass:v4', 'images', 'svg', 'error-pages', 'concatEncryption', 'browserify:v4'],
-    cb
+    'modernizr',
+    done
   )
 })
 

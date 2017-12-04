@@ -11,7 +11,7 @@ gulp.task('modernizr', () => {
   const dest = path.join(config.dest[gutil.env.version], config.scripts.vendorDestDirName)
 
   return gulp.src(config.scripts.modernizr.files.src)
-      .pipe(modernizr(config.scripts.modernizr))
+      .pipe(modernizr(Object.assign({}, config.scripts.modernizr)))
       .pipe(uglify())
       .pipe(gulp.dest(dest))
 })
