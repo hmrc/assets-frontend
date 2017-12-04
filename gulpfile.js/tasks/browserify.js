@@ -22,8 +22,8 @@ const sourcemaps = require('gulp-sourcemaps')
  */
 browserify.prototype.ignore = function (file) {
   this._ignore.push(file)
-  return this;
-};
+  return this
+}
 
 function promisifyStream (browserifyInstance, conf) {
   const dest = path.join(config.dest[gutil.env.version], conf.destDirName)
