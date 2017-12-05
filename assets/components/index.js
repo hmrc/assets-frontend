@@ -1,6 +1,6 @@
 
-var charCounter = require('./account-menu/account-menu')
-var accountMenu = require('./character-counter/character-counter')
+var accountMenu = require('./account-menu/account-menu')
+var charCounter = require('./character-counter/character-counter')
 
-charCounter()
 accountMenu()
+charCounter()
