@@ -65,6 +65,7 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Updated .nvmrc file to use up to date node version for AF [#848](https://github.com/hmrc/assets-frontend/pull/848)
 - Remove style overrides for layout and typography for the Design System [#851](https://github.com/hmrc/assets-frontend/pull/851)
 - Add Styles tab with a reference for Component Library [#858](https://github.com/hmrc/assets-frontend/pull/858)
+- Resolve navigation snag list for Frontend-template [#861](https://github.com/hmrc/assets-frontend/pull/861)
 - Add Styles to fix singleCheckbox error message placement [#864](https://github.com/hmrc/assets-frontend/pull/864)
 
 ## Fixed

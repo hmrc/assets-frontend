@@ -340,6 +340,12 @@
 }
 
 // Base-level rules cannot contain the parent-selector-referencing character '&'.
+.hidden--mobile {
+  @include media(mobile) {
+    display: none !important;
+  }
+}
+
 .hidden--tablet {
   @include media(tablet) {
     display: none !important;
