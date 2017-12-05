@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- Fix header logo reference in header and account-header components [#874](https://github.com/hmrc/assets-frontend/pull/874)
 
 ### Fixed
 - Fix style for logged in status logo [#872](https://github.com/hmrc/assets-frontend/pull/872)
