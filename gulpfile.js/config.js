@@ -104,7 +104,7 @@ module.exports = {
         govuk.elements + '/public/sass',
         govuk.toolkit + '/stylesheets'
       ],
-      outputStyle: 'expanded'
+      outputStyle: 'compressed'
     },
     sourceMapsDir: './maps'
 
