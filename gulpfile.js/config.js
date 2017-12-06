@@ -40,11 +40,13 @@ module.exports = {
   scripts: {
     src: [
       src + 'javascripts/modules/**/*.js',
-      src + 'components/**/*.js'
+      src + 'javascripts/**/index.js',
+      src + 'components/**/*.js',
+      src + 'application.js',
+      '!**/*.polyfill.js'
     ],
     destDirName: 'javascripts',
     vendorDestDirName: 'javascripts/vendor',
-    entryPoint: src + 'javascripts/application.js',
     gulpTasks: 'gulpfile.js/**/*.js',
     encryptionSrc: src + 'javascripts/encryption/**/*.js',
 

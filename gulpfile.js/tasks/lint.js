@@ -19,12 +19,7 @@ gulp.task('lint:gulpTasks', () => {
 })
 
 gulp.task('lint:scripts', () => {
-  const scripts = config.scripts.src.concat([
-    config.scripts.entryPoint,
-    '!**/*.polyfill.js'
-  ])
-
-  return gulp.src(scripts)
+  return gulp.src(config.scripts.src)
     .pipe(standard())
     .pipe(standard.reporter('default', {
       breakOnError: true
