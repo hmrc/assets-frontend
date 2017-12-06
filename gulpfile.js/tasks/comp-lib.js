@@ -7,7 +7,6 @@ const gutil = require('gulp-util')
 const config = require('../config')
 const compLibConfig = require('../../component-lib.json')
 
-// @FIXME: should this be a step of build:v3?
 gulp.task('kss', (done) => {
   const genCompLib = './node_modules/.bin/kss-node --config component-lib.json'
 
