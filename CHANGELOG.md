@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- Fix header logo reference in header and account-header components [#874](https://github.com/hmrc/assets-frontend/pull/874)
+
+### Fixed
+- Fix style for logged in status logo [#872](https://github.com/hmrc/assets-frontend/pull/872)
+- Move header component stylesheet import to all-components [#875](https://github.com/hmrc/assets-frontend/pull/875)
+
+## [3.0.1]
+- Remove the `.content__body p` selector as it is too specific and overriding other changes in V3
+- Remove changes that had previously been put in place to add specificity to other classes to counteract the effect of `.content__body p`
+
+### Fixed
+- fixed comments on shutter page examples [#870](https://github.com/hmrc/assets-frontend/pull/870)
 
 ### Changed
 - added work in progress banner to the character counter [#869](https://github.com/hmrc/assets-frontend/pull/869)
@@ -44,6 +57,8 @@ This entire version is covered by a single pull request. [#867](https://github.c
 ## Added
 - Adds a close link to the banner, with cookie [#859](https://github.com/hmrc/assets-frontend/pull/859)
 - Added the account header [#862](https://github.com/hmrc/assets-frontend/pull/862)
+- Updated reportAProblem to reattach form validation after a successful submission, in case of server side validation failure resulting in the form reloaded [#863](https://github.com/hmrc/assets-frontend/pull/863/files)
+- removed the account menu component from the navigation [#865](https://github.com/hmrc/assets-frontend/pull/865)
 
 ### Changed
 - Changed a reference to an svg icon to a data uri [#848](https://github.com/hmrc/assets-frontend/pull/848)

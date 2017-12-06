@@ -131,13 +131,11 @@ body {
   background: $white;
 }
 
-/* Headings with `p` added due to the specificity of `.content__body p`.
- * To be removed once specificity lowered. */
-p.heading-48 {
+.heading-48 {
   @extend .heading-xlarge;
 }
 
-p.heading-24 {
+.heading-24 {
   @extend .heading-medium;
 }
 
