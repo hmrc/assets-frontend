@@ -1,0 +1,390 @@
+
+> assets-frontend@0.0.1 dev C:\Users\danie\OneDrive\Documents\HMRC\Projects\assets-frontend
+> gulp "test"
+
+[14:14:52] Using gulpfile ~\OneDrive\Documents\HMRC\Projects\assets-frontend\gulpfile.js
+[14:14:52] Starting 'stylelint'...
+[14:14:52] Starting 'lint:gulpTasks'...
+[14:14:52] Starting 'lint:scripts'...
+[14:14:52] Starting 'lint:tests'...
+[14:14:52] Starting 'test:gulpTasks'...
+
+  addFileType - throws an error if not given a src
+
+    √ throws an error if not given a src
+
+  addFileType - determines whether a file is a category or a page
+
+    √ a page
+    √ a section
+    √ a page
+    √ a section
+
+  addHomepage - throws if not given config
+
+    √ should throw
+
+  addHomepage - does nothing if not given a homepage
+
+    √ returns the same object it's given
+
+  addHomepage - adds an index file
+
+    √ to the files array given to it
+    √ with the correct filename
+    √ with the contents of the given file
+    √ with a type property that has a value of section
+
+  addHomepage - optionally takes a base directory
+
+    √ adds the homepage to the files array
+    √ with a path relative to the base directory
+    √ with the contents of the given file
+
+  buildScenarios - scenarios should be built as expected
+
+    √ result label should contain "Test-example-one"
+    √ result label should contain "Test-example-two"
+    √ result label should contain "Test-example-three"
+Standard linter results: √ All OK!
+[14:14:57] Finished 'lint:tests' after 5.45 s
+
+  buildScenarios - JSON parse error caught as expected
+
+    √ error message should be "Malformed JSON error"
+
+  changelog - runCommand
+
+    √ returns an Error if the command fails
+    √ returns exec's error message
+
+    × should return a Promise if given a command to run
+    ----------------------------------------------------
+      operator: equal
+      expected: 'test\n'
+      actual:   '"test"\r\n'
+      at: run (C:\Users\danie\OneDrive\Documents\HMRC\Projects\assets-frontend\node_modules\karma\node_modules\core-js\modules\es6.promise.js:66:22)
+      stack: |-
+
+
+  changelog - getCurrentBranchRevision
+
+    √ returns a promise
+
+  changelog - getMasterRevision
+
+    √ returns a promise
+
+  changelog - getGitDiffs
+
+    √ returns a promise
+
+  changelog - filterFiles
+
+    √ returns 1 as only README has filtered
+    √ returns 1 as only README has filtered
+    √ returns a string representing the only item
+
+  changelog - verifyGitDiffs
+
+    √ returns a promise
+    √ returns an Error if the command fails
+    √ returns an error message
+    √ returns an Error if the command fails
+    √ returns an error message
+    √ returns an Error if the command fails
+    √ returns an error message
+    √ returns true as CHANGELOG.md is in the list
+    √ returns true as CHANGELOG.md should not be changed
+
+  compileTemplate - compiles a template at a given path
+
+    √ throws an error when given an empty object
+    √ throws an error when given an empty object
+
+    × throws an error when given a bad template path
+    -------------------------------------------------
+      operator: equal
+      expected: |-
+        'Failed to read template path/to/non-existent/template'
+      actual: |-
+        'Failed to read template path\\to\\non-existent\\template'
+      at: run (C:\Users\danie\OneDrive\Documents\HMRC\Projects\assets-frontend\node_modules\karma\node_modules\core-js\modules\es6.promise.js:66:22)
+      stack: |-
+
+    √ returns the compiled template as a Promisified function
+
+  componentParser - Parses a directory of components
+
+    √ should return one component
+    √ with four properties
+    √ with the README file converted to HTML
+    √ with the HTML file contents as a markup property
+    √ with a styles property
+    √ with a scripts property
+
+  componentRenderer - Errors when
+
+    √ no options object given
+    √ no template option given
+    √ a non-existent template path given
+
+  componentRenderer - Converts a component to a component library file
+
+    √ with a filename starting with "section-"
+    √ with a description
+    √ with a visual example of the component.example
+    √ with styles
+    √ with scripts
+
+  configGenerator - config file should be created
+
+    √ configGenerator should resolve with correct message
+    √ backstop.json file should exist
+
+  configGenerator - config properties should contain correct values
+
+    √ scenarios should only contain one object
+    √ config "label" should equal "Test-example"
+
+    × config "url" should equal "http://example:7000/section-test-example.html"
+    ----------------------------------------------------------------------------
+      operator: equal
+      expected: |-
+        'http://example:7000/section-test-example.html'
+      actual: |-
+        'http://example:7000\\section-test-example.html'
+      at: run (C:\Users\danie\OneDrive\Documents\HMRC\Projects\assets-frontend\node_modules\karma\node_modules\core-js\modules\es6.promise.js:66:22)
+      stack: |-
+
+    √ config "selectors[0]" should equal ".comp-lib-pattern-component"
+    √ config "selectorExpansion" should be true
+    √ config "misMatchThreshold" should be 0.1
+
+  configGenerator - bad template data should throw
+
+    √ bad data in template config should throw error
+
+  configGenerator - teardown
+
+    √ teardown complete
+
+  copyAssets - throws is not given a config object
+
+    √ should throw
+
+  copyAssets - copies a public directory from the template to the destination
+
+    √ copies all the directories in public to public
+    √ and doesn't alter the file contents
+
+  deepClone - objects should be cloned as expected
+
+    √ copied obj should be equal
+Standard linter results: √ All OK!
+[14:14:59] Finished 'lint:scripts' after 7.65 s
+
+  deepClone - copied object values reference should be broken
+
+    √ copied property value should be "another example"
+    √ original property value should be "example"
+    √ nested object copied property value should be "another nested example"
+    √ nested object original property value should be "nested example"
+
+  getFiles - throws if given bad config
+
+    √ throws an error when given nothing
+    √ throws an error when given an empty object
+    √ throws an error when given an empty src property
+
+  getFiles - rejects if given bad source paths
+
+    √ which is empty when given a non-existent path as a string
+    √ which is empty when given a non-existent path as a string
+
+  getFiles - returns an array of file objects
+
+    √ which totals the number of existing READMEs when given paths as an array
+    √ which totals the number of READMEs when given an existing path as a string
+    √ and have the content of the README on a contents property
+    √ and has its expected output path as a path property
+
+  mergeObj - objects should merged as expected
+
+    √ parent key value should be a string
+    √ parent key value should equal "parent"
+    √ child value should be a string
+    √ child value should equal "child"
+
+  mergeObj - child object value should clobber parent object value of same name
+
+    √ parent property should be a string
+    √ value property should equal "child"
+
+  parseDocumentation - returns rendered markdown
+
+    √ markdown is parsed to html and added to the data object
+
+  parseDocumentation - parses an include and markup
+
+    √ with the contents of the include
+    √ with the contents of the include
+
+  prepareAssetPaths - Creates links from an array of css paths
+
+    √ with a prefix
+    √ without a prefix
+
+  prepareAssetPaths - Creates links from an array of js paths
+
+    √ with a prefix
+    √ without a prefix
+
+  registerHandlebarsHelpers - accepts an optional hendlebars helpers directory
+
+    √ doesn't throw if not given helpers config
+    √ and doesn't call handlebars
+    √ throws an error when given a non-existent directory
+    √ throws an error when given an object
+    √ accepts helpers path as a string
+    √ accepts helpers paths as an array
+
+  renderLibraryPages - takes config and an array of file objects
+
+    √ throws if given an empty config object
+    √ throws if not given a path to a template
+    √ optionally takes a path to handlebars helpers - undefined
+    √ optionally takes a path to handlebars helpers - path
+
+  renderPagesFromTemplate - renders a homepage
+
+    √ replaces a files object contents with a rendered template
+    √ with a homepage variable set to true
+    √ with the right number top nav items
+    √ that have the expected urls
+    √ and the homepage link should say About
+    √ with no sub nav
+
+  renderPagesFromTemplate - renders a section
+
+    √ replaces a files object contents with a rendered template
+    √ with a homepage variable set to false
+    √ with the right number top nav items
+
+    × that have the expected urls
+    ------------------------------
+      operator: equal
+      expected: |-
+        '/category-one/index.html'
+      actual: |-
+        '/category-one\\index.html'
+      at: Test.<anonymous> (C:\Users\danie\OneDrive\Documents\HMRC\Projects\assets-frontend\gulpfile.js\tests\renderPagesFromTemplate.test.js:62:5)
+      stack: |-
+
+    √ and the expected text
+    √ with a sub nav of siblings
+
+    × that have the expected urls
+    ------------------------------
+      operator: equal
+      expected: |-
+        '/category-one/thing/index.html'
+      actual: |-
+        '/category-one\\thing\\index.html'
+      at: Test.<anonymous> (C:\Users\danie\OneDrive\Documents\HMRC\Projects\assets-frontend\gulpfile.js\tests\renderPagesFromTemplate.test.js:76:5)
+      stack: |-
+
+    √ that have the expected titles
+
+  renderPagesFromTemplate - renders a page
+
+    √ with documentation
+    √ with a homepage variable set to false
+    √ with the right number top nav items
+    √ that have the expected urls
+    √ that have the expected urls
+    √ with a sub nav of siblings
+
+    × that have the expected urls
+    ------------------------------
+      operator: equal
+      expected: |-
+        '/category-one/thing/index.html'
+      actual: |-
+        '/category-one\\thing\\index.html'
+      at: Test.<anonymous> (C:\Users\danie\OneDrive\Documents\HMRC\Projects\assets-frontend\gulpfile.js\tests\renderPagesFromTemplate.test.js:115:5)
+      stack: |-
+
+    √ that have the expected titles
+
+  updateLibraryNav - Updates the library navigation with new components
+
+    √ add itself to the nav
+    √ with a highlighted class
+    √ add existing files to the nav
+    √ add new file to existing file's nav
+
+  writeFiles - throws an error if not given a destination
+
+    √ throws an error if not given a destination
+
+  writeFiles - writes a file to a given destination
+
+    √ creates an HTML file
+    √ with the file contents as the HTML file's contents
+    √ and returns a sucess message
+
+  writeFiles - writes multiple files to a directory structure
+
+    √ with an index.html page and a category directory
+    √ and a thing.html page in the category directory
+
+  writeFiles - takes an optional base directory
+
+    √ and writes files to a relative destination
+    √ with the correct directory structure
+    √ and returns a sucess message
+[14:15:01] 'test:gulpTasks' errored after 8.69 s
+[14:15:01] Error in plugin 'gulp-tape'
+Message:
+    Test failed
+
+
+
+  Failed Tests: There were 6 failures
+
+    changelog - runCommand
+
+      × should return a Promise if given a command to run
+
+
+    compileTemplate - compiles a template at a given path
+
+      × throws an error when given a bad template path
+
+
+    configGenerator - config properties should contain correct values
+
+      × config "url" should equal "http://example:7000/section-test-example.html"
+
+
+    renderPagesFromTemplate - renders a section
+
+      × that have the expected urls
+      × that have the expected urls
+
+
+    renderPagesFromTemplate - renders a page
+
+      × that have the expected urls
+
+
+  total:     139
+  passing:   133
+  failing:   6
+  duration:  8.7s
+
+
+Standard linter results: √ All OK!
+[14:15:01] Finished 'lint:gulpTasks' after 8.82 s
+[14:15:01] Finished 'stylelint' after 9.11 s
