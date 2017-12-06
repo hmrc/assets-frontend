@@ -8,9 +8,8 @@ const config = require('../config')
 
 gulp.task('error-pages', function () {
   const version = process.env.TAG ? process.env.TAG : path.parse(config.dest[gutil.env.version]).name
-  const assetsPath = '/assets/' + version + '/'
 
   return gulp.src(config.errorPages.src)
-      .pipe(replace('{{ assetsPath }}', assetsPath))
+      .pipe(replace('{{ assetsPath }}', `${config.errorPages.assetsBaseUri}${version}/`))
       .pipe(gulp.dest(config.dest[gutil.env.version]))
 })

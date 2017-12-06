@@ -137,7 +137,8 @@ module.exports = {
   },
 
   errorPages: {
-    src: src + 'error_pages/*.html'
+    src: src + 'error_pages/*.html',
+    assetsBaseUri: '/assets/'
   },
 
   compLib: {
