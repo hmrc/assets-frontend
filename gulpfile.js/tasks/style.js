@@ -10,8 +10,9 @@ const plumber = require('gulp-plumber')
 const replace = require('gulp-replace')
 const gutil = require('gulp-util')
 const rename = require('gulp-rename')
+const runSequence = require('run-sequence')
 
-function sassToCss (stream) {
+function sassToCss(stream) {
   return stream
     .pipe(sourceMaps.init())
     .pipe(plumber((error) => {
@@ -25,10 +26,13 @@ function sassToCss (stream) {
     .pipe(gulp.dest(path.join(config.dest[gutil.env.version], config.sass.destDirName)))
 }
 
-gulp.task('style', [
-  'style:v3',
-  'style:v4'
-])
+gulp.task('style', (done) => {
+  runSequence(
+    'style:v3',
+    'style:v4',
+    done
+  )
+})
 
 gulp.task('style:v3', ['v3', 'stylelint'], () => {
   return sassToCss(gulp.src(config.sass.src))

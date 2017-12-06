@@ -11,6 +11,7 @@ const gutil = require('gulp-util')
 const rename = require('gulp-rename')
 const uglify = require('gulp-uglify')
 const sourcemaps = require('gulp-sourcemaps')
+const runSequence = require('run-sequence')
 
 /**
  * @FIXME: it's here to point out an issue with ignore() fn.
@@ -41,10 +42,13 @@ function promisifyStream (browserifyInstance, bundleConfig) {
   })
 }
 
-gulp.task('browserify', [
-  'browserify:v3',
-  'browserify:v4'
-])
+gulp.task('browserify', (done) => {
+  runSequence(
+    'browserify:v3',
+    'browserify:v4',
+    done
+  )
+})
 
 gulp.task('browserify:v3', ['v3', 'lint:scripts'], () => {
   return Promise.all(
