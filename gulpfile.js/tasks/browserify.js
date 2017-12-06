@@ -25,19 +25,17 @@ browserify.prototype.ignore = function (file) {
   return this
 }
 
-function promisifyStream (browserifyInstance, conf) {
-  const dest = path.join(config.dest[gutil.env.version], conf.destDirName)
-
+function promisifyStream (browserifyInstance, bundleConfig) {
   return new Promise((resolve, reject) => {
     browserifyInstance
       .bundle()
-      .pipe(source(conf.outputName))
+      .pipe(source(bundleConfig.outputName))
       .pipe(buffer())
       .pipe(sourcemaps.init())
       .pipe(uglify())
       .pipe(rename({suffix: '.min'}))
       .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest(dest))
+      .pipe(gulp.dest(bundleConfig.dest))
       .on('error', reject)
       .on('end', resolve)
   })
@@ -46,19 +44,25 @@ function promisifyStream (browserifyInstance, conf) {
 gulp.task('browserify', ['lint:scripts'], () => {
   return Promise.all(
     config.browserify.bundleConfigs
-      .map(config => Object.assign(config, {plugin: collapse}))
-      .map(config => promisifyStream(browserify(config), config))
+      .map(bundleConfig => Object.assign(bundleConfig, {
+        plugin: collapse,
+        dest: path.join(config.dest[gutil.env.version], bundleConfig.destDirName)
+      }))
+      .map(bundleConfig => promisifyStream(browserify(bundleConfig), bundleConfig))
   )
 })
 
 gulp.task('browserify:v4', ['v4', 'lint:scripts'], () => {
   return Promise.all(
     config.browserify.bundleConfigs
-      .map(config => Object.assign(config, {plugin: collapse}))
-      .map(config => {
+      .map(bundleConfig => Object.assign(bundleConfig, {
+        plugin: collapse,
+        dest: path.join(config.dest[gutil.env.version], bundleConfig.destDirName)
+      }))
+      .map(bundleConfig => {
         promisifyStream(
-          browserify(config).ignore('./javascripts'),
-          config
+          browserify(bundleConfig).ignore('./javascripts'),
+          bundleConfig
         )
       })
   )
