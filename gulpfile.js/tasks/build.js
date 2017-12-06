@@ -15,7 +15,7 @@ gulp.task('build', ['lint', 'test:gulpTasks'], (done) => {
 gulp.task('build:v3', ['v3'], (done) => {
   runSequence(
     'clean',
-    ['style', 'images', 'svg', 'error-pages', 'concat:encryption', 'browserify'],
+    ['style:v3', 'images', 'svg', 'error-pages', 'concat:encryption', 'browserify:v3'],
     'modernizr',
     done
   )

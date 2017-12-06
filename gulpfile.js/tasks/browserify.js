@@ -41,7 +41,12 @@ function promisifyStream (browserifyInstance, bundleConfig) {
   })
 }
 
-gulp.task('browserify', ['lint:scripts'], () => {
+gulp.task('browserify', [
+  'browserify:v3',
+  'browserify:v4'
+])
+
+gulp.task('browserify:v3', ['v3', 'lint:scripts'], () => {
   return Promise.all(
     config.browserify.bundleConfigs
       .map(bundleConfig => Object.assign(bundleConfig, {

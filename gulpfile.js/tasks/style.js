@@ -25,7 +25,12 @@ function sassToCss (stream) {
     .pipe(gulp.dest(path.join(config.dest[gutil.env.version], config.sass.destDirName)))
 }
 
-gulp.task('style', ['stylelint'], () => {
+gulp.task('style', [
+  'style:v3',
+  'style:v4'
+])
+
+gulp.task('style:v3', ['v3', 'stylelint'], () => {
   return sassToCss(gulp.src(config.sass.src))
 })
 
