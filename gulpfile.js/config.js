@@ -67,6 +67,8 @@ module.exports = {
       files: {
         src: [
           src + '{javascripts,scss}/**/*.{js,scss}',
+          govuk.toolkit + '/**/*.{js,scss}',
+          govuk.elements + '/**/*.{js,scss}',
           '!**[^node_modules]/**/modernizr.js'
         ]
       }
