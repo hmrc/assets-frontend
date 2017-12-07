@@ -1,3 +1,5 @@
+'use strict'
+
 var path = require('path')
 var test = require('tape')
 var sinon = require('sinon')
@@ -8,7 +10,6 @@ test('compileTemplate - compiles a template at a given path', (t) => {
   t.plan(4)
 
   var handlebarsSpy = sinon.spy(Handlebars, 'compile')
-
   var nonExistentTemplate = path.join('path', 'to', 'non-existent', 'template')
   var existingTemplate = path.join(__dirname, 'fixtures', 'pattern-library', 'design-pattern-library-template.html')
 
@@ -39,6 +40,7 @@ test('compileTemplate - compiles a template at a given path', (t) => {
         handlebarsSpy.calledOnce,
         'returns the compiled template as a Promisified function'
       )
+
       handlebarsSpy.restore()
     })
 })
