@@ -14,6 +14,7 @@
     "start": "npm run dev",
     "dev": "gulp",
     "build": "gulp build",
+    "release": "gulp release",
     "test": "gulp test",
     "test:dev": "karma start assets/test/config/karma.conf.js no-single-run",
     "test:gulp": "gulp lint:gulpTasks && gulp test:gulpTasks",
