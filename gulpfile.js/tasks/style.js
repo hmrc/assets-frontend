@@ -12,7 +12,7 @@ const gutil = require('gulp-util')
 const rename = require('gulp-rename')
 const runSequence = require('run-sequence')
 
-function sassToCss(stream) {
+function sassToCss (stream) {
   return stream
     .pipe(sourceMaps.init())
     .pipe(plumber((error) => {
