@@ -17,6 +17,7 @@ gulp.task('build:v3', ['v3'], (done) => {
     'clean',
     ['style:v3', 'images', 'svg', 'error-pages', 'concat:encryption', 'browserify:v3'],
     'modernizr',
+    'test:gulpTasks',
     done
   )
 })
@@ -26,6 +27,7 @@ gulp.task('build:v4', ['v4'], (done) => {
     'clean',
     ['style:v4', 'images', 'svg', 'error-pages', 'concat:encryption', 'browserify:v4'],
     'modernizr',
+    'test:gulpTasks',
     done
   )
 })
