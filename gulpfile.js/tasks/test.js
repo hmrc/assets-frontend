@@ -7,7 +7,15 @@ const tape = require('gulp-tape')
 const tapSpec = require('tap-spec')
 const config = require('../config').test
 
-const karmaTask = (done) => {
+gulp.task('test:gulpTasks', ['lint:gulpTasks'], () => {
+  return gulp.src(config.gulpTasks)
+    .pipe(tape({
+      bail: true,
+      reporter: tapSpec()
+    }))
+})
+
+gulp.task('test', (done) => {
   const server = new Server({
     configFile: fs.realpathSync(config.karmaConfig),
     singleRun: true
@@ -17,18 +25,4 @@ const karmaTask = (done) => {
   })
 
   server.start()
-}
-
-gulp.task('test:gulpTasks', ['lint:gulpTasks'], () => {
-  return gulp.src(config.gulpTasks)
-    .pipe(tape({
-      bail: true,
-      reporter: tapSpec()
-    }))
 })
-
-gulp.task('test', [
-  'style',
-  'lint',
-  'test:gulpTasks'
-], karmaTask)
