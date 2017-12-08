@@ -104,7 +104,8 @@
     "govuk-template": "./assets/javascripts/vendor/govuk-template.js",
     "datatables": "./node_modules/datatables/media/js/jquery.dataTables.js",
     "base64": "./node_modules/js-base64/base64.js",
-    "json3": "./node_modules/json3/lib/json3.js"
+    "json3": "./node_modules/json3/lib/json3.js",
+    "javascripts": "./assets/javascripts/index.js"
   },
   "browserify-shim": {
     "jquery": {

@@ -13,19 +13,6 @@ const uglify = require('gulp-uglify')
 const sourcemaps = require('gulp-sourcemaps')
 const runSequence = require('run-sequence')
 
-/**
- * @FIXME: it's here to point out an issue with ignore() fn.
- *
- * We need a workaround for it.
- *
- * @param file
- * @returns {browserify}
- */
-browserify.prototype.ignore = function (file) {
-  this._ignore.push(file)
-  return this
-}
-
 function promisifyStream (browserifyInstance, bundleConfig) {
   return new Promise((resolve, reject) => {
     browserifyInstance
@@ -70,7 +57,7 @@ gulp.task('browserify:v4', ['v4', 'lint:scripts'], () => {
       }))
       .map(bundleConfig => {
         promisifyStream(
-          browserify(bundleConfig).ignore('./javascripts'),
+          browserify(bundleConfig).ignore('javascripts'),
           bundleConfig
         )
       })

@@ -1,6 +1,6 @@
 
 require('govuk-template')
 
-require('./javascripts')
+require('javascripts')
 
 require('./components')
