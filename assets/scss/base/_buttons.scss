@@ -74,6 +74,8 @@ button, .button {
   text-decoration: underline;
   color: $link-colour;
   border: none;
+  margin: 0;
+  padding: 0;
 
   &.button--link-table {
     color: $black;
