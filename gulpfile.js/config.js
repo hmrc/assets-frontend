@@ -213,7 +213,8 @@ module.exports = {
     src: [
       src + 'styles',
       src + 'components',
-      src + 'patterns'
+      src + 'patterns',
+      src + 'contribute'
 
     ],
     dest: 'design-pattern-library',
