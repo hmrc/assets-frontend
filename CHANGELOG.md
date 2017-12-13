@@ -6,9 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- Fix header logo reference in header and account-header components [#874](https://github.com/hmrc/assets-frontend/pull/874)
 
 ### Fixed
 - Fix style for logged in status logo [#872](https://github.com/hmrc/assets-frontend/pull/872)
+- Move header component stylesheet import to all-components [#875](https://github.com/hmrc/assets-frontend/pull/875)
 
 ## [3.0.1]
 - Remove the `.content__body p` selector as it is too specific and overriding other changes in V3
@@ -16,6 +19,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - fixed comments on shutter page examples [#870](https://github.com/hmrc/assets-frontend/pull/870)
+
+### Changed
+- added work in progress banner to the character counter [#869](https://github.com/hmrc/assets-frontend/pull/869)
 
 ## [3.0.0] - 2017-11-24
 
@@ -37,6 +43,7 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Updated image paths
 - `govuk-template.js` moved to vendor directory
 - Root scss files have been moved and simplified
+
 
 ### Deprecated
 - The Component Library!
