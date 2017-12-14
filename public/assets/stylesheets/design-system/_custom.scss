@@ -168,7 +168,7 @@ main {
     }
   }
 
-  pre {
+  > pre {
     padding: 0;
 
     code {
@@ -176,46 +176,51 @@ main {
     }
   }
 
-  p, ul.list, ol.list, blockquote, .example {
+  > p,
+  > ul.list,
+  > ol.list,
+  > blockquote,
+  > .example {
     max-width: 34em;
   }
 
-  ul {
+  > ul {
     list-style: disc;
   }
 
-  ul, ol {
+  > ul,
+  > ol {
     padding: 0 0 0 20px;
     margin: 15px 0 45px;
   }
 
-  ol li {
+  > ol li {
     list-style-type: decimal;
   }
 
-  ul li {
+  > ul li {
     list-style-type: disc;
   }
 
-  .example + pre,
-  .example + .highlight {
+  > .example + pre,
+  > .example + .highlight {
     margin-top: -31px;
   }
 
-  .highlight {
+  > .highlight {
     font-size: 16px;
   }
 
-  blockquote {
+  > blockquote {
     margin: 15px 0;
     border-left: 4px solid #dee0e2;
   }
 
-  strong {
+  > strong {
     font-weight: bold;
   }
 
-  .list-no-bullet {
+  > .list-no-bullet {
     list-style: none;
     padding-left: 0px;
   }

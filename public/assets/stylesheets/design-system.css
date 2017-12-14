@@ -1227,32 +1227,37 @@ main {
       .markdown > h4,
       .markdown > .heading-small {
         margin-top: 1.05263em; } }
-  .markdown pre {
+  .markdown > pre {
     padding: 0; }
-    .markdown pre code {
+    .markdown > pre code {
       border: none; }
-  .markdown p, .markdown ul.list, .markdown ol.list, .markdown blockquote, .markdown .example {
+  .markdown > p,
+  .markdown > ul.list,
+  .markdown > ol.list,
+  .markdown > blockquote,
+  .markdown > .example {
     max-width: 34em; }
-  .markdown ul {
+  .markdown > ul {
     list-style: disc; }
-  .markdown ul, .markdown ol {
+  .markdown > ul,
+  .markdown > ol {
     padding: 0 0 0 20px;
     margin: 15px 0 45px; }
-  .markdown ol li {
+  .markdown > ol li {
     list-style-type: decimal; }
-  .markdown ul li {
+  .markdown > ul li {
     list-style-type: disc; }
-  .markdown .example + pre,
-  .markdown .example + .highlight {
+  .markdown > .example + pre,
+  .markdown > .example + .highlight {
     margin-top: -31px; }
-  .markdown .highlight {
+  .markdown > .highlight {
     font-size: 16px; }
-  .markdown blockquote {
+  .markdown > blockquote {
     margin: 15px 0;
     border-left: 4px solid #dee0e2; }
-  .markdown strong {
+  .markdown > strong {
     font-weight: bold; }
-  .markdown .list-no-bullet {
+  .markdown > .list-no-bullet {
     list-style: none;
     padding-left: 0px; }
 
