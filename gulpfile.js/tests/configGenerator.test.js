@@ -1,4 +1,5 @@
 var fs = require('fs')
+var path = require('path')
 var test = require('tape')
 var configGenerator = require('./../util/backstop/configGenerator')
 var deepClone = require('./../util/deepClone')
@@ -77,8 +78,8 @@ test('configGenerator - config properties should contain correct values', functi
         'config "label" should equal "Test-example"'
       )
       t.equal(
-        firstScenario.url, 'http://example:7000/section-test-example.html',
-        'config "url" should equal "http://example:7000/section-test-example.html"'
+        firstScenario.url, 'http://example:7000' + path.sep + 'section-test-example.html',
+        'config "url" should equal "http://example:7000' + path.sep + 'section-test-example.html"'
       )
       t.equal(
         firstScenario.selectors[0], '.comp-lib-pattern-component',

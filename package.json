@@ -77,7 +77,7 @@
     "modernizr": "^3.0.0-alpha.4",
     "phantomjs-prebuilt": "^2.1.7",
     "pretty-hrtime": "^1.0.0",
-    "require-dir": "^0.2.0",
+    "require-dir": "^0.3.2",
     "run-sequence": "^2.0.0",
     "st": "^1.2.0",
     "stageprompt": "hmrc/stageprompt",

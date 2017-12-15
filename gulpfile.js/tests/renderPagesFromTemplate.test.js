@@ -61,7 +61,7 @@ test('renderPagesFromTemplate - renders a section', function (t) {
 
   t.equal(
     $('#sections a:nth-child(2)').attr('href'),
-    '/category-one/index.html',
+    '/category-one' + path.sep + 'index.html',
     'that have the expected urls'
   )
 
@@ -75,7 +75,7 @@ test('renderPagesFromTemplate - renders a section', function (t) {
 
   t.equal(
     $('#nav a:first-child').attr('href'),
-    '/category-one/thing/index.html',
+    '/category-one' + path.sep + 'thing' + path.sep + 'index.html',
     'that have the expected urls'
   )
 
@@ -114,7 +114,7 @@ test('renderPagesFromTemplate - renders a page', function (t) {
 
   t.equal(
     $('#nav a:first-child').attr('href'),
-    '/category-one/thing/index.html',
+    '/category-one' + path.sep + 'thing' + path.sep + 'index.html',
     'that have the expected urls'
   )
   t.equal(
