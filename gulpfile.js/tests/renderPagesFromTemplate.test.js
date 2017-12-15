@@ -12,11 +12,11 @@ var compiledTemplate = Handlebars.compile(templateSource)
 
 var getFiles = function () {
   return [
-    getFile(path.resolve('index.html'), 'section', 'Homepage'),
-    getFile(path.resolve('category-one', 'thing', 'index.html'), 'page', 'Category One - Thing'),
-    getFile(path.resolve('category-one', 'thing-two', 'index.html'), 'page', 'Category One - Thing Two'),
-    getFile(path.resolve('category-one', 'index.html'), 'section', 'Category One - Section'),
-    getFile(path.resolve('category-two', 'thing', 'index.html'), 'page', 'Category Two - Thing')
+    getFile('index.html', 'section', 'Homepage'),
+    getFile('category-one/thing/index.html', 'page', 'Category One - Thing'),
+    getFile('category-one/thing-two/index.html', 'page', 'Category One - Thing Two'),
+    getFile('category-one/index.html', 'section', 'Category One - Section'),
+    getFile('category-two/thing/index.html', 'page', 'Category Two - Thing')
   ]
 }
 
@@ -61,7 +61,7 @@ test('renderPagesFromTemplate - renders a section', function (t) {
 
   t.equal(
     $('#sections a:nth-child(2)').attr('href'),
-    '/category-one' + path.sep + 'index.html',
+    '/category-one/index.html',
     'that have the expected urls'
   )
 
@@ -75,7 +75,7 @@ test('renderPagesFromTemplate - renders a section', function (t) {
 
   t.equal(
     $('#nav a:first-child').attr('href'),
-    '/category-one' + path.sep + 'thing' + path.sep + 'index.html',
+    '/category-one/thing/index.html',
     'that have the expected urls'
   )
 
@@ -114,7 +114,7 @@ test('renderPagesFromTemplate - renders a page', function (t) {
 
   t.equal(
     $('#nav a:first-child').attr('href'),
-    '/category-one' + path.sep + 'thing' + path.sep + 'index.html',
+    '/category-one/thing/index.html',
     'that have the expected urls'
   )
   t.equal(

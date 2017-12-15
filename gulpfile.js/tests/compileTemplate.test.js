@@ -28,7 +28,7 @@ test('compileTemplate - compiles a template at a given path', (t) => {
     .catch((error) => {
       t.equal(
         error.message,
-        'Failed to read template path' + path.sep + 'to' + path.sep + 'non-existent' + path.sep + 'template',
+        'Failed to read template ' + path.join('path', 'to', 'non-existent', 'template'),
         'throws an error when given a bad template path'
       )
     })
