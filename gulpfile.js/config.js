@@ -158,6 +158,10 @@ module.exports = {
       entries: [
         src + 'javascripts/application.js'
       ],
+      add: [
+        govuk.toolkit + '/javascripts/govuk/**/*.js',
+        '!' + govuk.toolkit + '/javascripts/govuk/selection-buttons.js'
+      ],
       dev: {
         dest: snapshotDir + 'javascripts'
       },
