@@ -1,7 +1,12 @@
 /* For header styled see https://github.com/alphagov/govuk_template/blob/master/source/assets/stylesheets/_header.scss */
 
-#global-header .header-proposition #proposition-link {
-  float: right;
+#global-header {
+  position: relative;
+  z-index: 999;
+
+  .header-proposition #proposition-link {
+    float: right;
+  }
 }
 
 .hmrc-banner {

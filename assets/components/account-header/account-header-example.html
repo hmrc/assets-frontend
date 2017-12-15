@@ -18,6 +18,16 @@
       <div class="content">
         <nav id="proposition-menu">
           <a href="#" id="proposition-name">Personal tax account</a>
+          <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+          <ul id="proposition-links" class="header__menu__proposition-links">
+
+            <li>
+              <span class="faded-text--small"><strong>English |</strong></span>
+              <a id="switchToWelsh" lang="cy" href="/personal-account/lang/cyGb?redirectUrl&#61;%2Fpersonal-account" data-journey-click="link - click:lang-select:Cymraeg"><small><strong>Cymraeg</strong></small></a>
+            </li>
+
+
+          </ul>
         </nav>
       </div>
     </div>
@@ -27,76 +37,124 @@
 <!-- END GOV.UK HEADER -->
 <main id="content" role="main">
 <!-- ACCOUNT MENU -->
-<nav id="secondary-nav" class="account-menu" role="navigation">
-  <a href="#" class="account-menu__link account-menu__link--active account-menu__link--home "><span class="account-icon account-icon--home">Account home</span></a>
-  <a href="#" class="account-menu__link account-menu__link--menu js-hidden js-visible" aria-hidden="true" aria-expanded="false">Account menu</a>
+  <nav id="secondary-nav" class="account-menu js-enabled" role="navigation">
+    <a href="http://localhost:9232/personal-account" class="account-menu__link account-menu__link--home account-menu__link--active" data-journey-click="link - click:utility-nav:Account home">
+                        <span class="account-icon account-icon--home">
 
-  <ul class="account-menu__main">
-    <li class="account-menu__link--back hidden" aria-hidden="true"><a href="#" class="account-menu__link">Back</a></li>
 
-    <li><a href="messages" class="account-menu__link">Messages</a></li>
+                                Account home
 
-    <li><a href="track-your-forms" class="account-menu__link">Check progress</a></li>
+                        </span>
+    </a>
 
-    <li>
-      <a href="#subnav-1" id="account-menu__main-1" class="account-menu__link account-icon account-menu__link--more" aria-haspopup="true" aria-owns="subnav-1">Get help</a>
+    <a href="#" class="account-menu__link account-menu__link--menu js-hidden js-visible" aria-hidden="true" aria-expanded="false" data-journey-click="link - click:utility-nav:Account menu">
 
-      <div class="subnav js-hidden" id="subnav-1" role="navigation" aria-labelledby="account-menu__main-1" aria-label="Get help">
-        <div class="column-one-third subnav__section">
-          <p class="subnav__section__heading">Live chat</p>
-          <div><a href="#">Chat with us now</a></div>
-          <p>Live chat is available and the queue time is currently around 12 minutes</p>
+
+      Account menu
+
+    </a>
+
+    <ul class="account-menu__main">
+      <li class="account-menu__link--back hidden" aria-hidden="true">
+        <a href="#" class="account-menu__link" data-journey-click="link - click:utility-nav:Back">
+
+
+          Back
+
+        </a>
+      </li>
+
+      <li>
+        <a href="http://localhost:9232/personal-account/messages" class="account-menu__link" data-journey-click="link - click:utility-nav:Messages">
+
+
+          Messages
+
+        </a>
+      </li>
+
+      <li>
+        <a href="http://localhost:9100/track" class="account-menu__link" data-journey-click="link - click:utility-nav:Check progress">
+
+
+          Check progress
+
+        </a>
+      </li>
+
+      <li>
+        <a href="#subnav-your-account" id="account-menu__main-2" class="account-menu__link account-icon account-menu__link--more js-enabled" aria-haspopup="true" aria-owns="subnav-your-account" data-journey-click="accordion - click:utility-nav:Your account" aria-expanded="false">
+
+
+          Your account
+
+        </a>
+
+        <div class="subnav" id="subnav-your-account" role="navigation" aria-labelledby="account-menu__main-2" aria-label="Your account" aria-hidden="true" tabindex="-1">
+
+
+
+
+          <div class="
+                                 column-half
+
+                                 subnav__section">
+            <p class="subnav__section__heading">
+
+
+              Paperless settings
+
+            </p>
+            <div>
+              <a href="http://localhost:9232/personal-account/preferences" data-journey-click="link - click:utility-nav:Manage your paperless settings">
+
+
+                Manage your paperless settings
+
+              </a>
+            </div>
+          </div>
+          <div class="
+                                 column-half
+
+                                 subnav__section">
+            <p class="subnav__section__heading">
+
+
+              Personal details
+
+            </p>
+            <div>
+              <a href="http://localhost:9232/personal-account/personal-details" data-journey-click="link - click:utility-nav:Manage your personal details">
+
+
+                Manage your personal details
+
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="column-one-third subnav__section">
-          <p class="subnav__section__heading">Phone</p>
-          <div>01234 567 890</div>
-          <p>Lines are currently closed and will reopen tomorrow at 8:00am</p>
-        </div>
-        <div class="column-one-third subnav__section">
-          <p class="subnav__section__heading">Technical problems</p>
-          <div><a href="#">Report a technical problem</a></div>
-          <p>We aim to reply within 72 hours</p>
-        </div>
-      </div>
-    </li>
+      </li>
 
-    <li>
-      <a href="#subnav-2" id="account-menu__main-2" class="account-menu__link account-icon account-menu__link--more" aria-haspopup="true" aria-owns="subnav-2">Your account</a>
+      <li>
+        <a href="/personal-account/signout?continueUrl=http%3A%2F%2Flocalhost%3A9514%2Ffeedback-survey%3Forigin%3DPERTAX" class="account-menu__link" data-journey-click="link - click:utility-nav:Sign out">
 
-      <div class="subnav js-hidden" id="subnav-2" role="navigation" aria-labelledby="account-menu__main-2" aria-label="Your account">
-        <div class="column-one-third subnav__section">
-          <p class="subnav__section__heading">Security settings</p>
-          <div><a href="#">Change your password</a></div>
-          <div><a href="#">Change your phone number</a></div>
-          <div><a href="account-two">Trusted helpers</a></div>
-        </div>
-        <div class="column-one-third subnav__section">
-          <p class="subnav__section__heading">Paperless settings</p>
-          <div><a href="contact-preferences">Go paperless</a></div>
-          <p>
-            You currently receive all correspondence by post
-          </p>
-        </div>
-        <div class="column-one-third subnav__section">
-          <p class="subnav__section__heading">Personal information</p>
-          <div><a href="personal-details">View your personal details</a></div>
-          <p>View or edit your address, phone number and National Insurance.</p>
-        </div>
-      </div>
-    </li>
 
-    <li><a href="#" class="account-menu__link">Sign out</a></li>
-  </ul>
-</nav>
+          Sign out
+
+        </a>
+      </li>
+    </ul>
+  </nav>
 <!-- END ACCOUNT MENU -->
 
   <!-- LANGUAGE TOGGLE -->
-  <div class="lang-select">
-    <ul>
-      <li>English</li>
-      <li>|</li>
-      <li><a href="#">Cymraeg</a></li>
-    </ul>
-  </div>
+  <!--<div class="lang-select">-->
+    <!--<ul>-->
+      <!--<li>English</li>-->
+      <!--<li>|</li>-->
+      <!--<li><a href="#">Cymraeg</a></li>-->
+    <!--</ul>-->
+  <!--</div>-->
   <!-- END LANGUAGE TOGGLE -->
 </main>

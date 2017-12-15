@@ -4,68 +4,131 @@
 
 .account-icon--home {
   background-image: url(data:image/svg+xml;base64,PHN2ZyBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWlkIj48dGl0bGU+aWNvbi1ob21lPC90aXRsZT48cGF0aCBkPSJNMTIgMkwxIDEyLjVoMy4xOXY5LjM4aDUuNDR2LTcuMTNoNC41djcuMTNoNS40NFYxMi41SDIzTDEyIDJ6Ii8+PC9zdmc+);
-  background-position: left -2px;
-  background-size: 24px;
-  padding-left: 28px;
+  background-position: left -1px;
+  background-size: 19px;
+  padding-left: 22px;
 
   @include ie-lte(9) {
     background-image: url("../images/icon-home.png");
   }
 }
 
-.account-menu {
-  @extend %contain-floats;
-  border-bottom: 1px solid $light-grey;
+#global-cookie-message {
   position: relative;
-
-  &.is-open {
-    margin-bottom: 5em;
-
-    &.is-smaller {
-      margin-bottom: 0;
-    }
-  }
-
+  z-index: 999;
 }
 
-.account-menu__link,
-.account-menu__link:visited {
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 300;
-  text-transform: none;
+.service-info {
+  border-top: none;
+  display: block;
+  position: relative;
+  z-index: 997;
+}
+
+.account-menu {
+  @extend %contain-floats;
+  background-color: $white;
+  border-bottom: 1px solid $grey-8;
+  border-top: 10px solid $govuk-blue;
+  margin-bottom: 0;
+  position: relative;
+  transition: all .3s ease-in-out;
+
+  &.subnav-is-open {
+    margin-bottom: 5em;
+  }
+}
+
+.is-smaller.account-menu {
+  border-bottom: 1px solid $grey-8;
+  margin-bottom: 0;
+  transition: none;
+
+  &.main-nav-menu-is-open {
+    margin-bottom: 5em;
+  }
+
+  li:last-of-type {
+    a:last-of-type {
+      padding-right: 0;
+    }
+  }
+}
+
+.account-menu__link {
   border-bottom: 4px solid transparent;
   box-sizing: border-box;
-  color: $grey-1;
+  color: #4A4A4A;
   display: block;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.25;
+  padding: 12px 16px 8px;
+  text-transform: none;
   text-decoration: none;
-  padding: 12px 28px 8px;
+
+  &:visited {
+    color: #4A4A4A;
+  }
 
   &:hover,
   &:focus {
-    border-bottom: 4px solid $govuk-grey-3;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    color: $light-blue;
   }
 
   &:hover {
-    color: $light-blue;
+    border-bottom-color: $govuk-grey-3;
   }
 
   &:focus {
     background-color: transparent;
-    color: $black;
-    outline: 3px solid $focus-colour;
+    border-bottom-color: $focus-colour;
   }
 }
 
+.is-smaller .account-menu__link {
+  color: $black;
+  padding-left: 10px;
 
-.account-menu__link--home,
-.account-menu__link--home:visited {
+  &:hover {
+    color: $black;
+  }
+}
+
+.account-menu__link--home {
   float: left;
   padding: 12px 18px 8px 0;
 }
 
-.account-menu__link--menu,
-.account-menu__link--menu:visited {
+.is-smaller .account-menu__link--home,
+.is-smaller .account-menu__link--menu {
+  padding-left: 0;
+
+  &:hover {
+    border-bottom-color: transparent;
+  }
+
+  &:focus {
+    border-bottom-color: #ffbf47;
+    color: $light-blue;
+  }
+
+  &.account-menu__link--active {
+    &:hover {
+      border-bottom-color: $govuk-blue;
+      color: $black;
+    }
+
+    &:focus {
+      border-bottom-color: #ffbf47;
+      color: $light-blue;
+    }
+  }
+}
+
+.account-menu__link--menu {
   border-bottom: 4px solid transparent;
   float: right;
   padding: 12px 20px 8px 0;
@@ -73,17 +136,19 @@
 
 .account-menu__link--active,
 .account-menu__link--active:visited {
-  color: $black;
   border-bottom: 4px solid $govuk-blue;
+  color: $black;
 }
 
 .account-menu__main {
   float: right;
   margin: initial;
+  z-index: 995;
 
   li {
     @include inline-block;
     margin: initial;
+    margin-bottom: 0px;
   }
 }
 
@@ -93,8 +158,9 @@
     clear: both;
     float: none;
 
-    &.is-open {
-      border-top: 1px solid $light-grey;
+    &.main-nav-is-open,
+    &.subnav-is-open {
+      border-top: 1px solid $grey-8;
       position: relative;
 
       &:before,
@@ -123,11 +189,22 @@
     }
 
     li {
+      border-bottom: 1px solid $grey-8;
       display: block;
+      overflow: hidden;
+
+      &:last-child,
+      &.active-subnav-parent {
+        border-bottom: none;
+      }
     }
 
-    a {
-      width: 100%;
+    .account-menu__link {
+      border-bottom: none;
+
+      &:hover {
+        border-bottom: none;
+      }
     }
   }
 
@@ -145,6 +222,10 @@
 
     .account-menu__link {
       padding: 12px 8px 8px;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
@@ -153,41 +234,122 @@
   @include core-16;
   @extend %contain-floats;
   background-color: $shaded-bg-grey;
-  border-bottom: 1px solid $light-grey;
+  border-bottom: 1px solid $grey-8;
   left: 0;
+  outline: none;
   position: absolute;
-  top: 45px;
+  top: -61px;
+  transition: all .3s ease-in-out;
   width: 100%;
-  padding: 0.63158em 0;
+  z-index: -1;
 
   p {
     @include core-16;
   }
 
-  a:visited {
-    color: $light-blue;
+  a {
+    text-decoration: none;
+
+    &:visited {
+      color: $govuk-blue;
+    }
+
+    &:hover {
+      color: $light-blue;
+      text-decoration: underline;
+    }
+  }
+
+  &.subnav-reveal {
+    display: block;
+    top: 43px;
   }
 }
 
 .is-smaller .subnav {
-  margin: 0 28px;
+  border-bottom: none;
+  margin: 0 0 0 10px;
+  outline: none;
+  padding: 0;
   position: relative;
   top: inherit;
+  transition: none;
+  z-index: 1;
+
+  &.subnav-reveal {
+    display: block;
+  }
+}
+
+.subnav .subnav__section {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  &:first-child {
+    > p,
+    > div a {
+      padding-left: 30px;
+      padding-right: 15px;
+    }
+  }
+
+  &:nth-child(2) {
+    > p,
+    > div a {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  &:last-child {
+    > p,
+    > div a {
+      padding-right: 30px;
+    }
+  }
 }
 
 .is-smaller .subnav__section {
-  margin-bottom: 1em;
-  padding: 0;
+  border-bottom: 1px solid $grey-8;
+  margin: 0;
+  padding: 1em 0 1em 0;
+  width: 100%;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  a:hover {
+    color: $govuk-blue;
+  }
+
+  &:first-child,
+  &:nth-child(2),
+  &:last-child {
+    > p,
+    > div a {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
 p.subnav__section__heading {
-  @include bold-19;
+  @include bold-16;
+  font-weight: 400;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.is-smaller p.subnav__section__heading {
+  @include bold-16;
+  font-weight: 600;
+  margin-bottom: 7px;
 }
 
 .js-enabled .account-menu__link--menu,
 .js-enabled .is-smaller .account-menu__link--more {
   background-image: url("../images/icon-chevron-right.svg");
-  background-position: right center;
+  background-position: right 4px center;
   background-repeat: no-repeat;
   background-size: 12px;
 
@@ -200,12 +362,61 @@ p.subnav__section__heading {
 .js-enabled .is-smaller .account-menu__link--more-expanded,
 .js-enabled .account-menu__link--more {
   background-image: url("../images/icon-chevron-down.svg");
-  background-position: right center;
+  background-position: right 4px center;
   background-size: 12px;
 
   @include ie-lte(9) {
     background-image: url("../images/icon-chevron-down.png");
   }
+}
+
+.js-enabled .account-menu__link--more {
+  background-image: url("../images/icon-chevron-down.svg");
+  background-position: right 14px center;
+  background-size: 12px;
+  border-bottom: none;
+  padding-right: 31px;
+  position: relative;
+  outline: none;
+
+  @include ie-lte(9) {
+    background-image: url("../images/icon-chevron-down.png");
+  }
+
+  &:before,
+  &:after {
+    content: none;
+  }
+
+  &.account-menu__link--more-expanded {
+    &:before,
+    &:after {
+      border: solid transparent;
+      bottom: -5px;
+      content: " ";
+      height: 0;
+      pointer-events: none;
+      position: absolute;
+      right: 14px;
+      width: 0;
+    }
+
+    &:before {
+      border-bottom-color: $light-grey;
+      border-width: 7px;
+      right: 13px;
+    }
+
+    &:after {
+      border-bottom-color: $shaded-bg-grey;
+      border-width: 6px;
+      margin-left: -6px;
+    }
+  }
+}
+
+.is-smaller .account-menu__link--more-expanded {
+  display: none;
 }
 
 .no-js {
@@ -224,19 +435,25 @@ p.subnav__section__heading {
   background-color: #005ea5;
   color: #fff;
   display: block;
+  position: relative;
+  z-index: 999;
 }
+
 .full-width-banner__container {
   padding: 20px .78947em;
   position: relative;
 }
+
 .full-width-banner a {
   color: #fff;
 }
+
 .full-width-banner__title {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
 }
+
 .full-width-banner__close {
   color: #fff;
   font-size: 14px;
