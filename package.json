@@ -82,6 +82,7 @@
     "st": "^1.2.0",
     "stageprompt": "hmrc/stageprompt",
     "sticky-header": "^0.2.1",
+    "upath": "^1.0.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0",
