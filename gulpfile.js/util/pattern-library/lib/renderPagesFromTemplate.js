@@ -1,7 +1,7 @@
 var path = require('path')
 
 var relativeUrl = function (basedir, filePath) {
-  return `/${basedir}${filePath}`
+  return `/${path.relative(basedir, filePath)}`
 }
 
 var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) {
@@ -14,8 +14,8 @@ var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) 
   data.sections = files
     .filter((file) => file.type === 'section')
     .map((file) => ({
-      url: relativeUrl(baseDirectory, file.path),
-      title: path.relative(baseDirectory, path.parse(file.path).dir) || homepage
+      url: relativeUrl(baseDirectory, file.relative),
+      title: path.relative(baseDirectory, path.parse(file.relative).dir) || homepage
     }))
 
   return files
@@ -23,17 +23,17 @@ var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) 
       var currentSection = homepage
 
       data.sections.forEach((section) => {
-        if (file.path.includes(section.title)) {
+        if (file.relative.includes(section.title)) {
           currentSection = section.title
         }
       })
 
       data.nav = files
-        .filter((file) => file.path.includes(currentSection))
+        .filter((file) => file.relative.includes(currentSection))
         .filter((file) => file.type === 'page')
         .map((file) => ({
-          url: relativeUrl(baseDirectory, file.path),
-          title: path.parse(path.parse(file.path).dir).name
+          url: relativeUrl(baseDirectory, file.relative),
+          title: path.parse(path.parse(file.relative).dir).name
         }))
 
       data.documentation = file.contents.toString()

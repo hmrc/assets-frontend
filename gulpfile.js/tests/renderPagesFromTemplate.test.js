@@ -12,11 +12,11 @@ var compiledTemplate = Handlebars.compile(templateSource)
 
 var getFiles = function () {
   return [
-    getFile('index.html', 'section', 'Homepage'),
-    getFile('category-one/thing/index.html', 'page', 'Category One - Thing'),
-    getFile('category-one/thing-two/index.html', 'page', 'Category One - Thing Two'),
-    getFile('category-one/index.html', 'section', 'Category One - Section'),
-    getFile('category-two/thing/index.html', 'page', 'Category Two - Thing')
+    getFile(path.resolve('index.html'), 'section', 'Homepage'),
+    getFile(path.resolve('category-one', 'thing', 'index.html'), 'page', 'Category One - Thing'),
+    getFile(path.resolve('category-one', 'thing-two', 'index.html'), 'page', 'Category One - Thing Two'),
+    getFile(path.resolve('category-one', 'index.html'), 'section', 'Category One - Section'),
+    getFile(path.resolve('category-two', 'thing', 'index.html'), 'page', 'Category Two - Thing')
   ]
 }
 
