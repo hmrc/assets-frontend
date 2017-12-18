@@ -1,6 +1,6 @@
 # Character Counter
 
-{{ deprecated(https://github.com/alphagov/ds-character-count, GDS Character counter) }}
+{{ deprecated('https://github.com/alphagov/ds-character-count', 'GDS Character counter') }}
 
 A character counter for textareas.
 
