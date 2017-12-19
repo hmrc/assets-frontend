@@ -1232,9 +1232,10 @@ main {
     .markdown > pre code {
       border: none; }
   .markdown > p,
-  .markdown > ul.list,
-  .markdown > ol.list,
+  .markdown > ul,
+  .markdown > ol,
   .markdown > blockquote,
+  .markdown > table,
   .markdown > .example {
     max-width: 34em; }
   .markdown > ul {

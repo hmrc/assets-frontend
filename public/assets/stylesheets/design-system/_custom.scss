@@ -177,9 +177,10 @@ main {
   }
 
   > p,
-  > ul.list,
-  > ol.list,
+  > ul,
+  > ol,
   > blockquote,
+  > table,
   > .example {
     max-width: 34em;
   }
