@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+- Depricated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
+
 ### Fixed
 - Allows assets-frontend to run in a Windows environment [#878](https://github.com/hmrc/assets-frontend/pull/878)
 
