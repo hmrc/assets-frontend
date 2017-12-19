@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Depricated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
 
 ### Fixed
+- Allows assets-frontend to run in a Windows environment [#878](https://github.com/hmrc/assets-frontend/pull/878)
+
+### Fixed
 - Fix header logo reference in header and account-header components [#874](https://github.com/hmrc/assets-frontend/pull/874)
 
 ### Fixed
