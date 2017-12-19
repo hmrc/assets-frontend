@@ -13,7 +13,7 @@ gulp.task('clean-comp-lib', function (cb) {
 
 gulp.task('component-library', ['clean-comp-lib', 'sass', 'images', 'browserify'], function (cb) {
   var env = global.runmode
-  var genCompLib = './node_modules/.bin/kss-node --config component-lib.json'
+  var genCompLib = path.join('.', 'node_modules', '.bin', 'kss-node') + ' --config component-lib.json'
 
   exec(genCompLib, function (err, stout, sterr) {
     var files = [

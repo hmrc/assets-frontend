@@ -1,7 +1,6 @@
 'use strict'
 
 var mergeObj = require('./../mergeObj')
-var sep = require('path').sep
 var Transform = require('stream').Transform
 var util = require('util')
 var scenarioTemplate = {
@@ -48,7 +47,7 @@ BuildScenarios.prototype.createScenarios = function () {
     var pageName = path.slice(8, -5)
     var scenario = mergeObj({
       label: pageName[0].toUpperCase() + pageName.slice(1),
-      url: componentLibraryUrl + sep + path
+      url: componentLibraryUrl + '/' + path
     }, scenarioTemplate)
 
     return scenario

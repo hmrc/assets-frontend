@@ -1,0 +1,11 @@
+{% macro deprecated(new_component_link, component_name) %}
+  <div class="panel panel-border-wide">
+    <p class="heading-small">This component has been deprecated.</p>
+    <p>
+      You should remove this component and replace it with 
+      <a href="{{ new_component_link }}" target="_blank">
+        {{ component_name }}
+      </a>
+    </p>
+  </div>
+{% endmacro %}
