@@ -12,11 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Allows assets-frontend to run in a Windows environment [#878](https://github.com/hmrc/assets-frontend/pull/878)
 
 ### Fixed
-- Fix header logo reference in header and account-header components [#874](https://github.com/hmrc/assets-frontend/pull/874)
-
-### Fixed
 - Fix style for logged in status logo [#872](https://github.com/hmrc/assets-frontend/pull/872)
+- Fix header logo reference in header and account-header components [#874](https://github.com/hmrc/assets-frontend/pull/874)
 - Move header component stylesheet import to all-components [#875](https://github.com/hmrc/assets-frontend/pull/875)
+- Include JavaScript from GOV.UK frontend toolkit [#880](https://github.com/hmrc/assets-frontend/pull/880)
 
 ## [3.0.1]
 - Remove the `.content__body p` selector as it is too specific and overriding other changes in V3

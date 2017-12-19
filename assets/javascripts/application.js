@@ -5,6 +5,7 @@ require('details')
 require('validate')
 require('basicpunc')
 require('govuk-template')
+require('stageprompt')
 
 window._gaq = window._gaq || []
 
@@ -35,7 +36,6 @@ var customValidations = require('./validation/customValidations.js')
 var exitSurveyValidation = require('./validation/exitSurveyValidation.js')
 var citizenAuthValidation = require('./validation/citizenAuthValidation.js')
 var saEmailPrefs = require('./validation/saEmailPrefs.js')
-var GOVUK = require('stageprompt')
 var toggleDetails = require('./modules/toggleDetails.js')
 var fingerprint = require('./modules/fingerprint.js')
 var validatorFocus = require('./modules/validatorFocus.js')
@@ -80,7 +80,7 @@ $(function () {
   }
 
   // initialise stageprompt for Analytics
-  GOVUK.performance.stageprompt.setupForGoogleAnalytics()
+  window.GOVUK.performance.stageprompt.setupForGoogleAnalytics()
 
   $('.print-link a').attr('target', '_blank')
 
