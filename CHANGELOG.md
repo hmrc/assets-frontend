@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Fixed
-- Calls `.restore()` on spied functions after they've been used to prevent `already wrapped` errors from crashing the `watch` task
+- Calls `.restore()` on spied functions after they've been used to prevent `already wrapped` errors from crashing the `watch` task [#882](https://github.com/hmrc/assets-frontend/pull/882)
 
 ## [3.0.2] - 2017-12-19
 - Depricated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
