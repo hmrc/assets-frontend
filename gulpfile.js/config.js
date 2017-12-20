@@ -118,6 +118,10 @@ module.exports = {
       entries: [
         src + 'application.js'
       ],
+      add: [
+        govuk.toolkit + '/javascripts/govuk/**/*.js',
+        '!' + govuk.toolkit + '/javascripts/govuk/selection-buttons.js'
+      ],
       destDirName: 'javascripts',
       outputName: 'application.js'
     }, {

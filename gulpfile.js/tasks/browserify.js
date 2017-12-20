@@ -12,8 +12,13 @@ const rename = require('gulp-rename')
 const uglify = require('gulp-uglify')
 const sourcemaps = require('gulp-sourcemaps')
 const runSequence = require('run-sequence')
+const glob = require('globby')
 
 function promisifyStream (browserifyInstance, bundleConfig) {
+  if (bundleConfig.add) {
+    browserifyInstance.add(glob.sync(bundleConfig.add))
+  }
+
   return new Promise((resolve, reject) => {
     browserifyInstance
       .bundle()
@@ -44,7 +49,10 @@ gulp.task('browserify:v3', ['v3', 'lint:scripts'], () => {
         plugin: collapse,
         dest: path.join(config.dest[gutil.env.version], bundleConfig.destDirName)
       }))
-      .map(bundleConfig => promisifyStream(browserify(bundleConfig), bundleConfig))
+      .map(bundleConfig => promisifyStream(
+        browserify(bundleConfig),
+        bundleConfig
+      ))
   )
 })
 
@@ -55,11 +63,9 @@ gulp.task('browserify:v4', ['v4', 'lint:scripts'], () => {
         plugin: collapse,
         dest: path.join(config.dest[gutil.env.version], bundleConfig.destDirName)
       }))
-      .map(bundleConfig => {
-        promisifyStream(
-          browserify(bundleConfig).ignore('javascripts'),
-          bundleConfig
-        )
-      })
+      .map(bundleConfig => promisifyStream(
+        browserify(bundleConfig).ignore('javascripts'),
+        bundleConfig
+      ))
   )
 })
