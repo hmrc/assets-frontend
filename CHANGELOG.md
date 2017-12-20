@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [3.0.2] - 2017-12-19
 - Depricated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
 
 ### Fixed
@@ -199,7 +201,9 @@ This entire version is covered by a single pull request. [#867](https://github.c
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/3.0.0...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...master 
+[3.0.2]: https://github.com/hmrc/assets-frontend/compare/release/3.0.1...release/3.0.2
+[3.0.1]: https://github.com/hmrc/assets-frontend/compare/release/3.0.0...release/3.0.1 
 [3.0.0]: https://github.com/hmrc/assets-frontend/compare/release/2.254.0...release/3.0.0
 [2.254.0]: https://github.com/hmrc/assets-frontend/compare/release/2.253.0...release/2.254.0
 [2.253.0]: https://github.com/hmrc/assets-frontend/compare/release/2.252.0...release/2.253.0
