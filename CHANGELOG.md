@@ -6,27 +6,27 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Build a version without deprecated components [#873](https://github.com/hmrc/assets-frontend/pull/873)
 
 ### Fixed
 - Calls `.restore()` on spied functions after they've been used to prevent `already wrapped` errors from crashing the `watch` task [#882](https://github.com/hmrc/assets-frontend/pull/882)
 
 ## [3.0.2] - 2017-12-19
-- Depricated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
-
 ### Fixed
 - Allows assets-frontend to run in a Windows environment [#878](https://github.com/hmrc/assets-frontend/pull/878)
-
-### Fixed
 - Fix style for logged in status logo [#872](https://github.com/hmrc/assets-frontend/pull/872)
 - Fix header logo reference in header and account-header components [#874](https://github.com/hmrc/assets-frontend/pull/874)
 - Move header component stylesheet import to all-components [#875](https://github.com/hmrc/assets-frontend/pull/875)
 - Include JavaScript from GOV.UK frontend toolkit [#880](https://github.com/hmrc/assets-frontend/pull/880)
 
-## [3.0.1]
+### Changed
+- Depricated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
+
+## [3.0.1] - 2017-11-30
+### Fixed
 - Remove the `.content__body p` selector as it is too specific and overriding other changes in V3
 - Remove changes that had previously been put in place to add specificity to other classes to counteract the effect of `.content__body p`
-
-### Fixed
 - fixed comments on shutter page examples [#870](https://github.com/hmrc/assets-frontend/pull/870)
 
 ### Changed
@@ -52,7 +52,6 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Updated image paths
 - `govuk-template.js` moved to vendor directory
 - Root scss files have been moved and simplified
-
 
 ### Deprecated
 - The Component Library!
@@ -204,9 +203,9 @@ This entire version is covered by a single pull request. [#867](https://github.c
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...master 
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...master
 [3.0.2]: https://github.com/hmrc/assets-frontend/compare/release/3.0.1...release/3.0.2
-[3.0.1]: https://github.com/hmrc/assets-frontend/compare/release/3.0.0...release/3.0.1 
+[3.0.1]: https://github.com/hmrc/assets-frontend/compare/release/3.0.0...release/3.0.1
 [3.0.0]: https://github.com/hmrc/assets-frontend/compare/release/2.254.0...release/3.0.0
 [2.254.0]: https://github.com/hmrc/assets-frontend/compare/release/2.253.0...release/2.254.0
 [2.253.0]: https://github.com/hmrc/assets-frontend/compare/release/2.252.0...release/2.253.0
