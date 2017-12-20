@@ -33,6 +33,14 @@ Styleguide Add remove
   margin: em(10) 0 em(10) 0;
 }
 
+.add-remove__item {
+  margin: 0.25em 0;
+
+  @include media-down(mobile) {
+    margin-left: 16px;
+  }
+}
+
 .add-remove__remove-btn {
   margin: 0 0 0 em(5);
 }

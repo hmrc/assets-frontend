@@ -1,7 +1,7 @@
-var path = require('path')
+var upath = require('upath')
 
 var relativeUrl = function (basedir, filePath) {
-  return `/${path.relative(basedir, filePath)}`
+  return `/${upath.relative(basedir, filePath)}`
 }
 
 var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) {
@@ -15,7 +15,7 @@ var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) 
     .filter((file) => file.type === 'section')
     .map((file) => ({
       url: relativeUrl(baseDirectory, file.relative),
-      title: path.relative(baseDirectory, path.parse(file.relative).dir) || homepage
+      title: upath.relative(baseDirectory, upath.parse(file.relative).dir) || homepage
     }))
 
   return files
@@ -33,7 +33,7 @@ var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) 
         .filter((file) => file.type === 'page')
         .map((file) => ({
           url: relativeUrl(baseDirectory, file.relative),
-          title: path.parse(path.parse(file.relative).dir).name
+          title: upath.parse(upath.parse(file.relative).dir).name
         }))
 
       data.documentation = file.contents.toString()

@@ -24,7 +24,7 @@ Styleguide Organisation Logo
   text-decoration: none;
 
   padding: 3px 0 2px 30px;
-  background-image: url("../images/icons/crests/hmrc_crest_13px.png");
+  background-image: url("../images/crests/hmrc_crest_13px.png");
   background-position: 5px center;
   background-repeat: no-repeat;
   border-left: 2px solid $hm-revenue-customs;
@@ -64,7 +64,7 @@ Styleguide Organisation Logo.Stacked
   @extend .organisation-logo;
 
   padding: 20px 0 0 6px;
-  background-image: url("../images/icons/crests/hmrc_crest_13px.png");
+  background-image: url("../images/crests/hmrc_crest_13px.png");
   background-position: 5px top;
 }
 
@@ -77,7 +77,7 @@ Styleguide Organisation Logo.Stacked
 @media all and (-webkit-min-device-pixel-ratio: 2) {
   .organisation-logo,
   .organisation-logo-stacked {
-    background-image: url("../images/icons/crests/hmrc_crest_13px_x2.png");
+    background-image: url("../images/crests/hmrc_crest_13px_x2.png");
     background-size: auto 20px;
   }
 }
@@ -87,7 +87,7 @@ Styleguide Organisation Logo.Stacked
     font-size: 18px;
     line-height: 22px;
     padding: 3px 0 2px 38px;
-    background-image: url("../images/icons/crests/hmrc_crest_18px.png");
+    background-image: url("../images/crests/hmrc_crest_18px.png");
     background-position: 6px center;
     border-left: 2px solid $hm-revenue-customs;
     white-space: nowrap;
@@ -96,7 +96,7 @@ Styleguide Organisation Logo.Stacked
 
 @include ie(8) {
   .organisation-logo-medium {
-    background-image: url("../images/icons/crests/hmrc_crest_13px.png");
+    background-image: url("../images/crests/hmrc_crest_13px.png");
   }
 }
 
@@ -104,7 +104,7 @@ Styleguide Organisation Logo.Stacked
   @extend .organisation-logo-medium;
   @include media(tablet) {
     padding: 25px 0 0 7px;
-    background-image: url("../images/icons/crests/hmrc_crest_18px.png");
+    background-image: url("../images/crests/hmrc_crest_18px.png");
     background-position: 6px top;
   }
 }
@@ -118,7 +118,7 @@ Styleguide Organisation Logo.Stacked
   @media all and (-webkit-min-device-pixel-ratio: 2) {
     .organisation-logo-medium,
     .organisation-logo-stacked-medium {
-      background-image: url("../images/icons/crests/hmrc_crest_18px_x2.png");
+      background-image: url("../images/crests/hmrc_crest_18px_x2.png");
       background-size: auto 26px;
     }
   }

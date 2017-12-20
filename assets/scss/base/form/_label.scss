@@ -108,8 +108,16 @@ label.selectable {
 
 label.selectable input {
   cursor: pointer;
-}
+  width: auto;
 
+  &[type="radio"] {
+    appearance: radio;
+  }
+
+  &[type="checkbox"] {
+    appearance: checkbox;
+  }
+}
 
 /*
 Radio input
@@ -267,6 +275,17 @@ Styleguide Label.block
 
   input {
     @extend %vertically-aligned-input;
+    position: absolute;
+    width: auto;
+    margin: 0;
+  }
+
+  input[type="radio"] {
+    appearance: radio;
+  }
+
+  input[type="checkbox"] {
+    appearance: checkbox;
   }
 
   @include media(tablet) {
@@ -362,11 +381,6 @@ Markup:
 
 Styleguide Label.form date
 */
-
-.form-date label {
-  display: block;
-  margin-bottom: 5px;
-}
 
 // Add focus styles to block labels
 .js-enabled .add-focus {

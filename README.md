@@ -1,183 +1,121 @@
 # assets-frontend
 
-Frontend assets for the Tax Platform
+This repository contains the source files and documentation for the Components & Design Patterns used to design and build digital services for the HMRC Tax Platform.
 
-[![Stories in Ready](https://badge.waffle.io/hmrc/assets-frontend.png?label=ready&title=Ready)](https://waffle.io/hmrc/assets-frontend) [![Build Status](https://travis-ci.org/hmrc/assets-frontend.svg?branch=master)](https://travis-ci.org/hmrc/assets-frontend) [![devDependency Status](https://david-dm.org/hmrc/assets-frontend/dev-status.svg)](https://david-dm.org/hmrc/assets-frontend#info=devDependencies)
-
-- [Using service-manager](#using-service-manager)
-- [Requirements](#requirements)
-- [Running Locally](#running-locally-development-mode)
-- [Running JS Tests](#running-js-tests)
-- [Running tests whilst developing](#running-js-tests-whilst-developing)
-- [Running a Production build](#running-a-production-build)
-- [Component Library](#component-library)
-- [Contributing](#contributing)
-- [More info](#more-info)
-- [License](#license)
+It provides additional styles on top of the [GOV.UK styles](govuk-elements).
 
 
-## Using service-manager
+# Quick Start
 
-Unless you're making changes to the frontend assets, you'll most likely be using [service-manager](https://github.com/hmrc/service-manager) to serve assets to your frontends. The ASSETS_FRONTEND service is responsible for serving released artifacts and can be started with:
-
-```
-$ sm --start ASSETS_FRONTEND
-```
-
-
-## Developing Locally
-
-### Requirements
+## Requirements
 
 * [Node.js](https://nodejs.org/en/) `== 4.8.4`
 * [npm](https://www.npmjs.com/) `>= 2.11.3`
-
-#### [Node.js](https://nodejs.org/en/) & [npm](https://www.npmjs.com/)
 
 To install multiple versions of Node.js, you may find it easier to use a node version manager:
 
 * [nvm](https://github.com/creationix/nvm)
 * [n](https://github.com/tj/n)
 
-### Running Locally (Development mode)
+## Installation
 
-The command below will kick off a local node.js server on a predefined port (`9032`). This serves the assets with sourcemaps via the gulp task runner.
-
-```
-$ ./server.sh dev
-```
-
-
-### Running JS Tests
-
-The [Karma test runner](http://karma-runner.github.io/) is used to run our JS tests with the command:
+Clone this repository and run install:
 
 ```
-$ ./server.sh test
+$ git clone https://github.com/hmrc/assets-frontend.git
+$ cd assets-frontend
+$ npm install
 ```
 
-Or to run the tests with a watch task for continuous development, you can run them with:
+## Running
 
+1. Run `npm start`
+2. Assets are then available at http://localhost:9032/assets/999-SNAPSHOT/
+3. The Design System is available at http://localhost:9034/
+4. The Component Library [DEPRECATED] is available at http://localhost:9033/
+
+
+# Usage
+
+## Using assets locally
+
+### Prototypes
+
+For now, the quickest and simplest way to add assets-frontend to your prototype is to grab the built CSS and JS from production.
+
+Just replace `VERSION` in the links below with the [released version](https://github.com/hmrc/assets-frontend/releases) you want to use (we recommend using the latest).
+
+If your prototype is based on the [GOV.UK prototype kit](https://github.com/alphagov/govuk_prototype_kit/) then do the following:
+
+**CSS**
+
+Save the file found at https://www.tax.service.gov.uk/assets/VERSION/stylesheets/application.min.css to `/app/assets/sass/assets-frontend.scss`.
+
+And add the following to `app/views/includes/head.html`:
 ```
-$ ./server.sh test-dev
-```
-
-### Running a Production build
-
-Compiles the assets for production.
-
-```
-$ ./server.sh build
-```
-
-## Component Library
-
-### Viewing the Component Library
-
-It is available at [http://hmrc.github.io/assets-frontend](http://hmrc.github.io/assets-frontend).
-
-If you're running assets-frontend locally using `./server dev` or `npm start`, then you can view the Component Library by opening a browser at http://localhost:9032/component-library/
-
-### Running Component Library with watch
-
-The Component Library will be compiled when you run the following command, this command also adds a watch task so any
-changes you make within assets will automatically re-build the component library.
-
-```
-$ ./server.sh dev
+<link href="/public/stylesheets/assets-frontend.scss" rel="stylesheet" type="text/css" />
 ```
 
-### Manually building the Component Library
+**JavaScript**
 
-A static build of the Component Library can be generated as a single process by running
+Save the file found at https://www.tax.service.gov.uk/assets/VERSION/javascripts/application.min.js to `/app/assets/javascripts/assets-frontend.js`
 
+And add the following to `app/views/includes/head.html`
 ```
-$ npm run comp-lib
-```
-
-Bare in mind that in order to see the output in a browser you'll have to serve the files manually from the `component-library` directory with something like [http-server](https://www.npmjs.com/package/http-server) (for node.js) or [SimpleHTTPServer](https://docs.python.org/2/library/simplehttpserver.html) (for python)
-
-### Working on the Component Library Template
-
-The steps for working with a local copy of the component library template are:
-
-1. Remove the npm installed dependancy
-2. Clone the [hmrc/component-library-template](https://github.com/hmrc/component-library-template/)
-3. Symlink the local template for npm
-4. Run the watch task in assets-frontend
-
-Assuming you're in the root of your local assets-frontend it would look like this:
-
-```
-$ rm -rf node_modules/hmrc-component-library-template
-$ cd .. && git clone https://github.com/hmrc/component-library-template.git
-$ cd component-library-template && npm link
-$ cd ../assets-frontend
-$ npm run comp-lib:watch -- -w ../component-library-template
+<script src="/public/javascripts/assets-frontend.js"></script>
 ```
 
-If you're working extensively on the [templates](https://github.com/hmrc/component-library-template) for the Component Library, there is a helpful watch task using [nodemon](https://github.com/remy/nodemon). This makes development easier and faster.
+## Frontends
 
-You need to of linked your local version of the component library template
-```
-$ cd component-library-template && npm link && cd -
-```
+If your frontend is based on [init-service](https://github.com/hmrc/init-service/), then you just need to make sure the configuration for assets in the [application.conf](https://github.com/hmrc/init-service/blob/f9a55c100faa8b13d2a1a869c0531f6e3a7b556c/templates/service/conf/application.conf#L73-L77) file has the line `version = ${?ASSETS_FRONTEND_VERSION}` after declaring the actual version.
 
-Assuming you're in the root of your local assets-frontend it would look like this:
-```
-$ npm install -g nodemon
-$ npm run comp-lib:watch -- -w ./path/to/hmrc/component-library-template
-```
-
-You need to give it the path to a local checkout of [hmrc-component-library-template](https://github.com/hmrc/component-library-template/), relative to the assets-frontend's `package.json`
-
-The watch task then automatically links this local copy [hmrc/component-library-template](https://github.com/hmrc/component-library-template.git) and then builds the Component Library using the [npm script above](#manually-building-the-component-library).
-
-### Updating the Component Library Template dependency
-
-If you wish to update the component library in assets frontend because there have been changes in the component
-library template.
+Once it has, you just need to set an environment variable before running your frontend:
 
 ```
-$ rm -rf node_modules/hmrc-component-library-template
-$ npm install hmrc/component-library-template
+$ ASSETS_FRONTEND_VERSION=999-SNAPSHOT sbt run
 ```
 
-or
-
-```
-$ npm install --force hmrc/component-library-template
-```
-
-## Visual Regression Testing
-Provides a tool to visually compare Component Library changes from Assets Frontend.
-
-### Usage
-
-To get a base reference for your visual regression tests please save any work on your development branch, checkout your master branch and capture the baseline component screen shots via:
-
-```
-$ npm run vrt:baseline
-```
-
-To compare your changes please checkout the branch with your changes on then run the comparision tests.
-```
-$ npm run vrt:compare
-```
-
-Your results will be output to `vrt-output/report`
+If you’re using [service-manager](https://github.com/hmrc/service-manager), please read the [service manager guidance in the Wiki](https://github.com/hmrc/assets-frontend/wiki/Using-service-manager).
 
 
-## Contributing
+# Using assets in production
 
-Please take a few minutes to review the process and guidelines before you submit your request, otherwise it may be rejected.
-[CONTRIBUTING.md](CONTRIBUTING.md)
+Running `npm run build` calls the [build gulp task](https://github.com/hmrc/assets-frontend/blob/master/gulpfile.js/tasks/build.js) and this happens on our internal Jenkins instances.
 
-## More info
+The final step of our internal release pipeline is to version and deploy the compiled assets to https://www.tax.service.gov.uk/assets/VERSION/.
 
-Check out [the wiki](https://github.com/hmrc/assets-frontend/wiki)
+Releasing assets for use in production is currently a manual process which is owned by the [Service Design Tools](https://github.com/orgs/hmrc/teams/service-design-tools) team.
+
+If you’d like a new version of assets-frontend released, please get in touch with us in the [#team-sdt](https://hmrcdigital.slack.com/messages/C39V3PH38) Slack channel.
 
 
-## License
+# HMRC Design System
+
+The [HMRC Design System can be viewed here](http://hmrc.github.io/assets-frontend/).
+
+For detailed information on how the HMRC Design System works, please read the [Design System page in the Wiki](https://github.com/hmrc/assets-frontend/wiki/HMRC-Design-System).
+
+
+# Component Library - [DEPRECATED]
+
+:rotating_light: **The Component Library has been deprecated in favour of the [HMRC Design System](http://hmrc.github.io/assets-frontend/).**:rotating_light:
+
+If your service relies on a component or pattern that doesn’t appear in the HMRC Design System then please follow the [Design System contribution guidelines](https://github.com/hmrc/assets-frontend/wiki/HMRC-Design-System#contributing-a-design-pattern).
+
+For detailed information on how the Component Library works, please read the [Component Library guidance in the Wiki](https://github.com/hmrc/assets-frontend/wiki/Component-Library-%5BDEPRECATED%5D).
+
+
+# Contributing
+
+## Design Patterns
+
+For details on how to contribute Design Patterns, please take a few minutes to review our [Design Pattern standards and contribution process](https://github.com/hmrc/assets-frontend/wiki/HMRC-Design-System#contributing-a-design-pattern) before you submit your request, otherwise it may be rejected.
+
+## Features and issues
+
+If you’ve spotted an issue or thought of a feature that you’d like to contribute to assets-frontend, please take a few minutes to review our [contribution process and guidelines for Assets Frontend](CONTRIBUTING.md) before you submit your request, otherwise it may be rejected.
+
+
+# License
 
 This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html").

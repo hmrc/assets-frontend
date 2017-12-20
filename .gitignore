@@ -14,7 +14,7 @@ test_results/
 test_coverage/
 assets/public/
 target/
-component-library/
+/component-library/
 design-pattern-library/
 !gulpfile.js/util/component-library/
 vrt-output/

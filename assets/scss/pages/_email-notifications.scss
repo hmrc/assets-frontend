@@ -14,8 +14,7 @@
   @include bold-48();
 }
 
-// NOTE: specifying p element is needed to override ".content__body p"
-p.email-notifications__p {
+.email-notifications__p {
   padding: 17px 0 8px 0;
 }
 

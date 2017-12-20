@@ -27,6 +27,8 @@ module.exports = function (config) {
       })
       .pipe(writeConfig)
       .on('error', function () {
+        // calls end() on writeConfig so that tests on Windows finish correctly
+        writeConfig.end()
         reject(new Error('Bad data in template config'))
       })
       .on('finish', function () {

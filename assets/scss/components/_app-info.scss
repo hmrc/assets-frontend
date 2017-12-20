@@ -81,7 +81,7 @@ Styleguide App Info.Approved
 .app-info__info {
   @extend .faded-text;
   @include core-16;
-  margin-top: em(5) !important; // needed to override .content__body p
+  margin-top: em(5);
 }
 
 /*

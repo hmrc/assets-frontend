@@ -35,20 +35,15 @@ body {
   text-align: left;
 }
 
-#content {
-  @include page-slice(32);
-}
+// #content {
+//   @include page-slice(32);
+// }
 
 .centered-content {
   @include page-slice();
 }
 
 .content__body {
-
-  p {
-    @include core-19();
-    margin: em(12) 0;
-  }
 
   .full-width & {
     float: none;

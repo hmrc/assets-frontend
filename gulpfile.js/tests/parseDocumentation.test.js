@@ -17,7 +17,6 @@ test('parseDocumentation - returns rendered markdown', function (t) {
   ]
 
   files = parseDocumentation(files)
-  console.log('files[0].contents.toString()', files[0].contents.toString())
 
   t.ok(
     files[0].contents.toString().includes('<h1 id="test-component">Test component</h1>'),

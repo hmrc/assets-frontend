@@ -1,72 +1,55 @@
 # Header
 
-<div class="alert alert--info">
-  <p class="alert__message">This component is work in progress.</p>
-  <p class="alert__message">You can use it in your service but you should [contribute research](https://github.com/hmrc/design-patterns/issues/4).</p>
-</div>
-  
+{{ wip(4) }}
 
-The HMRC header is a variant of the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) all elements that are imported from the GOV.UK header should be consistent and should not be changed.
+The HMRC header is the same as the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) but includes the HMRC logo. All elements that are imported from the GOV.UK header must not be changed.
 
 {{ example('header.html', true) }}
 
-## When to use the HMRC Header
+## When to use the HMRC header
 
 Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer).
 
 Only use the HMRC header if there is a user need for people to know they are dealing with HMRC.
 
-If your service is going to be within the Personal tax account you should use the [Account header](/components/accopunt-header/index.html).
+If your service is in the personal tax account, use the [Account header](/components/account-header/index.html).
 
-## How the HMRC Header works
+## How the HMRC header works
 
-The HMRC header has two states:
+There are 2 versions of the header. Both versions must contain:
 
--  [signed out](#signed-out-state)
--  [signed in](#signed-in-state)
+- [the HMRC cookie banner](#the-hmrc-cookie-banner)
+- [the GOV.UK header](#the-gov.uk-header)
+- [a phase banner](#phase-banner) unless the service is live
+- [HMRC logo](#hmrc-logo)
+- [the language selector](#language-selector) if your service is avalible in Welsh
 
-### Signed out state
+### Version 1: When someone is signed out
 
-Use this:
+Use this version:
 
-- in services that do not require people to sign in
-- when a user is signed out
-- when it's important to people that they know they are using an HMRC service
+- in services people do not have to sign in to
+- before a user signs in
+- when a user has signed out
 
 {{ example('header.html', true) }}
 
-This version of the header should contain:
-
-- [the HMRC cookie banner](#the-hmrc-cookie-banner)
-- [the GOV.UK header](#the-gov.uk-header)
-- [a phase banner](#phase-banner) unless the service is live
-- [HMRC logo](#hmrc-logo)
-- [the language selector](#language-selector) if your service is avalible in Welsh
-
-#### Markup 
+#### Markup
 
 {{ markup('header.html') }}
 
-### Signed in state
+### Version 2: When someone is signed in
 
-Use this:
-
-- when it's important to people that they know they are using an HMRC service
-- when people are signed in
+Use this version when people are signed in to a service.
 
 {{ example('header--signed-in.html', true) }}
 
-This version of the header should contain:
+This version of the header must also contain:
 
-- [the HMRC cookie banner](#the-hmrc-cookie-banner)
-- [the GOV.UK header](#the-gov.uk-header)
 - [a sign out link](#sign-out-link)
-- [a phase banner](#phase-banner) unless the service is live
-- [HMRC logo](#hmrc-logo)
-- [last logged in status](#last-logged-in-status)
-- [the language selector](#language-selector) if your service is avalible in Welsh
+- [last signed in status](#last-signed-in-status)
 
-#### Markup 
+#### Markup
 
 {{ markup('header--signed-in.html') }}
 
@@ -74,64 +57,56 @@ This version of the header should contain:
 
 #### The HMRC cookie banner
 
-The link to the cookie policy should go to the [HMRC cookie policy](https://www.tax.service.gov.uk/help/cookies) page. You should add information on service-specific cookie information to that page.
+Link to [HMRC cookie policy](https://www.tax.service.gov.uk/help/cookies). Add service-specific cookie information to the cookie policy page.
 
-The cookie banner is displayed the first time a person visits GOV.UK. It's not shown on subsequent pages unless the cookies change. When people move to an HMRC service the HMRC cookie banner will be displayed again. 
-
-Most people will access HMRC transactional services via a GOV.UK start page. They will be displayed the cookie banner twice. This is not ideal as people will not understand they are moving from one site to another. 
+Because most people get to HMRC services through GOV.UK, they may see GOV.UK’s cookie banner and HMRC’s. Both banners look the same but link to different policies. Both banners are shown once a month or if the cookies change.
 
 #### The GOV.UK header
 
-The GOV.UK header should be used without changing anything.
+The GOV.UK header must used without changing anything.
 
 #### Sign out link
 
-Only used if people are signed in.
+Only use if people are signed in.
 
 #### Phase banner
 
 The phase banner comes from GOV.UK.
 
-The feedback link in the phase banner should point to [https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name](https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated). Your service name should be appended to the URL so feedback can be directed back to your service team.
+The feedback link in the phase banner is [https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name](https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated). Append your service name to the URL so feedback can be directed back to your team.
 
 #### HMRC logo
 
-The HMRC logo is included for services where there is a user need to reassure people that they are using an HMRC service.
+The HMRC logo is only where there is a user need to reassure people that they are dealing with HMRC.
 
-For example, when they are making a payment and need to be sure that the money is going to the right government department.
+For example, if they are making a payment and need to be sure that the money is going to the right government department.
 
 More user research is needed to prove that the HMRC logo reassures people and meets this need.
 
-#### Last logged in status
+#### Last signed in status
 
-The last logged in status tells people the time and date that they signed in.
+The last signed in status tells people the time and date they last signed in.
 
-At the moment it's not possible to present names across all HMRC services in a consistent way which may cause people confusion. We stopped using peoples names in September 2016.
+At the moment, it is not possible to present people’s names consistently across services. We stopped using names in September 2016.
 
-More research is needed to understand if displaying a persons name is important.
+More research is needed to understand if displaying a person’s name is important.
 
 #### Language selector
 
-Should be used if the service or page has been translated into another language. 
+Use if the service or page is available in another language. 
 
-Welsh is the only language we support at the moment. We call this the Language selector because we don't know if it will be used for other languages in the future. 
+Welsh is the only language we currently support. We do not know if it will be used for other languages. 
 
-The Language selector is sometimes referred to as the Welsh toggle.
+The language selector is sometimes called the Welsh toggle.
 
 ## Research on this component 
 
 We need more user research on the header. 
 
-We want to know:
+We want to know if:
 
-- if people are reassured when they seeing the HMRC logo
-- if the last signed in date in the signed in version is necessary
-- if showing a persons name reassures them 
+- people are reassured by the HMRC logo
+- the last signed in time and date is needed
+- displaying a person’s name reassures them 
 
 Contribute your research via this [GitHub issue](https://github.com/hmrc/design-patterns/issues/4).
-
-
-
-
-
-

@@ -4,11 +4,11 @@
 <div class="grid-row masthead">
   <div class="column-full column-constrained">
     <h1 class="hero__title">Design your service using GOV.UK styles, components and patterns</h1>
-    <p class="hero__description">Use this design system to make your service consistent with other services. Learn from the research and experience of other service teams and avoid repeating work that’s already been done.</p>
+    <p class="hero__description">Use this design system to make your service consistent with other HMRC services. Learn from the research and experience of other service teams and avoid repeating work that’s already been done.</p>
   </div>
 </div>
 
-<main id="design-system-content" class="technical-documentation markdown" data-module="anchored-headings">
+<main id="design-system-content" class="markdown" data-module="anchored-headings">
   <div class="grid-row">
     <div class="column-full">
       <section>
@@ -16,9 +16,19 @@
           <div class="column-full column-constrained">
             <div class="grid-row">
               <div class="column-one-third">
+                <h2 class="heading-large">Styles</h2>
+                <p>The core styles that will make your service look and feel like GOV.UK. This includes Colour, Typography and Layout.</p>
+                <p class="mt_20 mtb_20-m"><a href="styles">See all styles</a></p>
+              </div>
+              <div class="column-one-third">
                 <h2 class="heading-large">Components</h2>
                 <p>Re-usable parts of the user interface.</p>
                 <p class="mt_20 mtb_20-m"><a href="components">See all components</a></p>
+              </div>
+              <div class="column-one-third">
+                <h2 class="heading-large">Patterns</h2>
+                <p>Best practice design solutions for specific user-focused tasks and scenarios.</p>
+                <p class="mt_20 mtb_20-m"><a href="patterns">See all patterns</a></p>
               </div>
             </div>
           </div>

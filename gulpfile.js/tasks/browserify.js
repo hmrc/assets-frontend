@@ -20,6 +20,7 @@ var gutil = require('gulp-util')
 var rename = require('gulp-rename')
 var uglify = require('gulp-uglify')
 var gulpIf = require('gulp-if')
+var glob = require('globby')
 
 var browserifyTask = function (callback, devMode) {
   var env = global.runmode
@@ -76,6 +77,9 @@ var browserifyTask = function (callback, devMode) {
         }
       }
     }
+
+    // Add extra entry files
+    if (bundleConfig.add) b.add(glob.sync(bundleConfig.add))
 
     // Sort out shared dependencies.
     // b.require exposes modules externally
