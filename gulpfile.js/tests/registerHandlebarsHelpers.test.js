@@ -38,4 +38,5 @@ test('registerHandlebarsHelpers - accepts an optional hendlebars helpers directo
 
   registerHandlebarsHelpers([existentHelpersDirectory])
   t.equal(handlebarsSpy.callCount, 1, 'accepts helpers paths as an array')
+  handlebarsSpy.restore()
 })
