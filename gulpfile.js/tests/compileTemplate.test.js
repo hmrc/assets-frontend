@@ -39,5 +39,6 @@ test('compileTemplate - compiles a template at a given path', (t) => {
         handlebarsSpy.calledOnce,
         'returns the compiled template as a Promisified function'
       )
+      handlebarsSpy.restore()
     })
 })
