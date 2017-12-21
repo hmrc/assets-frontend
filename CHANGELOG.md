@@ -13,8 +13,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Calls `.restore()` on spied functions after they've been used to prevent `already wrapped` errors from crashing the `watch` task [#882](https://github.com/hmrc/assets-frontend/pull/882)
 
+### Changed
+- Removed check your answers from component navigation [#885](https://github.com/hmrc/assets-frontend/pull/885)
+
 ## [3.0.2] - 2017-12-19
-- Depricated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
+- Deprecated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
 
 ### Fixed
 - Allows assets-frontend to run in a Windows environment [#878](https://github.com/hmrc/assets-frontend/pull/878)
