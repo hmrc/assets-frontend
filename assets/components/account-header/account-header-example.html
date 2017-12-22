@@ -19,15 +19,7 @@
         <nav id="proposition-menu">
           <a href="#" id="proposition-name">Personal tax account</a>
           <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
-          <ul id="proposition-links" class="header__menu__proposition-links">
-
-            <li>
-              <span class="faded-text--small"><strong>English |</strong></span>
-              <a id="switchToWelsh" lang="cy" href="/personal-account/lang/cyGb?redirectUrl&#61;%2Fpersonal-account" data-journey-click="link - click:lang-select:Cymraeg"><small><strong>Cymraeg</strong></small></a>
-            </li>
-
-
-          </ul>
+          {% include "language-selector.html" %}
         </nav>
       </div>
     </div>
@@ -147,14 +139,4 @@
     </ul>
   </nav>
 <!-- END ACCOUNT MENU -->
-
-  <!-- LANGUAGE TOGGLE -->
-  <!--<div class="lang-select">-->
-    <!--<ul>-->
-      <!--<li>English</li>-->
-      <!--<li>|</li>-->
-      <!--<li><a href="#">Cymraeg</a></li>-->
-    <!--</ul>-->
-  <!--</div>-->
-  <!-- END LANGUAGE TOGGLE -->
 </main>
