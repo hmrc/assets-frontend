@@ -1316,7 +1316,8 @@ dl.meta-data-bottom {
       padding: 15px; } }
   .callout h2 {
     margin-top: 0 !important;
-    padding-top: 0; }
+    padding-top: 0;
+    max-width: 35em; }
     @media (max-width: 767px) {
       .callout h2.heading-medium {
         padding-top: 15px; } }
@@ -1324,7 +1325,8 @@ dl.meta-data-bottom {
     margin-top: 60px;
     margin-bottom: 0; }
   .callout p {
-    font-size: 19px; }
+    font-size: 19px;
+    max-width: 36em; }
   .callout ul {
     margin-bottom: 30px; }
   .callout a {

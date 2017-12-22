@@ -302,6 +302,7 @@ dl.meta-data-bottom {
   h2 {
     margin-top: 0 !important;
     padding-top: 0;
+    max-width: 35em;    
     &.heading-medium {
       @include media(mobile) {
         padding-top: $gutter-half;
@@ -315,6 +316,7 @@ dl.meta-data-bottom {
 
   p {
     font-size: 19px;
+    max-width: 36em;
   }
 
   ul {
