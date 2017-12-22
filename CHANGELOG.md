@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - All style sections now link to the corresponding GOV.UK Elements style section [#883](https://github.com/hmrc/assets-frontend/pull/883)
 
+- Session Timeout Modal [#889](https://github.com/hmrc/assets-frontend/pull/889)
+
 ### Fixed
 - Calls `.restore()` on spied functions after they've been used to prevent `already wrapped` errors from crashing the `watch` task [#882](https://github.com/hmrc/assets-frontend/pull/882)
 
