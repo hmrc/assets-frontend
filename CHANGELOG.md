@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Calls `.restore()` on spied functions after they've been used to prevent `already wrapped` errors from crashing the `watch` task [#882](https://github.com/hmrc/assets-frontend/pull/882)
 
 ### Changed
+- Content of work in progress macro and added new research macro [#888](https://github.com/hmrc/assets-frontend/pull/888)
+
 - Removed check your answers from component navigation [#885](https://github.com/hmrc/assets-frontend/pull/885)
 
 ## [3.0.2] - 2017-12-19
