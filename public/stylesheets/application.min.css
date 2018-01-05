@@ -15545,4 +15545,22 @@ p.subnav__section__heading {
   margin-left: 7.5px;
 }
 
+/* line 1, assets/components/badge/badge.scss */
+.badge {
+  position: relative;
+  display: inline-block;
+  top: -10px;
+  left: -6px;
+  min-width: 19px;
+  padding: 3px 6px 2px 6px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  background: #B10E1E;
+  color: #FFF;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 10px;
+}
+
 /*# sourceMappingURL=maps/application.min.css.map */
