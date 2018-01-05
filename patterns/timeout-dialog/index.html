@@ -120,17 +120,19 @@
             </div>
             -->
 
-            <h1 id="500-pages">500 Pages</h1>
+            <h1 id="timeout-dialog">Timeout Dialog</h1>
   <div class="panel panel-border-wide">
-    <p>This is a work in progress – <a href="https://github.com/hmrc/design-patterns/issues/105">view more information on GitHub</a>.</p>
+    <p>This is a work in progress – <a href="https://github.com/hmrc/design-patterns/issues/89">view more information on GitHub</a>.</p>
   </div>
 
 
-<p>500 pages are used to tell users that we [HMRC] have a problem that was not their fault.</p>
+<p>For anyone that takes longer to complete information on a digital form, or would need to step away from the computer to find any required information, after 15 minutes of being on the same page their session would expire and they would be signed out of the service. They are redirected to a information page telling them they have been signed out and can sign in again. Up until that point any form entries on the previous page are lost.</p>
+<p>To address this issue a session timeout warning has been included in the P800 Tax Calculation service. A modal popup appears after 13 minutes warning the user that their session is about to end and gives them 2 minutes to extend the session by another 15 minutes, otherwise they are automatically signed out and redirected to an information page. By extending their session all the information input into the current form is retained and they can continue using the service from that point.</p>
+<h4 id="example-timeout-dialog-interactive-example">Example timeout dialog interactive example</h4>
 <div class="example">
   <div class="scale-wrapper">
     <div class="scale"><!-- COOKIE MESSAGE -->
-<div id="global-cookie-message" style="display: block;">
+<div id="global-cookie-message">
   <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
     cookies</a></p>
 </div>
@@ -157,7 +159,7 @@
 <div id="global-header-bar"></div>
 <!-- END GOV.UK HEADER -->
 
-<main id="content" role="main">
+<main id="content">
   <!-- PHASE BANNER -->
   <div class="phase-banner">
     <p>
@@ -166,62 +168,81 @@
     </p>
   </div>
   <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-    <div class="grid-row">
-        <div class="column-two-thirds">
-            <h1 class="heading-large">We are experiencing technical problems</h1>
-            <p>Something has gone wrong with this service. It wasn&#39;t your fault.</p>
-            <p>Please try again in a few moments.</p>
+
+  <!-- PAGE CONTENT-->
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form method="post" action="refund-and-bank-address-edit" >
+        <h1 class="heading-large">Enter your full name</h1>
+        <div class="form-group">
+          <label class="form-label visuallyhidden" for="full-name-f1">Enter your full name</label>
+          <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
         </div>
+        <button type="submit" class="button">Continue</button>
+      </form>
+      <br>
+      <!-- Back button -->
+      <a href="javascript:window.history.back();" class="link-back">Back</a>
     </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
+  </div>
+
+  <!-- END PAGE CONTENT-->
+<p></main>
+<!-- FOOTER   --></p>
+<p><footer class="group js-footer" id="footer" role="contentinfo">
   <div class="footer-wrapper">
     <div class="footer-meta">
       <div class="footer-meta-inner">
+        <!-- PLATFORM HELP LINKS -->
         <ul class="platform-help-links">
           <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
           <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
           <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
           <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
         </ul>
+        <!-- END PLATFORM HELP LINKS -->
+        <!-- OPEN GOVERNMENT LICENCE -->
         <div class="open-government-licence">
           <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
           <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
         </div>
+        <!-- END OPEN GOVERNMENT LICENCE -->
       </div>
+      <!-- COPYRIGHT -->
       <div class="copyright">
         <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
       </div>
+      <!-- END COPYRIGHT -->
     </div>
   </div>
-</footer>
-<!-- END FOOTER --></div>
+</footer></p>
+<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex="-1" aria-live="polite">
+  <h1 class="heading-medium push--top">You’re about to be signed out</h1>
+  <p id="timeout-message" role="text">For security reasons, you will be signed out of this service in <span id="timeout-countdown" class="countdown">2 minutes</span>.</p>
+  <button id="timeout-keep-signin-btn" class="button">Stay signed in</button>
+  <button id="timeout-sign-out-btn" class="button button--link">Sign out</button>
+</div>
+<div id="timeout-overlay" class="timeout-overlay"></div>
+</div>
   </div>
 </div>
 
 
 
-<h2 id="when-to-use-a-500-page">When to use a 500 page</h2>
-<p>They cover a range of situations when something has gone wrong with the server.</p>
-<p>500 errors should be logged by services and fixed as a matter of priority.</p>
-<p>500 errors should only be displayed to people for a short time. The standard approach within HMRC is to <a href="shutter-pages/index.html">shutter</a> a service, if there is going to be a disruption to users for an extended period of time.</p>
-<p>There are a number of <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_error">standard pages</a> that fall into the category of 500 pages. We do not need different error pages to cover all of these situations.</p>
-<h2 id="how-500-pages-work">How 500 pages work</h2>
-<p>When displaying a 500 page you should:</p>
-<ul>
-<li>use the standard template</li>
-<li>explain to users whats going on</li>
-<li>tell users what they can do, if anything to resolve the issue.</li>
-<li>If there is an alternative channel that they can use to continue their transaction this should be made available to them.</li>
-</ul>
-<h3 id="example-500-page-when-there-is-an-alternative-channel">Example 500 page when there is an alternative channel</h3>
+<h4 id="example-options">Example options</h4>
+<pre><code>$.timeoutDialog({
+  timeout: 900,
+  countdown: 120,
+  keep_alive_url: &#39;/keep-alive&#39;,
+  logout_url: &#39;/sign-out&#39;,
+  keep_alive_button_text: &#39;Get another 15 minutes&#39;,
+  sign_out_button_text: &#39;Sign out&#39;
+});
+</code></pre><h4 id="example-signed-out-page">Example signed out page</h4>
 <div class="example">
   <div class="scale-wrapper">
     <div class="scale"><!-- COOKIE MESSAGE -->
-<div id="global-cookie-message" style="display: block;">
+<div id="global-cookie-message">
   <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
     cookies</a></p>
 </div>
@@ -248,7 +269,7 @@
 <div id="global-header-bar"></div>
 <!-- END GOV.UK HEADER -->
 
-<main id="content" role="main">
+<main id="content">
   <!-- PHASE BANNER -->
   <div class="phase-banner">
     <p>
@@ -257,53 +278,54 @@
     </p>
   </div>
   <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-    <div class="grid-row">
-        <div class="column-two-thirds">
-            <h1 class="heading-large">We are experiencing technical problems</h1>
-            <p>Something has gone wrong with this service. It wasn&#39;t your fault.</p>
-            <p>If you&#39;d like to continue your transaction offline you can contact us on Telephone: 03000 555 995</p>
-      <p>Opening times: 8:30am to 4:30pm, Monday to Friday</p>
-        </div>
+
+  <!-- PAGE CONTENT-->
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">You’ve been signed out</h1>
+      <p class="lede">You haven’t done anything for 15 minutes, so we’ve signed you out to keep your account secure.</p>
+      <p>Please sign in again.</p>
+      <p><a class="button">Sign in</a></p>
     </div>
-  <!-- END PAGE CONTENT -->
+  </div>
+  <!-- END PAGE CONTENT-->
 </main>
+
 <!-- FOOTER   -->
 <footer class="group js-footer" id="footer" role="contentinfo">
   <div class="footer-wrapper">
     <div class="footer-meta">
       <div class="footer-meta-inner">
+        <!-- PLATFORM HELP LINKS -->
         <ul class="platform-help-links">
           <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
           <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
           <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
           <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
         </ul>
+        <!-- END PLATFORM HELP LINKS -->
+
+        <!-- OPEN GOVERNMENT LICENCE -->
         <div class="open-government-licence">
           <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
           <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
         </div>
+        <!-- END OPEN GOVERNMENT LICENCE -->
       </div>
+      <!-- COPYRIGHT -->
       <div class="copyright">
         <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
       </div>
+      <!-- END COPYRIGHT -->
     </div>
   </div>
 </footer>
-<!-- END FOOTER --></div>
+<!-- END FOOTER -->
+</div>
   </div>
 </div>
 
 
-
-<h2 id="research-on-500-pages">Research on 500 pages</h2>
-<p>We need more user research on 500 Pages. </p>
-<p>We want to know:</p>
-<ul>
-<li>if people understand what is going on</li>
-<li>what peoples expectations are having seen a 500 page</li>
-</ul>
-<p>Contribute your research via this <a href="https://github.com/hmrc/design-patterns/issues/105">GitHub issue</a>.</p>
 
 
             <!--

@@ -13670,6 +13670,76 @@ p.subnav__section__heading {
   margin-left: 7.5px;
 }
 
+/* Timeout Modal */
+@media (max-width: 640px) {
+  /* line 4, assets/components/timeout-dialog/_timeout-dialog.scss */
+  .timeout-dialog {
+    width: 280px !important;
+  }
+}
+
+/* line 9, assets/components/timeout-dialog/_timeout-dialog.scss */
+.timeout-overlay {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=80);
+  -khtml-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* line 23, assets/components/timeout-dialog/_timeout-dialog.scss */
+html.noScroll {
+  overflow: hidden;
+}
+
+/* line 27, assets/components/timeout-dialog/_timeout-dialog.scss */
+.timeout-dialog {
+  z-index: 1002;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 435px;
+  padding: 30px;
+  border: 5px solid black;
+  background-color: #fff;
+}
+
+/* line 40, assets/components/timeout-dialog/_timeout-dialog.scss */
+.timeout-dialog p {
+  font-size: 19px;
+  line-height: 1.31579;
+}
+
+/* line 45, assets/components/timeout-dialog/_timeout-dialog.scss */
+.timeout-dialog .countdown {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+/* line 51, assets/components/timeout-dialog/_timeout-dialog.scss */
+.timeout-dialog .button {
+  margin-bottom: 1em;
+  font-size: 19px;
+}
+
+/* line 56, assets/components/timeout-dialog/_timeout-dialog.scss */
+.timeout-dialog .button.button--link {
+  margin: 0;
+  padding: .526315em .789473em .263157em;
+}
+
 /* line 1, assets/components/badge/badge.scss */
 .badge {
   position: relative;
