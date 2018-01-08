@@ -7,11 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- All style sections now link to the corresponding GOV.UK Elements style section [#883](https://github.com/hmrc/assets-frontend/pull/883)
+- Session Timeout Modal [#889](https://github.com/hmrc/assets-frontend/pull/889)
+- New badge component [#886](https://github.com/hmrc/assets-frontend/pull/886)
+
 ### Fixed
 - Calls `.restore()` on spied functions after they've been used to prevent `already wrapped` errors from crashing the `watch` task [#882](https://github.com/hmrc/assets-frontend/pull/882)
 
+### Changed
+- Content of work in progress macro and added new research macro [#888](https://github.com/hmrc/assets-frontend/pull/888)
+
+- Removed check your answers from component navigation [#885](https://github.com/hmrc/assets-frontend/pull/885)
+
 ## [3.0.2] - 2017-12-19
-- Depricated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
+- Deprecated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
 
 ### Fixed
 - Allows assets-frontend to run in a Windows environment [#878](https://github.com/hmrc/assets-frontend/pull/878)

@@ -1,0 +1,61 @@
+/* Timeout Modal */
+
+@media (max-width: 640px){
+  .timeout-dialog {
+    width: 280px !important;
+  }
+}
+
+.timeout-overlay {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=80);
+  -khtml-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+html.noScroll {
+  overflow: hidden;
+}
+
+.timeout-dialog {
+  z-index: 1002;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 435px;
+  padding: 30px;
+  border: 5px solid black;
+  background-color: #fff;
+
+  p {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+
+  .countdown {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: 700;
+  }
+
+  .button{
+    margin-bottom: 1em;
+    font-size: 19px;
+  }
+
+  .button.button--link{
+    margin: 0;
+    padding: .526315em .789473em .263157em;
+  }
+
+}
