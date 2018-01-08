@@ -6,7 +6,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-
 ### Added
 - All style sections now link to the corresponding GOV.UK Elements style section [#883](https://github.com/hmrc/assets-frontend/pull/883)
 - Session Timeout Modal [#889](https://github.com/hmrc/assets-frontend/pull/889)
@@ -17,22 +16,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Content of work in progress macro and added new research macro [#888](https://github.com/hmrc/assets-frontend/pull/888)
-
+- Include language selector as a partial in other components [#887](https://github.com/hmrc/assets-frontend/pull/887)
 - Removed check your answers from component navigation [#885](https://github.com/hmrc/assets-frontend/pull/885)
 
 ## [3.0.2] - 2017-12-19
+### Deprecated
 - Deprecated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
 
 ### Fixed
 - Allows assets-frontend to run in a Windows environment [#878](https://github.com/hmrc/assets-frontend/pull/878)
-
-### Fixed
 - Fix style for logged in status logo [#872](https://github.com/hmrc/assets-frontend/pull/872)
 - Fix header logo reference in header and account-header components [#874](https://github.com/hmrc/assets-frontend/pull/874)
 - Move header component stylesheet import to all-components [#875](https://github.com/hmrc/assets-frontend/pull/875)
 - Include JavaScript from GOV.UK frontend toolkit [#880](https://github.com/hmrc/assets-frontend/pull/880)
 
-## [3.0.1]
+## [3.0.1] - 2017-11-30
+### Removed
 - Remove the `.content__body p` selector as it is too specific and overriding other changes in V3
 - Remove changes that had previously been put in place to add specificity to other classes to counteract the effect of `.content__body p`
 
