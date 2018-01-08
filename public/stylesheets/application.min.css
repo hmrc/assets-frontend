@@ -15545,6 +15545,73 @@ p.subnav__section__heading {
   margin-left: 7.5px;
 }
 
+/* line 1, assets/components/language-selector/_language-selector.scss */
+.lang-select {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 641px) {
+  /* line 1, assets/components/language-selector/_language-selector.scss */
+  .lang-select {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 800px) {
+  /* line 1, assets/components/language-selector/_language-selector.scss */
+  .lang-select {
+    width: 100%;
+  }
+}
+
+/* line 12, assets/components/language-selector/_language-selector.scss */
+.lang-select li {
+  display: inline;
+  margin-left: 7.5px;
+}
+
+/* line 17, assets/components/language-selector/_language-selector.scss */
+.lang-select a, .lang-select .link-style, .lang-select .button--link-style {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  text-decoration: none;
+}
+
+@media (min-width: 641px) {
+  /* line 17, assets/components/language-selector/_language-selector.scss */
+  .lang-select a, .lang-select .link-style, .lang-select .button--link-style {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 21, assets/components/language-selector/_language-selector.scss */
+.lang-select a:hover, .lang-select .link-style:hover, .lang-select .button--link-style:hover, .lang-select a:focus, .lang-select .link-style:focus, .lang-select .button--link-style:focus, .lang-select a:active, .lang-select .link-style:active, .lang-select .button--link-style:active {
+  text-decoration: underline;
+}
+
+/* line 34, assets/components/language-selector/_language-selector.scss */
+#proposition-menu .lang-select {
+  padding-right: 0.78947em;
+}
+
+/* line 37, assets/components/language-selector/_language-selector.scss */
+#proposition-menu .lang-select a, #proposition-menu .lang-select .link-style, #proposition-menu .lang-select .button--link-style {
+  color: #fff;
+}
+
 /* Timeout Modal */
 @media (max-width: 640px) {
   /* line 4, assets/components/timeout-dialog/_timeout-dialog.scss */
