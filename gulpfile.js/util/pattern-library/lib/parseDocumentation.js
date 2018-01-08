@@ -1,12 +1,14 @@
 var path = require('path')
 var marked = require('marked')
 var nunjucks = require('nunjucks')
+var config = require('../../../config')
 
 var parseDocumentation = function (files) {
   files.forEach(function (file) {
     nunjucks.configure([
       path.join(__dirname, '..', 'macros'),
-      path.parse(file.path).dir
+      path.parse(file.path).dir,
+      config.patternLibrary.sourceBaseDir
     ])
 
     var fileContents = [

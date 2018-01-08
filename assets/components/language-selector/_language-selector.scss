@@ -1,0 +1,41 @@
+.lang-select {
+  @include bold-16;
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  @include media-down(tablet) {
+    width: 100%;
+  }
+
+  li {
+    display: inline;
+    margin-left: $gutter-one-quarter;
+  }
+
+  a {
+    @include bold-16;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    @extend .list--inline;
+  }
+}
+
+#proposition-menu {
+  .lang-select {
+    padding-right: em(15);
+
+    a {
+      color: $white;
+    }
+  }
+}
