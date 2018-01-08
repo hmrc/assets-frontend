@@ -1,23 +1,21 @@
+var fs = require('fs')
 var path = require('path')
 var marked = require('marked')
 var nunjucks = require('nunjucks')
+var config = require('../../../config')
 
 var parseDocumentation = function (files) {
+  var macros = fs.readdirSync(config.patternLibrary.macrosPath)
+    .map(fileName => `{% from '${fileName}' import '${path.parse(fileName).name}' %}`)
+    .join('')
+
   files.forEach(function (file) {
     nunjucks.configure([
-      path.join(__dirname, '..', 'macros'),
+      config.patternLibrary.macrosPath,
       path.parse(file.path).dir
     ])
 
-    var fileContents = [
-      `{% from 'example.html' import example %}`,
-      `{% from 'markup.html' import markup %}`,
-      `{% from 'wip.html' import wip %}`,
-      `{% from 'research.html' import research %}`,
-      `{% from 'deprecated.html' import deprecated %}`,
-      file.contents.toString()
-    ].join('\n')
-
+    var fileContents = macros + file.contents.toString()
     var markdown = nunjucks.renderString(fileContents)
     var html = marked(markdown)
 
