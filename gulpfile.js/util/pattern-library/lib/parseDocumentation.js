@@ -12,7 +12,8 @@ var parseDocumentation = function (files) {
   files.forEach(function (file) {
     nunjucks.configure([
       config.patternLibrary.macrosPath,
-      path.parse(file.path).dir
+      path.parse(file.path).dir,
+      config.patternLibrary.sourceBaseDir
     ])
 
     var fileContents = macros + file.contents.toString()
