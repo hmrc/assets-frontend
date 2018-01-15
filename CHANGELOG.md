@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Updated badge content for design system and added second code example [#894](https://github.com/hmrc/assets-frontend/pull/894)
 
+- Updated the ‘pattern-library’ task so macro refs are dynamic in the gulp task [#890](https://github.com/hmrc/assets-frontend/pull/890)
+
 - Content of work in progress macro and added new research macro [#888](https://github.com/hmrc/assets-frontend/pull/888)
 
 - Removed check your answers from component navigation [#885](https://github.com/hmrc/assets-frontend/pull/885)
