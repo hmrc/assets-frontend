@@ -8,11 +8,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Build a version without deprecated components [#873](https://github.com/hmrc/assets-frontend/pull/873)
+- All style sections now link to the corresponding GOV.UK Elements style section [#883](https://github.com/hmrc/assets-frontend/pull/883)
+- Session Timeout Modal [#889](https://github.com/hmrc/assets-frontend/pull/889)
+- New badge component [#886](https://github.com/hmrc/assets-frontend/pull/886)
 
 ### Fixed
 - Calls `.restore()` on spied functions after they've been used to prevent `already wrapped` errors from crashing the `watch` task [#882](https://github.com/hmrc/assets-frontend/pull/882)
+- Nunjucks config needed path to components - [892](https://github.com/hmrc/assets-frontend/issues/891)
+
+### Changed
+- Updated badge README.md and added second markup example [#895](https://github.com/hmrc/assets-frontend/issues/895)
+- Updated the ‘pattern-library’ task so macro refs are dynamic in the gulp task [#890](https://github.com/hmrc/assets-frontend/pull/890)
+- Content of work in progress macro and added new research macro [#888](https://github.com/hmrc/assets-frontend/pull/888)
+- Include language selector as a partial in other components [#887](https://github.com/hmrc/assets-frontend/pull/887)
+- Removed check your answers from component navigation [#885](https://github.com/hmrc/assets-frontend/pull/885)
 
 ## [3.0.2] - 2017-12-19
+### Deprecated
+- Deprecated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
+
 ### Fixed
 - Allows assets-frontend to run in a Windows environment [#878](https://github.com/hmrc/assets-frontend/pull/878)
 - Fix style for logged in status logo [#872](https://github.com/hmrc/assets-frontend/pull/872)
@@ -20,10 +34,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Move header component stylesheet import to all-components [#875](https://github.com/hmrc/assets-frontend/pull/875)
 - Include JavaScript from GOV.UK frontend toolkit [#880](https://github.com/hmrc/assets-frontend/pull/880)
 
-### Changed
-- Depricated the HMRC character counter in favour of the GDS version [#897](https://github.com/hmrc/assets-frontend/pull/879)
-
 ## [3.0.1] - 2017-11-30
+### Removed
+- Remove the `.content__body p` selector as it is too specific and overriding other changes in V3
+- Remove changes that had previously been put in place to add specificity to other classes to counteract the effect of `.content__body p`
+
 ### Fixed
 - Remove the `.content__body p` selector as it is too specific and overriding other changes in V3
 - Remove changes that had previously been put in place to add specificity to other classes to counteract the effect of `.content__body p`

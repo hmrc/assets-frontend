@@ -165,7 +165,8 @@ module.exports = {
     dest: 'design-pattern-library',
     template: './node_modules/hmrc-component-library-template/design-system.html',
     homepage: 'design-system.md',
-    helpers: './node_modules/hmrc-component-library-template/helpers'
+    helpers: './node_modules/hmrc-component-library-template/helpers',
+    macrosPath: './gulpfile.js/util/pattern-library/macros'
   },
 
   vrt: {
