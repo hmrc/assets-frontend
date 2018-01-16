@@ -12,7 +12,16 @@ To address this issue a session timeout warning has been included in the P800 Ta
 
 #### Example options
 
-{{ markup('options.html') }}
+```
+$.timeoutDialog({
+  timeout: 900,
+  countdown: 120,
+  keep_alive_url: '/keep-alive',
+  logout_url: '/sign-out',
+  keep_alive_button_text: 'Get another 15 minutes',
+  sign_out_button_text: 'Sign out'
+});
+```
 
 #### Example signed out page
 
