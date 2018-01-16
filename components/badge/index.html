@@ -129,33 +129,33 @@
   </div>
 
 
-<p>Badges are numerical indicators of how many items are associated with a link.</p>
+<p>A badge shows a number.</p>
 <div class="example"><a href="#">Messages<span class="badge" aria-label="Number of x">36</span></a></div>
 
 
 
-<h2 id="when-to-use-this">When to use this</h2>
-<p>Use this component to notify users when there is a specific number of related items that may require their attention. The component should only be used with an associated link whereby the user can take an action to reduce the number of items requiring their attention.</p>
-<blockquote>
-<p>The accessibility requirements, markup and css for this component requires additional work and investigation.</p>
-</blockquote>
-<h3 id="when-not-to-use-this">When not to use this</h3>
-<p>The component is designed to draw the users attention so it should only be used with careful consideration. Unless a strong user need can be demonstrated, badges should not be implemented outside of primary navigation. </p>
-<p>Do not use this component where the user cannot take any action to reduce the badge counter.</p>
-<h2 id="how-it-works">How it works</h2>
-<pre><code class="lang-html">&lt;a href=&quot;#&quot;&gt;Messages&lt;span class=&quot;badge&quot; aria-label=&quot;You have 103 unread messages&quot;&gt;99+&lt;/span&gt;&lt;/a&gt;
-</code></pre>
-<p>This component should be used alongside a link, it will appear to the top right of the link.</p>
-<p>A counter value should be passed into the span as well as the aria-label. When the counter value is 0 the badge should not be visible and the aria-label should also reflect this.</p>
-<p>Although the badge will expand to display large numbers, it is recommended that a reasonable cap is agreed and implemented.</p>
-<p>For example, if an unread message count exceeds 99, display &quot;99+&quot;.</p>
-<h2 id="research-on-this">Research on this</h2>
-<p>This is a widely recognised component that is ubiquitous on both mobile and desktop interfaces.</p>
-<p>Whilst this component has not undergone specific internal usability testing a two key hypotheses have been tested as part of the wider <a href="components/account-header/index.html">Account header</a> pattern:</p>
+<h2 id="when-to-use-a-badge">When to use a badge</h2>
+<p>Use a badge to grab attention and show how many things something has and. Only use it with an action someone can do to change the number.</p>
+<h3 id="when-not-to-use-a-badge">When not to use a badge</h3>
+<p>Do not use a badge when:</p>
 <ul>
-<li>What the badge represents is correctly understood by users</li>
-<li>The badge does not interfere or distract users that are attempting to complete a task</li>
+<li>the number of things is 0</li>
+<li>there is no action</li>
 </ul>
+<p>Unless there is a strong user need, only use one as a part of navigation.</p>
+<h2 id="how-a-badge-works">How a badge works</h2>
+<p>A badge displays a number on the right-hand side of an action.</p>
+<p>If the number is more than 99, display “99+”.</p>
+<pre><code>&lt;a href=&quot;#&quot;&gt;Messages&lt;span class=&quot;badge&quot; aria-label=&quot;Number of x&quot;&gt;36&lt;/span&gt;&lt;/a&gt;
+</code></pre><p>If there are 0 things, do not show the badge.</p>
+<pre><code>&lt;a href=&quot;#&quot;&gt;Messages&lt;/a&gt;
+</code></pre><h2 id="research-on-badges">Research on badges</h2>
+<p>Badges are common on many sites and services. It has been tested as part of the <a href="components/account-header/index.html">Account header</a>. Research showed:</p>
+<ul>
+<li>people understand what it is for</li>
+<li>it does not distract people from their task</li>
+</ul>
+<p>More work is needed to make it accessible – <a href="https://github.com/hmrc/design-patterns/issues/142">add your research on GitHub</a>.</p>
 
 
             <!--
