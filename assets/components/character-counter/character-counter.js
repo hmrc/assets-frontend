@@ -15,6 +15,9 @@
  * In non-Chrome browsers, sometimes it will say 0 characters remaining but let you type one more.
  *
  */
+
+var $ = require('jquery')
+
 var counterContainer = '[data-char-counter]'
 var counterField = '[data-char-field]'
 var counterValue = '[data-counter]'

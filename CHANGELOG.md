@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- Build a version without deprecated components [#873](https://github.com/hmrc/assets-frontend/pull/873)
 - All style sections now link to the corresponding GOV.UK Elements style section [#883](https://github.com/hmrc/assets-frontend/pull/883)
 - Session Timeout Modal [#889](https://github.com/hmrc/assets-frontend/pull/889)
-- Session Timeout Modal unit tests
 - New badge component [#886](https://github.com/hmrc/assets-frontend/pull/886)
 
 ### Fixed
@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Nunjucks config needed path to components - [892](https://github.com/hmrc/assets-frontend/issues/891)
 
 ### Changed
-- UPdated badge README.md and added second markup example [#895](https://github.com/hmrc/assets-frontend/issues/895)
+- Updated badge README.md and added second markup example [#895](https://github.com/hmrc/assets-frontend/issues/895)
 - Updated the ‘pattern-library’ task so macro refs are dynamic in the gulp task [#890](https://github.com/hmrc/assets-frontend/pull/890)
 - Content of work in progress macro and added new research macro [#888](https://github.com/hmrc/assets-frontend/pull/888)
 - Include language selector as a partial in other components [#887](https://github.com/hmrc/assets-frontend/pull/887)
@@ -40,6 +40,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Remove changes that had previously been put in place to add specificity to other classes to counteract the effect of `.content__body p`
 
 ### Fixed
+- Remove the `.content__body p` selector as it is too specific and overriding other changes in V3
+- Remove changes that had previously been put in place to add specificity to other classes to counteract the effect of `.content__body p`
 - fixed comments on shutter page examples [#870](https://github.com/hmrc/assets-frontend/pull/870)
 
 ### Changed
@@ -65,7 +67,6 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Updated image paths
 - `govuk-template.js` moved to vendor directory
 - Root scss files have been moved and simplified
-
 
 ### Deprecated
 - The Component Library!
@@ -217,9 +218,9 @@ This entire version is covered by a single pull request. [#867](https://github.c
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...master 
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...master
 [3.0.2]: https://github.com/hmrc/assets-frontend/compare/release/3.0.1...release/3.0.2
-[3.0.1]: https://github.com/hmrc/assets-frontend/compare/release/3.0.0...release/3.0.1 
+[3.0.1]: https://github.com/hmrc/assets-frontend/compare/release/3.0.0...release/3.0.1
 [3.0.0]: https://github.com/hmrc/assets-frontend/compare/release/2.254.0...release/3.0.0
 [2.254.0]: https://github.com/hmrc/assets-frontend/compare/release/2.253.0...release/2.254.0
 [2.253.0]: https://github.com/hmrc/assets-frontend/compare/release/2.252.0...release/2.253.0

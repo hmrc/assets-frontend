@@ -20,13 +20,8 @@ module.exports = function (config) {
       'test/specs/*.js',
       'components/**/**.html',
       'components/**/**.test.js',
-      'public/999-SNAPSHOT/stylesheets/application.min.css'
+      'public/v3-SNAPSHOT/stylesheets/application.min.css'
     ],
-
-    preprocessors: {
-      'test/specs/*.js': ['browserify'],
-      'components/**/*.test.js': ['browserify']
-    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
@@ -41,6 +36,11 @@ module.exports = function (config) {
       debug: true
     },
 
+    preprocessors: {
+      'test/specs/*.js': ['browserify'],
+      'components/**/*.test.js': ['browserify']
+    },
+
     // web server port
     port: 9876,
 
@@ -52,7 +52,7 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
     // Start these browsers, currently available:
     // - Chrome
@@ -69,6 +69,6 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: true
   })
 }

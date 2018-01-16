@@ -1,30 +1,21 @@
 'use strict'
 
-var del = require('del')
-var path = require('path')
-var gulp = require('gulp')
-var exec = require('child_process').exec
-var config = require('../config')
-var compLibConfig = require('../../component-lib.json')
+const exec = require('child_process').exec
+const gulp = require('gulp')
+const runSequence = require('run-sequence')
 
-gulp.task('clean-comp-lib', function (cb) {
-  del(compLibConfig.destination, cb)
+gulp.task('kss', (done) => {
+  const genCompLib = './node_modules/.bin/kss-node --config component-lib.json'
+
+  exec(genCompLib, (err) => {
+    done(err)
+  })
 })
 
-gulp.task('component-library', ['clean-comp-lib', 'sass', 'images', 'browserify'], function (cb) {
-  var env = global.runmode
-  var genCompLib = path.join('.', 'node_modules', '.bin', 'kss-node') + ' --config component-lib.json'
-
-  exec(genCompLib, function (err, stout, sterr) {
-    var files = [
-      config.images[env].dest + '/**/*',
-      config.sass[env].dest + '**/*',
-      config.scripts[env].dest + '/**/*'
-    ]
-
-    gulp.src(files, { base: config[env].dest })
-        .pipe(gulp.dest(path.join(compLibConfig.destination, 'public')))
-
-    cb(err)
-  })
+gulp.task('component-library', ['clean:component-library'], (done) => {
+  runSequence(
+    ['kss', 'build:v3'],
+    'copy:component-library',
+    done
+  )
 })

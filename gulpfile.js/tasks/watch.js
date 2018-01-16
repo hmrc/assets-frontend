@@ -1,15 +1,10 @@
 'use strict'
 
-var gulp = require('gulp')
-var config = require('../config')
+const gulp = require('gulp')
+const config = require('../config')
 
-gulp.task('watch', ['server'], function (callback) {
-  gulp.watch(config.scripts.gulpTasks, ['lint:gulpTasks', 'test:gulpTasks'])
-
-  gulp.watch([
-    config.scripts.src,
-    config.scripts.entryPoint
-  ], ['component-library'])
+gulp.task('watch', () => {
+  gulp.watch(config.scripts.gulpTasks, ['test:gulpTasks'])
 
   gulp.watch(
     config.patternLibrary.src.map((dir) => `${dir}/**/*`),
@@ -17,6 +12,4 @@ gulp.task('watch', ['server'], function (callback) {
   )
 
   gulp.watch(config.test.src, ['test'])
-
-  gulp.watch(config.sass.src, ['component-library'])
 })

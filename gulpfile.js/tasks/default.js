@@ -1,14 +1,13 @@
 'use strict'
 
-var gulp = require('gulp')
-var runSequence = require('run-sequence')
+const gulp = require('gulp')
+const runSequence = require('run-sequence')
 
-gulp.task('default', ['clean'], function () {
+gulp.task('default', (done) => {
   runSequence(
-    ['lint:gulpTasks', 'sass', 'images', 'svg', 'concatEncryption', 'error-pages'],
-    'test',
-    'modernizr',
     'pattern-library',
-    'watch'
+    'server',
+    'watch',
+    done
   )
 })

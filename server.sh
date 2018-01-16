@@ -15,12 +15,8 @@ if [[ -n $1 ]]; then
   "dev") deps && output "Starting gulp in dev mode..."
     npm run dev
     ;;
-  "build") deps && output "Starting gulp build task..."
-    if [[ -n $2 ]]; then
-      npm run build $2
-    else
-      npm run build
-    fi
+  "release") deps && output "Starting gulp release task..."
+    npm run release
     ;;
   "test-dev")  deps && output "Auto watch tests..."
     npm run test:dev

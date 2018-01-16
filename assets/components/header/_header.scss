@@ -58,8 +58,8 @@
 .lang-select {
   float: right;
 
-  ul {
-    @extend .list--inline;
+  li {
+    display: inline;
   }
 }
 

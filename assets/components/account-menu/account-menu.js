@@ -14,6 +14,8 @@
 * 2. if a menu link with sub-nav (showSubnavLink) is open, close it when triggered
 **/
 
+var $ = require('jquery')
+
 var nav = $('.account-menu')
 var mainNav = $('.account-menu__main')
 var subNav = $('.subnav')

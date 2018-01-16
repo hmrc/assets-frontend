@@ -14,6 +14,7 @@
     "start": "npm run dev",
     "dev": "gulp",
     "build": "gulp build",
+    "release": "gulp release",
     "test": "gulp test",
     "test:dev": "karma start assets/test/config/karma.conf.js no-single-run",
     "test:gulp": "gulp lint:gulpTasks && gulp test:gulpTasks",
@@ -73,7 +74,6 @@
     "karma-script-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.31",
     "kss": "^2.4.0",
-    "lodash": "^3.5.0",
     "modernizr": "^3.0.0-alpha.4",
     "phantomjs-prebuilt": "^2.1.7",
     "pretty-hrtime": "^1.0.0",
@@ -104,7 +104,8 @@
     "govuk-template": "./assets/javascripts/vendor/govuk-template.js",
     "datatables": "./node_modules/datatables/media/js/jquery.dataTables.js",
     "base64": "./node_modules/js-base64/base64.js",
-    "json3": "./node_modules/json3/lib/json3.js"
+    "json3": "./node_modules/json3/lib/json3.js",
+    "javascripts": "./assets/javascripts/index.js"
   },
   "browserify-shim": {
     "jquery": {

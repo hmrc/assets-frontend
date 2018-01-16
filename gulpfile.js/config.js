@@ -20,57 +20,35 @@ Test:
 - Spec reporter
 */
 
-var src = './assets/'
-var dest = src + 'public/'
-var distDir = src + 'dist/'
-var snapshotDir = dest + '999-SNAPSHOT/'
+const src = './assets/'
+const dest = src + 'public/'
+const distDir = src + 'dist/'
+const snapshotDir = {
+  v3: dest + 'v3-SNAPSHOT/',
+  v4: dest + 'v4-SNAPSHOT/'
+}
+
 var govuk = {
   elements: 'node_modules/govuk-elements-sass',
   toolkit: 'node_modules/govuk_frontend_toolkit'
 }
 
 module.exports = {
-  dest: dest,
+  dest: snapshotDir,
   distDir: distDir,
-
-  dev: {
-    dest: snapshotDir
-  },
-  prod: {
-    dest: distDir
-  },
-
-  production: {
-    jsSrc: distDir + 'javascripts/*.js',
-    jsDest: distDir + 'javascripts/',
-    imagesDir: distDir + 'images',
-    cssSrc: distDir + 'stylesheets',
-    dest: distDir
-  },
 
   scripts: {
     src: [
       src + 'javascripts/modules/**/*.js',
-      src + 'components/**/*.js'
+      src + 'javascripts/**/index.js',
+      src + 'components/**/*.js',
+      src + 'application.js',
+      '!**/*.polyfill.js'
     ],
-    dest: snapshotDir + 'javascripts',
-    dev: {
-      dest: snapshotDir + 'javascripts'
-    },
-    prod: {
-      dest: distDir + 'javascripts'
-    },
-    entryPoint: src + 'javascripts/application.js',
+    destDirName: 'javascripts',
+    vendorDestDirName: 'javascripts/vendor',
     gulpTasks: 'gulpfile.js/**/*.js',
     encryptionSrc: src + 'javascripts/encryption/**/*.js',
-    encryptionDest: {
-      dev: snapshotDir + 'javascripts/',
-      prod: distDir + 'javascripts/'
-    },
-    vendorDest: {
-      dev: snapshotDir + 'javascripts/vendor/',
-      prod: distDir + 'javascripts/vendor/'
-    },
 
     modernizr: {
       options: [
@@ -88,7 +66,9 @@ module.exports = {
       ],
       files: {
         src: [
-          src + '{javascripts,scss,govuk_*}/**/*.{js,scss}',
+          src + '{javascripts,scss}/**/*.{js,scss}',
+          govuk.toolkit + '/**/*.{js,scss}',
+          govuk.elements + '/**/*.{js,scss}',
           '!**[^node_modules]/**/modernizr.js'
         ]
       }
@@ -100,12 +80,7 @@ module.exports = {
       src + 'images/**/*.svg',
       govuk.toolkit + '/images/**/*.svg'
     ],
-    dev: {
-      dest: snapshotDir + 'images'
-    },
-    prod: {
-      dest: distDir + 'images'
-    }
+    destDirName: 'images'
   },
 
   images: {
@@ -115,12 +90,7 @@ module.exports = {
       govuk.toolkit + '/images/**/*',
       '!' + govuk.toolkit + '/images/**/*.svg'
     ],
-    dev: {
-      dest: snapshotDir + 'images'
-    },
-    prod: {
-      dest: distDir + 'images'
-    }
+    destDirName: 'images'
   },
 
   sass: {
@@ -129,56 +99,36 @@ module.exports = {
       src + 'scss/**/*.scss',
       src + 'components/**/*.scss'
     ],
-    dev: {
-      dest: snapshotDir + 'stylesheets/',
-      settings: {
-        sourceComments: true,
-        includePaths: [
-          govuk.elements + '/public/sass',
-          govuk.toolkit + '/stylesheets'
-        ],
-        outputStyle: 'expanded'
-      },
-      sourceMapsDir: './maps'
+    destDirName: 'stylesheets',
+    settings: {
+      sourceComments: true,
+      includePaths: [
+        govuk.elements + '/public/sass',
+        govuk.toolkit + '/stylesheets'
+      ],
+      outputStyle: 'compressed'
     },
-    prod: {
-      dest: distDir + 'stylesheets/',
-      settings: {
-        includePaths: [
-          govuk.elements + '/public/sass',
-          govuk.toolkit + '/stylesheets'
-        ],
-        outputStyle: 'compressed'
-      }
-    }
+    sourceMapsDir: './maps'
+
   },
 
   browserify: {
     bundleConfigs: [{
+      basedir: './',
       entries: [
-        src + 'javascripts/application.js'
+        src + 'application.js'
       ],
       add: [
         govuk.toolkit + '/javascripts/govuk/**/*.js',
         '!' + govuk.toolkit + '/javascripts/govuk/selection-buttons.js'
       ],
-      dev: {
-        dest: snapshotDir + 'javascripts'
-      },
-      prod: {
-        dest: distDir + 'javascripts'
-      },
+      destDirName: 'javascripts',
       outputName: 'application.js'
     }, {
       entries: [
         src + 'javascripts/export/fingerprint.js'
       ],
-      dev: {
-        dest: snapshotDir + 'javascripts'
-      },
-      prod: {
-        dest: distDir + 'javascripts'
-      },
+      destDirName: 'javascripts',
       outputName: 'mdtpdf.js'
     }]
   },
@@ -196,14 +146,7 @@ module.exports = {
 
   errorPages: {
     src: src + 'error_pages/*.html',
-    dev: {
-      dest: snapshotDir,
-      assetsPath: '/' + snapshotDir
-    },
-    prod: {
-      dest: distDir,
-      assetsPath: process.env.TAG ? '/assets/' + process.env.TAG + '/' : '/assets/999-SNAPSHOT/'
-    }
+    assetsBaseUri: '/assets/'
   },
 
   compLib: {
@@ -218,7 +161,6 @@ module.exports = {
       src + 'styles',
       src + 'components',
       src + 'patterns'
-
     ],
     dest: 'design-pattern-library',
     template: './node_modules/hmrc-component-library-template/design-system.html',
