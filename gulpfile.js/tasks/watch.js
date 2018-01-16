@@ -3,7 +3,7 @@
 const gulp = require('gulp')
 const config = require('../config')
 
-gulp.task('watch', ['server'], () => {
+gulp.task('watch', () => {
   gulp.watch(config.scripts.gulpTasks, ['test:gulpTasks'])
 
   gulp.watch(
