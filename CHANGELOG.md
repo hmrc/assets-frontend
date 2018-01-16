@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Calls `.restore()` on spied functions after they've been used to prevent `already wrapped` errors from crashing the `watch` task [#882](https://github.com/hmrc/assets-frontend/pull/882)
 - Nunjucks config needed path to components - [892](https://github.com/hmrc/assets-frontend/issues/891)
+- Build styles as a dependency of the test task [896](https://github.com/hmrc/assets-frontend/issues/896)
 
 ### Changed
 - Updated badge README.md and added second markup example [#895](https://github.com/hmrc/assets-frontend/issues/895)
