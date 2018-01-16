@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Nunjucks config needed path to components - [892](https://github.com/hmrc/assets-frontend/issues/891)
 
 ### Changed
+- UPdated badge README.md and added second markup example [#895](https://github.com/hmrc/assets-frontend/issues/895)
 - Updated the ‘pattern-library’ task so macro refs are dynamic in the gulp task [#890](https://github.com/hmrc/assets-frontend/pull/890)
 - Content of work in progress macro and added new research macro [#888](https://github.com/hmrc/assets-frontend/pull/888)
 - Include language selector as a partial in other components [#887](https://github.com/hmrc/assets-frontend/pull/887)

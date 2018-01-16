@@ -2,36 +2,40 @@
 
 {{ wip(142) }}
 
-Badges are numerical indicators of how many items are associated with a link.
+A badge shows a number.
 
 {{ example("badge.html") }}
 
-## When to use this
-Use this component to notify users when there is a specific number of related items that may require their attention. The component should only be used with an associated link whereby the user can take an action to reduce the number of items requiring their attention.
+## When to use a badge
 
-> The accessibility requirements, markup and css for this component requires additional work and investigation.
+Use a badge to grab attention and show how many things something has and. Only use it with an action someone can do to change the number.
 
-### When not to use this
-The component is designed to draw the users attention so it should only be used with careful consideration. Unless a strong user need can be demonstrated, badges should not be implemented outside of primary navigation. 
+### When not to use a badge
 
-Do not use this component where the user cannot take any action to reduce the badge counter.
+Do not use a badge when:
 
-## How it works 
-```html
-<a href="#">Messages<span class="badge" aria-label="You have 103 unread messages">99+</span></a>
-```
+- the number of things is 0
+- there is no action
 
-This component should be used alongside a link, it will appear to the top right of the link.
+Unless there is a strong user need, only use one as a part of navigation.
 
-A counter value should be passed into the span as well as the aria-label. When the counter value is 0 the badge should not be visible and the aria-label should also reflect this.
+## How a badge works
 
-Although the badge will expand to display large numbers, it is recommended that a reasonable cap is agreed and implemented.
+A badge displays a number on the right-hand side of an action.
 
-For example, if an unread message count exceeds 99, display "99+".
+If the number is more than 99, display “99+”.
 
-## Research on this
-This is a widely recognised component that is ubiquitous on both mobile and desktop interfaces.
+{{ markup("badge.html") }}
 
-Whilst this component has not undergone specific internal usability testing a two key hypotheses have been tested as part of the wider [Account header](components/account-header/index.html) pattern:
-* What the badge represents is correctly understood by users
-* The badge does not interfere or distract users that are attempting to complete a task
+If there are 0 things, do not show the badge.
+
+{{ markup("badge-0.html") }}
+
+## Research on badges
+
+Badges are common on many sites and services. It has been tested as part of the [Account header](components/account-header/index.html). Research showed:
+
+- people understand what it is for
+- it does not distract people from their task
+
+More work is needed to make it accessible – [add your research on GitHub](https://github.com/hmrc/design-patterns/issues/142).
