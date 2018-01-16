@@ -6,8 +6,7 @@
  */
 
 require('jquery')
-
-describe('Given the timeout dialog has appeared on the page', function () {
+describe('Given the timeout dialog has been called', function () {
   var timeoutDialog
 
   beforeEach(function () {
@@ -21,6 +20,10 @@ describe('Given the timeout dialog has appeared on the page', function () {
   })
 
   describe('the timeout dialog', function () {
+    it('should not display on page load', function () {
+      expect($('#timeout-dialog')).not.toBeInDOM()
+    })
+
     it('should display', function (done) {
       setTimeout(function () {
         expect($('#timeout-dialog')).toBeInDOM()
