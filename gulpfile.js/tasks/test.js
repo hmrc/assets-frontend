@@ -15,7 +15,7 @@ gulp.task('test:gulpTasks', ['lint:gulpTasks'], () => {
     }))
 })
 
-gulp.task('test', (done) => {
+gulp.task('test', ['lint', 'style'], (done) => {
   const server = new Server({
     configFile: fs.realpathSync(config.karmaConfig),
     singleRun: true
