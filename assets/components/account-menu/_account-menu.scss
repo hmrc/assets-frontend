@@ -462,7 +462,7 @@ p.subnav__section__heading {
   top: 20px;
 }
 
-@media (min-width: 641px) {
+@include media(tablet) {
   .full-width-banner__close {
     right: 35px;
   }

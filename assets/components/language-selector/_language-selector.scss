@@ -4,9 +4,10 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 
-  @include media-down(tablet) {
-    width: 100%;
+  @include media(tablet) {
+    width: auto;
   }
 
   li {
@@ -23,10 +24,6 @@
     &:active {
       text-decoration: underline;
     }
-  }
-
-  ul {
-    @extend .list--inline;
   }
 }
 
