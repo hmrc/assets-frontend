@@ -29,7 +29,7 @@ gulp.task('build:v4', ['v4'], (done) => {
     ['lint', 'test:gulpTasks'],
     ['style:v4', 'images', 'svg', 'error-pages', 'concat:encryption', 'browserify:v4'],
     'modernizr',
-    // run jasmine tests
+    'test',
     done
   )
 })
