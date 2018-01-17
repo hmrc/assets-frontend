@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- Build styles as a dependency of the test task [896](https://github.com/hmrc/assets-frontend/issues/896)
+
+## [3.1.0] and [4.1.0] - 2018-01-16
 ### Added
 - Build a version without deprecated components [#873](https://github.com/hmrc/assets-frontend/pull/873)
 - All style sections now link to the corresponding GOV.UK Elements style section [#883](https://github.com/hmrc/assets-frontend/pull/883)
@@ -15,7 +19,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Calls `.restore()` on spied functions after they've been used to prevent `already wrapped` errors from crashing the `watch` task [#882](https://github.com/hmrc/assets-frontend/pull/882)
 - Nunjucks config needed path to components - [892](https://github.com/hmrc/assets-frontend/issues/891)
-- Build styles as a dependency of the test task [896](https://github.com/hmrc/assets-frontend/issues/896)
 
 ### Changed
 - Updated badge README.md and added second markup example [#895](https://github.com/hmrc/assets-frontend/issues/895)
@@ -219,7 +222,9 @@ This entire version is covered by a single pull request. [#867](https://github.c
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...master
+[4.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...4.1.0
+[3.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...3.1.0
 [3.0.2]: https://github.com/hmrc/assets-frontend/compare/release/3.0.1...release/3.0.2
 [3.0.1]: https://github.com/hmrc/assets-frontend/compare/release/3.0.0...release/3.0.1
 [3.0.0]: https://github.com/hmrc/assets-frontend/compare/release/2.254.0...release/3.0.0
