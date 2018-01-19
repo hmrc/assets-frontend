@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Fixed
 - Build styles as a dependency of the test task [896](https://github.com/hmrc/assets-frontend/issues/896)
+- Link style button(button--link) focus background colour is green [900](https://github.com/hmrc/assets-frontend/issues/900)
 
 ## [3.1.0] and [4.1.0] - 2018-01-16
 ### Added
