@@ -18,18 +18,17 @@ gulp.task('build:v3', ['v3'], (done) => {
     ['lint', 'test:gulpTasks'],
     ['style:v3', 'images', 'svg', 'error-pages', 'concat:encryption', 'browserify:v3'],
     'modernizr',
-    'test',
+    'test:v3',
     done
   )
 })
 
-gulp.task('build:v4', ['v4'], (done) => {
+gulp.task('build:v4', ['v4', 'clean'], (done) => {
   runSequence(
-    'clean',
     ['lint', 'test:gulpTasks'],
     ['style:v4', 'images', 'svg', 'error-pages', 'concat:encryption', 'browserify:v4'],
     'modernizr',
-    'test',
+    'test:v4',
     done
   )
 })

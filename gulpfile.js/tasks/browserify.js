@@ -56,7 +56,7 @@ gulp.task('browserify:v3', ['v3', 'lint:scripts'], () => {
   )
 })
 
-gulp.task('browserify:v4', ['v4', 'lint:scripts'], () => {
+gulp.task('browserify:v4', () => {
   return Promise.all(
     config.browserify.bundleConfigs
       .map(bundleConfig => Object.assign(bundleConfig, {

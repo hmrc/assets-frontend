@@ -132,9 +132,22 @@ module.exports = {
       outputName: 'mdtpdf.js'
     }]
   },
-
   test: {
     src: src + 'test/**/*.js',
+    files: {
+      v3: [
+        'test/specs/fixtures/*.html',
+        'test/specs/*.js',
+        'components/**/**.html',
+        'components/**/**.test.js',
+        'public/v3-SNAPSHOT/stylesheets/application.min.css'
+      ],
+      v4: [
+        'components/**/**.html',
+        'components/**/**.test.js',
+        'public/v3-SNAPSHOT/stylesheets/application.min.css'
+      ]
+    },
     specsScr: src + 'test/specs/unit/**/*.js',
     fixturesScr: src + 'test/specs/fixtures/*.html',
     karmaConfig: src + 'test/config/karma.conf.js',
@@ -174,25 +187,31 @@ module.exports = {
     backstopConfig: './backstop.json'
   },
 
-  browserSync: [{
-    ui: false,
-    port: 9032,
-    open: false,
-    server: {
-      baseDir: '.',
-      routes: {
-        '/assets': dest
+  browserSync: {
+    assets: {
+      ui: false,
+      port: 9032,
+      open: false,
+      server: {
+        baseDir: '.',
+        routes: {
+          '/assets': dest
+        }
       }
+    },
+    v3: {
+      logPrefix: 'Assets frontend version 3/4',
+      ui: false,
+      port: 9033,
+      open: false,
+      server: 'component-library'
+    },
+    v4: {
+      logPrefix: 'Assets frontend version 4',
+      ui: false,
+      port: 9034,
+      open: false,
+      server: 'design-pattern-library'
     }
-  }, {
-    ui: false,
-    port: 9033,
-    open: false,
-    server: 'component-library'
-  }, {
-    ui: false,
-    port: 9034,
-    open: false,
-    server: 'design-pattern-library'
-  }]
+  }
 }

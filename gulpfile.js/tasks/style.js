@@ -38,7 +38,7 @@ gulp.task('style:v3', ['v3', 'stylelint'], () => {
   return sassToCss(gulp.src(config.sass.src))
 })
 
-gulp.task('style:v4', ['v4', 'stylelint'], () => {
+gulp.task('style:v4', ['stylelint'], () => {
   return sassToCss(
     gulp.src(config.sass.src).pipe(replace(/^@import.*scss\/.*$/gmi, ''))
   )
