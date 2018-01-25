@@ -24,25 +24,13 @@ function runCommand (cmd) {
   })
 }
 
-function getMasterRevision () {
-  return runCommand('git rev-parse master')
-}
-
-function getCurrentBranchRevision () {
-  return runCommand('git rev-parse HEAD')
-}
-
 function getGitDiffs () {
   return runCommand(`git diff --name-only master...`)
 }
 
-function isMaster () {
-  return new Promise((resolve) => {
-    Promise.all([getCurrentBranchRevision(), getMasterRevision()])
-      .then(results => {
-        resolve(results[0].trim() === results[1].trim())
-      })
-  })
+function isMerged () {
+  return runCommand('git branch -a --contains HEAD')
+    .then((results) => results.includes('remotes/origin/master'))
 }
 
 function filterFiles (files) {
@@ -67,7 +55,7 @@ function verifyGitDiffs (diffs) {
 }
 
 gulp.task('changelog', () => {
-  return isMaster()
+  return isMerged()
     .then(isit => {
       return isit
         ? true
@@ -78,8 +66,7 @@ gulp.task('changelog', () => {
 module.exports = {
   runCommand: runCommand,
   getGitDiffs: getGitDiffs,
-  getCurrentBranchRevision: getCurrentBranchRevision,
-  getMasterRevision: getMasterRevision,
   filterFiles: filterFiles,
+  isMerged: isMerged,
   verifyGitDiffs: verifyGitDiffs
 }
