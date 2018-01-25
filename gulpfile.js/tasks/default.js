@@ -16,6 +16,7 @@ gulp.task('default', (done) => {
   runSequence(
     'pattern-library',
     'server',
+    'message',
     'watch',
     done
   )
