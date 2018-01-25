@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Build styles as a dependency of the test task [896](https://github.com/hmrc/assets-frontend/issues/896)
 ### Added
 - Added in links to the contribution guidelines [#902](https://github.com/hmrc/assets-frontend/pull/902)
+- Change log checks that the current commit doesn't exist in the remote master [904](https://github.com/hmrc/assets-frontend/pull/904)
 
 ## [3.1.0] and [4.1.0] - 2018-01-16
 ### Added
