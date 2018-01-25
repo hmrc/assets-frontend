@@ -87,6 +87,7 @@ button, .button {
   }
 
   &:hover, &:focus {
+    background-color: transparent;
     color: $link-hover-colour;
   }
 
