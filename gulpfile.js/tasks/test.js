@@ -15,19 +15,7 @@ gulp.task('test:gulpTasks', ['lint'], () => {
     }))
 })
 
-gulp.task('test:v3', ['lint', 'style:v3'], (done) => {
-  const server = new Server({
-    configFile: fs.realpathSync(config.karmaConfig),
-    singleRun: true
-  },
-  function (exitCode) {
-    done(exitCode)
-  })
-
-  server.start()
-})
-
-gulp.task('test:v4', (done) => {
+gulp.task('test', (done) => {
   const server = new Server({
     configFile: fs.realpathSync(config.karmaConfig),
     singleRun: true

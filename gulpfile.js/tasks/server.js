@@ -6,6 +6,12 @@ const browserSync = require('browser-sync')
 const config = require('../config').browserSync
 
 gulp.task('server', () => {
-  browserSync.create().init(config[gutil.env.version])
-  browserSync.create().init(config.assets)
+  if (gutil.env.version === 'v3') {
+    browserSync.create().init(config.v3)
+    browserSync.create().init(config.v4)
+    browserSync.create().init(config.assets)
+  } else {
+    browserSync.create().init(config[gutil.env.version])
+    browserSync.create().init(config.assets)
+  }
 })

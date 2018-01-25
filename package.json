@@ -13,7 +13,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "gulp",
-    "build": "gulp build",
+    "build": "gulp build:v4",
+    "build:all" : "gulp build:all",
     "release": "gulp release",
     "test": "gulp test",
     "test:dev": "karma start assets/test/config/karma.conf.js no-single-run",
