@@ -21,19 +21,14 @@ test('changelog - runCommand', (t) => {
     })
 })
 
-test('changelog - getCurrentBranchRevision', (t) => {
-  t.plan(1)
-  t.ok(changelog.getCurrentBranchRevision().then(), 'returns a promise')
-})
-
-test('changelog - getMasterRevision', (t) => {
-  t.plan(1)
-  t.ok(changelog.getMasterRevision().then(), 'returns a promise')
-})
-
 test('changelog - getGitDiffs', (t) => {
   t.plan(1)
   t.ok(changelog.getGitDiffs().then(), 'returns a promise')
+})
+
+test('changelog - isMerged', (t) => {
+  t.plan(1)
+  t.ok(changelog.isMerged().then(), 'returns a promise')
 })
 
 test('changelog - filterFiles', (t) => {
