@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Content of work in progress macro and added new research macro [#888](https://github.com/hmrc/assets-frontend/pull/888)
 - Include language selector as a partial in other components [#887](https://github.com/hmrc/assets-frontend/pull/887)
 - Removed check your answers from component navigation [#885](https://github.com/hmrc/assets-frontend/pull/885)
+- Fix issue with blue border not displaying on pages without the PTA account menu [#903](https://github.com/hmrc/assets-frontend/pull/903)
 
 ## [3.0.2] - 2017-12-19
 ### Deprecated
