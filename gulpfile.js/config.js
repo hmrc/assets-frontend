@@ -19,7 +19,6 @@ Test:
 - Continuous
 - Spec reporter
 */
-
 const src = './assets/'
 const dest = src + 'public/'
 const distDir = src + 'dist/'
@@ -27,9 +26,6 @@ const snapshotDir = {
   v3: dest + 'v3-SNAPSHOT/',
   v4: dest + 'v4-SNAPSHOT/'
 }
-
-const componentLibraryPort = 9033
-const patternLibraryPort = 9034
 
 var govuk = {
   elements: 'node_modules/govuk-elements-sass',
@@ -202,25 +198,6 @@ module.exports = {
           '/assets': dest
         }
       }
-    },
-    v3: {
-      ui: false,
-      port: 9033,
-      open: false,
-      logLevel: 'silent',
-      server: 'component-library'
-    },
-    v4: {
-      ui: false,
-      port: 9034,
-      open: false,
-      logLevel: 'silent',
-      server: 'design-pattern-library'
     }
-  },
-  serverMessage: {
-    v4: `Design system running on: http://localhost:${patternLibraryPort}`,
-    v3: `Component library running on: http://localhost:${componentLibraryPort}`,
-    all: `Design system running on: http://localhost:${patternLibraryPort}\n  you are running both version 3 and 4 of Assets Frontend`
   }
 }
