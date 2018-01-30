@@ -19,17 +19,16 @@
 }
 
 .service-info {
-  border-top: none;
   display: block;
   position: relative;
   z-index: 997;
+  overflow: hidden;
 }
 
 .account-menu {
   @extend %contain-floats;
   background-color: $white;
   border-bottom: 1px solid $grey-2;
-  border-top: 10px solid $govuk-blue;
   margin-bottom: 0;
   position: relative;
   transition: all .3s ease-in-out;
