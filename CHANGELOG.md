@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Build styles as a dependency of the test task [896](https://github.com/hmrc/assets-frontend/issues/896)
 
+###Changed
+- Improve the developer experience of running assets-frontend [735](https://github.com/hmrc/assets-frontend/pull/907)
+
 ## [3.1.0] and [4.1.0] - 2018-01-16
 ### Added
 - Build a version without deprecated components [#873](https://github.com/hmrc/assets-frontend/pull/873)
