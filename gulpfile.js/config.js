@@ -35,7 +35,6 @@ var govuk = {
 module.exports = {
   dest: snapshotDir,
   distDir: distDir,
-
   scripts: {
     src: [
       src + 'javascripts/modules/**/*.js',
@@ -166,8 +165,14 @@ module.exports = {
     host: 'http://localhost',
     baseDir: './component-library/'
   },
-
+  componentLibrary: {
+    basePort: 9033,
+    dest: 'component-library',
+    friendlyName: 'Component library'
+  },
   patternLibrary: {
+    basePort: 9034,
+    friendlyName: 'Design system',
     sourceBaseDir: src,
     src: [
       src + 'styles',

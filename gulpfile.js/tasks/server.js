@@ -5,33 +5,30 @@ const portfinder = require('portfinder')
 const gutil = require('gulp-util')
 const browserSync = require('browser-sync')
 const colors = require('colors')
-const config = require('../config').browserSync
+const config = require('../config')
 const assetsPathV3 = `http://localhost:9032/public/v3-SNAPSHOT/`
 const assetsPathV4 = `http://localhost:9032/public/v4-SNAPSHOT/`
-portfinder.basePort = 9033
 
 gulp.task('server', () => {
   if (gutil.env.version === 'v3') {
-    startServer('component-library')
+    browserSync.create().init(config.browserSync.assets, afStarted)
+    startServer('patternLibrary')
       .then(() => {
-        startServer('design-pattern-library').then(() => {
-          afStarted()
-        })
+        startServer('componentLibrary')
       })
-    browserSync.create().init(config.assets)
   } else {
-    startServer('design-pattern-library').then(() => {
-      afStarted()
-    })
-    browserSync.create().init(config.assets)
+    browserSync.create().init(config.browserSync.assets, afStarted)
+    startServer('patternLibrary')
   }
 })
 
-const startServer = (serverPath) => {
+const startServer = (serverName) => {
+  const serverPath = config[serverName].dest
+  portfinder.basePort = config[serverName].basePort
   let serverConfig
   return new Promise((resolve, reject) => {
     const hasStarted = () => {
-      message(`Started ${serverPath} on http://localhost:${serverConfig.port}`)
+      message(`${config[serverName].friendlyName} started on http://localhost:${serverConfig.port}/`)
       resolve()
     }
     try {
@@ -63,12 +60,25 @@ const getServerConfig = (serverPath) => {
   })
 }
 
+const afStartupMessage = (version) => {
+  let output = 'Assets frontend started on http://localhost:9032/\n'
+  switch (version) {
+    case 'v3':
+      output +=
+        `\tVersion 3 assets are available at: ${assetsPathV3}\n` +
+        `\tVersion 4 assets are available at: ${assetsPathV4}`
+      break
+    case 'v4':
+      output +=
+        `\tVersion 4 assets are available at: ${assetsPathV4}`
+  }
+  return output
+}
+
 const afStarted = () => {
-  message('assets-frontend started on http://localhost:9032')
+  message(afStartupMessage(gutil.env.version))
 }
 
 const message = (message) => {
-  return console.log(colors.yellow(`
-  ${message}
-  `))
+  return console.log(colors.green(`\n${message}`))
 }
