@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- Issue with Stageprompt not recognising JQuery [909](https://github.com/hmrc/assets-frontend/pull/909)
 
 ## [3.2.0] and [4.2.0] - 2018-01-25
 ### Fixed
