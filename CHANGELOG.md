@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [3.2.1] and [4.2.1] - 2018-02-02
 ### Fixed
 - Issue with Stageprompt not recognising JQuery [909](https://github.com/hmrc/assets-frontend/pull/909)
 
@@ -233,8 +235,10 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Changes to nginx error pages not being build and deployed [#734]
 
 [Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...master
+[4.2.1]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...4.2.1
 [4.2.0]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...4.2.0
 [4.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...4.1.0
+[3.2.1]: https://github.com/hmrc/assets-frontend/compare/release/3.2.0...3.2.1
 [3.2.0]: https://github.com/hmrc/assets-frontend/compare/release/3.1.0...3.2.0
 [3.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...3.1.0
 [3.0.2]: https://github.com/hmrc/assets-frontend/compare/release/3.0.1...release/3.0.2
