@@ -6,8 +6,9 @@ Buttons are used for *calls to actions* to start a journey or to *submit* inform
 If you are using an `<a>` element please also apply the `role="button"` attribute.
 
 Markup:
-<button class="button {{modifier_class}}">Button text</button>
+<button class="{{modifier_class}}">Button text</button>
 
+.button                - A standard button
 .button--get-started   - For a button to start a user journey
 .button--secondary     - A secondary button
 .button--alert         - An alert button
