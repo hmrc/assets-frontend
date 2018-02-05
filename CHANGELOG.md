@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Fixed
+- SDT-768 [#908](https://github.com/hmrc/assets-frontend/issues/908) Updated the generated markup for buttons so that they better represent how to use the new govuk-elements css
 - Issue with Stageprompt not recognising JQuery [909](https://github.com/hmrc/assets-frontend/pull/909)
 
 ## [3.2.0] and [4.2.0] - 2018-01-25
