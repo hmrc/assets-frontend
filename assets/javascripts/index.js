@@ -1,10 +1,8 @@
 /* eslint-env jquery */
 
-require('jquery')
 require('details')
 require('validate')
 require('basicpunc')
-require('govuk-template')
 require('stageprompt')
 
 window._gaq = window._gaq || []
