@@ -95,8 +95,8 @@
             <nav id="toc" class="js-toc-list toc__list">
               <ul class="pattern-nav">
                 <li><a href="/assets-frontend/patterns/404-page/index.html">404 page</a></li>
-                <li><a href="/assets-frontend/patterns/500-pages/index.html">500 pages</a></li>
-                <li><a href="/assets-frontend/patterns/shutter-pages/index.html">Shutter pages</a></li>
+                <li><a href="/assets-frontend/patterns/service-unavailable/index.html">Service unavailable</a></li>
+                <li><a href="/assets-frontend/patterns/technical-problem/index.html">Technical problem</a></li>
               <ul>
             </nav>
           </div>
@@ -119,29 +119,28 @@
             </div>
             -->
 
-            <h1 id="500-pages">500 Pages</h1>
-  <div class="panel panel-border-wide">
+            <h1 id="technical-problem">Technical problem</h1>
+  <div class="banner banner__out-of-date">
     <p>This is a work in progress – <a href="https://github.com/hmrc/design-patterns/issues/105">view more information on GitHub</a>.</p>
   </div>
 
 
-<p>500 pages are used to tell users that we [HMRC] have a problem that was not their fault.</p>
+<p>This is a page that tells someone there is something wrong with the service. They are also known as 500 pages.</p>
 <div class="example">
   <div class="scale-wrapper">
-    <div class="scale"><!-- COOKIE MESSAGE -->
-<div id="global-cookie-message" style="display: block;">
+    <div class="scale"><!--COOKIE MESSAGE -->
+<!-- <div id="global-cookie-message">
   <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-    cookies</a></p>
-</div>
+  cookies</a></p>
+</div> -->
 <!-- END COOKIE MESSAGE -->
-
 <!-- GOV.UK HEADER -->
 <header role="banner" id="global-header" class="with-proposition">
   <div class="header-wrapper">
     <div class="header-global">
       <div class="header-logo">
         <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
       </div>
     </div>
     <div class="header-proposition">
@@ -155,7 +154,6 @@
 </header>
 <div id="global-header-bar"></div>
 <!-- END GOV.UK HEADER -->
-
 <main id="content" role="main">
   <!-- PHASE BANNER -->
   <div class="phase-banner">
@@ -166,13 +164,12 @@
   </div>
   <!-- END PHASE BANNER -->
   <!-- PAGE CONTENT -->
-    <div class="grid-row">
-        <div class="column-two-thirds">
-            <h1 class="heading-large">We are experiencing technical problems</h1>
-            <p>Something has gone wrong with this service. It wasn&#39;t your fault.</p>
-            <p>Please try again in a few moments.</p>
-        </div>
-    </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">There is problem with the service</h1>
+      <p class="lede">Try again later.</p>
+      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to make changes to your claim or speak to someone about your tax credits.</p><br>    </div>
+  </div>
   <!-- END PAGE CONTENT -->
 </main>
 <!-- FOOTER   -->
@@ -203,36 +200,51 @@
 
 
 
-<h2 id="when-to-use-a-500-page">When to use a 500 page</h2>
-<p>They cover a range of situations when something has gone wrong with the server.</p>
-<p>500 errors should be logged by services and fixed as a matter of priority.</p>
-<p>500 errors should only be displayed to people for a short time. The standard approach within HMRC is to <a href="shutter-pages/index.html">shutter</a> a service, if there is going to be a disruption to users for an extended period of time.</p>
-<p>There are a number of <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_error">standard pages</a> that fall into the category of 500 pages. We do not need different error pages to cover all of these situations.</p>
-<h2 id="how-500-pages-work">How 500 pages work</h2>
-<p>When displaying a 500 page you should:</p>
+<h2 id="when-to-use-a-technical-problem-page">When to use a technical problem page</h2>
+<p>Use a technical problem page when there is an unexpected problem with the service. Use the same page for all  technical problems.</p>
+<p>Log all errors and fix them as quickly as possibly.</p>
+<p>Only display the page for a short time. If a problem cannot be fixed quickly, close the service and use a <a href="/patterns/service-unavailable/index.html">service unavailable page</a>.</p>
+<h2 id="how-a-technical-problem-page-works">How a technical problem page works</h2>
+<p>Use the standard page template from your service and have the same:</p>
 <ul>
-<li>use the standard template</li>
-<li>explain to users whats going on</li>
-<li>tell users what they can do, if anything to resolve the issue.</li>
-<li>If there is an alternative channel that they can use to continue their transaction this should be made available to them.</li>
+<li>header</li>
+<li>phase banner</li>
+<li>footer</li>
 </ul>
-<h3 id="example-500-page-when-there-is-an-alternative-channel">Example 500 page when there is an alternative channel</h3>
+<p>The page should have:</p>
+<ul>
+<li>“There is a problem with the service – [service name] – GOV.UK” as the page title</li>
+<li>“There is a problem with the service” as the H1</li>
+<li>“Try again later.” as a lede paragraph</li>
+<li>contact information, if it exists and helps meet a user need</li>
+</ul>
+<p>Contact information should be either:</p>
+<ul>
+<li>a link to a specific GOV.UK contact page, not <a href="https://www.gov.uk/contact-hmrc">contact HMRC</a> or <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact">HM Revenue &amp; Customs Contacts</a></li>
+<li>formatted like a GOV.UK contact page when there is no GOV.UK page</li>
+</ul>
+<p>Have clear and concise content and do not use:</p>
+<ul>
+<li>breadcrumbs</li>
+<li>words like 500, bad request, please, sorry and “We are experiencing technical difficulties”</li>
+<li>red text to warn people</li>
+</ul>
+<h3 id="service-has-a-gov-uk-contact-page">Service has a GOV.UK contact page</h3>
 <div class="example">
   <div class="scale-wrapper">
-    <div class="scale"><!-- COOKIE MESSAGE -->
-<div id="global-cookie-message" style="display: block;">
+    <div class="scale"><!--COOKIE MESSAGE -->
+<!-- <div id="global-cookie-message">
   <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-    cookies</a></p>
-</div>
+  cookies</a></p>
+</div> -->
 <!-- END COOKIE MESSAGE -->
-
 <!-- GOV.UK HEADER -->
 <header role="banner" id="global-header" class="with-proposition">
   <div class="header-wrapper">
     <div class="header-global">
       <div class="header-logo">
         <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
       </div>
     </div>
     <div class="header-proposition">
@@ -246,7 +258,6 @@
 </header>
 <div id="global-header-bar"></div>
 <!-- END GOV.UK HEADER -->
-
 <main id="content" role="main">
   <!-- PHASE BANNER -->
   <div class="phase-banner">
@@ -257,14 +268,12 @@
   </div>
   <!-- END PHASE BANNER -->
   <!-- PAGE CONTENT -->
-    <div class="grid-row">
-        <div class="column-two-thirds">
-            <h1 class="heading-large">We are experiencing technical problems</h1>
-            <p>Something has gone wrong with this service. It wasn&#39;t your fault.</p>
-            <p>If you&#39;d like to continue your transaction offline you can contact us on Telephone: 03000 555 995</p>
-      <p>Opening times: 8:30am to 4:30pm, Monday to Friday</p>
-        </div>
-    </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">There is problem with the service</h1>
+      <p class="lede">Try again later.</p>
+      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to make changes to your claim or speak to someone about your tax credits.</p><br>    </div>
+  </div>
   <!-- END PAGE CONTENT -->
 </main>
 <!-- FOOTER   -->
@@ -295,14 +304,106 @@
 
 
 
-<h2 id="research-on-500-pages">Research on 500 pages</h2>
-<p>We need more user research on 500 Pages. </p>
+<h3 id="service-has-offline-support-but-no-gov-uk-contact-page">Service has offline support but no GOV.UK contact page</h3>
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!--COOKIE MESSAGE -->
+<!-- <div id="global-cookie-message">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+  cookies</a></p>
+</div> -->
+<!-- END COOKIE MESSAGE -->
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service name</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+<main id="content" role="main">
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+  <!-- PAGE CONTENT -->
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">There is a problem with the service</h1>
+      <p class="lede">Try again later.</p>
+      <p>Contact us if you have any questions.</p>
+      <p>Telephone:<br/>
+      <span style="font-weight:700">0345 300 3900</span></p>
+      <p>Textphone:<br/>
+      <span style="font-weight:700">0345 300 3909</span></p>
+      <p>Outside UK:<br/>
+      <span style="font-weight:700">+44 2890 538 192</span></p>
+      <p>Opening times:<br/>
+      Monday to Friday: 8am to 8pm<br/>
+      Saturday: 8am to 4pm<br/>
+      Sunday: 9am to 5pm</p>
+      <p>Closed Easter Sunday, Christmas Day, Boxing Day and New Year’s Day.</p>
+    </div>
+  </div>
+  <!-- END PAGE CONTENT -->
+</main>
+<!-- FOOTER   -->
+<footer class="group js-footer" id="footer" role="contentinfo">
+  <div class="footer-wrapper">
+    <div class="footer-meta">
+      <div class="footer-meta-inner">
+        <ul class="platform-help-links">
+          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
+          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
+          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
+          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
+        </ul>
+        <div class="open-government-licence">
+          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- END FOOTER --></div>
+  </div>
+</div>
+
+
+
+<h2 id="research-on-technical-problem-pages">Research on technical problem pages</h2>
+  <div class="">
+    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/105">add your research on GitHub</a>.</p>
+  </div>
+
+
 <p>We want to know:</p>
 <ul>
-<li>if people understand what is going on</li>
-<li>what peoples expectations are having seen a 500 page</li>
+<li>what people need to know</li>
+<li>what their expectations are after reading the page</li>
+<li>if people understand what is going on when they see the page</li>
+<li>if people expect to see please and sorry</li>
 </ul>
-<p>Contribute your research via this <a href="https://github.com/hmrc/design-patterns/issues/105">GitHub issue</a>.</p>
 
 
             <!--

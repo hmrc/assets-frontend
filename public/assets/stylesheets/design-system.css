@@ -1383,3 +1383,7 @@ dl.meta-data-bottom {
   transform-origin: 0 0;
   width: 200%;
   box-sizing: border-box; }
+
+.banner__deprecated {
+  background-color: #F7E7E9;
+  border: 1px solid #B10E1E; }
