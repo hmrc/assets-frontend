@@ -25,7 +25,7 @@ function promisifyStream (browserifyInstance, bundleConfig) {
       .pipe(source(bundleConfig.outputName))
       .pipe(buffer())
       .pipe(sourcemaps.init())
-      .pipe(uglify())
+      .pipe(uglify({ie8: true}))
       .pipe(rename({suffix: '.min'}))
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest(bundleConfig.dest))
