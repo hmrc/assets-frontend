@@ -3,9 +3,6 @@
 require('details')
 require('validate')
 require('basicpunc')
-require('stageprompt')
-
-window._gaq = window._gaq || []
 
 var sso = require('./modules/sso.js')
 var visibility = require('./modules/visibility.js')
@@ -74,9 +71,6 @@ $(function () {
   if (datatable.length) {
     enhancedTables(datatable)
   }
-
-  // initialise stageprompt for Analytics
-  window.GOVUK.performance.stageprompt.setupForGoogleAnalytics()
 
   $('.print-link a').attr('target', '_blank')
 
