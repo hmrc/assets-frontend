@@ -4,7 +4,7 @@ var path = require('path')
 var test = require('tape')
 var sinon = require('sinon')
 var Handlebars = require('handlebars')
-var compileTemplate = require('../util/pattern-library/lib/compileTemplate')
+var compileTemplate = require('../util/design-system/lib/compileTemplate')
 
 test('compileTemplate - compiles a template at a given path', (t) => {
   t.plan(4)

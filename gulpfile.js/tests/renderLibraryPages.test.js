@@ -1,6 +1,6 @@
 var path = require('path')
 var test = require('tape')
-var renderLibraryPages = require('../util/pattern-library/lib/renderLibraryPages')
+var renderLibraryPages = require('../util/design-system/lib/renderLibraryPages')
 
 var templatePath = path.join(__dirname, 'fixtures', 'pattern-library', 'design-pattern-library-template.html')
 var helpersPath = path.join(__dirname, 'fixtures', 'handlebarsHelpers')

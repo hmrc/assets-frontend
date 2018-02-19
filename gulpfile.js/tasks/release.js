@@ -3,15 +3,15 @@
 const gulp = require('gulp')
 const runSequence = require('run-sequence')
 
-gulp.task('release', ['changelog'], (done) => {
+gulp.task('release', ['changelog', 'clean', 'clean:dist'], (done) => {
   runSequence(
-    'release:v3',
-    'release:v4',
+    'build',
+    'zip',
     done
   )
 })
 
-gulp.task('release:v3', (done) => {
+gulp.task('release:v3', ['changelog', 'clean', 'clean:dist'], (done) => {
   runSequence(
     'build:v3',
     'zip',
@@ -19,7 +19,7 @@ gulp.task('release:v3', (done) => {
   )
 })
 
-gulp.task('release:v4', (done) => {
+gulp.task('release:v4', ['changelog', 'clean', 'clean:dist'], (done) => {
   runSequence(
     'build:v4',
     'zip',

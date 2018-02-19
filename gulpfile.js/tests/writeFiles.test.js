@@ -3,7 +3,7 @@ var del = require('del')
 var path = require('path')
 var test = require('tape')
 var gutil = require('gulp-util')
-var writeFiles = require('../util/pattern-library/lib/writeFiles')
+var writeFiles = require('../util/design-system/lib/writeFiles')
 
 var destination = path.join(__dirname, 'pattern-library')
 var baseDirectory = path.join(__dirname, 'fixtures', 'components')

@@ -1,6 +1,6 @@
 var path = require('path')
 var test = require('tape')
-var addFileType = require('./../util/pattern-library/lib/addFileType')
+var addFileType = require('../util/design-system/lib/addFileType')
 
 test('addFileType - throws an error if not given a src', function (t) {
   t.plan(1)

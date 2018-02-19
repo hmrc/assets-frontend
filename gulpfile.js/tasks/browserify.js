@@ -42,12 +42,12 @@ gulp.task('browserify', (done) => {
   )
 })
 
-gulp.task('browserify:v3', ['v3', 'lint:scripts'], () => {
+gulp.task('browserify:v3', ['v3'], () => {
   return Promise.all(
     config.browserify.bundleConfigs
       .map(bundleConfig => Object.assign(bundleConfig, {
         plugin: collapse,
-        dest: path.join(config.dest[gutil.env.version], bundleConfig.destDirName)
+        dest: path.join(config.snapshotDir[gutil.env.version], bundleConfig.destDirName)
       }))
       .map(bundleConfig => promisifyStream(
         browserify(bundleConfig),
@@ -56,12 +56,12 @@ gulp.task('browserify:v3', ['v3', 'lint:scripts'], () => {
   )
 })
 
-gulp.task('browserify:v4', () => {
+gulp.task('browserify:v4', ['v4'], () => {
   return Promise.all(
     config.browserify.bundleConfigs
       .map(bundleConfig => Object.assign(bundleConfig, {
         plugin: collapse,
-        dest: path.join(config.dest[gutil.env.version], bundleConfig.destDirName)
+        dest: path.join(config.snapshotDir[gutil.env.version], bundleConfig.destDirName)
       }))
       .map(bundleConfig => promisifyStream(
         browserify(bundleConfig).ignore('javascripts'),

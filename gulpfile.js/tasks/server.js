@@ -12,13 +12,13 @@ const assetsPathV4 = `http://localhost:9032/public/v4-SNAPSHOT/`
 gulp.task('server', () => {
   if (gutil.env.version === 'v3') {
     browserSync.create().init(config.browserSync.assets, afStarted)
-    startServer('patternLibrary')
+    startServer('designSystem')
       .then(() => {
         startServer('componentLibrary')
       })
   } else {
     browserSync.create().init(config.browserSync.assets, afStarted)
-    startServer('patternLibrary')
+    startServer('designSystem')
   }
 })
 

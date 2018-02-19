@@ -1,6 +1,6 @@
 var path = require('path')
 var test = require('tape')
-var getFiles = require('./../util/pattern-library/lib/getFiles')
+var getFiles = require('../util/design-system/lib/getFiles')
 
 test('getFiles - throws if given bad config', function (t) {
   t.plan(3)

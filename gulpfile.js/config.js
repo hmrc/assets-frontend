@@ -22,10 +22,6 @@ Test:
 const src = './assets/'
 const dest = src + 'public/'
 const distDir = src + 'dist/'
-const snapshotDir = {
-  v3: dest + 'v3-SNAPSHOT/',
-  v4: dest + 'v4-SNAPSHOT/'
-}
 
 var govuk = {
   elements: 'node_modules/govuk-elements-sass',
@@ -33,8 +29,12 @@ var govuk = {
 }
 
 module.exports = {
-  dest: snapshotDir,
+  dest: dest,
   distDir: distDir,
+  snapshotDir: {
+    v3: dest + 'v3-SNAPSHOT/',
+    v4: dest + 'v4-SNAPSHOT/'
+  },
   scripts: {
     src: [
       src + 'javascripts/modules/**/*.js',
@@ -143,7 +143,7 @@ module.exports = {
       v4: [
         'components/**/**.html',
         'components/**/**.test.js',
-        'public/v3-SNAPSHOT/stylesheets/application.min.css'
+        'public/v4-SNAPSHOT/stylesheets/application.min.css'
       ]
     },
     specsScr: src + 'test/specs/unit/**/*.js',
@@ -170,7 +170,7 @@ module.exports = {
     dest: 'component-library',
     friendlyName: 'Component library'
   },
-  patternLibrary: {
+  designSystem: {
     basePort: 9034,
     friendlyName: 'Design system',
     sourceBaseDir: src,
@@ -179,11 +179,11 @@ module.exports = {
       src + 'components',
       src + 'patterns'
     ],
-    dest: 'design-pattern-library',
+    dest: 'design-system',
     template: './node_modules/hmrc-component-library-template/design-system.html',
     homepage: 'design-system.md',
     helpers: './node_modules/hmrc-component-library-template/helpers',
-    macrosPath: './gulpfile.js/util/pattern-library/macros'
+    macrosPath: './gulpfile.js/util/design-system/macros'
   },
 
   vrt: {

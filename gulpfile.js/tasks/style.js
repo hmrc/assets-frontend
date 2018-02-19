@@ -23,7 +23,7 @@ function sassToCss (stream) {
     .pipe(autoprefixer({browsers: ['last 2 versions', 'IE >= 8']}))
     .pipe(rename({suffix: '.min'}))
     .pipe(sourceMaps.write(config.sass.sourceMapsDir))
-    .pipe(gulp.dest(path.join(config.dest[gutil.env.version], config.sass.destDirName)))
+    .pipe(gulp.dest(path.join(config.snapshotDir[gutil.env.version], config.sass.destDirName)))
 }
 
 gulp.task('style', (done) => {
@@ -34,11 +34,11 @@ gulp.task('style', (done) => {
   )
 })
 
-gulp.task('style:v3', ['v3', 'stylelint'], () => {
+gulp.task('style:v3', () => {
   return sassToCss(gulp.src(config.sass.src))
 })
 
-gulp.task('style:v4', ['stylelint'], () => {
+gulp.task('style:v4', () => {
   return sassToCss(
     gulp.src(config.sass.src).pipe(replace(/^@import.*scss\/.*$/gmi, ''))
   )

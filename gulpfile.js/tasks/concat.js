@@ -9,7 +9,7 @@ const uglify = require('gulp-uglify')
 const rename = require('gulp-rename')
 
 gulp.task('concat:encryption', () => {
-  const dest = path.join(config.dest[gutil.env.version], config.scripts.destDirName)
+  const dest = path.join(config.snapshotDir[gutil.env.version], config.scripts.destDirName)
 
   return gulp.src(config.scripts.encryptionSrc)
     .pipe(concat('encryption.js'))
