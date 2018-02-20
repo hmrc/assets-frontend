@@ -3,6 +3,8 @@
 const gulp = require('gulp')
 const runSequence = require('run-sequence')
 
+runSequence.options.showErrorStackTrace = false
+
 gulp.task('release', ['changelog', 'clean:dist'], (done) => {
   runSequence(
     'build',

@@ -4,6 +4,8 @@ const gulp = require('gulp')
 const config = require('../config')
 const runSequence = require('run-sequence')
 
+runSequence.options.showErrorStackTrace = false
+
 gulp.task('watch', () => {
   gulp.watch(config.scripts.gulpTasks, ['lint:gulpTasks', 'test:gulpTasks'])
 

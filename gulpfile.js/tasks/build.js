@@ -1,7 +1,9 @@
 'use strict'
 
 const gulp = require('gulp')
-const runSequence = require('run-sequence').use(gulp)
+const runSequence = require('run-sequence')
+
+runSequence.options.showErrorStackTrace = false
 
 const globalTasks = ['lint', 'stylelint', 'test:gulpTasks']
 

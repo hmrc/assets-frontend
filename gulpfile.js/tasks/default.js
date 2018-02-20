@@ -3,11 +3,12 @@
 const gulp = require('gulp')
 const runSequence = require('run-sequence')
 
-gulp.task('default', (done) => {
+runSequence.options.showErrorStackTrace = false
+
+gulp.task('default', () => {
   runSequence(
     'design-system',
     'server',
     'watch',
-    done
   )
 })
