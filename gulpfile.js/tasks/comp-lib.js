@@ -12,7 +12,7 @@ gulp.task('kss', (done) => {
   })
 })
 
-gulp.task('component-library', ['clean:component-library'], (done) => {
+gulp.task('component-library', (done) => {
   runSequence(
     ['kss', 'build:v3'],
     'copy:component-library',
