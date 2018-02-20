@@ -3,7 +3,6 @@
 const gulp = require('gulp')
 const config = require('../config')
 const runSequence = require('run-sequence')
-// const designSystemStyles = config.designSystem.src.map((dir) => `${dir}/**/*.scss`)
 
 gulp.task('watch', () => {
   gulp.watch(config.scripts.gulpTasks, ['lint:gulpTasks', 'test:gulpTasks'])
@@ -23,6 +22,7 @@ gulp.task('watch', () => {
     () => {
       runSequence(
         'lint:scripts',
+        'test',
         'browserify:v4',
         'copy:design-system'
       )
@@ -34,5 +34,5 @@ gulp.task('watch', () => {
     ['design-system:generate']
   )
 
-  gulp.watch(config.test.src, ['test'])
+  gulp.watch(config.test.src, ['lint:scripts', 'test'])
 })
