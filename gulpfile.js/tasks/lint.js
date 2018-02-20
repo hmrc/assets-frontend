@@ -14,7 +14,8 @@ gulp.task('lint:gulpTasks', () => {
   return gulp.src(config.scripts.gulpTasks)
     .pipe(standard())
     .pipe(standard.reporter('default', {
-      breakOnError: true
+      breakOnError: true,
+      quiet: true
     }))
 })
 
@@ -22,7 +23,8 @@ gulp.task('lint:scripts', () => {
   return gulp.src(config.scripts.src)
     .pipe(standard())
     .pipe(standard.reporter('default', {
-      breakOnError: true
+      breakOnError: true,
+      quiet: true
     }))
 })
 
@@ -30,6 +32,7 @@ gulp.task('lint:tests', () => {
   return gulp.src(config.test.src)
     .pipe(standard())
     .pipe(standard.reporter('default', {
-      breakOnError: true
+      breakOnError: true,
+      quiet: true
     }))
 })

@@ -29,12 +29,17 @@ var govuk = {
 }
 
 module.exports = {
+  src: src,
+
   dest: dest,
+
   distDir: distDir,
+
   snapshotDir: {
     v3: dest + 'v3-SNAPSHOT/',
     v4: dest + 'v4-SNAPSHOT/'
   },
+
   scripts: {
     src: [
       src + 'javascripts/modules/**/*.js',
@@ -130,6 +135,7 @@ module.exports = {
       outputName: 'mdtpdf.js'
     }]
   },
+
   test: {
     src: src + 'test/**/*.js',
     files: {
@@ -165,11 +171,13 @@ module.exports = {
     host: 'http://localhost',
     baseDir: './component-library/'
   },
+
   componentLibrary: {
     basePort: 9033,
     dest: 'component-library',
     friendlyName: 'Component library'
   },
+
   designSystem: {
     basePort: 9034,
     friendlyName: 'Design system',
