@@ -17,10 +17,11 @@ gulp.task('build:v3', ['clean:v3'].concat(globalTasks), () => {
   )
 })
 
-gulp.task('build:v4', ['clean:v4'].concat(globalTasks), () => {
+gulp.task('build:v4', ['clean:v4'].concat(globalTasks), (done) => {
   runSequence(
     ['style:v4', 'images:v4', 'svg:v4'],
     'test:v4',
-    ['error-pages:v4', 'concat:encryption:v4', 'modernizr:v4', 'browserify:v4']
+    ['error-pages:v4', 'concat:encryption:v4', 'modernizr:v4', 'browserify:v4'],
+    done
   )
 })
