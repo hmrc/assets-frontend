@@ -66,6 +66,8 @@ module.exports = function (karmaConfig) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: true
+    singleRun: true,
+
+    browserDisconnectTolerance: 3
   })
 }
