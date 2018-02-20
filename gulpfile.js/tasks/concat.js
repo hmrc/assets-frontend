@@ -2,20 +2,27 @@
 
 const path = require('path')
 const gulp = require('gulp')
-const gutil = require('gulp-util')
 const config = require('../config')
 const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
 const rename = require('gulp-rename')
 
-gulp.task('concat:encryption', () => {
-  const dest = path.join(config.snapshotDir[gutil.env.version], config.scripts.destDirName)
+const concatEncryption = (v) => {
+  const dest = path.join(config.snapshotDir[v], config.scripts.destDirName)
 
   return gulp.src(config.scripts.encryptionSrc)
     .pipe(concat('encryption.js'))
-    .pipe(uglify())
+    .pipe(uglify({ ie8: true }))
     .pipe(rename((path) => {
       path.extname = '.min.js'
     }))
     .pipe(gulp.dest(dest))
+}
+
+gulp.task('concat:encryption:v3', () => {
+  return concatEncryption('v3')
+})
+
+gulp.task('concat:encryption:v4', () => {
+  return concatEncryption('v4')
 })

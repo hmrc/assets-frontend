@@ -2,14 +2,24 @@
 
 const path = require('path')
 const gulp = require('gulp')
-const gutil = require('gulp-util')
 const svgmin = require('gulp-svgmin')
 const config = require('../config')
 
-gulp.task('svg', () => {
-  const dest = path.join(config.snapshotDir[gutil.env.version], config.images.destDirName)
+const svg = (v) => {
+  const dest = path.join(
+    config.snapshotDir[v],
+    config.images.destDirName
+  )
 
   return gulp.src(config.svg.src)
     .pipe(svgmin())
     .pipe(gulp.dest(dest))
+}
+
+gulp.task('svg:v3', () => {
+  return svg('v3')
+})
+
+gulp.task('svg:v4', () => {
+  return svg('v4')
 })

@@ -1,9 +1,6 @@
 // Karma configuration
 // Generated on Tue Aug 26 2014 11:01:22 GMT+0100 (BST)
 
-const gutil = require('gulp-util')
-const config = require('../../../gulpfile.js/config')
-
 module.exports = function (karmaConfig) {
   karmaConfig.set({
     // base path, that will be used to resolve files and exclude
@@ -18,7 +15,8 @@ module.exports = function (karmaConfig) {
     ],
 
     // list of files / patterns to load in the browser
-    files: config.test.files[gutil.env.version],
+    // these are set in /gulpfile.js/config.js
+    files: [],
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
