@@ -8,7 +8,7 @@ const tape = require('gulp-tape')
 const tapSpec = require('tap-spec')
 const config = require('../config').test
 
-gulp.task('test:gulpTasks', ['lint'], () => {
+gulp.task('test:gulpTasks', ['lint:gulpTasks'], () => {
   return gulp.src(config.gulpTasks)
     .pipe(tape({
       bail: true,
