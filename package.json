@@ -11,7 +11,7 @@
     "npm": ">=2.15.5"
   },
   "scripts": {
-    "start": "npm run dev",
+    "start": "npm run -s dev",
     "dev": "gulp",
     "build": "gulp build",
     "release": "gulp release",
