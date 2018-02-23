@@ -145,7 +145,6 @@
     "mkdirp": "^0.5.1",
     "nodemon": "^1.11.0",
     "nunjucks": "^3.0.1",
-    "portfinder": "^1.0.13",
     "sinon": "^1.17.7",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3"
