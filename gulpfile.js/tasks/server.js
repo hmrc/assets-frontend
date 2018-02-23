@@ -1,84 +1,71 @@
 'use strict'
 
+const net = require('net')
 const gulp = require('gulp')
-const portfinder = require('portfinder')
 const gutil = require('gulp-util')
 const browserSync = require('browser-sync')
-const colors = require('colors')
 const config = require('../config')
-const assetsPathV3 = `http://localhost:9032/public/v3-SNAPSHOT/`
-const assetsPathV4 = `http://localhost:9032/public/v4-SNAPSHOT/`
 
-gulp.task('server', () => {
-  if (gutil.env.version === 'v3') {
-    browserSync.create().init(config.browserSync.assets, afStarted)
-    startServer('designSystem')
-      .then(() => {
-        startServer('componentLibrary')
-      })
-  } else {
-    browserSync.create().init(config.browserSync.assets, afStarted)
-    startServer('designSystem')
-  }
-})
-
-const startServer = (serverName) => {
-  const serverPath = config[serverName].dest
-  portfinder.basePort = config[serverName].basePort
-  let serverConfig
-  return new Promise((resolve, reject) => {
-    const hasStarted = () => {
-      message(`${config[serverName].friendlyName} started on http://localhost:${serverConfig.port}/`)
-      resolve()
-    }
-    try {
-      getServerConfig(serverPath).then((config) => {
-        serverConfig = config
-        browserSync.create(serverPath).init(config, hasStarted)
-      })
-    } catch (err) {
-      reject(err)
-    }
-  })
+const titleCase = (string) => {
+  return string.split('-').map(_ => _.charAt(0).toUpperCase() + _.substring(1)).join(' ')
 }
 
-const getServerConfig = (serverPath) => {
+const isPortAvailable = (port, host) => {
   return new Promise((resolve, reject) => {
-    portfinder.getPort((err, port) => {
-      if (err) {
+    const client = new net.Socket()
+    client.once('connect', () => resolve(port))
+    client.once('error', (err) => {
+      if (err.code !== 'ECONNREFUSED') {
         reject(err)
       } else {
-        resolve({
-          ui: false,
-          logLevel: 'silent',
-          port: port,
-          open: false,
-          server: serverPath
-        })
+        resolve(false)
       }
     })
+
+    client.connect({port, host})
   })
 }
 
-const afStartupMessage = (version) => {
-  let output = 'Assets frontend started on http://localhost:9032/\n'
-  switch (version) {
-    case 'v3':
-      output +=
-        `\tVersion 3 assets are available at: ${assetsPathV3}\n` +
-        `\tVersion 4 assets are available at: ${assetsPathV4}`
-      break
-    case 'v4':
-      output +=
-        `\tVersion 4 assets are available at: ${assetsPathV4}`
-  }
-  return output
+const getConfigsExcluding = (configs, exclude) => {
+  return configs.filter(config => config.server !== exclude)
 }
 
-const afStarted = () => {
-  message(afStartupMessage(gutil.env.version))
+const startBrowserSync = (name, config) => {
+  browserSync.create(name).init(config, () => {
+    console.log(gutil.colors.green(`\n${titleCase(name)} server started on port ${config.port}`))
+    console.log(gutil.colors.green(`-> http://localhost:${config.port}`))
+  })
 }
 
-const message = (message) => {
-  return console.log(colors.green(`\n${message}`))
+const startServers = (configs, done) => {
+  configs.forEach(config => {
+    const name = typeof config.server === 'string' ? config.server : 'assets-frontend'
+
+    if (name === 'assets-frontend') {
+      isPortAvailable(config.port, config.host)
+        .then((port) => {
+          if (port) {
+            console.log(gutil.colors.red(`\nPort ${port} is not available. Kill any processes listening on this port and try again.`))
+            done(process.exit(1))
+          } else {
+            startBrowserSync(name, config)
+          }
+        })
+        .catch((err) => {
+          console.error('Error checking for port:', err.message)
+        })
+    } else {
+      startBrowserSync(name, config)
+    }
+  })
 }
+
+gulp.task('server:v4', (done) => {
+  const configs = getConfigsExcluding(config.browserSync, 'component-library')
+  return startServers(configs, done)
+})
+
+gulp.task('server:all', (done) => {
+  const configs = getConfigsExcluding(config.browserSync, null)
+  return startServers(configs, done)
+})
