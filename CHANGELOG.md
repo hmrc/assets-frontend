@@ -6,8 +6,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [3.2.0] and [4.2.0] - 2018-01-25
 ### Fixed
 - Build styles as a dependency of the test task [896](https://github.com/hmrc/assets-frontend/issues/896)
+- Link style button(button--link) focus background colour is green [900](https://github.com/hmrc/assets-frontend/issues/900)
+- Change log checks that the current commit doesn't exist in the remote master [904](https://github.com/hmrc/assets-frontend/pull/904)
+
+### Added
+- Added in links to the contribution guidelines [#902](https://github.com/hmrc/assets-frontend/pull/902)
 
 ###Changed
 - Improve the developer experience of running assets-frontend [735](https://github.com/hmrc/assets-frontend/pull/907)
@@ -29,6 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Content of work in progress macro and added new research macro [#888](https://github.com/hmrc/assets-frontend/pull/888)
 - Include language selector as a partial in other components [#887](https://github.com/hmrc/assets-frontend/pull/887)
 - Removed check your answers from component navigation [#885](https://github.com/hmrc/assets-frontend/pull/885)
+- Fix issue with blue border not displaying on pages without the PTA account menu [#903](https://github.com/hmrc/assets-frontend/pull/903)
 
 ## [3.0.2] - 2017-12-19
 ### Deprecated
@@ -225,8 +233,10 @@ This entire version is covered by a single pull request. [#867](https://github.c
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...master
+[4.2.0]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...4.2.0
 [4.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...4.1.0
+[3.2.0]: https://github.com/hmrc/assets-frontend/compare/release/3.1.0...3.2.0
 [3.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...3.1.0
 [3.0.2]: https://github.com/hmrc/assets-frontend/compare/release/3.0.1...release/3.0.2
 [3.0.1]: https://github.com/hmrc/assets-frontend/compare/release/3.0.0...release/3.0.1
