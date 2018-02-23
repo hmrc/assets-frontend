@@ -57,6 +57,6 @@ gulp.task('vrt-compare', function () {
 
 gulp.task('vrt-server', function () {
   compLibServer = http.createServer(
-    st(config.compLib.baseDir)
-  ).listen(config.compLib.port)
+    st(config.componentLibrary.baseDir)
+  ).listen(config.componentLibrary.port)
 })

@@ -22,6 +22,9 @@ Test:
 const src = './assets/'
 const dest = src + 'public/'
 const distDir = src + 'dist/'
+const assetsPort = 9032
+const componentLibraryPort = 9033
+const designSystemPort = 9034
 
 var govuk = {
   elements: 'node_modules/govuk-elements-sass',
@@ -166,21 +169,12 @@ module.exports = {
     assetsBaseUri: '/assets/'
   },
 
-  compLib: {
-    port: 9042,
-    host: 'http://localhost',
-    baseDir: './component-library/'
-  },
-
   componentLibrary: {
-    basePort: 9033,
-    dest: 'component-library',
-    friendlyName: 'Component library'
+    baseDir: './component-library/',
+    dest: 'component-library'
   },
 
   designSystem: {
-    basePort: 9034,
-    friendlyName: 'Design system',
     sourceBaseDir: src,
     src: [
       src + 'styles',
@@ -199,18 +193,33 @@ module.exports = {
     backstopConfig: './backstop.json'
   },
 
-  browserSync: {
-    assets: {
-      ui: false,
-      port: 9032,
-      open: false,
-      logLevel: 'silent',
-      server: {
-        baseDir: '.',
-        routes: {
-          '/assets': dest
-        }
+  browserSync: [{
+    ui: false,
+    port: assetsPort,
+    open: false,
+    logLevel: 'silent',
+    host: '127.0.0.1',
+    server: {
+      baseDir: '.',
+      routes: {
+        '/assets': dest
       }
     }
-  }
+  }, {
+    ui: false,
+    port: componentLibraryPort,
+    open: false,
+    logLevel: 'silent',
+    localOnly: true,
+    host: '127.0.0.1',
+    server: 'component-library'
+  }, {
+    ui: false,
+    port: designSystemPort,
+    open: false,
+    logLevel: 'silent',
+    localOnly: true,
+    host: '127.0.0.1',
+    server: 'design-system'
+  }]
 }
