@@ -12,9 +12,6 @@
 */
 
 const requireDir = require('require-dir')
-const gutil = require('gulp-util')
-
-gutil.env['version'] = 'v3'
 
 // Require all tasks in gulpfile.js/tasks
 requireDir('./tasks', { recurse: false })
