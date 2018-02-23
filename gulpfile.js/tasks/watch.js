@@ -3,11 +3,12 @@
 const gulp = require('gulp')
 const config = require('../config')
 const runSequence = require('run-sequence')
+const gutil = require('gulp-util')
 
 runSequence.options.showErrorStackTrace = false
 
 const tasksComplete = () => {
-  console.log('\nWatch tasks finished. Waiting for changes...\n'.green)
+  console.log(gutil.colors.green('\nWatch tasks finished. Waiting for changes...\n'))
 }
 
 gulp.task('watch', () => {
