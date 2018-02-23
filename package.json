@@ -13,6 +13,7 @@
   "scripts": {
     "start": "npm run -s dev",
     "dev": "gulp",
+    "dev:all": "gulp default:all",
     "build": "gulp build",
     "release": "gulp release",
     "test": "gulp test",
@@ -81,6 +82,7 @@
     "run-sequence": "^2.1.0",
     "st": "^1.2.0",
     "sticky-header": "^0.2.1",
+    "tcp-port-used": "^0.1.2",
     "upath": "^1.0.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
@@ -134,7 +136,6 @@
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "colors": "^1.1.2",
     "globby": "^6.1.0",
     "gulp-standard": "^10.0.0",
     "gulp-stats": "0.0.4",
