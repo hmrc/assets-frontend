@@ -9,11 +9,12 @@ const globalTasks = ['lint', 'stylelint', 'test:gulpTasks']
 
 gulp.task('build', ['build:v3', 'build:v4'])
 
-gulp.task('build:v3', ['clean:v3'].concat(globalTasks), () => {
+gulp.task('build:v3', ['clean:v3'].concat(globalTasks), (done) => {
   runSequence(
     ['style:v3', 'images:v3', 'svg:v3'],
     'test:v3',
-    ['error-pages:v3', 'concat:encryption:v3', 'modernizr:v3', 'browserify:v3']
+    ['error-pages:v3', 'concat:encryption:v3', 'modernizr:v3', 'browserify:v3'],
+    done
   )
 })
 
