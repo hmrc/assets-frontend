@@ -5,15 +5,15 @@ var nunjucks = require('nunjucks')
 var config = require('../../../config')
 
 var parseDocumentation = function (files) {
-  var macros = fs.readdirSync(config.patternLibrary.macrosPath)
+  var macros = fs.readdirSync(config.designSystem.macrosPath)
     .map(fileName => `{% from '${fileName}' import '${path.parse(fileName).name}' %}`)
     .join('')
 
   files.forEach(function (file) {
     nunjucks.configure([
-      config.patternLibrary.macrosPath,
+      config.designSystem.macrosPath,
       path.parse(file.path).dir,
-      config.patternLibrary.sourceBaseDir
+      config.designSystem.sourceBaseDir
     ])
 
     var fileContents = macros + file.contents.toString()

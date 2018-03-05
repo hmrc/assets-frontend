@@ -7,14 +7,12 @@ const gulp = require('gulp')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
 const config = require('../config')
-const gutil = require('gulp-util')
 const rename = require('gulp-rename')
 const uglify = require('gulp-uglify')
 const sourcemaps = require('gulp-sourcemaps')
-const runSequence = require('run-sequence')
 const glob = require('globby')
 
-function promisifyStream (browserifyInstance, bundleConfig) {
+const promisifyStream = (browserifyInstance, bundleConfig) => {
   if (bundleConfig.add) {
     browserifyInstance.add(glob.sync(bundleConfig.add))
   }
@@ -34,21 +32,17 @@ function promisifyStream (browserifyInstance, bundleConfig) {
   })
 }
 
-gulp.task('browserify', (done) => {
-  runSequence(
-    'browserify:v3',
-    'browserify:v4',
-    done
-  )
-})
+const getBundleConfig = (bundleConfig, v) => {
+  return Object.assign(bundleConfig, {
+    plugin: collapse,
+    dest: path.join(config.snapshotDir[v], bundleConfig.destDirName)
+  })
+}
 
-gulp.task('browserify:v3', ['v3', 'lint:scripts'], () => {
+gulp.task('browserify:v3', () => {
   return Promise.all(
     config.browserify.bundleConfigs
-      .map(bundleConfig => Object.assign(bundleConfig, {
-        plugin: collapse,
-        dest: path.join(config.dest[gutil.env.version], bundleConfig.destDirName)
-      }))
+      .map(bundleConfig => getBundleConfig(bundleConfig, 'v3'))
       .map(bundleConfig => promisifyStream(
         browserify(bundleConfig),
         bundleConfig
@@ -56,13 +50,10 @@ gulp.task('browserify:v3', ['v3', 'lint:scripts'], () => {
   )
 })
 
-gulp.task('browserify:v4', ['v4', 'lint:scripts'], () => {
+gulp.task('browserify:v4', () => {
   return Promise.all(
     config.browserify.bundleConfigs
-      .map(bundleConfig => Object.assign(bundleConfig, {
-        plugin: collapse,
-        dest: path.join(config.dest[gutil.env.version], bundleConfig.destDirName)
-      }))
+      .map(bundleConfig => getBundleConfig(bundleConfig, 'v4'))
       .map(bundleConfig => promisifyStream(
         browserify(bundleConfig).ignore('javascripts'),
         bundleConfig

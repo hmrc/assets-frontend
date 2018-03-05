@@ -6,7 +6,7 @@ var addFileType = require('./lib/addFileType')
 var parseDocumentation = require('./lib/parseDocumentation')
 var renderLibraryPages = require('./lib/renderLibraryPages')
 
-var patternLibrary = function (config) {
+var designSystem = function (config) {
   return getFiles(config)
     .then((files) => addFileType(config, files))
     .then((files) => addHomepage(config, files))
@@ -16,4 +16,4 @@ var patternLibrary = function (config) {
     .then(() => copyAssets(config))
 }
 
-module.exports = patternLibrary
+module.exports = designSystem

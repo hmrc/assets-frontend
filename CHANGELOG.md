@@ -29,6 +29,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Added in links to the contribution guidelines [#902](https://github.com/hmrc/assets-frontend/pull/902)
 
+###Changed
+- Improve the developer experience of running assets-frontend [735](https://github.com/hmrc/assets-frontend/pull/907)
+
 ## [3.1.0] and [4.1.0] - 2018-01-16
 ### Added
 - Build a version without deprecated components [#873](https://github.com/hmrc/assets-frontend/pull/873)

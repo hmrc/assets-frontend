@@ -19,7 +19,7 @@ To install multiple versions of Node.js, you may find it easier to use a node ve
 
 ## Installation
 
-Clone this repository and run install:
+Clone this repository and install its dependencies:
 
 ```
 $ git clone https://github.com/hmrc/assets-frontend.git
@@ -29,11 +29,17 @@ $ npm install
 
 ## Running
 
-1. Run `npm start`
-2. Assets are then available at http://localhost:9032/assets/999-SNAPSHOT/
-3. The Design System is available at http://localhost:9034/
-4. The Component Library [DEPRECATED] is available at http://localhost:9033/
+### The Design System:
 
+1. Run `npm start`
+2. Assets are then available at http://localhost:9032/assets/v4-SNAPSHOT/...
+3. The Design System is available at http://localhost:9034/
+
+### The Component Library [DEPRECATED]
+
+1. Run `npm run build:all`
+2. Assets are then available at http://localhost:9032/assets/v3-SNAPSHOT/...
+3. The Component Library is available at http://localhost:9033/
 
 # Usage
 
@@ -43,13 +49,15 @@ $ npm install
 
 For now, the quickest and simplest way to add assets-frontend to your prototype is to grab the built CSS and JS from production.
 
-Just replace `VERSION` in the links below with the [released version](https://github.com/hmrc/assets-frontend/releases) you want to use (we recommend using the latest).
+Just replace `<VERSION>` in the links below with the [released version](https://github.com/hmrc/assets-frontend/releases) you want to use (we recommend using the latest).
 
 If your prototype is based on the [GOV.UK prototype kit](https://github.com/alphagov/govuk_prototype_kit/) then do the following:
 
 **CSS**
 
-Save the file found at https://www.tax.service.gov.uk/assets/VERSION/stylesheets/application.min.css to `/app/assets/sass/assets-frontend.scss`.
+Save the file found at
+[https://www.tax.service.gov.uk/assets/\<VERSION\>/stylesheets/application.min.css](https://www.tax.service.gov.uk/assets/\<VERSION\>/stylesheets/application.min.css)
+to `/app/assets/sass/assets-frontend.scss`.
 
 And add the following to `app/views/includes/head.html`:
 ```
@@ -58,7 +66,9 @@ And add the following to `app/views/includes/head.html`:
 
 **JavaScript**
 
-Save the file found at https://www.tax.service.gov.uk/assets/VERSION/javascripts/application.min.js to `/app/assets/javascripts/assets-frontend.js`
+Save the file found at
+[https://www.tax.service.gov.uk/assets/\<VERSION\>/javascripts/application.min.js](https://www.tax.service.gov.uk/assets/\<VERSION\>/javascripts/application.min.js)
+to `/app/assets/javascripts/assets-frontend.js`
 
 And add the following to `app/views/includes/head.html`
 ```
@@ -78,13 +88,13 @@ $ ASSETS_FRONTEND_VERSION=999-SNAPSHOT sbt run
 If you’re using [service-manager](https://github.com/hmrc/service-manager), please read the [service manager guidance in the Wiki](https://github.com/hmrc/assets-frontend/wiki/Using-service-manager).
 
 
-# Using assets in production
+## Using assets in production
 
-Running `npm run build` calls the [build gulp task](https://github.com/hmrc/assets-frontend/blob/master/gulpfile.js/tasks/build.js) and this happens on our internal Jenkins instances.
+Running `npm run release` calls the [release gulp task](https://github.com/hmrc/assets-frontend/blob/master/gulpfile.js/tasks/release.js) and this happens on our internal Jenkins instances.
 
-The final step of our internal release pipeline is to version and deploy the compiled assets to https://www.tax.service.gov.uk/assets/VERSION/.
+The final step of our internal release pipeline is to version and deploy the compiled assets to https://www.tax.service.gov.uk/assets/.
 
-Releasing assets for use in production is currently a manual process which is owned by the [Service Design Tools](https://github.com/orgs/hmrc/teams/service-design-tools) team.
+Releasing assets for use in production is currently a process owned by the [Service Design Tools](https://github.com/orgs/hmrc/teams/service-design-tools) team.
 
 If you’d like a new version of assets-frontend released, please get in touch with us in the [#team-sdt](https://hmrcdigital.slack.com/messages/C39V3PH38) Slack channel.
 

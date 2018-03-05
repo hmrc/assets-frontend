@@ -10,6 +10,8 @@ var backstopConfigGenerator = require('./../util/backstop/configGenerator')
 var argv = require('yargs').argv
 var compLibServer
 
+runSequence.options.showErrorStackTrace = false
+
 gulp.task('build-vrt-config', function () {
   return backstopConfigGenerator(config)
 })
@@ -55,6 +57,6 @@ gulp.task('vrt-compare', function () {
 
 gulp.task('vrt-server', function () {
   compLibServer = http.createServer(
-    st(config.compLib.baseDir)
-  ).listen(config.compLib.port)
+    st(config.componentLibrary.baseDir)
+  ).listen(config.componentLibrary.port)
 })

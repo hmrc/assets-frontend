@@ -2,7 +2,7 @@ var fs = require('fs')
 var del = require('del')
 var path = require('path')
 var test = require('tape')
-var copyAssets = require('../util/pattern-library/lib/copyAssets')
+var copyAssets = require('../util/design-system/lib/copyAssets')
 
 test('copyAssets - throws is not given a config object', function (t) {
   t.plan(1)

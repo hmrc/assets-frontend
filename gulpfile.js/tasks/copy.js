@@ -7,12 +7,12 @@ const compLibConfig = require('../../component-lib.json')
 
 gulp.task('copy:component-library', () => {
   return gulp
-    .src([`${config.dest.v3}/**/*`])
+    .src([`${config.snapshotDir.v3}/**/*`])
     .pipe(gulp.dest(path.join(compLibConfig.destination, 'public')))
 })
 
-gulp.task('copy:pattern-library', () => {
+gulp.task('copy:design-system', () => {
   return gulp
-    .src([`${config.dest.v4}/**/*`])
-    .pipe(gulp.dest(path.join(config.patternLibrary.dest, 'public')))
+    .src([`${config.snapshotDir.v4}/**/*`])
+    .pipe(gulp.dest(path.join(config.designSystem.dest, 'public')))
 })

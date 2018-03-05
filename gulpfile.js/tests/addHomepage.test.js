@@ -1,6 +1,6 @@
 var path = require('path')
 var test = require('tape')
-var addHomepage = require('../util/pattern-library/lib/addHomepage')
+var addHomepage = require('../util/design-system/lib/addHomepage')
 
 test('addHomepage - throws if not given config', function (t) {
   t.plan(1)

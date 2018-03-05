@@ -1,7 +1,8 @@
 'use strict'
 
-const fs = require('fs')
+const path = require('path')
 const gulp = require('gulp')
+const karmaConfig = require('karma').config
 const Server = require('karma').Server
 const tape = require('gulp-tape')
 const tapSpec = require('tap-spec')
@@ -15,14 +16,36 @@ gulp.task('test:gulpTasks', ['lint:gulpTasks'], () => {
     }))
 })
 
-gulp.task('test', ['lint', 'style'], (done) => {
-  const server = new Server({
-    configFile: fs.realpathSync(config.karmaConfig),
-    singleRun: true
-  },
-  function (exitCode) {
-    done(exitCode)
-  })
+gulp.task('test', ['test:v3', 'test:v4'])
+
+gulp.task('test:v3', (done) => {
+  const v3KarmaConfig = karmaConfig.parseConfig(
+    path.resolve(config.karmaConfig),
+    { files: config.files.v3 }
+  )
+
+  const server = new Server(
+    v3KarmaConfig,
+    (exitCode) => {
+      done(exitCode)
+    }
+  )
+
+  server.start()
+})
+
+gulp.task('test:v4', (done) => {
+  const v4KarmaConfig = karmaConfig.parseConfig(
+    path.resolve(config.karmaConfig),
+    { files: config.files.v4 }
+  )
+
+  const server = new Server(
+    v4KarmaConfig,
+    (exitCode) => {
+      done(exitCode)
+    }
+  )
 
   server.start()
 })

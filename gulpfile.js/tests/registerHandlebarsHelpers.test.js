@@ -2,7 +2,7 @@ var path = require('path')
 var test = require('tape')
 var sinon = require('sinon')
 var Handlebars = require('handlebars')
-var registerHandlebarsHelpers = require('../util/pattern-library/lib/registerHandlebarsHelpers')
+var registerHandlebarsHelpers = require('../util/design-system/lib/registerHandlebarsHelpers')
 
 test('registerHandlebarsHelpers - accepts an optional hendlebars helpers directory', function (t) {
   t.plan(6)

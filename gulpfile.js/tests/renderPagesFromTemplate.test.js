@@ -4,7 +4,7 @@ var test = require('tape')
 var gutil = require('gulp-util')
 var cheerio = require('cheerio')
 var Handlebars = require('handlebars')
-var renderPagesFromTemplate = require('../util/pattern-library/lib/renderPagesFromTemplate')
+var renderPagesFromTemplate = require('../util/design-system/lib/renderPagesFromTemplate')
 
 var templatePath = path.join(__dirname, 'fixtures', 'pattern-library', 'design-pattern-library-template.html')
 var templateSource = fs.readFileSync(templatePath).toString()

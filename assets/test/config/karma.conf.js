@@ -1,8 +1,8 @@
 // Karma configuration
 // Generated on Tue Aug 26 2014 11:01:22 GMT+0100 (BST)
 
-module.exports = function (config) {
-  config.set({
+module.exports = function (karmaConfig) {
+  karmaConfig.set({
     // base path, that will be used to resolve files and exclude
     basePath: '../..',
 
@@ -15,13 +15,8 @@ module.exports = function (config) {
     ],
 
     // list of files / patterns to load in the browser
-    files: [
-      'test/specs/fixtures/*.html',
-      'test/specs/*.js',
-      'components/**/**.html',
-      'components/**/**.test.js',
-      'public/v3-SNAPSHOT/stylesheets/application.min.css'
-    ],
+    // these are set in /gulpfile.js/config.js
+    files: [],
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
@@ -49,7 +44,7 @@ module.exports = function (config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: karmaConfig.LOG_INFO,
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: false,
@@ -69,6 +64,8 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: true
+    singleRun: true,
+
+    browserDisconnectTolerance: 3
   })
 }

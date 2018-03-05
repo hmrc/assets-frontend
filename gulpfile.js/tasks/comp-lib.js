@@ -4,6 +4,8 @@ const exec = require('child_process').exec
 const gulp = require('gulp')
 const runSequence = require('run-sequence')
 
+runSequence.options.showErrorStackTrace = false
+
 gulp.task('kss', (done) => {
   const genCompLib = './node_modules/.bin/kss-node --config component-lib.json'
 
@@ -12,7 +14,7 @@ gulp.task('kss', (done) => {
   })
 })
 
-gulp.task('component-library', ['clean:component-library'], (done) => {
+gulp.task('component-library', (done) => {
   runSequence(
     ['kss', 'build:v3'],
     'copy:component-library',

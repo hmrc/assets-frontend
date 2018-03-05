@@ -1,16 +1,21 @@
 'use strict'
 
+const fs = require('fs')
 const gulp = require('gulp')
-const gutil = require('gulp-util')
 const zip = require('gulp-zip')
 const config = require('../config')
 
 gulp.task('zip', () => {
-  return gulp
-    .src([
-      `${config.dest[gutil.env.version]}**/*`,
-      '!**/*.map'
-    ])
-    .pipe(zip(`assets-frontend-${gutil.env.version}.zip`))
-    .pipe(gulp.dest(config.distDir))
+  const versions = fs.readdirSync(config.dest)
+
+  return Promise.all(versions.map((version) => {
+    return Promise.resolve(
+      gulp.src([
+        `${config.dest}${version}/**/*`,
+        `!${config.dest}**/*.map`
+      ])
+        .pipe(zip(`assets-frontend-${version.split('-')[0]}.zip`))
+        .pipe(gulp.dest(config.distDir))
+    )
+  }))
 })

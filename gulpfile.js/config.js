@@ -19,14 +19,9 @@ Test:
 - Continuous
 - Spec reporter
 */
-
 const src = './assets/'
 const dest = src + 'public/'
 const distDir = src + 'dist/'
-const snapshotDir = {
-  v3: dest + 'v3-SNAPSHOT/',
-  v4: dest + 'v4-SNAPSHOT/'
-}
 
 var govuk = {
   elements: 'node_modules/govuk-elements-sass',
@@ -34,8 +29,16 @@ var govuk = {
 }
 
 module.exports = {
-  dest: snapshotDir,
+  src: src,
+
+  dest: dest,
+
   distDir: distDir,
+
+  snapshotDir: {
+    v3: dest + 'v3-SNAPSHOT/',
+    v4: dest + 'v4-SNAPSHOT/'
+  },
 
   scripts: {
     src: [
@@ -135,6 +138,20 @@ module.exports = {
 
   test: {
     src: src + 'test/**/*.js',
+    files: {
+      v3: [
+        'test/specs/fixtures/*.html',
+        'test/specs/*.js',
+        'components/**/**.html',
+        'components/**/**.test.js',
+        'public/v3-SNAPSHOT/stylesheets/application.min.css'
+      ],
+      v4: [
+        'components/**/**.html',
+        'components/**/**.test.js',
+        'public/v4-SNAPSHOT/stylesheets/application.min.css'
+      ]
+    },
     specsScr: src + 'test/specs/unit/**/*.js',
     fixturesScr: src + 'test/specs/fixtures/*.html',
     karmaConfig: src + 'test/config/karma.conf.js',
@@ -149,24 +166,23 @@ module.exports = {
     assetsBaseUri: '/assets/'
   },
 
-  compLib: {
-    port: 9042,
-    host: 'http://localhost',
-    baseDir: './component-library/'
+  componentLibrary: {
+    baseDir: './component-library/',
+    dest: 'component-library'
   },
 
-  patternLibrary: {
+  designSystem: {
     sourceBaseDir: src,
     src: [
       src + 'styles',
       src + 'components',
       src + 'patterns'
     ],
-    dest: 'design-pattern-library',
+    dest: 'design-system',
     template: './node_modules/hmrc-component-library-template/design-system.html',
     homepage: 'design-system.md',
     helpers: './node_modules/hmrc-component-library-template/helpers',
-    macrosPath: './gulpfile.js/util/pattern-library/macros'
+    macrosPath: './gulpfile.js/util/design-system/macros'
   },
 
   vrt: {
@@ -178,6 +194,8 @@ module.exports = {
     ui: false,
     port: 9032,
     open: false,
+    logLevel: 'silent',
+    host: '127.0.0.1',
     server: {
       baseDir: '.',
       routes: {
@@ -188,11 +206,17 @@ module.exports = {
     ui: false,
     port: 9033,
     open: false,
+    logLevel: 'silent',
+    localOnly: true,
+    host: '127.0.0.1',
     server: 'component-library'
   }, {
     ui: false,
     port: 9034,
     open: false,
-    server: 'design-pattern-library'
+    logLevel: 'silent',
+    localOnly: true,
+    host: '127.0.0.1',
+    server: 'design-system'
   }]
 }

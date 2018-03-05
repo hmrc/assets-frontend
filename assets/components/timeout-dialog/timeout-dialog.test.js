@@ -6,16 +6,15 @@
  */
 
 require('jquery')
+
 describe('Given the timeout dialog has been called', function () {
-  var timeoutDialog
+  var timeoutDialog = require('./timeoutDialog.js')
 
   beforeEach(function () {
     jasmine.getFixtures().fixturesPath = 'base/components/timeout-dialog'
     loadFixtures('timeout-dialog.html')
-    timeoutDialog = require('./timeoutDialog.js')
-    $(function () {
-      $.timeoutDialog = timeoutDialog
-    })
+
+    $.timeoutDialog = timeoutDialog
     $.timeoutDialog({ timeout: 120 })
   })
 

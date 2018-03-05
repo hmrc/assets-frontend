@@ -2,7 +2,7 @@ var fs = require('fs')
 var path = require('path')
 var test = require('tape')
 var gutil = require('gulp-util')
-var parseDocumentation = require('../util/pattern-library/lib/parseDocumentation')
+var parseDocumentation = require('../util/design-system/lib/parseDocumentation')
 
 test('parseDocumentation - returns rendered markdown', function (t) {
   t.plan(1)

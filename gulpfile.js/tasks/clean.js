@@ -2,18 +2,18 @@
 
 const del = require('del')
 const gulp = require('gulp')
-const gutil = require('gulp-util')
 const config = require('../config')
-const compLibConfig = require('../../component-lib.json')
 
-gulp.task('clean', () => {
-  return del.sync(config.dest[gutil.env.version])
+gulp.task('clean', ['clean:v3', 'clean:v4'])
+
+gulp.task('clean:v4', () => {
+  return del([config.designSystem.dest, config.snapshotDir.v4])
 })
 
-gulp.task('clean:pattern-library', () => {
-  return del.sync(config.patternLibrary.dest)
+gulp.task('clean:v3', () => {
+  return del([config.componentLibrary.dest, config.snapshotDir.v3])
 })
 
-gulp.task('clean:component-library', () => {
-  return del.sync(compLibConfig.destination)
+gulp.task('clean:dist', () => {
+  return del([config.distDir])
 })

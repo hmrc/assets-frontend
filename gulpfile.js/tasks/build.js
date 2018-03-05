@@ -1,43 +1,28 @@
 'use strict'
 
 const gulp = require('gulp')
-const gutil = require('gulp-util')
 const runSequence = require('run-sequence')
 
-gulp.task('build', (done) => {
+runSequence.options.showErrorStackTrace = false
+
+const globalTasks = ['lint', 'stylelint', 'test:gulpTasks']
+
+gulp.task('build', ['build:v3', 'build:v4'])
+
+gulp.task('build:v3', ['clean:v3'].concat(globalTasks), (done) => {
   runSequence(
-    'build:v3',
-    'build:v4',
+    ['style:v3', 'images:v3', 'svg:v3'],
+    'test:v3',
+    ['error-pages:v3', 'concat:encryption:v3', 'modernizr:v3', 'browserify:v3'],
     done
   )
 })
 
-gulp.task('build:v3', ['v3'], (done) => {
+gulp.task('build:v4', ['clean:v4'].concat(globalTasks), (done) => {
   runSequence(
-    'clean',
-    ['lint', 'test:gulpTasks'],
-    ['style:v3', 'images', 'svg', 'error-pages', 'concat:encryption', 'browserify:v3'],
-    'modernizr',
-    'test',
+    ['style:v4', 'images:v4', 'svg:v4'],
+    'test:v4',
+    ['error-pages:v4', 'concat:encryption:v4', 'modernizr:v4', 'browserify:v4'],
     done
   )
-})
-
-gulp.task('build:v4', ['v4'], (done) => {
-  runSequence(
-    'clean',
-    ['lint', 'test:gulpTasks'],
-    ['style:v4', 'images', 'svg', 'error-pages', 'concat:encryption', 'browserify:v4'],
-    'modernizr',
-    'test',
-    done
-  )
-})
-
-gulp.task('v3', () => {
-  gutil.env.version = 'v3'
-})
-
-gulp.task('v4', () => {
-  gutil.env.version = 'v4'
 })
