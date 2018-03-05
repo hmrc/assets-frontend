@@ -13,7 +13,7 @@ if [[ -n $1 ]]; then
   case "$1" in
 
   "dev") deps && output "Starting gulp in dev mode..."
-    npm run dev
+    npm run dev:all
     ;;
   "release") deps && output "Starting gulp release task..."
     npm run release
