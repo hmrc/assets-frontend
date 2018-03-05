@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.2.2] and [4.2.2] - 2018-02-16
+### Fixed
+- Abillity to use universal analytics with stageprompt [#914](https://github.com/hmrc/assets-frontend/pull/914)
+- IE8 support in the minified JavaScript [#916](https://github.com/hmrc/assets-frontend/pull/916)
+
+### Updated
+- Updated documentation for service unavailable and technical problem pages, and changed work in progress and deprecated banner styles [#912](https://github.com/hmrc/assets-frontend/pull/912)
+
+## [3.2.1] and [4.2.1] - 2018-02-02
+### Fixed
+- SDT-768 [#908](https://github.com/hmrc/assets-frontend/issues/908) Updated the generated markup for buttons so that they better represent how to use the new govuk-elements css
+- Issue with Stageprompt not recognising JQuery [909](https://github.com/hmrc/assets-frontend/pull/909)
+
 ## [3.2.0] and [4.2.0] - 2018-01-25
 ### Fixed
 - Build styles as a dependency of the test task [896](https://github.com/hmrc/assets-frontend/issues/896)
@@ -234,8 +247,10 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Changes to nginx error pages not being build and deployed [#734]
 
 [Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...master
+[4.2.1]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...4.2.1
 [4.2.0]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...4.2.0
 [4.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...4.1.0
+[3.2.1]: https://github.com/hmrc/assets-frontend/compare/release/3.2.0...3.2.1
 [3.2.0]: https://github.com/hmrc/assets-frontend/compare/release/3.1.0...3.2.0
 [3.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...3.1.0
 [3.0.2]: https://github.com/hmrc/assets-frontend/compare/release/3.0.1...release/3.0.2

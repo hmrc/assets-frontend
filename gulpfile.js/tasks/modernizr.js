@@ -11,7 +11,7 @@ const runModernizr = (v) => {
 
   return gulp.src(config.scripts.modernizr.files.src)
       .pipe(modernizr(Object.assign({}, config.scripts.modernizr)))
-      .pipe(uglify())
+      .pipe(uglify({ie8: true}))
       .pipe(gulp.dest(dest))
 }
 
