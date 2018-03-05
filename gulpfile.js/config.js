@@ -22,9 +22,6 @@ Test:
 const src = './assets/'
 const dest = src + 'public/'
 const distDir = src + 'dist/'
-const assetsPort = 9032
-const componentLibraryPort = 9033
-const designSystemPort = 9034
 
 var govuk = {
   elements: 'node_modules/govuk-elements-sass',
@@ -195,7 +192,7 @@ module.exports = {
 
   browserSync: [{
     ui: false,
-    port: assetsPort,
+    port: 9032,
     open: false,
     logLevel: 'silent',
     host: '127.0.0.1',
@@ -207,7 +204,7 @@ module.exports = {
     }
   }, {
     ui: false,
-    port: componentLibraryPort,
+    port: 9033,
     open: false,
     logLevel: 'silent',
     localOnly: true,
@@ -215,7 +212,7 @@ module.exports = {
     server: 'component-library'
   }, {
     ui: false,
-    port: designSystemPort,
+    port: 9034,
     open: false,
     logLevel: 'silent',
     localOnly: true,
