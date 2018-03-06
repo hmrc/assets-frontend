@@ -6,6 +6,4 @@ On the most part, if you are using the [GOV.UK Prototype Kit](https://github.com
 
 ## HMRC component library 
 
-The HMRC component library has been depricated. You should not use patterns from the component library in your service.
-
-However you can refer to the [component library](https://hmrc-component-library.herokuapp.com) to maintain your exsisting service.
+Do not use the [component library](https://hmrc-component-library.herokuapp.com) to build new services. Use it to maintain a service that uses assets frontend version 1, 2 or 3.
