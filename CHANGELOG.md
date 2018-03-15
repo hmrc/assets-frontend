@@ -5,7 +5,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [Unreleased] 
+- Preventing a user from being able to focus inside the subnav when it has not been opened
 
 ## [3.2.2] and [4.2.2] - 2018-02-16
 ### Fixed
