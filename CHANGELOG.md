@@ -248,12 +248,14 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Changes to nginx error pages not being build and deployed [#734]
 
 [Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...master
-[4.2.1]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...4.2.1
-[4.2.0]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...4.2.0
-[4.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...4.1.0
-[3.2.1]: https://github.com/hmrc/assets-frontend/compare/release/3.2.0...3.2.1
-[3.2.0]: https://github.com/hmrc/assets-frontend/compare/release/3.1.0...3.2.0
-[3.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...3.1.0
+[4.2.2]: https://github.com/hmrc/assets-frontend/compare/release/4.2.1...release/4.2.2
+[4.2.1]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...release/4.2.1
+[4.2.0]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...release/4.2.0
+[4.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...release/4.1.0
+[3.2.2]: https://github.com/hmrc/assets-frontend/compare/release/3.2.1...release/3.2.2
+[3.2.1]: https://github.com/hmrc/assets-frontend/compare/release/3.2.0...release/3.2.1
+[3.2.0]: https://github.com/hmrc/assets-frontend/compare/release/3.1.0...release/3.2.0
+[3.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...release/3.1.0
 [3.0.2]: https://github.com/hmrc/assets-frontend/compare/release/3.0.1...release/3.0.2
 [3.0.1]: https://github.com/hmrc/assets-frontend/compare/release/3.0.0...release/3.0.1
 [3.0.0]: https://github.com/hmrc/assets-frontend/compare/release/2.254.0...release/3.0.0
