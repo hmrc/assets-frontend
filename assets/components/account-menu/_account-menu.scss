@@ -234,6 +234,7 @@
   @extend %contain-floats;
   background-color: $canvas-colour;
   border-bottom: 1px solid $grey-2;
+  display: none;
   left: 0;
   outline: none;
   position: absolute;
