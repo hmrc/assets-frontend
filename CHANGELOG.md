@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Updated
+- Updated documentation headings and page not found pattern [#922](https://github.com/hmrc/assets-frontend/pull/922)
+
 ## [3.2.2] and [4.2.2] - 2018-02-16
 ### Fixed
-- Abillity to use universal analytics with stageprompt [#914](https://github.com/hmrc/assets-frontend/pull/914)
+- Ability to use universal analytics with stageprompt [#914](https://github.com/hmrc/assets-frontend/pull/914)
 - IE8 support in the minified JavaScript [#916](https://github.com/hmrc/assets-frontend/pull/916)
 
 ### Updated
