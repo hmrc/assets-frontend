@@ -6,7 +6,7 @@ The HMRC header is the same as the [GOV.UK header](https://www.gov.uk/service-ma
 
 {{ example('header.html', true) }}
 
-## When to use the HMRC header
+## When to use this component
 
 Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer).
 
@@ -14,7 +14,7 @@ Only use the HMRC header if there is a user need for people to know they are dea
 
 If your service is in the personal tax account, use the [Account header](/components/account-header/index.html).
 
-## How the HMRC header works
+## How it works
 
 There are 2 versions of the header. Both versions must contain:
 

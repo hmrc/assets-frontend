@@ -6,11 +6,11 @@ A badge shows a number.
 
 {{ example("badge.html") }}
 
-## When to use a badge
+## When to use this component
 
 Use a badge to grab attention and show how many things something has and. Only use it with an action someone can do to change the number.
 
-### When not to use a badge
+### When not to use this component
 
 Do not use a badge when:
 
@@ -19,7 +19,7 @@ Do not use a badge when:
 
 Unless there is a strong user need, only use one as a part of navigation.
 
-## How a badge works
+## How it works
 
 A badge displays a number on the right-hand side of an action.
 
@@ -31,7 +31,7 @@ If there are 0 things, do not show the badge.
 
 {{ markup("badge-0.html") }}
 
-## Research on badges
+## Research on this component
 
 Badges are common on many sites and services. It has been tested as part of the [Account header](components/account-header/index.html). Research showed:
 

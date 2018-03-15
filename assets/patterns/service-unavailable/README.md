@@ -6,7 +6,7 @@ This is a page that tells someone a service is unavailable. It should say when t
 
 {{ example('service-unavailable.html', true) }}
 
-## When to use a service unavailable page
+## When to use this pattern
 
 Use a service unavailable page when a service has been closed on purpose. This could be for a specific period of time or permanently.
 
@@ -14,7 +14,7 @@ If there is a problem with the service, [use a technical problem page](/patterns
 
 Have a general page in case you need to quickly close a service. Update the page as soon as you know when the service will be available.
 
-## How service unavailable pages work
+## How it works
 
 Use the standard page template from your service and have the same:
 
@@ -70,7 +70,7 @@ This is for a service like tax credit renewals.
 
 {{ example('service-unavailable-replacement.html', true) }}
 
-## Research on service unavailable pages
+## Research on this pattern
 
 {{ research(103) }}
 
