@@ -2,17 +2,17 @@
 
 {{ wip(142) }}
 
-A Notification badge shows a number.
+A notification badge shows a number.
 
 {{ example("notification-badge.html") }}
 
 ## When to use this component
 
-Use a Notification badge to grab attention and show how many things something has and. Only use it with an action someone can do to change the number.
+Use a notification badge to grab attention and show how many things something has and. Only use it with an action someone can do to change the number.
 
 ### When not to use this component
 
-Do not use a Notification badge when:
+Do not use a notification badge when:
 
 - the number of things is 0
 - there is no action
@@ -21,7 +21,7 @@ Unless there is a strong user need, only use one as a part of navigation.
 
 ## How it works
 
-A Notification badge displays a number on the right-hand side of an action.
+A notification badge displays a number on the right-hand side of an action.
 
 If the number is more than 99, display “99+”.
 
@@ -33,7 +33,7 @@ If there are 0 things, do not show the badge.
 
 ## Research on this component
 
-Notification Badges are common on many sites and services. It has been tested as part of the [Account header](components/account-header/index.html). Research showed:
+Notification badges are common on many sites and services. It has been tested as part of the [Account header](components/account-header/index.html). Research showed:
 
 - people understand what it is for
 - it does not distract people from their task

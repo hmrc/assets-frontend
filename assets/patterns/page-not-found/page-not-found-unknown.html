@@ -40,11 +40,14 @@
       <p>If you typed the web address, check it is correct.</p>
       <p>If you pasted the web address, check you copied the entire address.</p>
       <p>If the web address is correct or you selected a link or button, you can:</p>
-      <h2 class="heading-medium">Tell us what you were trying to do</h2>
-      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">contact the Tax Credit Helpline</a> if you need to speak to someone about your tax credits</p>
+      <ul class="list list-bullet">
+        <li><a href="https://www.gov.uk/contact-the-tax-credit-office">contact the Tax Credit Helpline</a> if you need to speak to someone about your tax credits</li>
+        <li>tell us what you were trying to do</li>
+      </ul>      
+      
       <form action="/" method="POST" id="error-feedback-form" class="form--feedback" novalidate="novalidate">
         <fieldset>
-          <legend class="visuallyhidden">Tell us what you were trying to do</legend>
+          <legend><h2 class="heading-medium">Tell us what you were trying to do</h2></legend>
           <div class="form-group">
             <label for="report-name" class="form-label">Full name</label>
             <input id="report-name" maxlength="70" class="input--fullwidth form-control" name="report-name" type="text" data-rule-letterswithbasicpunc="true" data-msg-letterswithbasicpunc="Letters or punctuation only please." data-rule-required="true" data-msg-required="Please provide your name." aria-required="true">
