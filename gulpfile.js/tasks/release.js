@@ -8,7 +8,7 @@ runSequence.options.showErrorStackTrace = false
 gulp.task('release', ['changelog', 'clean:dist'], (done) => {
   runSequence(
     'build',
-    'zip',
+    'version',
     done
   )
 })
@@ -16,7 +16,7 @@ gulp.task('release', ['changelog', 'clean:dist'], (done) => {
 gulp.task('release:v3', ['changelog', 'clean:dist'], (done) => {
   runSequence(
     'build:v3',
-    'zip',
+    'version',
     done
   )
 })
@@ -24,7 +24,7 @@ gulp.task('release:v3', ['changelog', 'clean:dist'], (done) => {
 gulp.task('release:v4', ['changelog', 'clean:dist'], (done) => {
   runSequence(
     'build:v4',
-    'zip',
+    'version',
     done
   )
 })
