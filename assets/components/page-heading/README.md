@@ -1,13 +1,53 @@
-# Accessible page heading
+# Page heading
 
-The current design pattern seems like it could be built a little better.
-The page title reads "Contacting you — GOV.UK elements",
-which isn't how the `h1` reads. Having a `span` in the `h1` gives
-differing results, depending on the assistive technology used.
+The page heading is main heading of the page and an optional secondary heading.
 
-This new version splits the page name (`h1`) and the section name (`p`) –
-which are now in the correct source order – and then positions the section
-name above with CSS. This keeps the pattern visually identical, but brings
-added accessibility wins.
+{{ example("page-heading.html") }}
 
-The user can skip to the first header and they'll hear _just_ the page header. If they then key through the page, they'll hear which section they're in.
+## When to use this component
+
+Use a page heading on every page.
+
+## How it works
+
+For accessibility reasons, every page must have a main heading coded as a `<h1>`.
+
+Include a secondary heading, coded as a paragraph (`<p>`), if it helps people know where they are in a service. This is important for long services and those with multiple sections.
+
+Use this code so the `<h1>` and the secondary heading are:
+
+- separate
+- in the correct source order
+- displayed the correct way
+- read out the correct way
+
+{{ example("page-heading.html") }}
+
+{{ markup("page-heading.html") }}
+
+Change or remove the `visuallyhidden` content to meet your user needs.
+
+If your service does not need a secondary heading, leave it out.
+
+{{ example("page-heading-no-secondary.html") }}
+
+{{ markup("page-heading-no-secondary.html") }}
+
+## Research on this component
+
+Research into how the page heading was coded found many ways of doing it.
+
+Some had the secondary heading above the `<h1>`. This means a screen reader user may never hear it.
+
+Some had the secondary heading inside the `<h1>`. This gives different results depending on what screen reader you use. For example:
+
+- VoiceOver – “Heading level onetwo items What is your name? Personal details” 
+- NVDA – “Heading level one What is your name? Heading level one Personal details”
+- JAWS – “What is your name? Personal details Heading level one”
+
+The recommended code has been tested with screen reader users and all browsers, device and assistive technology combinations. Research showed it:
+
+- displayed as expected
+- worked consistently across different assistive technologies
+- helped people know where they were in the service
+- did not distract people from their task
