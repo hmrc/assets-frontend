@@ -122,16 +122,71 @@
             </div>
             -->
 
-            <h1 id="accessible-page-heading">Accessible page heading</h1>
-<p>The current design pattern seems like it could be built a little better.
-The page title reads &quot;Contacting you — GOV.UK elements&quot;,
-which isn&#39;t how the <code>h1</code> reads. Having a <code>span</code> in the <code>h1</code> gives
-differing results, depending on the assistive technology used.</p>
-<p>This new version splits the page name (<code>h1</code>) and the section name (<code>p</code>) –
-which are now in the correct source order – and then positions the section
-name above with CSS. This keeps the pattern visually identical, but brings
-added accessibility wins.</p>
-<p>The user can skip to the first header and they&#39;ll hear <em>just</em> the page header. If they then key through the page, they&#39;ll hear which section they&#39;re in.</p>
+            <h1 id="page-heading">Page heading</h1>
+<p>The page heading is main heading of the page and an optional secondary heading.</p>
+<div class="example"><header class="page-heading">
+  <h1 class="heading-xlarge">What is your name?</h1>
+  <p class="heading-secondary"><span class="visuallyhidden">This section is </span>Personal details</p>
+</header>
+</div>
+
+
+
+<h2 id="when-to-use-this-component">When to use this component</h2>
+<p>Use a page heading on every page.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>For accessibility reasons, every page must have a main heading coded as a <code>&lt;h1&gt;</code>.</p>
+<p>Include a secondary heading, coded as a paragraph (<code>&lt;p&gt;</code>), if it helps people know where they are in a service. This is important for long services and those with multiple sections.</p>
+<p>Use this code so the <code>&lt;h1&gt;</code> and the secondary heading are:</p>
+<ul>
+<li>separate</li>
+<li>in the correct source order</li>
+<li>displayed the correct way</li>
+<li>read out the correct way</li>
+</ul>
+<div class="example"><header class="page-heading">
+  <h1 class="heading-xlarge">What is your name?</h1>
+  <p class="heading-secondary"><span class="visuallyhidden">This section is </span>Personal details</p>
+</header>
+</div>
+
+
+
+
+<pre><code>&lt;header class=&quot;page-heading&quot;&gt;
+  &lt;h1 class=&quot;heading-xlarge&quot;&gt;What is your name?&lt;/h1&gt;
+  &lt;p class=&quot;heading-secondary&quot;&gt;&lt;span class=&quot;visuallyhidden&quot;&gt;This section is &lt;/span&gt;Personal details&lt;/p&gt;
+&lt;/header&gt;
+
+</code></pre><p>Change or remove the <code>visuallyhidden</code> content to meet your user needs.</p>
+<p>If your service does not need a secondary heading, leave it out.</p>
+<div class="example"><header class="page-heading">
+  <h1 class="heading-xlarge">What is your name?</h1><br></header>
+</div>
+
+
+
+
+<pre><code>&lt;header class=&quot;page-heading&quot;&gt;
+  &lt;h1 class=&quot;heading-xlarge&quot;&gt;What is your name?&lt;/h1&gt;  
+&lt;/header&gt;
+
+</code></pre><h2 id="research-on-this-component">Research on this component</h2>
+<p>Research into how the page heading was coded found many ways of doing it.</p>
+<p>Some had the secondary heading above the <code>&lt;h1&gt;</code>. This means a screen reader user may never hear it.</p>
+<p>Some had the secondary heading inside the <code>&lt;h1&gt;</code>. This gives different results depending on what screen reader you use. For example:</p>
+<ul>
+<li>VoiceOver – “Heading level onetwo items What is your name? Personal details” </li>
+<li>NVDA – “Heading level one What is your name? Heading level one Personal details”</li>
+<li>JAWS – “What is your name? Personal details Heading level one”</li>
+</ul>
+<p>The recommended code has been tested with screen reader users and all browsers, device and assistive technology combinations. Research showed it:</p>
+<ul>
+<li>displayed as expected</li>
+<li>worked consistently across different assistive technologies</li>
+<li>helped people know where they were in the service</li>
+<li>did not distract people from their task</li>
+</ul>
 
 
             <!--
