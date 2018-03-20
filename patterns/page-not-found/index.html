@@ -119,20 +119,20 @@
             </div>
             -->
 
-            <h1 id="service-unavailable">Service unavailable</h1>
+            <h1 id="page-not-found">Page not found</h1>
   <div class="banner banner__out-of-date">
-    <p>This is a work in progress – <a href="https://github.com/hmrc/design-patterns/issues/103">view more information on GitHub</a>.</p>
+    <p>This is a work in progress – <a href="https://github.com/hmrc/design-patterns/issues/104">view more information on GitHub</a>.</p>
   </div>
 
 
-<p>This is a page that tells someone a service is unavailable. It should say when the service will be available or what to do if it is permanently closed.</p>
+<p>A page not found tells someone the page they were trying to view cannot be found. They are also known as 404 pages.</p>
 <div class="example">
   <div class="scale-wrapper">
-    <div class="scale"><!--COOKIE MESSAGE -->
-<!-- <div id="global-cookie-message">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<!--<div id="global-cookie-message">
   <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
   cookies</a></p>
-</div> -->
+</div>-->
 <!-- END COOKIE MESSAGE -->
 <!-- GOV.UK HEADER -->
 <header role="banner" id="global-header" class="with-proposition">
@@ -166,9 +166,18 @@
   <!-- PAGE CONTENT -->
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p class="lede">You will be able to use the service from 11:59am on Monday 19&nbsp;November&nbsp;2018.</p>
-      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to make changes to your claim or speak to someone about your tax credits.</p>
+      <h1 class="heading-large">Page not found</h1>
+      <p>This has been reported to the team that manage the service and will be fixed as soon as possible.</p>
+      <p>Contact us if you need to speak to someone about your tax credits.</p>
+      <p>Telephone:<br>
+      <span style="font-weight:700">0345 300 3900</span></p>
+      <p>Textphone:<br>
+      <span style="font-weight:700">0345 300 3909</span></p>
+      <p>Outside UK:<br>
+      <span style="font-weight:700">+44 2890 538 192</span></p>
+      <p>Opening times:<br>
+      <span style="font-weight:700">Monday to Friday: 8am to 8pm</span></p>
+      <p>Closed Easter Sunday, Christmas Day, Boxing Day and New Year’s Day.</p>
     </div>
   </div>
   <!-- END PAGE CONTENT -->
@@ -202,11 +211,16 @@
 
 
 <h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Use a service unavailable page when a service has been closed on purpose. This could be for a specific period of time or permanently.</p>
-<p>If there is a problem with the service, <a href="/patterns/technical-problem/index.html">use a technical problem page</a>.</p>
-<p>Have a general page in case you need to quickly close a service. Update the page as soon as you know when the service will be available.</p>
+<p>Use a page not found if someone is trying to view a page that does not exist. This happens if someone:</p>
+<ul>
+<li>selects a link or button that takes them to a page that does not exist</li>
+<li>types or copies a web address for a page that does not exist</li>
+<li>types or copies a web address incorrectly</li>
+</ul>
+<p>Test all links and buttons to make sure they go where they are supposed to.</p>
+<p>Make sure any web addresses in your service, letters, forms and on GOV.UK are for or redirect to pages that exist.</p>
 <h2 id="how-it-works">How it works</h2>
-<p>Use the standard page template from your service and have the same:</p>
+<p>The page should use the standard page template from your service and have the same:</p>
 <ul>
 <li>header</li>
 <li>phase banner</li>
@@ -214,30 +228,29 @@
 </ul>
 <p>The page should have:</p>
 <ul>
-<li>“Service unavailable – service name – GOV.UK” as the page title</li>
-<li>“Service unavailable” as the H1</li>
-<li>the day, date and time it is going to be available or what to do if it is permanently closed</li>
+<li>“Page not found – service name – GOV.UK” as the page title</li>
+<li>“Page not found” as the H1</li>
 <li>contact information, if it exists and helps meet a user need</li>
 </ul>
 <p>Contact information should be either:</p>
 <ul>
-<li>a link to a specific GOV.UK contact page, not <a href="https://www.gov.uk/contact-hmrc">contact HMRC</a> or <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact">HM Revenue &amp; Customs Contacts</a></li>
+<li>a link to a specific GOV.UK contact page not a general contact page</li>
 <li>formatted like a GOV.UK contact page when there is no GOV.UK page</li>
 </ul>
-<p>Have clear and concise content and do not use:</p>
+<p>The content should be clear and concise, not blame the user, and not use:</p>
 <ul>
 <li>breadcrumbs</li>
-<li>words like maintenance, improvements, please and sorry</li>
+<li>words like oops, 404, bad request, please and sorry</li>
 <li>red text to warn people</li>
 </ul>
-<h3 id="general-page">General page</h3>
+<h3 id="if-you-do-not-know-why-the-page-is-not-found">If you do not know why the page is not found</h3>
 <div class="example">
   <div class="scale-wrapper">
-    <div class="scale"><!--COOKIE MESSAGE -->
-<!-- <div id="global-cookie-message">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<!--<div id="global-cookie-message">
   <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
   cookies</a></p>
-</div> -->
+</div>-->
 <!-- END COOKIE MESSAGE -->
 <!-- GOV.UK HEADER -->
 <header role="banner" id="global-header" class="with-proposition">
@@ -271,170 +284,34 @@
   <!-- PAGE CONTENT -->
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p class="lede">You will be able to use the service later.</p>
-      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to make changes to your claim or speak to someone about your tax credits.</p>
-    </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER --></div>
-  </div>
-</div>
-
-
-
-<h3 id="when-you-know-when-a-service-will-be-available">When you know when a service will be available</h3>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!--COOKIE MESSAGE -->
-<!-- <div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div> -->
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p class="lede">You will be able to use the service from 11:59am on Monday 19&nbsp;November&nbsp;2018.</p>
-      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to make changes to your claim or speak to someone about your tax credits.</p>
-    </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER --></div>
-  </div>
-</div>
-
-
-
-<h3 id="service-is-closed-for-part-of-the-year">Service is closed for part of the year</h3>
-<p>This is for a service like tax credit renewals.</p>
-<h4 id="after-a-service-closes">After a service closes</h4>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!--COOKIE MESSAGE -->
-<!-- <div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div> -->
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p class="lede">You cannot use the online service to renew your tax credits.</p>
-      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> to renew your tax credits by phone or letter.</p>
-      <p>You can <a href="#">use the tax credits service</a> to:</p>
+      <h1 class="heading-large">Page not found</h1>
+      <p>If you typed the web address, check it is correct.</p>
+      <p>If you pasted the web address, check you copied the entire address.</p>
+      <p>If the web address is correct or you selected a link or button, you can:</p>
       <ul class="list list-bullet">
-        <li>find out more about your payments</li>
-        <li>see who is on your claim</li>
-        <li>make changes to your claim</li>
-        <li>check the status of your renewal</li>
-      </ul>
+        <li><a href="https://www.gov.uk/contact-the-tax-credit-office">contact the Tax Credit Helpline</a> if you need to speak to someone about your tax credits</li>
+        <li>tell us what you were trying to do</li>
+      </ul><form action="/" method="POST" id="error-feedback-form" class="form--feedback" novalidate="novalidate">
+        <fieldset>
+          <legend><h2 class="heading-medium">Tell us what you were trying to do</h2></legend>
+          <div class="form-group">
+            <label for="report-name" class="form-label">Full name</label>
+            <input id="report-name" maxlength="70" class="input--fullwidth form-control" name="report-name" type="text" data-rule-letterswithbasicpunc="true" data-msg-letterswithbasicpunc="Letters or punctuation only please." data-rule-required="true" data-msg-required="Please provide your name." aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="report-email" class="form-label">Email address</label>
+            <input id="report-email" maxlength="255" class="input--fullwidth form-control" name="report-email" type="email" data-msg-email="Please enter a valid email address." data-rule-required="true" data-rule-email="true" data-msg-required="Please provide your email address." aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="report-action" class="form-label">What were you trying to do?</label>
+            <span class="form-hint">Do not include personal or financial information like your National Insurance number or credit card details.</span>
+            <textarea class="form-control form-control-3-4" name="report-action" id="report-action" rows="5"></textarea>
+          </div>
+        </fieldset>
+        <div class="form-field">
+          <button id="report-submit" class="button" type="submit" data-journey-click="page:Click:Get help with this page Submit">Send</button>
+        </div>
+      </form>
     </div>
   </div>
   <!-- END PAGE CONTENT -->
@@ -461,20 +338,21 @@
     </div>
   </div>
 </footer>
-<!-- END FOOTER --></div>
+<!-- END FOOTER -->
+</div>
   </div>
 </div>
 
 
 
-<h4 id="before-a-service-opens">Before a service opens</h4>
+<p>Page after they send the form.</p>
 <div class="example">
   <div class="scale-wrapper">
-    <div class="scale"><!--COOKIE MESSAGE -->
-<!-- <div id="global-cookie-message">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<!--<div id="global-cookie-message">
   <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
   cookies</a></p>
-</div> -->
+</div>-->
 <!-- END COOKIE MESSAGE -->
 <!-- GOV.UK HEADER -->
 <header role="banner" id="global-header" class="with-proposition">
@@ -508,14 +386,9 @@
   <!-- PAGE CONTENT -->
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p class="lede">You will be able renew your tax credits from Tuesday 24&nbsp;April&nbsp;2018.</p>
-      <p>You can <a href="#">use the tax credits service</a> to:</p>
-      <ul class="list list-bullet">
-        <li>find out more about your payments</li>
-        <li>see who is on your claim</li>
-        <li>make changes to your claim</li>
-      </ul>
+      <h1 class="heading-large">We have your details and what you were trying to do</h1>
+      <p>We will email you when we have fixed the service.</p>
+      <p><a class="button" href="#">Go back to the service</a></p>
     </div>
   </div>
   <!-- END PAGE CONTENT -->
@@ -548,15 +421,14 @@
 
 
 
-<h3 id="service-is-closed-forever">Service is closed forever</h3>
-<h4 id="nothing-has-replaced-the-service">Nothing has replaced the service</h4>
+<h3 id="service-mistake">Service mistake</h3>
 <div class="example">
   <div class="scale-wrapper">
-    <div class="scale"><!--COOKIE MESSAGE -->
-<!-- <div id="global-cookie-message">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<!--<div id="global-cookie-message">
   <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
   cookies</a></p>
-</div> -->
+</div>-->
 <!-- END COOKIE MESSAGE -->
 <!-- GOV.UK HEADER -->
 <header role="banner" id="global-header" class="with-proposition">
@@ -590,103 +462,95 @@
   <!-- PAGE CONTENT -->
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p class="lede">The submit an employment intermediary report service has closed.</p>
-      <p>Telephone:<br/>
-      <span style="font-weight:700">03000 555 995</span></p>
-      <p>Opening times:<br/>
-      Monday to Friday: 8:30am to 4:30pm</p>
-    </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER --></div>
-  </div>
-</div>
-
-
-
-<h4 id="something-has-replaced-the-service">Something has replaced the service</h4>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!--COOKIE MESSAGE -->
-<!-- <div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div> -->
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p class="lede">Tax credits has been replaced by Universal Credit.</p>
+      <h1 class="heading-large">Page not found</h1>
+      <p>This has been reported to the team that manage the service and will be fixed as soon as possible.</p>
       <p>Contact us if you need to speak to someone about your tax credits.</p>
-      <p>Telephone:<br/>
+      <p>Telephone:<br>
       <span style="font-weight:700">0345 300 3900</span></p>
-      <p>Textphone:<br/>
+      <p>Textphone:<br>
       <span style="font-weight:700">0345 300 3909</span></p>
-      <p>Outside UK:<br/>
+      <p>Outside UK:<br>
       <span style="font-weight:700">+44 2890 538 192</span></p>
-      <p>Opening times:<br/>
-      Monday to Friday: 8am to 8pm</p>
+      <p>Opening times:<br>
+      <span style="font-weight:700">Monday to Friday: 8am to 8pm</span></p>
       <p>Closed Easter Sunday, Christmas Day, Boxing Day and New Year’s Day.</p>
-      <p>You can:</p>
-      <ul class="list list-bullet">
-        <li><a href="https://www.gov.uk/universal-credit">find out more about Universal Credit</a></li>
-        <li><a href="https://www.gov.uk/apply-universal-credit">apply for Universal Credit</a></li>
-        <li><a href="https://www.gov.uk/sign-in-universal-credit">sign in to your Universal Credit account</a></li>
-      </ul>
+    </div>
+  </div>
+  <!-- END PAGE CONTENT -->
+</main>
+<!-- FOOTER   -->
+<footer class="group js-footer" id="footer" role="contentinfo">
+  <div class="footer-wrapper">
+    <div class="footer-meta">
+      <div class="footer-meta-inner">
+        <ul class="platform-help-links">
+          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
+          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
+          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
+          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
+        </ul>
+        <div class="open-government-licence">
+          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- END FOOTER --></div>
+  </div>
+</div>
+
+
+
+<h3 id="user-mistake">User mistake</h3>
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<!--<div id="global-cookie-message">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+  cookies</a></p>
+</div>-->
+<!-- END COOKIE MESSAGE -->
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service name</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+<main id="content" role="main">
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+  <!-- PAGE CONTENT -->
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Page not found</h1>
+      <p>If you typed the web address, check it is correct.</p>
+      <p>If you pasted the web address, check you copied the entire address.</p>
+      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to speak to someone about your tax credits.</p>
     </div>
   </div>
   <!-- END PAGE CONTENT -->
@@ -721,15 +585,16 @@
 
 <h2 id="research-on-this-pattern">Research on this pattern</h2>
   <div class="">
-    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/103">add your research on GitHub</a>.</p>
+    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/104">add your research on GitHub</a>.</p>
   </div>
 
 
-<p>We want to know:</p>
+<p>We want to know if people:</p>
 <ul>
-<li>what people need to know</li>
-<li>what their expectations are after reading the page</li>
-<li>if people understand what is going on when they see the page</li>
+<li>can fix the problem on their own</li>
+<li>understand what has happened</li>
+<li>understand the content and if there is anything missing</li>
+<li>would use a form to tell us about the problem and if that helps them</li>
 </ul>
 
 

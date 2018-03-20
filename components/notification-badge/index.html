@@ -94,9 +94,12 @@
           <div class="toc" data-module="table-of-contents">
             <nav id="toc" class="js-toc-list toc__list">
               <ul class="pattern-nav">
-                <li><a href="/assets-frontend/patterns/404-page/index.html">404 page</a></li>
-                <li><a href="/assets-frontend/patterns/service-unavailable/index.html">Service unavailable</a></li>
-                <li><a href="/assets-frontend/patterns/technical-problem/index.html">Technical problem</a></li>
+                <li><a href="/assets-frontend/components/account-header/index.html">Account header</a></li>
+                <li><a href="/assets-frontend/components/character-counter/index.html">Character counter</a></li>
+                <li><a href="/assets-frontend/components/header/index.html">Header</a></li>
+                <li><a href="/assets-frontend/components/notification-badge/index.html">Notification badge</a></li>
+                <li><a href="/assets-frontend/components/page-heading/index.html">Page heading</a></li>
+                <li><a href="/assets-frontend/components/timeout-dialog/index.html">Timeout dialog</a></li>
               <ul>
             </nav>
           </div>
@@ -119,164 +122,40 @@
             </div>
             -->
 
-            <h1 id="404-page">404 page</h1>
+            <h1 id="notification-badge">Notification Badge</h1>
   <div class="banner banner__out-of-date">
-    <p>This is a work in progress – <a href="https://github.com/hmrc/design-patterns/issues/104">view more information on GitHub</a>.</p>
+    <p>This is a work in progress – <a href="https://github.com/hmrc/design-patterns/issues/142">view more information on GitHub</a>.</p>
   </div>
 
 
-<p>404 pages (usually described as a &#39;page not found&#39;) tell users that the page they were trying to access is not there.</p>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!-- COOKIE MESSAGE -->
-<div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div>
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Page not found</h1>
-      <h2 class="heading-small">If you typed in the web address</h2>
-      <p>Check the address and make sure you typed it in correctly.</p>
-      <h2 class="heading-small">If you selected a link or button or typed in the web address correctly</h2>
-        <!-- FORM FOR USERS TO TELL US THEY GOT A 404 -->
-      <div class="form-group">
-        <details>
-        <summary><span class="summary">Let us know the page was not found.</span></summary>
-        <div class="panel panel-border-narrow">
-          <div class="form-group">
-            <label class="form-label" for="full-name">
-              Full name
-            </label>
-            <input type="text" class="form-control" id="full-name">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="full-name">
-              Email address (optional)
-              <span class="form-hint">We will let you know when the problem is fixed.</span>
-            </label>
-            <input type="text" class="form-control" id="full-name">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="full-name">
-              What were you doing?
-            </label>
-            <input type="text" class="form-control" id="full-name">
-          </div>
-          <div class="form-group">
-            <input type="submit" class="button" value="Send">
-          </div>
-        </div>
-        </details>
-      </div>
-      <!-- END FORM FOR USERS TO TELL US THEY GOT A 404 -->
-      <p><a class="button" href="#">Go back to the previous page</a></p>
-    </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER --></div>
-  </div>
-</div>
+<p>A notification badge shows a number.</p>
+<div class="example"><a href="#">Messages<span class="badge" aria-label="Number of x">36</span></a></div>
 
 
 
-<h2 id="when-to-use-a-404-page">When to use a 404 page</h2>
-<p>There is a chance in all services that people will encounter a 404 page. 
-Processes and systems should be put in place to prevent users encountering 404 pages in the first place.</p>
-<p>The main reasons you would need to show users a 404 page:</p>
-<ol>
-<li>if they followed a link (URL) that is broken or pointing to the wrong location</li>
-<li>if they typed or copied a link incorrectly</li>
-</ol>
-<p>When you design the 404 page for your service you need to consider:</p>
+<h2 id="when-to-use-this-component">When to use this component</h2>
+<p>Use a notification badge to grab attention and show how many things something has and. Only use it with an action someone can do to change the number.</p>
+<h3 id="when-not-to-use-this-component">When not to use this component</h3>
+<p>Do not use a notification badge when:</p>
 <ul>
-<li>the best way for people to solve the problem</li>
-<li>if there is anything spesific your service can do to help users</li>
+<li>the number of things is 0</li>
+<li>there is no action</li>
 </ul>
-<h2 id="how-404-pages-work">How 404 pages work</h2>
-<p>When you design the 404 page for your service you need to consider:</p>
+<p>Unless there is a strong user need, only use one as a part of navigation.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>A notification badge displays a number on the right-hand side of an action.</p>
+<p>If the number is more than 99, display “99+”.</p>
+<pre><code>&lt;a href=&quot;#&quot;&gt;Messages&lt;span class=&quot;badge&quot; aria-label=&quot;Number of x&quot;&gt;36&lt;/span&gt;&lt;/a&gt;
+</code></pre><p>If there are 0 things, do not show the badge.</p>
+<pre><code>&lt;a href=&quot;#&quot;&gt;Messages&lt;/a&gt;
+
+</code></pre><h2 id="research-on-this-component">Research on this component</h2>
+<p>Notification badges are common on many sites and services. It has been tested as part of the <a href="components/account-header/index.html">Account header</a>. Research showed:</p>
 <ul>
-<li>the best way for people to solve the problem</li>
-<li>if there is anything spesific your service can do to help users</li>
+<li>people understand what it is for</li>
+<li>it does not distract people from their task</li>
 </ul>
-<p>The page should:
-<!-- @todo add link to the page template --></p>
-<ul>
-<li>use the standard page template</li>
-<li>include the phase banner relevent to the service</li>
-<li>have &quot;Page not found&quot; as the page title and H1</li>
-<li>be clear and concise</li>
-<li>an explination of the problem if possible</li>
-<li>not have breadcrumbs</li>
-<li>not use vague terms</li>
-<li>not use red text to warn people</li>
-<li>optionally display a form for users to tell us about the problem</li>
-</ul>
-<h2 id="research-on-404-pages">Research on 404 pages</h2>
-<p>We need more user research on 404 pages. </p>
-<p>We want to know:</p>
-<ul>
-<li>if people are able to resolve the problem on their own</li>
-<li>if people understand what caused the page</li>
-<li>if people understand the content </li>
-<li>if anything is missing from the content</li>
-<li>if giving users a form to report the problem helps </li>
-</ul>
-<p>Contribute your research via this <a href="https://github.com/hmrc/design-patterns/issues/104">GitHub issue</a>.</p>
+<p>More work is needed to make it accessible – <a href="https://github.com/hmrc/design-patterns/issues/142">add your research on GitHub</a>.</p>
 
 
             <!--
