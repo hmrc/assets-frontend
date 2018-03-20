@@ -6,7 +6,7 @@ This is a page that tells someone there is something wrong with the service. The
 
 {{ example("technical-problem-page.html", scaled=true) }}
 
-## When to use a technical problem page
+## When to use this pattern
 
 Use a technical problem page when there is an unexpected problem with the service. Use the same page for all  technical problems.
 
@@ -14,7 +14,7 @@ Log all errors and fix them as quickly as possibly.
 
 Only display the page for a short time. If a problem cannot be fixed quickly, close the service and use a [service unavailable page](/patterns/service-unavailable/index.html).
 
-## How a technical problem page works
+## How it works
 
 Use the standard page template from your service and have the same:
 
@@ -37,7 +37,7 @@ Contact information should be either:
 Have clear and concise content and do not use:
 
 - breadcrumbs
-- words like 500, bad request, please, sorry and “We are experiencing technical difficulties”
+- words like 500, bad request and “We are experiencing technical difficulties”
 - red text to warn people
 
 ### Service has a GOV.UK contact page
@@ -48,7 +48,7 @@ Have clear and concise content and do not use:
 
 {{ example("technical-problem-page-no-contact.html", scaled=true) }}
 
-## Research on technical problem pages
+## Research on this pattern
 
 {{ research(105) }}
 
