@@ -5,15 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased] 
+## [Unreleased]
+### Updated
+- Updated documentation headings and page not found pattern [#922](https://github.com/hmrc/assets-frontend/pull/922)
+- Updated documentation and examples for page heading [#923](https://github.com/hmrc/assets-frontend/pull/923)
+
+### Changed
+- Version build artefacts according to the [HMRC release candidate format](http://hmrc.github.io/coding-in-the-open-manual/#release-candidates) [#924](https://github.com/hmrc/assets-frontend/pull/924)
+- Tar build artefacts instead of zip and add a package file for publishing [#925](https://github.com/hmrc/assets-frontend/pull/925)
 
 ## [3.2.3] and [4.2.3] - 2018-03-15
 ### Fixed
-- Preventing a user from being able to focus inside the subnav when it has not been opened
+- Preventing a user from being able to focus inside the subnav when it has not been opened [#920](https://github.com/hmrc/assets-frontend/pull/920)
 
 ## [3.2.2] and [4.2.2] - 2018-02-16
 ### Fixed
-- Abillity to use universal analytics with stageprompt [#914](https://github.com/hmrc/assets-frontend/pull/914)
+- Ability to use universal analytics with stageprompt [#914](https://github.com/hmrc/assets-frontend/pull/914)
 - IE8 support in the minified JavaScript [#916](https://github.com/hmrc/assets-frontend/pull/916)
 
 ### Updated
