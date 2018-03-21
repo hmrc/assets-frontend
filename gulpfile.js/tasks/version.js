@@ -1,27 +1,44 @@
 'use strict'
 
-const fs = require('fs')
+const path = require('path')
 const gulp = require('gulp')
-const zip = require('gulp-zip')
+const tar = require('gulp-tar')
+const rename = require('gulp-rename')
+const replace = require('gulp-replace')
 const NodeGitVersion = require('node-git-versioning')
 
 const config = require('../config')
+const packageFile = `${config.src}/package-build.json`
 
-gulp.task('version', () => {
-  const snapshots = fs.readdirSync(config.dest)
+const getVersion = (snapshotPath) => {
+  const snapshot = path.parse(snapshotPath).name
+  const snapshotVersion = snapshot.match(/v(\d)-/)[1]
+  return NodeGitVersion(`*${snapshotVersion}.*`)
+}
 
-  return Promise.all(snapshots.map((snapshot) => {
-    const snapshotVersion = snapshot.match(/v(\d)-/)[1]
-    const releaseCandidate = NodeGitVersion(`*${snapshotVersion}.*`)
+const writePackageFile = (snapshotVersion) => {
+  const version = getVersion(config.snapshotDir[snapshotVersion])
 
-    return Promise.resolve(
-      gulp
-        .src([
-          `${config.dest}${snapshot}/**/*`,
-          `!${config.dest}**/*.map`
-        ])
-        .pipe(zip(`${releaseCandidate}.zip`))
-        .pipe(gulp.dest(config.distDir))
-    )
-  }))
-})
+  return gulp
+    .src(packageFile)
+    .pipe(replace('<%= version %>', version))
+    .pipe(rename('package.json'))
+    .pipe(gulp.dest(config.snapshotDir[snapshotVersion]))
+}
+
+const createTar = (snapshotVersion) => {
+  const version = getVersion(config.snapshotDir[snapshotVersion])
+
+  return gulp
+    .src([
+      `${config.snapshotDir[snapshotVersion]}/**/*`,
+      `!${config.snapshotDir[snapshotVersion]}**/*.map`
+    ])
+    .pipe(tar(`${version}.tar`))
+    .pipe(gulp.dest(config.distDir))
+}
+
+gulp.task('writePackageFile:v3', () => writePackageFile('v3'))
+gulp.task('writePackageFile:v4', () => writePackageFile('v4'))
+gulp.task('version:v3', ['writePackageFile:v3'], () => createTar('v3'))
+gulp.task('version:v4', ['writePackageFile:v4'], () => createTar('v4'))
