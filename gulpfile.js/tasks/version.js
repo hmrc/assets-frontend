@@ -2,7 +2,6 @@
 
 const path = require('path')
 const gulp = require('gulp')
-const tar = require('gulp-tar')
 const rename = require('gulp-rename')
 const replace = require('gulp-replace')
 const NodeGitVersion = require('node-git-versioning')
@@ -16,7 +15,7 @@ const getVersion = (snapshotPath) => {
   return NodeGitVersion(`*${snapshotVersion}.*`)
 }
 
-const writePackageFile = (snapshotVersion) => {
+const version = (snapshotVersion) => {
   const version = getVersion(config.snapshotDir[snapshotVersion])
 
   return gulp
@@ -26,19 +25,5 @@ const writePackageFile = (snapshotVersion) => {
     .pipe(gulp.dest(config.snapshotDir[snapshotVersion]))
 }
 
-const createTar = (snapshotVersion) => {
-  const version = getVersion(config.snapshotDir[snapshotVersion])
-
-  return gulp
-    .src([
-      `${config.snapshotDir[snapshotVersion]}/**/*`,
-      `!${config.snapshotDir[snapshotVersion]}**/*.map`
-    ])
-    .pipe(tar(`${version}.tar`))
-    .pipe(gulp.dest(config.distDir))
-}
-
-gulp.task('writePackageFile:v3', () => writePackageFile('v3'))
-gulp.task('writePackageFile:v4', () => writePackageFile('v4'))
-gulp.task('version:v3', ['writePackageFile:v3'], () => createTar('v3'))
-gulp.task('version:v4', ['writePackageFile:v4'], () => createTar('v4'))
+gulp.task('version:v3', () => version('v3'))
+gulp.task('version:v4', () => version('v4'))

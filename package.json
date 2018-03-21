@@ -140,7 +140,6 @@
     "gulp-standard": "^10.0.0",
     "gulp-stats": "0.0.4",
     "gulp-tape": "0.0.9",
-    "gulp-tar": "^2.1.0",
     "handlebars": "^4.0.10",
     "marked": "^0.3.6",
     "mkdirp": "^0.5.1",
