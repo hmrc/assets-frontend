@@ -7,12 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Updated
+- Added documentation for page title [#928](https://github.com/hmrc/assets-frontend/pull/928)
+- Added documentation for open links in a new window or tab component [#926](https://github.com/hmrc/assets-frontend/pull/926)
 - Updated documentation headings and page not found pattern [#922](https://github.com/hmrc/assets-frontend/pull/922)
 - Updated documentation and examples for page heading [#923](https://github.com/hmrc/assets-frontend/pull/923)
 
 ### Changed
 - Version build artefacts according to the [HMRC release candidate format](http://hmrc.github.io/coding-in-the-open-manual/#release-candidates) [#924](https://github.com/hmrc/assets-frontend/pull/924)
 - Tar build artefacts instead of zip and add a package file for publishing [#925](https://github.com/hmrc/assets-frontend/pull/925)
+
+### Fixed
+- Run tests in desktop viewport instead of phantom's default 400 [#927](https://github.com/hmrc/assets-frontend/pull/927)
 
 ## [3.2.3] and [4.2.3] - 2018-03-15
 ### Fixed
