@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Version build artefacts according to the [HMRC release candidate format](http://hmrc.github.io/coding-in-the-open-manual/#release-candidates) [#924](https://github.com/hmrc/assets-frontend/pull/924)
 - Tar build artefacts instead of zip and add a package file for publishing [#925](https://github.com/hmrc/assets-frontend/pull/925)
 
+### Fixed
+- Run tests in desktop viewport instead of phantom's default 400 [#927](https://github.com/hmrc/assets-frontend/pull/927)
+
 ## [3.2.3] and [4.2.3] - 2018-03-15
 ### Fixed
 - Preventing a user from being able to focus inside the subnav when it has not been opened [#920](https://github.com/hmrc/assets-frontend/pull/920)
