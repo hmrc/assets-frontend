@@ -1,9 +1,11 @@
 <nav id="secondary-nav" class="account-menu" role="navigation">
   <a href="#" class="account-menu__link account-menu__link--active account-menu__link--home "><span class="account-icon account-icon--home">Account home</span><span class="account-icon account-icon--home hidden--tablet">Home</span></a>
-  <a href="#" class="account-menu__link account-menu__link--menu js-hidden js-visible" aria-hidden="true" aria-expanded="false">Account menu</a>
+  <a href="#" id="mobile-menu" class="account-menu__link account-menu__link--menu js-hidden js-visible" aria-hidden="true" aria-expanded="false">Account menu</a>
 
   <ul class="account-menu__main">
-    <li class="account-menu__link--back hidden" aria-hidden="true"><a href="#" class="account-menu__link">Back</a></li>
+    <li class="account-menu__link--back hidden" aria-hidden="true">
+      <a href="#" class="account-menu__link">Back</a>
+    </li>
 
     <li><a href="messages" class="account-menu__link">Messages</a></li>
 
@@ -44,9 +46,7 @@
         <div class="column-one-third subnav__section">
           <p class="subnav__section__heading">Paperless settings</p>
           <div><a href="contact-preferences">Go paperless</a></div>
-          <p>
-            You currently receive all correspondence by post
-          </p>
+          <p>You currently receive all correspondence by post</p>
         </div>
         <div class="column-one-third subnav__section">
           <p class="subnav__section__heading">Personal information</p>

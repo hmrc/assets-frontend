@@ -16,15 +16,15 @@
 
 var $ = require('jquery')
 
-var nav = $('.account-menu')
-var mainNav = $('.account-menu__main')
-var subNav = $('.subnav')
-var showSubnavLink = $('.account-menu__link--more')
-var showNavLinkMobile = $('.account-menu__link--menu')
-var viewportWidth = $(window).width()
-var backLink = $('.account-menu__link--back a')
-
 module.exports = function () {
+  var nav = $('.account-menu')
+  var mainNav = $('.account-menu__main')
+  var subNav = $('.subnav')
+  var showSubnavLink = $('.account-menu__link--more')
+  var showNavLinkMobile = $('.account-menu__link--menu')
+  var viewportWidth = $(window).width()
+  var backLink = $('.account-menu__link--back a')
+
   subNav.attr({
     'aria-hidden': 'true',
     'tabindex': -1
@@ -105,10 +105,8 @@ module.exports = function () {
     }
   })
 
-  $(window).on('load resize', function () {
-    viewportWidth = $(window).width()
-
-    if (isSmall()) {
+  function init () {
+    if (isSmall(window)) {
       nav.addClass('is-smaller')
       showNavLinkMobile
         .attr('aria-hidden', 'false')
@@ -125,7 +123,7 @@ module.exports = function () {
         .removeClass('js-hidden')
       subNav.removeClass('js-hidden')
     }
-  })
+  }
 
   function showMainNavMobile () {
     // TODO: shall we add main-nav-is-open to `nav`????
@@ -272,7 +270,13 @@ module.exports = function () {
       })
   }
 
-  function isSmall () {
-    return (viewportWidth <= 768)
+  function isSmall (element) {
+    return ($(element).width() <= 768)
+  }
+
+  // initialize if the menu exists
+  if (nav.length) {
+    init()
+    $(window).on('resize', init)
   }
 }

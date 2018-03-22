@@ -5,18 +5,21 @@
  * Account menu module tests
  */
 
-require('jquery')
+var $ = require('jquery')
 
 describe('Given I have an account menu of the page', function () {
-  var accountMenu
+  var accountMenu = require('./account-menu.js')
 
-  var $menuItem1, $menuItem2, $subMenu1, $subMenu2
+  var $menuItem1
+  var $menuItem2
+  var $subMenu1
+  var $subMenu2
 
   beforeEach(function () {
     jasmine.getFixtures().fixturesPath = 'base/components/account-menu'
     loadFixtures('account-menu.html')
 
-    accountMenu = require('./account-menu.js')
+    accountMenu()
 
     $menuItem1 = $('#account-menu__main-1')
     $menuItem2 = $('#account-menu__main-2')
@@ -25,35 +28,21 @@ describe('Given I have an account menu of the page', function () {
   })
 
   describe('When the page is loaded', function () {
-    beforeEach(function () {
-      accountMenu()
-    })
-
     it('An account menu should show menu items with no sub menus visible', function () {
       expect($subMenu1).toHaveClass('js-hidden')
       expect($subMenu2).toHaveClass('js-hidden')
     })
   })
 
-  describe('When I click on the first menu item', function () {
-    beforeEach(function () {
-      accountMenu()
-      $($menuItem1).click()
-    })
+  // describe('When I click on the first menu item', function () {
+  //   it('the first sub menu should open', function () {
+  //     expect($subMenu1).not.toHaveClass('js-hidden')
+  //   })
+  // })
 
-    it('the first sub menu should open', function () {
-      // expect($subMenu1).not.toHaveClass('js-hidden')
-    })
-  })
-
-  describe('When I click on the second menu item', function () {
-    beforeEach(function () {
-      accountMenu()
-      $menuItem2.trigger('click')
-    })
-
-    it('the second sub menu should open', function () {
-      // expect($subMenu2).not.toHaveClass('js-hidden')
-    })
-  })
+  // describe('When I click on the second menu item', function () {
+  //   it('the second sub menu should open', function () {
+  //     expect($subMenu2).not.toHaveClass('js-hidden')
+  //   })
+  // })
 })
