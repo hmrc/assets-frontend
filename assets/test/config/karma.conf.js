@@ -11,7 +11,8 @@ module.exports = function (karmaConfig) {
       'jasmine-jquery',
       'jasmine',
       'jasmine-matchers',
-      'browserify'
+      'browserify',
+      'viewport'
     ],
 
     // list of files / patterns to load in the browser
