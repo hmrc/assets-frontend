@@ -27,7 +27,6 @@ describe('Given I have an account menu of the page', function () {
     $yourAccountSubNav = $('#subnav-2')
     $mobileMenuLink = $('#mobile-menu')
     $mobileBack = $('.account-menu__link--back')
-
   })
 
   describe('When the page is loaded', function () {
@@ -61,8 +60,8 @@ describe('Given I have an account menu of the page', function () {
     })
 
     it('should close the subnav in second click', function () {
-      // $yourAccountLink.click()
-      expect($yourAccountSubNav).toHaveClass('subnav-reveal')
+      $yourAccountLink.click()
+      expect($yourAccountSubNav).not.toHaveClass('subnav-reveal')
     })
   })
 })

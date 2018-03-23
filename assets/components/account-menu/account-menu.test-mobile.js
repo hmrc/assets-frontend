@@ -1,5 +1,5 @@
 /* eslint-env jasmine */
-/* global loadFixtures */
+/* global loadFixtures, viewport */
 
 /**
  * Account menu module tests
@@ -10,7 +10,7 @@ var $ = require('jquery')
 describe('Given I have an account menu on the page', function () {
   var accountMenu = require('./account-menu.js')
 
-  var $mobileMenuLink
+  var $nav, $mobileMenuLink, $mobileSubMenu, $yourAccountLink, $subnavItems, $mobileBack, $mobileBackLink
 
   beforeEach(function () {
     jasmine.getFixtures().fixturesPath = 'base/components/account-menu'

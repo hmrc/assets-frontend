@@ -22,7 +22,6 @@ module.exports = function () {
   var subNav = $('.subnav')
   var showSubnavLink = $('#account-menu__main-2')
   var showNavLinkMobile = $('.account-menu__link--menu')
-  var viewportWidth = $(window).width()
   var backLink = $('.account-menu__link--back a')
 
   subNav.attr({
@@ -37,7 +36,7 @@ module.exports = function () {
 
   showSubnavLink.on({
     click: function (e) {
-      if (isSmall()) {
+      if (isSmall(window)) {
         // TODO: remove redundant check - showSubnavLink appears only when subnav is not expanded
         if (!$(this).hasClass('account-menu__link--more-expanded')) {
           hideMainNavMobile($(this))
@@ -56,13 +55,13 @@ module.exports = function () {
     },
 
     focusout: function () {
-      if (!isSmall()) {
+      if (!isSmall(window)) {
         $(this.hash).data('subMenuTimer', setTimeout(0))
       }
     },
 
     focusin: function () {
-      if (!isSmall()) {
+      if (!isSmall(window)) {
         clearTimeout($(this.hash).data('subMenuTimer'))
       }
     }
@@ -80,7 +79,7 @@ module.exports = function () {
 
   subNav.on({
     focusout: function () {
-      if (!isSmall()) {
+      if (!isSmall(window)) {
         $(this).data('subMenuTimer', setTimeout(function () {
           hideSubnavDesktop()
         }, 0))
@@ -93,7 +92,7 @@ module.exports = function () {
   })
 
   showNavLinkMobile.on('click', function (e) {
-    if (isSmall()) {
+    if (isSmall(window)) {
       if (mainNav.hasClass('subnav-is-open') || mainNav.hasClass('main-nav-is-open')) {
         hideSubnavMobile()
         hideMainNavMobile($(this))
