@@ -236,7 +236,10 @@ module.exports = function () {
         'aria-hidden': 'false',
         'aria-expanded': 'true'
       })
-      .focus()
+    setTimeout(function () {
+      subNav.focus()
+      console.log(document.activeElement)
+    }, 500)
 
     showSubnavLink
       .addClass('account-menu__link--more-expanded')

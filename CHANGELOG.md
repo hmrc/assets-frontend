@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+- Refactoring the account menu JS and adding in unit tests
 ### Updated
 - Added documentation for page title [#928](https://github.com/hmrc/assets-frontend/pull/928)
 - Added documentation for open links in a new window or tab component [#926](https://github.com/hmrc/assets-frontend/pull/926)

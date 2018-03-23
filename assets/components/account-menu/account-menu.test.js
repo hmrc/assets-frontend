@@ -61,7 +61,12 @@ describe('Given I have an account menu of the page', function () {
 
     it('should close the subnav in second click', function () {
       $yourAccountLink.click()
+      expect($nav).not.toHaveClass('subnav-is-open')
+      expect($yourAccountLink.attr('aria-expanded')).toBe('false')
+      expect($yourAccountLink).not.toHaveClass('account-menu__link--more-expanded')
       expect($yourAccountSubNav).not.toHaveClass('subnav-reveal')
+      expect($yourAccountSubNav.attr('aria-hidden')).toBe('true')
+      expect($yourAccountSubNav.attr('aria-expanded')).toBe('false')
     })
   })
 })
