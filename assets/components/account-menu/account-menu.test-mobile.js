@@ -24,7 +24,7 @@ describe('Given I have an account menu on the page', function () {
     $mobileMenuLink = $('#mobile-menu')
     $mobileSubMenu = $('.account-menu__main')
     $yourAccountLink = $('#account-menu__main-2')
-    $subnavItems = $('.subnav-items')
+    $subnavItems = $('.subnav-item')
     $mobileBack = $('.account-menu__link--back')
     $mobileBackLink = $('.account-menu__link--back a')
   })
