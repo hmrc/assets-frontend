@@ -34,6 +34,16 @@ The message details should show the complete message. It should include:
 - message content
 - back link to messages list
 
+### Unread messages
+
+{{ example("messages-unread.html") }}
+{{ markup("messages-unread.html") }}
+
+### Read messages
+
+{{ example("messages-read.html") }}
+{{ markup("messages-read.html") }}
+
 ## Research on this pattern
 
 {{ research(44) }}
