@@ -2,37 +2,33 @@
 
 {{ wip(44) }}
 
-This pattern is used to display messages sent to a user from an HMRC service.
+This pattern is used to display messages sent to a user from HMRC.
 
 ## When to use this pattern
 
-Use this pattern when your service needs to send multiple messages to users.
-
+Use this pattern when your service sends messages to users.
 
 ## How it works 
 
-This patterns has two views:
-
-- message list
-- message details
+This pattern includes a message list and message details.
 
 ### Message list
 
-This should display a list summarising messages received. Each summary should link to the full message and should have a read and unread state.
+Display a summary of messages the user has received. The list has:
 
-The summary information should include:
-
-- subject
-- date
+- subject of the message
+- date the message was sent
+- a link to the full message
+- a read and unread state
 
 ### Message details
 
-The message details should show the complete message. It should include:
+Display a complete message. Include:
 
-- subject
-- date
+- subject of the message
+- date the message was sent
 - message content
-- back link to messages list
+- back link that takes you to the message list
 
 ### Unread messages
 
