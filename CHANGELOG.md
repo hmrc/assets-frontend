@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 - Refactoring the account menu JS and adding in unit tests
 ### Updated
+- Fixed a typo in technical problem page [#933](https://github.com/hmrc/assets-frontend/pull/933)
 - Added documentation for page title [#928](https://github.com/hmrc/assets-frontend/pull/928)
 - Added documentation for open links in a new window or tab component [#926](https://github.com/hmrc/assets-frontend/pull/926)
 - Updated documentation headings and page not found pattern [#922](https://github.com/hmrc/assets-frontend/pull/922)
