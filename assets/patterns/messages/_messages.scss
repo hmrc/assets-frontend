@@ -1,24 +1,21 @@
-.messages-table {
-  .messages-table__row {
-    .message-table__data {
-      font-weight: bold;
-      &:first-child {
-        padding-left: 10px;
-      }
-      &:last-child {
-        padding-right: 10px;
-        white-space: nowrap;
-      }
-    }
-    &.messages-table__row--read {
-      background-color: #f8f8f8;
-      .message-table__data {
-        font-weight: normal;
-      }
-    }
-    .messages-table__link {
-      color: #005ea5;
-      text-decoration: none;
-    }
+.message-table__data {
+  font-weight: bold;
+  &:first-child {
+    padding-left: 10px;
   }
+  &:last-child {
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+}
+
+.messages-table__row--read {
+  background-color: #f8f8f8;
+  .message-table__data {
+    font-weight: normal;
+  }
+}
+
+.messages-table__link {
+  text-decoration: none;
 }
