@@ -5,55 +5,68 @@
  * Account menu module tests
  */
 
-require('jquery')
+var $ = require('jquery')
 
 describe('Given I have an account menu of the page', function () {
-  var accountMenu
+  var accountMenu = require('./account-menu.js')
 
-  var $menuItem1, $menuItem2, $subMenu1, $subMenu2
+  var $nav
+  var $yourAccountLink
+  var $yourAccountSubNav
+  var $mobileMenuLink
+  var $mobileBack
 
   beforeEach(function () {
     jasmine.getFixtures().fixturesPath = 'base/components/account-menu'
     loadFixtures('account-menu.html')
 
-    accountMenu = require('./account-menu.js')
+    accountMenu()
 
-    $menuItem1 = $('#account-menu__main-1')
-    $menuItem2 = $('#account-menu__main-2')
-    $subMenu1 = $('#subnav-1')
-    $subMenu2 = $('#subnav-2')
+    $nav = $('#secondary-nav')
+    $yourAccountLink = $('#account-menu__main-2')
+    $yourAccountSubNav = $('#subnav-2')
+    $mobileMenuLink = $('#mobile-menu')
+    $mobileBack = $('.account-menu__link--back')
   })
 
   describe('When the page is loaded', function () {
-    beforeEach(function () {
-      accountMenu()
-    })
-
     it('An account menu should show menu items with no sub menus visible', function () {
-      expect($subMenu1).toHaveClass('js-hidden')
-      expect($subMenu2).toHaveClass('js-hidden')
+      expect($yourAccountSubNav).not.toHaveClass('subnav-reveal')
+      expect($yourAccountSubNav.attr('aria-hidden')).toBe('true')
+      expect($yourAccountLink.attr('aria-expanded')).toBe('false')
+    })
+
+    it('Should have all mobile elements hidden', function () {
+      expect($mobileMenuLink).toHaveClass('js-hidden')
+      expect($mobileMenuLink.attr('aria-hidden')).toBe('true')
+      expect($mobileMenuLink.attr('aria-expanded')).toBe('false')
+      expect($mobileBack).toHaveClass('hidden')
+      expect($mobileBack.attr('aria-hidden')).toBe('true')
     })
   })
 
-  describe('When I click on the first menu item', function () {
+  describe('When \'Your account\' is opened', function () {
     beforeEach(function () {
-      accountMenu()
-      $($menuItem1).click()
+      $yourAccountLink.click()
     })
 
-    it('the first sub menu should open', function () {
-      // expect($subMenu1).not.toHaveClass('js-hidden')
-    })
-  })
-
-  describe('When I click on the second menu item', function () {
-    beforeEach(function () {
-      accountMenu()
-      $menuItem2.trigger('click')
+    it('should reveal the subnav', function () {
+      expect($nav).toHaveClass('subnav-is-open')
+      expect($yourAccountLink.attr('aria-expanded')).toBe('true')
+      expect($yourAccountLink).toHaveClass('account-menu__link--more-expanded')
+      expect($yourAccountSubNav).toHaveClass('subnav-reveal')
+      expect($yourAccountSubNav.attr('aria-hidden')).toBe('false')
+      expect($yourAccountSubNav.attr('aria-expanded')).toBe('true')
     })
 
-    it('the second sub menu should open', function () {
-      // expect($subMenu2).not.toHaveClass('js-hidden')
+    it('should close the subnav in second click', function () {
+      $yourAccountLink.click()
+      expect($nav).not.toHaveClass('subnav-is-open')
+      expect($yourAccountLink.attr('aria-expanded')).toBe('false')
+      expect($yourAccountLink).not.toHaveClass('account-menu__link--more-expanded')
+      expect($yourAccountSubNav).not.toHaveClass('subnav-reveal')
+      expect($yourAccountSubNav.attr('aria-hidden')).toBe('true')
+      expect($yourAccountSubNav.attr('aria-expanded')).toBe('false')
     })
   })
 })

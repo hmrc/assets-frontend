@@ -11,7 +11,8 @@ module.exports = function (karmaConfig) {
       'jasmine-jquery',
       'jasmine',
       'jasmine-matchers',
-      'browserify'
+      'browserify',
+      'viewport'
     ],
 
     // list of files / patterns to load in the browser
@@ -33,7 +34,8 @@ module.exports = function (karmaConfig) {
 
     preprocessors: {
       'test/specs/*.js': ['browserify'],
-      'components/**/*.test.js': ['browserify']
+      'components/**/*.test.js': ['browserify'],
+      'components/**/*.test-mobile.js': ['browserify']
     },
 
     // web server port
