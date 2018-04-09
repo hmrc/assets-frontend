@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Updated
-- Fixed a typo in open links in a new window or tab page
+- Fixed a typo in open links in a new window or tab page [#935](https://github.com/hmrc/assets-frontend/pull/935)
 - Fixed a typo in technical problem page [#933](https://github.com/hmrc/assets-frontend/pull/933)
 - Added documentation for page title [#928](https://github.com/hmrc/assets-frontend/pull/928)
 - Added documentation for open links in a new window or tab component [#926](https://github.com/hmrc/assets-frontend/pull/926)
