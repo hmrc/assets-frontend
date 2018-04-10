@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Updated
 - Documentation and examples for page not found, service unavailable and there is a problem with the service [#936](https://github.com/hmrc/assets-frontend/pull/936)
+- Updated notification badge CSS, code and examples [#934](https://github.com/hmrc/assets-frontend/pull/934)
 - Fixed a typo in open links in a new window or tab page [#935](https://github.com/hmrc/assets-frontend/pull/935)
 - Fixed a typo in technical problem page [#933](https://github.com/hmrc/assets-frontend/pull/933)
 - Added documentation for page title [#928](https://github.com/hmrc/assets-frontend/pull/928)
