@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Run tests in desktop viewport instead of phantom's default 400 [#927](https://github.com/hmrc/assets-frontend/pull/927)
+- Fixed broken link [#937](https://github.com/hmrc/assets-frontend/pull/937)
 
 ## [3.2.3] and [4.2.3] - 2018-03-15
 ### Fixed
