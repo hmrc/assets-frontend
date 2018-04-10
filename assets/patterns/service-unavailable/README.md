@@ -2,7 +2,7 @@
 
 {{ wip(103) }}
 
-This is a page that tells someone a service is unavailable. It should say when the service will be available or what to do if it is permanently closed.
+This is a page that tells someone a service is unavailable on purpose. These are also known as 503 and shutter pages.
 
 {{ example('service-unavailable.html', true) }}
 
@@ -12,7 +12,7 @@ Use a service unavailable page when a service has been closed on purpose. This c
 
 If there is a problem with the service, [use a technical problem page](/patterns/technical-problem/index.html).
 
-Have a general page in case you need to quickly close a service. Update the page as soon as you know when the service will be available.
+Have a general page in case you need to close a service and do not have time to update the page. As soon as you know when the service will be available, update the page.
 
 ## How it works
 
@@ -27,17 +27,19 @@ The page should have:
 - “Service unavailable – service name – GOV.UK” as the page title
 - “Service unavailable” as the H1
 - the day, date and time it is going to be available or what to do if it is permanently closed
+- information about what has happened to their answers if they are in the middle of a transaction
 - contact information, if it exists and helps meet a user need
+- a link to another service, if they can use it to do what they came to do
 
-Contact information should be either:
+Contact information should either:
 
-- a link to a specific GOV.UK contact page, not [contact HMRC](https://www.gov.uk/contact-hmrc) or [HM Revenue & Customs Contacts](https://www.gov.uk/government/organisations/hm-revenue-customs/contact)
-- formatted like a GOV.UK contact page when there is no GOV.UK page
+- be a link to a specific page that includes numbers and opening times
+- include all numbers and opening times
 
 Have clear and concise content and do not use:
 
 - breadcrumbs
-- words like maintenance, improvements, please and sorry
+- vague, unhelpful words like maintenance and improvements
 - red text to warn people
 
 ### General page
@@ -48,6 +50,10 @@ Have clear and concise content and do not use:
 
 {{ example('service-unavailable.html', true) }}
 
+### A link to another service
+
+{{ example('service-unavailable-link.html', true) }}
+
 ### Service is closed for part of the year
 
 This is for a service like tax credit renewals.
@@ -57,6 +63,8 @@ This is for a service like tax credit renewals.
 {{ example('service-unavailable-after.html', true) }}
 
 #### Before a service opens
+
+Do not include any contact information.
 
 {{ example('service-unavailable-before.html', true) }}
 
@@ -71,6 +79,18 @@ This is for a service like tax credit renewals.
 {{ example('service-unavailable-replacement.html', true) }}
 
 ## Research on this pattern
+
+This pattern was tested with 5 users. The user needs identified were to say:
+
+- when the service will be available
+- how they can do what they came to do
+
+To meet the needs:
+
+- give clear information about when the service will be available again
+- if the service has closed forever, what has replaced it
+- say what someone needs to do if they need to speak to someone
+- include a link to another service or contact information about offline support
 
 {{ research(103) }}
 

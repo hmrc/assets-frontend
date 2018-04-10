@@ -14,9 +14,14 @@ Use a page not found if someone is trying to view a page that does not exist. Th
 - types or copies a web address for a page that does not exist
 - types or copies a web address incorrectly
 
-Test all links and buttons to make sure they go where they are supposed to.
+Test all links and buttons to make sure work. Remember to [do the hard work to make it simple](https://www.gov.uk/guidance/government-design-principles#do-the-hard-work-to-make-it-simple).
 
-Make sure any web addresses in your service, letters, forms and on GOV.UK are for or redirect to pages that exist.
+Make sure any web addresses in your service, letters, forms and on GOV.UK are for pages that exist or redirect to pages that exist.
+
+For example, if someone has bookmarked a confirmation or a page in the middle of a journey:
+
+- explain that the information or page is no longer available
+- give them a link or button to get to a sensible place in the service
 
 ## How it works
 
@@ -32,30 +37,27 @@ The page should have:
 - “Page not found” as the H1
 - contact information, if it exists and helps meet a user need
 
-Contact information should be either:
+Contact information should either:
 
-- a link to a specific GOV.UK contact page not a general contact page
-- formatted like a GOV.UK contact page when there is no GOV.UK page
+- be a link to a specific page that includes numbers and opening times
+- include all numbers and opening times
 
-The content should be clear and concise, not blame the user, and not use:
+The content should be clear and concise and not blame the user.
+
+Do not use:
 
 - breadcrumbs
-- words like oops, 404, bad request, please and sorry
+- technical jargon like 404 or bad request
+- informal or humorous words like oops
 - red text to warn people
-
-### If you do not know why the page is not found
-
-{{ example("page-not-found-unknown.html", scaled=true) }}
-
-Page after they send the form.
-
-{{ example("page-not-found-sent.html", scaled=true) }}
 
 ### Service mistake
 
 {{ example("page-not-found.html", scaled=true) }}
 
-### User mistake
+As mentioned, test all links and buttons to make sure they work or are sensibly redirected.
+
+### User mistake or you do not know why the page is not found
 
 {{ example("page-not-found-user.html", scaled=true) }}
 
@@ -68,4 +70,4 @@ We want to know if people:
 - can fix the problem on their own
 - understand what has happened
 - understand the content and if there is anything missing
-- would use a form to tell us about the problem and if that helps them
+- would use report a page not found if they could
