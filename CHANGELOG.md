@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [3.2.4] and [4.2.4] - 2018-04-12
+### Fixed
+- The text in form inputs wasn't visible in high contrast mode [#939](https://github.com/hmrc/assets-frontend/pull/939)
+- Run tests in desktop viewport instead of phantom's default 400 [#927](https://github.com/hmrc/assets-frontend/pull/927)
+- Fixed broken link [#937](https://github.com/hmrc/assets-frontend/pull/937)
+
 ### Updated
 - Documentation and examples for page not found, service unavailable and there is a problem with the service [#936](https://github.com/hmrc/assets-frontend/pull/936)
 - Updated notification badge CSS, code and examples [#934](https://github.com/hmrc/assets-frontend/pull/934)
@@ -21,11 +28,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Version build artefacts according to the [HMRC release candidate format](http://hmrc.github.io/coding-in-the-open-manual/#release-candidates) [#924](https://github.com/hmrc/assets-frontend/pull/924)
 - Tar build artefacts instead of zip and add a package file for publishing [#925](https://github.com/hmrc/assets-frontend/pull/925)
 - Moved the timeout dialog pattern from the components directory to the patterns directory [#931](https://github.com/hmrc/assets-frontend/pull/931)
-
-### Fixed
-- Run tests in desktop viewport instead of phantom's default 400 [#927](https://github.com/hmrc/assets-frontend/pull/927)
-- Fixed broken link [#937](https://github.com/hmrc/assets-frontend/pull/937)
-- The text in form inputs wasn't visible in high contrast mode [#939](https://github.com/hmrc/assets-frontend/pull/939)
 
 ## [3.2.3] and [4.2.3] - 2018-03-15
 ### Fixed
@@ -271,11 +273,13 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Changes to nginx error pages not being build and deployed [#734]
 
 [Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...master
+[4.2.4]: https://github.com/hmrc/assets-frontend/compare/release/4.2.3...release/4.2.4
 [4.2.3]: https://github.com/hmrc/assets-frontend/compare/release/4.2.2...release/4.2.3
 [4.2.2]: https://github.com/hmrc/assets-frontend/compare/release/4.2.1...release/4.2.2
 [4.2.1]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...release/4.2.1
 [4.2.0]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...release/4.2.0
 [4.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...release/4.1.0
+[3.2.4]: https://github.com/hmrc/assets-frontend/compare/release/3.2.4...release/3.2.4
 [3.2.3]: https://github.com/hmrc/assets-frontend/compare/release/3.2.2...release/3.2.3
 [3.2.2]: https://github.com/hmrc/assets-frontend/compare/release/3.2.1...release/3.2.2
 [3.2.1]: https://github.com/hmrc/assets-frontend/compare/release/3.2.0...release/3.2.1
