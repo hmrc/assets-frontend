@@ -1,10 +1,8 @@
 # There is a problem with the service
 
-{{ wip(105) }}
-
 This is a page that tells someone there is something wrong with the service. They are also known as 500 and internal service error pages.
 
-{{ example("there-is-a-problem-with-the-service.html", scaled=true) }}
+{{ example("there-is-a-problem-with-the-service.html", false) }}
 
 ## When to use this pattern
 
@@ -45,15 +43,15 @@ Have clear and concise content and do not use:
 
 ### Service has a specific page that includes numbers and opening times
 
-{{ example("there-is-a-problem-with-the-service.html", scaled=true) }}
+{{ example("there-is-a-problem-with-the-service.html", false) }}
 
 ### Service has offline support but no specific page that includes numbers and opening times
 
-{{ example("there-is-a-problem-with-the-service-no-contact.html", scaled=true) }}
+{{ example("there-is-a-problem-with-the-service-no-contact.html", false) }}
 
 ### A link to another service
 
-{{ example("there-is-a-problem-with-the-service-link.html", scaled=true) }}
+{{ example("there-is-a-problem-with-the-service-link.html", false) }}
 
 ## Research on this pattern
 

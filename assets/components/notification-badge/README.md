@@ -1,7 +1,5 @@
 # Notification badge
 
-{{ wip(142) }}
-
 A notification badge shows a number.
 
 {{ example("notification-badge.html") }}

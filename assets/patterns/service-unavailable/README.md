@@ -1,10 +1,8 @@
 # Service unavailable
 
-{{ wip(103) }}
-
 This is a page that tells someone a service is unavailable on purpose. These are also known as 503 and shutter pages.
 
-{{ example('service-unavailable.html', true) }}
+{{ example('service-unavailable.html', scaled=false) }}
 
 ## When to use this pattern
 
@@ -44,15 +42,15 @@ Have clear and concise content and do not use:
 
 ### General page
 
-{{ example('service-unavailable-general.html', true) }}
+{{ example('service-unavailable-general.html', false) }}
 
 ### When you know when a service will be available
 
-{{ example('service-unavailable.html', true) }}
+{{ example('service-unavailable.html', false) }}
 
 ### A link to another service
 
-{{ example('service-unavailable-link.html', true) }}
+{{ example('service-unavailable-link.html', false) }}
 
 ### Service is closed for part of the year
 
@@ -60,23 +58,23 @@ This is for a service like tax credit renewals.
 
 #### After a service closes
 
-{{ example('service-unavailable-after.html', true) }}
+{{ example('service-unavailable-after.html', false) }}
 
 #### Before a service opens
 
 Do not include any contact information.
 
-{{ example('service-unavailable-before.html', true) }}
+{{ example('service-unavailable-before.html', false) }}
 
 ### Service is closed forever
 
 #### Nothing has replaced the service
 
-{{ example('service-unavailable-no-replacement.html', true) }}
+{{ example('service-unavailable-no-replacement.html', false) }}
 
 #### Something has replaced the service
 
-{{ example('service-unavailable-replacement.html', true) }}
+{{ example('service-unavailable-replacement.html', false) }}
 
 ## Research on this pattern
 

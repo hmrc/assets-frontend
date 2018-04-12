@@ -1,10 +1,8 @@
 # Page not found
 
-{{ wip(104) }}
-
 A page not found tells someone the page they were trying to view cannot be found. They are also known as 404 pages.
 
-{{ example("page-not-found.html", scaled=true) }}
+{{ example("page-not-found.html", false) }}
 
 ## When to use this pattern
 
@@ -53,13 +51,13 @@ Do not use:
 
 ### Service mistake
 
-{{ example("page-not-found.html", scaled=true) }}
+{{ example("page-not-found.html", false) }}
 
 As mentioned, test all links and buttons to make sure they work or are sensibly redirected.
 
 ### User mistake or you do not know why the page is not found
 
-{{ example("page-not-found-user.html", scaled=true) }}
+{{ example("page-not-found-user.html", false) }}
 
 ## Research on this pattern
 
