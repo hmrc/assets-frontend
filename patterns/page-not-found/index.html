@@ -96,7 +96,7 @@
               <ul class="pattern-nav">
                 <li><a href="/assets-frontend/patterns/page-not-found/index.html">Page not found</a></li>
                 <li><a href="/assets-frontend/patterns/service-unavailable/index.html">Service unavailable</a></li>
-                <li><a href="/assets-frontend/patterns/technical-problem/index.html">Technical problem</a></li>
+                <li><a href="/assets-frontend/patterns/there-is-a-problem-with-the-service/index.html">There is a problem with the service</a></li>
                 <li><a href="/assets-frontend/patterns/timeout-dialog/index.html">Timeout dialog</a></li>
               <ul>
             </nav>
@@ -121,51 +121,8 @@
             -->
 
             <h1 id="page-not-found">Page not found</h1>
-  <div class="banner banner__out-of-date">
-    <p>This is a work in progress – <a href="https://github.com/hmrc/design-patterns/issues/104">view more information on GitHub</a>.</p>
-  </div>
-
-
 <p>A page not found tells someone the page they were trying to view cannot be found. They are also known as 404 pages.</p>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!-- COOKIE MESSAGE -->
-<!--<div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div>-->
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
+<div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">Page not found</h1>
       <p>This has been reported to the team that manage the service and will be fixed as soon as possible.</p>
@@ -180,34 +137,7 @@
       <span style="font-weight:700">Monday to Friday: 8am to 8pm</span></p>
       <p>Closed Easter Sunday, Christmas Day, Boxing Day and New Year’s Day.</p>
     </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER --></div>
-  </div>
-</div>
+  </div></div>
 
 
 
@@ -218,8 +148,13 @@
 <li>types or copies a web address for a page that does not exist</li>
 <li>types or copies a web address incorrectly</li>
 </ul>
-<p>Test all links and buttons to make sure they go where they are supposed to.</p>
-<p>Make sure any web addresses in your service, letters, forms and on GOV.UK are for or redirect to pages that exist.</p>
+<p>Test all links and buttons to make sure work. Remember to <a href="https://www.gov.uk/guidance/government-design-principles#do-the-hard-work-to-make-it-simple">do the hard work to make it simple</a>.</p>
+<p>Make sure any web addresses in your service, letters, forms and on GOV.UK are for pages that exist or redirect to pages that exist.</p>
+<p>For example, if someone has bookmarked a confirmation or a page in the middle of a journey:</p>
+<ul>
+<li>explain that the information or page is no longer available</li>
+<li>give them a link or button to get to a sensible place in the service</li>
+</ul>
 <h2 id="how-it-works">How it works</h2>
 <p>The page should use the standard page template from your service and have the same:</p>
 <ul>
@@ -233,235 +168,21 @@
 <li>“Page not found” as the H1</li>
 <li>contact information, if it exists and helps meet a user need</li>
 </ul>
-<p>Contact information should be either:</p>
+<p>Contact information should either:</p>
 <ul>
-<li>a link to a specific GOV.UK contact page not a general contact page</li>
-<li>formatted like a GOV.UK contact page when there is no GOV.UK page</li>
+<li>be a link to a specific page that includes numbers and opening times</li>
+<li>include all numbers and opening times</li>
 </ul>
-<p>The content should be clear and concise, not blame the user, and not use:</p>
+<p>The content should be clear and concise and not blame the user.</p>
+<p>Do not use:</p>
 <ul>
 <li>breadcrumbs</li>
-<li>words like oops, 404, bad request, please and sorry</li>
+<li>technical jargon like 404 or bad request</li>
+<li>informal or humorous words like oops</li>
 <li>red text to warn people</li>
 </ul>
-<h3 id="if-you-do-not-know-why-the-page-is-not-found">If you do not know why the page is not found</h3>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!-- COOKIE MESSAGE -->
-<!--<div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div>-->
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Page not found</h1>
-      <p>If you typed the web address, check it is correct.</p>
-      <p>If you pasted the web address, check you copied the entire address.</p>
-      <p>If the web address is correct or you selected a link or button, you can:</p>
-      <ul class="list list-bullet">
-        <li><a href="https://www.gov.uk/contact-the-tax-credit-office">contact the Tax Credit Helpline</a> if you need to speak to someone about your tax credits</li>
-        <li>tell us what you were trying to do</li>
-      </ul><form action="/" method="POST" id="error-feedback-form" class="form--feedback" novalidate="novalidate">
-        <fieldset>
-          <legend><h2 class="heading-medium">Tell us what you were trying to do</h2></legend>
-          <div class="form-group">
-            <label for="report-name" class="form-label">Full name</label>
-            <input id="report-name" maxlength="70" class="input--fullwidth form-control" name="report-name" type="text" data-rule-letterswithbasicpunc="true" data-msg-letterswithbasicpunc="Letters or punctuation only please." data-rule-required="true" data-msg-required="Please provide your name." aria-required="true">
-          </div>
-          <div class="form-group">
-            <label for="report-email" class="form-label">Email address</label>
-            <input id="report-email" maxlength="255" class="input--fullwidth form-control" name="report-email" type="email" data-msg-email="Please enter a valid email address." data-rule-required="true" data-rule-email="true" data-msg-required="Please provide your email address." aria-required="true">
-          </div>
-          <div class="form-group">
-            <label for="report-action" class="form-label">What were you trying to do?</label>
-            <span class="form-hint">Do not include personal or financial information like your National Insurance number or credit card details.</span>
-            <textarea class="form-control form-control-3-4" name="report-action" id="report-action" rows="5"></textarea>
-          </div>
-        </fieldset>
-        <div class="form-field">
-          <button id="report-submit" class="button" type="submit" data-journey-click="page:Click:Get help with this page Submit">Send</button>
-        </div>
-      </form>
-    </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER -->
-</div>
-  </div>
-</div>
-
-
-
-<p>Page after they send the form.</p>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!-- COOKIE MESSAGE -->
-<!--<div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div>-->
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">We have your details and what you were trying to do</h1>
-      <p>We will email you when we have fixed the service.</p>
-      <p><a class="button" href="#">Go back to the service</a></p>
-    </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER --></div>
-  </div>
-</div>
-
-
-
 <h3 id="service-mistake">Service mistake</h3>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!-- COOKIE MESSAGE -->
-<!--<div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div>-->
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
+<div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">Page not found</h1>
       <p>This has been reported to the team that manage the service and will be fixed as soon as possible.</p>
@@ -476,111 +197,20 @@
       <span style="font-weight:700">Monday to Friday: 8am to 8pm</span></p>
       <p>Closed Easter Sunday, Christmas Day, Boxing Day and New Year’s Day.</p>
     </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER --></div>
-  </div>
-</div>
+  </div></div>
 
 
 
-<h3 id="user-mistake">User mistake</h3>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!-- COOKIE MESSAGE -->
-<!--<div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div>-->
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
+<p>As mentioned, test all links and buttons to make sure they work or are sensibly redirected.</p>
+<h3 id="user-mistake-or-you-do-not-know-why-the-page-is-not-found">User mistake or you do not know why the page is not found</h3>
+<div class="example"><div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">Page not found</h1>
       <p>If you typed the web address, check it is correct.</p>
       <p>If you pasted the web address, check you copied the entire address.</p>
       <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to speak to someone about your tax credits.</p>
     </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER --></div>
-  </div>
-</div>
+  </div></div>
 
 
 
@@ -595,7 +225,7 @@
 <li>can fix the problem on their own</li>
 <li>understand what has happened</li>
 <li>understand the content and if there is anything missing</li>
-<li>would use a form to tell us about the problem and if that helps them</li>
+<li>would use report a page not found if they could</li>
 </ul>
 
 

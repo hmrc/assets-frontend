@@ -96,7 +96,7 @@
               <ul class="pattern-nav">
                 <li><a href="/assets-frontend/patterns/page-not-found/index.html">Page not found</a></li>
                 <li><a href="/assets-frontend/patterns/service-unavailable/index.html">Service unavailable</a></li>
-                <li><a href="/assets-frontend/patterns/technical-problem/index.html">Technical problem</a></li>
+                <li><a href="/assets-frontend/patterns/there-is-a-problem-with-the-service/index.html">There is a problem with the service</a></li>
                 <li><a href="/assets-frontend/patterns/timeout-dialog/index.html">Timeout dialog</a></li>
               <ul>
             </nav>
@@ -120,90 +120,21 @@
             </div>
             -->
 
-            <h1 id="technical-problem">Technical problem</h1>
-  <div class="banner banner__out-of-date">
-    <p>This is a work in progress – <a href="https://github.com/hmrc/design-patterns/issues/105">view more information on GitHub</a>.</p>
-  </div>
-
-
-<p>This is a page that tells someone there is something wrong with the service. They are also known as 500 pages.</p>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!--COOKIE MESSAGE -->
-<!-- <div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div> -->
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
+            <h1 id="there-is-a-problem-with-the-service">There is a problem with the service</h1>
+<p>This is a page that tells someone there is something wrong with the service. They are also known as 500 and internal service error pages.</p>
+<div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">Sorry, there is a problem with the service</h1>
-      <p class="lede">Try again later.</p>
+      <p>Try again later.</p>
+      <p>We saved your answers. They will be available for 30 days.</p>
       <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to make changes to your claim or speak to someone about your tax credits.</p><br>    </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER --></div>
-  </div>
-</div>
+  </div></div>
 
 
 
 <h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Use a technical problem page when there is an unexpected problem with the service. Use the same page for all  technical problems.</p>
-<p>Log all errors and fix them as quickly as possibly.</p>
+<p>Use this page when there is an unexpected problem with the service. Use the same page for all unexpected problems.</p>
+<p>Log all errors and fix them as quickly as possible.</p>
 <p>Only display the page for a short time. If a problem cannot be fixed quickly, close the service and use a <a href="/patterns/service-unavailable/index.html">service unavailable page</a>.</p>
 <h2 id="how-it-works">How it works</h2>
 <p>Use the standard page template from your service and have the same:</p>
@@ -216,139 +147,41 @@
 <ul>
 <li>“There is a problem with the service – [service name] – GOV.UK” as the page title</li>
 <li>“There is a problem with the service” as the H1</li>
-<li>“Try again later.” as a lede paragraph</li>
+<li>“Try again later.” as a normal paragraph</li>
+<li>information about what has happened to their answers if they are in the middle of a transaction</li>
 <li>contact information, if it exists and helps meet a user need</li>
+<li>a link to another service, if they can use it to do what they came to do</li>
 </ul>
 <p>Contact information should be either:</p>
 <ul>
-<li>a link to a specific GOV.UK contact page, not <a href="https://www.gov.uk/contact-hmrc">contact HMRC</a> or <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact">HM Revenue &amp; Customs Contacts</a></li>
-<li>formatted like a GOV.UK contact page when there is no GOV.UK page</li>
+<li>be a link to a specific page that includes numbers and opening times</li>
+<li>include all numbers and opening times</li>
 </ul>
 <p>Have clear and concise content and do not use:</p>
 <ul>
 <li>breadcrumbs</li>
-<li>words like 500, bad request and “We are experiencing technical difficulties”</li>
+<li>words like 500 and bad request</li>
+<li>“We are experiencing technical difficulties”</li>
 <li>red text to warn people</li>
 </ul>
-<h3 id="service-has-a-gov-uk-contact-page">Service has a GOV.UK contact page</h3>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!--COOKIE MESSAGE -->
-<!-- <div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div> -->
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
+<h3 id="service-has-a-specific-page-that-includes-numbers-and-opening-times">Service has a specific page that includes numbers and opening times</h3>
+<div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">Sorry, there is a problem with the service</h1>
-      <p class="lede">Try again later.</p>
+      <p>Try again later.</p>
+      <p>We saved your answers. They will be available for 30 days.</p>
       <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to make changes to your claim or speak to someone about your tax credits.</p><br>    </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER --></div>
-  </div>
-</div>
+  </div></div>
 
 
 
-<h3 id="service-has-offline-support-but-no-gov-uk-contact-page">Service has offline support but no GOV.UK contact page</h3>
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale"><!--COOKIE MESSAGE -->
-<!-- <div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-  cookies</a></p>
-</div> -->
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content" role="main">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- PAGE CONTENT -->
-  <div class="grid-row">
+<h3 id="service-has-offline-support-but-no-specific-page-that-includes-numbers-and-opening-times">Service has offline support but no specific page that includes numbers and opening times</h3>
+<div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">Sorry, there is a problem with the service</h1>
-      <p class="lede">Try again later.</p>
-      <p>Contact us if you have any questions.</p>
+      <p>Try again later.</p>
+      <p>We have not saved your answers. When the service is available, you will have to start again.</p>
+      <p>Contact the Tax Credit Helpline if you have any questions.</p>
       <p>Telephone:<br/>
       <span style="font-weight:700">0345 300 3900</span></p>
       <p>Textphone:<br/>
@@ -361,38 +194,33 @@
       Sunday: 9am to 5pm</p>
       <p>Closed Easter Sunday, Christmas Day, Boxing Day and New Year’s Day.</p>
     </div>
-  </div>
-  <!-- END PAGE CONTENT -->
-</main>
-<!-- FOOTER   -->
-<footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-      </div>
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END FOOTER --></div>
-  </div>
-</div>
+  </div></div>
+
+
+
+<h3 id="a-link-to-another-service">A link to another service</h3>
+<div class="example">  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Sorry, there is a problem with the service</h1>
+      <p>Try again later.</p>
+      <p>If you need to make a payment and know how much you need to pay, <a href="">use the payment service</a>.</p>
+      <p><a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/income-tax-enquiries-for-individuals-pensioners-and-employees">Contact the Income Tax Helpline</a> if you need to speak to someone about your tax calculation.</p><br>    </div>
+  </div></div>
 
 
 
 <h2 id="research-on-this-pattern">Research on this pattern</h2>
+<p>The pattern was tested with 5 users. The user needs identified were to say:</p>
+<ul>
+<li>when the service will be available</li>
+<li>how they can do what they came to do</li>
+</ul>
+<p>We cannot meet the first need because we do not know what has happened.</p>
+<p>To meet the other need:</p>
+<ul>
+<li>say what someone needs to do if they need to speak to someone</li>
+<li>include a link to another service or contact information about offline support</li>
+</ul>
   <div class="">
     <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/105">add your research on GitHub</a>.</p>
   </div>
@@ -403,6 +231,7 @@
 <li>what people need to know</li>
 <li>what their expectations are after reading the page</li>
 <li>if people understand what is going on when they see the page</li>
+<li>if people need to know if this affects only them or other people too</li>
 <li>if people expect to see please and sorry</li>
 </ul>
 
