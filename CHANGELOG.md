@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - The text in form inputs wasn't visible in high contrast mode [#939](https://github.com/hmrc/assets-frontend/pull/939)
 - Run tests in desktop viewport instead of phantom's default 400 [#927](https://github.com/hmrc/assets-frontend/pull/927)
-- Fixed broken link [#937](https://github.com/hmrc/assets-frontend/pull/937)
+- Fixed broken link on "errors and validation" styles page [#937](https://github.com/hmrc/assets-frontend/pull/937)
 
 ### Updated
 - Documentation and examples for page not found, service unavailable and there is a problem with the service [#936](https://github.com/hmrc/assets-frontend/pull/936)
