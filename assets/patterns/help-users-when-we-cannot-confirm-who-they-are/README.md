@@ -1,6 +1,6 @@
 # Help users when we cannot confirm who they are
 
-This pattern tells users we cannot confirm who they are and tells them what they can do next. This is part of confirming who they are when they sign in with a Government Gateway account for the first time.
+This pattern tells users we cannot confirm who they are and what they can do next. This is part of confirming who they are when they sign in with a Government Gateway account for the first time.
 
 {{ example('help-users-when-we-cannot-confirm-who-they-are.html', scaled=false) }}
 
@@ -13,7 +13,7 @@ Use this pattern when we cannot confirm a user’s identity. This may include wh
 - does not provide enough information
 - makes too many attempts
 
-Doing this helps users to complete the task they are trying to perform. It can also help reduce time and money spent processing queries received by phone and post.
+Doing this helps users complete the task they are trying to do. It also helps reduce time and money spent dealing with queries received by phone and post.
 
 There is also a pattern to tell users we have confirmed who they are.
 
@@ -29,7 +29,7 @@ The page should have:
 
 - “H1 – service name – GOV.UK” as the page title
 - a H1 page heading
-- content explaining what went wrong and what they can do
+- content that explains what went wrong and what they can do
 - a call to action
 
 {{ example('help-users-when-we-cannot-confirm-who-they-are.html', scaled=false) }}
