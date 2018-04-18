@@ -4,8 +4,6 @@
 
 The HMRC header is the same as the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) but includes the HMRC logo. All elements that are imported from the GOV.UK header must not be changed.
 
-{{ example('header.html', true) }}
-
 ## When to use this component
 
 Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer).
@@ -49,9 +47,25 @@ This version of the header must also contain:
 - [a sign out link](#sign-out-link)
 - [last signed in status](#last-signed-in-status)
 
-#### Markup
+### Version 3: Adding the HMRC logo
 
-{{ markup('header--signed-in.html') }}
+Use this version when you need to display the HMRC logo.
+
+{{ example('header--hmrc-logo.html', true) }}
+
+
+### Version 3: Adding a phase banner
+
+Use this version when you need to display a phase in the service.
+
+{{ example('header--phase-banner.html', true) }}
+
+
+### Version 4: Adding a navigation
+
+Use this version when you need to use a navigation.
+
+{{ example('header--navigation.html', true) }}
 
 ### Header elements
 
