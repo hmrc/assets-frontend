@@ -52,7 +52,7 @@ List what they need in the ‘before you start’ information where the service 
 
 ### Give users extra help when they have a deadline
 
-If a user must do something by a specific time and the deadline is close, help them confirm who they are as quickly as possible. For example, a Self Assessment tax return or tax credit renewal.
+Help users to confirm who they are as quickly as possible if a user must do something by a specific time and the deadline is close. For example, a Self Assessment tax return or tax credit renewal.
 
 ### Provide help specific to your service
 
