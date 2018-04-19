@@ -15,7 +15,7 @@ Use this pattern when we cannot confirm a user’s identity. This may include wh
 
 Doing this helps users complete the task they are trying to do. It also helps reduce time and money spent dealing with queries received by phone and post.
 
-There is also a pattern to tell users we have confirmed who they are.
+There is also a pattern to [tell users we have confirmed who they are](/patterns/tell-users-we-have-confirmed-who-they-are/index.html).
 
 ## How it works
 
