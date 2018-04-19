@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- New pattern for help users when we cannot confirm who they are [#942](https://github.com/hmrc/assets-frontend/pull/942)
+- New patterns for help users when we cannot confirm who they are and tell user we have confirmed who they are [#942](https://github.com/hmrc/assets-frontend/pull/942)
 
 ## [3.2.4] and [4.2.4] - 2018-04-12
 ### Fixed
