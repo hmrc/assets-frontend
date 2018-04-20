@@ -20,7 +20,7 @@ There are 2 versions of the header. Both versions must contain:
 - [the GOV.UK header](#the-gov.uk-header)
 - [a phase banner](#phase-banner) unless the service is live
 - [HMRC logo](#hmrc-logo)
-- [the language selector](#language-selector) if your service is avalible in Welsh
+- [the language selector](#language-selector) if your service is available in Welsh
 
 ### Version 1: When someone is signed out
 
@@ -107,20 +107,20 @@ More research is needed to understand if displaying a person’s name is importa
 
 #### Language selector
 
-Use if the service or page is available in another language. 
+Use if the service or page is available in another language.
 
-Welsh is the only language we currently support. We do not know if it will be used for other languages. 
+Welsh is the only language we currently support. We do not know if it will be used for other languages.
 
 The language selector is sometimes called the Welsh toggle.
 
-## Research on this component 
+## Research on this component
 
-We need more user research on the header. 
+We need more user research on the header.
 
 We want to know if:
 
 - people are reassured by the HMRC logo
 - the last signed in time and date is needed
-- displaying a person’s name reassures them 
+- displaying a person’s name reassures them
 
 Contribute your research via this [GitHub issue](https://github.com/hmrc/design-patterns/issues/4).
