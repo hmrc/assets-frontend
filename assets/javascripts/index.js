@@ -33,6 +33,7 @@ var citizenAuthValidation = require('./validation/citizenAuthValidation.js')
 var saEmailPrefs = require('./validation/saEmailPrefs.js')
 var toggleDetails = require('./modules/toggleDetails.js')
 var fingerprint = require('./modules/fingerprint.js')
+var fingerprint2 = require('./modules/fingerprint2.js')
 var validatorFocus = require('./modules/validatorFocus.js')
 var enhancedTables = require('./modules/enhancedTables.js')
 var attorneyBanner = require('./modules/attorneyBanner.js')
@@ -47,6 +48,7 @@ var noticeBanner = require('./modules/noticeBanner.js')
 
 // initialise mdtpf
 fingerprint()
+fingerprint2()
 
 $(function () {
   var datatable

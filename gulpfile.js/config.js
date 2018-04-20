@@ -52,6 +52,7 @@ module.exports = {
     vendorDestDirName: 'javascripts/vendor',
     gulpTasks: 'gulpfile.js/**/*.js',
     encryptionSrc: src + 'javascripts/encryption/**/*.js',
+    auditSrc: src + 'javascripts/audit/**/*.js',
 
     modernizr: {
       options: [
