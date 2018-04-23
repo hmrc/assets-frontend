@@ -6,7 +6,7 @@ This is the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-gov
 
 All elements that are imported from the GOV.UK header must not be changed.
 
-## When to use this component
+## When to use this pattern
 
 Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer).
 
@@ -16,15 +16,15 @@ If your service is in the personal tax account, use the [personal tax account he
 
 ## How it works
 
-There are 2 versions of the header. Both versions must contain:
+Whenever you use the header, it must contain:
 
-- [the HMRC cookie banner](#the-hmrc-cookie-banner)
 - [the GOV.UK header](#the-gov.uk-header)
 - [a phase banner](#phase-banner) unless the service is live
-- [HMRC logo](#hmrc-logo)
 - [the language selector](#language-selector) if your service is available in Welsh
 
-### Version 1: When someone is signed out
+## Choose the right header
+
+### When the user is signed out
 
 Use this version:
 
@@ -38,16 +38,11 @@ Use this version:
 
 {{ markup('header.html') }}
 
-### Version 2: When someone is signed in
+### When the user is signed in
 
-Use this version when people are signed in to a service.
+This version of the header must also contain a sign out link.
 
 {{ example('header--signed-in.html', true) }}
-
-This version of the header must also contain:
-
-- [a sign out link](#sign-out-link)
-- [last signed in status](#last-signed-in-status)
 
 ### Version 3: Adding the HMRC logo
 
