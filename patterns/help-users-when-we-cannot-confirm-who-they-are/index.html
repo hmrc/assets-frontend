@@ -122,23 +122,28 @@
             </div>
             -->
 
-            <h1 id="service-unavailable">Service unavailable</h1>
-<p>This is a page that tells someone a service is unavailable on purpose. These are also known as 503 and shutter pages.</p>
+            <h1 id="help-users-when-we-cannot-confirm-who-they-are">Help users when we cannot confirm who they are</h1>
+<p>This pattern tells users we cannot confirm who they are and what they can do next. This is part of confirming who they are when they sign in with a Government Gateway account for the first time.</p>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p>You will be able to use the service from 9am on Monday 19&nbsp;November&nbsp;2018.</p>
-      <p>We have not saved your answers. When the service is available, you will have to start again.</p>
-      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to make changes to your claim or speak to someone about your tax credits.</p>
+      <h1 class="heading-large">We cannot confirm who you are</h1>
+      <p>The information you have provided does not match what we hold.</p>
+      <a href="" role="button" class="button">Try again</a>
     </div>
   </div></div>
 
 
 
 <h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Use a service unavailable page when a service has been closed on purpose. This could be for a specific period of time or permanently.</p>
-<p>If there is a problem with the service, <a href="/patterns/technical-problem/index.html">use a technical problem page</a>.</p>
-<p>Have a general page in case you need to close a service and do not have time to update the page. As soon as you know when the service will be available, update the page.</p>
+<p>Use this pattern when we cannot confirm a user’s identity. This may include when a user:</p>
+<ul>
+<li>provides details that do not match those we have on file</li>
+<li>does not complete the process</li>
+<li>does not provide enough information</li>
+<li>makes too many attempts</li>
+</ul>
+<p>Doing this helps users complete the task they are trying to do. It also helps reduce time and money spent dealing with queries received by phone and post.</p>
+<p>There is also a pattern to <a href="/patterns/tell-users-we-have-confirmed-who-they-are/index.html">tell users we have confirmed who they are</a>.</p>
 <h2 id="how-it-works">How it works</h2>
 <p>Use the standard page template from your service and have the same:</p>
 <ul>
@@ -148,153 +153,57 @@
 </ul>
 <p>The page should have:</p>
 <ul>
-<li>“Service unavailable – service name – GOV.UK” as the page title</li>
-<li>“Service unavailable” as the H1</li>
-<li>the day, date and time it is going to be available or what to do if it is permanently closed</li>
-<li>information about what has happened to their answers if they are in the middle of a transaction</li>
-<li>contact information, if it exists and helps meet a user need</li>
-<li>a link to another service, if they can use it to do what they came to do</li>
+<li>“H1 – service name – GOV.UK” as the page title</li>
+<li>a H1 page heading</li>
+<li>content that explains what went wrong and what they can do</li>
+<li>a call to action</li>
 </ul>
-<p>Contact information should either:</p>
-<ul>
-<li>be a link to a specific page that includes numbers and opening times</li>
-<li>include all numbers and opening times</li>
-</ul>
-<p>Have clear and concise content and do not use:</p>
-<ul>
-<li>breadcrumbs</li>
-<li>vague, unhelpful words like maintenance and improvements</li>
-<li>red text to warn people</li>
-</ul>
-<h3 id="general-page">General page</h3>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p>You will be able to use the service later.</p>
-      <p>We saved your answers. They will be available for 30 days.</p>
-      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to make changes to your claim or speak to someone about your tax credits.</p>
+      <h1 class="heading-large">We cannot confirm who you are</h1>
+      <p>The information you have provided does not match what we hold.</p>
+      <a href="" role="button" class="button">Try again</a>
     </div>
   </div></div>
 
 
 
-<h3 id="when-you-know-when-a-service-will-be-available">When you know when a service will be available</h3>
+<h3 id="avoid-ending-a-journey">Avoid ending a journey</h3>
+<p>Offer the user a way of continuing to use the service where possible.</p>
+<p>If this is not possible, provide a way for the user to do what they need to do another way. This could be another service where they do not need to confirm who they are.</p>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p>You will be able to use the service from 9am on Monday 19&nbsp;November&nbsp;2018.</p>
-      <p>We have not saved your answers. When the service is available, you will have to start again.</p>
-      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to make changes to your claim or speak to someone about your tax credits.</p>
-    </div>
-  </div></div>
-
-
-
-<h3 id="a-link-to-another-service">A link to another service</h3>
-<div class="example">  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p>You will be able to use the service from 9am on Monday 19&nbsp;November&nbsp;2018.</p>
+      <h1 class="heading-large">You tried to confirm who you are too many times</h1>
+      <p>You can try again in 24 hours by <a href="">signing in to the service again</a>.</p>
       <p>If you need to make a payment and know how much you need to pay, <a href="">use the payment service</a>.</p>
-      <p><a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/income-tax-enquiries-for-individuals-pensioners-and-employees">Contact the Income Tax Helpline</a> if you need to speak to someone about your tax calculation.</p>
     </div>
   </div></div>
 
 
 
-<h3 id="service-is-closed-for-part-of-the-year">Service is closed for part of the year</h3>
-<p>This is for a service like tax credit renewals.</p>
-<h4 id="after-a-service-closes">After a service closes</h4>
+<h3 id="understand-the-user-s-journey">Understand the user’s journey</h3>
+<p>Work with the team responsible for the microservice that confirms who the user is to understand how the process works. This will help you decide what is the best thing to tell a user to help them complete the process.</p>
+<h3 id="tell-users-what-they-will-need-to-confirm-who-they-are-when-they-start-to-use-the-service">Tell users what they will need to confirm who they are when they start to use the service</h3>
+<p>List what they need in the ‘before you start’ information where the service starts.</p>
+<h3 id="give-users-extra-help-when-they-have-a-deadline">Give users extra help when they have a deadline</h3>
+<p>Help users confirm who they are as quickly as possible if they must do something by a specific time and the deadline is close. For example, a Self Assessment tax return or tax credit renewal.</p>
+<h3 id="provide-help-specific-to-your-service">Provide help specific to your service</h3>
+<p>Avoid generic content. Display content that is relevant to the user’s journey.</p>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p>You cannot use the online service to renew your tax credits.</p>
-      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> to renew your tax credits by phone or letter.</p>
-      <p>You can <a href="#">use the tax credits service</a> to:</p>
-      <ul class="list list-bullet">
-        <li>find out more about your payments</li>
-        <li>see who is on your claim</li>
-        <li>make changes to your claim</li>
-        <li>check the status of your renewal</li>
-      </ul>
-    </div>
-  </div></div>
-
-
-
-<h4 id="before-a-service-opens">Before a service opens</h4>
-<p>Do not include any contact information.</p>
-<div class="example">  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p>You will be able renew your tax credits from Tuesday 24&nbsp;April&nbsp;2018.</p>
-      <p>You can <a href="#">use the tax credits service</a> to:</p>
-      <ul class="list list-bullet">
-        <li>find out more about your payments</li>
-        <li>see who is on your claim</li>
-        <li>make changes to your claim</li>
-      </ul>
-    </div>
-  </div></div>
-
-
-
-<h3 id="service-is-closed-forever">Service is closed forever</h3>
-<h4 id="nothing-has-replaced-the-service">Nothing has replaced the service</h4>
-<div class="example">  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p>The submit an employment intermediary report service has closed.</p>
-      <p>Contact us if you need to speak to someone about the service and your reports.</p>
-      <p>Telephone:<br/>
-      <span style="font-weight:700">03000 555 995</span></p>
-      <p>Opening times:<br/>
-      Monday to Friday: 8:30am to 4:30pm</p>
-    </div>
-  </div></div>
-
-
-
-<h4 id="something-has-replaced-the-service">Something has replaced the service</h4>
-<div class="example">  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Service unavailable</h1>
-      <p>Universal Credit has replaced tax credits.</p>
-      <p><a href="https://www.gov.uk/contact-the-tax-credit-office">Contact the Tax Credit Helpline</a> if you need to speak to someone about your tax credits.</p><br>      <p>You can:</p>
-      <ul class="list list-bullet">
-        <li><a href="https://www.gov.uk/universal-credit">find out more about Universal Credit</a></li>
-        <li><a href="https://www.gov.uk/apply-universal-credit">apply for Universal Credit</a></li>
-        <li><a href="https://www.gov.uk/sign-in-universal-credit">sign in to your Universal Credit account</a></li>
-      </ul>
+      <h1 class="heading-large">We cannot confirm who you are</h1>
+      <p>You have not given us enough information.</p>
+      <a href="" class="button" role="button">Try again</a>
     </div>
   </div></div>
 
 
 
 <h2 id="research-on-this-pattern">Research on this pattern</h2>
-<p>This pattern was tested with 5 users. The user needs identified were to say:</p>
-<ul>
-<li>when the service will be available</li>
-<li>how they can do what they came to do</li>
-</ul>
-<p>To meet the needs:</p>
-<ul>
-<li>give clear information about when the service will be available again</li>
-<li>if the service has closed forever, what has replaced it</li>
-<li>say what someone needs to do if they need to speak to someone</li>
-<li>include a link to another service or contact information about offline support</li>
-</ul>
   <div class="">
-    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/103">add your research on GitHub</a>.</p>
+    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/117">add your research on GitHub</a>.</p>
   </div>
 
-
-<p>We want to know:</p>
-<ul>
-<li>what people need to know</li>
-<li>what their expectations are after reading the page</li>
-<li>if people understand what is going on when they see the page</li>
-</ul>
 
 
             <!--
