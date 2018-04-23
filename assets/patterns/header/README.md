@@ -4,11 +4,9 @@
 
 This is the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) with a number of additional parts, depending on the needs of your users.
 
-All elements that are imported from the GOV.UK header must not be changed.
-
 ## When to use this pattern
 
-Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer).
+Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer). All elements that are imported from the GOV.UK header must not be changed.
 
 Only add an HMRC header if there is a user need for people to know they are dealing with HMRC. For example, if they are making a payment and need to be sure that the money is going to the right government department.
 
@@ -16,13 +14,7 @@ If your service is in the personal tax account, use the [personal tax account he
 
 ## How it works
 
-Whenever you use the header, it must contain:
-
-- [the GOV.UK header](#the-gov.uk-header)
-- [a phase banner](#phase-banner) unless the service is live
-- [the language selector](#language-selector) if your service is available in Welsh
-
-## Choose the right header
+Whenever you use the header, include the language selector, if your service is available in Welsh.
 
 ### When the user is signed out
 
@@ -50,7 +42,9 @@ The GOV.UK header comes with a cookie banner. Use this, but change the link so i
 
 ### Use the phase banner
 
-The GOV.UK header also comes with a phase banner. It includes a link to get feedback about your service. The feedback link in the phase banner is [https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name](https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated). Add your service name to the end of the URL so feedback can be directed back to your team.
+The GOV.UK header also comes with a phase banner. It includes a link to get feedback about your service: [https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name](https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated).
+
+Add your service name to the end of the URL so feedback can be directed back to your team.
 
 {{ example('header--phase-banner.html', true) }}
 
