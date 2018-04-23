@@ -2,15 +2,17 @@
 
 {{ wip(4) }}
 
-The HMRC header is the same as the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) but includes the HMRC logo. All elements that are imported from the GOV.UK header must not be changed.
+This is the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) with a number of additional parts, depending on the needs of your users.
+
+All elements that are imported from the GOV.UK header must not be changed.
 
 ## When to use this component
 
 Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer).
 
-Only use the HMRC header if there is a user need for people to know they are dealing with HMRC.
+Only add an HMRC header if there is a user need for people to know they are dealing with HMRC. For example, if they are making a payment and need to be sure that the money is going to the right government department.
 
-If your service is in the personal tax account, use the [Account header](/components/account-header/index.html).
+If your service is in the personal tax account, use the [personal tax account header](/components/account-header/index.html) instead.
 
 ## How it works
 
