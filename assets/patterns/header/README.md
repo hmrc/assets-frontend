@@ -42,7 +42,8 @@ The GOV.UK header comes with a cookie banner. Use this, but change the link so i
 
 ### Use the phase banner
 
-The GOV.UK header also comes with a phase banner. It includes a link to get feedback about your service: [https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name](https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated).
+The GOV.UK header also comes with a phase banner. It includes a link to get feedback about your service:
+[https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name](https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated).
 
 Add your service name to the end of the URL so feedback can be directed back to your team.
 
