@@ -50,4 +50,4 @@ Add your service name to the end of the URL so feedback can be directed back to 
 
 ## Research on this component
 
-We need more research – [add your research on GitHub] (https://github.com/hmrc/design-patterns/issues/4).
+We need more research – [add your research on GitHub](https://github.com/hmrc/design-patterns/issues/4).
