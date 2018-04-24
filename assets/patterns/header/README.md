@@ -10,6 +10,8 @@ Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-
 
 Only add an HMRC header if there is a user need for people to know they are dealing with HMRC. For example, if they are making a payment and need to be sure that the money is going to the right government department.
 
+{{ example('header--hmrc-logo.html', true) }}
+
 If your service is in the personal tax account, use the [personal tax account header](/components/account-header/index.html) instead.
 
 ## How it works
