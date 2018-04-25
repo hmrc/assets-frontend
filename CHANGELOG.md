@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - New patterns for help users when we cannot confirm who they are and tell user we have confirmed who they are [#942](https://github.com/hmrc/assets-frontend/pull/942)
 
+### Updated
+- Error message examples and code [#945](https://github.com/hmrc/assets-frontend/pull/945)
+
 ## [3.2.4] and [4.2.4] - 2018-04-12
 ### Fixed
 - The text in form inputs wasn't visible in high contrast mode [#939](https://github.com/hmrc/assets-frontend/pull/939)
