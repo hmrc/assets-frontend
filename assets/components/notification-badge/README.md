@@ -1,6 +1,4 @@
-# Notification Badge
-
-{{ wip(142) }}
+# Notification badge
 
 A notification badge shows a number.
 
@@ -38,4 +36,4 @@ Notification badges are common on many sites and services. It has been tested as
 - people understand what it is for
 - it does not distract people from their task
 
-More work is needed to make it accessible – [add your research on GitHub](https://github.com/hmrc/design-patterns/issues/142).
+{{ research(142) }}

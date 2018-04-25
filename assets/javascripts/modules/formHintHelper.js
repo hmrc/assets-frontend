@@ -67,8 +67,8 @@ var $formHintHelperEvent = function ($formHintHelperInput) {
   $formHintHelperInput.on('keyup', function () {
     var inputValue = $formHintHelperInput.val()
 
-    for (var value in rules) {
-      var rule = rules[value]
+    for (var i = 0, length1 = rules.length; i < length1; i++) {
+      var rule = rules[i]
 
       if (rule.pattern.test(inputValue)) {
         rule.$elem.addClass('form-hint-list-item--valid')

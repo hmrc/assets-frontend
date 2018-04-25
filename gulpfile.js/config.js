@@ -144,11 +144,13 @@ module.exports = {
         'test/specs/*.js',
         'components/**/**.html',
         'components/**/**.test.js',
+        'components/**/**.test-mobile.js',
         'public/v3-SNAPSHOT/stylesheets/application.min.css'
       ],
       v4: [
         'components/**/**.html',
         'components/**/**.test.js',
+        'components/**/**.test-mobile.js',
         'public/v4-SNAPSHOT/stylesheets/application.min.css'
       ]
     },
