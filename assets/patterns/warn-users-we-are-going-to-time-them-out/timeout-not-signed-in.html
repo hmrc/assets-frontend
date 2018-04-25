@@ -39,15 +39,22 @@
   <!-- PAGE CONTENT-->
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-xlarge">You’ve been signed out</h1>
-      <p class="lede">You haven’t done anything for 15 minutes, so we’ve signed you out to keep your account secure.</p>
-      <p>Please sign in again.</p>
-      <p><a class="button">Sign in</a></p>
+      <form method="post" action="refund-and-bank-address-edit" >
+        <h1 class="heading-large">Enter your full name</h1>
+        <div class="form-group">
+          <label class="form-label visuallyhidden" for="full-name-f1">Enter your full name</label>
+          <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
+        </div>
+        <button type="submit" class="button">Continue</button>
+      </form>
+      <br>
+      <!-- Back button -->
+      <a href="javascript:window.history.back();" class="link-back">Back</a>
     </div>
   </div>
+
   <!-- END PAGE CONTENT-->
 </main>
-
 <!-- FOOTER   -->
 <footer class="group js-footer" id="footer" role="contentinfo">
   <div class="footer-wrapper">
@@ -61,7 +68,6 @@
           <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
         </ul>
         <!-- END PLATFORM HELP LINKS -->
-
         <!-- OPEN GOVERNMENT LICENCE -->
         <div class="open-government-licence">
           <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
@@ -77,4 +83,9 @@
     </div>
   </div>
 </footer>
-<!-- END FOOTER -->
+<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex="-1" aria-live="polite">  
+  <p id="timeout-message" role="text">For your security, we will deleted your answers in <span id="timeout-countdown" class="countdown">2 minutes</span>.</p>
+  <button id="timeout-keep-signin-btn" class="button">Continue checking what help you can get with childcare costs</button>
+  <button id="timeout-sign-out-btn" class="button button--link">Delete your answers</button>
+</div>
+<div id="timeout-overlay" class="timeout-overlay"></div>
