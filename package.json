@@ -135,6 +135,7 @@
     }
   },
   "devDependencies": {
+    "@hmrc/node-git-versioning": "^0.1.0",
     "cheerio": "^1.0.0-rc.2",
     "globby": "^6.1.0",
     "gulp-standard": "^10.0.0",
@@ -144,7 +145,6 @@
     "karma-viewport": "^0.4.2",
     "marked": "^0.3.6",
     "mkdirp": "^0.5.1",
-    "@hmrc/node-git-versioning": "0.1.0",
     "nodemon": "^1.11.0",
     "nunjucks": "^3.0.1",
     "sinon": "^1.17.7",
