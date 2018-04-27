@@ -6,23 +6,38 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- `node-git-versioning` plugin has been published to npm so we can depend on that version [#946](https://github.com/hmrc/assets-frontend/pull/946)
+
+### Added
+- New patterns for help users when we cannot confirm who they are and tell user we have confirmed who they are [#942](https://github.com/hmrc/assets-frontend/pull/942)
+
+## [3.2.4] and [4.2.4] - 2018-04-12
+### Fixed
+- The text in form inputs wasn't visible in high contrast mode [#939](https://github.com/hmrc/assets-frontend/pull/939)
+- Run tests in desktop viewport instead of phantom's default 400 [#927](https://github.com/hmrc/assets-frontend/pull/927)
+- Fixed broken link on "errors and validation" styles page [#937](https://github.com/hmrc/assets-frontend/pull/937)
+
 ### Added
 - Documentation for page title [#928](https://github.com/hmrc/assets-frontend/pull/928)
 - Documentation for open links in a new window or tab component [#926](https://github.com/hmrc/assets-frontend/pull/926)
 - Documentation for messages pattern [#932](https://github.com/hmrc/assets-frontend/pull/932)
 
 ### Updated
+- Documentation and examples for page not found, service unavailable and there is a problem with the service [#936](https://github.com/hmrc/assets-frontend/pull/936)
+- Updated notification badge CSS, code and examples [#934](https://github.com/hmrc/assets-frontend/pull/934)
+- Fixed a typo in open links in a new window or tab page [#935](https://github.com/hmrc/assets-frontend/pull/935)
+- Fixed a typo in technical problem page [#933](https://github.com/hmrc/assets-frontend/pull/933)
+- Added documentation for page title [#928](https://github.com/hmrc/assets-frontend/pull/928)
+- Added documentation for open links in a new window or tab component [#926](https://github.com/hmrc/assets-frontend/pull/926)
 - Updated documentation headings and page not found pattern [#922](https://github.com/hmrc/assets-frontend/pull/922)
 - Updated documentation and examples for page heading [#923](https://github.com/hmrc/assets-frontend/pull/923)
+- Refactoring the account menu JS and adding in unit tests [#929](https://github.com/hmrc/assets-frontend/pull/929)
 
 ### Changed
 - Version build artefacts according to the [HMRC release candidate format](http://hmrc.github.io/coding-in-the-open-manual/#release-candidates) [#924](https://github.com/hmrc/assets-frontend/pull/924)
 - Tar build artefacts instead of zip and add a package file for publishing [#925](https://github.com/hmrc/assets-frontend/pull/925)
-- Updated Styles index page to remove redundant paragraph
 - Moved the timeout dialog pattern from the components directory to the patterns directory [#931](https://github.com/hmrc/assets-frontend/pull/931)
-
-### Fixed
-- Run tests in desktop viewport instead of phantom's default 400 [#927](https://github.com/hmrc/assets-frontend/pull/927)
 
 ## [3.2.3] and [4.2.3] - 2018-03-15
 ### Fixed
@@ -50,7 +65,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Added in links to the contribution guidelines [#902](https://github.com/hmrc/assets-frontend/pull/902)
 
-###Changed
+### Changed
 - Improve the developer experience of running assets-frontend [735](https://github.com/hmrc/assets-frontend/pull/907)
 
 ## [3.1.0] and [4.1.0] - 2018-01-16

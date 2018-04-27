@@ -31,6 +31,7 @@
   "author": "HMRC",
   "license": "Apache-2.0",
   "dependencies": {
+    "@hmrc/node-git-versioning": "^0.1.0",
     "backstopjs": "hmrc/BackstopJS",
     "browser-sync": "^2.4.0",
     "browserify": "^14.4.0",
@@ -141,9 +142,9 @@
     "gulp-stats": "0.0.4",
     "gulp-tape": "0.0.9",
     "handlebars": "^4.0.10",
+    "karma-viewport": "^0.4.2",
     "marked": "^0.3.6",
     "mkdirp": "^0.5.1",
-    "node-git-versioning": "hmrc/node-git-versioning",
     "nodemon": "^1.11.0",
     "nunjucks": "^3.0.1",
     "sinon": "^1.17.7",
