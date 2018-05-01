@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Changed
+- Moved the header pattern to patterns and updated documentation [944](https://github.com/hmrc/assets-frontend/pull/944)
 - `node-git-versioning` plugin has been published to npm so we can depend on that version [#946](https://github.com/hmrc/assets-frontend/pull/946)
 
 ### Updated

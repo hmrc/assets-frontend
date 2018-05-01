@@ -31,7 +31,6 @@
   "author": "HMRC",
   "license": "Apache-2.0",
   "dependencies": {
-    "@hmrc/node-git-versioning": "^0.1.0",
     "backstopjs": "hmrc/BackstopJS",
     "browser-sync": "^2.4.0",
     "browserify": "^14.4.0",
@@ -136,6 +135,7 @@
     }
   },
   "devDependencies": {
+    "@hmrc/node-git-versioning": "^0.1.0",
     "cheerio": "^1.0.0-rc.2",
     "globby": "^6.1.0",
     "gulp-standard": "^10.0.0",
