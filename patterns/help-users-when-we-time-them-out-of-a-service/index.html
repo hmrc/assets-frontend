@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="en" class="no-js tech-docs">
+  <head>
+    <base href="/assets-frontend/">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="robots" content="noindex">
+
+    <title>HMRC Design System</title>
+
+    <link rel="icon" type="image/x-icon" href="public/images/favicon.ico" />
+
+    <link rel="stylesheet" href="public/assets/stylesheets/design-system.css">
+    <link rel="stylesheet" href="public/assets/stylesheets/vendor/highlight/github.css">
+
+    <!--[if gt IE 8]><!--><link href="public/assets/stylesheets/govuk-template.css" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <!--[if IE 6]><link href="public/assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]><link href="public/assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]><link href="public/assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <!--[if gt IE 8]><!--><link rel="stylesheet" href="public/stylesheets/application.min.css"><!--<![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="public/stylesheets/application-ie.min.css"><![endif]-->
+
+    
+
+    <script src="public/assets/javascripts/vendor/modernizr.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-43414424-34', 'auto');
+      ga('set', 'anonymizeIp', true)
+      ga('send', 'pageview');
+    </script>
+  </head>
+
+  <body class="">
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="skip-link">Skip to main content</a>
+
+        <header class="design-system-header design-system-header--full-width">
+          <div class="design-system-header__container">
+            <div class="design-system-header__brand">
+                <a href="index.html">
+                  <span class="design-system-govuk-logo">
+                    <img class="design-system-govuk-logo__printable-crown" src="public/assets/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+                    GOV.UK
+                  </span>
+
+                  <span class="design-system-header__title">HMRC Design System</span>
+                </a>
+            </div>
+
+            <!--
+            <div class="pattern-search pattern-search--in-header">
+              <input type="text" name="pattern-query" class="pattern-search__input" placeholder="Search Design System" autocomplete="off">
+              <ul class="search-results js-search-results">
+              </ul>
+            </div>
+           -->
+
+            <div class="mobile-nav-trigger">
+              <input class="button js-mobile-nav-toggle" type="submit" value="Menu">
+            </div>
+          </div>
+        </header>
+
+        <div class="design-system phase-banner">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a prototype</span>
+          </p>
+        </div>
+
+        <div class="sub-nav">
+          <ul class="sub-nav-list">
+            <li><a href="/assets-frontend/index.html">About</a></li>
+            <li><a href="/assets-frontend/styles/index.html">Styles</a></li>
+            <li><a href="/assets-frontend/components/index.html">Components</a></li>
+            <li><a href="/assets-frontend/patterns/index.html">Patterns</a></li>
+           </ul>
+        </div>
+      </div>
+
+      <!-- TODO: mobile_nav -->
+
+      <div class="app-pane__body">
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <nav id="toc" class="js-toc-list toc__list">
+              <ul class="pattern-nav">
+                <li><a href="/assets-frontend/patterns/header/index.html">Header</a></li>
+                <li><a href="/assets-frontend/patterns/help-users-when-we-cannot-confirm-who-they-are/index.html">Help users when we cannot confirm who they are</a></li>
+                <li><a href="/assets-frontend/patterns/help-users-when-we-time-them-out-of-a-service/index.html">Help users when we time them out of a service</a></li>
+                <li><a href="/assets-frontend/patterns/page-not-found/index.html">Page not found</a></li>
+                <li><a href="/assets-frontend/patterns/service-unavailable/index.html">Service unavailable</a></li>
+                <li><a href="/assets-frontend/patterns/tell-users-we-have-confirmed-who-they-are/index.html">Tell users we have confirmed who they are</a></li>
+                <li><a href="/assets-frontend/patterns/there-is-a-problem-with-the-service/index.html">There is a problem with the service</a></li>
+              <ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="design-system-content" class="markdown" data-module="anchored-headings">
+            <!--
+            <div class="banner banner__out-of-date">
+              <p>This content has not yet been written using the Design System content guidelines</p>
+            </div>
+             -->
+
+            <!--
+            TODO: set title as data
+
+            <div class="pattern-header">
+              <p class="section-heading"></p>
+              <h1></h1>
+            </div>
+            -->
+
+            <h1 id="help-users-when-we-time-them-out-of-a-service">Help users when we time them out of a service</h1>
+<p>This pattern warns someone before we are going to time them out of a service and what to tell them if we do.</p>
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<div id="global-cookie-message">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+    cookies</a></p>
+</div>
+<!-- END COOKIE MESSAGE -->
+
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service name</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+
+<main id="content">
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+
+  <!-- PAGE CONTENT-->
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form method="post" action="refund-and-bank-address-edit" >
+        <h1 class="heading-large">Enter your full name</h1>
+        <div class="form-group">
+          <label class="form-label visuallyhidden" for="full-name-f1">Enter your full name</label>
+          <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
+        </div>
+        <button type="submit" class="button">Continue</button>
+      </form>
+      <!-- Back button -->
+      <a href="javascript:window.history.back();" class="link-back">Back</a>
+    </div>
+  </div>
+
+  <!-- END PAGE CONTENT-->
+<p></main>
+<!-- FOOTER   --></p>
+<p><footer class="group js-footer" id="footer" role="contentinfo">
+  <div class="footer-wrapper">
+    <div class="footer-meta">
+      <div class="footer-meta-inner">
+        <!-- PLATFORM HELP LINKS -->
+        <ul class="platform-help-links">
+          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
+          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
+          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
+          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
+        </ul>
+        <!-- END PLATFORM HELP LINKS -->
+        <!-- OPEN GOVERNMENT LICENCE -->
+        <div class="open-government-licence">
+          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+        </div>
+        <!-- END OPEN GOVERNMENT LICENCE -->
+      </div>
+      <!-- COPYRIGHT -->
+      <div class="copyright">
+        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+      </div>
+      <!-- END COPYRIGHT -->
+    </div>
+  </div>
+</footer></p>
+<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex="-1" aria-live="polite">
+  <p id="timeout-message" role="text">For your security, we will sign you out in <span id="timeout-countdown" class="countdown">2 minutes</span>.</p>
+  <button id="timeout-keep-signin-btn" class="button">Stay signed in</button>
+  <button id="timeout-sign-out-btn" class="button button--link">Sign out</button>
+</div>
+<div id="timeout-overlay" class="timeout-overlay"></div>
+</div>
+  </div>
+</div>
+
+
+
+<h2 id="when-to-use-this-pattern">When to use this pattern</h2>
+<p>Warn a user we are going to time them out when they do not do anything for 13 minutes. This gives them 2 minutes to decide to stay signed in.</p>
+<p>The warning helps make a service more accessible.</p>
+<p>Automatically take them to a page that tells them what has happened after 15 minutes.</p>
+<h2 id="how-the-pattern-works">How the pattern works</h2>
+<p>The pattern uses an accessible dialog box that appears on top of the page. They will not be able to use the screen with mouse or keyboard until they select an option or dismiss the dialog box.</p>
+<p>The user can:</p>
+<ul>
+<li>select a button to stop being timed out</li>
+<li>select a link</li>
+<li>press the escape key to close the warning and stop being timed out without refreshing the page</li>
+<li>do nothing</li>
+</ul>
+<h3 id="when-they-are-signed-in-to-the-service">When they are signed in to the service</h3>
+<p>The warning should:</p>
+<ul>
+<li>say “For your security, we will sign you out in 2 minutes.”</li>
+<li>say what will happen to their answers</li>
+<li>have a “Stay signed in” button</li>
+<li>have a “Sign out” link that signs them out as normal</li>
+</ul>
+<p>If they do nothing, take them to a page that uses content that complements the warning box.</p>
+<h4 id="warning">Warning</h4>
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<div id="global-cookie-message">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+    cookies</a></p>
+</div>
+<!-- END COOKIE MESSAGE -->
+
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service name</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+
+<main id="content">
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+
+  <!-- PAGE CONTENT-->
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form method="post" action="refund-and-bank-address-edit" >
+        <h1 class="heading-large">Enter your full name</h1>
+        <div class="form-group">
+          <label class="form-label visuallyhidden" for="full-name-f1">Enter your full name</label>
+          <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
+        </div>
+        <button type="submit" class="button">Continue</button>
+      </form>
+      <!-- Back button -->
+      <a href="javascript:window.history.back();" class="link-back">Back</a>
+    </div>
+  </div>
+
+  <!-- END PAGE CONTENT-->
+<p></main>
+<!-- FOOTER   --></p>
+<p><footer class="group js-footer" id="footer" role="contentinfo">
+  <div class="footer-wrapper">
+    <div class="footer-meta">
+      <div class="footer-meta-inner">
+        <!-- PLATFORM HELP LINKS -->
+        <ul class="platform-help-links">
+          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
+          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
+          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
+          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
+        </ul>
+        <!-- END PLATFORM HELP LINKS -->
+        <!-- OPEN GOVERNMENT LICENCE -->
+        <div class="open-government-licence">
+          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+        </div>
+        <!-- END OPEN GOVERNMENT LICENCE -->
+      </div>
+      <!-- COPYRIGHT -->
+      <div class="copyright">
+        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+      </div>
+      <!-- END COPYRIGHT -->
+    </div>
+  </div>
+</footer></p>
+<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex="-1" aria-live="polite">
+  <p id="timeout-message" role="text">For your security, we will sign you out in <span id="timeout-countdown" class="countdown">2 minutes</span>.</p>
+  <button id="timeout-keep-signin-btn" class="button">Stay signed in</button>
+  <button id="timeout-sign-out-btn" class="button button--link">Sign out</button>
+</div>
+<div id="timeout-overlay" class="timeout-overlay"></div>
+</div>
+  </div>
+</div>
+
+
+
+
+
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<div id="global-cookie-message">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+    cookies</a></p>
+</div>
+<!-- END COOKIE MESSAGE -->
+
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service name</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+
+<main id="content">
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+
+  <!-- PAGE CONTENT-->
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form method="post" action="refund-and-bank-address-edit" >
+        <h1 class="heading-large">Enter your full name</h1>
+        <div class="form-group">
+          <label class="form-label visuallyhidden" for="full-name-f1">Enter your full name</label>
+          <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
+        </div>
+        <button type="submit" class="button">Continue</button>
+      </form>
+      <!-- Back button -->
+      <a href="javascript:window.history.back();" class="link-back">Back</a>
+    </div>
+  </div>
+
+  <!-- END PAGE CONTENT-->
+<p></main>
+<!-- FOOTER   --></p>
+<p><footer class="group js-footer" id="footer" role="contentinfo">
+  <div class="footer-wrapper">
+    <div class="footer-meta">
+      <div class="footer-meta-inner">
+        <!-- PLATFORM HELP LINKS -->
+        <ul class="platform-help-links">
+          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
+          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
+          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
+          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
+        </ul>
+        <!-- END PLATFORM HELP LINKS -->
+        <!-- OPEN GOVERNMENT LICENCE -->
+        <div class="open-government-licence">
+          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+        </div>
+        <!-- END OPEN GOVERNMENT LICENCE -->
+      </div>
+      <!-- COPYRIGHT -->
+      <div class="copyright">
+        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+      </div>
+      <!-- END COPYRIGHT -->
+    </div>
+  </div>
+</footer></p>
+<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex="-1" aria-live="polite">
+  <p id="timeout-message" role="text">For your security, we will sign you out in <span id="timeout-countdown" class="countdown">2 minutes</span>. We saved your answers.</p>
+  <button id="timeout-keep-signin-btn" class="button">Stay signed in</button>
+  <button id="timeout-sign-out-btn" class="button button--link">Sign out</button>
+</div>
+<div id="timeout-overlay" class="timeout-overlay"></div>
+</div>
+  </div>
+</div>
+
+
+
+
+
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<div id="global-cookie-message">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+    cookies</a></p>
+</div>
+<!-- END COOKIE MESSAGE -->
+
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service name</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+
+<main id="content">
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+
+  <!-- PAGE CONTENT-->
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form method="post" action="refund-and-bank-address-edit" >
+        <h1 class="heading-large">Enter your full name</h1>
+        <div class="form-group">
+          <label class="form-label visuallyhidden" for="full-name-f1">Enter your full name</label>
+          <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
+        </div>
+        <button type="submit" class="button">Continue</button>
+      </form>
+      <!-- Back button -->
+      <a href="javascript:window.history.back();" class="link-back">Back</a>
+    </div>
+  </div>
+
+  <!-- END PAGE CONTENT-->
+<p></main>
+<!-- FOOTER   --></p>
+<p><footer class="group js-footer" id="footer" role="contentinfo">
+  <div class="footer-wrapper">
+    <div class="footer-meta">
+      <div class="footer-meta-inner">
+        <!-- PLATFORM HELP LINKS -->
+        <ul class="platform-help-links">
+          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
+          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
+          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
+          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
+        </ul>
+        <!-- END PLATFORM HELP LINKS -->
+        <!-- OPEN GOVERNMENT LICENCE -->
+        <div class="open-government-licence">
+          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+        </div>
+        <!-- END OPEN GOVERNMENT LICENCE -->
+      </div>
+      <!-- COPYRIGHT -->
+      <div class="copyright">
+        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+      </div>
+      <!-- END COPYRIGHT -->
+    </div>
+  </div>
+</footer></p>
+<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex="-1" aria-live="polite">
+  <p id="timeout-message" role="text">For your security, we will sign you out in <span id="timeout-countdown" class="countdown">2 minutes</span>. We will not save your answers.</p>
+  <button id="timeout-keep-signin-btn" class="button">Stay signed in</button>
+  <button id="timeout-sign-out-btn" class="button button--link">Sign out</button>
+</div>
+<div id="timeout-overlay" class="timeout-overlay"></div>
+</div>
+  </div>
+</div>
+
+
+
+<h4 id="we-signed-you-out">We signed you out</h4>
+<div class="example">  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">For your security, we signed you out</h1>
+      <a href="" class="button" role="button">Sign in</a>
+    </div>
+  </div></div>
+
+
+
+
+
+<div class="example">  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">For your security, we signed you out</h1>
+      <p>We saved your answers.</p>
+      <a href="" class="button" role="button">Sign in</a>
+    </div>
+  </div></div>
+
+
+
+
+
+<div class="example">  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">For your security, we signed you out</h1>
+      <p>We did not save your answers.</p>
+      <a href="" class="button" role="button">Sign in</a>
+    </div>
+  </div></div>
+
+
+
+<h3 id="when-they-are-not-signed-in-to-the-service">When they are not signed in to the service</h3>
+<p>The warning should:</p>
+<ul>
+<li>say “For your security, we will delete your answers in 2 minutes.”</li>
+<li>have a button to stay in the service</li>
+<li>have a “Delete your answers” link that takes them to the “You deleted your answers” page</li>
+</ul>
+<p>If they do nothing, delete their answers and take them the “For your security, we deleted your answers” page.</p>
+<h4 id="warning">Warning</h4>
+<div class="example">
+  <div class="scale-wrapper">
+    <div class="scale"><!-- COOKIE MESSAGE -->
+<div id="global-cookie-message">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
+    cookies</a></p>
+</div>
+<!-- END COOKIE MESSAGE -->
+
+<!-- GOV.UK HEADER -->
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <nav id="proposition-menu">
+          <a href="#" id="proposition-name">Service name</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="global-header-bar"></div>
+<!-- END GOV.UK HEADER -->
+
+<main id="content">
+  <!-- PHASE BANNER -->
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  <!-- END PHASE BANNER -->
+
+  <!-- PAGE CONTENT-->
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form method="post" action="refund-and-bank-address-edit" >
+        <h1 class="heading-large">Enter your full name</h1>
+        <div class="form-group">
+          <label class="form-label visuallyhidden" for="full-name-f1">Enter your full name</label>
+          <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
+        </div>
+        <button type="submit" class="button">Continue</button>
+      </form>
+      <!-- Back button -->
+      <a href="javascript:window.history.back();" class="link-back">Back</a>
+    </div>
+  </div>
+
+  <!-- END PAGE CONTENT-->
+<p></main>
+<!-- FOOTER   --></p>
+<p><footer class="group js-footer" id="footer" role="contentinfo">
+  <div class="footer-wrapper">
+    <div class="footer-meta">
+      <div class="footer-meta-inner">
+        <!-- PLATFORM HELP LINKS -->
+        <ul class="platform-help-links">
+          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
+          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
+          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
+          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
+        </ul>
+        <!-- END PLATFORM HELP LINKS -->
+        <!-- OPEN GOVERNMENT LICENCE -->
+        <div class="open-government-licence">
+          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+        </div>
+        <!-- END OPEN GOVERNMENT LICENCE -->
+      </div>
+      <!-- COPYRIGHT -->
+      <div class="copyright">
+        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+      </div>
+      <!-- END COPYRIGHT -->
+    </div>
+  </div>
+</footer></p>
+<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex="-1" aria-live="polite">
+  <p id="timeout-message" role="text">For your security, we will delete your answers in <span id="timeout-countdown" class="countdown">2 minutes</span>.</p>
+  <button id="timeout-keep-signin-btn" class="button">Continue checking what help you can get with childcare costs</button>
+  <button id="timeout-sign-out-btn" class="button button--link">Delete your answers</button>
+</div>
+<div id="timeout-overlay" class="timeout-overlay"></div>
+</div>
+  </div>
+</div>
+
+
+
+<h4 id="we-deleted-your-answers">We deleted your answers</h4>
+<div class="example">  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">For your security, we deleted your answers</h1>
+      <a href="" class="button" role="button">Start again</a>
+    </div>
+  </div></div>
+
+
+
+<h4 id="you-deleted-your-answers">You deleted your answers</h4>
+<div class="example">  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">You deleted your answers</h1>
+      <a href="" class="button" role="button">Start again</a>
+    </div>
+  </div></div>
+
+
+
+<h3 id="technical-details">Technical details</h3>
+<p>Add the timeout-dialog.js file and call the timeoutDialog method on a service’s main template. This will add the warning to every page.</p>
+<pre><code>$.timeoutDialog({
+  timeout: 900,
+  countdown: 120,
+  keep_alive_url: &#39;/keep-alive&#39;,
+  logout_url: &#39;/sign-out&#39;,
+  keep_alive_button_text: &#39;Get another 15 minutes&#39;,
+  sign_out_button_text: &#39;Sign out&#39;
+});
+</code></pre><p>From timeout-dialog.js:</p>
+<ul>
+<li>timeout is the number of seconds before you are timed out – 900 is the platform default</li>
+<li>countdown is the number of seconds before the timeout the warning is displayed</li>
+<li>keep_alive_url is a call to the server that keeps them in the service without refreshing the page</li>
+<li>logout_url is the same URL as your service’s sign out page</li>
+<li>keep_alive_button_text is the default content for the button you will need to change</li>
+<li>sign_out_button_text is the default content for the button you may need to change</li>
+</ul>
+<p>When the dialog box loads:</p>
+<ul>
+<li>set focus to the box</li>
+<li>read the paragraph of content</li>
+<li>set focus to the button</li>
+<li>read the button label</li>
+</ul>
+<p>This lets a user hear what they need to and stay in the service with a single click.</p>
+<h2 id="research-on-this-component">Research on this component</h2>
+<p>The warning was tested with 5 people for a service they were signed in to. One person had dyslexia and the other was 70 years old. All 5 people understood the warning and managed to stay signed in.</p>
+  <div class="">
+    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/89">add your research on GitHub</a>.</p>
+  </div>
+
+
+<p>We want to do more usability testing, especially with people who use assistive technology and with services you do not sign in to.</p>
+<p>We want to know if people:</p>
+<ul>
+<li>understand what has happened</li>
+<li>understand the content and if there is anything missing
+– can do what they need to do
+– stay signed in, continue with the service, sign out, start again, or get timed out</li>
+</ul>
+<p>The warning has been tested with <a href="https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices">all recommended browsers</a>. It has been lab tested with most assistive technology including:</p>
+<ul>
+<li>JAWS</li>
+<li>ZoomText</li>
+<li>NVDA</li>
+<li>VoiceOver</li>
+</ul>
+<p>It has not been tested with Dragon NaturallySpeaking.</p>
+
+
+            <!--
+            TODO: pass the following into the template from AF
+
+            <div id="related-content" class="related-content">
+              <div class="grid-row">
+
+
+
+                <div class="column-one-quarter related-content-grid-item">
+                  <h2>Further resources</h2>
+
+                  <ul class="list">
+
+
+                    <li><a href="#">Edit this guidance on GitHub</a></li>
+                    <li><a href="#">Raise an issue on GitHub</a></li>
+                    <li><a href="#">History of this page</a></li>
+                  </ul>
+                </div>
+
+                <div class="column-one-quarter related-content-grid-item">
+                  <dl class="meta-data-bottom">
+                    <dt>Last reviewed:</dt>
+                    <dd>30 March 2017</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+            -->
+
+            <div class="callout">
+              <h2 class="heading-medium">Get in touch</h2>
+              <p>If you’ve got a question, idea or suggestion share it in <a href="https://hmrcdigital.slack.com/messages/C39V3PH38">#team-sdt</a> on HMRC Slack (<a href="slack://channel?team=T04RY81HB&amp;id=C39V3PH38">open in app</a>) or <a href="hmrc-service-design-tools-g@digital.hmrc.gov.uk">email the Service Design Tools team</a></p>
+            </div>
+          </main>
+
+          <footer class="design-system-footer design-system-footer--full-width">
+            <div class="footer-container">
+              <div class="footer__navigation">
+                <div class="footer__navigation--column">
+                  <h2 class="heading-medium">GOV.UK Design System</h2>
+                  <ul>
+                    <li><p>The GOV.UK design-system is in private beta</p></li>
+                  </ul>
+                </div>
+                <div class="footer__navigation--column">
+                  <h2 class="heading-medium">Other design resources</h2>
+                  <ul>
+                    <li><a href="https://www.gov.uk/design-principles">GDS Design Principles</a></li>
+                    <li><a href="https://www.gov.uk/service-manual">GOV.UK Service Manual</a></li>
+                    <li><a href="#">GOV.UK Frontend</a></li>
+                    <li><a href="https://govuk-prototype-kit.herokuapp.com/docs">GOV.UK Prototype kit</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="footer__licence">
+                <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
+                <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+              </div>
+
+              <div class="footer__copyright">
+                <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script src="public/assets/javascripts/vendor/highlight/highlight.pack.js"></script>
+    <script src="public/assets/javascripts/design-system.js"></script>
+
+    
+
+    <script src="public/javascripts/application.min.js"></script>
+  </body>
+</html>
