@@ -1,6 +1,6 @@
-# Warn users we are going to time them out
+# Help users when we time them out of a service
 
-This pattern warns someone we are going to time them out and what to tell them if we do.
+This pattern warns someone before we are going to time them out of a service and what to tell them if we do.
 
 {{ example("timeout.html", true) }}
 
@@ -14,39 +14,33 @@ Automatically take them to a page that tells them what has happened after 15 min
 
 ## How the pattern works
 
-### Warning
+The pattern uses an accessible dialog box that appears on top of the page. They will not be able to use the screen with mouse or keyboard until they select an option or dismiss the dialog box.
 
-Use an accessible modal box to warn users what will happen. The user can:
+The user can:
 
-* select a button to stop being timed out without refreshing the page
-* select a link
-* press the escape key to close the warning and stop being timed out without refreshing the page
-* do nothing
+- select a button to stop being timed out
+- select a link
+- press the escape key to close the warning and stop being timed out without refreshing the page
+- do nothing
 
-If they are signed in to the service, the modal should:
+### When they are signed in to the service
+
+The warning should:
 
 - say “For your security, we will sign you out in 2 minutes.”
 - say what will happen to their answers
 - have a “Stay signed in” button
 - have a “Sign out” link that signs them out as normal
 
-If they do nothing, take them to a “We signed you out” page that uses content that complements the modal box.
+If they do nothing, take them to a page that uses content that complements the warning box.
+
+#### Warning
+
+{{ example("timeout.html", true) }}
 
 {{ example("timeout-saved.html", true) }}
 
 {{ example("timeout-will-not-save.html", true) }}
-
-If they are not signed in to the service, the modal should:
-
-- say “For your security, we will delete your answers in 2 minutes.”
-- have a button to stay in the service
-- have a “Delete your answers” link that takes them to the “You deleted your answers” page
-
-If they do nothing, delete their answers and take them to the “We deleted your answers” page.
-
-{{ example("timeout-not-signed-in.html", true) }}
-
-### Other pages
 
 #### We signed you out
 
@@ -55,6 +49,20 @@ If they do nothing, delete their answers and take them to the “We deleted your
 {{ example("we-signed-you-out-saved.html", false) }}
 
 {{ example("we-signed-you-out-did-not-save.html", false) }}
+
+### When they are not signed in to the service
+
+The warning should:
+
+- say “For your security, we will delete your answers in 2 minutes.”
+- have a button to stay in the service
+- have a “Delete your answers” link that takes them to the “You deleted your answers” page
+
+If they do nothing, delete their answers and take them the “For your security, we deleted your answers” page.
+
+#### Warning
+
+{{ example("timeout-not-signed-in.html", true) }}
 
 #### We deleted your answers
 
@@ -74,19 +82,23 @@ $.timeoutDialog({
   countdown: 120,
   keep_alive_url: '/keep-alive',
   logout_url: '/sign-out',
+  keep_alive_button_text: 'Get another 15 minutes',
+  sign_out_button_text: 'Sign out'
 });
 ```
 
-From the JavaScript file:
+From timeout-dialog.js:
 
-- timeout is the number of seconds before you are timed out, 900 is the platform default
-- countdown is the number of seconds from the end of the timeout the warning is displayed
+- timeout is the number of seconds before you are timed out – 900 is the platform default
+- countdown is the number of seconds before the timeout the warning is displayed
 - keep_alive_url is a call to the server that keeps them in the service without refreshing the page
 - logout_url is the same URL as your service’s sign out page
+- keep_alive_button_text is the default content for the button you will need to change
+- sign_out_button_text is the default content for the button you may need to change
 
-When the modal loads:
+When the dialog box loads:
 
-- set focus to the modal
+- set focus to the box
 - read the paragraph of content
 - set focus to the button
 - read the button label
@@ -107,8 +119,6 @@ We want to know if people:
 - understand the content and if there is anything missing
 – can do what they need to do
 – stay signed in, continue with the service, sign out, start again, or get timed out
-
-We want to test with more 
 
 The warning has been tested with [all recommended browsers](https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices). It has been lab tested with most assistive technology including:
 
