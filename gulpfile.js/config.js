@@ -142,15 +142,19 @@ module.exports = {
       v3: [
         'test/specs/fixtures/*.html',
         'test/specs/*.js',
-        'components/**/**.html',
-        'components/**/**.test.js',
-        'components/**/**.test-mobile.js',
+        'components/**/*.html',
+        'components/**/*.test.js',
+        'components/**/*.test-mobile.js',
+        'patterns/**/*.html',
+        'patterns/**/*.test.js',
         'public/v3-SNAPSHOT/stylesheets/application.min.css'
       ],
       v4: [
-        'components/**/**.html',
-        'components/**/**.test.js',
-        'components/**/**.test-mobile.js',
+        'components/**/*.html',
+        'components/**/*.test.js',
+        'components/**/*.test-mobile.js',
+        'patterns/**/*.html',
+        'patterns/**/*.test.js',
         'public/v4-SNAPSHOT/stylesheets/application.min.css'
       ]
     },

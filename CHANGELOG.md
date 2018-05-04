@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `node-git-versioning` plugin has been published to npm so we can depend on that version [#946](https://github.com/hmrc/assets-frontend/pull/946)
 
 ### Updated
+- Timeout documentation and examples [#949](https://github.com/hmrc/assets-frontend/pull/949)
 - Page not found, service unavailable and there is a problem with the service examples [#947](https://github.com/hmrc/assets-frontend/pull/947)
 
 ### Added
@@ -34,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated documentation headings and page not found pattern [#922](https://github.com/hmrc/assets-frontend/pull/922)
 - Updated documentation and examples for page heading [#923](https://github.com/hmrc/assets-frontend/pull/923)
 - Refactoring the account menu JS and adding in unit tests [#929](https://github.com/hmrc/assets-frontend/pull/929)
+- Running the patterns tests alongside components tests [#948](https://github.com/hmrc/assets-frontend/pull/948)
 
 ### Changed
 - Version build artefacts according to the [HMRC release candidate format](http://hmrc.github.io/coding-in-the-open-manual/#release-candidates) [#924](https://github.com/hmrc/assets-frontend/pull/924)
