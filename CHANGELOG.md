@@ -8,9 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Fixed
 - Added the `mailto:` scheme to the email link on the design-system *About* page. [951](https://github.com/hmrc/assets-frontend/pull/951)
+
 ### Changed
 - Moved the header pattern to patterns and updated documentation [944](https://github.com/hmrc/assets-frontend/pull/944)
 - `node-git-versioning` plugin has been published to npm so we can depend on that version [#946](https://github.com/hmrc/assets-frontend/pull/946)
+- The secondary timeout dialog button should be a link [#952](https://github.com/hmrc/assets-frontend/pull/952)
 
 ### Updated
 - Timeout documentation and examples [#949](https://github.com/hmrc/assets-frontend/pull/949)
