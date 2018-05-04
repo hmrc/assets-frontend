@@ -48,13 +48,9 @@ html.noScroll {
     font-weight: 700;
   }
 
-  .button{
-    margin-bottom: 1em;
-    font-size: 19px;
-  }
-
-  .button.button--link{
-    margin: 0;
+  .link {
+    display: inline-block;
+    line-height: 1.25;
     padding: .526315em .789473em .263157em;
   }
 
