@@ -71,7 +71,7 @@ module.exports = function (options) {
         '<h1 class="heading-medium push--top">' + settings.title + '</h1>' +
         '<p id="timeout-message" role="text">' + settings.message + ' <span id="timeout-countdown" class="countdown">' + time.m + ' ' + settings.time + '</span>' + '.</p>' +
         '<button id="timeout-keep-signin-btn" class="button">' + settings.keep_alive_button_text + '</button>' +
-        '<a id="timeout-sign-out-btn" class="link">' + settings.sign_out_button_text + '</button>' +
+        '<a id="timeout-sign-out-btn" class="link">' + settings.sign_out_button_text + '</a>' +
         '</div>' +
         '<div id="timeout-overlay" class="timeout-overlay"></div>')
       .appendTo('body')
