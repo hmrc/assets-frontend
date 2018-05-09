@@ -11,7 +11,7 @@ require('jquery')
 describe('Timeout Dialog', function () {
   var timeoutDialog = require('./timeoutDialog.js')
   var ESCAPE_KEY_CODE = 27
-  var timeoutDialogControl;
+  var timeoutDialogControl
 
   function pretendSecondsHavePassed(numberOfSeconds) {
     jasmine.clock().tick(numberOfSeconds * 10)
@@ -21,8 +21,12 @@ describe('Timeout Dialog', function () {
     jasmine.getFixtures().fixturesPath = 'base/patterns/timeout-dialog'
     loadFixtures('timeout-dialog.html')
     jasmine.clock().install()
+    // TODO: Use assets-frontend/assets/components/index.js to test authentically
     window.govuk = window.govuk || {}
     window.govuk.timeoutDialog = timeoutDialog
+    $.timeoutDialog = function () {
+      window.govuk.timeoutDialog.apply(window.govuk, arguments)
+    }
   })
 
   afterEach(function () {
@@ -125,6 +129,16 @@ describe('Timeout Dialog', function () {
 
     it('should show sign out button', function () {
       expect($('#timeout-dialog #timeout-sign-out-btn').text()).toEqual('sign OUT')
+    })
+  })
+  describe('Legacy interface', function () {
+    it('should still be available with the legacy $. interface', function () {
+      spyOn(window.govuk, 'timeoutDialog')
+      var config = {
+        a: 'b'
+      };
+      $.timeoutDialog(config);
+      expect(window.govuk.timeoutDialog).toHaveBeenCalledWith(config);
     })
   })
   describe('Cleanup', function () {
