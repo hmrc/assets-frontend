@@ -97,6 +97,9 @@ describe('Timeout Dialog', function () {
       }
       expect($('#timeout-dialog')).toBeInDOM()
     })
+    it('should be attached to the end of the body', function () {
+      expect($('body').children().last().attr('id')).toEqual('timeout-dialog')
+    })
   })
   describe('the configuration options', function () {
     beforeEach(function () {
@@ -124,24 +127,9 @@ describe('Timeout Dialog', function () {
       expect($('#timeout-dialog #timeout-sign-out-btn').text()).toEqual('sign OUT')
     })
   })
-  describe('Configuring the rootSelector', function () {
-    it('should default to body', function () {
-      timeoutDialogControl = window.govuk.timeoutDialog();
-      pretendSecondsHavePassed(780);
-      expect($('body').children().last().attr('id')).toEqual('timeout-dialog')
-    })
-    it('should attach to a custom element when specified', function () {
-      var $playground = $('<div id="my-playground">');
-      $('main#content').append($playground)
-      timeoutDialogControl = window.govuk.timeoutDialog({root_selector: '#my-playground'})
-      pretendSecondsHavePassed(780);
-      expect($playground.children().last().attr('id')).toEqual('timeout-dialog')
-      expect($playground.children().first().attr('id')).toEqual('timeout-dialog')
-    })
-  })
   describe('Cleanup', function () {
     beforeEach(function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({root_selector: 'main#content', timeout: 121, count: 120})
+      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 121, count: 120})
     })
     it('should not display after the cleanup has been called', function () {
       timeoutDialogControl.cleanup()

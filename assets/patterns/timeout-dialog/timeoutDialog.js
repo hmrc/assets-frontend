@@ -9,8 +9,7 @@ module.exports = function (options) {
     title: 'You’re about to be signed out',
     message: 'For security reasons, you will be signed out of this service in 2 minutes',
     keep_alive_button_text: 'Stay signed in',
-    sign_out_button_text: 'Sign out',
-    root_selector: 'body'
+    sign_out_button_text: 'Sign out'
   }, options)
   var $modal = $('<div>')
   var waitForStartOfCountdown
@@ -35,7 +34,7 @@ module.exports = function (options) {
       .append($('<p id="timeout-message" role="text">').text(config.message))
       .append($('<button id="timeout-keep-signin-btn" class="button">').text(config.keep_alive_button_text))
       .append($('<button id="timeout-sign-out-btn" class="button">').text(config.sign_out_button_text))
-      .appendTo($(config.root_selector))
+      .appendTo($('body'))
 
     $(document).on('keydown', escapeKeyListener)
   }
