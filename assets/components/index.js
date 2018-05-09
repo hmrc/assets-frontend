@@ -7,5 +7,6 @@ var timeoutDialog = require('../patterns/timeout-dialog/timeoutDialog')
 ;(function ($, window, document) {
   accountMenu()
   charCounter()
-  $.timeoutDialog = timeoutDialog
+  window.govuk = window.govuk || {}
+  window.govuk.timeoutDialog = timeoutDialog
 })(window.jQuery, window, document)
