@@ -27,11 +27,11 @@ Do not use any icons in place of the words. See ‘[Removing the external link i
 
 ## How it works
 
-Always put ‘(opens in a new link or window)’ inside the link text content.
+Always put ‘(opens in a new window or tab)’ inside the link text content.
 
 In the code include:
 
-- target="_blank" top open in a new window or tab
+- target="_blank" to open in a new window or tab
 - rel="noopener noreferrer" to reduce security risks for some browsers
 
 {{ example("open-links-in-a-new-window-or-tab.html") }}
