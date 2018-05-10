@@ -16,7 +16,7 @@ describe('Timeout Dialog', function () {
   var assume
 
   function pretendSecondsHavePassed(numberOfSeconds) {
-    jasmine.clock().tick(numberOfSeconds * 10)
+    jasmine.clock().tick(numberOfSeconds * 1000)
   }
 
   beforeEach(function () {
@@ -70,7 +70,7 @@ describe('Timeout Dialog', function () {
     })
 
     it('should show message', function () {
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('For security reasons, you will be signed out of this service in 2 minutes')
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('For security reasons, you will be signed out of this service in 2 minutes.')
     })
 
     it('should show keep signed in button', function () {
@@ -96,7 +96,11 @@ describe('Timeout Dialog', function () {
       expect($('#timeout-dialog')).toBeInDOM()
     })
     it('should be attached to the end of the body', function () {
-      expect($('body').children().last().attr('id')).toEqual('timeout-dialog')
+      var $lastElement = $('body').children().last()
+      var $secondToLastElement = $lastElement.prev()
+
+      expect($lastElement.attr('id')).toEqual('timeout-overlay')
+      expect($secondToLastElement.attr('id')).toEqual('timeout-dialog')
     })
     it('should redirect to default signout url when signout is clicked', function () {
       assume(redirector).not.toHaveBeenCalled()
@@ -123,7 +127,7 @@ describe('Timeout Dialog', function () {
     })
 
     it('should show message', function () {
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('MY custom message')
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('MY custom message 2 minutes.')
     })
 
     it('should show keep signed in button', function () {
