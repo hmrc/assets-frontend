@@ -3,10 +3,10 @@
 require('jquery')
 
 module.exports = function (options) {
-  // TODO: Error when timeout, count, keep_alive_url or logout_url are missing - requires discussion.
+  // TODO: Error when timeout, countdown, keep_alive_url or logout_url are missing - requires discussion.
   var config = $.extend({
     timeout: 900,
-    count: 120,
+    countdown: 120,
     title: 'You’re about to be signed out',
     message: 'For security reasons, you will be signed out of this service in 2 minutes',
     keep_alive_button_text: 'Stay signed in',
@@ -49,7 +49,7 @@ module.exports = function (options) {
 
   waitForStartOfCountdown = setTimeout(function () {
     createModal();
-  }, (config.timeout - config.count) * 10)
+  }, (config.timeout - config.countdown) * 10)
 
   return {
     cleanup: clearModal

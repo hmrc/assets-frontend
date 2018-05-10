@@ -38,7 +38,7 @@ describe('Timeout Dialog', function () {
 
   describe('Delay before displaying', function () {
     it('should start countdown at 2.5 minutes', function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 300, count: 30})
+      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 300, countdown: 30})
 
       pretendSecondsHavePassed(269)
 
@@ -158,7 +158,7 @@ describe('Timeout Dialog', function () {
 
       expect(window.govuk.timeoutDialog).toHaveBeenCalledWith({
         timeout: 900,
-        count: 120,
+        countdown: 120,
         keep_alive_url: '/keep-alive',
         logout_url: '/sign-out'
       });
@@ -166,7 +166,7 @@ describe('Timeout Dialog', function () {
     it('should override legacy defaults with specified config', function () {
       var config = {
         timeout: 100,
-        count: 50,
+        countdown: 50,
         keep_alive_url: '/hello-world',
         logout_url: '/goodbye-world'
       }
@@ -179,7 +179,7 @@ describe('Timeout Dialog', function () {
   describe('Cleanup', function () {
     var MINIMUM_TIME_UNTIL_MODAL_DISPLAYED = 10;
     beforeEach(function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, count: 120})
+      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
     })
     it('should not display the dialog if cleanup has already been called', function () {
       timeoutDialogControl.cleanup()

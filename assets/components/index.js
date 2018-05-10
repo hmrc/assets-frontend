@@ -13,7 +13,7 @@ var timeoutDialog = require('../patterns/timeout-dialog/timeoutDialog')
     console.warn('$.timeout is now deprecated, please use window.govuk.timeoutDialog')
     window.govuk.timeoutDialog($.extend({
       timeout: 900,
-      count: 120,
+      countdown: 120,
       keep_alive_url: '/keep-alive',
       logout_url: '/sign-out'
     }, config))
