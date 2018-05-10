@@ -6,10 +6,10 @@
  */
 
 require('jquery')
+require('../../components/index.js')
 
 
 describe('Timeout Dialog', function () {
-  var timeoutDialog = require('./timeoutDialog.js')
   var ESCAPE_KEY_CODE = 27
   var timeoutDialogControl
 
@@ -21,12 +21,6 @@ describe('Timeout Dialog', function () {
     jasmine.getFixtures().fixturesPath = 'base/patterns/timeout-dialog'
     loadFixtures('timeout-dialog.html')
     jasmine.clock().install()
-    // TODO: Use assets-frontend/assets/components/index.js to test authentically
-    window.govuk = window.govuk || {}
-    window.govuk.timeoutDialog = timeoutDialog
-    $.timeoutDialog = function () {
-      window.govuk.timeoutDialog.apply(window.govuk, arguments)
-    }
   })
 
   afterEach(function () {
@@ -36,7 +30,6 @@ describe('Timeout Dialog', function () {
     delete timeoutDialogControl
     jasmine.clock().uninstall()
     jasmine.getFixtures().cleanUp()
-    delete window.govuk.timeoutDialog
   })
 
   describe('with custom settings', function () {
@@ -131,13 +124,37 @@ describe('Timeout Dialog', function () {
       expect($('#timeout-dialog #timeout-sign-out-btn').text()).toEqual('sign OUT')
     })
   })
-  describe('Legacy interface', function () {
-    it('should still be available with the legacy $. interface', function () {
+  describe('Using the legacy interface', function () {
+    beforeEach(function () {
       spyOn(window.govuk, 'timeoutDialog')
+    })
+    it('should log a deprecation warning', function () {
+      spyOn(window.console, 'warn')
+
+      $.timeoutDialog();
+
+      expect(window.console.warn).toHaveBeenCalledWith('$.timeout is now deprecated, please use window.govuk.timeoutDialog')
+    })
+    it('should provide legacy defaults when no config object is provided', function () {
+      $.timeoutDialog();
+
+      expect(window.govuk.timeoutDialog).toHaveBeenCalledWith({
+        timeout: 900,
+        count: 120,
+        keep_alive_url: '/keep-alive',
+        logout_url: '/sign-out'
+      });
+    })
+    it('should override legacy defaults with specified config', function () {
       var config = {
-        a: 'b'
-      };
+        timeout: 100,
+        count: 50,
+        keep_alive_url: '/hello-world',
+        logout_url: '/goodbye-world'
+      }
+
       $.timeoutDialog(config);
+
       expect(window.govuk.timeoutDialog).toHaveBeenCalledWith(config);
     })
   })

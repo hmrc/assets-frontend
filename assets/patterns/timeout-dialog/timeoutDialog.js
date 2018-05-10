@@ -3,6 +3,7 @@
 require('jquery')
 
 module.exports = function (options) {
+  // TODO: Error when timeout, count, keep_alive_url or logout_url are missing - requires discussion.
   var config = $.extend({
     timeout: 900,
     count: 120,
