@@ -33,7 +33,7 @@ describe('Timeout Dialog', function () {
     if (timeoutDialogControl && timeoutDialogControl.cleanup) {
       timeoutDialogControl.cleanup();
     }
-    delete timeoutDialogControl;
+    delete timeoutDialogControl
     jasmine.clock().uninstall()
     jasmine.getFixtures().cleanUp()
     delete window.govuk.timeoutDialog
@@ -142,16 +142,17 @@ describe('Timeout Dialog', function () {
     })
   })
   describe('Cleanup', function () {
+    var MINIMUM_TIME_UNTIL_MODAL_DISPLAYED = 10;
     beforeEach(function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 121, count: 120})
+      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, count: 120})
     })
-    it('should not display after the cleanup has been called', function () {
+    it('should not display the dialog if cleanup has already been called', function () {
       timeoutDialogControl.cleanup()
-      pretendSecondsHavePassed(100)
+      pretendSecondsHavePassed(MINIMUM_TIME_UNTIL_MODAL_DISPLAYED)
       expect($('#timeout-dialog')).not.toBeInDOM()
     })
-    it('should remove display when the cleanup has been called', function () {
-      pretendSecondsHavePassed(100)
+    it('should remove dialog when cleanup is called', function () {
+      pretendSecondsHavePassed(MINIMUM_TIME_UNTIL_MODAL_DISPLAYED)
       expect($('#timeout-dialog')).toBeInDOM()
       timeoutDialogControl.cleanup()
       expect($('#timeout-dialog')).not.toBeInDOM()
