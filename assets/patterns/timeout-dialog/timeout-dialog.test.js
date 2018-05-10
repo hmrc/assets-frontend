@@ -12,15 +12,19 @@ require('../../components/index.js')
 describe('Timeout Dialog', function () {
   var ESCAPE_KEY_CODE = 27
   var timeoutDialogControl
+  var redirector
+  var assume
 
   function pretendSecondsHavePassed(numberOfSeconds) {
     jasmine.clock().tick(numberOfSeconds * 10)
   }
 
   beforeEach(function () {
+    assume = expect
     jasmine.getFixtures().fixturesPath = 'base/patterns/timeout-dialog'
     loadFixtures('timeout-dialog.html')
     jasmine.clock().install()
+    redirector = jasmine.createSpy('redirector')
   })
 
   afterEach(function () {
@@ -32,7 +36,7 @@ describe('Timeout Dialog', function () {
     jasmine.getFixtures().cleanUp()
   })
 
-  describe('with custom settings', function () {
+  describe('Delay before displaying', function () {
     it('should start countdown at 2.5 minutes', function () {
       timeoutDialogControl = window.govuk.timeoutDialog({timeout: 300, count: 30})
 
@@ -44,9 +48,7 @@ describe('Timeout Dialog', function () {
 
       expect($('#timeout-dialog')).toBeInDOM()
     })
-  })
-  describe('with default settings', function () {
-    it('should start countdown at 13 minutes', function () {
+    it('should start countdown at 13 minutes by default', function () {
       timeoutDialogControl = window.govuk.timeoutDialog()
 
       pretendSecondsHavePassed(779)
@@ -58,10 +60,9 @@ describe('Timeout Dialog', function () {
       expect($('#timeout-dialog')).toBeInDOM()
     })
   })
-
   describe('the default options', function () {
     beforeEach(function () {
-      timeoutDialogControl = window.govuk.timeoutDialog()
+      timeoutDialogControl = window.govuk.timeoutDialog({redirector: redirector})
       pretendSecondsHavePassed(780)
     })
     it('should show heading', function () {
@@ -97,6 +98,13 @@ describe('Timeout Dialog', function () {
     it('should be attached to the end of the body', function () {
       expect($('body').children().last().attr('id')).toEqual('timeout-dialog')
     })
+    it('should redirect to default signout url when signout is clicked', function () {
+      assume(redirector).not.toHaveBeenCalled()
+
+      $('#timeout-dialog #timeout-sign-out-btn').click()
+
+      expect(redirector).toHaveBeenCalledWith('/sign-out')
+    })
   })
   describe('the configuration options', function () {
     beforeEach(function () {
@@ -104,7 +112,9 @@ describe('Timeout Dialog', function () {
         title: 'my custom TITLE',
         message: 'MY custom message',
         keep_alive_button_text: 'KEEP alive',
-        sign_out_button_text: 'sign OUT'
+        sign_out_button_text: 'sign OUT',
+        logout_url: '/myLogoutUrl.html',
+        redirector: redirector
       })
       pretendSecondsHavePassed(780)
     })
@@ -122,6 +132,14 @@ describe('Timeout Dialog', function () {
 
     it('should show sign out button', function () {
       expect($('#timeout-dialog #timeout-sign-out-btn').text()).toEqual('sign OUT')
+    })
+
+    it('should redirect to default signout url when signout is clicked', function () {
+      assume(redirector).not.toHaveBeenCalled()
+
+      $('#timeout-dialog #timeout-sign-out-btn').click()
+
+      expect(redirector).toHaveBeenCalledWith('/myLogoutUrl.html')
     })
   })
   describe('Using the legacy interface', function () {
