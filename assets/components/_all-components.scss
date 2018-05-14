@@ -3,7 +3,7 @@
 @import "character-counter/character-counter";
 @import "check-your-answers/check-your-answers";
 @import "page-heading/page-heading";
-@import "header/header";
+@import "../patterns/header/header";
 @import "language-selector/language-selector";
-@import "../patterns/timeout-dialog/timeout-dialog";
+@import "../patterns/help-users-when-we-time-them-out-of-a-service/timeout-dialog";
 @import "notification-badge/notification_badge";

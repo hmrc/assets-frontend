@@ -2,9 +2,9 @@
   @include bold-16;
   float: right;
   list-style-type: none;
-  padding: 0;
   margin: 0;
   width: 100%;
+  padding: em(20) 0;
 
   @include media(tablet) {
     width: auto;

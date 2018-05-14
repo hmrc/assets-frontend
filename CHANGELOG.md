@@ -6,8 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- Added the `mailto:` scheme to the email link on the design-system *About* page. [951](https://github.com/hmrc/assets-frontend/pull/951)
+- Fixed the `sign-out` link on the *Help users when we sign them out...* page examples [953](https://github.com/hmrc/assets-frontend/pull/953)
+- Fixed a couple of typos on the _opens in a new window or tab_ page [954](https://github.com/hmrc/assets-frontend/pull/954)
 ### Changed
+- Moved the header pattern to patterns and updated documentation [944](https://github.com/hmrc/assets-frontend/pull/944)
 - `node-git-versioning` plugin has been published to npm so we can depend on that version [#946](https://github.com/hmrc/assets-frontend/pull/946)
+- The secondary timeout dialog button should be a link [#952](https://github.com/hmrc/assets-frontend/pull/952)
+
+### Updated
+- Timeout documentation and examples [#949](https://github.com/hmrc/assets-frontend/pull/949)
+- Page not found, service unavailable and there is a problem with the service examples [#947](https://github.com/hmrc/assets-frontend/pull/947)
 
 ### Added
 - New patterns for help users when we cannot confirm who they are and tell user we have confirmed who they are [#942](https://github.com/hmrc/assets-frontend/pull/942)
@@ -33,6 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated documentation headings and page not found pattern [#922](https://github.com/hmrc/assets-frontend/pull/922)
 - Updated documentation and examples for page heading [#923](https://github.com/hmrc/assets-frontend/pull/923)
 - Refactoring the account menu JS and adding in unit tests [#929](https://github.com/hmrc/assets-frontend/pull/929)
+- Running the patterns tests alongside components tests [#948](https://github.com/hmrc/assets-frontend/pull/948)
 
 ### Changed
 - Version build artefacts according to the [HMRC release candidate format](http://hmrc.github.io/coding-in-the-open-manual/#release-candidates) [#924](https://github.com/hmrc/assets-frontend/pull/924)

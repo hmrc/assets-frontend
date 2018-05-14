@@ -35,7 +35,9 @@ module.exports = function (karmaConfig) {
     preprocessors: {
       'test/specs/*.js': ['browserify'],
       'components/**/*.test.js': ['browserify'],
-      'components/**/*.test-mobile.js': ['browserify']
+      'components/**/*.test-mobile.js': ['browserify'],
+      'patterns/**/*.test.js': ['browserify'],
+      'patterns/**/*.test-mobile.js': ['browserify']
     },
 
     // web server port
