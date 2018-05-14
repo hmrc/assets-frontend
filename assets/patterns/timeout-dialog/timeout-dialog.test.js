@@ -109,6 +109,15 @@ describe('Timeout Dialog', function () {
 
       expect(redirector).toHaveBeenCalledWith('/sign-out')
     })
+
+    it('should specify no background scroll while dialog is open', function () {
+      expect($('html')).toHaveClass('noScroll')
+    })
+
+    it('should remove no background scroll when dialog closes', function () {
+      timeoutDialogControl.cleanup()
+      expect($('html')).not.toHaveClass('noScroll')
+    })
   })
   describe('the configuration options', function () {
     beforeEach(function () {
@@ -195,6 +204,50 @@ describe('Timeout Dialog', function () {
       expect($('#timeout-dialog')).toBeInDOM()
       timeoutDialogControl.cleanup()
       expect($('#timeout-dialog')).not.toBeInDOM()
+    })
+  })
+
+  describe('Countdown timer', function () {
+    it('should countdown minutes and then seconds', function () {
+      window.govuk.timeoutDialog({timeout: 130, count: 120, message: 'time:', logout_url: 'logout', redirector: redirector})
+
+      pretendSecondsHavePassed(10)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 2 minutes.')
+
+      pretendSecondsHavePassed(59)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 2 minutes.')
+
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 minute.')
+
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 59 seconds.')
+
+      pretendSecondsHavePassed(57)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 2 seconds.')
+
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 seconds.')
+      expect(redirector).not.toHaveBeenCalled()
+
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 0 seconds.')
+
+      pretendSecondsHavePassed(1)
+
+      expect(redirector).toHaveBeenCalledWith('logout')
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -1 seconds.')
+
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -2 seconds.')
     })
   })
 })
