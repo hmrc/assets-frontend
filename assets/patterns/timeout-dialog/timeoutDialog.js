@@ -28,7 +28,7 @@ module.exports = function (options) {
     time: 'minutes',
     title: 'You’re about to be signed out',
     message: 'For security reasons, you will be signed out of this service in',
-//     keep_alive_url: '/keep-alive',
+    keep_alive_url: '/keep-alive',
     logout_url: '/sign-out',
 //     restart_on_yes: true,
 //     dialog_width: 340,
@@ -51,6 +51,7 @@ module.exports = function (options) {
     settings.keep_alive_button_text = options.keep_alive_button_text || settings.keep_alive_button_text
     settings.sign_out_button_text = options.sign_out_button_text || settings.sign_out_button_text
     settings.logout_url = options.logout_url || settings.logout_url
+    settings.keep_alive_url = options.keep_alive_url || settings.keep_alive_url
     settings.redirector = options.redirector || function () {}
   }
 
@@ -107,12 +108,12 @@ module.exports = function (options) {
         }
       }
 //
-//       self.closeDialog = function () {
+      self.closeDialog = function () {
 //         if (window.dialogOpen) {
-//           self.keepAlive()
+          self.keepAlive()
 //           activeElement.focus()
 //         }
-//       }
+      }
 //
 //       // AL: prevent scrolling on touch, but allow pinch zoom
 //       self.handleTouch = function (e) {
@@ -126,7 +127,7 @@ module.exports = function (options) {
 //       // AL: add touchmove handler
 //       $(document).on('touchmove', self.handleTouch)
       $(document).on('keydown', self.escPress)
-//       $('#timeout-keep-signin-btn').on('click', self.closeDialog)
+      $('#timeout-keep-signin-btn').on('click', self.closeDialog)
       $('#timeout-sign-out-btn').on('click', self.signOut)
     },
 //
@@ -210,32 +211,32 @@ module.exports = function (options) {
 //
     keepAlive: function () {
 //       var self = this
-      this.destroyDialog()
+      this.cleanup()
 //       window.clearInterval(this.countdown)
-//       $.get(settings.keep_alive_url, function () {
+      $.get(settings.keep_alive_url, function () {
 //         if (settings.restart_on_yes) {
 //           self.setupDialogTimer()
 //         } else {
 //           self.signOut()
 //         }
-//       })
+      })
     },
 
     signOut: function () {
       settings.redirector(settings.logout_url)
-    }
-  }
-
-  TimeoutDialog.init()
-  return {
+    },
     cleanup: function () {
       if (TimeoutDialog.timeout) {
         window.clearTimeout(TimeoutDialog.timeout)
       }
+      $(document).off('keydown', self.escPress)
 //       if (TimeoutDialog.countdown) {
 //         window.clearInterval(TimeoutDialog.countdown)
 //       }
       TimeoutDialog.destroyDialog()
     }
   }
+
+  TimeoutDialog.init()
+  return {cleanup: TimeoutDialog.cleanup}
 }

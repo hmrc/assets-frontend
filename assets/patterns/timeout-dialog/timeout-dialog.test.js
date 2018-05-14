@@ -19,6 +19,21 @@ describe('Timeout Dialog', function () {
     jasmine.clock().tick(numberOfSeconds * 1000)
   }
 
+  function pretendEscapeWasPressed() {
+    var esc = $.Event('keydown', {keyCode: ESCAPE_KEY_CODE})
+    $('#timeout-dialog').trigger(esc)
+  }
+
+  function pretendEverythingButEscapeWasPressed() {
+    var keyCode = 256
+    while (keyCode >= 0) {
+      keyCode--
+      if (keyCode !== ESCAPE_KEY_CODE) {
+        $('#timeout-dialog').trigger($.Event('keydown', {keyCode: keyCode}))
+      }
+    }
+  }
+
   beforeEach(function () {
     assume = expect
     jasmine.getFixtures().fixturesPath = 'base/patterns/timeout-dialog'
@@ -60,6 +75,7 @@ describe('Timeout Dialog', function () {
       expect($('#timeout-dialog')).toBeInDOM()
     })
   })
+
   describe('the default options', function () {
     beforeEach(function () {
       timeoutDialogControl = window.govuk.timeoutDialog({redirector: redirector})
@@ -83,19 +99,12 @@ describe('Timeout Dialog', function () {
     })
 
     it('should hide when escape is pressed', function () {
-      var esc = $.Event('keydown', {keyCode: ESCAPE_KEY_CODE})
-      $('#timeout-dialog').trigger(esc)
+      pretendEscapeWasPressed()
       expect($('#timeout-dialog')).not.toBeInDOM()
     })
 
     it('should not hide when everything other than the escape key is pressed', function () {
-      var keyCode = 256
-      while (keyCode >= 0) {
-        keyCode--
-        if (keyCode !== ESCAPE_KEY_CODE) {
-          $('#timeout-dialog').trigger($.Event('keydown', {keyCode: keyCode}))
-        }
-      }
+      pretendEverythingButEscapeWasPressed()
       expect($('#timeout-dialog')).toBeInDOM()
     })
 
@@ -115,14 +124,96 @@ describe('Timeout Dialog', function () {
       expect(redirector).toHaveBeenCalledWith('/sign-out')
     })
 
+    it('should AJAX call the keep alive URL when the keepalive button is clicked', function () {
+      spyOn($, 'get')
+
+      $('#timeout-dialog #timeout-keep-signin-btn').click()
+
+      expect(redirector).not.toHaveBeenCalled()
+      expect($.get).toHaveBeenCalledWith('/keep-alive', jasmine.any(Function))
+    })
+
+    it('should AJAX call the keep alive URL when escape is pressed', function () {
+      spyOn($, 'get')
+
+      pretendEscapeWasPressed()
+
+      expect($.get).toHaveBeenCalledWith('/keep-alive', jasmine.any(Function))
+      expect($.get.calls.count()).toEqual(1)
+    })
+
+    it('should not AJAX call the keep alive URL when escape is not pressed', function () {
+      spyOn($, 'get')
+
+      pretendEverythingButEscapeWasPressed()
+
+      expect($.get).not.toHaveBeenCalled()
+    })
+
+    it('should only AJAX call once - while closing the dialog', function () {
+      spyOn($, 'get')
+
+      pretendEscapeWasPressed()
+      pretendEscapeWasPressed()
+      pretendEscapeWasPressed()
+      pretendEscapeWasPressed()
+      pretendEscapeWasPressed()
+
+      expect($.get.calls.count()).toEqual(1)
+    })
+
+    it('should not AJAX call after cleanup', function () {
+      spyOn($, 'get')
+
+      timeoutDialogControl.cleanup();
+
+      pretendEscapeWasPressed()
+
+      expect($.get).not.toHaveBeenCalled()
+    })
+
     it('should specify no background scroll while dialog is open', function () {
       expect($('html')).toHaveClass('noScroll')
     })
 
-    it('should remove no background scroll when dialog closes', function () {
+    it('should remove no background scroll when dialog cleaned up', function () {
       timeoutDialogControl.cleanup()
+
       expect($('html')).not.toHaveClass('noScroll')
     })
+
+    it('should remove no background scroll when dialog closes on escape key press', function () {
+      pretendEscapeWasPressed()
+
+      expect($('html')).not.toHaveClass('noScroll')
+    })
+
+    it('should remove no background scroll when dialog closes on keep alive button press', function () {
+      $('#timeout-keep-signin-btn').click()
+
+      expect($('html')).not.toHaveClass('noScroll')
+    })
+  })
+
+  it('should not AJAX call before dialog is open', function () {
+    spyOn($, 'get')
+
+    timeoutDialogControl = window.govuk.timeoutDialog()
+    pretendEscapeWasPressed()
+
+    expect($.get).not.toHaveBeenCalled()
+  })
+
+  it('should AJAX call the configured URL', function () {
+    spyOn($, 'get')
+
+    timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120, keep_alive_url: '/customKeepAlive'})
+
+    pretendSecondsHavePassed(10)
+    pretendEscapeWasPressed()
+
+    expect($.get).toHaveBeenCalledWith('/customKeepAlive', jasmine.any(Function))
+    expect($.get.calls.count()).toEqual(1)
   })
 
   describe('the configuration options', function () {
@@ -221,7 +312,13 @@ describe('Timeout Dialog', function () {
 
   describe('Countdown timer', function () {
     it('should countdown minutes and then seconds', function () {
-      window.govuk.timeoutDialog({timeout: 130, count: 120, message: 'time:', logout_url: 'logout', redirector: redirector})
+      window.govuk.timeoutDialog({
+        timeout: 130,
+        count: 120,
+        message: 'time:',
+        logout_url: 'logout',
+        redirector: redirector
+      })
 
       pretendSecondsHavePassed(10)
 
@@ -263,7 +360,13 @@ describe('Timeout Dialog', function () {
     })
 
     it('should countdown only seconds when the countdown is short', function () {
-      window.govuk.timeoutDialog({timeout: 130, count: 50, message: 'time:', logout_url: 'logout', redirector: redirector})
+      window.govuk.timeoutDialog({
+        timeout: 130,
+        count: 50,
+        message: 'time:',
+        logout_url: 'logout',
+        redirector: redirector
+      })
 
       pretendSecondsHavePassed(80)
 
