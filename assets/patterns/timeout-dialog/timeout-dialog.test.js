@@ -65,8 +65,9 @@ describe('Timeout Dialog', function () {
       timeoutDialogControl = window.govuk.timeoutDialog({redirector: redirector})
       pretendSecondsHavePassed(780)
     })
+
     it('should show heading', function () {
-      expect($('#timeout-dialog h1')).toContainText('You’re about to be signed out')
+      expect($('#timeout-dialog h1.push--top')).toContainText('You’re about to be signed out')
     })
 
     it('should show message', function () {
@@ -74,17 +75,19 @@ describe('Timeout Dialog', function () {
     })
 
     it('should show keep signed in button', function () {
-      expect($('#timeout-dialog #timeout-keep-signin-btn').text()).toEqual('Stay signed in')
+      expect($('#timeout-dialog #timeout-keep-signin-btn.button').text()).toEqual('Stay signed in')
     })
 
     it('should show sign out button', function () {
-      expect($('#timeout-dialog #timeout-sign-out-btn').text()).toEqual('Sign out')
+      expect($('#timeout-dialog #timeout-sign-out-btn.link').text()).toEqual('Sign out')
     })
+
     it('should hide when escape is pressed', function () {
       var esc = $.Event('keydown', {keyCode: ESCAPE_KEY_CODE})
       $('#timeout-dialog').trigger(esc)
       expect($('#timeout-dialog')).not.toBeInDOM()
     })
+
     it('should not hide when everything other than the escape key is pressed', function () {
       var keyCode = 256
       while (keyCode >= 0) {
@@ -95,6 +98,7 @@ describe('Timeout Dialog', function () {
       }
       expect($('#timeout-dialog')).toBeInDOM()
     })
+
     it('should be attached to the end of the body', function () {
       var $lastElement = $('body').children().last()
       var $secondToLastElement = $lastElement.prev()
@@ -102,6 +106,7 @@ describe('Timeout Dialog', function () {
       expect($lastElement.attr('id')).toEqual('timeout-overlay')
       expect($secondToLastElement.attr('id')).toEqual('timeout-dialog')
     })
+
     it('should redirect to default signout url when signout is clicked', function () {
       assume(redirector).not.toHaveBeenCalled()
 
@@ -119,6 +124,7 @@ describe('Timeout Dialog', function () {
       expect($('html')).not.toHaveClass('noScroll')
     })
   })
+
   describe('the configuration options', function () {
     beforeEach(function () {
       timeoutDialogControl = window.govuk.timeoutDialog({
@@ -131,6 +137,7 @@ describe('Timeout Dialog', function () {
       })
       pretendSecondsHavePassed(780)
     })
+
     it('should show heading', function () {
       expect($('#timeout-dialog h1')).toContainText('my custom TITLE')
     })
@@ -155,10 +162,12 @@ describe('Timeout Dialog', function () {
       expect(redirector).toHaveBeenCalledWith('/myLogoutUrl.html')
     })
   })
+
   describe('Using the legacy interface', function () {
     beforeEach(function () {
       spyOn(window.govuk, 'timeoutDialog')
     })
+
     it('should log a deprecation warning', function () {
       spyOn(window.console, 'warn')
 
@@ -166,6 +175,7 @@ describe('Timeout Dialog', function () {
 
       expect(window.console.warn).toHaveBeenCalledWith('$.timeout is now deprecated, please use window.govuk.timeoutDialog')
     })
+
     it('should provide legacy defaults when no config object is provided', function () {
       $.timeoutDialog();
 
@@ -176,6 +186,7 @@ describe('Timeout Dialog', function () {
         logout_url: '/sign-out'
       });
     })
+
     it('should override legacy defaults with specified config', function () {
       var config = {
         timeout: 100,
@@ -194,6 +205,7 @@ describe('Timeout Dialog', function () {
     beforeEach(function () {
       timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
     })
+
     it('should not display the dialog if cleanup has already been called', function () {
       timeoutDialogControl.cleanup()
       pretendSecondsHavePassed(MINIMUM_TIME_UNTIL_MODAL_DISPLAYED)
@@ -249,6 +261,7 @@ describe('Timeout Dialog', function () {
 
       expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -2 seconds.')
     })
+
     it('should countdown only seconds when the countdown is short', function () {
       window.govuk.timeoutDialog({timeout: 130, count: 50, message: 'time:', logout_url: 'logout', redirector: redirector})
 
