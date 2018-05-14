@@ -2,15 +2,23 @@
 
 {{ wip(44) }}
 
-This pattern is used to display messages sent to a user from HMRC.
+This pattern is used to display messages sent to a user from an HMRC service.
 
 ## When to use this pattern
 
-Use this pattern when your service sends messages to users.
+Use this pattern when your service needs to send multiple messages to users. These messages are not deleted and can be referred back to at any time.
 
-## How it works 
+## When not to use this pattern
 
-This pattern includes a message list and message details.
+Do not use this as the only way of sharing important or time-sensitive information with a user. You should only display messages when users are signed in to a service.
+
+## How it works
+
+This patterns has two views:
+
+* message list
+* message details
+
 
 ### Message list
 
