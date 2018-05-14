@@ -249,5 +249,38 @@ describe('Timeout Dialog', function () {
 
       expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -2 seconds.')
     })
+    it('should countdown only seconds when the countdown is short', function () {
+      window.govuk.timeoutDialog({timeout: 130, count: 50, message: 'time:', logout_url: 'logout', redirector: redirector})
+
+      pretendSecondsHavePassed(80)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 50 seconds.')
+
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 49 seconds.')
+
+      pretendSecondsHavePassed(47)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 2 seconds.')
+
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 seconds.')
+      expect(redirector).not.toHaveBeenCalled()
+
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 0 seconds.')
+
+      pretendSecondsHavePassed(1)
+
+      expect(redirector).toHaveBeenCalledWith('logout')
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -1 seconds.')
+
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -2 seconds.')
+    })
   })
 })
