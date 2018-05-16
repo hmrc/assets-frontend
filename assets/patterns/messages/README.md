@@ -1,7 +1,5 @@
 # Messages
 
-{{ wip(44) }}
-
 This pattern is used to display messages sent to a user from an HMRC service.
 
 ## When to use this pattern
