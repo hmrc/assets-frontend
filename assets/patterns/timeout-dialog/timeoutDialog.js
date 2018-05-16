@@ -82,15 +82,15 @@ module.exports = function (options) {
 //       if (time.m === 1) {
 //         settings.time = ' minute'
 //       }
-      var time = {m: 2}
       $('<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex=-1 aria-live="polite">' +
         '<h1 class="heading-medium push--top">' + settings.title + '</h1>' +
-        '<p id="timeout-message" role="text">' + settings.message + ' <span id="timeout-countdown" class="countdown">' + time.m + ' ' + settings.time + '</span>' + '.</p>' +
+        '<p id="timeout-message" role="text">' + settings.message + ' <span id="timeout-countdown" class="countdown"></span>' + '.</p>' +
         '<button id="timeout-keep-signin-btn" class="button">' + settings.keep_alive_button_text + '</button>' +
         '<a id="timeout-sign-out-btn" class="link">' + settings.sign_out_button_text + '</a>' +
         '</div>' +
         '<div id="timeout-overlay" class="timeout-overlay"></div>')
         .appendTo('body')
+
 //
 //       // AL: disable the non-dialog page to prevent confusion for VoiceOver users
 //       $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer').attr('aria-hidden', 'true')
@@ -200,6 +200,7 @@ module.exports = function (options) {
 //
     startCountdown: function (counter) {
       var self = this
+      self.updateUI(counter)
       self.countdown = window.setInterval(function () {
         counter -= 1
         self.updateUI(counter)

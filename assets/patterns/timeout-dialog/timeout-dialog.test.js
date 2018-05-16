@@ -312,9 +312,9 @@ describe('Timeout Dialog', function () {
 
   describe('Countdown timer', function () {
     it('should countdown minutes and then seconds', function () {
-      window.govuk.timeoutDialog({
+      timeoutDialogControl = window.govuk.timeoutDialog({
         timeout: 130,
-        count: 120,
+        countdown: 120,
         message: 'time:',
         logout_url: 'logout',
         redirector: redirector
@@ -359,10 +359,31 @@ describe('Timeout Dialog', function () {
       expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -2 seconds.')
     })
 
+    it('should countdown lots of minutes when countdown is long', function () {
+      timeoutDialogControl = window.govuk.timeoutDialog({
+        timeout: 1810,
+        countdown: 1800,
+        message: 'time:'
+      })
+
+      pretendSecondsHavePassed(10)
+      assume($('#timeout-dialog')).toBeInDOM()
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 30 minutes.')
+
+      pretendSecondsHavePassed(59)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 30 minutes.')
+
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 29 minutes.')
+    })
+
     it('should countdown only seconds when the countdown is short', function () {
-      window.govuk.timeoutDialog({
+      timeoutDialogControl = window.govuk.timeoutDialog({
         timeout: 130,
-        count: 50,
+        countdown: 50,
         message: 'time:',
         logout_url: 'logout',
         redirector: redirector
