@@ -254,6 +254,20 @@ describe('Timeout Dialog', function () {
     })
   })
 
+  describe('Restarting countdown on close', function () {
+    it('should restart with default settings', function () {
+      timeoutDialogControl = window.govuk.timeoutDialog({message: 'time:'})
+
+      pretendSecondsHavePassed(880)
+      pretendEscapeWasPressed()
+      assume($('#timeout-dialog')).not.toBeInDOM()
+      pretendSecondsHavePassed(880)
+
+      expect($('#timeout-dialog')).toBeInDOM()
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 20 seconds.')
+    })
+  })
+
   describe('Using the legacy interface', function () {
     beforeEach(function () {
       spyOn(window.govuk, 'timeoutDialog')
@@ -268,6 +282,7 @@ describe('Timeout Dialog', function () {
     })
 
     it('should provide legacy defaults when no config object is provided', function () {
+      spyOn(window.console, 'warn')
       $.timeoutDialog();
 
       expect(window.govuk.timeoutDialog).toHaveBeenCalledWith({
@@ -279,6 +294,7 @@ describe('Timeout Dialog', function () {
     })
 
     it('should override legacy defaults with specified config', function () {
+      spyOn(window.console, 'warn')
       var config = {
         timeout: 100,
         countdown: 50,
@@ -291,22 +307,42 @@ describe('Timeout Dialog', function () {
       expect(window.govuk.timeoutDialog).toHaveBeenCalledWith(config);
     })
   })
+
   describe('Cleanup', function () {
     var MINIMUM_TIME_UNTIL_MODAL_DISPLAYED = 10;
-    beforeEach(function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
-    })
 
     it('should not display the dialog if cleanup has already been called', function () {
+      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+
       timeoutDialogControl.cleanup()
       pretendSecondsHavePassed(MINIMUM_TIME_UNTIL_MODAL_DISPLAYED)
       expect($('#timeout-dialog')).not.toBeInDOM()
     })
+
     it('should remove dialog when cleanup is called', function () {
+      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+
       pretendSecondsHavePassed(MINIMUM_TIME_UNTIL_MODAL_DISPLAYED)
       expect($('#timeout-dialog')).toBeInDOM()
       timeoutDialogControl.cleanup()
       expect($('#timeout-dialog')).not.toBeInDOM()
+    })
+
+    it('should clearInterval', function () {
+      var intervalReturn = {message: 'this has been returned from a spy'}
+      jasmine.clock().uninstall()
+      spyOn(window, 'setInterval').and.returnValue(intervalReturn)
+      spyOn(window, 'clearInterval')
+      spyOn(window, 'setTimeout').and.callFake(function (fn) {
+        fn()
+      })
+
+      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+      assume(window.setInterval).toHaveBeenCalled()
+      assume(window.clearInterval).not.toHaveBeenCalled()
+
+      timeoutDialogControl.cleanup()
+      expect(window.clearInterval).toHaveBeenCalledWith(intervalReturn)
     })
   })
 
@@ -419,5 +455,8 @@ describe('Timeout Dialog', function () {
 
       expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -2 seconds.')
     })
+  })
+  describe('techy features', function () {
+
   })
 })

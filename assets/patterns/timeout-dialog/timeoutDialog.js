@@ -173,7 +173,7 @@ module.exports = function (options) {
     keepAlive: function () {
 //       var self = this
       this.cleanup()
-//       window.clearInterval(this.countdown)
+      this.setupDialogTimer()
       $.get(settings.keep_alive_url, function () {
 //         if (settings.restart_on_yes) {
 //           self.setupDialogTimer()
