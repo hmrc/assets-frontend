@@ -1,59 +1,26 @@
-// /* eslint-env jquery */
-//
-// require('jquery')
-//
-// Date.now = Date.now || function () { return +new Date() }
-//
-// function secondsToTime (secs) {
-//   var hours = Math.floor(secs / (60 * 60))
-//
-//   var divisorForMinutes = secs % (60 * 60)
-//   var minutes = Math.floor(divisorForMinutes / 60)
-//
-//   var divisorForSeconds = divisorForMinutes % 60
-//   var seconds = Math.ceil(divisorForSeconds)
-//
-//   var obj = {
-//     'h': hours,
-//     'm': minutes,
-//     's': seconds
-//   }
-//   return obj
-// }
-//
+/* eslint-env jquery */
+
+require('jquery')
+
+Date.now = Date.now || function () { return +new Date() }
+
 module.exports = function (options) {
   var settings = {
     timeout: 900,
     countdown: 120,
-    time: 'minutes',
     title: 'You’re about to be signed out',
     message: 'For security reasons, you will be signed out of this service in',
     keep_alive_url: '/keep-alive',
     logout_url: '/sign-out',
-//     restart_on_yes: true,
-//     dialog_width: 340,
-//     close_on_escape: true,
-//     background_no_scroll: true,
     keep_alive_button_text: 'Stay signed in',
     sign_out_button_text: 'Sign out',
-//     redirector: function (url) {
-//       // TODO: Look for a sensible way to test redirects
-//       window.location.href = url
-//     }
+    redirector: function (url) {
+      // TODO: Look for a sensible way to test redirects
+      window.location.href = url
+    }
   }
 
-  // $.extend(settings, options)
-  if (options) {
-    settings.timeout = options.timeout || settings.timeout
-    settings.countdown = options.countdown || settings.countdown
-    settings.title = options.title || settings.title
-    settings.message = options.message || settings.message
-    settings.keep_alive_button_text = options.keep_alive_button_text || settings.keep_alive_button_text
-    settings.sign_out_button_text = options.sign_out_button_text || settings.sign_out_button_text
-    settings.logout_url = options.logout_url || settings.logout_url
-    settings.keep_alive_url = options.keep_alive_url || settings.keep_alive_url
-    settings.redirector = options.redirector || function () {}
-  }
+  $.extend(settings, options)
 
   var TimeoutDialog = {
     init: function () {
@@ -74,14 +41,7 @@ module.exports = function (options) {
 //       self.startTime = Math.round(Date.now() / 1000, 0)
 //       self.currentMin = Math.ceil(settings.timeout / 60)
 //       self.destroyDialog()
-//       if (settings.background_no_scroll) {
         $('html').addClass('noScroll')
-//       }
-//       var time = secondsToTime(settings.countdown)
-//       self.dialogOpen = true
-//       if (time.m === 1) {
-//         settings.time = ' minute'
-//       }
       $('<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex=-1 aria-live="polite">' +
         '<h1 class="heading-medium push--top">' + settings.title + '</h1>' +
         '<p id="timeout-message" role="text">' + settings.message + ' <span id="timeout-countdown" class="countdown"></span>' + '.</p>' +
@@ -231,9 +191,9 @@ module.exports = function (options) {
         window.clearTimeout(TimeoutDialog.timeout)
       }
       $(document).off('keydown', self.escPress)
-//       if (TimeoutDialog.countdown) {
-//         window.clearInterval(TimeoutDialog.countdown)
-//       }
+      if (TimeoutDialog.countdown) {
+        window.clearInterval(TimeoutDialog.countdown)
+      }
       TimeoutDialog.destroyDialog()
     }
   }
