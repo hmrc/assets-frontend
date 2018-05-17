@@ -388,7 +388,7 @@ describe('Timeout Dialog', function () {
 
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 seconds.')
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 second.')
       expect(redirector).not.toHaveBeenCalled()
 
       pretendSecondsHavePassed(1)
@@ -449,7 +449,7 @@ describe('Timeout Dialog', function () {
 
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 seconds.')
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 second.')
       expect(redirector).not.toHaveBeenCalled()
 
       pretendSecondsHavePassed(1)

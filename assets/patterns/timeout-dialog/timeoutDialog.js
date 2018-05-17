@@ -110,7 +110,7 @@ module.exports = function (options) {
       var self = this
       if (counter < 60) {
 //         $('.timeout-dialog').removeAttr('aria-live')
-        $('#timeout-countdown').html(counter + ' seconds')
+        $('#timeout-countdown').html(counter + ' second' + (counter !== 1 ? 's' : ''))
       } else {
         var newCounter = Math.ceil(counter / 60)
         var minutesMessage = ' minutes'
