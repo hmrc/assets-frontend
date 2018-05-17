@@ -141,6 +141,7 @@ describe('Timeout Dialog', function () {
 
       expect(redirector).not.toHaveBeenCalled()
       expect($.get).toHaveBeenCalledWith('/keep-alive', jasmine.any(Function))
+      expect($('#timeout-dialog')).not.toBeInDOM()
     })
 
     it('should AJAX call the keep alive URL when escape is pressed', function () {

@@ -2,7 +2,9 @@
 
 require('jquery')
 
-Date.now = Date.now || function () { return +new Date() }
+Date.now = Date.now || function () {
+  return +new Date()
+}
 
 module.exports = function (options) {
   var settings = {
@@ -40,10 +42,8 @@ module.exports = function (options) {
     setupDialog: function () {
       var self = this
 //       window.dialogOpen = true
-//       self.startTime = Math.round(Date.now() / 1000, 0)
-//       self.currentMin = Math.ceil(settings.timeout / 60)
 //       self.destroyDialog()
-        $('html').addClass('noScroll')
+      $('html').addClass('noScroll')
       $('<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex=-1 aria-live="polite">' +
         '<h1 class="heading-medium push--top">' + settings.title + '</h1>' +
         '<p id="timeout-message" role="text">' + settings.message + ' <span id="timeout-countdown" class="countdown"></span>' + '.</p>' +
@@ -64,17 +64,13 @@ module.exports = function (options) {
       self.startCountdown(settings.countdown)
       self.escPress = function (event) {
         if (event.keyCode === 27) {
-          // close the dialog
-          self.keepAlive()
+          self.keepAliveAndClose()
 //           activeElement.focus()
         }
       }
 //
       self.closeDialog = function () {
-//         if (window.dialogOpen) {
-          self.keepAlive()
-//           activeElement.focus()
-//         }
+        self.keepAliveAndClose()
       }
 //
 //       // AL: prevent scrolling on touch, but allow pinch zoom
@@ -94,20 +90,13 @@ module.exports = function (options) {
     },
 //
     destroyDialog: function () {
-//       if ($('#timeout-dialog').length) {
-//         window.dialogOpen = false
-//         $('.timeout-overlay').remove()
-        $('#timeout-dialog').remove()
-//         if (settings.background_no_scroll) {
-          $('html').removeClass('noScroll')
-//         }
-//       }
+      $('#timeout-dialog').remove()
+      $('html').removeClass('noScroll')
 //       $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer').removeAttr('aria-hidden')
     },
 //
 //     // AL: moved updater to own call to allow calling from other events
     updateUI: function (counter) {
-      var self = this
       if (counter < 60) {
 //         $('.timeout-dialog').removeAttr('aria-live')
         $('#timeout-countdown').html(counter + ' second' + (counter !== 1 ? 's' : ''))
@@ -117,10 +106,7 @@ module.exports = function (options) {
         if (newCounter === 1) {
           minutesMessage = ' minute'
         }
-//         if (newCounter < self.currentMin) {
-//           self.currentMin = newCounter
-          $('#timeout-countdown').html(newCounter + minutesMessage)
-//         }
+        $('#timeout-countdown').html(newCounter + minutesMessage)
       }
     },
 //
@@ -176,16 +162,10 @@ module.exports = function (options) {
       }, 1000)
     },
 //
-    keepAlive: function () {
-//       var self = this
+    keepAliveAndClose: function () {
       this.cleanup()
       this.setupDialogTimer()
       $.get(settings.keep_alive_url, function () {
-//         if (settings.restart_on_yes) {
-//           self.setupDialogTimer()
-//         } else {
-//           self.signOut()
-//         }
       })
     },
 
