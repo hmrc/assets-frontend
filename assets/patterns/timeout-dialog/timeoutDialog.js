@@ -29,6 +29,8 @@ module.exports = function (options) {
 
     setupDialogTimer: function () {
       var self = this
+      settings.signout_time = Date.now() + settings.timeout * 1000
+
 //       self.dialogOpen = false
       self.timeout = window.setTimeout(function () {
         self.setupDialog()
@@ -158,11 +160,15 @@ module.exports = function (options) {
 //       }
 //     },
 //
-    startCountdown: function (counter) {
+    startCountdown: function () {
+      function recalculateCount() {
+        return Math.floor((settings.signout_time - Date.now()) / 1000)
+      }
+
       var self = this
-      self.updateUI(counter)
+      self.updateUI(recalculateCount())
       self.countdown = window.setInterval(function () {
-        counter -= 1
+        var counter = recalculateCount()
         self.updateUI(counter)
         if (counter <= 0) {
           self.signOut()

@@ -14,14 +14,20 @@ describe('Timeout Dialog', function () {
   var timeoutDialogControl
   var redirector
   var assume
+  var currentDateTime
 
   function pretendSecondsHavePassed(numberOfSeconds) {
-    jasmine.clock().tick(numberOfSeconds * 1000)
+    var millis = numberOfSeconds * 1000
+    currentDateTime += millis
+    jasmine.clock().tick(millis)
+  }
+
+  function triggerKeyPress(keyCode) {
+    $('#timeout-dialog').trigger($.Event('keydown', {keyCode: keyCode}))
   }
 
   function pretendEscapeWasPressed() {
-    var esc = $.Event('keydown', {keyCode: ESCAPE_KEY_CODE})
-    $('#timeout-dialog').trigger(esc)
+    triggerKeyPress(ESCAPE_KEY_CODE);
   }
 
   function pretendEverythingButEscapeWasPressed() {
@@ -29,13 +35,17 @@ describe('Timeout Dialog', function () {
     while (keyCode >= 0) {
       keyCode--
       if (keyCode !== ESCAPE_KEY_CODE) {
-        $('#timeout-dialog').trigger($.Event('keydown', {keyCode: keyCode}))
+        triggerKeyPress(keyCode)
       }
     }
   }
 
   beforeEach(function () {
     assume = expect
+    currentDateTime = 1526544629000 // the time these tests were written - this can change but it's best not to write randomness into tests
+    spyOn(Date, 'now').and.callFake(function () {
+      return currentDateTime
+    })
     jasmine.getFixtures().fixturesPath = 'base/patterns/timeout-dialog'
     loadFixtures('timeout-dialog.html')
     jasmine.clock().install()
@@ -457,6 +467,27 @@ describe('Timeout Dialog', function () {
     })
   })
   describe('techy features', function () {
+    it('should not rely on setInterval for countdown', function () {
+      timeoutDialogControl = window.govuk.timeoutDialog({
+        timeout: 80,
+        countdown: 50,
+        message: 'time:'
+      })
 
+      pretendSecondsHavePassed(29)
+
+      assume($('#timeout-dialog')).not.toBeInDOM()
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog')).toBeInDOM()
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 50 seconds.')
+
+      currentDateTime += 2 * 1000 // two seconds go by without any interval events
+      pretendSecondsHavePassed(1)
+
+      expect($('#timeout-dialog')).toBeInDOM()
+      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 47 seconds.')
+
+    })
   })
 })
