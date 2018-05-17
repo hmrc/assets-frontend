@@ -79,7 +79,9 @@ module.exports = {
 //   }
 // }
 
-
+  // <div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex=-1 aria-live="polite">
+// </div>
+// <div id="timeout-overlay" class="timeout-overlay"></div>
 // on close
 //           activeElement.focus()
 //       $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer').removeAttr('aria-hidden')

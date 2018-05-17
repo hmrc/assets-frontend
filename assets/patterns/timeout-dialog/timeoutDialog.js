@@ -34,13 +34,13 @@ module.exports = function (options) {
   }
 
   function setupDialog() {
-    var $element = $('<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex=-1 aria-live="polite">' +
-      '<h1 class="heading-medium push--top">' + settings.title + '</h1>' +
-      '<p id="timeout-message" role="text">' + settings.message + ' <span id="timeout-countdown" class="countdown"></span>' + '.</p>' +
-      '<button id="timeout-keep-signin-btn" class="button">' + settings.keep_alive_button_text + '</button>' +
-      '<a id="timeout-sign-out-btn" class="link">' + settings.sign_out_button_text + '</a>' +
-      '</div>' +
-      '<div id="timeout-overlay" class="timeout-overlay"></div>')
+    var $element = $('<div>')
+      .append($('<h1 class="heading-medium push--top">').text(settings.title))
+      .append($('<p id="timeout-message" role="text">').text(settings.message)
+        .append($('<span id="timeout-countdown" class="countdown"></span>'))
+        .append('.'))
+      .append($('<button id="timeout-keep-signin-btn" class="button">').text(settings.keep_alive_button_text))
+      .append($('<a id="timeout-sign-out-btn" class="link">').text(settings.sign_out_button_text))
 
     $element.find('#timeout-keep-signin-btn').on('click', keepAliveAndClose)
     $element.find('#timeout-sign-out-btn').on('click', signOut)
@@ -52,30 +52,34 @@ module.exports = function (options) {
 
   function startCountdown($countdownElement) {
     function updateCountdown(counter, $countdownElement) {
+      var message
       if (counter < 60) {
-        $countdownElement.html(counter + ' second' + (counter !== 1 ? 's' : ''))
+        message = counter + ' second' + (counter !== 1 ? 's' : '')
       } else {
         var newCounter = Math.ceil(counter / 60)
         var minutesMessage = ' minutes'
         if (newCounter === 1) {
           minutesMessage = ' minute'
         }
-        $countdownElement.html(newCounter + minutesMessage)
+        message = newCounter + minutesMessage
       }
+      $countdownElement.text(' ' + message)
     }
 
     function recalculateCount() {
       return Math.floor((settings.signout_time - Date.now()) / 1000)
     }
 
-    updateCountdown(recalculateCount(), $countdownElement)
-    countdown = window.setInterval(function () {
+    function runUpdate() {
       var counter = recalculateCount()
       updateCountdown(counter, $countdownElement)
       if (counter <= 0) {
         signOut()
       }
-    }, 1000)
+    }
+
+    countdown = window.setInterval(runUpdate, 1000)
+    runUpdate()
   }
 
   function keepAliveAndClose() {
