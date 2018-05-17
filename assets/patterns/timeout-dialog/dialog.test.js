@@ -73,3 +73,20 @@
 //
 //   expect($.get).not.toHaveBeenCalled()
 // })
+
+//
+// function pretendEverythingButEscapeWasPressed() {
+//   var keyCode = 256
+//   while (keyCode >= 0) {
+//     keyCode--
+//     if (keyCode !== ESCAPE_KEY_CODE) {
+//       triggerKeyPress(keyCode)
+//     }
+//   }
+// }
+//
+// function triggerKeyPress(keyCode) {
+//   $('#timeout-dialog').trigger($.Event('keydown', {keyCode: keyCode}))
+// }
+// var ESCAPE_KEY_CODE = 27
+

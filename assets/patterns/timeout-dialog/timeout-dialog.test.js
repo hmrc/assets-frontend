@@ -8,10 +8,9 @@
 require('jquery')
 require('../../components/index.js')
 var dialog = require('../../patterns/timeout-dialog/dialog.js')
-
+var redirectHelper = require('../../patterns/timeout-dialog/redirectHelper.js')
 
 describe('Timeout Dialog', function () {
-  var ESCAPE_KEY_CODE = 27
   var assume
   var testScope // an object which is reset between test runs
 
@@ -21,10 +20,6 @@ describe('Timeout Dialog', function () {
     jasmine.clock().tick(millis)
   }
 
-  function triggerKeyPress(keyCode) {
-    $('#timeout-dialog').trigger($.Event('keydown', {keyCode: keyCode}))
-  }
-
   function pretendDialogWasClosedWithoutButtonPress() {
     if (!testScope.latestDialogCloseCallback) {
       throw new Error('No dialog close callback available.')
@@ -32,25 +27,16 @@ describe('Timeout Dialog', function () {
     testScope.latestDialogCloseCallback()
   }
 
-  function pretendEverythingButEscapeWasPressed() {
-    var keyCode = 256
-    while (keyCode >= 0) {
-      keyCode--
-      if (keyCode !== ESCAPE_KEY_CODE) {
-        triggerKeyPress(keyCode)
-      }
-    }
-  }
 
   beforeEach(function () {
     assume = expect
     testScope = {
       currentDateTime: 1526544629000, // the time these tests were written - this can change but it's best not to write randomness into tests
-      redirector: jasmine.createSpy('redirector')
     }
     spyOn(Date, 'now').and.callFake(function () {
       return testScope.currentDateTime
     })
+    spyOn(redirectHelper, 'redirectToUrl')
     spyOn(dialog, 'displayDialog').and.callFake(function ($elementToDisplay, closeCallback) {
       testScope.latestDialog$element = $elementToDisplay
       testScope.latestDialogCloseCallback = closeCallback
@@ -101,7 +87,7 @@ describe('Timeout Dialog', function () {
 
   describe('the default options', function () {
     beforeEach(function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({redirector: testScope.redirector})
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog()
       pretendSecondsHavePassed(780)
     })
 
@@ -122,10 +108,10 @@ describe('Timeout Dialog', function () {
     })
 
     it('should redirect to default signout url when signout is clicked', function () {
-      assume(testScope.redirector).not.toHaveBeenCalled()
+      assume(redirectHelper.redirectToUrl).not.toHaveBeenCalled()
 
       testScope.latestDialog$element.find('#timeout-sign-out-btn').click()
-      expect(testScope.redirector).toHaveBeenCalledWith('/sign-out')
+      expect(redirectHelper.redirectToUrl).toHaveBeenCalledWith('/sign-out')
     })
 
     it('should AJAX call the keep alive URL when the keepalive button is clicked', function () {
@@ -139,7 +125,7 @@ describe('Timeout Dialog', function () {
       expect(testScope.latestDialogControl.closeDialog).toHaveBeenCalled()
 
       pretendSecondsHavePassed(130)
-      expect(testScope.redirector).not.toHaveBeenCalled()
+      expect(redirectHelper.redirectToUrl).not.toHaveBeenCalled()
     })
 
     it('should AJAX call the keep alive URL when dialog is closed without using the button', function () {
@@ -172,8 +158,7 @@ describe('Timeout Dialog', function () {
         message: 'MY custom message',
         keep_alive_button_text: 'KEEP alive',
         sign_out_button_text: 'sign OUT',
-        logout_url: '/myLogoutUrl.html',
-        redirector: testScope.redirector
+        logout_url: '/myLogoutUrl.html'
       })
       pretendSecondsHavePassed(780)
     })
@@ -195,12 +180,12 @@ describe('Timeout Dialog', function () {
     })
 
     it('should redirect to default signout url when signout is clicked', function () {
-      assume(testScope.redirector).not.toHaveBeenCalled()
+      assume(redirectHelper.redirectToUrl).not.toHaveBeenCalled()
 
       expect(testScope.latestDialog$element).toContainElement('#timeout-sign-out-btn')
 
       testScope.latestDialog$element.find('#timeout-sign-out-btn').click()
-      expect(testScope.redirector).toHaveBeenCalledWith('/myLogoutUrl.html')
+      expect(redirectHelper.redirectToUrl).toHaveBeenCalledWith('/myLogoutUrl.html')
     })
   })
 
@@ -286,8 +271,7 @@ describe('Timeout Dialog', function () {
         timeout: 130,
         countdown: 120,
         message: 'time:',
-        logout_url: 'logout',
-        redirector: testScope.redirector
+        logout_url: 'logout'
       })
 
       pretendSecondsHavePassed(10)
@@ -308,14 +292,14 @@ describe('Timeout Dialog', function () {
       pretendSecondsHavePassed(1)
 
       expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 1 second.')
-      expect(testScope.redirector).not.toHaveBeenCalled()
+      expect(redirectHelper.redirectToUrl).not.toHaveBeenCalled()
 
       pretendSecondsHavePassed(1)
 
       expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 0 seconds.')
       pretendSecondsHavePassed(1)
 
-      expect(testScope.redirector).toHaveBeenCalledWith('logout')
+      expect(redirectHelper.redirectToUrl).toHaveBeenCalledWith('logout')
       expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: -1 seconds.')
       pretendSecondsHavePassed(1)
 
@@ -347,7 +331,7 @@ describe('Timeout Dialog', function () {
         countdown: 50,
         message: 'time:',
         logout_url: 'logout',
-        redirector: testScope.redirector
+        
       })
 
       pretendSecondsHavePassed(80)
@@ -362,14 +346,14 @@ describe('Timeout Dialog', function () {
       pretendSecondsHavePassed(1)
 
       expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 1 second.')
-      expect(testScope.redirector).not.toHaveBeenCalled()
+      expect(redirectHelper.redirectToUrl).not.toHaveBeenCalled()
 
       pretendSecondsHavePassed(1)
 
       expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 0 seconds.')
       pretendSecondsHavePassed(1)
 
-      expect(testScope.redirector).toHaveBeenCalledWith('logout')
+      expect(redirectHelper.redirectToUrl).toHaveBeenCalledWith('logout')
       expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: -1 seconds.')
       pretendSecondsHavePassed(1)
 

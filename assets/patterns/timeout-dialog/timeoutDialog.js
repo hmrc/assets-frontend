@@ -2,6 +2,7 @@
 
 require('jquery')
 var dialog = require('./dialog.js')
+var redirectHelper = require('./redirectHelper.js')
 
 Date.now = Date.now || function () {
   return +new Date()
@@ -16,11 +17,7 @@ module.exports = function (options) {
     keep_alive_url: '/keep-alive',
     logout_url: '/sign-out',
     keep_alive_button_text: 'Stay signed in',
-    sign_out_button_text: 'Sign out',
-    redirector: function (url) {
-      // TODO: Look for a sensible way to test redirects
-      window.location.href = url
-    }
+    sign_out_button_text: 'Sign out'
   }
 
   $.extend(settings, options)
@@ -107,7 +104,7 @@ module.exports = function (options) {
     },
 
     signOut: function () {
-      settings.redirector(settings.logout_url)
+      redirectHelper.redirectToUrl(settings.logout_url)
     },
     cleanup: function () {
       if (TimeoutDialog.timeout) {
