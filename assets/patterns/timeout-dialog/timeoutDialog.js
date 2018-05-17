@@ -1,6 +1,7 @@
 /* eslint-env jquery */
 
 require('jquery')
+var dialog = require('./dialog.js')
 
 Date.now = Date.now || function () {
   return +new Date()
@@ -24,6 +25,7 @@ module.exports = function (options) {
 
   $.extend(settings, options)
 
+  var dialogControl
   var TimeoutDialog = {
     init: function () {
       this.setupDialogTimer()
@@ -39,61 +41,58 @@ module.exports = function (options) {
 
     setupDialog: function () {
       var self = this
-      $('html').addClass('noScroll')
-      $('<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex=-1 aria-live="polite">' +
+      var $element = $('<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex=-1 aria-live="polite">' +
         '<h1 class="heading-medium push--top">' + settings.title + '</h1>' +
         '<p id="timeout-message" role="text">' + settings.message + ' <span id="timeout-countdown" class="countdown"></span>' + '.</p>' +
         '<button id="timeout-keep-signin-btn" class="button">' + settings.keep_alive_button_text + '</button>' +
         '<a id="timeout-sign-out-btn" class="link">' + settings.sign_out_button_text + '</a>' +
         '</div>' +
         '<div id="timeout-overlay" class="timeout-overlay"></div>')
-        .appendTo('body')
 
+      var close = self.keepAliveAndClose.bind(self)
+      $element.find('#timeout-keep-signin-btn').on('click', close)
+      $element.find('#timeout-sign-out-btn').on('click', self.signOut)
 
-      self.startCountdown(settings.countdown)
+      dialogControl = dialog.displayDialog($element, close)
+
+      self.startCountdown($element.find('#timeout-countdown'))
       self.escPress = function (event) {
         if (event.keyCode === 27) {
           self.keepAliveAndClose()
         }
       }
 
-      self.closeDialog = function () {
-        self.keepAliveAndClose()
-      }
-
-      $(document).on('keydown', self.escPress)
-      $('#timeout-keep-signin-btn').on('click', self.closeDialog)
-      $('#timeout-sign-out-btn').on('click', self.signOut)
     },
 
     destroyDialog: function () {
-      $('#timeout-dialog').remove()
-      $('html').removeClass('noScroll')
+      if (dialogControl) {
+        dialogControl.closeDialog()
+      }
     },
 
-    updateUI: function (counter) {
+    updateCountdown: function (counter, $countdownElement) {
       if (counter < 60) {
-        $('#timeout-countdown').html(counter + ' second' + (counter !== 1 ? 's' : ''))
+        $countdownElement.html(counter + ' second' + (counter !== 1 ? 's' : ''))
       } else {
         var newCounter = Math.ceil(counter / 60)
         var minutesMessage = ' minutes'
         if (newCounter === 1) {
           minutesMessage = ' minute'
         }
-        $('#timeout-countdown').html(newCounter + minutesMessage)
+        $countdownElement.html(newCounter + minutesMessage)
       }
     },
 
-    startCountdown: function () {
+    startCountdown: function ($countdownElement) {
       function recalculateCount() {
         return Math.floor((settings.signout_time - Date.now()) / 1000)
       }
 
       var self = this
-      self.updateUI(recalculateCount())
+      self.updateCountdown(recalculateCount(), $countdownElement)
       self.countdown = window.setInterval(function () {
         var counter = recalculateCount()
-        self.updateUI(counter)
+        self.updateCountdown(counter, $countdownElement)
         if (counter <= 0) {
           self.signOut()
         }
@@ -114,7 +113,6 @@ module.exports = function (options) {
       if (TimeoutDialog.timeout) {
         window.clearTimeout(TimeoutDialog.timeout)
       }
-      $(document).off('keydown', self.escPress)
       if (TimeoutDialog.countdown) {
         window.clearInterval(TimeoutDialog.countdown)
       }

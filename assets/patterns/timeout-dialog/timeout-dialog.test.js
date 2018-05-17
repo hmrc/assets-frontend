@@ -7,6 +7,7 @@
 
 require('jquery')
 require('../../components/index.js')
+var dialog = require('../../patterns/timeout-dialog/dialog.js')
 
 
 describe('Timeout Dialog', function () {
@@ -24,8 +25,11 @@ describe('Timeout Dialog', function () {
     $('#timeout-dialog').trigger($.Event('keydown', {keyCode: keyCode}))
   }
 
-  function pretendEscapeWasPressed() {
-    triggerKeyPress(ESCAPE_KEY_CODE);
+  function pretendDialogWasClosedWithoutButtonPress() {
+    if (!testScope.latestDialogCloseCallback) {
+      throw new Error('No dialog close callback available.')
+    }
+    testScope.latestDialogCloseCallback()
   }
 
   function pretendEverythingButEscapeWasPressed() {
@@ -47,6 +51,14 @@ describe('Timeout Dialog', function () {
     spyOn(Date, 'now').and.callFake(function () {
       return testScope.currentDateTime
     })
+    spyOn(dialog, 'displayDialog').and.callFake(function ($elementToDisplay, closeCallback) {
+      testScope.latestDialog$element = $elementToDisplay
+      testScope.latestDialogCloseCallback = closeCallback
+      testScope.latestDialogControl = {
+        closeDialog: jasmine.createSpy('closeDialog')
+      }
+      return testScope.latestDialogControl
+    })
     jasmine.getFixtures().fixturesPath = 'base/patterns/timeout-dialog'
     loadFixtures('timeout-dialog.html')
     jasmine.clock().install()
@@ -67,22 +79,23 @@ describe('Timeout Dialog', function () {
 
       pretendSecondsHavePassed(269)
 
-      expect($('#timeout-dialog')).not.toBeInDOM()
+      expect(dialog.displayDialog).not.toHaveBeenCalled()
+      expect(dialog.displayDialog).not.toHaveBeenCalled()
 
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog')).toBeInDOM()
+      expect(dialog.displayDialog).toHaveBeenCalled()
     })
     it('should start countdown at 13 minutes by default', function () {
       testScope.timeoutDialogControl = window.govuk.timeoutDialog()
 
       pretendSecondsHavePassed(779)
 
-      expect($('#timeout-dialog')).not.toBeInDOM()
+      expect(dialog.displayDialog).not.toHaveBeenCalled()
 
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog')).toBeInDOM()
+      expect(dialog.displayDialog).toHaveBeenCalled()
     })
   })
 
@@ -93,126 +106,51 @@ describe('Timeout Dialog', function () {
     })
 
     it('should show heading', function () {
-      expect($('#timeout-dialog h1.push--top')).toContainText('You’re about to be signed out')
+      expect(testScope.latestDialog$element.find('h1.push--top')).toContainText('You’re about to be signed out')
     })
 
     it('should show message', function () {
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('For security reasons, you will be signed out of this service in 2 minutes.')
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('For security reasons, you will be signed out of this service in 2 minutes.')
     })
 
     it('should show keep signed in button', function () {
-      expect($('#timeout-dialog #timeout-keep-signin-btn.button').text()).toEqual('Stay signed in')
+      expect(testScope.latestDialog$element.find('#timeout-keep-signin-btn.button').text()).toEqual('Stay signed in')
     })
 
     it('should show sign out button', function () {
-      expect($('#timeout-dialog #timeout-sign-out-btn.link').text()).toEqual('Sign out')
-    })
-
-    it('should hide when escape is pressed', function () {
-      pretendEscapeWasPressed()
-      expect($('#timeout-dialog')).not.toBeInDOM()
-    })
-
-    it('should not hide when everything other than the escape key is pressed', function () {
-      pretendEverythingButEscapeWasPressed()
-      expect($('#timeout-dialog')).toBeInDOM()
-    })
-
-    it('should be attached to the end of the body', function () {
-      var $lastElement = $('body').children().last()
-      var $secondToLastElement = $lastElement.prev()
-
-      expect($lastElement.attr('id')).toEqual('timeout-overlay')
-      expect($secondToLastElement.attr('id')).toEqual('timeout-dialog')
+      expect(testScope.latestDialog$element.find('#timeout-sign-out-btn.link').text()).toEqual('Sign out')
     })
 
     it('should redirect to default signout url when signout is clicked', function () {
       assume(testScope.redirector).not.toHaveBeenCalled()
 
-      $('#timeout-dialog #timeout-sign-out-btn').click()
-
+      testScope.latestDialog$element.find('#timeout-sign-out-btn').click()
       expect(testScope.redirector).toHaveBeenCalledWith('/sign-out')
     })
 
     it('should AJAX call the keep alive URL when the keepalive button is clicked', function () {
       spyOn($, 'get')
 
-      $('#timeout-dialog #timeout-keep-signin-btn').click()
+      assume(testScope.latestDialogControl.closeDialog).not.toHaveBeenCalled()
 
+      testScope.latestDialog$element.find('#timeout-keep-signin-btn').trigger('click')
+
+      expect($.get).toHaveBeenCalledWith('/keep-alive', jasmine.any(Function))
+      expect(testScope.latestDialogControl.closeDialog).toHaveBeenCalled()
+
+      pretendSecondsHavePassed(130)
       expect(testScope.redirector).not.toHaveBeenCalled()
-      expect($.get).toHaveBeenCalledWith('/keep-alive', jasmine.any(Function))
-      expect($('#timeout-dialog')).not.toBeInDOM()
     })
 
-    it('should AJAX call the keep alive URL when escape is pressed', function () {
+    it('should AJAX call the keep alive URL when dialog is closed without using the button', function () {
       spyOn($, 'get')
 
-      pretendEscapeWasPressed()
+      pretendDialogWasClosedWithoutButtonPress()
 
       expect($.get).toHaveBeenCalledWith('/keep-alive', jasmine.any(Function))
       expect($.get.calls.count()).toEqual(1)
     })
 
-    it('should not AJAX call the keep alive URL when escape is not pressed', function () {
-      spyOn($, 'get')
-
-      pretendEverythingButEscapeWasPressed()
-
-      expect($.get).not.toHaveBeenCalled()
-    })
-
-    it('should only AJAX call once - while closing the dialog', function () {
-      spyOn($, 'get')
-
-      pretendEscapeWasPressed()
-      pretendEscapeWasPressed()
-      pretendEscapeWasPressed()
-      pretendEscapeWasPressed()
-      pretendEscapeWasPressed()
-
-      expect($.get.calls.count()).toEqual(1)
-    })
-
-    it('should not AJAX call after cleanup', function () {
-      spyOn($, 'get')
-
-      testScope.timeoutDialogControl.cleanup();
-
-      pretendEscapeWasPressed()
-
-      expect($.get).not.toHaveBeenCalled()
-    })
-
-    it('should specify no background scroll while dialog is open', function () {
-      expect($('html')).toHaveClass('noScroll')
-    })
-
-    it('should remove no background scroll when dialog cleaned up', function () {
-      testScope.timeoutDialogControl.cleanup()
-
-      expect($('html')).not.toHaveClass('noScroll')
-    })
-
-    it('should remove no background scroll when dialog closes on escape key press', function () {
-      pretendEscapeWasPressed()
-
-      expect($('html')).not.toHaveClass('noScroll')
-    })
-
-    it('should remove no background scroll when dialog closes on keep alive button press', function () {
-      $('#timeout-keep-signin-btn').click()
-
-      expect($('html')).not.toHaveClass('noScroll')
-    })
-  })
-
-  it('should not AJAX call before dialog is open', function () {
-    spyOn($, 'get')
-
-    testScope.timeoutDialogControl = window.govuk.timeoutDialog()
-    pretendEscapeWasPressed()
-
-    expect($.get).not.toHaveBeenCalled()
   })
 
   it('should AJAX call the configured URL', function () {
@@ -221,7 +159,7 @@ describe('Timeout Dialog', function () {
     testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120, keep_alive_url: '/customKeepAlive'})
 
     pretendSecondsHavePassed(10)
-    pretendEscapeWasPressed()
+    pretendDialogWasClosedWithoutButtonPress()
 
     expect($.get).toHaveBeenCalledWith('/customKeepAlive', jasmine.any(Function))
     expect($.get.calls.count()).toEqual(1)
@@ -241,26 +179,27 @@ describe('Timeout Dialog', function () {
     })
 
     it('should show heading', function () {
-      expect($('#timeout-dialog h1')).toContainText('my custom TITLE')
+      expect(testScope.latestDialog$element.find('h1')).toContainText('my custom TITLE')
     })
 
     it('should show message', function () {
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('MY custom message 2 minutes.')
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('MY custom message 2 minutes.')
     })
 
     it('should show keep signed in button', function () {
-      expect($('#timeout-dialog #timeout-keep-signin-btn').text()).toEqual('KEEP alive')
+      expect(testScope.latestDialog$element.find('#timeout-keep-signin-btn').text()).toEqual('KEEP alive')
     })
 
     it('should show sign out button', function () {
-      expect($('#timeout-dialog #timeout-sign-out-btn').text()).toEqual('sign OUT')
+      expect(testScope.latestDialog$element.find('#timeout-sign-out-btn').text()).toEqual('sign OUT')
     })
 
     it('should redirect to default signout url when signout is clicked', function () {
       assume(testScope.redirector).not.toHaveBeenCalled()
 
-      $('#timeout-dialog #timeout-sign-out-btn').click()
+      expect(testScope.latestDialog$element).toContainElement('#timeout-sign-out-btn')
 
+      testScope.latestDialog$element.find('#timeout-sign-out-btn').click()
       expect(testScope.redirector).toHaveBeenCalledWith('/myLogoutUrl.html')
     })
   })
@@ -270,12 +209,12 @@ describe('Timeout Dialog', function () {
       testScope.timeoutDialogControl = window.govuk.timeoutDialog({message: 'time:'})
 
       pretendSecondsHavePassed(880)
-      pretendEscapeWasPressed()
-      assume($('#timeout-dialog')).not.toBeInDOM()
+      pretendDialogWasClosedWithoutButtonPress()
+      dialog.displayDialog.calls.reset()
       pretendSecondsHavePassed(880)
 
-      expect($('#timeout-dialog')).toBeInDOM()
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 20 seconds.')
+      expect(dialog.displayDialog).toHaveBeenCalled()
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 20 seconds.')
     })
   })
 
@@ -327,33 +266,17 @@ describe('Timeout Dialog', function () {
 
       testScope.timeoutDialogControl.cleanup()
       pretendSecondsHavePassed(MINIMUM_TIME_UNTIL_MODAL_DISPLAYED)
-      expect($('#timeout-dialog')).not.toBeInDOM()
+      expect(dialog.displayDialog).not.toHaveBeenCalled()
     })
 
     it('should remove dialog when cleanup is called', function () {
       testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
-
       pretendSecondsHavePassed(MINIMUM_TIME_UNTIL_MODAL_DISPLAYED)
-      expect($('#timeout-dialog')).toBeInDOM()
-      testScope.timeoutDialogControl.cleanup()
-      expect($('#timeout-dialog')).not.toBeInDOM()
-    })
-
-    it('should clearInterval', function () {
-      var intervalReturn = {message: 'this has been returned from a spy'}
-      jasmine.clock().uninstall()
-      spyOn(window, 'setInterval').and.returnValue(intervalReturn)
-      spyOn(window, 'clearInterval')
-      spyOn(window, 'setTimeout').and.callFake(function (fn) {
-        fn()
-      })
-
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
-      assume(window.setInterval).toHaveBeenCalled()
-      assume(window.clearInterval).not.toHaveBeenCalled()
+      assume(dialog.displayDialog).toHaveBeenCalled()
 
       testScope.timeoutDialogControl.cleanup()
-      expect(window.clearInterval).toHaveBeenCalledWith(intervalReturn)
+
+      expect(testScope.latestDialogControl.closeDialog).toHaveBeenCalled()
     })
   })
 
@@ -369,41 +292,34 @@ describe('Timeout Dialog', function () {
 
       pretendSecondsHavePassed(10)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 2 minutes.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 2 minutes.')
       pretendSecondsHavePassed(59)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 2 minutes.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 2 minutes.')
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 minute.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 1 minute.')
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 59 seconds.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 59 seconds.')
       pretendSecondsHavePassed(57)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 2 seconds.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 2 seconds.')
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 second.')
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 1 second.')
       expect(testScope.redirector).not.toHaveBeenCalled()
 
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 0 seconds.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 0 seconds.')
       pretendSecondsHavePassed(1)
 
       expect(testScope.redirector).toHaveBeenCalledWith('logout')
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -1 seconds.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: -1 seconds.')
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -2 seconds.')
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: -2 seconds.')
     })
 
     it('should countdown lots of minutes when countdown is long', function () {
@@ -414,17 +330,15 @@ describe('Timeout Dialog', function () {
       })
 
       pretendSecondsHavePassed(10)
-      assume($('#timeout-dialog')).toBeInDOM()
+      assume(dialog.displayDialog).toHaveBeenCalled()
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 30 minutes.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 30 minutes.')
       pretendSecondsHavePassed(59)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 30 minutes.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 30 minutes.')
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 29 minutes.')
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 29 minutes.')
     })
 
     it('should countdown only seconds when the countdown is short', function () {
@@ -438,33 +352,28 @@ describe('Timeout Dialog', function () {
 
       pretendSecondsHavePassed(80)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 50 seconds.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 50 seconds.')
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 49 seconds.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 49 seconds.')
       pretendSecondsHavePassed(47)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 2 seconds.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 2 seconds.')
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 second.')
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 1 second.')
       expect(testScope.redirector).not.toHaveBeenCalled()
 
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 0 seconds.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 0 seconds.')
       pretendSecondsHavePassed(1)
 
       expect(testScope.redirector).toHaveBeenCalledWith('logout')
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -1 seconds.')
-
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: -1 seconds.')
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -2 seconds.')
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: -2 seconds.')
     })
   })
   describe('techy features', function () {
@@ -477,18 +386,50 @@ describe('Timeout Dialog', function () {
 
       pretendSecondsHavePassed(29)
 
-      assume($('#timeout-dialog')).not.toBeInDOM()
+      assume(dialog.displayDialog).not.toHaveBeenCalled()
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog')).toBeInDOM()
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 50 seconds.')
-
+      expect(dialog.displayDialog).toHaveBeenCalled()
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 50 seconds.')
       testScope.currentDateTime += 2 * 1000 // two seconds go by without any interval events
       pretendSecondsHavePassed(1)
 
-      expect($('#timeout-dialog')).toBeInDOM()
-      expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 47 seconds.')
+      expect(dialog.displayDialog).toHaveBeenCalled()
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 47 seconds.')
+    })
 
+    it('should clearInterval on cleanup', function () {
+      var intervalReturn = {message: 'this has been returned from a spy'}
+      jasmine.clock().uninstall()
+      spyOn(window, 'setInterval').and.returnValue(intervalReturn)
+      spyOn(window, 'clearInterval')
+      spyOn(window, 'setTimeout').and.callFake(function (fn) {
+        fn()
+      })
+
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+      assume(window.setInterval).toHaveBeenCalled()
+      assume(window.clearInterval).not.toHaveBeenCalled()
+
+      testScope.timeoutDialogControl.cleanup()
+      expect(window.clearInterval).toHaveBeenCalledWith(intervalReturn)
+    })
+
+    it('should clearInterval on closeDialog', function () {
+      var intervalReturn = {message: 'this has been returned from a spy'}
+      jasmine.clock().uninstall()
+      spyOn(window, 'setInterval').and.returnValue(intervalReturn)
+      spyOn(window, 'clearInterval')
+      spyOn(window, 'setTimeout').and.callFake(function (fn) {
+        fn()
+      })
+
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+      assume(window.setInterval).toHaveBeenCalled()
+      assume(window.clearInterval).not.toHaveBeenCalled()
+
+      testScope.latestDialogCloseCallback()
+      expect(window.clearInterval).toHaveBeenCalledWith(intervalReturn)
     })
   })
 })

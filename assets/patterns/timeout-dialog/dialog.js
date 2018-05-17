@@ -1,3 +1,19 @@
+module.exports = {
+  displayDialog: function ($elementToDisplay, closeCallback) {
+    return {
+      closeDialog: function (){}
+    }
+  }
+}
+// $('html').addClass('noScroll')
+// $(document).off('keydown', self.escPress)
+//
+// destroyDialog: function () {
+//   $('#timeout-dialog').remove()
+//   $('html').removeClass('noScroll')
+// },
+//      $(document).on('keydown', self.escPress)
+
 //       // AL: disable the non-dialog page to prevent confusion for VoiceOver users
 //       $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer').attr('aria-hidden', 'true')
 //
