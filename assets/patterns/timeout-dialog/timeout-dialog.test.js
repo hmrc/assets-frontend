@@ -11,14 +11,12 @@ require('../../components/index.js')
 
 describe('Timeout Dialog', function () {
   var ESCAPE_KEY_CODE = 27
-  var timeoutDialogControl
-  var redirector
   var assume
-  var currentDateTime
+  var testScope // an object which is reset between test runs
 
   function pretendSecondsHavePassed(numberOfSeconds) {
     var millis = numberOfSeconds * 1000
-    currentDateTime += millis
+    testScope.currentDateTime += millis
     jasmine.clock().tick(millis)
   }
 
@@ -42,28 +40,30 @@ describe('Timeout Dialog', function () {
 
   beforeEach(function () {
     assume = expect
-    currentDateTime = 1526544629000 // the time these tests were written - this can change but it's best not to write randomness into tests
+    testScope = {
+      currentDateTime: 1526544629000, // the time these tests were written - this can change but it's best not to write randomness into tests
+      redirector: jasmine.createSpy('redirector')
+    }
     spyOn(Date, 'now').and.callFake(function () {
-      return currentDateTime
+      return testScope.currentDateTime
     })
     jasmine.getFixtures().fixturesPath = 'base/patterns/timeout-dialog'
     loadFixtures('timeout-dialog.html')
     jasmine.clock().install()
-    redirector = jasmine.createSpy('redirector')
   })
 
   afterEach(function () {
-    if (timeoutDialogControl && timeoutDialogControl.cleanup) {
-      timeoutDialogControl.cleanup();
+    if (testScope.timeoutDialogControl && testScope.timeoutDialogControl.cleanup) {
+      testScope.timeoutDialogControl.cleanup();
     }
-    delete timeoutDialogControl
+    delete testScope.timeoutDialogControl
     jasmine.clock().uninstall()
     jasmine.getFixtures().cleanUp()
   })
 
   describe('Delay before displaying', function () {
     it('should start countdown at 2.5 minutes', function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 300, countdown: 30})
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 300, countdown: 30})
 
       pretendSecondsHavePassed(269)
 
@@ -74,7 +74,7 @@ describe('Timeout Dialog', function () {
       expect($('#timeout-dialog')).toBeInDOM()
     })
     it('should start countdown at 13 minutes by default', function () {
-      timeoutDialogControl = window.govuk.timeoutDialog()
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog()
 
       pretendSecondsHavePassed(779)
 
@@ -88,7 +88,7 @@ describe('Timeout Dialog', function () {
 
   describe('the default options', function () {
     beforeEach(function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({redirector: redirector})
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({redirector: testScope.redirector})
       pretendSecondsHavePassed(780)
     })
 
@@ -127,11 +127,11 @@ describe('Timeout Dialog', function () {
     })
 
     it('should redirect to default signout url when signout is clicked', function () {
-      assume(redirector).not.toHaveBeenCalled()
+      assume(testScope.redirector).not.toHaveBeenCalled()
 
       $('#timeout-dialog #timeout-sign-out-btn').click()
 
-      expect(redirector).toHaveBeenCalledWith('/sign-out')
+      expect(testScope.redirector).toHaveBeenCalledWith('/sign-out')
     })
 
     it('should AJAX call the keep alive URL when the keepalive button is clicked', function () {
@@ -139,7 +139,7 @@ describe('Timeout Dialog', function () {
 
       $('#timeout-dialog #timeout-keep-signin-btn').click()
 
-      expect(redirector).not.toHaveBeenCalled()
+      expect(testScope.redirector).not.toHaveBeenCalled()
       expect($.get).toHaveBeenCalledWith('/keep-alive', jasmine.any(Function))
       expect($('#timeout-dialog')).not.toBeInDOM()
     })
@@ -176,7 +176,7 @@ describe('Timeout Dialog', function () {
     it('should not AJAX call after cleanup', function () {
       spyOn($, 'get')
 
-      timeoutDialogControl.cleanup();
+      testScope.timeoutDialogControl.cleanup();
 
       pretendEscapeWasPressed()
 
@@ -188,7 +188,7 @@ describe('Timeout Dialog', function () {
     })
 
     it('should remove no background scroll when dialog cleaned up', function () {
-      timeoutDialogControl.cleanup()
+      testScope.timeoutDialogControl.cleanup()
 
       expect($('html')).not.toHaveClass('noScroll')
     })
@@ -209,7 +209,7 @@ describe('Timeout Dialog', function () {
   it('should not AJAX call before dialog is open', function () {
     spyOn($, 'get')
 
-    timeoutDialogControl = window.govuk.timeoutDialog()
+    testScope.timeoutDialogControl = window.govuk.timeoutDialog()
     pretendEscapeWasPressed()
 
     expect($.get).not.toHaveBeenCalled()
@@ -218,7 +218,7 @@ describe('Timeout Dialog', function () {
   it('should AJAX call the configured URL', function () {
     spyOn($, 'get')
 
-    timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120, keep_alive_url: '/customKeepAlive'})
+    testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120, keep_alive_url: '/customKeepAlive'})
 
     pretendSecondsHavePassed(10)
     pretendEscapeWasPressed()
@@ -229,13 +229,13 @@ describe('Timeout Dialog', function () {
 
   describe('the configuration options', function () {
     beforeEach(function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({
         title: 'my custom TITLE',
         message: 'MY custom message',
         keep_alive_button_text: 'KEEP alive',
         sign_out_button_text: 'sign OUT',
         logout_url: '/myLogoutUrl.html',
-        redirector: redirector
+        redirector: testScope.redirector
       })
       pretendSecondsHavePassed(780)
     })
@@ -257,17 +257,17 @@ describe('Timeout Dialog', function () {
     })
 
     it('should redirect to default signout url when signout is clicked', function () {
-      assume(redirector).not.toHaveBeenCalled()
+      assume(testScope.redirector).not.toHaveBeenCalled()
 
       $('#timeout-dialog #timeout-sign-out-btn').click()
 
-      expect(redirector).toHaveBeenCalledWith('/myLogoutUrl.html')
+      expect(testScope.redirector).toHaveBeenCalledWith('/myLogoutUrl.html')
     })
   })
 
   describe('Restarting countdown on close', function () {
     it('should restart with default settings', function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({message: 'time:'})
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({message: 'time:'})
 
       pretendSecondsHavePassed(880)
       pretendEscapeWasPressed()
@@ -323,19 +323,19 @@ describe('Timeout Dialog', function () {
     var MINIMUM_TIME_UNTIL_MODAL_DISPLAYED = 10;
 
     it('should not display the dialog if cleanup has already been called', function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
 
-      timeoutDialogControl.cleanup()
+      testScope.timeoutDialogControl.cleanup()
       pretendSecondsHavePassed(MINIMUM_TIME_UNTIL_MODAL_DISPLAYED)
       expect($('#timeout-dialog')).not.toBeInDOM()
     })
 
     it('should remove dialog when cleanup is called', function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
 
       pretendSecondsHavePassed(MINIMUM_TIME_UNTIL_MODAL_DISPLAYED)
       expect($('#timeout-dialog')).toBeInDOM()
-      timeoutDialogControl.cleanup()
+      testScope.timeoutDialogControl.cleanup()
       expect($('#timeout-dialog')).not.toBeInDOM()
     })
 
@@ -348,23 +348,23 @@ describe('Timeout Dialog', function () {
         fn()
       })
 
-      timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
       assume(window.setInterval).toHaveBeenCalled()
       assume(window.clearInterval).not.toHaveBeenCalled()
 
-      timeoutDialogControl.cleanup()
+      testScope.timeoutDialogControl.cleanup()
       expect(window.clearInterval).toHaveBeenCalledWith(intervalReturn)
     })
   })
 
   describe('Countdown timer', function () {
     it('should countdown minutes and then seconds', function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({
         timeout: 130,
         countdown: 120,
         message: 'time:',
         logout_url: 'logout',
-        redirector: redirector
+        redirector: testScope.redirector
       })
 
       pretendSecondsHavePassed(10)
@@ -390,7 +390,7 @@ describe('Timeout Dialog', function () {
       pretendSecondsHavePassed(1)
 
       expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 second.')
-      expect(redirector).not.toHaveBeenCalled()
+      expect(testScope.redirector).not.toHaveBeenCalled()
 
       pretendSecondsHavePassed(1)
 
@@ -398,7 +398,7 @@ describe('Timeout Dialog', function () {
 
       pretendSecondsHavePassed(1)
 
-      expect(redirector).toHaveBeenCalledWith('logout')
+      expect(testScope.redirector).toHaveBeenCalledWith('logout')
       expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -1 seconds.')
 
       pretendSecondsHavePassed(1)
@@ -407,7 +407,7 @@ describe('Timeout Dialog', function () {
     })
 
     it('should countdown lots of minutes when countdown is long', function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({
         timeout: 1810,
         countdown: 1800,
         message: 'time:'
@@ -428,12 +428,12 @@ describe('Timeout Dialog', function () {
     })
 
     it('should countdown only seconds when the countdown is short', function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({
         timeout: 130,
         countdown: 50,
         message: 'time:',
         logout_url: 'logout',
-        redirector: redirector
+        redirector: testScope.redirector
       })
 
       pretendSecondsHavePassed(80)
@@ -451,7 +451,7 @@ describe('Timeout Dialog', function () {
       pretendSecondsHavePassed(1)
 
       expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 1 second.')
-      expect(redirector).not.toHaveBeenCalled()
+      expect(testScope.redirector).not.toHaveBeenCalled()
 
       pretendSecondsHavePassed(1)
 
@@ -459,7 +459,7 @@ describe('Timeout Dialog', function () {
 
       pretendSecondsHavePassed(1)
 
-      expect(redirector).toHaveBeenCalledWith('logout')
+      expect(testScope.redirector).toHaveBeenCalledWith('logout')
       expect($('#timeout-dialog #timeout-message').text()).toEqual('time: -1 seconds.')
 
       pretendSecondsHavePassed(1)
@@ -469,7 +469,7 @@ describe('Timeout Dialog', function () {
   })
   describe('techy features', function () {
     it('should not rely on setInterval for countdown', function () {
-      timeoutDialogControl = window.govuk.timeoutDialog({
+      testScope.timeoutDialogControl = window.govuk.timeoutDialog({
         timeout: 80,
         countdown: 50,
         message: 'time:'
@@ -483,7 +483,7 @@ describe('Timeout Dialog', function () {
       expect($('#timeout-dialog')).toBeInDOM()
       expect($('#timeout-dialog #timeout-message').text()).toEqual('time: 50 seconds.')
 
-      currentDateTime += 2 * 1000 // two seconds go by without any interval events
+      testScope.currentDateTime += 2 * 1000 // two seconds go by without any interval events
       pretendSecondsHavePassed(1)
 
       expect($('#timeout-dialog')).toBeInDOM()
