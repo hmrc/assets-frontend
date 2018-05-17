@@ -26,6 +26,16 @@ Display a summary of messages the user has received. The list has:
 - a link to the full message
 - a read and unread state
 
+#### Unread messages
+
+{{ example("messages-unread.html") }}
+{{ markup("messages-unread.html") }}
+
+#### Read messages
+
+{{ example("messages-read.html") }}
+{{ markup("messages-read.html") }}
+
 ### Message details
 
 Display a complete message. Include:
@@ -34,16 +44,6 @@ Display a complete message. Include:
 - date the message was sent
 - message content
 - back link that takes you to the message list
-
-### Unread messages
-
-{{ example("messages-unread.html") }}
-{{ markup("messages-unread.html") }}
-
-### Read messages
-
-{{ example("messages-read.html") }}
-{{ markup("messages-read.html") }}
 
 ## Research on this pattern
 
