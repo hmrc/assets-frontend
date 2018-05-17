@@ -1,14 +1,14 @@
 # Messages
 
-This pattern is used to display messages sent to a user from an HMRC service.
+This pattern displays messages sent to a user from an HMRC service.
 
 ## When to use this pattern
 
-Use this pattern when a service needs to send messages to users. The messages are not deleted and can be referred back to at any time.
+Use this pattern when a service needs to send messages to users. The messages are not deleted and the user can read them at any time.
 
 ### When not to use this pattern
 
-Do not use this as the only way of sharing important or time-sensitive information with a user. Only display messages when users are signed in to a service.
+Do not use this as the only way of sharing important or time-sensitive information with a user. Only display messages when users sign in to a service.
 
 ## How it works
 
