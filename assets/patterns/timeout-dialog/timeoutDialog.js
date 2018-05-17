@@ -26,10 +26,6 @@ module.exports = function (options) {
   var timeout
   var countdown
 
-  function init() {
-    setupDialogTimer()
-  }
-
   function setupDialogTimer() {
     settings.signout_time = Date.now() + settings.timeout * 1000
     timeout = window.setTimeout(function () {
@@ -52,34 +48,22 @@ module.exports = function (options) {
     dialogControl = dialog.displayDialog($element, keepAliveAndClose)
 
     startCountdown($element.find('#timeout-countdown'))
-    escPress = function (event) {
-      if (event.keyCode === 27) {
-        keepAliveAndClose()
-      }
-    }
-
-  }
-
-  function destroyDialog() {
-    if (dialogControl) {
-      dialogControl.closeDialog()
-    }
-  }
-
-  function updateCountdown(counter, $countdownElement) {
-    if (counter < 60) {
-      $countdownElement.html(counter + ' second' + (counter !== 1 ? 's' : ''))
-    } else {
-      var newCounter = Math.ceil(counter / 60)
-      var minutesMessage = ' minutes'
-      if (newCounter === 1) {
-        minutesMessage = ' minute'
-      }
-      $countdownElement.html(newCounter + minutesMessage)
-    }
   }
 
   function startCountdown($countdownElement) {
+    function updateCountdown(counter, $countdownElement) {
+      if (counter < 60) {
+        $countdownElement.html(counter + ' second' + (counter !== 1 ? 's' : ''))
+      } else {
+        var newCounter = Math.ceil(counter / 60)
+        var minutesMessage = ' minutes'
+        if (newCounter === 1) {
+          minutesMessage = ' minute'
+        }
+        $countdownElement.html(newCounter + minutesMessage)
+      }
+    }
+
     function recalculateCount() {
       return Math.floor((settings.signout_time - Date.now()) / 1000)
     }
@@ -112,10 +96,12 @@ module.exports = function (options) {
     if (countdown) {
       window.clearInterval(countdown)
     }
-    destroyDialog()
+    if (dialogControl) {
+      dialogControl.closeDialog()
+    }
   }
 
+  setupDialogTimer()
 
-  init()
   return {cleanup: cleanup}
 }

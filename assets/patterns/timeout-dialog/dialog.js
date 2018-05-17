@@ -72,6 +72,14 @@ module.exports = {
 //       }
 //     },
 
+
+// var escPress = function (event) {
+//   if (event.keyCode === 27) {
+//     keepAliveAndClose()
+//   }
+// }
+
+
 // on close
 //           activeElement.focus()
 //       $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer').removeAttr('aria-hidden')
