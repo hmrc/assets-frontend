@@ -23,100 +23,99 @@ module.exports = function (options) {
   $.extend(settings, options)
 
   var dialogControl
-  var TimeoutDialog = {
-    init: function () {
-      this.setupDialogTimer()
-    },
+  var timeout
+  var countdown
 
-    setupDialogTimer: function () {
-      var self = this
-      settings.signout_time = Date.now() + settings.timeout * 1000
-      self.timeout = window.setTimeout(function () {
-        self.setupDialog()
-      }, ((settings.timeout) - (settings.countdown)) * 1000)
-    },
+  function init() {
+    setupDialogTimer()
+  }
 
-    setupDialog: function () {
-      var self = this
-      var $element = $('<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex=-1 aria-live="polite">' +
-        '<h1 class="heading-medium push--top">' + settings.title + '</h1>' +
-        '<p id="timeout-message" role="text">' + settings.message + ' <span id="timeout-countdown" class="countdown"></span>' + '.</p>' +
-        '<button id="timeout-keep-signin-btn" class="button">' + settings.keep_alive_button_text + '</button>' +
-        '<a id="timeout-sign-out-btn" class="link">' + settings.sign_out_button_text + '</a>' +
-        '</div>' +
-        '<div id="timeout-overlay" class="timeout-overlay"></div>')
+  function setupDialogTimer() {
+    settings.signout_time = Date.now() + settings.timeout * 1000
+    timeout = window.setTimeout(function () {
+      setupDialog()
+    }, ((settings.timeout) - (settings.countdown)) * 1000)
+  }
 
-      var close = self.keepAliveAndClose.bind(self)
-      $element.find('#timeout-keep-signin-btn').on('click', close)
-      $element.find('#timeout-sign-out-btn').on('click', self.signOut)
+  function setupDialog() {
+    var $element = $('<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex=-1 aria-live="polite">' +
+      '<h1 class="heading-medium push--top">' + settings.title + '</h1>' +
+      '<p id="timeout-message" role="text">' + settings.message + ' <span id="timeout-countdown" class="countdown"></span>' + '.</p>' +
+      '<button id="timeout-keep-signin-btn" class="button">' + settings.keep_alive_button_text + '</button>' +
+      '<a id="timeout-sign-out-btn" class="link">' + settings.sign_out_button_text + '</a>' +
+      '</div>' +
+      '<div id="timeout-overlay" class="timeout-overlay"></div>')
 
-      dialogControl = dialog.displayDialog($element, close)
+    $element.find('#timeout-keep-signin-btn').on('click', keepAliveAndClose)
+    $element.find('#timeout-sign-out-btn').on('click', signOut)
 
-      self.startCountdown($element.find('#timeout-countdown'))
-      self.escPress = function (event) {
-        if (event.keyCode === 27) {
-          self.keepAliveAndClose()
-        }
+    dialogControl = dialog.displayDialog($element, keepAliveAndClose)
+
+    startCountdown($element.find('#timeout-countdown'))
+    escPress = function (event) {
+      if (event.keyCode === 27) {
+        keepAliveAndClose()
       }
+    }
 
-    },
+  }
 
-    destroyDialog: function () {
-      if (dialogControl) {
-        dialogControl.closeDialog()
-      }
-    },
-
-    updateCountdown: function (counter, $countdownElement) {
-      if (counter < 60) {
-        $countdownElement.html(counter + ' second' + (counter !== 1 ? 's' : ''))
-      } else {
-        var newCounter = Math.ceil(counter / 60)
-        var minutesMessage = ' minutes'
-        if (newCounter === 1) {
-          minutesMessage = ' minute'
-        }
-        $countdownElement.html(newCounter + minutesMessage)
-      }
-    },
-
-    startCountdown: function ($countdownElement) {
-      function recalculateCount() {
-        return Math.floor((settings.signout_time - Date.now()) / 1000)
-      }
-
-      var self = this
-      self.updateCountdown(recalculateCount(), $countdownElement)
-      self.countdown = window.setInterval(function () {
-        var counter = recalculateCount()
-        self.updateCountdown(counter, $countdownElement)
-        if (counter <= 0) {
-          self.signOut()
-        }
-      }, 1000)
-    },
-
-    keepAliveAndClose: function () {
-      this.cleanup()
-      this.setupDialogTimer()
-      $.get(settings.keep_alive_url, function () {
-      })
-    },
-
-    signOut: function () {
-      redirectHelper.redirectToUrl(settings.logout_url)
-    },
-    cleanup: function () {
-      if (TimeoutDialog.timeout) {
-        window.clearTimeout(TimeoutDialog.timeout)
-      }
-      if (TimeoutDialog.countdown) {
-        window.clearInterval(TimeoutDialog.countdown)
-      }
-      TimeoutDialog.destroyDialog()
+  function destroyDialog() {
+    if (dialogControl) {
+      dialogControl.closeDialog()
     }
   }
 
-  TimeoutDialog.init()
-  return {cleanup: TimeoutDialog.cleanup}
+  function updateCountdown(counter, $countdownElement) {
+    if (counter < 60) {
+      $countdownElement.html(counter + ' second' + (counter !== 1 ? 's' : ''))
+    } else {
+      var newCounter = Math.ceil(counter / 60)
+      var minutesMessage = ' minutes'
+      if (newCounter === 1) {
+        minutesMessage = ' minute'
+      }
+      $countdownElement.html(newCounter + minutesMessage)
+    }
+  }
+
+  function startCountdown($countdownElement) {
+    function recalculateCount() {
+      return Math.floor((settings.signout_time - Date.now()) / 1000)
+    }
+
+    updateCountdown(recalculateCount(), $countdownElement)
+    countdown = window.setInterval(function () {
+      var counter = recalculateCount()
+      updateCountdown(counter, $countdownElement)
+      if (counter <= 0) {
+        signOut()
+      }
+    }, 1000)
+  }
+
+  function keepAliveAndClose() {
+    cleanup()
+    setupDialogTimer()
+    $.get(settings.keep_alive_url, function () {
+    })
+  }
+
+  function signOut() {
+    redirectHelper.redirectToUrl(settings.logout_url)
+  }
+
+  function cleanup() {
+    if (timeout) {
+      window.clearTimeout(timeout)
+    }
+    if (countdown) {
+      window.clearInterval(countdown)
+    }
+    destroyDialog()
+  }
+
+
+  init()
+  return {cleanup: cleanup}
 }
