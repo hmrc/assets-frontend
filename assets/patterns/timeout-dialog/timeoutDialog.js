@@ -47,12 +47,24 @@ module.exports = function (options) {
 
     dialogControl = dialog.displayDialog($element, keepAliveAndClose)
 
+    dialogControl.setAriaLabelledBy('timeout-message')
+    if (getSecondsRemaining() > 60) {
+      dialogControl.setAriaLive('polite')
+    }
+
     startCountdown($element.find('#timeout-countdown'))
+  }
+
+  function getSecondsRemaining() {
+    return Math.floor((settings.signout_time - Date.now()) / 1000)
   }
 
   function startCountdown($countdownElement) {
     function updateCountdown(counter, $countdownElement) {
       var message
+      if (counter === 60) {
+        dialogControl.setAriaLive()
+      }
       if (counter < 60) {
         message = counter + ' second' + (counter !== 1 ? 's' : '')
       } else {
@@ -66,12 +78,8 @@ module.exports = function (options) {
       $countdownElement.text(message)
     }
 
-    function recalculateCount() {
-      return Math.floor((settings.signout_time - Date.now()) / 1000)
-    }
-
     function runUpdate() {
-      var counter = recalculateCount()
+      var counter = getSecondsRemaining()
       updateCountdown(counter, $countdownElement)
       if (counter <= 0) {
         signOut()

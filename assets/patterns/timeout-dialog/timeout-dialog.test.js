@@ -41,7 +41,9 @@ describe('Timeout Dialog', function () {
       testScope.latestDialog$element = $elementToDisplay
       testScope.latestDialogCloseCallback = closeCallback
       testScope.latestDialogControl = {
-        closeDialog: jasmine.createSpy('closeDialog')
+        closeDialog: jasmine.createSpy('closeDialog'),
+        setAriaLive: jasmine.createSpy('setAriaLive'),
+        setAriaLabelledBy: jasmine.createSpy('setAriaLabelledBy')
       }
       return testScope.latestDialogControl
     })
@@ -66,11 +68,12 @@ describe('Timeout Dialog', function () {
       pretendSecondsHavePassed(269)
 
       expect(dialog.displayDialog).not.toHaveBeenCalled()
-      expect(dialog.displayDialog).not.toHaveBeenCalled()
 
       pretendSecondsHavePassed(1)
 
       expect(dialog.displayDialog).toHaveBeenCalled()
+      expect(testScope.latestDialogControl.setAriaLive).not.toHaveBeenCalledWith('polite')
+      expect(testScope.latestDialogControl.setAriaLabelledBy).toHaveBeenCalledWith('timeout-message')
     })
     it('should start countdown at 13 minutes by default', function () {
       testScope.timeoutDialogControl = window.govuk.timeoutDialog()
@@ -89,6 +92,10 @@ describe('Timeout Dialog', function () {
     beforeEach(function () {
       testScope.timeoutDialogControl = window.govuk.timeoutDialog()
       pretendSecondsHavePassed(780)
+    })
+
+    it('should start with a polite screenreader tone', function () {
+      expect(testScope.latestDialogControl.setAriaLive).toHaveBeenCalledWith('polite')
     })
 
     it('should show heading', function () {
@@ -280,8 +287,10 @@ describe('Timeout Dialog', function () {
       pretendSecondsHavePassed(59)
 
       expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 2 minutes.')
+      expect(testScope.latestDialogControl.setAriaLive).not.toHaveBeenCalledWith()
       pretendSecondsHavePassed(1)
 
+      expect(testScope.latestDialogControl.setAriaLive).toHaveBeenCalledWith()
       expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 1 minute.')
       pretendSecondsHavePassed(1)
 
@@ -315,6 +324,7 @@ describe('Timeout Dialog', function () {
 
       pretendSecondsHavePassed(10)
       assume(dialog.displayDialog).toHaveBeenCalled()
+      expect(testScope.latestDialogControl.setAriaLive).toHaveBeenCalledWith('polite')
 
       expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 30 minutes.')
       pretendSecondsHavePassed(59)
@@ -331,11 +341,12 @@ describe('Timeout Dialog', function () {
         countdown: 50,
         message: 'time:',
         logout_url: 'logout',
-        
+
       })
 
       pretendSecondsHavePassed(80)
 
+      expect(testScope.latestDialogControl.setAriaLive).not.toHaveBeenCalled()
       expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 50 seconds.')
       pretendSecondsHavePassed(1)
 

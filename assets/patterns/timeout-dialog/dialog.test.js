@@ -71,7 +71,6 @@ describe('Dialog', function () {
       expect($dialog).toHaveClass('timeout-dialog')
       expect($dialog).toHaveAttr('role', 'dialog')
       expect($dialog).toHaveAttr('tabindex', '-1')
-      expect($dialog).toHaveAttr('aria-live', 'polite')
     })
 
     it('should be attached to the end of the body', function () {
@@ -234,6 +233,21 @@ describe('Dialog', function () {
       expect(testScope.elementsCreatedForThisTest[0]).toHaveAttr('aria-hidden', 'abcd')
       expect(testScope.elementsCreatedForThisTest[1]).toHaveAttr('aria-hidden', 'efgh')
       expect(testScope.elementsCreatedForThisTest[2]).not.toHaveAttr('aria-hidden')
+    })
+
+    it('should allow aria-live to be set, reset and removed', function () {
+      openDefaultDialog()
+      var $dialog = $('#timeout-dialog');
+
+      expect($dialog).not.toHaveAttr('aria-live')
+
+      testScope.dialogControl.setAriaLive('polite')
+
+      expect($dialog).toHaveAttr('aria-live', 'polite')
+
+      testScope.dialogControl.setAriaLive()
+
+      expect($dialog).not.toHaveAttr('aria-live')
     })
 
     describe('Focus control', function () {

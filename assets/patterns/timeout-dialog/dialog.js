@@ -4,8 +4,7 @@ module.exports = {
       .attr({
         'id': 'timeout-dialog',
         'tabindex': '-1',
-        'role': 'dialog',
-        'aria-live': 'polite'
+        'role': 'dialog'
       })
       .addClass('timeout-dialog')
       .append($elementToDisplay)
@@ -87,6 +86,16 @@ module.exports = {
     return {
       closeDialog: function () {
         close()
+      },
+      setAriaLive: function (value) {
+        if (value) {
+          $dialog.attr('aria-live', value)
+        } else {
+          $dialog.removeAttr('aria-live')
+        }
+      },
+      setAriaLabelledBy: function (value) {
+
       }
     }
   }
