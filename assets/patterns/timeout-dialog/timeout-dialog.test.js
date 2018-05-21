@@ -107,11 +107,11 @@ describe('Timeout Dialog', function () {
     })
 
     it('should show keep signed in button', function () {
-      expect(testScope.latestDialog$element.find('#timeout-keep-signin-btn.button').text()).toEqual('Stay signed in')
+      expect(testScope.latestDialog$element.find('button#timeout-keep-signin-btn.button').text()).toEqual('Stay signed in')
     })
 
     it('should show sign out button', function () {
-      expect(testScope.latestDialog$element.find('#timeout-sign-out-btn.button.button--link').text()).toEqual('Sign out')
+      expect(testScope.latestDialog$element.find('button#timeout-sign-out-btn.button.button--link').text()).toEqual('Sign out')
     })
 
     it('should redirect to default signout url when signout is clicked', function () {

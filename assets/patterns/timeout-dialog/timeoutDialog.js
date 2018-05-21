@@ -40,7 +40,7 @@ module.exports = function (options) {
         .append($('<span id="timeout-countdown" class="countdown"></span>'))
         .append('.'))
       .append($('<button id="timeout-keep-signin-btn" class="button">').text(settings.keep_alive_button_text))
-      .append($('<a id="timeout-sign-out-btn" class="button button--link">').text(settings.sign_out_button_text))
+      .append($('<button id="timeout-sign-out-btn" class="button button--link">').text(settings.sign_out_button_text))
 
     $element.find('#timeout-keep-signin-btn').on('click', keepAliveAndClose)
     $element.find('#timeout-sign-out-btn').on('click', signOut)
