@@ -61,9 +61,17 @@ describe('Dialog', function () {
       expect(testScope.closeCallback).not.toHaveBeenCalled()
     })
 
-    it('should be added to the dom', function () {
-      expect($('#timeout-overlay')).toBeInDOM()
-      expect($('#timeout-dialog')).toBeInDOM()
+    it('should be added to the dom with correct attributes', function () {
+      var $overlay = $('#timeout-overlay')
+      var $dialog = $('#timeout-dialog')
+
+      expect($overlay).toBeInDOM()
+      expect($overlay).toHaveClass('timeout-overlay')
+      expect($dialog).toBeInDOM()
+      expect($dialog).toHaveClass('timeout-dialog')
+      expect($dialog).toHaveAttr('role', 'dialog')
+      expect($dialog).toHaveAttr('tabindex', '-1')
+      expect($dialog).toHaveAttr('aria-live', 'polite')
     })
 
     it('should be attached to the end of the body', function () {
