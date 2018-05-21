@@ -1,7 +1,36 @@
 module.exports = {
   displayDialog: function ($elementToDisplay, closeCallback) {
+    var $dialog = $('<div>')
+      .attr('id', 'timeout-dialog')
+      .append($elementToDisplay);
+    var $overlay = $('<div>')
+      .attr('id', 'timeout-overlay');
+    var noop = function () {};
+    var safeCallback = closeCallback || noop
+    var keydownListener = function (e) {
+      if (e.keyCode === 27) {
+        closeAndInform()
+      }
+    };
+
+    $('body').append($dialog).append($overlay)
+    $(document).on('keydown', keydownListener)
+
+    function close() {
+      $(document).off('keydown', keydownListener)
+      $dialog.remove()
+      $overlay.remove()
+    }
+
+    function closeAndInform() {
+      safeCallback()
+      close()
+    }
+
     return {
-      closeDialog: function (){}
+      closeDialog: function () {
+        close()
+      }
     }
   }
 }
@@ -21,7 +50,6 @@ module.exports = {
 //       var modalFocus = document.getElementById('timeout-dialog')
 //       modalFocus.focus()
 //       self.addEvents()
-
 
 
 //       // AL: prevent scrolling on touch, but allow pinch zoom
@@ -79,7 +107,7 @@ module.exports = {
 //   }
 // }
 
-  // <div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex=-1 aria-live="polite">
+// <div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex=-1 aria-live="polite">
 // </div>
 // <div id="timeout-overlay" class="timeout-overlay"></div>
 // on close
