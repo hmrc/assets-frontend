@@ -83,20 +83,22 @@ module.exports = {
       close()
     }
 
+    function createSetterFunctionForAttributeOfDialog(attributeName) {
+      return function (value) {
+        if (value) {
+          $dialog.attr(attributeName, value)
+        } else {
+          $dialog.removeAttr(attributeName)
+        }
+      }
+    }
+
     return {
       closeDialog: function () {
         close()
       },
-      setAriaLive: function (value) {
-        if (value) {
-          $dialog.attr('aria-live', value)
-        } else {
-          $dialog.removeAttr('aria-live')
-        }
-      },
-      setAriaLabelledBy: function (value) {
-
-      }
+      setAriaLive: createSetterFunctionForAttributeOfDialog('aria-live'),
+      setAriaLabelledBy: createSetterFunctionForAttributeOfDialog('aria-labelledby')
     }
   }
 }

@@ -249,6 +249,25 @@ describe('Dialog', function () {
 
       expect($dialog).not.toHaveAttr('aria-live')
     })
+    
+    it('should allow aria-labelledby to be set, reset and removed', function () {
+      openDefaultDialog()
+      var $dialog = $('#timeout-dialog');
+
+      expect($dialog).not.toHaveAttr('aria-labelledby')
+
+      testScope.dialogControl.setAriaLabelledBy('element-id')
+
+      expect($dialog).toHaveAttr('aria-labelledby', 'element-id')
+
+      testScope.dialogControl.setAriaLabelledBy('something-else')
+
+      expect($dialog).toHaveAttr('aria-labelledby', 'something-else')
+
+      testScope.dialogControl.setAriaLabelledBy()
+
+      expect($dialog).not.toHaveAttr('aria-labelledby')
+    })
 
     describe('Focus control', function () {
       function expeectActiveElementToHaveId(id) {
