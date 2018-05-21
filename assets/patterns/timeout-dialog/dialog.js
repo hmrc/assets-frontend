@@ -11,13 +11,13 @@ module.exports = {
       .attr('id', 'timeout-overlay')
       .addClass('timeout-overlay')
     var noop = function () {
-    };
+    }
     var safeCallback = closeCallback || noop
     var keydownListener = function (e) {
       if (e.keyCode === 27) {
         closeAndInform()
       }
-    };
+    }
     var $elementsToAriaHide = $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer');
     var resetElementsFunctionList = []
 
@@ -50,24 +50,16 @@ module.exports = {
     }())
     $dialog.focus()
 
-    // ;(function () {
-    //   // var $elems = $('a, input, textarea, button, [tabindex]').on('focus', keepFocus)
-    //   var $elems = $('a').on('focus', keepFocus)
-    //   resetElementsFunctionList.push(function () {
-    //     $elems.off('focus', keepFocus)
-    //   })
-    // }())
-
-
+    $(document).on('focus', '*', keepFocus)
     $(document).on('keydown', keydownListener)
 
     resetElementsFunctionList.push(function () {
       $dialog.remove()
       $overlay.remove()
+      $(document).off('focus', '*', keepFocus)
       $(document).off('keydown', keydownListener)
+      returnFocusFn()
     })
-
-    resetElementsFunctionList.push(returnFocusFn)
 
     function keepFocus(event) {
       var modalFocus = document.getElementById('timeout-dialog')

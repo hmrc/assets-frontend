@@ -229,6 +229,10 @@ describe('Dialog', function () {
     })
 
     describe('Focus control', function () {
+      function expeectActiveElementToHaveId(id) {
+        expect($(document.activeElement).attr('id') || document.activeElement.outerHTML).toEqual(id)
+      }
+
       beforeEach(function () {
         testScope.elementsCreatedForThisTest.push($('<a href=#>').text('abc').attr('id', 'the-element-with-the-focus').appendTo($('body')).focus())
         testScope.elementsCreatedForThisTest.push($('<input>').attr('id', 'different-elem').appendTo($('body')))
@@ -236,52 +240,67 @@ describe('Dialog', function () {
         testScope.elementsCreatedForThisTest.push($('<textarea>').text('abc').appendTo($('body')))
         testScope.elementsCreatedForThisTest.push($('<div tabindex="-1">').text('abc').appendTo($('body')))
         testScope.elementsCreatedForThisTest.push($('<div tabindex="10">').text('def').appendTo($('body')))
-
-        openDefaultDialog()
       })
 
       it('should take focus when opening', function () {
         openDefaultDialog()
 
-        expect($(document.activeElement)).toHaveId('timeout-dialog')
+        expeectActiveElementToHaveId('timeout-dialog')
       })
 
       it('should return the focus when closed', function () {
         $('#the-element-with-the-focus').focus()
-        expect($(document.activeElement)).toHaveId('the-element-with-the-focus')
+        expeectActiveElementToHaveId('the-element-with-the-focus')
 
         openDefaultDialog()
         testScope.dialogControl.closeDialog()
 
-        expect($(document.activeElement)).toHaveId('the-element-with-the-focus')
+        expeectActiveElementToHaveId('the-element-with-the-focus')
 
         $('#different-elem').focus()
 
         openDefaultDialog()
         pretendEscapeWasPressed()
 
-        expect($(document.activeElement)).toHaveId('different-elem')
+        expeectActiveElementToHaveId('different-elem')
       })
 
-      // it('should not allow focus to move outside the dialog', function () {
-      //   openDefaultDialog()
-      //
-      //   testScope.elementsCreatedForThisTest.forEach(function ($elem) {
-      //     $elem.focus()
-      //   })
-      //
-      //   expect($(document.activeElement)).toHaveId('timeout-dialog')
-      // })
+      it('should not allow focus to move outside the dialog', function () {
+        openDefaultDialog()
+
+        testScope.elementsCreatedForThisTest.push($('<a href=#>').text('this was added after dialog open').attr('id', 'added-after-open').appendTo($('body')))
+
+        testScope.elementsCreatedForThisTest.forEach(function ($elem) {
+          $elem.focus()
+          expeectActiveElementToHaveId('timeout-dialog')
+        })
+      })
 
       it('should allow focus to move outside the dialog after closing', function () {
         openDefaultDialog()
         testScope.dialogControl.closeDialog()
 
         $('#the-element-with-the-focus').focus()
-        expect($(document.activeElement)).toHaveId('the-element-with-the-focus')
+        expeectActiveElementToHaveId('the-element-with-the-focus')
 
         $('#different-elem').focus()
-        expect($(document.activeElement)).toHaveId('different-elem')
+        expeectActiveElementToHaveId('different-elem')
+      })
+
+      it('should allow focus to move inside the dialog', function () {
+        expeectActiveElementToHaveId('the-element-with-the-focus')
+
+        testScope.dialogControl = dialog.displayDialog($('<div><a href=# id="button-a">Button A</a><a href=# id="button-b">Button B</a></div>'))
+
+        $('#button-a').focus()
+        expeectActiveElementToHaveId('button-a')
+
+        $('#button-b').focus()
+        expeectActiveElementToHaveId('button-b')
+
+        testScope.dialogControl.closeDialog()
+
+        expeectActiveElementToHaveId('the-element-with-the-focus')
       })
     })
 
