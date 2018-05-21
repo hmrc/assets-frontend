@@ -51,8 +51,8 @@ describe('Dialog', function () {
     })
 
     it('calling close should remove the elements', function () {
-      assume($('#timeout-overlay')).toBeInDOM()
-      assume($('#timeout-dialog')).toBeInDOM()
+      assume($('#timeout-overlay.timeout-overlay')).toBeInDOM()
+      assume($('#timeout-dialog.timeout-dialog')).toBeInDOM()
 
       testScope.dialogControl.closeDialog()
 

@@ -36,11 +36,11 @@ module.exports = function (options) {
   function setupDialog() {
     var $element = $('<div>')
       .append($('<h1 class="heading-medium push--top">').text(settings.title))
-      .append($('<p id="timeout-message" role="text">').text(settings.message)
+      .append($('<p id="timeout-message" role="text">').text(settings.message + ' ')
         .append($('<span id="timeout-countdown" class="countdown"></span>'))
         .append('.'))
       .append($('<button id="timeout-keep-signin-btn" class="button">').text(settings.keep_alive_button_text))
-      .append($('<a id="timeout-sign-out-btn" class="link">').text(settings.sign_out_button_text))
+      .append($('<a id="timeout-sign-out-btn" class="button button--link">').text(settings.sign_out_button_text))
 
     $element.find('#timeout-keep-signin-btn').on('click', keepAliveAndClose)
     $element.find('#timeout-sign-out-btn').on('click', signOut)
@@ -63,7 +63,7 @@ module.exports = function (options) {
         }
         message = newCounter + minutesMessage
       }
-      $countdownElement.text(' ' + message)
+      $countdownElement.text(message)
     }
 
     function recalculateCount() {

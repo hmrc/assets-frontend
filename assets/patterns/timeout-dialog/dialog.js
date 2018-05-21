@@ -2,9 +2,11 @@ module.exports = {
   displayDialog: function ($elementToDisplay, closeCallback) {
     var $dialog = $('<div>')
       .attr('id', 'timeout-dialog')
-      .append($elementToDisplay);
+      .addClass('timeout-dialog')
+      .append($elementToDisplay)
     var $overlay = $('<div>')
-      .attr('id', 'timeout-overlay');
+      .attr('id', 'timeout-overlay')
+      .addClass('timeout-overlay')
     var noop = function () {};
     var safeCallback = closeCallback || noop
     var keydownListener = function (e) {

@@ -104,7 +104,7 @@ describe('Timeout Dialog', function () {
     })
 
     it('should show sign out button', function () {
-      expect(testScope.latestDialog$element.find('#timeout-sign-out-btn.link').text()).toEqual('Sign out')
+      expect(testScope.latestDialog$element.find('#timeout-sign-out-btn.button.button--link').text()).toEqual('Sign out')
     })
 
     it('should redirect to default signout url when signout is clicked', function () {
@@ -176,7 +176,7 @@ describe('Timeout Dialog', function () {
     })
 
     it('should show sign out button', function () {
-      expect(testScope.latestDialog$element.find('#timeout-sign-out-btn').text()).toEqual('sign OUT')
+      expect(testScope.latestDialog$element.find('#timeout-sign-out-btn.button.button--link').text()).toEqual('sign OUT')
     })
 
     it('should redirect to default signout url when signout is clicked', function () {
