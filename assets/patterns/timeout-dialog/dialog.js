@@ -1,27 +1,88 @@
 module.exports = {
   displayDialog: function ($elementToDisplay, closeCallback) {
     var $dialog = $('<div>')
-      .attr('id', 'timeout-dialog')
+      .attr({
+        'id': 'timeout-dialog',
+        'tabindex': '-1'
+      })
       .addClass('timeout-dialog')
       .append($elementToDisplay)
     var $overlay = $('<div>')
       .attr('id', 'timeout-overlay')
       .addClass('timeout-overlay')
-    var noop = function () {};
+    var noop = function () {
+    };
     var safeCallback = closeCallback || noop
     var keydownListener = function (e) {
       if (e.keyCode === 27) {
         closeAndInform()
       }
     };
+    var $elementsToAriaHide = $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer');
+    var resetElementsFunctionList = []
 
+    if (!$('html').hasClass('noScroll')) {
+      $('html').addClass('noScroll')
+      resetElementsFunctionList.push(function () {
+        $('html').removeClass('noScroll')
+      })
+    }
     $('body').append($dialog).append($overlay)
+
+    // disable the non-dialog page to prevent confusion for VoiceOver users
+    $elementsToAriaHide.each(function () {
+      var value = $(this).attr('aria-hidden')
+      var $elem = $(this)
+      resetElementsFunctionList.push(function () {
+        if (value) {
+          $elem.attr('aria-hidden', value)
+        } else {
+          $elem.removeAttr('aria-hidden')
+        }
+      })
+    }).attr('aria-hidden', 'true')
+
+    var returnFocusFn = (function () {
+      var elemToFocus = document.activeElement
+      return function () {
+        $(elemToFocus).focus()
+      }
+    }())
+    $dialog.focus()
+
+    // ;(function () {
+    //   // var $elems = $('a, input, textarea, button, [tabindex]').on('focus', keepFocus)
+    //   var $elems = $('a').on('focus', keepFocus)
+    //   resetElementsFunctionList.push(function () {
+    //     $elems.off('focus', keepFocus)
+    //   })
+    // }())
+
+
     $(document).on('keydown', keydownListener)
 
-    function close() {
-      $(document).off('keydown', keydownListener)
+    resetElementsFunctionList.push(function () {
       $dialog.remove()
       $overlay.remove()
+      $(document).off('keydown', keydownListener)
+    })
+
+    resetElementsFunctionList.push(returnFocusFn)
+
+    function keepFocus(event) {
+      var modalFocus = document.getElementById('timeout-dialog')
+      if (modalFocus) {
+        if (event.target !== modalFocus && !modalFocus.contains(event.target)) {
+          event.stopPropagation()
+          modalFocus.focus()
+        }
+      }
+    }
+
+    function close() {
+      $.each(resetElementsFunctionList, function () {
+        this()
+      })
     }
 
     function closeAndInform() {
@@ -36,23 +97,6 @@ module.exports = {
     }
   }
 }
-// $('html').addClass('noScroll')
-// $(document).off('keydown', self.escPress)
-//
-// destroyDialog: function () {
-//   $('#timeout-dialog').remove()
-//   $('html').removeClass('noScroll')
-// },
-//      $(document).on('keydown', self.escPress)
-
-//       // AL: disable the non-dialog page to prevent confusion for VoiceOver users
-//       $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer').attr('aria-hidden', 'true')
-//
-//       var activeElement = document.activeElement
-//       var modalFocus = document.getElementById('timeout-dialog')
-//       modalFocus.focus()
-//       self.addEvents()
-
 
 //       // AL: prevent scrolling on touch, but allow pinch zoom
 //       self.handleTouch = function (e) {

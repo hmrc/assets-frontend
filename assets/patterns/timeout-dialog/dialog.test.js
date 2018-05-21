@@ -117,7 +117,35 @@ describe('Dialog', function () {
       expect($('#timeout-overlay')).toBeInDOM()
       expect(testScope.closeCallback).not.toHaveBeenCalled()
     })
+
+    it('should specify no background scroll', function () {
+      expect($('html')).toHaveClass('noScroll')
+    })
+
+    it('should remove no background scroll when closed with escape key', function () {
+      pretendEscapeWasPressed()
+
+      expect($('html')).not.toHaveClass('noScroll')
+    })
+
+    it('should remove no background scroll when closed with control function', function () {
+      testScope.dialogControl.closeDialog()
+
+      expect($('html')).not.toHaveClass('noScroll')
+    })
   })
+
+  it('should not remove noScroll class if it was set before opening', function () {
+    $('html').addClass('noScroll')
+
+    openDefaultDialog()
+    pretendEscapeWasPressed()
+
+    expect($('html')).toHaveClass('noScroll')
+
+    $('html').removeClass('noScroll') // to cleanup before the next test
+  })
+
   it('should open with specified element', function () {
     var $root = $('<div>').attr('id', 'my-custom-elem').text('abc');
 
@@ -126,51 +154,136 @@ describe('Dialog', function () {
     expect($('#timeout-dialog')).toContainElement($root)
   })
   it('should not error when escape is pressed and no callback is provided', function () {
-    testScope.dialogControl = dialog.displayDialog($DEFAULT_ELEMENT_TO_DISPLAY, function(){})
+    testScope.dialogControl = dialog.displayDialog($DEFAULT_ELEMENT_TO_DISPLAY)
 
     expect(pretendEscapeWasPressed).not.toThrow()
 
     expect($('#timeout-dialog')).not.toBeInDOM()
     expect($('#timeout-overlay')).not.toBeInDOM()
   })
-//
-// it('should not callback on escape after cleanup', function () {
-//   spyOn($, 'get')
-//
-//   testScope.timeoutDialogControl.cleanup();
-//
-//   pretendDialogWasClosedWithoutButtonPress()
-//
-//   expect($.get).not.toHaveBeenCalled()
-// })
-// it('should specify no background scroll while dialog is open', function () {
-//   expect($('html')).toHaveClass('noScroll')
-// })
-//
-// it('should remove no background scroll when dialog cleaned up', function () {
-//   testScope.timeoutDialogControl.cleanup()
-//
-//   expect($('html')).not.toHaveClass('noScroll')
-// })
-//
-// it('should remove no background scroll when dialog closes on escape key press', function () {
-//   pretendDialogWasClosedWithoutButtonPress()
-//
-//   expect($('html')).not.toHaveClass('noScroll')
-// })
-//
-// it('should remove no background scroll when dialog closes on keep alive button press', function () {
-//   $('#timeout-keep-signin-btn').click()
-//
-//   expect($('html')).not.toHaveClass('noScroll')
-// })
-// it('should not AJAX call before dialog is open', function () {
-//   spyOn($, 'get')
-//
-//   testScope.timeoutDialogControl = window.govuk.timeoutDialog()
-//   pretendDialogWasClosedWithoutButtonPress()
-//
-//   expect($.get).not.toHaveBeenCalled()
-// })
 
+  describe('Manipulating page elements for dialog', function () {
+    beforeEach(function () {
+      testScope.elementsCreatedForThisTest = []
+      if ($('#skiplink-container').length === 0) {
+        testScope.elementsCreatedForThisTest.push($('<div id=skiplink-container>').appendTo($('body')))
+      }
+      if ($('#global-cookie-message').length === 0) {
+        testScope.elementsCreatedForThisTest.push($('<div id=global-cookie-message>').appendTo($('body')))
+      }
+      if ($('body>header').length === 0) {
+        testScope.elementsCreatedForThisTest.push($('<header>').appendTo($('body')))
+      }
+      if ($('body>main').length === 0) {
+        testScope.elementsCreatedForThisTest.push($('<main>').appendTo($('body')))
+      }
+      if ($('body>footer').length === 0) {
+        testScope.elementsCreatedForThisTest.push($('<footer>').appendTo($('body')))
+      }
+    })
+    afterEach(function () {
+      testScope.elementsCreatedForThisTest.forEach(function ($elem) {
+        $elem.remove()
+      })
+    })
+
+    it('should set aria-hidden when dialog is open', function () {
+      var selectors = [
+        '#skiplink-container',
+        'body>header',
+        '#global-cookie-message',
+        'body>main',
+        'body>footer'
+      ];
+      selectors.forEach(function (selector) {
+        assume($(selector)).toBeInDOM()
+      })
+
+      openDefaultDialog()
+
+      selectors.forEach(function (selector) {
+        var $selected = $(selector);
+        $selected.each(function () {
+          expect($(this)).toHaveAttr('aria-hidden', 'true')
+        })
+      })
+    })
+
+    it('should reset to previous values when closed', function () {
+      assume(testScope.elementsCreatedForThisTest.length).toBeGreaterThanOrEqual(3)
+      testScope.elementsCreatedForThisTest[0].attr('aria-hidden', 'abcd')
+      testScope.elementsCreatedForThisTest[1].attr('aria-hidden', 'efgh')
+      assume(testScope.elementsCreatedForThisTest[2]).not.toHaveAttr('aria-hidden')
+
+      openDefaultDialog()
+
+      expect(testScope.elementsCreatedForThisTest[0]).toHaveAttr('aria-hidden', 'true')
+      expect(testScope.elementsCreatedForThisTest[1]).toHaveAttr('aria-hidden', 'true')
+      expect(testScope.elementsCreatedForThisTest[2]).toHaveAttr('aria-hidden', 'true')
+
+      pretendEscapeWasPressed()
+
+      expect(testScope.elementsCreatedForThisTest[0]).toHaveAttr('aria-hidden', 'abcd')
+      expect(testScope.elementsCreatedForThisTest[1]).toHaveAttr('aria-hidden', 'efgh')
+      expect(testScope.elementsCreatedForThisTest[2]).not.toHaveAttr('aria-hidden')
+    })
+
+    describe('Focus control', function () {
+      beforeEach(function () {
+        testScope.elementsCreatedForThisTest.push($('<a href=#>').text('abc').attr('id', 'the-element-with-the-focus').appendTo($('body')).focus())
+        testScope.elementsCreatedForThisTest.push($('<input>').attr('id', 'different-elem').appendTo($('body')))
+        testScope.elementsCreatedForThisTest.push($('<button>').text('abc').appendTo($('body')))
+        testScope.elementsCreatedForThisTest.push($('<textarea>').text('abc').appendTo($('body')))
+        testScope.elementsCreatedForThisTest.push($('<div tabindex="-1">').text('abc').appendTo($('body')))
+        testScope.elementsCreatedForThisTest.push($('<div tabindex="10">').text('def').appendTo($('body')))
+
+        openDefaultDialog()
+      })
+
+      it('should take focus when opening', function () {
+        openDefaultDialog()
+
+        expect($(document.activeElement)).toHaveId('timeout-dialog')
+      })
+
+      it('should return the focus when closed', function () {
+        $('#the-element-with-the-focus').focus()
+        expect($(document.activeElement)).toHaveId('the-element-with-the-focus')
+
+        openDefaultDialog()
+        testScope.dialogControl.closeDialog()
+
+        expect($(document.activeElement)).toHaveId('the-element-with-the-focus')
+
+        $('#different-elem').focus()
+
+        openDefaultDialog()
+        pretendEscapeWasPressed()
+
+        expect($(document.activeElement)).toHaveId('different-elem')
+      })
+
+      // it('should not allow focus to move outside the dialog', function () {
+      //   openDefaultDialog()
+      //
+      //   testScope.elementsCreatedForThisTest.forEach(function ($elem) {
+      //     $elem.focus()
+      //   })
+      //
+      //   expect($(document.activeElement)).toHaveId('timeout-dialog')
+      // })
+
+      it('should allow focus to move outside the dialog after closing', function () {
+        openDefaultDialog()
+        testScope.dialogControl.closeDialog()
+
+        $('#the-element-with-the-focus').focus()
+        expect($(document.activeElement)).toHaveId('the-element-with-the-focus')
+
+        $('#different-elem').focus()
+        expect($(document.activeElement)).toHaveId('different-elem')
+      })
+    })
+
+  })
 })
