@@ -29,6 +29,7 @@ describe('Timeout Dialog', function () {
 
 
   beforeEach(function () {
+    jasmine.getFixtures().fixturesPath = 'base/patterns/help-users-when-we-time-them-out-of-a-service'
     assume = expect
     testScope = {
       currentDateTime: 1526544629000, // the time these tests were written - this can change but it's best not to write randomness into tests
