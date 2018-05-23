@@ -20,7 +20,7 @@ module.exports = function (options) {
   return {cleanup: cleanup}
 
   function validateInput(config) {
-    var requiredConfig = ['timeout', 'countdown', 'keep_alive_url', 'logout_url', 'language']
+    var requiredConfig = ['timeout', 'countdown', 'keepAliveUrl', 'signOutUrl', 'language']
     var missingRequiredConfig = []
     var validLanguages = ['en', 'cy']
 
@@ -43,8 +43,8 @@ module.exports = function (options) {
     return $.extend({
       title: 'You’re about to be signed out',
       message: 'For security reasons, you will be signed out of this service in',
-      keep_alive_button_text: 'Stay signed in',
-      sign_out_button_text: 'Sign out'
+      keepAliveButtonText: 'Stay signed in',
+      signOutButtonText: 'Sign out'
     }, options)
   }
 
@@ -67,8 +67,8 @@ module.exports = function (options) {
       .append($('<p id="timeout-message" role="text">').text(settings.message + ' ')
         .append($countdownElement)
         .append('.'))
-      .append($('<button id="timeout-keep-signin-btn" class="button">').text(settings.keep_alive_button_text))
-      .append($('<button id="timeout-sign-out-btn" class="button button--link">').text(settings.sign_out_button_text))
+      .append($('<button id="timeout-keep-signin-btn" class="button">').text(settings.keepAliveButtonText))
+      .append($('<button id="timeout-sign-out-btn" class="button button--link">').text(settings.signOutButtonText))
 
     $element.find('#timeout-keep-signin-btn').on('click', keepAliveAndClose)
     $element.find('#timeout-sign-out-btn').on('click', signOut)
@@ -128,12 +128,12 @@ module.exports = function (options) {
   function keepAliveAndClose() {
     cleanup()
     setupDialogTimer()
-    $.get(settings.keep_alive_url, function () {
+    $.get(settings.keepAliveUrl, function () {
     })
   }
 
   function signOut() {
-    redirectHelper.redirectToUrl(settings.logout_url)
+    redirectHelper.redirectToUrl(settings.signOutUrl)
   }
 
   function cleanup() {

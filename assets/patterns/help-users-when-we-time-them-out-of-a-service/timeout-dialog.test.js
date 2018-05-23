@@ -56,8 +56,8 @@ describe('Timeout Dialog', function () {
     testScope.minimumValidConfig = {
       timeout: 900,
       countdown: 120,
-      keep_alive_url: '/keep-alive',
-      logout_url: '/sign-out',
+      keepAliveUrl: '/keep-alive',
+      signOutUrl: '/sign-out',
       language: 'en'
     }
   })
@@ -164,7 +164,7 @@ describe('Timeout Dialog', function () {
     setupDialog({
       timeout: 130,
       countdown: 120,
-      keep_alive_url: '/customKeepAlive'
+      keepAliveUrl: '/customKeepAlive'
     })
 
     pretendSecondsHavePassed(10)
@@ -179,9 +179,9 @@ describe('Timeout Dialog', function () {
       setupDialog({
         title: 'my custom TITLE',
         message: 'MY custom message',
-        keep_alive_button_text: 'KEEP alive',
-        sign_out_button_text: 'sign OUT',
-        logout_url: '/myLogoutUrl.html'
+        keepAliveButtonText: 'KEEP alive',
+        signOutButtonText: 'sign OUT',
+        signOutUrl: '/mySignOutUrl.html'
       })
       pretendSecondsHavePassed(780)
     })
@@ -208,7 +208,7 @@ describe('Timeout Dialog', function () {
       expect(testScope.latestDialog$element).toContainElement('#timeout-sign-out-btn')
 
       testScope.latestDialog$element.find('#timeout-sign-out-btn').click()
-      expect(redirectHelper.redirectToUrl).toHaveBeenCalledWith('/myLogoutUrl.html')
+      expect(redirectHelper.redirectToUrl).toHaveBeenCalledWith('/mySignOutUrl.html')
     })
   })
 
@@ -244,24 +244,34 @@ describe('Timeout Dialog', function () {
       expect(window.govuk.timeoutDialog).toHaveBeenCalledWith({
         timeout: 900,
         countdown: 120,
-        keep_alive_url: '/keep-alive',
-        logout_url: '/sign-out',
+        keepAliveUrl: '/keep-alive',
+        signOutUrl: '/sign-out',
         language: 'en'
       });
     })
 
-    it('should override legacy defaults with specified config', function () {
+    it('should override legacy defaults with specified config, overrides turned into camelCase', function () {
       var config = {
-        timeout: 100,
-        countdown: 50,
+        timeout: 200,
         keep_alive_url: '/hello-world',
         logout_url: '/goodbye-world',
+        keep_alive_button_text: 'my button text',
+        sign_out_button_text: 'sign out button text',
         language: 'en'
       }
 
       $.timeoutDialog(config);
 
-      expect(window.govuk.timeoutDialog).toHaveBeenCalledWith(config);
+      expect(window.govuk.timeoutDialog).toHaveBeenCalledWith({
+          timeout: 200,
+          countdown: 120,
+          keepAliveUrl: '/hello-world',
+          signOutUrl: '/goodbye-world',
+          keepAliveButtonText: 'my button text',
+          signOutButtonText: 'sign out button text',
+          language: 'en'
+        }
+      );
     })
 
     it('should mix defaults with specified config', function () {
@@ -276,8 +286,8 @@ describe('Timeout Dialog', function () {
       expect(window.govuk.timeoutDialog).toHaveBeenCalledWith({
         timeout: 700,
         countdown: 120,
-        keep_alive_url: '/keep-alive',
-        logout_url: '/sign-out',
+        keepAliveUrl: '/keep-alive',
+        signOutUrl: '/sign-out',
         language: 'cy',
         otherConfigItem: 'something'
       });
@@ -300,20 +310,20 @@ describe('Timeout Dialog', function () {
       }).toThrow(new Error('Missing config item(s): [countdown]'))
     })
 
-    it('should fail when keep_alive_url is missing', function () {
-      delete testScope.minimumValidConfig.keep_alive_url
+    it('should fail when keepAliveUrl is missing', function () {
+      delete testScope.minimumValidConfig.keepAliveUrl
 
       expect(function () {
         govuk.timeoutDialog(testScope.minimumValidConfig)
-      }).toThrow(new Error('Missing config item(s): [keep_alive_url]'))
+      }).toThrow(new Error('Missing config item(s): [keepAliveUrl]'))
     })
 
-    it('should fail when logout_url is missing', function () {
-      delete testScope.minimumValidConfig.logout_url
+    it('should fail when signOutUrl is missing', function () {
+      delete testScope.minimumValidConfig.signOutUrl
 
       expect(function () {
         govuk.timeoutDialog(testScope.minimumValidConfig)
-      }).toThrow(new Error('Missing config item(s): [logout_url]'))
+      }).toThrow(new Error('Missing config item(s): [signOutUrl]'))
     })
 
     it('should fail when language is missing', function () {
@@ -327,7 +337,7 @@ describe('Timeout Dialog', function () {
     it('should fail when all config is missing', function () {
       expect(function () {
         govuk.timeoutDialog({})
-      }).toThrow(new Error('Missing config item(s): [timeout, countdown, keep_alive_url, logout_url, language]'))
+      }).toThrow(new Error('Missing config item(s): [timeout, countdown, keepAliveUrl, signOutUrl, language]'))
     })
 
     it('should allow english as a language', function () {
@@ -382,7 +392,7 @@ describe('Timeout Dialog', function () {
         timeout: 130,
         countdown: 120,
         message: 'time:',
-        logout_url: 'logout'
+        signOutUrl: 'logout'
       })
 
       pretendSecondsHavePassed(10)
@@ -444,8 +454,7 @@ describe('Timeout Dialog', function () {
         timeout: 130,
         countdown: 50,
         message: 'time:',
-        logout_url: 'logout',
-
+        signOutUrl: 'logout',
       })
 
       pretendSecondsHavePassed(80)
