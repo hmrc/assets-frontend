@@ -13,13 +13,11 @@ module.exports = function (options) {
   validateInput(options)
   var settings = mergeOptionsWithDefaults(options)
 
+  var cleanupFunctions = []
+
   setupDialogTimer()
 
   return {cleanup: cleanup}
-
-  var dialogControl
-  var timeout
-  var countdown
 
   function validateInput(config) {
     var requiredConfig = ['timeout', 'countdown', 'keep_alive_url', 'logout_url', 'language']
@@ -52,16 +50,22 @@ module.exports = function (options) {
 
   function setupDialogTimer() {
     settings.signout_time = Date.now() + settings.timeout * 1000
-    timeout = window.setTimeout(function () {
+
+    var timeout = window.setTimeout(function () {
       setupDialog()
     }, ((settings.timeout) - (settings.countdown)) * 1000)
+
+    cleanupFunctions.push(function () {
+      window.clearTimeout(timeout)
+    })
   }
 
   function setupDialog() {
+    var $countdownElement = $('<span id="timeout-countdown" class="countdown">');
     var $element = $('<div>')
       .append($('<h1 class="heading-medium push--top">').text(settings.title))
       .append($('<p id="timeout-message" role="text">').text(settings.message + ' ')
-        .append($('<span id="timeout-countdown" class="countdown"></span>'))
+        .append($countdownElement)
         .append('.'))
       .append($('<button id="timeout-keep-signin-btn" class="button">').text(settings.keep_alive_button_text))
       .append($('<button id="timeout-sign-out-btn" class="button button--link">').text(settings.sign_out_button_text))
@@ -69,21 +73,25 @@ module.exports = function (options) {
     $element.find('#timeout-keep-signin-btn').on('click', keepAliveAndClose)
     $element.find('#timeout-sign-out-btn').on('click', signOut)
 
-    dialogControl = dialog.displayDialog($element, keepAliveAndClose)
+    var dialogControl = dialog.displayDialog($element, keepAliveAndClose)
+
+    cleanupFunctions.push(function () {
+      dialogControl.closeDialog()
+    })
 
     dialogControl.setAriaLabelledBy('timeout-message')
     if (getSecondsRemaining() > 60) {
       dialogControl.setAriaLive('polite')
     }
 
-    startCountdown($element.find('#timeout-countdown'))
+    startCountdown($countdownElement, dialogControl)
   }
 
   function getSecondsRemaining() {
     return Math.floor((settings.signout_time - Date.now()) / 1000)
   }
 
-  function startCountdown($countdownElement) {
+  function startCountdown($countdownElement, dialogControl) {
     function updateCountdown(counter, $countdownElement) {
       var message
       if (counter === 60) {
@@ -110,7 +118,10 @@ module.exports = function (options) {
       }
     }
 
-    countdown = window.setInterval(runUpdate, 1000)
+    var countdown = window.setInterval(runUpdate, 1000)
+    cleanupFunctions.push(function () {
+      window.clearInterval(countdown)
+    })
     runUpdate()
   }
 
@@ -126,14 +137,9 @@ module.exports = function (options) {
   }
 
   function cleanup() {
-    if (timeout) {
-      window.clearTimeout(timeout)
-    }
-    if (countdown) {
-      window.clearInterval(countdown)
-    }
-    if (dialogControl) {
-      dialogControl.closeDialog()
+    while (cleanupFunctions.length > 0) {
+      var fn = cleanupFunctions.shift()
+      fn()
     }
   }
 }
