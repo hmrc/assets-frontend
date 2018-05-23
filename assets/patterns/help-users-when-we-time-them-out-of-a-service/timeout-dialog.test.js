@@ -7,8 +7,8 @@
 
 require('jquery')
 require('../../components/index.js')
-var dialog = require('../../patterns/timeout-dialog/dialog.js')
-var redirectHelper = require('../../patterns/timeout-dialog/redirectHelper.js')
+var dialog = require('./dialog.js')
+var redirectHelper = require('./redirectHelper.js')
 
 describe('Timeout Dialog', function () {
   var assume
@@ -27,6 +27,9 @@ describe('Timeout Dialog', function () {
     testScope.latestDialogCloseCallback()
   }
 
+  function setupDialog(partialConfig) {
+    testScope.timeoutDialogControl = window.govuk.timeoutDialog($.extend({}, testScope.minimumValidConfig, partialConfig))
+  }
 
   beforeEach(function () {
     jasmine.getFixtures().fixturesPath = 'base/patterns/help-users-when-we-time-them-out-of-a-service'
@@ -48,9 +51,15 @@ describe('Timeout Dialog', function () {
       }
       return testScope.latestDialogControl
     })
-    jasmine.getFixtures().fixturesPath = 'base/patterns/timeout-dialog'
     loadFixtures('timeout-dialog.html')
     jasmine.clock().install()
+    testScope.minimumValidConfig = {
+      timeout: 900,
+      countdown: 120,
+      keep_alive_url: '/keep-alive',
+      logout_url: '/sign-out',
+      language: 'en'
+    }
   })
 
   afterEach(function () {
@@ -64,7 +73,7 @@ describe('Timeout Dialog', function () {
 
   describe('Delay before displaying', function () {
     it('should start countdown at 2.5 minutes', function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 300, countdown: 30})
+      setupDialog({timeout: 300, countdown: 30})
 
       pretendSecondsHavePassed(269)
 
@@ -76,8 +85,9 @@ describe('Timeout Dialog', function () {
       expect(testScope.latestDialogControl.setAriaLive).not.toHaveBeenCalledWith('polite')
       expect(testScope.latestDialogControl.setAriaLabelledBy).toHaveBeenCalledWith('timeout-message')
     })
-    it('should start countdown at 13 minutes by default', function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog()
+
+    it('should start countdown at 13 minutes', function () {
+      setupDialog({timeout: 900, countdown: 120})
 
       pretendSecondsHavePassed(779)
 
@@ -87,11 +97,12 @@ describe('Timeout Dialog', function () {
 
       expect(dialog.displayDialog).toHaveBeenCalled()
     })
+
   })
 
   describe('the default options', function () {
     beforeEach(function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog()
+      setupDialog()
       pretendSecondsHavePassed(780)
     })
 
@@ -150,7 +161,11 @@ describe('Timeout Dialog', function () {
   it('should AJAX call the configured URL', function () {
     spyOn($, 'get')
 
-    testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120, keep_alive_url: '/customKeepAlive'})
+    setupDialog({
+      timeout: 130,
+      countdown: 120,
+      keep_alive_url: '/customKeepAlive'
+    })
 
     pretendSecondsHavePassed(10)
     pretendDialogWasClosedWithoutButtonPress()
@@ -161,7 +176,7 @@ describe('Timeout Dialog', function () {
 
   describe('the configuration options', function () {
     beforeEach(function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({
+      setupDialog({
         title: 'my custom TITLE',
         message: 'MY custom message',
         keep_alive_button_text: 'KEEP alive',
@@ -199,7 +214,7 @@ describe('Timeout Dialog', function () {
 
   describe('Restarting countdown on close', function () {
     it('should restart with default settings', function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({message: 'time:'})
+      setupDialog({message: 'time:'})
 
       pretendSecondsHavePassed(880)
       pretendDialogWasClosedWithoutButtonPress()
@@ -214,40 +229,128 @@ describe('Timeout Dialog', function () {
   describe('Using the legacy interface', function () {
     beforeEach(function () {
       spyOn(window.govuk, 'timeoutDialog')
+      spyOn(window.console, 'warn')
     })
 
     it('should log a deprecation warning', function () {
-      spyOn(window.console, 'warn')
-
       $.timeoutDialog();
 
       expect(window.console.warn).toHaveBeenCalledWith('$.timeout is now deprecated, please use window.govuk.timeoutDialog')
     })
 
     it('should provide legacy defaults when no config object is provided', function () {
-      spyOn(window.console, 'warn')
       $.timeoutDialog();
 
       expect(window.govuk.timeoutDialog).toHaveBeenCalledWith({
         timeout: 900,
         countdown: 120,
         keep_alive_url: '/keep-alive',
-        logout_url: '/sign-out'
+        logout_url: '/sign-out',
+        language: 'en'
       });
     })
 
     it('should override legacy defaults with specified config', function () {
-      spyOn(window.console, 'warn')
       var config = {
         timeout: 100,
         countdown: 50,
         keep_alive_url: '/hello-world',
-        logout_url: '/goodbye-world'
+        logout_url: '/goodbye-world',
+        language: 'en'
       }
 
       $.timeoutDialog(config);
 
       expect(window.govuk.timeoutDialog).toHaveBeenCalledWith(config);
+    })
+
+    it('should mix defaults with specified config', function () {
+      var config = {
+        timeout: 700,
+        language: 'cy',
+        otherConfigItem: 'something'
+      }
+
+      $.timeoutDialog(config);
+
+      expect(window.govuk.timeoutDialog).toHaveBeenCalledWith({
+        timeout: 700,
+        countdown: 120,
+        keep_alive_url: '/keep-alive',
+        logout_url: '/sign-out',
+        language: 'cy',
+        otherConfigItem: 'something'
+      });
+    })
+  })
+  describe('required configuration', function () {
+    it('should fail when timeout is missing', function () {
+      delete testScope.minimumValidConfig.timeout
+
+      expect(function () {
+        govuk.timeoutDialog(testScope.minimumValidConfig)
+      }).toThrow(new Error('Missing config item(s): [timeout]'))
+    })
+
+    it('should fail when countdown is missing', function () {
+      delete testScope.minimumValidConfig.countdown
+
+      expect(function () {
+        govuk.timeoutDialog(testScope.minimumValidConfig)
+      }).toThrow(new Error('Missing config item(s): [countdown]'))
+    })
+
+    it('should fail when keep_alive_url is missing', function () {
+      delete testScope.minimumValidConfig.keep_alive_url
+
+      expect(function () {
+        govuk.timeoutDialog(testScope.minimumValidConfig)
+      }).toThrow(new Error('Missing config item(s): [keep_alive_url]'))
+    })
+
+    it('should fail when logout_url is missing', function () {
+      delete testScope.minimumValidConfig.logout_url
+
+      expect(function () {
+        govuk.timeoutDialog(testScope.minimumValidConfig)
+      }).toThrow(new Error('Missing config item(s): [logout_url]'))
+    })
+
+    it('should fail when language is missing', function () {
+      delete testScope.minimumValidConfig.language
+
+      expect(function () {
+        govuk.timeoutDialog(testScope.minimumValidConfig)
+      }).toThrow(new Error('Missing config item(s): [language]'))
+    })
+
+    it('should fail when all config is missing', function () {
+      expect(function () {
+        govuk.timeoutDialog({})
+      }).toThrow(new Error('Missing config item(s): [timeout, countdown, keep_alive_url, logout_url, language]'))
+    })
+
+    it('should allow english as a language', function () {
+      testScope.minimumValidConfig.language = 'en'
+      expect(function () {
+        govuk.timeoutDialog(testScope.minimumValidConfig)
+      }).not.toThrow()
+    })
+
+    it('should allow welsh as a language', function () {
+      testScope.minimumValidConfig.language = 'cy'
+      expect(function () {
+        govuk.timeoutDialog(testScope.minimumValidConfig)
+      }).not.toThrow()
+    })
+
+    it('should not allow other languages', function () {
+      $.each(['fr', 'de', 'not-a-language'], function () {
+        var lang = testScope.minimumValidConfig.language = this
+        expect(function () {
+          govuk.timeoutDialog(testScope.minimumValidConfig)
+        }).toThrow(new Error('Invalid language provided [' + lang + ']'))
+      })
     })
   })
 
@@ -255,7 +358,7 @@ describe('Timeout Dialog', function () {
     var MINIMUM_TIME_UNTIL_MODAL_DISPLAYED = 10;
 
     it('should not display the dialog if cleanup has already been called', function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+      setupDialog({timeout: 130, countdown: 120})
 
       testScope.timeoutDialogControl.cleanup()
       pretendSecondsHavePassed(MINIMUM_TIME_UNTIL_MODAL_DISPLAYED)
@@ -263,7 +366,7 @@ describe('Timeout Dialog', function () {
     })
 
     it('should remove dialog when cleanup is called', function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+      setupDialog({timeout: 130, countdown: 120})
       pretendSecondsHavePassed(MINIMUM_TIME_UNTIL_MODAL_DISPLAYED)
       assume(dialog.displayDialog).toHaveBeenCalled()
 
@@ -275,7 +378,7 @@ describe('Timeout Dialog', function () {
 
   describe('Countdown timer', function () {
     it('should countdown minutes and then seconds', function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({
+      setupDialog({
         timeout: 130,
         countdown: 120,
         message: 'time:',
@@ -317,7 +420,7 @@ describe('Timeout Dialog', function () {
     })
 
     it('should countdown lots of minutes when countdown is long', function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({
+      setupDialog({
         timeout: 1810,
         countdown: 1800,
         message: 'time:'
@@ -337,7 +440,7 @@ describe('Timeout Dialog', function () {
     })
 
     it('should countdown only seconds when the countdown is short', function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({
+      setupDialog({
         timeout: 130,
         countdown: 50,
         message: 'time:',
@@ -374,7 +477,7 @@ describe('Timeout Dialog', function () {
   })
   describe('techy features', function () {
     it('should not rely on setInterval for countdown', function () {
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({
+      setupDialog({
         timeout: 80,
         countdown: 50,
         message: 'time:'
@@ -403,7 +506,7 @@ describe('Timeout Dialog', function () {
         fn()
       })
 
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+      setupDialog({timeout: 130, countdown: 120})
       assume(window.setInterval).toHaveBeenCalled()
       assume(window.clearInterval).not.toHaveBeenCalled()
 
@@ -420,7 +523,7 @@ describe('Timeout Dialog', function () {
         fn()
       })
 
-      testScope.timeoutDialogControl = window.govuk.timeoutDialog({timeout: 130, countdown: 120})
+      setupDialog({timeout: 130, countdown: 120})
       assume(window.setInterval).toHaveBeenCalled()
       assume(window.clearInterval).not.toHaveBeenCalled()
 

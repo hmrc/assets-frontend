@@ -9,22 +9,41 @@ Date.now = Date.now || function () {
 }
 
 module.exports = function (options) {
-  var settings = {
-    timeout: 900,
-    countdown: 120,
-    title: 'You’re about to be signed out',
-    message: 'For security reasons, you will be signed out of this service in',
-    keep_alive_url: '/keep-alive',
-    logout_url: '/sign-out',
-    keep_alive_button_text: 'Stay signed in',
-    sign_out_button_text: 'Sign out'
-  }
+  validateInput(options)
 
-  $.extend(settings, options)
-
+  var settings = mergeOptionsWithDefaults(options)
   var dialogControl
   var timeout
   var countdown
+
+  function validateInput(config) {
+    var requiredConfig = ['timeout', 'countdown', 'keep_alive_url', 'logout_url', 'language']
+    var missingRequiredConfig = []
+    var validLanguages = ['en', 'cy']
+
+    $.each(requiredConfig, function () {
+      if (!config.hasOwnProperty(this)) {
+        missingRequiredConfig.push(this)
+      }
+    })
+
+    if (missingRequiredConfig.length > 0) {
+      throw new Error('Missing config item(s): [' + missingRequiredConfig.join(', ') + ']')
+    }
+
+    if (validLanguages.indexOf(config.language) === -1) {
+      throw new Error('Invalid language provided [' + config.language + ']')
+    }
+  }
+
+  function mergeOptionsWithDefaults(options) {
+    return $.extend({
+      title: 'You’re about to be signed out',
+      message: 'For security reasons, you will be signed out of this service in',
+      keep_alive_button_text: 'Stay signed in',
+      sign_out_button_text: 'Sign out'
+    }, options)
+  }
 
   function setupDialogTimer() {
     settings.signout_time = Date.now() + settings.timeout * 1000
