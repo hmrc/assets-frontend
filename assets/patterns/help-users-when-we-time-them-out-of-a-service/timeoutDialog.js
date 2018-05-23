@@ -9,9 +9,14 @@ Date.now = Date.now || function () {
 }
 
 module.exports = function (options) {
-  validateInput(options)
 
+  validateInput(options)
   var settings = mergeOptionsWithDefaults(options)
+
+  setupDialogTimer()
+
+  return {cleanup: cleanup}
+
   var dialogControl
   var timeout
   var countdown
@@ -131,8 +136,4 @@ module.exports = function (options) {
       dialogControl.closeDialog()
     }
   }
-
-  setupDialogTimer()
-
-  return {cleanup: cleanup}
 }
