@@ -274,13 +274,18 @@ describe('Dialog', function () {
         expect($(document.activeElement).attr('id') || document.activeElement.outerHTML).toEqual(id)
       }
 
+      function appendToBody($elem) {
+        testScope.elementsCreatedForThisTest.push($elem.appendTo($('body')))
+        return $elem
+      }
+
       beforeEach(function () {
-        testScope.elementsCreatedForThisTest.push($('<a href=#>').text('abc').attr('id', 'the-element-with-the-focus').appendTo($('body')).focus())
-        testScope.elementsCreatedForThisTest.push($('<input>').attr('id', 'different-elem').appendTo($('body')))
-        testScope.elementsCreatedForThisTest.push($('<button>').text('abc').appendTo($('body')))
-        testScope.elementsCreatedForThisTest.push($('<textarea>').text('abc').appendTo($('body')))
-        testScope.elementsCreatedForThisTest.push($('<div tabindex="-1">').text('abc').appendTo($('body')))
-        testScope.elementsCreatedForThisTest.push($('<div tabindex="10">').text('def').appendTo($('body')))
+        appendToBody($('<a href=#>').text('abc').attr('id', 'the-element-with-the-focus')).focus()
+        appendToBody($('<input>').attr('id', 'different-elem'))
+        appendToBody($('<button>').text('abc'))
+        appendToBody($('<textarea>').text('abc'))
+        appendToBody($('<div tabindex="-1">').text('abc'))
+        appendToBody($('<div tabindex="10">').text('def'))
       })
 
       it('should take focus when opening', function () {
@@ -309,7 +314,7 @@ describe('Dialog', function () {
       it('should not allow focus to move outside the dialog', function () {
         openDefaultDialog()
 
-        testScope.elementsCreatedForThisTest.push($('<a href=#>').text('this was added after dialog open').attr('id', 'added-after-open').appendTo($('body')))
+        appendToBody($('<a href=#>').text('this was added after dialog open').attr('id', 'added-after-open'))
 
         testScope.elementsCreatedForThisTest.forEach(function ($elem) {
           $elem.focus()
