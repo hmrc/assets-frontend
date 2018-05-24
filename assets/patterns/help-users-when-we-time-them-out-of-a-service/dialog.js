@@ -73,9 +73,10 @@ module.exports = {
     }
 
     function close() {
-      $.each(resetElementsFunctionList, function () {
-        this()
-      })
+      while(resetElementsFunctionList.length > 0) {
+        var fn = resetElementsFunctionList.shift()
+        fn()
+      }
     }
 
     function closeAndInform() {
