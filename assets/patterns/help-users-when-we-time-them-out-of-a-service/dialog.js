@@ -102,3 +102,13 @@ module.exports = {
     }
   }
 }
+
+//       // AL: prevent scrolling on touch, but allow pinch zoom
+//       self.handleTouch = function (e) {
+//         var touches = e.originalEvent.touches || e.originalEvent.changedTouches
+//         if ($('#timeout-dialog').length) {
+//           if (touches.length === 1) {
+//             e.preventDefault()
+//           }
+//         }
+//       }
