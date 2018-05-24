@@ -28,7 +28,7 @@ describe('Timeout Dialog', function () {
   }
 
   function setupDialog(partialConfig) {
-    testScope.timeoutDialogControl = window.govuk.timeoutDialog($.extend({}, testScope.minimumValidConfig, partialConfig))
+    testScope.timeoutDialogControl = window.GOVUK.timeoutDialog($.extend({}, testScope.minimumValidConfig, partialConfig))
   }
 
   beforeEach(function () {
@@ -228,20 +228,20 @@ describe('Timeout Dialog', function () {
 
   describe('Using the legacy interface', function () {
     beforeEach(function () {
-      spyOn(window.govuk, 'timeoutDialog')
+      spyOn(window.GOVUK, 'timeoutDialog')
       spyOn(window.console, 'warn')
     })
 
     it('should log a deprecation warning', function () {
       $.timeoutDialog();
 
-      expect(window.console.warn).toHaveBeenCalledWith('$.timeout is now deprecated, please use window.govuk.timeoutDialog')
+      expect(window.console.warn).toHaveBeenCalledWith('$.timeout is now deprecated, please use window.GOVUK.timeoutDialog')
     })
 
     it('should provide legacy defaults when no config object is provided', function () {
       $.timeoutDialog();
 
-      expect(window.govuk.timeoutDialog).toHaveBeenCalledWith({
+      expect(window.GOVUK.timeoutDialog).toHaveBeenCalledWith({
         timeout: 900,
         countdown: 120,
         keepAliveUrl: '/keep-alive',
@@ -262,7 +262,7 @@ describe('Timeout Dialog', function () {
 
       $.timeoutDialog(config);
 
-      expect(window.govuk.timeoutDialog).toHaveBeenCalledWith({
+      expect(window.GOVUK.timeoutDialog).toHaveBeenCalledWith({
           timeout: 200,
           countdown: 120,
           keepAliveUrl: '/hello-world',
@@ -283,7 +283,7 @@ describe('Timeout Dialog', function () {
 
       $.timeoutDialog(config);
 
-      expect(window.govuk.timeoutDialog).toHaveBeenCalledWith({
+      expect(window.GOVUK.timeoutDialog).toHaveBeenCalledWith({
         timeout: 700,
         countdown: 120,
         keepAliveUrl: '/keep-alive',
@@ -298,7 +298,7 @@ describe('Timeout Dialog', function () {
       delete testScope.minimumValidConfig.timeout
 
       expect(function () {
-        govuk.timeoutDialog(testScope.minimumValidConfig)
+        GOVUK.timeoutDialog(testScope.minimumValidConfig)
       }).toThrow(new Error('Missing config item(s): [timeout]'))
     })
 
@@ -306,7 +306,7 @@ describe('Timeout Dialog', function () {
       delete testScope.minimumValidConfig.countdown
 
       expect(function () {
-        govuk.timeoutDialog(testScope.minimumValidConfig)
+        GOVUK.timeoutDialog(testScope.minimumValidConfig)
       }).toThrow(new Error('Missing config item(s): [countdown]'))
     })
 
@@ -314,7 +314,7 @@ describe('Timeout Dialog', function () {
       delete testScope.minimumValidConfig.keepAliveUrl
 
       expect(function () {
-        govuk.timeoutDialog(testScope.minimumValidConfig)
+        GOVUK.timeoutDialog(testScope.minimumValidConfig)
       }).toThrow(new Error('Missing config item(s): [keepAliveUrl]'))
     })
 
@@ -322,7 +322,7 @@ describe('Timeout Dialog', function () {
       delete testScope.minimumValidConfig.signOutUrl
 
       expect(function () {
-        govuk.timeoutDialog(testScope.minimumValidConfig)
+        GOVUK.timeoutDialog(testScope.minimumValidConfig)
       }).toThrow(new Error('Missing config item(s): [signOutUrl]'))
     })
 
@@ -330,27 +330,27 @@ describe('Timeout Dialog', function () {
       delete testScope.minimumValidConfig.language
 
       expect(function () {
-        govuk.timeoutDialog(testScope.minimumValidConfig)
+        GOVUK.timeoutDialog(testScope.minimumValidConfig)
       }).toThrow(new Error('Missing config item(s): [language]'))
     })
 
     it('should fail when all config is missing', function () {
       expect(function () {
-        govuk.timeoutDialog({})
+        GOVUK.timeoutDialog({})
       }).toThrow(new Error('Missing config item(s): [timeout, countdown, keepAliveUrl, signOutUrl, language]'))
     })
 
     it('should allow english as a language', function () {
       testScope.minimumValidConfig.language = 'en'
       expect(function () {
-        govuk.timeoutDialog(testScope.minimumValidConfig)
+        GOVUK.timeoutDialog(testScope.minimumValidConfig)
       }).not.toThrow()
     })
 
     it('should allow welsh as a language', function () {
       testScope.minimumValidConfig.language = 'cy'
       expect(function () {
-        govuk.timeoutDialog(testScope.minimumValidConfig)
+        GOVUK.timeoutDialog(testScope.minimumValidConfig)
       }).not.toThrow()
     })
 
@@ -358,7 +358,7 @@ describe('Timeout Dialog', function () {
       $.each(['fr', 'de', 'not-a-language'], function () {
         var lang = testScope.minimumValidConfig.language = this
         expect(function () {
-          govuk.timeoutDialog(testScope.minimumValidConfig)
+          GOVUK.timeoutDialog(testScope.minimumValidConfig)
         }).toThrow(new Error('Invalid language provided [' + lang + ']'))
       })
     })

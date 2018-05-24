@@ -7,10 +7,10 @@ var timeoutDialog = require('../patterns/help-users-when-we-time-them-out-of-a-s
 ;(function ($, window, document) {
   accountMenu()
   charCounter()
-  window.govuk = window.govuk || {}
-  window.govuk.timeoutDialog = timeoutDialog
+  window.GOVUK = window.GOVUK || {}
+  window.GOVUK.timeoutDialog = timeoutDialog
   $.timeoutDialog = function (config) {
-    console.warn('$.timeout is now deprecated, please use window.govuk.timeoutDialog')
+    console.warn('$.timeout is now deprecated, please use window.GOVUK.timeoutDialog')
     var updatedConfig = $.extend({}, config)
 
     if (updatedConfig.hasOwnProperty('keep_alive_url')) {
@@ -30,7 +30,7 @@ var timeoutDialog = require('../patterns/help-users-when-we-time-them-out-of-a-s
       delete updatedConfig.sign_out_button_text
     }
 
-    window.govuk.timeoutDialog($.extend({
+    window.GOVUK.timeoutDialog($.extend({
       timeout: 900,
       countdown: 120,
       keepAliveUrl: '/keep-alive',
