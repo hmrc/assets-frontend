@@ -10,11 +10,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added the `mailto:` scheme to the email link on the design-system *About* page. [951](https://github.com/hmrc/assets-frontend/pull/951)
 - Fixed the `sign-out` link on the *Help users when we sign them out...* page examples [953](https://github.com/hmrc/assets-frontend/pull/953)
 - Fixed a couple of typos on the _opens in a new window or tab_ page [954](https://github.com/hmrc/assets-frontend/pull/954)
+- Fixed table layout issue on messages pattern full width [959](https://github.com/hmrc/assets-frontend/pull/959)
 
 ### Changed
 - Moved the header pattern to patterns and updated documentation [944](https://github.com/hmrc/assets-frontend/pull/944)
 - `node-git-versioning` plugin has been published to npm so we can depend on that version [#946](https://github.com/hmrc/assets-frontend/pull/946)
 - The secondary timeout dialog button should be a link [#952](https://github.com/hmrc/assets-frontend/pull/952)
+- Examples that link to another service when a journey is incomplete [#956](https://github.com/hmrc/assets-frontend/pull/956)
+- Documentation and examples for messages pattern [#955](https://github.com/hmrc/assets-frontend/pull/955)
 - Timeout documentation and examples [#949](https://github.com/hmrc/assets-frontend/pull/949)
 - Page not found, service unavailable and there is a problem with the service examples [#947](https://github.com/hmrc/assets-frontend/pull/947)
 - Markup example and tests for Account Menu and Account Header [#961](https://github.com/hmrc/assets-frontend/pull/961)
@@ -27,6 +30,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - The text in form inputs wasn't visible in high contrast mode [#939](https://github.com/hmrc/assets-frontend/pull/939)
 - Run tests in desktop viewport instead of phantom's default 400 [#927](https://github.com/hmrc/assets-frontend/pull/927)
 - Fixed broken link on "errors and validation" styles page [#937](https://github.com/hmrc/assets-frontend/pull/937)
+
+### Added
+- Documentation for page title [#928](https://github.com/hmrc/assets-frontend/pull/928)
+- Documentation for open links in a new window or tab component [#926](https://github.com/hmrc/assets-frontend/pull/926)
+- Documentation for messages pattern [#932](https://github.com/hmrc/assets-frontend/pull/932)
 
 ### Changed
 - Documentation and examples for page not found, service unavailable and there is a problem with the service [#936](https://github.com/hmrc/assets-frontend/pull/936)
@@ -287,13 +295,11 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Changes to nginx error pages not being build and deployed [#734]
 
 [Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...master
-[4.2.4]: https://github.com/hmrc/assets-frontend/compare/release/4.2.3...release/4.2.4
 [4.2.3]: https://github.com/hmrc/assets-frontend/compare/release/4.2.2...release/4.2.3
 [4.2.2]: https://github.com/hmrc/assets-frontend/compare/release/4.2.1...release/4.2.2
 [4.2.1]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...release/4.2.1
 [4.2.0]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...release/4.2.0
 [4.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...release/4.1.0
-[3.2.4]: https://github.com/hmrc/assets-frontend/compare/release/3.2.4...release/3.2.4
 [3.2.3]: https://github.com/hmrc/assets-frontend/compare/release/3.2.2...release/3.2.3
 [3.2.2]: https://github.com/hmrc/assets-frontend/compare/release/3.2.1...release/3.2.2
 [3.2.1]: https://github.com/hmrc/assets-frontend/compare/release/3.2.0...release/3.2.1

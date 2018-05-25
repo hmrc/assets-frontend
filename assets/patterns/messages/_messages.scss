@@ -1,0 +1,29 @@
+.message-inbox__list {
+  display: table;
+  width: 100%;
+  border-top: 1px solid #a1acb2;
+
+  .message-inbox__list-item {
+    display: table-row;
+    font-weight: bold;
+    a:link{
+      text-decoration: none;
+    }
+    &--read {
+      background-color: #f8f8f8;
+      font-weight: normal;
+    }
+  }
+
+  .message-inbox__block {
+    display: table-cell;
+    padding: 20px 10px;
+    border-bottom: 1px solid #a1acb2;
+    &:last-child {
+      white-space: nowrap;
+      text-align: right;
+    }
+  }
+}
+
+
