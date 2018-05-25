@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added the `mailto:` scheme to the email link on the design-system *About* page. [951](https://github.com/hmrc/assets-frontend/pull/951)
 - Fixed the `sign-out` link on the *Help users when we sign them out...* page examples [953](https://github.com/hmrc/assets-frontend/pull/953)
 - Fixed a couple of typos on the _opens in a new window or tab_ page [954](https://github.com/hmrc/assets-frontend/pull/954)
+- Fixed table layout issue on messages pattern full width [959](https://github.com/hmrc/assets-frontend/pull/959)
+
 ### Changed
 - Moved the header pattern to patterns and updated documentation [944](https://github.com/hmrc/assets-frontend/pull/944)
 - `node-git-versioning` plugin has been published to npm so we can depend on that version [#946](https://github.com/hmrc/assets-frontend/pull/946)
