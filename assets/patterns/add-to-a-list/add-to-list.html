@@ -1,0 +1,54 @@
+<header class="page-header">
+  <h1 class="heading-xlarge">You have added 3 directors</h1>
+</header>
+<div class="form-group">
+  <dl class="govuk-check-your-answers form-group cya-questions-short">    
+    <div>
+      <dt class="cya-question cya-question--light">Michael Cain</dt>
+      <dd class="cya-delete">
+        <a href="/"><span aria-hidden="true">Delete</span><span class="visually-hidden">Delete Michael Cain</span></a>
+      </dd>
+      <dd class="cya-change">
+        <a href="/"><span aria-hidden="true">Change</span><span class="visually-hidden">Change Michael Cain’s details</span></a>
+      </dd>
+    </div>
+    <div>
+      <dt class="cya-question cya-question--light">Jeremy Winter</dt>
+      <dd class="cya-delete">
+        <a href="/"><span aria-hidden="true">Delete</span><span class="visually-hidden">Delete Jeremy Winter</span></a>
+      </dd>
+      <dd class="cya-change">
+        <a href="/"><span aria-hidden="true">Change</span><span class="visually-hidden">Change Jeremy Winter’s details</span></a>
+      </dd>
+    </div>
+    <div>
+      <dt class="cya-question cya-question--light">Elizabeth Keen</dt>
+      <dd class="cya-delete">
+        <a href="/"><span aria-hidden="true">Delete</span><span class="visually-hidden">Delete Elizabeth Keen</span></a>
+      </dd>
+      <dd class="cya-change">
+        <a href="/"><span aria-hidden="true">Change</span><span class="visually-hidden">Change Elizabeth Keen’s details</span></a>
+      </dd>
+    </div>
+  </dl>
+</div>
+<form>
+  <div class="form-group">
+    <fieldset class="inline" id="director">
+      <legend>
+        <span class="bold-small">Do you need to add another director?</span>
+        <span class="form-hint">You must tell us about all your directors.</span>
+      </legend>
+      <div class="multiple-choice">
+        <input aria-describedby="psa-director-yes-hint" id="psa-director-yes" type="radio" name="redirectUrl" value="/">
+        <label class="block-label bold" for="psa-director-yes">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input aria-describedby="psa-director-no-hint" id="psa-director-no" type="radio" name="redirectUrl" value="/">
+        <label class="block-label bold" for="psa-director-no">No</label>
+      </div>
+      <input type="hidden" name="errorData" value="">
+    </fieldset>
+  </div>
+  <button type="submit" class="button">Continue</button>
+</form>

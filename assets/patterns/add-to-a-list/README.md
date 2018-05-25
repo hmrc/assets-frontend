@@ -1,30 +1,34 @@
 # Add to a list
 
-This pattern enables users to add information with multiple parts to a list, for example, addresses or a person’s details. It lets users know where they are in the process, and what they have already added to the list.
+This pattern lets users add information with multiple parts to a list.
+
+{{ example('add-to-list-directors-name.html') }}
 
 ## When to use this pattern
 
-Use this pattern when users need to add multiple sets of the same kind of information to a list.
+Use this pattern when users need to add information with multiple parts to a list. For example, addresses or a person’s details.
 
-{{ example('add-to-list-directors-name.html') }}
-{{ markup('add-to-list-directors-name.html') }}
+### ​​​​When not to use this pattern
 
-{{ example('add-to-list-next-directors-name.html') }}
-{{ markup('add-to-list-next-directors-name.html') }}
-
-## ​​​​When not to use this pattern
-Do not use this pattern when lists contains multiple sets of different kinds of information. 
+Do not use this pattern when lists contain different kinds of information.
 
 ## How it works
 
-This pattern allows users to:
+Allow users to:
 
-* add information with multiple parts to a list, without losing track of what has already been added
-​​* view a summary of what has already been added 
-* review new information before it is added to the list
-* view the complete list
+​​- view a summary of what has already been added
+- answer questions about what they are adding to the list
+- check their answers
+- view the complete list
 
+{{ example('add-to-list.html') }}
+{{ markup('add-to-list.html') }}
+
+{{ example('add-to-list-name.html') }}
+{{ markup('add-to-list-name.html') }}
+
+![Animated example of add to a list pattern that includes asking for name, date of birth, National Insurance number, Unique Taxpayer Reference, and letting you check your answers.](./add-to-a-list.gif)
 
 ## Research on this component
 
-We need more research – [add your research on GitHub](https://github.com/hmrc/design-patterns/issues/31).
+{{ research(31) }}
