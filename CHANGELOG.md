@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - The secondary timeout dialog button should be a link [#952](https://github.com/hmrc/assets-frontend/pull/952)
 
 ### Updated
+- Account header documentation to fix a spelling mistake and remove broken links [#958](https://github.com/hmrc/assets-frontend/pull/958)
 - Examples that link to another service when a journey is incomplete [#956](https://github.com/hmrc/assets-frontend/pull/956)
 - Documentation and examples for messages pattern [#955](https://github.com/hmrc/assets-frontend/pull/955)
 - Timeout documentation and examples [#949](https://github.com/hmrc/assets-frontend/pull/949)
