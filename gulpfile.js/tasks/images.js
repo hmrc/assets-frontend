@@ -11,6 +11,8 @@ const images = (v) => {
     .pipe(gulp.dest(dest))
 }
 
+gulp.task('images', ['images:v3', 'images:v4'])
+
 gulp.task('images:v3', () => {
   return images('v3')
 })
