@@ -125,119 +125,148 @@
             </div>
             -->
 
-            <h1 id="messages">Messages</h1>
-<p>This pattern displays messages sent to a user from an HMRC service.</p>
+            <h1 id="ask-users-for-their-consent">Ask users for their consent</h1>
+<p>This pattern asks users for their consent when we collect and store personal data. The pattern meets our responsibilities under the General Data Protection Regulation 2018 (GDPR) and Data Protection Act 2018 (DPA).</p>
+<div class="example"><!-- <h1 class="heading-xlarge">Go paperless with HMRC</h1>
+
+<p>You can choose to get electronic communications instead of letters from HMRC.</p>
+
+<p>These electronic communications include statutory notices, decisions, estimates and reminders relating to your tax affairs, such as notices to file a tax return, make a payment, penalties due, or information about other matters.</p>
+
+<p>When you have a new electronic communication we will send you an email notification requiring you to log in to your HMRC online account.</p>
+
+ -->
+<div class="form-group">
+  <fieldset class="inline">
+
+    <legend>
+      <h2 class="heading-medium">
+        Do you want to get electronic communications instead of letters from HMRC?
+      </h2>
+    </legend>
+
+    <div class="multiple-choice">
+      <input id="yes" type="radio" name="paperless" value="Yes">
+      <label for="yes">Yes</label>
+    </div>
+    <div class="multiple-choice" data-target="email-address">
+      <input id="no" type="radio" name="paperless" value="No">
+      <label for="no">No</label>
+    </div>   
+
+<p>  </fieldset>  </p>
+<p></div></p>
+<div class="form-field">
+    <button id="continue" class="button" name="continueButton" type="submit">Continue</button>
+</div></div>
+
+
+
 <h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Use this pattern when a service needs to send messages to users. The messages are not deleted and the user can read them at any time.</p>
-<h3 id="when-not-to-use-this-pattern">When not to use this pattern</h3>
-<p>Do not use this as the only way of sharing important or time-sensitive information with a user. Only display messages when users sign in to a service.</p>
+<p>Use this pattern to ask a user for their consent when you collect and store personal data.</p>
+<p>Personal data is anything that on its own or together with other data can identify a person.</p>
 <h2 id="how-it-works">How it works</h2>
-<p>This patterns has 2 views:</p>
+<p>Consent cannot be inferred by someone using a service or doing nothing. It must be:</p>
 <ul>
-<li>message list</li>
-<li>message details</li>
+<li>freely given</li>
+<li>a positive action to opt-in</li>
+<li>clear, concise and specific</li>
+<li>separate from other terms and conditions</li>
+<li>as easy to withdraw as to give</li>
 </ul>
-<h3 id="message-list">Message list</h3>
-<p>Display a summary of messages the user has received. The list has:</p>
-<ul>
-<li>subject of the message</li>
-<li>date the message was sent</li>
-<li>a link to the full message</li>
-<li>a read and unread state</li>
-</ul>
-<h4 id="unread-messages">Unread messages</h4>
-<div class="example"><div class="message-inbox">
-  <h2 class="heading-medium">Messages</h2>
-  <div class="message-inbox__list" role="list">
-    <div class="message-inbox__list-item" role="listitem"><span
-      class="visually-hidden">unread</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
-      <span class="message-inbox__block no-wrap">29 March 2018</span>
+<p><a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/consent/">Read more about consent on the Information Commissioner’s Office website</a>.</p>
+<p>Do not select radio buttons and checkboxes for users. This means the positive action would opt-out.</p>
+<p>Consent covers all activities done for the same reason. If there is more than one reason the data is used, get separate consent for each reason.</p>
+<h3 id="ask-a-yes-no-question">Ask a yes-no question</h3>
+<div class="example"><!-- <h1 class="heading-xlarge">Go paperless with HMRC</h1>
+
+<p>You can choose to get electronic communications instead of letters from HMRC.</p>
+
+<p>These electronic communications include statutory notices, decisions, estimates and reminders relating to your tax affairs, such as notices to file a tax return, make a payment, penalties due, or information about other matters.</p>
+
+<p>When you have a new electronic communication we will send you an email notification requiring you to log in to your HMRC online account.</p>
+
+ -->
+<div class="form-group">
+  <fieldset class="inline">
+
+    <legend>
+      <h2 class="heading-medium">
+        Do you want to get electronic communications instead of letters from HMRC?
+      </h2>
+    </legend>
+
+    <div class="multiple-choice">
+      <input id="yes" type="radio" name="paperless" value="Yes">
+      <label for="yes">Yes</label>
     </div>
-    <div class="message-inbox__list-item" role="listitem"><span
-      class="visually-hidden">unread</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
-      <span class="message-inbox__block no-wrap">24 February 2018</span>
-    </div>
-    <div class="message-inbox__list-item" role="listitem"><span
-      class="visually-hidden">unread</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
-      <span class="message-inbox__block no-wrap">4 January 2018</span>
-    </div>
+    <div class="multiple-choice" data-target="email-address">
+      <input id="no" type="radio" name="paperless" value="No">
+      <label for="no">No</label>
+    </div>   
+
+<p>  </fieldset>  </p>
+<p></div></p>
+<div class="form-field">
+    <button id="continue" class="button" name="continueButton" type="submit">Continue</button>
+</div></div>
+
+
+
+<h3 id="use-a-single-checkbox">Use a single checkbox</h3>
+<div class="example"><!-- <h1 class="heading-xlarge">Enter your access code</h1>
+
+<p>We just sent a 6 digit access code by text to: <span style="font-weight:700">&ast;&ast;&ast;&ast;&ast;&ast;&ast;&ast;999</span></p>
+
+<p>It may take a few minutes to arrive.</p>
+
+ --><div class="form-group">
+  <label class="form-label-bold" for="access-code">Access code</label>
+    <input class="form-control form-control-1-4" id="access-code" type="tel" name="access-code">
+</div>
+
+<div class="form-group">
+  <div class="multiple-choice">
+    <input id="access-code-7-days" name="access-code" type="checkbox" value="Keep for 7 days">
+      <label for="access-code-7-days">Remember this access code for 7 days</label>
   </div>
 </div>
+
+<div class="form-field form-group">
+  <button id="continue" class="button" name="continueButton" type="submit">Continue</button>
 </div>
+<!-- 
+<a id="cancel" href="">I cannot get my access code</a> --></div>
 
 
 
-<pre><code>&lt;div class=&quot;message-inbox&quot;&gt;
-  &lt;h2 class=&quot;heading-medium&quot;&gt;Messages&lt;/h2&gt;
-  &lt;div class=&quot;message-inbox__list&quot; role=&quot;list&quot;&gt;
-    &lt;div class=&quot;message-inbox__list-item&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;unread&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
-      &lt;span class=&quot;message-inbox__block no-wrap&quot;&gt;29 March 2018&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;message-inbox__list-item&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;unread&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
-      &lt;span class=&quot;message-inbox__block no-wrap&quot;&gt;24 February 2018&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;message-inbox__list-item&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;unread&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
-      &lt;span class=&quot;message-inbox__block no-wrap&quot;&gt;4 January 2018&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+<h3 id="use-more-than-one-checkbox">Use more than one checkbox</h3>
+<p>For when there is more than one type of consent or consent must be separate from other terms and conditions.</p>
+<div class="example"><div class="form-group">
 
-</code></pre><h4 id="read-messages">Read messages</h4>
-<div class="example"><div class="message-inbox">
-  <h2 class="heading-medium">Messages</h2>
-  <div class="message-inbox__list" role="list">
-    <div class="message-inbox__list-item message-inbox__list-item--read" role="listitem"><span
-      class="visually-hidden">read</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
-      <span class="message-inbox__block">29 March 2018</span>
+    <div class="multiple-choice">
+      <input id="terms" type="checkbox" name="terms" value="Terms">
+      <label for="terms">I agree to the <a href="" target="_blank">terms and conditions (opens in a new window or tab)</a></label>
     </div>
-    <div class="message-inbox__list-item message-inbox__list-item--read" role="listitem"><span
-      class="visually-hidden">read</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
-      <span class="message-inbox__block">24 February 2018</span>
+    <div class="multiple-choice">
+      <input id="email" type="checkbox" name="email" value="Email">
+      <label for="email">I want to get electronic communications instead of letters from HMRC</label>
     </div>
-    <div class="message-inbox__list-item message-inbox__list-item--read" role="listitem"><span
-      class="visually-hidden">read</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
-      <span class="message-inbox__block">4 January 2018</span>
-    </div>
+    <div class="multiple-choice">
+      <input id="access-code-7-days" name="access-code" type="checkbox" value="Keep for 7 days">
+      <label for="access-code-7-days">Remember this access code for 7 days</label>
   </div>
 </div>
+
+<div class="form-field">
+  <button id="continue" class="button" name="continueButton" type="submit">Continue</button>
+</div>
 </div>
 
 
 
-<pre><code>&lt;div class=&quot;message-inbox&quot;&gt;
-  &lt;h2 class=&quot;heading-medium&quot;&gt;Messages&lt;/h2&gt;
-  &lt;div class=&quot;message-inbox__list&quot; role=&quot;list&quot;&gt;
-    &lt;div class=&quot;message-inbox__list-item message-inbox__list-item--read&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;read&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
-      &lt;span class=&quot;message-inbox__block&quot;&gt;29 March 2018&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;message-inbox__list-item message-inbox__list-item--read&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;read&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
-      &lt;span class=&quot;message-inbox__block&quot;&gt;24 February 2018&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;message-inbox__list-item message-inbox__list-item--read&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;read&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
-      &lt;span class=&quot;message-inbox__block&quot;&gt;4 January 2018&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-</code></pre><h3 id="message-details">Message details</h3>
-<p>Display a complete message. Include:</p>
-<ul>
-<li>subject of the message</li>
-<li>date the message was sent</li>
-<li>message content</li>
-<li>back link that takes you to the message list</li>
-</ul>
 <h2 id="research-on-this-pattern">Research on this pattern</h2>
-  <div class="">
-    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/44">add your research on GitHub</a>.</p>
-  </div>
-
+<p>We need more research.</p>
 
 
             <!--
