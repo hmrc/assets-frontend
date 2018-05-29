@@ -1,5 +1,5 @@
 module.exports = {
-  displayDialog: function ($elementToDisplay, closeCallback) {
+  displayDialog: function ($elementToDisplay) {
     var $dialog = $('<div>')
       .attr({
         'id': 'timeout-dialog',
@@ -11,9 +11,6 @@ module.exports = {
     var $overlay = $('<div>')
       .attr('id', 'timeout-overlay')
       .addClass('timeout-overlay')
-    var noop = function () {
-    }
-    var safeCallback = closeCallback || noop
     var keydownListener = function (e) {
       if (e.keyCode === 27) {
         closeAndInform()
@@ -21,6 +18,7 @@ module.exports = {
     }
     var $elementsToAriaHide = $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer');
     var resetElementsFunctionList = []
+    var closeCallbacks = []
 
     if (!$('html').hasClass('noScroll')) {
       $('html').addClass('noScroll')
@@ -80,7 +78,10 @@ module.exports = {
     }
 
     function closeAndInform() {
-      safeCallback()
+      $.each(closeCallbacks, function () {
+        var fn = this
+        fn()
+      })
       close()
     }
 
@@ -99,7 +100,10 @@ module.exports = {
         close()
       },
       setAriaLive: createSetterFunctionForAttributeOfDialog('aria-live'),
-      setAriaLabelledBy: createSetterFunctionForAttributeOfDialog('aria-labelledby')
+      setAriaLabelledBy: createSetterFunctionForAttributeOfDialog('aria-labelledby'),
+      addCloseHandler: function (closeHandler) {
+        closeCallbacks.push(closeHandler)
+      }
     }
   }
 }

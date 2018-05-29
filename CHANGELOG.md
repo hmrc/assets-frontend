@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moved the header pattern to patterns and updated documentation [944](https://github.com/hmrc/assets-frontend/pull/944)
 - `node-git-versioning` plugin has been published to npm so we can depend on that version [#946](https://github.com/hmrc/assets-frontend/pull/946)
 - The secondary timeout dialog button should be a link [#952](https://github.com/hmrc/assets-frontend/pull/952)
-g- The timeout dialog has been heavily refactored with full test coverage, a new preferred interface has been added as govuk.timeoutDialog() while still supporting $.timeoutDialog() with its current form
+- The timeout dialog has been heavily refactored with full test coverage, a new preferred interface has been added as govuk.timeoutDialog() while still supporting $.timeoutDialog() with its current form
 
 ### Updated
 - Examples that link to another service when a journey is incomplete [#956](https://github.com/hmrc/assets-frontend/pull/956)

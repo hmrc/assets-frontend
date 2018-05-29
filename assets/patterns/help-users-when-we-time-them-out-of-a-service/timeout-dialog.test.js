@@ -41,13 +41,15 @@ describe('Timeout Dialog', function () {
       return testScope.currentDateTime
     })
     spyOn(redirectHelper, 'redirectToUrl')
-    spyOn(dialog, 'displayDialog').and.callFake(function ($elementToDisplay, closeCallback) {
+    spyOn(dialog, 'displayDialog').and.callFake(function ($elementToDisplay) {
       testScope.latestDialog$element = $elementToDisplay
-      testScope.latestDialogCloseCallback = closeCallback
       testScope.latestDialogControl = {
         closeDialog: jasmine.createSpy('closeDialog'),
         setAriaLive: jasmine.createSpy('setAriaLive'),
-        setAriaLabelledBy: jasmine.createSpy('setAriaLabelledBy')
+        setAriaLabelledBy: jasmine.createSpy('setAriaLabelledBy'),
+        addCloseHandler: jasmine.createSpy('addCloseHandler').and.callFake(function (fn) {
+          testScope.latestDialogCloseCallback = fn
+        })
       }
       return testScope.latestDialogControl
     })

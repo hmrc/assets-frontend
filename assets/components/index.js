@@ -9,6 +9,7 @@ var timeoutDialog = require('../patterns/help-users-when-we-time-them-out-of-a-s
   charCounter()
   window.GOVUK = window.GOVUK || {}
   window.GOVUK.timeoutDialog = timeoutDialog
+
   $.timeoutDialog = function (config) {
     console.warn('$.timeout is now deprecated, please use window.GOVUK.timeoutDialog')
     var updatedConfig = $.extend({}, config)

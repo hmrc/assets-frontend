@@ -38,7 +38,8 @@ describe('Dialog', function () {
 
   function openDefaultDialog() {
     testScope.closeCallback = jasmine.createSpy('closeCallback')
-    testScope.dialogControl = dialog.displayDialog($DEFAULT_ELEMENT_TO_DISPLAY, testScope.closeCallback)
+    testScope.dialogControl = dialog.displayDialog($DEFAULT_ELEMENT_TO_DISPLAY)
+    testScope.dialogControl.addCloseHandler(testScope.closeCallback)
   }
 
   describe('When open', function () {

@@ -17,8 +17,6 @@ module.exports = function (options) {
 
   setupDialogTimer()
 
-  return {cleanup: cleanup}
-
   function validateInput(config) {
     var requiredConfig = ['timeout', 'countdown', 'keepAliveUrl', 'signOutUrl', 'language']
     var missingRequiredConfig = []
@@ -73,11 +71,13 @@ module.exports = function (options) {
     $element.find('#timeout-keep-signin-btn').on('click', keepAliveAndClose)
     $element.find('#timeout-sign-out-btn').on('click', signOut)
 
-    var dialogControl = dialog.displayDialog($element, keepAliveAndClose)
+    var dialogControl = dialog.displayDialog($element)
 
     cleanupFunctions.push(function () {
       dialogControl.closeDialog()
     })
+
+    dialogControl.addCloseHandler(keepAliveAndClose)
 
     dialogControl.setAriaLabelledBy('timeout-message')
     if (getSecondsRemaining() > 60) {
@@ -142,4 +142,6 @@ module.exports = function (options) {
       fn()
     }
   }
+
+  return {cleanup: cleanup}
 }
