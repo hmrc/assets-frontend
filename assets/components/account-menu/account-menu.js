@@ -238,7 +238,6 @@ module.exports = function () {
       })
     setTimeout(function () {
       subNav.focus()
-      console.log(document.activeElement)
     }, 500)
 
     showSubnavLink
