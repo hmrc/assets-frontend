@@ -33,6 +33,7 @@ describe('Timeout Dialog', function () {
   }
 
   beforeEach(function () {
+    document.cookie = 'PLAY_LANG=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path/;'
     jasmine.getFixtures().fixturesPath = 'base/patterns/help-users-when-we-time-them-out-of-a-service'
     assume = expect
     testScope = {
@@ -112,12 +113,12 @@ describe('Timeout Dialog', function () {
       expect(testScope.latestDialogControl.setAriaLive).toHaveBeenCalledWith('polite')
     })
 
-    it('should show heading', function () {
-      expect(testScope.latestDialog$element.find('h1.push--top')).toContainText('You’re about to be signed out')
+    it('should not show heading', function () {
+      expect(testScope.latestDialog$element.find('h1.push--top')).not.toBeInDOM()
     })
 
     it('should show message', function () {
-      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('For security reasons, you will be signed out of this service in 2 minutes.')
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('For your security, we will sign you out in 2 minutes.')
     })
 
     it('should show keep signed in button', function () {
@@ -156,6 +157,30 @@ describe('Timeout Dialog', function () {
 
       expect($.get).toHaveBeenCalledWith('/keep-alive', jasmine.any(Function))
       expect($.get.calls.count()).toEqual(1)
+    })
+
+  })
+  describe('the default welsh options', function () {
+    beforeEach(function () {
+      setLanguageToWelsh()
+      setupDialog()
+      pretendSecondsHavePassed(780)
+    })
+
+    it('should not show heading', function () {
+      expect(testScope.latestDialog$element.find('h1.push--top')).not.toBeInDOM()
+    })
+
+    it('should show message', function () {
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('Er eich diogelwch, byddwn yn eich allgofnodi cyn pen 2 funud.')
+    })
+
+    it('should show keep signed in button', function () {
+      expect(testScope.latestDialog$element.find('button#timeout-keep-signin-btn.button').text()).toEqual('Parhau i fod wedi’ch mewngofnodi')
+    })
+
+    it('should show sign out button', function () {
+      expect(testScope.latestDialog$element.find('button#timeout-sign-out-btn.button.button--link').text()).toEqual('Allgofnodi')
     })
 
   })
@@ -352,8 +377,12 @@ describe('Timeout Dialog', function () {
     })
   })
 
+  function setLanguageToWelsh() {
+    document.cookie = "PLAY_LANG=cy"
+  }
+
   describe('Countdown timer', function () {
-    it('should countdown minutes and then seconds', function () {
+    it('should countdown minutes and then seconds in english', function () {
       setupDialog({
         timeout: 130,
         countdown: 120,
@@ -393,6 +422,48 @@ describe('Timeout Dialog', function () {
       pretendSecondsHavePassed(1)
 
       expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: -2 seconds.')
+    })
+    it('should countdown minutes and then seconds in welsh', function () {
+      setLanguageToWelsh();
+      setupDialog({
+        timeout: 130,
+        countdown: 120,
+        message: 'time:',
+        signOutUrl: 'logout'
+      })
+
+      pretendSecondsHavePassed(10)
+
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 2 funud.')
+      pretendSecondsHavePassed(59)
+
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 2 funud.')
+      expect(testScope.latestDialogControl.setAriaLive).not.toHaveBeenCalledWith()
+      pretendSecondsHavePassed(1)
+
+      expect(testScope.latestDialogControl.setAriaLive).toHaveBeenCalledWith()
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 1 funud.')
+      pretendSecondsHavePassed(1)
+
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 59 eiliad.')
+      pretendSecondsHavePassed(57)
+
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 2 eiliad.')
+      pretendSecondsHavePassed(1)
+
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 1 eiliad.')
+      expect(redirectHelper.redirectToUrl).not.toHaveBeenCalled()
+
+      pretendSecondsHavePassed(1)
+
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: 0 eiliad.')
+      pretendSecondsHavePassed(1)
+
+      expect(redirectHelper.redirectToUrl).toHaveBeenCalledWith('logout')
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: -1 eiliad.')
+      pretendSecondsHavePassed(1)
+
+      expect(testScope.latestDialog$element.find('#timeout-message').text()).toEqual('time: -2 eiliad.')
     })
 
     it('should countdown lots of minutes when countdown is long', function () {

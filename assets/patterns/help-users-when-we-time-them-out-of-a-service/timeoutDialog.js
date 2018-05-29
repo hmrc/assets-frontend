@@ -17,7 +17,30 @@ var self = module.exports = {
   timeoutDialog: function (options) {
 
     validateInput(options)
-    var settings = mergeOptionsWithDefaults(options)
+    var localisedDefaults = readCookie('PLAY_LANG') && readCookie('PLAY_LANG') === 'cy' && {
+      title: undefined,
+      message: 'Er eich diogelwch, byddwn yn eich allgofnodi cyn pen',
+      keepAliveButtonText: 'Parhau i fod wedi’ch mewngofnodi',
+      signOutButtonText: 'Allgofnodi',
+      properties: {
+        minutes: 'funud',
+        minute: 'funud',
+        seconds: 'eiliad',
+        second: 'eiliad'
+      }
+    } || {
+      title: undefined,
+      message: 'For your security, we will sign you out in',
+      keepAliveButtonText: 'Stay signed in',
+      signOutButtonText: 'Sign out',
+      properties: {
+        minutes: 'minutes',
+        minute: 'minute',
+        seconds: 'seconds',
+        second: 'second'
+      }
+    }
+    var settings = mergeOptionsWithDefaults(options, localisedDefaults)
 
     var cleanupFunctions = []
 
@@ -38,13 +61,8 @@ var self = module.exports = {
       }
     }
 
-    function mergeOptionsWithDefaults(options) {
-      return $.extend({
-        title: 'You’re about to be signed out',
-        message: 'For security reasons, you will be signed out of this service in',
-        keepAliveButtonText: 'Stay signed in',
-        signOutButtonText: 'Sign out'
-      }, options)
+    function mergeOptionsWithDefaults(options, localisedDefaults) {
+      return $.extend({}, localisedDefaults, options)
     }
 
     function setupDialogTimer() {
@@ -62,7 +80,7 @@ var self = module.exports = {
     function setupDialog() {
       var $countdownElement = $('<span id="timeout-countdown" class="countdown">');
       var $element = $('<div>')
-        .append($('<h1 class="heading-medium push--top">').text(settings.title))
+        .append(settings.title ? $('<h1 class="heading-medium push--top">').text(settings.title) : '')
         .append($('<p id="timeout-message" role="text">').text(settings.message + ' ')
           .append($countdownElement)
           .append('.'))
@@ -99,12 +117,12 @@ var self = module.exports = {
           dialogControl.setAriaLive()
         }
         if (counter < 60) {
-          message = counter + ' second' + (counter !== 1 ? 's' : '')
+          message = counter + ' ' + settings.properties[counter !== 1 ? 'seconds' : 'second']
         } else {
           var newCounter = Math.ceil(counter / 60)
-          var minutesMessage = ' minutes'
+          var minutesMessage = ' ' + settings.properties.minutes
           if (newCounter === 1) {
-            minutesMessage = ' minute'
+            minutesMessage = ' ' + settings.properties.minute
           }
           message = newCounter + minutesMessage
         }
@@ -142,6 +160,13 @@ var self = module.exports = {
         var fn = cleanupFunctions.shift()
         fn()
       }
+    }
+
+    function readCookie(cookieName) { // From http://www.javascripter.net/faq/readingacookie.htm
+      var re = new RegExp('[; ]'+cookieName+'=([^\\s;]*)');
+      var sMatch = (' '+document.cookie).match(re);
+      if (cookieName && sMatch) return unescape(sMatch[1]);
+      return '';
     }
 
     return {cleanup: cleanup}
