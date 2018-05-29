@@ -119,12 +119,8 @@ var self = module.exports = {
         if (counter < 60) {
           message = counter + ' ' + settings.properties[counter !== 1 ? 'seconds' : 'second']
         } else {
-          var newCounter = Math.ceil(counter / 60)
-          var minutesMessage = ' ' + settings.properties.minutes
-          if (newCounter === 1) {
-            minutesMessage = ' ' + settings.properties.minute
-          }
-          message = newCounter + minutesMessage
+          var minutes = Math.ceil(counter / 60)
+          message = minutes + ' ' + settings.properties[minutes === 1 ? 'minute' : 'minutes']
         }
         $countdownElement.text(message)
       }
