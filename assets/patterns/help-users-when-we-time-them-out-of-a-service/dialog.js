@@ -33,11 +33,11 @@ module.exports = {
     }).attr('aria-hidden', 'true')
 
     setupFocusHandlerAndFocusDialog()
-
     setupKeydownHandler()
+    preventMobileScrollWhileAllowingPinchZoom()
 
     function close() {
-      while(resetElementsFunctionList.length > 0) {
+      while (resetElementsFunctionList.length > 0) {
         var fn = resetElementsFunctionList.shift()
         fn()
       }
@@ -87,6 +87,22 @@ module.exports = {
       })
     }
 
+    function preventMobileScrollWhileAllowingPinchZoom() {
+      function handleTouch(e) {
+        var touches = e.originalEvent.touches || e.originalEvent.changedTouches || []
+
+        if (touches.length === 1) {
+          e.preventDefault()
+        }
+      }
+
+      $(document).on('touchmove', handleTouch)
+
+      resetElementsFunctionList.push(function () {
+        $(document).off('touchmove', handleTouch)
+      })
+    }
+
     function createSetterFunctionForAttributeOfDialog(attributeName) {
       return function (value) {
         if (value) {
@@ -109,13 +125,3 @@ module.exports = {
     }
   }
 }
-
-//       // AL: prevent scrolling on touch, but allow pinch zoom
-//       self.handleTouch = function (e) {
-//         var touches = e.originalEvent.touches || e.originalEvent.changedTouches
-//         if ($('#timeout-dialog').length) {
-//           if (touches.length === 1) {
-//             e.preventDefault()
-//           }
-//         }
-//       }

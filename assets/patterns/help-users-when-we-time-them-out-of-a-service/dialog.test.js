@@ -250,7 +250,7 @@ describe('Dialog', function () {
 
       expect($dialog).not.toHaveAttr('aria-live')
     })
-    
+
     it('should allow aria-labelledby to be set, reset and removed', function () {
       openDefaultDialog()
       var $dialog = $('#timeout-dialog');
@@ -350,6 +350,98 @@ describe('Dialog', function () {
         expeectActiveElementToHaveId('the-element-with-the-focus')
       })
     })
+  })
 
+  describe('Zoom and Scroll on Mobile', function () {
+    function simulateTouchmoveWithNumberOfFingers(n) {
+      return triggerTouchmoveEventWith('touches', n)
+    }
+
+    function simulateNumberOfChangedTouches(n) {
+      return triggerTouchmoveEventWith('changedTouches', n)
+    }
+
+    function triggerTouchmoveEventWith(arrayName, arrayLength) {
+      var arr = []
+      for (var i = 0; i < arrayLength; i++) {
+        arr.push({})
+      }
+      var originalEvent = {}
+      originalEvent[arrayName] = arr
+      var event = $.Event('touchmove', {originalEvent: originalEvent})
+      $(document).trigger(event)
+      return event
+    }
+
+    beforeEach(function () {
+      jasmine.addMatchers({
+        toHaveHadDefaultPrevented: function () {
+          return {
+            compare: function (actual) {
+              var result = {}
+              var passMessage = ['Expected', actual.type, 'event']
+              result.pass = actual.isDefaultPrevented()
+              if (result.pass) {
+                passMessage.push('not', 'to have had default prevented')
+              } else {
+                passMessage.push('to have had default prevented, but it wasn\'t prevented')
+              }
+              result.message = passMessage.join(' ')
+              return result
+            }
+          }
+        }
+      })
+    })
+    it('should allow all combinations before dialog is open', function () {
+      expect(simulateTouchmoveWithNumberOfFingers(1)).not.toHaveHadDefaultPrevented()
+      expect(simulateTouchmoveWithNumberOfFingers(2)).not.toHaveHadDefaultPrevented()
+      expect(simulateTouchmoveWithNumberOfFingers(3)).not.toHaveHadDefaultPrevented()
+      expect(simulateTouchmoveWithNumberOfFingers(4)).not.toHaveHadDefaultPrevented()
+      expect(simulateTouchmoveWithNumberOfFingers(5)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(1)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(2)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(3)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(4)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(5)).not.toHaveHadDefaultPrevented()
+    })
+    it('should disallow scroll while dialog is open', function () {
+      openDefaultDialog()
+
+      expect(simulateTouchmoveWithNumberOfFingers(1)).toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(1)).toHaveHadDefaultPrevented()
+    })
+    it('should allow pinch scroll while dialog is open', function () {
+      openDefaultDialog()
+
+      expect(simulateTouchmoveWithNumberOfFingers(2)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(2)).not.toHaveHadDefaultPrevented()
+    })
+    it('should allow other multifinger touches while dialog is open', function () {
+      openDefaultDialog()
+
+      expect(simulateTouchmoveWithNumberOfFingers(3)).not.toHaveHadDefaultPrevented()
+      expect(simulateTouchmoveWithNumberOfFingers(4)).not.toHaveHadDefaultPrevented()
+      expect(simulateTouchmoveWithNumberOfFingers(5)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(3)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(4)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(5)).not.toHaveHadDefaultPrevented()
+    })
+    it('should allow all combinations after dialog is closed', function () {
+      openDefaultDialog()
+      testScope.dialogControl.closeDialog()
+
+      expect(simulateTouchmoveWithNumberOfFingers(1)).not.toHaveHadDefaultPrevented()
+      expect(simulateTouchmoveWithNumberOfFingers(2)).not.toHaveHadDefaultPrevented()
+      expect(simulateTouchmoveWithNumberOfFingers(3)).not.toHaveHadDefaultPrevented()
+      expect(simulateTouchmoveWithNumberOfFingers(4)).not.toHaveHadDefaultPrevented()
+      expect(simulateTouchmoveWithNumberOfFingers(5)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(1)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(2)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(3)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(4)).not.toHaveHadDefaultPrevented()
+      expect(simulateNumberOfChangedTouches(5)).not.toHaveHadDefaultPrevented()
+
+    })
   })
 })
