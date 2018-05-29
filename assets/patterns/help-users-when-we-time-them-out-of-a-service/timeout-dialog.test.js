@@ -59,8 +59,7 @@ describe('Timeout Dialog', function () {
       timeout: 900,
       countdown: 120,
       keepAliveUrl: '/keep-alive',
-      signOutUrl: '/sign-out',
-      language: 'en'
+      signOutUrl: '/sign-out'
     }
   })
 
@@ -247,8 +246,7 @@ describe('Timeout Dialog', function () {
         timeout: 900,
         countdown: 120,
         keepAliveUrl: '/keep-alive',
-        signOutUrl: '/sign-out',
-        language: 'en'
+        signOutUrl: '/sign-out'
       });
     })
 
@@ -258,8 +256,7 @@ describe('Timeout Dialog', function () {
         keep_alive_url: '/hello-world',
         logout_url: '/goodbye-world',
         keep_alive_button_text: 'my button text',
-        sign_out_button_text: 'sign out button text',
-        language: 'en'
+        sign_out_button_text: 'sign out button text'
       }
 
       $.timeoutDialog(config);
@@ -270,8 +267,7 @@ describe('Timeout Dialog', function () {
           keepAliveUrl: '/hello-world',
           signOutUrl: '/goodbye-world',
           keepAliveButtonText: 'my button text',
-          signOutButtonText: 'sign out button text',
-          language: 'en'
+          signOutButtonText: 'sign out button text'
         }
       );
     })
@@ -279,7 +275,6 @@ describe('Timeout Dialog', function () {
     it('should mix defaults with specified config', function () {
       var config = {
         timeout: 700,
-        language: 'cy',
         otherConfigItem: 'something'
       }
 
@@ -290,7 +285,6 @@ describe('Timeout Dialog', function () {
         countdown: 120,
         keepAliveUrl: '/keep-alive',
         signOutUrl: '/sign-out',
-        language: 'cy',
         otherConfigItem: 'something'
       });
     })
@@ -328,41 +322,10 @@ describe('Timeout Dialog', function () {
       }).toThrow(new Error('Missing config item(s): [signOutUrl]'))
     })
 
-    it('should fail when language is missing', function () {
-      delete testScope.minimumValidConfig.language
-
-      expect(function () {
-        GOVUK.timeoutDialog(testScope.minimumValidConfig)
-      }).toThrow(new Error('Missing config item(s): [language]'))
-    })
-
     it('should fail when all config is missing', function () {
       expect(function () {
         GOVUK.timeoutDialog({})
-      }).toThrow(new Error('Missing config item(s): [timeout, countdown, keepAliveUrl, signOutUrl, language]'))
-    })
-
-    it('should allow english as a language', function () {
-      testScope.minimumValidConfig.language = 'en'
-      expect(function () {
-        GOVUK.timeoutDialog(testScope.minimumValidConfig)
-      }).not.toThrow()
-    })
-
-    it('should allow welsh as a language', function () {
-      testScope.minimumValidConfig.language = 'cy'
-      expect(function () {
-        GOVUK.timeoutDialog(testScope.minimumValidConfig)
-      }).not.toThrow()
-    })
-
-    it('should not allow other languages', function () {
-      $.each(['fr', 'de', 'not-a-language'], function () {
-        var lang = testScope.minimumValidConfig.language = this
-        expect(function () {
-          GOVUK.timeoutDialog(testScope.minimumValidConfig)
-        }).toThrow(new Error('Invalid language provided [' + lang + ']'))
-      })
+      }).toThrow(new Error('Missing config item(s): [timeout, countdown, keepAliveUrl, signOutUrl]'))
     })
   })
 

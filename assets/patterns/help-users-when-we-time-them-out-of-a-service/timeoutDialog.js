@@ -8,6 +8,11 @@ Date.now = Date.now || function () {
   return +new Date()
 }
 
+/* TODO:
+    - Support welsh by using cookie.  This may be appropriate detection code
+      `var playLangCookieMatch = document.cookie.match(/PLAY_LANG=([^;]+)/); lang = playLangCookieMatch && playLangCookieMatch[1] || 'en'`
+ */
+
 module.exports = function (options) {
 
   validateInput(options)
@@ -18,9 +23,8 @@ module.exports = function (options) {
   setupDialogTimer()
 
   function validateInput(config) {
-    var requiredConfig = ['timeout', 'countdown', 'keepAliveUrl', 'signOutUrl', 'language']
+    var requiredConfig = ['timeout', 'countdown', 'keepAliveUrl', 'signOutUrl']
     var missingRequiredConfig = []
-    var validLanguages = ['en', 'cy']
 
     $.each(requiredConfig, function () {
       if (!config.hasOwnProperty(this)) {
@@ -30,10 +34,6 @@ module.exports = function (options) {
 
     if (missingRequiredConfig.length > 0) {
       throw new Error('Missing config item(s): [' + missingRequiredConfig.join(', ') + ']')
-    }
-
-    if (validLanguages.indexOf(config.language) === -1) {
-      throw new Error('Invalid language provided [' + config.language + ']')
     }
   }
 

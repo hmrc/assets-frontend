@@ -35,8 +35,7 @@ var timeoutDialog = require('../patterns/help-users-when-we-time-them-out-of-a-s
       timeout: 900,
       countdown: 120,
       keepAliveUrl: '/keep-alive',
-      signOutUrl: '/sign-out',
-      language: 'en'
+      signOutUrl: '/sign-out'
     }, updatedConfig))
   }
 })(window.jQuery, window, document)
