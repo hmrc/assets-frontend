@@ -1,16 +1,8 @@
 module.exports = {
   displayDialog: function ($elementToDisplay) {
-    var $dialog = $('<div>')
-      .attr({
-        'id': 'timeout-dialog',
-        'tabindex': '-1',
-        'role': 'dialog'
-      })
-      .addClass('timeout-dialog')
+    var $dialog = $('<div id="timeout-dialog" tabindex="-1" role="dialog" class="timeout-dialog">')
       .append($elementToDisplay)
-    var $overlay = $('<div>')
-      .attr('id', 'timeout-overlay')
-      .addClass('timeout-overlay')
+    var $overlay = $('<div id="timeout-overlay" class="timeout-overlay">')
     var keydownListener = function (e) {
       if (e.keyCode === 27) {
         closeAndInform()
@@ -27,6 +19,11 @@ module.exports = {
       })
     }
     $('body').append($dialog).append($overlay)
+
+    resetElementsFunctionList.push(function () {
+      $dialog.remove()
+      $overlay.remove()
+    })
 
     // disable the non-dialog page to prevent confusion for VoiceOver users
     $elementsToAriaHide.each(function () {
@@ -53,8 +50,6 @@ module.exports = {
     $(document).on('keydown', keydownListener)
 
     resetElementsFunctionList.push(function () {
-      $dialog.remove()
-      $overlay.remove()
       $(document).off('focus', '*', keepFocus)
       $(document).off('keydown', keydownListener)
       returnFocusFn()
