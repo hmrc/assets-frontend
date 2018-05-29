@@ -16,7 +16,7 @@ gulp.task('test:gulpTasks', ['lint:gulpTasks'], () => {
     }))
 })
 
-gulp.task('test', ['test:v3', 'test:v4'])
+gulp.task('test', ['style', 'images', 'svg', 'test:v3', 'test:v4'])
 
 gulp.task('test:v3', (done) => {
   const v3KarmaConfig = karmaConfig.parseConfig(
