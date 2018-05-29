@@ -3,12 +3,6 @@ module.exports = {
     var $dialog = $('<div id="timeout-dialog" tabindex="-1" role="dialog" class="timeout-dialog">')
       .append($elementToDisplay)
     var $overlay = $('<div id="timeout-overlay" class="timeout-overlay">')
-    var keydownListener = function (e) {
-      if (e.keyCode === 27) {
-        closeAndInform()
-      }
-    }
-    var $elementsToAriaHide = $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer');
     var resetElementsFunctionList = []
     var closeCallbacks = []
 
@@ -26,7 +20,7 @@ module.exports = {
     })
 
     // disable the non-dialog page to prevent confusion for VoiceOver users
-    $elementsToAriaHide.each(function () {
+    $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer').each(function () {
       var value = $(this).attr('aria-hidden')
       var $elem = $(this)
       resetElementsFunctionList.push(function () {
@@ -38,32 +32,9 @@ module.exports = {
       })
     }).attr('aria-hidden', 'true')
 
-    var returnFocusFn = (function () {
-      var elemToFocus = document.activeElement
-      return function () {
-        $(elemToFocus).focus()
-      }
-    }())
-    $dialog.focus()
+    setupFocusHandlerAndFocusDialog()
 
-    $(document).on('focus', '*', keepFocus)
-    $(document).on('keydown', keydownListener)
-
-    resetElementsFunctionList.push(function () {
-      $(document).off('focus', '*', keepFocus)
-      $(document).off('keydown', keydownListener)
-      returnFocusFn()
-    })
-
-    function keepFocus(event) {
-      var modalFocus = document.getElementById('timeout-dialog')
-      if (modalFocus) {
-        if (event.target !== modalFocus && !modalFocus.contains(event.target)) {
-          event.stopPropagation()
-          modalFocus.focus()
-        }
-      }
-    }
+    setupKeydownHandler()
 
     function close() {
       while(resetElementsFunctionList.length > 0) {
@@ -78,6 +49,42 @@ module.exports = {
         fn()
       })
       close()
+    }
+
+    function setupFocusHandlerAndFocusDialog() {
+      function keepFocus(event) {
+        var modalFocus = document.getElementById('timeout-dialog')
+        if (modalFocus) {
+          if (event.target !== modalFocus && !modalFocus.contains(event.target)) {
+            event.stopPropagation()
+            modalFocus.focus()
+          }
+        }
+      }
+
+      var elemToFocusOnReset = document.activeElement
+      $dialog.focus()
+
+      $(document).on('focus', '*', keepFocus)
+
+      resetElementsFunctionList.push(function () {
+        $(document).off('focus', '*', keepFocus)
+        $(elemToFocusOnReset).focus()
+      })
+    }
+
+    function setupKeydownHandler() {
+      function keydownListener(e) {
+        if (e.keyCode === 27) {
+          closeAndInform()
+        }
+      }
+
+      $(document).on('keydown', keydownListener)
+
+      resetElementsFunctionList.push(function () {
+        $(document).off('keydown', keydownListener)
+      })
     }
 
     function createSetterFunctionForAttributeOfDialog(attributeName) {
