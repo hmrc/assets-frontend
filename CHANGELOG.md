@@ -16,12 +16,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Moved the header pattern to patterns and updated documentation [944](https://github.com/hmrc/assets-frontend/pull/944)
 - `node-git-versioning` plugin has been published to npm so we can depend on that version [#946](https://github.com/hmrc/assets-frontend/pull/946)
 - The secondary timeout dialog button should be a link [#952](https://github.com/hmrc/assets-frontend/pull/952)
-
-### Updated
 - Examples that link to another service when a journey is incomplete [#956](https://github.com/hmrc/assets-frontend/pull/956)
 - Documentation and examples for messages pattern [#955](https://github.com/hmrc/assets-frontend/pull/955)
 - Timeout documentation and examples [#949](https://github.com/hmrc/assets-frontend/pull/949)
 - Page not found, service unavailable and there is a problem with the service examples [#947](https://github.com/hmrc/assets-frontend/pull/947)
+- Markup example and tests for Account Menu and Account Header [#961](https://github.com/hmrc/assets-frontend/pull/961)
 
 ### Added
 - New patterns for help users when we cannot confirm who they are and tell user we have confirmed who they are [#942](https://github.com/hmrc/assets-frontend/pull/942)
@@ -37,7 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Documentation for open links in a new window or tab component [#926](https://github.com/hmrc/assets-frontend/pull/926)
 - Documentation for messages pattern [#932](https://github.com/hmrc/assets-frontend/pull/932)
 
-### Updated
+### Changed
 - Documentation and examples for page not found, service unavailable and there is a problem with the service [#936](https://github.com/hmrc/assets-frontend/pull/936)
 - Updated notification badge CSS, code and examples [#934](https://github.com/hmrc/assets-frontend/pull/934)
 - Fixed a typo in open links in a new window or tab page [#935](https://github.com/hmrc/assets-frontend/pull/935)
@@ -48,8 +47,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated documentation and examples for page heading [#923](https://github.com/hmrc/assets-frontend/pull/923)
 - Refactoring the account menu JS and adding in unit tests [#929](https://github.com/hmrc/assets-frontend/pull/929)
 - Running the patterns tests alongside components tests [#948](https://github.com/hmrc/assets-frontend/pull/948)
-
-### Changed
 - Version build artefacts according to the [HMRC release candidate format](http://hmrc.github.io/coding-in-the-open-manual/#release-candidates) [#924](https://github.com/hmrc/assets-frontend/pull/924)
 - Tar build artefacts instead of zip and add a package file for publishing [#925](https://github.com/hmrc/assets-frontend/pull/925)
 - Moved the timeout dialog pattern from the components directory to the patterns directory [#931](https://github.com/hmrc/assets-frontend/pull/931)
@@ -63,7 +60,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Ability to use universal analytics with stageprompt [#914](https://github.com/hmrc/assets-frontend/pull/914)
 - IE8 support in the minified JavaScript [#916](https://github.com/hmrc/assets-frontend/pull/916)
 
-### Updated
+### Changed
 - Updated documentation for service unavailable and technical problem pages, and changed work in progress and deprecated banner styles [#912](https://github.com/hmrc/assets-frontend/pull/912)
 
 ## [3.2.1] and [4.2.1] - 2018-02-02
