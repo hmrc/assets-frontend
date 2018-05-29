@@ -8,6 +8,7 @@
 require('jquery')
 require('../../components/index.js')
 var dialog = require('./dialog.js')
+var timeoutDialog = require('./timeoutDialog.js')
 var redirectHelper = require('./redirectHelper.js')
 
 describe('Timeout Dialog', function () {
@@ -229,7 +230,7 @@ describe('Timeout Dialog', function () {
 
   describe('Using the legacy interface', function () {
     beforeEach(function () {
-      spyOn(window.GOVUK, 'timeoutDialog')
+      spyOn(timeoutDialog, 'timeoutDialog')
       spyOn(window.console, 'warn')
     })
 
@@ -242,7 +243,7 @@ describe('Timeout Dialog', function () {
     it('should provide legacy defaults when no config object is provided', function () {
       $.timeoutDialog();
 
-      expect(window.GOVUK.timeoutDialog).toHaveBeenCalledWith({
+      expect(timeoutDialog.timeoutDialog).toHaveBeenCalledWith({
         timeout: 900,
         countdown: 120,
         keepAliveUrl: '/keep-alive',
@@ -261,7 +262,7 @@ describe('Timeout Dialog', function () {
 
       $.timeoutDialog(config);
 
-      expect(window.GOVUK.timeoutDialog).toHaveBeenCalledWith({
+      expect(timeoutDialog.timeoutDialog).toHaveBeenCalledWith({
           timeout: 200,
           countdown: 120,
           keepAliveUrl: '/hello-world',
@@ -280,7 +281,7 @@ describe('Timeout Dialog', function () {
 
       $.timeoutDialog(config);
 
-      expect(window.GOVUK.timeoutDialog).toHaveBeenCalledWith({
+      expect(timeoutDialog.timeoutDialog).toHaveBeenCalledWith({
         timeout: 700,
         countdown: 120,
         keepAliveUrl: '/keep-alive',
