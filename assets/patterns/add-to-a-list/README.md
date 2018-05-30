@@ -2,7 +2,7 @@
 
 This pattern lets users add information with multiple parts to a list.
 
-{{ example('add-to-list-directors-name.html') }}
+{{ example('add-to-list-name.html') }}
 
 ## When to use this pattern
 

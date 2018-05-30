@@ -14,9 +14,8 @@ test_results/
 test_coverage/
 assets/public/
 target/
+/design-system/
 /component-library/
-design-pattern-library/
-design-system/
 !gulpfile.js/util/component-library/
 vrt-output/
 backstop.json
