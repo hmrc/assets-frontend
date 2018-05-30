@@ -4,7 +4,6 @@
     cookies</a></p>
 </div>
 <!-- END COOKIE MESSAGE -->
-
 <!-- GOV.UK HEADER -->
 <header role="banner" id="global-header" class="with-proposition">
   <div class="header-wrapper">
@@ -28,115 +27,47 @@
 <div id="global-header-bar"></div>
 <!-- END GOV.UK HEADER -->
 <main id="content" role="main">
-<!-- ACCOUNT MENU -->
-  <nav id="secondary-nav" class="account-menu js-enabled" role="navigation">
-    <a href="http://localhost:9232/personal-account" class="account-menu__link account-menu__link--home account-menu__link--active" data-journey-click="link - click:utility-nav:Account home">
-                        <span class="account-icon account-icon--home">
-
-
-                                Account home
-
-                        </span>
+  <!-- ACCOUNT MENU -->
+  <nav id="secondary-nav" class="account-menu" role="navigation" aria-label="Account">
+    <a href="#" class="account-menu__link account-menu__link--home account-menu__link--active">
+      <span class="account-icon account-icon--home">Account home</span>
     </a>
-
-    <a href="#" class="account-menu__link account-menu__link--menu js-hidden js-visible" aria-hidden="true" aria-expanded="false" data-journey-click="link - click:utility-nav:Account menu">
-
-
-      Account menu
-
-    </a>
-
-    <ul class="account-menu__main">
+    <a href="#" class="account-menu__link account-menu__link--menu js-hidden js-visible" aria-hidden="true" aria-expanded="false">Account menu</a>
+    <ul class="account-menu__main js-hidden">
       <li class="account-menu__link--back hidden" aria-hidden="true">
-        <a href="#" class="account-menu__link" data-journey-click="link - click:utility-nav:Back">
-
-
-          Back
-
+        <a href="#" class="account-menu__link">Back</a>
+      </li>
+      <li>
+        <a href="#" class="account-menu__link">Messages
+          <span class="badge" aria-label="Number of unread messages">2</span>
         </a>
       </li>
-
       <li>
-        <a href="http://localhost:9232/personal-account/messages" class="account-menu__link" data-journey-click="link - click:utility-nav:Messages">
-
-
-          Messages
-
-        </a>
+        <a href="#" class="account-menu__link">Check progress</a>
       </li>
-
       <li>
-        <a href="http://localhost:9100/track" class="account-menu__link" data-journey-click="link - click:utility-nav:Check progress">
-
-
-          Check progress
-
-        </a>
-      </li>
-
-      <li>
-        <a href="#subnav-your-account" id="account-menu__main-2" class="account-menu__link account-icon account-menu__link--more js-enabled" aria-haspopup="true" aria-owns="subnav-your-account" data-journey-click="accordion - click:utility-nav:Your account" aria-expanded="false">
-
-
+        <a href="#subnav-your-account" id="account-menu__main-2" class="account-menu__link account-icon account-menu__link--more" aria-haspopup="true" aria-owns="subnav-your-account">
           Your account
-
         </a>
-
-        <div class="subnav" id="subnav-your-account" role="navigation" aria-labelledby="account-menu__main-2" aria-label="Your account" aria-hidden="true" tabindex="-1">
-
-
-
-
-          <div class="
-                                 column-half
-
-                                 subnav__section">
-            <p class="subnav__section__heading">
-
-
-              Paperless settings
-
-            </p>
+        <div class="subnav js-hidden" id="subnav-your-account" role="navigation" aria-labelledby="account-menu__main-2" aria-label="Your account">
+          <div class="subnav__section column-half">
+            <p class="subnav__section__heading">Paperless settings</p>
             <div>
-              <a href="http://localhost:9232/personal-account/preferences" data-journey-click="link - click:utility-nav:Manage your paperless settings">
-
-
-                Manage your paperless settings
-
-              </a>
+              <a href="#">Manage your paperless settings</a>
             </div>
           </div>
-          <div class="
-                                 column-half
-
-                                 subnav__section">
-            <p class="subnav__section__heading">
-
-
-              Personal details
-
-            </p>
+          <div class="subnav__section column-half">
+            <p class="subnav__section__heading">Personal details</p>
             <div>
-              <a href="http://localhost:9232/personal-account/personal-details" data-journey-click="link - click:utility-nav:Manage your personal details">
-
-
-                Manage your personal details
-
-              </a>
+              <a href="#">Manage your personal details</a>
             </div>
           </div>
         </div>
       </li>
-
       <li>
-        <a href="/personal-account/signout?continueUrl=http%3A%2F%2Flocalhost%3A9514%2Ffeedback-survey%3Forigin%3DPERTAX" class="account-menu__link" data-journey-click="link - click:utility-nav:Sign out">
-
-
-          Sign out
-
-        </a>
+        <a href="#" class="account-menu__link">Sign out</a>
       </li>
     </ul>
   </nav>
-<!-- END ACCOUNT MENU -->
+  <!-- END ACCOUNT MENU -->
 </main>

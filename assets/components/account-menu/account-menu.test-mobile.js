@@ -21,10 +21,10 @@ describe('Given I have an account menu on the page', function () {
     accountMenu()
 
     $nav = $('#secondary-nav')
-    $mobileMenuLink = $('#mobile-menu')
+    $mobileMenuLink = $('.account-menu__link--menu')
     $mobileSubMenu = $('.account-menu__main')
     $yourAccountLink = $('#account-menu__main-2')
-    $subnavItems = $('.subnav-item')
+    $subnavItems = $('.account-menu__link').parent()
     $mobileBack = $('.account-menu__link--back')
     $mobileBackLink = $('.account-menu__link--back a')
   })
@@ -48,12 +48,13 @@ describe('Given I have an account menu on the page', function () {
       expect($yourAccountLink.attr('aria-expanded')).toBe('false')
     })
 
-    it('should reveals the your account subnav when clicked', function () {
+    it('should reveal the Your Account subnav when clicked', function () {
       $mobileMenuLink.click()
       $yourAccountLink.click()
       expect($nav).toHaveClass('subnav-is-open')
       expect($mobileSubMenu).toHaveClass('subnav-is-open')
       expect($yourAccountLink.attr('aria-expanded')).toBe('true')
+      expect($yourAccountLink.parent()).toHaveClass('active-subnav-parent')
       expect($mobileBack).not.toHaveClass('hidden')
       expect($mobileBack.attr('aria-hidden')).toBe('false')
       expect($subnavItems).toHaveClass('hidden')
@@ -68,7 +69,7 @@ describe('Given I have an account menu on the page', function () {
       expect($mobileSubMenu).toHaveClass('main-nav-is-open')
       expect($mobileBack).toHaveClass('hidden')
       expect($mobileBack.attr('aria-hidden')).toBe('true')
-      expect($subnavItems).not.toHaveClass('hidden')
+      expect($subnavItems.not($mobileBack)).not.toHaveClass('hidden')
     })
   })
 })
