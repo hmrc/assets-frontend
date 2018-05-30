@@ -4,10 +4,6 @@ require('jquery')
 var dialog = require('./dialog.js')
 var redirectHelper = require('./redirectHelper.js')
 
-Date.now = Date.now || function () {
-  return +new Date()
-}
-
 var self = module.exports = {
   timeoutDialog: function (options) {
 
@@ -62,7 +58,7 @@ var self = module.exports = {
     }
 
     function setupDialogTimer() {
-      settings.signout_time = Date.now() + settings.timeout * 1000
+      settings.signout_time = getDateNow() + settings.timeout * 1000
 
       var timeout = window.setTimeout(function () {
         setupDialog()
@@ -103,7 +99,7 @@ var self = module.exports = {
     }
 
     function getSecondsRemaining() {
-      return Math.floor((settings.signout_time - Date.now()) / 1000)
+      return Math.floor((settings.signout_time - getDateNow()) / 1000)
     }
 
     function startCountdown($countdownElement, dialogControl) {
@@ -141,6 +137,10 @@ var self = module.exports = {
       setupDialogTimer()
       $.get(settings.keepAliveUrl, function () {
       })
+    }
+
+    function getDateNow() {
+      return Date.now() || +new Date()
     }
 
     function signOut() {
