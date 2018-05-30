@@ -8,15 +8,12 @@ Date.now = Date.now || function () {
   return +new Date()
 }
 
-/* TODO:
-    - Support welsh by using cookie.  This may be appropriate detection code
-      `var playLangCookieMatch = document.cookie.match(/PLAY_LANG=([^;]+)/); lang = playLangCookieMatch && playLangCookieMatch[1] || 'en'`
- */
-
 var self = module.exports = {
   timeoutDialog: function (options) {
 
     validateInput(options)
+
+    var cleanupFunctions = []
     var localisedDefaults = readCookie('PLAY_LANG') && readCookie('PLAY_LANG') === 'cy' && {
       title: undefined,
       message: 'Er eich diogelwch, byddwn yn eich allgofnodi cyn pen',
@@ -40,9 +37,8 @@ var self = module.exports = {
         second: 'second'
       }
     }
-    var settings = mergeOptionsWithDefaults(options, localisedDefaults)
 
-    var cleanupFunctions = []
+    var settings = mergeOptionsWithDefaults(options, localisedDefaults)
 
     setupDialogTimer()
 
