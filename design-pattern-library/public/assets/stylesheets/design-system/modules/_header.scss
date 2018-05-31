@@ -1,0 +1,242 @@
+$active-nav-color: #1d8feb;
+
+.design-system-header {
+  @extend %contain-floats;
+
+  @include screen {
+    background: $black;
+    color: $white;
+    border-bottom: 10px solid $white;
+  }
+}
+
+.design-system-header__container {
+  @extend %site-width-container;
+  @extend %contain-floats;
+  zoom: 1;
+
+  padding: 2px 0;
+
+  @include screen {
+    border-bottom: 10px solid $mainstream-brand;
+    margin-bottom: -10px;
+  }
+}
+
+.design-system-header.design-system-header--full-width {
+  margin-bottom: 0;
+
+  @include screen {
+    border-bottom: 10px solid $mainstream-brand;
+  }
+
+  .design-system-header__container {
+    border-bottom: none;
+    width: auto;
+    max-width: none;
+    margin: 0 $gutter-half;
+  }
+}
+
+.design-system-header--without-border {
+  border-bottom: none;
+  margin-bottom: 0;
+
+  .design-system-header__container {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+
+.design-system-header__brand {
+  font-size: 30px;
+  margin-top: 2px;
+
+  a:link, a:visited {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .design-system-govuk-logo {
+    float: left;
+    background-position: 0 4px;
+    margin-right: 8px;
+
+    @include media(tablet) {
+      margin-right: 5px;
+    }
+  }
+
+  @include screen {
+    a:link, a:visited {
+      color: $white;
+    }
+
+    @include media(tablet) {
+      float: left;
+
+      .design-system-govuk-logo {
+        float: none;
+        background-position: 0 2px;
+      }
+
+      a:hover {
+        text-decoration: none;
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+
+  @include print {
+    a:link, a:visited {
+      color: $black;
+    }
+  }
+}
+
+.design-system-header__title {
+  font-size: 20px;
+  display: block;
+  padding-top: 12px;
+
+  @include media(tablet) {
+    @include core-24;
+    display: inherit;
+    float: none;
+    clear: none;
+    padding-top: 0px;
+    padding-left: 0px;
+  }
+
+  .phase-banner {
+    margin-left: 5px;
+  }
+}
+
+.design-system-header__navigation {
+  @include screen {
+    @include bold-16;
+
+    display: none;
+    clear: both;
+
+    padding-top: 10px;
+
+    a:link, a:visited {
+      color: $white;
+      text-decoration: none;
+    }
+
+    li.active a:link, li.active a:visited {
+      color: $active-nav-color;
+    }
+
+    a:hover, a:active {
+      text-decoration: underline;
+    }
+
+    ul {
+      border-top: 1px solid $grey-1;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    @include media(tablet) {
+      display: block;
+      clear: none;
+      padding-top: 5px;
+      border-top: none;
+      float: right;
+
+      ul {
+        border-top: none;
+      }
+
+      li {
+        float: left;
+        margin-left: $gutter-half;
+      }
+    }
+  }
+
+  @include print {
+    display: none;
+  }
+}
+
+.mobile-nav-trigger {
+  float: left;
+  width: 25%;
+  padding-left: 15px;
+  @include box-sizing(border-box);
+  height: 35px;
+
+  input.button {
+    padding: 7px 4px 6px 4px !important;
+    box-shadow: 0px 0px 0px;
+    background-color: $black;
+    border: 1px solid white;
+    font-size: 16px;
+  }
+
+  input.button.active {
+    background-color: $govuk-blue;
+  }
+
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+.design-system-header__navigation-toggle {
+  float: right;
+  color: $white;
+  text-decoration: none;
+  border: 1px solid $grey-1;
+  border-radius: 3px;
+  padding: 2px 6px 1px;
+  font-size: 80%;
+  font-weight: bold;
+
+  input {
+    display: none;
+  }
+
+  @include media(tablet) {
+    display: none;
+  }
+
+  &:after {
+    display: inline-block;
+    font-size: 8px;
+    height: 8px;
+    padding-left: 5px;
+    vertical-align: middle;
+    content: " \25BC";
+  }
+}
+
+.design-system-header__navigation-toggle-checkbox {
+  position: absolute;
+  left: -9999em;
+
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+.design-system-header__navigation-toggle-checkbox:checked ~ .design-system-header__navigation-toggle:after {
+  content: "\25B2";
+}
+
+.design-system-header__navigation-toggle-checkbox:checked ~ .design-system-header__navigation {
+  display: block;
+}
