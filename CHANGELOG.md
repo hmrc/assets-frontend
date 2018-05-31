@@ -10,16 +10,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added the `mailto:` scheme to the email link on the design-system *About* page. [951](https://github.com/hmrc/assets-frontend/pull/951)
 - Fixed the `sign-out` link on the *Help users when we sign them out...* page examples [953](https://github.com/hmrc/assets-frontend/pull/953)
 - Fixed a couple of typos on the _opens in a new window or tab_ page [954](https://github.com/hmrc/assets-frontend/pull/954)
+- Fixed table layout issue on messages pattern full width [959](https://github.com/hmrc/assets-frontend/pull/959)
+
 ### Changed
 - Moved the header pattern to patterns and updated documentation [944](https://github.com/hmrc/assets-frontend/pull/944)
 - `node-git-versioning` plugin has been published to npm so we can depend on that version [#946](https://github.com/hmrc/assets-frontend/pull/946)
 - The secondary timeout dialog button should be a link [#952](https://github.com/hmrc/assets-frontend/pull/952)
-
-### Updated
+- Examples that link to another service when a journey is incomplete [#956](https://github.com/hmrc/assets-frontend/pull/956)
+- Documentation and examples for messages pattern [#955](https://github.com/hmrc/assets-frontend/pull/955)
 - Timeout documentation and examples [#949](https://github.com/hmrc/assets-frontend/pull/949)
 - Page not found, service unavailable and there is a problem with the service examples [#947](https://github.com/hmrc/assets-frontend/pull/947)
+- Markup example and tests for Account Menu and Account Header [#961](https://github.com/hmrc/assets-frontend/pull/961)
 
 ### Added
+- New pattern for asking users for their consent to meet GDPR and DPA standards [#962](https://github.com/hmrc/assets-frontend/pull/962)
 - New patterns for help users when we cannot confirm who they are and tell user we have confirmed who they are [#942](https://github.com/hmrc/assets-frontend/pull/942)
 
 ## [3.2.4] and [4.2.4] - 2018-04-12
@@ -28,7 +32,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Run tests in desktop viewport instead of phantom's default 400 [#927](https://github.com/hmrc/assets-frontend/pull/927)
 - Fixed broken link on "errors and validation" styles page [#937](https://github.com/hmrc/assets-frontend/pull/937)
 
-### Updated
+### Added
+- Documentation for page title [#928](https://github.com/hmrc/assets-frontend/pull/928)
+- Documentation for open links in a new window or tab component [#926](https://github.com/hmrc/assets-frontend/pull/926)
+- Documentation for messages pattern [#932](https://github.com/hmrc/assets-frontend/pull/932)
+
+### Changed
 - Documentation and examples for page not found, service unavailable and there is a problem with the service [#936](https://github.com/hmrc/assets-frontend/pull/936)
 - Updated notification badge CSS, code and examples [#934](https://github.com/hmrc/assets-frontend/pull/934)
 - Fixed a typo in open links in a new window or tab page [#935](https://github.com/hmrc/assets-frontend/pull/935)
@@ -39,8 +48,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated documentation and examples for page heading [#923](https://github.com/hmrc/assets-frontend/pull/923)
 - Refactoring the account menu JS and adding in unit tests [#929](https://github.com/hmrc/assets-frontend/pull/929)
 - Running the patterns tests alongside components tests [#948](https://github.com/hmrc/assets-frontend/pull/948)
-
-### Changed
 - Version build artefacts according to the [HMRC release candidate format](http://hmrc.github.io/coding-in-the-open-manual/#release-candidates) [#924](https://github.com/hmrc/assets-frontend/pull/924)
 - Tar build artefacts instead of zip and add a package file for publishing [#925](https://github.com/hmrc/assets-frontend/pull/925)
 - Moved the timeout dialog pattern from the components directory to the patterns directory [#931](https://github.com/hmrc/assets-frontend/pull/931)
@@ -54,7 +61,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Ability to use universal analytics with stageprompt [#914](https://github.com/hmrc/assets-frontend/pull/914)
 - IE8 support in the minified JavaScript [#916](https://github.com/hmrc/assets-frontend/pull/916)
 
-### Updated
+### Changed
 - Updated documentation for service unavailable and technical problem pages, and changed work in progress and deprecated banner styles [#912](https://github.com/hmrc/assets-frontend/pull/912)
 
 ## [3.2.1] and [4.2.1] - 2018-02-02
@@ -289,13 +296,11 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Changes to nginx error pages not being build and deployed [#734]
 
 [Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...master
-[4.2.4]: https://github.com/hmrc/assets-frontend/compare/release/4.2.3...release/4.2.4
 [4.2.3]: https://github.com/hmrc/assets-frontend/compare/release/4.2.2...release/4.2.3
 [4.2.2]: https://github.com/hmrc/assets-frontend/compare/release/4.2.1...release/4.2.2
 [4.2.1]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...release/4.2.1
 [4.2.0]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...release/4.2.0
 [4.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...release/4.1.0
-[3.2.4]: https://github.com/hmrc/assets-frontend/compare/release/3.2.4...release/3.2.4
 [3.2.3]: https://github.com/hmrc/assets-frontend/compare/release/3.2.2...release/3.2.3
 [3.2.2]: https://github.com/hmrc/assets-frontend/compare/release/3.2.1...release/3.2.2
 [3.2.1]: https://github.com/hmrc/assets-frontend/compare/release/3.2.0...release/3.2.1

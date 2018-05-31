@@ -24,8 +24,8 @@ describe('Given I have an account menu of the page', function () {
 
     $nav = $('#secondary-nav')
     $yourAccountLink = $('#account-menu__main-2')
-    $yourAccountSubNav = $('#subnav-2')
-    $mobileMenuLink = $('#mobile-menu')
+    $yourAccountSubNav = $('#' + $yourAccountLink.attr('aria-owns'))
+    $mobileMenuLink = $('.account-menu__link--menu')
     $mobileBack = $('.account-menu__link--back')
   })
 

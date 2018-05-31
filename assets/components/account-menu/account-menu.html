@@ -1,61 +1,97 @@
-<nav id="secondary-nav" class="account-menu" role="navigation">
-  <a href="#" class="account-menu__link account-menu__link--active account-menu__link--home "><span class="account-icon account-icon--home">Account home</span><span class="account-icon account-icon--home hidden--tablet">Home</span></a>
-  <a href="#" id="mobile-menu" class="account-menu__link account-menu__link--menu js-hidden js-visible" aria-hidden="true" aria-expanded="false">Account menu</a>
+<nav id="secondary-nav" class="account-menu" role="navigation" aria-label="Account">
+  <a href="#" class="account-menu__link account-menu__link--home account-menu__link--active">
+    <span class="account-icon account-icon--home">Account home</span>
+  </a>
 
-  <ul class="account-menu__main">
+  <a href="#" class="account-menu__link account-menu__link--menu js-hidden js-visible" aria-hidden="true" aria-expanded="false">Account menu</a>
+
+  <ul class="account-menu__main js-hidden">
     <li class="account-menu__link--back hidden" aria-hidden="true">
       <a href="#" class="account-menu__link">Back</a>
     </li>
 
-    <li class="subnav-item"><a href="messages" class="account-menu__link">Messages</a></li>
+    <!-- {{#isGovernmentGateway}} -->
+    <li>
+      <a href="#" class="account-menu__link">Messages
+        <!-- {{#unreadMessageCount}} -->
+        <span class="badge" aria-label="Number of unread messages">2</span>
+        <!-- {{/unreadMessageCount}} -->
+      </a>
+    </li>
+    <!-- {{/isGovernmentGateway}} -->
 
-    <li class="subnav-item"><a href="track-your-forms" class="account-menu__link">Check progress</a></li>
-
-    <li class="subnav-item">
-      <a href="#subnav-1" id="account-menu__main-1" class="account-menu__link account-icon account-menu__link--more" aria-haspopup="true" aria-owns="subnav-1">Get help</a>
-
-      <div class="subnav js-hidden" id="subnav-1" role="navigation" aria-labelledby="account-menu__main-1" aria-label="Get help">
-        <div class="column-one-third subnav__section">
-          <p class="subnav__section__heading">Live chat</p>
-          <div><a href="#">Chat with us now</a></div>
-          <p>Live chat is available and the queue time is currently around 12 minutes</p>
-        </div>
-        <div class="column-one-third subnav__section">
-          <p class="subnav__section__heading">Phone</p>
-          <div>01234 567 890</div>
-          <p>Lines are currently closed and will reopen tomorrow at 8:00am</p>
-        </div>
-        <div class="column-one-third subnav__section">
-          <p class="subnav__section__heading">Technical problems</p>
-          <div><a href="#">Report a technical problem</a></div>
-          <p>We aim to reply within 72 hours</p>
-        </div>
-      </div>
+    <li>
+      <a href="#" class="account-menu__link">Check progress</a>
     </li>
 
-    <li class="subnav-item">
-      <a href="#subnav-2" id="account-menu__main-2" class="account-menu__link account-icon account-menu__link--more" aria-haspopup="true" aria-owns="subnav-2">Your account</a>
+    <li>
+      <a href="#subnav-your-account" id="account-menu__main-2" class="account-menu__link account-icon account-menu__link--more" aria-haspopup="true" aria-owns="subnav-your-account">
+        Your account
+      </a>
 
-      <div class="subnav js-hidden" id="subnav-2" role="navigation" aria-labelledby="account-menu__main-2" aria-label="Your account">
+      <div class="subnav js-hidden" id="subnav-your-account" role="navigation" aria-labelledby="account-menu__main-2" aria-label="Your account">
+        <!-- {{#isGovernmentGateway}} -->
+        <!-- {{#isSa}} -->
+        <div class="column-one-third subnav__section">
+          <p class="subnav__section__heading">Business taxes</p>
+
+          <div>
+            <a href="#">View your business tax account</a>
+          </div>
+        </div>
+        <!-- {{/isSa}} -->
+        <!-- {{/isGovernmentGateway}} -->
+
+        <!-- {{#isVerify}} -->
         <div class="column-one-third subnav__section">
           <p class="subnav__section__heading">Security settings</p>
-          <div><a href="#">Change your password</a></div>
-          <div><a href="#">Change your phone number</a></div>
-          <div><a href="account-two">Trusted helpers</a></div>
+
+          <div>
+            <a href="#">Manage your trusted helpers</a>
+          </div>
         </div>
-        <div class="column-one-third subnav__section">
+        <!-- {{/isVerify}} -->
+
+        <!--
+        <div class="{{^isGovernmentGateway}}{{^isVerify}} column-half {{/isVerify}}{{/isGovernmentGateway}}
+        {{#isGovernmentGateway}}{{^isSa}} column-half {{/isSa}}{{/isGovernmentGateway}}
+        {{#isGovernmentGateway}}{{#isSa}} column-one-third {{/isSa}}{{/isGovernmentGateway}}
+        {{#isVerify}} column-one-third {{/isVerify}} subnav__section">
+        -->
+        <div class="subnav__section">
           <p class="subnav__section__heading">Paperless settings</p>
-          <div><a href="contact-preferences">Go paperless</a></div>
-          <p>You currently receive all correspondence by post</p>
+
+          <div>
+            <a href="#">Manage your paperless settings</a>
+          </div>
         </div>
-        <div class="column-one-third subnav__section">
-          <p class="subnav__section__heading">Personal information</p>
-          <div><a href="personal-details">View your personal details</a></div>
-          <p>View or edit your address, phone number and National Insurance.</p>
+
+      <!--
+      <div class="{{^isGovernmentGateway}}{{^isVerify}} column-half {{/isVerify}}{{/isGovernmentGateway}}
+      {{#isGovernmentGateway}}{{^isSa}} column-half {{/isSa}}{{/isGovernmentGateway}}
+      {{#isGovernmentGateway}}{{#isSa}} column-one-third {{/isSa}}{{/isGovernmentGateway}}
+      {{#isVerify}} column-one-third {{/isVerify}} subnav__section">
+      -->
+        <div class="subnav__section">
+          <p class="subnav__section__heading">
+          <!-- {{#isWelsh}}Manylion personol{{/isWelsh}} -->
+
+          <!-- {{^isWelsh}} -->
+          Personal details
+          <!-- {{/isWelsh}} -->
+          </p>
+
+          <div>
+            <a href="#">Manage your personal details</a>
+          </div>
         </div>
       </div>
     </li>
 
-    <li><a href="#" class="account-menu__link">Sign out</a></li>
+    <!-- {{#signOutUrl}} -->
+    <li>
+      <a href="#" class="account-menu__link">Sign out</a>
+    </li>
+    <!-- {{/signOutUrl}} -->
   </ul>
 </nav>
