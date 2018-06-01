@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - New pattern for asking users for their consent to meet GDPR and DPA standards [#962](https://github.com/hmrc/assets-frontend/pull/962)
 - New patterns for help users when we cannot confirm who they are and tell user we have confirmed who they are [#942](https://github.com/hmrc/assets-frontend/pull/942)
+- New patterns for users to add information with multiple parts to a list [#963](https://github.com/hmrc/assets-frontend/pull/963)
 
 ## [3.2.4] and [4.2.4] - 2018-04-12
 ### Fixed
