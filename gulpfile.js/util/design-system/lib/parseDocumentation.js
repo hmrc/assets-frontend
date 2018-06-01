@@ -10,11 +10,12 @@ var parseDocumentation = function (files) {
     .join('')
 
   files.forEach(function (file) {
-    nunjucks.configure([
+    var environment = nunjucks.configure([
       config.designSystem.macrosPath,
       path.parse(file.path).dir,
       config.designSystem.sourceBaseDir
     ])
+    environment.addGlobal('filePath', path.parse(path.relative(config.designSystem.sourceBaseDir, file.path)).dir)
 
     var fileContents = macros + file.contents.toString()
     var markdown = nunjucks.renderString(fileContents)
