@@ -27,7 +27,7 @@ Allow users to:
 {{ example('add-to-list-name.html') }}
 {{ markup('add-to-list-name.html') }}
 
-![Animated example of add to a list pattern that includes asking for name, date of birth, National Insurance number, Unique Taxpayer Reference, and letting you check your answers.](./add-to-a-list.gif)
+![Animated example of add to a list pattern that includes asking for name, date of birth, National Insurance number, Unique Taxpayer Reference, and letting you check your answers.](/patterns/add-to-a-list/add-to-a-list.gif)
 
 ## Research on this component
 
