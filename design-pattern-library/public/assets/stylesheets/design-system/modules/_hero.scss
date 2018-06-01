@@ -1,0 +1,133 @@
+/**
+ * Hero Component
+ *
+ * Notes:
+ * - If using together with a breadcrumb in a masthead, add the --breaded
+ *   modifier to reduce top padding.
+ * - There are two images included – one is shown on mobile (hero__inline-image),
+ *   and the other on tablet and above. Both are optional.
+ *
+ * Example Usage:
+ *
+ *  <div class="hero hero--breaded">
+ *    <div class="hero__content">
+ *      <div class="hero__body">
+ *        <h1 class="hero__title">Duis aute irure dolor in reprehenderit</h1>
+ *        <div class="hero__inline-image">
+ *          <img src="//placehold.it/646x492/005ea5/ffffff?text=A+supporting+image" alt="" role="presentation">
+ *        </div>
+ *        <p class="hero__description">
+ *          Lorem ipsum dolor sit amet, consectetur adipisicing elit
+ *        </p>
+ *        <a href="#" role="button" class="hero-button">
+ *          Do this thing
+ *        </a>
+ *        <span class="hero-alternative-action">
+ *          or <a href="#">do another thing</a> because reasons
+ *        </span>
+ *        <p>Pellentesque commodo arcu in sollicitudin lacinia. Vivamus lacus nibh, maximus nec laoreet eget, condimentum vel mi.</p>
+ *      </div>
+ *      <div class="hero__aside-image">
+ *        <img src="//placehold.it/646x492/005ea5/ffffff?text=A+supporting+image" alt="" role="presentation">
+ *      </div>
+ *    </div>
+ *  </div>
+ */
+
+.hero {
+  @extend %site-width-container;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $white;
+  padding: $gutter-half 0;
+
+  @include media(tablet) {
+    padding: $gutter 0;
+  }
+
+  &--breaded {
+    padding-top: 0;
+  }
+
+  a:link,
+  a:visited {
+    font-weight: bold;
+    color: $white;
+  }
+
+  a:hover,
+  a:active {
+    color: $light-blue-25;
+  }
+
+  a:focus {
+    color: $black;
+  }
+
+  &__title {
+    @include bold-48;
+  }
+
+  &__description {
+    @include core-24;
+  }
+
+  &__title,
+  &__description {
+    margin-bottom: $gutter-half;
+
+    @include media(tablet) {
+      margin-bottom: $gutter;
+    }
+  }
+
+
+  &__inline-image {
+    text-align: center;
+
+    @include media(tablet) {
+      display: none;
+      visibility: hidden;
+    }
+
+    img {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+
+
+  &__aside-image {
+    display: none;
+    visibility: hidden;
+
+    @include media(tablet) {
+      display: block;
+      visibility: visible;
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: $gutter-half;
+    }
+  }
+
+  &__content {
+    @extend %grid-row;
+  }
+
+  &__body,
+  &__aside-image {
+    @include grid-column(1 / 2);
+  }
+
+  @include media(desktop) {
+    &__body {
+      @include grid-column(2 / 3);
+    }
+
+    &__aside-image {
+      @include grid-column(1 / 3);
+    }
+  }
+}

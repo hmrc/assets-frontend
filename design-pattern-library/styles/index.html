@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" class="no-js tech-docs">
+  <head>
+    <base href="/">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="robots" content="noindex">
+
+    <title>HMRC Design System</title>
+
+    <link rel="icon" type="image/x-icon" href="public/images/favicon.ico" />
+
+    <link rel="stylesheet" href="public/assets/stylesheets/design-system.css">
+    <link rel="stylesheet" href="public/assets/stylesheets/vendor/highlight/github.css">
+
+    <!--[if gt IE 8]><!--><link href="public/assets/stylesheets/govuk-template.css" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <!--[if IE 6]><link href="public/assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 7]><link href="public/assets/stylesheets/govuk-template-ie7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 8]><link href="public/assets/stylesheets/govuk-template-ie8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <!--[if gt IE 8]><!--><link rel="stylesheet" href="public/stylesheets/application.min.css"><!--<![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="public/stylesheets/application-ie.min.css"><![endif]-->
+
+    
+
+    <script src="public/assets/javascripts/vendor/modernizr.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-43414424-34', 'auto');
+      ga('set', 'anonymizeIp', true)
+      ga('send', 'pageview');
+    </script>
+  </head>
+
+  <body class="">
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="skip-link">Skip to main content</a>
+
+        <header class="design-system-header design-system-header--full-width">
+          <div class="design-system-header__container">
+            <div class="design-system-header__brand">
+                <a href="index.html">
+                  <span class="design-system-govuk-logo">
+                    <img class="design-system-govuk-logo__printable-crown" src="public/assets/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+                    GOV.UK
+                  </span>
+
+                  <span class="design-system-header__title">HMRC Design System</span>
+                </a>
+            </div>
+
+            <!--
+            <div class="pattern-search pattern-search--in-header">
+              <input type="text" name="pattern-query" class="pattern-search__input" placeholder="Search Design System" autocomplete="off">
+              <ul class="search-results js-search-results">
+              </ul>
+            </div>
+           -->
+
+            <div class="mobile-nav-trigger">
+              <input class="button js-mobile-nav-toggle" type="submit" value="Menu">
+            </div>
+          </div>
+        </header>
+
+        <div class="design-system phase-banner">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a prototype</span>
+          </p>
+        </div>
+
+        <div class="sub-nav">
+          <ul class="sub-nav-list">
+            <li><a href="/index.html">About</a></li>
+            <li><a href="/styles/index.html">Styles</a></li>
+            <li><a href="/components/index.html">Components</a></li>
+            <li><a href="/patterns/index.html">Patterns</a></li>
+           </ul>
+        </div>
+      </div>
+
+      <!-- TODO: mobile_nav -->
+
+      <div class="app-pane__body">
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <nav id="toc" class="js-toc-list toc__list">
+              <ul class="pattern-nav">
+                <li><a href="/styles/alpha-and-beta-banners/index.html">Alpha and beta banners</a></li>
+                <li><a href="/styles/buttons/index.html">Buttons</a></li>
+                <li><a href="/styles/colour/index.html">Colour</a></li>
+                <li><a href="/styles/data/index.html">Data</a></li>
+                <li><a href="/styles/errors-and-validation/index.html">Errors and validation</a></li>
+                <li><a href="/styles/form-elements/index.html">Form elements</a></li>
+                <li><a href="/styles/icons-and-images/index.html">Icons and images</a></li>
+                <li><a href="/styles/layout/index.html">Layout</a></li>
+                <li><a href="/styles/typography/index.html">Typography</a></li>
+              <ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="design-system-content" class="markdown" data-module="anchored-headings">
+            <!--
+            <div class="banner banner__out-of-date">
+              <p>This content has not yet been written using the Design System content guidelines</p>
+            </div>
+             -->
+
+            <!--
+            TODO: set title as data
+
+            <div class="pattern-header">
+              <p class="section-heading"></p>
+              <h1></h1>
+            </div>
+            -->
+
+            <h1 id="styles">Styles</h1>
+<p>The core styles that will make your service look and feel like GOV.UK.</p>
+<p>Providing you are using the <a href="https://github.com/alphagov/govuk_prototype_kit/">GOV.UK Prototype Kit</a> or have <a href="https://github.com/alphagov/govuk-frontend">GOV.UK Frontend</a> included in your build, the code supplied in the design system should not need any additional styling.</p>
+<p>If you&#39;re using <a href="http://github.com/hmrc/assets-frontend">HMRC Assets-Frontend</a> some of these styles will look different until Assets Frontend has been updated to the latest version of GOV.UK Frontend.</p>
+<p>Should you need to apply styles manually you should follow existing GOV.UK conventions. For example, don’t assign new meanings to colours, don’t change the styling of buttons or change the thickness of borders on form inputs.</p>
+<p>All of the links in this section will take you to the current version of <a href="http://govuk-elements.herokuapp.com/">GOV.UK Elements</a>.</p>
+
+
+            <!--
+            TODO: pass the following into the template from AF
+
+            <div id="related-content" class="related-content">
+              <div class="grid-row">
+
+
+
+                <div class="column-one-quarter related-content-grid-item">
+                  <h2>Further resources</h2>
+
+                  <ul class="list">
+
+
+                    <li><a href="#">Edit this guidance on GitHub</a></li>
+                    <li><a href="#">Raise an issue on GitHub</a></li>
+                    <li><a href="#">History of this page</a></li>
+                  </ul>
+                </div>
+
+                <div class="column-one-quarter related-content-grid-item">
+                  <dl class="meta-data-bottom">
+                    <dt>Last reviewed:</dt>
+                    <dd>30 March 2017</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+            -->
+
+            <div class="callout">
+              <h2 class="heading-medium">Get in touch</h2>
+              <p>If you’ve got a question, idea or suggestion share it in <a href="https://hmrcdigital.slack.com/messages/C39V3PH38">#team-sdt</a> on HMRC Slack (<a href="slack://channel?team=T04RY81HB&amp;id=C39V3PH38">open in app</a>) or <a href="hmrc-service-design-tools-g@digital.hmrc.gov.uk">email the Service Design Tools team</a></p>
+            </div>
+          </main>
+
+          <footer class="design-system-footer design-system-footer--full-width">
+            <div class="footer-container">
+              <div class="footer__navigation">
+                <div class="footer__navigation--column">
+                  <h2 class="heading-medium">GOV.UK Design System</h2>
+                  <ul>
+                    <li><a href="https://govuk-design-system-prototypes.cloudapps.digital/design-patterns/patterns/">Prototype</a></li>
+                  </ul>
+                </div>
+                <div class="footer__navigation--column">
+                  <h2 class="heading-medium">Other design resources</h2>
+                  <ul>
+                    <li><a href="https://www.gov.uk/design-principles">GDS Design Principles</a></li>
+                    <li><a href="https://www.gov.uk/service-manual">GOV.UK Service Manual</a></li>
+                    <li><a href="#">GOV.UK Frontend</a></li>
+                    <li><a href="https://govuk-prototype-kit.herokuapp.com/docs">GOV.UK Prototype kit</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="footer__licence">
+                <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
+                <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+              </div>
+
+              <div class="footer__copyright">
+                <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script src="public/assets/javascripts/vendor/highlight/highlight.pack.js"></script>
+    <script src="public/assets/javascripts/design-system.js"></script>
+
+    
+
+    <script src="public/javascripts/application.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+/* Styles for the structure of the component library */
+.comp-lib-content {
+  max-width: 1024px;
+  padding: 0 1em;
+  margin: 0 auto;
+}
+.comp-lib {
+  margin-top: 2.6em;
+  display: table;
+  width: 100%;
+}
+.comp-lib-sidebar {
+  width: 22%;
+  display: table-cell;
+  vertical-align: top;
+  padding-right: .8em;
+}
+.comp-lib-main {
+  width: 78%;
+  display: table-cell;
+}
+.comp-lib-menu-item {
+  margin-bottom: .2em;
+  padding: .1em .2em .1em 0;
+}
+.comp-lib-menu-item--indented {
+  list-style: disc;
+  list-style-position: inside;
+  font-size: .9em;
+}
+.comp-lib-menu-item--highlighted {
+  font-weight: bold;
+}
+.comp-lib-menu-link {
+  color: #000;
+  text-decoration: none;
+}
+.comp-lib-menu-link:hover {
+  text-decoration: underline;
+}
+.comp-lib-menu-link:link,
+.comp-lib-menu-link:visited,
+.comp-lib-menu-link:active {
+  color: #000;
+}
+.comp-lib-description {
+  line-height: 1.5;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+.comp-lib-description--experimental {
+  border-left: 4px solid #af1324;
+  background-color: #f7e7e9;
+  padding: 1em;
+}
+.comp-lib-description--deprecated {
+  border-left: 4px solid #6f777b;
+  background-color: #dee0e2;
+  padding: 1em;
+}
+.comp-lib-pre {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  font-size: .9em;
+  border: none;
+}
+.comp-lib-code {
+  border: none;
+  font-size: .9em;
+  padding: 1em !important;
+}
+.comp-lib-pattern-component {
+  padding-bottom: 1em;
+}
+.comp-lib-pattern-example {
+  margin-bottom: 4em;
+}
+.comp-lib-pattern-component #wrapper,
+.comp-lib-pattern-component .sidebar,
+.comp-lib-pattern-component .content__body,
+.comp-lib-pattern-component .centered-content {
+  background: rgba(127,127,127,0.2);
+}
+.comp-lib-pattern-component .grid-layout__column {
+  background-color: #dee0e2;
+  padding: 1em;
+  outline: 1px solid #fff;
+}
+.comp-lib-pattern-component .grid-layout {
+  font-size: .8em;
+}
+.comp-lib-pattern-component--dark {
+  background-color: #6f777b;
+}
+.comp-lib-description code,
+.comp-lib-pattern-markdown code {
+  border: none !important;
+  font: inherit;
+  border-radius: 4px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.comp-lib-pattern-markdown blockquote {
+  margin-left: .4em;
+  padding-left: .6em;
+  border-left: 4px solid #bfc1c3;
+  color: #bfc1c3;
+}
+.comp-lib-pattern-markdown blockquote code {
+  color: #fff;
+  background-color: #bfc1c3;
+}
+.comp-lib-pattern-markdown ul {
+  list-style: disc;
+  list-style-position: inside;
+  margin: 0;
+  padding-left: 1.2em;
+}
+.comp-lib-pattern-markdown p {
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+.comp-lib-pattern-markdown h1 {
+  padding-top: 1.6em;
+}
+.comp-lib-pattern-markdown h2,
+.comp-lib-pattern-markdown h3,
+.comp-lib-pattern-markdown h4 {
+  margin-bottom: 1em;
+  padding-top: .8em;
+}
+.comp-lib-clearfix:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+.comp-lib-warning {
+  padding-top: 0 !important;
+  color: #df3034;
+  text-decoration: underline;
+}
+
+/* Scaled component examples */
+.scale-wrapper {
+  margin-bottom: em(20, 16);
+  overflow: hidden;
+}
+
+.scale {
+  -ms-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+
+  -ms-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  width: 200%;
+  border: 2px solid #bfc1c3;
+  padding: 20px;
+  box-sizing: border-box;
+}
