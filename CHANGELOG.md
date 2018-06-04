@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Timeout documentation and examples [#949](https://github.com/hmrc/assets-frontend/pull/949)
 - Page not found, service unavailable and there is a problem with the service examples [#947](https://github.com/hmrc/assets-frontend/pull/947)
 - Markup example and tests for Account Menu and Account Header [#961](https://github.com/hmrc/assets-frontend/pull/961)
+- The timeout dialog has been heavily refactored with full test coverage, a new preferred interface has been added as `govuk.timeoutDialog()` while still supporting `$.timeoutDialog()` with its current form [#957](https://github.com/hmrc/assets-frontend/pull/957) 
 
 ### Added
 - New pattern for asking users for their consent to meet GDPR and DPA standards [#962](https://github.com/hmrc/assets-frontend/pull/962)

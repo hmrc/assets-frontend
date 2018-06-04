@@ -7,5 +7,7 @@ var timeoutDialog = require('../patterns/help-users-when-we-time-them-out-of-a-s
 ;(function ($, window, document) {
   accountMenu()
   charCounter()
-  $.timeoutDialog = timeoutDialog
+  window.GOVUK = window.GOVUK || {}
+  window.GOVUK.timeoutDialog = timeoutDialog.timeoutDialog
+  $.timeoutDialog = timeoutDialog.legacyWrapper
 })(window.jQuery, window, document)
