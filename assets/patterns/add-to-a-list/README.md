@@ -33,7 +33,7 @@ Get a user to confirm they want to delete something from the list.
 {{ example('add-to-list-delete-director.html') }}
 {{ markup('add-to-list-delete-director.html') }}
 
-{{ image('Animated example of deleting a director from the list that asks a yes-no question for them to confirm they want to delete the specific director', 'add-to-list-delete.gif') }}
+{{ image('Animated example of deleting a director from the list that asks a yes-no question for them to confirm they want to delete the specific director.', 'add-to-list-delete.gif') }}
 
 ### Change something on the list
 
@@ -46,4 +46,4 @@ Show all the information about the entry and let someone make a change.
 
 ## Research on this component
 
-{{ research(31) }}
+{{ research(31) }}  kdafjsd
