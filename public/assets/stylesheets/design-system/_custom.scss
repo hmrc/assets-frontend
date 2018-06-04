@@ -110,6 +110,10 @@ main {
       background: $grey-1;
       color: white;
     }
+
+    img {
+      max-width: 100%;
+    }
   }
 
   .column-one-third > h2 {
@@ -302,7 +306,7 @@ dl.meta-data-bottom {
   h2 {
     margin-top: 0 !important;
     padding-top: 0;
-    max-width: 35em;    
+    max-width: 35em;
     &.heading-medium {
       @include media(mobile) {
         padding-top: $gutter-half;

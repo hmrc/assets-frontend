@@ -1149,6 +1149,8 @@ main {
       line-height: 1.25;
       background: #6f777b;
       color: white; }
+    .markdown .example img {
+      max-width: 100%; }
   .markdown .column-one-third > h2 {
     padding-top: 30px;
     margin-top: 15px; }
