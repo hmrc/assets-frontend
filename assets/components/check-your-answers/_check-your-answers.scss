@@ -40,25 +40,6 @@
     // using margin instead of padding because of easier absolutely positioning of .change
   }
 
-  .cya-question--light {
-    font-weight: normal;
-  }
-
-  .cya-delete {
-    text-align: right;
-    display: block;
-    margin: 0;
-
-    @include media(desktop) {
-      display: table-cell;
-      padding-right: 0;
-      + .cya-change {
-        width: 6em;
-      }
-    }
-
-  }
-
   > *:first-child .cya-question {
     margin-top: 0;
   }

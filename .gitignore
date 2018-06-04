@@ -17,6 +17,7 @@ target/
 /design-pattern-library/
 /design-system/
 /component-library/
+/component-library-template/
 !gulpfile.js/util/component-library/
 vrt-output/
 backstop.json

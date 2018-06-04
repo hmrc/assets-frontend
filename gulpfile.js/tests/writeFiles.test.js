@@ -40,7 +40,7 @@ test('writeFiles - writes a file to a given destination', function (t) {
   var config = getConfig(destination)
 
   writeFiles(config, files)
-    .then(function (returnValue) {
+    .then(function (message) {
       var outputFile = fs.readFileSync(path.join(destination, filePath))
 
       t.ok(
@@ -54,10 +54,10 @@ test('writeFiles - writes a file to a given destination', function (t) {
         'with the file contents as the HTML file\'s contents'
       )
 
-      t.deepEqual(
-        returnValue,
-        files,
-        'Returns the original files array'
+      t.equal(
+        message,
+        'Design pattern library created',
+        'and returns a sucess message'
       )
     })
     .then(function () {
@@ -126,7 +126,7 @@ test('writeFiles - takes an optional base directory', function (t) {
   del.sync([destination])
 
   writeFiles(config, files)
-    .then((returnValue) => {
+    .then((message) => {
       t.deepEqual(
         fs.readdirSync(destination),
         ['category', 'index.html'],
@@ -139,10 +139,10 @@ test('writeFiles - takes an optional base directory', function (t) {
         `with the correct directory structure`
       )
 
-      t.deepEqual(
-        returnValue,
-        files,
-        'Returns the original files array'
+      t.equal(
+        message,
+        'Design pattern library created',
+        'and returns a sucess message'
       )
     })
     .then(() => {
