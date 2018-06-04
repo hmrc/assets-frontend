@@ -1,26 +1,26 @@
 # Help users when we time them out of a service
 
-This pattern warns someone before we are going to time them out of a service and what to tell them if we do.
+This pattern warns someone before we are going to time them out of a service and what to tell them if we do time them out.
 
 {{ example("timeout.html", true) }}
 
 ## When to use this pattern
 
-Warn a user we are going to time them out when they do not do anything for 13 minutes. This gives them 2 minutes to decide to stay signed in.
+Warn a user we are going to time them out when they do not do anything for 13 minutes. This gives them 2 minutes to decide to keep using the service.
 
-The warning helps make a service more accessible.
+The warning makes a service more accessible.
 
 Automatically take them to a page that tells them what has happened after 15 minutes.
 
 ## How the pattern works
 
-The pattern uses an accessible dialog box that appears on top of the page. They will not be able to use the screen with mouse or keyboard until they select an option or dismiss the dialog box.
+The pattern uses an accessible dialog box that appears on top of the page. This stops them using the screen with a mouse or keyboard until they select an option or press the escape key.
 
 The user can:
 
 - select a button to stop being timed out
-- select a link
-- press the escape key to close the warning and stop being timed out without refreshing the page
+- select a link to sign out or have their answers deleted
+- press the escape key to close the warning and stop being timed out
 - do nothing
 
 ### When they are signed in to the service
@@ -32,7 +32,7 @@ The warning should:
 - have a “Stay signed in” button
 - have a “Sign out” link that signs them out as normal
 
-If they do nothing, take them to a page that uses content that complements the warning box.
+If they do nothing, take them to a “We signed you out” page that uses similar content as the warning box.
 
 #### Warning
 
@@ -78,25 +78,21 @@ Add the timeout-dialog.js file and call the timeoutDialog method on a service’
 
 ```
 $.timeoutDialog({
-  timeout: 900,
-  countdown: 120,
-  keep_alive_url: '/keep-alive',
-  logout_url: '/sign-out',
-  keep_alive_button_text: 'Get another 15 minutes',
-  sign_out_button_text: 'Sign out'
+	timeout: 900,
+   countdown: 120,
+   keepAliveUrl: '/keep-alive',
+   signOutUrl: '/sign-out'  
 });
 ```
 
 From timeout-dialog.js:
 
-- timeout is the number of seconds before you are timed out – 900 is the platform default
+- timeout is the number of seconds before you are timed out and 900 is the platform default
 - countdown is the number of seconds before the timeout the warning is displayed
 - keep_alive_url is a call to the server that keeps them in the service without refreshing the page
 - logout_url is the same URL as your service’s sign out page
-- keep_alive_button_text is the default content for the button you will need to change
-- sign_out_button_text is the default content for the button you may need to change
 
-When the dialog box loads:
+When the warning loads:
 
 - set focus to the box
 - read the paragraph of content

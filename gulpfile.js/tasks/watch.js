@@ -25,8 +25,9 @@ gulp.task('watch', () => {
     }
   )
 
-  gulp.watch(
-    config.test.files.v4.map((glob) => `${config.src}${glob}`),
+  var testsToWatch = config.test.files.v4.map((glob) => `${config.src}${glob}`)
+
+  gulp.watch(testsToWatch,
     () => {
       runSequence(
         'lint:scripts',
