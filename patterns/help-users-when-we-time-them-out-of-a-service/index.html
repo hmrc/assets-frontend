@@ -127,7 +127,7 @@
             -->
 
             <h1 id="help-users-when-we-time-them-out-of-a-service">Help users when we time them out of a service</h1>
-<p>This pattern warns someone before we are going to time them out of a service and what to tell them if we do.</p>
+<p>This pattern warns someone before we are going to time them out of a service and what to tell them if we do time them out.</p>
 <div class="example">
   <div class="scale-wrapper">
     <div class="scale"><!-- COOKIE MESSAGE -->
@@ -227,16 +227,16 @@
 
 
 <h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Warn a user we are going to time them out when they do not do anything for 13 minutes. This gives them 2 minutes to decide to stay signed in.</p>
-<p>The warning helps make a service more accessible.</p>
+<p>Warn a user we are going to time them out when they do not do anything for 13 minutes. This gives them 2 minutes to decide to keep using the service.</p>
+<p>The warning makes a service more accessible.</p>
 <p>Automatically take them to a page that tells them what has happened after 15 minutes.</p>
 <h2 id="how-the-pattern-works">How the pattern works</h2>
-<p>The pattern uses an accessible dialog box that appears on top of the page. They will not be able to use the screen with mouse or keyboard until they select an option or dismiss the dialog box.</p>
+<p>The pattern uses an accessible dialog box that appears on top of the page. This stops them using the screen with a mouse or keyboard until they select an option or press the escape key.</p>
 <p>The user can:</p>
 <ul>
 <li>select a button to stop being timed out</li>
-<li>select a link</li>
-<li>press the escape key to close the warning and stop being timed out without refreshing the page</li>
+<li>select a link to sign out or have their answers deleted</li>
+<li>press the escape key to close the warning and stop being timed out</li>
 <li>do nothing</li>
 </ul>
 <h3 id="when-they-are-signed-in-to-the-service">When they are signed in to the service</h3>
@@ -247,7 +247,7 @@
 <li>have a “Stay signed in” button</li>
 <li>have a “Sign out” link that signs them out as normal</li>
 </ul>
-<p>If they do nothing, take them to a page that uses content that complements the warning box.</p>
+<p>If they do nothing, take them to a “We signed you out” page that uses similar content as the warning box.</p>
 <h4 id="warning">Warning</h4>
 <div class="example">
   <div class="scale-wrapper">
@@ -711,23 +711,19 @@
 <h3 id="technical-details">Technical details</h3>
 <p>Add the timeout-dialog.js file and call the timeoutDialog method on a service’s main template. This will add the warning to every page.</p>
 <pre><code>$.timeoutDialog({
-  timeout: 900,
-  countdown: 120,
-  keep_alive_url: &#39;/keep-alive&#39;,
-  logout_url: &#39;/sign-out&#39;,
-  keep_alive_button_text: &#39;Get another 15 minutes&#39;,
-  sign_out_button_text: &#39;Sign out&#39;
+    timeout: 900,
+   countdown: 120,
+   keepAliveUrl: &#39;/keep-alive&#39;,
+   signOutUrl: &#39;/sign-out&#39;  
 });
 </code></pre><p>From timeout-dialog.js:</p>
 <ul>
-<li>timeout is the number of seconds before you are timed out – 900 is the platform default</li>
+<li>timeout is the number of seconds before you are timed out and 900 is the platform default</li>
 <li>countdown is the number of seconds before the timeout the warning is displayed</li>
 <li>keep_alive_url is a call to the server that keeps them in the service without refreshing the page</li>
 <li>logout_url is the same URL as your service’s sign out page</li>
-<li>keep_alive_button_text is the default content for the button you will need to change</li>
-<li>sign_out_button_text is the default content for the button you may need to change</li>
 </ul>
-<p>When the dialog box loads:</p>
+<p>When the warning loads:</p>
 <ul>
 <li>set focus to the box</li>
 <li>read the paragraph of content</li>
