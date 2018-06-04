@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed a couple of typos on the _opens in a new window or tab_ page [954](https://github.com/hmrc/assets-frontend/pull/954)
 - Fixed table layout issue on messages pattern full width [959](https://github.com/hmrc/assets-frontend/pull/959)
 - Removed unwanted folder called component library template from git [964](https://github.com/hmrc/assets-frontend/pull/964)
+- Replaced missing 'add to a list' pattern files which got deleted from merge on commit 8c6fd11 [965](https://github.com/hmrc/assets-frontend/pull/965)
 
 ### Changed
 - Moved the header pattern to patterns and updated documentation [944](https://github.com/hmrc/assets-frontend/pull/944)
