@@ -7,7 +7,7 @@ var writeFiles = function (config, files) {
     throw new Error('You must provide a destination path for the design pattern library')
   }
 
-  files = files.map(function (file) {
+  var promises = files.map(function (file) {
     var fileDirectory = path.parse(file.relative).dir
     var outputDirectory = path.join(config.dest, fileDirectory)
     var outputFile = path.join(outputDirectory, file.basename)
@@ -39,9 +39,9 @@ var writeFiles = function (config, files) {
     })
   })
 
-  return Promise.all(files)
+  return Promise.all(promises)
     .then(function () {
-      return 'Design pattern library created'
+      return files
     })
     .catch(function (error) {
       return error
