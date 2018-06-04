@@ -15,6 +15,7 @@ test_coverage/
 assets/public/
 target/
 /component-library/
+/component-library-template/
 design-pattern-library/
 design-system/
 !gulpfile.js/util/component-library/
