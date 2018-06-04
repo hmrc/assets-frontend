@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed the `sign-out` link on the *Help users when we sign them out...* page examples [953](https://github.com/hmrc/assets-frontend/pull/953)
 - Fixed a couple of typos on the _opens in a new window or tab_ page [954](https://github.com/hmrc/assets-frontend/pull/954)
 - Fixed table layout issue on messages pattern full width [959](https://github.com/hmrc/assets-frontend/pull/959)
+- Removed unwanted folder called component library template from git [964](https://github.com/hmrc/assets-frontend/pull/964)
 
 ### Changed
 - Moved the header pattern to patterns and updated documentation [944](https://github.com/hmrc/assets-frontend/pull/944)
