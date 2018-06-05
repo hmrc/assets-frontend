@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Fixed
+- Updated add to a list documentation so animated gif matches example. [#966](https://github.com/hmrc/assets-frontend/pull/966)
 - Added the `mailto:` scheme to the email link on the design-system *About* page. [951](https://github.com/hmrc/assets-frontend/pull/951)
 - Fixed the `sign-out` link on the *Help users when we sign them out...* page examples [953](https://github.com/hmrc/assets-frontend/pull/953)
 - Fixed a couple of typos on the _opens in a new window or tab_ page [954](https://github.com/hmrc/assets-frontend/pull/954)
