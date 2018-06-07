@@ -109,7 +109,7 @@ var self = module.exports = {
           dialogControl.setAriaLive()
         }
         if (counter < 60) {
-          message = counter + ' ' + settings.properties[counter !== 1 ? 'seconds' : 'second']
+          message = counter + ' ' + settings.properties[counter === 1 ? 'second' : 'seconds']
         } else {
           var minutes = Math.ceil(counter / 60)
           message = minutes + ' ' + settings.properties[minutes === 1 ? 'minute' : 'minutes']
