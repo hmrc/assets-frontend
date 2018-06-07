@@ -8,7 +8,6 @@ runSequence.options.showErrorStackTrace = false
 
 gulp.task('kss', (done) => {
   const genCompLib = './node_modules/.bin/kss-node --config component-lib.json'
-
   exec(genCompLib, (err) => {
     done(err)
   })
@@ -16,7 +15,8 @@ gulp.task('kss', (done) => {
 
 gulp.task('component-library', (done) => {
   runSequence(
-    ['kss', 'build:v3'],
+    'build:v3',
+    'kss',
     'copy:component-library',
     done
   )
