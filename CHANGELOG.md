@@ -6,7 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+
+
+## [3.3.0] and [4.3.0] 2018-06-08
 ### Fixed
+- Added the missing styles for conditional reveal and correctly initialised the javascript [#967](https://github.com/hmrc/assets-frontend/pull/967)
 - Updated add to a list documentation so animated gif matches example. [#966](https://github.com/hmrc/assets-frontend/pull/966)
 - Added the `mailto:` scheme to the email link on the design-system *About* page. [951](https://github.com/hmrc/assets-frontend/pull/951)
 - Fixed the `sign-out` link on the *Help users when we sign them out...* page examples [953](https://github.com/hmrc/assets-frontend/pull/953)
@@ -30,7 +35,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - New pattern for asking users for their consent to meet GDPR and DPA standards [#962](https://github.com/hmrc/assets-frontend/pull/962)
 - New patterns for help users when we cannot confirm who they are and tell user we have confirmed who they are [#942](https://github.com/hmrc/assets-frontend/pull/942)
-- Added the conditional reveal functionality from Elements [#967](https://github.com/hmrc/assets-frontend/pull/967)
 - Added new tests for the show hide content module [#969](https://github.com/hmrc/assets-frontend/pull/969)
 
 ## [3.2.4] and [4.2.4] - 2018-04-12
