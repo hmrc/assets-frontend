@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [3.3.1] and [4.3.1] 2018-06-11
+## [3.3.1] and [4.3.1] 2018-06-11 
 ### Fixed
 - Fixed the initialisation of conditional reveal (show-hide) Javascript [#971]
 - Refactored tests for show hide as we needed to test the function with DOMContentLoaded event listener, previous test were not a true reflection of when the code gets loaded in production. [971](https://github.com/hmrc/assets-frontend/pull/971) 
