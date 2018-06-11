@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed table layout issue on messages pattern full width [959](https://github.com/hmrc/assets-frontend/pull/959)
 - Removed unwanted folder called component library template from git [964](https://github.com/hmrc/assets-frontend/pull/964)
 - Replaced missing 'add to a list' pattern files which got deleted from merge on commit 8c6fd11 [965](https://github.com/hmrc/assets-frontend/pull/965)
+- Refactored tests for show hide as we needed to test the function with DOMContentLoaded event listener, previous test were not a true reflection of when the code gets loaded in production. [971](https://github.com/hmrc/assets-frontend/pull/971) 
 
 ### Changed
 - Moved the header pattern to patterns and updated documentation [944](https://github.com/hmrc/assets-frontend/pull/944)
