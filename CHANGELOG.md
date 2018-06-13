@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Updated
+- Deleted nonsense characters from add to a list documentation. [#973](https://github.com/hmrc/assets-frontend/pull/973)
 
 ## [3.3.1] and [4.3.1] 2018-06-11
 ### Fixed
