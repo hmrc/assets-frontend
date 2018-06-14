@@ -1,4 +1,4 @@
-{% macro example(file, scaled=false, cy=false, summary='', html=false) %}
+{% macro example(file, scaled=false, cy=false, html=false) %}
   {% if scaled %}
     {% set scaledWrapperStart %}<div class="scale-wrapper"><div class="scale">{% endset %}
     {% set scaledWrapperEnd %}</div></div>{% endset %}
@@ -15,7 +15,7 @@
   {% if cy %}
   {% set fileCy %}{{ file | getWelshFileName }}{% endset %}
   <details>
-    <summary>{{ summary }}</summary>
+    <summary>Welsh example</summary>
      <div class="example">{{ scaledWrapperStart | safe }}{% include fileCy %}{{ scaledWrapperEnd | safe }}</div>
   </details>
   {% if html %}
