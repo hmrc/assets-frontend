@@ -15,6 +15,15 @@ var parseDocumentation = function (files) {
       path.parse(file.path).dir,
       config.designSystem.sourceBaseDir
     ])
+
+    environment.addFilter('getWelshFileName', function (filePath) {
+      var filePathArray = filePath.split('.')
+      var fileType = filePathArray.pop()
+      filePathArray.push('cy')
+      filePathArray.push(fileType)
+      return filePathArray.join('.')
+    })
+
     environment.addGlobal('filePath', path.parse(path.relative(config.designSystem.sourceBaseDir, file.path)).dir)
 
     var fileContents = macros + file.contents.toString()
