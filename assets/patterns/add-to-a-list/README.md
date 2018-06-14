@@ -46,4 +46,4 @@ Show all the information about the entry and let someone make a change.
 
 ## Research on this component
 
-{{ research(31) }}  kdafjsd
+{{ research(31) }}
