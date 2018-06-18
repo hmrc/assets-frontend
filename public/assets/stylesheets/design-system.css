@@ -1132,6 +1132,7 @@ main {
 .markdown {
   margin: 0 32px 30px; }
   .markdown .example {
+    max-width: 34em;
     position: relative;
     border: 1px solid #bfc1c3;
     margin: 30px 0;
@@ -1151,6 +1152,14 @@ main {
       color: white; }
     .markdown .example img {
       max-width: 100%; }
+    .markdown .example title {
+      display: block; }
+  .markdown details .example {
+    margin-bottom: 0; }
+  .markdown details + pre {
+    display: none; }
+  .markdown details[open] + pre {
+    display: block; }
   .markdown .column-one-third > h2 {
     padding-top: 30px;
     margin-top: 15px; }
@@ -1233,12 +1242,13 @@ main {
     padding: 0; }
     .markdown > pre code {
       border: none; }
+    .markdown > pre + details {
+      margin-top: 30px; }
   .markdown > p,
   .markdown > ul,
   .markdown > ol,
   .markdown > blockquote,
-  .markdown > table,
-  .markdown > .example {
+  .markdown > table {
     max-width: 34em; }
   .markdown > ul {
     list-style: disc; }

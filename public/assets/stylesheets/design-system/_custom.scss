@@ -90,6 +90,7 @@ main {
   margin: 0 32px 30px;
 
   .example {
+    max-width: 34em;
     @extend %contain-floats;
     position: relative;
     border: 1px solid $border-colour;
@@ -114,7 +115,26 @@ main {
     img {
       max-width: 100%;
     }
+
+    title {
+      display: block;
+    }
   }
+
+  details {
+    .example {
+      margin-bottom: 0;
+    }
+    + pre {
+      display: none;
+    }
+  }
+  details[open]{
+    + pre {
+      display: block;
+    }
+  }
+
 
   .column-one-third > h2 {
     padding-top: 30px;
@@ -178,14 +198,16 @@ main {
     code {
       border: none;
     }
+    + details {
+      margin-top: 30px;
+    }
   }
 
   > p,
   > ul,
   > ol,
   > blockquote,
-  > table,
-  > .example {
+  > table {
     max-width: 34em;
   }
 
