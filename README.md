@@ -57,11 +57,11 @@ If your prototype is based on the [GOV.UK prototype kit](https://github.com/alph
 
 Save the file found at
 [https://www.tax.service.gov.uk/assets/\<VERSION\>/stylesheets/application.min.css](https://www.tax.service.gov.uk/assets/\<VERSION\>/stylesheets/application.min.css)
-to `/app/assets/sass/assets-frontend.scss`.
+to `/app/assets/sass/assets-frontend.css`.
 
 And add the following to `app/views/includes/head.html`:
 ```
-<link href="/public/stylesheets/assets-frontend.scss" rel="stylesheet" type="text/css" />
+<link href="/public/stylesheets/assets-frontend.css" rel="stylesheet" type="text/css" />
 ```
 
 **JavaScript**

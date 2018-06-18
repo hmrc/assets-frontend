@@ -1,11 +1,22 @@
-{% macro example(file, scaled=false) %}
+{% macro example(file, scaled=false, cy=false, html=false) %}
 {% if scaled %}
-<div class="example">
-  <div class="scale-wrapper">
-    <div class="scale">{% include file %}</div>
-  </div>
-</div>
+{% set scaledWrapperStart %}<div class="scale-wrapper"><div class="scale">{% endset %}
+{% set scaledWrapperEnd %}</div></div>{% endset %}
 {% else %}
-<div class="example">{% include file %}</div>
+{% set scaledWrapperStart = '' %}
+{% set scaledWrapperEnd = '' %}
+{% endif %}
+<div class="example">{{ scaledWrapperStart | safe }}{% include file %}{{ scaledWrapperEnd | safe }}</div>
+{% if html %}
+```
+{% include file %}
+```
+{% endif %}
+{% if cy %}
+{% set fileCy %}{{ file | getWelshFileName }}{% endset %}
+<details>
+<summary>Welsh example</summary>
+<div class="example">{{ scaledWrapperStart | safe }}{% include fileCy %}{{ scaledWrapperEnd | safe }}</div>
+</details>
 {% endif %}
 {% endmacro %}

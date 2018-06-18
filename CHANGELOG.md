@@ -42,6 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New pattern for asking users for their consent to meet GDPR and DPA standards [#962](https://github.com/hmrc/assets-frontend/pull/962)
 - New patterns for help users when we cannot confirm who they are and tell user we have confirmed who they are [#942](https://github.com/hmrc/assets-frontend/pull/942)
 - Added new tests for the show hide content module [#969](https://github.com/hmrc/assets-frontend/pull/969)
+- Added new macro for displaying Welsh examples [#975](https://github.com/hmrc/assets-frontend/pull/975)
 
 ## [3.2.4] and [4.2.4] - 2018-04-12
 ### Fixed
