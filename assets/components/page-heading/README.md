@@ -12,7 +12,7 @@ Use a page heading on every page.
 
 For accessibility reasons, every page must have a main heading coded as a `<h1>`.
 
-Include a secondary heading, coded as a paragraph (`<p>`), if it helps people know where they are in a service. This is important for long services and those with multiple sections.
+Include a secondary heading, coded as a paragraph (`<p>`), if it helps people know where they are in a service. This is important for long services and those with more than one section.
 
 Use this code so the `<h1>` and the secondary heading are:
 
@@ -25,7 +25,7 @@ Use this code so the `<h1>` and the secondary heading are:
 
 {{ markup("page-heading.html") }}
 
-Change or remove the `visuallyhidden` content to meet your user needs.
+Change or remove the visually hidden content to meet your user needs.
 
 If your service does not need a secondary heading, leave it out.
 
