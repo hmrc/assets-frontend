@@ -4,7 +4,7 @@ This is the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-gov
 
 ## When to use this pattern
 
-Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer). All elements that are imported must not be changed.
+Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer). Do not change any element you import from this header.
 
 Only add an HMRC header if there is a user need to know you are dealing with HMRC. For example, if they are making a payment and need to be sure that the money is going to the right government department.
 
@@ -42,7 +42,7 @@ The GOV.UK header comes with a cookie banner. Use this but change the link to [h
 
 The GOV.UK header also has the phase banner. It includes a feedback link – [https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name](https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name)
 
-In the URL, replace ‘service-name’ with your service’s name so feedback can be directed to your team.
+In the URL, replace ‘service-name’ with your service’s name so feedback goes to your team.
 
 {{ example('header--phase-banner.html', scaled=true, cy=false, html=false) }}
 

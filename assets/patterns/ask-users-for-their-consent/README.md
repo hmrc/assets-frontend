@@ -12,19 +12,19 @@ Personal data is anything that on its own or together with other data can identi
 
 ## How it works
 
-Consent cannot be inferred by someone using a service or doing nothing. It must be:
+Do not infer consent when someone uses a service or does nothing. Consent must be:
 
 - freely given
 - a positive action to opt-in
 - clear, concise and specific
 - separate from other terms and conditions
-- as easy to withdraw as to give
+- as easy to withdraw as it is to give
 
 [Read more about consent on the Information Commissioner’s Office website](https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/consent/).
 
 Do not select radio buttons and checkboxes for users. This means the positive action would opt-out.
 
-Consent covers all activities done for the same reason. If there is more than one reason the data is used, get separate consent for each reason.
+Consent covers all activities done for the same reason. If you use the data for more than one reason, get separate consent for each reason.
 
 ### Ask a yes-no question
 

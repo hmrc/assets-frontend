@@ -19,7 +19,7 @@ For example, ‘What is Gordon's date of birth?’ could be ‘What is their dat
 The page title can have 3 or 4 items separated by dashes. They are:
 
 - the same `<h1>` as the page with any personally identifiable information replaced
-- section name, which should only be used with long services and those with multiple sections
+- section name, only use this with long services and those with more than one section
 - service name
 - GOV.UK
 

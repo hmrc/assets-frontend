@@ -51,13 +51,13 @@ Use this version when you know the page not found is because of a broken link or
 
 ### User or unknown error
 
-Use this version when you know the page not found is because of a user error or you do not know what caused it. This could be a link or button outside the service or the web address was typed or pasted incorrectly.
+Use this version when you know the page not found is because of a user error or you do not know what caused it. This could be a link or button outside the service or the user typed or pasted the web address incorrectly.
 
 {{ example("page-not-found-user.html", scaled=false, cy=true, html=false) }}
 
-### The page exists but cannot be shown
+### The page exists but is no longer available
 
-Use this version if the page is part of a longer journey like a confirmation page. Give a link to a sensible place in the service.
+Use this version if the page exists but cannot be display. This could be a page in the middle of a journey or a confirmation page. Give a link to a sensible place in the service.
 
 {{ example("page-not-found-link.html", scaled=false, cy=false, html=false) }}
 
