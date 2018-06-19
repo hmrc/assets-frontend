@@ -231,9 +231,9 @@
 <p>The pattern uses an accessible dialog box that appears on top of the page. This stops them using the screen with a mouse or keyboard until they select an option or press the escape key.</p>
 <p>The user can:</p>
 <ul>
-<li>select a button to stop being timed out</li>
+<li>select a button to stay in the service and not time out</li>
 <li>select a link to sign out or have their answers deleted</li>
-<li>press the escape key to close the warning and stop being timed out</li>
+<li>press the escape key to close the warning, stay in the service and not time out</li>
 <li>do nothing</li>
 </ul>
 <h3 id="when-they-are-signed-in-to-the-service">When they are signed in to the service</h3>
@@ -1161,8 +1161,8 @@
 });
 </code></pre><p>From timeout-dialog.js:</p>
 <ul>
-<li>timeout is the number of seconds before you are timed out and 900 is the platform default</li>
-<li>countdown is the number of seconds before the timeout the warning is displayed</li>
+<li>timeout is the number of seconds before the user times out and 900 is the platform default</li>
+<li>countdown is the number of seconds before the service displays the warning</li>
 <li>keep_alive_url is a call to the server that keeps them in the service without refreshing the page</li>
 <li>logout_url is the same URL as your service’s sign out page</li>
 </ul>
@@ -1175,7 +1175,7 @@
 </ul>
 <p>This lets a user hear what they need to and stay in the service with a single click.</p>
 <h2 id="research-on-this-component">Research on this component</h2>
-<p>The warning was tested with 5 people for a service they were signed in to. One person had dyslexia and the other was 70 years old. All 5 people understood the warning and managed to stay signed in.</p>
+<p>The warning was tested with 5 people for a service they signed in to. One person had dyslexia and the other was 70 years old. All 5 people understood the warning and managed to stay signed in.</p>
   <div class="">
     <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/89">add your research on GitHub</a>.</p>
   </div>
