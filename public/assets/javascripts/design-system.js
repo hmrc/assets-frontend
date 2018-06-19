@@ -11,14 +11,6 @@
     }
   }
 
-  function scaleExampleHeight() {
-    var scaleWrapper = document.querySelectorAll('.scale-wrapper')
-
-    for (var i = 0, n = scaleWrapper.length; i < n; i++) {
-      scaleWrapper[i].style.height = scaleWrapper[i].querySelector('.scale').offsetHeight / 2 + 'px'
-    }
-  }
-
   function captureCopyEvents(){
     var codeBlocks = document.querySelectorAll('code')
     for (var i = 0, n = codeBlocks.length; i < n; i++){
@@ -26,8 +18,24 @@
         ga('send', 'event', 'markup', 'copy', document.location.pathname)
       })
     }
-
   }
+
+  function scaleExampleHeight() {
+    var scaleWrappers = Array.from(document.querySelectorAll('.scale-wrapper'))
+    scaleWrappers.forEach(function(el){
+      el.style.height = el.querySelector('.scale').clientHeight / 2 + 'px'
+    })
+  }
+
+  var detailsElement = Array.from(document.getElementsByTagName('details'));
+
+  detailsElement.forEach(function(el){
+    el.addEventListener('click', function(){
+      setTimeout(function(){
+        scaleExampleHeight()
+      },100)
+    })
+  })
 
   window.addEventListener('resize', function () {
     scaleExampleHeight()
