@@ -1,12 +1,12 @@
 # Add to a list
 
-This pattern lets users add information with multiple parts to a list.
+This pattern lets users add information with more than one part to a list.
 
 {{ example('add-to-list.html', scaled=false, cy=false, html=false) }}
 
 ## When to use this pattern
 
-Use this pattern when users need to add information with multiple parts to a list. For example, addresses or a person’s details.
+Use this pattern when users need to add information with more than one part to a list. For exatheyple, addresses or a person’s details.
 
 ### ​​​​When not to use this pattern
 
@@ -16,7 +16,7 @@ Do not use this pattern when lists contain different kinds of information.
 
 Allow users to:
 
-- view a summary of what has already been added
+- view a summary of what they have already added to the list
 - answer questions about what they are adding to the list
 - [check their answers before adding to the list](https://www.gov.uk/service-manual/design/check-your-answers-pages)
 - delete and change things on the list

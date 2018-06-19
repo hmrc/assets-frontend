@@ -18,9 +18,9 @@ The pattern uses an accessible dialog box that appears on top of the page. This 
 
 The user can:
 
-- select a button to stop being timed out
+- select a button to stay in the service and not time out
 - select a link to sign out or have their answers deleted
-- press the escape key to close the warning and stop being timed out
+- press the escape key to close the warning, stay in the service and not time out
 - do nothing
 
 ### When they are signed in to the service
@@ -87,8 +87,8 @@ $.timeoutDialog({
 
 From timeout-dialog.js:
 
-- timeout is the number of seconds before you are timed out and 900 is the platform default
-- countdown is the number of seconds before the timeout the warning is displayed
+- timeout is the number of seconds before the user times out and 900 is the platform default
+- countdown is the number of seconds before the service displays the warning
 - keep_alive_url is a call to the server that keeps them in the service without refreshing the page
 - logout_url is the same URL as your service’s sign out page
 
@@ -103,7 +103,7 @@ This lets a user hear what they need to and stay in the service with a single cl
 
 ## Research on this component
 
-The warning was tested with 5 people for a service they were signed in to. One person had dyslexia and the other was 70 years old. All 5 people understood the warning and managed to stay signed in.
+The warning was tested with 5 people for a service they signed in to. One person had dyslexia and the other was 70 years old. All 5 people understood the warning and managed to stay signed in.
 
 {{ research(89) }}
 

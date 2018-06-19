@@ -31,7 +31,7 @@ If there are 0 things, do not show the badge.
 
 ## Research on this component
 
-Notification badges are common on many sites and services. It has been tested as part of the [Account header](components/account-header/index.html). Research showed:
+Notification badges are common on many sites and services. It is part of the [Account header](components/account-header/index.html). Research showed:
 
 - people understand what it is for
 - it does not distract people from their task

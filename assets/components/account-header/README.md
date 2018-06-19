@@ -2,7 +2,7 @@
 
 {{ wip(128) }}
 
-The account header is used in, and was specifically designed for, the [personal tax account](https://www.tax.service.gov.uk/personal-account).
+The account header is used in, and was designed for, the [personal tax account](https://www.tax.service.gov.uk/personal-account).
 
 {{ example('account-header-example.html', scaled=true, cy=false, html=false) }}
 

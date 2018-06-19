@@ -10,7 +10,7 @@ Use a unique page title on every page.
 
 ### When not to use this component
 
-If there is personally identifiable information in the `<h1>` replace it so is not recorded in Google Analytics.
+If there is personally identifiable information in the `<h1>`, replace it so is not recorded in Google Analytics.
 
 For example, ‘What is Gordon's date of birth?’ could be ‘What is their date of birth?’ or ‘What is the child’s date of birth?’
 
@@ -19,7 +19,7 @@ For example, ‘What is Gordon's date of birth?’ could be ‘What is their dat
 The page title can have 3 or 4 items separated by dashes. They are:
 
 - the same `<h1>` as the page with any personally identifiable information replaced
-- section name, which should only be used with long services and those with multiple sections
+- section name, only use this with long services and those with more than one section
 - service name
 - GOV.UK
 
@@ -27,7 +27,7 @@ The page title can have 3 or 4 items separated by dashes. They are:
 
 ## Research on this component
 
-This component is based on the format recommended by the Web Content Accessibility Guidelines in [Providing descriptive titles for Web pages](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G88).
+This component is based on the format recommended by the Web Content Accessibility Guidelines. See [Providing descriptive titles for Web pages](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G88).
 
 It is more accessible and is consistent with GOV.UK guidance pages.
 
