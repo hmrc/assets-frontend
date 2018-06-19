@@ -6,7 +6,7 @@ This pattern lets users add information with more than one part to a list.
 
 ## When to use this pattern
 
-Use this pattern when users need to add information with more than one part to a list. For exatheyple, addresses or a person’s details.
+Use this pattern when users need to add information with more than one part to a list. For example, addresses or a person’s details.
 
 ### ​​​​When not to use this pattern
 

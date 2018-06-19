@@ -20,7 +20,7 @@ Use this component if testing shows you need to open a link in a new window or t
 If opening a link in a new window or tab:
 
 - does not meet a user need
-- leads to more than one window or tab for the same service
+- leads to more than one window or tab open for the same service
 - stops people completing their task
 
 Do not use any icons in place of the words. See ‘[Removing the external link icon from GOV.UK](https://designnotes.blog.gov.uk/2016/11/28/removing-the-external-link-icon-from-gov-uk/)'.
