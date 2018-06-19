@@ -2,7 +2,7 @@
 
 What information to include in the page title. This is the `<title>` not the main heading or `<h1>`.
 
-{{ example("page-title.html") }}
+{{ example("page-title.html", scaled=false, cy=false, html=false) }}
 
 ## When to use this component
 
@@ -16,16 +16,14 @@ For example, ‘What is Gordon's date of birth?’ could be ‘What is their dat
 
 ## How it works
 
-The page title can have 3 or 4 items separated by dashes.
+The page title can have 3 or 4 items separated by dashes. They are:
 
-1. The same `<h1>` as the page with any personally identifiable information replaced.
-2. Section name. This should only be used with long services and those with multiple sections.
-3. Service name.
-4. GOV.UK
+- the same `<h1>` as the page with any personally identifiable information replaced
+- section name, which should only be used with long services and those with multiple sections
+- service name
+- GOV.UK
 
-{{ example("page-title.html") }}
-
-{{ markup("page-title-markup.html") }}
+{{ example("page-title.html", scaled=false, cy=false, html=false) }}
 
 ## Research on this component
 

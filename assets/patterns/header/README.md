@@ -8,7 +8,7 @@ Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-
 
 Only add an HMRC header if there is a user need to know you are dealing with HMRC. For example, if they are making a payment and need to be sure that the money is going to the right government department.
 
-{{ example('header--hmrc-logo.html', true) }}
+{{ example('header--hmrc-logo.html', scaled=true, cy=false, html=false) }}
 
 If your service is in the personal tax account, use the [Account header](/components/account-header/index.html).
 
@@ -24,17 +24,13 @@ Use this header:
 - before a user signs in
 - when a user has signed out
 
-{{ example('header.html', true) }}
-
-#### Markup
-
-{{ markup('header.html') }}
+{{ example('header.html', scaled=true, cy=false, html=true) }}
 
 ### When the user is signed in
 
 This header must contain a sign out link.
 
-{{ example('header--signed-in.html', true) }}
+{{ example('header--signed-in.html', scaled=true, cy=false, html=false) }}
 
 ### Tell users about cookies
 
@@ -48,7 +44,7 @@ The GOV.UK header also has the phase banner. It includes a feedback link – [ht
 
 In the URL, replace ‘service-name’ with your service’s name so feedback can be directed to your team.
 
-{{ example('header--phase-banner.html', true) }}
+{{ example('header--phase-banner.html', scaled=true, cy=false, html=false) }}
 
 ## Research on this component
 

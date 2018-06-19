@@ -2,7 +2,7 @@
 
 This pattern asks users for their consent when we collect and store personal data. The pattern meets our responsibilities under the General Data Protection Regulation 2018 (GDPR) and Data Protection Act 2018 (DPA).
 
-{{ example('ask-users-for-their-consent-yes-no-question.html', scaled=false) }}
+{{ example('ask-users-for-their-consent-yes-no-question.html', scaled=false, cy=false, html=false) }}
 
 ## When to use this pattern
 
@@ -28,17 +28,17 @@ Consent covers all activities done for the same reason. If there is more than on
 
 ### Ask a yes-no question
 
-{{ example('ask-users-for-their-consent-yes-no-question.html', scaled=false) }}
+{{ example('ask-users-for-their-consent-yes-no-question.html', scaled=false, cy=false, html=false) }}
 
 ### Use a single checkbox
 
-{{ example('ask-users-for-their-consent-checkbox.html', scaled=false) }}
+{{ example('ask-users-for-their-consent-checkbox.html', scaled=false, cy=false, html=false) }}
 
 ### Use more than one checkbox
 
 For when there is more than one type of consent or consent must be separate from other terms and conditions.
 
-{{ example('ask-users-for-their-consent-checkboxes.html', scaled=false) }}
+{{ example('ask-users-for-their-consent-checkboxes.html', scaled=false, cy=false, html=false) }}
 
 ## Research on this pattern
 

@@ -1,8 +1,8 @@
 # Page not found
 
-A page not found tells someone the page they were trying to view cannot be found. They are also known as 404 pages.
+A page not found tells someone we cannot find the page they were trying to view. They are also known as 404 pages.
 
-{{ example("page-not-found.html", false) }}
+{{ example("page-not-found.html", scaled=false, cy=false, html=false) }}
 
 ## When to use this pattern
 
@@ -22,12 +22,6 @@ For example, if someone has bookmarked a confirmation or a page in the middle of
 - give them a link or button to get to a sensible place in the service
 
 ## How it works
-
-The page should use the standard page template from your service and have the same:
-
-- header
-- phase banner
-- footer
 
 The page should have:
 
@@ -49,15 +43,23 @@ Do not use:
 - informal or humorous words like oops
 - red text to warn people
 
-### Service mistake
+### Service error
 
-{{ example("page-not-found.html", false) }}
+{{ example("page-not-found.html", scaled=false, cy=true, html=false) }}
 
-As mentioned, test all links and buttons to make sure they work or are sensibly redirected.
+Use this version when you know the page not found is because of a broken link or button from inside the service. Include a back link at the top of the screen.
 
-### User mistake or you do not know why the page is not found
+### User or unknown error
 
-{{ example("page-not-found-user.html", false) }}
+Use this version when you know the page not found is because of a user error or you do not know what caused it. This could be a link or button outside the service or the web address was typed or pasted incorrectly.
+
+{{ example("page-not-found-user.html", scaled=false, cy=true, html=false) }}
+
+### The page exists but cannot be shown
+
+Use this version if the page is part of a longer journey like a confirmation page. Give a link to a sensible place in the service.
+
+{{ example("page-not-found-link.html", scaled=false, cy=false, html=false) }}
 
 ## Research on this pattern
 
