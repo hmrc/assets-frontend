@@ -2,7 +2,7 @@
 
 This is a page that tells someone there is something wrong with the service. They are also known as 500 and internal service error pages.
 
-{{ example("there-is-a-problem-with-the-service.html", false) }}
+{{ example("there-is-a-problem-with-the-service.html", scaled=false, cy=false, html=false) }}
 
 ## When to use this pattern
 
@@ -13,12 +13,6 @@ Log all errors and fix them as quickly as possible.
 Only display the page for a short time. If a problem cannot be fixed quickly, close the service and use a [service unavailable page](/patterns/service-unavailable/index.html).
 
 ## How it works
-
-Use the standard page template from your service and have the same:
-
-- header
-- phase banner
-- footer
 
 The page should have:
 
@@ -43,15 +37,15 @@ Have clear and concise content and do not use:
 
 ### Service has a specific page that includes numbers and opening times
 
-{{ example("there-is-a-problem-with-the-service.html", false) }}
+{{ example("there-is-a-problem-with-the-service.html", scaled=false, cy=true, html=false) }}
 
 ### Service has offline support but no specific page that includes numbers and opening times
 
-{{ example("there-is-a-problem-with-the-service-no-contact.html", false) }}
+{{ example("there-is-a-problem-with-the-service-no-contact.html", scaled=false, cy=true, html=false) }}
 
 ### A link to another service
 
-{{ example("there-is-a-problem-with-the-service-link.html", false) }}
+{{ example("there-is-a-problem-with-the-service-link.html", scaled=false, cy=true, html=false) }}
 
 ## Research on this pattern
 

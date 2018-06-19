@@ -2,7 +2,7 @@
 
 This is a page that tells someone a service is unavailable on purpose. These are also known as 503 and shutter pages.
 
-{{ example('service-unavailable.html', scaled=false) }}
+{{ example('service-unavailable.html', scaled=false, cy=false, html=false) }}
 
 ## When to use this pattern
 
@@ -13,12 +13,6 @@ If there is a problem with the service, [use a technical problem page](/patterns
 Have a general page in case you need to close a service and do not have time to update the page. As soon as you know when the service will be available, update the page.
 
 ## How it works
-
-Use the standard page template from your service and have the same:
-
-- header
-- phase banner
-- footer
 
 The page should have:
 
@@ -42,15 +36,15 @@ Have clear and concise content and do not use:
 
 ### General page
 
-{{ example('service-unavailable-general.html', false) }}
+{{ example('service-unavailable-general.html', scaled=false, cy=true, html=false) }}
 
 ### When you know when a service will be available
 
-{{ example('service-unavailable.html', false) }}
+{{ example('service-unavailable.html', scaled=false, cy=true, html=false) }}
 
 ### A link to another service
 
-{{ example('service-unavailable-link.html', false) }}
+{{ example('service-unavailable-link.html', scaled=false, cy=true, html=false) }}
 
 ### Service is closed for part of the year
 
@@ -58,23 +52,23 @@ This is for a service like tax credit renewals.
 
 #### After a service closes
 
-{{ example('service-unavailable-after.html', false) }}
+{{ example('service-unavailable-after.html', scaled=false, cy=true, html=false) }}
 
 #### Before a service opens
 
 Do not include any contact information.
 
-{{ example('service-unavailable-before.html', false) }}
+{{ example('service-unavailable-before.html', scaled=false, cy=true, html=false) }}
 
 ### Service is closed forever
 
 #### Nothing has replaced the service
 
-{{ example('service-unavailable-no-replacement.html', false) }}
+{{ example('service-unavailable-no-replacement.html', scaled=false, cy=true, html=false) }}
 
 #### Something has replaced the service
 
-{{ example('service-unavailable-replacement.html', false) }}
+{{ example('service-unavailable-replacement.html', scaled=false, cy=true, html=false) }}
 
 ## Research on this pattern
 

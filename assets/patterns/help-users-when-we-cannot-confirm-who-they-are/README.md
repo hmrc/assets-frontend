@@ -2,7 +2,7 @@
 
 This pattern tells users we cannot confirm who they are and what they can do next. This is part of confirming who they are when they sign in with a Government Gateway account for the first time.
 
-{{ example('help-users-when-we-cannot-confirm-who-they-are.html', scaled=false) }}
+{{ example('help-users-when-we-cannot-confirm-who-they-are.html', scaled=false, cy=false, html=false) }}
 
 ## When to use this pattern
 
@@ -19,12 +19,6 @@ There is also a pattern to [tell users we have confirmed who they are](/patterns
 
 ## How it works
 
-Use the standard page template from your service and have the same:
-
-- header
-- phase banner
-- footer
-
 The page should have:
 
 - “H1 – service name – GOV.UK” as the page title
@@ -32,7 +26,7 @@ The page should have:
 - content that explains what went wrong and what they can do
 - a call to action
 
-{{ example('help-users-when-we-cannot-confirm-who-they-are.html', scaled=false) }}
+{{ example('help-users-when-we-cannot-confirm-who-they-are.html', scaled=false, cy=true, html=false) }}
 
 ### Avoid ending a journey
 
@@ -40,7 +34,7 @@ Offer the user a way of continuing to use the service where possible.
 
 If this is not possible, provide a way for the user to do what they need to do another way. This could be another service where they do not need to confirm who they are.
 
-{{ example('help-users-when-we-cannot-confirm-who-they-are-avoid.html', scaled=false) }}
+{{ example('help-users-when-we-cannot-confirm-who-they-are-avoid.html', scaled=false, cy=true, html=false) }}
 
 ### Understand the user’s journey
 
@@ -58,7 +52,7 @@ Help users confirm who they are as quickly as possible if they must do something
 
 Avoid generic content. Display content that is relevant to the user’s journey.
 
-{{ example('help-users-when-we-cannot-confirm-who-they-are-specific.html', scaled=false) }}
+{{ example('help-users-when-we-cannot-confirm-who-they-are-specific.html', scaled=false, cy=true, hmtl=false) }}
 
 ## Research on this pattern
 

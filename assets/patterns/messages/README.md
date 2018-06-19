@@ -28,13 +28,11 @@ Display a summary of messages the user has received. The list has:
 
 #### Unread messages
 
-{{ example("messages-unread.html") }}
-{{ markup("messages-unread.html") }}
+{{ example("messages-unread.html", scaled=false, cy=false, html=true) }}
 
 #### Read messages
 
-{{ example("messages-read.html") }}
-{{ markup("messages-read.html") }}
+{{ example("messages-read.html", scaled=false, cy=false, html=true) }}
 
 ### Message details
 

@@ -2,7 +2,7 @@
 
 A notification badge shows a number.
 
-{{ example("notification-badge.html") }}
+{{ example("notification-badge.html", scaled=false, cy=false, html=false) }}
 
 ## When to use this component
 
@@ -23,11 +23,11 @@ A notification badge displays a number on the right-hand side of an action.
 
 If the number is more than 99, display “99+”.
 
-{{ markup("notification-badge.html") }}
+{{ example("notification-badge.html", scaled=false, cy=false, html=true) }}
 
 If there are 0 things, do not show the badge.
 
-{{ markup("notification-badge-zero.html") }}
+{{ example("notification-badge-zero.html", scaled=false, cy=false, html=true) }}
 
 ## Research on this component
 
