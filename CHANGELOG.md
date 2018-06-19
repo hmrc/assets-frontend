@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Updated
+- Updated examples macro and added Welsh translations. [#976](https://github.com/hmrc/assets-frontend/pull/976)
 - Deleted nonsense characters from add to a list documentation. [#973](https://github.com/hmrc/assets-frontend/pull/973)
 - Added an exception for internal security tool [#974](https://github.com/hmrc/assets-frontend/pull/974)
 
