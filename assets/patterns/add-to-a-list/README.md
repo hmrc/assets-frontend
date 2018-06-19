@@ -2,7 +2,7 @@
 
 This pattern lets users add information with multiple parts to a list.
 
-{{ example('add-to-list.html') }}
+{{ example('add-to-list.html', scaled=false, cy=false, html=false) }}
 
 ## When to use this pattern
 
@@ -21,8 +21,7 @@ Allow users to:
 - [check their answers before adding to the list](https://www.gov.uk/service-manual/design/check-your-answers-pages)
 - delete and change things on the list
 
-{{ example('add-to-list.html') }}
-{{ markup('add-to-list.html') }}
+{{ example('add-to-list.html', scaled=false, cy=false, html=true) }}
 
 {{ image('Animated example of add to a list pattern that includes asking for name, date of birth, National Insurance number, Unique Taxpayer Reference, and letting you check your answers.', 'add-to-list.gif') }}
 
@@ -30,8 +29,7 @@ Allow users to:
 
 Get a user to confirm they want to delete something from the list.
 
-{{ example('add-to-list-delete-director.html') }}
-{{ markup('add-to-list-delete-director.html') }}
+{{ example('add-to-list-delete-director.html', scaled=false, cy=false, html=true) }}
 
 {{ image('Animated example of deleting a director from the list that asks a yes-no question for them to confirm they want to delete the specific director.', 'add-to-list-delete.gif') }}
 
@@ -39,8 +37,7 @@ Get a user to confirm they want to delete something from the list.
 
 Show all the information about the entry and let someone make a change.
 
-{{ example('add-to-list-change.html') }}
-{{ markup('add-to-list-change.html') }}
+{{ example('add-to-list-change.html', scaled=false, cy=false, html=true) }}
 
 {{ image('Animated example of changing a director’s name that includes showing a check your answers type page about the director and changing their name.', 'add-to-list-change.gif') }}
 

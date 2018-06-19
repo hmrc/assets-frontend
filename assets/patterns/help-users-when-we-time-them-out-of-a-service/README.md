@@ -2,7 +2,7 @@
 
 This pattern warns someone before we are going to time them out of a service and what to tell them if we do time them out.
 
-{{ example("timeout.html", true) }}
+{{ example("timeout.html", scaled=true, cy=false, html=false) }}
 
 ## When to use this pattern
 
@@ -36,19 +36,19 @@ If they do nothing, take them to a “We signed you out” page that uses simila
 
 #### Warning
 
-{{ example("timeout.html", true) }}
+{{ example("timeout.html", scaled=true, cy=true, html=false) }}
 
-{{ example("timeout-saved.html", true) }}
+{{ example("timeout-saved.html", scaled=true, cy=true, html=false) }}
 
-{{ example("timeout-will-not-save.html", true) }}
+{{ example("timeout-will-not-save.html", scaled=true, cy=true, html=false) }}
 
 #### We signed you out
 
-{{ example("we-signed-you-out.html", false) }}
+{{ example("we-signed-you-out.html", scaled=false, cy=true, html=false) }}
 
-{{ example("we-signed-you-out-saved.html", false) }}
+{{ example("we-signed-you-out-saved.html", scaled=false, cy=true, html=false) }}
 
-{{ example("we-signed-you-out-did-not-save.html", false) }}
+{{ example("we-signed-you-out-did-not-save.html", scaled=false, cy=true, html=false) }}
 
 ### When they are not signed in to the service
 
@@ -62,15 +62,15 @@ If they do nothing, delete their answers and take them the “For your security,
 
 #### Warning
 
-{{ example("timeout-not-signed-in.html", true) }}
+{{ example("timeout-not-signed-in.html", scaled=true, cy=true, html=false) }}
 
 #### We deleted your answers
 
-{{ example("we-deleted-your-answers.html", false) }}
+{{ example("we-deleted-your-answers.html", scaled=false, cy=true, html=false) }}
 
 #### You deleted your answers
 
-{{ example("you-deleted-your-answers.html", false) }}
+{{ example("you-deleted-your-answers.html", scaled=false, cy=true, html=false) }}
 
 ### Technical details
 

@@ -2,7 +2,7 @@
 
 The page heading is main heading of the page and an optional secondary heading.
 
-{{ example("page-heading.html") }}
+{{ example("page-heading.html", scaled=false, cy=false, html=false) }}
 
 ## When to use this component
 
@@ -21,17 +21,13 @@ Use this code so the `<h1>` and the secondary heading are:
 - displayed the correct way
 - read out the correct way
 
-{{ example("page-heading.html") }}
-
-{{ markup("page-heading.html") }}
+{{ example("page-heading.html", scaled=false, cy=false, html=true) }}
 
 Change or remove the visually hidden content to meet your user needs.
 
 If your service does not need a secondary heading, leave it out.
 
-{{ example("page-heading-no-secondary.html") }}
-
-{{ markup("page-heading-no-secondary.html") }}
+{{ example("page-heading-no-secondary.html", scaled=false, cy=false, html=true) }}
 
 ## Research on this component
 

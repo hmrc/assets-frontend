@@ -2,7 +2,7 @@
 
 This pattern lets users know we have confirmed who they are. This is part of confirming who they are when they sign in with a Government Gateway account for the first time.
 
-{{ example('tell-users-we-have-confirmed-who-they-are.html', scaled=false) }}
+{{ example('tell-users-we-have-confirmed-who-they-are.html', scaled=false, cy=false, html=false) }}
 
 ## When to use this pattern
 
@@ -24,7 +24,7 @@ The page should have:
 - “We have confirmed who you are”
 - a “Continue” call to action
 
-{{ example('tell-users-we-have-confirmed-who-they-are.html', scaled=false) }}
+{{ example('tell-users-we-have-confirmed-who-they-are.html', scaled=false, cy=true, html=false) }}
 
 Do not use the confirmation page pattern. This is not the end of their journey.
 

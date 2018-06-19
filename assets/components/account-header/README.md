@@ -4,7 +4,7 @@
 
 The account header is used in, and was designed for, the [personal tax account](https://www.tax.service.gov.uk/personal-account).
 
-{{ example('account-header-example.html', true) }}
+{{ example('account-header-example.html', scaled=true, cy=false, html=false) }}
 
 ## When to use this component
 
@@ -22,6 +22,8 @@ The account header contains:
 - [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer)
 - the Account menu
 - the language selector if your service is available in Welsh
+
+{{ example('account-header-example.html', scaled=true, cy=true, html=true) }}
 
 ## Research on this component 
 

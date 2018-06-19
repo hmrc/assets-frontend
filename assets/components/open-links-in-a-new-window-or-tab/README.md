@@ -2,7 +2,7 @@
 
 How to display links that open in a new window or tab.
 
-{{ example("open-links-in-a-new-window-or-tab.html") }}
+{{ example("open-links-in-a-new-window-or-tab.html", scaled=false, cy=false, html=false) }}
 
 ## When to use this component
 
@@ -34,9 +34,7 @@ In the code include:
 - target="_blank" to open in a new window or tab
 - rel="noopener noreferrer" to reduce security risks for some browsers
 
-{{ example("open-links-in-a-new-window-or-tab.html") }}
-
-{{ markup("open-links-in-a-new-window-or-tab.html") }}
+{{ example("open-links-in-a-new-window-or-tab.html", scaled=false, cy=true, html=true) }}
 
 ## Research on this component
 
