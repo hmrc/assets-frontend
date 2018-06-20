@@ -59,7 +59,7 @@ Use this version when you know the page not found is because of a user error or 
 
 Use this version if the page exists but cannot be display. This could be a page in the middle of a journey or a confirmation page. Give a link to a sensible place in the service.
 
-{{ example("page-not-found-link.html", scaled=false, cy=false, html=false) }}
+{{ example("page-not-found-link.html", scaled=false, cy=true, html=false) }}
 
 ## Research on this pattern
 
