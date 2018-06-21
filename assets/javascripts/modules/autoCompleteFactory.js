@@ -18,12 +18,10 @@ var createAutoCompleteCountries = function () {
 }
 
 var createAutoComplete = function () {
-  // additional work required to extract the template to a configurable option
-  var suggestionDisplayTemplate = function (title, value) {
-    return title + ' (+' + value + ')'
-  }
+  // we do not use a suggestionDisplayTemplate in this default
+  // implementation until work can be done to make it configurable
 
-  autoComplete($('.js-hmrc-auto-complete').first(), null, null, suggestionDisplayTemplate)
+  autoComplete($('.js-hmrc-auto-complete').first(), null, null, null)
 }
 
 module.exports = function () {
