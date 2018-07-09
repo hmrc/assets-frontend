@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Deleted nonsense characters from add to a list documentation. [#973](https://github.com/hmrc/assets-frontend/pull/973)
 - Added an exception for internal security tool [#974](https://github.com/hmrc/assets-frontend/pull/974)
 
+## [3.3.2] and [4.3.2]
+### pseudo release to test PBD-647
+
 ## [3.3.1] and [4.3.1] 2018-06-11
 ### Fixed
 - Fixed the initialisation of conditional reveal (show-hide) Javascript [#971]
