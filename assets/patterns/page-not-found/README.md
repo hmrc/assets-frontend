@@ -70,4 +70,3 @@ We want to know if people:
 - can fix the problem on their own
 - understand what has happened
 - understand the content and if there is anything missing
-- would use report a page not found if they could
