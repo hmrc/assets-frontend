@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Updated
+- Page not found documentation. [#982](https://github.com/hmrc/assets-frontend/pull/982)
 - Welsh translation of last page not found example. [#979](https://github.com/hmrc/assets-frontend/pull/979)
 - Made more small edits to documentation to make content more active, shorter and use more plain English. [#978](https://github.com/hmrc/assets-frontend/pull/978)
 - Made small edits to documentation to make content more active, shorter and use more plain English. [#977](https://github.com/hmrc/assets-frontend/pull/977)
@@ -17,7 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [3.3.1] and [4.3.1] 2018-06-11
 ### Fixed
 - Fixed the initialisation of conditional reveal (show-hide) Javascript [#971]
-- Refactored tests for show hide as we needed to test the function with DOMContentLoaded event listener, previous test were not a true reflection of when the code gets loaded in production. [971](https://github.com/hmrc/assets-frontend/pull/971) 
+- Refactored tests for show hide as we needed to test the function with DOMContentLoaded event listener, previous test were not a true reflection of when the code gets loaded in production. [971](https://github.com/hmrc/assets-frontend/pull/971)
 
 ## [3.3.0] and [4.3.0] 2018-06-08
 ### Fixed
@@ -39,7 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Timeout documentation and examples [#949](https://github.com/hmrc/assets-frontend/pull/949)
 - Page not found, service unavailable and there is a problem with the service examples [#947](https://github.com/hmrc/assets-frontend/pull/947)
 - Markup example and tests for Account Menu and Account Header [#961](https://github.com/hmrc/assets-frontend/pull/961)
-- The timeout dialog has been heavily refactored with full test coverage, a new preferred interface has been added as `govuk.timeoutDialog()` while still supporting `$.timeoutDialog()` with its current form [#957](https://github.com/hmrc/assets-frontend/pull/957) 
+- The timeout dialog has been heavily refactored with full test coverage, a new preferred interface has been added as `govuk.timeoutDialog()` while still supporting `$.timeoutDialog()` with its current form [#957](https://github.com/hmrc/assets-frontend/pull/957)
 - Minor refactor to timeoutDialog for consistency - missed while doing the major change [#968](https://github.com/hmrc/assets-frontend/pull/968)
 
 ### Added
