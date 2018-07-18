@@ -12,7 +12,7 @@ Use a page not found if someone is trying to view a page that does not exist. Th
 - types or copies a web address for a page that does not exist
 - types or copies a web address incorrectly
 
-Test all links and buttons to make sure work. Remember to [do the hard work to make it simple](https://www.gov.uk/guidance/government-design-principles#do-the-hard-work-to-make-it-simple).
+Test all links and buttons to make sure they work. Remember to [do the hard work to make it simple](https://www.gov.uk/guidance/government-design-principles#do-the-hard-work-to-make-it-simple).
 
 Make sure any web addresses in your service, letters, forms and on GOV.UK are for pages that exist or redirect to pages that exist.
 
