@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Updated
-- Page not found documentation. [#982](https://github.com/hmrc/assets-frontend/pull/982)
+- Updated page not found documentation and examples. [#985](https://github.com/hmrc/assets-frontend/pull/985)
+- Page not found documentation. [#983](https://github.com/hmrc/assets-frontend/pull/983)
 - Welsh translation of last page not found example. [#979](https://github.com/hmrc/assets-frontend/pull/979)
 - Made more small edits to documentation to make content more active, shorter and use more plain English. [#978](https://github.com/hmrc/assets-frontend/pull/978)
 - Made small edits to documentation to make content more active, shorter and use more plain English. [#977](https://github.com/hmrc/assets-frontend/pull/977)
