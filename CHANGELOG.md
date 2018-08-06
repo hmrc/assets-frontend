@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Fixed
-- Fixed validorFocus.js to escape dots in jquery id selector [#984]
+- Fixed validorFocus.js to escape dots in jquery id selector [#984](https://github.com/hmrc/assets-frontend/pull/984)
 
 ### Updated
 - Updated page not found documentation and examples. [#985](https://github.com/hmrc/assets-frontend/pull/985)
