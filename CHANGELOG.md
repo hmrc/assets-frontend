@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Updated
+- Updated 401, 403, 404 and 500 error pages. [#988](https://github.com/hmrc/assets-frontend/pull/988)
+- Updated Page not found documentation. [#982](https://github.com/hmrc/assets-frontend/pull/982)
 - Updated page not found documentation and examples. [#985](https://github.com/hmrc/assets-frontend/pull/985)
 - Updated ask user for their consent documentation. [#983](https://github.com/hmrc/assets-frontend/pull/983)
 - Welsh translation of last page not found example. [#979](https://github.com/hmrc/assets-frontend/pull/979)
