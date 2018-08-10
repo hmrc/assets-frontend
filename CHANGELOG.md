@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### New
+- Default 400 error page
+
 
 ## [3.4.0] and [4.4.0] 2018-08-10
 ### Updated
