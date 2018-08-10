@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [3.4.0] and [4.4.0] 2018-08-10
 ### Updated
 - Updated 401, 403, 404 and 500 error pages. [#988](https://github.com/hmrc/assets-frontend/pull/988)
 - Updated Page not found documentation. [#982](https://github.com/hmrc/assets-frontend/pull/982)
