@@ -27,6 +27,18 @@ Only include a section name if the service has more than one section.
 
 {{ example("page-title.html", scaled=false, cy=false, html=false) }}
 
+If a user makes an error, add ‘Error: ’ to the beginning of the title so screen readers read it out as soon as possible.
+
+{{ example("page-title-error.html", scaled=false, cy=false, html=false) }}
+
+### Personally identifiable information
+
+If there is personally identifiable information in the &lt;h1&gt;, you must make sure it is not recorded in your analytics package.
+
+For example, if the &lt;h1&gt; is ‘What is Gordon's date of birth?’, record ‘What is their date of birth?’.
+
+To do this you could change the page title to use ‘their’ but keep ‘Gordon’ in the &lt;h1&gt;. Or you could keep ‘Gordon’ in the page title and send a different page title to your analytics package.
+
 ## Research on this component
 
 This component is based on the format recommended by the Web Content Accessibility Guidelines. See [Providing descriptive titles for Web pages](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G88).
