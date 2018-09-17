@@ -22,7 +22,7 @@ module.exports = function () {
       focusId = '#' + focusId
     }
 
-    var inputToFocus = $(focusId)
+    var inputToFocus = $(focusId.replace('.', '\\.'))
 
     if (!inputToFocus.length) {
       return
