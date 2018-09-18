@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [3.4.0] and [4.4.0] 2018-08-10
 
 ### Updated
+- Updated service unavailable pages and Welsh translations [#993](https://github.com/hmrc/assets-frontend/pull/993)
 - Updated page title guidance [#992](https://github.com/hmrc/assets-frontend/pull/992)
 - Updated 401, 403, 404 and 500 error pages. [#988](https://github.com/hmrc/assets-frontend/pull/988)
 - Updated Page not found documentation. [#982](https://github.com/hmrc/assets-frontend/pull/982)
