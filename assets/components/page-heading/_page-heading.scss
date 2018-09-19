@@ -4,6 +4,8 @@
   margin-bottom: em(30, 32);
   margin-top: em(60, 32);
   padding-top: 8px;
+  width: 100%;
+  table-layout: fixed;
 
   @include media(tablet) {
     margin-bottom: em(60, 48);
