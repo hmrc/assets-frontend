@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Updated
+- Updated service unavailable page example [#995](https://github.com/hmrc/assets-frontend/pull/995)
+
 ### Fixed
 - Fixed validorFocus.js to escape dots in jquery id selector [#984](https://github.com/hmrc/assets-frontend/pull/984)
 - Fixed bug where word-break and overflow-wrap didn't work with page heading elements [994](https://github.com/hmrc/assets-frontend/pull/994)
