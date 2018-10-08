@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### New
+- Added references and identifiers to system [#996](https://github.com/hmrc/assets-frontend/pull/996)
+
 ### Updated
 - Updated service unavailable page example [#995](https://github.com/hmrc/assets-frontend/pull/995)
 
