@@ -16,10 +16,11 @@ var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) 
     .map((sectionFile) => ({
       url: relativeUrl(baseDirectory, sectionFile.relative),
       title: upath.relative(baseDirectory, upath.parse(sectionFile.relative).dir) || homepage,
-      nav: files.filter(file => file.relative.startsWith(
-          upath.parse(sectionFile.relative).dir) &&
-          relativeUrl(baseDirectory, sectionFile.relative) !== '/index.html'
-        )
+      nav: files.filter(file => {
+        return file.relative.startsWith(upath.parse(sectionFile.relative).dir) &&
+          relativeUrl(baseDirectory, sectionFile.relative) !== '/index.html' &&
+          file.relative !== sectionFile.relative
+      })
         .map(file => ({
           url: relativeUrl(baseDirectory, file.relative),
           title: upath.parse(upath.parse(file.relative).dir).name
