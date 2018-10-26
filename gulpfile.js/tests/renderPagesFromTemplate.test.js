@@ -21,7 +21,7 @@ var getFiles = function () {
 }
 
 test('renderPagesFromTemplate - renders a homepage', function (t) {
-  t.plan(6)
+  t.plan(17)
 
   var output = renderPagesFromTemplate(getFiles(), compiledTemplate)
   var $ = cheerio.load(output[0].contents)
@@ -45,6 +45,67 @@ test('renderPagesFromTemplate - renders a homepage', function (t) {
   )
 
   t.equal($('#nav a').length, 0, 'with no sub nav')
+
+  t.equal($('#mobileNav').length, 1, 'with a mobile nav')
+
+  t.equal(
+    $('#mobileNav ul:first-child li:first-child').length,
+    2,
+    'with the right number of sections in the mobile nav'
+  )
+
+  t.equal(
+    $('#mobileNav > ul > li:first-child > a').attr('href'),
+    '/index.html',
+    'with the first link to the homepage'
+  )
+
+  t.equal(
+    $('#mobileNav > ul > li:first-child > a').text(),
+    'about',
+    'with the first link to the homepage'
+  )
+
+  t.equal(
+    $('#mobileNav > ul > li:nth-child(2) > a').attr('href'),
+    '/category-one/index.html',
+    'with a second section link'
+  )
+
+  t.equal(
+    $('#mobileNav > ul > li:nth-child(2) > a').text(),
+    'category-one',
+    'with the correct link text'
+  )
+
+  t.equal(
+    $('#mobileNav > ul > li:nth-child(2) ul li').length, 2,
+    'with a subnav of the correct length'
+  )
+
+  t.equal(
+    $('#mobileNav > ul > li:nth-child(2) li:first-child a').attr('href'),
+    '/category-one/thing/index.html',
+    'with the correct first url'
+  )
+
+  t.equal(
+    $('#mobileNav > ul > li:nth-child(2) li:first-child a').text(),
+    'thing',
+    'with the correct first link text'
+  )
+
+  t.equal(
+    $('#mobileNav > ul > li:nth-child(2) li:nth-child(2) a').attr('href'),
+    '/category-one/thing-two/index.html',
+    'with the correct second url'
+  )
+
+  t.equal(
+    $('#mobileNav > ul > li:nth-child(2) li:nth-child(2) a').text(),
+    'thing-two',
+    'with the correct second link text'
+  )
 })
 
 test('renderPagesFromTemplate - renders a section', function (t) {
