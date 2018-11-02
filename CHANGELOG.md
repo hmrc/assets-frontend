@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### New
+- Updated confirmed identity and could not confirm identity patterns [#1000](https://github.com/hmrc/assets-frontend/pull/1000)
 - Added references and identifiers to system [#996](https://github.com/hmrc/assets-frontend/pull/996)
 
 ### Updated
