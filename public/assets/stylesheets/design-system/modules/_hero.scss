@@ -69,7 +69,11 @@
   }
 
   &__description {
-    @include core-24;
+    font-size: 19px;
+    font-weight: bold;
+    @include media(tablet) {
+      @include core-24;
+    }
   }
 
   &__title,

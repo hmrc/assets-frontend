@@ -55,18 +55,6 @@
                   <span class="design-system-header__title">HMRC Design System</span>
                 </a>
             </div>
-
-            <!--
-            <div class="pattern-search pattern-search--in-header">
-              <input type="text" name="pattern-query" class="pattern-search__input" placeholder="Search Design System" autocomplete="off">
-              <ul class="search-results js-search-results">
-              </ul>
-            </div>
-           -->
-
-            <div class="mobile-nav-trigger">
-              <input class="button js-mobile-nav-toggle" type="submit" value="Menu">
-            </div>
           </div>
         </header>
 
@@ -96,8 +84,8 @@
               <ul class="pattern-nav">
                 <li><a href="/assets-frontend/patterns/add-to-a-list/index.html">Add to a list</a></li>
                 <li><a href="/assets-frontend/patterns/ask-users-for-their-consent/index.html">Ask users for their consent</a></li>
-                <li><a href="/assets-frontend/patterns/cannot-confirm-identity/index.html">Cannot confirm identity</a></li>
                 <li><a href="/assets-frontend/patterns/confirmed-identity/index.html">Confirmed identity</a></li>
+                <li><a href="/assets-frontend/patterns/could-not-confirm-identity/index.html">Could not confirm identity</a></li>
                 <li><a href="/assets-frontend/patterns/header/index.html">Header</a></li>
                 <li><a href="/assets-frontend/patterns/help-users-when-we-time-them-out-of-a-service/index.html">Help users when we time them out of a service</a></li>
                 <li><a href="/assets-frontend/patterns/messages/index.html">Messages</a></li>
@@ -127,20 +115,21 @@
             -->
 
             <h1 id="confirmed-identity">Confirmed identity</h1>
-<p>This pattern lets users know we have confirmed their identity. This is part of confirming their identity when they sign in with a Government Gateway account for the first time.</p>
+<p>This pattern lets users know we have confirmed their identity. It is part of the journey when users sign in with a Government Gateway account for the first time.</p>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">We have confirmed who you are</h1>
+      <h1 class="heading-large">We have confirmed your identity</h1>
       <a href="" role="button" class="button">Continue</a>
     </div>
-  </div></div>
+  </div>
+</div>
 
 
 
 
 <h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Use this pattern when we can confirm a user’s identity.</p>
-<p>There is also a pattern to <a href="/patterns/help-users-when-we-cannot-confirm-who-they-are/index.html">help users when we cannot confirm their identity</a>.</p>
+<p>Use this pattern when we can confirm a user’s identity.</p></p>
+<p>There is also a pattern when we [could not confirm their identity]<a href="/patterns/could-not-confirm-identity/index.html">help users when we cannot confirm their identity</a>.</p>
 <h2 id="how-it-works">How it works</h2>
 <p>Use the standard page template from your service and have the same:</p>
 <ul>
@@ -148,18 +137,13 @@
 <li>phase banner</li>
 <li>footer</li>
 </ul>
-<p>The page should have:</p>
-<ul>
-<li>‘We have confirmed your identity – service name – GOV.UK’ as the page title</li>
-<li>‘We have confirmed your identity’ as the <code>&lt;h1&gt;</code> page heading</li>
-<li>a ‘Continue’ call to action</li>
-</ul>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">We have confirmed who you are</h1>
+      <h1 class="heading-large">We have confirmed your identity</h1>
       <a href="" role="button" class="button">Continue</a>
     </div>
-  </div></div>
+  </div>
+</div>
 
 
 
@@ -175,12 +159,16 @@
 
 
 
+<p>The page should have:</p>
+<ul>
+<li>‘We have confirmed your identity – service name – GOV.UK’ as the page title</li>
+<li>‘We have confirmed your identity’ as the <code>&lt;h1&gt;</code> page heading</li>
+<li>a ‘Continue’ call to action</li>
+</ul>
 <p>Do not use the confirmation page pattern. This is not the end of their journey.</p>
-<h2 id="research-on-this-pattern">Research on this pattern</h2>
-  <div class="">
-    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/148">add your research on GitHub</a>.</p>
-  </div>
-
+<h2 id="research">Research</h2>
+<p>We need more research. If you have used confirmed identity, get in touch to share your research findings.</p>
+<p><a href="https://github.com/hmrc/design-patterns/issues/148">Discuss confirmed identity on GitHub</a></p>
 
 
             <!--

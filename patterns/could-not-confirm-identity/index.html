@@ -55,18 +55,6 @@
                   <span class="design-system-header__title">HMRC Design System</span>
                 </a>
             </div>
-
-            <!--
-            <div class="pattern-search pattern-search--in-header">
-              <input type="text" name="pattern-query" class="pattern-search__input" placeholder="Search Design System" autocomplete="off">
-              <ul class="search-results js-search-results">
-              </ul>
-            </div>
-           -->
-
-            <div class="mobile-nav-trigger">
-              <input class="button js-mobile-nav-toggle" type="submit" value="Menu">
-            </div>
           </div>
         </header>
 
@@ -96,8 +84,8 @@
               <ul class="pattern-nav">
                 <li><a href="/assets-frontend/patterns/add-to-a-list/index.html">Add to a list</a></li>
                 <li><a href="/assets-frontend/patterns/ask-users-for-their-consent/index.html">Ask users for their consent</a></li>
-                <li><a href="/assets-frontend/patterns/cannot-confirm-identity/index.html">Cannot confirm identity</a></li>
                 <li><a href="/assets-frontend/patterns/confirmed-identity/index.html">Confirmed identity</a></li>
+                <li><a href="/assets-frontend/patterns/could-not-confirm-identity/index.html">Could not confirm identity</a></li>
                 <li><a href="/assets-frontend/patterns/header/index.html">Header</a></li>
                 <li><a href="/assets-frontend/patterns/help-users-when-we-time-them-out-of-a-service/index.html">Help users when we time them out of a service</a></li>
                 <li><a href="/assets-frontend/patterns/messages/index.html">Messages</a></li>
@@ -126,12 +114,12 @@
             </div>
             -->
 
-            <h1 id="cannot-confirm-identity">Cannot confirm identity</h1>
-<p>This pattern tells users we cannot confirm their identity and what they can do next. This is part of confirming their identity when they sign in with a Government Gateway account for the first time.</p>
+            <h1 id="could-not-confirm-identity">Could not confirm identity</h1>
+<p>Tell users we could not confirm their identity and what they can do next. This is part of confirming their identity when they sign in with a Government Gateway account for the first time.</p>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">We cannot confirm your identity</h1>
-      <p>The information you have provided does not match what we hold.</p>
+      <h1 class="heading-large">We could not confirm your identity</h1>
+      <p>The information you have entered does not match our records.</p>
       <a href="" role="button" class="button">Try again</a>
     </div>
   </div>
@@ -141,7 +129,7 @@
 
 
 <h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Use this pattern when we cannot confirm a user’s identity. This may include when a user:</p>
+<p>Use this pattern when we could not confirm a user’s identity. This may include when a user:</p>
 <ul>
 <li>provides details that do not match those we have on file</li>
 <li>does not complete the process</li>
@@ -149,19 +137,25 @@
 <li>makes too many attempts</li>
 </ul>
 <p>Doing this helps users complete the task they are trying to do. It also helps reduce time and money spent dealing with queries received by phone and post.</p>
-<p>There is also a pattern to <a href="/patterns/tell-users-we-have-confirmed-who-they-are/index.html">tell users we have confirmed their identity</a>.</p>
+<p>There is also a pattern when we have <a href="/patterns/tell-users-we-have-confirmed-who-they-are/index.html">confirmed their identity</a>.</p>
 <h2 id="how-it-works">How it works</h2>
+<p>Use the standard page template from your service and have the same:</p>
+<ul>
+<li>header</li>
+<li>phase banner</li>
+<li>footer</li>
+</ul>
 <p>The page should have:</p>
 <ul>
-<li>‘We cannot confirm your identity – service name – GOV.UK’ as the page title</li>
-<li>‘We cannot confirm your identity’ as the <code>&lt;h1&gt;</code> page heading</li>
+<li>‘We could not confirm your identity – service name – GOV.UK’ as the page title</li>
+<li>‘We could not confirm your identity’ as the <code>&lt;h1&gt;</code> page heading</li>
 <li>content that explains what went wrong and what they can do</li>
 <li>a call to action</li>
 </ul>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">We cannot confirm your identity</h1>
-      <p>The information you have provided does not match what we hold.</p>
+      <h1 class="heading-large">We could not confirm your identity</h1>
+      <p>The information you have entered does not match our records.</p>
       <a href="" role="button" class="button">Try again</a>
     </div>
   </div>
@@ -173,24 +167,26 @@
 <summary>Welsh translation of this example</summary>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Ni allwn gadarnhau pwy ydych</h1>
-      <p>Nid yw’r wybodaeth yr ydych wedi’i rhoi’n cyd-fynd â’r hyn sydd gennym yn ein cofnodion.</p>
+      <h1 class="heading-large">Nid oeddem yn gallu cadarnhau pwy ydych</h1>
+      <p>Nid yw’r wybodaeth yr ydych wedi’i nodi yn cyd-fynd â’n cofnodion.</p>
       <a href="" role="button" class="button">Rhowch gynnig arall arni</a>
     </div>
-  </div></div>
+  </div>
+</div>
 </details>
 
 
 
-<h3 id="avoid-ending-a-journey">Avoid ending a journey</h3>
-<p>Offer the user a way of continuing to use the service where possible.</p>
-<p>If this is not possible, provide another way for the user to do what they need to do. This could be another service where they do not need to confirm their identity.</p>
+
+
+
+
+
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">We cannot confirm your identity</h1>
-      <p>You tried to confirm your identity too many times.</p>
-      <p>You can try again in 24 hours by signing in to the service again.</p>
-      <p>You can <a href="#">change other VAT details</a>.</p>
+      <h1 class="heading-large">We could not confirm your identity</h1>
+      <p>You have not given us enough information.</p>
+      <a href="" class="button" role="button">Try again</a>
     </div>
   </div>
 </div>
@@ -201,10 +197,37 @@
 <summary>Welsh translation of this example</summary>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Ni allwn gadarnhau pwy ydych</h1>
-      <p>Rydych wedi ceisio cadarnhau pwy ydych ormod o weithiau.</p>
-      <p>Gallwch roi cynnig arall arni mewn 24 awr drwy fewngofnodi eto i’r gwasanaeth.</p>
-      <p>Gallwch <a href="#">newid fanylion TAW eraill</a>.</p>
+      <h1 class="heading-large">Nid oeddem yn gallu cadarnhau pwy ydych</h1>
+      <p>Nid ydych wedi rhoi digon o wybodaeth i ni.</p>
+      <a href="" class="button" role="button">Rhowch gynnig arall arni</a>
+    </div>
+  </div>
+</div>
+</details>
+
+
+
+<h3 id="avoid-ending-a-journey">Avoid ending a journey</h3>
+<p>Offer the user a way of continuing to use the service where possible.</p>
+<p>If this is not possible, provide another way for the user to do what they need to do. This could be another service where they do not need to confirm their identity.</p>
+<div class="example">  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">We could not confirm your identity</h1>
+      <p>You have entered information that does not match our records too many times. For security reasons, you must wait 24 hours and then sign in to try again.</p>
+      <p>You can <a href="#">change other VAT details</a> without confirming your identity.</p>
+    </div>
+  </div>
+</div>
+
+
+
+<details>
+<summary>Welsh translation of this example</summary>
+<div class="example">  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Nid oeddem yn gallu cadarnhau pwy ydych</h1>
+      <p>Rydych wedi nodi gwybodaeth nad yw’n cyd-fynd â’n cofnodion gormod o weithiau. Am resymau diogelwch, mae’n rhaid i chi aros 24 awr ac yna mewngofnodi i roi cynnig arall arni.</p>
+      <p>Gallwch <a href="#">newid manylion TAW eraill</a> heb gadarnhau pwy ydych.</p>
     </div>
   </div>
 </div>
@@ -218,37 +241,9 @@
 <p>List what they need in the ‘before you start’ information where the service starts.</p>
 <h3 id="give-users-extra-help-when-they-have-a-deadline">Give users extra help when they have a deadline</h3>
 <p>Help users confirm their identity as quickly as possible if they must do something by a specific time and the deadline is close. For example, a Self Assessment tax return or tax credit renewal.</p>
-<h3 id="provide-help-specific-to-your-service">Provide help specific to your service</h3>
-<p>Avoid generic content. Display content that is relevant to the user’s journey.</p>
-<div class="example">  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">We cannot confirm your identity</h1>
-      <p>You have not given us enough information.</p>
-      <a href="" class="button" role="button">Try again</a>
-    </div>
-  </div>
-</div>
-
-
-
-<details>
-<summary>Welsh translation of this example</summary>
-<div class="example">  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Ni allwn gadarnhau pwy ydych</h1>
-      <p>Nid ydych wedi rhoi digon o wybodaeth i ni.</p>
-      <a href="" class="button" role="button">Rhowch gynnig arall arni</a>
-    </div>
-  </div></div>
-</details>
-
-
-
-<h2 id="research-on-this-pattern">Research on this pattern</h2>
-  <div class="">
-    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/117">add your research on GitHub</a>.</p>
-  </div>
-
+<h2 id="research">Research</h2>
+<p>We need more research. If you have used could not confirm identity, get in touch to share your research findings.</p>
+<p><a href="https://github.com/hmrc/design-patterns/issues/117">Discuss could not confirm identity on GitHub</a></p>
 
 
             <!--

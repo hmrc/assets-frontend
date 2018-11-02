@@ -317,8 +317,8 @@ dl.meta-data-bottom {
 
 .callout {
   padding: $gutter;
-  background-color: $govuk-blue;
-  color: white;
+  background-color: $grey-4;
+  color: black;
   margin-top: $gutter;
 
   @include media(mobile) {
@@ -347,14 +347,6 @@ dl.meta-data-bottom {
 
   ul {
     margin-bottom: $gutter;
-  }
-
-  a {
-    color: white !important;
-
-    &:hover {
-      color: lighten($light-blue, 20%) !important;
-    }
   }
 }
 
