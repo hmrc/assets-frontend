@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [3.7.0 and 4.7.0]
+## [3.7.0 and 4.7.0] 2018-11-19
 
 ### New
 - Updated confirmed identity and could not confirm identity patterns [#1000](https://github.com/hmrc/assets-frontend/pull/1000)
