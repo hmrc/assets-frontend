@@ -13,20 +13,25 @@ var renderPagesFromTemplate = function (files, compiledTemplate, baseDirectory) 
 
   data.sections = files
     .filter((file) => file.type === 'section')
-    .map((file) => ({
-      url: relativeUrl(baseDirectory, file.relative),
-      title: upath.relative(baseDirectory, upath.parse(file.relative).dir) || homepage
+    .map((sectionFile) => ({
+      url: relativeUrl(baseDirectory, sectionFile.relative),
+      title: upath.relative(baseDirectory, upath.parse(sectionFile.relative).dir) || homepage,
+      nav: files.filter(file => {
+        return file.relative.startsWith(upath.parse(sectionFile.relative).dir) &&
+          relativeUrl(baseDirectory, sectionFile.relative) !== '/index.html' &&
+          file.relative !== sectionFile.relative
+      })
+        .map(file => ({
+          url: relativeUrl(baseDirectory, file.relative),
+          title: upath.parse(upath.parse(file.relative).dir).name
+        }))
     }))
 
   return files
     .map((file) => {
-      var currentSection = homepage
-
-      data.sections.forEach((section) => {
-        if (file.relative.includes(section.title)) {
-          currentSection = section.title
-        }
-      })
+      var currentSection = (
+        data.sections.find(section => file.relative.includes(section.title)) || {title: homepage}
+      ).title
 
       data.nav = files
         .filter((file) => file.relative.includes(currentSection))
