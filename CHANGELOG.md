@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### New
-- Added expanding subnavigation to mobile navigation
+- Added expanding subnavigation to mobile navigation [#1004](https://github.com/hmrc/assets-frontend/pull/1004)
 
 ## [3.7.0 and 4.7.0] 2018-11-19
 
