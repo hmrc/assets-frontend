@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.7.0 and 4.7.0] 2018-11-19
+
 ### New
 - Updated confirmed identity and could not confirm identity patterns [#1000](https://github.com/hmrc/assets-frontend/pull/1000)
 - Added references and identifiers to system [#996](https://github.com/hmrc/assets-frontend/pull/996)
@@ -22,7 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed bug where word-break and overflow-wrap didn't work with page heading elements [994](https://github.com/hmrc/assets-frontend/pull/994)
 
 ## [3.6.0 and 4.6.0] 2018-11-13
-- Pseudo release, no code changes
+- Tags only no actual release, no code changes
 
 ## [3.5.0 and 4.5.0] 2018-08-13
 
