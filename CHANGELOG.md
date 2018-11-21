@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added references and identifiers to system [#996](https://github.com/hmrc/assets-frontend/pull/996)
 
 ### Updated
+- Updated add to a list code and animated gif [#1002](https://github.com/hmrc/assets-frontend/pull/1002)
 - Updated example on identity page [#998](https://github.com/hmrc/assets-frontend/pull/998)
 - Updated identity pages [#997](https://github.com/hmrc/assets-frontend/pull/997)
 - Updated service unavailable page example [#995](https://github.com/hmrc/assets-frontend/pull/995)

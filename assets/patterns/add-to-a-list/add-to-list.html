@@ -2,21 +2,57 @@
   <h1 class="heading-xlarge">You have added 3 directors</h1>
 </header>
 <div class="form-group">
-  <dl class="govuk-check-your-answers form-group cya-questions-short">    
-    <div>
-      <dt class="cya-question cya-question--light">Michael Cain</dt>
-      <dd class="cya-delete"><a href="/"><span aria-hidden="true">Delete</span><span class="visually-hidden">Delete Michael Cain</span></a></dd>
-      <dd class="cya-change"><a href="/"><span aria-hidden="true">Change</span><span class="visually-hidden">Change Michael Cain’s details</span></a></dd>
+  <dl class="hmrc-add-to-a-list hmrc-add-to-a-list--short">
+    <div class="hmrc-add-to-a-list__contents">
+      <dt class="hmrc-add-to-a-list__identifier hmrc-add-to-a-list__identifier--light">
+        Sydney Russell
+      </dt>
+      <dd class="hmrc-add-to-a-list__change">
+        <a href="#">
+          <span aria-hidden="true">Change</span>
+          <span class="visually-hidden">Change Sydney Russell</span>
+        </a>
+      </dd>
+      <dd class="hmrc-add-to-a-list__remove">
+        <a href="#">
+          <span aria-hidden="true">Remove</span>
+          <span class="visually-hidden">Remove Sydney Russell’s name</span>
+        </a>
+      </dd>
     </div>
-    <div>
-      <dt class="cya-question cya-question--light">Jeremy Winter</dt>
-      <dd class="cya-delete"><a href="/"><span aria-hidden="true">Delete</span><span class="visually-hidden">Delete Jeremy Winter</span></a></dd>
-      <dd class="cya-change"><a href="/"><span aria-hidden="true">Change</span><span class="visually-hidden">Change Jeremy Winter’s details</span></a></dd>
+    <div class="hmrc-add-to-a-list__contents">
+      <dt class="hmrc-add-to-a-list__identifier hmrc-add-to-a-list__identifier--light">
+        Michael Cain
+      </dt>
+      <dd class="hmrc-add-to-a-list__change">
+        <a href="#">
+          <span aria-hidden="true">Change</span>
+          <span class="visually-hidden">Change Michael Cain</span>
+        </a>
+      </dd>
+      <dd class="hmrc-add-to-a-list__remove">
+        <a href="#">
+          <span aria-hidden="true">Remove</span>
+          <span class="visually-hidden">Remove Michael Cain’s details</span>
+        </a>
+      </dd>
     </div>
-    <div>
-      <dt class="cya-question cya-question--light">Elizabeth Keen</dt>
-      <dd class="cya-delete"><a href="/"><span aria-hidden="true">Delete</span><span class="visually-hidden">Delete Elizabeth Keen</span></a></dd>
-      <dd class="cya-change"><a href="/"><span aria-hidden="true">Change</span><span class="visually-hidden">Change Elizabeth Keen’s details</span></a></dd>
+    <div class="hmrc-add-to-a-list__contents">
+      <dt class="hmrc-add-to-a-list__identifier hmrc-add-to-a-list__identifier--light">
+        Jeremy Winter
+      </dt>
+      <dd class="hmrc-add-to-a-list__change">
+        <a href="#">
+          <span aria-hidden="true">Change</span>
+          <span class="visually-hidden">Change Jeremy Winter</span>
+        </a>
+      </dd>
+      <dd class="hmrc-add-to-a-list__remove">
+        <a href="#">
+          <span aria-hidden="true">Remove</span>
+          <span class="visually-hidden">Remove Jeremy Winter’s details</span>
+        </a>
+      </dd>
     </div>
   </dl>
 </div>
@@ -28,11 +64,11 @@
         <span class="form-hint">You must tell us about all your directors.</span>
       </legend>
       <div class="multiple-choice">
-        <input aria-describedby="psa-director-yes-hint" id="psa-director-yes" type="radio" name="redirectUrl" value="/">
+        <input id="psa-director-yes" type="radio" name="redirectUrl" value="/">
         <label class="block-label" for="psa-director-yes">Yes</label>
       </div>
       <div class="multiple-choice">
-        <input aria-describedby="psa-director-no-hint" id="psa-director-no" type="radio" name="redirectUrl" value="/">
+        <input id="psa-director-no" type="radio" name="redirectUrl" value="/">
         <label class="block-label" for="psa-director-no">No</label>
       </div>
       <input type="hidden" name="errorData" value="">
