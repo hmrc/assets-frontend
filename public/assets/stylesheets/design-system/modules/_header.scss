@@ -173,11 +173,6 @@ $active-nav-color: #1d8feb;
 }
 
 .mobile-nav-trigger {
-  float: left;
-  width: 25%;
-  padding-left: 15px;
-  @include box-sizing(border-box);
-  height: 35px;
 
   input.button {
     padding: 7px 4px 6px 4px !important;
@@ -190,53 +185,4 @@ $active-nav-color: #1d8feb;
   input.button.active {
     background-color: $govuk-blue;
   }
-
-  @include media(tablet) {
-    display: none;
-  }
-}
-
-.design-system-header__navigation-toggle {
-  float: right;
-  color: $white;
-  text-decoration: none;
-  border: 1px solid $grey-1;
-  border-radius: 3px;
-  padding: 2px 6px 1px;
-  font-size: 80%;
-  font-weight: bold;
-
-  input {
-    display: none;
-  }
-
-  @include media(tablet) {
-    display: none;
-  }
-
-  &:after {
-    display: inline-block;
-    font-size: 8px;
-    height: 8px;
-    padding-left: 5px;
-    vertical-align: middle;
-    content: " \25BC";
-  }
-}
-
-.design-system-header__navigation-toggle-checkbox {
-  position: absolute;
-  left: -9999em;
-
-  @include media(tablet) {
-    display: none;
-  }
-}
-
-.design-system-header__navigation-toggle-checkbox:checked ~ .design-system-header__navigation-toggle:after {
-  content: "\25B2";
-}
-
-.design-system-header__navigation-toggle-checkbox:checked ~ .design-system-header__navigation {
-  display: block;
 }

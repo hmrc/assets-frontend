@@ -1,0 +1,164 @@
+.app-mobile-nav {
+    display: none;
+  &--active {
+    display: block;
+
+    @include media(tablet) {
+      display: none;
+    }
+  }
+}
+
+.no-js .app-mobile-nav {
+  @include media(tablet){
+    display: block;
+  }
+}
+
+.app-mobile-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: $canvas-colour;
+
+  & > li {
+    // @include govuk-typography-common;
+    font-weight: bold;
+    font-size: 19px;
+
+    & > a {
+      font-weight: bold;
+      display: block;
+      padding: 16px 20px 17px 20px;
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &:visited {
+        color: $govuk-blue;
+        background-color: inherit;
+      }
+    }
+  }
+}
+
+.app-mobile-nav__subnav {
+  margin: 0;
+  padding: 10px 0 0 0;
+  list-style: none;
+  border-top: 1px solid $grey-3;
+  border-bottom: 1px solid $grey-3;
+  background-color: $white;
+  display: none;
+
+  & > li {
+    & > a {
+      font-size: 16px;
+      display: block;
+      padding: 10px 20px;
+
+      text-decoration: none;
+    }
+
+    &.current-page a {
+      border-left: 4px solid $govuk-blue;
+    }
+  }
+}
+
+.app-mobile-nav__subnav--active {
+  display: block;
+}
+
+.app-mobile-nav__current-page {
+  border-left: 4px solid $govuk-blue;
+}
+
+.app-mobile-nav__theme {
+  margin: 0;
+  // padding: govuk-spacing(4) govuk-spacing(4) govuk-spacing(1) govuk-spacing(4);
+  color: $grey-1;
+  // Font is defined as a hard 19px so
+  // it doesn't re-size on mobile viewport
+  font-size: 19px;
+  // font-size: govuk-px-to-rem(19px);
+  font-weight: 400;
+}
+
+.app-mobile-nav__theme-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: $white;
+
+  & > li {
+    // @include govuk-font(19);
+
+    & > a {
+      display: block;
+      // padding: govuk-spacing(3) govuk-spacing(4) govuk-spacing(2) govuk-spacing(4);
+
+      text-decoration: none;
+    }
+
+    &.current-page a {
+      border-left: 4px solid $govuk-blue;
+      // padding-left: govuk-spacing(4) - 4px;
+    }
+
+    &:last-child a {
+      // padding-bottom: govuk-spacing(5);
+    }
+  }
+}
+
+.js-enabled .app-mobile-nav__subnav-toggler--active {
+  border-top: 1px solid $white;
+}
+
+.app-header-mobile-nav-toggler {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding-left: 15px;
+  @include box-sizing(border-box);
+  @include core-19;
+  height: 35px;
+  background-color: $black;
+  color: $white;
+  border: 0px;
+
+  @include media(tablet) {
+    display: none;
+  }
+
+  &:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    -webkit-clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    border-width: 8.66px 5px 0 5px;
+    border-top-color: inherit;
+    content: "";
+    border-color: #fff;
+    margin-left: 5px
+  }
+}
+
+.app-header-mobile-nav-toggler--active {
+    &::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border-width: 0 5px 8.66px 5px;
+    border-bottom-color: inherit;
+    border-color: #fff;
+  }
+}

@@ -55,6 +55,11 @@
                   <span class="design-system-header__title">HMRC Design System</span>
                 </a>
             </div>
+            <div>
+              <button id="mobile-nav-trigger" class="app-header-mobile-nav-toggler js-app-mobile-nav-toggler" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="app-mobile-nav">
+                Menu
+              </button>
+            </div>
           </div>
         </header>
 
@@ -76,6 +81,31 @@
       </div>
 
       <!-- TODO: mobile_nav -->
+        <nav id="app-mobile-nav" class="app-mobile-nav js-app-mobile-nav app-mobile-nav__theme" role="navigation">
+          <ul class="app-mobile-nav__list">
+            <li><a
+              href="/assets-frontend/index.html"
+>About</a>
+              
+            </li>
+            <li><a
+              href="/assets-frontend/styles/index.html"
+>Styles</a>
+              
+            </li>
+            <li><a
+              href="/assets-frontend/components/index.html"
+>Components</a>
+              
+            </li>
+            <li><a
+              href="/assets-frontend/patterns/index.html"
+>Patterns</a>
+              
+            </li>
+        </ul>
+      </nav>
+
 
       <div class="app-pane__body">
         <div class="app-pane__toc">
@@ -1259,6 +1289,8 @@
 
     <script src="public/assets/javascripts/vendor/highlight/highlight.pack.js"></script>
     <script src="public/assets/javascripts/design-system.js"></script>
+    <script src="public/assets/javascripts/mobile-nav.js"></script>
+    <script>new MobileNav().init()</script>
 
     
 
