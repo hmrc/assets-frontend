@@ -10,6 +10,8 @@ var templatePath = path.join(__dirname, 'fixtures', 'pattern-library', 'design-p
 var templateSource = fs.readFileSync(templatePath).toString()
 var compiledTemplate = Handlebars.compile(templateSource)
 
+var pathPrefix = (process.env.NODE_ENV === 'prod') ? '/assets-frontend' : ''
+
 var getFiles = function () {
   return [
     getFile(path.resolve('index.html'), 'section', 'Homepage'),
@@ -34,7 +36,7 @@ test('renderPagesFromTemplate - renders a homepage', function (t) {
 
   t.equal(
     $('#sections a:first-child').attr('href'),
-    '/index.html',
+    pathPrefix + '/index.html',
     'that have the expected urls'
   )
 
@@ -56,7 +58,7 @@ test('renderPagesFromTemplate - renders a homepage', function (t) {
 
   t.equal(
     $('#mobileNav > ul > li:first-child > a').attr('href'),
-    '/index.html',
+    pathPrefix + '/index.html',
     'with the first link to the homepage'
   )
 
@@ -68,7 +70,7 @@ test('renderPagesFromTemplate - renders a homepage', function (t) {
 
   t.equal(
     $('#mobileNav > ul > li:nth-child(2) > a').attr('href'),
-    '/category-one/index.html',
+    pathPrefix + '/category-one/index.html',
     'with a second section link'
   )
 
@@ -85,7 +87,7 @@ test('renderPagesFromTemplate - renders a homepage', function (t) {
 
   t.equal(
     $('#mobileNav > ul > li:nth-child(2) li:first-child a').attr('href'),
-    '/category-one/thing/index.html',
+    pathPrefix + '/category-one/thing/index.html',
     'with the correct first url'
   )
 
@@ -97,7 +99,7 @@ test('renderPagesFromTemplate - renders a homepage', function (t) {
 
   t.equal(
     $('#mobileNav > ul > li:nth-child(2) li:nth-child(2) a').attr('href'),
-    '/category-one/thing-two/index.html',
+    pathPrefix + '/category-one/thing-two/index.html',
     'with the correct second url'
   )
 
@@ -122,7 +124,7 @@ test('renderPagesFromTemplate - renders a section', function (t) {
 
   t.equal(
     $('#sections a:nth-child(2)').attr('href'),
-    '/category-one/index.html',
+    pathPrefix + '/category-one/index.html',
     'that have the expected urls'
   )
 
@@ -136,7 +138,7 @@ test('renderPagesFromTemplate - renders a section', function (t) {
 
   t.equal(
     $('#nav a:first-child').attr('href'),
-    '/category-one/thing/index.html',
+    pathPrefix + '/category-one/thing/index.html',
     'that have the expected urls'
   )
 
@@ -175,7 +177,7 @@ test('renderPagesFromTemplate - renders a page', function (t) {
 
   t.equal(
     $('#nav a:first-child').attr('href'),
-    '/category-one/thing/index.html',
+    pathPrefix + '/category-one/thing/index.html',
     'that have the expected urls'
   )
   t.equal(
