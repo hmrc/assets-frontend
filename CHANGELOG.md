@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### New
 - Added expanding subnavigation to mobile navigation [#1004](https://github.com/hmrc/assets-frontend/pull/1004)
 
+### Fixed
+- Updated the fixture and tests for the design library template [#1005](https://github.com/hmrc/assets-frontend/pull/1005)
+
 ## [3.7.0 and 4.7.0] 2018-11-19
 
 ### New
