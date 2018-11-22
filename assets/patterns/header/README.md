@@ -34,13 +34,13 @@ This header must contain a sign out link.
 
 ### Tell users about cookies
 
-The GOV.UK header comes with a cookie banner. Use this but change the link to [https://www.tax.service.gov.uk/help/cookies](https://www.tax.service.gov.uk/help/cookies)
+The GOV.UK header comes with a cookie banner. Use this but change the link to [https://www.tax.service.gov.uk/help/cookies](https://www.tax.service.gov.uk/help/cookies).
 
-[Find out more about cookies](https://www.gov.uk/service-manual/technology/working-with-cookies-and-similar-technologies)
+[Find out more about cookies](https://www.gov.uk/service-manual/technology/working-with-cookies-and-similar-technologies).
 
 ### Use the phase banner
 
-The GOV.UK header also has the phase banner. It includes a feedback link – [https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name](https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name)
+The GOV.UK header also has the phase banner. It includes a feedback link – [https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name](https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name).
 
 In the URL, replace ‘service-name’ with your service’s name so feedback goes to your team.
 
