@@ -242,7 +242,8 @@
 .design-system-header__title {
   font-size: 20px;
   display: block;
-  padding-top: 12px; }
+  clear: both;
+  padding-top: 0px; }
   @media (min-width: 768px) {
     .design-system-header__title {
       font-family: "nta", Arial, sans-serif;

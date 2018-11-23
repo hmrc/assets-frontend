@@ -100,7 +100,8 @@ $active-nav-color: #1d8feb;
 .design-system-header__title {
   font-size: 20px;
   display: block;
-  padding-top: 12px;
+  clear: both;
+  padding-top: 0px;
 
   @include media(tablet) {
     @include core-24;
