@@ -145,7 +145,6 @@
     "karma-viewport": "^0.4.2",
     "marked": "^0.3.6",
     "mkdirp": "^0.5.1",
-    "nodemon": "^1.11.0",
     "nunjucks": "^3.0.1",
     "sinon": "^1.17.7",
     "tap-spec": "^4.1.1",
