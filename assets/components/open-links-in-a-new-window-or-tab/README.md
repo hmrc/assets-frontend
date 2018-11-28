@@ -1,46 +1,41 @@
 # Open links in a new window or tab
 
-How to display links that open in a new window or tab.
+This component lets the user open links in a new window or tab.
 
-{{ example("open-links-in-a-new-window-or-tab.html", scaled=false, cy=false, html=false) }}
+## When to use
 
-## When to use this component
+First, design your service so that links open in the same window or tab and test with users. Research shows that some users struggle to get back to a service because the back button does not work in the new window or tab.
 
-Start with opening all links in the same window or tab and test with your users. Research shows some people struggle to get back to a service because the back button does not work in the new window or tab.
-
-Use this component if testing shows you need to open a link in a new window or tab, it meets a user need and is necessary. This could be because:
+Only use this pattern if opening a link in a new window or tab meets a user need or is necessary to use the service. This could be because:
 
 - the link is to a document in a different format, like a PDF
-- the link is guidance that cannot be inside the service
-- they would lose their details if they left the service
-- they need go to another site or service to get some information
+- the link is to guidance that cannot be inside the service
+- the user would lose their details if they left the service
+- the user needs to go to another site or service to get information
 
-### When not to use this component
+### When not to use
 
-If opening a link in a new window or tab:
+Do not use if opening a link in a new window or tab:
 
 - does not meet a user need
-- leads to more than one window or tab open for the same service
-- stops people completing their task
-
-Do not use any icons in place of the words. See ‘[Removing the external link icon from GOV.UK](https://designnotes.blog.gov.uk/2016/11/28/removing-the-external-link-icon-from-gov-uk/)'.
+- leads to more than one window or tab open within the same service
+- stops the user completing their task
 
 ## How it works
+
+{{ example("open-links-in-a-new-window-or-tab.html", scaled=false, cy=true, html=true) }}
 
 Always put ‘(opens in a new window or tab)’ inside the link text content.
 
 In the code include:
 
-- target="_blank" to open in a new window or tab
-- rel="noopener noreferrer" to reduce security risks for some browsers
+- `target="_blank"` to open in a new window or tab
+- `rel="noopener noreferrer"` to reduce security risks for some browsers
 
-{{ example("open-links-in-a-new-window-or-tab.html", scaled=false, cy=true, html=true) }}
+Do not use any icons in place of the words. See ‘[Removing the external link icon from GOV.UK](https://designnotes.blog.gov.uk/2016/11/28/removing-the-external-link-icon-from-gov-uk/)'.
 
-## Research on this component
+## Research
 
-This component is based on the format recommended by the Web Content Accessibility Guidelines. See [Giving users advanced warning when opening a new window](https://www.w3.org/TR/WCAG20-TECHS/G201.html).
+We need more research. If you have used open links in a new window or tab, get in touch to share your research findings.
 
-All users will know a link will open in a new window or tab without needing to:
-
-- read another part of the screen
-- understand an icon
+[Discuss open links in a new window or tab on GitHub](https://github.com/hmrc/design-patterns/issues/141)

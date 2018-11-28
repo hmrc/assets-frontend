@@ -1,49 +1,41 @@
 # Page heading
 
-The page heading is main heading of the page. In some instances, it may include an optional supraheading. A supraheading is an additional heading placed above the `<h1>`. 
+This component is the main heading of the current page, which lets the user know what information is being asked for or provided.
 
-{{ example("page-heading.html", scaled=false, cy=false, html=false) }}
-
-## When to use this component
+## When to use
 
 Use a page heading on every page.
 
+You can also include a section heading if it helps the user know where they are in a service. For example, in long services and those with more than one section.
+
 ## How it works
 
-For accessibility reasons, every page must have a main heading coded as a `<h1>`.
+Every page must have a main heading coded as an `<h1>`.
 
-Include a supraheading, coded as a paragraph (`<p>`), if it helps people know where they are in a service. This is important for long services and those with more than one section.
+{{ example("page-heading-no-secondary.html", scaled=false, cy=false, html=true) }}
 
-Use this code so the `<h1>` and the supraheading are:
+For accessibility reasons, if you use a section heading, it should be coded as a paragraph `<p>` inside a `<header>`.
+
+{{ example("page-heading.html", scaled=false, cy=false, html=true) }}
+
+This makes sure that when using screen readers and other assistive technologies, the page heading and the section heading are:
 
 - separate
 - in the correct source order
 - displayed the correct way
 - read out the correct way
 
-{{ example("page-heading.html", scaled=false, cy=false, html=true) }}
+Change or remove any visually hidden content to meet your users’ needs.
 
-Change or remove the visually hidden content to meet your user needs.
+## Research
 
-If your service does not need a supraheading, leave it out.
-
-{{ example("page-heading-no-secondary.html", scaled=false, cy=false, html=true) }}
-
-## Research on this component
-
-Research into how the page heading was coded found many ways of doing it.
-
-Some had the supraheading above the `<h1>`. This means a screen reader user may never hear it.
-
-Some had the supraheading inside the `<h1>`. This gives different results depending on what screen reader you use. For example:
-
-- VoiceOver – “Heading level onetwo items What is your name? Personal details”
-- NVDA – “Heading level one What is your name? Heading level one Personal details”
-- JAWS – “What is your name? Personal details Heading level one”
-
-The recommended code has been tested with screen reader users and all browsers, device and assistive technology combinations. Research showed it:
+The recommended code has been tested with screen reader users and all browsers, devices and assistive technologies. Research showed it:
 
 - displayed as expected
 - worked consistently across different assistive technologies
-- helped people know where they were in the service
-- did not distract people from their task
+- helped users know where they were in the service
+- did not distract users from their task
+
+We need more research. If you have used the page heading and section heading, get in touch to share your research findings.
+
+[Discuss the page heading on GitHub](https://github.com/hmrc/design-patterns/issues/149)

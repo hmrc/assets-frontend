@@ -2,29 +2,29 @@
 
 {{ wip(128) }}
 
-The account header is used in, and was designed for, the [personal tax account](https://www.tax.service.gov.uk/personal-account).
+The account header is used for services that are part of the [personal tax account](https://www.tax.service.gov.uk/personal-account).
 
-{{ example('account-header-example.html', scaled=true, cy=false, html=false) }}
+## When to use
 
-## When to use this component
+Use this component if your service is part of the personal tax account.
 
-If your service is part of the personal tax account. 
+### When not to use
 
-### When not to use this component
-
-If your service is not part of the personal tax account. Use the [header](/patterns/header/index.html) instead.
+Do not use this component if your service is not part of the personal tax account. Use the [HMRC header](patterns/header/index.html) instead.
 
 ## How it works
 
 The account header contains:
 
-- the HMRC cookie banner
-- [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer)
-- the Account menu
-- the language selector if your service is available in Welsh
+- the GOV.UK cookie banner, with a link to HMRC cookie policy</li>
+- the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer)
+- the account menu
+- the language selector, if your service is available in Welsh
 
 {{ example('account-header-example.html', scaled=true, cy=true, html=true) }}
 
-## Research on this component 
+## Research
 
-{{ research(128) }}
+We need more research. If you have used the account header, get in touch to share your research findings.
+
+[Discuss the account header on GitHub](https://github.com/hmrc/design-patterns/issues/128)
