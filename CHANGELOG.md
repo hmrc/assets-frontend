@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Updated the fixture and tests for the design library template [#1005](https://github.com/hmrc/assets-frontend/pull/1005)
 
+### updated
+- Updated documentation following a prototype review [#1008](https://github.com/hmrc/assets-frontend/pull/1008)
+
 ### Removed
 - Removed unused nodemon package that's affected by [the `flatmap-stream` vulnerability](https://github.com/dominictarr/event-stream/issues/116)[#1007](https://github.com/hmrc/assets-frontend/pull/1007)
 
