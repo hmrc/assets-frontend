@@ -1,39 +1,39 @@
 # Notification badge
 
-A notification badge shows a number.
+The notification badge lets the user know that there is new information to view, like unread messages, and how many of them there are. The notification badge is part of the [account header](components/account-header/index.html).
 
-{{ example("notification-badge.html", scaled=false, cy=false, html=false) }}
+## When to use
 
-## When to use this component
+Use the notification badge when the user needs to be alerted that they have, for example, unread messages and how many of them there are. Only use it if the number changes when the user performs an action.
 
-Use a notification badge to grab attention and show how many things something has and. Only use it with an action someone can do to change the number.
+### When not to use
 
-### When not to use this component
-
-Do not use a notification badge when:
+Do not use the notification badge when:
 
 - the number of things is 0
 - there is no action
 
-Unless there is a strong user need, only use one as a part of navigation.
+Unless there is a strong user need, only use a notification badge as a part of the navigation.
 
 ## How it works
 
-A notification badge displays a number on the right-hand side of an action.
-
-If the number is more than 99, display “99+”.
+The notification badge is a number displayed to the right-hand side of whatever it refers to.
 
 {{ example("notification-badge.html", scaled=false, cy=false, html=true) }}
+
+If the number is more than 99, display “99+”.
 
 If there are 0 things, do not show the badge.
 
 {{ example("notification-badge-zero.html", scaled=false, cy=false, html=true) }}
 
-## Research on this component
+## Research
 
-Notification badges are common on many sites and services. It is part of the [Account header](components/account-header/index.html). Research showed:
+Research showed that notification badges are common across online services, smartphones and apps. Usability testing showed:
 
-- people understand what it is for
-- it does not distract people from their task
+- users understand what it is for
+- it does not distract users from their task
 
-{{ research(142) }}
+We need more research. If you have used the notification badge, get in touch to share your research findings.
+
+[Discuss the notification badge on GitHub](https://github.com/hmrc/design-patterns/issues/142)

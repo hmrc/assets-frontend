@@ -1,51 +1,34 @@
-# Header
+# HMRC header
 
-This is the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer) with extra parts to meet user needs.
+The HMRC header shows external users that they are dealing with HMRC.
 
-## When to use this pattern
+## When to use
 
-Start with the [GOV.UK header](https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer). Do not change any element you import from this header.
+Use this pattern if the user needs to know they are dealing with HMRC. For example, if they need to be sure that a payment is going to the right government department.
 
-Only add an HMRC header if there is a user need to know you are dealing with HMRC. For example, if they are making a payment and need to be sure that the money is going to the right government department.
+## When not to use
 
-{{ example('header--hmrc-logo.html', scaled=true, cy=false, html=false) }}
+Do not use this pattern when the user does not need to know they are dealing with HMRC. Use the [GOV.UK header](https://design-system.service.gov.uk/components/header/).
 
-If your service is in the personal tax account, use the [Account header](/components/account-header/index.html).
+Do not use this pattern for:
+
+- personal tax account services – use the [account header](/components/account-header/index.html)
+- HMRC internal services – use the [internal header](/patterns/internal-header/index.html)
 
 ## How it works
 
-If your service is available in Welsh, include the language selector.
+The HMRC header should sit below the [GOV.UK header](https://design-system.service.gov.uk/components/header/) and the [phase banner](https://design-system.service.gov.uk/components/phase-banner/), and above the Welsh language toggle.
 
-### When the user is signed out
+It should have:
 
-Use this header:
+- the HMRC logo
+- a vertical teal bar on the left side
+- a horizontal grey bar on the bottom
 
-- in services people do not have to sign in to
-- before a user signs in
-- when a user has signed out
+{{ example('header--hmrc-logo.html', scaled=true, cy=false, html=true) }}
 
-{{ example('header.html', scaled=true, cy=false, html=true) }}
+## Research
 
-### When the user is signed in
+We need more research. If you have used the HMRC header, get in touch to share your research findings.
 
-This header must contain a sign out link.
-
-{{ example('header--signed-in.html', scaled=true, cy=false, html=false) }}
-
-### Tell users about cookies
-
-The GOV.UK header comes with a cookie banner. Use this but change the link to [https://www.tax.service.gov.uk/help/cookies](https://www.tax.service.gov.uk/help/cookies).
-
-[Find out more about cookies](https://www.gov.uk/service-manual/technology/working-with-cookies-and-similar-technologies).
-
-### Use the phase banner
-
-The GOV.UK header also has the phase banner. It includes a feedback link – [https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name](https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name).
-
-In the URL, replace ‘service-name’ with your service’s name so feedback goes to your team.
-
-{{ example('header--phase-banner.html', scaled=true, cy=false, html=false) }}
-
-## Research on this component
-
-We need more research – [add your research on GitHub](https://github.com/hmrc/design-patterns/issues/4).
+[Discuss the HMRC header on GitHub](https://github.com/hmrc/design-patterns/issues/4)

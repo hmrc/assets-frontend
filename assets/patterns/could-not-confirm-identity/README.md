@@ -1,19 +1,17 @@
 # Could not confirm identity
 
-Tell users we could not confirm their identity and what they can do next. This is part of confirming their identity when they sign in with a Government Gateway account for the first time.
+This pattern lets the user know we could not confirm their identity and what they can do next. This is part of confirming their identity when they sign in with a Government Gateway account for the first time.
 
-{{ example('could-not-confirm-identity.html', scaled=false, cy=false, html=false) }}
+## When to use
 
-## When to use this pattern
-
-Use this pattern when we could not confirm a user’s identity. This may include when a user:
+Use this pattern when we could not confirm the user’s identity. This may include when the user:
 
 - provides details that do not match those we have on file
 - does not complete the process
 - does not provide enough information
 - makes too many attempts
 
-Doing this helps users complete the task they are trying to do. It also helps reduce time and money spent dealing with queries received by phone and post.
+Doing this helps the user complete the task they are trying to do. It also helps reduce time and money spent dealing with queries received by phone and post.</p>
 
 There is also a pattern when we have [confirmed their identity](/patterns/tell-users-we-have-confirmed-who-they-are/index.html).
 
@@ -46,15 +44,15 @@ If this is not possible, provide another way for the user to do what they need t
 
 ### Understand the user’s journey
 
-Work with the team responsible for the microservice that confirms a user’s identity to understand how the process works. This will help you decide what is the best thing to tell a user to help them complete the process.
+Work with the team responsible for the microservice that confirms a user’s identity to understand how the process works. This will help you decide what is the best thing to tell the user to help them complete the process.
 
 ### Tell users what they will need to confirm their identity when they start to use the service
 
-List what they need in the ‘before you start’ information where the service starts.
+List what the user needs in the ‘before you start’ information where the service starts.
 
-### Give users extra help when they have a deadline
+### Give the user extra help when they have a deadline
 
-Help users confirm their identity as quickly as possible if they must do something by a specific time and the deadline is close. For example, a Self Assessment tax return or tax credit renewal.
+Help the user confirm their identity as quickly as possible if they must do something by a specific time and the deadline is close. For example, a Self Assessment tax return or tax credit renewal.
 
 ## Research
 
