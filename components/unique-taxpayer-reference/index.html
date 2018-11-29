@@ -196,38 +196,13 @@
 <strong class="phase-tag">EXPERIMENTAL</strong><br>
 This is currently experimental because more research is needed.</p>
 
-<p>This pattern lets users enter a Unique Taxpayer Reference (UTR). Do not call it a ‘Unique Taxpayer Reference number’.</p>
+<p>This component lets the user enter a Unique Taxpayer Reference (UTR). Do not call it a ‘Unique Taxpayer Reference number’.</p>
 <h2 id="when-to-use">When to use</h2>
-<p>Use this pattern when users need to enter a UTR in order to use a service.</p>
-<p>If there is a good reason for asking for a UTR, but the user does not have to enter one, make it optional.</p>
+<p>Use this pattern when the user must enter a UTR to use a service.</p>
+<p>If there is a good reason for asking for a UTR but the user does not have to enter one, make it optional.</p>
 <h2 id="when-not-to-use">When not to use</h2>
-<p>If there is no good reason for asking for a UTR, and the user does not have to enter one to use the service, do not ask for one.</p>
+<p>If there is no good reason for asking for a UTR and the user does not have to enter one to use the service, do not ask for one.</p>
 <h2 id="how-it-works">How it works</h2>
-<p>Use a single text input when you ask users for a UTR. Allow users to enter:</p>
-<ul>
-<li>10 numbers, with or without spaces</li>
-<li>13 numbers, with or without spaces</li>
-<li>10 or 13 numbers that start or end with a k, for example k1234567890123 and 1234567890k</li>
-</ul>
-<p>Remove spaces, characters and extra numbers before validating.</p>
-<p>If you show an example, always use ‘1234567890’.</p>
-<h3 id="provide-help">Provide help</h3>
-<p>Always provide help in the form label, normal content or hint text. This may include:</p>
-<ul>
-<li>a short explanation of what a UTR is</li>
-<li>where they can find it</li>
-<li>what it looks like</li>
-<li>an example</li>
-</ul>
-<p>You can use an image that shows where it is on documents and letters.</p>
-<p>Do not use the <a href="https://design-system.service.gov.uk/components/details/">details component</a> to hide any help. Research shows people may:</p>
-<ul>
-<li>not know what a UTR is</li>
-<li>struggle with how it is formatted</li>
-<li>need help to know what a UTR looks like</li>
-</ul>
-<p>The form label and help should be as clear as possible.</p>
-<p>Ask users about the type of business earlier in the journey and use appropriate content. For example, if the business is a sole trader, tell the user they can find their UTR on letters about Self Assessment. If the business if a limited company, tell the user they can find it on letters about Corporation Tax.</p>
 <p>You can ask for the UTR as the main heading or <code>&lt;h1&gt;</code> of the screen. It may be a question or statement.</p>
 <div class="example"><form>
   <div class="form-group">
@@ -325,7 +300,29 @@ This is currently experimental because more research is needed.</p>
   &lt;input class=&quot;form-control form-control-1-3&quot; id=&quot;unique-taxpayer-reference&quot; name=&quot;unique-taxpayer-reference&quot; type=&quot;text&quot;&gt;
 &lt;/div&gt;
 
-</code></pre><h3 id="error-messages">Error messages</h3>
+</code></pre><p>Use a single text input and allow the user to enter:</p>
+<ul>
+<li>10 numbers, with or without spaces</li>
+<li>13 numbers, with or without spaces</li>
+<li>10 or 13 numbers that start or end with a k, for example k1234567890123 and 1234567890k</li>
+</ul>
+<p>Remove spaces, characters and extra numbers before validating.</p>
+<h3 id="provide-help">Provide help</h3>
+<p>Always provide help in the form of a label, normal content or hint text that is as clear as possible. This may include:</p>
+<ul>
+<li>a short explanation of what a UTR is</li>
+<li>where the user can find it</li>
+<li>what it looks like</li>
+<li>an example – if you show an example, always use ‘1234567890’</li>
+</ul>
+<p>You can use an image that shows where it is on documents and letters. You could also provide a link to <a href="https://www.gov.uk/find-lost-utr-number">Find a lost UTR number</a>.</p>
+<p>Do not use the <a href="https://design-system.service.gov.uk/components/details/">details component</a> to hide any help. Research shows users may:</p>
+<ul>
+<li>not know what a UTR is</li>
+<li>need help to know what a UTR looks like</li>
+</ul>
+<p>Ask the user about the type of business earlier in the journey and use appropriate content. For example, if the business is a sole trader, tell the user they can find their UTR on letters about Self Assessment. If the business if a limited company, tell the user they can find it on letters about Corporation Tax.</p>
+<h3 id="error-messages">Error messages</h3>
 <p>Error messages should be styled like this:</p>
 <div class="example"><div class="form-group form-group-error">
   <label for="unique-taxpayer-reference">
@@ -363,9 +360,16 @@ This is currently experimental because more research is needed.</p>
 <p>Say ‘Enter [whatever it is]’.<br>
 For example, ‘Enter your Self Assessment Unique Taxpayer Reference’.</p>
 <h4 id="if-the-utr-is-in-the-wrong-format">If the UTR is in the wrong format</h4>
-<p>Say ‘Enter [whatever it is] in the right format’.<br>
-For example, ‘Enter your partnership’s Self Assessment Unique Taxpayer Reference in the right format’.</p>
+<p>Say ‘Enter [whatever it is] in the correct format’.<br>
+For example, ‘Enter your partnership’s Self Assessment Unique Taxpayer Reference in the correct format’.</p>
 <h2 id="research">Research</h2>
+<p>Research has shown that users often expect this kind of information to be pre-populated, especially when they have signed in. Research has also shown users:</p>
+<ul>
+<li>may not know what a UTR is</li>
+<li>need help to know what their UTR looks like</li>
+<li>need a specific error message so they know what went wrong</li>
+<li>find their UTR more easily when we provide help appropriate to the type of business</li>
+</ul>
 <p>We need more research. If you have used Unique Taxpayer Reference, get in touch to share your research findings.</p>
 <p><a href="https://github.com/hmrc/design-patterns/issues/126">Discuss Unique Taxpayer Reference on GitHub</a></p>
 

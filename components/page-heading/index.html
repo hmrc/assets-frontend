@@ -192,28 +192,21 @@
             -->
 
             <h1 id="page-heading">Page heading</h1>
-<p>The page heading is main heading of the page. In some instances, it may include an optional supraheading. A supraheading is an additional heading placed above the <code>&lt;h1&gt;</code>. </p>
+<p>This component is the main heading of the current page, which lets the user know what information is being asked for or provided.</p>
+<h2 id="when-to-use">When to use</h2>
+<p>Use a page heading on every page.</p>
+<p>You can also include a section heading if it helps the user know where they are in a service. For example, in long services and those with more than one section.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>Every page must have a main heading coded as an <code>&lt;h1&gt;</code>.</p>
 <div class="example"><header class="page-heading">
-  <h1 class="heading-xlarge">What is your name?</h1>
-  <p class="heading-secondary"><span class="visuallyhidden">This section is </span>Personal details</p>
-</header>
+  <h1 class="heading-xlarge">What is your name?</h1><br></header>
 </div>
 
+<pre><code>&lt;header class=&quot;page-heading&quot;&gt;
+  &lt;h1 class=&quot;heading-xlarge&quot;&gt;What is your name?&lt;/h1&gt;  
+&lt;/header&gt;
 
-
-
-<h2 id="when-to-use-this-component">When to use this component</h2>
-<p>Use a page heading on every page.</p>
-<h2 id="how-it-works">How it works</h2>
-<p>For accessibility reasons, every page must have a main heading coded as a <code>&lt;h1&gt;</code>.</p>
-<p>Include a supraheading, coded as a paragraph (<code>&lt;p&gt;</code>), if it helps people know where they are in a service. This is important for long services and those with more than one section.</p>
-<p>Use this code so the <code>&lt;h1&gt;</code> and the supraheading are:</p>
-<ul>
-<li>separate</li>
-<li>in the correct source order</li>
-<li>displayed the correct way</li>
-<li>read out the correct way</li>
-</ul>
+</code></pre><p>For accessibility reasons, if you use a section heading, it should be coded as a paragraph <code>&lt;p&gt;</code> inside a <code>&lt;header&gt;</code>.</p>
 <div class="example"><header class="page-heading">
   <h1 class="heading-xlarge">What is your name?</h1>
   <p class="heading-secondary"><span class="visuallyhidden">This section is </span>Personal details</p>
@@ -225,32 +218,24 @@
   &lt;p class=&quot;heading-secondary&quot;&gt;&lt;span class=&quot;visuallyhidden&quot;&gt;This section is &lt;/span&gt;Personal details&lt;/p&gt;
 &lt;/header&gt;
 
-</code></pre><p>Change or remove the visually hidden content to meet your user needs.</p>
-<p>If your service does not need a supraheading, leave it out.</p>
-<div class="example"><header class="page-heading">
-  <h1 class="heading-xlarge">What is your name?</h1><br></header>
-</div>
-
-<pre><code>&lt;header class=&quot;page-heading&quot;&gt;
-  &lt;h1 class=&quot;heading-xlarge&quot;&gt;What is your name?&lt;/h1&gt;  
-&lt;/header&gt;
-
-</code></pre><h2 id="research-on-this-component">Research on this component</h2>
-<p>Research into how the page heading was coded found many ways of doing it.</p>
-<p>Some had the supraheading above the <code>&lt;h1&gt;</code>. This means a screen reader user may never hear it.</p>
-<p>Some had the supraheading inside the <code>&lt;h1&gt;</code>. This gives different results depending on what screen reader you use. For example:</p>
+</code></pre><p>This makes sure that when using screen readers and other assistive technologies, the page heading and the section heading are:</p>
 <ul>
-<li>VoiceOver – “Heading level onetwo items What is your name? Personal details”</li>
-<li>NVDA – “Heading level one What is your name? Heading level one Personal details”</li>
-<li>JAWS – “What is your name? Personal details Heading level one”</li>
+<li>separate</li>
+<li>in the correct source order</li>
+<li>displayed the correct way</li>
+<li>read out the correct way</li>
 </ul>
-<p>The recommended code has been tested with screen reader users and all browsers, device and assistive technology combinations. Research showed it:</p>
+<p>Change or remove any visually hidden content to meet your users’ needs.</p>
+<h2 id="research">Research</h2>
+<p>The recommended code has been tested with screen reader users and all browsers, devices and assistive technologies. Research showed it:</p>
 <ul>
 <li>displayed as expected</li>
 <li>worked consistently across different assistive technologies</li>
-<li>helped people know where they were in the service</li>
-<li>did not distract people from their task</li>
+<li>helped users know where they were in the service</li>
+<li>did not distract users from their task</li>
 </ul>
+<p>We need more research. If you have used the page heading and section heading, get in touch to share your research findings.</p>
+<p><a href="https://github.com/hmrc/design-patterns/issues/149">Discuss the page heading on GitHub</a></p>
 
 
             <!--

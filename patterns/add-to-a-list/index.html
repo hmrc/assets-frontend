@@ -192,102 +192,21 @@
             -->
 
             <h1 id="add-to-a-list">Add to a list</h1>
-<p>This pattern lets users add information with more than one part to a list.</p>
-<div class="example"><header class="page-header">
-  <h1 class="heading-xlarge">You have added 3 directors</h1>
-</header>
-<div class="form-group">
-  <dl class="hmrc-add-to-a-list hmrc-add-to-a-list--short">
-    <div class="hmrc-add-to-a-list__contents">
-      <dt class="hmrc-add-to-a-list__identifier hmrc-add-to-a-list__identifier--light">
-        Sydney Russell
-      </dt>
-      <dd class="hmrc-add-to-a-list__change">
-        <a href="#">
-          <span aria-hidden="true">Change</span>
-          <span class="visually-hidden">Change Sydney Russell</span>
-        </a>
-      </dd>
-      <dd class="hmrc-add-to-a-list__remove">
-        <a href="#">
-          <span aria-hidden="true">Remove</span>
-          <span class="visually-hidden">Remove Sydney Russell’s name</span>
-        </a>
-      </dd>
-    </div>
-    <div class="hmrc-add-to-a-list__contents">
-      <dt class="hmrc-add-to-a-list__identifier hmrc-add-to-a-list__identifier--light">
-        Michael Cain
-      </dt>
-      <dd class="hmrc-add-to-a-list__change">
-        <a href="#">
-          <span aria-hidden="true">Change</span>
-          <span class="visually-hidden">Change Michael Cain</span>
-        </a>
-      </dd>
-      <dd class="hmrc-add-to-a-list__remove">
-        <a href="#">
-          <span aria-hidden="true">Remove</span>
-          <span class="visually-hidden">Remove Michael Cain’s details</span>
-        </a>
-      </dd>
-    </div>
-    <div class="hmrc-add-to-a-list__contents">
-      <dt class="hmrc-add-to-a-list__identifier hmrc-add-to-a-list__identifier--light">
-        Jeremy Winter
-      </dt>
-      <dd class="hmrc-add-to-a-list__change">
-        <a href="#">
-          <span aria-hidden="true">Change</span>
-          <span class="visually-hidden">Change Jeremy Winter</span>
-        </a>
-      </dd>
-      <dd class="hmrc-add-to-a-list__remove">
-        <a href="#">
-          <span aria-hidden="true">Remove</span>
-          <span class="visually-hidden">Remove Jeremy Winter’s details</span>
-        </a>
-      </dd>
-    </div>
-  </dl>
-</div>
-<form>
-  <div class="form-group">
-    <fieldset class="inline" id="director">
-      <legend>
-        <span class="bold-small">Do you need to add another director?</span>
-        <span class="form-hint">You must tell us about all your directors.</span>
-      </legend>
-      <div class="multiple-choice">
-        <input id="psa-director-yes" type="radio" name="redirectUrl" value="/">
-        <label class="block-label" for="psa-director-yes">Yes</label>
-      </div>
-      <div class="multiple-choice">
-        <input id="psa-director-no" type="radio" name="redirectUrl" value="/">
-        <label class="block-label" for="psa-director-no">No</label>
-      </div>
-      <input type="hidden" name="errorData" value="">
-    </fieldset>
-  </div>
-  <button type="submit" class="button">Continue</button>
-</form>
-</div>
-
-
-
-
-<h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Use this pattern when users need to add information with more than one part to a list. For example, addresses or a person’s details.</p>
-<h3 id="-when-not-to-use-this-pattern">​​​​When not to use this pattern</h3>
-<p>Do not use this pattern when lists contain different kinds of information.</p>
+<p>This pattern lets the user add information with more than one part to a list.</p>
+<h2 id="when-to-use">When to use</h2>
+<p>Use this pattern when the user needs to add information with more than one part to a list. For example, when they need to enter more than one address or more than one person’s details.</p>
+<h3 id="-when-not-to-use">​​​​When not to use</h3>
+<p>Do not use this pattern when the user needs to add different kinds of information that do not relate to each other.</p>
 <h2 id="how-it-works">How it works</h2>
-<p>Allow users to:</p>
+<p>Allow the user to:</p>
 <ul>
-<li>view a summary of what they have already added to the list</li>
-<li>answer questions about what they are adding to the list</li>
-<li><a href="https://www.gov.uk/service-manual/design/check-your-answers-pages">check their answers before adding to the list</a></li>
-<li>delete and change things on the list</li>
+<li>view a summary of what they have added to the list</li></li>
+<li>add things to the list</li></li>
+<li><a href="https://www.gov.uk/service-manual/design/check-your-answers-pages">check their answers</a></li>
+<li>change things on the list</li>
+<li>remove things from the list</li>
 </ul>
+<h3 id="view-a-summary-of-what-they-have-added-to-the-list">View a summary of what they have added to the list</h3>
 <div class="example"><header class="page-header">
   <h1 class="heading-xlarge">You have added 3 directors</h1>
 </header>
@@ -452,57 +371,14 @@
 </div>
 
 
-<h3 id="delete-something-from-the-list">Delete something from the list</h3>
-<p>Get a user to confirm they want to delete something from the list.</p>
-<div class="example"><form>
-  <div class="form-group">
-    <fieldset class="inline">
-      <legend class="page-header">
-        <h1 class="heading-large">Are you sure you want to delete Elizabeth Keen?</h1>
-      </legend>
-      <div class="multiple-choice">
-        <input id="delete-yes" type="radio" name="yes-no-group" value="Yes">
-        <label for="delete-yes">Yes</label>
-      </div>
-      <div class="multiple-choice">
-        <input id="delete-no" type="radio" name="yes-no-group" value="No">
-        <label for="delete-no">No</label>
-      </div>
-    </fieldset>
-  </div>
-  <button class="button" role="button">Continue</button>
-</form></div>
-
-<pre><code>&lt;form&gt;
-  &lt;div class=&quot;form-group&quot;&gt;
-    &lt;fieldset class=&quot;inline&quot;&gt;
-      &lt;legend class=&quot;page-header&quot;&gt;
-        &lt;h1 class=&quot;heading-large&quot;&gt;Are you sure you want to delete Elizabeth Keen?&lt;/h1&gt;
-      &lt;/legend&gt;
-      &lt;div class=&quot;multiple-choice&quot;&gt;
-        &lt;input id=&quot;delete-yes&quot; type=&quot;radio&quot; name=&quot;yes-no-group&quot; value=&quot;Yes&quot;&gt;
-        &lt;label for=&quot;delete-yes&quot;&gt;Yes&lt;/label&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;multiple-choice&quot;&gt;
-        &lt;input id=&quot;delete-no&quot; type=&quot;radio&quot; name=&quot;yes-no-group&quot; value=&quot;No&quot;&gt;
-        &lt;label for=&quot;delete-no&quot;&gt;No&lt;/label&gt;
-      &lt;/div&gt;
-    &lt;/fieldset&gt;
-  &lt;/div&gt;
-  &lt;button class=&quot;button&quot; role=&quot;button&quot;&gt;Continue&lt;/button&gt;
-&lt;/form&gt;
-</code></pre><div class="example">
-  <img src="patterns/add-to-a-list/add-to-list-delete.gif" alt="Animated example of deleting a director from the list that asks a yes-no question for them to confirm they want to delete the specific director." />
-</div>
-
-
-<h3 id="change-something-on-the-list">Change something on the list</h3>
-<p>Show all the information about the entry and let someone make a change.</p>
+<h3 id="change-things-on-the-list">Change things on the list</h3>
+<p>Show all the information about the entry and let the user make a change.</p>
 <div class="example"><header class="page-header">
   <h1 class="heading-xlarge">Change Elizabeth Keen’s details</h1>
 </header>
 <div class="form-group">
-  <dl class="govuk-check-your-answers form-group cya-questions-long"><br>    <div>
+  <dl class="govuk-check-your-answers form-group cya-questions-long">
+    <div>
       <dt class="cya-question">What is the company director’s name?</dt>
       <dd class="cya-answer">Elizabeth Keen</dd>
       <dd class="cya-change"><a href="/"><span aria-hidden="true">Change</span><span class="visually-hidden">Change Elizabeth Keen’s name</span></a></dd>
@@ -538,13 +414,13 @@
   </dl>
 </div>
 
-<p><a href="" class="button" role="button">Continue</a>
+<p><a href="#" class="button" role="button">Continue</a>
 </div></p>
 <pre><code>&lt;header class=&quot;page-header&quot;&gt;
   &lt;h1 class=&quot;heading-xlarge&quot;&gt;Change Elizabeth Keen’s details&lt;/h1&gt;
 &lt;/header&gt;
 &lt;div class=&quot;form-group&quot;&gt;
-  &lt;dl class=&quot;govuk-check-your-answers form-group cya-questions-long&quot;&gt;    
+  &lt;dl class=&quot;govuk-check-your-answers form-group cya-questions-long&quot;&gt;
     &lt;div&gt;
       &lt;dt class=&quot;cya-question&quot;&gt;What is the company director’s name?&lt;/dt&gt;
       &lt;dd class=&quot;cya-answer&quot;&gt;Elizabeth Keen&lt;/dd&gt;
@@ -581,18 +457,62 @@
   &lt;/dl&gt;
 &lt;/div&gt;
 
-&lt;a href=&quot;&quot; class=&quot;button&quot; role=&quot;button&quot;&gt;Continue&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button&quot; role=&quot;button&quot;&gt;Continue&lt;/a&gt;
 
-</code></pre><div class="example">
+</code></pre><!-- 
+<div class="example">
   <img src="patterns/add-to-a-list/add-to-list-change.gif" alt="Animated example of changing a director’s name that includes showing a check your answers type page about the director and changing their name." />
 </div>
-
-
-<h2 id="research-on-this-component">Research on this component</h2>
-  <div class="">
-    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/31">add your research on GitHub</a>.</p>
+ -->
+<h3 id="remove-things-from-the-list">Remove things from the list</h3>
+<p>Ask the user to confirm they want to remove something from the list.</p>
+<div class="example"><form>
+  <div class="form-group">
+    <fieldset class="inline">
+      <legend class="page-header">
+        <h1 class="heading-large">Are you sure you want to remove Elizabeth Keen?</h1>
+      </legend>
+      <div class="multiple-choice">
+        <input id="delete-yes" type="radio" name="yes-no-group" value="Yes">
+        <label for="delete-yes">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="delete-no" type="radio" name="yes-no-group" value="No">
+        <label for="delete-no">No</label>
+      </div>
+    </fieldset>
   </div>
+  <button class="button" role="button">Continue</button>
+</form>
+</div>
 
+<pre><code>&lt;form&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;fieldset class=&quot;inline&quot;&gt;
+      &lt;legend class=&quot;page-header&quot;&gt;
+        &lt;h1 class=&quot;heading-large&quot;&gt;Are you sure you want to remove Elizabeth Keen?&lt;/h1&gt;
+      &lt;/legend&gt;
+      &lt;div class=&quot;multiple-choice&quot;&gt;
+        &lt;input id=&quot;delete-yes&quot; type=&quot;radio&quot; name=&quot;yes-no-group&quot; value=&quot;Yes&quot;&gt;
+        &lt;label for=&quot;delete-yes&quot;&gt;Yes&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;multiple-choice&quot;&gt;
+        &lt;input id=&quot;delete-no&quot; type=&quot;radio&quot; name=&quot;yes-no-group&quot; value=&quot;No&quot;&gt;
+        &lt;label for=&quot;delete-no&quot;&gt;No&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;button&quot; role=&quot;button&quot;&gt;Continue&lt;/button&gt;
+&lt;/form&gt;
+
+</code></pre><!-- 
+<div class="example">
+  <img src="patterns/add-to-a-list/add-to-list-delete.gif" alt="Animated example of deleting a director from the list that asks a yes-no question for them to confirm they want to delete the specific director." />
+</div>
+ -->
+<h2 id="research">Research</h2>
+<p>We need more research. If you have used add to a list, get in touch to share your research findings.</p>
+<p><a href="https://github.com/hmrc/design-patterns/issues/31">Discuss add to a list on GitHub</a></p>
 
 
             <!--

@@ -192,20 +192,9 @@
             -->
 
             <h1 id="confirmed-identity">Confirmed identity</h1>
-<p>This pattern lets users know we have confirmed their identity. It is part of the journey when users sign in with a Government Gateway account for the first time.</p>
-<div class="example">  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">We have confirmed your identity</h1>
-      <a href="" role="button" class="button">Continue</a>
-    </div>
-  </div>
-</div>
-
-
-
-
-<h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Use this pattern when we can confirm a user’s identity.</p></p>
+<p>This pattern lets the user know we have confirmed their identity. This is part of confirming their identity when they sign in with a Government Gateway account for the first time.</p>
+<h2 id="when-to-use">When to use</h2>
+<p>Use this pattern when we can confirm the user’s identity.</p>
 <p>There is also a pattern when we [could not confirm their identity]<a href="/patterns/could-not-confirm-identity/index.html">help users when we cannot confirm their identity</a>.</p>
 <h2 id="how-it-works">How it works</h2>
 <p>Use the standard page template from your service and have the same:</p>
@@ -214,10 +203,16 @@
 <li>phase banner</li>
 <li>footer</li>
 </ul>
+<p>The page should have:</p>
+<ul>
+<li>‘We have confirmed your identity – service name – GOV.UK’ as the page title</li>
+<li>‘We have confirmed your identity’ as the <code>&lt;h1&gt;</code> page heading</li>
+<li>a ‘Continue’ call to action</li>
+</ul>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">We have confirmed your identity</h1>
-      <a href="" role="button" class="button">Continue</a>
+      <a href="#" role="button" class="button">Continue</a>
     </div>
   </div>
 </div>
@@ -229,20 +224,15 @@
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">Rydym wedi cadarnhau pwy ydych</h1>
-      <a href="" role="button" class="button">Yn eich blaen</a>
+      <a href="#" role="button" class="button">Yn eich blaen</a>
     </div>
-  </div></div>
+  </div>
+</div>
 </details>
 
 
 
-<p>The page should have:</p>
-<ul>
-<li>‘We have confirmed your identity – service name – GOV.UK’ as the page title</li>
-<li>‘We have confirmed your identity’ as the <code>&lt;h1&gt;</code> page heading</li>
-<li>a ‘Continue’ call to action</li>
-</ul>
-<p>Do not use the confirmation page pattern. This is not the end of their journey.</p>
+<p>Do not use the confirmation page pattern. This is not the end of the user’s journey.</p>
 <h2 id="research">Research</h2>
 <p>We need more research. If you have used confirmed identity, get in touch to share your research findings.</p>
 <p><a href="https://github.com/hmrc/design-patterns/issues/148">Discuss confirmed identity on GitHub</a></p>

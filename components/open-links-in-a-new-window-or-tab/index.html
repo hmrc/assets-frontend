@@ -192,53 +192,47 @@
             -->
 
             <h1 id="open-links-in-a-new-window-or-tab">Open links in a new window or tab</h1>
-<p>How to display links that open in a new window or tab.</p>
-<div class="example"><a href="" target="_blank" rel="noopener noreferrer">Find out if you qualify for tax credits (opens in a new window or tab)</a></div>
-
-
-
-
-<h2 id="when-to-use-this-component">When to use this component</h2>
-<p>Start with opening all links in the same window or tab and test with your users. Research shows some people struggle to get back to a service because the back button does not work in the new window or tab.</p>
-<p>Use this component if testing shows you need to open a link in a new window or tab, it meets a user need and is necessary. This could be because:</p>
+<p>This component lets the user open links in a new window or tab.</p>
+<h2 id="when-to-use">When to use</h2>
+<p>First, design your service so that links open in the same window or tab and test with users. Research shows that some users struggle to get back to a service because the back button does not work in the new window or tab.</p>
+<p>Only use this pattern if opening a link in a new window or tab meets a user need or is necessary to use the service. This could be because:</p>
 <ul>
 <li>the link is to a document in a different format, like a PDF</li>
-<li>the link is guidance that cannot be inside the service</li>
-<li>they would lose their details if they left the service</li>
-<li>they need go to another site or service to get some information</li>
+<li>the link is to guidance that cannot be inside the service</li>
+<li>the user would lose their details if they left the service</li>
+<li>the user needs to go to another site or service to get information</li>
 </ul>
-<h3 id="when-not-to-use-this-component">When not to use this component</h3>
-<p>If opening a link in a new window or tab:</p>
+<h3 id="when-not-to-use">When not to use</h3>
+<p>Do not use if opening a link in a new window or tab:</p>
 <ul>
 <li>does not meet a user need</li>
-<li>leads to more than one window or tab open for the same service</li>
-<li>stops people completing their task</li>
+<li>leads to more than one window or tab open within the same service</li>
+<li>stops the user completing their task</li>
 </ul>
-<p>Do not use any icons in place of the words. See ‘<a href="https://designnotes.blog.gov.uk/2016/11/28/removing-the-external-link-icon-from-gov-uk/">Removing the external link icon from GOV.UK</a>&#39;.</p>
 <h2 id="how-it-works">How it works</h2>
-<p>Always put ‘(opens in a new window or tab)’ inside the link text content.</p>
-<p>In the code include:</p>
-<ul>
-<li>target=&quot;_blank&quot; to open in a new window or tab</li>
-<li>rel=&quot;noopener noreferrer&quot; to reduce security risks for some browsers</li>
-</ul>
-<div class="example"><a href="" target="_blank" rel="noopener noreferrer">Find out if you qualify for tax credits (opens in a new window or tab)</a></div>
+<div class="example"><a href="#" target="_blank" rel="noopener noreferrer">Find out if you qualify for tax credits (opens in a new window or tab)</a>
+</div>
 
-<pre><code>&lt;a href=&quot;&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Find out if you qualify for tax credits (opens in a new window or tab)&lt;/a&gt;
+<pre><code>&lt;a href=&quot;#&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Find out if you qualify for tax credits (opens in a new window or tab)&lt;/a&gt;
+
 </code></pre><details>
 <summary>Welsh translation of this example</summary>
-<div class="example"><a href="" target="_blank" rel="noopener noreferrer">Dod i wybod a ydych yn gymwys ar gyfer credydau treth (yn agor ffenestr neu dab newydd)</a></div>
+<div class="example"><a href="#" target="_blank" rel="noopener noreferrer">Dod i wybod a ydych yn gymwys ar gyfer credydau treth (yn agor ffenestr neu dab newydd)</a>
+</div>
 </details>
 
 
 
-<h2 id="research-on-this-component">Research on this component</h2>
-<p>This component is based on the format recommended by the Web Content Accessibility Guidelines. See <a href="https://www.w3.org/TR/WCAG20-TECHS/G201.html">Giving users advanced warning when opening a new window</a>.</p>
-<p>All users will know a link will open in a new window or tab without needing to:</p>
+<p>Always put ‘(opens in a new window or tab)’ inside the link text content.</p>
+<p>In the code include:</p>
 <ul>
-<li>read another part of the screen</li>
-<li>understand an icon</li>
+<li><code>target=&quot;_blank&quot;</code> to open in a new window or tab</li>
+<li><code>rel=&quot;noopener noreferrer&quot;</code> to reduce security risks for some browsers</li>
 </ul>
+<p>Do not use any icons in place of the words. See ‘<a href="https://designnotes.blog.gov.uk/2016/11/28/removing-the-external-link-icon-from-gov-uk/">Removing the external link icon from GOV.UK</a>&#39;.</p>
+<h2 id="research">Research</h2>
+<p>We need more research. If you have used open links in a new window or tab, get in touch to share your research findings.</p>
+<p><a href="https://github.com/hmrc/design-patterns/issues/141">Discuss open links in a new window or tab on GitHub</a></p>
 
 
             <!--

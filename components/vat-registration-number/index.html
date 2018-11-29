@@ -196,32 +196,13 @@
 <strong class="phase-tag">EXPERIMENTAL</strong><br>
 This is currently experimental because more research is needed.</p>
 
-<p>This pattern lets users enter a VAT registration number. Do not call it ‘VAT number’ or ‘VAT identification number’.</p>
+<p>This component lets the user enter a VAT registration number. Do not call it ‘VAT number’ or ‘VAT identification number’.</p>
 <h2 id="when-to-use">When to use</h2>
-<p>Use this pattern when users need to enter a VAT registration number to use a service.</p>
-<p>If there is a good reason for asking for a VAT registration number, but the user does not have to enter one, make it optional.</p>
+<p>Use this pattern when the user must enter a VAT registration number to use a service.</p>
+<p>If there is a good reason for asking for a VAT registration number but the user does not have to enter one, make it optional.</p>
 <h2 id="when-not-to-use">When not to use</h2>
 <p>If there is no good reason for asking for a VAT registration number and the user does not have to enter one to use the service, do not ask for one.</p>
 <h2 id="how-it-works">How it works</h2>
-<p>Use a single text input when you ask users for a VAT registration number. Allow users to enter it as 9 numbers with or without ‘GB’ at the start and remove this before validating.</p>
-<p>If you show an example, always use ‘123456789’.</p>
-<h3 id="provide-help">Provide help</h3>
-<p>Always provide help in the form label, normal content or hint text. This may include:</p>
-<ul>
-<li>a short explanation of what a VAT registration number is</li>
-<li>where they can find it</li>
-<li>what it looks like</li>
-<li>an example</li>
-</ul>
-<p>You can use an image that shows where it is on documents and letters.</p>
-<p>Do not use the <a href="https://design-system.service.gov.uk/components/details/">details component</a> to hide any help. Research shows people may:</p>
-<ul>
-<li>not know what a VAT registration number is</li>
-<li>struggle with how it is formatted</li>
-<li>need help to know what a VAT registration number looks like</li>
-</ul>
-<p>The form label and help should be as clear as possible.</p>
-<p>If it is the company the user works for, use ‘your VAT registration number’. If it is not the company the user works for, use the company&#39;s name, for example ‘Anycompany’s VAT registration number’.</p>
 <p>You can ask for the VAT registration number as the main heading or <code>&lt;h1&gt;</code> of the screen. It may be a question or statement.</p>
 <div class="example"><form>
   <div class="form-group">
@@ -284,7 +265,23 @@ This is currently experimental because more research is needed.</p>
   &lt;input class=&quot;form-control form-control-1-3&quot; id=&quot;vat-registration-number&quot; name=&quot;vat-registration-number&quot; type=&quot;text&quot;&gt;
 &lt;/div&gt;
 
-</code></pre><h3 id="error-messages">Error messages</h3>
+</code></pre><p>Use a single text input that allows the user to enter it as 9 numbers with or without ‘GB’ at the start and remove this before validating.</p>
+<h3 id="provide-help">Provide help</h3>
+<p>Always provide help in the form label, normal content or hint text that is as clear as possible. This may include:</p>
+<ul>
+<li>a short explanation of what a VAT registration number is</li>
+<li>where the user can find it</li>
+<li>what it looks like</li>
+<li>an example – if you show an example, always use ‘123456789’</li>
+</ul>
+<p>You can use an image that shows where it is on documents and letters.</p>
+<p>Do not use the <a href="https://design-system.service.gov.uk/components/details/">details component</a> to hide any help. Research shows users may:</p>
+<ul>
+<li>not know what a VAT registration number is</li>
+<li>need help to know what a VAT registration number looks like</li>
+</ul>
+<p>If it is the company the user works for, use ‘your VAT registration number’. If it is not the company the user works for, use the company&#39;s name, for example ‘Anycompany’s VAT registration number’.</p>
+<h3 id="error-messages">Error messages</h3>
 <p>Error messages should be styled like this:</p>
 <div class="example"><div class="form-group form-group-error">
   <label for="vat-registration-number">
@@ -322,10 +319,15 @@ This is currently experimental because more research is needed.</p>
 <p>Say ‘Enter [whatever it is]’.<br>
 For example, ‘Enter your VAT registration number’.</p>
 <h4 id="if-the-vat-registration-number-is-in-the-wrong-format">If the VAT registration number is in the wrong format</h4>
-<p>Say ‘Enter [whatever it is] in the right format’.<br>
-For example, ‘Enter your VAT registration number in the right format’.</p>
+<p>Say ‘Enter [whatever it is] in the correct format’.<br>
+For example, ‘Enter your VAT registration number in the correct format’.</p>
 <h2 id="research">Research</h2>
-<p>We need more research. If you have used VAT registration number, get in touch to share your research findings.</p>
+<p>Research has shown that users often expect this kind of information to be pre-populated, especially when they have signed in. Research has also shown users need help to know:</p>
+<ul>
+<li>what their VAT registration number looks like</li>
+<li>where they can find their VAT registration number</li>
+</ul>
+<p>We need more research. If you’ve used this pattern, get in touch to share your user research findings.</p>
 <p><a href="https://github.com/hmrc/design-patterns/issues/129">Discuss VAT registration number on GitHub</a></p>
 
 

@@ -192,41 +192,38 @@
             -->
 
             <h1 id="messages">Messages</h1>
-<p>This pattern displays messages sent to a user from an HMRC service.</p>
-<h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Use this pattern when a service needs to send messages to users. The messages are not deleted and the user can read them at any time.</p>
-<h3 id="when-not-to-use-this-pattern">When not to use this pattern</h3>
-<p>Do not use this as the only way of sharing important or time-sensitive information with a user. Only display messages when users sign in to a service.</p>
+<p>This pattern displays messages sent to the user from an HMRC service.</p>
+<h2 id="when-to-use">When to use</h2>
+<p>Use this pattern when a service needs to send messages to users.</p>
+<h3 id="when-not-to-use">When not to use</h3>
+<p>Do not use this as the only way of sharing important or time-sensitive information with the user. Only display messages when the user signs in to a service.</p>
 <h2 id="how-it-works">How it works</h2>
-<p>This patterns has 2 views:</p>
-<ul>
-<li>message list</li>
-<li>message details</li>
-</ul>
+<p>Messages has 2 views. A message list and message details.</p>
 <h3 id="message-list">Message list</h3>
-<p>Display a summary of messages the user has received. The list has:</p>
+<p>This should display a summary of the messages the user has received.</p>
+<p>The messages are not deleted and the user can read them at any time.</p>
+<p>Include:</p>
 <ul>
-<li>subject of the message</li>
-<li>date the message was sent</li>
+<li>the subject of the message</li>
+<li>the date the message was sent</li>
 <li>a link to the full message</li>
 <li>a read and unread state</li>
 </ul>
-<h4 id="unread-messages">Unread messages</h4>
 <div class="example"><div class="message-inbox">
   <h2 class="heading-medium">Messages</h2>
   <div class="message-inbox__list" role="list">
-    <div class="message-inbox__list-item" role="listitem"><span
-      class="visually-hidden">unread</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
-      <span class="message-inbox__block no-wrap">29 March 2018</span>
+    <div class="message-inbox__list-item message-inbox__list-item--read" role="listitem"><span
+      class="visually-hidden">read</span> <a class="message-inbox__block" href="#">Pay your tax bill by 1 January 2018</a>
+      <span class="message-inbox__block">12 December 2017</span>
     </div>
     <div class="message-inbox__list-item" role="listitem"><span
-      class="visually-hidden">unread</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
+      class="visually-hidden">unread</span> <a class="message-inbox__block" href="#">Send your Self Assessment tax return by 31 January 2018</a>
+      <span class="message-inbox__block no-wrap">13 December 2017</span>
+    </div>
+    <div class="message-inbox__list-item" role="listitem"><span
+      class="visually-hidden">unread</span> <a class="message-inbox__block" href="#">Your tax refund of £250.98</a>
       <span class="message-inbox__block no-wrap">24 February 2018</span>
     </div>
-    <div class="message-inbox__list-item" role="listitem"><span
-      class="visually-hidden">unread</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
-      <span class="message-inbox__block no-wrap">4 January 2018</span>
-    </div>
   </div>
 </div>
 </div>
@@ -234,72 +231,62 @@
 <pre><code>&lt;div class=&quot;message-inbox&quot;&gt;
   &lt;h2 class=&quot;heading-medium&quot;&gt;Messages&lt;/h2&gt;
   &lt;div class=&quot;message-inbox__list&quot; role=&quot;list&quot;&gt;
-    &lt;div class=&quot;message-inbox__list-item&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;unread&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
-      &lt;span class=&quot;message-inbox__block no-wrap&quot;&gt;29 March 2018&lt;/span&gt;
+    &lt;div class=&quot;message-inbox__list-item message-inbox__list-item--read&quot; role=&quot;listitem&quot;&gt;&lt;span
+      class=&quot;visually-hidden&quot;&gt;read&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;#&quot;&gt;Pay your tax bill by 1 January 2018&lt;/a&gt;
+      &lt;span class=&quot;message-inbox__block&quot;&gt;12 December 2017&lt;/span&gt;
     &lt;/div&gt;
     &lt;div class=&quot;message-inbox__list-item&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;unread&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
+      class=&quot;visually-hidden&quot;&gt;unread&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;#&quot;&gt;Send your Self Assessment tax return by 31 January 2018&lt;/a&gt;
+      &lt;span class=&quot;message-inbox__block no-wrap&quot;&gt;13 December 2017&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;message-inbox__list-item&quot; role=&quot;listitem&quot;&gt;&lt;span
+      class=&quot;visually-hidden&quot;&gt;unread&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;#&quot;&gt;Your tax refund of £250.98&lt;/a&gt;
       &lt;span class=&quot;message-inbox__block no-wrap&quot;&gt;24 February 2018&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;message-inbox__list-item&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;unread&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
-      &lt;span class=&quot;message-inbox__block no-wrap&quot;&gt;4 January 2018&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-</code></pre><h4 id="read-messages">Read messages</h4>
-<div class="example"><div class="message-inbox">
-  <h2 class="heading-medium">Messages</h2>
-  <div class="message-inbox__list" role="list">
-    <div class="message-inbox__list-item message-inbox__list-item--read" role="listitem"><span
-      class="visually-hidden">read</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
-      <span class="message-inbox__block">29 March 2018</span>
-    </div>
-    <div class="message-inbox__list-item message-inbox__list-item--read" role="listitem"><span
-      class="visually-hidden">read</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
-      <span class="message-inbox__block">24 February 2018</span>
-    </div>
-    <div class="message-inbox__list-item message-inbox__list-item--read" role="listitem"><span
-      class="visually-hidden">read</span> <a class="message-inbox__block" href="/">Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client</a>
-      <span class="message-inbox__block">4 January 2018</span>
-    </div>
-  </div>
-</div>
-</div>
-
-<pre><code>&lt;div class=&quot;message-inbox&quot;&gt;
-  &lt;h2 class=&quot;heading-medium&quot;&gt;Messages&lt;/h2&gt;
-  &lt;div class=&quot;message-inbox__list&quot; role=&quot;list&quot;&gt;
-    &lt;div class=&quot;message-inbox__list-item message-inbox__list-item--read&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;read&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
-      &lt;span class=&quot;message-inbox__block&quot;&gt;29 March 2018&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;message-inbox__list-item message-inbox__list-item--read&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;read&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
-      &lt;span class=&quot;message-inbox__block&quot;&gt;24 February 2018&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;message-inbox__list-item message-inbox__list-item--read&quot; role=&quot;listitem&quot;&gt;&lt;span
-      class=&quot;visually-hidden&quot;&gt;read&lt;/span&gt; &lt;a class=&quot;message-inbox__block&quot; href=&quot;/&quot;&gt;Pub Moon under the water 5 - 7a Temple Place, Brighton BN3 7JB - Client: Mr A Client&lt;/a&gt;
-      &lt;span class=&quot;message-inbox__block&quot;&gt;4 January 2018&lt;/span&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 </code></pre><h3 id="message-details">Message details</h3>
-<p>Display a complete message. Include:</p>
+<p>This should display a complete message.</p>
+<p>Include:</p>
 <ul>
-<li>subject of the message</li>
-<li>date the message was sent</li>
-<li>message content</li>
-<li>back link that takes you to the message list</li>
+<li>the subject of the message</li>
+<li>the date the message was sent</li>
+<li>the message content</li>
+<li>a back link to the message list</li>
 </ul>
-<h2 id="research-on-this-pattern">Research on this pattern</h2>
-  <div class="">
-    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/44">add your research on GitHub</a>.</p>
-  </div>
+<div class="example"><a href="#" class="link-back">Back</a>
 
+<header class="page-heading">
+  <h1 class="heading-xlarge">Send your Self Assessment tax return by 31&nbsp;January&nbsp;2018</h1>
+  <p class="heading-secondary">
+    <span class="visuallyhidden">This message was sent on  </span>
+    13&nbsp;December&nbsp;2018
+  </p>
+</header>
+
+<p>You must send your Self Assessment tax return for the 2016 to 2017 tax year by 31&nbsp;January&nbsp;2018.</p>
+
+<p>There may be penalties if your tax return is late.</p>
+</div>
+
+<pre><code>&lt;a href=&quot;#&quot; class=&quot;link-back&quot;&gt;Back&lt;/a&gt;
+
+&lt;header class=&quot;page-heading&quot;&gt;
+  &lt;h1 class=&quot;heading-xlarge&quot;&gt;Send your Self Assessment tax return by 31&amp;nbsp;January&amp;nbsp;2018&lt;/h1&gt;
+  &lt;p class=&quot;heading-secondary&quot;&gt;
+    &lt;span class=&quot;visuallyhidden&quot;&gt;This message was sent on  &lt;/span&gt;
+    13&amp;nbsp;December&amp;nbsp;2018
+  &lt;/p&gt;
+&lt;/header&gt;
+
+&lt;p&gt;You must send your Self Assessment tax return for the 2016 to 2017 tax year by 31&amp;nbsp;January&amp;nbsp;2018.&lt;/p&gt;
+
+&lt;p&gt;There may be penalties if your tax return is late.&lt;/p&gt;
+
+</code></pre><h2 id="research">Research</h2>
+<p>We need more research. If you have used messages, get in touch to share your research findings.</p>
+<p><a href="https://github.com/hmrc/design-patterns/issues/44">Discuss messages on GitHub</a></p>
 
 
             <!--

@@ -192,108 +192,11 @@
             -->
 
             <h1 id="help-users-when-we-time-them-out-of-a-service">Help users when we time them out of a service</h1>
-<p>This pattern warns someone before we are going to time them out of a service and what to tell them if we do time them out.</p>
-<div class="example"><div class="scale-wrapper"><div class="scale"><!-- COOKIE MESSAGE -->
-<!-- <div id="global-cookie-message">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-    cookies</a></p>
-</div> -->
-<!-- END COOKIE MESSAGE -->
-
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-          <img src="images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-
-<main id="content">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-
-  <!-- PAGE CONTENT-->
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <form method="post" action="refund-and-bank-address-edit" >
-        <h1 class="heading-large">Enter your full name</h1>
-        <div class="form-group">
-          <label class="form-label visuallyhidden" for="full-name-f1">Enter your full name</label>
-          <input class="form-control" id="full-name-f1" type="text" name="full-name-f1">
-        </div>
-        <button type="submit" class="button">Continue</button>
-      </form>
-      <!-- Back button -->
-      <a href="javascript:window.history.back();" class="link-back">Back</a>
-    </div>
-  </div>
-
-  <!-- END PAGE CONTENT-->
-<p></main>
-<!-- FOOTER   --></p>
-<p><footer class="group js-footer" id="footer" role="contentinfo">
-  <div class="footer-wrapper">
-    <div class="footer-meta">
-      <div class="footer-meta-inner">
-        <!-- PLATFORM HELP LINKS -->
-        <ul class="platform-help-links">
-          <li><a href="/help/cookies" target="_blank" data-sso="false" data-journey-click="footer:Click:Cookies">Cookies</a></li>
-          <li><a href="/help/privacy" target="_blank" data-sso="false" data-journey-click="footer:Click:Privacy policy">Privacy policy</a></li>
-          <li><a href="/help/terms-and-conditions" target="_blank" data-sso="false" data-journey-click="footer:Click:Terms and conditions">Terms and conditions</a></li>
-          <li><a href="https://www.gov.uk/help" target="_blank" data-sso="false" data-journey-click="footer:Click:Help">Help using GOV.UK</a></li>
-        </ul>
-        <!-- END PLATFORM HELP LINKS -->
-        <!-- OPEN GOVERNMENT LICENCE -->
-        <div class="open-government-licence">
-          <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-          <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-        </div>
-        <!-- END OPEN GOVERNMENT LICENCE -->
-      </div>
-      <!-- COPYRIGHT -->
-      <div class="copyright">
-        <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
-      </div>
-      <!-- END COPYRIGHT -->
-    </div>
-  </div>
-</footer></p>
-<div id="timeout-dialog" class="timeout-dialog" role="dialog" aria-labelledby="timeout-message" tabindex="-1" aria-live="polite">
-  <p id="timeout-message" role="text">For your security, we will sign you out in <span id="timeout-countdown" class="countdown">2 minutes</span>.</p>
-  <button id="timeout-keep-signin-btn" class="button">Stay signed in</button>
-  <a id="timeout-sign-out-btn" class="link">Sign out</a>
-</div>
-<div id="timeout-overlay" class="timeout-overlay"></div>
-</div></div></div>
-
-
-
-
-<h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Warn a user we are going to time them out when they do not do anything for 13 minutes. This gives them 2 minutes to decide to keep using the service.</p>
-<p>The warning makes a service more accessible.</p>
-<p>Automatically take them to a page that tells them what has happened after 15 minutes.</p>
-<h2 id="how-the-pattern-works">How the pattern works</h2>
-<p>The pattern uses an accessible dialog box that appears on top of the page. This stops them using the screen with a mouse or keyboard until they select an option or press the escape key.</p>
+<p>This pattern warns the user before we time them out of a service and tells them what has happened when we do time them out.</p>
+<h2 id="when-to-use">When to use</h2>
+<p>We time the user out when they do not do anything for 15 minutes. Warn them after 13 minutes, which gives them 2 minutes to decide to keep using the service.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>Use an accessible dialog box that appears on top of the page. This stops them using the screen with a mouse or keyboard until they select an option or press the escape key.</p>
 <p>The user can:</p>
 <ul>
 <li>select a button to stay in the service and not time out</li>
@@ -304,13 +207,11 @@
 <h3 id="when-they-are-signed-in-to-the-service">When they are signed in to the service</h3>
 <p>The warning should:</p>
 <ul>
-<li>say “For your security, we will sign you out in 2 minutes.”</li>
-<li>say what will happen to their answers</li>
-<li>have a “Stay signed in” button</li>
-<li>have a “Sign out” link that signs them out as normal</li>
+<li>say ‘For your security, we will sign you out in 2 minutes.’</li>
+<li>say what will happen to their answers, if needed</li>
+<li>have a ‘Stay signed in’ button</li>
+<li>have a ‘Sign out’ link that signs them out as normal</li>
 </ul>
-<p>If they do nothing, take them to a “We signed you out” page that uses similar content as the warning box.</p>
-<h4 id="warning">Warning</h4>
 <div class="example"><div class="scale-wrapper"><div class="scale"><!-- COOKIE MESSAGE -->
 <!-- <div id="global-cookie-message">
   <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
@@ -894,13 +795,14 @@
 
 
 
-<h4 id="we-signed-you-out">We signed you out</h4>
+<p>If they do nothing, take them to a ‘We signed you out’ page that uses similar content as the warning box.</p>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">For your security, we signed you out</h1>
-      <a href="" class="button" role="button">Sign in</a>
+      <a href="#" class="button" role="button">Sign in</a>
     </div>
-  </div></div>
+  </div>
+</div>
 
 
 
@@ -909,9 +811,10 @@
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">Er eich diogelwch, gwnaethom eich allgofnodi</h1>
-      <a href="" class="button" role="button">Mewngofnodi</a>
+      <a href="#" class="button" role="button">Mewngofnodi</a>
     </div>
-  </div></div>
+  </div>
+</div>
 </details>
 
 
@@ -925,9 +828,10 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">For your security, we signed you out</h1>
       <p>We saved your answers.</p>
-      <a href="" class="button" role="button">Sign in</a>
+      <a href="#" class="button" role="button">Sign in</a>
     </div>
-  </div></div>
+  </div>
+</div>
 
 
 
@@ -937,9 +841,10 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">Er eich diogelwch, gwnaethom eich allgofnodi</h1>
       <p>Gwnaethom gadw’ch atebion.</p>
-      <a href="" class="button" role="button">Mewngofnodi</a>
+      <a href="#" class="button" role="button">Mewngofnodi</a>
     </div>
-  </div></div>
+  </div>
+</div>
 </details>
 
 
@@ -953,9 +858,10 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">For your security, we signed you out</h1>
       <p>We did not save your answers.</p>
-      <a href="" class="button" role="button">Sign in</a>
+      <a href="#" class="button" role="button">Sign in</a>
     </div>
-  </div></div>
+  </div>
+</div>
 
 
 
@@ -965,22 +871,21 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">Er eich diogelwch, gwnaethom eich allgofnodi</h1>
       <p>Ni wnaethom gadw’ch atebion.</p>
-      <a href="" class="button" role="button">Mewngofnodi</a>
+      <a href="#" class="button" role="button">Mewngofnodi</a>
     </div>
-  </div></div>
+  </div>
+</div>
 </details>
 
 
 
-<h3 id="when-they-are-not-signed-in-to-the-service">When they are not signed in to the service</h3>
+<h3 id="when-the-user-is-not-signed-in">When the user is not signed in</h3>
 <p>The warning should:</p>
 <ul>
-<li>say “For your security, we will delete your answers in 2 minutes.”</li>
+<li>say ‘For your security, we will delete your answers in 2 minutes.’</li>
 <li>have a button to stay in the service</li>
-<li>have a “Delete your answers” link that takes them to the “You deleted your answers” page</li>
+<li>have a ‘Delete your answers’ link that takes them to the ‘You deleted your answers’ page</li>
 </ul>
-<p>If they do nothing, delete their answers and take them the “For your security, we deleted your answers” page.</p>
-<h4 id="warning">Warning</h4>
 <div class="example"><div class="scale-wrapper"><div class="scale"><!-- COOKIE MESSAGE -->
 <!-- <div id="global-cookie-message">
   <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
@@ -1172,35 +1077,18 @@
 
 
 
-<h4 id="we-deleted-your-answers">We deleted your answers</h4>
-<div class="example">  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">For your security, we deleted your answers</h1>
-      <a href="" class="button" role="button">Start again</a>
-    </div>
-  </div></div>
 
 
 
-<details>
-<summary>Welsh translation of this example</summary>
-<div class="example">  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">Er eich diogelwch, gwnaethom ddileu’ch atebion</h1>
-      <a href="" class="button" role="button">Dechrau eto</a>
-    </div>
-  </div></div>
-</details>
 
 
-
-<h4 id="you-deleted-your-answers">You deleted your answers</h4>
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">You deleted your answers</h1>
-      <a href="" class="button" role="button">Start again</a>
+      <a href="#" class="button" role="button">Start again</a>
     </div>
-  </div></div>
+  </div>
+</div>
 
 
 
@@ -1209,9 +1097,34 @@
 <div class="example">  <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">Gwnaethoch ddileu’ch atebion</h1>
-      <a href="" class="button" role="button">Dechrau eto</a>
+      <a href="#" class="button" role="button">Dechrau eto</a>
     </div>
-  </div></div>
+  </div>
+</div>
+</details>
+
+
+
+<p>If they do nothing, delete their answers and take them the ‘For your security, we deleted your answers’ page.</p>
+<div class="example">  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">For your security, we deleted your answers</h1>
+      <a href="#" class="button" role="button">Start again</a>
+    </div>
+  </div>
+</div>
+
+
+
+<details>
+<summary>Welsh translation of this example</summary>
+<div class="example">  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Er eich diogelwch, gwnaethom ddileu’ch atebion</h1>
+      <a href="#" class="button" role="button">Dechrau eto</a>
+    </div>
+  </div>
+</div>
 </details>
 
 
@@ -1239,29 +1152,25 @@
 <li>read the button label</li>
 </ul>
 <p>This lets a user hear what they need to and stay in the service with a single click.</p>
-<h2 id="research-on-this-component">Research on this component</h2>
+<h2 id="research">Research</h2>
 <p>The warning was tested with 5 people for a service they signed in to. One person had dyslexia and the other was 70 years old. All 5 people understood the warning and managed to stay signed in.</p>
-  <div class="">
-    <p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/89">add your research on GitHub</a>.</p>
-  </div>
-
-
-<p>We want to do more usability testing, especially with people who use assistive technology and with services you do not sign in to.</p>
-<p>We want to know if people:</p>
+<p>We want to do more usability testing, especially with users who use assistive technology and with services you do not sign in to.</p>
+<p>We want to know if users:</p>
 <ul>
 <li>understand what has happened</li>
-<li>understand the content and if there is anything missing
-– can do what they need to do
-– stay signed in, continue with the service, sign out, start again, or get timed out</li>
+<li>understand the content and if there is anything missing</li>
+<li>can do what they need to do – stay signed in, continue with the service, sign out, start again, or get timed out</li>
 </ul>
 <p>The warning has been tested with <a href="https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices">all recommended browsers</a>. It has been lab tested with most assistive technology including:</p>
 <ul>
 <li>JAWS</li>
 <li>ZoomText</li>
 <li>NVDA</li>
-<li>VoiceOver</li>
+<li>VoiceOver on MacOS and iOS</li>
 </ul>
 <p>It has not been tested with Dragon NaturallySpeaking.</p>
+<p>We need more research. If you have used service timeout, get in touch to share your research findings.</p>
+<p><a href="https://github.com/hmrc/design-patterns/issues/89">Discuss service timeout on GitHub</a></p>
 
 
             <!--

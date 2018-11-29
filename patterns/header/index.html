@@ -191,286 +191,41 @@
             </div>
             -->
 
-            <h1 id="header">Header</h1>
-<p>This is the <a href="https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer">GOV.UK header</a> with extra parts to meet user needs.</p>
-<h2 id="when-to-use-this-pattern">When to use this pattern</h2>
-<p>Start with the <a href="https://www.gov.uk/service-manual/design/add-the-govuk-header-and-footer">GOV.UK header</a>. Do not change any element you import from this header.</p>
-<p>Only add an HMRC header if there is a user need to know you are dealing with HMRC. For example, if they are making a payment and need to be sure that the money is going to the right government department.</p>
-<div class="example"><div class="scale-wrapper"><div class="scale"><!-- COOKIE MESSAGE -->
-<div id="global-cookie-message" style="display: block;">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
-</div>
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-          <img src="public/assets/images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service Name</a>
-          <p id="proposition-link">
-            <a href="#">Sign out</a>
-          </p>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<!-- END GOV.UK HEADER -->
-<div id="global-header-bar"></div>
-<main id="content">
-  <!-- HMRC LOGO -->
-  <div class="hmrc-banner" role="banner">
+            <h1 id="hmrc-header">HMRC header</h1>
+<p>The HMRC header shows external users that they are dealing with HMRC.</p>
+<h2 id="when-to-use">When to use</h2>
+<p>Use this pattern if the user needs to know they are dealing with HMRC. For example, if they need to be sure that a payment is going to the right government department.</p>
+<h2 id="when-not-to-use">When not to use</h2>
+<p>Do not use this pattern when the user does not need to know they are dealing with HMRC. Use the <a href="https://design-system.service.gov.uk/components/header/">GOV.UK header</a>.</p>
+<p>Do not use this pattern for:</p>
+<ul>
+<li>personal tax account services – use the <a href="/components/account-header/index.html">account header</a></li>
+<li>HMRC internal services – use the <a href="/patterns/internal-header/index.html">internal header</a></li>
+</ul>
+<h2 id="how-it-works">How it works</h2>
+<p>The HMRC header should sit below the <a href="https://design-system.service.gov.uk/components/header/">GOV.UK header</a> and the <a href="https://design-system.service.gov.uk/components/phase-banner/">phase banner</a>, and above the Welsh language toggle.</p>
+<p>It should have:</p>
+<ul>
+<li>the HMRC logo</li>
+<li>a vertical teal bar on the left side</li>
+<li>a horizontal grey bar on the bottom</li>
+</ul>
+<div class="example"><div class="scale-wrapper"><div class="scale">  <div class="hmrc-banner" role="banner">
     <div class="organisation-logo">
       <p>HM Revenue &amp; Customs</p>
     </div>
   </div>
-  <!-- END HMRC LOGO -->
-  <!-- LANGUAGE TOGGLE -->
-  <ul class="lang-select">
-    <li>
-      <span class="faded-text--small">
-        <strong>English |</strong>
-      </span>
-      <a id="switchToWelsh" lang="cy" href="/personal-account/lang/cyGb?redirectUrl&#61;%2Fpersonal-account" data-journey-click="link - click:lang-select:Cymraeg">
-        <small>
-          <strong>Cymraeg</strong>
-        </small>
-      </a>
-    </li>
-  </ul>
-<!-- END LANGUAGE TOGGLE -->
-
-</main>
 </div></div></div>
 
-
-
-
-<p>If your service is in the personal tax account, use the <a href="/components/account-header/index.html">Account header</a>.</p>
-<h2 id="how-it-works">How it works</h2>
-<p>If your service is available in Welsh, include the language selector.</p>
-<h3 id="when-the-user-is-signed-out">When the user is signed out</h3>
-<p>Use this header:</p>
-<ul>
-<li>in services people do not have to sign in to</li>
-<li>before a user signs in</li>
-<li>when a user has signed out</li>
-</ul>
-<div class="example"><div class="scale-wrapper"><div class="scale"><!-- COOKIE MESSAGE -->
-<div id="global-cookie-message" style="display: block;">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-    cookies</a></p>
-</div>
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-          <img src="public/assets/images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service name</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content">
-  <!-- LANGUAGE TOGGLE -->
-  <ul class="lang-select">
-    <li>
-      <span class="faded-text--small">
-        <strong>English |</strong>
-      </span>
-      <a id="switchToWelsh" lang="cy" href="/personal-account/lang/cyGb?redirectUrl&#61;%2Fpersonal-account" data-journey-click="link - click:lang-select:Cymraeg">
-        <small>
-          <strong>Cymraeg</strong>
-        </small>
-      </a>
-    </li>
-  </ul>
-<!-- END LANGUAGE TOGGLE -->
-
-</main>
-</div></div></div>
-
-<pre><code>&lt;!-- COOKIE MESSAGE --&gt;
-&lt;div id=&quot;global-cookie-message&quot; style=&quot;display: block;&quot;&gt;
-  &lt;p&gt;GOV.UK uses cookies to make the site simpler. &lt;a href=&quot;https://www.gov.uk/help/cookies&quot;&gt;Find out more about
-    cookies&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- END COOKIE MESSAGE --&gt;
-&lt;!-- GOV.UK HEADER --&gt;
-&lt;header role=&quot;banner&quot; id=&quot;global-header&quot; class=&quot;with-proposition&quot;&gt;
-  &lt;div class=&quot;header-wrapper&quot;&gt;
-    &lt;div class=&quot;header-global&quot;&gt;
-      &lt;div class=&quot;header-logo&quot;&gt;
-        &lt;a href=&quot;https://www.gov.uk&quot; title=&quot;Go to the GOV.UK homepage&quot; id=&quot;logo&quot; class=&quot;content&quot;&gt;
-          &lt;img src=&quot;public/assets/images/gov.uk_logotype_crown_invert_trans.png?0.19.2&quot; width=&quot;36&quot; height=&quot;32&quot; alt=&quot;&quot;&gt;GOV.UK&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;header-proposition&quot;&gt;
-      &lt;div class=&quot;content&quot;&gt;
-        &lt;nav id=&quot;proposition-menu&quot;&gt;
-          &lt;a href=&quot;#&quot; id=&quot;proposition-name&quot;&gt;Service name&lt;/a&gt;
-        &lt;/nav&gt;
-      &lt;/div&gt;
+<pre><code>  &lt;div class=&quot;hmrc-banner&quot; role=&quot;banner&quot;&gt;
+    &lt;div class=&quot;organisation-logo&quot;&gt;
+      &lt;p&gt;HM Revenue &amp;amp; Customs&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/header&gt;
-&lt;div id=&quot;global-header-bar&quot;&gt;&lt;/div&gt;
-&lt;!-- END GOV.UK HEADER --&gt;
-&lt;main id=&quot;content&quot;&gt;
-  &lt;!-- LANGUAGE TOGGLE --&gt;
-  &lt;ul class=&quot;lang-select&quot;&gt;
-    &lt;li&gt;
-      &lt;span class=&quot;faded-text--small&quot;&gt;
-        &lt;strong&gt;English |&lt;/strong&gt;
-      &lt;/span&gt;
-      &lt;a id=&quot;switchToWelsh&quot; lang=&quot;cy&quot; href=&quot;/personal-account/lang/cyGb?redirectUrl&amp;#61;%2Fpersonal-account&quot; data-journey-click=&quot;link - click:lang-select:Cymraeg&quot;&gt;
-        &lt;small&gt;
-          &lt;strong&gt;Cymraeg&lt;/strong&gt;
-        &lt;/small&gt;
-      &lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;!-- END LANGUAGE TOGGLE --&gt;
 
-&lt;/main&gt;
-
-</code></pre><h3 id="when-the-user-is-signed-in">When the user is signed in</h3>
-<p>This header must contain a sign out link.</p>
-<div class="example"><div class="scale-wrapper"><div class="scale"><!-- COOKIE MESSAGE -->
-<div id="global-cookie-message" style="display: block;">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
-</div>
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-        <img src="public/assets/images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service Name</a>
-          <p id="proposition-link">
-            <a href="#">Sign out</a>
-          </p>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content">
-  <!-- LANGUAGE TOGGLE -->
-  <ul class="lang-select">
-    <li>
-      <span class="faded-text--small">
-        <strong>English |</strong>
-      </span>
-      <a id="switchToWelsh" lang="cy" href="/personal-account/lang/cyGb?redirectUrl&#61;%2Fpersonal-account" data-journey-click="link - click:lang-select:Cymraeg">
-        <small>
-          <strong>Cymraeg</strong>
-        </small>
-      </a>
-    </li>
-  </ul>
-<!-- END LANGUAGE TOGGLE -->
-
-</main>
-</div></div></div>
-
-
-
-
-<h3 id="tell-users-about-cookies">Tell users about cookies</h3>
-<p>The GOV.UK header comes with a cookie banner. Use this but change the link to <a href="https://www.tax.service.gov.uk/help/cookies">https://www.tax.service.gov.uk/help/cookies</a>.</p>
-<p><a href="https://www.gov.uk/service-manual/technology/working-with-cookies-and-similar-technologies">Find out more about cookies</a>.</p>
-<h3 id="use-the-phase-banner">Use the phase banner</h3>
-<p>The GOV.UK header also has the phase banner. It includes a feedback link – <a href="https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name">https://www.tax.service.gov.uk/contact/beta-feedback-unauthenticated?service=service-name</a>.</p>
-<p>In the URL, replace ‘service-name’ with your service’s name so feedback goes to your team.</p>
-<div class="example"><div class="scale-wrapper"><div class="scale"><!-- COOKIE MESSAGE -->
-<div id="global-cookie-message" style="display: block;">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about
-    cookies</a></p>
-</div>
-<!-- END COOKIE MESSAGE -->
-<!-- GOV.UK HEADER -->
-<header role="banner" id="global-header" class="with-proposition">
-  <div class="header-wrapper">
-    <div class="header-global">
-      <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-          <img src="public/assets/images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">GOV.UK</a>
-      </div>
-    </div>
-    <div class="header-proposition">
-      <div class="content">
-        <nav id="proposition-menu">
-          <a href="#" id="proposition-name">Service Name</a>
-          <p id="proposition-link">
-            <a href="#">Sign out</a>
-          </p>
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
-<div id="global-header-bar"></div>
-<!-- END GOV.UK HEADER -->
-<main id="content">
-  <!-- PHASE BANNER -->
-  <div class="phase-banner">
-    <p>
-      <strong class="phase-tag">BETA</strong>
-      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-    </p>
-  </div>
-  <!-- END PHASE BANNER -->
-  <!-- LANGUAGE TOGGLE -->
-  <ul class="lang-select">
-    <li>
-      <span class="faded-text--small">
-        <strong>English |</strong>
-      </span>
-      <a id="switchToWelsh" lang="cy" href="/personal-account/lang/cyGb?redirectUrl&#61;%2Fpersonal-account" data-journey-click="link - click:lang-select:Cymraeg">
-        <small>
-          <strong>Cymraeg</strong>
-        </small>
-      </a>
-    </li>
-  </ul>
-<!-- END LANGUAGE TOGGLE -->
-
-</main>
-</div></div></div>
-
-
-
-
-<h2 id="research-on-this-component">Research on this component</h2>
-<p>We need more research – <a href="https://github.com/hmrc/design-patterns/issues/4">add your research on GitHub</a>.</p>
+</code></pre><h2 id="research">Research</h2>
+<p>We need more research. If you have used the HMRC header, get in touch to share your research findings.</p>
+<p><a href="https://github.com/hmrc/design-patterns/issues/4">Discuss the HMRC header on GitHub</a></p>
 
 
             <!--

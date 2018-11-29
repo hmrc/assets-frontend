@@ -196,37 +196,13 @@
 <strong class="phase-tag">EXPERIMENTAL</strong><br>
 This is currently experimental because more research is needed.</p>
 
-<p>This pattern lets users enter an Accounts Office reference. Do not call it ‘Accounts Office reference number’, ‘accounts office reference’ or ‘PAYE Accounts Office reference’.</p>
+<p>This component lets the user enter an Accounts Office reference. Do not call it ‘Accounts Office reference number’, ‘accounts office reference’ or ‘PAYE Accounts Office reference’.</p>
 <h2 id="when-to-use">When to use</h2>
-<p>Use this pattern when users need to enter an Accounts Office reference to use a service.</p>
-<p>If there is a good reason for asking for an Accounts Office reference, but the user does not have to enter one, make it optional.</p>
+<p>Use this component when the user must enter an Accounts Office reference to use a service.</p>
+<p>If there is a good reason for asking for an Accounts Office reference but the user does not have to enter one, make it optional.</p>
 <h2 id="when-not-to-use">When not to use</h2>
 <p>If there is no good reason for asking for an Accounts Office reference and the user does not have to enter one to use the service, do not ask for one.</p>
 <h2 id="how-it-works">How it works</h2>
-<p>Use a single text input when you ask users for an Accounts Office reference. It must be formatted as:</p>
-<ul>
-<li>3 numbers</li>
-<li>‘P’</li>
-<li>a letter</li>
-<li>8 numbers or 7 numbers and an ‘X’</li>
-</ul>
-<p>If you show an example, always use ‘123PX00123456’ or ‘123PX0012345X’.</p>
-<h3 id="provide-help">Provide help</h3>
-<p>Always provide help in the form label, normal content or hint text. This may include:</p>
-<ul>
-<li>a short explanation of what an Accounts Office reference is</li>
-<li>where they can find it</li>
-<li>what it looks like</li>
-<li>an example</li>
-</ul>
-<p>You can use an image that shows where it is on documents and letters.</p>
-<p>Do not use the <a href="https://design-system.service.gov.uk/components/details/">details component</a> to hide any help. Research shows people may:</p>
-<ul>
-<li>not know what an Accounts Office reference is</li>
-<li>struggle with how it is formatted</li>
-<li>need help to know what an Accounts Office reference looks like</li>
-</ul>
-<p>The form label and help should be as clear as possible.</p>
 <p>You can ask for the Accounts Office reference as the main heading or <code>&lt;h1&gt;</code> of the screen. It can be a question or statement.</p>
 <div class="example"><form>
   <div class="form-group">
@@ -263,7 +239,7 @@ This is currently experimental because more research is needed.</p>
   &lt;/button&gt;
 &lt;/form&gt;
 
-</code></pre><p>Or you can ask for the Accounts Office reference as a normal form label, separate from the <code>&lt;h1&gt;</code>.</p>
+</code></pre><p>Or you can ask for the Accounts Office reference as a form label, separate from the <code>&lt;h1&gt;</code>.</p>
 <div class="example"><div class="form-group">
   <label for="accounts-office-reference">
     <span class="form-label">
@@ -289,7 +265,28 @@ This is currently experimental because more research is needed.</p>
   &lt;input class=&quot;form-control form-control-1-3&quot; id=&quot;accounts-office-reference&quot; name=&quot;accounts-office-reference&quot; type=&quot;text&quot;&gt;
 &lt;/div&gt;
 
-</code></pre><h3 id="error-messages">Error messages</h3>
+</code></pre><p>Use a single text input and get the user to enter the reference formatted as:</p>
+<ul>
+<li>3 numbers</li>
+<li>‘P’</li>
+<li>a letter</li>
+<li>8 numbers or 7 numbers and an ‘X’</li>
+</ul>
+<h3 id="provide-help">Provide help</h3>
+<p>Always provide help in the form label, normal content or hint text that is as clear as possible. This may include:</p>
+<ul>
+<li>a short explanation of what an Accounts Office reference is</li>
+<li>where the user can find it</li>
+<li>what it looks like</li>
+<li>an example – if you show an example, always use ‘123PX00123456’ or ‘123PX0012345X’.</li>
+</ul>
+<p>You can use an image that shows where it is on documents and letters.</p>
+<p>Do not use the <a href="https://design-system.service.gov.uk/components/details/">details component</a> to hide any help. Research shows users may:</p>
+<ul>
+<li>not know what an Accounts Office reference is</li>
+<li>need help to know what an Accounts Office reference looks like</li>
+</ul>
+<h3 id="error-messages">Error messages</h3>
 <p>Error messages should be styled like this:</p>
 <div class="example"><div class="form-group form-group-error">
   <label for="accounts-office-reference">
@@ -326,10 +323,11 @@ This is currently experimental because more research is needed.</p>
 <h4 id="if-the-accounts-office-reference-is-empty">If the Accounts Office reference is empty</h4>
 <p>Say ‘Enter [whatever it is]’.<br/>
 For example, ‘Enter your Accounts office reference’.</p>
-<h4 id="if-the-accounts-office-reference-is-in-the-wrong-format-and-there-is-an-example">If the Accounts Office reference is in the wrong format and there is an example</h4>
-<p>Say ‘Enter [whatever it is] in the right format’.<br/>
-For example, ‘Enter your Accounts Office reference in the right format’</p>
+<h4 id="if-the-accounts-office-reference-is-in-the-wrong-format">If the Accounts Office reference is in the wrong format</h4>
+<p>Say ‘Enter [whatever it is] in the correct format’.<br/>
+For example, ‘Enter your Accounts Office reference in the correct format’</p>
 <h2 id="research">Research</h2>
+<p>Research has shown that users often expect this kind of information to be pre-populated, especially when they have signed in.</p>
 <p>We need more research. If you have used Accounts Office reference, get in touch to share your research findings.</p>
 <p><a href="https://github.com/hmrc/design-patterns/issues/153">Discuss Accounts Office reference on GitHub</a></p>
 
