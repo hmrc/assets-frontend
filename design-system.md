@@ -1,6 +1,15 @@
 <!--
   NOTE: This is from the GOV.UK Design System, without the bits that don't apply
 -->
+<div class="grid-row">
+  <div class="column-full column-constrained">
+  <div class="notification-summary">
+  <h2 class="heading-medium no-top-margin">Some Title goes here</h2>
+  <p class="body-text">some text goes in here</p>
+  <p>More Text goes here</p>
+  </div>
+  </div>
+</div>
 <div class="grid-row masthead">
   <div class="column-full column-constrained">
     <h1 class="hero__title">Design your service using GOV.UK styles, components and patterns</h1>
