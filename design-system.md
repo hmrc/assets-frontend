@@ -13,8 +13,8 @@
 </div>
 <div class="grid-row masthead">
   <div class="column-full column-constrained">
-    <h1 class="hero__title">Design your service using GOV.UK styles, components and patterns</h1>
-    <p class="hero__description">Use this design system to make your service consistent with other HMRC services. Learn from the research and experience of other service teams and avoid repeating work that’s already been done.</p>
+  <h1 class="hero__title">Assets Frontend design styles, components and patterns</h1>
+  <p class="hero__description">Use only for services built on Assets Frontend.</p>
   </div>
 </div>
 
