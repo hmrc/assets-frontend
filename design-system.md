@@ -4,9 +4,10 @@
 <div class="grid-row">
   <div class="column-full column-constrained">
   <div class="notification-summary">
-  <h2 class="heading-medium no-top-margin">Some Title goes here</h2>
-  <p class="body-text">some text goes in here</p>
-  <p>More Text goes here</p>
+  <h2 class="heading-medium no-top-margin">The new HMRC Design Patterns launched on 07 December 2018</h2>
+  <p> HMRC is retiring Assets frontend following the launch of the <a href="#">HMRC Design Patterns</a>. Assets frontend will remain available to you if you are currently using it but will no longer be maintained. The Service design tools team will only roll out major bug fixes and security patches.</p>
+
+  <p>For new projects using the <a href="https://govuk-prototype-kit.herokuapp.com/docs">GOV.UK prototyping kit</a>, use the new <a href="#"> HMRC Design Patterns</a> to find patterns designed specifically for the needs of HMRC users and patterns that are not yet in the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a>.</p>
   </div>
   </div>
 </div>
