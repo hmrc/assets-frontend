@@ -4,10 +4,12 @@
 <div class="grid-row">
   <div class="column-full column-constrained">
   <div class="notification-summary">
-  <h2 class="heading-medium no-top-margin">The new HMRC Design Patterns launched on 07 December 2018</h2>
-  <p> HMRC is retiring Assets frontend following the launch of the <a href="#">HMRC Design Patterns</a>. Assets frontend will remain available to you if you are currently using it but will no longer be maintained. The Service design tools team will only roll out major bug fixes and security patches.</p>
+  <h2 class="heading-medium no-top-margin">HMRC Design Patterns launched on 7 December 2018</h2>
+  <p> HMRC is retiring Assets Frontend following the launch of <a href="#">HMRC Design Patterns</a>. Assets Frontend is still available for services that use it but it will not be developed further. HMRC will maintain it and roll out major bug fixes and security patches.</p>
 
-  <p>For new projects using the <a href="https://govuk-prototype-kit.herokuapp.com/docs">GOV.UK prototyping kit</a>, use the new <a href="#"> HMRC Design Patterns</a> to find patterns designed specifically for the needs of HMRC users and patterns that are not yet in the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a>.</p>
+<p>
+For new projects that use the latest <a href="https://govuk-prototype-kit.herokuapp.com/docs">GOV.UK Prototype Kit</a>, use <a href="#">HMRC Design Patterns</a> to get patterns and code designed specifically for HMRC and for patterns not yet in the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a>.
+
   </div>
   </div>
 </div>
