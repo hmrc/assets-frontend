@@ -15,8 +15,8 @@ For new projects that use the latest <a href="https://govuk-prototype-kit.heroku
 </div>
 <div class="grid-row masthead">
   <div class="column-full column-constrained">
-  <h1 class="hero__title">Assets Frontend design styles, components and patterns</h1>
-  <p class="hero__description">Use only for services built on Assets Frontend.</p>
+  <h1 class="hero__title">HMRC Assets Frontend components and patterns</h1>
+  <p class="hero__description">Only use these components and patterns for HMRC services built with Assets Frontend</p>
   </div>
 </div>
 
@@ -56,10 +56,8 @@ For new projects that use the latest <a href="https://govuk-prototype-kit.heroku
   <section>
     <div class="grid-row">
       <div class="column-full column-constrained">
-      <h2 class="heading-large">Contribute</h2>
-      <p>If the component or pattern you need does not already exist, you can <a href="https://github.com/hmrc/design-patterns/blob/master/CONTRIBUTING.md">contribute a new one</a> to the HMRC Design System.</p>
-        <h2 class="heading-large">Get in touch</h2>
-        <p>If you’ve got a question, idea or suggestion share it in <a href="https://hmrcdigital.slack.com/messages/C39V3PH38">#team-sdt</a> on HMRC Slack (<a href="slack://channel?team=T04RY81HB&amp;id=C39V3PH38">open in app</a>) or <a href="mailto:hmrc-service-design-tools-g@digital.hmrc.gov.uk">email the Service Design Tools team</a></p>
+        <h2 class="heading-large">Help and support</h2>
+        <p>Contact the Service Design Tools team in <a href="https://hmrcdigital.slack.com/messages/C39V3PH38">#team-sdt</a> on HMRC Slack (<a href="slack://channel?team=T04RY81HB&amp;id=C39V3PH38">open in app</a>) or <a href="mailto:hmrc-service-design-tools-g@digital.hmrc.gov.uk">email us</a>.</p>
       </div>
     </div>
   </section>
