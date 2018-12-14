@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.8.0 and 4.8.0] 2018-12-14
+
 ### New
 - Added mitigation for the vulnerability [CVE-2015-9251](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-9251) in older versions of jQuery [#1009](https://github.com/hmrc/assets-frontend/pull/1009)
 - Added expanding subnavigation to mobile navigation [#1004](https://github.com/hmrc/assets-frontend/pull/1004)
