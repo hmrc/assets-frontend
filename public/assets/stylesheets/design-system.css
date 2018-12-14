@@ -313,6 +313,20 @@
 .mobile-nav-trigger input.button.active {
   background-color: #005ea5; }
 
+.notification-summary {
+  border: 4px solid #008670;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px 10px; }
+  .notification-summary p {
+    max-width: 38em; }
+  @media (min-width: 768px) {
+    .notification-summary {
+      border: 5px solid #008670;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding: 20px 15px 15px; } }
+
 /**
  * Hero Component
  *
@@ -1458,6 +1472,9 @@ dl.meta-data-bottom {
   @media (max-width: 767px) {
     .footer__navigation--column {
       max-width: 100%; } }
+
+.no-top-margin {
+  margin-top: 0 !important; }
 
 /* Scaled component examples */
 .scale-wrapper {
