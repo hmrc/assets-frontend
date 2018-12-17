@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.8.0] and [4.8.0] - 2018-12-14
 ### New
+- Added mitigation for the vulnerability [CVE-2015-9251](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-9251) in older versions of jQuery [#1009](https://github.com/hmrc/assets-frontend/pull/1009)
 - Added expanding subnavigation to mobile navigation [#1004](https://github.com/hmrc/assets-frontend/pull/1004)
 
 ### Fixed
@@ -19,8 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 - Removed unused nodemon package that's affected by [the `flatmap-stream` vulnerability](https://github.com/dominictarr/event-stream/issues/116)[#1007](https://github.com/hmrc/assets-frontend/pull/1007)
 
-## [3.7.0 and 4.7.0] 2018-11-19
-
+## [3.7.0] and [4.7.0] 2018-11-19
 ### New
 - Updated confirmed identity and could not confirm identity patterns [#1000](https://github.com/hmrc/assets-frontend/pull/1000)
 - Added references and identifiers to system [#996](https://github.com/hmrc/assets-frontend/pull/996)
@@ -36,16 +37,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed validorFocus.js to escape dots in jquery id selector [#984](https://github.com/hmrc/assets-frontend/pull/984)
 - Fixed bug where word-break and overflow-wrap didn't work with page heading elements [994](https://github.com/hmrc/assets-frontend/pull/994)
 
-## [3.6.0 and 4.6.0] 2018-11-13
+## [3.6.0] and [4.6.0] 2018-11-13
 - Tags only no actual release, no code changes
 
-## [3.5.0 and 4.5.0] 2018-08-13
-
+## [3.5.0] and [4.5.0] 2018-08-13
 ### New
 - Default 400 error page
 
 ## [3.4.0] and [4.4.0] 2018-08-10
-
 ### Updated
 - Updated service unavailable pages and Welsh translations [#993](https://github.com/hmrc/assets-frontend/pull/993)
 - Updated page title guidance [#992](https://github.com/hmrc/assets-frontend/pull/992)
@@ -364,11 +363,27 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Changes to nginx error pages not being build and deployed [#734]
 
 [Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...master
+[4.8.0]: https://github.com/hmrc/assets-frontend/compare/v4.7.0...v4.8.0
+[4.7.0]: https://github.com/hmrc/assets-frontend/compare/release/4.6.0...v4.7.0
+[4.6.0]: https://github.com/hmrc/assets-frontend/compare/release/4.5.0...release/4.6.0
+[4.5.0]: https://github.com/hmrc/assets-frontend/compare/release/4.4.0...release/4.5.0
+[4.4.0]: https://github.com/hmrc/assets-frontend/compare/release/4.3.1...release/4.4.0
+[4.3.1]: https://github.com/hmrc/assets-frontend/compare/release/4.3.0...release/4.3.1
+[4.3.0]: https://github.com/hmrc/assets-frontend/compare/release/4.2.4...release/4.3.0
+[4.2.4]: https://github.com/hmrc/assets-frontend/compare/release/4.2.3...release/4.2.4
 [4.2.3]: https://github.com/hmrc/assets-frontend/compare/release/4.2.2...release/4.2.3
 [4.2.2]: https://github.com/hmrc/assets-frontend/compare/release/4.2.1...release/4.2.2
 [4.2.1]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...release/4.2.1
 [4.2.0]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...release/4.2.0
 [4.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...release/4.1.0
+[3.8.0]: https://github.com/hmrc/assets-frontend/compare/v3.7.0...v3.8.0
+[3.7.0]: https://github.com/hmrc/assets-frontend/compare/release/3.6.0...v3.7.0
+[3.6.0]: https://github.com/hmrc/assets-frontend/compare/release/3.5.0...release/3.6.0
+[3.5.0]: https://github.com/hmrc/assets-frontend/compare/release/3.4.0...release/3.5.0
+[3.4.0]: https://github.com/hmrc/assets-frontend/compare/release/3.3.1...release/3.4.0
+[3.3.1]: https://github.com/hmrc/assets-frontend/compare/release/3.3.0...release/3.3.1
+[3.3.0]: https://github.com/hmrc/assets-frontend/compare/release/3.2.4...release/3.3.0
+[3.2.4]: https://github.com/hmrc/assets-frontend/compare/release/3.2.3...release/3.2.4
 [3.2.3]: https://github.com/hmrc/assets-frontend/compare/release/3.2.2...release/3.2.3
 [3.2.2]: https://github.com/hmrc/assets-frontend/compare/release/3.2.1...release/3.2.2
 [3.2.1]: https://github.com/hmrc/assets-frontend/compare/release/3.2.0...release/3.2.1
