@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### updated
+ - Added a deprecation banner to direct users to the new design resources for HMRC on Heroku, with associated content and ssyling changes [#1011](https://github.com/hmrc/assets-frontend/pull/1011)
 
 ## [3.8.0] and [4.8.0] - 2018-12-14
 ### New
