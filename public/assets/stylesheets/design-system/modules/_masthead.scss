@@ -26,16 +26,20 @@
   }
   .hero__title {
     display: block;
-    max-width: 13em;
+    @include grid-column(2 / 3);
     @include media(mobile) {
       max-width: 100%;
     }
   }
   .hero__description {
     margin-bottom: 10px;
-    max-width: 25em;
+    @include grid-column(2 / 3);
     @include media(mobile) {
       max-width: 100%;
+    }
+    & a {
+      color: white;
+      text-decoration: underline
     }
   }
   ul {

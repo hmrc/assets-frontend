@@ -194,9 +194,7 @@ $active-nav-color: #1d8feb;
   margin-top: $gutter-half;
   margin-bottom: $gutter-half;
   padding: $gutter-half 10px;
-  p {
-    max-width: 38em;
-  }
+
   @include media(tablet) {
     border: 5px solid $hm-revenue-customs-websafe;
     margin-top: $gutter;
