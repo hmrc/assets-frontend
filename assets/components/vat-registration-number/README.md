@@ -26,7 +26,7 @@ Or you can ask for the VAT registration number as a normal form label, separate 
 
 {{ example("vat-registration-number-label.html", scaled=false, cy=false, html=true) }}
 
-Use a single text input that allows the user to enter it as 9 numbers with or without ‘GB’ at the start and remove this before validating.
+Use a single text input and allow the user to enter 9 numbers with or without spaces or ‘GB’ at the start. Remove the spaces and the ‘GB’ before validating.
 
 ### Provide help
 
