@@ -188,7 +188,8 @@ module.exports = {
     template: './node_modules/hmrc-component-library-template/design-system.html',
     homepage: 'design-system.md',
     helpers: './node_modules/hmrc-component-library-template/helpers',
-    macrosPath: './gulpfile.js/util/design-system/macros'
+    macrosPath: './gulpfile.js/util/design-system/macros',
+    mdtpRepositoryMetadata: 'repository.yaml'
   },
 
   vrt: {

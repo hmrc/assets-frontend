@@ -17,8 +17,8 @@ gulp.task('copy:design-system', () => {
     .pipe(gulp.dest(path.join(config.designSystem.dest, 'public')))
 })
 
-gulp.task('copy:repository-yaml', () => {
+gulp.task('copy:mdtp-repository-metadata', () => {
   return gulp
-    .src('repository.yaml')
+    .src(config.designSystem.mdtpRepositoryMetadata)
     .pipe(gulp.dest(config.designSystem.dest))
 })
