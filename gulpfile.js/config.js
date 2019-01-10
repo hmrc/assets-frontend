@@ -35,6 +35,8 @@ module.exports = {
 
   distDir: distDir,
 
+  designSystemRepositoryMetadata: 'design-system-repository-metadata.yaml',
+
   snapshotDir: {
     v3: dest + 'v3-SNAPSHOT/',
     v4: dest + 'v4-SNAPSHOT/'
@@ -188,8 +190,7 @@ module.exports = {
     template: './node_modules/hmrc-component-library-template/design-system.html',
     homepage: 'design-system.md',
     helpers: './node_modules/hmrc-component-library-template/helpers',
-    macrosPath: './gulpfile.js/util/design-system/macros',
-    mdtpRepositoryMetadata: 'repository.yaml'
+    macrosPath: './gulpfile.js/util/design-system/macros'
   },
 
   vrt: {
