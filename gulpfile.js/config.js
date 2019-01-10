@@ -35,6 +35,8 @@ module.exports = {
 
   distDir: distDir,
 
+  designSystemRepositoryMetadata: 'design-system-repository-metadata.yaml',
+
   snapshotDir: {
     v3: dest + 'v3-SNAPSHOT/',
     v4: dest + 'v4-SNAPSHOT/'

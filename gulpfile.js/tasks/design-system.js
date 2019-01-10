@@ -13,6 +13,7 @@ gulp.task('design-system', ['build:v4'], (done) => {
   runSequence(
     'design-system:generate',
     'copy:design-system',
+    'copy:mdtp-repository-metadata',
     done
   )
 })
