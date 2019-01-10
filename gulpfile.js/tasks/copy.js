@@ -16,3 +16,9 @@ gulp.task('copy:design-system', () => {
     .src([`${config.snapshotDir.v4}/**/*`])
     .pipe(gulp.dest(path.join(config.designSystem.dest, 'public')))
 })
+
+gulp.task('copy:repository-yaml', () => {
+  return gulp
+    .src('repository.yaml')
+    .pipe(gulp.dest(config.designSystem.dest))
+})
