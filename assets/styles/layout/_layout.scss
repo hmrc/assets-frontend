@@ -1,0 +1,13 @@
+/*
+Full width on tablet
+
+Use the `.full-width--tablet` class when you need the page content to use the full width of the page on tablets.
+
+See .full-width in /assets/scss/layouts/_page.scss for a non-tablet version.
+*/
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .full-width--tablet .content__body {
+    width: 100%;
+  }
+}

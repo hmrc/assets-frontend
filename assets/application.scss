@@ -16,5 +16,6 @@ $path: "../images/";
 @import "scss/backward-compatibility";
 
 // HMRC Design System
+@import "styles/layout/layout";
 @import "components/all-components";
 @import "patterns/all-patterns";
