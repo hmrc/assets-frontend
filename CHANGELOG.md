@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [3.9.0] and [4.9.0] - 2019-01-24
 ### Updated
 - Updated VAT registration number documentation [#1012](https://github.com/hmrc/assets-frontend/pull/1012)
 - Added a deprecation banner to direct users to the new design resources for HMRC on Heroku, with associated content and styling changes [#1011](https://github.com/hmrc/assets-frontend/pull/1011)
@@ -370,6 +372,7 @@ This entire version is covered by a single pull request. [#867](https://github.c
 - Changes to nginx error pages not being build and deployed [#734]
 
 [Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...master
+[4.9.0]: https://github.com/hmrc/assets-frontend/compare/v4.8.0...v4.9.0
 [4.8.0]: https://github.com/hmrc/assets-frontend/compare/v4.7.0...v4.8.0
 [4.7.0]: https://github.com/hmrc/assets-frontend/compare/release/4.6.0...v4.7.0
 [4.6.0]: https://github.com/hmrc/assets-frontend/compare/release/4.5.0...release/4.6.0
@@ -383,6 +386,7 @@ This entire version is covered by a single pull request. [#867](https://github.c
 [4.2.1]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...release/4.2.1
 [4.2.0]: https://github.com/hmrc/assets-frontend/compare/release/4.1.0...release/4.2.0
 [4.1.0]: https://github.com/hmrc/assets-frontend/compare/release/3.0.2...release/4.1.0
+[3.9.0]: https://github.com/hmrc/assets-frontend/compare/v3.8.0...v3.9.0
 [3.8.0]: https://github.com/hmrc/assets-frontend/compare/v3.7.0...v3.8.0
 [3.7.0]: https://github.com/hmrc/assets-frontend/compare/release/3.6.0...v3.7.0
 [3.6.0]: https://github.com/hmrc/assets-frontend/compare/release/3.5.0...release/3.6.0
