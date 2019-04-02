@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.9.0] and [4.9.0] - 2019-04-03
+### Fixed
+- The assets path in the static error pages was pointing to a SNAPSHOT version of the assests since new build changes
+- The javascript link in the static error pages was pointing to an unminified filename which isn't present in the release
+
 ## [3.9.0] and [4.9.0] - 2019-01-24
 ### Updated
 - Updated VAT registration number documentation [#1012](https://github.com/hmrc/assets-frontend/pull/1012)
