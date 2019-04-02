@@ -10,7 +10,7 @@ let version = ''
 const errorPages = (v) => {
   const nextMinorVersion = parseInt(NodeGitVersion().split('.')[1]) + 1
 
-  if (process.env.JENKINS_URL === 'https://build.tax.service.gov.uk/') {
+  if (/https?:\/\/.*\.tax\.service\.gov\.uk\//.test(process.env.JENKINS_URL)) {
     version = [v.slice(1), nextMinorVersion, '0'].join('.')
   } else {
     version = path.parse(config.snapshotDir[v]).name
