@@ -4,10 +4,17 @@ const path = require('path')
 const gulp = require('gulp')
 const replace = require('gulp-replace')
 const config = require('../config')
+const NodeGitVersion = require('@hmrc/node-git-versioning')
+let version = ''
 
 const errorPages = (v) => {
-  const version = process.env.TAG ? process.env.TAG : path.parse(config.snapshotDir[v]).name
+  const nextMinorVersion = parseInt(NodeGitVersion().split('.')[1]) + 1
 
+  if (/https?:\/\/.*\.tax\.service\.gov\.uk\//.test(process.env.JENKINS_URL)) {
+    version = [v.slice(1), nextMinorVersion, '0'].join('.')
+  } else {
+    version = path.parse(config.snapshotDir[v]).name
+  }
   return gulp.src(config.errorPages.src)
     .pipe(replace('{{ assetsPath }}', `${config.errorPages.assetsBaseUri}${version}/`))
     .pipe(gulp.dest(config.snapshotDir[v]))
