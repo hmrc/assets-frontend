@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+
+## [3.11.0] and [4.11.0] - 2019-04-09
+### Fixed
+- When navigating through the navigation bar, 'your account' doesn't highlight when the focus is on it. To fix this, CSS added to highlight on focus - same functionality as the other navigation buttons.
+
+
 ## [3.10.0] and [4.10.0] - 2019-04-03
 ### Fixed
 - The assets path in the static error pages was pointing to a SNAPSHOT version of the assests since new build changes
