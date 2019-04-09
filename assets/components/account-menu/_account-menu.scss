@@ -470,3 +470,8 @@ p.subnav__section__heading {
     padding: 20px 30px 10px;
   }
 }
+
+#account-menu__main-2:focus {
+  border-bottom: 4px solid #ffbf47;
+  outline: 3px solid #ffbf47;
+}
