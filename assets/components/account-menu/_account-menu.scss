@@ -374,10 +374,8 @@ p.subnav__section__heading {
   background-image: url("../images/icon-chevron-down.svg");
   background-position: right 14px center;
   background-size: 12px;
-  border-bottom: none;
   padding-right: 31px;
   position: relative;
-  outline: none;
 
   @include ie-lte(9) {
     background-image: url("../images/icon-chevron-down.png");
