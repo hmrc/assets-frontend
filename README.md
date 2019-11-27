@@ -36,8 +36,14 @@ $ npm install
 
 ### The Component Library [DEPRECATED]
 
-1. Run `npm run build:all`
+1. Run `./server.sh dev`
 2. The Component Library is available at http://localhost:9033/
+
+### To access both the Design System and the Component Library
+
+1. Run `npm run dev:all`
+2. The Design System is available at http://localhost:9034/
+3. The Component Library is available at http://localhost:9033/
 
 ### Assets Frontend locally
 
