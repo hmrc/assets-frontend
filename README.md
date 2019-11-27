@@ -36,7 +36,7 @@ $ npm install
 3. Latest V4 Assets are then available at http://localhost:9032/assets/v4-SNAPSHOT/...
 4. Latest V3 Assets are then available at http://localhost:9032/assets/v3-SNAPSHOT/...
 
-### To access both the Design System and the Component Library
+### To access both the Design System and the Component Library [DEPRECATED]
 
 1. Run `npm run dev:all` or `./server.sh dev`
 2. The Design System is available at http://localhost:9034/
