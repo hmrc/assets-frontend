@@ -32,14 +32,21 @@ $ npm install
 ### The Design System:
 
 1. Run `npm start`
-2. Assets are then available at http://localhost:9032/assets/v4-SNAPSHOT/...
-3. The Design System is available at http://localhost:9034/
+2. The Design System is available at http://localhost:9034/
+3. Latest V4 Assets are then available at http://localhost:9032/assets/v4-SNAPSHOT/...
+4. Latest V3 Assets are then available at http://localhost:9032/assets/v3-SNAPSHOT/...
 
-### The Component Library [DEPRECATED]
+### To access both the Design System and the Component Library [DEPRECATED]
 
-1. Run `npm run build:all`
-2. Assets are then available at http://localhost:9032/assets/v3-SNAPSHOT/...
+1. Run `npm run dev:all` or `./server.sh dev`
+2. The Design System is available at http://localhost:9034/
 3. The Component Library is available at http://localhost:9033/
+
+### To run a specific version of Assets Frontend locally
+
+1. Run `./server.sh`
+2. V4 Assets are then available at http://localhost:9032/assets/4.11.0/...
+3. V3 Assets are then available at http://localhost:9032/assets/3.11.0/...
 
 # Usage
 
