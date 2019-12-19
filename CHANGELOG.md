@@ -6,7 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-
+### Fixed
+- Dependencies with known vulnerabilities have been updated.
 
 ## [3.11.0] and [4.11.0] - 2019-04-11
 ### Fixed
