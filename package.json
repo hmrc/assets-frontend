@@ -141,7 +141,7 @@
     "gulp-standard": "^10.0.0",
     "gulp-stats": "0.0.4",
     "gulp-tape": "0.0.9",
-    "handlebars": "^4.0.10",
+    "handlebars": "^4.1.2",
     "karma-viewport": "^0.4.2",
     "marked": "^0.3.6",
     "mkdirp": "^0.5.1",
