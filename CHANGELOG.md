@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Fixed
 - Dependencies with known vulnerabilities have been updated.
+- Fixed the leak detection issue for the repository.
 
 ## [3.11.0] and [4.11.0] - 2019-04-11
 ### Fixed
