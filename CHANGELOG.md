@@ -5,8 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [3.12.0] and [4.12.0] - 2020-07-31
 ### Fixed
+- Improved accessibility of timeoutDialog.
 - Dependencies with known vulnerabilities have been updated.
 - Fixed the leak detection issue for the repository.
 
