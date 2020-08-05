@@ -187,15 +187,10 @@ module.exports = {
       src + 'patterns'
     ],
     dest: 'design-system',
-    template: './node_modules/hmrc-component-library-template/design-system.html',
+    template: './gulpfile.js/util/design-system/design-system.html',
     homepage: 'design-system.md',
-    helpers: './node_modules/hmrc-component-library-template/helpers',
+    helpers: './gulpfile.js/util/design-system/helpers',
     macrosPath: './gulpfile.js/util/design-system/macros'
-  },
-
-  vrt: {
-    backstopConfigTemplate: './gulpfile.js/util/backstop/backstop.template.json',
-    backstopConfig: './backstop.json'
   },
 
   browserSync: [{

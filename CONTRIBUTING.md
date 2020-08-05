@@ -83,7 +83,27 @@ If there aren’t any existing tests that cover your changes, write some new tes
 
 Make sure that your work hasn’t changed anything visually without you knowing, run the visual regression tests:
 
-[Details on running the visual regression tests](https://github.com/hmrc/assets-frontend#visual-regression-testing)
+To run visual regression tests you will need to install backstopjs:
+
+```
+npm install -g backstopjs
+```
+
+You can then run the tests with:
+
+```
+backstop test
+```
+
+If there are known changes, these can be approved with:
+
+```
+backstop approve
+```
+
+The existing reference images were run using backstopjs on a Mac running Mac OS Catalina.
+
+See more information on backstop at https://www.github.com/garris/backstopjs
 
 #### A note on browser support
 

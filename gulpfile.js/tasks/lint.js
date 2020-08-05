@@ -4,13 +4,7 @@ const gulp = require('gulp')
 const standard = require('gulp-standard')
 const config = require('../config')
 
-gulp.task('lint', [
-  'lint:gulpTasks',
-  'lint:scripts',
-  'lint:tests'
-])
-
-gulp.task('lint:gulpTasks', () => {
+gulp.task('lint:gulpTasks', (done) => {
   return gulp.src(config.scripts.gulpTasks)
     .pipe(standard())
     .pipe(standard.reporter('default', {
@@ -36,3 +30,9 @@ gulp.task('lint:tests', () => {
       quiet: true
     }))
 })
+
+gulp.task('lint', gulp.series(
+  'lint:gulpTasks',
+  'lint:scripts',
+  'lint:tests'
+))

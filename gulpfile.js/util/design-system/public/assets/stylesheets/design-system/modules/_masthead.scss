@@ -1,0 +1,48 @@
+/**
+ * Masthead Component
+ *
+ * Notes:
+ * - It's big and it's blue
+ *
+ * Example Usage:
+ *
+ * <div class="masthead">
+ *  [...]
+ * </div>
+ */
+
+.masthead {
+  background-color: $hm-revenue-customs-websafe;
+  padding: $gutter;
+  color: white;
+
+  @include media(mobile) {
+    padding: $gutter-half;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  .hero__title {
+    display: block;
+    @include grid-column(2 / 3);
+    @include media(mobile) {
+      max-width: 100%;
+    }
+  }
+  .hero__description {
+    margin-bottom: 10px;
+    @include grid-column(2 / 3);
+    @include media(mobile) {
+      max-width: 100%;
+    }
+    & a {
+      color: white;
+      text-decoration: underline
+    }
+  }
+  ul {
+    margin-bottom: 0;
+  }
+}

@@ -3,17 +3,8 @@
     "assets/scss"
   ],
   "destination": "component-library",
-  "template": "node_modules/hmrc-component-library-template",
-  "css": [
-    "public/stylesheets/application.min.css"
-  ],
-  "js": [
-    "public/javascripts/application.min.js"
-  ],
-  "homepage": "../../styleguide.md",
-  "helpers": [
-    "node_modules/hmrc-component-library-template/helpers/"
-  ],
+  "builder": "component-library-builder",
+  "homepage": "styleguide.md",
   "custom": [
     "Discussion",
     "Example Data",
