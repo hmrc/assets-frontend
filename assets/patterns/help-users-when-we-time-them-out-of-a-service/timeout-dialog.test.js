@@ -22,7 +22,7 @@ describe('Timeout Dialog', function () {
   var assume
   var testScope // an object which is reset between test runs
 
-  var audibleCountSelector = '.screenreader-content.govuk-visually-hidden[aria-live=assertive]'
+  var audibleCountSelector = '.screenreader-content.visually-hidden[aria-live=assertive]'
   var visualCountSelector = '[aria-hidden=true]'
 
   function pretendSecondsHavePassed(numberOfSeconds) {

@@ -95,14 +95,14 @@ var self = module.exports = {
         $timeoutMessage.append(settings.messageSuffix)
       }
 
-      var $audibleCountdownElement = $('<div class="screenreader-content govuk-visually-hidden" aria-live="assertive">')
+      var $audibleCountdownElement = $('<div class="screenreader-content visually-hidden" aria-live="assertive">')
 
       var $element = $('<div>')
         .append($audibleCountdownElement)
         .append(settings.title ? $('<h1 class="heading-medium push--top">').text(settings.title) : '')
         .append($timeoutMessage)
         .append($('<button id="timeout-keep-signin-btn" class="button">').text(settings.keepAliveButtonText))
-        .append($('<p>')
+        .append($('<p class="timeout-sign-out-link-wrapper">')
           .append($('<a id="timeout-sign-out-link">').text(settings.signOutButtonText).attr('href', settings.signOutUrl)))
 
       $element.find('#timeout-keep-signin-btn').on('click', keepAliveAndClose)
