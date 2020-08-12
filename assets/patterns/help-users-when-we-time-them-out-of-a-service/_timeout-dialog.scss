@@ -1,9 +1,23 @@
 /* Timeout Modal */
 
-@media (max-width: 640px){
+@media (max-width: 640px) {
   .timeout-dialog {
     width: 280px !important;
   }
+}
+
+.screenreader-content.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
 }
 
 .timeout-overlay {
@@ -46,6 +60,10 @@ html.noScroll {
     display: inline-block;
     white-space: nowrap;
     font-weight: 700;
+  }
+
+  .timeout-sign-out-link-wrapper {
+    display: inline-block;
   }
 
   .link {

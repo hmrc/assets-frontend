@@ -3,6 +3,7 @@
 require('jquery')
 var dialog = require('./dialog.js')
 var redirectHelper = require('./redirectHelper.js')
+var timeoutHelper = require('./timeoutHelper.js')
 
 var self = module.exports = {
   timeoutDialog: function (options) {
@@ -43,7 +44,7 @@ var self = module.exports = {
       var missingRequiredConfig = []
 
       $.each(requiredConfig, function () {
-        if (!config.hasOwnProperty(this)) {
+        if (!config.hasOwnProperty(this) || config[this] === '') {
           missingRequiredConfig.push(this)
         }
       })
@@ -53,34 +54,62 @@ var self = module.exports = {
       }
     }
 
-    function mergeOptionsWithDefaults(options, localisedDefaults) {
-      return $.extend({}, localisedDefaults, options)
+    function mergeOptionsWithDefaults (options, localisedDefaults) {
+      var clone = $.extend({}, options)
+
+      Object.keys(localisedDefaults).forEach(function (key) {
+        if (typeof clone[key] === 'object') {
+          clone[key] = mergeOptionsWithDefaults(
+            options[key],
+            localisedDefaults[key]
+          )
+        }
+        if (clone[key] === undefined || clone[key] === '') {
+          clone[key] = localisedDefaults[key]
+        }
+      })
+
+      return clone
     }
 
-    function setupDialogTimer() {
+    function setupDialogTimer () {
       settings.signout_time = getDateNow() + settings.timeout * 1000
 
-      var timeout = window.setTimeout(function () {
+      var timeout = timeoutHelper.setTimeout(function () {
         setupDialog()
-      }, ((settings.timeout) - (settings.countdown)) * 1000)
+      }, (settings.timeout - settings.countdown) * 1000)
 
       cleanupFunctions.push(function () {
-        window.clearTimeout(timeout)
+        timeoutHelper.clearTimeout(timeout)
       })
     }
 
     function setupDialog() {
-      var $countdownElement = $('<span id="timeout-countdown" class="countdown">');
+      var $countdownElement = $('<span id="timeout-countdown" class="countdown">')
+      var $timeoutMessage = $('<p id="timeout-message" role="text" aria-hidden="true">').text(settings.message + ' ')
+        .append($countdownElement)
+        .append('.')
+
+      if (settings.messageSuffix) {
+        $timeoutMessage.append(' ')
+        $timeoutMessage.append(settings.messageSuffix)
+      }
+
+      var $audibleCountdownElement = $('<div class="screenreader-content visually-hidden" aria-live="assertive">')
+
       var $element = $('<div>')
+        .append($audibleCountdownElement)
         .append(settings.title ? $('<h1 class="heading-medium push--top">').text(settings.title) : '')
-        .append($('<p id="timeout-message" role="text">').text(settings.message + ' ')
-          .append($countdownElement)
-          .append('.'))
+        .append($timeoutMessage)
         .append($('<button id="timeout-keep-signin-btn" class="button">').text(settings.keepAliveButtonText))
-        .append($('<button id="timeout-sign-out-btn" class="button button--link">').text(settings.signOutButtonText))
+        .append($('<p class="timeout-sign-out-link-wrapper">')
+          .append($('<a id="timeout-sign-out-link">').text(settings.signOutButtonText).attr('href', settings.signOutUrl)))
 
       $element.find('#timeout-keep-signin-btn').on('click', keepAliveAndClose)
-      $element.find('#timeout-sign-out-btn').on('click', signOut)
+      $element.find('#timeout-sign-out-link').on('click', function (e) {
+        e.preventDefault()
+        signOut()
+      })
 
       var dialogControl = dialog.displayDialog($element)
 
@@ -91,47 +120,92 @@ var self = module.exports = {
       dialogControl.addCloseHandler(keepAliveAndClose)
 
       dialogControl.setAriaLabelledBy('timeout-message')
-      if (getSecondsRemaining() > 60) {
-        dialogControl.setAriaLive('polite')
-      }
 
-      startCountdown($countdownElement, dialogControl)
+      startCountdown($countdownElement, $audibleCountdownElement)
     }
 
-    function getSecondsRemaining() {
-      return Math.floor((settings.signout_time - getDateNow()) / 1000)
+    function getMillisecondsRemaining () {
+      return settings.signout_time - getDateNow()
     }
 
-    function startCountdown($countdownElement, dialogControl) {
-      function updateCountdown(counter, $countdownElement) {
-        var message
-        if (counter === 60) {
-          dialogControl.setAriaLive()
+    function getSecondsRemaining () {
+      return Math.round(getMillisecondsRemaining() / 1000)
+    }
+
+    function startCountdown ($countdownElement, $screenReaderCountdownElement) {
+      var currentTimer
+
+      cleanupFunctions.push(function () {
+        if (currentTimer) {
+          timeoutHelper.clearTimeout(currentTimer)
         }
+      })
+
+      function getHumanText (counter) {
+        var minutes, visibleMessage
         if (counter < 60) {
-          message = counter + ' ' + settings.properties[counter === 1 ? 'second' : 'seconds']
+          visibleMessage = counter + ' ' + settings.properties[counter !== 1 ? 'seconds' : 'second']
         } else {
-          var minutes = Math.ceil(counter / 60)
-          message = minutes + ' ' + settings.properties[minutes === 1 ? 'minute' : 'minutes']
+          minutes = Math.ceil(counter / 60)
+          visibleMessage = minutes + ' ' + settings.properties[minutes === 1 ? 'minute' : 'minutes']
         }
-        $countdownElement.text(message)
+        return visibleMessage
       }
 
-      function runUpdate() {
+      function getAudibleHumanText (counter) {
+        var humanText = getHumanText(roundSecondsUp(counter))
+        var messageParts = [settings.message, ' ', humanText, '.']
+        if (settings.messageSuffix) {
+          messageParts.push(' ')
+          messageParts.push(settings.messageSuffix)
+        }
+        return messageParts.join('')
+      }
+
+      function roundSecondsUp (counter) {
+        if (counter > 60) {
+          return counter
+        } else if (counter < 20) {
+          return 20
+        } else {
+          return Math.ceil(counter / 20) * 20
+        }
+      }
+
+      function updateTextIfChanged ($elem, text) {
+        if ($elem.text() !== text) {
+          $elem.text(text)
+        }
+      }
+
+      function updateCountdown (counter, $countdownElement) {
+        var visibleMessage = getHumanText(counter)
+        var audibleHumanText = getAudibleHumanText(counter)
+
+        updateTextIfChanged($countdownElement, visibleMessage)
+        updateTextIfChanged($screenReaderCountdownElement, audibleHumanText)
+      }
+
+      function getNextTimeout () {
+        var remaining = getMillisecondsRemaining()
+        var roundedRemaining = Math.floor(getMillisecondsRemaining() / 1000) * 1000
+        if (roundedRemaining <= 60000) {
+          return (remaining - roundedRemaining) || 1000
+        }
+        return remaining - (roundedRemaining - (roundedRemaining % 60000 || 60000))
+      }
+
+      function runUpdate () {
         var counter = getSecondsRemaining()
         updateCountdown(counter, $countdownElement)
         if (counter <= 0) {
           signOut()
         }
+        currentTimer = timeoutHelper.setTimeout(runUpdate, getNextTimeout())
       }
 
-      var countdown = window.setInterval(runUpdate, 1000)
-      cleanupFunctions.push(function () {
-        window.clearInterval(countdown)
-      })
       runUpdate()
     }
-
     function keepAliveAndClose() {
       cleanup()
       setupDialogTimer()
@@ -140,7 +214,8 @@ var self = module.exports = {
     }
 
     function getDateNow() {
-      return Date.now() || +new Date()
+      var dateNow = Date.now() || +new Date()
+      return dateNow
     }
 
     function signOut() {
@@ -155,10 +230,10 @@ var self = module.exports = {
     }
 
     function readCookie(cookieName) { // From http://www.javascripter.net/faq/readingacookie.htm
-      var re = new RegExp('[; ]'+cookieName+'=([^\\s;]*)');
-      var sMatch = (' '+document.cookie).match(re);
-      if (cookieName && sMatch) return unescape(sMatch[1]);
-      return '';
+      var re = new RegExp('[ ]' + cookieName + '=([^\\s]*)')
+      var sMatch = (' ' + document.cookie).match(re)
+      if (cookieName && sMatch) return unescape(sMatch[1])
+      return ''
     }
 
     return {cleanup: cleanup}
