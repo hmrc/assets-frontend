@@ -7,12 +7,12 @@
       <h2 class="heading-medium no-top-margin">HMRC Design Patterns launched on 21 December 2018</h2>
       <div class="grid-row">
         <div class="column-two-thirds">
-          <p>HMRC is retiring Assets Frontend following the launch of <a href="https://design-resources-for-hmrc.herokuapp.com/design-library/">HMRC Design Patterns</a>. Assets
+          <p>HMRC is retiring Assets Frontend following the launch of <a href="https://design.tax.service.gov.uk/hmrc-design-patterns/">HMRC Design Patterns</a>. Assets
              Frontend is still available for services that use it but it will not be developed further. HMRC will
              maintain it and roll out major bug fixes and security patches.</p>
           <p>For new projects that use the latest <a href="https://govuk-prototype-kit.herokuapp.com/docs">GOV.UK
-             Prototype Kit</a>, use <a href="https://design-resources-for-hmrc.herokuapp.com/design-library/">HMRC Design Patterns</a> to get patterns and code designed
-             specifically for HMRC and for patterns not yet in the <a href="https://design-system.service.gov.uk/design-system.md">GOV.UK
+             Prototype Kit</a>, use <a href="https://design.tax.service.gov.uk/hmrc-design-patterns/">HMRC Design Patterns</a> to get patterns and code designed
+             specifically for HMRC and for patterns not yet in the <a href="https://design-system.service.gov.uk/">GOV.UK
              Design System</a>.</p>
         </div>
       </div>
