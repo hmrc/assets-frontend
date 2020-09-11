@@ -198,6 +198,15 @@
       "selectorExpansion": true
     },
     {
+      "label": "Indent",
+      "url": "http://localhost:9033/section-indent.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
       "label": "Label",
       "url": "http://localhost:9033/section-label.html",
       "selectors": [
@@ -335,6 +344,15 @@
     {
       "label": "Service-info",
       "url": "http://localhost:9033/section-service-info.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Side-navigation",
+      "url": "http://localhost:9033/section-side-navigation.html",
       "selectors": [
         ".comp-lib-pattern-component"
       ],
