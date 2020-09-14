@@ -1,0 +1,407 @@
+// From GOV.UK Elements for the design system copy
+main {
+  @include core-19;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Centred
+.column-constrained {
+  padding: 0 $gutter-half !important;
+  @media (min-width: 1200px) {
+    padding: 0 10% !important;
+  }
+  @media (min-width: 1367px) {
+    padding: 0 15% !important;
+  }
+}
+
+.design-system {
+  &.phase-banner {
+    padding: $gutter-half;
+
+    & .phase-tag {
+      background-color: #005ea5;
+    }
+  }
+}
+
+#toc > .nav-group {
+  margin-top: 15px;
+}
+
+.toc {
+  padding: 15px;
+}
+
+.toc__list {
+  a:link {
+    padding-left: 11px;
+    position: relative;
+    padding-right: 60px;
+  }
+}
+
+.toc__list a:visited {
+  color: $link-colour;
+}
+
+.toc__list a:first-letter {
+  text-transform: uppercase;
+}
+
+.toc__list ul.pattern-nav {
+  a:link {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.toc__list li a,
+.toc__list li li a {
+  border-left: 4px solid transparent;
+}
+
+.toc__list .current-page a {
+  background-color: darken($grey-4, 3%);
+  font-weight: bold !important;
+  letter-spacing: 0;
+  border-left: 4px solid $govuk-blue;
+
+  &:hover {
+    border-left-color: $govuk-blue;
+  }
+
+  //Copy of pattern status
+  &::after {
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+    padding: 0 10px 0 3px;
+    min-width: 56px;
+    text-align: right;
+    margin-top: 3px;
+    letter-spacing: 1;
+    color: $secondary-text-colour;
+  }
+}
+
+.markdown {
+  margin: 0 32px 30px;
+
+  .example {
+    max-width: 34em;
+    @extend %contain-floats;
+    position: relative;
+    border: 1px solid $border-colour;
+    margin: $gutter 0;
+    padding: $gutter;
+
+    &:before {
+      content: "EXAMPLE";
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 5px 15px 5px 15px;
+      font-family: "nta", Arial, sans-serif;
+      font-weight: 400;
+      text-transform: none;
+      font-size: 12px;
+      line-height: 1.25;
+      background: $grey-1;
+      color: white;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    title {
+      display: block;
+    }
+  }
+
+  details {
+    .example {
+      margin-bottom: 0;
+    }
+    + pre {
+      display: none;
+    }
+  }
+  details[open]{
+    + pre {
+      display: block;
+    }
+  }
+
+
+  .column-one-third > h2 {
+    padding-top: 30px;
+    margin-top: 15px;
+  }
+
+  > h1,
+  > .heading-xlarge {
+    @include bold-48();
+
+    margin-top: em(15, 32);
+    margin-bottom: em(30, 32);
+
+    @include media(tablet) {
+      margin-top: em(30, 48);
+      margin-bottom: em(60, 48);
+    }
+  }
+
+  > h2,
+  > .heading-large {
+    @include bold-36();
+
+    margin-top: em(25, 24);
+    margin-bottom: em(10, 24);
+
+    @include media(tablet) {
+      margin-top: em(45, 36);
+      margin-bottom: em(20, 36);
+    }
+  }
+
+  > h3,
+  > .heading-medium {
+    @include bold-24();
+
+    margin-top: em(25, 20);
+    margin-bottom: em(10, 20);
+
+    @include media(tablet) {
+      margin-top: em(45, 24);
+      margin-bottom: em(20, 24);
+    }
+  }
+
+  > h4,
+  > .heading-small {
+    @include bold-19();
+
+    margin-top: em(10, 16);
+    margin-bottom: em(5, 16);
+
+    @include media(tablet) {
+      margin-top: em(20, 19);
+    }
+  }
+
+  > pre {
+    padding: 0;
+
+    code {
+      border: none;
+    }
+    + details {
+      margin-top: 30px;
+    }
+  }
+
+  > p,
+  > ul,
+  > ol,
+  > blockquote,
+  > table {
+    max-width: 34em;
+  }
+
+  > ul {
+    list-style: disc;
+  }
+
+  > ul,
+  > ol {
+    padding: 0 0 0 20px;
+    margin: 15px 0 45px;
+  }
+
+  > ol li {
+    list-style-type: decimal;
+  }
+
+  > ul li {
+    list-style-type: disc;
+  }
+
+  > .example + pre,
+  > .example + .highlight {
+    margin-top: -31px;
+  }
+
+  > .highlight {
+    font-size: 16px;
+  }
+
+  > blockquote {
+    margin: 15px 0;
+    border-left: 4px solid #dee0e2;
+  }
+
+  > strong {
+    font-weight: bold;
+  }
+
+  > .list-no-bullet {
+    list-style: none;
+    padding-left: 0px;
+  }
+}
+
+.banner {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+
+  h3, p {
+    margin: 0;
+    padding-top: 0;
+    max-width: 100%;
+  }
+}
+
+.banner__out-of-date,
+.panel__quick-links {
+  background-color: lighten($govuk-blue, 65%);
+  border: 1px solid $govuk-blue;
+}
+
+// Related content panel
+.related-content {
+  font-size: 16px;
+  margin-top: $gutter;
+  border-top: 1px solid $border-colour;
+
+  h2 {
+    margin-top: 0 !important;
+  }
+
+  ul {
+    // font-size: 16px;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+      font-size: 16px;
+    }
+  }
+}
+
+.related-content-grid-item {
+  @include media(tablet) {
+    width: 100%;
+  }
+  @include media(desktop) {
+    width: 25%;
+  }
+
+}
+
+dl.meta-data-bottom {
+  margin-top: $gutter;
+  font-size: 16px;
+  dt {
+    font-weight: 700;
+    margin-top: $gutter-half;
+  }
+  dt + dd {
+    display: inline;
+  }
+}
+
+.callout {
+  padding: $gutter;
+  background-color: $grey-4;
+  color: black;
+  margin-top: $gutter;
+
+  @include media(mobile) {
+    padding: $gutter-half;
+  }
+
+  h2 {
+    margin-top: 0 !important;
+    padding-top: 0;
+    max-width: 35em;
+    &.heading-medium {
+      @include media(mobile) {
+        padding-top: $gutter-half;
+      }
+    }
+  }
+  .govuk-metadata-bottom {
+    margin-top: $gutter*2;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 19px;
+    max-width: 36em;
+  }
+
+  ul {
+    margin-bottom: $gutter;
+  }
+}
+
+.design-system-footer {
+  margin-top: 5px;
+}
+
+.footer-container {
+  flex-flow: wrap;
+
+  .heading-medium {
+    color: $black;
+    margin-bottom: 0;
+
+    &:nth-of-type(1) {
+      margin-top: 0;
+    }
+  }
+
+  .footer__navigation {
+    width: 100%;
+    margin-bottom: $gutter;
+    display: flex;
+    flex-direction: row;
+
+    @include media(mobile) {
+      flex-direction: column;
+
+      .footer__navigation--column {
+        margin-top: $gutter-half;
+      }
+    }
+
+    & ul li a {
+      display: block;
+      font-size: 16px;
+      padding: 10px 0 0;
+    }
+
+    & ul li p {
+      font-size: 16px;
+      padding: 10px 0 0;
+      margin: 0;
+    }
+  }
+}
+
+.footer__navigation--column {
+  flex: 1;
+  max-width: 25%;
+  @include media(mobile) {
+    max-width: 100%;
+  }
+}
+
+.no-top-margin {
+  margin-top: 0 !important;
+}

@@ -25,8 +25,6 @@ function sassToCss (stream, version) {
     .pipe(gulp.dest(path.join(config.snapshotDir[version], config.sass.destDirName)))
 }
 
-gulp.task('style', ['style:v3', 'style:v4'])
-
 gulp.task('style:v3', () => {
   const src = gulp.src(config.sass.src)
   return sassToCss(src, 'v3')
@@ -36,3 +34,5 @@ gulp.task('style:v4', () => {
   const src = gulp.src(config.sass.src).pipe(replace(/^@import.*scss\/.*$/gmi, ''))
   return sassToCss(src, 'v4')
 })
+
+gulp.task('style', gulp.series('style:v3', 'style:v4'))

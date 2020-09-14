@@ -1,0 +1,54 @@
+.sub-nav {
+  @extend %contain-floats;
+
+  padding: 0px 10px 0px $gutter-half;
+  background-color: darken($grey-4, 3%);
+
+  @include media(mobile) {
+    display: none;
+  }
+
+  ul.sub-nav-list {
+    @extend %contain-floats;
+
+    padding: 0;
+
+    li {
+      float: left;
+      margin-bottom: 0; // Override assets-frontend list items
+
+      a {
+        @include box-sizing(border-box);
+        display: block;
+        color: $govuk-blue;
+        text-decoration: none;
+        height: 35px;
+        line-height: 35px;
+        border-left: 4px solid transparent;
+        padding-left: $gutter-half;
+
+        &.is-active {
+          border-left: 4px solid $govuk-blue;
+        }
+
+        @include media(tablet) {
+          padding: 0 20px;
+          border-left: 0px;
+          border-bottom: 4px solid transparent;
+          height: 53px;
+          line-height: 53px;
+          font-weight: 700;
+
+          &:hover {
+            border-bottom: 4px solid $light-blue;
+          }
+
+          &.is-active {
+            border-left: 0px;
+            border-bottom: 4px solid $govuk-blue;
+          }
+        }
+      }
+    }
+  }
+}

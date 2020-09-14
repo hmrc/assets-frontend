@@ -8,13 +8,13 @@ const compLibConfig = require('../../component-lib.json')
 
 gulp.task('copy:component-library', () => {
   return gulp
-    .src([`${config.snapshotDir.v3}/**/*`])
+    .src([`${config.snapshotDir.v3}/**/*`, './template/**/*', './gulpfile.js/util/component-library/public/**/*'])
     .pipe(gulp.dest(path.join(compLibConfig.destination, 'public')))
 })
 
 gulp.task('copy:design-system', () => {
   return gulp
-    .src([`${config.snapshotDir.v4}/**/*`])
+    .src([`${config.snapshotDir.v4}/**/*`, './template/**/*', './gulpfile.js/util/design-system/public/**/*'])
     .pipe(gulp.dest(path.join(config.designSystem.dest, 'public')))
 })
 

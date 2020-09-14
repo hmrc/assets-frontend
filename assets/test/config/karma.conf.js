@@ -53,27 +53,7 @@ module.exports = function (karmaConfig) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: false,
 
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera (has to be installed with `npm install karma-opera-launcher`)
-    // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
-    // - PhantomJS
-    // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-    browsers: ['PhantomJS_desktop'],
-
-    customLaunchers: {
-      'PhantomJS_desktop': {
-        base: 'PhantomJS',
-        options: {
-          viewportSize: {
-            width: 1024,
-            height: 800
-          }
-        }
-      }
-    },
+    browsers: ['ChromeHeadless'],
 
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 60000,

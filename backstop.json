@@ -1,0 +1,479 @@
+{
+  "id": "assets-frontend-vrt",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Accordion",
+      "url": "http://localhost:9033/section-accordion.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Add-remove",
+      "url": "http://localhost:9033/section-add-remove.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Alpha",
+      "url": "http://localhost:9033/section-alpha.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "App-info",
+      "url": "http://localhost:9033/section-app-info.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Attorney-banner",
+      "url": "http://localhost:9033/section-attorney-banner.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Autocomplete",
+      "url": "http://localhost:9033/section-autocomplete.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Beta",
+      "url": "http://localhost:9033/section-beta.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Breadcrumbs",
+      "url": "http://localhost:9033/section-breadcrumbs.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Buttons",
+      "url": "http://localhost:9033/section-buttons.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Code",
+      "url": "http://localhost:9033/section-code.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Datatable",
+      "url": "http://localhost:9033/section-datatable.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Details",
+      "url": "http://localhost:9033/section-details.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Dividers",
+      "url": "http://localhost:9033/section-dividers.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Errors",
+      "url": "http://localhost:9033/section-errors.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "External-markup",
+      "url": "http://localhost:9033/section-external-markup.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Flag",
+      "url": "http://localhost:9033/section-flag.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Form-hint",
+      "url": "http://localhost:9033/section-form-hint.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Form",
+      "url": "http://localhost:9033/section-form.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Header",
+      "url": "http://localhost:9033/section-header.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Hero",
+      "url": "http://localhost:9033/section-hero.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Icons",
+      "url": "http://localhost:9033/section-icons.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Indent",
+      "url": "http://localhost:9033/section-indent.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Label",
+      "url": "http://localhost:9033/section-label.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Layout",
+      "url": "http://localhost:9033/section-layout.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Links",
+      "url": "http://localhost:9033/section-links.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Lists",
+      "url": "http://localhost:9033/section-lists.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Load-partial",
+      "url": "http://localhost:9033/section-load-partial.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Navigation",
+      "url": "http://localhost:9033/section-navigation.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Notification-banner",
+      "url": "http://localhost:9033/section-notification-banner.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Notification",
+      "url": "http://localhost:9033/section-notification.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Organisation-logo",
+      "url": "http://localhost:9033/section-organisation-logo.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Page-header",
+      "url": "http://localhost:9033/section-page-header.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Panel",
+      "url": "http://localhost:9033/section-panel.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Radio-input",
+      "url": "http://localhost:9033/section-radio-input.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Reminders",
+      "url": "http://localhost:9033/section-reminders.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Section",
+      "url": "http://localhost:9033/section-section.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Select-input",
+      "url": "http://localhost:9033/section-select-input.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Service-info",
+      "url": "http://localhost:9033/section-service-info.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Side-navigation",
+      "url": "http://localhost:9033/section-side-navigation.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Table",
+      "url": "http://localhost:9033/section-table.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Tabs",
+      "url": "http://localhost:9033/section-tabs.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Tabular-data",
+      "url": "http://localhost:9033/section-tabular-data.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Template-page-header",
+      "url": "http://localhost:9033/section-template-page-header.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Text-input",
+      "url": "http://localhost:9033/section-text-input.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Textarea-input",
+      "url": "http://localhost:9033/section-textarea-input.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Toggle-button",
+      "url": "http://localhost:9033/section-toggle-button.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Typography",
+      "url": "http://localhost:9033/section-typography.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    },
+    {
+      "label": "Youtube-player",
+      "url": "http://localhost:9033/section-youtube-player.html",
+      "selectors": [
+        ".comp-lib-pattern-component"
+      ],
+      "misMatchThreshold": 0.1,
+      "selectorExpansion": true
+    }
+  ],
+  "onReadyScript": "puppet/onReady.js",
+  "ci": {
+    "format": "junit",
+    "testReportFileName": "component-library-xunit",
+    "testSuiteName": "Assets Frontend Visual Regression Tests"
+  },
+  "paths": {
+    "bitmaps_reference": "vrt-output/baseline",
+    "bitmaps_test": "vrt-output/compare",
+    "engine_scripts": "vrt-output/engine_scripts",
+    "html_report": "vrt-output/report",
+    "ci_report": "vrt-output/ci-report"
+  },
+  "report": [
+    "browser"
+  ],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": [
+      "--no-sandbox"
+    ]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "resembleOutputOptions": {
+    "errorColor": {
+      "red": 255,
+      "green": 0,
+      "blue": 255
+    },
+    "errorType": "movement",
+    "transparency": 0.3
+  },
+  "debug": false,
+  "debugWindow": false
+}

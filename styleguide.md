@@ -1,4 +1,4 @@
-This Component Library demonstrates styles and components for **HMRC** applications. It is built on top of the [GOV.UK frontend toolkit](https://github.com/alphagov/govuk_frontend_toolkit) and the [GOV.UK template](https://github.com/alphagov/govuk_template) and it uses the [hmrc-component-library-template](https://github.com/hmrc/component-library-template).
+This Component Library demonstrates styles and components for **HMRC** applications. It is built on top of the [GOV.UK frontend toolkit](https://github.com/alphagov/govuk_frontend_toolkit) and the [GOV.UK template](https://github.com/alphagov/govuk_template).
 
 * [What is the Component Library?](#what-is-the-component-library)
 * [Adding Components](#adding-components)
@@ -49,13 +49,3 @@ If you would like to discuss extra features or the design of the template itself
 ## Development details
 
 All the information you need to know for developing and enabling Components within the Component Library can be found can be found in the [assets-frontend](https://github.com/hmrc/assets-frontend) README.
-
-
-# Component Library Template
-
-This library uses the [hmrc-component-library-template](https://github.com/hmrc/component-library-template).
-
-
-## Developing on the template
-
-All the information you need to know for developing on the template can be found in the [hmrc-component-library-template README](https://github.com/hmrc/component-library-template#readme).

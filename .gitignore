@@ -19,6 +19,7 @@ target/
 /component-library/
 /component-library-template/
 !gulpfile.js/util/component-library/
-vrt-output/
-backstop.json
+vrt-output/ci-report
+vrt-output/compare
+vrt-output/report
 .project

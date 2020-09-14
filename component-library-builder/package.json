@@ -1,0 +1,6 @@
+{
+  "name": "kss-node-component-library-builder",
+  "version": "3.0.0",
+  "description": "The custom kss builder for the component library.",
+  "main": "builder.js"
+}

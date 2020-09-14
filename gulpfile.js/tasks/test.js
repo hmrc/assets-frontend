@@ -8,15 +8,11 @@ const tape = require('gulp-tape')
 const tapSpec = require('tap-spec')
 const config = require('../config').test
 
-gulp.task('test:gulpTasks', ['lint:gulpTasks'], () => {
-  return gulp.src(config.gulpTasks)
-    .pipe(tape({
-      bail: true,
-      reporter: tapSpec()
-    }))
-})
-
-gulp.task('test', ['style', 'images', 'svg', 'test:v3', 'test:v4'])
+gulp.task('test:gulpTasks', gulp.series('lint:gulpTasks', () => gulp.src(config.gulpTasks)
+  .pipe(tape({
+    bail: true,
+    reporter: tapSpec()
+  }))))
 
 gulp.task('test:v3', (done) => {
   const v3KarmaConfig = karmaConfig.parseConfig(
@@ -49,3 +45,5 @@ gulp.task('test:v4', (done) => {
 
   server.start()
 })
+
+gulp.task('test', gulp.parallel('style', 'images', 'svg', 'test:v3', 'test:v4'))
