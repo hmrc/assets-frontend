@@ -1,6 +1,6 @@
 sudo: false
 language: node_js
 node_js:
-  - 8.17.0
+  - 12.13.1
 before_install: git fetch origin master:master
 script: ./server.sh release
