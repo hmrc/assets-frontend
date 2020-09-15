@@ -40,7 +40,7 @@ test('changelog - filterFiles', (t) => {
 })
 
 test('changelog - verifyGitDiffs', (t) => {
-  t.plan(9)
+  t.plan(8)
 
   changelog
     .verifyGitDiffs()
@@ -62,8 +62,6 @@ test('changelog - verifyGitDiffs', (t) => {
       t.ok(err instanceof Error, 'returns an Error if the command fails')
       t.ok(err.message.includes('CHANGELOG.md was not updated'), 'returns an error message')
     })
-
-  t.ok(changelog.verifyGitDiffs('string').then(), 'returns a promise')
 
   changelog
     .verifyGitDiffs('file1\nCHANGELOG.md\nfile')

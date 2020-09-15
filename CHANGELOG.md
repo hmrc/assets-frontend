@@ -5,8 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [3.13.0] and [4.13.0] - 2020-09-11
+## [3.13.0] and [4.13.0] - 2020-09-15
 ### Fixed
+- Fixed Puppeteer configuration
 - Node uplifted to v12 for consistency with hmrc-frontend
 - Gulp uplifted to v4 and pipelines refactored
 - kss uplifted and component-library custom builder re-built
