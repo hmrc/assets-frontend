@@ -54,7 +54,14 @@ module.exports = function (karmaConfig) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: false,
 
-    browsers: ['ChromeHeadless'],
+    browsers: ['ChromeHeadlessNoSandbox'],
+
+    customLaunchers: {
+      'ChromeHeadlessNoSandbox': {
+        base: 'ChromeHeadless',
+        flags: ['--disable-setuid-sandbox', '--no-sandbox']
+      }
+    },
 
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 60000,

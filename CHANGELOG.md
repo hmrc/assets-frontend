@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [3.13.0] and [4.13.0] - 2020-09-15
 ### Fixed
-- Fixed Puppeteer configuration
+- Fixed Puppeteer configuration and added --no-sandbox
 - Node uplifted to v12 for consistency with hmrc-frontend
 - Gulp uplifted to v4 and pipelines refactored
 - kss uplifted and component-library custom builder re-built
