@@ -9,7 +9,7 @@ This Component Library demonstrates styles and components for **HMRC** applicati
     * [Components](#components)
     * [Template](#template)
 * [Development details](#development-details)
-* [Component Library Template](#component-library-template)
+* ~~[Component Library Template](#component-library-template)~~ *Archived*
 * [Developing on the template](#developing-on-the-template)
 
 
@@ -43,7 +43,7 @@ Once a decision has been made by the design team on a component the work needs t
 
 #### Template
 
-If you would like to discuss extra features or the design of the template itself please raise an issue in [HMRC component-library-template issues](https://github.com/hmrc/component-library-template/issues).
+If you would like to discuss extra features or the design of the template itself please raise it with Plat UI.
 
 
 ## Development details
