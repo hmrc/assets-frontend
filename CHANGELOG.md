@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased]
+### Updated
+- Documented the archieving of component-library-template
+
 ## [3.13.0] and [4.13.0] - 2020-09-15
 ### Fixed
 - Fixed Puppeteer configuration and added --no-sandbox
