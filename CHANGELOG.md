@@ -5,12 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased]
+## [Unreleased]
+
+## [3.14.0] and [4.14.0] - 2020-10-20
+### Fixed
+- Documented the archiving of component-library-template
+- Incorrectly added aria-hidden attribute on 'Your account' link on PTA account menu
+- Added WCAG 2.1 AA focus and colour contrast fixes from
+https://gist.github.com/adamliptrot-oc/f77250a6f69fb31fabd935e2002f4964 (v3)
+and https://gist.github.com/adamliptrot-oc/c35166dce1f3234bfc8f0dbb915f07b8 (v4)
+
 ### Updated
 - Documented the archiving of component-library-template
-
-### Fixed
-- Incorrectly added aria-hidden attribute on 'Your account' link on PTA account menu
 
 ## [3.13.0] and [4.13.0] - 2020-09-15
 ### Fixed

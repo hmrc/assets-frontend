@@ -19,3 +19,10 @@ $path: "../images/";
 @import "styles/layout/layout";
 @import "components/all-components";
 @import "patterns/all-patterns";
+
+// WCAG 2.1 AA Fixes for GOV.UK Elements
+@import 'wcag_2_1_aa/palette';
+@import 'wcag_2_1_aa/focus';
+
+// WCAG 2.1 AA Fixes for Assets Frontend v3
+@import 'scss/wcag_2_1_aa/palette';

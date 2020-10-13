@@ -1,0 +1,200 @@
+// =========================
+// updated 11 June 2020 13:46 BST
+// focus states
+// changes made to bring in line with
+// https://designnotes.blog.gov.uk/2019/07/29/weve-made-the-gov-uk-design-system-more-accessible/
+// to check for updates visit https://gist.github.com/adamliptrot-oc/f77250a6f69fb31fabd935e2002f4964
+// =========================
+
+  a:focus,
+  .error-summary .error-summary-list a:focus,
+  details summary:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    -webkit-box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+  }
+  // error summary spacing
+  .error-summary-list li {
+    margin-bottom: 5px;
+  }
+  details summary:focus .summary {
+    text-decoration: none;
+  }
+  input:focus,
+  textarea:focus,
+  select:focus,
+  #global-header input:focus {
+    outline-color: #fd0;
+  }
+  .button {
+    border: 2px solid transparent;
+  }
+  .button:focus:not(:active):not(:hover) {
+    border-color: #fd0;
+    color: #0b0c0c;
+    background-color: #fd0;
+    -webkit-box-shadow: 0 2px 0 #0b0c0c;
+    box-shadow: 0 2px 0 #0b0c0c;
+  }
+  .button:focus {
+    border-color: #fd0;
+    outline: 3px solid transparent;
+    -webkit-box-shadow: inset 0 0 0 1px #fd0;
+    box-shadow: inset 0 0 0 1px #fd0;
+  }
+  .autocomplete__input:focus,
+  .form-control:focus {
+    outline: 3px solid #fd0;
+    outline-offset: 0;
+    -webkit-box-shadow: inset 0 0 0 2px;
+    box-shadow: inset 0 0 0 2px;
+  }
+  .multiple-choice [type=checkbox]:focus+label::before {
+    border-width: 3px;
+  }
+
+// header and footer (incl. account header)
+  .report-error .report-error__toggle:focus,
+  #footer a:focus,
+  #global-header .header-proposition #proposition-links li a:focus,
+  #global-header .header-proposition a.menu:focus,
+  #global-header #logo:focus {
+    color: #0b0c0c;
+  }
+  #global-header #logo:focus img {
+    filter: invert(1);
+  }
+  .account-menu__link:focus,
+  .is-smaller .account-menu__link--home:focus,
+  .is-smaller .account-menu__link--menu:focus,
+  .is-smaller .account-menu__link--home.account-menu__link--active:focus,
+  .is-smaller .account-menu__link--menu.account-menu__link--active:focus {
+    color: #0b0c0c;
+    background-color: #fd0;
+  }
+  @media (min-width: 641px){
+    #footer .footer-meta .copyright a {
+      background-position: 50% 0;
+      float: right;
+    }
+  }
+  #footer .footer-meta .copyright a:focus {
+    background-color: #fd0;
+  }
+.secondary-button:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    -webkit-box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+  }
+
+
+  // error focus state
+  .form-control-error.form-control-error:focus {
+    border-color: #0b0c0c;
+    -webkit-box-shadow: none;
+    box-shadow: none
+  }
+
+  // radios
+  .multiple-choice input {
+    top: -2px;
+    left: -2px;
+    width: 44px;
+    height: 44px;
+}
+.multiple-choice [type="radio"]+label::before {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+}
+.multiple-choice [type="radio"]:focus+label::before {
+    border-width: 4px;
+}
+.multiple-choice [type=radio]+label::after {
+    top: 10px;
+    left: 10px;
+}
+
+.multiple-choice [type=checkbox]+label::before {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.multiple-choice [type=checkbox]:focus+label::before {
+    border-width: 4px;
+}
+
+.multiple-choice [type=checkbox]+label::after {
+    top: 11px;
+    left: 9px;
+}
+
+// govuk textarea
+  textarea:focus {
+    outline: 3px solid #fd0;
+    outline-offset: 0;
+    -webkit-box-shadow: inset 0 0 0 2px;
+    box-shadow: inset 0 0 0 2px;
+  }
+// show focus on error fields
+  .form-control-error:focus {
+    border-color: #0b0c0c;
+    -webkit-box-shadow: none;
+    box-shadow: none
+  }
+
+// skip link
+#skiplink-container {
+  text-align: left;
+  background: none;
+}
+#skiplink-container div {
+  text-align: left;
+  margin: 0;
+  max-width: none;
+}
+#skiplink-container .skiplink {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  font-size: 1.6rem;
+  text-decoration: underline;
+  line-height: 1.14286;
+  display: block;
+  padding: 10px 15px;
+}
+@supports (padding: unquote('max(calc(0px))')) {
+  #skiplink-container .skiplink {
+      padding-right: unquote('max(15px, calc(15px + env(safe-area-inset-right)))');
+      padding-left: unquote('max(15px, calc(15px + env(safe-area-inset-left)))');
+  }
+}
+#skiplink-container .skiplink:active,
+#skiplink-container .skiplink:focus {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin: inherit !important;
+  overflow: visible !important;
+  clip: auto !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+  white-space: inherit !important;
+}
