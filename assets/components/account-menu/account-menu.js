@@ -173,7 +173,6 @@ module.exports = function () {
     showSubnavLink
       .addClass('account-menu__link--more-expanded')
       .attr({
-        'aria-hidden': 'false',
         'aria-expanded': 'true'
       })
 
@@ -206,7 +205,6 @@ module.exports = function () {
     showSubnavLink
       .removeClass('account-menu__link--more-expanded')
       .attr({
-        'aria-hidden': 'true',
         'aria-expanded': 'false'
       })
 
@@ -243,7 +241,6 @@ module.exports = function () {
     showSubnavLink
       .addClass('account-menu__link--more-expanded')
       .attr({
-        'aria-hidden': 'false',
         'aria-expanded': 'true'
       })
   }
@@ -266,7 +263,6 @@ module.exports = function () {
     showSubnavLink
       .removeClass('account-menu__link--more-expanded')
       .attr({
-        'aria-hidden': 'true',
         'aria-expanded': 'false'
       })
   }

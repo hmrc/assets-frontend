@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 ### Updated
-- Documented the archieving of component-library-template
+- Documented the archiving of component-library-template
+
+### Fixed
+- Incorrectly added aria-hidden attribute on 'Your account' link on PTA account menu
 
 ## [3.13.0] and [4.13.0] - 2020-09-15
 ### Fixed
