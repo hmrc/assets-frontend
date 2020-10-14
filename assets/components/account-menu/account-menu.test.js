@@ -43,6 +43,10 @@ describe('Given I have an account menu of the page', function () {
       expect($mobileBack).toHaveClass('hidden')
       expect($mobileBack.attr('aria-hidden')).toBe('true')
     })
+
+    it('should not have an aria-hidden attribute on the Your Account link', function () {
+      expect($yourAccountLink.attr('aria-hidden')).toBeUndefined()
+    })
   })
 
   describe('When \'Your account\' is opened', function () {
@@ -67,6 +71,11 @@ describe('Given I have an account menu of the page', function () {
       expect($yourAccountSubNav).not.toHaveClass('subnav-reveal')
       expect($yourAccountSubNav.attr('aria-hidden')).toBe('true')
       expect($yourAccountSubNav.attr('aria-expanded')).toBe('false')
+    })
+
+    it('should not have an aria-hidden attribute on the Your Account link in second click', function () {
+      $yourAccountLink.click()
+      expect($yourAccountLink.attr('aria-hidden')).toBeUndefined()
     })
   })
 })
