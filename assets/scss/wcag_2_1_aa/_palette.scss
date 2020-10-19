@@ -1,0 +1,16 @@
+// =========================
+// Palette change
+// https://designnotes.blog.gov.uk/2019/07/29/weve-updated-the-gov-uk-colours-and-font/
+// =========================
+
+// #DEE0E2 to #f3f2f1
+.block-label,
+.block-label--stacked,
+html {
+  background-color: #f3f2f1;
+}
+
+.block-label,
+.block-label--stacked {
+  border-color: #f3f2f1;
+}
