@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.15.0] and [4.15.0] - 2020-10-30
+### Fixed
+- Uplifted jQuery version to 1.12.4 to fix the vulnerability [CVE-2020-11022](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11022)
+
 ## [3.14.0] and [4.14.0] - 2020-10-20
 ### Fixed
 - Documented the archiving of component-library-template
