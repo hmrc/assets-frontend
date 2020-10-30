@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.15.0] and [4.15.0] - 2020-10-30
+### Fixed
+- Uplifted jQuery version to 1.12.4, and added patch to assets/application.js, to fix the vulnerability [CVE-2020-11022](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11022)
+- Uplifted browser-sync version to 2.26.13 to fix the vulnerability in the dependent package object-path [CVE-2020-15256](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15256)
+
 ## [3.14.0] and [4.14.0] - 2020-10-20
 ### Fixed
 - Documented the archiving of component-library-template
