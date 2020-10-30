@@ -9,6 +9,11 @@ window.jQuery.ajaxPrefilter(function (s) {
   }
 })
 
+// patch jQuery for http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11022
+jQuery.htmlPrefilter = function (html) {
+  return html
+}
+
 require('govuk-template')
 require('javascripts')
 require('./components')
