@@ -105,6 +105,14 @@ Releasing assets for use in production is currently a process owned by the [Serv
 
 If you’d like a new version of assets-frontend released, please get in touch with us in the [#team-sdt](https://hmrcdigital.slack.com/messages/C39V3PH38) Slack channel.
 
+## Build and deploy steps
+1. Manually [run the build job](https://build.tax.service.gov.uk/job/Service%20Design%20Tools/job/assets-frontend/), which will generate 3.x.x and 4.x.x versions of the library.
+2. From the console, get the 3.x.x and 4.x.x version numbers.
+3. From the Production orchestrator, [deploy the 3.x.x version](https://orchestrator.tools.production.tax.service.gov.uk/job/deploy-assets-frontend/).
+4. From the Production orchestrator, [deploy the 4.x.x version](https://orchestrator.tools.production.tax.service.gov.uk/job/deploy-assets-frontend/).
+5. Optional: To sanity check the deployment to S3, check:
+* https://www.tax.service.gov.uk/assets/3.x.x/stylesheets/application.min.css
+* https://www.tax.service.gov.uk/assets/4.x.x/stylesheets/application.min.css
 
 # HMRC Design System
 
