@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.15.1] and [4.15.1] - 2020-12-11
+### Security
+- Bump version of ini to 1.3.7
+
 ## [3.15.0] and [4.15.0] - 2020-10-30
 ### Fixed
 - Uplifted jQuery version to 1.12.4, and added patch to assets/application.js, to fix the vulnerability [CVE-2020-11022](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11022)
