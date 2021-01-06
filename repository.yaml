@@ -4,4 +4,4 @@ leakDetectionExemptions:
  - ruleId: 'ip_addresses'
    filePaths:
       - '/public/javascripts/mdtpdf.min.js.map'
-
+      - '/javascripts/mdtpdf.min.js.map'
