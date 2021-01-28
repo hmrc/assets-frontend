@@ -4,7 +4,7 @@ const path = require('path')
 const gulp = require('gulp')
 const rename = require('gulp-rename')
 const replace = require('gulp-replace')
-const NodeGitVersion = require('@hmrc/node-git-versioning')
+const NodeGitVersion = require('./node-git-versioning')
 
 const config = require('../config')
 const packageFile = `${config.src}/package-build.json`
