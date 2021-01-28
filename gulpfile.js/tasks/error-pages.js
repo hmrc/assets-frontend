@@ -4,7 +4,7 @@ const path = require('path')
 const gulp = require('gulp')
 const replace = require('gulp-replace')
 const config = require('../config')
-const NodeGitVersion = require('@hmrc/node-git-versioning')
+const NodeGitVersion = require('./node-git-versioning')
 let version = ''
 
 const errorPages = (v) => {
