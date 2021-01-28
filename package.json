@@ -52,7 +52,7 @@
     "gulp-util": "^3.0.8",
     "jasmine-core": "2.5.2",
     "jquery": "^1.12.4",
-    "jquery-validation": "1.13.1",
+    "jquery-validation": "1.19.3",
     "js-base64": "^2.1.7",
     "json3": "^3.3.2",
     "karma": "^5.1.1",
