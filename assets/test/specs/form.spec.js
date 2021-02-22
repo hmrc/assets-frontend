@@ -2,7 +2,7 @@
 /* global loadFixtures */
 
 require('jquery')
-require('validate')
+require('jquery-validation')
 
 var ERROR_SUMMARY_HEADER_TEXT = 'There are errors on the page.'
 var form
