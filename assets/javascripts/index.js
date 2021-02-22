@@ -1,8 +1,7 @@
 /* eslint-env jquery */
 
 require('details')
-require('validate')
-require('basicpunc')
+require('jquery-validation')
 
 var sso = require('./modules/sso.js')
 var visibility = require('./modules/visibility.js')
