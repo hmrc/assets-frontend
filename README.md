@@ -2,7 +2,7 @@
 
 :rotating_light: **Assets Frontend has been deprecated in favour of the [Play Frontend](https://confluence.tools.tax.service.gov.uk/display/PLATUI/play-frontend+Libraries).** :rotating_light:
 
-If you do decide to use Assets Frontend anyway you need to be aware of the vulnerabilities including but not limited to the ones listed here ]https://github.com/hmrc/assets-frontend/security/dependabot](https://github.com/hmrc/assets-frontend/security/dependabot).  We won't be making updates to Assets Frontend so we recommend moving over to the latest [Play Frontend Libraries](https://confluence.tools.tax.service.gov.uk/display/PLATUI/play-frontend+Libraries)
+If you do decide to use Assets Frontend anyway you need to be aware of the vulnerabilities including but not limited to the ones listed here ]https://github.com/hmrc/assets-frontend/security/dependabot](https://github.com/hmrc/assets-frontend/security/dependabot).  There are also known accessibility issues when using Assets Frontend which will cause delays with going live.  We won't be making updates to Assets Frontend so we recommend moving over to the latest [Play Frontend Libraries](https://confluence.tools.tax.service.gov.uk/display/PLATUI/play-frontend+Libraries)
 
 # assets-frontend
 
