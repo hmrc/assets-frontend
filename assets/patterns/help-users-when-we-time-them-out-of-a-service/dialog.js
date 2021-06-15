@@ -20,7 +20,7 @@ module.exports = {
     })
 
     // disable the non-dialog page to prevent confusion for VoiceOver users
-    $('#skiplink-container, body>header, #global-cookie-message, body>main, body>footer').each(function () {
+    $('#skiplink-container, body>header, body>main, body>footer').each(function () {
       var value = $(this).attr('aria-hidden')
       var $elem = $(this)
       resetElementsFunctionList.push(function () {

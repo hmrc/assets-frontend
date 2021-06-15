@@ -176,9 +176,6 @@ describe('Dialog', function () {
       if ($('#skiplink-container').length === 0) {
         testScope.elementsCreatedForThisTest.push($('<div id=skiplink-container>').appendTo($('body')))
       }
-      if ($('#global-cookie-message').length === 0) {
-        testScope.elementsCreatedForThisTest.push($('<div id=global-cookie-message>').appendTo($('body')))
-      }
       if ($('body>header').length === 0) {
         testScope.elementsCreatedForThisTest.push($('<header>').appendTo($('body')))
       }
@@ -199,7 +196,6 @@ describe('Dialog', function () {
       var selectors = [
         '#skiplink-container',
         'body>header',
-        '#global-cookie-message',
         'body>main',
         'body>footer'
       ];

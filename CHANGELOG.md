@@ -7,11 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [4.17.0] and [3.17.0] - 2020-02-22
+## [4.19.0] and [3.19.0] - 2020-06-15
+### Changed
+- Removed old cookie banner functionality replaced by 
+  [hmrc/tracking-consent-frontend](https://www.github.com/hmrc/tracking-consent-frontend)
+
+## [4.18.0] and [3.18.0] - 2020-02-22
 ### Security
 - Patch security vulnerabilities
 
-## [3.15.1] and [4.15.1] - 2020-12-11
+## [4.17.0] and [3.17.0] - 2020-01-28
+### Changed
+- Inlined hmrc/node-git-versioning
+
+## [3.16.1] and [4.16.1] - 2020-12-11
 ### Security
 - Bump version of ini to 1.3.7
 
