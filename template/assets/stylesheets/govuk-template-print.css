@@ -93,6 +93,5 @@ select {
 /* hide the unnecessary page elements */
 body footer,
 .visuallyhidden,
-#global-cookie-message,
 #skiplink-container {
   display: none !important; }
