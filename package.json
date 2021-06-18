@@ -67,7 +67,6 @@
     "modernizr": "^3.11.3",
     "pretty-hrtime": "^1.0.0",
     "require-dir": "^0.3.2",
-    "stageprompt": "hmrc/stageprompt",
     "sticky-header": "^0.2.1",
     "tcp-port-used": "^1.0.1",
     "upath": "^1.0.2",

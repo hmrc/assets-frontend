@@ -2,7 +2,6 @@
 /* global YT */
 
 require('jquery')
-var GOVUK = require('stageprompt')
 
 /**
  * Embed a Youtube iframe in the page, replacing a div with the js-youtube-player class.
@@ -50,7 +49,6 @@ window.onYouTubeIframeAPIReady = function () {
 }
 
 /**
- * Fires Google Analytics event via GDS Stageprompt library.
  * Event values provided by data-ga-play-event attribute on player containing element.
  * @param event
  */
@@ -60,10 +58,6 @@ var onPlayerStateChange = function (event) {
 
   if (youtubePlayer && !youtubePlayer.started && event.data === YT.PlayerState.PLAYING) {
     youtubePlayer.started = true
-    var gaEventFields = youtubePlayer.params.gaEvent.split(':')
-    if (gaEventFields.length === 3) {
-      GOVUK.performance.sendGoogleAnalyticsEvent(gaEventFields[0], gaEventFields[1], gaEventFields[2])
-    }
   }
 }
 
