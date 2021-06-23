@@ -46,4 +46,4 @@ gulp.task('test:v4', (done) => {
   server.start()
 })
 
-gulp.task('test', gulp.parallel('style', 'images', 'svg', 'test:v3', 'test:v4'))
+gulp.task('test', gulp.series(gulp.parallel('style', 'images', 'svg'), gulp.parallel('test:v3', 'test:v4')))
