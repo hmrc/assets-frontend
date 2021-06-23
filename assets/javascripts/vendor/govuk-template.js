@@ -1,6 +1,6 @@
 (function () {
   "use strict"
-  var root = this;
+  var root = window;
   if(typeof root.GOVUK === 'undefined') { root.GOVUK = {}; }
 
   /*

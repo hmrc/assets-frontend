@@ -19,3 +19,13 @@ require('javascripts')
 require('./components')
 require('./components/show-hide-content/show-hide-content-init')
 
+var stub = function() {console.log('This feature has been removed, please use Tracking Consent instead.')};
+window.GOVUK.Analytics = stub
+window.GOVUK.GoogleAnalyticsUniversalTracker = stub
+window.GOVUK.GOVUKTracker = stub
+window.GOVUK.analyticsPlugins = {
+  downloadLinkTracker: stub,
+  error: stub,
+  externalLinkTracker: stub,
+  printIntent: stub,
+}

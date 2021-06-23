@@ -125,7 +125,8 @@ module.exports = {
       ],
       add: [
         govuk.toolkit + '/javascripts/govuk/**/*.js',
-        '!' + govuk.toolkit + '/javascripts/govuk/selection-buttons.js'
+        '!' + govuk.toolkit + '/javascripts/govuk/selection-buttons.js',
+        '!' + govuk.toolkit + '/javascripts/govuk/analytics/*'
       ],
       destDirName: 'javascripts',
       outputName: 'application.js'
