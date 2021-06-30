@@ -67,7 +67,6 @@
     "modernizr": "^3.11.3",
     "pretty-hrtime": "^1.0.0",
     "require-dir": "^0.3.2",
-    "stageprompt": "hmrc/stageprompt",
     "sticky-header": "^0.2.1",
     "tcp-port-used": "^1.0.1",
     "upath": "^1.0.2",
@@ -83,7 +82,6 @@
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "mdtpdf": "./assets/javascripts/modules/mdtpdf.js",
-    "stageprompt": "./node_modules/stageprompt/script/stageprompt.js",
     "details": "./node_modules/govuk_frontend_toolkit/javascripts/govuk/details.polyfill.js",
     "govuk-template": "./assets/javascripts/vendor/govuk-template.js",
     "datatables": "./node_modules/datatables/media/js/jquery.dataTables.js",
@@ -99,14 +97,6 @@
       "depends": [
         "jquery",
         "delegate"
-      ]
-    },
-    "stageprompt": {
-      "exports": "GOVUK"
-    },
-    "govuk-template": {
-      "depends": [
-        "stageprompt"
       ]
     },
     "json3": {

@@ -5,7 +5,6 @@
  * @module javascripts/modules/modaldialog
  * @author  Matthew Pepper
  * @requires jquery
- * @requires stageprompt
  * @requires scss/modules/_modal-dialog.scss
  *
  * @summary An accessible modal-dialog component module consisting of:
@@ -52,8 +51,6 @@
  *
  */
 require('jquery')
-
-var GOVUK = require('stageprompt')
 
 module.exports = function () {
   var $modalDialog = $('.modal-dialog')
@@ -110,11 +107,6 @@ module.exports = function () {
 
       // shift focus to showing content
       $(contentShowing).focus()
-
-      // send google analytics event
-      if ($(contentShowing).length) {
-        fireEventTracking($(contentShowing).data('gaOpenEvent'))
-      }
     }
   }
 
@@ -198,15 +190,6 @@ module.exports = function () {
   $modalDialog.on('keyup', contentShowing, function (e) {
     // escape key press to close modal-dialog
     if ($(contentShowing).length && e.which === 27) {
-      // send google analytics event - assume the same value data-journey-click value as the close button
-      var $closeButton = $(contentShowing).find('[data-modaldialog-action="close"]')
-
-      // if the close button exists
-      if ($closeButton.length) {
-        // use the close button / links data-journey-click attribute value to fire a GA event
-        fireEventTracking($closeButton.data('journeyClick'))
-      }
-
       hide()
     }
   })
@@ -285,20 +268,6 @@ module.exports = function () {
     // show the modal
     show(e)
   })
-
-  /**
-   * Fire Google Analytics event tracking
-   */
-  function fireEventTracking (gaEvent) {
-    // get the GA event fields
-    var gaEventFields = gaEvent.split(':')
-
-    // if three GA fields defined
-    if (gaEventFields.length === 3) {
-      // fire a GA event
-      GOVUK.performance.sendGoogleAnalyticsEvent(gaEventFields[0], gaEventFields[1], gaEventFields[2])
-    }
-  }
 
   /**
    * Set the value of the "hidden" attributes
