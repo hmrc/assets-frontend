@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [4.20.0] and [3.20.0] - 2020-06-15
 ### Changed
-- Removed stageprompt as it delivers Google Analytics in a way which shouldn't be use alongside 
+- Removed stageprompt as it delivers Google Analytics in a way which shouldn't be used alongside 
   [hmrc/tracking-consent-frontend](https://www.github.com/hmrc/tracking-consent-frontend)
 
 
