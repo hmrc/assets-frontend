@@ -14,18 +14,21 @@ jQuery.htmlPrefilter = function (html) {
   return html
 }
 
+window.GOVUK = window.GOVUK || {}
+
 require('govuk-template')
 require('javascripts')
 require('./components')
 require('./components/show-hide-content/show-hide-content-init')
 
-var stub = function() {console.log('This feature has been removed, please use Tracking Consent instead.')};
-window.GOVUK.Analytics = stub
-window.GOVUK.GoogleAnalyticsUniversalTracker = stub
-window.GOVUK.GOVUKTracker = stub
+var stubGenerator = function(name) {function() {console.log(name + 'has been removed alongside other analytics features' +
+  ', please use Tracking Consent instead.')}};
+window.GOVUK.Analytics = stubGenerator('window.GOVUK.Analytics')
+window.GOVUK.GoogleAnalyticsUniversalTracker = stubGenerator('window.GOVUK.GoogleAnalyticsUniversalTracker')
+window.GOVUK.GOVUKTracker = stubGenerator('window.GOVUK.GOVUKTracker')
 window.GOVUK.analyticsPlugins = {
-  downloadLinkTracker: stub,
-  error: stub,
-  externalLinkTracker: stub,
-  printIntent: stub,
+  downloadLinkTracker: stubGenerator('window.GOVUK.analyticsPlugins.downloadLinkTracker'),
+  error: stubGenerator('window.GOVUK.analyticsPlugins.error'),
+  externalLinkTracker: stubGenerator('window.GOVUK.analyticsPlugins.externalLinkTracker'),
+  printIntent: stubGenerator('window.GOVUK.analyticsPlugins.printIntent')
 }
