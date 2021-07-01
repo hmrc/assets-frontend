@@ -2,7 +2,7 @@ var fs = require('fs')
 var path = require('path')
 var gutil = require('gulp-util')
 var globby = require('globby')
-var mkdirp = require('mkdirp')
+var mkdirp = require('../../mkdir')
 
 var copyAssets = function (config) {
   if (!config) {
