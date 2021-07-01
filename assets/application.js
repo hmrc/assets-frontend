@@ -21,8 +21,13 @@ require('javascripts')
 require('./components')
 require('./components/show-hide-content/show-hide-content-init')
 
-var stubGenerator = function(name) {function() {console.log(name + 'has been removed alongside other analytics features' +
-  ', please use Tracking Consent instead.')}};
+var stubGenerator = function(name) {
+  return function() {
+    console.log(name + 'has been removed alongside other analytics features' +
+  ', please use Tracking Consent instead.')
+  }
+}
+
 window.GOVUK.Analytics = stubGenerator('window.GOVUK.Analytics')
 window.GOVUK.GoogleAnalyticsUniversalTracker = stubGenerator('window.GOVUK.GoogleAnalyticsUniversalTracker')
 window.GOVUK.GOVUKTracker = stubGenerator('window.GOVUK.GOVUKTracker')
