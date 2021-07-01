@@ -1,6 +1,6 @@
 var fs = require('fs')
 var path = require('path')
-var mkdirp = require('mkdirp')
+var mkdirp = require('../../mkdir')
 
 var writeFiles = function (config, files) {
   if (!config || !config.dest) {
