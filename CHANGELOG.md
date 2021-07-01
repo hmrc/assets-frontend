@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [4.20.0] and [3.20.0] - 2020-06-15
+## [4.21.0] and [3.21.0] - 2020-07-02
+### Changed
+- Bumped dependencies to resolve vulnerabilities
+- Using specific versions for precision
+- Not using mkdirp as a dependency as it was less work to rebuild it now that recursive directories are supported directly in fs
+
+## [4.20.0] and [3.20.0] - 2020-07-01
 ### Changed
 - Removed stageprompt as it delivers Google Analytics in a way which shouldn't be used alongside 
   [hmrc/tracking-consent-frontend](https://www.github.com/hmrc/tracking-consent-frontend)

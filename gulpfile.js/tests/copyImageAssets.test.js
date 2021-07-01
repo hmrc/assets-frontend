@@ -3,7 +3,7 @@ var path = require('path')
 var del = require('del')
 var test = require('tape')
 var gutil = require('gulp-util')
-var mkdirp = require('mkdirp')
+var mkdirp = require('../util/mkdir')
 var globby = require('globby')
 var copyAssetsImages = require('../util/design-system/lib/copyImageAssets')
 
