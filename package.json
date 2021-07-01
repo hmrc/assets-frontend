@@ -107,20 +107,20 @@
     }
   },
   "devDependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "globby": "^6.1.0",
-    "gulp-standard": "^10.0.0",
+    "cheerio": "1.0.0-rc.10",
+    "globby": "6.1.0",
+    "gulp-standard": "10.0.0",
     "gulp-stats": "0.0.4",
     "gulp-tape": "0.0.9",
-    "handlebars": "^4.7.6",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-viewport": "^0.4.2",
-    "marked": "^2.0.0",
-    "mkdirp": "^0.5.1",
-    "nunjucks": "^3.2.2",
-    "puppeteer": "^5.2.1",
-    "sinon": "^1.17.7",
-    "tap-spec": "^5.0.0",
-    "tape": "^4.6.3"
+    "handlebars": "4.7.7",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-viewport": "0.4.2",
+    "marked": "2.0.0",
+    "mkdirp": "0.5.1",
+    "nunjucks": "3.2.2",
+    "puppeteer": "5.2.1",
+    "sinon": "1.17.7",
+    "tap-spec": "5.0.0",
+    "tape": "4.6.3"
   }
 }
