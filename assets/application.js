@@ -23,8 +23,8 @@ require('./components/show-hide-content/show-hide-content-init')
 
 var stubGenerator = function(name) {
   return function() {
-    console.log(name + 'has been removed alongside other analytics features' +
-  ', please use Tracking Consent instead.')
+    console.log(name + ' has been removed alongside other analytics features' +
+  ', please use https://github.com/hmrc/tracking-consent-frontend instead.')
   }
 }
 
