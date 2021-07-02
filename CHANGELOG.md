@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bumped dependencies to resolve vulnerabilities
 - Using specific versions for precision
 - Not using mkdirp as a dependency as it was less work to rebuild it now that recursive directories are supported directly in fs
+- Updated message for analytics stub
 
 ## [4.20.0] and [3.20.0] - 2020-07-01
 ### Changed
