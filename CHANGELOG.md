@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [4.22.0] and [3.22.0] - 2020-08-19
+### Changed
+- Bumped dependencies to resolve vulnerabilities
+
 ## [4.21.0] and [3.21.0] - 2020-07-02
 ### Changed
 - Bumped dependencies to resolve vulnerabilities
