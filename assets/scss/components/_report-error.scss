@@ -4,7 +4,7 @@ Load Partial
 Styles to contain a page partial loaded into the current page by AJAX, and a loading spinner to be displayed while the content is being loaded.
 This is used on the 'Get help with this page' content on the templates of many front-ends.
 The spinner is shown while loading, then removed and replaced with the loaded content.
-The component requires Javascript module: [/javascripts/modules/reportAProblem.js](https://github.com/hmrc/assets-frontend/blob/master/assets/javascripts/modules/reportAProblem.js).
+The component requires Javascript module: [/javascripts/modules/reportAProblem.js](https://github.com/hmrc/assets-frontend/blob/main/assets/javascripts/modules/reportAProblem.js).
 
 Markup:
 <div class="report-error">

@@ -103,7 +103,7 @@ If you’re using [service-manager](https://github.com/hmrc/service-manager), pl
 
 ## Using assets in production
 
-Running `npm run release` calls the [release gulp task](https://github.com/hmrc/assets-frontend/blob/master/gulpfile.js/tasks/release.js) and this happens on our internal Jenkins instances.
+Running `npm run release` calls the [release gulp task](https://github.com/hmrc/assets-frontend/blob/main/gulpfile.js/tasks/release.js) and this happens on our internal Jenkins instances.
 
 The final step of our internal release pipeline is to version and deploy the compiled assets to https://www.tax.service.gov.uk/assets/.
 
