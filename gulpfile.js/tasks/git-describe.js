@@ -31,7 +31,7 @@ const getCommitCount = (gitDir) => {
   let gitArgs = [
     'rev-list',
     '--count',
-    'master'
+    'main'
   ]
 
   return gitExec(gitArgs, gitDir)

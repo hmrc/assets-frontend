@@ -228,7 +228,7 @@ marked, dot-prop, node-sass, jpeg-js, lodash)
 ### Fixed
 - Build styles as a dependency of the test task [896](https://github.com/hmrc/assets-frontend/issues/896)
 - Link style button(button--link) focus background colour is green [900](https://github.com/hmrc/assets-frontend/issues/900)
-- Change log checks that the current commit doesn't exist in the remote master [904](https://github.com/hmrc/assets-frontend/pull/904)
+- Change log checks that the current commit doesn't exist in the remote's default branch [904](https://github.com/hmrc/assets-frontend/pull/904)
 
 ### Added
 - Added in links to the contribution guidelines [#902](https://github.com/hmrc/assets-frontend/pull/902)
@@ -450,7 +450,7 @@ This entire version is covered by a single pull request. [#867](https://github.c
 ### Fixed
 - Changes to nginx error pages not being build and deployed [#734]
 
-[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...master
+[Unreleased]: https://github.com/hmrc/assets-frontend/compare/release/4.2.0...main
 [4.10.0]: https://github.com/hmrc/assets-frontend/compare/v4.9.0...v4.10.0
 [4.9.0]: https://github.com/hmrc/assets-frontend/compare/v4.8.0...v4.9.0
 [4.8.0]: https://github.com/hmrc/assets-frontend/compare/v4.7.0...v4.8.0

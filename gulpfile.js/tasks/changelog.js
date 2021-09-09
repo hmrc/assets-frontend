@@ -25,12 +25,12 @@ function runCommand (cmd) {
 }
 
 function getGitDiffs () {
-  return runCommand(`git diff --name-only master...`)
+  return runCommand(`git diff --name-only main...`)
 }
 
 function isMerged () {
   return runCommand('git branch -a --contains HEAD')
-    .then((results) => results.includes('remotes/origin/master'))
+    .then((results) => results.includes('remotes/origin/main'))
 }
 
 function filterFiles (files) {

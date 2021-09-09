@@ -51,7 +51,7 @@ Please follow these contribution guidelines to maintain the quality of the code:
 
 ### Use EditorConfig
 
-The project uses [EditorConfig](http://editorconfig.org) to ensure consistent coding styles between different editors and IDEs. Please [install a plugin](http://editorconfig.org/#download) for your editor of choice or manually enforce the rules listed in [.editorconfig](https://github.com/hmrc/assets-frontend/blob/master/.editorconfig).
+The project uses [EditorConfig](http://editorconfig.org) to ensure consistent coding styles between different editors and IDEs. Please [install a plugin](http://editorconfig.org/#download) for your editor of choice or manually enforce the rules listed in [.editorconfig](https://github.com/hmrc/assets-frontend/blob/main/.editorconfig).
 
 ### Lint the Code
 
@@ -142,7 +142,7 @@ There has already been a lot written about git commit messages, so we follow [th
 
 ### Squash related commits
 
-> ...changes are proposed in a *branch*, which ensures that the `master` branch only contains finished and approved work. – [GitHub](https://help.github.com/articles/creating-a-pull-request/)
+> ...changes are proposed in a *branch*, which ensures that the `main` branch only contains finished and approved work. – [GitHub](https://help.github.com/articles/creating-a-pull-request/)
 
 Pull requests that do one thing have much more chance of being reviewed and merged quickly. Huge changes that take a long time to work through will have less chance of being reviewed or merged.
 
@@ -155,7 +155,7 @@ Pull requests that do one thing have much more chance of being reviewed and merg
 
 ### Description
 
-When filling out the description for your Pull Request, [follow the template](https://github.com/hmrc/assets-frontend/blob/master/.github/PULL_REQUEST_TEMPLATE.md).
+When filling out the description for your Pull Request, [follow the template](https://github.com/hmrc/assets-frontend/blob/main/.github/PULL_REQUEST_TEMPLATE.md).
 
 ### Closing issues
 
