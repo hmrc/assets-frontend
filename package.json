@@ -116,7 +116,7 @@
     "handlebars": "4.7.7",
     "karma-chrome-launcher": "3.1.0",
     "karma-viewport": "0.4.2",
-    "marked": "2.0.0",
+    "marked": "4.0.10",
     "nunjucks": "3.2.2",
     "puppeteer": "5.2.1",
     "sinon": "1.17.7",
