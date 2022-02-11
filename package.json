@@ -55,7 +55,7 @@
     "jquery-validation": "1.19.3",
     "js-base64": "2.1.7",
     "json3": "3.3.2",
-    "karma": "6.3.4",
+    "karma": "6.3.14",
     "karma-browserify": "7.0.0",
     "karma-jasmine": "1.1.0",
     "karma-jasmine-jquery": "hmrc/karma-jasmine-jquery#5f308457fd",
