@@ -39,7 +39,7 @@ class TestRepo {
   }
 
   init () {
-    this.execGit('init')
+    this.execGit('init', '-b', 'main')
   }
 
   makeChange () {
