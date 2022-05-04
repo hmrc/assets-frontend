@@ -12,7 +12,7 @@
  *  https://github.com/hmrc/play-ui/blob/main/src/main/twirl/uk/gov/hmrc/play/views/layouts/attorney_banner.scala.html
  *
  *  Example from the tai-frontend:
- *  https://www.github.com/hmrc/tai-frontend/blob/master/app/views/main.scala.html#L47
+ *  https://www.github.com/hmrc/tai-frontend/blob/main/app/views/main.scala.html#L47
  *
  *  @actingAttorneyBanner = {
  *      @actingAttorney.map {actingAttorneyValue =>
