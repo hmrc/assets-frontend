@@ -39,6 +39,7 @@ class TestRepo {
   }
 
   init () {
+    this.clean()
     this.execGit('init', '-b', 'main')
   }
 
