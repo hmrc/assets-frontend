@@ -19,7 +19,8 @@
     "copy:component-library": "gulp copy:component-library",
     "kss": "kss -c component-lib.json",
     "kss-clone": "kss --clone --builder=node_modules/kss/builder/handlebars/",
-    "design-system": "gulp design-system"
+    "design-system": "gulp design-system",
+    "audit": "better-npm-audit audit"
   },
   "keywords": [
     "HMRC",
@@ -108,6 +109,7 @@
     }
   },
   "devDependencies": {
+    "better-npm-audit": "^3.7.3",
     "cheerio": "1.0.0-rc.10",
     "globby": "6.1.0",
     "gulp-standard": "10.0.0",
