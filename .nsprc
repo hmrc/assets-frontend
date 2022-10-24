@@ -23,7 +23,7 @@
   "1070440": "async: Won't fix due to library deprecation",
   "1070456": "jquery-validation: Won't fix due to library deprecation",
   "1070493": "engine.io: Won't fix due to library deprecation",
-  "1075650": "shell-quote: Won't fix due to library deprecation",
+  "1084769": "shell-quote: Won't fix due to library deprecation",
   "1081702": "jquery-validation: Won't fix due to library deprecation",
   "1084436": "axios: Won't fix due to library deprecation",
   "1081826": "jquery: Won't fix due to library deprecation",
@@ -34,5 +34,6 @@
   "1082047": "engine.io: Won't fix due to library deprecation",
   "1082166": "ajv: Won't fix due to library deprecation",
   "1082216": "gulp-tape: Won't fix due to library deprecation",
-  "1082342": "copy-props: Won't fix due to library deprecation"
+  "1082342": "copy-props: Won't fix due to library deprecation",
+  "1084765": "minimatch: Won't fix due to library deprecation"
 }
