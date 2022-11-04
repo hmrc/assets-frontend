@@ -11,7 +11,7 @@ var self = module.exports = {
     validateInput(options)
 
     var cleanupFunctions = []
-    var localisedDefaults = readCookie('PLAY_LANG') && readCookie('PLAY_LANG') === 'cy' && {
+    var localisedDefaults = document.querySelector("html").lang.startsWith("cy") && {
       title: undefined,
       message: 'Er eich diogelwch, byddwn yn eich allgofnodi cyn pen',
       keepAliveButtonText: 'Parhau i fod wedi’ch mewngofnodi',
