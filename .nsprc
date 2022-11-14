@@ -36,5 +36,7 @@
   "1082216": "gulp-tape: Won't fix due to library deprecation",
   "1082342": "copy-props: Won't fix due to library deprecation",
   "1084765": "minimatch: Won't fix due to library deprecation",
-  "1084824": "socket.io-parser: Won't fix due to library deprecation"
+  "1084945": "socket.io-parser: Won't fix due to library deprecation",
+  "1084946": "socket.io-parser: Won't fix due to library deprecation",
+  "1084947": "socket.io-parser: Won't fix due to library deprecation"
 }
