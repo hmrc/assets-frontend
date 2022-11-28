@@ -38,5 +38,10 @@
   "1084765": "minimatch: Won't fix due to library deprecation",
   "1084945": "socket.io-parser: Won't fix due to library deprecation",
   "1084946": "socket.io-parser: Won't fix due to library deprecation",
-  "1084947": "socket.io-parser: Won't fix due to library deprecation"
+  "1084947": "socket.io-parser: Won't fix due to library deprecation",
+  "1085027": "engine.io : Won't fix due to library deprecation",
+  "1085028": "engine.io : Won't fix due to library deprecation",
+  "1085041": "socket.io-parser : Won't fix due to library deprecation",
+  "1085042": "socket.io-parser : Won't fix due to library deprecation",
+  "1085043": "socket.io-parser : Won't fix due to library deprecation"
 }
