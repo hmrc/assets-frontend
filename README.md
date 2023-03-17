@@ -35,6 +35,14 @@ $ npm install
 
 ## Running
 
+### The Component Library microsite
+1. Clone the repo locally: `git clone https://github.com/hmrc/assets-frontend.git`
+2. In your file system, navigate to the assets-frontend directory: `cd assets-frontend`
+3. Checkout the `gh-pages` branch: `git checkout gh-pages`
+4. In your file system, navigate one directory level above the `assets-frontend` folder: `cd ../`
+5. Start a local server for serving the pages: `python3 -m http.server --cgi 8888`
+6. In the browser, navigate to to `http://localhost:8888/assets-frontend`
+
 ### The Design System:
 
 1. Run `npm start`
